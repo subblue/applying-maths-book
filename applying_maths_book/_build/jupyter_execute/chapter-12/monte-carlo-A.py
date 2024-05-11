@@ -24,9 +24,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To use a Monte Carlo method to numerically integrate a function, the area corresponding to the integral is calculated by repeatedly guessing pairs of $x$ and $y$ values at random and evaluating the function $y = f (x)$ to see whether or not $y$ lies within the area bound by the integral, Figure 1. Clearly many guesses will be needed and while many will fall inside the required region, many will not. The ratio of correct guesses to the total number is proportional to the integral. The more guesses that are made, the closer the answer becomes to the true value. The error can then be estimated and the calculation truncated when a satisfactory result is achieved.
 # 
-# There are two considerations. First, the computer generated random numbers must actually be random, or as near random as possible. These are usually described as being pseudo-random. The randomness of numbers is a complicated issue, but if Python and similar programs are used, then the (pseudo) random number generators can be relied upon; (Prest et al. 1986 give details about random number generators.) Python uses the Mersenne Twister as the core generator,which produces 53-bit precision floats and has a period of $2^{19937}-1$ which is a number about 6000 digits long. The second consideration is that numbers should be taken from a uniform distribution. A uniform distribution is one in which the chance of obtaining any number in a given range, which may be 0 to 1 but is normally $a$ to $b$, is the same no matter where the number is in that range. In other distributions, this is not true; a Gaussian distribution has more chance of returning a number near to its mean value than elsewhere.
+# There are two considerations. First, the computer generated random numbers must actually be random, or as near random as possible. These are usually described as being pseudo-random. The randomness of numbers is a complicated issue, but if Python and similar programs are used, then the (pseudo) random number generators can be relied upon; (Prest et al. 1986 give details about random number generators.) Python uses the Mersenne Twister as the core generator, which produces 53-bit precision floats and has a period of $2^{19937}-1$ which is a number about 6000 digits long. The second consideration is that numbers should be taken from a uniform distribution. A uniform distribution is one in which the chance of obtaining any number in a given range, which may be 0 to 1 but is normally $a$ to $b$, is the same no matter where the number is in that range. In other distributions, this is not true; a Gaussian distribution has more chance of returning a number near to its mean value than elsewhere.
 # 
-# Figure 1 explains the Monte Carlo integration method. The integral is $Q = \int_a^b f(x)dx$. Two uniformly distributed random numbers are chosen; one $R_x$ between $a$ and $b$ and another $R_y$ between limits $f(c)$ and $f(d)$, where the points $c$ and $d$ must be chosen to include the minimum and maximum of the function in the range $a$ to $b$. A large number of pairs of points are chosen, those for which $R_y \le f(R_x)$ are found and then counted up. The integral is approximated as
+# Figure 1 explains the Monte Carlo integration method. The integral is 
+# 
+# $$\displaystyle Q = \int_a^b f(x)dx$$
+# 
+# Two uniformly distributed random numbers are chosen; one $R_x$ between $a$ and $b$ and another $R_y$ between limits $f(c)$ and $f(d)$, where the points $c$ and $d$ must be chosen to include the minimum and maximum of the function in the range $a$ to $b$. A large number of pairs of points are chosen, those for which $R_y \le f(R_x)$ are found and then counted up. The integral is approximated as
 # 
 # $$\int_a^bf(x)dx \approx \frac{\text{number of guesses inside/under curve}}{\text{total number of guesses}}\times A \qquad\tag{1}$$
 # 
@@ -93,7 +97,15 @@ print('{:8.4f}'.format(av_f) )
 # 
 # where $\langle f(x_m) \rangle$  is the average value of the function calculated over the range $a$ to $b$. Clearly, for a closed symmetrical function such as an ellipse, Figure 1, the limits $a$ and $b$ must be chosen so that the mean does not turn out to be zero.
 # 
-# A two dimensional integral is in general $\displaystyle \int_a^b\int_c^d f(x,y)dxdy$, for example this might be $\displaystyle \int_0^2\int_0^1 \sqrt{4-x^2-y^2}dxdy$ where the limits 0 , 1 refer to the integration in $x$. In this case the Monte-Carlo method and mean- value theorem give
+# A two dimensional integral is in general 
+# 
+# $$\displaystyle \int_a^b\int_c^d f(x,y)dxdy$$
+# 
+# for example this might be 
+# 
+# $$\displaystyle \int_0^2\int_0^1 \sqrt{4-x^2-y^2}dxdy$$
+# 
+# where the inner limits $0 \to $1 refer to the integration in $x$. In this case the Monte-Carlo method and mean- value theorem give
 # 
 # $$\displaystyle \int_a^b\int_c^d f(x,y)dxdy \approx \frac{(b-a)(d-c)}{n}\langle f(x,y)_m \rangle \qquad\tag{5}$$
 # 
@@ -109,7 +121,7 @@ print('{:8.4f}'.format(av_f) )
 f = lambda x:  np.sin(1/x)**2                          # function to integrate
 xlim_a = 0.0 
 xlim_b = 2.0 
-n = 5000
+n = 5000                                               # repeats 
 s = 0.0 
 s2= 0.0 
 for i in range(n):
@@ -135,13 +147,27 @@ print('{:8.4f} {:s} {:8.4f}'.format( av_f, '+/-',  sig ) )
 # 
 # where $p(x)$ is a function we need to guess. Preferably, it has the same shape as $f(x)$ so that on division the ratio $f(x)/p(x)$ is approximately constant. The remaining $p(x)$ is converted into a normalized distribution function to provide values of $x$ distributed as $p^{-1}$. The _inverted distribution_, which we shall call $t$, is $t = p^{-1}(r)$ and $r$ is a random number in the range $0 \to 1$. The choice of $p$ is limited to functions that can easily be inverted, such as $e^{-x}$; otherwise, a numerical way of inverting the function has to be used which will involve a lot of unnecessary calculation.
 # 
-# If the integral to be evaluated is $\displaystyle \int_0^b e^{-x^2}dx$, the starting point is to choose a distribution  function $p$. The Gaussian $e^{-x^2}$ is an obvious choice but this can only be inverted numerically, such as with the Box - Muller algorithm (Weisstein), and therefore we will instead try $p(x) = e^{-x}$, which has a similarly decaying form when $x \gt 0$. (As the Gaussian is symmetrical, limits $\lt$ 0 can easily be calculated). The next step is to make a distribution function out of $p$ over the limits of the integration. The cumulative distribution up to a point $t$ is defined as $\displaystyle \int_{-\infty}^t p(x)dx = r$. This is the chance (probability) of choosing a value less than or equal to $r$.
+# If the integral to be evaluated is 
 # 
-# Defining the function $p$ as $p(x)=ke^{-kx}$ when $0 \le x \le \infty$ , and zero for negative $x$, and if $k$ is a constant, then
+# $$\displaystyle \int_0^b e^{-x^2}dx$$
+# 
+# the starting point is to choose a distribution  function $p$. The Gaussian $e^{-x^2}$ is an obvious choice but this can only be inverted numerically, such as with the Box - Muller algorithm (Weisstein), and therefore we will instead try $p(x) = e^{-x}$, which has a similarly decaying form when $x \gt 0$. (As the Gaussian is symmetrical, limits $\lt$ 0 can easily be calculated). The next step is to make a distribution function out of $p$ over the limits of the integration. The cumulative distribution up to a point $t$ is defined as 
+# 
+# $$\displaystyle \int_{-\infty}^t p(x)dx = r$$
+# 
+# This is the chance (probability) of choosing a value less than or equal to $r$. Defining the function $p$ as $p(x)=ke^{-kx}$ when $0 \le x \le \infty$ , and zero for negative $x$, and if $k$ is a constant, then
 # 
 # $$\displaystyle \int_0^te^{-kx}dx=\frac{1-e^{-kt}}{k}$$
 # 
-# The second step is to normalize the distribution over the range of the integration, which is the integral $\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}$. Finally, the normalized cumulative distribution is $\displaystyle \frac{1-e^{-kt}}{1-e^{-kb}}$ and rearranged this gives the inverted distribution,
+# The second step is to normalize the distribution over the range of the integration, which is the integral 
+# 
+# $\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}$$
+# 
+# Finally, the normalized cumulative distribution is 
+# 
+# $$\displaystyle \frac{1-e^{-kt}}{1-e^{-kb}}$$
+# 
+# and rearranged this gives the inverted distribution,
 # 
 # $$\displaystyle t=-\frac{\ln\left( 1-r\left(1-e^{-kb} \right) \right)}{k}  \qquad\tag{7}$$
 # 

@@ -3,7 +3,7 @@
 
 # # 13 Simultaneous equations 
 
-# ## 13.1 Sequential chemical reactions
+# ## 13.1 Sequential chemical reactions $\displaystyle A \stackrel{k_1} \longrightarrow B \stackrel{k_2}\longrightarrow C$
 # 
 # Complex chemical reactions can often be represented as a set of simultaneous reactions. The sequential scheme $\displaystyle A \stackrel{k_1} \longrightarrow B \stackrel{k_2}\longrightarrow C$ has already been solved with the integrating factor method in Section 2, and as an eigenvalue - eigenvector equation in Chapter 7.12.3. Here it is converted into a second-order equation and solved using the $D$ operator method. The rate equations are,
 # 
@@ -18,7 +18,11 @@
 # 
 # $$\displaystyle  \frac{d^2B}{dt^2}+(k_1+k_2)\frac{dB}{dt}+k_1k_2B=0 \qquad \text{ or } \qquad (D^2+(k_1+k_2)D+k_1k_2)B=0 $$
 # 
-# The solution can be written down after solving the characteristic equation $\displaystyle m^2 + (k_1 + k_2)m + k_1k_2 = 0$, which has roots $m = -k_1, -k_2$. The homogeneous equation is 
+# The solution can be written down after solving the characteristic equation 
+# 
+# $$\displaystyle m^2 + (k_1 + k_2)m + k_1k_2 = 0$$
+# 
+# which has roots $m = -k_1, -k_2$. The homogeneous equation is 
 # 
 # $$\displaystyle B = c_1e^{-k_1t} + c_2e^{-k_2t}$$
 # 
@@ -26,7 +30,15 @@
 # 
 # $$\displaystyle  B=c_1(e^{-k_1t}-e^{-k_2t})$$
 # 
-# and the final step is to find $c_1$ when $\displaystyle A = A_0e^{-k_1t}$. This is done by differentiating B and equating this with the rate equation $dB/dt = k_1A - k_2B$ after substituting for A and B. The resulting equation produces $c_1 = k_1A_0/(k_2 - k_1)$ making
+# and the final step is to find $c_1$ when 
+# 
+# $$\displaystyle A = A_0e^{-k_1t}$$
+# 
+# This is done by differentiating B and equating this with the rate equation 
+# 
+# $$\displaystyle dB/dt = k_1A - k_2B$$
+# 
+# after substituting for A and B. The resulting equation produces $c_1 = k_1A_0/(k_2 - k_1)$ making
 # 
 # $$\displaystyle  B=\frac{k_1A_0}{k_2 - k_1}(e^{-k_1t}-e^{-k_2t})$$
 # 
@@ -34,7 +46,7 @@
 # 
 # ## 13.2 Sequential reactions with equal rate constants
 # 
-# There are important chemical examples of the case when the rate constants are all equal at $k$ in the scheme $A \to B \to C$, notably the mechanical unfolding of proteins and DNA using an atomic force microscope. The fact that all the rate constants are equal does not mean that the concentration of B is zero at all times, even though it is formed at the same rate as it decays. Taking the last result, it is not possible to make $k_1 = k_2$ because the concentration of B becomes undefined as 0/0, however, l'Hopital's rule could, in this case, be used to find the limit $k_2 - k_1 \to 0$, (see Chapter 3.8). Instead, we start with the combined rate equations as in section 7.1, 
+# There are important chemical examples of the case when the rate constants are all equal at $k$ in the scheme $A \to B \to C$, notably the mechanical unfolding of proteins and DNA using an atomic force microscope. The fact that all the rate constants are equal does not mean that the concentration of B is zero at all times, even though it is formed at the same rate as it decays. Taking the last result, it is not possible to make $k_1 = k_2$ because the concentration of B becomes undefined as 0/0, however, l'Hopital's rule could, in this case, be used to find the limit $k_2 - k_1 \to 0$, (see Chapter 3.8). Instead, we start with the combined rate equations, 
 # 
 # $$\displaystyle  \frac{d^2B}{dt^2}+2k\frac{dB}{dt}+k^2B=0 \qquad \text{ or } \qquad (D^2+2kD+k^2)B=0 $$
 # 
@@ -59,13 +71,18 @@
 # fig 15a. Concentration of species $A \to B \to C \to D \to $ etc. calculated using $\displaystyle C_n =A_0\frac{k^nt^n}{n!} e^{-kt}$ calculated with $k = 1$ and $n=0\cdots 5$. At $t = 0,\, A_0 = 1$ and all other species are zero.
 # ____
 # 
-# Although rate constants for the reaction of different molecules can be the same, they are generally different. One situation where this is _not_ true is the unfolding of concatenated proteins by mechanical force. 
+# ### **(i) Atomic force microscope unfolding a concatenated protein**
+# Although rate constants for the reaction of different molecules can be the same, they are generally different. One situation where rate constants are all the same is the unfolding of concatenated proteins by mechanical force. 
 # 
 # A concatamer is a macroscopic molecule made by attaching several identical folded proteins in tandem, just like beads on a necklace. The links between proteins consist of only a few peptides compared the the protein which may contain a 100 amino acids. When one end of the concatamer is anchored to a substrate and the other to the tip of an atomic force microscope (AFM), the concatamer can be stretched by the AFM and each protein will unfold but in a random order with respect to its position in the concatamer (Reif et al. 1977; Brockwell et al. 2003). See Fig. 3.21 for a sketch of the experiment. The unfolding is registered by measuring the force and, to a good approximation, the unfolding rate constants for each protein are all the same. However, in this experiment, unlike normal chemical kinetics, the probability or chance $S$ that a protein is still folded at any given force is measured. If there are four proteins the reaction sequence is $\displaystyle S_4 \to S_3 \to S_2 \to S_1$ where $S_4$ is the chance that all proteins are folded, $S_3$ that three remain folded etc. _at a given force_.
 # 
 # The rate constants $k_0$ of thermally induced chemical reactions are constant at fixed temperature and are the same for each protein because they are identical. In the mechanical pulling experiment, the rate constant depends on the force $f$, because the barrier to unfolding is lowered by the applied force (Bell 1978; Evans & Richie 1997). The rate constant also depends on how fast the force is applied, and the protein becomes stiffer, i.e. more force is needed to unfold it the faster the force is applied. This occurs because the barrier can be lowered more quickly than the average time between thermally induced protein fluctuations that lead to barrier crossing.
 # 
-# The unfolding rate constant is given by $\displaystyle (k_0/L)e^{f/f0}$ where $f_0 =kT/x_u$ and $L$ is the load rate in pN s$^{-1}$. The constant $k_0$ is the (thermal) unfolding rate constant at zero force and $x_u$ is the distance from the minimum of the potential well to the top of the barrier separating the folded and unfolded protein. It is a measure of the distance the protein conformation has to change to reach the unfolding transition state and is typically $0.25$ nm. The unfolding forces are $100 \to 300$ piconewton and $f_0 \approx 15$ pN. Since all proteins are identical, and we assume that each protein experiences the same force irrespective of how many are folded or unfolded, the unfolding scheme for $N$ proteins can be written as
+# The unfolding rate constant is given by 
+# 
+# $$\displaystyle (k_0/L)e^{f/f0}$$
+# 
+# where $f_0 =kT/x_u$ and $L$ is the load rate in pN s$^{-1}$. The constant $k_0$ is the (thermal) unfolding rate constant at zero force and $x_u$ is the distance from the minimum of the potential well to the top of the barrier separating the folded and unfolded protein. It is a measure of the distance the protein conformation has to change to reach the unfolding transition state and is typically $0.25$ nm. The unfolding forces are $100 \to 300$ piconewton and $f_0 \approx 15$ pN. Since all proteins are identical, and we assume that each protein experiences the same force irrespective of how many are folded or unfolded, the unfolding scheme for $N$ proteins can be written as
 # 
 # $$\displaystyle \begin{align}
 # &\frac{dS_N}{df}=-\frac{k_0}{L}e^{f/f_0}S_N\\
@@ -183,7 +200,19 @@
 # 
 # $$\displaystyle (D^4 +3\omega^2D^2 +\omega^4)x=0$$
 # 
-# where $\displaystyle \omega^2 = k/m$, and has the characteristic equation $\displaystyle z^4 + 3\omega^2z^2 + \omega^4 = 0$. This has four solutions $\displaystyle z_{\pm,\pm}= \pm \frac{i\omega}{\sqrt{2}}\sqrt{3\pm \sqrt{5}} $. These solutions are equivalent to $\displaystyle z_{\pm,\pm}=\pm i\omega\frac{1\pm \sqrt{5}}{2}$ and produces the homogeneous equation
+# where $\displaystyle \omega^2 = k/m$, and has the characteristic equation 
+# 
+# $$\displaystyle z^4 + 3\omega^2z^2 + \omega^4 = 0$$
+# 
+# This has four solutions 
+# 
+# $$\displaystyle z_{\pm,\pm}= \pm \frac{i\omega}{\sqrt{2}}\sqrt{3\pm \sqrt{5}} $$
+# 
+# These solutions are equivalent to 
+# 
+# $$\displaystyle z_{\pm,\pm}=\pm i\omega\frac{1\pm \sqrt{5}}{2}$$
+# 
+# and produces the homogeneous equation
 # 
 # $$\displaystyle x=Ae^{tz_{++}}+Be^{tz_{+-}}+Ce^{tz_{-+}t}+De^{tz_{--}}$$
 # 

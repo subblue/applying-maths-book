@@ -85,15 +85,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is a series of spikes separated by $2\pi/\omega$, see fig. 21b chapter 9 (Fourier transforms). 
 # 
-# ### Mode-locked lasers.
+# ### **(i) The Mode-Locked laser**
 # 
-# A mode-locked laser is one that produces a continuous train of short laser pulses, these can be very short indeed, just a few femtoseconds, for example $20\cdot10^{-15}$ seconds is quite easily obtained from a Ti-sapphire laser. In these lasers Ti ions are doped into $\mathrm{Al_2O_3}$ (sapphire) crystals. The short pulses are possible because the Ti ions are in a wide variety of environments so that their emission spectrum is wide. The connection between pulse width and energy(frequency) spread is $\Delta t \sim k/\Delta \nu$ where $k$ is a constant of order of unity. (The value of $k$ depends on the shape of the laser pulse, 0.44 for a gaussian shaped (transform limited) pulse). Thus a gas laser with a narrow atomic emission line can only produce pulse of $\approx 0.1$ ns but a Ti sapphire laser with a fwhm of $\sim 700 \to 900$ nanometres which is a frequency spread of $\Delta \nu \approx 3175\,\mathrm{cm^{-1}}$ can potentially produce a pulse of $\Delta t = 10$ fs duration. 
+# A mode-locked laser produces a continuous train of short light pulses and these can be very short indeed, just a few femtoseconds, for example $20\cdot10^{-15}$ seconds, is quite easily obtained from a Ti-sapphire laser. In these lasers the gain material consists of Ti ions doped into $\mathrm{Al_2O_3}$ (sapphire) crystals. The short pulses are possible because the Ti ions are in a wide variety of environments so that their emission spectrum is wide. The connection between pulse width and energy(frequency) spread is $\Delta t \sim k/\Delta \nu$ where $k$ is a constant of order of unity. (The value of $k$ depends on the shape of the laser pulse, 0.44 for a gaussian shaped (transform limited) pulse). Thus a gas-laser with a narrow atomic emission line can only produce pulse of $\sim 0.1$ ns but a Ti sapphire laser with a fwhm of $\sim 700 \to 900$ nanometres which is a frequency spread of $\Delta \nu \approx 3175\,\mathrm{cm^{-1}}$ can potentially produce a pulse of $\Delta t = 10$ fs duration. 
 # 
-# Suppose that the laser is running in a continuous way (continuous wave or cw), in this case the phases of the waves is random. This means that the standing waves at each of many wavelengths that exist in the cavity are oscillating independently of one another. To make a pulse these modes have all to oscillate together, i.e. in phase with one another, i.e. these numerous mode must be locked together. Mode-locking can be produced in a variety of ways but this always involves modifying the 'gain' in the laser cavity, where 'gain' means the amplification of the light.
+# Suppose that the laser is running in a continuous way (continuous wave or cw), in this case the phases of the waves is random. This means that the standing waves at each of many wavelengths that exist in the cavity are oscillating independently of one another. To make a pulse these modes have all to be made to oscillate together, i.e. in phase with one another, thus these numerous modes must be locked together. Mode-locking can be produced in a variety of ways but this always involves modifying the 'gain' in the laser cavity, where 'gain' means the amplification of the light.
 # 
-# If the the laser cavity is perturbed in some way it is possible for the most intense part of the circulating light to produce more gain at the expense of the less intense parts. These more intense modes will then become more intense and so on, and eventually become locked simply because these are the only ones left with any amplitude. The result is that a pulse moves end to end in the cavity with a small amount of this being lost through the output coupler mirror each round trip and so produces a train of pulses. Each pulse is separated by the round trip time $2L/c$ seconds from its neighbour, where $L$ is the path-length in the laser and $c$ the speed of light, thus for a $1.5$ m cavity pulses are produced $10$ ns apart. The perturbation to start mode-locking can be in the form on an acoustic modulator inside the cavity, a saturable absorber or in the case of Ti-sapphire lasers by tapping one mirror. This minor motion causes the gain to oscillate and so a pulse is formed as the most intense part of this stimulates more photons and so on to form a pulse. 
+# If the the laser cavity is perturbed in some way it is possible for the most intense part of the circulating light to produce more gain at the expense of the less intense parts. These more intense modes will then become more intense and so on, and eventually more of them become locked together simply because these are the only ones left with any amplitude. The result is that a pulse moves end to end in the cavity with a small amount of this being lost through the output coupler mirror each round trip which produces a train of pulses. Each pulse is separated by the round trip time $2L/c$ seconds from its neighbour, where $L$ is the path-length in the laser and $c$ the speed of light, thus for a $1.5$ m cavity pulses are produced $10$ ns apart. The perturbation to start mode-locking can be in the form on an acoustic modulator inside the cavity, a saturable absorber or in the case of Ti-sapphire lasers by tapping one mirror. This minor motion causes the gain to oscillate and so a pulse is formed as the most intense part of this stimulates more photons and so on to form a pulse. 
 # 
-# The total electric field of the radiation inside the cavity has very many modes, these are called *longitudinal* modes (Svelto, 1982). Such a mode is a wave that that has an integer number $n$ of half wavelengths and so fits exactly into the cavity. Not all wavelengths will do this and so do not exist in the laser output. At a wavelength $\lambda_n$ the condition is $n\lambda_n/2 = L$. However, at a slightly different wavelength $(n+1)\lambda_{n+1}=2L$ is also true. The typical length for a mode-locked laser is $1.5$ m and if the wavelength is $800$ nm then $n=3750000$ making the next mode at a wavelength of $3/3750001= 799.99978$ nm thus these modes are extremely close in wavelength, and consequently there are a vast number of modes making up the laser pulse. Instead of calculating the change in wavelength, if frequency is used the  separation of the modes is $\Delta \nu=c/2L$ Hz or $\tau=2L/c$ seconds. The pulse moving round the cavity means that the phase of these modes is locked together and it is this effect that makes the pulse; random phases of sine waves would cancel one another out, see fig 18 in section 5.7 of this chapter.
+# The total electric field of the radiation inside the cavity has very many modes, these are called *longitudinal* modes (Svelto, 1982). Such a mode is a wave that that has an integer number $n$ of half wavelengths and so fits exactly into the cavity. Not all wavelengths will do this and so do not exist in the laser output. At a wavelength $\lambda_n$ the condition is $n\lambda_n/2 = L$. However, at a slightly different wavelength $(n+1)\lambda_{n+1}=2L$ is also true. The typical length for a mode-locked laser is $1.5$ m and if the wavelength is $800$ nm then $n=3750000$ making the next mode at a wavelength of $3/3750001= 799.99978$ nm thus these modes are extremely close in wavelength, and consequently there are a vast number of modes making up the laser pulse. Instead of calculating the change in wavelength frequency can be used making the  separation of the modes $\Delta \nu=c/2L$ Hz or $\tau=2L/c$ seconds. The pulse moving round the cavity means that the phase of these modes is locked together and it is this effect that makes the pulse; random phases of sine waves would cancel one another out, see fig 18 in section 5.7 of this chapter.
 # 
 # To calculate the laser output we suppose that all the longitudinal modes are of equal intensity $E_0$ and the phase difference between two consecutive modes is fixed and equal to $\varphi$, the total electric field of the radiation is the sum of all the longitudinal modes which is,
 # 
@@ -104,7 +104,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \begin{align}E(t)& =A(t)e^{i\omega_0 t}\\A(t)&=E_0
 # \frac{\sin\big((2N+1)(\Delta\omega t+\varphi)/2\big)}{\sin\big(( \Delta\omega t+\varphi)/2\big)}\end{align}$$
 # 
-# The intensity measured on a photodiode or other 'square law' detector is $E(t)E^*(t)=A(t)^2$ where the $^*$ is the complex conjugate and some pulses are shown in the figure. The sine terms ensure that the pulse repeats itself at intervals of $\tau=2L/c$. The pulse width is $\displaystyle \Delta \tau \approx \frac{2\pi}{(2n+1)\Delta \omega}$ which shows that a large number of oscillating modes, and hence a broad emission spectrum, are needed to produce a short pulse. 
+# The intensity measured on a photodiode or other 'square law' detector is $E(t)E^*(t)=A(t)^2$ where $E^*$ is the complex conjugate. Some pulses are shown in the figure. The sine terms ensure that the pulse repeats itself at intervals of $\tau=2L/c$. The pulse width is $\displaystyle \Delta \tau \approx \frac{2\pi}{(2n+1)\Delta \omega}$ which shows that a large number of oscillating modes, and hence a broad emission spectrum, are needed to produce a short pulse. 
 # 
 # ![Drawing](series-fig00a.png)
 # 
@@ -112,7 +112,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # __________________________
 # 
 # ## 1.3 Diffraction
-# Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 0. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period $d$, and at an angle $theta$ we would like to know how the intensity of the summed waves varies as $\theta$ is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed. 
+# Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 1a. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period $d$, and at an angle $theta$ we would like to know how the intensity of the summed waves varies as $\theta$ is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed. 
 # 
 # The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.
 # 
@@ -218,7 +218,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # ## 2 Making new series
 # 
-# **(i)** New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn. 2,
+# ### **(i) Differentiating an existing series**
+# 
+# New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn. 2,
 #  
 # $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \qquad\tag{3}$$
 #          
@@ -226,7 +228,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \qquad\tag{4}$$
 # 
-# **(ii)** Substituting $x \to -x $ gives the series
+# ### **(ii)Substituting $x \to -x $**
+#  
+# Substituting $x \to -x $ gives the series
 # 
 # $$\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \qquad\tag{5}$$
 # 
@@ -236,7 +240,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and the $\displaystyle (-1)^n$ ensures that alternate terms are positive and negative.
 # 
-# **(iii)** The sum 
+# ### **(iii)  Summation** 
 # 
 # $$\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1$$
 # 
@@ -248,7 +252,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 2.1 Table of Summations
 # 
-# $$\displaystyle \begin{array}{l|l|l}
+# $$\displaystyle \small \begin{array}{l|l|l}
 # \hline
 # \sum_0^\infty\limits x^n = \displaystyle\frac{1}{1-x},\quad |x|<1&
 # \sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|<1&
@@ -682,8 +686,8 @@ for i in range(len(J)):
 
 S_int = R*np.log(Z) + N_A*ZE/(T*Z)
 
-print('{:s} {:8.4f} {:s}'.format('S internal', S_int,  ' J/mol/K') )
-print('{:s} {:8.4f} {:s}'.format('S total', S_int+S_trans,' J/mol/K') )
+print('{:s} {:8.4f} {:s}'.format('S internal   ', S_int,  ' J/mol/K') )
+print('{:s} {:8.4f} {:s}'.format('S total      ', S_int+S_trans,' J/mol/K') )
 
 
 # In[ ]:

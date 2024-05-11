@@ -167,7 +167,7 @@
 # 
 # With the definition of eqn 20, $(w_n)^n\equiv w_n^n=e^{2\pi i}=1 =w_n^0$. if we add $n$ to any of the roots for example $w_n^{j+n}$ then  $w_n^{j+n}=w_n^nw_n^j=w_n^j$ which shows that the roots are cyclic $j$ being an integer and have a period of $n$. 
 # 
-# ### **Sum and product of the roots of unity**
+# ### **(i) Sum and product of the roots of unity**
 # Figure 5 shows the five roots of unity. The sum of these roots, provide there are two or more, is zero, which can be intuitively seen by looking at the image. A geometric argument is that each root can be considered as a vector based at $(0,0i)$ and their sum will be zero as each is equally spaced from its neighbour.
 # 
 # The sum is 
@@ -194,7 +194,7 @@
 # 
 # As $e^{-i\pi} = -1$ and the other term is $\pm 1$ depending on whether $n$ is odd or even therefore the product is always $ 1$ if $n$ is even and $-1$ if odd, i.e $(-1)^n$.
 # 
-# ### **Useful relationships**
+# ### **(ii) Useful relationships**
 # 
 # $$\displaystyle \begin{array}\\
 # e^{i\pi}&=e^{3i\pi}&=e^{5i\pi}\cdots &= -1\\
@@ -213,11 +213,11 @@
 # 
 # As an example of using Euler's equation, we will evaluate $w = \ln(-1)$ even though it doesn't exist as a pure real number, then calculate $w = \ln(i)$ and $w = \ln(z/3)$, where $z$ is any complex number. The strategy in problems of this type is to convert the number $-1$, or $i$, or whatever it is into an exponential form using Euler's theorem.
 # 
-# **(i)** In the first example, $w = \ln(-1)$ or $e^w = -1$ and $w$ has to be found to solve this equation. A general complex number can always be written as $z = re^{i\theta}$, therefore to find $w$, let $w = i\theta$. The absolute value (modulus) $r$ of $e^w$ is $e^{i\theta}e^{-i\theta} = 1$. Because $e^{i\theta} = \cos(\theta) + i \sin(\theta)$, when $\theta = \pi$, $e^{i\theta} = -1$ making the principal value of $\ln(-1) = \ln(1e^{i\pi}) = i\pi$, which, obviously, is a complex number. Note that there are other values of $\theta$ separated by $2k\pi i$, where $k$ is an integer because $e^{i\theta}$ is a cyclic function.
+# **(a)** In the first example, $w = \ln(-1)$ or $e^w = -1$ and $w$ has to be found to solve this equation. A general complex number can always be written as $z = re^{i\theta}$, therefore to find $w$, let $w = i\theta$. The absolute value (modulus) $r$ of $e^w$ is $e^{i\theta}e^{-i\theta} = 1$. Because $e^{i\theta} = \cos(\theta) + i \sin(\theta)$, when $\theta = \pi$, $e^{i\theta} = -1$ making the principal value of $\ln(-1) = \ln(1e^{i\pi}) = i\pi$, which, obviously, is a complex number. Note that there are other values of $\theta$ separated by $2k\pi i$, where $k$ is an integer because $e^{i\theta}$ is a cyclic function.
 # 
-# **(ii)** Suppose $w=\ln(i)$ or $e^w =i$. Let $w=i\theta$. As $e^{i\theta} =\cos(\theta)+i\sin(\theta)$,when $\theta = \pi/2$ this equation produces $e^{i\pi/2} = i$ or $\ln(i) = i\pi/2$.
+# **(b)** Suppose $w=\ln(i)$ or $e^w =i$. Let $w=i\theta$. As $e^{i\theta} =\cos(\theta)+i\sin(\theta)$,when $\theta = \pi/2$ this equation produces $e^{i\pi/2} = i$ or $\ln(i) = i\pi/2$.
 # 
-# **(iii)** If $w = \ln(z/3)$, then $3e^w = z$, and if $z$ is any complex number then we look for a value of $\theta$ such that $3e^{i\theta} = z$. Generally a complex number is represented by $z = re^{i\theta}$, then in this example $w = \ln(z) = \ln(3e^{i\theta}) = \ln(3) + i(\theta + 2\pi k)$ and $2\pi k$ is added because the function is cyclic and $k$ is any integer; recall that the Euler equation can be put into a cosine and sine form, so it is a repetitive function. The principal value occurs when $k = 0$.
+# **(c)** If $w = \ln(z/3)$, then $3e^w = z$, and if $z$ is any complex number then we look for a value of $\theta$ such that $3e^{i\theta} = z$. Generally a complex number is represented by $z = re^{i\theta}$, then in this example $w = \ln(z) = \ln(3e^{i\theta}) = \ln(3) + i(\theta + 2\pi k)$ and $2\pi k$ is added because the function is cyclic and $k$ is any integer; recall that the Euler equation can be put into a cosine and sine form, so it is a repetitive function. The principal value occurs when $k = 0$.
 # 
 # Returning to example (i), $w = \ln(-1)$, if the $-1$ is treated as a complex number with an imaginary part that is zero, then the answer can be written down directly as $w = \ln(-1) = \ln(re^{i\theta}) = \ln(1) + i(\pi + 2\pi k)$
 # and, since $r = 1$ and $\ln(1) = 0$, this gives the same result as in (i) $\ln(-1) = i\pi$ for the principal value.
@@ -240,7 +240,7 @@
 # 
 # but it is often easier to use as eqn 21.
 # 
-# ### **The phase problem**  
+# ### **(i) The phase problem**  
 # The intensity of the diffracted spot is $I=|F|^2=F^*F$  which means that the series of terms in $F$ has to be multiplied by its complex conjugate. The term $f_i$ is the atomic scattering factor for each type of atom relative to that of a single electron. Electrons in an atom that predominantly scatter the x-rays and as $f_i$ is proportional to the number of electrons, scattering is larger for heavy atoms than light ones. See Chapter 9-13.6 for details. Notice in particular that the structure factor *does not depend on the shape or size of the unit cell*, but on the fractional positions of the atoms.
 # 
 # The fact that the detector, e.g. CCD or photon counting array, always measures the intensity $F^*F$ is the reason the _phase problem_ exists which makes interpreting X-ray diffraction data somewhat complicated. To illustrate, if there are only two atoms then eqn. 21 becomes
@@ -253,7 +253,7 @@
 # 
 # and we know $f_0$ and $f_1$ as these _atomic_ structure factors can be calculated. However, with one measurement there are two unknowns in the difference term. The $hkl$ values are known from the positions of the diffracted spots on the detector ( the image has been *indexed* ), and so a second measurement can be made with different $k,h,l$, producing say $\beta_1-\beta_2$, but the atomic positions are the same and this process can be continued producing a set of difference equations which can be solved until the structure is determined, i.e. the $u_i,v_i,w_i$ are known. In particular cases some simplification is possible as shown next.
 # 
-# ### **Orthorhombic crystals** 
+# ### **(ii) Orthorhombic crystals** 
 # In figure 7a (left) is shown a unit cell of an orthorhombic crystal, this means all angles are $90^\text{o}$ and the sides are of unequal lengths $a, b, c$. An atom is at each corner and one atom in the base of the cell, (The second (top) atom is the base of the unit above). On the right is a body-centered unit cell.
 # 
 # ![Drawing](chapter2-fig7a.png )
@@ -279,7 +279,9 @@
 # 
 # and when $k+k$ is an odd number $\cos(\pi(h+k))=-1$ making $F=0$ and when $h+k$ is even the intensity is $4f^2$.  Because the detected intensity is $4f^2$ heavy atoms, with more electrons have far 'brighter' spots that do H atoms, meaning that it is far more difficult to detect the latter. 
 # 
-# **(v) NaCl structure factor**. The NaCl crystal has a cubic structure with $4$ Na and $4$Cl in the unit cell. The coordinates (as fractions of the unit cell sides) are
+# ### **(iii) NaCl structure factor**. 
+# 
+# The NaCl crystal has a cubic structure with $4$ Na and $4$Cl in the unit cell. The coordinates (as fractions of the unit cell sides) are
 # 
 # $$\displaystyle \begin{array}\\
 # \text{Na} & 0, 0, 0 & 1/2, 1/2, 0 & 1/2, 0, 1/2  & 0, 1/2, 1/2 \\

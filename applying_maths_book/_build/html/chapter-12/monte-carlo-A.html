@@ -1598,8 +1598,11 @@ title="Print to PDF"
 <section id="integration">
 <h2>1.1 Integration<a class="headerlink" href="#integration" title="Permalink to this headline">#</a></h2>
 <p>To use a Monte Carlo method to numerically integrate a function, the area corresponding to the integral is calculated by repeatedly guessing pairs of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values at random and evaluating the function <span class="math notranslate nohighlight">\(y = f (x)\)</span> to see whether or not <span class="math notranslate nohighlight">\(y\)</span> lies within the area bound by the integral, Figure 1. Clearly many guesses will be needed and while many will fall inside the required region, many will not. The ratio of correct guesses to the total number is proportional to the integral. The more guesses that are made, the closer the answer becomes to the true value. The error can then be estimated and the calculation truncated when a satisfactory result is achieved.</p>
-<p>There are two considerations. First, the computer generated random numbers must actually be random, or as near random as possible. These are usually described as being pseudo-random. The randomness of numbers is a complicated issue, but if Python and similar programs are used, then the (pseudo) random number generators can be relied upon; (Prest et al. 1986 give details about random number generators.) Python uses the Mersenne Twister as the core generator,which produces 53-bit precision floats and has a period of <span class="math notranslate nohighlight">\(2^{19937}-1\)</span> which is a number about 6000 digits long. The second consideration is that numbers should be taken from a uniform distribution. A uniform distribution is one in which the chance of obtaining any number in a given range, which may be 0 to 1 but is normally <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, is the same no matter where the number is in that range. In other distributions, this is not true; a Gaussian distribution has more chance of returning a number near to its mean value than elsewhere.</p>
-<p>Figure 1 explains the Monte Carlo integration method. The integral is <span class="math notranslate nohighlight">\(Q = \int_a^b f(x)dx\)</span>. Two uniformly distributed random numbers are chosen; one <span class="math notranslate nohighlight">\(R_x\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> and another <span class="math notranslate nohighlight">\(R_y\)</span> between limits <span class="math notranslate nohighlight">\(f(c)\)</span> and <span class="math notranslate nohighlight">\(f(d)\)</span>, where the points <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(d\)</span> must be chosen to include the minimum and maximum of the function in the range <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>. A large number of pairs of points are chosen, those for which <span class="math notranslate nohighlight">\(R_y \le f(R_x)\)</span> are found and then counted up. The integral is approximated as</p>
+<p>There are two considerations. First, the computer generated random numbers must actually be random, or as near random as possible. These are usually described as being pseudo-random. The randomness of numbers is a complicated issue, but if Python and similar programs are used, then the (pseudo) random number generators can be relied upon; (Prest et al. 1986 give details about random number generators.) Python uses the Mersenne Twister as the core generator, which produces 53-bit precision floats and has a period of <span class="math notranslate nohighlight">\(2^{19937}-1\)</span> which is a number about 6000 digits long. The second consideration is that numbers should be taken from a uniform distribution. A uniform distribution is one in which the chance of obtaining any number in a given range, which may be 0 to 1 but is normally <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, is the same no matter where the number is in that range. In other distributions, this is not true; a Gaussian distribution has more chance of returning a number near to its mean value than elsewhere.</p>
+<p>Figure 1 explains the Monte Carlo integration method. The integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Q = \int_a^b f(x)dx\]</div>
+<p>Two uniformly distributed random numbers are chosen; one <span class="math notranslate nohighlight">\(R_x\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> and another <span class="math notranslate nohighlight">\(R_y\)</span> between limits <span class="math notranslate nohighlight">\(f(c)\)</span> and <span class="math notranslate nohighlight">\(f(d)\)</span>, where the points <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(d\)</span> must be chosen to include the minimum and maximum of the function in the range <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>. A large number of pairs of points are chosen, those for which <span class="math notranslate nohighlight">\(R_y \le f(R_x)\)</span> are found and then counted up. The integral is approximated as</p>
 <div class="math notranslate nohighlight">
 \[\int_a^bf(x)dx \approx \frac{\text{number of guesses inside/under curve}}{\text{total number of guesses}}\times A \qquad\tag{1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is the integration area, see Figure 1. If the function is <span class="math notranslate nohighlight">\(f (x) = x^2\)</span>, and <span class="math notranslate nohighlight">\(R_x\)</span> and <span class="math notranslate nohighlight">\(R_y\)</span> are random guesses in the range <span class="math notranslate nohighlight">\(a \to b\)</span> in <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(a_2 \to b_2\)</span> in <span class="math notranslate nohighlight">\(y\)</span>, respectively, only if <span class="math notranslate nohighlight">\(R_y \le R_{x^2}\)</span> is the point counted as being within the function. This approach is clearly rather wasteful; less than half of the points fall within the area for <span class="math notranslate nohighlight">\(x^2\)</span> although this is better for an ellipse, because most of the ellipse fills the rectangular area. In practice, this method, while easy to implement would never be used; the mean-value method described next works far better and involves only a little more analysis.</p>
@@ -1638,7 +1641,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0730
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0920
 </pre></div>
 </div>
 </div>
@@ -1658,7 +1661,13 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^bf(x)dx\approx \frac{(b-a)}{n}\sum_{i=1}^nf(x_i)= (b-a)\langle f(x_m) \rangle \qquad\tag{4}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\langle f(x_m) \rangle\)</span>  is the average value of the function calculated over the range <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>. Clearly, for a closed symmetrical function such as an ellipse, Figure 1, the limits <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> must be chosen so that the mean does not turn out to be zero.</p>
-<p>A two dimensional integral is in general <span class="math notranslate nohighlight">\(\displaystyle \int_a^b\int_c^d f(x,y)dxdy\)</span>, for example this might be <span class="math notranslate nohighlight">\(\displaystyle \int_0^2\int_0^1 \sqrt{4-x^2-y^2}dxdy\)</span> where the limits 0 , 1 refer to the integration in <span class="math notranslate nohighlight">\(x\)</span>. In this case the Monte-Carlo method and mean- value theorem give</p>
+<p>A two dimensional integral is in general</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b\int_c^d f(x,y)dxdy\]</div>
+<p>for example this might be</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^2\int_0^1 \sqrt{4-x^2-y^2}dxdy\]</div>
+<p>where the inner limits <span class="math notranslate nohighlight">\(0 \to \)</span>1 refer to the integration in <span class="math notranslate nohighlight">\(x\)</span>. In this case the Monte-Carlo method and mean- value theorem give</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b\int_c^d f(x,y)dxdy \approx \frac{(b-a)(d-c)}{n}\langle f(x,y)_m \rangle \qquad\tag{5}\]</div>
 <p>Two random numbers are now chosen from a uniform distribution, which are <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span> and the average of the function is calculated as a summation. The extension of this formula to more than two dimensions is done in a similar way.</p>
@@ -1670,7 +1679,7 @@ title="Print to PDF"
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                          <span class="c1"># function to integrate</span>
 <span class="n">xlim_a</span> <span class="o">=</span> <span class="mf">0.0</span> 
 <span class="n">xlim_b</span> <span class="o">=</span> <span class="mf">2.0</span> 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5000</span>                                               <span class="c1"># repeats </span>
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span> 
 <span class="n">s2</span><span class="o">=</span> <span class="mf">0.0</span> 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1686,7 +1695,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0837 +/-   0.0080
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0819 +/-   0.0080
 </pre></div>
 </div>
 </div>
@@ -1700,11 +1709,21 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^bf(x)dx =\int_a^b\left( \frac{f(x)}{p(x)} \right)p(x)dx=\int_a^b\frac{f(p^{-1}(r))}{p(p^{-1}(r))}dx=\int_a^b\frac{f(t)}{p(t)}dt \qquad\tag{6}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p(x)\)</span> is a function we need to guess. Preferably, it has the same shape as <span class="math notranslate nohighlight">\(f(x)\)</span> so that on division the ratio <span class="math notranslate nohighlight">\(f(x)/p(x)\)</span> is approximately constant. The remaining <span class="math notranslate nohighlight">\(p(x)\)</span> is converted into a normalized distribution function to provide values of <span class="math notranslate nohighlight">\(x\)</span> distributed as <span class="math notranslate nohighlight">\(p^{-1}\)</span>. The <em>inverted distribution</em>, which we shall call <span class="math notranslate nohighlight">\(t\)</span>, is <span class="math notranslate nohighlight">\(t = p^{-1}(r)\)</span> and <span class="math notranslate nohighlight">\(r\)</span> is a random number in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span>. The choice of <span class="math notranslate nohighlight">\(p\)</span> is limited to functions that can easily be inverted, such as <span class="math notranslate nohighlight">\(e^{-x}\)</span>; otherwise, a numerical way of inverting the function has to be used which will involve a lot of unnecessary calculation.</p>
-<p>If the integral to be evaluated is <span class="math notranslate nohighlight">\(\displaystyle \int_0^b e^{-x^2}dx\)</span>, the starting point is to choose a distribution  function <span class="math notranslate nohighlight">\(p\)</span>. The Gaussian <span class="math notranslate nohighlight">\(e^{-x^2}\)</span> is an obvious choice but this can only be inverted numerically, such as with the Box - Muller algorithm (Weisstein), and therefore we will instead try <span class="math notranslate nohighlight">\(p(x) = e^{-x}\)</span>, which has a similarly decaying form when <span class="math notranslate nohighlight">\(x \gt 0\)</span>. (As the Gaussian is symmetrical, limits <span class="math notranslate nohighlight">\(\lt\)</span> 0 can easily be calculated). The next step is to make a distribution function out of <span class="math notranslate nohighlight">\(p\)</span> over the limits of the integration. The cumulative distribution up to a point <span class="math notranslate nohighlight">\(t\)</span> is defined as <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^t p(x)dx = r\)</span>. This is the chance (probability) of choosing a value less than or equal to <span class="math notranslate nohighlight">\(r\)</span>.</p>
-<p>Defining the function <span class="math notranslate nohighlight">\(p\)</span> as <span class="math notranslate nohighlight">\(p(x)=ke^{-kx}\)</span> when <span class="math notranslate nohighlight">\(0 \le x \le \infty\)</span> , and zero for negative <span class="math notranslate nohighlight">\(x\)</span>, and if <span class="math notranslate nohighlight">\(k\)</span> is a constant, then</p>
+<p>If the integral to be evaluated is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^b e^{-x^2}dx\]</div>
+<p>the starting point is to choose a distribution  function <span class="math notranslate nohighlight">\(p\)</span>. The Gaussian <span class="math notranslate nohighlight">\(e^{-x^2}\)</span> is an obvious choice but this can only be inverted numerically, such as with the Box - Muller algorithm (Weisstein), and therefore we will instead try <span class="math notranslate nohighlight">\(p(x) = e^{-x}\)</span>, which has a similarly decaying form when <span class="math notranslate nohighlight">\(x \gt 0\)</span>. (As the Gaussian is symmetrical, limits <span class="math notranslate nohighlight">\(\lt\)</span> 0 can easily be calculated). The next step is to make a distribution function out of <span class="math notranslate nohighlight">\(p\)</span> over the limits of the integration. The cumulative distribution up to a point <span class="math notranslate nohighlight">\(t\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^t p(x)dx = r\]</div>
+<p>This is the chance (probability) of choosing a value less than or equal to <span class="math notranslate nohighlight">\(r\)</span>. Defining the function <span class="math notranslate nohighlight">\(p\)</span> as <span class="math notranslate nohighlight">\(p(x)=ke^{-kx}\)</span> when <span class="math notranslate nohighlight">\(0 \le x \le \infty\)</span> , and zero for negative <span class="math notranslate nohighlight">\(x\)</span>, and if <span class="math notranslate nohighlight">\(k\)</span> is a constant, then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^te^{-kx}dx=\frac{1-e^{-kt}}{k}\]</div>
-<p>The second step is to normalize the distribution over the range of the integration, which is the integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}\)</span>. Finally, the normalized cumulative distribution is <span class="math notranslate nohighlight">\(\displaystyle \frac{1-e^{-kt}}{1-e^{-kb}}\)</span> and rearranged this gives the inverted distribution,</p>
+<p>The second step is to normalize the distribution over the range of the integration, which is the integral</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}\)</span>$</p>
+<p>Finally, the normalized cumulative distribution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1-e^{-kt}}{1-e^{-kb}}\]</div>
+<p>and rearranged this gives the inverted distribution,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle t=-\frac{\ln\left( 1-r\left(1-e^{-kb} \right) \right)}{k}  \qquad\tag{7}\]</div>
 <p>when <span class="math notranslate nohighlight">\(r\)</span> is a uniform random number between zero and one. The same procedure can be followed for any function <span class="math notranslate nohighlight">\(p(x)\)</span> provided <span class="math notranslate nohighlight">\(p^{-1}(x)\)</span> can be calculated.</p>
@@ -1751,7 +1770,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral =  0.883313 +/- 0.001881 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral =  0.882516 +/- 0.001878 
 </pre></div>
 </div>
 </div>

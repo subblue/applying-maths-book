@@ -73,7 +73,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # These series are extremely useful, for example, to calculate $\sin(1.3), \;\cos(\pi/4),\; \ln(1 + x)$, and so forth if the function can be expanded as a Taylor series and the terms added until the required numerical accuracy is needed. This is tedious to do by hand, rather than being difficult, but is ideally suited for computer calculation where repetitive calculations are easily performed.
 # 
-# ### 6.2.1 **Series of an Unknown function** 
+# ### **(i) Series of an Unknown function** 
 # 
 # If there is a multiply differentiable but unknown function $f$ then expansion of $f(x+x_0)$ is possible. Starting with eqn 16 we substitute $x+x_0$ for $x$ and $x$ for $x_0$ then
 # 
@@ -91,15 +91,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d^2f}{dx^2}\approx\frac{f(x+\delta x)+f(x-\delta x)-2f(x)}{\delta x^2}$$
 # 
-# ## 6.3 $O(x)$ and $\sim$ notations
+# ## 6.3 $\mathcal{O}(x)$ and $\sim$ notations
 # 
 # In a series expansion of a function $f(x)$ it is often possible to state something general perhaps that that $f(x) \to \infty$ as $x\to \infty$. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as $x$ changes; does it change as $x^2$ or $e^x$ for example? 
 # 
-# The 'big O' notation, for example, $O(x^2),\; O(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + O(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
+# The 'big O' notation, for example, $\mathcal{O}(x^2),\; \mathcal{O}(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + \mathcal{O}(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
 # 
 # ## 6.4 Useful series expansion formulae
 # 
-# Several expansions are listed below. If you want to calculate, for example $1/(1 - ax)$, replace each $x$ in the first series below with $-ax$ and evaluate the result; $(1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots$. This substitution can be performed with any series and means that fewer need to be remembered. The $O(x^6)$ means that the next term in the series has power of order of $x^6$. You must check on the value of $x$ used determine if this is an acceptable approximation.
+# Several expansions are listed below. If you want to calculate, for example $1/(1 - ax)$, replace each $x$ in the first series below with $-ax$ and evaluate the result; $(1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots$. This substitution can be performed with any series and means that fewer need to be remembered. The $\mathcal{O}(x^6)$ means that the next term in the series has power of order of $x^6$. You must check on the value of $x$ used determine if this is an acceptable approximation.
 # 
 # $$\displaystyle \begin{align}
 # \frac{1}{1+x} &= 1 - x + x^{2} - x^{3} + x^{4} - x^{5}+\mathcal{O}\left(x^{6}\right)  \\[0.25cm]
@@ -290,7 +290,7 @@ plt.show()
 # 
 # $$\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \qquad\tag{25}$$
 # 
-# ### **Example; calculate square root**
+# ### **(i) Calculate square root**
 # Consider calculating $\sqrt{3/2}$, using equation (25). Letting $x$ = 1/2 the series is $(1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265$. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being $x^8$ to reach this level of accuracy. Trying to calculate $\sqrt 3$ using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.
 # 
 # ## 6.9 Derivatives of series

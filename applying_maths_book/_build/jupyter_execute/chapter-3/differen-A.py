@@ -197,7 +197,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Constants always differentiate to zero because a graph of $y$ = constant has a zero gradient.
 # 
-# ## 3.6 Differentiating with Sympy
+# ## 3.6 Differentiation using Sympy
 
 # In[2]:
 
@@ -283,7 +283,7 @@ diff(eq2, x)
 # $$\displaystyle  \frac{d}{dz}\left(\frac{dy}{dx}\right)=\frac{d^2y}{dzdx}=12x^2z^3, \qquad \frac{d}{dx}\left(\frac{dy}{dz}\right)=\frac{d^2y}{dxdz}=12x^2z^3$$
 # 
 # 
-# ### **Change in enthalpy, entropy & heat capacity  from electrochemical potential $\epsilon$ vs. $T$**
+# ### **(i) Change in enthalpy, entropy & heat capacity  from electrochemical potential $\epsilon$ vs. $T$**
 # 
 # In an electrochemical cell the enthalpy at constant pressure is given by 
 # 

@@ -63,7 +63,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This relationship can be understood by realizing that the area of triangle $bce$ is half that of the rectangle. To calculate the area of a triangle we need to use a basis set and this is done next.
 # 
-# ## 15.1 Cross products using the $i\; j\; k$ basis set
+# ## 15.1 Cross products using the $\boldsymbol{i\; j\; k}$ basis set
 # 
 # Returning to equation 38 we can see that the cross product of two vectors can be zero; $\vec A \times \vec B = 0$ even when neither $\vec A$ nor $\vec B$ are zero because the angle between them is zero. It is clear that, if $\vec A$ and $\vec B$ are parallel to one another the angle between them being zero, $\sin(0) = 0$; the same is true if the vectors are anti-parallel because $\sin(180^\text{o}) = 0$, see figure 32.
 # 
@@ -92,7 +92,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle = (u_yv_z - u_zv_y)\;\boldsymbol i\quad - (u_xv_z - u_zv_x)\;\boldsymbol j\quad + (u_xv_y - u_yv_x)\;\boldsymbol k \qquad$$
 # 
-# ### **The area of a triangle**
+# ### **(i) The area of a triangle**
 # The area of any triangle, such as in figure 33, can now be found. Suppose a triangle is enclosed by three vertices $(2, -1, 6), (8, 3, 10), (10, -2, 16)$. To calculate the area, make the triangle's sides into vectors and calculate half the absolute value of the cross product. The $(i, j, k)$ basis set should be used. Three vectors $\vec A, \vec B, \vec C$ will form a triangle if $\vec A +\vec B + \vec C = 0$. Using the coordinates, let $\vec A$ be the difference between the first and second $\vec A=(8-2)\boldsymbol i+(3+1)\boldsymbol j+(10-6)\boldsymbol k$, $\vec B$ the difference between the first and third $\vec B=8\boldsymbol i-\boldsymbol j+10\boldsymbol k$, and then $\vec C = -14\boldsymbol i - 7\boldsymbol j - 14\boldsymbol k$ although it is not needed. The vectors must form a triangle unless they lie on the same straight line, in which case the area would be zero. The cross product is
 # 
 # $$\displaystyle \vec A\times\vec B=\begin{vmatrix}\boldsymbol i& \boldsymbol j & k\\
@@ -195,7 +195,7 @@ print('{:s} {:s} {:s} {:8.3f}'.format('cross product=', str(ab),' distance = ',d
 # 
 # $$\displaystyle \begin{array}
 # \hline
-# atom & x & y & z\\
+# \text{atom} & x & y & z\\
 # \hline
 # O_2P & 115.394& 41.169& 129.137\\
 # O_4 & 120.546& 41.818& 127.822\\
@@ -211,6 +211,7 @@ print('{:s} {:s} {:s} {:8.3f}'.format('cross product=', str(ab),' distance = ',d
 
 
 #Algorithm 3 Distance  from a point to a plane
+
 P = np.array([ 115.394, 41.169, 129.137 ]) # O2P xyz coordinates in angstrom
 S = np.array([ 120.546, 41.818, 127.822 ]) # O4 
 R = np.array([ 119.237, 43.428, 126.672 ]) # C3 
@@ -227,6 +228,7 @@ print('{:s} {:s}\n {:s} {:6.3f}{:s}'.format(' normal vector n =',str(n),
 
 
 # now get eqn of plane using sympy
+
 x,y,z = symbols('x,y,z') # use sympy as x,y,z are symbolic
 X = np.array([x,y,z])
 np.dot(n,(X-T))          # equation of plane 

@@ -1683,27 +1683,27 @@ title="Print to PDF"
 <p>While it can be appreciated by drawing pictures that the back projection will reform something that looks like the original object, at least approximately, it is important to check if this is always going to be the case or whether it may fail in certain circumstances.  We start by looking at the inverse 2D fourier transform of a general object <span class="math notranslate nohighlight">\(f(x,y)\)</span>, see equation 60, and finally arrive at the filtered back projection equation. In other words, by analysis a correction to the simple back projection is naturally produced.</p>
 <p>As a reminder the 2D function of value <span class="math notranslate nohighlight">\(f(x,y)\)</span> at position <span class="math notranslate nohighlight">\(x,y\)</span> is, in effect, an image. The position <span class="math notranslate nohighlight">\(x,y\)</span> in ‘normal’ space will be called <span class="math notranslate nohighlight">\(u,v\)</span> in transform space, and by analogy with 1D transforms, the 2D transform is,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle F(u,v)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-2\pi i (ux+vy)}dxdy\qquad\tag{65}\]</div>
+\[\displaystyle F(u,v)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{\large{-2\pi i (ux+vy)}}dxdy\qquad\tag{65}\]</div>
 <p>where <span class="math notranslate nohighlight">\(u,v\)</span> are the conjugate variables to <span class="math notranslate nohighlight">\(x,y\)</span>, i.e. if <span class="math notranslate nohighlight">\(x,y\)</span> are in distance <span class="math notranslate nohighlight">\(u,v\)</span> are in reciprocal distance and so may be called the ‘spatial frequency’ but in tomography is called the <em>projection</em>. The <span class="math notranslate nohighlight">\(1/\sqrt{\pi}\)</span> scaling of the transform can be ignored. Examples of other 2D transforms are given in section 12.</p>
 <p>The inverse 2D transform is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x,y) = \int_{-\infty}^\infty \int_{-\infty}^\infty F(u,v) e^{+2\pi i(ux+vy)}dudv \qquad\tag{66}\]</div>
+\[\displaystyle f(x,y) = \int_{-\infty}^\infty \int_{-\infty}^\infty F(u,v) e^{\large{+2\pi i(ux+vy)}}dudv \qquad\tag{66}\]</div>
 <p>and we change this to polar coordinates i.e. to the (spatial) frequency domain with coordinates <span class="math notranslate nohighlight">\(\theta, \omega\)</span> where <span class="math notranslate nohighlight">\(u = \omega\cos(\theta),\;v=\omega\sin(\theta)\)</span>. To find <span class="math notranslate nohighlight">\(d\omega d\theta\)</span> a Jacobian is used</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{vmatrix}\displaystyle\frac{du}{d\omega} &amp; \displaystyle\frac{du}{d\theta}\\ \displaystyle\frac{dv}{d\omega} &amp; \displaystyle\frac{dv}{d\theta} \end{vmatrix} =\begin{vmatrix}\cos(\theta) &amp; -\omega\sin(\theta)\\ \sin(\theta) &amp; \omega\cos(\theta) \end{vmatrix}=\omega\end{split}\]</div>
 <p>making <span class="math notranslate nohighlight">\(dudv=\omega d\omega d\theta\)</span> and equation 66 becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x,y) = \int_{0}^{2\pi} \int_{0}^\infty F\big(\omega\cos(\theta),\omega\sin(\theta)\big)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}\omega\; d\omega d\theta \qquad\tag{67}\]</div>
+\[\displaystyle f(x,y) = \int_{0}^{2\pi} \int_{0}^\infty F\big(\omega\cos(\theta),\omega\sin(\theta)\big)e^{\large{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}}\omega\; d\omega d\theta \qquad\tag{67}\]</div>
 <p>Using the Slice Theorem (details below) the 2D transform <span class="math notranslate nohighlight">\(F(u,v)\)</span> can be replaced by the 1D transform at <span class="math notranslate nohighlight">\(\theta\)</span> of the experimental data which is the projection, <span class="math notranslate nohighlight">\(P(\theta,\omega)\)</span> which is a line in the sinogram. This is what connects the measured projection data to the true object <span class="math notranslate nohighlight">\(f(x,y)\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x,y) = \int_{0}^{2\pi} \int_{0}^\infty P(\theta,\omega)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}\omega\; d\omega d\theta \]</div>
+\[\displaystyle f(x,y) = \int_{0}^{2\pi} \int_{0}^\infty P(\theta,\omega)e^{\large{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}}\omega\; d\omega d\theta \]</div>
 <p>To get limits <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span> the integral is split into two parts <span class="math notranslate nohighlight">\(0\to\pi\)</span> and <span class="math notranslate nohighlight">\(\pi\to 2\pi\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align} f(x,y) =&amp;\int_{0}^{\pi} \int_{0}^\infty P(\theta,\omega)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}\omega\; d\omega d\theta \\+
-&amp;\int_{\pi}^{2\pi} \int_{0}^\infty P_\theta(\omega)e^{+2\pi i\omega (x\cos(\theta+\pi)+y\sin(\theta+\pi)\;)}\omega\; d\omega d\theta \end{align}\end{split}\]</div>
+\[\begin{split}\displaystyle \begin{align} f(x,y) =&amp;\int_{0}^{\pi} \int_{0}^\infty P(\theta,\omega)e^{\large{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}}\omega\; d\omega d\theta \\+
+&amp;\int_{\pi}^{2\pi} \int_{0}^\infty P_\theta(\omega)e^{\large{+2\pi i\omega (x\cos(\theta+\pi)+y\sin(\theta+\pi)\;)}}\omega\; d\omega d\theta \end{align}\end{split}\]</div>
 <p>which may be simplified because <span class="math notranslate nohighlight">\(\cos(\theta+\pi)=-\cos(\theta)\)</span> and similarly for sines which changes the sign in the exponential, consequently, <span class="math notranslate nohighlight">\(P(\theta+\pi,\omega)=P(\theta,-\omega)\)</span> and the result for filtered back projection is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x,y) = \int_{0}^{\pi} \int_{0}^\infty |\omega| P(\theta,\omega)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)} d\omega d\theta \]</div>
+\[\displaystyle f(x,y) = \int_{0}^{\pi} \int_{0}^\infty |\omega| P(\theta,\omega)e^{\large{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}} d\omega d\theta \]</div>
 <p>The <span class="math notranslate nohighlight">\(|\omega|\)</span> that arises in these last equations, as a result of changing to polar coordinates, is in effect a filter function and has a ‘V’ shape centred at the origin. It can account for the fact that there are too many points near to the origin compared to farther out, because the transform is arranged radially. The result of the radial arrangement is that the large values in frequency space, which correspond to small features (i.e fine details) in the image and not well resolved, therefore to improve resolution data at many angles are needed. This <span class="math notranslate nohighlight">\(1/r\)</span> blurring is removed by the filter <span class="math notranslate nohighlight">\(|\omega|\)</span>, in other words the transform of the <span class="math notranslate nohighlight">\(1/r\)</span> in ‘real’ space is is <span class="math notranslate nohighlight">\(|\omega|\)</span> in transform space, thus we can easily perform the convolution, via fourier transforms, to remove the distortion caused by simple back projection.</p>
 <p>Having measured the projections at all angles the filtered back projection method starts with the sinogram.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(a)</strong> Fourier transform the first line in the sinogram.</p>
@@ -1752,8 +1752,8 @@ title="Print to PDF"
 \[\displaystyle p(\theta,\omega)=\int_{-\infty}^\infty\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\delta(\;x\cos(\theta)+y\sin(\theta)-x')e^{-2\pi i \omega x'}dxdydx'\qquad\tag{75}\]</div>
 <p>The delta function is <span class="math notranslate nohighlight">\(1\)</span> only when <span class="math notranslate nohighlight">\(x\cos(\theta)+y\sin(\theta)=x'\)</span> making it selective for certain values and the integral is simplified to</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle p(\theta,\omega)=\int_{-\infty}^\infty\int_{-\infty}^\infty\ f(x,y)e^{-2\pi i \omega (x\cos(\theta)+y\sin(\theta))}dxdy\qquad\tag{76}\]</div>
-<p>This now has the form of a 2D fourier transform as in eqn. 60, i.e. <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-2\pi i (ux+vy)}dudv\)</span>,</p>
+\[\displaystyle p(\theta,\omega)=\int_{-\infty}^\infty\int_{-\infty}^\infty\ f(x,y)e^{\large{-2\pi i \omega (x\cos(\theta)+y\sin(\theta))}}dxdy\qquad\tag{76}\]</div>
+<p>This now has the form of a 2D fourier transform as in eqn. 60, i.e. <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{\large{-2\pi i (ux+vy)}}dudv\)</span>,</p>
 <p>and is the 1D fourier transform of that part of the image <span class="math notranslate nohighlight">\(f(x,y)\)</span> that lies on the line defined by <span class="math notranslate nohighlight">\(u=x\cos(\theta),v= y\sin(\theta))\)</span> and is the general form of the Slice Theorem.</p>
 </section>
 <section id="stages-in-the-filtered-back-projection">
@@ -1854,7 +1854,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-tomography_6_0.png" src="../_images/Fourier-tomography_6_0.png" />
+<img alt="../_images/Fourier-tomography_5_0.png" src="../_images/Fourier-tomography_5_0.png" />
 </div>
 </div>
 </section>

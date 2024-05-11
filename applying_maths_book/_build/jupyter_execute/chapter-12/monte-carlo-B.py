@@ -60,7 +60,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle a_0=\sum_{R=1}^n a_R \qquad\tag{8}$$
 # 
-# and therefore $\displaystyle \frac{dP_0}{d\tau}=-a_0$.
+# and therefore 
+# 
+# $$\displaystyle \frac{dP_0}{d\tau}=-a_0$$
 # 
 # The chance of no reaction up to time $T$ is found by integrating, and is $\displaystyle P_0(T)=e^{-a_0T}$.
 # 
@@ -72,12 +74,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Two terms now remain undefined. The first is the individual $a_R$ and their sum $a_0$, and the second determines which reaction happens next. Calculating $a_R$ is very easy, as each $a_R$ is the product of the number of molecules present in a reaction of type $R$ multiplied with the rate constant per unit volume. 
 # 
+# ### **(i) $A\to B$**
 # If there is just a single reaction $\mathrm{A} \overset{k_1}\longrightarrow \mathrm{B}$ then $a_1=k_1N_A$ where $N_A$ is the number of $A$ molecules present at time $T$. 
 # 
+# ### **(ii) $A+B\to C$**
 # If the reaction is $\mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C}$ then $a_2=k_2N_aN_B$ and if both reactions are present in the overall reaction scheme which would then be
 # 
 # $$\displaystyle \mathrm{A} \overset{k_1}\longrightarrow \mathrm{B} \qquad \mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C} \qquad a_0=\sum a_R=a_1+a_2 \qquad\tag{10}$$
 # 
+# ### **(iii) $A+A\to B$**
 # In the special case where a reaction combines two identical molecules $\mathrm{A+A} \overset{k_2} \longrightarrow $ the number of _indistinguishable combinations_, i.e. the number of distinct A-A pairs of the two species must be calculated and this makes 
 # 
 # $$\displaystyle a = k_2\frac{N_A(N_A - 1)}{2!}$$
@@ -85,7 +90,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Normally, in dealing with chemical kinetics, $N_A$ is so vast that $\displaystyle a = k_2\frac{N_A^2}{2}$, but in the Monte Carlo simulations, $N_A$ is small because individual molecules are dealt with, and the exact formula must be used. Thus, macroscopic, (kinetic), chemical equations are only valid when deviations from the Poisson distribution are negligible.
 # ____
 # 
-# ### **Comment  on validity**
+# ### **(iv) Comment  on validity**
 # 
 # The term 
 # 
@@ -215,15 +220,19 @@ while indx < bins and nA > 0  :
 # 
 # ## 2.4 Excited state forming triplet
 # 
-# As a second example, suppose an excited state of a molecule reacts as shown in Figure 6. The excited state decays to the triplet state by intersystem crossing and by fluorescence, to the ground state. The triplet is assumed to have a very long lifetime, so does not convert to the ground state during the time considered in this calculation. The rate constants are $k_{isc}$ to the triplet and $k_f$ to the ground state. The population of all three states involved will be calculated. The decay of the excited state is $\tau = 1/(k_f + k_{isc})$ and this is the lifetime with which the triplet is formed and also that with which the ground state is formed; equivalently the rate constant is $k_1 = k_f + k_{isc}$. In fact, only two states need be calculated as the total number of all molecules is a constant number, but all state populations will be calculated by way of illustration.
+# As a second example, suppose an excited state of a molecule reacts as shown in Figure 6. The excited state decays to the triplet state by intersystem crossing and by fluorescence, to the ground state. The triplet is assumed to have a very long lifetime, so does not convert to the ground state during the time considered in this calculation. The rate constants are $k_{isc}$ to the triplet and $k_f$ to the ground state. The population of all three states involved will be calculated. The decay of the excited state is 
+# 
+# $$\displaystyle \tau = \frac{1}{k_f + k_{isc}}$$
+# 
+# and this is the lifetime with which the triplet is formed and also that with which the ground state is formed; equivalently the rate constant is $k_1 = k_f + k_{isc}$. In fact, only two states need be calculated as the total number of all molecules is a constant number, but all state populations will be calculated by way of illustration.
 # 
 # If the triplet or ground state populations are needed, then one molecule is added each time to these populations; initially these are zero. The chance (probability) of going to the triplet is the fraction or yield 
 # 
-# $$\displaystyle \varphi_T=k_{isc}/(k_f + k_{isc})$$
+# $$\displaystyle \varphi_T=\frac{k_{isc}}{k_f + k_{isc}}$$
 # 
 # and the chance of fluorescing and so returning to the ground state, is the fluorescence yield 
 # 
-# $$\displaystyle \varphi_f = k_f /(k_f + k_{isc})$$
+# $$\displaystyle \varphi_f = \frac{k_f }{k_f + k_{isc}}$$
 # 
 # The sum of these yields is one. Which state the molecule ends up in is determined by casting a die in the form of a uniform random number in the range $0 \to 1$. If it is in the range zero to $\varphi_T$ the triplet is produced; if not, the ground state results and the molecule has fluoresced.
 # 

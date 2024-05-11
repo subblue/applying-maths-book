@@ -34,7 +34,7 @@
 # 
 # Figure 1 Diagram showing some examples of adding and subtracting vectors.
 # ________
-# In Fig. 6.2, OA and OB are vectors and because both start at the origin, they are called _position vectors_ . The basis set for OA and OB are unit vectors along the $x$- and $y$-axes only, because they are two dimensional. Vector OA comprises 3 units of the $x$-axis base vector and 2 units of the $y$-axis base vector. Later on, we will find that to solve some problems this basis set will have to be written explicitly as $(i, j)$ where $i$ and $j$ are the unit vectors along $x$ and $y$, but before doing this the properties of positional vectors are described and some problems solved.
+# In Fig. 2, OA and OB are vectors and because both start at the origin, they are called _position vectors_ . The basis set for OA and OB are unit vectors along the $x$- and $y$-axes only, because they are two dimensional. Vector OA comprises 3 units of the $x$-axis base vector and 2 units of the $y$-axis base vector. Later on, we will find that to solve some problems this basis set will have to be written explicitly as $(i, j)$ where $i$ and $j$ are the unit vectors along $x$ and $y$, but before doing this the properties of positional vectors are described and some problems solved.
 # 
 # The length of a position vector is, by Pythagoras' theorem,
 # 
@@ -43,7 +43,7 @@
 # where $a_1, a_2$, and $a_3$ are the components; if $\vec V$ (Fig. 2, right) ends at $(x_1, y_1, z_) = (3, 4, 5)$
 # then $|\vec V|= \sqrt{9+16+25}=5\sqrt{2}$ .In vector $\vec{A}, a_1 =3,\; a_2 =2$ or $\vec {A} =[3\; 2]$ and there is no $a_3$ because $\vec A$ is two dimensional; its length is $13$ . 
 # 
-# The length or projection of $\vec A$ along the x-axis is $\vec A_x =|\vec A|\cos(\theta)=3$ and along the $y$-axis $\vec A_y =|\vec A|\sin(\theta)= 2$ and the angle $\theta =\tan^{-1)(2/3).
+# The length or projection of $\vec A$ along the x-axis is $\vec A_x =|\vec A|\cos(\theta)=3$ and along the $y$-axis $\vec A_y =|\vec A|\sin(\theta)= 2$ and the angle $\theta =\tan^{-1}(2/3)$.
 # 
 # The vector $\vec AB$ is defined as $\vec {AB} = \vec{B} -\vec {A}$ (see figure 2) and the individual coordinates are subtracted, therefore $\vec {AB} = (2, -5)$ and has length $| \vec {AB}| = \sqrt{29} = 5.385$. This vector is not the same as the dashed line in figure 2 between $A$ and $B$, but a parallel one starting at the origin and ending at $(2, -5)$. This illustrates that each vector has its own set of axes from which it springs; to make $\vec AB$ start at the end of $\vec A$ the origin of its axes have to be placed there, not at zero as our calculation did. The angle between two vectors, say $\vec A$ and $\vec {AB}$, can be calculated by trigonometry, but this is clearly awkward and is overcome by learning how to multiply two vectors together. This is described in the next few sections.
 # 
@@ -73,16 +73,16 @@
 # Figure 2a1. A lens forming on a surface between two immiscible liquids. 'a, O, w' refer to air, organic liquid and water respectively. The angles are measured relative to a horizontal axis as shown. The vectors $\gamma$ are numerically equal to the respective inter-facial tensions.
 # _______
 # 
-# The condition for equilibrium is that between the vertical and horizontal components, the horizontal ones are
+# The condition for equilibrium is that between the vertical components and horizontal components, the horizontal ones are,
 # 
 # $$\displaystyle \gamma_{oa}\cos(\alpha_2)+\gamma_{wo}\cos(\alpha_3)=\gamma_{wa}\cos(\alpha_1)$$
 # 
-# and vertical (ignoring gravity) 
+# and vertical (ignoring gravity), 
 # 
 # $$\displaystyle \gamma_{oa}\sin(\alpha_2)+\gamma_{wa}\sin(\alpha_1)=\gamma_{wo}\sin(\alpha_3)$$
 # 
 # 
-# If the full horizontal force $\gamma_{wa}$ exceeds the other two then spreading $S\gt 0$ will occur;
+# If the surface tension $\gamma_{wa}$ exceeds the other two then spreading $S\gt 0$ will occur;
 # 
 # $$\displaystyle S=\gamma_{wa}-\gamma_{oa}-\gamma_{w0}$$
 # 
@@ -240,11 +240,11 @@
 # 
 # Once we define a basis set then specific, rather than general calculation can be performed. For example, if vectors $A$ and $B$ of figure 3 are given magnitudes we cannot tell what the angle between them is because we do not know how $A$ and $B$ relate to one another. A basis set provides the scaffold, as it were, on which the vectors are fixed. It is possible to choose different basis sets to solve the same problem and to convert between one set and another. The following three properties of vectors and basis sets are important:
 # 
-# **(i)** Every vector is always made from a linear combination of the components of its basis set.
+# **(a)** Every vector is always made from a linear combination of the components of its basis set.
 # 
-# **(ii)** Because a basis set is the minimal possible set, it cannot be decomposed any further or made any simpler.
+# **(b)** Because a basis set is the minimal possible set, it cannot be decomposed any further or made any simpler.
 # 
-# **(iii)** Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases.
+# **(c)** Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases.
 # 
 # For example, the vector $A$ in figure 3 has components of $a$ units on the $x$-axis and $b$ on the $y$- and is therefore described as $\vec A = a\boldsymbol i + b\boldsymbol j$. In Cartesian coordinates, the basis set most often used is made of orthogonal, unit vectors along each of the $x-, y-$ and $z$-axes; conventionally we represent this as the basis set $(\boldsymbol i, \boldsymbol j,\boldsymbol k)$ where $\boldsymbol i, \boldsymbol j$ and $\boldsymbol k$ are _orthogonal unit vectors_ . Figure 4 shows the basis set vectors and a three-dimensional vector separated into it basis set components. A unit vector has length of $1$, so a vector can be made from multiples of this. The $(\boldsymbol i, \boldsymbol j, \boldsymbol k)$ basis set is described more detail in Section 3.
 # 
@@ -334,15 +334,29 @@
 # ## 2.10 Colliding molecules
 # Newton diagrams describing elastic scattering are given above. The angles  and vectors are shown in figure 2c. Suppose the initial speeds in an experiment colliding $\mathrm{Kr+HI}$ are $800$ and $250$ m/s respectively. The masses are $84$ and $128$ amu and the scattering angle is  $\chi =25^\text{o}$ in the c.o.m. frame, see fig 2b. We want to calculate the angle $\Theta$, the detector angle in the lab frame and also the angle $\delta$ which is used in the transformation from lab to centre of mass coordinates. It is necessary, therefore, to calculate $\vec v_1'$ (see figure 2c) and to do this $\vec w_1$ and $\vec w_1'$ are needed.
 # 
-# The initial vectors are $\vec v_1 =\begin{bmatrix} 800 & 0\end{bmatrix}, \quad \vec v_2 =\begin{bmatrix} 0 & 250\end{bmatrix}$, thus $\vec v_r=\vec v_1-\vec v_2=\begin{bmatrix} 800 & -250\end{bmatrix}$ with magnitude $|v_r|=\sqrt{800^2+250^2}$. 
+# The initial vectors are 
+# 
+# $$\displaystyle \vec v_1 =\begin{bmatrix} 800 & 0\end{bmatrix}, \quad \vec v_2 =\begin{bmatrix} 0 & 250\end{bmatrix}$$
+# 
+# thus 
+# 
+# $$\displaystyle \vec v_r=\vec v_1-\vec v_2=\begin{bmatrix} 800 & -250\end{bmatrix}$$
+# 
+# with magnitude $|v_r|=\sqrt{800^2+250^2}$. 
 # 
 # The dot product connecting the $\vec w$ vectors (see equation 0) to the scattering angle $\chi$ is
 # 
 # $$\displaystyle \vec w_1\cdot \vec w_1' = |\vec v_r|^2\left(\frac{m_2}{m_1+m_2}\right)^2\cos(\chi)$$
 # 
-# where $|\vec v_r|=|\vec v_r'|$. However, this does not help  as the $w$ vectors on the left-hand side of the equation have to be found another way because we cannot determine the individual vectors from the result of the dot product.  From construction (figure 2c) these vectors are $\vec w_1=\vec v_1-\vec v_{cm}\,, \quad \vec w_1'=\vec v_1'-\vec v_{cm}$. 
+# where $|\vec v_r|=|\vec v_r'|$. However, this does not help  as the $w$ vectors on the left-hand side of the equation have to be found another way because we cannot determine the individual vectors from the result of the dot product.  From construction (figure 2c) these vectors are 
 # 
-# The centre of mass vector is $\displaystyle \vec v_{cm} = \frac{m_1\vec v_1}{m_1+m_2}+\frac{m_2\vec v_2}{m_1+m_2}$ which using the values given is
+# $$\displaystyle\vec w_1=\vec v_1-\vec v_{cm}\,, \quad \vec w_1'=\vec v_1'-\vec v_{cm}$$ 
+# 
+# The centre of mass vector is 
+# 
+# $$\displaystyle \vec v_{cm} = \frac{m_1\vec v_1}{m_1+m_2}+\frac{m_2\vec v_2}{m_1+m_2}$$
+# 
+# which using the values given is
 # 
 # $$\displaystyle \vec v_{cm}=\frac{84}{212}\begin{bmatrix}800 & 0 \end{bmatrix}+\frac{128}{212}\begin{bmatrix}0 &250 \end{bmatrix} = \begin{bmatrix}317 & 151\end{bmatrix}$$
 # 
@@ -350,12 +364,13 @@
 # 
 # $$\displaystyle \begin{bmatrix}\cos(\chi)& \sin(\chi)\\ -\sin(\chi)&\cos(\chi)\end{bmatrix} \begin{bmatrix}800-317\\0-151 \end{bmatrix}+\begin{bmatrix}317\\151 \end{bmatrix}=\begin{bmatrix}818.5\\218.3 \end{bmatrix}$$
 # 
-# which are the coordinates at the end of $\vec w_1'$ therefore  $\vec v_1'=\begin{bmatrix}818.5 & 218.3\end{bmatrix}$. This is also the coordinates at the tip of $\vec v_1'$ and so the angle $\Theta = \tan^{-1}(218.3/818.5) \approx 15^\text{o}$. 
+# which are the coordinates at the end of $\vec w_1'$ therefore  $\vec v_1'=\begin{bmatrix}818.5 & 218.3\end{bmatrix}$. This is also the coordinates at the tip of $\vec v_1'$ and so the angle 
+# 
+# $$\displaystyle \Theta = \tan^{-1}(218.3/818.5) \approx 15^\text{o}$$ 
 # 
 # Now that we have both $\vec w_1'$ and $\vec v_1'$ the dot product will give the angle
 # 
 # $$\displaystyle \cos(\delta)= \frac{\vec w_1'\cdot\vec v_1'}{|\vec w_1'||\vec v_1'|}$$
-# 
 # 
 # and the calculation is simple! 
 # 
@@ -365,7 +380,9 @@
 # 
 # $$\displaystyle \vec w_1'\cdot\vec v_1'= \begin{bmatrix}818.5 & 218.3 \end{bmatrix}\begin{bmatrix}818.5-317 \\ 218.3-151 \end{bmatrix}=425169.34$$
 # 
-# making $\delta = 7.3^\text{o}$. The Jacobian to transform from lab to centre of mass coordinates is $\displaystyle \left(\frac{|v_1'|}{|w_1'|}\right)^2\frac{1}{|\cos(\delta)|}$.
+# making $\delta = 7.3^\text{o}$. The Jacobian to transform from lab to centre of mass coordinates is 
+# 
+# $$\displaystyle \left(\frac{|v_1'|}{|w_1'|}\right)^2\frac{1}{|\cos(\delta)|}$$
 # 
 # The calculation starting with $\Theta$ and finding $\chi$ is a little different. Once $\vec w_1$ is found the vector $\vec w_1'$ will lie on a circle of radius $|\vec w_1|$ with its centre at the centre of mass. The vector $\vec v_1'$ will intersect this at two points and then $\vec w_1'$ can be found by substituting $y=x\tan(\Theta)$ into the equation for the circle described.
 # 
@@ -375,7 +392,18 @@
 # The calculation to produce the check digit ($4$) is
 # 
 # $$\displaystyle \small 10-\left(\begin{bmatrix}1&3&1&3&1&3&1&3&1&3&1&3\end{bmatrix}\cdot \begin{bmatrix}9&7&8&0&1&9&2&3&0&9&1\end{bmatrix}^T\right)\text{mod}(10)=4$$
-# 
+
+# In[1]:
+
+
+import numpy as np            # used to get dot product, % is modulus 
+
+n   = [1 if i % 2 == 0 else 3 for i in range(12)]  # make list 131313...
+isbn= [9, 7, 8, 0, 1, 9, 9, 2, 3, 0, 9, 1]
+
+print('check digit =', 10 - np.dot(n,isbn)%10 )
+
+
 # ## 3 Unit vectors and normalizing vectors
 # 
 #  Unit vectors, as their name suggests, have a length of $1$. A vector can be made into a unit vector by dividing by its length. If a vector is $\vec v = [a\quad b\quad c\quad d]$ the normalizing condition is
@@ -396,7 +424,7 @@
 # 
 # $$\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \qquad\tag{10}$$
 
-# ## 4 The orthonormal ijk base vectors
+# ## 4 The orthonormal $\boldsymbol {i\;j\;k}$ base vectors
 # 
 # A general method for describing a three-vector is to express it in terms of vectors along a set of axes. If the mutually perpendicular set of $x$-, $y$-, and $z$-axes is chosen, the basis set is orthogonal set. If the base vectors are also normalized to $1$, each base vector is a unit vector and the set is orthonormal. Conventionally, orthonormal base vectors are labelled $\boldsymbol i,\boldsymbol j,\boldsymbol k$ and any vector in this basis is written as,
 # 
@@ -455,7 +483,7 @@
 # 
 # ## 5 Summary
 # 
-# ### **Dot Product**
+# ### **(i) Dot Product**
 # $\displaystyle \qquad \vec A \cdot \vec B= |\vec A||\vec B|\cos(\theta)$  
 # 
 # The magnitude of $\vec A$ is $\displaystyle |\vec A|=\sqrt{\vec A \cdot \vec A}$
@@ -468,7 +496,7 @@
 # 
 # $$\displaystyle \vec A\cdot \vec B = (a\boldsymbol i + b\boldsymbol j + c\boldsymbol k)\cdot(c\boldsymbol i + d\boldsymbol j + e\boldsymbol k) = ac + bd + ce$$
 # 
-# ### **The Cross Product exists only in three dimensions**
+# ### **(ii) The Cross Product exists only in three dimensions**
 # 
 # $$\displaystyle \vec A \times \vec B=|\vec A||\vec B|\sin(\theta)\vec n $$
 # 

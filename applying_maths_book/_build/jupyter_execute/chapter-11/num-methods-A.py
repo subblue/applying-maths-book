@@ -22,12 +22,19 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ## 1.1 Rounding errors
 # 
-# In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression $(1 - x)^6$ is expanded as the series $1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6$ and this is plotted close to its minimum at $x\approx 1$ in Fig.1. While the scale is small, $\approx 10^{-13}$, determining the exact root of the equation numerically is difficult. Of course, we know it is at $1$, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.
+# In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression $(1 - x)^6$ is expanded as the series 
 # 
-# A real number is converted in the computer into a floating-point number represented as $x = \pm 0.d_1d_2d_3d_4 \cdot 10^y$ which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction $0.d_1d_2d_3d_4$, where $d_1$ etc. are the digits $0\cdots 9$. A floating-point number is usually described as a single or double precision and the number of decimal places is typically $7$ and $14$ respectively; this depends on the type of computer being used. Normally nowadays double precision is standard for example $17$ digits.
+# $$\displaystyle (1 - x)^6=1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6$$
 # 
-# However, as seen in Fig. 1, 17 digits are not good enough to find the root; $25$ decimal places give a far more accurate result. The instruction Digits:= 25, sets $25$ decimal place precision for floating point numbers.
-# Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is 
+# and this is plotted close to its minimum at $x\approx 1$ in Fig.1. While the scale is small, $\approx 10^{-13}$, determining the exact root of the equation numerically is difficult. Of course, we know it is at $1$, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.
+# 
+# A real number is converted in the computer into a floating-point number represented as 
+# 
+# $$\displaystyle x = \pm 0.d_1d_2d_3d_4 \cdot 10^y$$
+# 
+# which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction $0.d_1d_2d_3d_4$, where $d_1$ etc. are the digits $0\cdots 9$. A floating-point number is usually described as a single or double precision and the number of decimal places is typically $7$ and $14$ respectively; naturally this depends on the type of computer being used. Normally nowadays double precision is standard for example $17$ digits.
+# 
+# However, as seen in Fig. 1, $17$ digits are not good enough to find the root; $25$ decimal places give a far more accurate result. Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is 
 
 # In[2]:
 
@@ -37,14 +44,14 @@ df= lambda x: -6.0 + 30.0*x - 60.0*x**2 + 60.0*x**3 - 30.0*x**4 + 6.0*x**5      
 s  = 0.8
 for i in range(100):
     snew = s - f(s)/df(s)
-    if abs(snew-s) < 1e-10:
+    if abs(snew-s) < 1e-12:
         break
     else:
         s = snew
 print(s)
 
 
-# With typical double precision ($16$ decimal places), the root found is $1.0030182818841857$, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function $(1 - x)^6$ is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with $25$ digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.
+# With typical double precision ($16$ decimal places), the root found is $1.0030182818841857$, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function $(1 - x)^6$ is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with $25$ digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.  Python has the 'decimal' library to deal with higher precision and also there is a third party library called mpath.
 # 
 # ![Drawing](num-methods-fig1.png)
 # 
@@ -55,7 +62,11 @@ print(s)
 # 
 # In summing a series, the number of terms to be added has to be decided in advance. This automatically leads to an error that is nothing to do with arithmetical precision. The calculation should be repeated with more terms until the number of decimal places you require is continuously obtained. Rounding errors must additionally be considered, especially if the series contains alternating positive and negative terms; the errors can accumulate as the summation continues but will not be the same for all values of $x$.
 # 
-# Consider the series $ \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots$ which is valid for all $x$. If the series is summed up to the term $x^n/n!$ with $x \gt 0$, the error is less than $\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|$. The values of $\sin(0.5)$ is $0.47942553$ whether calculated directly using Python or as the summation up to the $x^7$ term. If, however, $x$ is large, for instance $x = 5.5\pi$, then we know by drawing a graph that  $\sin(x) = -1$, but by summation up to $x^7$ the result is $-79258.34$: clearly this is ridiculous because $\sin(x) \le 1 $ for all $x$. Only if the number of terms in the summation is increased to at least terms $\gt x^{59}$, and the numerical precision increased to $20$ decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of $\sin(x)$ are well known, but if you are summing a series whose result is unknown, then great care is necessary.
+# Consider the series 
+# 
+# $$ \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots$$
+# 
+# which is valid for all $x$. If the series is summed up to the term $x^n/n!$ with $x \gt 0$, the error is less than $\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|$. The value of $\sin(0.5)$ is $0.47942553$ whether calculated directly using Python or as the summation up to the $x^7$ term. If, however, $x$ is large, for instance $x = 5.5\pi$, then we know by drawing a graph that  $\sin(x) = -1$, but by summation up to $x^7$ the result is $-79258.34$: clearly this is ridiculous because $\sin(x) \le 1 $ for all $x$. Only if the number of terms in the summation is increased to at least terms $\gt x^{59}$, and the numerical precision increased to $20$ decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of $\sin(x)$ are well known, but if you are summing a series whose result is unknown, then great care is necessary.
 # 
 # ## 1.3 Unstable recursion: magnification of errors
 # 
@@ -63,26 +74,26 @@ print(s)
 # 
 # $$\displaystyle I_n=\int_0^1 x^ne^{x-1}dx = x^ne^{x-1} \bigg|_0^1 -n\int_0^1 x^{n-1}e^{x-1} dx =1 - nI_{n-1}$$
 # 
-# To evaluate the integral with the code below different $n$, the starting value with $n = 0$ is required, which is $I_0 = 1 - 1/e$. In the recursion calculation, $s$ has, arbitrarily, been chosen as the name for the integral because $I$ and $int$ are reserved names in Sympy. Recall that $\mathtt{s= 1 - n* s}$; is an assignment, meaning that the new value of $s$ is $1 - n \times (current\; value)$. Some of the results are tabulated below the code, $n$ is the power to which $x$ is raised, $s$ is the recursion answer and $f$ the result of algebraic integration. 
+# To evaluate the integral with the code below different $n$, the starting value with $n = 0$ is required, which is $I_0 = 1 - 1/e$. In the recursion calculation, $s$ has, arbitrarily, been chosen as the name for the integral because $I$ and $int$ are reserved names in Sympy. Recall that $\mathtt{s= 1 - n* s}$; is an assignment, meaning that the new value of $s$ is $1 - n \times (current\; value)$. Some of the results are tabulated below the code, $n$ is the power to which $x$ is raised, $s$ is the recursion answer and $f(n)$ the result of algebraic integration. In fact the situation is worse as the result $f(n)$ depends on whether the limits used are real or integer numbers, i.e $(x,0,1)$ or $(x,0.1,1.0)$.
 
 # In[3]:
 
 
-x, n = symbols('x, n',positive=True)          # use SymPy
+x, n = symbols('x, n',positive=True)         # use SymPy
 
-s = 1.0 - 1.0/np.exp(1.0)                    # initial value
+s = 1.0 - 1.0/exp(1.0)                    # initial value
 ans_s = []                                   # arrays to hold results
 ans_f = []
 for n in range(1,23):
     s = 1.0 - n*s                            # recursion
     ans_s.append(s)                          # save values
     eqn = x**n*exp(x - 1)
-    f = integrate(eqn,(x,0.0,1.0) )          # normal algebraic integration
+    f = integrate(eqn,(x,0.0,1.0) )          # normal algebraic integration, from 0 to 1
     ans_f.append(f.evalf())                  # save result
     pass
 print('{:s}'.format('n      s      f(n)'))
 for i in range(len(ans_s)):
-    print('{:d} {:s} {:s}'.format(i+1,str(ans_s[i])[0:9], str(ans_f[i])[0:9])  )    # format output
+    print('{:3d} {:s} {:s}'.format(i+1,str(ans_s[i])[0:10], str(ans_f[i])[0:10])  )    # format output
     pass
 
 
@@ -104,7 +115,11 @@ for i in range(len(ans_s)):
 # 
 # $$\displaystyle dN/dt=r\,N(1-k/N)$$
 # 
-# where $N$ is the population $r$ the growth rate and $k$ a constant the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction $A+X\leftrightharpoons 2X,\quad X+B\to C$ has the related rate equation 
+# where $N$ is the population $r$ the growth rate and $k$ a constant the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction 
+# 
+# $$\displaystyle A+X\leftrightharpoons 2X,\quad X+B\to C$$
+# 
+# has the related rate equation 
 # 
 # $$dX/dt=-(k_1A+k_2B)X+4k_2X^2$$
 # 
@@ -184,7 +199,11 @@ for j in range(n):
 # 
 # We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.
 # 
-# The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If $f (x) = 0$ is the equation whose roots or $x$ values we want to find, then, in a recursive scheme, the next $x$ value is given by Newton - Raphson as $x_{n+1} = x_n  f(x_n)/f'(x_n)$ with $n = 0, 1, 2 \cdots$ and $f'$ is the derivative with respect to $x$. Notice how similar this equation is to the general form of the logistic map in the previous section, i.e $x_{n+1}=f(x_n)$.  The $x_0$ value to start the calculation must be somewhere near to the root, and can be estimated by plotting the function. At the end of each step, the new value $x_{n+1}$ is substituted into the right-hand side of the equation, and the process is repeated until the absolute value of the function becomes less than some preset tolerance or the number of iterations is exceeded.
+# The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If $f (x) = 0$ is the equation whose roots or $x$ values we want to find, then, in a recursive scheme, the next $x$ value is given by Newton - Raphson as 
+# 
+# $$\displaystyle x_{n+1} = x_n  f(x_n)/f'(x_n),\quad n = 0, 1, 2 \cdots$$
+# 
+# and $f'$ is the derivative with respect to $x$. Notice how similar this equation is to the general form of the logistic map in the previous section, i.e $x_{n+1}=f(x_n)$.  The $x_0$ value to start the calculation must be somewhere near to the root, and can be estimated by plotting the function. At the end of each step, the new value $x_{n+1}$ is substituted into the right-hand side of the equation, and the process is repeated until the absolute value of the function becomes less than some preset tolerance or the number of iterations is exceeded.
 # In the secant method, the derivative is approximated as
 # 
 # $$\displaystyle f'(x_n)\approx \frac{\Delta f}{\Delta x}=\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}$$
@@ -434,7 +453,7 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 # and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
 # 
-# ### **Example. Concentration of ion pairs**
+# ### **(i)  Concentration of ion pairs**
 # Bjerrum's theory of ionic association in solution, the concentration of ion pairs is
 # 
 # $$\displaystyle n_{1,2}=3n_1\left( \frac{e^2}{4\pi\epsilon_0k_BT} \right)^3\left( \frac{1}{\epsilon a_0} \right)^3\int_2^be^xx^{-4}dx$$
@@ -507,15 +526,29 @@ for k in range(3,30,5):                              # start 3 , end 30, step 5
 # 
 # $$\displaystyle U_{eff}(r) = E_0\left(\frac{b}{r}\right)^2 + U(r)$$
 # 
-# instead of simply $U(r)$. By definition, angular momentum is $\displaystyle L = \mu r^2\frac{dθ}{dt}$ and also as $L = \mu bv_0$, therefore $\displaystyle d\theta = b v_0r^{-2}dt$.
+# instead of simply $U(r)$. By definition, angular momentum is 
 # 
-# Our aim is to find $\theta$ the scattering angle and, because the last equation involves $d\theta$ and $dt$, an integration will be needed, and a change of variable to $r$ from $t$. This change is found using the energy which, by definition, is $E = \mu(dr/dt)^2/2$ giving $\displaystyle dt = \sqrt{\frac{\mu}{2E}}dr$. Combining this with $d\theta = bv_0r^{−2}dt$, substituting $E = \mu v^2/2$, using equation 7, and simplifying a little gives the differential equation;
+# $$\displaystyle L = \mu r^2\frac{dθ}{dt}$$
+# 
+# and also as $L = \mu bv_0$, therefore 
+# 
+# $$\displaystyle d\theta = b v_0r^{-2}dt$$
+# 
+# Our aim is to find $\theta$ the scattering angle and, because the last equation involves $d\theta$ and $dt$, an integration will be needed, and a change of variable to $r$ from $t$. This change is found using the energy which, by definition, is 
+# 
+# $$\displaystyle E = \mu(dr/dt)^2/2$$
+# 
+# giving 
+# 
+# $$\displaystyle dt = \sqrt{\frac{\mu}{2E}}dr$$
+# 
+# Combining this with $d\theta = bv_0r^{−2}dt$, substituting $E = \mu v^2/2$, using equation 7, and simplifying a little gives the differential equation;
 # 
 # $$\displaystyle \frac{d\theta}{dr}=-\frac{b}{r^2}\left(1-\frac{U(r)}{E_0}-\frac{b^2}{r^2}  \right)^{-1/2} \qquad\tag{8}$$
 # 
 # The leading negative sign is introduced because $d\theta /dr$ describes the incoming particle. The angle $\theta$, which depends on energy $E_0$ and impact parameter $b$,  can be calculated by integrating from its minimum value at $r = r_0$ to infinity, and takes the form,
 # 
-# $$\displaystyle \theta_0(E_0,b) = -\int_{\infty}^{r_0} \frac{d\theta}{dr} dr =+b\int_{r_0}^{\infty}\frac{1}{r^2\sqrt{1-\frac{U(r)}{E_0} -\frac{b^2}{r^2}  }}dr \qquad\tag{9}$$
+# $$\displaystyle \theta_0(E_0,b) = -\int_{\infty}^{r_0} \frac{d\theta}{dr} dr =+b\int_{r_0}^{\infty}\frac{1}{r^2\sqrt{1-U(r)/E_0 -b^2/r^2  }}dr \qquad\tag{9}$$
 # 
 # Note that the angle $\theta_0$ depends on the impact parameter $b$, the initial energy of the particle $E_0$, and the potential $U$, each of which must be known, as must $r_0$, before the calculation can be completed.
 # 
@@ -539,37 +572,49 @@ for k in range(3,30,5):                              # start 3 , end 30, step 5
 # 
 # $$\displaystyle  \theta_0= +b\int_{d}^{\infty}\frac{1}{r^2\sqrt{1 -\frac{b^2}{r^2}  }}dr $$
 # 
-# changing the variable to $u=1/r$ produces $dr=-dr/r^2$ and then $\displaystyle \theta_0= \int_d^\infty (1-b^2u^2)^{-1/2}du$ and this has a standard form; 
+# changing the variable to $u=1/r$ produces $dr=-dr/r^2$ and then 
 # 
-# $$\displaystyle \theta_0= \sin^{-1}\left(\frac{b}{d} \right)$$
+# $$\displaystyle \theta_0= \int_d^\infty (1-b^2u^2)^{-1/2}du=\sin^{-1}\left(\frac{b}{d} \right)$$
 # 
-# and so the scattering angle is $\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)$ which is independent of the collision energy. This is shown in fig 5, where $x = b/d$.
+# which is a standard integral, and so the scattering angle is 
+# 
+# $$\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)$$
+# 
+# which is independent of the collision energy. This is shown in fig 5, where $x = b/d$.
 # 
 # ## 3.9 The  Coulomb potential
 # 
-# The Coulomb potential energy between charges $q_1$ and $q_2$ at separation $r$ is $U(r) = \alpha/r$ where $\alpha = q_1q_2/4\pi \epsilon_0$ in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This $1/r$ form of potential also describes that due to gravity, where $\alpha = -Gm_1m_2$. For example, it will describe a comet being attracted to and flung around the sun or a planet, $G$ being the gravitational constant and $m_1$ and $m_2$ the masses.
+# The Coulomb potential energy between charges $q_1$ and $q_2$ at separation $r$ is 
+# 
+# $$\displaystyle U(r) = \frac{\alpha}{r}$$
+# 
+# where $\alpha = q_1q_2/4\pi \epsilon_0$ in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This $1/r$ form of potential also describes that due to gravity, where $\alpha = -Gm_1m_2$. For example, it will describe a comet being attracted to and flung around the sun or a planet, $G$ being the gravitational constant and $m_1$ and $m_2$ the masses.
 # 
 # Considering now the Coulomb potential, the smallest separation of the particles is found from equation 11, which is a quadratic in $r_0$. The result is
 # 
 # $$\displaystyle r_0=\frac{\alpha \pm\sqrt{\alpha^2+4b^2E_0^2}}{2E_0} $$
 # 
-# and the larger root should be taken. The smallest value $r_0$ can take occurs when $b$ = 0, and is $\alpha/E_0$, which is the minimum separation because it is limited by the initial energy. The angle $\theta_0$ is given by equation 10, with $g(r)$ given by $\displaystyle \frac{b}{r^2}\left( 1-\frac{\alpha}{rE_0} -\frac{b^2}{r^2}  \right)^{-1/2}$.
+# and the larger root should be taken. The smallest value $r_0$ can take occurs when $b$ = 0, and is $\alpha/E_0$, which is the minimum separation because it is limited by the initial energy. The angle $\theta_0$ is given by equation 10, with $g(r)$ given by 
+# 
+# $\displaystyle \frac{b}{r^2}\left( 1-\frac{\alpha}{rE_0} -\frac{b^2}{r^2}  \right)^{-1/2}$$
 # 
 # The integral (10) can be solved by substituting $r=1/u$ to make  
 # 
 # $$\displaystyle \theta_0=b\int_0^{u_0}\frac{1}{\sqrt{ 1-a u -b^2u^2  } } du$$
 # 
-# where for clarity $a=\alpha/E_0$ and $\displaystyle u_0=1/r_0= \frac{-a\pm \sqrt{a^2+4b^2}  }{2b^2}$.
+# where for clarity 
+# 
+# $$\displaystyle a=\alpha/E_0\quad\text{ and }\quad u_0=1/r_0= \frac{-a\pm \sqrt{a^2+4b^2}  }{2b^2}$$
 # 
 # This has the form of a standard integral; 
 # 
 # $$\displaystyle \int \frac{dx}{\sqrt{f+gx+hx^2}}=-\frac{1}{\sqrt{-h}}\sin^{-1}\left(  \frac{2hx+g}{g^2-4fh}\right) + const$$
 # 
-# if $h$ is negative and $const$ is the integration constant. The relationship  $\displaystyle \sin^{-1}(x)=i\ln\left( ix+\sqrt{1-x^2} \right)$
+# if $h$ is negative and $const$ is the integration constant. The relationship  
 # 
-# is also needed to simplify the answer after the limits have been included.
+# $$\displaystyle \sin^{-1}(x)=i\ln\left( ix+\sqrt{1-x^2} \right)$$
 # 
-# The result for the scattering angle is 
+# is also needed to simplify the answer after the limits have been included. The result for the scattering angle is 
 # 
 # $$\displaystyle \chi=2\sin^{-1}\left(\frac{\alpha }{\sqrt{\alpha^2+4E_0b^2}}  \right) $$
 # 

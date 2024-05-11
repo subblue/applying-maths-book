@@ -16,10 +16,10 @@ from sympy import *
 # 
 # The branch of mathematics dealing with permutations, combinations, and probability is perhaps that most closely related to everyday experience, particularly so if you play cards or do the lottery. There are different ways of counting the number of the arrangements of objects, such as molecules or footballs and these are permutations and combinations.
 # 
-# ### **Permutations** 
+# ### **(i) Permutations** 
 # Permutations count the number of ways of arranging objects so that each permutation is unique. This means that the order is important.
 # 
-# ### **Combinations** 
+# ### **(ii) Combinations** 
 # Combinations count the number of ways of selecting objects from a group without considering the order of selecting.
 # 
 # We shall describe these quantities in terms of 'objects' and 'boxes' and let them variously apply to dice, playing cards, electrons, atoms, molecules, and energy levels as the context requires.
@@ -45,7 +45,7 @@ from sympy import *
 # If the letter/number/object is removed after being put into a box, so that all boxes are empty, then there are always $n$ choices and so the total number of different ways becomes $n^p$ when there are $n$ boxes and only $p$ objects. Alternatively, if we imagine that the box is full of letters then in the first case there are $n$ choices to take the first letter out and $n-1$ for the second etc., but if the letter is replaced then there are $n$ each time making $n^p$ in total. 
 # 
 # 
-# ### **Permutation Examples**
+# ### **(i) Permutation Examples**
 # 
 # **(a)** The number of permutations that can be made, each of 3 vowels long, from a, e, i, o, u is $\displaystyle P(5,3) = \frac{5!}{2!}=20$ 
 # 
@@ -185,7 +185,7 @@ from sympy import *
 # 
 # Quite often, some caution is necessary in analysing problems involving chance or random events. For example, if two coins are simultaneously flipped what is the change of observing two heads? The ways the coins can fall is either head H, or tail T, but to think that there are only three outcomes, HH, HT, TT and the chance $1/3$ is wrong. This is because there are four outcomes HH, HT, TH and TT so the chance of observing HH is $1/4$. The chance of a head and a tail is $1/2$.  Thus the definition of probability is 
 # 
-# ### **Probability** 
+# ### **(i) Probability** 
 # >Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.
 # 
 # ## 9.12 Calculating probability: Sample space
@@ -202,23 +202,23 @@ from sympy import *
 # 
 # ## 9.13 Definitions, notation, and some useful formulae
 # 
-# **Mutually exclusive *vs*. independent events.** 
+# ### **(i) Definitions. Mutually exclusive *vs*. independent events.** 
 # 
 # >A mutually exclusive event is one whose occurrence prevents the other form happening at the same time. Tossing a coin can only produce a head or a tail, if a head is observed the tail is prevented from happening and vice versa, both occurring is prevented. 
 # 
 # >Independent events mean that one outcome does not influence the other, and so these events cannot be mutually exclusive. Throwing a dice and tossing a coin are independent events, as are tossing two coins, the result of one does not influence that of the other and *vice versa*. 
 # 
-# **(i)** The probability of an event $A$ is $0 \ge  p(A) \le 1$.
+# **(a)** The probability of an event $A$ is $0 \ge  p(A) \le 1$.
 # 
-# **(ii)** The certain event $S$ has a probability of 1; $p(S)=1$.
+# **(b)** The certain event $S$ has a probability of 1; $p(S)=1$.
 # 
-# **(iii)** The probability of an event $p(A)$ is the sum of  simple events in the sample space.
+# **(c)** The probability of an event $p(A)$ is the sum of  simple events in the sample space.
 # 
-# **(iv)** The word 'or' is used in the inclusive sense. Thus, *A or B* means 'either A or B, or, both'. The notation $p(A + B)$, is the probability that either $A$ or $B$ or both occurs. The notation $p(AB)$ is a joint probability and means that both $A$ and $B$ occur. In set theory, this is the intersection or overlap of $A$ and $B$, and is usually written as $p(A\cap B)$; figure 20.
+# **(d)** The word 'or' is used in the inclusive sense. Thus, *A or B* means 'either A or B, or, both'. The notation $p(A + B)$, is the probability that either $A$ or $B$ or both occurs. The notation $p(AB)$ is a joint probability and means that both $A$ and $B$ occur. In set theory, this is the intersection or overlap of $A$ and $B$, and is usually written as $p(A\cap B)$; figure 20.
 # 
-# **(v)** If several _independent_ events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events, (**Product Rule**). An independent event is one whose outcome does not influence that for any of the others; $p(A \& B) = p(A)p(B)$.
+# **(e)** If several _independent_ events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events, (**Product Rule**). An independent event is one whose outcome does not influence that for any of the others; $p(A \& B) = p(A)p(B)$.
 # 
-# **(vi)** If two events $A$ and $B$ can occur, their inclusive probability $p(A + B)$ means that at least one event occurs, which is to be interpreted as event $A$ or $B$  occurs. In figure 20 (left) the sample spaces are related as
+# **(f)** If two events $A$ and $B$ can occur, their inclusive probability $p(A + B)$ means that at least one event occurs, which is to be interpreted as event $A$ or $B$  occurs. In figure 20 (left) the sample spaces are related as
 # 
 # $$\displaystyle n(A) + n(B) = n(A + B) + n(AB)$$
 # 
@@ -226,23 +226,23 @@ from sympy import *
 # 
 # $$\displaystyle p(inclusive) = p(A) + p(B) - p(AB)\qquad \qquad\tag{23}$$
 # 
-# **(vii)** A mutually exclusive event is one whose outcome prevents any others occurring. The two events $A$ and $B$, are mutually exclusive if there is no intersection or overlap of $A$ and $B$, $p(AB) = 0$, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities, (**Addition Rule**),
+# **(g)** A mutually exclusive event is one whose outcome prevents any others occurring. The two events $A$ and $B$, are mutually exclusive if there is no intersection or overlap of $A$ and $B$, $p(AB) = 0$, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities, (**Addition Rule**),
 # 
 # $$\displaystyle p(exclusive) = p(A) + p(B)$$ 
 # 
 # This equation only applies to two events.
 # 
-# **(viii)** The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is $(1 \cdots 6)$, in one set of playing cards $(1 \cdots 52)$, and so forth. If three coins are used, the sample space contains $2^3$ elements, HHH, HHT, etc. If $n_S$ represents the number of arrangements in the whole sample space, $n_A$ the subset that is the number of ways of arranging events in a successful outcome (call this $A$) and $n_{NA}$ the subset that is not $A$ then, clearly, $n_S = n_A + n_{NA}$. The probability of outcome $A$ is therefore
+# **(h)** The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is $(1 \cdots 6)$, in one set of playing cards $(1 \cdots 52)$, and so forth. If three coins are used, the sample space contains $2^3$ elements, HHH, HHT, etc. If $n_S$ represents the number of arrangements in the whole sample space, $n_A$ the subset that is the number of ways of arranging events in a successful outcome (call this $A$) and $n_{NA}$ the subset that is not $A$ then, clearly, $n_S = n_A + n_{NA}$. The probability of outcome $A$ is therefore
 # 
 # $$\displaystyle p=\frac{n_A}{n_s}=1-\frac{n_{NA}}{n_s}\qquad \tag{24}$$
 # 
-# **(ix)** If $p$ is the chance that an event occurs, then $1-p$ is the chance that it will not, (**Subtraction Rule**),
+# **(i)** If $p$ is the chance that an event occurs, then $1-p$ is the chance that it will not, (**Subtraction Rule**),
 # 
 # $$\displaystyle p(not A) = 1 - p(A)$$
 # 
 # This is called the complement. On the right of figure 20, the complement of $p(A\cup B)$ is the area outside the two shaded circles. In the left-hand sketch, the complement of the intersection $p(A\cap B) \equiv p(AB)$, is all the area not labelled $AB$ inside the square.
 # 
-# **(x)** Two objects can be placed into either one or the other or both of two different boxes, hence are distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are _indistinguishable_, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of $2/4$. However, if we take the three outcomes to be equally likely then the probability of the last is $1/3$, and this is the case for bosons.
+# **(j)** Two objects can be placed into either one or the other or both of two different boxes, hence are distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are _indistinguishable_, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of $2/4$. However, if we take the three outcomes to be equally likely then the probability of the last is $1/3$, and this is the case for bosons.
 
 # ## 9.14 Independent and exclusive events, sample spaces, and conditional probability
 # 
@@ -411,23 +411,26 @@ from sympy import *
 # 
 # $$\displaystyle p(12,4,1/2)=\binom{12}{4}\left(\frac{1}{2}\right)^4\left(\frac{1}{2}\right)^{12-4}=\frac{495}{4096}$$
 # 
-# ## 9.18 Similar random digits
+# # 9.18 Similar random digits
 # 
-# What is the probability of finding $20$ similar digits such as $0$, in $1000$ random digits. There are only $10$ types of digits, so using the binomial distribution the probability for $m$ similar digits gives (eqn. 25a)
+# What is the probability of finding at least $m=100$ similar digits such as $0$ or $3$ etc., in $n=1000$ random digits. There are only $10$ types of digits, so using the binomial distribution the probability for $m$ similar digits gives (eqn. 25a)
 # 
 # $$\displaystyle p(1000,m,1/10) =\binom{1000}{m}\left(\frac{1}{10}\right)^m\left(1-\frac{1}{10}\right)^{(1000-m)}$$
 # 
-# and as $m=20$ the probability is $4.9\cdot 10^{-24}$, which seems quite silly. However, there are $10$ types of digits and $1000$ numbers so on average we expect $100$ of any type of digit in the total and if we calculate the chance of there being $100$ digits of any type it is $0.042$ or $4.2$%. What is surprising is how quickly the values fall either side of this number, as you can calculate for yourself.  The calculation is shown below using Sympy. The factorials are extremely large, and Sympy has a function that will calculate these and also handle very large numbers.
+# but this has to be summed from $m\to n$ to find at least $m$ so that the probability becomes $\sum_{k=m}^n p(n,k,q)=0.515$. As $m$ increases this probability falls rapidly. The calculation is shown below using Sympy. The factorials are extremely large, and Sympy has a factorial function that will calculate these, as shown below, and there is also a $binom(n,m)$ function that calculates the binomial coefficient directly.  The same result can checked by repeatedly making a random list of $n$ digits and checking how many are equal to or larger than $m$.
 
 # In[2]:
 
 
 n, m, q = symbols('n, m, q')  
 n = 1000
-m = 50
+m = 100
 q = 1/10
-prob = factorial(n)/(factorial(m)*factorial(n-m))*(q)**m*(1-q)**(n-m)
-prob
+prob = lambda n,m,q: factorial(n)/(factorial(m)*factorial(n-m))*(q)**m*(1-q)**(n-m)
+s = 0
+for i in range(m,n,1):
+    s = s + prob(n,i,q)
+print('{:s} {:8.6g}'.format('probability ', s) )
 
 
 # ## 9.19 How many fragments are there in a well in a 96 well plate?
@@ -618,7 +621,7 @@ prob
 # 
 # The chance of no success, that is of not observing an 'event', is $e^{-\mu}$. The chance of observing exactly one event $k = 1$ is $\mu e^{-\mu}$, of exactly two events $\mu^2 e^{-\mu}/2!$, and of exactly $k$ events is $P(k, \mu)$. The chance of observing more than one event is $1 - e^{-\mu}$ . The sum to infinity is unity, and therefore the distribution is normalized.
 # 
-# ### **Franck-Condon Factors**
+# ### **(i) Franck-Condon Factors**
 # 
 # One interesting example of this distribution is found in the shape of the envelope of the absorption and emission spectrum of a diatomic molecule that has a harmonic potential in both the ground and electronic excited state. The chance of absorption is found by analysing the Franck-Condon Factor 
 # 
@@ -639,12 +642,12 @@ prob
 # Figure 20d. Calculated spectrum for CO.The size of the absorption lines follows the Poisson distribution. 
 # __________
 # 
-# ### **Sequential rate equations**
+# ### **(ii) Sequential rate equations**
 # 
 # A concatemer of identical proteins can be unfolded one at a time using an atomic force microscope (AFM). Each protein unfolds with the same rate constant. The scheme is $p_1 \to p_2\to p_3 \to \cdots$. As the rate constant for any step is the same the chance that the transition from protein, $n\to m$ is Poisson distributed. The calculation is described in full in chapter 10 (Differential equations) section 7. As the rate constants are all the same the unfolding is not sequential so any protein has the same chance of unfolding at a given applied force from the AFM.
 # 
 # 
-# ### **Poisson distribution derived from the binomial.**
+# ### **(iii) Poisson distribution derived from the binomial.**
 # 
 # In the previous section the binomial distribution found by analysing a chromatography column was simplified to the Poisson distribution. The binomial distribution is
 # 

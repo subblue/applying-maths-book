@@ -29,18 +29,30 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # where the energy of level or state $n$ is $E_n,\; k_B$ is Boltzmann's constant, and $T$ the temperature. The degeneracy of level $n$ is $g_n$. 
 # 
 # 
-# The heat capacity $C_V$ be calculated by differentiating $U$; then using $S =\int C_V/TdT$ the entropy is obtained as 
+# The heat capacity $C_V$ be calculated by differentiating $U$; then using 
+# 
+# $$\displaystyle S =\int C_V/TdT$$
+# 
+# the entropy is obtained as 
 # 
 # $$\displaystyle S=\frac{U-U_0}{T}+k_B\ln(Z)$$
 # 
-# There is, however, another way of calculating internal energy and heat capacity, and this is via the relationships $\langle E\rangle \equiv U - U_0$, giving 
+# There is, however, another way of calculating internal energy and heat capacity, and this is via the relationships 
+# 
+# $$\displaystyle \langle E\rangle \equiv U - U_0$$
+# 
+# giving 
 # 
 # $$\displaystyle  C_V=\frac{1}{k_BT^2}\left( \langle E^2 \rangle -  \langle E \rangle^2 \right) $$
 # 
 # where $\langle E \rangle$ is the average energy and $\langle E^2 \rangle$ is the average of the square of the energy. If the partition function can be calculated, then these averages  are not needed. In many cases, however, there are obstacles to calculating the partition function and then the Metropolis algorithm can be used. 
 # 
 # 
-# The harmonic oscillator's energies are $E_n = h\nu(n + 1/2)$, the quantum numbers $n = 1, \;2, \;3,\cdots$, and levels are singly degenerate; $g_n = 1$. The summation forming the partition function can be evaluated algebraically, but even if no algebraic solution was forthcoming, such as is the case for the anharmonic oscillator, $Z$ could be evaluated numerically because with increasing energy the exponential terms very rapidly become insignificant and contribute negligibly to the total sum. In practice, the summation has a limited, rather than infinite, number of terms. The small value of terms when the energy is large can be appreciated by comparing the $n = 0$ term with that when $n = 15$ where clearly $\displaystyle e^{-h\nu/2k_BT} \gg e^{-31h\nu/2k_BT}$; the ratio of the two terms is $\approx 1330$. This ratio increases dramatically as $\nu$ increases or $T$ decreases.
+# The harmonic oscillator's energies are $E_n = h\nu(n + 1/2)$, the quantum numbers $n = 1, \;2, \;3,\cdots$, and levels are singly degenerate; $g_n = 1$. The summation forming the partition function can be evaluated algebraically, but even if no algebraic solution was forthcoming, such as is the case for the anharmonic oscillator, $Z$ could be evaluated numerically because with increasing energy the exponential terms very rapidly become insignificant and contribute negligibly to the total sum. In practice, the summation has a limited, rather than infinite, number of terms. The small value of terms when the energy is large can be appreciated by comparing the $n = 0$ term with that when $n = 15$ where clearly 
+# 
+# $$\displaystyle e^{-h\nu/2k_BT} \gg e^{-31h\nu/2k_BT}$$
+# 
+# the ratio of the two terms is $\approx 1330$. This ratio increases dramatically as $\nu$ increases or $T$ decreases.
 # 
 # 
 # Now consider a more involved case of calculating the partition function for rotation around bonds in a protein. The purpose of this would be to estimate the lowest energy configuration and so the folded structure of the protein from its amino acid sequence$^*$. Suppose that there are 100 amino acids in the protein and the interaction energy between adjacent amino acids, caused by bond rotations, can take only three values, then there are $3^{100} \approx 5 \cdot 10^{47}$ configurations to calculate! Unlike the harmonic oscillator, there are now only three energies to consider, and these are similar in value. However, there are so many combinations of these that the partition function cannot be estimated by summation because the summation does not tend to a limit as more terms are added. This is quite unlike the harmonic oscillator, where terms become progressively and rapidly smaller as more are added. The number of configurations, $5 \cdot 10^{47}$, may not seem so large; large numbers can easily be imagined, Avogadro's number for instance, or even larger a googol $10^{100}$ or a googolplex $\displaystyle 10^{10^{100}}$, for example. To put our number into context, there have only been $\approx 4 \cdot 10^{17}$ s since the universe was created, and even if it were possible with a supercomputer to calculate $10^{15}$ configurations each second, this single calculation would still take longer than the age of the universe to complete. Quite a challenge!
@@ -95,7 +107,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \frac{\sigma}{\langle E\rangle}=\frac{\sqrt{k_BT^2C_V}}{\langle E\rangle}$$
 # 
-# For a single particle, $C_V = k_B/2$ and $\langle E\rangle = k_BT/2$, making $\sigma/\langle E\rangle = 1$. Thus, the average energy obtained from a measurement on a single particle has, not surprisingly, a very large standard deviation. When $N$ particles are measured (or $N$ repeated measurements of the same one), then $C_V = Nk_B/2, \;\langle E\rangle = Nk_BT/2$ and now $\sigma/\langle E\rangle \approx 1/\sqrt{N}$ which is a vanishingly small quantity if $N$ is large, and a good estimate of the true $\langle E\rangle$ is obtained. Similarly, with a Monte Carlo simulation, the more samples that are included, the more accurate the result becomes and the standard deviation improves in proportion to $1/\sqrt{N}$.
+# For a single particle, 
+# 
+# $$\displaystyle C_V = k_B/2,\quad\langle E\rangle = k_BT/2\quad\text{making}\quad \sigma/\langle E\rangle = 1$$
+# 
+# Thus, the average energy obtained from a measurement on a single particle has, not surprisingly, a very large standard deviation. When $N$ particles are measured (or $N$ repeated measurements of the same one), then 
+# 
+# $$\displaystyle C_V = Nk_B/2, \;\langle E\rangle = Nk_BT/2\quad\text{making}\quad \sigma/\langle E\rangle \approx 1/\sqrt{N}$$
+# 
+# which is a vanishingly small quantity if $N$ is large, and a good estimate of the true $\langle E\rangle$ is obtained. Similarly, with a Monte Carlo simulation, the more samples that are included, the more accurate the result becomes and the standard deviation improves in proportion to $1/\sqrt{N}$.
 # 
 # To calculate an average quantity $\langle Q \rangle$ the steps are:
 # 
@@ -192,7 +212,7 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # Figure 18. Metropolis estimation of potential energy vs. number of samples. The estimated energy is plotted as red circles. The horizontal line is the theoretical energy $k_BT/2$ at 300 K. The solid lines are given by $\langle E\rangle \pm a /\sqrt{ N}$ where $a=2.5$ is a constant.
 # _____
 # 
-# The harmonic oscillator clearly also has kinetic energy. The calculation to estimate this is essentially the same as just described; however, the constants are interpreted in a different way. The constant $k$ now represents the reduced mass, which is will become $10$ amu, and displacement $x$ now represents the velocity $v$ in m s<sup>-1</sup> about the origin of coordinates taken as the center of gravity of the molecule. The velocity must range from at least $\pm 4000\, \mathrm{ m\, s^{-1}}$ if the exponential $e^{-\Delta E/(k_BT)}$ is to be $\approx 10^{-8}$ or less at the largest speed. A typical value of the average kinetic energy (per molecule) is found to be $2.03 \pm 0.01 \cdot 10^{-21}$ J, which is effectively the same result as for the previous Monte Carlo calculation of $\langle E \rangle$  and demonstrates the equipartition theorem.
+# The harmonic oscillator clearly also has kinetic energy. The calculation to estimate this is essentially the same as just described; however, the constants are interpreted in a different way. The constant $k$ now represents the reduced mass, which is will become $10$ amu, and displacement $x$ now represents the velocity $v$ in m s$^{-1}$ about the origin of coordinates taken as the center of gravity of the molecule. The velocity must range from at least $\pm 4000\, \mathrm{ m\, s^{-1}}$ if the exponential $\exp(-\Delta E/(k_BT))$ is to be $\approx 10^{-8}$ or less at the largest speed. A typical value of the average kinetic energy (per molecule) is found to be $2.03 \pm 0.01 \cdot 10^{-21}$ J, which is effectively the same result as for the previous Monte Carlo calculation of $\langle E \rangle$  and demonstrates the equipartition theorem.
 # 
 # ## 6.4 Maxwell distribution
 # 
@@ -200,7 +220,15 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # 
 # $$\displaystyle f(s) = \frac{4}{\sqrt{\pi}}\left(\frac{m}{2k_BT} \right)^{3/2}s^2e^{-ms^2/(2k_BT)}  \qquad\tag{13c}$$
 # 
-# It can be verified that $\displaystyle \int_0^\infty f(s) ds = 1$. If the values of $v$ calculated from the Monte Carlo method are put into equation 13b, they are distributed toward smaller values of $v$, which shows the weighting that the method produces. However, if the Metropolis probability test is changed to $\displaystyle (s_2^2/s_1^2)e^{-\Delta E/(k_BT)}$ from $e^{-\Delta E/(k_BT)}$, then the results are distributed more evenly according to the Maxwell distribution. The changes to the code are shown below.
+# It can be verified that 
+# 
+# $$\displaystyle \int_0^\infty f(s) ds = 1$$
+# 
+# If the values of $v$ calculated from the Monte Carlo method are put into equation 13b, they are distributed toward smaller values of $v$, which shows the weighting that the method produces. However, if the Metropolis probability test is changed to 
+# 
+# $$\displaystyle \frac{s_2^2}{s_1^2}e^{-\Delta E/(k_BT)}\quad\text{ from }\quad e^{-\Delta E/(k_BT)}$$
+# 
+# then the results are distributed more evenly according to the Maxwell distribution. The changes to the code are shown below.
 
 # In[3]:
 
@@ -387,7 +415,11 @@ print('{:s} {:f} {:s} {:f}'.format('av energy/site =',avE/L, 'Cv =',Cv) )
 # 
 # Informally, we may label a black group as 'parallel spin up' and a white one 'parallel spin down', although 'up' and 'down' should not be taken literally. Within any blocks of either color, the spins are parallel to one another; hence, the coupling is $-J$ between adjacent spins. A color boundary thus indicates spin pairing and a coupling of $+ J$ between these two spins; see Figure 22. At $T = 0$ K, all spins are in the same state, which would mean that the whole strip would be of the same color. However, there are two ground states at $T = 0$ and these could be colored either black or white. At low temperatures, for example, $T$ = 1/2 or 1 K, (Figure 24) spins are grouped into a few large blocks of similar spin state. Although only one example is given in the figure, it is clear that if many calculations are performed here only a limited number of arrangements of these large blocks of spins will be possible. These configurations or arrangements determine the entropy. As the temperature is increased, the coupling between spins becomes relatively less important compared to the energy supplied by the surrounding heat bath. This reduces the size of the groups of similar spin state but increases their number, which leads to more of ways of arranging them, and hence, a larger entropy.
 # 
-# The entropy of the equilibrium state is given by $S = k_B \ln(\Omega)$ where $\Omega$ is the number of arrangements that the spins can take. To calculate $\Omega$, the number of groups of spins p present at the end of the calculation and at a given temperature is counted; see Figure 24. This is done by searching the pattern of spins for the number of spin changes and adding one to the total. From the theory of statistics, the number of ways of choosing $N_p$ distinguishable objects from a group of $N$ distinguishable objects, where the order of choosing does not matter, is given by
+# The entropy of the equilibrium state is given by 
+# 
+# $$\displaystyle S = k_B \ln(\Omega)$$
+# 
+# where $\Omega$ is the number of arrangements that the spins can take. To calculate $\Omega$, the number of groups of spins p present at the end of the calculation and at a given temperature is counted; see Figure 24. This is done by searching the pattern of spins for the number of spin changes and adding one to the total. From the theory of statistics, the number of ways of choosing $N_p$ distinguishable objects from a group of $N$ distinguishable objects, where the order of choosing does not matter, is given by
 # 
 # $$\displaystyle \Omega ' = \frac{N!}{N_p!(N-N_p)!}  \qquad\tag{13e} $$
 # 
@@ -402,11 +434,15 @@ print('{:s} {:f} {:s} {:f}'.format('av energy/site =',avE/L, 'Cv =',Cv) )
 # Figure 24.  Examples of spin states for $500$ spins and $2000$ samples/ spin and with $J/k_B =1$ K at $T=1/2$, top ,$1$ K middle, and $10$ K bottom. The pattern at $T=1/2$ K contains $15$ groups since the blue areas correspond to one spin state and white the other. 
 # ___________
 # 
-# Finally, we note that $S = k_B\ln(\Omega)$ is derived using a micro-canonical ensemble, ($N,\; V,\; E$ constant), whereas the entropy calculated using the partition function is derived from a canonical ensemble ($N, \;V, \;T$ constant). Energy fluctuations are permitted in the canonical ensemble but energy is fixed in the micro-canonical ensemble. This inherent difference does not contradict their equivalency, provided that the size of the fluctuations becomes vanishingly small in the canonical ensemble, which it does in the limit of large $N$. The argument to demonstrate this follows along the lines of that above where the energy dispersion $\sigma$  is now interpreted as the energy fluctuation of the canonical ensemble. The ratio of energy fluctuation to average energy $\sigma/\langle E\rangle \approx  1/\sqrt{N}$, becomes vanishingly small as N increases.
+# Finally, we note that $S = k_B\ln(\Omega)$ is derived using a micro-canonical ensemble, ($N,\; V,\; E$ constant), whereas the entropy calculated using the partition function is derived from a canonical ensemble ($N, \;V, \;T$ constant). Energy fluctuations are permitted in the canonical ensemble but energy is fixed in the micro-canonical ensemble. This inherent difference does not contradict their equivalency, provided that the size of the fluctuations becomes vanishingly small in the canonical ensemble, which it does in the limit of large $N$. The argument to demonstrate this follows along the lines of that above where the energy dispersion $\sigma$  is now interpreted as the energy fluctuation of the canonical ensemble. The ratio of energy fluctuation to average energy 
+# 
+# $$\displaystyle \sigma/\langle E\rangle \approx  1/\sqrt{N}$$
+# 
+# becomes vanishingly small as N increases.
 # 
 # ![Drawing](monte-carlo-fig25.png)
 # 
-# Figure 25. The open circles show the Monte Carlo calculated spin entropy as $\langle S\rangle/k_BN$ vs temperature with $J/k_B = 1$ K using eqn. 13e. At each temperature and $J$ value, $N = 500$ and $4000$ samples/spin were taken. The solid lines are calculated with the theoretical function,see text. The high temperature limit for both $J$ values was calculated at $T = 100$ and was effectively $k_BN\ln(2)$. This limit is indicated by the horizontal grey  line which has a value of $\ln(2)$.
+# Figure 25. The open circles show the Monte Carlo calculated spin entropy as $\langle S\rangle/k_BN$ vs temperature with $J/k_B = 1$ K using eqn. 13e. At each temperature and $J$ value, $N = 500$ and $4000$ samples/spin were taken. The solid lines are calculated with the theoretical function,see text. The high temperature limit for both $J$ values was calculated at $T = 100$ and was effectively $k_BN\ln(2)$. This limit is indicated by the horizontal gray line which has a value of $\ln(2)$.
 # ____
 # 
 # At the end of the calculation, the array $\mathtt{spin}$ contains the final pattern of spins. The number of changes in adjacent spins can be calculated as shown here, and then equation 13e used to calculate the entropy / spin. However, this equation can involve some very big numbers that can easily exceed the maximum allowable. In which case the after some algebra the binomial coefficients should be calculated which avoids these large numbers. The $\mathtt{BinCoeff()}$ procedure does this. It works because $p!$ can always be divided into $N!$. Figure 25 shows the results of the calculation.
@@ -456,7 +492,9 @@ def get_entropy(spin):
 # 
 # ### **Algebraic calculation of 1D Ising spin energy**
 # 
-# The partition function is defined as $\displaystyle Z = \sum_\alpha e^{-E_\alpha /k_BT}$ 
+# The partition function is defined as 
+# 
+# $$\displaystyle Z = \sum_\alpha e^{-E_\alpha /k_BT}$$ 
 # 
 # for energy levels $E_\alpha$. In 1-D, the energy of the Ising spin state $\alpha$ in the absence of a magnetic field, is 
 # 
@@ -490,7 +528,7 @@ def get_entropy(spin):
 # 
 # The thermodynamic functions can be obtained from the partition function (at constant volume) using
 # 
-# $$\displaystyle E=k_BT^2d\ln(Z)/dT,\quad  S=k_BT\ln(Z)+E/T, \quad  C_V= dE/dT$$
+# $$\displaystyle E=k_BT^2\frac{d\ln(Z)}{dT},\quad  S=k_BT\ln(Z)+E/T, \quad  C_V= \frac{dE}{dT}$$
 
 # ## 6.10 2D Ising spin model
 # 
@@ -502,9 +540,29 @@ def get_entropy(spin):
 # 
 # $$\displaystyle \sum^n_{\alpha,\beta}s_\alpha s_\beta=\sum_{\alpha =0}s_\alpha \sum_{\beta=0} s_\beta$$
 # 
-# indicates that each spin in turn (index $\alpha = 0\cdots n-1$) adds a contribution from each of its four neighbours (north, south, east, and west) to the sum, $\sum^3_{\beta=0}=s_N+s_S+s_E+s_W$ but the index $\alpha$ runs over all spins. If the spins are represented as a two-dimensional array, then $\alpha$ represents the pair of indices covering each row and column. 
+# indicates that each spin in turn (index $\alpha = 0\cdots n-1$) adds a contribution from each of its four neighbours (north, south, east, and west) to the sum, 
 # 
-# In the Ising model, the change of energy between configurations takes a particularly simple form. It can be obtained directly without having to add up the total energy for each of the two types of states and then subtracting them. The difference in energy, Fig. 12.13, left to right is due to flipping one spin. If the spin has a value, either filled diamond = $+1$ or empty diamond  = $-1$, then the energy on the left is $E_1 =-J(1+1+1-1)=-2J$ as three of the _spin pairs_ have the same value. The other configuration shown with the central spin flipped is $E_2 = -J(-1 - 1 - 1 + 1) = 2J$; the difference is therefore $_E2 - E_1 = 4J$. Considering all other possible arrangements of the four neighbouring spins, produces only five energy differences. However, because the spin that is flipped is also a neighbour to other spins, the total value of the summations for $E$ always produces an extra factor of $2$ compared to the energy differences of only the near neighbours. The values are $\Delta E = -8 J, -4J, 0, +4J, +8 J$. The energy difference occurring at a spin $k$ can be written in a general way as $\Delta E_k = 2Js_k^0 \sum^3_{\beta=0}s_\beta$ where $\beta$ indexes only the four nearest neighbours and $s^0_k=\pm 1$ is the value of the spin before flipping.
+# $$\displaystyle \sum^3_{\beta=0}=s_N+s_S+s_E+s_W$$
+# 
+# but the index $\alpha$ runs over all spins. If the spins are represented as a two-dimensional array, then $\alpha$ represents the pair of indices covering each row and column. 
+# 
+# In the Ising model, the change of energy between configurations takes a particularly simple form. It can be obtained directly without having to add up the total energy for each of the two types of states and then subtracting them. The difference in energy, Fig. 12.13, left to right is due to flipping one spin. If the spin has a value, either filled diamond = $+1$ or empty diamond  = $-1$, then the energy on the left is 
+# 
+# $$\displaystyle E_1 =-J(1+1+1-1)=-2J$$
+# 
+# as three of the _spin pairs_ have the same value. The other configuration shown with the central spin flipped is 
+# 
+# $$\displaystyle E_2 = -J(-1 - 1 - 1 + 1) = 2J$$
+# 
+# the difference is therefore $E_2 - E_1 = 4J$. Considering all other possible arrangements of the four neighbouring spins, produces only five energy differences. However, because the spin that is flipped is also a neighbour to other spins, the total value of the summations for $E$ always produces an extra factor of $2$ compared to the energy differences of only the near neighbours. The values are 
+# 
+# $$\displaystyle \Delta E = -8 J, -4J, 0, +4J, +8 J$$
+# 
+# The energy difference occurring at a spin $k$ can be written in a general way as 
+# 
+# $$\displaystyle \Delta E_k = 2Js_k^0 \sum^3_{\beta=0}s_\beta$$
+# 
+# where $\beta$ indexes only the four nearest neighbours and $s^0_k=\pm 1$ is the value of the spin before flipping.
 # 
 # ![Drawing](monte-carlo-fig27.png)
 # 

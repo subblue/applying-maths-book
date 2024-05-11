@@ -8,7 +8,7 @@
 # 
 # The fourier transform can be extended to 2D and 3D. The 2D transform is important in image analysis, optics and 2D spectroscopies such as ultrafast infra-red and nmr analysis. The 3D transform is used to describe x-ray diffraction from crystals which is the definitive way of determining molecular structure and is of central importance in chemistry and biochemistry. We shall illustrate how x-ray diffraction leads to structure using 2D fourier transforms.
 # 
-# ## 12. 2D Fourier Transforms.
+# ## 12.  Two dimensional Fourier Transforms.
 # 
 # The 2D forward and inverse transform is written down easily by analogy with the 1D versions, but rather than use $k_x,k_y$ for the conjugate variables it is clearer instead to use $u,v$
 # 
@@ -50,7 +50,6 @@
 # ![Drawing](fourier-fig64.png)
 # 
 # Figure 64. The transform of a rectangular aperture. $\displaystyle g(u,v)=4\sin(au/2)\sin(bv/2)/uv$ where $b/a=2$ The dotted lines show the negative part of the transform. Yellow represents large values. The straight horizontal and vertical lines are where the transform is exactly zero and shows that the image is dissected by the zero's of the function in both vertical and horizontal directions. The vertical lines are separated horizontally by $2\pi/a$, the horizontal by $2\pi/b$ except for the centres which are separated by twice these amounts. A horizontal or vertical cut through the centre lines will produce a plot of the sinc function as in figure 15.
-# 
 # ____________
 # 
 # The transform of annular aperture (ring) and of a disc shaped aperture can be calculated in a related way by using polar coordinates, which is far more convenient because of the radial symmetry. The transform for a ring is in terms of a Bessel function and for a disc is an Airy function, both of which are integrals that oscillate rather as the sinc function does. The transforms for one and two discs is shown, as their absolute value, in figure 65. These results are calculated using the numerical FFT. The diffraction pattern has the symmetry of the circle with ever increasing waves radiating outwards. The right-hand figure shows two discs separated by a small amount, here the transform looks like that of two points (a cosine) convoluted with a disc, i.e a cosine superimposed on expanding circles. The cosine rises and falls along the direction of centres of the two discs. The closer the two discs are the further apart the features in the transform due to the reciprocal nature of the variables in real space ($x,y$) and conjugate or transform space ($u,v$).
@@ -108,7 +107,7 @@
 # 
 # The structure of a molecule can be determined by detecting the x-rays diffracted by its crystal. The experiment consists of diffraction, detection and computational analysis which combined act as if a microscope was used. The explanation of how this works has two parts: (1) how is magnification achieved and (2) how does the measured data lead to the structure. The first part is quite straightforward, the second more involved.
 # 
-# ### **Magnification**
+# ### **(i) Magnification**
 # The magnification can be explained by reference to Huygens' wavelets as in figure 70a. A plane wave arrives at the bottom of the figure and is diffracted by two slits shown as red dots, alternatively these represent sources in their own right, for example two atoms whose electrons re-radiate x-rays. By calculating where the circular wavelets overlap the position of the bright fringes on a detector can be predicted. To be accurate this has to be done in the 'far field', i.e. at a very great distance from the source of diffraction. Alternatively, by assuming that the path lengths are different by integer numbers of wavelengths produces $n\lambda = d \sin(\theta)$  where $d$ is the separation of the sources, $\lambda$ the wavelength and the integers are $n=0,\pm 1,\pm 2\cdots $. The angle $\theta$ can be obtained from the experiment, as shown in the figure where $\tan(\theta)=(d/2+x)/R$ and $x,R$ are measurements. These values are generally many centimetres where as $d,\lambda $ are millions of times smaller. This is made clearer when the angle $\theta$ is small, then $\tan(\theta)\approx \sin(\theta) \approx \theta $ making $\displaystyle \frac{x}{R} =\frac{n\lambda}{d}$ and as these are ratios the orders of magnitude difference in size cancel out and once $\lambda$ is known so is $d$. 
 # 
 # The deflection caused by diffraction is crucial here for this separates the diffracted beam from the initial one allowing it to be detected against a dark (zero) background and secondly the fact that the angle of detection depends on the separation $d$ means that many distances can be separately measured without overlapping one another. The ratio of distances automatically enables magnification once the beams have propagated far enough to allow accurate measurement of diffracted spot positions.
@@ -118,7 +117,7 @@
 # Fig. 70a. Huygens wavelets to explain magnification after x-ray diffraction.  The wavelength is $1/4$ of the separation $d$ making the first order diffracted beams appear at $\pm 14.5^\text{o}$ from the vertical. In practice $R \gt x\gg d$. The sketch on the right shows the calculation to determine the angle $\theta$ from measurements of $x$ and $R$.
 # __________
 # 
-# ### **Structure**
+# ### **(ii) Structure**
 # Before we can find the cell dimensions it is necessary to understand how the x-rays are diffracted off the repeated and regular structure of the crystal. Diffraction of x-rays occurs by interaction of the electrons with the x-rays which then re-radiate in all directions. Only those directions satisfying conservation of momentum produce a diffracted beam that can be recorded as a bright spot on a detector. This means the only waves detected are those whose path-length differs by an integer number of wavelengths and therefore add constructively and re-enforce one another, all other waves cancel to zero. The condition for diffraction is given most generally by the Laue equation or equivalently and more simply by the Bragg condition, fig. 70, 
 # 
 # $$\displaystyle n\lambda =2d\sin(\theta)\qquad\tag{54}$$
@@ -313,14 +312,14 @@
 # To calculate the structure factor and so spot intensity we use the coordinates for TiO$_2$ which has a tetragonal structure with $a = b = 4.653\, ,c=2.969$, $\alpha=\beta=\gamma=90^\text{o}$ with $a,b,c$ in Angstrom. Figure 80 shows the structure. The repeating unit consists of two Ti atoms and four oxygens. The central Titanium is octahedrally coordinated with respect the the oxygens and the other Ti atoms are at the corners of the square prism. The atom coordinates are 
 # 
 # $\begin{array}{lll}
-# \text{Ti0} & [0.5000& 0.5000&  0.0000] &
-# \text{Ti1} & [0.0000& 0.0000&  0.0000]\\
-# \text{O1 } & [0.8045& 0.1954&  0.5000]&
-# \text{O2 } & [0.1954& 0.8045&  0.5000]\\
-# \text{O3 } & [0.3045& 0.3045&  0.0000]&
-# \text{O4 } & [0.6954& 0.6954&  0.0000]\\
-# \text{O5 } & [0.3045& 0.3045&  1.0000]&
-# \text{O6 } & [0.6954& 0.6954&  1.0000]\\
+# \text{Ti}_0 & [0.5000& 0.5000&  0.0000] &
+# \text{Ti}_1 & [0.0000& 0.0000&  0.0000]\\
+# \text{O}_1  & [0.8045& 0.1954&  0.5000]&
+# \text{O}_2  & [0.1954& 0.8045&  0.5000]\\
+# \text{O}_3  & [0.3045& 0.3045&  0.0000]&
+# \text{O}_4  & [0.6954& 0.6954&  0.0000]\\
+# \text{O}_5  & [0.3045& 0.3045&  1.0000]&
+# \text{O}_6  & [0.6954& 0.6954&  1.0000]\\
 # \end{array}$
 # 
 # The unit cell consists of the four oxygen atoms labelled and the Ti atom at bottom left connected to oxygen 1 and the central one.  When an atom does not lie on a plane defined by $(hkl)$ it still scatters x-rays but with a phase shifted by the fraction of the separation between the $hkl$ planes. The following analysis and figures are adapted from chapter 6 of C. Bunn, 'Chemical Crystallography' publ. OUP. 1961.
@@ -386,7 +385,7 @@
 # The absolute values used in $R$ just means that all $F$ are positive. An $R$ value of less that $\approx 0.2$ may be acceptable as an initial fit, but half this value or better is expected for a refined fit to the data. The $R$ factor between the two structures, fig. 85, is $0.26$ showing that the agreement between them is poor as is clear from the images of the projections. The bond lengths Ti to oxygen 1 (or 2) is only changed by 0.023 nm in a bond length of 0.20 nm and this shows how sensitive x-ray diffraction is to small changes in geometry. The bond length Ti to oxygen 3 (or 4) is similar to that for the other two oxygens and is $0.196$ nm but looks less because of the projection down the $c$ axis.
 # 
 
-# ## 13.10 X ray Diffraction from DNA
+# ## 13.10 X-ray Diffraction from DNA
 # 
 # Figure 85a is a copy of the original figure from Rosalind Frankin and R. Gosling's 1953 paper (Nature, v.171, p.740, 1953) which showed for the first time the x-ray diffraction pattern from para-crystalline, calf thymus B-DNA fibres. In the same issue is the famous paper by Watson and Crick (Nature v.171, p.737, 1953) in which they speculate, with a sketch of the same, that the DNA is a double helix with base pairs inside the helices and the phosphates on the outside. They comment 'we have been stimulated by a knowledge of the general nature of the unpublished experimental results of Dr. M. H. F. Wilkins and Dr. R. E. Franklin' which brings us back to figure 85a. Three quarters of a century later, the quality of this image looks poor but recall that this was recorded on photographic plates and that transistors, and thus integrated circuits, had not been invented and neither had electronic detectors, such as ccd's, and computers were all but unknown. The fact that sensitivity was low by modern standards means that the only spots ('blobs') detected come from atoms with the most electrons which are the phosphorous atoms, or possibly the phosphate group, and knowing this greatly helps identification.  Naturally far better x-ray data was soon available but it is very interesting to see how the limited original data lead to a correct understanding of the structure.
 # 

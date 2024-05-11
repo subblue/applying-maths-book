@@ -314,18 +314,18 @@ for i in range(m):                          # do iteration
     pass
 
 
-# If you try this algorithm with other values of $N$, you will soon realize that from a very wide range of initial values, convergence takes only a few iterations; it is far more efficient than the algorithm calculating $\pi$. You will need to increase $m$ a little to get more iterations with larger $N$.
+# If you try this algorithm with other values of $N$, you will soon realize that from a very wide range of initial values, convergence takes only a few iterations; it is far more efficient than the algorithm calculating $\pi$. You will need to increase $m$ a little to get more iterations with larger $N$, but eventually the arithmetical precision of Python comes into play and to get more digits better precision is needed, such as with the mpmath or Decimal libraries.
 
 # ## 2.3 Average or mean values. Arithmetic, Geometric and Harmonic
 # 
-# ### **Arithmetic mean** 
+# ### **(i) Arithmetic mean** 
 # The common or arithmetic average is the sum of a set of numbers divided by their number $m$,
 # 
 # $$\displaystyle \mu_A= \frac{(n_1+n_2+n_3 \cdots+n_m)}{m}=\frac{1}{m}\sum_{i=1}^m n_i$$
 # 
 # This mean is described in more detail in chapter 4.8 (integration), however, this is not the only type of average. 
 # 
-# ### **Geometric mean** 
+# ### **(ii) Geometric mean** 
 # The Geometric mean $\mu_G$ is defined as
 # 
 # $$\displaystyle \mu_G = (n_1\cdot n_2 \cdots n_m)^{1/m}= \left(\prod_{i=1}^m\right)^{1/m}$$
@@ -343,7 +343,7 @@ for i in range(m):                          # do iteration
 # 
 # This mean is useful when there are outliers in a data set as it produces a value closer to most number rather than being biased by the outlier. For example if the data is $(2,10,14, 50)$ the arithmetic mean is $39$ but the geometric mean is $10.88$ a much more reasonable value.
 # 
-# ### **Harmonic mean.** 
+# ### **(iii) Harmonic mean.** 
 # You may occasionally come across the Harmonic mean $\mu_H$ of $m$ numbers which is defined as
 # 
 # $$\displaystyle \frac{1}{\mu_H}=\frac{1}{m}\left(\frac{1}{n_1}+\frac{1}{n_2}+\cdots +\frac{1}{n_m} \right)$$
@@ -374,7 +374,7 @@ for i in range(m):                          # do iteration
 # 
 # Figure 6. An icosahedron (left) and a truncated icosahedron (right) which is the shape of a football and C$_{60}$ molecules.
 # ____
-# ### **Golden Section searching**  
+# ### **(i) Golden Section searching**  
 # A practical use of the golden ratio is that it provides the most efficient way of dividing a curve when trying to find its minimum numerically. This can be used when trying to find the minimum difference between a set of data $y_{ expt}$ and its fit to a theoretical expression $y_{calc}$. The minimum difference thus produces the best fit of the theoretical model to the experimental data. Suppose that the function $y_{calc}$ describes the first-order decay of a chemical species with time $t$, the theoretical equation is $\displaystyle y_{calc} = e^{-kt}$ where $k$ is the rate constant for the reaction we want to determine by fitting to experimental data. 
 # 
 # The parameter whose minimum is sought is the square of the difference between the experimental data points and the theoretical equation calculated at the same $t$ values but with different values of $k$. This is called the _residual_ and is the sum $\displaystyle R_k = \sum_{i=0}^n (y_{expt_i} - y_{calc_i})^2$ where points are labelled with index $i$. The curve whose minimum values is sought is then $R$ vs $k$ for a range of $k$ values; recall that $y_{calc}$ depends on $k$. One tedious way would be to start with some very large or very small value of $k$, far away from the true value, and calculate $R_k$ by changing $k$ by small amounts and comparing values of $R$ until a larger value of the residual than its predecessor is found. This method is called an exhaustive search, and this would take a huge number of computations to complete.
@@ -388,9 +388,9 @@ for i in range(m):                          # do iteration
 # 
 # The rules of this 'game' define the algorithm and are:
 # 
-# $\quad$**(i)** If the value of the function $R$ at $k_a \lt k_b$, then B is moved to $k_b$ to reduce the interval over which the minimum is to be found; the point $k_a$ becomes $k_b$ and a new $k_a$ is calculated in the original region A to $k_b$ and is placed at $1/\phi$ along this interval, labelled in the diagram as $k_a$.
+# $\quad$**(1)** If the value of the function $R$ at $k_a \lt k_b$, then B is moved to $k_b$ to reduce the interval over which the minimum is to be found; the point $k_a$ becomes $k_b$ and a new $k_a$ is calculated in the original region A to $k_b$ and is placed at $1/\phi$ along this interval, labelled in the diagram as $k_a$.
 # 
-# $\quad$**(ii)** If the value of the curve at $k_a \gt k_b$ then labels A and B are swapped around, meaning that A is moved to $x_a$ to reduce the search interval; $k_b$ becomes $k_a$ and a new $k_b$ is placed at $1 - 1/\phi$ along the original region $k_a$ to B.
+# $\quad$**(2)** If the value of the curve at $k_a \gt k_b$ then labels A and B are swapped around, meaning that A is moved to $x_a$ to reduce the search interval; $k_b$ becomes $k_a$ and a new $k_b$ is placed at $1 - 1/\phi$ along the original region $k_a$ to B.
 # 
 # These processes are repeated until a fixed number of iterations have occurred, or the minimum difference in two consecutive $k$ values found to within a certain error whose value you must decide.
 # 
@@ -481,7 +481,7 @@ while abs(b-a)> Lmt and i < N-1 :
 # 
 # $$\displaystyle  e^xe^y= e^{x+y}; \qquad \text{and} \qquad e^xe^ye^z= e^{x+y+z}\qquad\tag{9}$$
 # 
-# ### **Recursive calculation of e.** 
+# ### **(i) Recursive calculation of e.** 
 # You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by $x/3$, the fourth by multiplying the third by $x/4$, and so on. This type of process is called _recursion_ and the calculation of $\pi$ and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate $e^x$ recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms $s$.
 
 # In[5]:
@@ -499,14 +499,14 @@ for i in range(1,12):      # increase number if does not comverge
     pass
 
 
-# ### **Boltzmann's Distribution**
+# ### **(ii) Boltzmann's Distribution**
 # There are numerous examples of the exponential function in chemistry and physics. One of the most important is Boltzmann's equation, which relates the population of two energy levels, an upper one $n_2$ to that of a lower one $n_1$ and which are separated by energy $\Delta E$ at absolute temperature $T$,
 # 
 # $$\displaystyle \frac{n_2}{n_1}=e^{-\Delta E/(k_BT)} $$
 # 
 # Boltzmann's constant has the value $k_B = 1.38065 \times 10^{-23}\, \mathrm{J\, K^{-1}}$.
 # 
-# ### **First order or exponential decay**
+# ### **(iii) First order or exponential decay**
 # It is interesting to derive the first order rate expression to see why in theory, although not in practice, the decay continues to infinity. This was probably first derived by von Schweidler in 1905. First order processes occur in the radioactive decay of atoms, the decay of molecular and atomic excited states, such as by fluorescence, and in dissociation and cis/trans isomerisation of molecules.
 # 
 # The basic assumption is that the probability of reaction $p$ in a time interval $\Delta t$ is independent of past history and depends only on the length of the time interval $\Delta t$, and when this is sufficiently short the probability is _proportional_ to this interval as $p=k\Delta t$ where $k$ is the proportionality constant which depends on the particular type of atom or molecule. This will become the decay rate constant.
@@ -592,7 +592,7 @@ for i in range(1,12):      # increase number if does not comverge
 # \end{array}$$
 # 
 # 
-# ### **First order reaction**
+# ### **(i) First order reaction**
 # The change in population of a chemical species $c(t)$ decaying by a first-order process follows an exponential law, 
 # 
 # $$\displaystyle c(t) = c_0e^{-kt}$$
@@ -603,7 +603,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # because a plot of the $\ln$ vs time  $t$ is a straight line of slope $-k$. Dividing the concentration $c(t)$ by that initially present $c_0$ makes the log dimensionless.
 # 
-# ### **Entropy from a volume change in a gas**
+# ### **(ii) Entropy from a volume change in a gas**
 # When a gas expands at constant temperature (isothermally) there will be a change in entropy and a quantity of work done. If the change is carried out reversibly while the pressure changes this produces the maximum amount of work. Reversibility means that the pressure is continuously adjusted so slightly that equilibrium is maintained. The equation for the change in entropy when $n$ moles of an ideal gas goes from volume $V_1\to V_2$ is
 # 
 # $$\displaystyle \Delta S =nR\ln\left(\frac{V_2}{V_1} \right)$$
@@ -617,7 +617,7 @@ for i in range(1,12):      # increase number if does not comverge
 # The derivation of these equations need a knowledge of calculus and can be found in any phys. chem. or specialist textbook.
 # 
 # 
-# ### **A very confusing function simplified using logs, $\displaystyle \sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}$**
+# ### **(iii) A very confusing function simplified using logs, $\displaystyle \sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}$**
 # 
 # The product of square roots $\displaystyle \sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}$ is very hard to read but can be simplified using logs. Start by writing down the first few terms as powers of $1/2$ and then by induction propose that the formula found can be extended. Thus,
 # 

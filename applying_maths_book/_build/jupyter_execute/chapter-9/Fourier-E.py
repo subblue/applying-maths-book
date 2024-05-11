@@ -88,7 +88,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # the value of $w$ repeats because $w_N^N=e^{-2\pi i N/N} = -1$ so that $w_n^{k+n}=w_n^kw_n^n=w_n^k$.
 # 
-# As $N=4$ then $w_4=e^{-\pi i/2}=-i$ and  $w_4^n=(e^{-\pi i/2})^n=(-i)^n$ and we can use this to simplify the terms in the summation. The first term in the transform is the normalised sum of the signal because all the exponentials have a value of $1$. (The transform $g$ is multiplied by the normalisation (2) only for clarity)
+# As $N=4$ then 
+# 
+# $$\displaystyle w_4=e^{-\pi i/2}=-i\quad\text{and}\quad w_4^n=(e^{-\pi i/2})^n=(-i)^n$$
+# 
+# and we can use this to simplify the terms in the summation. The first term in the transform is the normalised sum of the signal because all the exponentials have a value of $1$. (The transform $g$ is multiplied by the normalisation (2) only for clarity)
 # 
 # $$\displaystyle \begin{align}
 # 2g_0 &= a_0e^0+a_1e^0+a_2e^0+a_3e^0   = a_0+a_1+a_2+a_3\\ \\
@@ -141,9 +145,19 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To help understand just what the matrix contains recall that the exponential part $e^{- 2\pi i t\nu/N}$ represents one of the $N^{th}$ roots of unity and this means that the exponential repeats itself with a period of $N$, just as sine and cosine do, i.e. $e^{i\theta}=\cos(\theta)+i\sin(\theta)$. Consequently the matrix $\pmb x$ can be simplified quite considerably by examining each term. As it is written it would seem that $N^2$ values would need to be calculated, but this is not so and in fact only $N$ are needed.  
 # 
-# The eigenvector matrix can easily be made directly, for example at position $j,k$ the entry is $x_n^{(j,k)} = w^{jk}=e^{-2\pi i/n( jk)}$. Now because of the repeating nature of the roots of unity (and of sine and cosine) only $N$ of the possible entries need to be calculated, in fact just a row and this is because the product $jk$ in the exponential can be replaced with $(jk)\; mod \;N$, which is the remainder after integer division of the product $jk$ with $N$ meaning that $jk$ is replaced by a number always in the range $0\to N-1$. 
+# The eigenvector matrix can easily be made directly, for example at position $j,k$ the entry is 
 # 
-# This repeating effect can be understood from the properties of exponentials; $w_N=e^{-2\pi i/N}$ then $w_N^N=e^{-2\pi i}=1=w_n^0$. Similarly when there is a multiple of $N$ for example $mN$ then $w_N^{mN}=w_N^m=e^{-m2\pi i}$ or a sum $w_N^{m+N} = w_N^Nw^m = w^m = e^{-m2\pi i}$.
+# $$\displaystyle x_n^{(j,k)} = w^{jk}=e^{-2\pi i/n( jk)}$$
+# 
+# Now because of the repeating nature of the roots of unity (and of sine and cosine) only $N$ of the possible entries need to be calculated, in fact just a row and this is because the product $jk$ in the exponential can be replaced with $(jk)\; mod \;N$, which is the remainder after integer division of the product $jk$ with $N$ meaning that $jk$ is replaced by a number always in the range $0\to N-1$. 
+# 
+# This repeating effect can be understood from the properties of exponentials; 
+# 
+# $$\displaystyle w_N=e^{-2\pi i/N}\quad\text{then}\quad w_N^N=e^{-2\pi i}=1=w_n^0$$
+# 
+# Similarly when there is a multiple of $N$ for example $mN$ then 
+# 
+# $$\displaystyle w_N^{mN}=w_N^m=e^{-m2\pi i}\quad\text{or a sum}\quad w_N^{m+N} = w_N^Nw^m = w^m = e^{-m2\pi i}$$
 # 
 # An example should make this clearer. The matrix is of size $6$ but $w_6^1$ etc. is replace by $ w^1$ etc. just for clarity and we label it as $\pmb F$ to indicate that it is a Fourier matrix.
 # 
@@ -234,7 +248,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Whether the Nyquist or Shannon condition applies depends on your particular situation. If you have some data, and for an instrumental reason can sample no higher than a certain value, any frequencies higher than the Nyquist will be under-sampled and not be measured properly. If on the other hand you can sample as often as you wish, no more samples than those predicted by the Shannon limit are needed. However, this sampling rate must apply to all the data even though its value is dictated only by the highest frequency present. If the data is not sampled frequently enough, then aliasing occurs and extra false signals are observed in the Fourier transform. This effect is described after a discrete transform has been calculated.
 # 
-# The Nyquist frequency has great implications for NMR and effectively dictates how the experiment is performed. A typical spectrometer operates at 400 MHz so that sampling should be done at $800$ MHz or every $1.25$ ns, which is a very tall order even with today's fast electronics. The amount of data collected would also be vast because the FID can last for several seconds, therefore, $\approx 8 \cdot 10^9$ points over $10$ seconds and perhaps four times as many bytes depending on the word size of the computer. However, the small frequency shift in the NMR signal from the RF frequency used to excite the nuclei comes to the rescue. This shift is only a few kHz, and if the NMR signal from the detector is mixed (heterodyned), with the frequency of the RF source beating will occur and the KHz frequency shift is extracted. (An analogue radio extracts the audio signal from the MHz broadcast frequency by a similar process.) After heterodyning, it is now relatively easy to sample the low frequency signal at a sufficiently high time resolution, in milliseconds not nanoseconds, to satisfy the Nyquist condition and accurately reproduce all frequencies in the signal. After a discrete Fourier transform, this signal becomes the NMR spectrum.
+# The Nyquist frequency has great implications for NMR and effectively dictates how the experiment is performed. A typical spectrometer operates at 400 MHz so that sampling should be done at $800$ MHz or every $1.25$ ns, which is a very tall order even with today's fast electronics. The amount of data collected would also be vast because the FID can last for several seconds, therefore, $\approx 8 \cdot 10^9$ points over $10$ seconds and perhaps four times as many bytes depending on the word size of the computer. However, the small frequency shift in the NMR signal from the RF frequency used to excite the nuclei comes to the rescue. This shift is only a few kHz, and if the NMR signal from the detector is mixed (heterodyned), with the frequency of the RF source beating will occur and the kHz frequency shift is extracted. (An analogue radio extracts the audio signal from the MHz broadcast frequency by a similar process.) After heterodyning, it is now relatively easy to sample the low frequency signal at a sufficiently high time resolution, in milliseconds not nanoseconds, to satisfy the Nyquist condition and accurately reproduce all frequencies in the signal. After a discrete Fourier transform, this signal becomes the NMR spectrum.
 # 
 # ![Drawing](fourier-fig40.png)
 # 
@@ -355,11 +369,11 @@ plt.show()
 # 
 # As a rule of thumb, the noise and data can be split into three approximate classes: 
 # 
-# **(i)** The data is a slowly changing function and the noise is spiky, i.e. of high frequency; 
+# **(a)** The data is a slowly changing function and the noise is spiky, i.e. of high frequency; 
 # 
-# **(ii)** the converse, the noise is slowly varying and the data is of high frequency; and 
+# **(b)** the converse, the noise is slowly varying and the data is of high frequency; and 
 # 
-# **(iii)** noise and data are of a similar frequency. 
+# **(c)** noise and data are of a similar frequency. 
 # 
 # In cases (i) and (ii) it is generally possible to separate noise and data; in (iii) this may not be possible.
 # 
@@ -382,20 +396,18 @@ plt.show()
 # ![Drawing](fourier-fig46.png)
 # 
 # Figure 46. Noisy data (left) (with the underlying double cosine superimposed in red) and its Fourier transform (right) illustrating the frequencies hidden in noise can be identified. Only the first part of each data set is shown.
-# 
 # _______
 # 
 # The vertical lines on the Fourier transform, fig 46, show the regions selected and figure 47 the recovered signal and for comparison the original one used to generate the data but without noise. In generating the filter all values are set to zero except inside the two regions illustrated. (If it is known that the transform cannot be negative then negative values in the filter can be set to zero before inverse transforming.) If the whole of the data between the outer vertical dotted lines is transformed then the quality of the recovered data is poorer because list of intermediate values are included which add noise, (as sine waves of different frequencies) to the recovered signal.
 # 
 # ![Drawing](fourier-fig47.png)
 # Figure 47. Reconstructed data obtained by filtering the Fourier transform and reverse transforming. Because of the Shannon theorem, very few data points are needed to reconstruct this signal and are determined only by those between the dotted lines in fig 46 all the rest being zero. 
-# 
 # _______
 
 # In[3]:
 
 
-# due to random noise figure produced may not be the same as in fig 46 or 47
+# Due to random noise the figure produced may not be the same as in fig 46 or 47
 
 fig1= plt.figure(figsize=(10.0,5.0))   # calculate data in fig 46/47
 ax0 = fig1.add_subplot(1,2,1)

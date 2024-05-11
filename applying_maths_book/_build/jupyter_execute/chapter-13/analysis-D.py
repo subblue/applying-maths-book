@@ -28,11 +28,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Using a numerical method implies 
 # 
-# **(i)**$\quad$ that starting values have to be defined for each of the parameters sought,
+# **(a)**$\quad$ that starting values have to be defined for each of the parameters sought,
 # 
-# **(ii)**$\quad$  increments in these have to be determined and are changed as the calculation proceeds, 
+# **(b)**$\quad$  increments in these have to be determined and are changed as the calculation proceeds, 
 # 
-# **(iii)**$\quad$  some ending condition has been specified for an acceptable fit to the data.
+# **(c)**$\quad$  some ending condition has been specified for an acceptable fit to the data.
 # 
 # These requirements mean that this problem is far harder to solve than is linear least-squares, partly for the reasons given, but also because there is no guarantee that the true minimum will be found even if the calculation appears to end satisfactorily. This last effect has two forms. The first is that close to the minimum solution several related sets of parameters can satisfy the same goodness of fit criterion, so that a unique set is not found, only a range of them. The second effect is that the 'surface' through and about which the minimum $\chi^2$ is sought may be rough, with local minima in which the calculation can become trapped.
 # 
@@ -72,7 +72,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # **(vi)**$\quad$  check at (iii) whether a preset minimum difference in consecutive $\chi^2$ is produced or maximum number of iterations reached.
 # 
-# The algorithm is shown below fitted to Poisson distributed data. The data represents a single exponential decay with a constant background and the model function used is $\displaystyle Y = c_1e^{-c_2x} + c_3$. The data was simulated, as described in chapter 12.3.4, and the data is
+# The algorithm is shown below fitted to Poisson distributed data. The data represents a single exponential decay with a constant background and the model function used is 
+# 
+# $$\displaystyle Y = c_1e^{-c_2x} + c_3$$
+# 
+# The data was simulated, as described in chapter 12.3-4, and the data is
 # 
 # $$\displaystyle \begin{array}\\
 # \hline
@@ -124,7 +128,7 @@ def getdata(filename):
 
 # fitting model   y = c1.exp(-c2.x) + c3
 
-filename='exponential-data.txt'  # in rows x , y weighting, 
+filename = 'exponential-data.txt'  # in rows x , y weighting, 
 # data is at end of book in 'Appendix, some basic Python instructions'
 
 xval,yval,w = getdata(filename)
@@ -252,17 +256,17 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # 
 # Matrix methods are used to find the principal components (PC). The data comprises m sets where each set has n data points. The whole data forms an n ×m matrix, D, with each data point in a new row of a given column and these vectors form m columns. The steps to find the principal components are:
 # 
-# **(i)**$\quad$ Remove the mean value from each of the individual datasets so that the centroid of the data becomes the origin of the new axes. In matrix form subtracting the mean from each data point is
+# **(a)**$\quad$ Remove the mean value from each of the individual datasets so that the centroid of the data becomes the origin of the new axes. In matrix form subtracting the mean from each data point is
 # $$\displaystyle \boldsymbol X= \boldsymbol D -\boldsymbol \mu$$
 # 
 # where $\boldsymbol D$ is the $n\times m$ matrix of data and $\boldsymbol \mu$ an $n\times m$ matrix with the appropriate mean value in each element of its columns. The PC.s are also sensitive to the scale of the data, so it may be necessary to divide the data by the variance giving each set a mean of zero and unit standard deviation during the calculation.<br>
-# **(ii)**$\quad$  The covariance of the data is then calculated, this is an $m\times m$ symmetrical matrix
+# **(b)**$\quad$  The covariance of the data is then calculated, this is an $m\times m$ symmetrical matrix
 # 
 # $$\boldsymbol C=\frac{1}{n-1}\boldsymbol{XX^T}\qquad\tag{52}$$
 # 
 # The superscript $T$ is the transpose, and the matrix multiplication has dimensions $(m \times n)\cdot(n \times m) = m \times m)$. (The $n-1$ makes an unbiased estimate). The entries in this matrix would be diagonal if the data were random, because each value is then independent of every other. However, this is very unlikely to be the case unless the data contains only random noise; therefore, off-diagonal terms are not zero. The covariance describes how much the data is spread among the axes. If the data were to lie only along each axis the covariance would be diagonal, the rotation of axes accompanying the principal components reduces the off-diagonal component in the covariance.
 #  
-# **(iii)**$\quad$  The m eigenvalues $\lambda$ and (column) eigenvectors $V$ ($m\times m$ matrix) of the covariance matrix $C$ are calculated and the eigenvalues are sorted from largest to smallest and the eigenvectors are placed in the same order see chapter 7.12.3. The eigenvalue-eigenvector equation is $\boldsymbol{CV} = \boldsymbol{\Lambda V}$ where $\Lambda$ is the diagonal matrix of the eigenvalues $\lambda$, i.e. a vector. It is assumed that the calculation produces eigenvectors that are normalized, if not they should be normalized by dividing each column by its vector length $\vec V_i\to \vec V_i/\sqrt{\vec V_i\cdot \vec V_i}$ where $\vec V_i$ is one column vector. The eigenvectors form the new principal component basis set because they are orthogonal one to another.
+# **(c)**$\quad$  The m eigenvalues $\lambda$ and (column) eigenvectors $V$ ($m\times m$ matrix) of the covariance matrix $C$ are calculated and the eigenvalues are sorted from largest to smallest and the eigenvectors are placed in the same order see chapter 7.12.3. The eigenvalue-eigenvector equation is $\boldsymbol{CV} = \boldsymbol{\Lambda V}$ where $\Lambda$ is the diagonal matrix of the eigenvalues $\lambda$, i.e. a vector. It is assumed that the calculation produces eigenvectors that are normalized, if not they should be normalized by dividing each column by its vector length $\vec V_i\to \vec V_i/\sqrt{\vec V_i\cdot \vec V_i}$ where $\vec V_i$ is one column vector. The eigenvectors form the new principal component basis set because they are orthogonal one to another.
 # 
 # The eigenvector of the largest eigenvalue forms the principal component of the data, smaller values the other principal components. The largest contains most of the variance or spread of the data and best describes any trend in the data. The smaller eigenvalues do so to lesser extents depending on their size. The largest s eigenvalues are then chosen to approximate the data. The eigenvalues correspond to variances along the principal axes, thus the fractional value of each eigenvalue to the sum of them all is
 # 
@@ -274,7 +278,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 #  
 # For example, if the first two eigenvalues describe $85$% of the data, it may be appropriate to ignore all the others. As a rule of thumb, when selecting data to eliminate, eigenvalues less than $\approx 1$ can be ignored.
 # 
-# **(iv)**$\quad$  To project the data points onto the new axes, the principal components, the dot product of the data $\boldsymbol X$ is made with each eigenvector $\boldsymbol V$,
+# **(d)**$\quad$  To project the data points onto the new axes, the principal components, the dot product of the data $\boldsymbol X$ is made with each eigenvector $\boldsymbol V$,
 # 
 # $$\displaystyle \boldsymbol Y = \boldsymbol V^T\boldsymbol X^T\qquad\tag{53}$$
 # 
@@ -292,7 +296,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # 
 # and $\boldsymbol\mu$ restores the mean to the data $\boldsymbol D$.
 # 
-# **(v)**$\quad$  When only $s$ of the eigenvalues and eigenvectors are being used, the $V$ matrix is reduced by ignoring all but the first $s$ columns and equation 54 is used to reconstruct the data.
+# **(e)**$\quad$  When only $s$ of the eigenvalues and eigenvectors are being used, the $V$ matrix is reduced by ignoring all but the first $s$ columns and equation 54 is used to reconstruct the data.
 # 
 # A python PCA algorithm is detailed below
 

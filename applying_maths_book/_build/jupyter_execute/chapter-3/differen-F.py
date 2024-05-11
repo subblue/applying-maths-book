@@ -48,7 +48,7 @@
 # 
 # In the last step substituting for $x=0$ gives the ratio as $0/1$ so  the limit is zero.
 # 
-# ### **Chemical equilibria**
+# ### **(i) Chemical equilibria**
 # 
 # In a second order reaction of the form 
 # 
@@ -58,7 +58,7 @@
 # 
 # $$\displaystyle \frac{dC}{dt}=k_1AB-k_{-1}CD$$
 # 
-# where $C\equiv [C]$ etc. for clarity. This can be re-written using $A_0-A=B_0-B=C_0+C=D_0+D$, where the subscript $0$ indicates the initial amount, and if initially only $A$ and $B$ are present,
+# where $C\equiv [C]$ etc. for clarity. Re-writing the equation using $A_0-A=B_0-B=C_0+C=D_0+D$, where the subscript $0$ indicates the initial amount, and assuming initially that only $A$ and $B$ are present so that $C_0=D_0=0$ then 
 # 
 # $$\displaystyle \frac{dC}{dt} = k_1(A_0-C)(B_0-C) - k_{-1}C^2$$
 # 
@@ -80,7 +80,7 @@
 # 
 # which makes sense as there are equal moles initially of $A$ and $B$ so in total $2A_0$ and equal concentrations for each species but only in this particular case.
 # 
-# ### **Diffraction intensity**
+# ### **(ii) Diffraction intensity**
 # The intensity of line of $N$ emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by
 # 
 # $$\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}$$
@@ -97,20 +97,21 @@
 # 
 # making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/\sin(x)$.
 # 
-# ### **Transitions between stationary states**
+# ### **(iii) Transitions between stationary states**
 # 
 # When a molecule absorbs light it can undergo a transition from, for example the ground state to the first excited state. This might be a vibrational or rotational transition or an electronic one in which a new electronic state is produced. This type of transition is called an electric dipole transition. The probability for this depends on the radiation's (light) frequency $\nu$ in that the Bohr condition is obeyed $E_1-E_0=h\nu$ where the energy levels are $E_0,E_1$. The probability of absorption is 
 # 
-# $$\displaystyle f(\nu) \sim \frac{\sin^2((E_1-E_0-h\nu)t/2\hbar)}{(E_1-E_0-h\nu)^2}$$
+# $$\displaystyle f(\nu) \sim \frac{\sin^2\big((E_1-E_0-h\nu)t/2\hbar\big)}{(E_1-E_0-h\nu)^2}$$
 # 
-# and we are interested in what happens as $E_1-E_0\to h\nu$ when $f(\nu)\to 0/0$. To determine this l'Hopital's rule can be used. We make the substitution $x=E_1-E_0-h\nu$ and look for the limit $x\to 0$.
+# and we are interested in what happens as $E_1-E_0\to h\nu$ when $f(\nu)\to 0/0$. To determine this l'Hopital's rule can be used. We make the substitution $x=E_1-E_0-h\nu$ and look for the limit $x\to 0$ and for clarity we also let $\tau=t/2\hbar$, then
 # 
-# $$\displaystyle lim_{x\to 0} \quad\frac{\sin^2(xt/2\hbar)}{x^2}\to \frac{t}{2\hbar}\frac{2\sin(xt/2\hbar) \cos(xt/2\hbar)}{2x}$$
+# $$\displaystyle \lim_{x\to 0} \quad\frac{\sin^2(x\tau)}{x^2}\to \tau\frac{2\sin(x\tau) \cos(x\tau)}{2x}$$
 # 
 # which still has the variable in both numerator and denominator so differentiating again produces
 # 
-# $$\displaystyle lim_{x\to 0} \quad \frac{t}{2\hbar}\frac{2\sin(xt/2\hbar)\cos(xt/2\hbar)}{2x}\to\frac{t}{4\hbar}\left(\frac{t}{\hbar}\cos^2(xt/2\hbar)-\frac{t}{\hbar}\sin^2(xt/2\hbar)\right)\to \frac{t^2}{4\hbar^2}$$
+# $$\displaystyle \lim_{x\to 0} \quad \tau\frac{\sin(x\tau)\cos(x\tau)}{x}\to\tau^2\cos^2(x\tau)-\tau^2\sin^2(x\tau)\to \frac{t^2}{4\hbar^2}$$
 # 
+# when in making the limit $x\to 0$ is used.
 # 
 # ## 6.1 Beware of 'False fractions'
 # 
@@ -151,7 +152,7 @@
 # 
 # The first derivative is zero at $x=0$, and the second zero at $\displaystyle x=\pm\frac{1}{\sqrt{3}}$  and $\displaystyle y=\pm\frac{3}{4}$
 
-# ### **Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root**
+# ### **(i) Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root**
 # 
 # Many compounds such as ZnS-Cu and zinc silicates-Mn and many other crystalline minerals, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists after being buried perhaps for millenia. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat (i.e. as phonons), with relatively low energy impurity 'traps'. The excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valence band) and the empty ones at higher energy (excited state or conduction band). 
 # 

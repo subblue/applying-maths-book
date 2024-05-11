@@ -20,11 +20,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Three things are needed to calculate a line integral: 
 # 
-# (a) The path to be followed, $C$.
+# **(a)** The path to be followed, $C$.
 # 
-# (b) Its starting and ending points, $A$ and $B$. 
+# **(b)** Its starting and ending points, $A$ and $B$. 
 # 
-# (c) The 'line' or surface function itself, $P(x, y)$.
+# **(c)** The 'line' or surface function itself, $P(x, y)$.
 # 
 # The line is often a two-dimensional function of $x$ and $y$. A typical example would be to calculate the line integral of $P(x, y) = x + y$ along a path or curve given by $y = x^2/2$ from $x = 0 \to = 2$. This is written in the form
 # 
@@ -52,7 +52,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ## 13.1 Definitions of some different forms of line integrals 
 # 
-# ##  Normal, i.e. continuous and single valued functions
+# ### **(i) Normal, i.e. continuous and single valued functions**
 # 
 # The line integral of a surface $P(x, y)$ with curve $C \equiv f(x)$ and limits $x_1 \to x_2$ is
 # 
@@ -65,7 +65,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # but note that it is necessary to multiply by $dy/dx$ and integrate in $dx$.
 # 
-# ## Parametric forms
+# ### **(ii) Parametric forms**
 # 
 # Parametric equations are very useful in defining complex curves; a circle of radius $2$ about the origin has the form $x^2 + y^2 = 2^2$ in Cartesian coordinates, and in parametric form, $x = 2\cos(t), y = 2\sin(t)$; see Section 6. A curve defined in parametric form is written as $(x(t), y(t))$. Integration is obtained by substituting equation 78 for $x$ and $y$ in terms of $t$ and integrating in $t$,
 # 
@@ -249,26 +249,26 @@ integrate(eq, theta )
 # 
 # The method to follow is to:
 # 
-# $\quad$**(1)** Substitute for any partial derivatives using (in this example) the ideal gas law to
+# $\quad$**(a)** Substitute for any partial derivatives using (in this example) the ideal gas law to
 # make an equation in $p$ or $T$ as necessary.
 # 
-# $\quad$**(2)** Use equation 85 to make equations in $dp$ and$ dT$.
+# $\quad$**(b)** Use equation 85 to make equations in $dp$ and$ dT$.
 # 
-# $\quad$**(3)** Work out the remaining derivative $dp/dT$ or $dT/dp$ depending on the path taken.
+# $\quad$**(c)** Work out the remaining derivative $dp/dT$ or $dT/dp$ depending on the path taken.
 # 
-# $\quad$**(4)** Integrate the resulting equation.
+# $\quad$**(d)** Integrate the resulting equation.
 # 
-# In step (1), starting with equation 89, substituting the partial derivative using the ideal gas law produces
+# In step (a), starting with equation 89, substituting the partial derivative using the ideal gas law produces
 # 
 # $$\displaystyle  S=\int \frac{C_p}{T}dT-\int\frac{R}{p}dp \qquad\tag{92}$$
 # 
-# Step (2): making the integral a function of $p$ and of $T$ alone gives
+# Step (b): making the integral a function of $p$ and of $T$ alone gives
 # 
 # $$\displaystyle  S_T=\int_{p_0}^{p_1} \left(\frac{C_p}{T}\frac{dT}{dp}-\frac{R}{p}\right) dp, \qquad S_p=\int_{T_1}^{T_2} \left(\frac{C_p}{T}-\frac{R}{p}\frac{dp}{dT}\right) dT $$
 # 
 # as illustrated in equation 85.
 # 
-# Steps (3) and (4): The first part of the path (a) is at constant $T=T_0$, and from $p_0 \to p_1$, therefore as $dT/dp=0$ 
+# Steps (c) and (d): The first part of the path (A) is at constant $T=T_0$, and from $p_0 \to p_1$, therefore as $dT/dp=0$ 
 # 
 # $$\displaystyle  S_p=\int_{p_0}^p{_1}\frac{R}{p}dp = -R\ln\left( \frac{p_1}{p_0} \right) $$
 # 

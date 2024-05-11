@@ -1566,28 +1566,28 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
-   15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms
+  <a class="reference internal nav-link" href="#diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
+   15.7 Diffusion and chemical reactions. Example of the growth of Algal Blooms
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#b-voltage-in-a-cell-the-cable-equation-revisited">
-   15.7b Voltage in a cell. The Cable equation revisited.
+  <a class="reference internal nav-link" href="#voltage-in-a-cell-the-cable-equation-revisited">
+   15.8 Voltage in a cell. The Cable equation revisited.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flow-and-chemical-reaction-lateral-flow-tests">
-   15.8 Flow and chemical reaction. Lateral flow tests
+   15.9 Flow and chemical reaction. Lateral flow tests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diffusion-in-a-closed-tube-or-isolated-bar">
-   15.9 Diffusion in a closed tube or isolated bar
+   15.10 Diffusion in a closed tube or isolated bar
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#periodic-boundary-conditions">
-   15.10 Periodic boundary conditions
+   15.11 Periodic boundary conditions
   </a>
  </li>
 </ul>
@@ -1663,28 +1663,28 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
-   15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms
+  <a class="reference internal nav-link" href="#diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
+   15.7 Diffusion and chemical reactions. Example of the growth of Algal Blooms
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#b-voltage-in-a-cell-the-cable-equation-revisited">
-   15.7b Voltage in a cell. The Cable equation revisited.
+  <a class="reference internal nav-link" href="#voltage-in-a-cell-the-cable-equation-revisited">
+   15.8 Voltage in a cell. The Cable equation revisited.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flow-and-chemical-reaction-lateral-flow-tests">
-   15.8 Flow and chemical reaction. Lateral flow tests
+   15.9 Flow and chemical reaction. Lateral flow tests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diffusion-in-a-closed-tube-or-isolated-bar">
-   15.9 Diffusion in a closed tube or isolated bar
+   15.10 Diffusion in a closed tube or isolated bar
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#periodic-boundary-conditions">
-   15.10 Periodic boundary conditions
+   15.11 Periodic boundary conditions
   </a>
  </li>
 </ul>
@@ -1717,9 +1717,12 @@ title="Print to PDF"
 <h2>15.1 Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
 <p>Many important phenomena in chemistry, physics, and biology involve partial differential equations; for example, the Schroedinger, wave, and diffusion equations. Although the general theory of partial differential equations is well beyond the scope of this book, the equations mentioned are among those whose solutions can be obtained by a powerful method known as the separation of variables.</p>
 <p>The simplest type of partial differential equation has two independent variables, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and its solution must represent a surface rather than a curve as does that of an ordinary differential equation. The ordinary differential equation has arbitrary constants as a result of integration, which are determined by the initial or boundary conditions; the partial differential equation has instead <em>arbitrary functions</em> of integration and these have to be eliminated to obtain a particular solution. The problem is not that there are too few arbitrary functions to solve the equation but that there are too many. An example given by Stephenson (1996) illustrates this point.</p>
-<p>Consider the equation formed by differentiating <span class="math notranslate nohighlight">\(w = yf(x)\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span>, and where <span class="math notranslate nohighlight">\(f(x)\)</span> is a general, unspecified function of <span class="math notranslate nohighlight">\(x\)</span>. The differential is <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial w}{\partial y} = f(x)\)</span> and by substitution to eliminate <span class="math notranslate nohighlight">\(f(x)\)</span> the partial differential equation is</p>
+<p>Consider the equation formed by differentiating <span class="math notranslate nohighlight">\(w = yf(x)\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span>, and where <span class="math notranslate nohighlight">\(f(x)\)</span> is a general, unspecified function of <span class="math notranslate nohighlight">\(x\)</span>. The differential is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y\frac{\partial w}{\partial y}-w=0\]</div>
+\[\displaystyle \frac{\partial w}{\partial y} = f(x)\]</div>
+<p>and by substitution to eliminate <span class="math notranslate nohighlight">\(f(x)\)</span> the partial differential equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y\frac{\partial w}{\partial y} - w = 0\]</div>
 <p>which is a first-order equation. The solution to this is <span class="math notranslate nohighlight">\(f(x)\)</span> but as this function was not specified, it is therefore <em>any arbitrary function</em>. Exactly what this function might be has to be determined by using the initial or boundary conditions imposed on the problem.</p>
 <p>As a second example, the one-dimensional wave equation will be ‘solved’. This equation has the form</p>
 <div class="math notranslate nohighlight">
@@ -1727,7 +1730,7 @@ title="Print to PDF"
 <p>Consider now the equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle u=f_1(x+at)+f_2(x-at)\]</div>
-<p>where the functions <span class="math notranslate nohighlight">\(f\)</span> are arbitrary and are not defined in any real sense. To find a solution we differentiate twice by <span class="math notranslate nohighlight">\(x\)</span> then twice by <span class="math notranslate nohighlight">\(t\)</span> and add the results. Let <span class="math notranslate nohighlight">\(x + at \equiv r\)</span> and <span class="math notranslate nohighlight">\(x − at \equiv s\)</span>, then</p>
+<p>where the functions <span class="math notranslate nohighlight">\(f\)</span> are arbitrary and are not defined in any real sense. To find a solution we differentiate twice by <span class="math notranslate nohighlight">\(x\)</span> then twice by <span class="math notranslate nohighlight">\(t\)</span> and add the results. Let <span class="math notranslate nohighlight">\(x + at \equiv r\)</span> and <span class="math notranslate nohighlight">\(x - at \equiv s\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial u}{\partial x}=\frac{\partial (f_1+f_2)}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial (f_1+f_2)}{\partial s}\frac{\partial s}{\partial x} =f'(x+at)+f'_2(x-at)\]</div>
 <p>and similarly</p>
@@ -1739,7 +1742,7 @@ title="Print to PDF"
 <p>To convince yourself of the arbitrary, and hence not very useful nature of the functions <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_2\)</span> that solve the wave equation, use Sympy to do the algebra on a few functions with arguments <span class="math notranslate nohighlight">\(x \pm at\)</span>. The functions (see box below) are differentiated twice in <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and then the wave equation is formed and the result is zero, proving that the functions we choose are in fact solutions. This method is therefore a way of solving the equation, but in many cases, the method of separating variables is more satisfactory and is described next.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a, t&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a, t&#39;</span><span class="p">)</span>
 <span class="n">f</span>  <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="p">))</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>       <span class="c1"># an arbitrary function in x+at, x-at</span>
 <span class="n">ans</span><span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 <span class="n">ans</span>
@@ -1775,8 +1778,12 @@ title="Print to PDF"
 <p>which is a partial differential equation in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The separation of variables assumes that the wavefunction <span class="math notranslate nohighlight">\(\varphi\)</span> which is a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, is also the product of two wavefunctions, one in <span class="math notranslate nohighlight">\(x\)</span> and the other in <span class="math notranslate nohighlight">\(y\)</span>, thus</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi(x,y) = \psi(x)\psi(y) \equiv \psi_x\psi_y\]</div>
-<p>Substituting gives <span class="math notranslate nohighlight">\(\displaystyle -\frac{\hbar^2}{2m}\left(\psi_y\frac{\partial^2 \psi_x }{\partial x^2 }  +\psi_x\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\psi_x\psi_y\)</span></p>
-<p>and rearranging <span class="math notranslate nohighlight">\(\displaystyle -\frac{\hbar^2}{2m}\left(\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }  +\frac{1}{\psi_y}\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\)</span></p>
+<p>Substituting gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\left(\psi_y\frac{\partial^2 \psi_x }{\partial x^2 }  +\psi_x\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\psi_x\psi_y\]</div>
+<p>and rearranging</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\left(\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }  +\frac{1}{\psi_y}\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\]</div>
 <p>The next step is essential to the method of separating variables and this is that each of the terms on the left of the equation must be equal to a constant. This is true because the two terms are variables of either <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span>. If <span class="math notranslate nohighlight">\(x\)</span> is varied, only the first term of the equation changes, the other is a constant as is the energy <span class="math notranslate nohighlight">\(E\)</span>. However, for the whole equation to be satisfied, the derivative in <span class="math notranslate nohighlight">\(x\)</span> must be equal to a constant, and this is labelled as <span class="math notranslate nohighlight">\(E_x\)</span>, and is called a separation constant;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }=E_x  \qquad\tag{42}\]</div>
@@ -1786,10 +1793,19 @@ title="Print to PDF"
 <p>and then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  E_x + E_y = E  \qquad\tag{44}\]</div>
-<p>The two equations in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> can now be solved in the usual way. For example <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2 \psi_x}{\partial x^2}+k^2\psi_x=0\)</span> with <span class="math notranslate nohighlight">\(\displaystyle k^2 = 2mE/\hbar^2\)</span> which produces the solutions to the problem of a particle in a one-dimensional box, see 3.8. Combining the equations gives for a box of dimensions <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>,</p>
+<p>The two equations in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> can now be solved in the usual way. For example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial^2 \psi_x}{\partial x^2}+k^2\psi_x=0\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k^2 = 2mE/\hbar^2\]</div>
+<p>which produces the solutions to the problem of a particle in a one-dimensional box, see 3.8. Combining the equations gives for a box of dimensions <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi =\sqrt{\frac{4}{ab}}\sin\left( \frac{n_x\pi x}{a}\right)\sin\left(\frac{n_y\pi x}{b} \right)\]</div>
-<p>and the energies are <span class="math notranslate nohighlight">\(\displaystyle E=\frac{\pi^2\hbar^2}{2m}\left(\frac{n_x^2}{a^2}+\frac{n_y^2}{b^2}  \right) \)</span> where <span class="math notranslate nohighlight">\(n_x\)</span> and <span class="math notranslate nohighlight">\(n_y\)</span> are positive integer quantum numbers which must be greater than zero, viz, <span class="math notranslate nohighlight">\(n_{x,y} = 1, 2, 3 \cdots\)</span>. Notice that in a square box some levels will be degenerate depending upon how the quantum numbers add, for example, <span class="math notranslate nohighlight">\(n_x = 2\)</span> and <span class="math notranslate nohighlight">\(n_y = 1\)</span> and vice versa. The first few wavefunctions are shown as contour plots in Fig. 20.</p>
+<p>and the energies are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=\frac{\pi^2\hbar^2}{2m}\left(\frac{n_x^2}{a^2}+\frac{n_y^2}{b^2}  \right) \]</div>
+<p>where <span class="math notranslate nohighlight">\(n_x\)</span> and <span class="math notranslate nohighlight">\(n_y\)</span> are positive integer quantum numbers which must be greater than zero, viz, <span class="math notranslate nohighlight">\(n_{x,y} = 1, 2, 3 \cdots\)</span>. Notice that in a square box some levels will be degenerate depending upon how the quantum numbers add, for example, <span class="math notranslate nohighlight">\(n_x = 2\)</span> and <span class="math notranslate nohighlight">\(n_y = 1\)</span> and vice versa. The first few wavefunctions are shown as contour plots in Fig. 20.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig20.png" /></p>
 <p>Fig. 20 Wavefunctions in the square well drawn as contour plots. The quantum numbers are labelled above each plot. Negative values are drawn as dashed lines.</p>
 </section>
@@ -1810,7 +1826,10 @@ The wave equation starts out as (41) but for a disc has to be written in plane p
 <p>and each term must be equal to a constant and is therefore independent of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>. The right-hand side of this equation is zero hence if we choose the separation constant to be <span class="math notranslate nohighlight">\(n^2\)</span> this is <span class="math notranslate nohighlight">\(-n^2\)</span> for one equation and <span class="math notranslate nohighlight">\(+n^2\)</span> for the other.</p>
 <section id="angular-solution">
 <h3><strong>Angular solution</strong><a class="headerlink" href="#angular-solution" title="Permalink to this headline">#</a></h3>
-<p>The <span class="math notranslate nohighlight">\(\theta\)</span> equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const\)</span> and using the separation constant <span class="math notranslate nohighlight">\(-n^2\)</span> this can be written as</p>
+<p>The <span class="math notranslate nohighlight">\(\theta\)</span> equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const\]</div>
+<p>and using the separation constant <span class="math notranslate nohighlight">\(-n^2\)</span> this can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \qquad\tag{47}\]</div>
 <p>and its solution is given by equation (27) and is</p>
@@ -1839,7 +1858,10 @@ The wave equation starts out as (41) but for a disc has to be written in plane p
 \[\displaystyle  R(r)=NJ_n\left(\rho_{n,l}\frac{r}{a} \right) \]</div>
 <p>The values of <span class="math notranslate nohighlight">\(\rho_{nl}\)</span> can be calculated using SciPy ‘special’ functions via. <span class="math notranslate nohighlight">\(\mathtt{import\; scipy.special \; as\;sp}\)</span> and then <span class="math notranslate nohighlight">\(\mathtt{sp.jn( n, x )}\)</span> and the zeros as <span class="math notranslate nohighlight">\(\text{sp.jn_zeros( n, num_0 )}\)</span>.</p>
 <p>The shape of the wavefunction at a fixed angle <span class="math notranslate nohighlight">\(\theta\)</span> has the profile of the Bessel function with the radius set at each of the zero crossings, the lowest energy is found at the first crossing, <span class="math notranslate nohighlight">\(\rho_{0,1}\)</span> the next at crossing <span class="math notranslate nohighlight">\(\rho_{1,1}\)</span> and so on with increasing <span class="math notranslate nohighlight">\(r\)</span>, see Fig. 21. The wavefunction for the lowest state (<span class="math notranslate nohighlight">\(k = 0,\, l = 1\)</span>) does not have a node before reaching the perimeter, the second (<span class="math notranslate nohighlight">\(k = 1,\, l = 1\)</span>) has one node as so on, just as for the particle in a box.</p>
-<p>Using the definition of <span class="math notranslate nohighlight">\(k^2\)</span> the energy is <span class="math notranslate nohighlight">\(\displaystyle E_{n,l}=\frac{\hbar^2}{2m}\left( \frac{\rho_{n,l}}{a} \right)^2\)</span> and the energy of the first few energy levels follows that of the value of <span class="math notranslate nohighlight">\(\rho_{n,l}\)</span>. Notice how this pattern of levels is similar, but not identical, to that of a particle in a box. The energy levels are ordered with the quantum numbers, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(l\)</span>, but in this case act through the value <span class="math notranslate nohighlight">\(\rho\)</span>, and this is different to that of the square well or box where the quantum numbers are included directly in the energy.</p>
+<p>Using the definition of <span class="math notranslate nohighlight">\(k^2\)</span> the energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_{n,l}=\frac{\hbar^2}{2m}\left( \frac{\rho_{n,l}}{a} \right)^2\]</div>
+<p>and the energy of the first few energy levels follows that of the value of <span class="math notranslate nohighlight">\(\rho_{n,l}\)</span>. Notice how this pattern of levels is similar, but not identical, to that of a particle in a box. The energy levels are ordered with the quantum numbers, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(l\)</span>, but in this case act through the value <span class="math notranslate nohighlight">\(\rho\)</span>, and this is different to that of the square well or box where the quantum numbers are included directly in the energy.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig21.png" /></p>
 <p>Fig 21. Left. Bessel’s <span class="math notranslate nohighlight">\(J\)</span> functions plotted with <span class="math notranslate nohighlight">\(x=kr\)</span>. Two of the zeros <span class="math notranslate nohighlight">\(\rho_{0,1}\)</span> and <span class="math notranslate nohighlight">\( \rho_{3,1}\)</span> are marked with black dots. Right. The first few energy levels of a particle on a disc are shown for a disc of <span class="math notranslate nohighlight">\(1\)</span> nm radius with mass that of the electron. The quantum numbers <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(l\)</span> are shown also.</p>
 <hr class="docutils" />
@@ -1858,7 +1880,13 @@ l &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 1 &amp; 2\\
 </section>
 <section id="drums">
 <h3><strong>Drums</strong><a class="headerlink" href="#drums" title="Permalink to this headline">#</a></h3>
-<p>Equation (46), if slightly modified, describes the shape of the normal modes of a circular drum, and the corresponding equations for a square box those of a square drum. The change to make is <span class="math notranslate nohighlight">\(\displaystyle k^2 = \omega^2/c^2\)</span> where <span class="math notranslate nohighlight">\(c^2 = \sqrt{T/\sigma}\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> is the normal mode’s vibrational frequency in rad <span class="math notranslate nohighlight">\(s^{-1}\)</span>. If the drum skin were cut, a tension of <span class="math notranslate nohighlight">\(T\)</span> newton per metre would be needed to keep it closed. The density of the drum skin <span class="math notranslate nohighlight">\(\rho\)</span> (units of kg m<span class="math notranslate nohighlight">\(^{-2}\)</span>) gives <span class="math notranslate nohighlight">\(c\)</span> units of velocity. The normal mode frequencies are <span class="math notranslate nohighlight">\(\displaystyle \omega_{n,l} = \frac{\rho_{n,l}c}{a}\)</span> and because the overtones are never an integer multiple of the fundamental, because of the values <span class="math notranslate nohighlight">\(\rho\)</span> takes (see table), a drum makes a noise rather than a pure sound.</p>
+<p>Equation (46), if slightly modified, describes the shape of the normal modes of a circular drum, and the corresponding equations for a square box those of a square drum. The change to make is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k^2 = \omega^2/c^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(c^2 = \sqrt{T/\sigma}\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> is the normal mode’s vibrational frequency in rad <span class="math notranslate nohighlight">\(s^{-1}\)</span>. If the drum skin were cut, a tension of <span class="math notranslate nohighlight">\(T\)</span> newton per metre would be needed to keep it closed. The density of the drum skin <span class="math notranslate nohighlight">\(\rho\)</span> (units of kg m<span class="math notranslate nohighlight">\(^{-2}\)</span>) gives <span class="math notranslate nohighlight">\(c\)</span> units of velocity. The normal mode frequencies are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega_{n,l} = \frac{\rho_{n,l}c}{a}\]</div>
+<p>and because the overtones are never an integer multiple of the fundamental, because of the values <span class="math notranslate nohighlight">\(\rho\)</span> takes (see table), a drum makes a noise rather than a pure sound.</p>
 </section>
 </section>
 <section id="steady-state-temperature-profile-in-two-dimensions">
@@ -1873,7 +1901,10 @@ l &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 1 &amp; 2\\
 <p>In two dimensions,<span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2 V}{\partial x^2}+\frac{\partial^2 V}{\partial y^2}=0\)</span> and the solution can be obtained in a similar manner to the last example. Separating variables produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{V_x}\frac{\partial^2 V_x}{\partial x^2}+\frac{1}{V_y}\frac{\partial^2 V_y}{\partial y^2}=0\]</div>
-<p>but each derivative must now be equal to the same constant as their sum is zero. Thus, <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{V_x}\frac{\partial^2 V_x}{\partial x^2}=-\frac{1}{V_y}\frac{\partial^2 V_y}{\partial y^2}=k^2 \)</span> and where <span class="math notranslate nohighlight">\(k^2\)</span> is chosen to make the solutions simpler and <span class="math notranslate nohighlight">\(k^2 \ge 0\)</span>.  The general solutions to these
+<p>but each derivative must now be equal to the same constant as their sum is zero. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{V_x}\frac{\partial^2 V_x}{\partial x^2}=-\frac{1}{V_y}\frac{\partial^2 V_y}{\partial y^2}=k^2 \]</div>
+<p>and where <span class="math notranslate nohighlight">\(k^2\)</span> is chosen to make the solutions simpler and <span class="math notranslate nohighlight">\(k^2 \ge 0\)</span>.  The general solutions to these
 equations are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V_x=Ae^{+kx}+Be^{-kx} \qquad \text{and} \qquad V_y=C\sin(ky)+D\cos(ky)\]</div>
@@ -1906,7 +1937,10 @@ be for all <span class="math notranslate nohighlight">\(k = n\pi/L\)</span> if <
 <p>This relationship is a Fourier series of sines, therefore, we can find the coefficients <span class="math notranslate nohighlight">\(b_n\)</span> as if they are Fourier coefficients (see Chapter 9.1.7) using</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle b_n=\frac{2}{L}\int_0^L f(y)\sin\left(\frac{n\pi y}{L} \right)dy  \qquad\tag{51}\]</div>
-<p>If, for example, the temperature function <span class="math notranslate nohighlight">\(f(y) = T\)</span> and <span class="math notranslate nohighlight">\(L = \pi\)</span>, then the coefficients are <span class="math notranslate nohighlight">\(\displaystyle b_n=\frac{}{}\int_0^\pi \sin(n y)dy\)</span> , which evaluate to <span class="math notranslate nohighlight">\(\displaystyle \frac{4T}{\pi},\; \frac{4T}{3\pi},\;\frac{4T}{5\pi},\cdots\)</span> and the temperature profile is</p>
+<p>If, for example, the temperature function <span class="math notranslate nohighlight">\(f(y) = T\)</span> and <span class="math notranslate nohighlight">\(L = \pi\)</span>, then the coefficients are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n=\frac{2T}{\pi}\int_0^\pi \sin(n y)dy\]</div>
+<p>which evaluate to <span class="math notranslate nohighlight">\(\displaystyle \frac{4T}{\pi},\; \frac{4T}{3\pi},\;\frac{4T}{5\pi},\cdots\)</span> and the temperature profile is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V=\frac{4T}{\pi}\left(e^{-x}\sin(y)+ e^{-3x}\frac{\sin(3y)}{3}+e^{-5x}\frac{\sin(5y)}{5}+\cdots  \right) \]</div>
 <p>The figure (fig 23) shows the temperature profile plotted as contours and python algorithm is listed also. The left-hand figure shows the calculation for a constant temperature <span class="math notranslate nohighlight">\(T = 10\)</span> along the y-axis. In the right hand figure, the temperature varies as <span class="math notranslate nohighlight">\(10\sin^2(2\pi y/L)\)</span> so it is initially maximal in two places  along the <span class="math notranslate nohighlight">\(y\)</span> axis. The way the heat spreads out is intuitively consistent with this.</p>
@@ -1916,6 +1950,7 @@ be for all <span class="math notranslate nohighlight">\(k = n\pi/L\)</span> if <
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is the basic code to reproduce fig 23. Use quad() to numberically integrate</span>
+
 <span class="n">s</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span> <span class="p">,</span><span class="n">n</span> <span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span><span class="n">y</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">quad</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># use [0] to answer return only</span>
 <span class="n">V</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">nmax</span> <span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span><span class="n">b</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="n">L</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nmax</span><span class="p">)]</span> <span class="p">)</span>
@@ -1973,9 +2008,9 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 <p>Fig. 24 Concentration profiles vs. position at different times inside the slab. Molecules are diffusing out from the top and the edges of the slab are kept at zero concentration, for example, by washing material away. The diffusion coefficient used is similar to that of lysozyme <span class="math notranslate nohighlight">\(11\cdot 10^{-11}\,\mathrm{m^2\, s^{-1}}\)</span>, the initial concentration <span class="math notranslate nohighlight">\(10\)</span> mM. The width of the slab is <span class="math notranslate nohighlight">\(10\)</span> nm. The times are given next to the lines and are in nanoseconds. The oscillating grey line at the top of the figure is set at <span class="math notranslate nohighlight">\(0.01\)</span> ns and shows that close to zero time the sine functions almost but not exactly cancel out one another even with <span class="math notranslate nohighlight">\(100\)</span> terms in the summation.  The plot also shows how slow diffusion is as it takes <span class="math notranslate nohighlight">\(\approx 600\)</span> ns for the molecules to be removed and the concentration to approach zero.</p>
 </section>
 <hr class="docutils" />
-<section id="a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
-<h2>15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms<a class="headerlink" href="#a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms" title="Permalink to this headline">#</a></h2>
-<p>Diffusion and reaction can sometimes compete because reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term <span class="math notranslate nohighlight">\(\pm kt\)</span> is thus added to the diffusion equation to allow for growth (<span class="math notranslate nohighlight">\(+kt\)</span>) or decay (<span class="math notranslate nohighlight">\(-kt\)</span>) of species.  Growth is examined first and decay in the next section 15.7b.</p>
+<section id="diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
+<h2>15.7 Diffusion and chemical reactions. Example of the growth of Algal Blooms<a class="headerlink" href="#diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms" title="Permalink to this headline">#</a></h2>
+<p>Diffusion and reaction can sometimes compete because a reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term <span class="math notranslate nohighlight">\(\pm kt\)</span> is thus added to the diffusion equation to allow for growth (<span class="math notranslate nohighlight">\(+kt\)</span>) or decay (<span class="math notranslate nohighlight">\(-kt\)</span>) of species.  Growth is examined first and decay in the next section 15.8.</p>
 <p>When diffusion and reaction compete it is possible that explosive growth of a product occurs, and for this to happen it is assumed that enough material is always present. Starting with Fick’s First Law the growth term <span class="math notranslate nohighlight">\(+kt\)</span> is added to allow for first order reaction forming product and is</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \qquad\tag{56a}\]</div>
@@ -2003,8 +2038,8 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 <p>fig 24a. Diffusion and reaction population at different times in microseconds. <span class="math notranslate nohighlight">\(L=10^{-4}\)</span> m, <span class="math notranslate nohighlight">\(k=10^3\)</span> /s, <span class="math notranslate nohighlight">\(D/L^2=0.1\)</span> The totals listed in the plot are proportional to the area under each curve, i.e to the amount of <span class="math notranslate nohighlight">\(c\)</span> produced. It is clear that the amount produced increases slowly to begin with then exponentially. The vertical line at <span class="math notranslate nohighlight">\(x/L=0.5\)</span> represents the delta function population at zero time.</p>
 </section>
 <hr class="docutils" />
-<section id="b-voltage-in-a-cell-the-cable-equation-revisited">
-<h2>15.7b Voltage in a cell. The Cable equation revisited.<a class="headerlink" href="#b-voltage-in-a-cell-the-cable-equation-revisited" title="Permalink to this headline">#</a></h2>
+<section id="voltage-in-a-cell-the-cable-equation-revisited">
+<h2>15.8 Voltage in a cell. The Cable equation revisited.<a class="headerlink" href="#voltage-in-a-cell-the-cable-equation-revisited" title="Permalink to this headline">#</a></h2>
 <p>The cable equation was introduced in section 11.3 where the equation found was</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle r_mC_m\frac{\partial V}{\partial t}=\frac{r_m}{r_c}\frac{\partial^2V}{\partial x^2}-V \]</div>
@@ -2019,7 +2054,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 </section>
 <hr class="docutils" />
 <section id="flow-and-chemical-reaction-lateral-flow-tests">
-<h2>15.8 Flow and chemical reaction. Lateral flow tests<a class="headerlink" href="#flow-and-chemical-reaction-lateral-flow-tests" title="Permalink to this headline">#</a></h2>
+<h2>15.9 Flow and chemical reaction. Lateral flow tests<a class="headerlink" href="#flow-and-chemical-reaction-lateral-flow-tests" title="Permalink to this headline">#</a></h2>
 <p>In a lateral flow test used to detect, for example, Covid 19 viruses, the analyte containing the virus is solubilsed in a buffer along with other reagents and a few drops added to a sample pad in the test device, see figure 24b. By capillary action, similar to that which occurs in thin layer chromatography, the fluid containing the analyte passes through to a second region containing antibodies (immunoglobulins) attached to silver or gold nanoparticles. The fluid then passes into a ribbon of nitrocellulose impregnated with reporter antibodies in two specific places, the first to trap any analyte containing species and the second as a test region to confirm that flow has occurred. Finally this ribbon is attached to a wick that ensures that flow continues until no more fluid is left.</p>
 <p>The purpose of the nanoparticles is only to allow visual identification of the result because they are highly coloured by virtue of <em>surface plasmon resonance</em>. These antibody - nanoparticle conjugates are coated in sucrose or other sugars to protect them during storage but which dissolves in the buffer fluid. This now enables the analyte (e.g. virus), A, to bind the antibody-nanoparticle Ab in the equilibrium,</p>
 <div class="math notranslate nohighlight">
@@ -2067,7 +2102,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 </section>
 <hr class="docutils" />
 <section id="diffusion-in-a-closed-tube-or-isolated-bar">
-<h2>15.9 Diffusion in a closed tube or isolated bar<a class="headerlink" href="#diffusion-in-a-closed-tube-or-isolated-bar" title="Permalink to this headline">#</a></h2>
+<h2>15.10 Diffusion in a closed tube or isolated bar<a class="headerlink" href="#diffusion-in-a-closed-tube-or-isolated-bar" title="Permalink to this headline">#</a></h2>
 <p>If the ends of a long tube are filled with solvent, then closed and some solute injected, diffusion will ensure that equilibrium will eventually be reached no matter where the solute is injected. Similarly, if the end of an otherwise insulated bar is heated for a short while, as heat cannot escape, a uniform temperature will be reached. From these results, we know that, because the initial concentration or temperature profile levels out to a constant value, the solution must have both a time-dependent and a constant part. At long times the temperature or concentration will become uniform and, if <span class="math notranslate nohighlight">\(f(x)\)</span> describes the amount initially added and <span class="math notranslate nohighlight">\(0 \lt x \lt L\)</span>, the long time value is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{L}\int_0^L f(x)dx\)</span>. The initial condition is given by the shape of the concentration profile <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(c(x,t)\)</span> is the concentration at position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, then, because no heat or material leaves, the concentration gradients at the ends of the tube are zero at all times, or</p>
 <div class="math notranslate nohighlight">
@@ -2097,7 +2132,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 </section>
 <hr class="docutils" />
 <section id="periodic-boundary-conditions">
-<h2>15.10 Periodic boundary conditions<a class="headerlink" href="#periodic-boundary-conditions" title="Permalink to this headline">#</a></h2>
+<h2>15.11 Periodic boundary conditions<a class="headerlink" href="#periodic-boundary-conditions" title="Permalink to this headline">#</a></h2>
 <p>When diffusion is on a circular loop, the boundary conditions are periodic. The effect is similar to the insulated bar in that an initial concentration profile becomes constant at long times. If the concentration is initially <span class="math notranslate nohighlight">\(f(\theta), -\pi &lt; \theta &lt; +\pi\)</span>, the amount initially present at long times is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{\pi}\int_{\pi}^{\pi}f(\theta)d\theta\)</span>. The boundary conditions ensure that the concentration and its gradient are the same after a period,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  c(0,t)=c(2\pi,t), \qquad c'(o,t)=c'(2\pi,t), \qquad t\gt 0\]</div>

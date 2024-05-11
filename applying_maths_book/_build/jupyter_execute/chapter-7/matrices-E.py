@@ -93,13 +93,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The elements of the $ABCD$ matrix have the following meaning when each in turn is made
 # equal to zero. The other elements are unchanged.
 # 
-# **(i)** Making $D = 0$ means that the first (left-most) reference plane must be at the focal point so that rays leave the optical elements parallel to one another.
+# **(a)** Making $D = 0$ means that the first (left-most) reference plane must be at the focal point so that rays leave the optical elements parallel to one another.
 # 
-# **(ii)** Making $A = 0$ puts the final reference plane at the focal point so the rays enter the optical arrangement parallel to one another.
+# **(b)** Making $A = 0$ puts the final reference plane at the focal point so the rays enter the optical arrangement parallel to one another.
 # 
-# **(iii)** If $B=0$, this produces the _object-image_ relationship, figure 39. The object is magnified by the amount of element $A$ and brought to a focus at the final reference plane. The number $1/D$ is also the magnification.
+# **(c)** If $B=0$, this produces the _object-image_ relationship, figure 39. The object is magnified by the amount of element $A$ and brought to a focus at the final reference plane. The number $1/D$ is also the magnification.
 # 
-# **(iv)** Making $C = 0$ ensures that both input and output rays are parallel but with angular magnification $D$. This is the telescopic relationship and the system is called *afocal*.
+# **(d)** Making $C = 0$ ensures that both input and output rays are parallel but with angular magnification $D$. This is the telescopic relationship and the system is called *afocal*.
 # 
 # As an example of using the matrix methods, the Lens Maker's formula 
 # 

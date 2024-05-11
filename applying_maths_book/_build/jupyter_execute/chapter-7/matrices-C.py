@@ -119,17 +119,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## Summary
 # 
-# **(i)**$\quad$ Check for special cases; diatomic, octahedral and tetrahedral molecules.
+# **(a)**$\quad$ Check for special cases; diatomic, octahedral and tetrahedral molecules.
 # 
-# **(ii)**$\quad$ Look for rotation axes; highest order axis is the principal axis, this gives the first subscript, $n$.
+# **(b)**$\quad$ Look for rotation axes; highest order axis is the principal axis, this gives the first subscript, $n$.
 # 
-# **(iii)**$\quad$ Determine orientation of any $C_2$ axes perpendicular to principal axis. If none is perpendicular
+# **(c)**$\quad$ Determine orientation of any $C_2$ axes perpendicular to principal axis. If none is perpendicular
 # then letter is $C$ (or $S$) else $D$.
 # 
-# **(iv)**$\quad$ Determine the orientation of any mirror planes relative to principal axis; this gives subscripts
+# **(d)**$\quad$ Determine the orientation of any mirror planes relative to principal axis; this gives subscripts
 # $V,h,d$.
 # 
-# **(v)**$\quad$ Identify all remaining symmetry elements/operation and check with point group tables.
+# **(e)**$\quad$ Identify all remaining symmetry elements/operation and check with point group tables.
 #  
 # ![Drawing](matrices-fig15.png)
 # 
@@ -190,13 +190,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The word 'group' in the context of molecular point groups has a precise mathematical definition. The group consists of a set of members that are the symmetry operations and follow four rules.
 # 
-# **(i)**$\quad$ There must be an identity operator that commutes with all others in the group and leaves them unchanged. The identity is always labelled $E$.
+# **(a)**$\quad$ There must be an identity operator that commutes with all others in the group and leaves them unchanged. The identity is always labelled $E$.
 # 
-# **(ii)**$\quad$ The product of two operators $A$ and $B$ is also an operator and member of the group, i.e. $AB$ belongs to the group as does $AA$ and $BB$.
+# **(b)**$\quad$ The product of two operators $A$ and $B$ is also an operator and member of the group, i.e. $AB$ belongs to the group as does $AA$ and $BB$.
 # 
-# **(iii)**$\quad$ The operators follow the associative product rule $(AB)C=A(BC)$.
+# **(c)**$\quad$ The operators follow the associative product rule $(AB)C=A(BC)$.
 # 
-# **(iv)**$\quad$ Every operator $A$ has an inverse $A^{-1}$ that is also an operator and member of the group. 
+# **(d)**$\quad$ Every operator $A$ has an inverse $A^{-1}$ that is also an operator and member of the group. 
 # 
 # $\qquad$ Any operator $A$ that operates on its inverse produces the identity $AA^{-1} = E$. 
 # 
@@ -284,7 +284,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A basis set can consist of unit vectors along the x-, y- and z-axes.  The translational vectors can be imagined along the axes shown in Figure 19 or 21. The matrices we now workout are quite general and do not belong to any particular point group. 
 # 
-# **Reflections**
+# ### **(i) Reflections**
 # 
 # A reflection of each $x,y$ or $z$ vector in turn in the $z-y$ plane will leave the $z$ and $y$ vectors unchanged (fig 21), but invert the $x$, therefore the matrix equation is
 # 
@@ -298,7 +298,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \sigma (x,y)= \begin{bmatrix} 1&0&0\\ 0&1&0\\0&0&-1\end{bmatrix},\qquad  \sigma (x,y)\begin{bmatrix} x\\ y\\z\end{bmatrix}=\begin{bmatrix} x\\ y\\-z\end{bmatrix} \qquad\qquad\qquad\text{(9.3)}$$
 # 
-# **Rotations**
+# ### **(ii) Rotations**
 # 
 # A rotation about the principal axis at angle $\theta=2\pi/n$ is labelled $C_2$ when $n=2$ and so forth. The general rotation matrix for an angle $\theta$ is
 # 
@@ -306,13 +306,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Note that some authors may use an alternative matrix, which is the inverse of this, and has the $-\sin()$ and $+\sin()$ swapped. The only difference is whether you consider the axes or molecule to be rotated. 
 # 
-# **Rotation- inversion (improper rotation)**
+# ### **(iii) Rotation- inversion (improper rotation)**
 # 
 # The rotation-inversion matrix $S_n$ can be obtained as the product of a rotation $C_n$ and a reflection $\sigma_{xy}$ in the plane perpendicular to the principle axis. The rotation-inversion matrix is 
 #  
 # $$\displaystyle S_n= \begin{bmatrix} \cos(\theta)&\sin(\theta)&0 \\ -\sin(\theta) & \cos(\theta) & 0 \\ 0&0&-1 \end{bmatrix},\qquad S_n  \begin{bmatrix}1&0&0\\0&1&0\\0&0&-1 \end{bmatrix}=\begin{bmatrix} \cos(\theta)&\sin(\theta)&0 \\ -\sin(\theta) & \cos(\theta) & 0 \\ 0&0&-1 \end{bmatrix}\qquad\qquad\qquad\text{(9.5)}$$
 # 
-# **Inversion and Identity**
+# ### **(iv) Inversion and Identity**
 # 
 # The two remaining operations, inversion $i$ and the identity are simple and can be written down directly and are
 # 
@@ -464,7 +464,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 21a Shows how a vector ending at point $x_1,y_1$ moves with a $C_3$ rotation (left) and reflection in the $zx$ plane, $\sigma_V$, (right). The images show the geometry looking down the z-axis, i.e. in the $x-y$ plane of a molecule belonging to  the $C_{3V}$ point group such as CHCl$_3$. The arrows ending at  $x_1,y_1$ represent unit vectors (length $r=1$) and $x_2,y_2$ the end point of the transformed vector after $C_3$ rotation. In rotation the transformed vector $x_2,y_2$ is a mixture of the original unit vectors. The C atom is situated where the axis cross. 
 # _________
 # 
-# #### **Rotations**
+# ### **(i) Rotations**
 # 
 # The coordinates of $x_2,y_2$ in fig 21a after rotation are 
 # 
@@ -495,7 +495,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle C_3= \begin{bmatrix} \cos(\theta)&\sin(\theta) \\ -\sin(\theta) & \cos(\theta)  \end{bmatrix}= \begin{bmatrix} -1/2  & \sqrt{3}/2 \\ -\sqrt{3}/2  &  -1/2 \end{bmatrix}$$
 # 
-# #### **Reflections**
+# ### **(ii) Reflections**
 # 
 # Reflection in the $xz$ plane just reverses a $y$ vector but leaves $x$ unchanged. The effect of reflection in  other mirror planes is found by multiplying the $\sigma_V$ matrix by a rotation matrix. This is a valid operation because both the rotation and reflection matrices belong to the same $C_{3V}$ point group.
 # 
@@ -537,7 +537,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # \hline
 # \end{array}\qquad\qquad\qquad\text{(9.14)}$$
 
-# ### 6.9.3 Atomic wavefunctions
+# ## 6.9.3 Atomic wavefunctions
 # 
 # Atomic wavefunctions are particularly important to chemists as they define where electrons are to be placed and so their symmetry is important to bonding theory. To find out which symmetry species in each point group these orbitals correspond to, the same general method is followed as explained above. Only the orbital's shape, the angular part of the wavefunction is needed because the radial parts are spherically symmetrical. We shall examine how the set of d-orbitals changes after different types of symmetry operation. Figure 21b shows the effect symmetry operations have on a $d_{xy}$ orbital in the $C_{4V}$ point group. Why the characters are $\pm 1$ as opposed to $0, \pm 1/2$ or other values is worked out. 
 # 
@@ -559,9 +559,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle f_1=(x^2-y^2)/2,\quad f_2=xy,\quad f_3=xz,\quad f_4=yz,\quad f_5=z^2$$
 # _________
-# #### **Converting the orbitals to $x,y,z$**
+# ### **(i) Converting the orbitals to $x,y,z$**
 # 
-# >The spherical polar coordinates are shown in chapter 5 fig 17. As an example, let $\sigma=Zr/a_0$ and $a_0$ be the Bohr radius and $Z$ the atomic number then
+# The spherical polar coordinates are shown in chapter 5 fig 17. As an example, let $\sigma=Zr/a_0$ and $a_0$ be the Bohr radius and $Z$ the atomic number then
 # 
 # $$\displaystyle \begin{align}\psi(3d_{xy})&=(81\sqrt{2\pi})^{-1}\left(\frac{Z}{a_0}\right)^{3/2}\sigma^2e^{-\sigma/3}\sin^2(\theta)\sin(2\phi)\\
 # &\sim r^2 \sin^2(\theta)\sin(2\phi)\\ &\sim r^2  \sin^2(\theta)2\sin(\phi)\cos(\phi)=2\underbrace{r\sin(\theta)\cos(\phi)}_{ x}\cdot \underbrace{r\sin(\theta)\sin(\phi)}_{ y}\sim xy\end{align}$$
@@ -570,7 +570,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### 6.9.4 Working out how rotation and reflection affects an orbital
 # 
-# #### **Rotations**
+# ### **(i) Rotations**
 # 
 # Returning to eqn. 9.15, we focus on the $f_1$ orbital and start by rotating it according to a $C_n$ operation where $\theta=2\pi/n$.  The rotation matrix of eqn. 9.4 is
 # 
@@ -637,7 +637,7 @@ theta = 2*pi/n
 theta*180/pi,rotated(theta)
 
 
-# #### **Reflection**
+# ### **(ii) Reflection**
 # 
 # The reflection matrices can be generated starting with say $\sigma_{xz}$ (see fig 21a) and using the rotation matrix to generate others, for example if the mirror plane is at angle $\theta$ to the $xz$ plane 
 # 
@@ -1060,13 +1060,13 @@ A
 # 
 # First, the atom positions or orbitals are drawn and labelled, then the molecule is subject to each of the symmetry operations of the point group in turn. A table is started and the first row is the list of symmetry operations. The second row is filled in according to four rules for each symmetry operation operating on each base vector.
 # 
-# **(i)**$\qquad$  If unchanged, a value of $1$ is entered in the table.
+# **(a)**$\qquad$  If unchanged, a value of $1$ is entered in the table.
 # 
-# **(ii)**$\qquad$ If changed in sign, $-1$ is entered.
+# **(b)**$\qquad$ If changed in sign, $-1$ is entered.
 # 
-# **(iii)**$\qquad$If moved in position, $0$ is entered.
+# **(c)**$\qquad$If moved in position, $0$ is entered.
 # 
-# **(iv)**$\qquad$ Add up all the numbers and enter the result under the symmetry operations column.
+# **(d)**$\qquad$ Add up all the numbers and enter the result under the symmetry operations column.
 # 
 # Consider now the p orbitals on SO$_2$, as shown in figure 22, we will use these as a basis for the calculation. They could also be envisaged as unit vectors pointing up from the atoms. The figure tries to show a perspective view; the principal axis, $z$, is equally placed between atoms 1 and 3 and through atom 2. The molecule has $C_{2V}$ symmetry and the point group, which is shown above, has four operations $E, C_2$ and two reflections $\sigma (xz)$ and $\sigma'(yz)$.
 # 
@@ -1087,7 +1087,7 @@ A
 # Figure 22. p-orbitals in $C_{2V}$ symmetry. The shading indicated $\pm$ phases and are used to identify changes under the symmetry operations. Instead of orbitals vectors on each atom pointing in the $y$ direction could be used.
 # _____
 # 
-# ### **The Tabular Method**
+# ### **(i) The Tabular Method**
 # 
 # To reduce the representation, a tabular method described by Carter (1997), is very convenient and simple to use although the following formula can alternatively be used. 
 # 
@@ -1366,7 +1366,7 @@ A
 # 
 # with each energy $E_k$. The orbitals must finally be normalised (so that $\sum_i c_{ij}^2=1$) and made orthogonal. The plan is therefore to find the LCAO's, eqn (9.34) by using symmetry to find a new set of orbitals $\varphi$ which are combinations of the $p_{\pi}$ atomic ones $f$ that are consistent with the symmetry of benzene. The Huckel Hamiltonian and overlap will be used to form the secular equation eqn. (9.30).
 # 
-# ### **Huckel approximation**
+# ### **(i) Huckel approximation**
 # 
 # In the Huckel approximation 
 # 
@@ -1401,7 +1401,7 @@ A
 # \hline
 # \end{array}$$
 
-# ### **Generating the reducible representation and then the irreps**
+# ### **(ii) Generating the reducible representation and then the irreps**
 # 
 # The first step in making the symmetry adapted molecular orbitals is to operate on a victim $p_{\pi}$ atomic  orbital, which we label $f_1$, by each of the symmetry operations in the point group. These atomic orbitals are labelled $f_1\cdots f_6$ 
 # 
@@ -1428,7 +1428,7 @@ A
 
 # Following the method in 6.13 this reducible representation consists of four irreps which in $C_6$ are, $A_2,B_2,E_1$ and $E_2$ which means that in the Huckel approximation there are four distinct energy levels of which two pairs are degenerate.  However, benzene belongs to the $D_{6h}$ point group so we must attend to the horizontal reflection in the plane of the molecule ($\sigma_h$) which has character $-1$ or $-2$, which by looking at the characters in this class shows that the symmetry species become $A_{2u}, B_{2g}, E_{1g}$ and $E_{2u}$.
 # 
-# ### **Projection Operator and Normalising**
+# ### **(iii) Projection Operator and Normalising**
 # 
 # The next step is to use the projection operator. To do this each symmetry operation in a class is treated separately, i.e. $2C_6$ in the point group is split into $C_6^+$ and $C_6^-$ and similarly for the other classes. A victim orbital is chosen and the operation performed on this. The result is then multiplied by the character in the point group for each symmetry species in turn, $A_2, B_2$ etc. as in eqn. 9.21. 
 # 

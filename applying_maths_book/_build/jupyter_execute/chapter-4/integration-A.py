@@ -37,7 +37,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 1. Pictorial representation of the integral as area under a curve shown as a very approximate evaluation of an integral as the sum of a set of narrow rectangles. The width of each rectangle is made to approach zero, and their number increased to infinity, when the integration is performed.
 # 
 # 
-# ### A note on notation
+# ### **(i) A note on notation**
 # 
 # The integration operation be written either as $\int f(x)dx$ or $\int dx f(x)$. The latter is often used in physics texts particularly when $f(x)$ is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following $dx$. As an aside, the symbol $\int$ was first introduced by Leibniz (1646 - 1716) is the stylized $S$ from the Latin word _summa_, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus _summatorius_. An integral is also sometimes called an anti-derivative.
 # 
@@ -125,13 +125,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![Drawing](integration-fig4.png)
 # 
 # Figure 4. left. An odd function $x^3-x$. The symmetrical range of the integration is shaded, $a=3/4$ and the integral is zero. Right. The even function $x^4-x^2$ where the integral is not zero but is negative.
+# 
 # _______
-# ## Summary
+# ## **(i) Summary**
 # 
-# $\qquad$ If $\displaystyle I=\int_{-a}^a f(x)dx$, and $f(x)$ is odd, $f(-x) = -f(x)$ and $I = 0$,
+# Only with symmetrical limits
 # 
-# $\qquad$ however, if $f(x)$ is even, $f(-x) = f(x)$, then $I \ne 0$.
-# ___________
+# $$\displaystyle I=\int_{-a}^a f(x)dx \begin{cases}\text{if} f(x) \text{ is odd }, f(-x) = -f(x) \text{ and } I = 0\\[2ex]
+# \text{if }f(x) \text{ is even, } f(-x) = f(x) \text{ and }I \ne 0\end{cases}$$
+# ____________
 
 # ## 1.4 Differential equations
 # 
@@ -194,7 +196,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \qquad\tag{8}$$
 # 
-# ### **Reaction on a surface**
+# ### **(i) Reaction on a surface**
 # 
 # Suppose that there are a large number of sites on a surface that can accept and react with a molecule reaching this from solution. Any one of the sites can either be occupied or empty. If $p(t)$ is the chance of being occupied at time $t$, let $k_d \delta t$ be the chance of becoming unoccupied (desorbing) in the interval $\delta t$. The average fraction becoming unoccupied is then $k_d p(t)\delta t$ in the interval $t\to t+\delta t$. Similarly, let the chance becoming occupied in the same time be $k_ap(t)\delta t$ where $k_a$ is the adsorption rate constant. The fraction of sites occupied is then $k_ap(t)(1 - p(t))\delta t$ which is the chance of being occupied multiplied by the chance that there is an empty site. The total rate of change in the limit $\delta t\to dt$ is
 # 
@@ -444,7 +446,7 @@ print( ans)
 # $\displaystyle \int  x^{2} e^{- a x^{2}} \;dx =  - \frac{x e^{- a x^{2}}}{2 a} + \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{4 a^{\frac{3}{2}}} $
 # 
 # 
-# To make your own table make a list then loop over values printing output in markdown.
+# To make your own table make a list then loop over values.
 
 # In[5]:
 
@@ -453,11 +455,13 @@ x,n,a,b,c = symbols('x,n,a,b,c', positive = True)                # use Sympy
 eqns = [x**n, 1/(a*x), exp(a*x + b), 1/(a*x + b)]                # list of integrals here 
 ans = []
 for  i, eqn in enumerate(eqns): 
-    ans.append( [eqns[i], simplify(integrate(eqn, x) ) ] )       # append make list of answers
+    ans.append( [ eqns[i],   simplify(integrate(eqn, x) ) ] )     # append make list of answers
     pass
 ans
 
 
-# 
+# In[ ]:
 
-# 
+
+
+

@@ -112,12 +112,35 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The next few sections describe the Fourier transform in detail, but first some jargon has to be explained. Formally, a Fourier transform is defined as a linear integral transform of one function or set of data into another; see equation (23). The transform is reversible, or invertible, enabling the original function or data to be retrieved after an inverse transform. These last two sentences are in 'math-speak', so what do they really mean?
 # 
-# Integral simply means that the transform involves an integration as shown in equation (23). The word 'linear', in 'linear transform, means that the transform $T$ has the property, when operating on two regular functions $f_1$ and $f_ 2$, that $T( f_1 + f_2) = T( f_1) + T( f_2)$. This means that the transform of the sum of $f_ 1$ and $f_ 2$ is the same as transforming $f_ 1$, and then transforming $f_2$ and adding the result. In addition, the linear transform has the property $T(cf_1) = cT( f_1)$ if $c$ is a constant.
+# Integral simply means that the transform involves an integration as shown in equation (23). The word 'linear', in 'linear transform, means that the transform $T$ has the property, when operating on two regular functions $f_1$ and $f_ 2$, that 
 # 
-# Reversible, or invertible, means that a reverse transform exists that reforms the initial function from the transform; formally this can be written as $f = T^{-1}[T[f]]$ if $T^{-1}$ is the inverse transform. Put another way, if a function $f$ is transformed to form a new function $g$, as $T[f] = g$, then the inverse transform takes $g$ and reforms $f$ as $f = T^{-1}[g]$. This might seem to be rather abstract, but is, in fact, very common. 
+# $$\displaystyle T( f_1 + f_2) = T( f_1) + T( f_2)$$
 # 
-# A straightforward example is the log and exponential functions, as they are convertible into one another as an operator pair: If $T$ is the exponential operator $e^{( )}$, and $x^2$ is the 'function', then $\displaystyle T[x^2] = e^{x^2}$. The inverse operator $T^{-1}$ reproduces the original function: $T^{-1}[T[x^2]] = x^2$ or, by substitution, it is true that $\displaystyle T^{-1}[e^{x^2}] = x^2$ if $T^{-1}$ is the logarithmic operator $\ln( )$ because $\displaystyle \ln(e^{x^2}) = x^2$. The Fourier transform is only a
-# more complicated version of an operator than is $\ln( )$ or $e^{( )}$.
+# This means that the transform of the sum of $f_ 1$ and $f_ 2$ is the same as transforming $f_ 1$, and then transforming $f_2$ and adding the result. In addition, the linear transform has the property 
+# 
+# $$\displaystyle T(cf_1) = cT( f_1 ),\qquad c=\text{const}$$
+# 
+# if $c$ is a constant.
+# 
+# Reversible, or invertible, means that a reverse transform exists that reforms the initial function from the transform; formally this can be written as 
+# 
+# $$f\displaystyle = T^{-1}[T[f]]$$
+# 
+# if $T^{-1}$ is the inverse transform. Put another way, if a function $f$ is transformed to form a new function $g$, as $T[f] = g$, then the inverse transform takes $g$ and reforms $f$ as $f = T^{-1}[g]$. This might seem to be rather abstract, but is, in fact, very common. 
+# 
+# A straightforward example is the log and exponential functions, as they are convertible into one another as an operator pair: If $T$ is the exponential operator $e^{( )}$, and $x^2$ is the 'function', then 
+# 
+# $$\displaystyle T[x^2] = e^{x^2}$$
+# 
+# The inverse operator $T^{-1}$ reproduces the original function: 
+# 
+# $$\displaystyle T^{-1}[T[x^2]] = x^2$$
+# 
+# or, by substitution, it is true that 
+# 
+# $$\displaystyle T^{-1}[e^{x^2}] = x^2$$
+# 
+# if $T^{-1}$ is the logarithmic operator $\ln( )$ because $\displaystyle \ln(e^{x^2}) = x^2$. The Fourier transform is only a more complicated version of an operator than is $\ln( )$ or $e^{( )}$.
 # 
 # The Fourier transform can be thought of as changing or 'mapping' the initial function $f$ to another function $g$, but in a systematic way. The new function may not look like the original, but however one might modify the transformed function $g$, when transformed back to $f$, it is as if $f$ itself had been modified. Although it is common to use the word 'transform', the word 'operator' could equally well be used although this is not usual in this context. Conversely, a matrix when acting on another matrix or a vector, performs a linear transform, however, a matrix is usually called a linear operator.
 
@@ -129,7 +152,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # So far, so good, but the length of the waves is not specified. Are they of finite length and so contain only a finite number of oscillations, or are they of infinite extent? If a sine wave is infinitely long, then only one line is observed in the transform, and will be of infinitesimal width and occur at the frequency of the sine wave. This line is a delta function. If the waves are turned on at some point and off again at another, then there are discontinuities at these points, and some additional frequencies must be associated with turning the signal on and off, which will appear in the transformed spectrum as _new_ frequencies. Think of how a waveform is made up of a sum of sine waves of different frequency, see Fig. 1. If a waveform is to be zero in some regions and not in others, then many waves have to be present to cancel out one another as necessary and these are the new frequencies needed. A broadening of the lines also occurs, because $\Delta t\Delta ν = 1$ and if $\Delta t$, the length of the whole sine wave is finite, then $\Delta v$ has a width associated with it. This is observed in FTIR and NMR spectra, but the software provided with many instruments can be set to remove as much of this broadening as possible by apodizing the lines (Sanders & Hunter 1987). This means multiplying the function with a decreasing function such as $\displaystyle e^{-x}$ before transforming.
 # 
-# The effect of Fourier transforming a short and a long rectangular pulse is shown below. The right-hand plots show the real part of the transform, which is a _sinc_ (or Cardinal Sine) function, $\mathrm{sinc}(ax) \equiv \sin(ax)/ax$. The result of transforming is mathematically the same for both long and sort pulses, of course, but in a fixed frequency range the effect appears to be different. The short pulse has a wide central band set at zero and widely spaced side bands, which decay rapidly at frequencies away from zero and extend to infinity. The longer pulse has a narrower central band, also centred at zero, and higher frequency side bands than in the short pulse case; the results conform to $\Delta t\Delta v = 1$, i.e. short $\Delta t$ with wide $\Delta v$ and _vice versa_.
+# The effect of Fourier transforming a short and a long rectangular pulse is shown below. The right-hand plots show the real part of the transform, which is a _sinc_ (or Cardinal Sine) function, 
+# 
+# $$\mathrm{sinc}(ax) \equiv \sin(ax)/ax$$
+# 
+# The result of transforming is mathematically the same for both long and sort pulses, of course, but in a fixed frequency range the effect appears to be different. The short pulse has a wide central band set at zero and widely spaced side bands, which decay rapidly at frequencies away from zero and extend to infinity. The longer pulse has a narrower central band, also centred at zero, and higher frequency side bands than in the short pulse case; the results conform to $\Delta t\Delta v = 1$, i.e. short $\Delta t$ with wide $\Delta v$ and _vice versa_.
 # 
 # If a pulse is turned on and off, as shown in Fig. 15, the transform must have frequencies associated with these changes. Again, think of the pulse being made of many terms in a Fourier series. Fig. 1 shows a few of the terms, but the more of these there are each with a different frequency, the better is a sharp edge or pulse defined. The oscillations in the transform of Fig. 15 arise from the many terms needed to describe the rectangular pulse. In fact, to reproduce the original pulse exactly by reverse transforming, an infinite frequency range is needed. If the transform of Fig. 15 _exactly_ as shown in the right-hand side were reverse transformed, the rectangular pulse shown on the left of the figure would not be produced, because on the plot the transform has a limited frequency range. In optics the shape of the transform is that produced by Fraunhofer diffraction from a long narrow slit and where in fig 15 time would be replaced by distance  and frequency by wavevector $k=2\pi/\lambda$
 # 
@@ -186,7 +213,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle c_n= \frac{1}{2L}\int_{-L}^L f(x)e^{-in\pi x/L}    \tag{25} $$
 # 
-# where $n$ is an integer specifying the position in the series, therefore, $c_n$ is one of a series of numbers that could be plotted on a graph $c_n$ vs $n$. To simplify (24), we define $k = n\pi /L$, which gives $\Delta k = (\pi/L)\Delta n$ for a small change in $k$, and clearly, as $L$ gets larger, $k$ gets smaller. However, there is a problem here, for when $L\to \infty$ it looks as though all values of $c_n$, equation (25), will go to zero, because $L$ is in the denominator. 
+# where $n$ is an integer specifying the position in the series, therefore, $c_n$ is one of a series of numbers that could be plotted on a graph $c_n$ vs $n$. To simplify (24), we define $\displaystyle k = \frac{n\pi }{L}$, which gives 
+# 
+# $$\displaystyle \Delta k = \frac{\pi}{L}\Delta n$$
+# 
+# for a small change in $k$, and clearly, as $L$ gets larger, $k$ gets smaller. However, there is a problem here, for when $L\to \infty$ it looks as though all values of $c_n$, equation (25), will go to zero, because $L$ is in the denominator. 
 # 
 # Instead of immediately taking the limit, suppose that the values of $n$ describe adjacent points on a graph of $c_n$ vs $n$, and because adjacent points are the smallest differences that $n$ can have, then $\Delta n  = 1$ and so $\Delta k = \pi /L$ or $(L/\pi )\Delta k = 1$. Equation (24) can now be multiplied by this factor without difficulty because it is $1$, giving
 # 
@@ -220,13 +251,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # There are some other points to note.
 # 
-# **(i)** These equations give the value of the transform at one point only. To obtain the full transform, $k$ has to be varied in principle from $-\infty$ to +$\infty$, but, in practice, a value of $k$ which is far less than infinity can be used because the transform often has an infinitesimal amplitude at large $k$; see Fig. 19 for an example.
+# **(a)** These equations give the value of the transform at one point only. To obtain the full transform, $k$ has to be varied in principle from $-\infty$ to +$\infty$, but, in practice, a value of $k$ which is far less than infinity can be used because the transform often has an infinitesimal amplitude at large $k$; see Fig. 19 for an example.
 # 
-# **(ii)** Because the integration involves a complex number, the result might be complex or it might be real; this just depends on what the function is and it might therefore be necessary to plot the real, imaginary, and absolute value of the transform.
+# **(b)** Because the integration involves a complex number, the result might be complex or it might be real; this just depends on what the function is and it might therefore be necessary to plot the real, imaginary, and absolute value of the transform.
 # 
-# **(iii)** There are different forms of Fourier transform pairs that differ from one another by normalization constants, $1/\sqrt{ 2\pi}$ in our notation. This can lead to confusion when comparing one calculation with another.
+# **(c)** There are different forms of Fourier transform pairs that differ from one another by normalization constants, $1/\sqrt{ 2\pi}$ in our notation. This can lead to confusion when comparing one calculation with another.
 # 
-# **(iv)** Finally, note that some authors, engineers in particular, often define the forward transform with a positive sign in the exponential and negative in the reverse, which is a change of phase with respect to our notation. They also often use $j$ instead of $i$ to mean $\sqrt{-1}$.
+# **(d)** Finally, note that some authors, engineers in particular, often define the forward transform with a positive sign in the exponential and negative in the reverse, which is a change of phase with respect to our notation. They also often use $j$ instead of $i$ to mean $\sqrt{-1}$.
 # 
 # ## 6.1 Plotting Fourier transforms
 # 
@@ -234,12 +265,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 6.2 What functions can be transformed?
 # 
-# To perform the transform, $f(x)$ must be integrable and must converge when the integration limits are infinity; this generally means that $f(x) \to$ 0 as $x \to \pm \infty$: a sufficient condition is that $\int_{-\infty}^{\infty} |f(x)|dx$ exists.
+# To perform the transform, $f(x)$ must be integrable and must converge when the integration limits are infinity; this generally means that $f(x) \to$ 0 as $x \to \pm \infty$: a sufficient condition is that $\displaystyle \int_{-\infty}^{\infty} |f(x)|dx$ exists.
 # 
 # 
 # ## 6.3 How to calculate and plot a Fourier transform
 # 
-# ### **(1) A finite wave train**
+# ### **(i) A finite wave train**
 # 
 # A finite wave train can be described as a sine wave $f(x) = \sin(\omega x)$ of  angular frequency $\omega = 2\pi/L$ that exists only over the range $-L$ to +$L$; this supposes also that the function $f(x)$ is zero everywhere else, see Fig. 19. Choosing the sine function to have the argument $2\pi x/L$ means that it is zero, i.e. has a node, at $x = \pm L$; note that the frequency need not be a multiple of the range of the transform, but the resulting equations are simpler if it is. Because the function is zero outside $\pm L$, so is the integral, and the integration limits of its fourier transform become $\pm L$ rather than $\pm \infty$. The forward fourier transform eqn. 27 gives,
 # 
@@ -276,7 +307,7 @@ g
 # 
 # ![Drawing](fourier-fig19.png)
 # 
-# Figure 19. Graphs of $\sin(\omega x)$ from $\pm L$ when $L = 10$; its Fourier transform, the imaginary part (top right), and its spectrum, the square of its absolute value (bottom right). The real part of the transform is zero because $\displaystyle g(k)= -\frac{4i\pi \sin(Lk)}{k^2L^2-4\pi^2}$ has no real part. (The vertical scales are not the same, but the maximum value of the transform and its absolute value is $L$.)
+# Figure 19. Graphs of $\sin(\omega x)$ from $\pm L$ when $L = 10$; its Fourier transform, the imaginary part (top right), and its spectrum, the square of its absolute value (bottom right). The real part of the transform is zero because $\displaystyle g(k)= -\frac{4i\pi }{k^2L^2-4\pi^2}\sin(Lk)$ has no real part. (The vertical scales are not the same, but the maximum value of the transform and its absolute value is $L$.)
 # _______
 
 # ### **(ii) Exponential decay**
@@ -306,7 +337,11 @@ g
 # 
 # ### **(iii) Electromagnetic waves in a laser cavity**
 # 
-# In a laser cavity an electromagnetic wave of frequency $\omega_0$ builds up in amplitude to $E_0$. Suddenly the cavity is 'opened' at $t=0$ and the radiation leaks out as $E(t)= E_0e^{-\omega_0 t/Q}e^{i\omega_0 t}$. The dimensionless parameter $Q$ is the ratio of stored energy to energy loss /cycle and $\omega_0/Q$ is the rate of decay of the radiation in the cavity or $Q/\omega$ the radiation's cavity lifetime. Calculate the intensity $I=|a(\omega)|^2$ vs frequency, which is the spectrum of the output radiation where $a$ is the fourier transform of $A$.
+# In a laser cavity an electromagnetic wave of frequency $\omega_0$ builds up in amplitude to $E_0$. Suddenly the cavity is 'opened' at $t=0$ and the radiation leaks out as 
+# 
+# $$\displaystyle E(t)= E_0e^{-\omega_0 t/Q}e^{i\omega_0 t}$$
+# 
+# The dimensionless parameter $Q$ is the ratio of stored energy to energy loss /cycle and $\omega_0/Q$ is the rate of decay of the radiation in the cavity or $Q/\omega$ the radiation's cavity lifetime. We will calculate the intensity $I=|a(\omega)|^2$ vs frequency, which is the spectrum of the output radiation where $a$ is the fourier transform of $A$.
 # 
 # The transform is
 # 
@@ -370,7 +405,7 @@ g
 # 
 # $$\displaystyle V_s=\frac{r_0s_0}{4\omega T} \big(\sin(\varphi)+2T\omega \cos(\varphi) \big)   \tag{29}$$
 # 
-# and as the phase $\varphi$ can be adjusted by the user, this signal can be maximized.
+# and as the phase $\varphi$ can be adjusted by the user, this signal can be maximized when $\theta=\tan^{-1}(1/(2T\omega))$.
 # 
 # Now consider the situation when noise is present and assume that this has a wide range of frequencies $\omega_{1,2..}$ and amplitudes $n_{1,2..}$. The signal from an instrument is normally noisy and is represented as
 # 
@@ -407,17 +442,22 @@ g
 # 
 # $$\displaystyle  \int_{-\infty}^{\infty} |g(k)|^2dk = \int_{-\infty}^{\infty} |f(x)|^2 dx $$
 # 
-# Graphically it means that the shaded areas are the same. The figure shows the transform of a square wave as in fig 15. The transform is $\displaystyle g(k)=\frac{\sin(ak)}{ak}$ where $a = 4$. The function $f(x) = 1 $ in the range $-2\to 2$ so $\int f(x)^2 dx= 4$. 
+# Graphically it means that the shaded areas are the same. The figure shows the transform of a square wave as in fig 15. The transform is 
+# 
+# $$\displaystyle g(k)=\frac{\sin(ak)}{ak}$$
+# 
+# where $a = 4$. The function $f(x) = 1 $ in the range $-2\to 2$ so $\int f(x)^2 dx= 4$. 
 # 
 # ![Drawing](fourier-fig21a.png)
 # 
 # Figure 21a. Illustrating the Parseval or Plancherel theorem. The shaded areas are the same size, although they do not appear to be. The absolute square of the transform $|g(k)|^2$ extends to $\pm \infty$ which makes up the area since the function is always positive a small part of which is shown magnified.
+# ___________
 # 
 # This theorem is very important in quantum mechanics. Should $f(x)$ represent a wavefunction that varies as a function of distance $x$, which could be the displacement from equilibrium of an harmonic oscillator, then variable $k$ can be interpreted as the momentum (usually given the letter $p$) making $g(k)$ the wavefunction in 'momentum space'. This means that calculations can be formed either in spatial coordinates, i.e. distance or in 'momentum space' depending upon which is the most convenient mathematically. The change in displacement, $\delta x$, and change in momentum, $\delta p$, are conjugate pairs of variables and are linked by the Heisenberg uncertainty principle $\delta x\delta p \ge \hbar/2$.
 # 
 # If $x$ is time $t$ and $k$ frequency $\omega$ then Parseval's theorem has a simple physical interpretation. On the right of the equation $f(t)$ is the electric field of some radiation, for example i.r. in a spectrometer or a laser pulse, then $|f(t)|^2$ is proportional to the total radiated power and the integral the total radiated energy.  On the left, $\int|g(\omega)|^2d\omega$ is the total amplitude squared of the spectrum, and $g(\omega)$ the energy per unit frequency interval. Thus Parseval's theorem represents the conservation of energy.
 # 
-# ### **The delta function as an integral**
+# ### **(i) The delta function as an integral**
 # 
 # The Parseval theorem can be proved using the delta function in its integral form. First we find the delta function. Suppose that a fourier transform is inserted into itself, starting with eqn. 28,
 # 
@@ -450,7 +490,7 @@ g
 # 
 # $$\displaystyle \begin{align}\int_{-\infty}^{\infty} |f(x)|^2 dx &=\int_{-\infty}^{\infty}dx\frac{1}{2\pi}\int_{-\infty}^\infty g^*(k)e^{-ikx}dk\int_{-\infty}^\infty g(k')e^{+ik'x}dk' \\ &=\int_{-\infty}^{\infty} g^*(k)dk\int_{-\infty}^{\infty} g(k')dk'\left[\frac{1}{2\pi}\int_{-\infty}^\infty e^{i(k'-k)x} \right]dx\\&=\int_{-\infty}^{\infty} g^*(k)dk\int_{-\infty}^{\infty} g(k')\delta(k'-k)dk'=\int_{-\infty}^{\infty} g^*(k)g(k)dk=\int_{-\infty}^{\infty} |g(k)|^2dk \end{align}$$
 # 
-# ###  **The delta function and comb of delta functions.**
+# ###  **(ii) The delta function and comb of delta functions.**
 # 
 # Using a comb of delta functions and convoluting this with a more complex function is a direct way of making a repeated pattern such as an image or positioning molecules in each unit cell in a crystal. This image can then be fourier transformed to imitate the diffraction pattern expected from a given crystal.
 # 
@@ -488,7 +528,11 @@ g
 # 
 # $$\displaystyle g_n(k) =\frac{1}{\sqrt{2\pi}}\sum_ne^{-ikx_n}$$
 # 
-# When there is a series of equally spaced delta functions $f(x)=\sum_{n=-\infty}^\infty \delta(x-na)$ the transform is also never ending a series of delta functions. To sum the transform it is necessary to suppose that $n$ is a large number $N$ and do the summation as a geometric series
+# When there is a series of equally spaced delta functions 
+# 
+# $$\displaystyle f(x)=\sum_{n=-\infty}^\infty \delta(x-na)$$
+# 
+# the transform is also never ending a series of delta functions. To sum the transform it is necessary to suppose that $n$ is a large number $N$ and do the summation as a geometric series
 # 
 # $$\displaystyle \sqrt{2\pi}g(x)=\sum_{n=-N}^N e^{-ikaN}=\frac{e^{iak(N+1)}-e^{-iakN} }{1-e^{-iak}}$$
 # 
@@ -549,9 +593,21 @@ g
 # 
 # Calculating using the method outlined above to find $\langle t^2\rangle$ and $\langle v^2\rangle$ we expect a different result because we now use the square of the function and transform.
 # 
-# Taking all integrations between $\pm\infty$, the function $\displaystyle  \int f(t)^2dt= \frac{1}{2a\sqrt{\pi}}$ and $\displaystyle \int t^2f(t)^2dt = \frac{a}{4\sqrt{\pi}}$ and their ratio is $\displaystyle \Delta t= \frac{a^2}{2}$.
+# Taking all integrations between $\pm\infty$, the function 
 # 
-# The transform has similar integrals$\displaystyle  \int g(v)^2dv= \frac{1}{2a\sqrt{\pi}}$ and $\displaystyle \int v^2g(v)^2dv = \frac{1}{4a^3\sqrt{\pi}}$ and their ratio is $\displaystyle \Delta v= \frac{1}{2a^2}$. 
+# $$\displaystyle  \int f(t)^2dt= \frac{1}{2a\sqrt{\pi}},\quad\text{and}\quad \displaystyle \int t^2f(t)^2dt = \frac{a}{4\sqrt{\pi}}$$
+# 
+# and their ratio is 
+# 
+# $$\displaystyle \Delta t= \frac{a^2}{2}$$
+# 
+# The transform has similar integrals
+# 
+# $$\displaystyle  \int g(v)^2dv= \frac{1}{2a\sqrt{\pi}}\quad\text{and}\quad \displaystyle \int v^2g(v)^2dv = \frac{1}{4a^3\sqrt{\pi}}$$
+# 
+# and their ratio is 
+# 
+# $$\displaystyle \Delta v= \frac{1}{2a^2}$$ 
 # 
 # The product of uncertainties after remembering that we calculate the square of the values is 
 # 
@@ -563,7 +619,13 @@ g
 # 
 # An excited electronic state can decay by emitting a photon, fluorescence if the transition is allowed, or phosphorescence if from a triplet excited state to a singlet ground state.  The time profile can be measured as can the spectral width of the transition and they demonstrate the time - energy/frequency relationship. The excited state has a lifetime $\tau$ and transition frequency $\omega_0$. A spatial analogue is momentum broadening as a result of collisions, where the lifetime is replace by the mean free path.
 # 
-# The field of the emitted photon is $\displaystyle f(t)=e^{i\omega_0 t}e^{-t/2\tau}$ which is that of a plane wave of frequency $\omega_0$ that decays away (or is damped) with a lifetime $\tau$. The detector measures the 'square' or absolute value squared of this which is $|f(t)|^2\equiv f(t)^*f(t) = e^{-t/\tau}$. 
+# The field of the emitted photon is 
+# 
+# $$\displaystyle f(t)=e^{i\omega_0 t}e^{-t/2\tau}$$
+# 
+# which is that of a plane wave of frequency $\omega_0$ that decays away (or is damped) with a lifetime $\tau$. The detector measures the 'square' or absolute value squared of this which is 
+# 
+# $$\displaystyle |f(t)|^2\equiv f(t)^*f(t) = e^{-t/\tau}$$ 
 # 
 # The transform is 
 # 
@@ -616,26 +678,26 @@ g
 # $$
 # 
 # The capital $F(\cdots)$ means 'do the transform'. The derivation of these results is given below.
-
-# **(i), (ii) Shift, delay.**
+# 
+# ### **(i), (ii) Shift, delay.**
 # 
 # $\qquad$Let $s=x-x_0$ then $ds=dx$ and provided $f$ exists at $x_0$,
 # 
 # $$\displaystyle F(f(x- x_0)) = \int_{-\infty}^{\infty} f(x- x_0)e^{-ik x}dx = \int_{-\infty}^{\infty} f(s)e^{-ik(s+ x_0)}ds = e^{-ik x_0} g(k)$$
 # 
-# **(iii) Scaling/Similarity.**
+# ### **(iii) Scaling/Similarity.**
 # 
 # $\qquad$Make the substitution $s=ax,\; a>0$
 # 
 # $$\displaystyle F(f(ax))=\int_{-\infty}^{\infty}f(ax)e^{-ikx}dx=\frac{1}{|a|}\int_{-\infty}^{\infty}f(s)e^{-iks/a}ds=\frac{1}{|a|}g\left(\frac{k}{a}\right)$$
 # 
-# **(iv) Reversal.** 
+# ### **(iv) Reversal.** 
 # 
 # $\qquad$Start with scaling (as above (iii) ) and let $a=-1$ giving 
 # 
 # $$\displaystyle F(f(-x)) = g(-k)$$
 # 
-# **(v) Complex conjugate.**
+# ### **(v) Complex conjugate.**
 # 
 # $$\displaystyle g(-k)= \int_{-\infty}^\infty f(x)e^{ikx}dx$$
 # 
@@ -643,7 +705,7 @@ g
 # 
 # $$\displaystyle g(-k)^*= \int_{-\infty}^\infty f(x)^*e^{-ikx}dx=f(x)^*$$
 # 
-# **(vi)(vii) Fourier derivatives.** 
+# ### **(vi)(vii) Fourier derivatives.** 
 # 
 # $\qquad$These are important when solving differential equations. First derivative
 # 
@@ -659,36 +721,37 @@ g
 # 
 # $$\displaystyle F\left(\frac{d^nf}{dx^n}\right)=(ik)^n g(k)$$
 # 
-# **(viii) Product.** 
+# ### **(viii) Product.** 
 # 
 # $\qquad$The product $xf(x)$ can be useful in solving differential equations.
 # 
 # $$\displaystyle \begin{align}F\left(xf(x)\right)&=\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx =\int_{-\infty}^{\infty} f(x)\frac{d}{dk}\left(ie^{-ikx}\right) dx\\&=i\frac{d}{dk}\int_{-\infty}^{\infty} f(x)e^{-ikx} dx=i\frac{d}{dk}g(k)\end{align}$$
-
-# ### **Example. Using the Shift Theorem**
 # 
-# When we measure a spectrum we expect to see a number of lines depending on the particular molecules being excited. These lines each have their own width and energy, i.e wavelength or frequency. However, if the light entering the spectrometer has a little of it delayed, such as by a beam splitter, and which then enters the spectrometer extra lines can be observed due to the phase-change introduced by the delay. The extra lines are caused by beating between the two light fields. The situation is shown in the diagram.
+# ### **(i,ii)  Example using the Shift Theorem**
+# 
+# When we measure a spectrum we expect to see a number of lines depending on the particular molecules being excited. These lines each have their own width and energy, i.e wavelength or frequency. However, if the light entering the spectrometer has a little of it delayed, such as by a beam splitter, and which then enters the spectrometer extra lines can be observed due to the phase-change introduced by the delay. The extra lines are caused by beating between the two light fields. The experimental detail is shown in the diagram.
 # 
 # ![Drawing](fourier-fig21c.png)
 # 
-# figure 21c. Left The arrangement whereby two beams enter the spectrometer. Right The spectrum as it should be (left) and (right) after contamination with a little of the delayed beam.
+# figure 21c. Left The arrangement whereby two beams enter the spectrometer. Right The spectrum as it should be (left) and (right) after contamination with a little ($5$%) of the delayed beam. The ripples are separated in frequency by $2\pi/\Delta$.
 # ____________
 # 
 # If the spectrum has the field $E(t)$ the detector measures the absolute value squared of the fourier transform $F$ of the total field, which in this case is the sum of the direct and reflected parts, i.e. a 'square law detector' measures
 # 
 # $$\displaystyle W(\omega)=\bigg| F\left(E(t)+cE(t-\Delta)\right)\bigg|^2$$
 # 
-# where $\Delta$ is the time delay and $c$ the amount in the delayed beam. Using the Shift Theorem produces
+# where $\Delta$ is the time delay and $c$ the amount in the delayed beam. This is single a part of the autocorrelation of the field $E$ taken at one delay $\Delta$. Using the Shift Theorem produces
 # 
 # $$\displaystyle \begin{align}W(\omega)&=\bigg|E(\omega)(1+ce^{-i\omega\Delta})\bigg|^2\\
 # &= |E(\omega)|^2(1+ce^{-i\omega\Delta})(1+ce^{+i\omega\Delta})\\
 # &= |E(\omega)|^2(1+c^2+2c\cos(\omega \Delta))\end{align}$$
 # 
-# where the identity $2\cos(\theta)=e^{+i\theta}+e^{-i\theta}$ was used.  This expression shows us that the spectrum $E(\omega)$ now has oscillations that might look like new transitions but are an artefact of allowing two beams into the spectrometer. The way round this is to use a beam-splitter that is anti-reflection coated on its far side, or use a far thicker one and use a knife edge to remove the weaker beam.
+# where the identity $2\cos(\theta)=e^{+i\theta}+e^{-i\theta}$ was used.  This expression shows us that the spectrum $E(\omega)$ now has oscillations/ripples that might look like new transitions but are an artefact of allowing two beams into the spectrometer. The frequency separation between peaks of the ripples is $2\pi/\Delta$. The way round this problem is to use a beam-splitter that is anti-reflection coated on its far side, or use a far thicker one and use a knife edge to remove the weaker beam.
 # 
-# The spectrum is shown in fig. 21c. The fringes are very clear even when $c$ is small, for example the figure shows the spectrum when $c=0.05$ or $5$% of the more intense beam. The oscillation at the peak is $\approx \pm 10$% of the peak height, rather large for such a small amount of extra light.
-
+# The spectrum is shown in fig. 21c. The fringes are very clear even when $c$ is small, for example the figure shows the spectrum when $c=0.05$ or $5\text{%}$ of the more intense beam. The oscillation at the peak is $\approx \pm 10\text{%}$ of the peak height, rather large for such a small amount of extra light.
+# 
 # ## 6.9 Table of useful Fourier transforms
+# The capital $F(\cdots)$ means 'do the transform'.
 # 
 # $$\displaystyle \begin{array}{ll}
 # \hline
@@ -699,6 +762,7 @@ g
 # \text{(v) sinc }&f(x)=\sin(x)/x    & F(f(x)) & \rightleftharpoons  & \text{top hat, }\\
 # & & & &1 \text{ if } 1/2\le x\le 1/2\; \text{ else } 0 \text{ (fig }15) \\[0.15cm]
 # \text{(vi) complex exponential }&f(x)=e^{ik_0x}    & F(f(x)) & \rightleftharpoons & \delta(k-k_0) \\[0.15cm]
+# \text{(vii) a constant} & f(x)=1& F(f(x))=& \rightleftharpoons & \delta(k) \\[0.15cm]
 # \hline\end{array}$$
 
 # In[ ]:

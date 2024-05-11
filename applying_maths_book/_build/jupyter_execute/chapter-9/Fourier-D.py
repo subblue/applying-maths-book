@@ -22,7 +22,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 7.1 Examples
 # 
-# **(i)** To be specific, suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope. Before doing this experiment, two questions have to be answered;
+# ### **(i)** Decay of an excited state**
+# Suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope. Before doing this experiment, two questions have to be answered;
 # 
 # **(a)** Is the laser used to excite the molecules of short enough duration that the molecules or atoms can be excited quickly enough before any significant number can decay back to the ground state? 
 # 
@@ -37,13 +38,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](fourier-fig25.png)
 # Figure 25. The convolution of a narrow spectral line with a wide slit in a spectrometer.
-# 
 # ____
 # 
-# **(ii)** As a second example, consider measuring the width or position of one particular spectral line, such as from a star or a sample of molecules in the lab. The spectrometer has slits on its entrance and exit and these, with the number of grooves in the grating, control the resolution of the spectrometer. Typically, this is $0.1$ nm/mm of slit width for a moderately good spectrometer and 1 nm/mm for a general purpose one. If the slits cannot be closed to more than $0.1$ mm, then the resolution of the general purpose instrument will be approximately 0.1 nm and a narrow spectral line will appear to have this value even it is many times narrower. This is because the grating is rotated while measuring the spectrum and the spectral line is swept across the slits. The effect is to sequentially place a spectral line at all possible points, and hence wavelengths, across the slit. A signal is recorded at all these wavelengths rather than being measured only at its proper one, and the response measured is the convolution of the ideal width of the spectral line with the instrument response, which is the finite width of the slit. In many instruments, a CCD camera measures all wavelengths simultaneously, and a slit is not needed nor is the grating scanned. However, the same reasoning applies because the individual elements of the camera have a finite width, which therefore act as individual slits.
+# ### **(ii) Width of a spectral line**
+# As a second example, consider measuring the width or position of one particular spectral line, such as from a star or a sample of molecules in the lab. The spectrometer has slits on its entrance and exit and these, with the number of grooves in the grating, control the resolution of the spectrometer. Typically, this is $0.1$ nm/mm of slit width for a moderately good spectrometer and 1 nm/mm for a general purpose one. If the slits cannot be closed to more than $0.1$ mm, then the resolution of the general purpose instrument will be approximately 0.1 nm and a narrow spectral line will appear to have this value even it is many times narrower. This is because the grating is rotated while measuring the spectrum and the spectral line is swept across the slits. The effect is to sequentially place a spectral line at all possible points, and hence wavelengths, across the slit. A signal is recorded at all these wavelengths rather than being measured only at its proper one, and the response measured is the convolution of the ideal width of the spectral line with the instrument response, which is the finite width of the slit. In many instruments, a CCD camera measures all wavelengths simultaneously, and a slit is not needed nor is the grating scanned. However, the same reasoning applies because the individual elements of the camera have a finite width, which therefore act as individual slits.
 # 
-# **(iii)** A final use of convolution is to smooth data. Because convoluting one function with another involves integration, this has the effect of summing or averaging. The rolling or moving average method (Section 10.4) is in effect a convolution, and effectively smooths spiky data.
-# 
+# ### **(iii) Smoothing data**
+# A final use of convolution is to smooth data. Because convoluting one function with another involves integration, this has the effect of summing or averaging. The rolling or moving average method (Section 10.4) is in effect a convolution, and effectively smooths spiky data.
 # 
 # ## 7.2 How convolution works
 # 
@@ -52,7 +53,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # ![Drawing](fourier-fig26.png)
 # 
 # Figure 26. Curves show the instrument response (red), made up as a series of impulses (dotted), which produce a response ($w$) at each point on its profile any a few of which are shown. These are then added together in this time delayed manner, to produce the convoluted response.
-# ____
+# _________
 # 
 # To understand how convolution works, suppose that the overall instrument response is made up of a series of $\delta$-function impulses. These can be infinitesimally narrow light pulses that excite a molecule. Suppose these impulses are made at ever shorter time intervals, then the effect is that of smoothly exciting the molecule. Each of the impulses elicits an ideal response but because there are many of them, their responses must be added together. The result is the convolution; the effect is shown in Fig. 26. It is always assumed in the convolution that the response is linear with the impulse, which simply means that doubling the impulse doubles the response and so forth.
 # 
@@ -78,7 +79,6 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # ![Drawing](fourier-fig27.png)
 # 
 # Figure 27. Diagram showing the notation used to calculate a convolution.
-# 
 # ______
 # 
 # ## 7.3 Convolution by summation
@@ -196,7 +196,7 @@ C = toep_conv(f,w)
 # 
 # The transform of the convolution of the train of 'dressed pulses' is shown in fig 27a frame (A). The electric field of the pulse is shown with its envelope in frame (B), and the frequency profile $f(\nu)$ of the original pulse (frame (C)), where the vertical lines show that the pulse is actually composed only of a series of individual frequencies which are the frequencies of the longitudinal modes of the laser (see Chapter 5-1). The frequency spacing between modes is $f_{rep}=c/2L$ Hz where $L$ is the optical length of the laser, and for a $1.5$ m long mode-locked laser these modes are separated by $10^8$ Hz, which might seem to be  a rather large value but as the centre wavelength of the pulse in a Ti Sapphire laser is $\approx 800$ nm, which is $3.75\cdot 10^{14}$ Hz, this is actually a very small frequency difference. 
 # 
-# ### **Comb Spectroscopy**
+# ### **(i) Comb Spectroscopy**
 # 
 # The advent of stable, mode-locked lasers with ultra-short pulses has led to new forms of high resolution spectroscopy using combs of these laser pulses. See N. Pique & T. Hansch, Nature Photonics, 2019, v13, p146 for a review. As can be seen in fig 27a (C) the femtosecond pulse is comprised of a number of closely spaced frequencies. These are so closely spaced that they are narrower than many vibrational/rotational transitions and so can be used to measure these with great accuracy. There are several variations of this method but the simplest, direct comb spectroscopy, is shown in the next figure where the absorption of the sample is measured as if in a normal spectrophotometer. A molecular transition that is $1\,\mathrm{cm^{-1}}$ wide has a frequency width of $3\cdot10^{10}$ Hz so that many comb lines will cover this frequency as typically their separation is $10^8$ Hz. 
 # 
@@ -224,9 +224,9 @@ C = toep_conv(f,w)
 # 
 # The connection between convolution and fourier transforms is
 # 
-# >**convolution in real space = multiplication in fourier space**
+# >### **Convolution in real space = multiplication in fourier space**
 # 
-# >**multiplication in real space = convolution in fourier space**
+# >### **Multiplication in real space = convolution in fourier space**
 # 
 # Performing a fourier transform  is often a very fast way of computing a convolution by computer because the digital transform (DFT) is highly optimised.
 # 
@@ -423,7 +423,7 @@ plt.show()
 # 
 # but now $k$ always ranges from $-n + 1 \to n - 1$. This distinction is crucial, otherwise the whole of the cross-correlation is not calculated.
 # 
-# ### **Numerical calculation using a  Toeplitz matrix**
+# ### **(i) Numerical calculation using a  Toeplitz matrix**
 # 
 # In calculating a correlation as a summation with a computer, as with a convolution, each term in the correlation is a sum, so this means that two nested 'loops' are needed to calculate the whole function; one loop sums each individual term, the other calculates the sum, $A_k$. Alternatively the Toeplitz matrix method can be used. This is explained in section 7.3 for convolution and the method to be used with correlation is similar. The Toeplitz matrix is made in the same way as for convolution but the *vector is reversed* in order. The final result also has to be reversed. Why this is is shown below.
 # 
@@ -446,7 +446,7 @@ plt.show()
 # 
 # Some authors define the correlation up to a maximum of $n$ in the summation, not $n - k$. There is, however, a pitfall in doing this because, if the correlation is not zero above half the length of the data, then this folds round and what is calculated is the sum of the correlation plus its mirror image. The way to avoid this is to add $n$ zeros to the data and the summation continued until $2n$. This should be done routinely if Fourier transforms are used to calculate the correlation.
 # 
-# ### **Code example of autocorrelation using Toeplitz matrix**
+# ### **(ii) Code example of autocorrelation using Toeplitz matrix**
 
 # In[5]:
 
@@ -460,7 +460,7 @@ def toep_corrl(f,w):
 #---------------------------------
 
 
-# ### **Integral forms**
+# ### **(iii) Integral forms**
 # 
 # Correlations and convolution are not restricted to digitized data but apply also to normal functions. Written as an integral, the cross-correlation of a real, i.e. not complex, function is
 # 
@@ -490,7 +490,7 @@ def toep_corrl(f,w):
 # 
 # where * indicates the complex conjugate.
 # 
-# ## 8.3 Comparison with convolution and a fourier transform.
+# ## 8.3 Comparison between convolution, correlation and using a fourier transform.
 # 
 # The convolution and correlation are very closely related , the convolution integral has the form 
 # 
@@ -519,7 +519,7 @@ def toep_corrl(f,w):
 # 
 # which is the Wiener-Khinchin Theorem described shortly. This shows us that the square of the absolute value of the fourier transform of $f$ is its autocorrelation.
 # 
-# ### **Code example. Calculating an autocorrelation with fourier transforms**
+# ### **(i) Code example. Calculating an autocorrelation with fourier transforms**
 # 
 # The calculation leading to equation 42a can be used to obtain the autocorrelation using a fourier transform. The procedure is to calculate the transform, multiply this by its complex conjugate and inverse transform, and as in the warning of section 7.5 the transform should be padded to prevent wrap-around. Try other functions and add noise to understand what autocorrelations look like.
 
@@ -694,13 +694,21 @@ plt.show()
 # 
 # $$\displaystyle \langle f^2 \rangle =\frac{1}{T}\int\limits_0^T\left [\sum\limits_{n=0}^\infty a_n\cos \left(\frac{2\pi n t}{T}\right)+\sum\limits_{n=0}^\infty b_n\sin\left(\frac{2\pi n t}{T}\right)    \right]^2 dt$$
 # 
-# which simplifies considerably because of the orthogonality of the cosine integrals such as $\displaystyle \int \cos(2\pi \frac{nt}{T})\sin(2\pi \frac{mt}{T})dt=0$, $n$ and $m$ being integers, and the result is very simple;
+# which simplifies considerably because of the orthogonality of the cosine integrals such as 
+# 
+# $$\displaystyle \int \cos(2\pi \frac{nt}{T})\sin(2\pi \frac{mt}{T})dt=0$$
+# 
+# $n$ and $m$ being integers, and the result is very simple;
 # 
 # $$\displaystyle \langle f^2\rangle = \frac{1}{2}\sum_n(a_n^2+b_n^2)  $$
 # 
 # This expression can also represent the average of many measurements if the coefficients $a$ and $b$ themselves represent average values. This means that the _ergodic hypothesis_ (or ergodic condition) applies, i.e. for a stationary system each part comprising the ensemble (of particles) will pass through all values accessible to it, given a sufficiently long time. Thus the time average is the same for all parts of the ensemble. This also means that the time average is the equivalent to the ensemble average.  To explain further; the word 'stationary' means that there is no preferred origin for the measurement, thus any time period over which measurements are made is just as good as any other. The ensemble average is taken over all coordinates of a system at a fixed time. The time average considers just a part of the ensemble averaged over a sufficiently long time. If the ergodic hypothesis applies these averages are equal.
 # 
-# The variance (the square of the standard deviation) on the signal is $\sigma^2=\langle f^2\rangle - \langle f\rangle^2 $ and in this case the standard deviation is $\sqrt{\langle f^2\rangle}$ and is the determined only by the amplitudes $a$, $b$ of the noise. The energy in the noise is  $a^2 + b^2$. 
+# The variance (the square of the standard deviation) on the signal is 
+# 
+# $$\displaystyle \sigma^2=\langle f^2\rangle - \langle f\rangle^2 $$
+# 
+# and in this case the standard deviation is $\sqrt{\langle f^2\rangle}$ and is the determined only by the amplitudes $a$, $b$ of the noise. The energy in the noise is  $a^2 + b^2$. 
 # 
 # The autocorrelation of $f(x)$ is 
 # 
@@ -714,7 +722,11 @@ plt.show()
 # 
 # ## 8.6 Wiener–Khinchin relations
 # 
-# The autocorrelation (equation (43)) is related to the energy or power in a given signal. For example, with electromagnetic radiation the energy is the square of the amplitude $E$ of the electric field, the field is given by the constants $a$ and $b$ thus $a^2 + b^2$ represents the energy. This is also true of a sound wave in a fluid where the energy is proportional to the square of the oscillating pressure. There are other examples; the power dissipated in a resistor is proportional to the current squared and the kinetic energy of a molecule is proportional to the square of the velocity. Thus, in general if the signal is $f$, $\langle f^2\rangle$ represents the average energy or power. The period $T$ (equation (43)) is somewhat arbitrary and can reasonably take on any value; therefore, it is possible to define $n/T \equiv \nu_n$ as a frequency. The amount of power $P$ in a small frequency interval from $\nu$ to $\nu + \nu + \delta \nu$ is therefore $\displaystyle P(\nu)d\nu = \frac{1}{2}\left(a_\nu^2 + b_\nu^2\right)$ and the autocorrelation can be written as an integral over frequencies rather than a summation over index $n$. This effectively means that there are so many terms in the sum that it can be changed into an integral without any significant error, and doing this produces the autocorrelation;
+# The autocorrelation (equation (43)) is related to the energy or power in a given signal. For example, with electromagnetic radiation the energy is the square of the amplitude $E$ of the electric field, the field is given by the constants $a$ and $b$ thus $a^2 + b^2$ represents the energy. This is also true of a sound wave in a fluid where the energy is proportional to the square of the oscillating pressure. There are other examples; the power dissipated in a resistor is proportional to the current squared and the kinetic energy of a molecule is proportional to the square of the velocity. Thus, in general if the signal is $f$, $\langle f^2\rangle$ represents the average energy or power. The period $T$ (equation (43)) is somewhat arbitrary and can reasonably take on any value; therefore, it is possible to define $n/T \equiv \nu_n$ as a frequency. The amount of power $P$ in a small frequency interval from $\nu$ to $\nu + \nu + \delta \nu$ is therefore 
+# 
+# $$\displaystyle P(\nu)d\nu = \frac{1}{2}\left(a_\nu^2 + b_\nu^2\right)$$
+# 
+# and the autocorrelation can be written as an integral over frequencies rather than a summation over index $n$. This effectively means that there are so many terms in the sum that it can be changed into an integral without any significant error, and doing this produces the autocorrelation;
 # 
 # $$\displaystyle A(u)=\int_{v=0}^\infty P(\nu)\cos(2\pi\nu u)d\nu  \qquad\tag{44}$$
 # 
@@ -752,15 +764,23 @@ plt.show()
 # 
 # An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and a single detector is used. This is unlike the situation in a uv-vis spectrophotometer where the light is split and passes separately through a sample and a reference cell and the signals from two detectors compared. 
 # 
-# Recall that the FTIR instrument is a Michelson interferometer in which the input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter, and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. If $d$ is the difference in distance travelled by the beams they arrive at the detector at times separated by a delay of $\tau=d/c$ seconds. The detector measures the _intensity_ $I$ which is the complex square of the amplitude of any wave $f^*f = |f|^2$. If the i.r. radiation is hypothetically monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally varying signal as the pathlength $\tau$ varies because the i.r. waves become in and out of phase with one another.
+# Recall that the FTIR instrument is a Michelson interferometer in which the input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter, and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. If $d$ is the difference in distance travelled by the beams they arrive at the detector at times separated by a delay of $\tau=d/c$ seconds. The detector measures the _intensity_ $I$ which is the complex square of the amplitude of any wave 
+# 
+# $$\displaystyle f^*f = |f|^2$$
+# 
+# If the i.r. radiation is hypothetically monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally varying signal as the pathlength $\tau$ varies because the i.r. waves become in and out of phase with one another.
 # 
 # The overall equation relating the autocorrelation of the radiation's electric field $f$ and at time delays $\tau$ is, via the Weiner-Kinchin equation, where $F(\cdots)$ is the fourier transform
 # 
 # $$\displaystyle F\bigg(\int_{-\infty}^\infty f(t)f^*(t+\tau)\bigg)= |F(f(t)|^2=|f(\omega|^2=spectrum $$
 # 
-# in other words the fourier transform of the autocorrelation is the spectrum. The i.r detector is a 'square-law' detector which means that the intensity $f*(\omega)f(\omega)$ is detected rather than the field(f(\omega)$. A typical detector material would consist of HgCdTe. 
+# in other words the fourier transform of the autocorrelation is the spectrum. The i.r detector is a 'square-law' detector which means that the intensity $f^*(\omega)f(\omega)$ is detected rather than the field $f(\omega)$. A typical detector material would consist of HgCdTe. 
 # 
-# To analyse what the detector measures we consider what happens at each delay. Each position of the movable mirror causes a time delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$.  The _amplitude_ or field of the i.r. radiation is $f=ae^{i\omega_0 t}$ at frequency $\omega_0$ ($\omega= 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
+# To analyse what the detector measures we consider what happens at each delay. Each position of the movable mirror causes a time delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$.  The _amplitude_ or field of the i.r. radiation is 
+# 
+# $$\displaystyle f=ae^{i\omega_0 t}$$
+# 
+# at frequency $\omega_0$ ($\omega= 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
 # 
 # $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \qquad\tag{46a}$$
 # 
@@ -798,11 +818,19 @@ plt.show()
 # 
 # $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\qquad\tag{46b}$$
 # 
-# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that $\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$. The integration ranges from $0\to \infty$ which in practice is the distance that becomes $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. Note that for each frequency $\omega$ the integration on the right of eqn. 46b has to be performed. Normally this will be done numerically using a fast four transform FFT.
+# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that 
+# 
+# $$\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$$
+# 
+# The integration ranges from $0\to \infty$ which in practice is the distance that becomes $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. Note that for each frequency $\omega$ the integration on the right of eqn. 46b has to be performed. Normally this will be done numerically using a fast four transform FFT.
 # 
 # At very long times there can no longer be any correlation between the two arms and the signal remaining is due to that of the two separate arms, the constant terms from eqn 46a, making the long time value $I(0)/2$.  
 # 
-# So far we have tried to explain how the fourier transfer picks out transition _frequencies_ but their _magnitudes_ are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the _phase of the combined wave_ (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude $a_i$ of a wave of frequency $\omega_i$ contributes to the sum $\sum_i a_ie^{i\omega_i \tau}=a_0\sum_i e^{i\omega_i \tau+i\varphi_i}$ and so the phase of the autocorrelation vs. $\tau$ is changed. This is shown in figure 34a for two transitions, in the first row of panels, the lower frequency is of greater intensity, and in the lower panel they are swapped in intensity but still have the same frequencies. The left most column (A, and D) shows the two waves vs. mirror displacement $\tau$ in the two cases. The yellow shading (around $\tau=90$) shows where the difference between them is most obvious, of course this repeats at each period. The centre panels  (B & E; autocorrelations) shows the combined waves vs. displacement $\tau$ and on the right the spectrum obtained by fourier transform of the autocorrelations.
+# So far we have tried to explain how the fourier transfer picks out transition _frequencies_ but their _magnitudes_ are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the _phase of the combined wave_ (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude $a_i$ of a wave of frequency $\omega_i$ contributes to the sum 
+# 
+# $$\displaystyle \sum_i a_ie^{i\omega_i \tau}=a_0\sum_i e^{i\omega_i \tau+i\varphi_i}$$
+# 
+# and so the phase of the autocorrelation vs. $\tau$ is changed. This is shown in figure 34a for two transitions, in the first row of panels, the lower frequency is of greater intensity, and in the lower panel they are swapped in intensity but still have the same frequencies. The left most column (A, and D) shows the two waves vs. mirror displacement $\tau$ in the two cases. The yellow shading (around $\tau=90$) shows where the difference between them is most obvious, of course this repeats at each period. The centre panels  (B & E; autocorrelations) shows the combined waves vs. displacement $\tau$ and on the right the spectrum obtained by fourier transform of the autocorrelations.
 # 
 # ![Drawing](fourier-fig34a.png)
 # 

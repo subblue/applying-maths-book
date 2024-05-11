@@ -34,7 +34,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$ \frac{dy}{dt} =x-x^3, \qquad  \frac{dx}{dt}=y$$ 
 # 
-# calculating the phase plane means integrating $dy/dx = (x - x^3)/y$. By separating $y$ and $x$ then $\displaystyle \int ydy=\int(x-x^3)dx$, which integrates to 
+# calculating the phase plane means integrating 
+# 
+# $$\displaystyle dy/dx = (x - x^3)/y$$
+# 
+# Separating $y$ and $x$ gives
+# 
+# $$\displaystyle \int ydy=\int(x-x^3)dx$$
+# 
+# which integrates to 
 # 
 # $$y=\sqrt{x^2-x^4/2 +c} $$
 # 
@@ -47,12 +55,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # making fixed points at $x=0,\;y=0$ and $x = \pm 1,\; y = 0$. A more detailed analysis of fixed points in general shows that they may be stable, unstable or saddle points, see Jeffrey (1990) and/or Strogatz (1994). 
 # 
 # A stable steady state has the property of returning to that state after a small perturbation to it is made, and clearly, the points ($\pm 1,\; 0$) are of this nature, Fig. 13 as they are at the bottom of the wells. The origin is a saddle point, and is not fully stable because moving in any direction from the origin the gradient is negative, except moving up or down the y-axis.
-# 
+# _________
 # $^2$ The name is historical and apparently was originally used in dynamics as the plane containing position $x$ and momentum $mdx/dt$ of a object as it moved under the influence of a force.
+# _________
 # 
 # ## 6.3 Isoclines and nullclines
 # 
-# The equation produced when the rate of change is zero is sometimes called an isocline or nullcline. Just as on an incline we move up, or on a decline down, an isocline means that the gradient is always the same and must therefore be a constant number, and a contour path is followed in the phase plane. A nullcline occurs when this constant is zero The nullclines are $x - x^3 = 0$ and $y = 0$, which in this case are both straight lines. Isoclines are the lines when $x - x^3 = a$ and $y = a$ where $a$ is some constant. Assuming that $y$ is plotted vertically and $x$ horizontally, the 'flow' or vector showing the direction of change, is always horizontal at each point along the nullcline, $dy/dt = 0$, no matter what its curve is, and vertical on the nullcline $dx/dt = 0$. The nullclines also partition the phase plane into areas where the derivatives have different sign; exactly what these are depends upon the particular equations. Figure  shows the phase portrait with isoclines at different $c$ values and the nullclines, which are dotted. The figure-of-eight curve is the _separatrix_ and, in this example, is the point when the particle has just enough initial energy to cross the barrier separating the region of oscillation in one well from motion over the barrier, and hence, motion between both wells. When the particle is placed in the bottom of either well, it has zero potential and zero kinetic energy. If it is not pushed, it will remain in this stable state at ($\pm 1, 0$) which are the points on the axis marked with a red dot.
+# The equation produced when the rate of change is zero is sometimes called an isocline or nullcline. Just as on an incline we move up, or on a decline down, an isocline means that the gradient is always the same and must therefore be a constant number, and a contour path is followed in the phase plane. A *nullcline* occurs when this constant is zero The nullclines are 
+# 
+# $$\displaystyle x - x^3 = 0\quad\text{ and }\quad y = 0$$
+# 
+# which in this case are both straight lines. *Isoclines* are the lines when 
+# 
+# $$x - x^3 = a\quad\text{ and }\quad y = a$$
+# 
+# where $a$ is some constant. Assuming that $y$ is plotted vertically and $x$ horizontally, the 'flow' or vector showing the direction of change, is always horizontal at each point along the nullcline, $dy/dt = 0$, no matter what its curve is, and vertical on the nullcline $dx/dt = 0$. The nullclines also partition the phase plane into areas where the derivatives have different sign; exactly what these are depends upon the particular equations. Figure  shows the phase portrait with isoclines at different $c$ values and the nullclines, which are dotted. The figure-of-eight curve is the _separatrix_ and, in this example, is the point when the particle has just enough initial energy to cross the barrier separating the region of oscillation in one well from motion over the barrier, and hence, motion between both wells. When the particle is placed in the bottom of either well, it has zero potential and zero kinetic energy. If it is not pushed, it will remain in this stable state at ($\pm 1, 0$) which are the points on the axis marked with a red dot.
 # 
 # Finally, in this short introduction to the phase plane, it must be remembered that although the phase plane equation 37 does not explicitly contain time, $x$ and $y$ are still functions of time and that time passing on the phase plane is not measured by equal $x$ and $y$ motion, but in a very non-linear manner. This can only really be observed by plotting pairs of $x$ and $y$ coordinates on the phase plane at various times after solving the coupled equations.
 # 
@@ -69,7 +86,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This equation  is described as non-linear because the angle $\varphi$ does not change linearly but as $\sin(\varphi)$. A derivation of is given in Chapter 10. 
 # 
-# The variable $\varphi$ is the angle in radians away from the vertical, and $\omega$ is an angular frequency defined as $\omega = \sqrt{g/L}\;\mathrm{s^{-1}}$ where $g$ is the acceleration due to gravity and $L$ the length of the pendulum. The frequency $\omega$ is the frequency that the pendulum has when it undergoes infinitesimally small oscillations. The mass of the pendulum is $m$; it is used to calculate forces but cancels out in the result. 
+# The variable $\varphi$ is the angle in radians away from the vertical, and $\omega$ is an angular frequency defined as 
+# 
+# $$\displaystyle \omega = \sqrt{g/L}\;\mathrm{s^{-1}}$$
+# 
+# where $g$ is the acceleration due to gravity and $L$ the length of the pendulum. The frequency $\omega$ is the frequency that the pendulum has when it undergoes infinitesimally small oscillations. The mass of the pendulum is $m$; it is used to calculate forces but cancels out in the result. 
 # 
 # When the angular displacement is small expanding the sine as a series and retaining the first terms as the next terms is $\varphi^3/3!$ and will be insignificant, gives, $\sin(\varphi) \to \varphi$, the the pendulum's motion is sinusoidal and that of the simple harmonic oscillator of frequency $\omega$. The equation of motion becomes 
 # 
@@ -79,7 +100,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$ \varphi (t)=c_1\sin(\omega t+c_2)$$
 # 
-# where $c_1,c_2$ are integration constants and depend on initial conditions. These are chosen to be $\varphi (t)=\varphi_0$ and $d\varphi/dt=v_0$ at $t=0$. The  equations become  $\varphi_0=c_1\sin(c_2)$ and $d\varphi/dt = v_0=c_1\omega\cos(c_2)$ which after finding the constants produces
+# where $c_1,c_2$ are integration constants and depend on initial conditions. These are chosen to be $\varphi (t)=\varphi_0$ and $d\varphi/dt=v_0$ at $t=0$. The  equations become  
+# 
+# $$\displaystyle \varphi_0=c_1\sin(c_2)\quad\text{ and }\quad d\varphi/dt = v_0=c_1\omega\cos(c_2)$$
+# 
+# which after finding the constants produces
 # 
 # $$\varphi(t)=\varphi_0\cos(\omega t)+\frac{v_0}{\omega}\sin(\omega t) $$
 # 
@@ -90,7 +115,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\frac{d\varphi}{dt} = v, \quad \frac{dv}{dt} + \omega^2 \sin(\varphi) = 0 \qquad\tag{39}$$
 # 
-# The equilibrium or steady state point when the derivatives are zero is clearly $v = 0$ and $\omega^2 \sin(\varphi) = 0$, which will occur when $\varphi = 0, \pm n\pi$ with $n = 1,\, 2 \cdots$. The nullclines are zero because only $v$ or $\varphi$ occur in each equation; the isoclines are found when the derivative is a constant $k$, whose values you can choose. In this case, $v = k$ and, $\varphi = \sin^{-1}(k/\omega^2)$ are the isoclines. The phase plane is obtained by first using the chain rule to give
+# The equilibrium or steady state point when the derivatives are zero is clearly $v = 0$ and $\omega^2 \sin(\varphi) = 0$, which will occur when $\varphi = 0, \pm n\pi$ with $n = 1,\, 2 \cdots$. The nullclines are zero because only $v$ or $\varphi$ occur in each equation; the isoclines are found when the derivative is a constant $k$, whose values you can choose. In this case, 
+# 
+# $$\displaystyle v = k\quad\text{ and }\quad\varphi = \sin^{-1}(k/\omega^2)$$
+# 
+# are the isoclines. The phase plane is obtained by first using the chain rule to give
 # 
 # $$ \frac{dv}{d\varphi} = -\frac{\omega^2}{v} \sin(\varphi)$$
 # 
@@ -108,6 +137,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and this is shown in fig 14. 
 # 
+# ### **(i) The Separatrix**
 # The line crossing through $\varphi/\pi=\pm 1$ on the abscissa, is called the *separatrix*; this is produced in this example when the integration constant $c = 1$ if $\omega = 1$. At all points between the separatrixes, the pendulum does not complete more than one revolution, i.e. oscillates back and forth, and the motion appears as closed curves in the figure. If the pendulum starts from a stationary position at any angle except zero, up to a fraction short of $\pi$ radians, a position almost upside down, it will then swing, ad infinitum, to a similar position on the other side and then back again; recall that there is no friction term in the equations. If the pendulum starts exactly upside down and also isn't given a push, i.e. initial angular velocity is zero, then it should remain upside down for ever in this metastable state. However, no matter what angle the pendulum is in initially, if it is given a sufficient push and acquires energy in excess of $2mgL$, then it can repeatedly rotate though 360$^\mathrm{o}$. This is shown on the phase plane by the lines above the separatrix that do not cross the horizontal $\varphi/\pi$ axis.
 # 
 # The direction of the motion can also be determined from the plot, starting at $\varphi/\pi = 1/2$ or 90$^\mathrm{o}$, and at zero initial velocity, the pendulum loses potential energy and gains kinetic energy. The angle decreases as the pendulum moves towards its lowest point; this means that the velocity is negative and becomes increasingly so, reaching its largest negative value when the pendulum is pointing vertically down. The motion is therefore clockwise around the closed curves as shown by the arrows on the plot. The motion continues forever, because energy is conserved in this model of the pendulum.
@@ -204,22 +234,26 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # where $S$ and $I$ represent the number of individuals (or the concentration of chemical species in an autocatalytic reaction). The initial number infected is $I_0$, those susceptible $S_0$, and removed $R_0$. The total number of individuals is a constant $N$, and, because of this, the last differential equation is not needed because $R$ can be calculated by subtracting from $N$ the amount of $S$ and $I$ at any time. The rate constants are $k_2$, the spreading rate constant and $k_1$ the removal rate constant, and have units of number$^{-1}$ time$^{-1}$ and number time$^{-1}$ respectively. By writing down rate equations, it is implicitly assumed that the number of individuals present is large and can be a continuous variable, not an integer, as is really the case. The model described so far assumes that all infected persons recover but instead many may die as we have seen with Covid19. To model this an extra rate constant can be added to $k_1\to k_1+k_D$ and then the term $dD/dt=k_DI$ included. The fraction that die is $k_1/(k_1+k_D)$, a number which will normally be known. Monte Carlo methods to integrate and simulate these equations without using calculus are shown in Chapter 12 in Q9 and Q16 and their answers.
 # 
-# Before the equations are numerically integrated, a complete analytical solution not being possible, some analysis of the problem will be carried out. The actual values of the constants are important if a real disease is to be modelled, and before trying to fit the data, it is necessary to know what range of parameters will produce an epidemic and what the expected populations will look like.
+# Before the equations are numerically integrated, a complete analytical solution not being possible, some analysis of the problem can still be carried out. The actual values of the constants are important if a real disease is to be modelled, and before trying to fit the data, it is necessary to know what range of parameters will produce an epidemic and what the expected populations will look like.
 # 
-# Intuitively, the scheme 40 suggests that the number infected I, which is initially small (for instance, one person), increases rapidly, passes through a maximum, then slowly decays away. However, this will occur only if $k_2S_0 \gt k_1$ because when S is large, I is initially formed more rapidly than it is consumed. If the opposite is true, then I is consumed more rapidly and its population cannot become large and no epidemic occurs. To be quantitative, let $R_R = k_2S_0/k_1$ be defined as the reproductive ratio,$^\dagger$ which is the number of secondary infections caused by one infected person if all the population is equally susceptible. An epidemic must ensue if the reproductive ratio is greater than one, because more individuals will become infected with time. This can also be appreciated by examining the rate of change of I in the second of equations 41 at 
+# Intuitively, scheme 40 suggests that the number infected I, which is initially small (for instance, one person), increases rapidly, passes through a maximum, then slowly decays away. However, this will occur only if $k_2S_0 \gt k_1$ because when S is large, I is initially formed more rapidly than it is consumed. If the opposite is true, then I is consumed more rapidly and its population cannot become large and no epidemic occurs. To be quantitative, let $R_R = k_2S_0/k_1$ be defined as the reproductive ratio,$^\dagger$ which is the number of secondary infections caused by one infected person if all the population is equally susceptible. An epidemic must ensue if the reproductive ratio is greater than one, because more individuals will become infected with time. This can also be appreciated by examining the rate of change of I in the second of equations 41 at 
 # 
 # $$\displaystyle t = 0;\; dI/dt\big|_{t = 0} = I_0(k_2S_0 − k_1)\quad\text{ if }\quad k_2S_0 \gt k_1$$
 # 
 # then $dS/dt \gt 0$ and an epidemic will occur. 
 # 
-# Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria $\approx$100, (see Britton 2003).
+# Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria $\approx$100, (see Britton 2003), Covid-19 $gt 3, \lt 9$ (Wikipedia).
 # 
 # ( $^\dagger$ Many texts call the reproductive ratio $R_0$, which is unfortunately confusing with $R_0$, the initial number in the removed class.)
 
 # ## 7.2 The SIR phase plane
 # 
 # A graph of $I$ vs $S$ is the phase plane. The phase plane shows how the number of infectives $I$
-# and susceptibles $S$ change with time, even though time is only implicit on the graph. The relationship between I and S is found by using the chain rule $\displaystyle\frac{dI}{dt}=\frac{dI}{dS}\frac{dS}{dt}$ and then  integrating:
+# and susceptibles $S$ change with time, even though time is only implicit on the graph. The relationship between I and S is found by using the chain rule 
+# 
+# $$\displaystyle\frac{dI}{dt}=\frac{dI}{dS}\frac{dS}{dt}$$
+# 
+# and then  integrating:
 # 
 # $$\frac{dI}{dS}=\frac{k_2S-k_1}{-k_2S}=\frac{k_1}{k_2S}-1$$
 # 
@@ -248,7 +282,11 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # ## 7.3 Steady states, isoclines, and nullclines
 # 
-# In a rate equation, a steady state is produced when the rate of change is zero. In the SIR model this means $dS/dt = 0$ and $dI/dt = 0$. When molecules, or species in general, interact more than one steady state can be present, and not all of these are necessarily stable. The nullclines on the phase plane of the SIR model are particularly simple and are $I = 0$, or along the S-axis, and $S = k_1/k_2$, which is the vertical line at $S_N^{max}$ and divides the region where the infected population increases from that where it decreases. The nullclines divide the phase plane into four areas, two areas are below the S-axis in this case, and, as negative number of individuals do not make any sense, only two of the four regions have any meaning. Assuming that I is plotted vertically and R horizontally, the 'flow' or vector, arrow Fig.16, showing the direction of change is always vertical at any point of the $I$ nullcline, (horizontal axis), no matter what its curve is, and horizontal on the $S$ nullcline when $dS/dt = 0$. A steady state point is found where the nullclines meet, in the SIR model this is in the $S$-axis at the point $[k_1/k_2, 0]$ which is the foot of the vertical line $S_N^{max}$.
+# In a rate equation, a steady state is produced when the rate of change is zero. In the SIR model this means 
+# 
+# $$\displaystyle \frac{dS}{dt} = 0,\qquad \frac{dI}{dt} = 0$$
+# 
+# When molecules, or species in general, interact more than one steady state can be present, and not all of these are necessarily stable. The nullclines on the phase plane of the SIR model are particularly simple and are $I = 0$, or along the S-axis, and $S = k_1/k_2$, which is the vertical line at $S_N^{max}$ and divides the region where the infected population increases from that where it decreases. The nullclines divide the phase plane into four areas, two areas are below the S-axis in this case, and, as negative number of individuals do not make any sense, only two of the four regions have any meaning. Assuming that I is plotted vertically and R horizontally, the 'flow' or vector, arrow Fig.16, showing the direction of change is always vertical at any point of the $I$ nullcline, (horizontal axis), no matter what its curve is, and horizontal on the $S$ nullcline when $dS/dt = 0$. A steady state point is found where the nullclines meet, in the SIR model this is in the $S$-axis at the point $[k_1/k_2, 0]$ which is the foot of the vertical line $S_N^{max}$.
 # 
 # ## 7.4 Threshold for an epidemic and maximum and total number infected
 # 

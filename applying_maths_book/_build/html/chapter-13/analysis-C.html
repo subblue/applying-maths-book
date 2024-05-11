@@ -1583,16 +1583,16 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cumulative-distribution">
+    <a class="reference internal nav-link" href="#vi-cumulative-distribution">
      <strong>
-      Cumulative distribution
+      (vi) Cumulative distribution
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#weighting-the-poisson-data">
+    <a class="reference internal nav-link" href="#vii-weighting-the-poisson-data">
      <strong>
-      Weighting the Poisson data
+      (vii) Weighting the Poisson data
      </strong>
     </a>
    </li>
@@ -1693,16 +1693,16 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cumulative-distribution">
+    <a class="reference internal nav-link" href="#vi-cumulative-distribution">
      <strong>
-      Cumulative distribution
+      (vi) Cumulative distribution
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#weighting-the-poisson-data">
+    <a class="reference internal nav-link" href="#vii-weighting-the-poisson-data">
      <strong>
-      Weighting the Poisson data
+      (vii) Weighting the Poisson data
      </strong>
     </a>
    </li>
@@ -1841,7 +1841,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\boldsymbol B=&amp;\begin{bmatrix} \sum_kw_ky_kf_1(x_k) &amp; \sum_kw_ky_kf_1(x_k) &amp;\cdots\end{bmatrix}\\
 \equiv&amp;\begin{bmatrix} S(wyf_1) &amp; S(wyf_2)&amp; \cdots\end{bmatrix}\end{align}\end{split}\]</div>
-<p>and, in the second line, the abbreviation, <span class="math notranslate nohighlight">\(S(\cdots )\)</span>, is used to indicate the summation over the <span class="math notranslate nohighlight">\(k\)</span> data points. The right-hand side of the normal equations (13.45) can be written as a square matrix A left multiplied by a row matrix C to make another row matrix thus making the right-hand side of the equation equal to the left. To form <span class="math notranslate nohighlight">\(\boldsymbol{CA}\)</span>, the right-hand side of 45 or 46 has to be split into a column and square matrix. It is clear that in each term <span class="math notranslate nohighlight">\(f\)</span> has indices in <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(k\)</span> so the term in row 1 column 2 in the <span class="math notranslate nohighlight">\(A\)</span> matrix can be written using the <span class="math notranslate nohighlight">\(S\)</span> abbreviation as <span class="math notranslate nohighlight">\(\displaystyle S(wf_1f_2)\equiv \sum_kw_kf_1(x_k)f_2(x_k)\)</span> and does not contain any <span class="math notranslate nohighlight">\(\alpha\)</span>, therefore</p>
+<p>and, in the second line, the abbreviation, <span class="math notranslate nohighlight">\(S(\cdots )\)</span>, is used to indicate the summation over the <span class="math notranslate nohighlight">\(k\)</span> data points. The right-hand side of the normal equations (13.45) can be written as a square matrix A left multiplied by a row matrix C to make another row matrix thus making the right-hand side of the equation equal to the left. To form <span class="math notranslate nohighlight">\(\boldsymbol{CA}\)</span>, the right-hand side of 45 or 46 has to be split into a column and square matrix. It is clear that in each term <span class="math notranslate nohighlight">\(f\)</span> has indices in <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(k\)</span> so the term in row 1 column 2 in the <span class="math notranslate nohighlight">\(A\)</span> matrix can be written using the <span class="math notranslate nohighlight">\(S\)</span> abbreviation as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S(wf_1f_2)\equiv \sum_kw_kf_1(x_k)f_2(x_k)\]</div>
+<p>and does not contain any <span class="math notranslate nohighlight">\(\alpha\)</span>, therefore</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \boldsymbol A=\begin{bmatrix} S(wf_1f_2)&amp; S(wf_1f_2) &amp; S(wf_1f_3)&amp;\cdots\\ S(wf_2f_1)&amp; S(wf_2f_2) &amp; S(wf_2f_3)&amp;\cdots\\ &amp;\vdots&amp; &amp;\ddots \end{bmatrix}\end{split}\]</div>
 <p>If the row matrix C contains only the coefficients, <span class="math notranslate nohighlight">\(\displaystyle \boldsymbol C=\begin{bmatrix} \alpha_1 &amp; \alpha_2 &amp; \cdots\end{bmatrix}\)</span> the right-hand side of matrix equation 47 is</p>
@@ -2058,15 +2061,15 @@ coefficients and errors
 <p>In a lottery every player has to guess a sequence of <span class="math notranslate nohighlight">\(6\)</span> digits from <span class="math notranslate nohighlight">\(0\to 9\)</span>. If a million people play, what is the probability that there are two winners?</p>
 <p><strong>Solution</strong>. Each player has a one in a million chance of guessing the right number and each player guesses independently. The number of winners is then a Poisson random variable with <span class="math notranslate nohighlight">\(\mu=10^6\cdot 10^{-6}=1\)</span>. The chance is <span class="math notranslate nohighlight">\(p(2,1)= 1^2e^{-1}/2!\approx 0.18\)</span>.</p>
 </section>
-<section id="cumulative-distribution">
-<h3><strong>Cumulative distribution</strong><a class="headerlink" href="#cumulative-distribution" title="Permalink to this headline">#</a></h3>
+<section id="vi-cumulative-distribution">
+<h3><strong>(vi) Cumulative distribution</strong><a class="headerlink" href="#vi-cumulative-distribution" title="Permalink to this headline">#</a></h3>
 <p>The cumulative distribution is found by summing to a given <span class="math notranslate nohighlight">\(k\)</span> value</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle CDF=\sum_{k=0}^np(k,\mu)=e^{-\mu}\left(1+\mu +\frac{\mu^2}{2!}+\frac{\mu^3}{3!}+\cdots +\frac{\mu^n}{n!}\right)\]</div>
 <p>The cumulative distribution is used to estimate the chance of having a value larger than say the 95% probability.</p>
 </section>
-<section id="weighting-the-poisson-data">
-<h3><strong>Weighting the Poisson data</strong><a class="headerlink" href="#weighting-the-poisson-data" title="Permalink to this headline">#</a></h3>
+<section id="vii-weighting-the-poisson-data">
+<h3><strong>(vii) Weighting the Poisson data</strong><a class="headerlink" href="#vii-weighting-the-poisson-data" title="Permalink to this headline">#</a></h3>
 <p>Photon and particle counting experiments normally follow a Poisson distribution. The weighting to use is <span class="math notranslate nohighlight">\(w_i = 1/c_i\)</span> where <span class="math notranslate nohighlight">\(c_i\)</span> is the mean number of counts at the <span class="math notranslate nohighlight">\(i^{th}\)</span> data point in the data, thus, the weighting is always known. This does lead to a specific problem, viz., what happens when no counts are recorded in a particular channel, <span class="math notranslate nohighlight">\(c_i = 0\)</span>? This is quite possible at low light levels as occurs in single photon counting fluorescence decay experiments, or, when measuring fluorescence from single molecules through a confocal microscope. The advice to deal with this is to manipulate the data either by ignoring values below <span class="math notranslate nohighlight">\(10\)</span> counts, or to add <span class="math notranslate nohighlight">\(1\)</span> to every data point or to make each zero into <span class="math notranslate nohighlight">\(1\)</span> and leave all the rest alone. None of this is satisfactory because it will cause incorrect parameters to be produced to the fitted data, and must be avoided. By making these changes, both the data and residuals are changed similarly so the effect can be disguised. The solution (Turton et al. Anal. Chem. 2003) is to fit the data with a weighting of <span class="math notranslate nohighlight">\(1\)</span> and then the use values from the fitted curve as the weighting and refit the data. This has been shown to produce unbiased fits down to a very few counts in the total signal and contradicts the widespread assumption that least squares fitting of Poisson distributed data is invalid. One further point worth making is that when conducting counting experiments, it is not the maximum number of counts in any one channel that is important for data fitting but the total number of counts in the whole signal.</p>
 </section>
 </section>

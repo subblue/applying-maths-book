@@ -20,11 +20,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The equations of chemical kinetics can quite easily become complicated even with simple schemes. The sequential scheme 
 # 
-# $$\displaystyle A \overset{k_1}\to B \overset{k_2}\to C$$
+# $$\displaystyle A \overset{k_1}\longrightarrow B \overset{k_2}\longrightarrow C$$
 # 
 # is quite difficult to solve by direct integration of the equations involved, and if a reversible step is introduced, such as 
 # 
-# $$\displaystyle A \underset{k_{-1}}{\stackrel{k_1}{\leftrightharpoons}} B \overset{k_2} \to C$$
+# $$\displaystyle A \underset{k_{-1}}{\stackrel{k_1}{\leftrightharpoons}} B \overset{k_2} \longrightarrow C$$
 # 
 # then solving the rate equations becomes a difficult task. When performing transient kinetics experiments using, for instance, the stopped-flow, flash - photolysis, or femtosecond pump - probe methods, the time profiles of the species present have to be calculated, so that they can be fitted to data to obtain rate coefficients. The transient species present, such as B above, are identified both by their time profile and by spectra. 
 # 
@@ -39,7 +39,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the scheme,
 # 
-# $$\displaystyle \displaystyle A \overset{k_1}\to B \overset{k_2}\to C$$
+# $$\displaystyle \displaystyle A \overset{k_1}\longrightarrow B \overset{k_2}\longrightarrow C$$
 # 
 # as $A$ decays $B$ is formed at rate $k_1A$, and as this decays with rate $k_2B$, $C$ is formed. The whole
 # scheme is
@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # As an extension to this scheme, suppose that A has an extra form of decay and rather than just forming B it also forms D with a rate constant $k_3$. This might be another chemical species or if A is an excited state, then D could be the ground state and A has fluoresced. Either way the scheme is  
 # 
-# $$\displaystyle \displaystyle A \overset{k_1}\to B \overset{k_2}\to C; \qquad A \overset{k_3}\to D$$
+# $$\displaystyle \displaystyle A \overset{k_1}\longrightarrow B \overset{k_2}\to C; \qquad A \overset{k_3}\longrightarrow D$$
 # 
 # and $\displaystyle \frac{dA}{dt}=-(k_1+k_3)A$ but B is unchanged as $\displaystyle \frac{dB}{dt}= k_1A - k_2B$. Notice that although $dB/dt$ is the same as in the scheme above B itself appears with rate constant $k_1+k_3$ which is the decay of A but only the fraction $k_1/(k_1+k_3)$ of A forms D. By inspecting the scheme, we can write down the decay of A and the appearance of D without any further calculation, giving
 # 
@@ -87,7 +87,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. The position of a row of  rate constants in the matrix is the same as in the rate equation for that species.  Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal. The next sections illustrate how the solution is determined.
 # 
-# ### **Secular Determinant**
+# ### **(i) Secular Determinant**
 # 
 # Solving the matrix equation 37 is done in two steps. First the eigenvalues $\lambda$ are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3; we use it first. The secular determinant of matrix $\pmb{k}$ is
 # 
@@ -95,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # whose characteristic equation is $(k_1 + \lambda)(k_2 + \lambda)\lambda = 0$ and from which, by inspection, $λ_1 =-k_1,\; \lambda_2 =-k_2$,and $\lambda_3 =0$.
 # 
-# ### **Time profiles**
+# ### **(ii) Time profiles**
 # 
 # To calculate the populations, or concentrations, using the Master equation approach the matrix equation
 # 
@@ -122,7 +122,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.
 # 
-# ### **Algebraic solution of $A \to B \to C$**
+# ### **(iii) Algebraic solution of $A \to B \to C$**
 # 
 # It is assumed that the rate constants are $k_1$ and $k_2$, and that, at time zero, the amount of $A$ present $A_0 = 1$, and that $B_0 = C_0 = 0$; This code will calculate any $A \leftrightharpoons B \leftrightharpoons C$ when the $\pmb{k}$ matrix is modified.
 
@@ -160,10 +160,10 @@ populations
 # 
 # ![Drawing](matrices-fig55.png)
 # 
-# Figure 55. Populations of species $A, \;B$, and $C$ with time when $k_1 = 1,\; k_2 = 1.5$ with initial concentrations $A_0 =1,\;B_0 =C_0 =0$. The scheme is $\displaystyle A \overset{k_1}\to B \overset{k_2}\to C$.
+# Figure 55. Populations of species $A, \;B$, and $C$ with time when $k_1 = 1,\; k_2 = 1.5$ with initial concentrations $A_0 =1,\;B_0 =C_0 =0$. The scheme is $\displaystyle A \overset{k_1}\longrightarrow B \overset{k_2}\longrightarrow C$.
 # ________
 # 
-# ### **Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$ using the Master Equation** 
+# ### **(iv) Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$ using the Master Equation** 
 
 # In[5]:
 
@@ -199,7 +199,7 @@ plt.show()
 # Plotting the three curves of pop[...] will produce figure 55.
 # ____________
 # 
-# ### **Circular reaction scheme**
+# ### **(v) Circular reaction scheme**
 # 
 # When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. We can see that equilibrium will be established for all three species as there is no pathway for any species to react other than to the others. We can also guess at the concentration vs time if only one species is populated initially, which is that this species decays and the others increase until equilibrium is reached.
 # 
@@ -225,7 +225,7 @@ plt.show()
 # 
 # This matrix method can be extended to schemes with many other species as in question 52. If, for instance, species $b$ decays such as by fluorescence or phosphorescence then $-k_f b$ is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.
 # 
-# ### **Steady State**
+# ### **(vi) Steady State**
 # 
 # In this particular scheme each species will soon reach the steady state, which is here equivalent to equilibrium, when the rate of change of concentration becomes zero. This happens because we have not included a process by which the total population can decrease, for example, by any one species reacting to a different molecule other than A, B or C. 
 # 
@@ -237,7 +237,7 @@ plt.show()
 # 
 # $$\displaystyle \frac{a}{c}=\frac{ k_{21} k_{31} + k_{21} k_{32} + k_{23} k_{31}}{k_{12} k_{23} + k_{13} k_{21} + k_{13} k_{23}}$$
 
-# ### **Energy transfer on a Polygon. Circulant determinants**
+# ### **(vii) Energy transfer on a Polygon. Circulant determinants**
 # 
 # In this example we consider energy transfer between molecules equally spaced apart on a polygon. The determinant produced is similar to the $\mathrm{H\overset{\cdot\cdot}uckel }$ one described in section 2 although the problem is totally different.
 # 
@@ -488,11 +488,11 @@ M5
 # 
 # The model has the following rules.
 # 
-# **(i)**$\quad$ The energy of the randomly coiled chain is taken as the baseline energy and it has a value of zero and a given a statistical weight of $1$.
+# **(a)**$\quad$ The energy of the randomly coiled chain is taken as the baseline energy and it has a value of zero and a given a statistical weight of $1$.
 # 
-# **(ii)**$\quad$ A section of helix is energetically favourable as hydrogen bonds are formed. The statistical weight given to a helix forming residue is $s$, if the helix is already formed, i.e. this is the statistical weight to add an $h$ if the preceding residue is also $h$. This is sometimes called a helix continuation parameter.
+# **(b)**$\quad$ A section of helix is energetically favourable as hydrogen bonds are formed. The statistical weight given to a helix forming residue is $s$, if the helix is already formed, i.e. this is the statistical weight to add an $h$ if the preceding residue is also $h$. This is sometimes called a helix continuation parameter.
 # 
-# **(iii)**$\quad$ The first helix forming residue must be at a $\cdots ch$ boundary. There is an entropy term $\sigma$ due to restricting the rotational motion of the residue on forming a helix from a coil, making the statistical weight $s\sigma$. The value of $\sigma$ is always less than 1.
+# **(c)**$\quad$ The first helix forming residue must be at a $\cdots ch$ boundary. There is an entropy term $\sigma$ due to restricting the rotational motion of the residue on forming a helix from a coil, making the statistical weight $s\sigma$. The value of $\sigma$ is always less than 1.
 # 
 # The results of the calculation show that there is cooperativity in the helix-coil transition. When $\sigma \ll 1$ it is hard to form a helix, but once formed it is energetically favourable to continue to add only $h$ residues and the helix-coil 'phase transition' is sharp. Conversely, when $\sigma \sim 1$ there is no cooperativity in the transition and it occurs over a relatively wide range of temperature, which effectively means a large range of $s$ because $s$ is the Boltzmann contribution $e^{-\Delta G/k_BT}$ to the partition function.
 # 

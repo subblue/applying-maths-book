@@ -43,7 +43,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The $n^{th}$ value of $t$ is $t_n = t_0 + nh,\,t_0$ being the initial time when $n = 0$, and the initial condition is $y(t_0)=y_0$ .The times are $t_0,\,t_1 =t_0 +h,\,t_2 =t_0 +2h$, and so forth. The grey area in Fig 7 (left) is $hf(t_n, y_n)$ which approximates the whole area under the curved line in the Euler method.
 # 
-# The calculation is easy to implement, but several terms have to be defined before starting. These are the initial condition, which means $t_0$ and $y(t_0) = y_0$, the final time to stop the calculation $t_{max}$, and the number of points $N$. These will define $h$ as $\displaystyle h= \frac{T_{max}-t_0}{N-1}$. Choosing $N$ is not difficult; as a rule-of-thumb start with 100 points and see what happens, then repeatedly double or treble this value. Increasing $N$ reduces $h$ and this will often have to be $\ll$ 0.01, but if it is too small, the calculation will take a considerable time to complete and therefore some compromise is always necessary.
+# The calculation is easy to implement, but several terms have to be defined before starting. These are the initial condition, which means $t_0$ and $y(t_0) = y_0$, the final time to stop the calculation $t_{max}$, and the number of points $N$. These will define $h$ as 
+# 
+# $$\displaystyle h= \frac{T_{max}-t_0}{N-1}$$
+# 
+# Choosing $N$ is not difficult; as a rule-of-thumb start with 100 points and see what happens, then repeatedly double or treble this value. Increasing $N$ reduces $h$ and this will often have to be $\ll$ 0.01, but if it is too small, the calculation will take a considerable time to complete and therefore some compromise is always necessary.
 # 
 # Sometimes, the solution of the equation is sought to smaller values than $t_0$, effectively running the calculation backwards, which means making $h$ negative. In this case, the time has to be reduced as $t_n=t_0-nh$ and the consecutive values of y calculated as
 # 
@@ -155,7 +159,11 @@ soln0,time0 = Eulerf(dydt,t0,y0,maxt,N)  # return results as arrays
 # 
 # $$\displaystyle y_{n+1}=y_n+\frac{h}{2}\left[f(t_n,y_n)+f(t_{n+1},y_{n+1})\right]  \qquad\tag{21}$$
 # 
-# Some simplifications can now be made by replacing $t_{n+1} = t_n + h$ and $y_{n+1} = y_n + hf(t_n, y_n)$, which is equation 19, into the second occurrence of the function to become the Modified Euler formula, which is sometimes also called Heun’s method. The result is
+# Some simplifications can now be made by replacing 
+# 
+# $$\displaystyle t_{n+1} = t_n + h\quad\text{ and }\quad y_{n+1} = y_n + hf(t_n, y_n)$$
+# 
+# which is equation 19, into the second occurrence of the function to become the Modified Euler formula, which is sometimes also called Heun’s method. The result is
 # 
 # $$\displaystyle y_{n+1}=y_n+\frac{h}{2}\left[f(t_n,y_n)+f(t_n+h,y_n+hf(t_n,y_n))\right]  \qquad\tag{22}$$
 # 
@@ -260,7 +268,11 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 # An MD simulation is a technique to calculate equilibrium and transport properties of many body systems, such as proteins, DNAs, polymers, or simple liquids. The calculation is normally classical, and integrates Newton's equation of motion. As classical mechanics is used, quantum effects such as tunnelling are ignored. The speed and capacity of modern computers make MD a common tool for the study of bio-molecules in particular, and a vast literature exists.
 # The MD simulation proceeds by calculating the forces between pairs of particles and integrating them at some time t; this time is now incremented by a small amount $\Delta t$ and the process repeated. In a protein or DNA, the forces between the atoms will comprise those of individual chemical bonds, with their own particular force constants for bond stretching, bending, and rotating. Between non-bonded atoms, Lennard-Jones type potentials could be used and the Coulomb potential between charged groups. These interactions can be- come rather complicated and are usually parameterized and standard sets of values used.
 # 
-# In the Verlet algorithm, the equations of motion are not solved as such, which means that the starting point is not to simplify the differential equation and then approximate them as done in the Euler and Runge - Kutta methods. Instead, a Taylor expansion in time about the initial position is made. To use the Verlet algorithm, the force or acceleration of each particle must be known; this is always the case once the potential is known because force is the negative derivative of the potential with distance; $f_x = -dU(x)/dx$. As the equations of motion are second order, two initial conditions are necessary for each atom or molecule and these are the starting point and the initial velocity. From these, the next position, a very small distance away, is calculated, perhaps by using Newton's laws, and from these two positions all the other positions, and the corresponding velocities, can be found from the algorithm.
+# In the Verlet algorithm, the equations of motion are not solved as such, which means that the starting point is not to simplify the differential equation and then approximate them as done in the Euler and Runge - Kutta methods. Instead, a Taylor expansion in time about the initial position is made. To use the Verlet algorithm, the force or acceleration of each particle must be known; this is always the case once the potential is known because force is the negative derivative of the potential with distance; 
+# 
+# $$\displaystyle f_x = -dU(x)/dx$$
+# 
+# As the equations of motion are second order, two initial conditions are necessary for each atom or molecule and these are the starting point and the initial velocity. From these, the next position, a very small distance away, is calculated, perhaps by using Newton's laws, and from these two positions all the other positions, and the corresponding velocities, can be found from the algorithm.
 # 
 # The Verlet calculation starts by making a Taylor expansion (see Chapter 5) about the position at time $t + \Delta t$ and $t - \Delta t$ and the sum and difference between these two positions calculated. The formula for a Taylor series of any function $f(x)$ expanded about a point $x_0$, is
 # 
@@ -345,7 +357,11 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 # 
 # Consider calculating the position and velocity of a ball dropped from a height of $h = 30$ metres until it reaches the ground. The equation of motion is obtained by balancing forces and is $md^2y/dt^2 + mg = 0$ where $m$ is the mass of the ball, which cancels out, and $g$ the acceleration due to gravity $9.81\,\mathrm{ ms^{-2}}$. The time steps have to be determined by trial and error but the calculation is quite accurate with time steps of $0.005$ s.
 # 
-# To start the calculation, two positions are needed. If the initial position is $y_0$ and velocity $v_0$, the other can be calculated from Newton's laws using $v_{old} = v_0 + (-g)(-\Delta t)$ and $y_{old} = y_0 - v_{old}\Delta t$. The acceleration is constant at all times and is $-g$. The Verlet algorithm is as follows:
+# To start the calculation, two positions are needed. If the initial position is $y_0$ and velocity $v_0$, the other can be calculated from Newton's laws using 
+# 
+# $$\displaystyle v_{old} = v_0 + (-g)(-\Delta t)\quad\text{ and }\quad y_{old} = y_0 - v_{old}\Delta t$$
+# 
+# The acceleration is constant at all times and is $-g$. The Verlet algorithm is as follows:
 
 # In[5]:
 
@@ -556,7 +572,7 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # where $\sigma =D\Delta t/\Delta x^2$. The tri-diagonal matrix contains the values at each old concentration at spatial position $k+1,k$ and $k-1$. Computationally the matrix multiply may be slower than using the direct calculation particularly so if array slicing is used, i.e. $c[1:-1]$ etc. as in algorithm 13a below.
 # 
-# ### **Adding a reaction**
+# ### **(i) Adding a reaction**
 # 
 # A reaction is added by including a term such as $kC^i_j$ to the right hand side of the equation. In the calculation of a transient decay, illustrated below this could be the decay of the excited state produced thus $k$ would be the excited state decay rate constant.
 # 
@@ -564,11 +580,11 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # and this could be added into the matrix form as an extra term but only in the diagonal as $k\Delta t/\sigma$.
 # 
-# ### **Stability**
+# ### **(ii) Stability**
 # 
 # The condition for absolute stability depends on both the spatial and temporal steps and is $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$ and making more spatial grid points is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand.
 # 
-# ### **Initial Conditions**
+# ### **(iii) Initial Conditions**
 # As with the solution of any differential equation  the calculation cannot be completed until the initial conditions have been specified. There are two types of these. The simplest to apply is to fix the value of $C$ at the edge of the grid to a constant value, the Dirichlet condition, the other is to make the gradient at the edge a constant value, Neumann condition. The former is more suitable for thermal calculations where the edges can be kept at a constant temperature. It would be hard to make a membrane that held the same chemical species at a higher concentration on one side than the other. 
 # 
 # The  Neumann initial condition is 
@@ -579,19 +595,37 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # where $\alpha,\;\beta$ are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making $C_0 = C_1, C_m = C_{m-1}$ at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.
 # 
-# ### **Example Calculation: Decay of Transient Grating. ( See also chapter 10-18.5 )** 
+# ### **(iv) Decay of Transient Grating. ( See also chapter 10-18.5 )** 
 # 
 # In the transient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. In solution rotational diffusion of a dye molecule is on the same time scale as the excited state decay of the dye and can thus be measured. See Chapter 10.10 for a diagram and details and H. Eichler, P. Gunter & D. Pohl, 'Laser induced Dynamic Gratings', publ Springer-Verlag 1986.
 # 
-# an initial concentration of $C$ has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs. position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the rotational diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up. In solution the diffracted beam decays due to the normal decay lifetime of the molecule and by rotational diffusion of a dye molecule washing out the grating. If the probe laser has its polarisation perpendicular to that forming the grating the decay has the form $\displaystyle \sim e^{-t/\tau}(1+4e^{-t/\tau_{r}}/5)$ whee $\tau$ is the excited state decay lifetime and $\tau_{r}$ that due to rotational diffusion. If the probe is parallel to the polarisation of the laser forming the grating the decay is $\displaystyle \sim e^{-t/\tau}e^{-t/\tau_{r}}$.
+# an initial concentration of $C$ has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs. position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the rotational diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up. In solution the diffracted beam decays due to the normal decay lifetime of the molecule and by rotational diffusion of a dye molecule washing out the grating. If the probe laser has its polarisation perpendicular to that forming the grating the decay has the form 
 # 
-# Before the calculation can start the dimensions in space and time have to be worked out. As a laser wavelength is measure in nanometres it seems sensible to use this as a unit of distance. The grating wavelength formed by the intersection of the two laser beams has wavelength $\Lambda=\lambda/2\cos(\theta/2)$. Using a $532$ nm laser and an angle of $20$ degrees between beams produces a value of $\Lambda \approx 46$ nm. The initial grating will have the form $c_{00}+\cos(2kx)$ where $x$ is in nm and $k=\pi/\Lambda$. The population $c_{00}$ is that in the sample where no grating is present but molecules are excited and we chose this to be ($c_{00}=2$). Outside the region where the grating is formed the concentration of excited molecules zero and as a result an area larger than the grating is used in the calculation. The reason for doing this is that as time progresses the excited molecules can diffuse into this unexcited area.
+# $$\displaystyle \sim e^{-t/\tau}(1+4e^{-t/\tau_{r}}/5)$$
 # 
-# The diffusion constant is normally quoted in units of $\mathrm{m^2\,s^{-1}}$ which is changed into $\mathrm{nm^2\,ns^{-1}}$ in the calculation meaning that the unit of time is nanoseconds. Because of the limit on the increments, which is that $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$, the time step is calculated using this formula. A smaller value could be used if preferred. This means that only $\Delta x$ need to be chosen and so the concentration plots below always have the same shape but correspond to different times if a different $\Delta x$ is chosen. It is clear that if too large a value is chosen that the calculation fails, this is observed as oscillations and unrealistic behaviour in the concentration, and illustrates that great care has always to be exercised in choosing parameter values in numerical calculations.
+# where $\tau$ is the excited state decay lifetime and $\tau_{r}$ that due to rotational diffusion. If the probe is parallel to the polarisation of the laser forming the grating the decay is 
+# 
+# $$\displaystyle \sim e^{-t/\tau}e^{-t/\tau_{r}}$$
+# 
+# Before the calculation can start the dimensions in space and time have to be worked out. As a laser wavelength is measure in nanometres it seems sensible to use this as a unit of distance. The grating wavelength formed by the intersection of the two laser beams has wavelength 
+# 
+# $$\Lambda=\lambda/2\cos(\theta/2)$$
+# 
+# Using a $532$ nm laser and an angle of $20$ degrees between beams produces a value of $\Lambda \approx 46$ nm. The initial grating will have the form $c_{00}+\cos(2kx)$ where $x$ is in nm and $k=\pi/\Lambda$. The population $c_{00}$ is that in the sample where no grating is present but molecules are excited and we chose this to be ($c_{00}=2$). Outside the region where the grating is formed the concentration of excited molecules zero and as a result an area larger than the grating is used in the calculation. The reason for doing this is that as time progresses the excited molecules can diffuse into this unexcited area.
+# 
+# The diffusion constant is normally quoted in units of $\mathrm{m^2\,s^{-1}}$ which is changed into $\mathrm{nm^2\,ns^{-1}}$ in the calculation meaning that the unit of time is nanoseconds. Because of the limit on the increments, which is that 
+# 
+# $$\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$$
+# 
+# the time step is calculated using this formula. A smaller value could be used if preferred. This means that only $\Delta x$ need to be chosen and so the concentration plots below always have the same shape but correspond to different times if a different $\Delta x$ is chosen. It is clear that if too large a value is chosen that the calculation fails, this is observed as oscillations and unrealistic behaviour in the concentration, and illustrates that great care has always to be exercised in choosing parameter values in numerical calculations.
 # 
 # As a thought experiment we imagine that as time progresses the grating should become washed out which is what the calculation shows. If the calculation continues for a very long time then a constant population across the whole region is produced, but only if the Neumann limiting condition is applied because this limiting condition ensures that the total concentration is held constant. Naturally, if we allow the excited state to decay the population will fall in this way independently of diffusion.
 # 
-# If a reaction such as $d[C]/dt =-k[C]$ were to be included then the updating equation has the additional rate term,
+# If a reaction such as 
+# 
+# $$\frac{d[C]}{dt} =-k[C]$$
+# 
+# were to be included then the updating equation has the additional rate term,
 # 
 #  $$\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right) -kC_k^{old}\Delta t $$
 #  
@@ -819,7 +853,7 @@ plt.show()
 # 
 # $$\displaystyle \frac{\psi_k^{j+1}-\psi_k^j}{\Delta t}=i\frac{1}{2(\Delta x)^2}\bigg(\left(\psi_{k+1}^{j+1}-2\psi_k^{j+1}+\psi_{k-1}^{j+1}\right) + \left(\psi_{k+1}^j-2\psi_k^j+\psi_{k-1}^j  \right )\bigg)-i V_k(\psi_k^{j+1}+\psi_k^j)$$
 # 
-# Expanding on a grid means that the end points effectively form an infinitely high barrier, i.e the calculation takes place within a square well or 'particle in a box' potential so normally the calculation is stopped before the ends are reached. If not you do this you should observe the wavepacket being reflected of the wall and then its continued motion. 
+# Expanding on a grid means that the end points effectively form an infinitely high barrier, i.e. the calculation takes place within a square well or 'particle in a box' potential so normally the calculation is stopped before the ends are reached. If not you do this you should observe the wavepacket being reflected off the wall and then its continued motion. 
 # 
 # To solve the equation it is far easier to convert it into matrix form. This means calculating all the spatial dimension terms before calculating in time. Its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in $\psi^{j+1}$ and in $\psi^j$ as
 # 
@@ -894,7 +928,7 @@ plt.show()
 # \quad\text{save }P^{new}\\
 # \text{repeat}$
 # 
-# ### **Wavepacket motion**
+# ### **(i) Wavepacket motion**
 # 
 # The following calculation illustrates a particle moving inside an infinite square-well potential and encountering a barrier. Because we are dealing with an atomic sized particle this is represented as a wavepacket. Depending on the initial conditions, i.e., the height and thickness of the barrier and its momentum the wavepacket either may reflect from the barrier, pass completely through (quantum tunnelling) or be split into two parts, one part being reflected the other tunnelling through.  The calculation's parameters are set up the illustrate the latter process. 
 # 
@@ -918,7 +952,7 @@ plt.show()
 # 
 # The phase velocity is the speed at which the peak of the wave inside the envelope moves. This can be viewed if the real or imaginary part of  $W$ is plotted and has spatial frequency $p_0$. The energy of the particle is $E=\hbar\omega$ where $\omega$ is the wave frequency in radians/sec ($\omega=2\pi\nu$ where $\nu$ is the frequency in s$^{-1}$). The energy is also $p^2/2m$ so that $k^2=2m\omega/\hbar$, so that $k$ is proportional to frequency.
 # 
-# As the wavepacket moves, in the absence of a barrier, its overall shape remains the same but its width spreads and amplitude decreases, this is called dispersion.. It is simpler to look at the probability distribution $|W|^2$ rather than the wavepacket itself. This is  
+# As the wavepacket moves, in the absence of a barrier, its overall shape remains the same but its width spreads and amplitude decreases, this is called dispersion. It is simpler to look at the probability distribution $|W|^2$ rather than the wavepacket itself. This is  
 # 
 # $$\displaystyle p(x,t)=|W(x,t)|^2 \sim \exp\left(-\frac{\left(x-\hbar k_0 t/m\right)^2}{2\sigma_t^2}\right),\qquad \sigma_t^2=\sigma^2+\frac{\hbar^2 t^2}{4m^2\sigma^2}$$
 # 
@@ -985,14 +1019,14 @@ def updatePsi(p0,pnew):                             # update all x at new time t
 def inits():                                         # initial values
     nt = 1500        # number time points (integer)
     dt = 0.125       # can be tricky to get this right.
-    nx = 600         # num grid x points
+    nx = 2001        # num grid x points. Reduce this number to 500 to make the calculation faster
     Lb = 200         # grid end  (integer)
     La = -200        # grid start (integer)
-    V0 = 0.25         # barrier height
+    V0 = 0.25        # barrier height
     w  = 3           # half barrier width (integer)
     k0 = 1           # wavepacket momentum
     sig= 5           # wavepacket width sigma
-    x0 = -100         # wave packet centre
+    x0 = -100        # initial wave packet centre
     
     return nx,nt,dt,k0,La,Lb,V0,w,sig,x0
 #--------------------------
@@ -1038,11 +1072,11 @@ f0 = dt*2.41888e-17*1e15                      # atomic units to femtoseconds
 mx = np.abs(np.amax(np.conj(psi)*psi ) )      # global maximum
 
 j = 0
-plt.plot(x, 7-j+np.real(psi[100,:]),color='grey', linewidth=1)
+plt.plot(x, 7.25-j+np.real(psi[100,:]),color='grey', linewidth=1)
 for i in [100,400,800,900,1000,1200,1400] :   # I choose to plot at these time points
-
-    plt.plot(x,6-j + np.real(np.conj(psi[i,:])*psi[i,:]/mx) ,color='red',linewidth=1)
-    plt.plot(x,6-j+0.95*V/V0,color='grey',linewidth=1)
+    plt.plot(x,6-j+0.9*V/V0,color='grey',linewidth=1)
+    plt.plot(x,6-j + np.real(np.conj(psi[i,:])*psi[i,:]/mx) ,color='black',linewidth=1)
+    
     fmt='{:d}{:6.2f}{:s}'.format(i,i*f0,' fs')
     plt.text(0.35*Lb,6-j+0.5,fmt,fontsize=10)
     j=j+1
@@ -1058,7 +1092,7 @@ plt.show()
 
 # Figure 10 d. The figure above shows the probability $\psi^*\psi$ vs $x$ at different times. The scattering of the wavepacket and its subsequent re-phasing is clear. The $\displaystyle e^{ik_0x}$ term of the wavepacket generates high spatial frequencies which are observed when the wavepacket is dephased at the barrier. Subsequently these reform and a smooth wavepacket is reproduced.  The probability is scaled to the maximum value at any time, the area is the same in each plot as the wavepacket is normalised.  The real part of the wavepacket is show above its envelope. This shows oscillatory behaviour due to the  $e^{ik_0x}$ term. 
 # 
-# ### **Wavepacket Animation**
+# ### **(ii) Wavepacket Animation**
 # 
 # The following script produces an animation of the wavepacket motion. The axes and calculation are the same as the figure above.
 
@@ -1066,10 +1100,9 @@ plt.show()
 
 
 import ipywidgets.widgets  as wgt
-from ipywidgets import interact, interactive, fixed, interact_manual,VBox,HBox,Layout,HTML
+from ipywidgets import interact, interactive, fixed, interact_manual,VBox,HBox,Layout,HTML,Text
 from IPython.display import display
 
-fig22 = plt.figure(figsize = (6,4))
 plt.rcParams.update({'font.size': 14})                 # set font size for plots
  
 mx = np.real(np.amax(np.conj(np.conj(psi)*psi ) )  )   # global max
@@ -1086,9 +1119,8 @@ def wpacket(k):
     plt.show()
     pass
 
-f02 = wgt.HTML( value="push triangle to start, must push (square) stop before restart ")
+f02 = wgt.HTML( value="*** Push triangle to start, must push square to reset before restart *** ")
 display(f02)
-
 f01 = wgt.interact(wpacket,k = wgt.Play(min=0,max=nt-1,step=20))  # step changes speed
 display(f01)
 

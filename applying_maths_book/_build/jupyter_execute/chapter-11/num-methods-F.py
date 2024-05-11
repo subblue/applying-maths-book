@@ -19,51 +19,59 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # ## 9.1 Shooting method
 # 
-# The previous examples have been treated as initial value problems, but, in many cases, the equation being examined requires that the solution has predetermined value at two places, and a number of engineering and quantum mechanical problems have this restriction. Figure 25 illustrates, in a schematic way, the difference in the initial value and boundary conditions for a second-order equation; $d^2y/dx^2 = f (x,y)$. The top sketch shows the two initial conditions chosen at $x = 0$ to be $y = 1$ and $dy/dx|_0 = 2$; the gradient is shown as an arrow. The lower figure illustrates the situation if the boundary condition on $y$ is one when $x = 0$, and zero when $x = 2$, which is the limit of the calculation; $x$ can only range from $0 \to 2$.
+# The previous examples have been treated as initial value problems, but, in many cases, the equation being examined requires that the solution has predetermined value at two places, and a number of engineering and quantum mechanical problems have this restriction. Figure 25 illustrates, in a schematic way, the difference in the initial value and boundary conditions for a second-order equation; 
 # 
-# The only way to solve differential equations is to know what the initial conditions are. In the boundary value problem, the true initial gradient $dy/dx|0 = \alpha$ and $\alpha$ is unknown, but whose value will produce the required result that at $x = 2,\; y = 0$. Initially $\alpha$ has to be guessed, the calculation performed and then repeated with new guesses until the boundary condition is satisfied. Fortunately, this guessing can be made into an iterative process gradually homing in on the true value.
+# $$\displaystyle d^2y/dx^2 = f (x,y)$$
+# 
+# The top sketch shows the two initial conditions chosen at $x = 0$ to be $y = 1$ and $dy/dx|_0 = 2$; the gradient is shown as an arrow. The lower figure illustrates the situation if the boundary condition on $y$ is one when $x = 0$, and zero when $x = 2$, which is the limit of the calculation; $x$ can thus only range from $0 \to 2$.
+# 
+# The only way to solve differential equations is to know what the initial conditions are. In the boundary value problem, the true initial gradient 
+# 
+# $$\displaystyle \frac{dy}{dx}\Big|_0 = a$$
+# 
+# and $\alpha$ is as yet unknown, but whose value will produce the required result which is that at $x = 2,\; y = 0$. Initially $a$ has to be guessed, the calculation performed and then repeated with new guesses until the boundary condition is satisfied. Fortunately, this guessing can be made into an iterative process gradually homing in on the true value.
 # 
 # ![Drawing](num-methods-fig25.png) 
 # 
-# Figure 25. Initial value conditions (top panel), and boundary value conditions (lower panel). This shows three curves following three different initial values $\alpha$, in addition to $y_0 = 1$, only one of which achieves the boundary condition $y = 0$ when $x = 2$. The shooting method guesses/iterates to the correct initial value $\alpha$ to satisfy the boundary condition
+# Figure 25. Initial value conditions (top panel), and boundary value conditions (lower panel). This shows three curves following three different initial values $a$, in addition to $y_0 = 1$, only one of which achieves the boundary condition $y = 0$ when $x = 2$. The shooting method guesses/iterates to the correct initial value $\alpha$ to satisfy the boundary condition
 # ____
 # 
 # Suppose the equation we want to solve is the one examined before in Section 5.2,
 # 
 # $$ \frac{d^y}{dx^2}+3\frac{dy}{dx}+5y=0   \qquad\tag{51}$$
 # 
-# but now with boundary conditions $y_0 = 1$ and $y_2 = 0$. This last condition means that the value of $y$ is fixed at zero when $x = 2$. Because this equation can only be solved with initial conditions, the condition $y_2 = 0$ must be replaced with $dy/dx |_0 = \alpha$, and $\alpha$ must be found so that when the equation is solved, $y_2 = 0$. The method to be used is a kind of trial and error techniques called shooting.
+# but now with boundary conditions $y_0 = 1$ and $y_2 = 0$. This last condition means that the value of $y$ is fixed at zero when $x = 2$. Because this equation can only be solved with initial conditions, the condition $y_2 = 0$ must be replaced with $dy/dx |_0 = a$, and $a$ must be found so that when the equation is solved, $y_2 = 0$. The method to be used is a kind of trial and error techniques called shooting.
 # 
 # An outline shooting algorithm, using the particular initial conditions $y_0 = a$ and $y_2 = b$ is;
 # 
 # 
-# **(1)**$\quad$ Set  $y_0 = a$.  Guess  initial  $\alpha$
+# **(1)**$\quad$ Set  $y_0 = a$.  Guess  initial  $a, b$
 # 
-# $\qquad$ Set precision $Q$ to restrict $|y_{2\alpha} - b|\lt Q$
+# $\qquad$ Set precision $Q$ to restrict $|y_{2a} - b|\lt Q$
 # 
 # $\qquad$ Set  loop  limit  in  case  no  result  is found.
 # 
-# $\qquad$ Solve equation with guessed $\alpha$  to get initial }$ y_{2\alpha}$
+# $\qquad$ Solve equation with guessed $a$  to get initial }$ y_{2a}$
 # 
-# **(2)**$\quad$ Loop until $|y_{2\alpha} - b|\lt Q$  or loop limit exceeded
+# **(2)**$\quad$ Loop until $|y_{2a} - b|\lt Q$  or loop limit exceeded
 # 
 # $\qquad\quad$ Numerically solve the equation in the range $a \le x \le b$
 # 
-# $\qquad\quad$ Save $y_{2\alpha}$ the value of $y$  at $x = 2$  found with value $\alpha$
+# $\qquad\quad$ Save $y_{2a}$ the value of $y$  at $x = 2$  found with value $a$
 # 
-# $\qquad\quad$ Update $\alpha$
+# $\qquad\quad$ Update $a$
 # 
 # $\qquad$ Loop to (2)
 # 
 # **(3)**$\quad$ Print result and plot data
 # 
-# The $y$ value calculated at the last data point ($x = 2$ in this case) is the boundary value $y_{2\alpha}$ for each $\alpha$, and this has to be stored after each solution and compared with the boundary condition $y_2 = b$. A new value of $\alpha$ is now chosen, and the new $y_{2\alpha}$ compared with the boundary value; when the difference is small enough the calculation ends. Ideally, the difference between the estimated and true value is zero; therefore, this calculation is the same as numerically finding the root of an equation. The new value of $\alpha$ is the root that can be found by linear interpolation (e.g. secant method), using the last two values calculated. Choosing the initial value of $\alpha$ is quite an art. Some equations are 'forgiving' and a value close to $y_0$ will produce a converging solution at the boundary; in other equations some experimenting with different $\alpha$ values is needed before a solution is reached; the innocuous looking equation $d^2y/dx^2 = 1/(1 + y^2)$ is difficult to solve unless $\alpha$ starts close to zero and the next $\alpha$ value chosen is also very small.
+# The $y$ value calculated at the last data point ($x = 2$ in this case) is the boundary value $y_{2a}$ for each $a$, and this has to be stored after each solution and compared with the boundary condition $y_2 = b$. A new value of $a$ is now chosen, and the new $y_{2a}$ compared with the boundary value; when the difference is small enough the calculation ends. Ideally, the difference between the estimated and true value is zero; therefore, this calculation is the same as numerically finding the root of an equation. The new value of $a$ is the root that can be found by linear interpolation (e.g. secant method), using the last two values calculated. Choosing the initial value of $a$ is quite an art. Some equations are 'forgiving' and a value close to $y_0$ will produce a converging solution at the boundary; in other equations some experimenting with different $\alpha$ values is needed before a solution is reached; the innocuous looking equation $d^2y/dx^2 = 1/(1 + y^2)$ is difficult to solve unless $a$ starts close to zero and the next $a$ value chosen is also very small.
 # 
 # Before working out a specific example, it is worth noting that the boundary conditions and the equation can be written generally, and in numerical methods textbooks may appear as 
 # 
 # $$\frac{d^2y}{dx^2}=f(x,y,dy/dx), \quad a \le x \le b ;\quad y_a = r,\quad y_b=s$$
 # 
-# The function $f (x, y, dy/dx)$ simply means that the differential equation has terms in one or more of $x,\; y$, and $dy/dx$ such as $d^2y/dx^2 + dy/dx + x^2 + y = 0$. The initial condition needed to solve this equation has the form $dy/dx |_a = \alpha$; note that this is defined at $a$, the initial point, and uses the value $\alpha$ that must be found. The boundary condition $y_b = s$ can be thought of as the non-linear equation $y_b(\alpha) - s = 0$ in the parameter $\alpha$, and this is the equation that has to be solved iteratively to find its root.
+# The function $f (x, y, dy/dx)$ simply means that the differential equation has terms in one or more of $x,\; y$, and $dy/dx$ such as $d^2y/dx^2 + dy/dx + x^2 + y = 0$. The initial condition needed to solve this equation has the form $dy/dx |_a = a$; note that this is defined at $a$, the initial point, and uses the value $a$ that must be found. The boundary condition $y_b = s$ can be thought of as the non-linear equation $y_b(a) - s = 0$ in the parameter $a$, and this is the equation that has to be solved iteratively to find its root.
 # 
 # To implement the shooting algorithm, the differential equation has to be solved several times with different initial values. In this case, it makes sense to put this part of the calculation into a small procedure so that the same code does not have to be repeated in several places. A procedure is shown below and is based on Algorithm 14. This code is placed inside the procedure and the parameters needed are passed through the header.  The equation to be solved, $d^2y/dx^2 + 3dy/dx + 5y = 0$, is split into two coupled equations, in the usual way,  as lambda functions.
 # 
@@ -118,7 +126,7 @@ xn = 2.0                           # calculate to this boundary
 y0 = 1.0                           # left hand boundary, point a
 yxn= 0.0                           # boundary at xn
 
-alpha0 = 0.0                       # initial alpha guess dy/dx=alpha
+alpha0 = 0.0                       # initial a=alpha guess dy/dx=alpha
 alpha1 = 1.0 + alpha0              # guess initial value
 Q = 1e-7                           # choose limit on accuracy of bisection
 
@@ -158,9 +166,17 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # The first term represents the kinetic energy, the second the potential energy with potential, $V(x)$, and $E$ is the total energy. At each of certain discrete energies, called the eigenvalues, this equation has a wavefunction that satisfies the condition $\psi(x) \to 0,\; (x \to R)$ where $R$ is a distance large compared to the extent of the potential at energy $E$. However, at almost any value of $E$ the equation has a solution, which means that it can be integrated to find $\psi(x)$, but only when $\psi(x) \to 0,\; (x \to R)$ does $\psi(x)$ have a physical interpretation. The range $R$ is taken to be the extent over which the particle can exist; while this is often $\pm \infty$, as in a harmonic oscillator, it is $\pm L/2$ in an infinitely high square well potential of length $L$ and $0 \to \infty$ for atoms. Once the energy $E$ is determined then the wavefunction can be found. The Numerov method is an efficient way to do this but Runge-Kutta or the Euler methods can also be used provided a method is chosen with sufficient precision.
 # 
 # 
-# Imposing the physics onto the mathematics leads to a huge reduction in the number of possible solutions, but presents us with the interesting task of finding just those solutions that are physically meaningful. Suppose that $\psi(x)$ is the value of a wavefunction of a (quantum) particle at some position $x$. The word 'particle' is used generically; it might be, for example, an electron, a proton, a rotational, or a vibrational quantum of a molecule. One of the axioms of quantum mechanics is that the probability at time $t$ of finding a particle between coordinate $x$ and $x + dx$ is $\psi(x)^*\psi(x)$ and, since the particle must exist somewhere in the range $-\infty \le x \le \infty$ , the total probability must be 1:$\displaystyle \int_{-\infty}^{\infty} \psi(x)^*\psi(x)dx=1$. Because the probability over all space is 1, this ensures that that every wavefunction is zero at $\pm \infty :\psi(x)\to 0,(x \to \pm \infty$).
+# Imposing the physics onto the mathematics leads to a huge reduction in the number of possible solutions, but presents us with the interesting task of finding just those solutions that are physically meaningful. Suppose that $\psi(x)$ is the value of a wavefunction of a (quantum) particle at some position $x$. The word 'particle' is used generically; it might be, for example, an electron, a proton, a rotational, or a vibrational quantum of a molecule. One of the axioms of quantum mechanics is that the probability at time $t$ of finding a particle between coordinate $x$ and $x + dx$ is $\psi(x)^*\psi(x)$ and, since the particle must exist somewhere in the range $-\infty \le x \le \infty$ , the total probability must be 1,
 # 
-# The derivative of $\psi$ at infinity is also zero $d\psi/dx|_\infty \to 0$. The wavefunctions only have this property at certain discrete values of $E$, and these are called the eigenvalues. The shape of the wavefunction changes depending on the energy; for example, 1s, 2s, and 3s atomic orbitals do have different shapes, as do the wavefunctions of the harmonic oscillator or of the 'particle in a box'.
+# $$\displaystyle \int_{-\infty}^{\infty} \psi(x)^*\psi(x)dx=1$$
+# 
+# Because the probability over all space is 1, this ensures that that every wavefunction is zero at $\pm \infty :\psi(x)\to 0,(x \to \pm \infty$).
+# 
+# The derivative of $\psi$ at infinity is also zero 
+# 
+# $$\displaystyle \frac{d\psi}{dx}\Big|_\infty \to 0$$
+# 
+# The wavefunctions only have this property at certain discrete values of $E$, and these are called the eigenvalues. The shape of the wavefunction changes depending on the energy; for example, 1s, 2s, and 3s atomic orbitals do have different shapes, as do the wavefunctions of the harmonic oscillator or of the 'particle in a box'.
 # 
 # 
 # Mathematically, the restriction $\psi(x) \to 0, (x \to R)$ makes the integration of the Schroedinger equation a boundary value problem. In solving for the energies and wavefunctions of the hydrogen or other atoms where the wavefunction's range is $r = 0\cdots \infty$, and the wavefunction is not always zero at $r = 0$, the spherically symmetric nature of the problem means that $\psi(r)^*\psi(r)$ has to be multiplied by $4πr^2$ to take into account the volume element of spherical coordinates. The probability density is then always zero at $r = 0$ and at infinity.
@@ -182,7 +198,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # ## 10.1 The Shooting Method with a quadratic potential
 # 
-# ### **Eigenvalues and wavefunctions**
+# ### **(i) Eigenvalues and wavefunctions**
 # 
 # In solving the Schroedinger equation is is necessary to re-write it into a more convenient form and also split it into to equations as done with previous examples of second order equations. Rearranging produces
 # 
@@ -196,7 +212,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # The calculation starts by solving the Schroedinger equation for $\psi$ at zero energy and $x = 0$, which happens to be at the lowest point of the potential, and $E$ is incremented by a small amount and at each new value the *sign* of the wavefunction at the boundary is checked. The energy is incremented until $\psi$ changes sign. When this happens an eigenvalue has been passed and the energy $E$ of the eigenvalue is between these last two values. The bisection method is now used to find an accurate value of the eigenvalue. This is a very stable method but takes several steps to reach the minimum for a given level of precision; the slowness of this method is more than compensated for by its stability because the Newton - Raphson or secant methods are rather subject to instability and can miss eigenvalues. A new energy is now chosen just above the last one found and a new eigenvalue sought and so forth, until the maximum energy required has been reached. The energy increments must be small enough not to miss an eigenvalue but not so small that the calculation takes an inordinate length of time, so some knowledge of the likely energy spacing, based on your knowledge of the chemical physics involved, is going to be useful.
 # 
-# ### **Eigenvalues**
+# ### **(ii) Eigenvalues**
 # 
 # The solutions of the Schroedinger equation in a symmetrical potential have either an 'odd' or 'even' parity, meaning that the wavefunction is either symmetrical and has a mirror image about the y-axis, or non-symmetrical and has instead a centre of inversion. If the wavefunction is of even parity then $\psi(x) = \psi(-x)$ and is finite at the origin but has zero slope; the initial condition is therefore
 # 
@@ -290,7 +306,15 @@ for i in range(s):
     print('{:5d}   {:12.6f} {:5d}   {:12.6f}'.format( Qnum[i], Eigval[i],Qnum[i+s], Eigval[i+s])) # results  
 
 
-# The eigenvalues for two different potentials are shown in Fig. 28. The harmonic $V(x) = (k/2)x^2,\; k=20$  and the double well, $V(x) = x^4 - 13x^2 + 169/4$, which has a minimum of zero and a barrier height of 42.25. A few eigenvalues for the harmonic potential are listed below, and the agreement between the numerical and exact eigenvalue energy is good to at least five decimal places.
+# The eigenvalues for two different potentials are shown in Fig. 28. The harmonic oscillator 
+# 
+# $$\displaystyle V(x) = (k/2)x^2,\; k=20$
+# 
+# and the double well, 
+# 
+# $$\displaystyle V(x) = x^4 - 13x^2 + 169/4$$
+# 
+# which has a minimum of zero and a barrier height of 42.25. A few eigenvalues for the harmonic potential are listed below, and the agreement between the numerical and exact eigenvalue energy is good to at least five decimal places.
 # 
 # $$\begin{array}{c c c}\\
 # n & \text{numerical} & \text{exact}\\
@@ -313,13 +337,12 @@ for i in range(s):
 # ![Drawing](num-methods-fig28.png) 
 # 
 # Figure 28 Potential energy and eigenvalues. Left the harmonic potential $V(x) = 10x^2$. Right The double well potential $V(x) = x^4 - 13x^2 + 169/4$.
-# _____
-# 
+# ________
 # The eigenvalues for the double well show a splitting below the barrier, as expected, because the two wells interact. However, the difference in energy is very small lower down in the well, and the levels are, in this particular potential, effectively accidentally degenerate. Only near the top of the barrier are two closely spaced levels visible in the plot, with quantum numbers $n = 12$ and $13$. This is because the barrier is narrow here and there is more interaction between the two halves of the potential. Above the barrier, the potential is suddenly wider and the energy levels now become closer together. Crudely, this can be thought of in a similar way as an infinite square well or 'particle in a box'. A wide well has energy levels closer together than a short one. As the potential energy increases, so does the separation between eigenvalues, just as happens in the square well.
 # 
 # The harmonic potential is unusual because as the energy increases so does the width of the well and it does so in such a way that the energy separation between adjacent levels is constant. In comparison in the infinite square well, adjacent levels separate by ever-increasing amounts as the energy increases. In a potential such as $|x^{3/2}|$, the level separation decreases with an increase in energy as they also do in the hydrogen atom, where the potential is proportional to $1/x$, or in the anharmonic oscillator with the Morse potential. The difference in the spacing between energy levels the harmonic and double well potentials is shown in Fig. 11.28. In the double well potential below an energy of $30$ units, the well is narrow, which means it effectively has a large force constant causing the energy levels to be widely spaced, compared to the harmonic potential which is wider, at the same energy, and therefore has a smaller force constant. Well above the barrier, the widths of the double and harmonic potential gradually become similar and the energy spacings are now also more similar to one another.
 # 
-# ### **Wavefunctions**
+# ### **(iii) Wavefunctions**
 # 
 # Once the eigenvalues are known the wavefunctions have also effectively been calculated, see Algorithm 11.18. Depending on the method used one half of the wavefunction can be calculated then its image used to form the other half or the whole may be calculated in one go. This is possible because in a symmetrical well the left half is either the mirror image or the inverse mirror image of the right half. Figure 11.29 shows some of the wavefunctions, eigenvalues, and the double well potential of Fig. 11.28. 
 # 
@@ -340,11 +363,11 @@ for i in range(s):
 # 
 # The displacement $x$ is in $\overset{\text{ o}} A$. The eigenvalues and their spacing will be calculated up to an energy of $4000\;\mathrm{cm^{-1}}$, which is above the barrier.
 # 
-# The normal SI units for Planck's constant and the reduced mass are difficult to use because they generate very large or very small numbers. Converting to atomic units greatly simplifies the calculation. This is done by using an energy scale in hartree, where 1 hartree is $2.1947465225 \cdot 10^5\;\mathrm{cm^{-1}}$ or $27.211396$ eV, and the corresponding distance scale, is in units of the Bohr radius $a_0$, which is $0.529177 \cdot10^{-10}$ m. The hartree is the natural unit of energy and is $e^2/(4\pi\epsilon_0a_0)$, where $\epsilon_0$ the permittivity of free space and $e$ the charge on the electron. The constants in the Schroedinger equation now become $\hbar^2/m_e = 1$, where $m_e$ is the mass in kg of the *electron* and therefore for the reduced mass $\mu$ (kg) of the molecular vibration, the ratio 
+# The normal SI units for Planck's constant and the reduced mass are difficult to use because they generate very large or very small numbers. Converting to atomic units greatly simplifies the calculation. This is done by using an energy scale in hartree, where 1 hartree is $2.1947465225 \cdot 10^5\;\mathrm{cm^{-1}}$ or $27.211396$ eV, and the corresponding distance scale, is in units of the Bohr radius $a_0=0.529177 \cdot10^{-10}$ m. The hartree is the natural unit of energy and is $e^2/(4\pi\epsilon_0a_0)$, where $\epsilon_0$ the permittivity of free space and $e$ the charge on the electron. The constants in the Schroedinger equation now become $\hbar^2/m_e = 1$, where $m_e$ is the mass in kg of the *electron* and therefore for the reduced mass $\mu$ (kg) of the molecular vibration, the ratio 
 # 
 # $$\displaystyle \frac{\hbar^2}{m_e}\frac{m_e}{\mu}\equiv \frac{m_e}{\mu}$$
 # 
-# is used. The schroedinger equation is now 
+# is used. The Schroedinger equation is now 
 # 
 # $$\displaystyle \frac{d^2\psi}{dx^2}-\frac{2\mu}{m_e}\left(V(x)-E\right)\psi=0$$
 # 

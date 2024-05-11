@@ -103,7 +103,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ can be found when $n$ or $m$ or both is an odd number. If the index of the sine is odd let $x=\cos(\theta)$, if the index of cosine is odd let $x=\sin(\theta)$. If $n+m$ is a negative even integer then the integral can also be found. This was illustrated above. When $n$ and $m$ are both even the integral becomes very difficult and then using computer algebra is by far the quickest way to arrive at at solution. 
 # 
-# #### **(1) $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$**
+# #### **(a) $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$**
 # 
 #  The integrals $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$ and so $dx=-\sin(\theta)d\theta$,
 # 
@@ -119,7 +119,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # making all the integrals zero for odd $n$. 
 # 
-# #### **(2) Integrals such as $\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta $**
+# #### **(b) Integrals such as $\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta $**
 # 
 # Again let $x=\cos(\theta)$ then 
 # 
@@ -129,13 +129,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle -\int (x^4-x^6) dx=-\frac{x^5}{5}+\frac{x^7}{7}=-\frac{\cos^5{\theta}}{5}+\frac{\cos^7{\theta}}{7}+c$$
 # 
-# #### **(3) Ratios of sine and cosine, e.g.  $\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta$**
+# #### **(c) Ratios of sine and cosine, e.g.  $\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta$**
 # 
 # With the substitution $x=\sin(\theta), dx=\cos(\theta)d\theta$ the integral becomes 
 # 
 # $$\displaystyle \int \frac{1-x^2}{x^2}dx=\int \left(\frac{1}{x^2}-1\right)dx=-\frac{1}{x}-x=-\frac{1}{\sin(\theta)}-\sin(\theta)+c$$
 # 
-# ### **(iv) The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $**
+# #### **(d) The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $**
 # 
 # The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ is hard to integrate whe the conditions given above do not apply, but can be done by iteration which means finding a reduction formula. The method is to start with another related function, differentiate it then integrate the result. The integral we require will then appear in terms of a new function and a new integral that can usually be solved easily. If this is not the case then the process can be repeated until a solvable integral appears.
 # 
@@ -288,7 +288,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### **(iv) An integral by parts and recursion, $\displaystyle I_n=\int x^ne^{-ax}dx$**
 # 
-# The integral $\displaystyle I_n=\int x^ne^{-ax}dx$ can be solved for $n=0,1,2\cdots$ where $a$ is a constant. The first in the series is $\displaystyle I_0=\int x^0e^{-ax}dx=-\frac{e^{-ax}}{a}$ . The next is integrated by parts, with $u=x, dv=e^{-ax}dx$, and $v=-e^{-ax}/a$,
+# The integral $\displaystyle I_n=\int x^ne^{-ax}dx$, which is sometimes called the generalised Euler integral, can be solved for $n=0,1,2\cdots$ where $a$ is a constant. The first in the series is $\displaystyle I_0=\int x^0e^{-ax}dx=-\frac{e^{-ax}}{a}$ . The next is integrated by parts, with $u=x, dv=e^{-ax}dx$, and $v=-e^{-ax}/a$,
 # 
 # $$\displaystyle I_1= \int xe^{-ax}dx= -\frac{xe^{-ax}}{a}+\frac{1}{a}\int e^{-ax}dx=-\frac{xe^{-ax}}{a}+\frac{e^{-ax}}{a}$$
 # 
@@ -329,15 +329,10 @@ simplify(xnexp(3) )                               # n=3
 simplify(integrate(x**3*exp(-a*x),x) )
 
 
-# In[ ]:
-
-
-
-
 
 # If limits of $0\to \infty$ are added to the integral then the last result becomes
 # 
-# $$\displaystyle \int_0^\infty x^3e^{-a*x}dx=-(a^3x^3+3a^2x^2-6ax-6)\frac{e^{-ax}}{a^4}\bigg|_0^\infty=\frac{6}{x^4}$$
+# $$\displaystyle \int_0^\infty x^3e^{-ax}dx=-(a^3x^3-3a^2x^2-6ax-6)\frac{e^{-ax}}{a^4}\bigg|_0^\infty=\frac{6}{a^4}$$
 # In the limit $x=0$ all terms in brackets, except the constant, are zero, and the remaining term is multiplied by $-1$ as it the lower limit, and when $x=\infty$ the exponential decreases faster than the power of $x$ increases and the whole becomes zero. The next few integrals are
 # 
 # $$\int_0^\infty x^4e^{-ax}dx=\frac{24}{a^5}\\ \int_0^\infty x^5e^{-ax}dx=\frac{120}{a^5}\\ \int_0^\infty x^6e^{-ax}dx=\frac{720}{a^7}$$
@@ -347,6 +342,16 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # $$\displaystyle \int_0^\infty x^ne^{-ax}dx=\frac{n!}{a^{n+1}}$$
 # 
 # which defines the Gamma function when $a=1$.
+# 
+# When the limits are for example $z \to \infty$ then if $n=3$ 
+# 
+# $$\displaystyle \begin{align}\int_z^\infty x^3e^{-ax}dx&=-(a^3x^3-3a^2x^2-6ax-6)\frac{e^{-ax}}{a^4}\bigg|_z^\infty\\&=-(a^3z^3-3a^2z^2-6az-6)\frac{e^{-az}}{a^4}\\&=3!\frac{e^{-az}}{a^4}(1+az+a^2z^2/2!)\end{align}$$
+# 
+# and in the last step the factorial is separated out. In the general case 
+# 
+# $$\displaystyle \int_z^\infty x^ne^{-ax}dx=n!\frac{e^{-az}}{a^{n+1}}\left(1+az+\frac{1}{2!}(az)^2+\cdots +\frac{1}{n!}(az)^n\right)$$
+# 
+# where the summation is the partial expansion of an exponential. 
 # 
 # ### **(v) Simplifying the partition function for the Debye model of a solid**
 # 
@@ -428,7 +433,6 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # ![Drawing](integration-fig7a.png)
 # 
 # Figure 7a. Calculated scattering profile as might be measure in a SAXS experiment with a square potential. The inset shows the vectors describing the incoming x-ray $k_0$ and the scattered ray $k$ with the wavevector $q$.
-# 
 
 # ## 5.2 Differentiation under the Integral. The Leibniz formula 
 # 
@@ -486,7 +490,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 
 # ### **Examples**
 # 
-# ### **(i)  $\int_0^{\pi/2}\sin(t-x)dx$**
+# ### **(i)  $\displaystyle\int_0^{\pi/2}\sin(t-x)dx$**
 # 
 # Let $\displaystyle F(t)=\int_0^{\pi/2}\sin(t-x)dx$ then $\displaystyle \frac{dF}{dt}$ can either be evaluated by direct calculation or by using the simpler form of the Leibniz formula, (eqn. A), since the limits are constants. Using Leibniz produces
 # 
@@ -553,7 +557,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and the $T^3$ dependence has been amply confirmed by experiment.
 
-# ### **(iv)$ \int_t^{t^2} e^{xt}dx$ using the full Leibniz formula**
+# ### **(iv)$\displaystyle \int_t^{t^2} e^{xt}dx$ using the full Leibniz formula**
 # 
 # If $\displaystyle F(t)=\int_t^{t^2} e^{xt}dx$ to find $dF/dt$ we must use the full Leibniz formula eqn. D.
 # 
@@ -567,7 +571,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # $$\displaystyle \frac{dF(t)}{dt}=(3t-1/t^2)e^{t^3}+(1/t^2-2)e^{t^2}$$
 # 
-# ### **(v) $ \int_0^\infty e^{-ax}dx=\frac{1}{a}$ by repeated differentiation**
+# ### **(v) $\displaystyle \int_0^\infty e^{-ax}dx=\frac{1}{a}$ by repeated differentiation**
 # 
 # The integral $\displaystyle \int_0^\infty e^{-ax}dx=\frac{1}{a}$ can be differentiated wrt. $a$ and if we differentiate one side then the other side must also be differentiated, viz
 # 
@@ -585,7 +589,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # which has the form of the gamma function when $a=1$.
 # 
-# ### **(vi) A complicated integral $ I_n=\int_0^1 x^t\ln^n(x)dx$ solved by recursion**
+# ### **(vi) A complicated integral $\displaystyle I_n=\int_0^1 x^t\ln^n(x)dx$ solved by recursion**
 # 
 # The complicated integral $\displaystyle I_n=\int_0^1 x^t\ln^n(x)dx$ can be solved by differentiating wrt. $t$ starting with $\displaystyle \int_0^1 x^t dx=(t+1)^{-1}$. ( The non standard notation $\ln^n(x) \equiv (\ln(x))^n$ is used for clarity). By using the 'by parts' method $I_n$ can also be evaluated, and this leads to recursion as follows. 
 # 
@@ -711,7 +715,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # ### Examples
 # 
-# ### **(i) $ F(t)= \int_0^{\ln(t)}e^xdx$**
+# ### **(i) $\displaystyle F(t)= \int_0^{\ln(t)}e^xdx$**
 # 
 # To reach a solution it is essential that the integral is known at some value, this is because after differentiation an integration without limits, i.e. an indefinite integral remains, and the integration constant has to be evaluated. To illustrate this the integral 
 # 
@@ -731,7 +735,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # This result could, of course, have been found easily by direct integration, but illustrates the method to be used for far more complex integrals where direct integration is not possible. 
 # 
-# ### **(ii) A hard integral made easier: $ \int_0^1(x-1)/\ln(x)dx$**
+# ### **(ii) A hard integral made easier, $\displaystyle  \int_0^1(x-1)\big/\ln(x)\;dx$**
 # 
 # A far harder integral than in example (i) is $\displaystyle \int_0^1\frac{x-1}{\ln(x)}dx$ which, using the Feynman method by adding a parameter $t$, is changed to
 # 
@@ -751,7 +755,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and the value of $t$ can be chosen as unity for our integral. 
 # 
-# ### **(iii) The sinc function $ \sin(ax)/ax$**
+# ### **(iii) The sinc function $\displaystyle \int \sin(ax)\big/ax\; dx$**
 # 
 # The sinc function has the form $\displaystyle \frac{\sin(ax)}{ax}$ and is the fourier transform of a rectangular pulse of length $a$. The integral 
 # 
@@ -832,7 +836,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and the normalisations for the other wavefunctions are done similarly, although they are more complicated, without having to do any integrations.
 # 
-# #### **(i) Expectation values and uncertainty principle**
+# #### **(a) Expectation values and uncertainty principle**
 # 
 # The expectation values can now be very easily calculated, for example to calculate the average momentum $\langle p\rangle>$ or  distance or average square distance $\langle x\rangle, \langle x^2\rangle$. 
 # 
@@ -842,7 +846,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and $\hat Q$ is the operator. The operator is just multiplication by $x$ for calculating average distance but for momentum is $\displaystyle -i\hbar\frac{d}{dx}$. 
 # 
-# #### **(ii) Average position and its uncertainty**
+# #### **(b) Average position and its uncertainty**
 # 
 # The average displacement for is by definition $\langle x\rangle$ and for the harmonic oscillator $\langle x\rangle =0$ for any quantum number as this will always be an odd function. Physically this makes sense as the potential is symmetrical about $r_e$ for any $n$.  
 # 
@@ -858,7 +862,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and is a measure of the uncertainty in a measurement. Knowing both values for position when $n=1$ gives $\displaystyle \sigma_x=\sqrt{\frac{3}{2a}}$
 # 
-# #### **(iii) Average momentum**
+# #### **(c) Average momentum**
 # 
 # To calculate the expectation values for momentum the operator is $\displaystyle -i\hbar\frac{d}{dx}$ thus
 #  

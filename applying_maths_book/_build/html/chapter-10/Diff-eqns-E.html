@@ -1720,20 +1720,36 @@ title="Print to PDF"
 <p>Sometimes a simple substitution can produce constant coefficients, but success in this depends very much on the exact form of the equation. The equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \cos(x)\frac{d^2y}{dx^2}+\sin(x)\frac{dy}{dx}+a\cos^3(x)y=0\]</div>
-<p>can be simplified with <span class="math notranslate nohighlight">\(u = \sin(x)\)</span>. The derivatives are <span class="math notranslate nohighlight">\(du/dx = \cos(x), \; d^2u/dx^2 = -\sin(x)\)</span> and as <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\cos(x)\frac{dy}{du}\)</span> and</p>
+<p>can be simplified with <span class="math notranslate nohighlight">\(u = \sin(x)\)</span>. The derivatives are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{du}{dx} = \cos(x), \; \frac{d^2u}{dx^2} = -\sin(x)\]</div>
+<p>and as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx},\quad\text{ then }\quad\frac{dy}{dx}=\cos(x)\frac{dy}{du}\]</div>
+<p>and</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2y}{dx^2}=-\sin(x)\frac{dy}{du}+\cos(x)\frac{d^2y}{du^2}\frac{du}{dx}=-\sin(x)\frac{dy}{du}+\cos^2(x)\frac{d^2y}{du^2}\]</div>
-<p>substituting into the differential equation produces <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{du^2}+ay=0\)</span> which is readily solved by standard methods to find <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(u\)</span>. Notice that if the <span class="math notranslate nohighlight">\(\cos^3(x)y\)</span> term in the original equation was replaced by <span class="math notranslate nohighlight">\(\cos(x)y\)</span>, then the equation produced is not as simple and is</p>
+<p>substituting into the differential equation produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{du^2}+ay=0\]</div>
+<p>which is readily solved by standard methods to find <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(u\)</span>. Notice that if the <span class="math notranslate nohighlight">\(\cos^3(x)y\)</span> term in the original equation was replaced by <span class="math notranslate nohighlight">\(\cos(x)y\)</span>, then the equation produced is not as simple and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (1-u^2)\frac{d^2y}{du^2}+ay=0\]</div>
 </section>
 <section id="ii-euler-or-cauchy-eqns">
 <h3><strong>(ii)  Euler or Cauchy eqns.</strong><a class="headerlink" href="#ii-euler-or-cauchy-eqns" title="Permalink to this headline">#</a></h3>
-<p>Equations of the particular type <span class="math notranslate nohighlight">\(\displaystyle x^3\frac{d^3y}{dx^3}+ax^2\frac{d^2y}{dx^2}+bx\frac{dy}{dx}+cy=f(x)\)</span></p>
-<p>where terms in <span class="math notranslate nohighlight">\(x\)</span> have the same power as the differential are called Euler’s or Cauchy’s equation and can be simplified with the substitution <span class="math notranslate nohighlight">\(\displaystyle x = e^{-z}\)</span>. The derivative is <span class="math notranslate nohighlight">\(\displaystyle dz/dx = e^{−z}\)</span> and if <span class="math notranslate nohighlight">\(D \equiv d/dz\)</span> then</p>
+<p>Equations of the particular type</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x^3\frac{d^3y}{dx^3}+ax^2\frac{d^2y}{dx^2}+bx\frac{dy}{dx}+cy=f(x)\]</div>
+<p>where terms in <span class="math notranslate nohighlight">\(x\)</span> have the same power as the differential are called Euler’s or Cauchy’s equation and can be simplified with the substitution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x = e^{-z}\]</div>
+<p>The derivative is <span class="math notranslate nohighlight">\(\displaystyle dz/dx = e^{−z}\)</span> and if <span class="math notranslate nohighlight">\(D \equiv d/dz\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=e^{-z}Dy, \qquad \frac{d^2y}{dx^2}=\frac{d^2y}{dz^2}\left(\frac{dz}{dx}\right)^2+\frac{dy}{dz}\frac{d^2z}{dx^2}=e^{-2z}(D^2-D)y\]</div>
-<p>The last derivative here was obtained as <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}=\frac{d}{dz}\left(\frac{dy}{dz}\frac{dz}{dx} \right)\frac{dz}{dx}\)</span></p>
+<p>The last derivative here was obtained as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}=\frac{d}{dz}\left(\frac{dy}{dz}\frac{dz}{dx} \right)\frac{dz}{dx}\]</div>
 <p>and using the product rule and <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\frac{dz}{dx}\equiv\frac{d}{dx}\)</span></p>
 <p>The different derivatives can be written down as</p>
 <div class="math notranslate nohighlight">
@@ -1742,17 +1758,27 @@ title="Print to PDF"
 </section>
 <section id="iii-using-derivatives">
 <h3><strong>(iii) Using derivatives</strong><a class="headerlink" href="#iii-using-derivatives" title="Permalink to this headline">#</a></h3>
-<p>To solve the equation <span class="math notranslate nohighlight">\(\displaystyle x^2\frac{d^2y}{dx^2}+2x\frac{dy}{dx}-y=0\)</span></p>
-<p>first simplify this to <span class="math notranslate nohighlight">\(\displaystyle (D^2+D-1)y=0\)</span> using the derivatives alone. The characteristic equation has roots <span class="math notranslate nohighlight">\(\displaystyle \frac{\sqrt{5}-1}{2},\;\frac{-\sqrt{5}-1}{2}\)</span>. However, the operator <span class="math notranslate nohighlight">\(D\)</span> is a function of <span class="math notranslate nohighlight">\(z\)</span> not of <span class="math notranslate nohighlight">\(x\)</span>, hence, the solution is a function of <span class="math notranslate nohighlight">\(z\)</span>, giving the solution</p>
+<p>To solve the equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x^2\frac{d^2y}{dx^2}+2x\frac{dy}{dx}-y=0\quad\text{ or }\quad (D^2+D-1)y=0\]</div>
+<p>first find the roots of the characteristic equation which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{5}-1}{2},\;\frac{-\sqrt{5}-1}{2}\]</div>
+<p>However, the operator <span class="math notranslate nohighlight">\(D\)</span> is a function of <span class="math notranslate nohighlight">\(z\)</span> not of <span class="math notranslate nohighlight">\(x\)</span>, hence, the solution is a function of <span class="math notranslate nohighlight">\(z\)</span>, giving the solution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y=Ae^{(\sqrt{5}-1)z/2}+Be^{(-\sqrt{5}-1)z/2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants determined by the initial conditions. As <span class="math notranslate nohighlight">\(\displaystyle x = e^z\)</span> or <span class="math notranslate nohighlight">\(z = \ln(x)\)</span>, the solution becomes <span class="math notranslate nohighlight">\(\displaystyle y=Ae^{(\sqrt{5}-1)\ln(x)/2}+Be^{(-\sqrt{5}-1)\ln(x)/2}\)</span>  which can be simplified to</p>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants determined by the initial conditions. As <span class="math notranslate nohighlight">\(\displaystyle x = e^z\)</span> or <span class="math notranslate nohighlight">\(z = \ln(x)\)</span>, the solution becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y=Ae^{(\sqrt{5}-1)\ln(x)/2}+Be^{(-\sqrt{5}-1)\ln(x)/2}\]</div>
+<p>which can be simplified to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y=Ax^{\large{(-1+\sqrt(5))/2}}+Bx^{\large{(-1-\sqrt(5))/2}}\]</div>
 </section>
 <section id="iv-special-form">
 <h3><strong>(iv) Special form</strong><a class="headerlink" href="#iv-special-form" title="Permalink to this headline">#</a></h3>
-<p>If the equation can be put into the form, <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y = 0 \)</span></p>
+<p>If the equation can be put into the form,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y = 0 \]</div>
 <p>then it can be reduced by the transformation <span class="math notranslate nohighlight">\(y = uv\)</span> where</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle v = e^{-(1/2)\large{\int} pdx}\]</div>
@@ -1763,9 +1789,16 @@ title="Print to PDF"
 </section>
 <section id="v-special-form">
 <h3><strong>(v) Special form</strong><a class="headerlink" href="#v-special-form" title="Permalink to this headline">#</a></h3>
-<p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2 y}{dx^2}+x\frac{dy}{dx}+(x-1)y = 0\)</span></p>
-<p>can be solved with this method if <span class="math notranslate nohighlight">\(\displaystyle v=e^{-(1/2)\large{\int}xdx}= e^{-x^2/4}\)</span></p>
-<p>and <span class="math notranslate nohighlight">\(\displaystyle w=3/2+x^2/4-x\)</span> which produces the equation with which to find <span class="math notranslate nohighlight">\(u\)</span> and which is,</p>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2 y}{dx^2}+x\frac{dy}{dx}+(x-1)y = 0\]</div>
+<p>can be solved with the transformation method (<span class="math notranslate nohighlight">\(y=uv\)</span>) if</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v=e^{-(1/2)\large{\int}xdx}= e^{-x^2/4}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle w=3/2+x^2/4-x\]</div>
+<p>which produces the equation with which to find <span class="math notranslate nohighlight">\(u\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2u}{dx^2}=\left(\frac{3}{2}+\frac{x^2}{4} -x \right)u = 0\]</div>
 </section>
@@ -1822,7 +1855,10 @@ as the starting points.</p>
 12a_4 + 2a_2 + a_2 = 0, &amp;  x^2 \\
  (n + 2)(n + 1)a_{n+2} + na_n + a_n = 0, &amp; x^n \\
  \hline \end{array}\end{split}\]</div>
-<p><strong>step (c)</strong> The recursion formula for the <span class="math notranslate nohighlight">\(x^n\)</span> term is <span class="math notranslate nohighlight">\(\displaystyle a_{n+2} =-\frac{(n+1)a_n}{(n+1)(n+2)}\)</span>. The first two coefficients are <span class="math notranslate nohighlight">\(a_0,\;a_1\)</span> and the other coefficients are expressed in terms of these as</p>
+<p><strong>step (c)</strong> The recursion formula for the <span class="math notranslate nohighlight">\(x^n\)</span> term is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_{n+2} =-\frac{(n+1)a_n}{(n+1)(n+2)}\]</div>
+<p>The first two coefficients are <span class="math notranslate nohighlight">\(a_0,\;a_1\)</span> and the other coefficients are expressed in terms of these as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n=0:\; a_2=a_0/2, \quad n=1:\; a_3=a_1/3,\quad n=2:\; a_4=a_2/4=a_0/8,\quad n=3:\; a_5=a_1/15\]</div>
 <p>The solution is therefore,</p>
@@ -1832,14 +1868,22 @@ as the starting points.</p>
 </section>
 <section id="ii-example">
 <h3><strong>(ii) Example</strong><a class="headerlink" href="#ii-example" title="Permalink to this headline">#</a></h3>
-<p>The equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+(\alpha-\beta x^2)y=0\)</span> and following the previous calculation, the recursion equation is</p>
+<p>The equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+(\alpha-\beta x^2)y=0\]</div>
+<p>and following the previous calculation, the recursion equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a_{n+2}=\frac{\beta a_{n-2}-\alpha a_n}{(n+1)(n+2)}\]</div>
 <p>and is not valid when <span class="math notranslate nohighlight">\(n\)</span> is 0 or 1 because <span class="math notranslate nohighlight">\(a_{-2}\)</span> and <span class="math notranslate nohighlight">\(a_{-1}\)</span> are not defined. The coefficients of the
-first two terms in the expansion must then be examined. These are <span class="math notranslate nohighlight">\(\displaystyle 2a_2+\alpha a_0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle 6a_3+\alpha a_1 =0\)</span> from which <span class="math notranslate nohighlight">\(a_2\)</span> and <span class="math notranslate nohighlight">\(a_3\)</span> can be found in terms of <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> and these then used as the starting points for the recursion formula. The series solution can be obtained using recursion. The first few terms are</p>
+first two terms in the expansion must then be examined. These are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 2a_2+\alpha a_0\quad\text{and}\quad \displaystyle 6a_3+\alpha a_1 =0\]</div>
+<p>from which <span class="math notranslate nohighlight">\(a_2\)</span> and <span class="math notranslate nohighlight">\(a_3\)</span> can be found in terms of <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> and these then used as the starting points for the recursion formula. The series solution can be obtained using recursion. The first few terms are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  \begin{align}a_2&amp;=-\alpha a_0/2,  \quad a_3=-\alpha a_1/6,\\ \quad a_4&amp;=\alpha a_0/24+\beta a_0/12,\quad a_5=\alpha^2 a_1/120+\beta a_1/20 \end{align}\end{split}\]</div>
-<p>and the solution <span class="math notranslate nohighlight">\(\displaystyle y = a_0 + a_1x - \frac{1}{2}\alpha a_0x^2-\frac{1}{6}\alpha a_1x^3+\left( \frac{1}{24}\alpha^2a_0+\frac{1}{12}\beta a_0 \right)x^4+\cdots\)</span>.</p>
+<p>and the solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y = a_0 + a_1x - \frac{1}{2}\alpha a_0x^2-\frac{1}{6}\alpha a_1x^3+\left( \frac{1}{24}\alpha^2a_0+\frac{1}{12}\beta a_0 \right)x^4+\cdots\]</div>
 <p>There are two series in the result; one with terms in <span class="math notranslate nohighlight">\(a_0\)</span> and the other in <span class="math notranslate nohighlight">\(a_1\)</span>. These are independent solutions.</p>
 </section>
 <section id="iii-the-hermite-equation">
@@ -1858,7 +1902,12 @@ first two terms in the expansion must then be examined. These are <span class="m
 <p>and evaluating the coefficients gives the series</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} y_\gamma &amp;=a_0\left(1-\gamma x^2 -\frac{(2-\gamma)\gamma}{6}x^4 -\frac{(4-\gamma)(2-\gamma)\gamma}{90}x^6 -\cdots \right) \\&amp;+a_1\left( x+\frac{1-\gamma}{3}x^3 +\frac{(3-\gamma)(1-\gamma)}{30}x^5+\cdots\right) +\end{align}\end{split}\]</div>
-<p>These series form the Hermite polynomials when <span class="math notranslate nohighlight">\(\gamma\)</span> is a positive integer. For example when <span class="math notranslate nohighlight">\(\gamma\)</span> = 3 the odd power series terminates to give <span class="math notranslate nohighlight">\(\displaystyle y_3=a_1\left(x-\frac{2}{3}x^3  \right)\)</span>  and when <span class="math notranslate nohighlight">\(\gamma\)</span> = 4 the even power series terminates and is <span class="math notranslate nohighlight">\(\displaystyle y_4=a_0\left(1-4x^2+\frac{4}{3}x^4  \right) \)</span>.</p>
+<p>These series form the Hermite polynomials when <span class="math notranslate nohighlight">\(\gamma\)</span> is a positive integer. For example when <span class="math notranslate nohighlight">\(\gamma\)</span> = 3 the odd power series terminates to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y_3=a_1\left(x-\frac{2}{3}x^3  \right)\]</div>
+<p>and when <span class="math notranslate nohighlight">\(\gamma\)</span> = 4 the even power series terminates and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y_4=a_0\left(1-4x^2+\frac{4}{3}x^4  \right) \]</div>
 <p>Each series is limited to a few terms because of the way the coefficients are formed. The first few Hermite polynomials are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{cc}
@@ -1880,7 +1929,10 @@ H_0(x)=1 &amp; H_1(x)=x \\ H_2(x)=4x^2-2 &amp; H_3(x)=8x^3+12x \\H_4(x)=16x^4-48
 <p>with <span class="math notranslate nohighlight">\(\gamma\)</span> as a constant is related to the Hermite equation if <span class="math notranslate nohighlight">\(\displaystyle y=ve^{-x^2/2}\)</span>, where <span class="math notranslate nohighlight">\(v\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>, then the second derivative is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^2y}{dx^2}=\left(\frac{d^2v}{dx^2}-2x\frac{dv}{dx}+(x^2-1)v  \right)e^{-x^2/2}\]</div>
-<p>and substituting this into eqn (40) and simplifying this  becomes <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2v}{dx^2}-2x\frac{dv}{dx}+2\gamma v=0\)</span> which is identical to (39). The solutions of (40) are therefore Hermite polynomials multiplied by the Gaussian <span class="math notranslate nohighlight">\(\displaystyle e^{−x^2/2}\)</span>.</p>
+<p>and substituting this into eqn (40) and simplifying this  becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2v}{dx^2}-2x\frac{dv}{dx}+2\gamma v=0\]</div>
+<p>which is identical to (39). The solutions of (40) are therefore Hermite polynomials multiplied by the Gaussian <span class="math notranslate nohighlight">\(\displaystyle e^{−x^2/2}\)</span>.</p>
 <p>The Schroedinger equation for the harmonic oscillator can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}\left( E-\frac{k}{2}x^2 \right)\psi=0\]</div>
@@ -1899,9 +1951,13 @@ H_0(x)=1 &amp; H_1(x)=x \\ H_2(x)=4x^2-2 &amp; H_3(x)=8x^3+12x \\H_4(x)=16x^4-48
 The general equation is</p>
 <div class="math notranslate nohighlight">
 \[ \displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=f(x)\]</div>
-<p>If the equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+\frac{dy}{dx}+y=0\)</span></p>
+<p>If the equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+\frac{dy}{dx}+y=0\]</div>
 <p>then this is analytic at <span class="math notranslate nohighlight">\(x\)</span> = 0, as <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are both 1.</p>
-<p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+\frac{x}{x-1}\frac{dy}{dx}+\frac{1}{x-1}y=0\)</span></p>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+\frac{x}{x-1}\frac{dy}{dx}+\frac{1}{x-1}y=0\]</div>
 <p>is also analytic at <span class="math notranslate nohighlight">\(x\)</span> = 0, and an expansion about 0 is possible. The point <span class="math notranslate nohighlight">\(x\)</span> = 1 is singular, and the function <span class="math notranslate nohighlight">\(1/(x - 1)\)</span> is then not defined, so the series expansion will not be possible here and the series solution is valid only in the range -1 <span class="math notranslate nohighlight">\(\lt x \lt\)</span> 1. In contrast the equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2y}{dx^2}+x(x-1)\frac{dy}{dx}+(x-1)y = 0\]</div>
@@ -1912,7 +1968,10 @@ The general equation is</p>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is a constant and when rearranged is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2y}{dx^2}+\frac{1}{x}\frac{dy}{dx}+\frac{(x^2-n^2)}{x^2}y=0\]</div>
-<p>so has a singular point at <span class="math notranslate nohighlight">\(x\)</span>=0. In this case, the equation can be shown to have solutions <span class="math notranslate nohighlight">\(\displaystyle y=x^m \sum \limits_{k=0}^\infty  a_kx^k\)</span> and where <span class="math notranslate nohighlight">\(a_0 \ne\)</span> 0. Using this series is often called Frobenius’ method and both the index <span class="math notranslate nohighlight">\(m\)</span> and coefficients <span class="math notranslate nohighlight">\(a_k\)</span> have to be determined. The method is very similar to that already described and is given in more advanced textbooks (Boas 1983; Jeffery 1990; Bronson 1994; Aratyn &amp; Rasinariu 2006).</p>
+<p>so has a singular point at <span class="math notranslate nohighlight">\(x\)</span>=0. In this case, the equation can be shown to have solutions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y=x^m \sum \limits_{k=0}^\infty  a_kx^k\]</div>
+<p>and where <span class="math notranslate nohighlight">\(a_0 \ne\)</span> 0. Using this series is often called Frobenius’ method and both the index <span class="math notranslate nohighlight">\(m\)</span> and coefficients <span class="math notranslate nohighlight">\(a_k\)</span> have to be determined. The method is very similar to that already described and is given in more advanced textbooks (Boas 1983; Jeffery 1990; Bronson 1994; Aratyn &amp; Rasinariu 2006).</p>
 </section>
 </section>
 

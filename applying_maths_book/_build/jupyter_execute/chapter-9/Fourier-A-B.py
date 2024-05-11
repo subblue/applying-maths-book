@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Before a worked example, it is worthwhile examining limits other than $\pm\pi$, describe the exponential form of the series and also simplifying some series using symmetry. The $a_n$ and $b_n$ constants are also derived.
 # 
-# ## 1.3 Series limits from -L to L
+# ## 1.3 Series limits from $-L$ to $L$
 # 
 # Over the range $−L$ to $L$, the equations to use for $f(x)$ are similar to equations (1)–(3) but $x$ is
 # changed to $\pi x/L$. The series is
@@ -211,8 +211,6 @@ plt.tight_layout()
 plt.show()
 
 
-# 
-
 # **Figure 3**. Left: Plot of $x^2$ and its Fourier series to $n$ = 3 showing a poor fit to the true function. More terms produce a better fit but only over the range $\pm \pi$ as shown in the centre panel where 20 terms are included in the summation. This plot also shows how the fit is only over the range $\pm \pi$ and then it repeats itself. On the right are shown the coefficients $a_n$ and shows how rapidly their value decreases as $n$ increases.
 # ________
 # 
@@ -243,7 +241,7 @@ plt.show()
 # Figure 4. A few cycles of a square wave, which is a discontinuous function. Left shows the function $f(x)$ and right its Fourier reconstruction $g(x)$ via a series of $n = 49$ terms.  The over- and undershoot in the Fourier series as shown on the right hand plot is a phenomenon called the Gibbs phenomenon and is discussed next.
 # 
 # ____
-
+# 
 # ## 1.8 The Gibbs phenomenon
 # 
 # The Fourier series of a square wave is shown in fig 4 (right) with a relatively large number of terms. Adding more will improve the fit to the function, but it will never be exact because an _infinite_ number of terms will be needed to follow the right-angled bends at the top and bottom of the wave. This angle effectively corresponds to an infinite sine frequency.
@@ -319,11 +317,27 @@ simplify(bn)
 # 
 # The sine and cosines making up the Fourier series have two important properties: orthogonality and  completeness.
 # 
-# In the language of vectors, the sine and cosine functions represent a _complete orthogonal basis set_ on which the target function, $f(x)$, is expanded as a sum of $N$ terms. This basis set is of infinite length and is $\sin(x), \sin(2x), \cdots \sin(nx) \cdots$, where $n = 1, 2, \cdots$, and there is a similar set for the cosines with $n$ $\ge$ 0. Any desired accuracy can be achieved, provided that $N$ is large enough. If the basis set functions are also normalized, the set is _orthonormal_ rather than just orthogonal. 
+# In the language of vectors, the sine and cosine functions represent a _complete orthogonal basis set_ on which the target function, $f(x)$, is expanded as a sum of $N$ terms. This basis set is of infinite length and is 
 # 
-# Basis sets often seem rather abstract because we do not often need to use them explicitly. For example, although not normally described in this way, the exponential function $\displaystyle e^x = 1 + x + x^2/2! + x^3/3! \cdots $, is, by contrast, an expansion in the basis set of $x^n$ and the coefficients are $1/0!, 1/1!, 1/2!, 1/3!, \cdots 1/n! \cdots$. This basis set is not orthogonal because the condition for this to apply is that the product of any two elements is zero when taken over the whole range of the set, $\pm \pi$ for sine and cosine. The dot product of any two orthogonal vectors is zero, see Chapter on Vectors section 2.
+# $$\displaystyle \sin(x),\; \sin(2x), \cdots \sin(nx) \cdots$$
 # 
-# Similarly for the sine and cosine basis set even though it is continuous, the condition is $\displaystyle \int_{-\pi}^\pi\sin(mx)\sin(nx)dx =\pi\delta_{n,m}$, which is zero if $m \ne n$. This is not true of the coefficient of
+# where $n = 1, 2, \cdots$, and there is a similar set for the cosines with $n$ $\ge$ 0. Any desired accuracy can be achieved, provided that $N$ is large enough. If the basis set functions are also normalized, the set is _orthonormal_ rather than just orthogonal. 
+# 
+# Basis sets often seem rather abstract because we do not often need to use them explicitly. For example, although not normally described in this way, the exponential function 
+# 
+# $$\displaystyle e^x = 1 + x + x^2/2! + x^3/3! \cdots $$
+# 
+# is, by contrast, an expansion in the basis set of $x^n$ and the coefficients are 
+# 
+# $$\displaystyle \frac{1}{0!}, \frac{1}{1!}, \frac{1}{2!},\frac{1}{3!} \cdots \frac{1}{n!} \cdots$$
+# 
+# This basis set is not orthogonal because the condition for this to apply is that the product of any two elements is zero when taken over the whole range of the set, $\pm \pi$ for sine and cosine. The dot product of any two orthogonal vectors is zero, see Chapter on Vectors section 2.
+# 
+# Similarly for the sine and cosine basis set even though it is continuous, the condition is 
+# 
+# $$\displaystyle \int_{-\pi}^\pi\sin(mx)\sin(nx)dx =\pi\delta_{n,m}$$
+# 
+# which is zero if $m \ne n$. This is not true of the coefficient of
 # the $x^n$ basis set of the exponential expansion, thus we cannot form a Fourier series based on this.
 # 
 # The great importance and usefulness of the Fourier series is that it represents the best fit, in a least-squares way, to any function $f(x)$ because $\displaystyle \int_{-L}^{L}[f(x)-g(x)]^2dx$ is minimized when $g(x)$ is the series expansion of $f(x)$.
@@ -332,15 +346,19 @@ simplify(bn)
 # 
 # $$\displaystyle  g(x) = \sum\limits_{n=1}^\infty q_nS_n(x)  \qquad\tag{16}$$
 # 
-# $q_n$ being constants that are related to the target function $f(x)$. If the $S$ functions are orthonormal, then, when $n$ and $m$ are integers, $\displaystyle \int S_n^*(x)S_m(x) dx= \delta_{m,n}$.
+# $q_n$ being constants that are related to the target function $f(x)$. If the $S$ functions are orthonormal, then, when $n$ and $m$ are integers, 
+# 
+# $$\displaystyle \int S_n^*(x)S_m(x) dx= \delta_{m,n}$$
 # 
 # In modern mathematics, the term 'Fourier series' does not refer just to the original sine and cosine series, or their complex exponential representation, but to a series formed by other functions that form a complete orthogonal basis set. Often the term generalized Fourier series is used to describe these, but this is not universal. The sine or cosine functions are not unique in forming series and many other functions could be used provided that they can form an orthogonal set. Other such functions include the Hermite polynomials, used to describe the harmonic oscillator wavefunctions, and the Legendre and Chebychev polynomials. In Section 4 it is shown how these can also be used to form series that describe arbitrary target functions $f(x)$.
 # 
 # ## 3.1 A general method for numerically calculating a Fourier series
 # 
-# An algorithm is given below with which to calculate the Fourier series of a function and is fairly straightforward if equations (5) and (6) are used and care taken over the integration limits. The function is placed in the first line as and the range is from $\pm 7$, in this example. The target function is $\displaystyle f(x)= e^{-x/2}\sin^2(x)$. The equations (4 to 6) in section 1.2 are used. The series is calculated numerically.
+# An algorithm is given below with which to calculate the Fourier series of a function and is fairly straightforward if equations (5) and (6) are used and care taken over the integration limits. The function is placed in the first line as and the range is from $\pm 7$, in this example. The target function is 
 # 
-# The result of the calculation is shown in Fig. 7 and is compared with the original function, and for most of the curve the fit is tolerably good but not excellent. The main discrepancy is the overshoot, which is the Gibbs phenomenon. 
+# $$\displaystyle f(x)= e^{-x/2}\sin^2(x)$$
+# 
+# The equations (4 to 6) in section 1.2 are used. The series is calculated numerically and the result of the calculation is shown in Fig. 7 and is compared with the original function, and for most of the curve the fit is tolerably good but not excellent. The main discrepancy is the overshoot, which is the Gibbs phenomenon. 
 
 # In[5]:
 
@@ -369,8 +387,7 @@ plt.title('Function & its Fourier series with '+str(m)+' terms',fontsize=12)
 plt.show()
 
 
-# **Fig 7**. The original function (thick golden line) and its Fourier series (blue). As can be seen the fit is not tremendously good although the series does follow the general shape of the function except at the end points $\pm 7$.
-# 
+# **Fig 7**. The original function (thick golden line) and its Fourier series (blue). As can be seen the fit is not tremendously good although the series does follow the general shape of the function except at the end points $\pm 7$. Adding more terms in the series improves the fit, although numerical problems will arise if this is made too large.
 # ______
 
 # ## 4 Generalized Fourier series with orthogonal polynomials
@@ -397,7 +414,11 @@ plt.show()
 # 
 # and this equation and (19) form the equations for the generalized Fourier transform. The only way that information about the function $f(x)$ enters the calculation, is _via_ the coefficients $a_n$.
 # 
-# The similarity of (19) to the expansion of a vector in its basis set is clear. In a vector equation in three dimensions, we might write $\displaystyle V=\sum\limits_{m=0}^3v_m \boldsymbol i$ where $\boldsymbol i$ is the unit vector along the $x$-axis, and then the $v_m$ are the projections of the vector $V$ onto this axis. If there were
+# The similarity of (19) to the expansion of a vector in its basis set is clear. In a vector equation in three dimensions, we might write 
+# 
+# $$\displaystyle V=\sum\limits_{m=0}^3v_m \boldsymbol i$$
+# 
+# where $\boldsymbol i$ is the unit vector along the $x$-axis, and then the $v_m$ are the projections of the vector $V$ onto this axis. If there were
 # $n$ dimensions, which clearly cannot be pictured graphically if $n \gt$ 3, then the $v_m$ would be projections of $V$ onto the $m^{th}$ axis. Similarly, in (19) the $a_n$ coefficients are the projections of the function $f(x)$ onto the $\varphi$, but in this case there are more than three 'axes'.
 # 
 # The Legendre polynomial $P_n(x)$ is used as an example of a basis set function with which to calculate the generalized Fourier series of $\displaystyle e^{-x}\cos^3(x)$ over the range $\pm $1. These polynomials appear in problems when an electric charge, perhaps on an ion, is close to other charges, such as from a dipole, or when an electron feels the effect of other electrons and nuclei. All the orthogonal polynomials have several different recursion formulae, and one of the most useful for the Legendre is
@@ -406,7 +427,11 @@ plt.show()
 # 
 # for $n = 2, 3, 4, \cdots$ with $P_0(x) = 1$ and $P_1(x) = x$, and the polynomials are defined only over the range $x = \pm $1. The weighting function is 1, and their normalization constant $c_n = 2/(2n + 1)$. Although it is not apparent from the formulae, these polynomials are oscillating functions with an increasing number of nodes as $n$ increases. The Fourier series using Legendre polynomials instead of sine/cosine is sometimes called the Fourier -Legendre series.
 # 
-# The Chebychev polynomials over the range $\pm$1 can be calculated directly as $T_n(x)=\cos(n\cdot\cos^{-1}(x))$. Some Legendre and Chebychev polynomials are shown in the next figure.
+# The Chebychev polynomials over the range $\pm$1 can be calculated directly as 
+# 
+# $$\displaystyle T_n(x)=\cos(n\cdot\cos^{-1}(x))$$
+# 
+# Some Legendre and Chebychev polynomials are shown in the next figure.
 # 
 # ![Display](fourier-fig8.png)
 # 
@@ -451,9 +476,10 @@ plt.legend()
 plt.show()
 
 
-# Figure 9. The range of some functions, orthogonal polynomials and weighting factors.
+# Figure 9. Legendre series and its fit to the function $\cos^2(3x)e^{-x}$.
 # __________
 # 
+# ### Table:  The range of some functions, orthogonal polynomials and weighting factors.
 # $$\displaystyle \begin{array}{lcc}
 # \text{}\\
 # \hline 

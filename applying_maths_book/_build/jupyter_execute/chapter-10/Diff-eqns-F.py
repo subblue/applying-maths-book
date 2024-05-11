@@ -20,13 +20,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Many important phenomena in chemistry, physics, and biology involve partial differential equations; for example, the Schroedinger, wave, and diffusion equations. Although the general theory of partial differential equations is well beyond the scope of this book, the equations mentioned are among those whose solutions can be obtained by a powerful method known as the separation of variables.
 # 
-# The simplest type of partial differential equation has two independent variables, $x$ and $y$, and its solution must represent a surface rather than a curve as does that of an ordinary differential equation. The ordinary differential equation has arbitrary constants as a result of integration, which are determined by the initial or boundary conditions; the partial differential equation has instead _arbitrary functions_ of integration and these have to be eliminated to obtain a particular solution. The problem is not that there are too few arbitrary functions to solve the equation but that there are too many. An example given by Stephenson (1996) illustrates this point. 
+# The simplest type of partial differential equation has two independent variables, $x$ and $y$, and its solution must represent a surface rather than a curve as does that of an ordinary differential equation. The ordinary differential equation has arbitrary constants as a result of integration, which are determined by the initial or boundary conditions; the partial differential equation has instead *arbitrary functions* of integration and these have to be eliminated to obtain a particular solution. The problem is not that there are too few arbitrary functions to solve the equation but that there are too many. An example given by Stephenson (1996) illustrates this point. 
 # 
-# Consider the equation formed by differentiating $w = yf(x)$ with respect to $y$, and where $f(x)$ is a general, unspecified function of $x$. The differential is $\displaystyle \frac{\partial w}{\partial y} = f(x)$ and by substitution to eliminate $f(x)$ the partial differential equation is
+# Consider the equation formed by differentiating $w = yf(x)$ with respect to $y$, and where $f(x)$ is a general, unspecified function of $x$. The differential is 
 # 
-# $$\displaystyle y\frac{\partial w}{\partial y}-w=0$$
+# $$\displaystyle \frac{\partial w}{\partial y} = f(x)$$
 # 
-# which is a first-order equation. The solution to this is $f(x)$ but as this function was not specified, it is therefore _any arbitrary function_. Exactly what this function might be has to be determined by using the initial or boundary conditions imposed on the problem.
+# and by substitution to eliminate $f(x)$ the partial differential equation is
+# 
+# $$\displaystyle y\frac{\partial w}{\partial y} - w = 0$$
+# 
+# which is a first-order equation. The solution to this is $f(x)$ but as this function was not specified, it is therefore *any arbitrary function*. Exactly what this function might be has to be determined by using the initial or boundary conditions imposed on the problem.
 # 
 # As a second example, the one-dimensional wave equation will be 'solved'. This equation has the form 
 # 
@@ -36,7 +40,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle u=f_1(x+at)+f_2(x-at)$$
 # 
-# where the functions $f$ are arbitrary and are not defined in any real sense. To find a solution we differentiate twice by $x$ then twice by $t$ and add the results. Let $x + at \equiv r$ and $x − at \equiv s$, then
+# where the functions $f$ are arbitrary and are not defined in any real sense. To find a solution we differentiate twice by $x$ then twice by $t$ and add the results. Let $x + at \equiv r$ and $x - at \equiv s$, then
 # 
 # $$\displaystyle \frac{\partial u}{\partial x}=\frac{\partial (f_1+f_2)}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial (f_1+f_2)}{\partial s}\frac{\partial s}{\partial x} =f'(x+at)+f'_2(x-at)$$
 # 
@@ -53,7 +57,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x, a, t =symbols('x, a, t')
+x, a, t = symbols('x, a, t')
 f  = sin(exp(x + a*t)) + exp(sin(x - a*t))       # an arbitrary function in x+at, x-at
 ans= diff(f,t,t) - a**2*diff(f,x,x)
 ans
@@ -81,9 +85,13 @@ ans
 # 
 # $$\displaystyle \varphi(x,y) = \psi(x)\psi(y) \equiv \psi_x\psi_y$$
 # 
-# Substituting gives $\displaystyle -\frac{\hbar^2}{2m}\left(\psi_y\frac{\partial^2 \psi_x }{\partial x^2 }  +\psi_x\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\psi_x\psi_y$
+# Substituting gives 
 # 
-# and rearranging $\displaystyle -\frac{\hbar^2}{2m}\left(\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }  +\frac{1}{\psi_y}\frac{\partial ^2\psi_y}{\partial y^2} \right) =E$
+# $$\displaystyle -\frac{\hbar^2}{2m}\left(\psi_y\frac{\partial^2 \psi_x }{\partial x^2 }  +\psi_x\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\psi_x\psi_y$$
+# 
+# and rearranging 
+# 
+# $$\displaystyle -\frac{\hbar^2}{2m}\left(\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }  +\frac{1}{\psi_y}\frac{\partial ^2\psi_y}{\partial y^2} \right) =E$$
 # 
 # The next step is essential to the method of separating variables and this is that each of the terms on the left of the equation must be equal to a constant. This is true because the two terms are variables of either $x$ or $y$. If $x$ is varied, only the first term of the equation changes, the other is a constant as is the energy $E$. However, for the whole equation to be satisfied, the derivative in $x$ must be equal to a constant, and this is labelled as $E_x$, and is called a separation constant;
 # 
@@ -97,11 +105,23 @@ ans
 # 
 # $$\displaystyle  E_x + E_y = E  \qquad\tag{44}$$
 # 
-# The two equations in $x$ and $y$ can now be solved in the usual way. For example $\displaystyle \frac{\partial^2 \psi_x}{\partial x^2}+k^2\psi_x=0$ with $\displaystyle k^2 = 2mE/\hbar^2$ which produces the solutions to the problem of a particle in a one-dimensional box, see 3.8. Combining the equations gives for a box of dimensions $a$ and $b$,
+# The two equations in $x$ and $y$ can now be solved in the usual way. For example 
+# 
+# $$\displaystyle \frac{\partial^2 \psi_x}{\partial x^2}+k^2\psi_x=0$$
+# 
+# with 
+# 
+# $$\displaystyle k^2 = 2mE/\hbar^2$$
+# 
+# which produces the solutions to the problem of a particle in a one-dimensional box, see 3.8. Combining the equations gives for a box of dimensions $a$ and $b$,
 # 
 # $$\displaystyle \varphi =\sqrt{\frac{4}{ab}}\sin\left( \frac{n_x\pi x}{a}\right)\sin\left(\frac{n_y\pi x}{b} \right)$$
 # 
-# and the energies are $\displaystyle E=\frac{\pi^2\hbar^2}{2m}\left(\frac{n_x^2}{a^2}+\frac{n_y^2}{b^2}  \right) $ where $n_x$ and $n_y$ are positive integer quantum numbers which must be greater than zero, viz, $n_{x,y} = 1, 2, 3 \cdots$. Notice that in a square box some levels will be degenerate depending upon how the quantum numbers add, for example, $n_x = 2$ and $n_y = 1$ and vice versa. The first few wavefunctions are shown as contour plots in Fig. 20.
+# and the energies are 
+# 
+# $$\displaystyle E=\frac{\pi^2\hbar^2}{2m}\left(\frac{n_x^2}{a^2}+\frac{n_y^2}{b^2}  \right) $$
+# 
+# where $n_x$ and $n_y$ are positive integer quantum numbers which must be greater than zero, viz, $n_{x,y} = 1, 2, 3 \cdots$. Notice that in a square box some levels will be degenerate depending upon how the quantum numbers add, for example, $n_x = 2$ and $n_y = 1$ and vice versa. The first few wavefunctions are shown as contour plots in Fig. 20.
 # 
 # ![Drawing](diffeqn-fig20.png)
 # 
@@ -129,7 +149,11 @@ ans
 # 
 # ### **Angular solution**
 # 
-# The $\theta$ equation is $\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const$ and using the separation constant $-n^2$ this can be written as
+# The $\theta$ equation is 
+# 
+# $$\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const$$
+# 
+# and using the separation constant $-n^2$ this can be written as
 # 
 # $$\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \qquad\tag{47}$$
 # 
@@ -169,7 +193,11 @@ ans
 # 
 # The shape of the wavefunction at a fixed angle $\theta$ has the profile of the Bessel function with the radius set at each of the zero crossings, the lowest energy is found at the first crossing, $\rho_{0,1}$ the next at crossing $\rho_{1,1}$ and so on with increasing $r$, see Fig. 21. The wavefunction for the lowest state ($k = 0,\, l = 1$) does not have a node before reaching the perimeter, the second ($k = 1,\, l = 1$) has one node as so on, just as for the particle in a box. 
 # 
-# Using the definition of $k^2$ the energy is $\displaystyle E_{n,l}=\frac{\hbar^2}{2m}\left( \frac{\rho_{n,l}}{a} \right)^2$ and the energy of the first few energy levels follows that of the value of $\rho_{n,l}$. Notice how this pattern of levels is similar, but not identical, to that of a particle in a box. The energy levels are ordered with the quantum numbers, $n$ and $l$, but in this case act through the value $\rho$, and this is different to that of the square well or box where the quantum numbers are included directly in the energy.
+# Using the definition of $k^2$ the energy is 
+# 
+# $$\displaystyle E_{n,l}=\frac{\hbar^2}{2m}\left( \frac{\rho_{n,l}}{a} \right)^2$$
+# 
+# and the energy of the first few energy levels follows that of the value of $\rho_{n,l}$. Notice how this pattern of levels is similar, but not identical, to that of a particle in a box. The energy levels are ordered with the quantum numbers, $n$ and $l$, but in this case act through the value $\rho$, and this is different to that of the square well or box where the quantum numbers are included directly in the energy.
 # 
 # ![Drawing](diffeqn-fig21.png)
 # 
@@ -192,7 +220,15 @@ ans
 # 
 # ### **Drums**
 # 
-# Equation (46), if slightly modified, describes the shape of the normal modes of a circular drum, and the corresponding equations for a square box those of a square drum. The change to make is $\displaystyle k^2 = \omega^2/c^2$ where $c^2 = \sqrt{T/\sigma}$ and $\omega$ is the normal mode's vibrational frequency in rad $s^{-1}$. If the drum skin were cut, a tension of $T$ newton per metre would be needed to keep it closed. The density of the drum skin $\rho$ (units of kg m$^{-2}$) gives $c$ units of velocity. The normal mode frequencies are $\displaystyle \omega_{n,l} = \frac{\rho_{n,l}c}{a}$ and because the overtones are never an integer multiple of the fundamental, because of the values $\rho$ takes (see table), a drum makes a noise rather than a pure sound.
+# Equation (46), if slightly modified, describes the shape of the normal modes of a circular drum, and the corresponding equations for a square box those of a square drum. The change to make is 
+# 
+# $$\displaystyle k^2 = \omega^2/c^2$$
+# 
+# where $c^2 = \sqrt{T/\sigma}$ and $\omega$ is the normal mode's vibrational frequency in rad $s^{-1}$. If the drum skin were cut, a tension of $T$ newton per metre would be needed to keep it closed. The density of the drum skin $\rho$ (units of kg m$^{-2}$) gives $c$ units of velocity. The normal mode frequencies are 
+# 
+# $$\displaystyle \omega_{n,l} = \frac{\rho_{n,l}c}{a}$$
+# 
+# and because the overtones are never an integer multiple of the fundamental, because of the values $\rho$ takes (see table), a drum makes a noise rather than a pure sound.
 
 # ## 15.5 Steady State temperature profile in two dimensions
 # 
@@ -210,7 +246,11 @@ ans
 # 
 # $$\displaystyle \frac{1}{V_x}\frac{\partial^2 V_x}{\partial x^2}+\frac{1}{V_y}\frac{\partial^2 V_y}{\partial y^2}=0$$
 # 
-# but each derivative must now be equal to the same constant as their sum is zero. Thus, $\displaystyle \frac{1}{V_x}\frac{\partial^2 V_x}{\partial x^2}=-\frac{1}{V_y}\frac{\partial^2 V_y}{\partial y^2}=k^2 $ and where $k^2$ is chosen to make the solutions simpler and $k^2 \ge 0$.  The general solutions to these
+# but each derivative must now be equal to the same constant as their sum is zero. Thus, 
+# 
+# $$\displaystyle \frac{1}{V_x}\frac{\partial^2 V_x}{\partial x^2}=-\frac{1}{V_y}\frac{\partial^2 V_y}{\partial y^2}=k^2 $$
+# 
+# and where $k^2$ is chosen to make the solutions simpler and $k^2 \ge 0$.  The general solutions to these
 # equations are
 # 
 # $$\displaystyle V_x=Ae^{+kx}+Be^{-kx} \qquad \text{and} \qquad V_y=C\sin(ky)+D\cos(ky)$$
@@ -255,7 +295,11 @@ ans
 # 
 # $$\displaystyle b_n=\frac{2}{L}\int_0^L f(y)\sin\left(\frac{n\pi y}{L} \right)dy  \qquad\tag{51}$$
 # 
-# If, for example, the temperature function $f(y) = T$ and $L = \pi$, then the coefficients are $\displaystyle b_n=\frac{}{}\int_0^\pi \sin(n y)dy$ , which evaluate to $\displaystyle \frac{4T}{\pi},\; \frac{4T}{3\pi},\;\frac{4T}{5\pi},\cdots$ and the temperature profile is 
+# If, for example, the temperature function $f(y) = T$ and $L = \pi$, then the coefficients are 
+# 
+# $$\displaystyle b_n=\frac{2T}{\pi}\int_0^\pi \sin(n y)dy$$
+# 
+# which evaluate to $\displaystyle \frac{4T}{\pi},\; \frac{4T}{3\pi},\;\frac{4T}{5\pi},\cdots$ and the temperature profile is 
 # 
 # $$\displaystyle V=\frac{4T}{\pi}\left(e^{-x}\sin(y)+ e^{-3x}\frac{\sin(3y)}{3}+e^{-5x}\frac{\sin(5y)}{5}+\cdots  \right) $$
 # 
@@ -270,6 +314,7 @@ ans
 
 
 # this is the basic code to reproduce fig 23. Use quad() to numberically integrate
+
 s = lambda y ,n : f(y)*np.sin(n*np.pi*y/L)
 b = lambda n,y : 2*quad(s, 0, L, args = n)[0]  # use [0] to answer return only
 V = lambda x, y,nmax : sum( [b(n,y)*np.exp(-n*np.pi*x/L)*np.sin(n*np.pi*y/L) for n in range(1,nmax)] )
@@ -334,9 +379,9 @@ plt.show()
 # Fig. 24 Concentration profiles vs. position at different times inside the slab. Molecules are diffusing out from the top and the edges of the slab are kept at zero concentration, for example, by washing material away. The diffusion coefficient used is similar to that of lysozyme $11\cdot 10^{-11}\,\mathrm{m^2\, s^{-1}}$, the initial concentration $10$ mM. The width of the slab is $10$ nm. The times are given next to the lines and are in nanoseconds. The oscillating grey line at the top of the figure is set at $0.01$ ns and shows that close to zero time the sine functions almost but not exactly cancel out one another even with $100$ terms in the summation.  The plot also shows how slow diffusion is as it takes $\approx 600$ ns for the molecules to be removed and the concentration to approach zero.
 # _________
 
-# ## 15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms
+# ## 15.7 Diffusion and chemical reactions. Example of the growth of Algal Blooms
 # 
-# Diffusion and reaction can sometimes compete because reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term $\pm kt$ is thus added to the diffusion equation to allow for growth ($+kt$) or decay ($-kt$) of species.  Growth is examined first and decay in the next section 15.7b.
+# Diffusion and reaction can sometimes compete because a reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term $\pm kt$ is thus added to the diffusion equation to allow for growth ($+kt$) or decay ($-kt$) of species.  Growth is examined first and decay in the next section 15.8.
 # 
 # When diffusion and reaction compete it is possible that explosive growth of a product occurs, and for this to happen it is assumed that enough material is always present. Starting with Fick's First Law the growth term $+kt$ is added to allow for first order reaction forming product and is
 # 
@@ -377,7 +422,7 @@ plt.show()
 # fig 24a. Diffusion and reaction population at different times in microseconds. $L=10^{-4}$ m, $k=10^3$ /s, $D/L^2=0.1$ The totals listed in the plot are proportional to the area under each curve, i.e to the amount of $c$ produced. It is clear that the amount produced increases slowly to begin with then exponentially. The vertical line at $x/L=0.5$ represents the delta function population at zero time.
 # ______
 
-# ## 15.7b Voltage in a cell. The Cable equation revisited.
+# ## 15.8 Voltage in a cell. The Cable equation revisited.
 # 
 # The cable equation was introduced in section 11.3 where the equation found was
 # 
@@ -399,7 +444,7 @@ plt.show()
 # 
 # ______
 
-# ## 15.8 Flow and chemical reaction. Lateral flow tests
+# ## 15.9 Flow and chemical reaction. Lateral flow tests
 # 
 # In a lateral flow test used to detect, for example, Covid 19 viruses, the analyte containing the virus is solubilsed in a buffer along with other reagents and a few drops added to a sample pad in the test device, see figure 24b. By capillary action, similar to that which occurs in thin layer chromatography, the fluid containing the analyte passes through to a second region containing antibodies (immunoglobulins) attached to silver or gold nanoparticles. The fluid then passes into a ribbon of nitrocellulose impregnated with reporter antibodies in two specific places, the first to trap any analyte containing species and the second as a test region to confirm that flow has occurred. Finally this ribbon is attached to a wick that ensures that flow continues until no more fluid is left.
 # 
@@ -471,7 +516,7 @@ plt.show()
 # Figure 24d. Calculated profiles of Ab$\cdot$A species in a lateral flow test as time vs distance. The reactive area $x_a\to x_b$ is shown by the vertical lines and is where the species Ab$\cdot$A binds to form Ab$\cdot$A$\cdot$X. The population of this rises in the test region as Ab$\cdot$A declines. Notice that outside this region the population of Ab$\cdot$A remains constant and its shape unchanged. The bottom line (red) shows the _time_ profile of the product placed in the test region.
 # ________
 
-# ## 15.9 Diffusion in a closed tube or isolated bar
+# ## 15.10 Diffusion in a closed tube or isolated bar
 # 
 # If the ends of a long tube are filled with solvent, then closed and some solute injected, diffusion will ensure that equilibrium will eventually be reached no matter where the solute is injected. Similarly, if the end of an otherwise insulated bar is heated for a short while, as heat cannot escape, a uniform temperature will be reached. From these results, we know that, because the initial concentration or temperature profile levels out to a constant value, the solution must have both a time-dependent and a constant part. At long times the temperature or concentration will become uniform and, if $f(x)$ describes the amount initially added and $0 \lt x \lt L$, the long time value is $\displaystyle \frac{1}{L}\int_0^L f(x)dx$. The initial condition is given by the shape of the concentration profile $f(x)$.
 # 
@@ -514,7 +559,7 @@ plt.show()
 # Right: The figure on the right shows the time profile measured at $x = 2.5, 10$ and $25$ nm along the tube. Both the x and y- axes are shown on a logarithmic scale which makes the plotted lines easier to distinguish from one another. Initially at $x = 2.5$ the concentration falls rapidly, while that at 10 nm remains effectively zero for about $10$ ns and that at $25$ nm remains zero for a few hundred ns. Eventually some molecules reach $10$ nm and then $25$ nm and the population at both positions begins to rise as a wave of molecules passes. As the tube is of finite length  eventually a steady concentration along the tube is reached. This takes $\approx 50000$ ns and demonstrates that molecular diffusion is an intrinsically slow process.
 # _______
 # 
-# ## 15.10 Periodic boundary conditions
+# ## 15.11 Periodic boundary conditions
 # 
 # When diffusion is on a circular loop, the boundary conditions are periodic. The effect is similar to the insulated bar in that an initial concentration profile becomes constant at long times. If the concentration is initially $f(\theta), -\pi < \theta < +\pi$, the amount initially present at long times is $\displaystyle \frac{1}{\pi}\int_{\pi}^{\pi}f(\theta)d\theta$. The boundary conditions ensure that the concentration and its gradient are the same after a period,
 # 

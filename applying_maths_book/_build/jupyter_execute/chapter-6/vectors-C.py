@@ -88,7 +88,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The angle $\beta$ between $\vec a$ and $c = 115^\text{o}30' \equiv 115.5^\text{o}$ and the other angles are each $90^\text{o}$.
 # 
-# **(i)** To find the C-N1 bond length, let the vector for the position of the N$_1$ atom be $\vec W_{N_1} = w_1\vec a + w_2\vec b + w_3\vec c$. Using data in the table, this vector is 
+# ### **(i) Bond Length**
+# To find the C-N1 bond length, let the vector for the position of the N$_1$ atom be $\vec W_{N_1} = w_1\vec a + w_2\vec b + w_3\vec c$. Using data in the table, this vector is 
 # 
 # $$\displaystyle \vec W_{N_1} = 0.1834a\vec a - 0.1669b\vec b - 0.0015c\vec c$$
 # 
@@ -123,7 +124,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and using the values for $a, b, c$ produces a C-N$_1$ bond length of $d = 0.1346$ nm.
 # 
-# **(ii)** The angle $\mathrm{N_1-C-N_2}$ (or any other) is found by defining difference vectors $\vec \Delta_{CN_2}$ and
+# ### **(ii) Bond angle**
+# The angle $\mathrm{N_1-C-N_2}$ (or any other) is found by defining difference vectors $\vec \Delta_{CN_2}$ and
 # $\vec \Delta_{CN_1}$  for the two bonds as just described, then calculating their dot product
 # 
 # $$\displaystyle \cos(\theta)=\frac{\vec \Delta_{CN_2}\cdot \vec \Delta_{CN_1}}{d_{CN_1}d_{CN_2}} \qquad\tag{25}$$
@@ -232,7 +234,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # where $\boldsymbol{M}^{-1}$ is the inverse of $\boldsymbol{M}$, see Chapter 7. Finally, and as a check when all the angles are $90^\text{o}$, matrix $\boldsymbol{M}$ reduces to a diagonal matrix and this tells us that ordering the axes as $ABC$ gives the resulting order $xyz$.
 
 # ## 10 Transformation of basis vectors
-# 
 # ## 10.1 Calculating bond lengths and angles in non right-angled crystals
 # 
 # Normally, we are not so interested in converting axes but wish to find an atom's coordinates in Cartesian ($xyz$) axes, but which are given in crystallographic tables in terms of the unit cell $abc$ axes. The convention in crystallographic tables is to quote the coordinates as fractions of the unit cell lengths in columns labelled as $x/a, y/b, z/c$, or even as $x, y, z$. This is initially confusing because $xyz$ axes are not involved.
@@ -357,7 +358,6 @@ print('{:s}{:6.1f}{:s}'.format('bond angle C12N =', bond_angle(C2,C1,N1),' degre
 
 
 # ## 11 Unit cell volume
-# 
 # The absolute value of the determinant of $\boldsymbol M$ is numerically equal to the volume of the unit cell, (Giacovazzo et al. 1992, p. 68). When all the angles are $90^\text{o}$ then this matrix reduces to a diagonal form, and the determinant is $abc$, which is equal to the volume. Consider a monoclinic crystal, such as benzoic acid, where only one crystal angle is not $90^\text{o}$, and where $a = 0.552, b = 0.514, c = 2.190$ nm and the angle $\beta= 97^\text{o}$. The volume of the crystal will only be a little smaller than that of a solid rectangle of sides $abc = 0.621\;\mathrm{ nm^3}$ because the angle $\beta$ is close to $90^\text{o}$. The $\boldsymbol M$ matrix for a monoclinic crystal where $\alpha = \gamma =90^\text{o}$ is
 # 
 # $$\displaystyle \begin{bmatrix}\vec a\\ \vec b\\ \vec c\end{bmatrix}=\begin{bmatrix}a&0&0\\0&b&0\\c\cos(\beta) & 0 & c\sin(\beta)\end{bmatrix}\begin{bmatrix}\vec x\\ \vec y\\ \vec z\end{bmatrix}\qquad\qquad\qquad\qquad\qquad\qquad\text{(36)}$$

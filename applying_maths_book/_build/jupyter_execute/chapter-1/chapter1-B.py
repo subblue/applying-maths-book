@@ -153,7 +153,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # A defining characteristic of waves is that they can form superpositions, which is to say that when added or subtracted a new waveform is produced. When the waves are of the same frequency (or wavelength) this leads to interference and diffraction phenomena. When waves of different frequency are added beats are produced as described above. In quantum mechanics wavepackets are formed as superpositions of wavefunctions and are described in Chapter 5, (Summation and Series). 
 # 
-# ### **Example from xray diffraction**
+# ### **(i) Example from x-ray diffraction**
 # 
 # In x-ray diffraction the x-rays are scattered by the atoms that are present in regular and repeated positions in a crystal. The smallest set of repeated positions is called the unit cell. The Bragg equation $n\lambda = 2d\sin(\theta) $ defines the angle $\theta$ that the x-rays are diffracted off planes with a separation $d$. Only some angles cause diffraction because $n$ is an integer and the values of $d$ are determined by the limited number spacing between atoms. As the incident and diffracted angle are equal at $\theta$ the diffracted rays can be considered to be reflected off the lattice planes. Only the diffracted (reflected) waves that interfere constructively with one another to produce light spots on the detector. Diffraction with crystals is described in more detail in Chapter 9, Fourier Transforms.
 # 
@@ -191,7 +191,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To recap, the intensity $I$ is that due to all atoms in the unit cell in proportion to their phase $\varphi_i$ and is unique at each possible scattering angle $\theta$, thus in x-ray diffraction from crystals the positional information is contained in the intensity of the measured spots on the detector not their position.
 # 
-# ### **Example with two waves**
+# ### **(ii) Example with two waves**
 # 
 # Suppose that there is a grating with small apertures separated by $d$ and a second set also with separation $d$ but displaced by $\alpha d$ as shown in the figure below. We can consider these apertures as point emitters producing equal amplitude waves of the same frequency and in phase. They could be, for example, atoms scattering x-rays. At a certain angle the waves with spacing $d$ have phase difference $2\pi n$, i.e. these waves combine constructively to give a line at order $n$. The other source has a phase difference relative to the first of $\varphi = 2\pi\alpha n$. On the detector the total wave intensity is observed at orders $n=0,\pm 1,\pm 2\cdots$ and the phases are $\varphi_0 = 0,  \varphi_1=2\pi n \alpha$ and from eqn. 16a and assuming the amplitudes are unity for simplicity, the intensity for a wave from each sets is,  
 # 
@@ -357,19 +357,19 @@ asinh(x).rewrite('log')
 # 
 # is sometimes given the symbol $(x)_n$ which is called the Pochhammer symbol, although this notation is not universal. Ratios of factorials similar to these occur in quantum mechanics, particularly when angular momentum quantum numbers are involved.
 # 
-# ###  **Stirling's formula**
+# ###  **(i) Large factorials. Stirling's formula**
 # 
-# The log of the factorial is often used as a way of calculating factorials and Stirling's formula
+# The log of the factorial is often used as a way of calculating factorials for large $n$ particularly those too large for normal multiplication. To this end Stirling's formula,
 # 
 # $$\displaystyle \ln(n!) = n \ln(n) - n  \qquad\tag{18}$$
 # 
-# is particularly useful for large $n$. For smaller values we can use the equivalent formula $\displaystyle  n!=n^ne^{-n}$.
+# is particularly useful. For smaller values we can use the equivalent formula $\displaystyle  n! = n^ne^{-n}$.
 # 
 # The approximations is calculated as
 # 
 # $$\displaystyle \begin{align}\ln(n!)&=\sum_{j=1}^n \ln(n_j) \approx \int_1^n \ln(x)dx=(n\ln(n)-n)\big|_1^n\\ &= n \ln(n) - n+1\end{align} $$
 # 
-# which is slightly smaller than the true value. A far more accurate approximation is 
+# which is slightly smaller than the true value. A far more accurate approximation, if such is needed, is 
 # 
 # $$\displaystyle \ln(n!) = \left(n+\frac{1}{2}\right) \ln(n) - n +\frac{1}{2}\ln(2\pi)$$
 # 

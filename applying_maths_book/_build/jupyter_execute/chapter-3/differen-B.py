@@ -72,13 +72,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \qquad\tag{11}$$
 # 
-# **(i)** The van't Hoff equation of chemical thermodynamics has this last form, 
+# **(a)** The van't Hoff equation of chemical thermodynamics has this last form, 
 # 
 # $$\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}$$
 # 
 # This equation describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and quantifies the Le Chatelier principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.
 # 
-# **(ii)** A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
+# **(b)** A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
 # 
 # $$\displaystyle R\frac{d^2S}{dx^2}+2\frac{dR}{dx}\frac{dS}{dx}=0$$
 # 
@@ -100,7 +100,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $C$ is a constant. The reason $C$ is there is that this is the general form and is simplified from the derivative of a log, since $\displaystyle \frac{d}{dx}\ln(Cx)=\frac{1}{x}$. 
 # 
-# **(iii)** The product $\displaystyle \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right)$ cannot be easily differentiated but its log can be and so
+# **(c)** The product $\displaystyle \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right)$ cannot be easily differentiated but its log can be and so
 # 
 # $$\displaystyle \log\left( \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right) \right)= \sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)$$
 # 
@@ -110,7 +110,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # 
 # 
-# ## 3.13 Differentiating x as a power 
+# ## 3.13 Differentiating $x$ as a power, factorials $x!$ and absolute values $|x|$ 
 # 
 # Expressions such as $y=a^x,\;y=x^{1/x},\; y= x^x $ etc. can be differentiated quite easily with a little care.
 # 
@@ -145,17 +145,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Fortunately, for large $x$ Stirling's Rule can be used which is 
 # 
-# $$\displaystyle x! \approx x^xe^x\qquad \text{or}\qquad \ln(x!)=x\ln(x)+x$$
+# $$\displaystyle x! \approx x^xe^{-x}\qquad \text{or}\qquad \ln(x!)=x\ln(x)-x$$
 # 
-# where $x$ is now a variable. Differentiating the log produces 
+# where $x$ is assumed not to be an integer but a variable. Differentiating the log produces 
 # 
-# $$\displaystyle \frac{d\,\ln\,x!}{dx}=\frac{1}{x!}\frac{d x!}{dx}=\ln(x)+2. \qquad \frac{dx!}{dx}=x!(\ln(x)+2)$$
+# $$\displaystyle \frac{d\,\ln\,x!}{dx}=\frac{1}{x!}\frac{d x!}{dx}=\ln(x). \qquad \frac{dx!}{dx}=x!\ln(x)$$
 # 
 # To find the maximum in  $\displaystyle \binom{n}{x}\equiv y=\frac{n!}{x!(n-x)!}$,
 # 
 # substitute for the factorials using Stirling's formula, differentiate and set the result to zero. 
 # 
-# $$\displaystyle \begin{align} \ln(y)&= n\ln(n)-x\ln(x)-x-(n-x)\ln(n-x)-(n-x) \\
+# $$\displaystyle \begin{align} \ln(y)& = n\ln(n) - x\ln(x) -(n-x)\ln(n-x) \\
 # \frac{1}{y}\frac{dy}{dx}&=-\ln(x) +\ln(n-x) \end{align} $$
 # 
 # substituting for $y$ produces 
@@ -164,7 +164,23 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and the maximum (or minimum) is found when the derivative is zero which can only be when $\ln(x)=\ln(n-x)$ or $x=n/2$. This can only be a maximum because the distribution is always positive and can be confirmed by direct calculation or plotting values. See Pascal's triangle and Binomial distribution in Chapters 1 and 12.
 # 
+# The derivative of any factorial can be evaluated using the Gamma function (see Chapter 1-8). The Gamma function produces factorials of any number, positive or negative, not just integers. Using $(x-1)!=\Gamma(x)$ the formula for the derivative $\Gamma'(x)$ is
 # 
+# $$\displaystyle \Gamma'(x)=\Gamma(x)\left(-\gamma+\sum_{k=1}^\infty \left(\frac{1}{k}-\frac{1}{k+x-1}\right) \right)$$
+# 
+# where $\gamma=0.57721\dots$ is the Euler-Mascheroni constant.
+# 
+# ### **(iv) Absolute or modulus |x|**
+# The absolute value or modulus $|x|$ is defined as positive $+x$ if $x$ is either positive or negative or zero if $x=0$  and can be differentiated by writing it as $\sqrt{x^2}$ in which case
+# 
+# $$\displaystyle \frac{d|x|}{dx}=\frac{1}{2}(x^2)^{-1/2}2x=\frac{x}{|x|}$$
+# 
+# which is $\pm 1$ depending on the sign of $x$. More complicated functions can be treated in the same way
+# 
+# $$\displaystyle \frac{d}{dx}|\sin{x}|= \frac{d}{dx}\sqrt{\sin^2{x}}=\frac{\sin(x)\cos(x)}{|\sin{x}|}$$
+# 
+# which is $sign(\sin(x))\cos(x)$.
+
 # ## 3.14 Reciprocal derivatives
 # 
 # Occasionally it is necessary, or simpler, to find $dx/dy$ rather than invert the equation to put it in terms of $y = \cdots$ and calculate $dy/dx$. The derivatives are related as double reciprocals;
@@ -213,7 +229,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # ## 3.17 Table of Differentials
 # 
-# $a,\;,b,\;$ and $n$ are treated as constants.
+# $a,\;b,\;$ and $n$ are treated as constants.
 # 
 # $$\displaystyle \begin{array}{lccc}
 # \hline

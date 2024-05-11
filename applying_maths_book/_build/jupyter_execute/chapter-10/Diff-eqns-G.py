@@ -20,7 +20,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Imagine that a very long, narrow tube is half filled with a dye solution and the other half contains pure solvent each half being separated by a partition. When partition is carefully removed, diffusion from either half into the other begins. The tube is so long ($x \to \infty$) that its ends do not affect the behaviour on an experimental time scale. Immediately on opening the partition the concentration at the interface is $c(x)= c_0$ for $x \ge 0$ and $c(x) = 0$ for $x\lt 0$ both conditions apply at $t = 0$. This initial condition is quite specific, and practical, but instead of keeping a constant value $c_0$ when $x \ge 0$ and $t = 0$ the initial concentration can in general be a function of position, $f(x)$ which may range over the whole range of $x$.
 # 
-# To obtain a solution equation (52); $\displaystyle \frac{\partial^2c_x}{\partial x^2}=-c_xk^2$ is solved in a general way using exponentials as
+# To obtain a solution equation (52); 
+# 
+# $$\displaystyle \frac{\partial^2c_x}{\partial x^2}=-c_xk^2$$
+# 
+# is solved in a general way using exponentials as
 # 
 # $$\displaystyle c_x=\alpha_ke^{ikx}+\beta_ke^{-ikx} \tag{57}$$
 # 
@@ -36,7 +40,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle f(x)=\int_{-\infty}^\infty b_ke^{-ikx}dk$$
 # 
-# and the constants $b_k$ are found with the Fourier transform $\displaystyle b_k=\frac{1}{2\pi}\int_{-\infty}^\infty f(s)e^{iks}ds$ where $s$ is the integration variable. The complete solution is 
+# and the constants $b_k$ are found with the Fourier transform 
+# 
+# $$\displaystyle b_k=\frac{1}{2\pi}\int_{-\infty}^\infty f(s)e^{iks}ds$$
+# 
+# where $s$ is the integration variable. The complete solution is 
 # 
 # $$\displaystyle c=\frac{1}{2\pi}\int_{-\infty}^\infty \int_{-\infty}^\infty e^{-Dk^2t}e^{-ik(s-x)}dsdk$$
 # 
@@ -80,7 +88,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The general solution (59) can now be thought of as the convolution of a function $f(x)$ with a impulse $\delta$ function in much the same way as described in Chapter 9.7 where fluorescence, equivalent to $f(x)$, is stimulated by a laser pulse which is equivalent to the exponential term in (59).
 # 
-# One important application of equations similar to, but more complex than those described here is in the technique known as FRAP, which stands for _fluorescence recovery after photo-bleaching_. In this technique, a dye molecule is introduced into a biological membrane and then an intense laser is used to bleach the dye rapidly in the small circular spot of the focused laser. A second weaker laser stimulates the dye's fluorescence and the intensity of this is measured as the dye molecules diffuse into the bleached area. The rate at which the fluorescence recovers can be used to determine the diffusion coefficient of the dye molecules or proteins to which the dye may be attached. Should the protein contains an intrinsic chromophore, as does the green fluorescent protein (GFP), this can be used directly.
+# One important application of equations similar to, but more complex than those described here is in the technique known as FRAP, which stands for fluorescence recovery after photo-bleaching. In this technique, a dye molecule is introduced into a biological membrane and then an intense laser is used to bleach the dye rapidly in the small circular spot of the focused laser. A second weaker laser stimulates the dye's fluorescence and the intensity of this is measured as the dye molecules diffuse into the bleached area. The rate at which the fluorescence recovers can be used to determine the diffusion coefficient of the dye molecules or proteins to which the dye may be attached. Should the protein contains an intrinsic chromophore, as does the green fluorescent protein (GFP), this can be used directly.
 # 
 
 # ## 16.2 Asymmetric boundary conditions: reaction at a plane
@@ -93,7 +101,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$t=0,\quad x\to \infty, \quad c=c_0 \qquad \text{ and } \qquad t \gt 0, \quad x=0, \quad c=0$$
 # 
-# Starting with the diffusion equation $\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}$, the variables are separated and the general solution obtained as was equation (57),
+# Starting with the diffusion equation 
+# 
+# $$\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}$$
+# 
+# the variables are separated and the general solution obtained as was equation (57),
 # 
 # $$\displaystyle c(x,t)=\int_{-\infty}^{\infty} \alpha_ke^{-Dk^2t}e^{-ikx}+\beta+ke^{-Dk^2t}e^{ikx}dk$$
 # 
@@ -141,7 +153,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle E=E^{\mathrm{O}} -\frac{RT}{nF}\ln\left(\frac{R_d}{O_X}  \right) $$
 # 
-# where $F$ is the Faraday constant and $n$ the number of electrons transferred in the reaction. For different values of $\Delta E = E - E^O$ the ratio $s = O_X/R_d$ can be plotted vs. distance from the electrodes. The expression $f_R = (1 - c(x, t))/(1 + s)$ plots the fraction as reductant and $f_{O_X} = (s + c(x, t))/(1 + s)$ the fraction oxidant, their sum being one. At oxidative, or positive, potentials the ratio $O_X/R_d$ is large, and the electrode remains almost in equilibrium with the $O_X$ concentration, being almost $c_0$. If the potential is negative, $O_X/R_d \lt 1$, and almost all of the oxidant in contact with the electrode reacts, eventually the region of reduced material expands away from the electrode, Fig. 29. The current measured in the electrochemical cell is initially large because the slope of concentration with distance is large, this is the flux, and the current is proportional to the flux. At longer times, the slope is smaller at the electrode, hence the flux is reduced and so is the current.
+# where $F$ is the Faraday constant and $n$ the number of electrons transferred in the reaction. For different values of $\Delta E = E - E^O$ the ratio $s = O_X/R_d$ can be plotted vs. distance from the electrodes. The expression 
+# 
+# $$\displaystyle f_R = (1 - c(x, t))/(1 + s)$$
+# 
+# plots the fraction as reductant and 
+# 
+# $$\displaystyle f_{O_X} = (s + c(x, t))/(1 + s)$$
+# 
+# the fraction oxidant, their sum being one. At oxidative, or positive, potentials the ratio $O_X/R_d$ is large, and the electrode remains almost in equilibrium with the $O_X$ concentration, being almost $c_0$. If the potential is negative, $O_X/R_d \lt 1$, and almost all of the oxidant in contact with the electrode reacts, eventually the region of reduced material expands away from the electrode, Fig. 29. The current measured in the electrochemical cell is initially large because the slope of concentration with distance is large, this is the flux, and the current is proportional to the flux. At longer times, the slope is smaller at the electrode, hence the flux is reduced and so is the current.
 # 
 # ![Drawing](diffeqn-fig29.png)
 # 
@@ -186,10 +206,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\varphi = Ae^{ikx}+Be^{-ikx}$$
 # 
-# where $A$ and $B4 are constants depending on the initial or boundary conditions.
+# where $A$ and $B$ are constants depending on the initial or boundary conditions.
 # 
-# The time-dependent part is solved with $\displaystyle \frac{i\hbar}{u}\frac{\partial u}{\partial t}=\hbar\omega$ from which $\displaystyle u(t) = e^{−i\omega t}$. The constants of integration need not be added here because these have
-# been included in $\varphi$. The complete wavefunction is therefore 
+# The time-dependent part is solved with 
+# 
+# $$\displaystyle \frac{i\hbar}{u}\frac{\partial u}{\partial t}=\hbar\omega\quad\text{ therefore }\quad u(t) = e^{-i\omega t}$$
+# 
+# The constants of integration need not be added here because these have been included in $\varphi$. The complete wavefunction is therefore 
 # 
 # $$\displaystyle \psi = Ae^{i(kx−ωt)} + Be^{−i(kx+ωt)}$$ 
 # 
@@ -197,14 +220,28 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \psi^*\psi = |A|^2 + |B|^2 + AB^*e^{2ikx} + BA^*e^{−2ikx}$$
 # 
-# which demonstrates that the particle shows interference and is thus localized periodically. If the particle does not have any boundary condition imposed on it either $A$ or $B$ be can arbitrarily set to zero and then the particle travels either to the right or left and the wavefunction is $\displaystyle \psi = Ce^{i(kx−ωt)}$, where $\displaystyle \psi^*\psi = |C|^2$ and $\sqrt{C}$ is thus the normalization.
+# which demonstrates that the particle shows interference and is thus localized periodically. If the particle does not have any boundary condition imposed on it either $A$ or $B$ be can arbitrarily set to zero and then the particle travels either to the right or left and the wavefunction is 
 # 
-# The particle’s energy is $E = \hbar\omega$ or $\displaystyle E = k^2\frac{\hbar^2}{2m}$, because momentum is $p = k\hbar $ and we have defined $\displaystyle k^2 = \frac{2m\omega}{\hbar} $. The classical velocity of the particle is $v = p/m$ or $v = k\hbar/m $ and this is identical to the group velocity, $v_g = d\omega/dk$. The phase velocity is, by definition, $v_p = \omega/k$, and this velocity is also $E/p$ because kinetic energy $E = p^2/2m$. The phase velocity is therefore $v/2$ and half the classical and group velocity. See Flugge (1999) for more details of this problem and many other interesting one-dimensional problems.
+# $$\displaystyle \psi = Ce^{i(kx−ωt)}$$
+# 
+# where $\displaystyle \psi^*\psi = |C|^2$ and $\sqrt{C}$ is thus the normalization.
+# 
+# The particle’s energy is $E = \hbar\omega$ or $\displaystyle E = k^2\frac{\hbar^2}{2m}$, because momentum is $p = k\hbar $ and we have defined $\displaystyle k^2 = \frac{2m\omega}{\hbar} $. 
+# 
+# The classical velocity of the particle is $v = p/m$ or $v = k\hbar/m $ and this is identical to the group velocity, $v_g = d\omega/dk$. The phase velocity is, by definition, $v_p = \omega/k$, and this velocity is also $E/p$ because kinetic energy $E = p^2/2m$. The phase velocity is therefore $v/2$ and half the classical and group velocity. See Flugge (1999) for more details of this problem and many other interesting one-dimensional problems.
 
 # ## 17 The wave equation
 # 
-# A _travelling wave_ can be imagined as a disturbance that moves both in space and time. Its general form is $u(x, t) = f (x - ct)$ where $f$ is a function of one variable (Knobel 2000). The wave moves with a  speed $c$. The profile $f$ of the travelling wave remains the same as time passes; one of many travelling waves is $\displaystyle y = e^{-(x-ct)^2}$.
+# ### **(i) Travelling wave**
+# A _travelling wave_ can be imagined as a disturbance that moves both in space and time. Its general form is 
 # 
+# $$\displaystyle u(x, t) = f (x - ct)$$
+# 
+# where $f$ is a function of one variable (Knobel 2000). The wave moves with a  speed $c$. The profile $f$ of the travelling wave remains the same as time passes; one of many travelling waves is 
+# 
+# $$\displaystyle y = e^{\large{-(x-ct)^2}}$$
+# 
+# ### **(ii) Standing wave**
 # A _standing wave_ varies in time and, although it appears to be fixed in space, it is the sum of two travelling waves moving in opposite directions. A taut wire when plucked will produce waves with the displacement depending upon its position $x$ along the wire and on time $t$. The vibrational frequency of such a wire is 
 # 
 # $$\displaystyle v_n=\frac{n}{2L}\sqrt{\frac{T}{\sigma}}$$
@@ -219,13 +256,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which has displacement $u$ at time $t$ and position $x$. It is interesting to compare this with the diffusion equation which has only the first derivative with respect to time. 
 # 
-# One general solution of the wave equation was indicated in the introduction. Here we solve this equation by separating variables in exactly the same manner as for the diffusion and other partial differential equations. The separation has the form $u(x, t) = w(t)v(x)$ and dividing both sides by $u$ gives
+# One general solution of the wave equation was indicated in the introduction. Here we solve this equation by separating variables in exactly the same manner as for the diffusion and other partial differential equations. The separation has the form 
+# 
+# $$\displaystyle u(x, t) = w(t)v(x)$$
+# 
+# and dividing both sides by $u$ gives
 # 
 # $$\displaystyle  \frac{1}{w}\frac{\partial^2 w }{\partial t^2}=\frac{c^2}{v}\frac{\partial^2 v}{\partial x^2} =k^2$$
 # 
-# where $k^2$ is the separation constant and different solutions are obtained depending on whether $k^2$ is zero, positive or negative. The solutions are readily found; when $k = 0$, then $\displaystyle \frac{\partial^2 w}{\partial t^2}=0,\;\frac{\partial^2 v}{\partial x^2}=0 $. Integrating twice produces $w = A + Bt,\;t=C+Dx$ where $A,\; B, \;C,\; D$, are constants determined by the initial and boundary conditions. 
+# where $k^2$ is the separation constant and different solutions are obtained depending on whether $k^2$ is zero, positive or negative. The solutions are readily found; when $k = 0$, then $\displaystyle \frac{\partial^2 w}{\partial t^2}=0,\;\frac{\partial^2 v}{\partial x^2}=0 $. Integrating twice produces $w = A + Bt,\;v=C+Dx$ where $A,\; B, \;C,\; D$, are constants determined by the initial and boundary conditions. The standing wave solution is the product $w(t)v(x)$;
 # 
-# The standing wave solution is $u = (A + Bt)(C + Dx)$.
+# $$\displaystyle u = (A + Bt)(C + Dx)$$
 # 
 # If $k^2 \gt 0$ then the solutions are found from 
 # 
@@ -257,7 +298,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Suppose that the initial amplitude and velocity of the guitar string are defined by some new initial conditions. If the string is plucked, just before it is released it has some particular shape; this is defined as $f (x)$, but can be defined more precisely later on. Also, supposing that all points on the string are stationary at $t = 0$, the new conditions will therefore be
 # 
-# $$\displaystyle u(x, 0) = f (x);\quad \partial u(x, t)/\partial t = 0$$
+# $$\displaystyle u(x, 0) = f (x);\quad \frac{\partial u(x, t)}{\partial t} = 0$$
 # 
 # As this time derivative is zero at time zero, the sine term in $t$ in the general solution must be zero, because its time derivative is a cosine which is not zero at $t = 0$. The general solution is therefore
 # 
@@ -271,7 +312,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle b_n=\frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}  \right)dx$$
 # 
-# If the initial displacement has the form $\displaystyle f(x) = e^{-a|2x-L|} -e^{-aL}$, which is peaked at the centre of the string, the solution is found by separating the integration into two parts to overcome the absolute value in the integral. The first part is from $0 \to L/2$, and the second from $L/2 \to L$. If the guitar string's length $L$ = 1/2 m, which has been calculated to have a fundamental frequency of $\nu = 400$ Hz, the wave velocity is $c = \lambda\nu$ which is $100\,\mathrm{ m s^{-1}}$ because the wavelength is $L/2$.
+# If the initial displacement has the form 
+# 
+# $$\displaystyle f(x) = e^{\large{-a|2x-L|} -e^{-aL}}$$
+# 
+# which is peaked at the centre of the string, the solution is found by separating the integration into two parts to overcome the absolute value in the integral. The first part is from $0 \to L/2$, and the second from $L/2 \to L$. If the guitar string's length $L$ = 1/2 m, which has been calculated to have a fundamental frequency of $\nu = 400$ Hz, the wave velocity is $c = \lambda\nu$ which is $100\,\mathrm{ m s^{-1}}$ because the wavelength is $L/2$.
 # 
 # ![Drawing](diffeqn-fig30.png)
 # 
@@ -307,13 +352,17 @@ plt.show()
 # 
 # In the case when the initial velocity is not zero but the displacement is zero, the initial conditions will be
 # 
-# $$\displaystyle  u(x, 0) = 0,\quad \partial u(x, t)/\partial t = f (x)$$
+# $$\displaystyle  u(x, 0) = 0,\quad \frac{\partial u(x, t)}{\partial t} = f (x)$$
 # 
 # Notice that the initial velocity is a function of position; i.e. this describes the initial velocity at each point along the wire. As the velocity is not zero, the sine term containing time in the general equation (63) is now used, as its derivative is a cosine which is not zero at $t = 0$. The general term is found by differentiating the general solution giving
 # 
 # $$\displaystyle \frac{\partial u}{\partial t}=\frac{n\pi c}{L}\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right)=f(x)$$
 # 
-# The coefficients are now $\displaystyle b_n=\frac{2}{L}\frac{L}{n\pi c}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx$ and the general solution is 
+# The coefficients are now 
+# 
+# $$\displaystyle b_n=\frac{2}{L}\frac{L}{n\pi c}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx$$
+# 
+# and the general solution is 
 # 
 # $$\displaystyle  u =\sum_{n=1}^\infty b_n\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right) \qquad\tag{64}$$
 # 
@@ -339,7 +388,11 @@ plt.show()
 # 
 # $$\displaystyle  F\left(\frac{d^2}{dx^2}f(x)\right)  = (ik)^2\,g(k)  \tag{9-23c}$$
 # 
-# The transform of the product $\displaystyle F\left(xf(x)\right) =\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx $ is evaluated by noticing $-ike^{-ikx}$ is a derivative which gives
+# The transform of the product 
+# 
+# $$\displaystyle F\left(xf(x)\right) =\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx $$
+# 
+# is evaluated by noticing $-ike^{-ikx}$ is a derivative which gives
 # 
 # $$\displaystyle \int_{-\infty}^{\infty} xf(x)e^{-ikx}dx=\int_{-\infty}^{\infty} f(x)\frac{d}{dk}\left(ie^{-ikx}\right) dx =i\frac{d}{dk}\int_{-\infty}^{\infty} f(x)e^{-ikx} dx=i\frac{d}{dk}g(k)\tag{9-23d}$$
 # 
@@ -457,9 +510,7 @@ plt.show()
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec z^2}\psi(\vec z,t)=i\hbar\frac{\partial}{\partial t}\psi(\vec z,t) $$
 # 
-# by making $z$ a vector of $x$ and $y$.
-# 
-# Taking the fourier transform of both sides using eqn's 23d and 23e gives,
+# by making $z$ a vector of $x$ and $y$. Taking the fourier transform of both sides using eqn's 23d and 23e gives,
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}k^2g(k,t)=-\hbar \frac{\partial }{\partial t}g(k,t)$$
 # 
@@ -514,7 +565,7 @@ plt.show()
 # 
 # where the initial condition $g(k,0)$ is in transform space. 
 # 
-# ### **Initial amount is a $\delta$ function at $x=0$**
+# ### **(i) Initial amount is a $\delta$ function at $x=0$**
 # 
 # In 'real' space let the initial amount be $f(x,0)$ with fourier transform
 # 
@@ -535,7 +586,7 @@ plt.show()
 # Figure 30d. Diffusion from the delta function initial distribution is represented by the vertical line at zero. The diffusion constant used was $10\cdot 10^{-6}\,\mathrm{cm^2\,s^{-1}}$. The left panel shows the concentration profile vs. position at the times shown and the right panel the concentration at various positions vs. time.
 # ______
 # 
-# ### **Initial concentration not at $x=0$**
+# ### **(ii) Initial concentration not at $x=0$**
 # 
 # If the function is to be situated at a different place other than zero this can most easily be done by using the shift property of fourier transforms.
 # 
@@ -562,9 +613,9 @@ plt.show()
 # 
 # $$\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] f(y,0)dy$$
 # 
-# ### **Comb of top-hat functions**
+# ### **(iii) Comb of top-hat functions**
 # 
-# In the case of a 'top-hat' function, i.e one that is constant between $x=a \to b$ and zero elsewhere or many polynomials between two values, the integrations can be performed analytically but for other cases a numerical method will have to used. The outer integral limits are $y=\pm\infty$ but usually the integral is split into parts, e.g $\int_{-\infty}^\infty [] -\int_{-\infty}^a []- \int_b^\infty []$  which can be simplified to $\int_a^b[]$. As an example the result of heating a series of strips is shown in figure 30e. The equation for a single strip is of amplitude $1$ is 
+# In the case of a 'top-hat' function, i.e one that is constant between $x=a \to b$ and zero elsewhere or many polynomials between two values, the integrations can be performed analytically but for other cases a numerical method will have to used. The outer integral limits are $y=\pm\infty$ but usually the integral is split into parts, e.g $\displaystyle \int_{-\infty}^\infty [\cdots] -\int_{-\infty}^a [\cdots]- \int_b^\infty [\cdots]$  which can be simplified to $\displaystyle \int_a^b[\cdots]$. As an example the result of heating a series of strips is shown in figure 30e. The equation for a single strip is of amplitude $1$ is 
 # 
 # $$\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] dy=\int_a^b\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}dy$$
 # 

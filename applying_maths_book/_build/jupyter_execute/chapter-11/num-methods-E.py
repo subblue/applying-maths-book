@@ -45,7 +45,11 @@
 # 
 # where $C$ is some compound whose concentration is unchanged during reaction and provides the material and fuel or free energy to form another Y; it is therefore always at vast excess over Y. To make these equations the same as in (11.48), the substitution $k_1 = k'_{1}C$ is made and so $k_1$ is a pseudo, first-order rate constant.
 # 
-# The first step in analysing these equations is to calculate the nullclines and steady state conditions that are also called the equilibrium points. Then the phase plane will be calculated, which plots the number density between predator and prey and finally the time profiles of species $Y$ and $X$. The initial values to do this will be $X_0 = 60,\; Y_0 = 100.0,\; k_1 = 1.0,\; k_2 = 0.01,\; k_3 = 0.5$, and time from 0 to 40 units. The unit of time could be in seconds or years; this depends on the situation. We need not specify it here, but clearly, the time would be something of the order of a year for hares and lynx. The numerical calculations used to produce the data in Fig. 19, was based on the Euler algorithm (14) with rate equations defined as
+# The first step in analysing these equations is to calculate the nullclines and steady state conditions that are also called the equilibrium points. Then the phase plane will be calculated, which plots the number density between predator and prey and finally the time profiles of species $Y$ and $X$. The initial values to do this will be 
+# 
+# $$\displaystyle X_0 = 60,\; Y_0 = 100.0,\; k_1 = 1.0,\; k_2 = 0.01,\; k_3 = 0.5,\; t=0\to 40$$
+# 
+# The unit of time could be in seconds or years; this depends on the situation. We need not specify it here, but clearly, the time would be something of the order of a year for hares and lynx. The numerical calculations used to produce the data in Fig. 19, was based on the Euler algorithm (14) with rate equations defined as
 
 # In[1]:
 
@@ -120,7 +124,15 @@
 # \displaystyle \frac{dw}{dt} & = & \epsilon(v-\gamma w)\\
 # \end{array}$$
 # 
-# The potential $v$ is the fast responding voltage; $w$ is the slow (Na$^+$) recovery one; $\alpha,\; \epsilon, \; \gamma$ are constants with $0 < \alpha < 1,\; \epsilon \ll 1$; and $C$ is an optional applied current. The $v$ nullcline is the cubic equation $w = v(1 - v)(v - \alpha) + C$; the $w$ nullcline is a straight line $w = v/\gamma $. These are plotted in Figure 21 as dotted lines with the parameters, $\alpha = 0.1,\; \epsilon = 0.02$, and $\gamma = 2$. The starting values for the calculation of the phase plane were $w_0 = -0.2,\; v_0 = 0.25$, and $C = 0$, and in Figure 22,  $C = 0.025$. 
+# The potential $v$ is the fast responding voltage; $w$ is the slow (Na$^+$) recovery one; $\alpha,\; \epsilon, \; \gamma$ are constants with $0 < \alpha < 1,\; \epsilon \ll 1$; and $C$ is an optional applied current. The $v$ nullcline is the cubic equation 
+# 
+# $$\displaystyle w = v(1 - v)(v - \alpha) + C$$
+# 
+# the $w$ nullcline is a straight line 
+# 
+# $$\displaystyle w = v/\gamma $$
+# 
+# These are plotted in Figure 21 as dotted lines with the parameters, $\alpha = 0.1,\; \epsilon = 0.02$, and $\gamma = 2$. The starting values for the calculation of the phase plane were $w_0 = -0.2,\; v_0 = 0.25$, and $C = 0$, and in Figure 22,  $C = 0.025$. 
 # 
 # The equilibrium point where the nullclines meet is the solution of 
 # 
@@ -157,3 +169,9 @@
 # ![Drawing](num-methods-fig23.png)
 # 
 # Figure 23. Two potentials with the form $V(x) = ax^2 + bx^4$.The parabola has $b=0$ and the double well with $b \gt 0$ but with $a$ negative. The double well has both unstable and stable points. The stable points are indicated by the filled circles.
+
+# In[ ]:
+
+
+
+

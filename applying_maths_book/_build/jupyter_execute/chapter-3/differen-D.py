@@ -30,11 +30,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This simple but powerful method is most easily explained by examples; (i) to (iv) below are typical. The general formula is given in the next section. To differentiate the functions, use the table or various sections above to remind you of the rules. 
 # 
-# $\quad$ (i) $\displaystyle y=\sin(ax^2+x^{-3}),\qquad\qquad \;\;$     (ii) $\displaystyle y=e^{ax^2+\sin(ax)}$
+# $\quad$ (a) $\displaystyle y=\sin(ax^2+x^{-3}),\qquad\qquad \;\;$     (b) $\displaystyle y=e^{ax^2+\sin(ax)}$
 # 
-# $\quad$ (iii) $\displaystyle p=\ln(e^{aq})$ and find $dp/dq,\qquad$ (iv) $\displaystyle y^n=\sin(ax^3)$
+# $\quad$ (c) $\displaystyle p=\ln(e^{aq})$ and find $dp/dq,\qquad$ (d) $\displaystyle y^n=\sin(ax^3)$
 # 
-# **(i)** To differentiate $\displaystyle y=\sin(ax^2+x^{-3})$ treat the sine as the outside function, differentiate it to produce $\cos(\cdots)$, then multiply by the differential of the terms inside the sine bracket
+# **(a)** To differentiate $\displaystyle y=\sin(ax^2+x^{-3})$ treat the sine as the outside function, differentiate it to produce $\cos(\cdots)$, then multiply by the differential of the terms inside the sine bracket
 # 
 # $$\displaystyle \qquad\qquad\begin{align} y& =\sin(\underline{ax^2+x^{-3}})\\
 # &\quad\uparrow \qquad \uparrow\\
@@ -44,17 +44,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{dy}{dx}=\cos(ax^2+x^{-3})\frac{d}{dx}(ax^2+x^{-3})=\cos(ax^2+x^{-3})(2ax-3x^{-4})$$
 # 
-# **(ii)** $\displaystyle y = e^{ax^2+\sin(x)}$, treat the power of the exponential as the inside function and differentiate the exponential and then multiply by the differential of the inside function to give 
+# **(b)** $\displaystyle y = e^{ax^2+\sin(x)}$, treat the power of the exponential as the inside function and differentiate the exponential and then multiply by the differential of the inside function to give 
 # 
 # $$\displaystyle \frac{dy}{dx} = e^{ax^2+\sin(x)}(2ax + \cos(x))$$
 # 
-# **(iii)** $\displaystyle p = \ln(e^{aq} + q^3)$, the exponential and $q^3$ are the inside functions then using the function of function rule produces 
+# **(c)** $\displaystyle p = \ln(e^{aq} + q^3)$, the exponential and $q^3$ are the inside functions then using the function of function rule produces 
 # 
 # $$\displaystyle \frac{dp}{dq} = \frac{ae^{aq} + 3q^2}{a^{aq}+q^3}$$
 # 
 # which can be checked using the result for logs.
 # 
-# **(iv)** In this example  $\displaystyle y^n = \sin(ax^3)$ and the equation can be differentiated either as written, or the $n$<sup>th</sup> root taken first. Taking the equation as written, because $\displaystyle y^n$ is a function of $x$ when it is differentiated and using the function of a function method, it produces 
+# **(d)** In this example  $\displaystyle y^n = \sin(ax^3)$ and the equation can be differentiated either as written, or the $n$<sup>th</sup> root taken first. Taking the equation as written, because $\displaystyle y^n$ is a function of $x$ when it is differentiated and using the function of a function method, it produces 
 # 
 # $$\displaystyle \frac{d}{dx}y^n=ny^{n-1}\frac{dy}{dx}$$
 # 
@@ -292,14 +292,13 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # and so forth for other tangents. The vertical tangent occurs at $dx/dt = 3t^2 - 1 = 0$ or $t = 1/\sqrt{3}$, with $x = \pm 0.385$ and $y = 0.654$, which are either side of the central loop in the curve.
 # 
-# ### **Calculating the Parametric Equation**
+# ### **(i) Calculating the Parametric Equation**
 # 
 # As an example consider finding the parametric equations of an epicycloid. This is the curve formed when one disc rotates about another, such as two coins. In the (false) models of the solar system, such as proposed by Ptolemy, epicycloids were used to describe the motion of the planets. Initially these worked quite well but as time passes such models, based as they were on incorrect physics, became increasingly inaccurate.  If the epicycloid curve produced has one cusp it is called a cardioid due to its heart-like shape, those with two cusps are called nephroids after the shape of a kidney. Figure 6a shows two epicycloids, the number of cusps corresponds to the ratio of radii.
 # 
 # ![Drawing](differen-fig6a.png)
 # 
 # Figure 6a. Epicycloids. Left The cardioid is the black curve (radio of radii is 1) and right Nephroid (black ) with ratio 2.
-# 
 # _____
 # 
 # Assuming that the fixed circle is centred at the origin of the coordinates (fig. 6b), the parameter $t$ used in the parametric equations is the angle from the x-axis to the centre of the rolling circle as shown in figure 6b.  The aim is to represent the point D in terms of the angle $t$ and the radii of the two circles $r_a\;r_b$. 
@@ -339,13 +338,13 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # Notation $f'=d/dx,\; f(x),\; g(x) $ are general functions in $x$ such as $x^2$ or $\sin(x)e^x$ etc. but mostly written as $f$ and $g$ for clarity. Constants used are $a$ and $b$.
 # 
-# ### **Exponentials**
+# ### **(i) Exponentials**
 # $$\displaystyle   y=e^{f(x)} \qquad \frac{dy}{dx}=f'(x)e^{f(x)}$$
 # _______
-# ### **Logarithms**
+# ### **(ii) Logarithms**
 # $$\displaystyle   y=\ln(f(x))\qquad \frac{d}{dx} \ln\left(  f(x) \right) =\frac{f'(x)}{f(x)} $$
 # _________
-# ### **Function of a Function or Chain Rule**
+# ### **(iii) Function of a Function or Chain Rule**
 # $$\displaystyle  \begin{align} \frac{d}{dx}f\left(g(x)  \right)&=\frac{df}{du}\frac{du}{dx} ;\quad \text{where } u=g(x)\\
 # \frac{d}{dx}f\left(g(x)  \right)&=f'g'\\
 # \frac{dy}{dx}&=\frac{dy}{dt}\frac{dt}{dx}
@@ -353,7 +352,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # $$\displaystyle \text{e.g.}\qquad y=\sin(ax^2+x^{-3}) \quad \to\quad \frac{dy}{dx}=\cos(ax^2+x^{-3})(2ax-3x^{-4})$$
 # _________
-# ### **Product Rule**
+# ### **(iv) Product Rule**
 # $$\displaystyle   \frac{d}{dx}fg = g\frac{d}{dx}f+f\frac{d}{dx}g \equiv gf'+fg'$$
 # 
 # $\qquad$or explicitly
@@ -363,28 +362,28 @@ print('y0 = ', 2*np.sin(ans**2))
 # $$\displaystyle \text{e.g.}\qquad  y=x^2e^{-x} \qquad \to \qquad \frac{dy}{dx}=2xe^{-x}-x^2e^{-x}$$
 # _________
 # 
-# ### **Function of powers of $x$**
+# ### **(v) Function of powers of $x$**
 # 
 # $$\displaystyle  y=a^x \qquad \text{ take logs }; \qquad \ln(y)=x\ln(a) \qquad \to \qquad \frac{1}{y}\frac{dy}{dx}=\ln(a)$$
 # __________
-# ### **Reciprocal Derivatives**
+# ### **(vi) Reciprocal Derivatives**
 # 
 # $$\displaystyle   \frac{dy}{dx}=\left(\frac{dx}{dy}  \right)^{-1}; \qquad \frac{d^2y}{dx^2}=-\frac{d^2x}{dy^2} \left( \frac{dx}{dy} \right)^{-3}$$
 # 
 # __________
-# ### **Changing Variables**
+# ### **(vii) Changing Variables**
 # 
 # $\qquad$If a function is expressed as $f(x)$ and you want it as $f(t)$ then; 
 # 
 # $$\displaystyle   \frac{df}{dt}=\frac{df}{dx}\frac{dx}{dt}$$
 # 
 # ________
-# ### **Parametric equations**
+# ### **(viii) Parametric equations**
 # 
-# $$\displaystyle  y=f(t),\qquad x=g(t); \qquad \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}= \frac{dy}{dt}/\frac{dx}{dt}$$
+# $$\displaystyle  y=f(t),\qquad x=g(t); \qquad \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}= \frac{dy}{dt}\big /\frac{dx}{dt}$$
 # 
 # _________
-# ### **Integrals**
+# ### **(ix) Integrals**
 # 
 # $$\displaystyle  \frac{d}{dx}\int f(u)du=f(x);\qquad \frac{d}{dx} \int_a^x f(u)du=f(x);\qquad \frac{d}{dx} \int_a^b f(u)du=0$$
 # 

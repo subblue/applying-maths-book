@@ -1559,6 +1559,29 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#quenching-an-excited-state-electron-spin-can-affect-the-outcome">
    2.4 Quenching an excited state. Electron spin can affect the outcome
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-reaction-or-activation-control">
+     <strong>
+      (i) Reaction or Activation Control
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-diffusion-control">
+     <strong>
+      (ii) Diffusion Control
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-spin-complexes">
+     <strong>
+      (iii) Spin complexes
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-phase-portrait">
@@ -1778,6 +1801,29 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#quenching-an-excited-state-electron-spin-can-affect-the-outcome">
    2.4 Quenching an excited state. Electron spin can affect the outcome
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-reaction-or-activation-control">
+     <strong>
+      (i) Reaction or Activation Control
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-diffusion-control">
+     <strong>
+      (ii) Diffusion Control
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-spin-complexes">
+     <strong>
+      (iii) Spin complexes
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-phase-portrait">
@@ -1974,7 +2020,10 @@ title="Print to PDF"
 <p>If the equation is of second or higher order, two, three, or more initial conditions apply. One condition is needed for each stage of integration. Suppose the equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^2y}{dt^2}=\frac{dy}{dt}+t+1\]</div>
-<p>has the particular solution <span class="math notranslate nohighlight">\(\displaystyle y(t_0)= 0, \left. \frac{dy}{dt} \right\rvert_{t_0}   = 1\)</span> at <span class="math notranslate nohighlight">\(t_0 = 0\)</span>, i.e we know from the physics/chemistry we are studying that these are the initial values. Our aim is to follow what happens at later times by solving the differential equation.</p>
+<p>has the particular solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(t_0)= 0, \left. \frac{dy}{dt} \right\rvert_{t_0}   = 1\quad \text{at}\quad t_0 = 0\]</div>
+<p>i.e we know from the physics/chemistry we are studying that these are the initial values. Our aim is to follow what happens at later times by solving the differential equation.</p>
 <p>The second condition describes the gradient evaluated at time <span class="math notranslate nohighlight">\(t_0\)</span> and what this gradient is depends on the problem being analysed. You can appreciate these initial conditions if you play football, rugby, or golf; to get the ball to where you want it go to, the initial direction and speed (<span class="math notranslate nohighlight">\(dy/dt\)</span>) with which it is hit clearly matter.</p>
 <p>The first stage of integration leaves us with one constant of integration and an equation in <span class="math notranslate nohighlight">\(dy/dt\)</span> and therefore <span class="math notranslate nohighlight">\(dy/dt\)</span> is needed at <span class="math notranslate nohighlight">\(t_0\)</span> to find this constant. Integrating this equation produces a second constant; hence, two initial conditions are needed. In any initial value problem once the calculation is started, there is no telling what value <span class="math notranslate nohighlight">\(y\)</span> will have since only the initial value has been fixed. Because many potential initial conditions could apply, all trajectories could start at <span class="math notranslate nohighlight">\(t_0\)</span>, and have different <span class="math notranslate nohighlight">\(y(t_0)\)</span> and gradients or start at different <span class="math notranslate nohighlight">\(t_0\)</span> with the same gradient and so forth. These different starting conditions generate a <em>field</em> or <em>swarm</em> of solutions, or trajectories, Fig. 1. Solutions are sometimes represented on a graph by sets of arrows to indicate trends at different places and these are drawn as well as a particular solution.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig1.png" /></p>
@@ -1983,25 +2032,44 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="boundary-value-problems-bvp">
 <h2>1.3 Boundary Value Problems (BVP)<a class="headerlink" href="#boundary-value-problems-bvp" title="Permalink to this headline">#</a></h2>
-<p>The boundary value problem defines conditions at two places that have to be satisfied throughout the calculation, thereby constraining the solutions. The most familiar example is probably the Schroedinger equation describing the quantum mechanical particle in an infinitely high box. This is solved with boundary conditions that the wavefunction must always be zero at both sides of the box, because if this were not the case an infinite amount of energy would be needed. The Schroedinger equation equates the kinetic and potential energy, <span class="math notranslate nohighlight">\(V(x)\)</span>, with the total energy but as the potential is zero inside the box only the kinetic energy remains and <span class="math notranslate nohighlight">\(\displaystyle -\frac{\hbar ^2}{2m}\frac{d^2\psi}{dx^2} = E\psi\)</span>. The boundary conditions are <span class="math notranslate nohighlight">\(\psi(x_0) = 0\)</span> and <span class="math notranslate nohighlight">\(\psi(x_L) = 0\)</span> where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_L\)</span> define the sides of the box.</p>
+<p>The boundary value problem defines conditions at two places that have to be satisfied throughout the calculation, thereby constraining the solutions. The most familiar example is probably the Schroedinger equation describing the quantum mechanical particle in an infinitely high box. This is solved with boundary conditions that the wavefunction must always be zero at both sides of the box, because if this were not the case an infinite amount of energy would be needed.</p>
+<p>The Schroedinger equation equates the kinetic and potential energy, <span class="math notranslate nohighlight">\(V(x)\)</span>, with the total energy but as the potential is zero inside the box only the kinetic energy remains and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar ^2}{2m}\frac{d^2\psi}{dx^2} = E\psi\]</div>
+<p>The boundary conditions are <span class="math notranslate nohighlight">\(\psi(x_0) = 0\)</span> and <span class="math notranslate nohighlight">\(\psi(x_L) = 0\)</span> where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_L\)</span> define the sides of the box.</p>
 </section>
 <section id="separable-variables">
 <h2>1.4 Separable variables<a class="headerlink" href="#separable-variables" title="Permalink to this headline">#</a></h2>
-<p>The rate of a chemical reaction can always be written down because this is proportional to the rate of loss or gain of a molecule’s population. For example, in a first-order process <span class="math notranslate nohighlight">\(A \to B\)</span>, such as a cis-trans isomerisation or decay of a radioactive nucleus, the rate of change of species A is proportional to the amount of A left unreacted or</p>
+<p>The rate of a chemical reaction can always be written down because this is proportional to the rate of loss or gain of a molecule’s population. For example, in a first-order process <span class="math notranslate nohighlight">\(A \to B\)</span>, such as a cis-trans isomerisation or decay of a radioactive nucleus or of an electronically excited state, the rate of change of species A is proportional to the amount of A left unreacted or</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d[A]}{dt}=-k_1[A]. \quad  [A_0]=A_0  \qquad\tag{1} \]</div>
-<p>where <span class="math notranslate nohighlight">\(A_0\)</span> is the amount initially present. The constant of proportionality <span class="math notranslate nohighlight">\(k_1\)</span> is the rate constant; more properly called the rate coefficient because in a chemical reaction, it depends on temperature. The negative sign is present because A decays into something else, and <span class="math notranslate nohighlight">\([A]\)</span> is the amount of A unreacted at time <span class="math notranslate nohighlight">\(t\)</span>. It is important to remember that [<span class="math notranslate nohighlight">\(A\)</span>] is changing with time, although this is never explicitly stated in the equations; i.e. we do not normally write <span class="math notranslate nohighlight">\([A]_t\)</span>. If the equation were written <span class="math notranslate nohighlight">\(d[A]/dt = +k_1[A]\)</span>, with a positive sign, then it could, for instance, describe the <em>rate of growth</em> of the number of bacteria A in the presence of an unlimited food supply. ( Note that, as the notation <span class="math notranslate nohighlight">\([A]\)</span> or  <span class="math notranslate nohighlight">\([B]\)</span> can be rather cumbersome, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> will normally be used instead to represent concentrations.)</p>
+\[\displaystyle \frac{d[A]}{dt}=-k_1[A], \qquad  [A_0]=A_0  \tag{1} \]</div>
+<p>where <span class="math notranslate nohighlight">\(A_0\)</span> is the amount initially present. The constant of proportionality <span class="math notranslate nohighlight">\(k_1\)</span> is the rate constant; more properly called the rate coefficient because in a chemical reaction, it depends on temperature. The negative sign is present because A decays into something else, and <span class="math notranslate nohighlight">\([A]\)</span> is the amount of A unreacted at time <span class="math notranslate nohighlight">\(t\)</span>. It is important to remember that [<span class="math notranslate nohighlight">\(A\)</span>] is changing with time, although this is never explicitly stated in the equations; i.e. we do not normally write <span class="math notranslate nohighlight">\([A]_t\)</span>. If the equation were written</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d[A]}{dt} = +k_1[A]\]</div>
+<p>with a positive sign, then it could, for instance, describe the <em>rate of growth</em> of the number of bacteria A in the presence of an unlimited food supply. ( Note that, as the notation <span class="math notranslate nohighlight">\([A]\)</span> or  <span class="math notranslate nohighlight">\([B]\)</span> can be rather cumbersome, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> will often be used instead to represent concentrations.)</p>
 <p>First-order equations are derived by considering the difference in the number of molecules <span class="math notranslate nohighlight">\(N\)</span> present at a time <span class="math notranslate nohighlight">\(t\)</span> and the number reacted during a small time interval <span class="math notranslate nohighlight">\(\delta t\)</span>. This can be expressed as, number unreacted at time</p>
 <div class="math notranslate nohighlight">
 \[t + \delta t = \text{ number at time } t - \text {number reacted in time } \delta t \]</div>
 <p>which can be written as <span class="math notranslate nohighlight">\(N(t + \delta t) = N(t) - k_1N(t)\delta t\)</span> from which</p>
 <div class="math notranslate nohighlight">
 \[ \displaystyle \frac{ N(t+\delta t) -N(t)}{\delta t}= -k_1N(t) \]</div>
-<p>and in the limit when <span class="math notranslate nohighlight">\(\delta t\)</span> becomes small, this equation becomes <span class="math notranslate nohighlight">\(dN/dt = -k_1N\)</span>. This becomes equation (1) if the number of molecules is converted into a concentration and can be solved provided the amount of <span class="math notranslate nohighlight">\([A]\)</span> present initially is defined; the initial condition is <span class="math notranslate nohighlight">\([A]_0 = A_0\)</span> where <span class="math notranslate nohighlight">\(A_0\)</span> is a constant. Integration from <span class="math notranslate nohighlight">\(t =0 \cdots t \)</span> produces <span class="math notranslate nohighlight">\(A = A_0e^{-k_1t}\)</span> as shown below.</p>
+<p>and in the limit when <span class="math notranslate nohighlight">\(\delta t\)</span> becomes small, this equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dN/dt = -k_1N\]</div>
+<p>This becomes equation (1) if the number of molecules is converted into a concentration and can be solved provided the amount of <span class="math notranslate nohighlight">\([A]\)</span> present initially is defined; the initial condition is <span class="math notranslate nohighlight">\([A]_0 = A_0\)</span> where <span class="math notranslate nohighlight">\(A_0\)</span> is a constant. Integration from <span class="math notranslate nohighlight">\(t =0 \to t \)</span> produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A = A_0e^{-k_1t}\]</div>
+<p>as shown below.</p>
 <p>If the reaction scheme is more complex, A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C, then the rate of decay of A is the same as just described, but B changes also and does so as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle d[B]/dt = k_1[A] - k_2[B]\]</div>
+\[\displaystyle \frac{d[B]}{dt} = k_1[A] - k_2[B]\]</div>
 <p>which is the rate with which A converts to B, less the rate that B reacts to form C. To solve this scheme, the amount of <span class="math notranslate nohighlight">\([A]\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is inserted into this equation. Reactions with many steps are dealt with in a similar manner, but eventually the scheme can become so complicated that only a numerical solution to the equations is possible.</p>
+<p>In passing recall that if a reaction has the balanced equation of the general form,</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle aA+bB=nN+mM\]</div>
+<p>which does not tell us what the mechanism actually is, then the rate of change of each species is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{1}{a}\frac{dA}{dt}=-\frac{1}{b}\frac{dB}{dt}=+\frac{1}{n}\frac{dN}{dt}=+\frac{1}{m}\frac{dM}{dt}\]</div>
 <p>The first-order equation is found to describe many physical phenomena and is also representative of many types of equations where the <em>variables are separable</em>. This means that the equation can be written with <span class="math notranslate nohighlight">\(y\)</span> on one side and <span class="math notranslate nohighlight">\(x\)</span> on the other, or, for a first-order chemical reaction A on one side and <span class="math notranslate nohighlight">\(t\)</span> on the other. The general form of the <em>separable equation</em> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Xdx + Ydy=0  \qquad\tag{2}\]</div>
@@ -2012,8 +2080,16 @@ title="Print to PDF"
 <p>In the first-order reaction of species A, the steps in the integration are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{dA}{dt}=-k_1A, \quad \frac{dA}{A}=-k_1dt, \quad \int\frac{dA}{A}=-k_1\int dt, \quad \ln(A)=-k_1t+c \]</div>
-<p>and the result should be familiar as the integration is a standard one. If the initial condition is that <span class="math notranslate nohighlight">\([A]_0 = A_0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span> then the solution is <span class="math notranslate nohighlight">\(\ln(A/A_0) = -k_1t\)</span> which is usually written as <span class="math notranslate nohighlight">\(\displaystyle A = A_0e^{-k_1t}\)</span> and indicates more clearly how the concentration varies with time. If the initial amount is <span class="math notranslate nohighlight">\(A_0\)</span> at time <span class="math notranslate nohighlight">\(t = t_0\)</span>, then the equation is <span class="math notranslate nohighlight">\(\displaystyle A = A_0e^{-k_1(t-t_0)}\)</span>.</p>
-<p>As species A decays it must form another B, but if this does not decay then B can be obtained from the initial conditions because the total number of molecules must be constant; therefore <span class="math notranslate nohighlight">\(\displaystyle B = A_0(1 - e^{-k_1t})\)</span> and B rises at the same rate as A falls. If, however, B decays to C, the scheme being A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C, then there is another rate equation <span class="math notranslate nohighlight">\(dB/dt = k_1A - k_2B\)</span>  and we can substitute A into this to obtain</p>
+<p>and the result should be familiar as the integration is a standard one. If the initial condition is that <span class="math notranslate nohighlight">\([A]_0 = A_0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span> then the solution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(A/A_0) = -k_1t,\quad\text{or equivalently}\quad  A = A_0e^{-k_1t}\]</div>
+<p>and indicates more clearly how the concentration varies with time. If the initial amount is <span class="math notranslate nohighlight">\(A_0\)</span> at time <span class="math notranslate nohighlight">\(t = t_0\)</span>, then the equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A = A_0e^{-k_1(t-t_0)}\]</div>
+<p>As species A decays it must form another B, but if this does not decay then B can be obtained from the initial conditions because the total number of molecules must be constant; therefore <span class="math notranslate nohighlight">\(\displaystyle B = A_0(1 - e^{-k_1t})\)</span> and B rises at the same rate as A falls. If, however, B decays to C, the scheme being A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C, then there is another rate equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dB/dt = k_1A - k_2B\]</div>
+<p>and we can substitute A into this to obtain</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dB}{dt}=k_1A_0e^{-k_1t}-k_2B \]</div>
 <p>but now the terms are not separable, and another method is needed, which is described in Section 4. Sets of equations for sequential and parallel reactions such as <span class="math notranslate nohighlight">\(dA/dt = \cdots\)</span>, and <span class="math notranslate nohighlight">\(dB/dt = \cdots\)</span> can alternatively be solved by eigenvalue methods described in Chapter 7 provided no terms with a product or ratio of concentrations is present, i.e. no A <span class="math notranslate nohighlight">\(\times\)</span> B terms, unless pseudo first-order conditions apply.</p>
@@ -2029,7 +2105,7 @@ title="Print to PDF"
 <p>the set of rate equations could be integrated, but if the rate of change of B is small then we can use the steady state approach,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dB}{dt} = k_1A -k_{-1}B-k_2B = 0\]</div>
-<p>making <span class="math notranslate nohighlight">\(\displaystyle B = k_1A/(k_{-1}+k_2)\)</span>, and</p>
+<p>making <span class="math notranslate nohighlight">\(\displaystyle B = \frac{k_1A}{k_{-1}+k_2}\)</span>, and</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dA}{dt} =-\frac{dC}{dt} = -\frac{k_1k_{2}}{k_{-1}+k_2}A \]</div>
 <p>If the equilibrium had been established first, with <span class="math notranslate nohighlight">\(k_{-1} \gg k_2\)</span> writing the equilibrium constant as <span class="math notranslate nohighlight">\(K_e = k_1/k_{-1}\)</span> gives</p>
@@ -2041,8 +2117,8 @@ title="Print to PDF"
 <h2>2.1 Iodine recombination, I + M reaction<a class="headerlink" href="#iodine-recombination-i-m-reaction" title="Permalink to this headline">#</a></h2>
 <p>The scheme</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle  I+M  \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} IM \\
- I+IM {\stackrel{k_2}{\longrightarrow}} I_2 + M \end{split}\]</div>
+\[\displaystyle  I+M  \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} IM ,\qquad
+ I+IM {\stackrel{k_2}{\longrightarrow}} I_2 + M \]</div>
 <p>describes how iodine atoms are recombined to form I<span class="math notranslate nohighlight">\(_2\)</span> in the presence of an inert buffer gas <span class="math notranslate nohighlight">\(M\)</span>. The transient collision complex <span class="math notranslate nohighlight">\(IM\)</span> can be supposed to exist at steady state once the reaction has started then,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d[IM]}{dt}=k_1 [I] [M]-(k_{-1}+k_2[I])[IM]=0 \]</div>
@@ -2050,7 +2126,7 @@ title="Print to PDF"
 <p>At steady state the rate of formation of I<span class="math notranslate nohighlight">\(_2\)</span> molecules is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  k_2[I][IM]=\frac{k_1k_2[I]^2[M]}{k_{-1}+k_2[I]}\]</div>
-<p>which could be tested experimentally.</p>
+<p>The recombination of iodine atoms has be studied experimentally and the presence of IM species is confirmed by using flash photolysis, now called the pump-probe method.  See G. Porter &amp; J. Smith. Proc. Roy. Soc. (Lond.) v26,p142, 1961.</p>
 </section>
 <section id="decomposition-of-mathrm-bh-3co">
 <h2>2.2 Decomposition of <span class="math notranslate nohighlight">\(\mathrm{BH_3CO}\)</span><a class="headerlink" href="#decomposition-of-mathrm-bh-3co" title="Permalink to this headline">#</a></h2>
@@ -2062,7 +2138,7 @@ title="Print to PDF"
 \[\displaystyle  \mathrm{BH_3+BH_3CO}\overset{k_3}{\to }\mathrm{B_2H_6+CO}\]</div>
 <p>is so slow that the equilibrium is effectively maintained. Steady state can be applied to the <span class="math notranslate nohighlight">\(\mathrm{BH_3}\)</span> and  then the fact that <span class="math notranslate nohighlight">\(k_2\gg k_3\)</span> is used to simplify the equation. For clarity we let <span class="math notranslate nohighlight">\(BH_3\equiv X,BH_3CO\equiv XCO\)</span>. The rate equation for <span class="math notranslate nohighlight">\(\mathrm{BH_3}\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d[X]}{dt} = k_1[XCO]-k_2[X][CO]-k_3[X][XC0]\]</div>
+\[\displaystyle \frac{d[X]}{dt} = k_1[XCO]-k_2[X][CO]-k_3[X][XCO]\]</div>
 <p>At steady state <span class="math notranslate nohighlight">\(d[X]/dt=0\)</span> and therefore <span class="math notranslate nohighlight">\(\displaystyle [X]=\frac{k_1[XCO]}{k_3[XCO]+k_2[CO]}\)</span>.</p>
 <p>As</p>
 <div class="math notranslate nohighlight">
@@ -2079,7 +2155,7 @@ title="Print to PDF"
 <p>and by substituting <span class="math notranslate nohighlight">\((a_0-x)=z\)</span>, <span class="math notranslate nohighlight">\(-dx=dz\)</span> and integrating produces the solution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}\]</div>
-<p>where <span class="math notranslate nohighlight">\(x \le a_0\)</span>. It is not obvious from this equation how the concentration of CO increases with time because <span class="math notranslate nohighlight">\(x\)</span> cannot be isolated on one side of the equation, in fact <span class="math notranslate nohighlight">\(\mathrm{[CO]}\)</span> increases initially with a large gradient which continuously reduces towards zero such that  at long times <span class="math notranslate nohighlight">\(x \to a_0\)</span>. At very early times expanding both terms in <span class="math notranslate nohighlight">\(x/a_0\)</span> gives <span class="math notranslate nohighlight">\(\sqrt{x/a_0}\sim t\)</span>.  A general plot can be made by substituting <span class="math notranslate nohighlight">\(z=x/a_0\)</span> and plot vs <span class="math notranslate nohighlight">\(t'= t/2k_3K_e\)</span> into the last equation.</p>
+<p>where <span class="math notranslate nohighlight">\(x \le a_0\)</span>. It is not obvious from this equation how the concentration of CO increases with time because <span class="math notranslate nohighlight">\(x\)</span> cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as <span class="math notranslate nohighlight">\(t=\cdots\)</span> and put <span class="math notranslate nohighlight">\(t\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>-axis. The <span class="math notranslate nohighlight">\(\mathrm{[CO]}\)</span> increases initially with a very large gradient until <span class="math notranslate nohighlight">\(x/a_0 \sim 0.8\)</span> in a plot of <span class="math notranslate nohighlight">\(x/a_0\)</span> vs. <span class="math notranslate nohighlight">\(t/2k_3K_e\)</span> and then rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times <span class="math notranslate nohighlight">\(x/a_0 \to 1\)</span>. At very early times expanding both terms in <span class="math notranslate nohighlight">\(x/a_0\)</span> gives <span class="math notranslate nohighlight">\(x/a_0\sim t^2\)</span>.</p>
 </section>
 <section id="fluorescence-yield">
 <h2>2.3 Fluorescence yield<a class="headerlink" href="#fluorescence-yield" title="Permalink to this headline">#</a></h2>
@@ -2116,12 +2192,20 @@ title="Print to PDF"
 <p>and therefore by substituting</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle k_q= \frac{k_d}{k_{-d}+k_R}k_R\]</div>
-<p><strong>Reaction or Activation Control</strong>. When the reaction is <em>activation controlled</em> this means that the reaction rate constant <span class="math notranslate nohighlight">\(k_R\)</span> is small thus the reaction’s activation energy is high and many, possibly millions of collisions occur before reaction takes place <span class="math notranslate nohighlight">\(k_R \ll k_{-d}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle k_q= \frac{k_d}{k_{-d}}k_R\)</span>.</p>
-<p><strong>Diffusion Control</strong>. When the reaction is diffusion controlled <span class="math notranslate nohighlight">\(k_q=k_d\)</span> and means that the reaction rate constant <span class="math notranslate nohighlight">\(k_R\)</span> is so large that reaction occurs essentially on first contact of the two species and then <span class="math notranslate nohighlight">\(k_R\gg k_{-d}\)</span>.</p>
+<section id="i-reaction-or-activation-control">
+<h3><strong>(i) Reaction or Activation Control</strong><a class="headerlink" href="#i-reaction-or-activation-control" title="Permalink to this headline">#</a></h3>
+<p>When the reaction is <em>activation controlled</em> this means that the reaction rate constant <span class="math notranslate nohighlight">\(k_R\)</span> is small thus the reaction’s activation energy is high and many, possibly millions of collisions occur before reaction takes place <span class="math notranslate nohighlight">\(k_R \ll k_{-d}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle k_q= \frac{k_d}{k_{-d}}k_R\)</span>.</p>
+</section>
+<section id="ii-diffusion-control">
+<h3><strong>(ii) Diffusion Control</strong><a class="headerlink" href="#ii-diffusion-control" title="Permalink to this headline">#</a></h3>
+<p>When the reaction is diffusion controlled <span class="math notranslate nohighlight">\(k_q=k_d\)</span> and means that the reaction rate constant <span class="math notranslate nohighlight">\(k_R\)</span> is so large that reaction occurs essentially on first contact of the two species and then <span class="math notranslate nohighlight">\(k_R\gg k_{-d}\)</span>.</p>
 <p>The diffusion controlled rate constant has been calculated by Smoluchowski and combined with the Stokes-Einstein equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle k_d=\frac{8000RT}{3\eta}\qquad\qquad (\mathrm{ dm^3/mol/s})\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity of the solution. In ethanol <span class="math notranslate nohighlight">\(k_d = 5.0\cdot 10^9\; \mathrm{dm^3 mol^{-1} s^{-1}}\)</span> where viscosity <span class="math notranslate nohighlight">\(\eta = 1.2\)</span> cP (cP = centiPoise = <span class="math notranslate nohighlight">\(10^{-3}\)</span> Pa s). In glycerol <span class="math notranslate nohighlight">\(k_d = 4.4\cdot 10^6 \mathrm{dm^3 mol^{-1} s^{-1}}\)</span> where <span class="math notranslate nohighlight">\(\eta = 14900\)</span> cP.</p>
+</section>
+<section id="iii-spin-complexes">
+<h3><strong>(iii) Spin complexes</strong><a class="headerlink" href="#iii-spin-complexes" title="Permalink to this headline">#</a></h3>
 <p>The difference in quenching rate constant with molecular oxygen between singlet and triplet excited states can only be understood if the spin properties of quencher and excited state are examined.  The oxygen molecule is paramagnetic with a triplet ground state, the term symbol is <span class="math notranslate nohighlight">\(^3\Sigma_g^-\)</span>. There are two low lying excited states <span class="math notranslate nohighlight">\(^1\Delta\)</span> at <span class="math notranslate nohighlight">\(8000\;\mathrm{cm^{-1}}\)</span> (<span class="math notranslate nohighlight">\(\approx 1250\)</span> nm) and <span class="math notranslate nohighlight">\(^1\Sigma_g^+\)</span> at <span class="math notranslate nohighlight">\(13000\;\mathrm{cm^{-1}}\)</span> (<span class="math notranslate nohighlight">\(\approx 770\)</span> nm). Both the singlet and triplet excited state energies of the excited aromatic molecule are at least <span class="math notranslate nohighlight">\(10000\;\mathrm{cm^{-1}}\)</span> above that of the oxygen <span class="math notranslate nohighlight">\(^1\Sigma\)</span>.</p>
 <p>The spin angular momentum has to be conserved in any transition thus there are three pathways for quenching of the two triplet states. The initial states are the excited triplet state <span class="math notranslate nohighlight">\(T\)</span> and O<span class="math notranslate nohighlight">\(_2\)</span> ground state. The energy of the aromatic’s excited state must also be greater than any of the quencher states. (In the scheme <span class="math notranslate nohighlight">\(^1M_0\)</span> is the aromatic molecule’s ground state).</p>
 <div class="math notranslate nohighlight">
@@ -2135,6 +2219,7 @@ title="Print to PDF"
 \[\displaystyle k_q=\frac{3}{9}k_d\frac{k_{isc}}{k_{isc}+k_{-d}}+\frac{1}{9}k_d\frac{k_e}{k_e+k_{-d}} \]</div>
 <p>Experimentally as <span class="math notranslate nohighlight">\(k_q=k_d/9\)</span> this implies that <span class="math notranslate nohighlight">\(k_e\gg k_{-d} \gg k_{isc}\)</span>, and so the experimental data is understood by considering the spin quantum numbers. Recall that the spin quantum number of an electron is <span class="math notranslate nohighlight">\(1/2\)</span> with projection or azimuthal or magnetic quantum numbers <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
 <p>Notice that this mechanism indicates that triplet-triplet annihilation is a spin allowed process provided the energy is sufficient, i.e. there must be enough energy to produce the singlet product, which means that energy conservation must always apply. Note also that when a singlet excited state is quenched by a triplet there is only one type of complex formed because the singlet has total spin of zero and multiplicity of <span class="math notranslate nohighlight">\(1\)</span> which means that quenching always occurs at its full value.</p>
+</section>
 </section>
 <section id="the-phase-portrait">
 <h2>2.5 The Phase Portrait<a class="headerlink" href="#the-phase-portrait" title="Permalink to this headline">#</a></h2>
@@ -2728,7 +2813,7 @@ title="Print to PDF"
 <p>Fig 8a. Velocity and distance  vs. time for a skydiver.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate time to hit the ground</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate time to hit the ground</span>
 <span class="n">v</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span><span class="o">-</span><span class="n">v0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">m</span><span class="p">)</span>                        <span class="c1"># velocity</span>
 <span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">g</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">v0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">x0</span> <span class="c1"># distance</span>
 
@@ -2743,7 +2828,7 @@ title="Print to PDF"
 <span class="n">tm</span> <span class="o">=</span> <span class="mf">10.0</span>      <span class="c1"># initial guess</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>         <span class="c1"># Newton-Raphson. V rapid convergence.</span>
     <span class="n">tm</span> <span class="o">=</span> <span class="n">tm</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span><span class="o">/</span><span class="n">v</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">tm</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;iteration &#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">tm</span><span class="p">)</span>
     <span class="k">pass</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.2f}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;time to reach ground &#39;</span><span class="p">,</span> <span class="n">tm</span><span class="p">,</span> <span class="s1">&#39; seconds&#39;</span><span class="p">))</span>
 </pre></div>
@@ -2751,9 +2836,9 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>terminal velocity  56.54 m/s or 126.48 mph
-0 68.07207783233369
-1 58.83034251371377
-2 58.83024022254945
+iteration  0 68.07207783233369
+iteration  1 58.83034251371377
+iteration  2 58.83024022254945
 time to reach ground  58.83 seconds
 </pre></div>
 </div>

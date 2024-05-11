@@ -1538,9 +1538,9 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#higher-order-equations">
+    <a class="reference internal nav-link" href="#i-higher-order-equations">
      <strong>
-      Higher order equations
+      (i) Higher order equations
      </strong>
     </a>
    </li>
@@ -1596,9 +1596,9 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#higher-order-equations">
+    <a class="reference internal nav-link" href="#i-higher-order-equations">
      <strong>
-      Higher order equations
+      (i) Higher order equations
      </strong>
     </a>
    </li>
@@ -1726,7 +1726,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The Runge - Kutta method can also be used with coupled equations in a similar way as in the last algorithm; notice how the <span class="math notranslate nohighlight">\(k\)</span>’s are defined in terms of <span class="math notranslate nohighlight">\(dydt\)</span> and add to terms in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(L\)</span>’s to those in <span class="math notranslate nohighlight">\(x\)</span>. Based on Algorithm 11 the modified equations are only in the for loop.</p>
+<p>The Runge - Kutta method can also be used with coupled equations in a similar way as in the last algorithm; notice how the <span class="math notranslate nohighlight">\(k\)</span>’s are defined in terms of <span class="math notranslate nohighlight">\(dy/dt\)</span> and add to terms in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(L\)</span>’s to those in <span class="math notranslate nohighlight">\(x\)</span>. Based on Algorithm 11 the modified equations are only in the for loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 16     Runge - Kutta fourth order (RK4)  method for coupled equations.</span>
@@ -1770,10 +1770,16 @@ title="Print to PDF"
 <section id="pcr-rate-equations">
 <h2>5.4 PCR rate equations<a class="headerlink" href="#pcr-rate-equations" title="Permalink to this headline">#</a></h2>
 <p>The rate equations for a basic PCR are shown below using the notation, <span class="math notranslate nohighlight">\(D\)</span>, double strand DNA, <span class="math notranslate nohighlight">\(S\)</span> single strand DNA, <span class="math notranslate nohighlight">\(E\)</span> the Taq Poly enzyme and <span class="math notranslate nohighlight">\(P\)</span> the primer.  We implicitly assume that there are enough molecules that the rate equation is accurate, and that a Monte-Carlo method is not needed. The steps taken in order my varying the temperature are</p>
-<p>(A) Dissociation of DNA into two strands at the highest temperature <span class="math notranslate nohighlight">\(\approx 95^{o}\)</span>C</p>
-<p>(B) Primer sequence attaches to single stranded DNA at the lowest temperature <span class="math notranslate nohighlight">\(\approx 72^{o}\)</span>C</p>
-<p>(C) The Taq enzyme adds base pairs to primer-single stranded DNA to make new double stranded DNA. This extension phase assumes the Michaelis - Menten scheme and occiurs at <span class="math notranslate nohighlight">\(\approx 85^{o}\)</span>C.</p>
-<p>Each of these steps has to occur at a different temperature so this has to be closely controlled, being raised and lowered as necessary to move the reaction towards product. The order is <span class="math notranslate nohighlight">\(95 \to 72 \to 85\)</span> which is then repeated. To calculate this numerically the rate constants have to be temperature dependent. This is done in two ways, the enzyme reaction is very specific and so a Gaussian temperature profile is used. If the temperature is too high or too low the rate constant tends to zero, i.e. <span class="math notranslate nohighlight">\(k_2\)</span> (see below) varies as <span class="math notranslate nohighlight">\(k_2\exp(-(T_0-T)^2/\sigma)\)</span>. All the other rate constants <span class="math notranslate nohighlight">\(k_i\)</span> must have a value of zero below a critical temperature and so are given the sigmoidal form <span class="math notranslate nohighlight">\(k_i/(1+\exp(-(T_0-T)/\sigma_0)\)</span> which rises from zero below <span class="math notranslate nohighlight">\(\approx T_0\)</span> to a <em>constant</em> value <span class="math notranslate nohighlight">\(k_i\)</span> above: <span class="math notranslate nohighlight">\(\sigma_0\)</span> controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of <span class="math notranslate nohighlight">\(60\)</span> seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a ‘lab-on-a-chip’.</p>
+<p>(a) Dissociation of DNA into two strands at the highest temperature <span class="math notranslate nohighlight">\(\approx 95^{o}\)</span>C</p>
+<p>(b) Primer sequence attaches to single stranded DNA at the lowest temperature <span class="math notranslate nohighlight">\(\approx 72^{o}\)</span>C</p>
+<p>(c) The Taq enzyme adds base pairs to primer-single stranded DNA to make new double stranded DNA. This extension phase assumes the Michaelis - Menten scheme and occiurs at <span class="math notranslate nohighlight">\(\approx 85^{o}\)</span>C.</p>
+<p>Each of these steps has to occur at a different temperature so this has to be closely controlled, being raised and lowered as necessary to move the reaction towards product. The order is <span class="math notranslate nohighlight">\(95 \to 72 \to 85\)</span> which is then repeated. To calculate this numerically the rate constants have to be temperature dependent. This is done in two ways, the enzyme reaction is very specific and so a Gaussian temperature profile is used. If the temperature is too high or too low the rate constant tends to zero, i.e. <span class="math notranslate nohighlight">\(k_2\)</span> (see below) varies as</p>
+<div class="math notranslate nohighlight">
+\[k_2=\displaystyle k_2^0\exp(-(T_0-T)^2/\sigma)\]</div>
+<p>All the other rate constants <span class="math notranslate nohighlight">\(k_i\)</span> must have a value of zero below a critical temperature and so are given the sigmoidal form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k_i/(1+\exp(-(T_0-T)/\sigma_0))\]</div>
+<p>which rises from zero below <span class="math notranslate nohighlight">\(\approx T_0\)</span> to a <em>constant</em> value <span class="math notranslate nohighlight">\(k_i\)</span> above: <span class="math notranslate nohighlight">\(\sigma_0\)</span> controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of <span class="math notranslate nohighlight">\(60\)</span> seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a ‘lab-on-a-chip’.</p>
 <p>The reaction scheme is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}\\ 
@@ -1794,8 +1800,8 @@ E + SP &amp;\overset{{\large k_{1}}}{\underset{{\large k_{-1}}} \rightleftharpoo
 <p>The result of integrating is shown in fig 11b assuming DNA segments of <span class="math notranslate nohighlight">\(b=200\)</span> base pairs. The concentration of the double stranded DNA (<span class="math notranslate nohighlight">\(D\)</span>, red), the single strand (<span class="math notranslate nohighlight">\(S\)</span>, green) and the complex (<span class="math notranslate nohighlight">\(E\cdot SP\)</span>, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}\\
-k_D=3000/b, &amp; k_{-D}=10^6,&amp; k_{sp}=5\cdot10^5, &amp; k_{-sp}=10^{-4},&amp; k_1=10^8, &amp; k_{-1}=10, &amp; k_2=60\\
-D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\cdot SP_0=0 &amp; \sigma=8 &amp; \sigma_0=2\\
+k_D=3000/b, &amp; k_{-D}=10^6,&amp; k_{sp}=5\cdot10^5, &amp; k_{-sp}=10^{-4}\\ k_1=10^8, &amp; k_{-1}=10, &amp; k_2=60\\
+D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot SP_0=0 &amp; \sigma=8 &amp; \sigma_0=2\\
 \end{array}\end{split}\]</div>
 <p>Notice that only a tiny amount of DNA need be present initially but that the primer is in vast excess over this and the enzyme <span class="math notranslate nohighlight">\(E\)</span>. This makes the annealing step pseudo-first order and <span class="math notranslate nohighlight">\(k_{sp}[P] \gg k_{-sp}\)</span>, but mainly the excess dose not limit the amount of <span class="math notranslate nohighlight">\(D\)</span> produced as <span class="math notranslate nohighlight">\(P\)</span> is consumed in the reaction. Of course there must be also sufficient nucleotides present to make the new DNA. The amount of all these concentrations depend on the particular situation but usually this is determined when the detection limit is exceeded by a suitable margin. Similarly to primer, increasing the amount of enzyme will also produce more DNA in a given time because <span class="math notranslate nohighlight">\(k_1[E][SP]\)</span> is increased.</p>
 <p>The unusual oscillatory behaviour is due to the temperature cycling which causes the rate constants to turn on and off. The decreasing region in <span class="math notranslate nohighlight">\(D\)</span> is due to the temperature increasing which starts DNA denaturing into two strands <span class="math notranslate nohighlight">\(S\)</span> which correspondingly increases (green). More double stranded DNA <span class="math notranslate nohighlight">\(D\)</span> is produced as the enzyme reaction <span class="math notranslate nohighlight">\(E+SP\)</span> starts and which stops when the temperature changes making <span class="math notranslate nohighlight">\([D]\)</span> constant. Recall that the temperature range is narrow over which this reaction occurs, i.e. <span class="math notranslate nohighlight">\(k \sim\exp(-(T_0-T)^2/\sigma)\)</span> as described above so the increase in <span class="math notranslate nohighlight">\(D\)</span> is short lived.</p>
@@ -1806,7 +1812,10 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 <p><img alt="Drawing" src="../_images/num-methods-fig20d.png" /></p>
 <p>Figure 11c. Plot showing variation of D with S+SR. the increase and decrease of <span class="math notranslate nohighlight">\(D\)</span> is clear and clearly shows the amplification. The slight kink in the extension is the horizontal part of fig 11b.</p>
 <hr class="docutils" />
-<p>Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling <span class="math notranslate nohighlight">\([D]\)</span> into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is <span class="math notranslate nohighlight">\(\approx 89\)</span> s. The doubling time is calculated assuming <span class="math notranslate nohighlight">\([D]=[D_0]e^{kt}\)</span> and using <span class="math notranslate nohighlight">\(t_2=\ln(2)/k\)</span> just as if a half-life were calculated.</p>
+<p>Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling <span class="math notranslate nohighlight">\([D]\)</span> into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is <span class="math notranslate nohighlight">\(\approx 89\)</span> s. The doubling time is calculated assuming</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [D]=[D_0]e^{kt}\]</div>
+<p>and using <span class="math notranslate nohighlight">\(t_2=\ln(2)/k\)</span> just as if a half-life were calculated.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig20b.png" /></p>
 <p>Figure 11d. The total amount of double stranded DNA, <span class="math notranslate nohighlight">\([D]\)</span> <em>vs</em>. time. The circles show the cycles. The dashed line is an exponential fit with a doubling time of <span class="math notranslate nohighlight">\(\approx 89\)</span> s.</p>
 </section>
@@ -1863,8 +1872,8 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 <p><img alt="Drawing" src="../_images/num-methods-fig12.png" /></p>
 <p>Figure12 Numerical (solid line) and algebraic solution to equation 34.</p>
 <hr class="docutils" />
-<section id="higher-order-equations">
-<h3><strong>Higher order equations</strong><a class="headerlink" href="#higher-order-equations" title="Permalink to this headline">#</a></h3>
+<section id="i-higher-order-equations">
+<h3><strong>(i) Higher order equations</strong><a class="headerlink" href="#i-higher-order-equations" title="Permalink to this headline">#</a></h3>
 <p>The higher order equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^3y}{dx^3}+a\frac{d^2y}{dx^2}-y=0 \]</div>
@@ -1933,8 +1942,13 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 <p>Writing this in terms of indices as required in an algorithm means making the changes <span class="math notranslate nohighlight">\(y(x+h) \to y_{n+1},\; y(x) \to f_n,\; y(x-h) \to y_{n-1}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y_{n+1}\left(1+\frac{h^2}{12}f_{n+1}\right)= 2y_n\left( 1-\frac{5h^2}{12}f_n \right) -y_{n-1}\left(1+\frac{h^2}{12}f_{n-1}  \right) \qquad\tag{ 35e}\]</div>
-<p>which means that <span class="math notranslate nohighlight">\(y\)</span> must be known at two points, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n+1\)</span> at the start of the calculation. Normally starting at large <span class="math notranslate nohighlight">\(x\)</span> values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  <span class="math notranslate nohighlight">\(y_0 =0 ,\;y_1 = 0.001\)</span> can be used. The wavefunction can be normalised at the end of the calculation (<span class="math notranslate nohighlight">\(\int\psi dx=1\)</span>) so these values are not critical. The function <span class="math notranslate nohighlight">\(f\)</span> is known at all points via <span class="math notranslate nohighlight">\(V(x)\)</span>  but as noted the eigenvalue <span class="math notranslate nohighlight">\(E\)</span> must be known. Note also the sign of <span class="math notranslate nohighlight">\(f(x)\)</span> when using the Schroedinger equation <span class="math notranslate nohighlight">\(\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)\)</span>.</p>
-<p>As an example calculation, the wavefunction of a quantum harmonic oscillator with <span class="math notranslate nohighlight">\(V= (k/2)x^2\)</span> is calculated using  constants <span class="math notranslate nohighlight">\(\mu=1,\;\hbar = 1,\; k = 20 \)</span>. The eigenvalues are <span class="math notranslate nohighlight">\(\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)\)</span>. This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, <span class="math notranslate nohighlight">\(\mathtt{odeint(\cdots)}\)</span> in Python/Scipy for example.</p>
+<p>which means that <span class="math notranslate nohighlight">\(y\)</span> must be known at two points, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n+1\)</span> at the start of the calculation. Normally starting at large <span class="math notranslate nohighlight">\(x\)</span> values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  <span class="math notranslate nohighlight">\(y_0 =0 ,\;y_1 = 0.001\)</span> can be used. The wavefunction can be normalised at the end of the calculation (<span class="math notranslate nohighlight">\(\int\psi dx=1\)</span>) so these values are not critical. The function <span class="math notranslate nohighlight">\(f\)</span> is known at all points via <span class="math notranslate nohighlight">\(V(x)\)</span>  but as noted the eigenvalue <span class="math notranslate nohighlight">\(E\)</span> must be known. Note also the sign of <span class="math notranslate nohighlight">\(f(x)\)</span> when using the Schroedinger equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)\]</div>
+<p>As an example calculation, the wavefunction of a quantum harmonic oscillator with <span class="math notranslate nohighlight">\(V= (k/2)x^2\)</span> is calculated using  constants <span class="math notranslate nohighlight">\(\mu=1,\;\hbar = 1,\; k = 20 \)</span>. The eigenvalues are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)\]</div>
+<p>This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, <span class="math notranslate nohighlight">\(\mathtt{odeint(\cdots)}\)</span> in Python/Scipy for example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 11.16a; Numerov method</span>

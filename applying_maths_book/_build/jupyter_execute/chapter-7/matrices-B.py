@@ -28,7 +28,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $\pmb A$ is an $n \times n$ square matrix, $\pmb x$ is one of possibly $n$, one-dimensional column matrices (column vectors) each of length $n$ and each one is called an *eigenvector*, $\lambda$  represents one of $n$ numbers, and each $\lambda$ is called an *eigenvalue*. What this equation shows us is that the operator (matrix $\pmb A$) changes a vector $\pmb x$ by stretching or contracting it by an amount $\lambda$ but leaves it pointing in the same direction.
 # 
-# ### **Addition and subtraction**
+# ### **(i) Addition and subtraction**
 # 
 # To add or subtract two matrices they must have the same shape. To add or subtract a constant or another matrix their individual elements are added or subtracted. Similarly, to multiply or divide by a constant number (a scalar), each element is also multiplied or divided by this value. Multiplying two matrices together is more complicated and depends on the order with which this is done and the shapes of the two matrices; sometimes it is just not possible.
 # 
@@ -44,10 +44,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and similarly for the other calculations.
 # 
-# ### **Division**
+# ### **(ii) Division**
 # One matrix _cannot_ be divided by another; the inverse matrix of the divisor is formed instead and then these matrices are multiplied together. The inverse of a matrix $\pmb M$ is always written as $\pmb{M}^{-1}$. Generating the inverse of a matrix is difficult unless the matrix is small, and one would normally use Python/Sympy to do this.
 # 
-# ### **Multiplication**
+# ### **(iii) Multiplication**
 # Matrices can be multiplied together. The multiplication order is always important; $\pmb{AB}$ is not necessarily the same as $\pmb{BA}$. With three or more matrices $\pmb{ABC}$, the multiplication sequence does not matter as long as the ordering is the same. This is the associatite property
 # 
 # $$\displaystyle \pmb{ABC}\equiv \pmb{A}(\pmb{BC})\equiv (\pmb{AB})\pmb{C}$$
@@ -288,7 +288,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # _____
 # ![Drawing](matrices-fig7c.png) 
 # 
-# Figure 7. Pictorial representation of allowed matrix multiplication. Only these four types of multiplications are possible. The bra-ket notation used in quantum mechanics is shown also.  The dot product is also called the *inner product*.
+# ![Drawing](matrices-fig7d.png)
+# Figure 7. Pictorial representation of allowed matrix multiplication. Only these types of multiplications are possible. The lowest diagram shows the general case. The bra-ket notation used in quantum mechanics is shown also.  The dot product is also called the *inner product*.
 # _______
 # 
 # ## 5.1 Matrix sum
@@ -364,13 +365,21 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 5.7 The special case of the  2 x 2  matrix
 # 
-# The matrix is $\displaystyle \pmb{M}= \begin{bmatrix} A & B \\C & D \end{bmatrix}$ 
+#  $$\displaystyle \pmb{M}= \begin{bmatrix} A & B \\C & D \end{bmatrix}$$ 
 # 
-# and has determinant $\displaystyle |\pmb{M}|=AD-BC$
+# ### **(i) Determinant**
 # 
-# trace $ Tr(\pmb{M})=A+D$
+# The determinant is $\displaystyle |\pmb{M}|=AD-BC$
 # 
-# and inverse $\displaystyle \pmb{M}^{-1}= \frac{1}{|\pmb{M}|}\begin{bmatrix} D & -B \\-C & A \end{bmatrix}$ 
+# ### **(ii) Trace**
+# 
+# The trace is $ Tr(\pmb{M})=A+D$
+# 
+# ### **(iii) Inverse**
+# 
+# The inverse is inverse $\displaystyle \pmb{M}^{-1}= \frac{1}{|\pmb{M}|}\begin{bmatrix} D & -B \\-C & A \end{bmatrix}$ 
+# 
+# ### **(iv) Eigenvalues**
 # 
 # The eigenvalues (see section 12.3) are solutions of the characteristic equation 
 # 
@@ -392,13 +401,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The is a distinction between doing numerical and symbolic calculations. Python/numpy is used for numerical work and Sympy for algebraic/symbolic calculations. The notation is slightly different depending on whether you use Sympy or numpy.
 # 
-# ### **(a) Symbolic calculations using Sympy**
+# ### **(i) Symbolic calculations using Sympy**
 
 # In[2]:
 
 
 M, N, a, b, c, d = symbols('M, N, a, b, c, d')    # define symbols to use        
-M = Matrix( [[a, b], [c, d]]   )              # note double sets of brackets
+M = Matrix( [[a, b], [c, d]]   )              # note double sets of brackets and capital M
 M
 
 
@@ -454,12 +463,12 @@ Transpose(V)*W                   # same as dot product
 V*transpose(W)                   # outer product is a matrix see figure 7
 
 
-# ### **(B) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy** 
+# ### **(ii) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy** 
 
 # In[11]:
 
 
-a = np.array([[1, 3],  [5, 1]])
+a = np.array([[1, 3],  [5, 1]])  # note that an array is now a treated as amatrix
 b = np.array([[4, 1], [2, 2]])
 print('a and b')
 a,b

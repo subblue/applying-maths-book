@@ -62,7 +62,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # \hline
 # \end{array}$$
 # 
-# ## 3.3 Simulation of one-dimensional diffusion
+# ## 3.3 Simulation of one-dimensional diffusion, Brownian motion
 # 
 # In diffusion, time, and distance are linked by Fick's second law; Chapter 10.6.2 (iv). However, in a simulation, this equation is not used and the position where the walk ends after a fixed number of total jumps is calculated. This is repeated many times and a histogram made of the final positions. To make the walk last a longer time, a larger total number of jumps is taken because each jump is supposed to take an equal time. In the Monte Carlo simulation, the total number of steps, s, must be decided beforehand. The walk must start at only one place, say $x_0$, and as there is an equal chance of moving to the right or left, the starting place of the walk will also be the mean value $\langle x_0 \rangle$. The root mean square distance the walker moves in taking $s$ steps, is $\sqrt{s}$.
 # 
@@ -86,28 +86,27 @@ steps= 50                                   # number of time steps
 reps = 5000                                 # repeats
 prob = np.zeros(n,dtype =float)             # array for probability
 xdata= np.zeros(n,dtype =float)             # x positions
-mdata= np.zeros(reps,dtype =int)            # array to hold distce from start
+mdata= np.zeros(reps,dtype =int)            # array to hold distance from start
 c = ( n - 1 )//2
-s=0
 for L in range(reps):
     m = 0   
     for j in range(steps):
-        r = rng.uniform()   # choose random number 0-1
+        r = rng.uniform()                   # choose random number 0-1
         if r < 0.50 :
-            m = m + 1          # move right one step
+            m = m + 1                       # move right one step
         else:
             m = m - 1 
         pass
     mdata[L] = m
-    prob[c + m//2] = prob[c + m//2] + 1  # calculate probabilty at each position. // is integer division
-    pass                       # end of ‘for L ..reps’
+    prob[c + m//2] = prob[c + m//2] + 1     # calculate probabilty at each position, // is integer division
+    pass                                    # end of ‘for L ..reps’
 
 for i in range(n):
-    xdata[i] = (-c + i )*2     # distance from start, only even x numbers
+    xdata[i] = (-c + i )*2                  # distance from start, only even x numbers
 
 # plot data. Plot either one or the other but not both together on same plot
-#plt.plot(mdata[0:50])          # displacement from start left in fig10
-#plt.plot(xdata,prob)          # distribution
+#plt.plot(mdata[0:50],color='red')                         # displacement from start left in fig10
+#plt.scatter(xdata[c-50:c+50],prob[c-50:c+50],s=5, color='blue')          # distribution
 #plt.show()
 
 
@@ -122,11 +121,35 @@ for i in range(n):
 # Figure 10. Left: The position vs time (as number of steps) of a random walker. Right: Five thousand simulations of a random walker forming a discrete distribution of 50 steps each and the distribution from walker following an unlimited number of steps and so forming a Gaussian distribution $p(x)$ with $\sigma = 50$ (blueline).
 # _____
 # 
+# Two or three dimensional diffusion can also be calculated. In the 2_D case a simpler algorithm is used. All that is done is to move plus or minus one step either in $x$ or $y$ direction and then the trajectory plotted. As only one trajectory is plotted the walk is very individual, only a snapshot of one of many possible walks, and only after numerous repeated walks are added together will any distribution along $x$ or $y$ resemble a Gaussian as predicted by diffusion theory. Similarly the average position after many walks will be zero in both $x$ and $y$, i.e. $\langle r\rangle =0$ where $r=\sqrt{x^2+y^2}$ and after $n$ jumps $\langle r^2\rangle \sim n$ where $n\sim \text{time}$.
+
+# In[3]:
+
+
+# Algorithm 2D random walk
+rng = np.random.default_rng()               # initialise random number generator
+steps= 10000                                # number ofsteps
+xdata = np.zeros(steps,dtype =float)        # position
+ydata = np.zeros(steps,dtype =float)        # position
+z = np.linspace(0,steps,steps)
+
+for i in range(1,steps,1):
+    xdata[i] = xdata[i-1]+rng.integers(-1,2)
+    ydata[i] = ydata[i-1]+rng.integers(-1,2) 
+#plt.plot(xdata,ydata, linewidth=1,color='grey')
+#plt.show()
+
+
+# ![Drawing](monte-carlo-fig10a.png)
+# 
+# Figure 10a. One trajectory of a 2D random walk on a grid, where each step is randomly $\pm1$ or zero jump in $x$ and $y$. Many such trajectories would produce a 2D gaussian profile. The color roughly indicates the time taken by the walk, starting with green and ending in red.
+# ___________________________
+# 
 # ## 3.4 Reacting molecules.
 # 
-# ### Reaction $A\to B$
+# ### **(i) Reaction $A\to B$**
 # 
-# Many molecules react by a first-order process; $A\overset{k}\to B$, e.g. $\mathrm{CH_3CN} \to \mathrm{CH_3NC}$ or a cis - trans isomerisation. A first-order decay was calculated by the Gillespie method in Section 2.2, but the method used there is very different to this one. 
+# Many molecules react by a first-order process; $A\overset{k}\to B$, e.g. $\mathrm{CH_3CN} \to \mathrm{CH_3NC}$, a cis - trans isomerisation or the decay of an excited state. A first-order decay was calculated by the Gillespie method in Section 2.2, but the method used there is very different to this one. 
 # 
 # Imagine instantly starting a reaction and then being able to observe each molecule individually and record the instant $t$ that each reacts. Each molecule follows a first-order process, the probability of not having reacted up to time $t$ is $p = e^{-kt}$, where $k$ is the rate constant and the lifetime $\tau$ for the reaction is $\tau = 1/k$. Observing these times for different molecules allows the probability distribution to be made and the reaction rate constant or lifetime calculated. The lifetimes of excited states and of first-order reactions have a huge range from $\approx 10^{-13}$ to $\gt 10$ s. The lifetimes of radioactive nuclei range from a few seconds to thousands of years.
 # 
@@ -150,7 +173,7 @@ for i in range(n):
 # 
 # The Python code is shown below with 50000 events placed in a histogram of $500$ bins. The reaction lifetime $\tau = 50$. In the simulation, the time - scale need not be explicitly defined; each time unit could be femtoseconds or years; it all depends on the reaction.
 
-# In[3]:
+# In[4]:
 
 
 rng = np.random.default_rng()                # initialise random number generator
@@ -185,11 +208,27 @@ for i in range(events):
 # 
 # Figure 11 Left: The residence times vs event number for $500$ events. Right: A histogram of the natural logarithm of the number of counts in each time channel in the simulation of a first-order rate process together with an exponential decay with the same decay time; $\tau = 50$ in this example, and $200000$ events have been recorded.
 # 
-# ### Reaction $A\to B\to C$
+# ### **(ii) Reaction $A\to B\to C$**
 # 
-# The Monte-Carlo method can be extended for example to $A \overset{k_A}\to  B \overset{ k_B} \to C$ by recording the total time when intermediate B is produced.  Molecule A decays at time $t_A=\tau_A\ln(p_1)$  where $p_1$ is a random number in the range $0\to 1$ and $\tau_A$ is A's lifetime. Molecule B cannot be formed before this time, and then it takes A time $t_B = \tau_B\ln(p_2)$, to react so that B is formed at time $t_A + t_B$, where $p_2$ is another random number in range $0\to 1$. The times $t_A+t_B$ are recorded, binned, and a histogram of the number of B produced is made. Figure 11a shows such a calculation with $\tau_A=50, \tau_B=30$. 
+# The Monte-Carlo method can be extended for example to 
 # 
-# The equations for the $A\to B\to C$ scheme are, of course, well known, see chapter XX. The rate constants used to make the figure are $k_A=1/\tau_A, k_B=1/\tau_B$ and the amount of B is given by $\displaystyle[B]=[A_0]\frac{k_B}{k_A-k_B}(e^{-k_Bt}-e^{-k_At})$ and this is shown on a linear scale in the figure together with the simulated data.  To observe the rise of C as the number of trials, and hence molecules, is fixed this can be found by subtracting the numbers of A and B in each bin from this number.  If a more complex scheme is required such as molecule B reacting to produce another product D as well as C, then the fraction of molecules to pathway C (or D) needs to be found. The fraction going to C would be $k_B/(k_D+k_B)$ and this is made by examining whether the random number is in the range $0 \le k_B/(k_D+k_B)$ or greater than this.
+# $$\displaystyle A \overset{k_A}\to  B \overset{ k_B} \to C$$
+# 
+# by recording the total time when intermediate B is produced.  Molecule A decays at time 
+# 
+# $$\displaystyle t_A=\tau_A\ln(p_1)$$
+# 
+# where $p_1$ is a random number in the range $0\to 1$ and $\tau_A=1/k_A$ is A's lifetime. Molecule B cannot be formed before this time, and then it takes A time 
+# 
+# $$\displaystyle t_B = \tau_B\ln(p_2)$$
+# 
+# to react so that B is formed at time $t_A + t_B$, where $p_2$ is another random number in range $0\to 1$. The times $t_A+t_B$ are recorded, binned, and a histogram of the number of B produced is made. Figure 11a shows such a calculation with $\tau_A=50, \tau_B=30$. 
+# 
+# The equations for the $A\to B\to C$ scheme are, of course, well known, see chapter XX. The rate constants used to make the figure are $k_A=1/\tau_A, k_B=1/\tau_B$ and the amount of B is given by 
+# 
+# $$\displaystyle[B]=[A_0]\frac{k_B}{k_A-k_B}(e^{-k_Bt}-e^{-k_At})$$
+# 
+# and this is shown on a linear scale in the figure together with the simulated data.  To observe the rise of C as the number of trials, and hence molecules, is fixed this can be found by subtracting the numbers of A and B in each bin from this number.  If a more complex scheme is required such as molecule B reacting to produce another product D as well as C, then the fraction of molecules to pathway C (or D) needs to be found. The fraction going to C would be $k_B/(k_D+k_B)$ and this is made by examining whether the random number is in the range $0 \le k_B/(k_D+k_B)$ or greater than this.
 # 
 # ![Drawing](monte-carlo-fig11a.png)
 # 
@@ -205,20 +244,24 @@ for i in range(events):
 # (3) The chain length increases steadily during reaction.
 # (4) High conversion is needed to form long polymers which also takes time.
 # 
-# ### Algorithm 1 
+# ### **(i) Algorithm 1**
 # 
 # The distribution of chain lengths is computed using a Monte-Carlo method. An array is made whose indices each represent one polymer chain. The value at each index gives the length of the chain, initially set to zero. At each step in the simulation the number $1$ is added to each element of the array, unless a random termination event has occurred and then a zero is added for this step and all future ones at this index, i.e. this particular chain's growth is halted. After repeating this many times a histogram is made of the chain lengths. The histogram records how many chains of a given length occur and groups these into 'bins' of a given width. A plot is made of the number of events (length of the chain) vs. the length itself. The random or Monte-Carlo part enters only in the termination step. A certain number of chains are chosen at random to be terminated on each round, this means that we must know the extent of reaction labelled $p$. The longer the rounds adding a molecule go on for, the longer the chain gets but also the greater the chance of termination. Thus, at the end of the process there are many chains of short length and fewer long ones. The maximum chain length is the number of rounds or repetitions.  
 # 
-# ### Algorithm 2
+# ### **(ii) Algorithm 2**
 # 
 # There is a second way of calculating the length distribution that is similar to the method developed in the previous section for an excited state. In this we determine the length of the chain at termination, rather than time of decay, from the probability of reacting and compute the length at which it is terminated, repeat this many times and then form a histogram. The lifetime $\tau$ used with a decaying molecule is replaced by the chain length, $tau$ being the length at which the distribution of lengths has fallen to $1/e\approx 0.37$ of its initial value. 
 # 
 # 
-# ### Statistical approach
+# ### **(iii) Statistical approach**
 # 
 # We have to answer the question; how shall we know that the Monte-Carlo simulation represents anything approximating theory or even reality? To answer this we need to use statistical theory model the distribution of polymer chain lengths. The number and weight averages can be calculated from the Monte-Carlo data, but these are only point measures of the polymer's length and mass distribution, the distributions themselves are really needed. Using arguments based on probability these distributions can be calculated (Cowie & Arrichi 2007), and the starting point is Carothers' equation. Carothers pioneered step-growth reactions and invented nylon 66. 
 # 
-# Let $x_n$ be the number average chain length which is defined as $\displaystyle x_n=\frac{n_0}{n}$ where $n_0$ is the original number of molecules present as monomers, and $n$ the number of all molecules able to react at a later time $t$, which included all potentially reactive polymers. The total number of functional groups that have reacted is therefore $(n_0-n)$  and then the extent of reaction $p$ is the fraction
+# Let $x_n$ be the number average chain length which is defined as 
+# 
+# $$\displaystyle x_n=\frac{n_0}{n}$$
+# 
+# where $n_0$ is the original number of molecules present as monomers, and $n$ the number of all molecules able to react at a later time $t$, which included all potentially reactive polymers. The total number of functional groups that have reacted is therefore $(n_0-n)$  and then the extent of reaction $p$ is the fraction
 # 
 # $$\displaystyle p=\frac{n_0-n}{n},\quad\text{or}\quad n=n_0(1-p)$$
 # 
@@ -240,7 +283,7 @@ for i in range(events):
 # 
 # $$\displaystyle n_x=n_0(1-p)^2p^{x-1}$$
 # 
-# Although not apparent, this equation has a shape very close to an exponential decay as in fig XX below, The histogram formed from chain lengths, which is the plot of the number of chains of length $n_x$ (of mass $m_0n_x)$ vs. $x$ is ideally of the same shape as this distribution. This distribution should be what is obtained from the simulation. The number average molar mass in terms of extent of reaction $p$ is from the Carothers equation
+# Although not apparent, this equation has a shape very close to an exponential decay as in fig 11b below, The histogram formed from chain lengths, which is the plot of the number of chains of length $n_x$ (of mass $m_0n_x)$ vs. $x$ is ideally of the same shape as this distribution. This distribution should be what is obtained from the simulation. The number average molar mass in terms of extent of reaction $p$ is from the Carothers equation
 # 
 # $$\displaystyle \langle m_n\rangle = \frac{M_0}{1-p}$$
 # 
@@ -254,17 +297,19 @@ for i in range(events):
 # 
 # $$\displaystyle \langle m_w\rangle = M_0\left(\frac{1+p}{1-p}\right)$$
 # 
-# and the ratio of the weight to number averages when $p=1$ is $2$ which is close to what is observed because $p$ will be close to unity. The weight average molar mass as a summation of chain lengths and masses is $\displaystyle \langle m_w\rangle =\frac{\sum n_im_i^2}{\sum n_im_i}$.
+# and the ratio of the weight to number averages when $p=1$ is $2$ which is close to what is observed because $p$ will be close to unity. The weight average molar mass as a summation of chain lengths and masses is 
+# 
+# $$\displaystyle \langle m_w\rangle =\frac{\sum n_im_i^2}{\sum n_im_i}$$
 # 
 # The simulation shows (fig 11d) that this gives good agreement with the predicted data based on statistical arguments.
 # 
-# ### **Simulation**
+# ### **(iv) Simulation**
 # 
 # The code to do the algorithm 1 simulation is shown below. The array 'chains' represents the polymers, the value at each index is the polymer length, e.g. chains[4] = 10 means that chain $4$ has length $10$. The array 'term' is either $1$ or $0$ and the whole array is added to the chains. Python allows whole arrays to be added without specifying indices but using $[:]$. The parameter $z$ is the number of chains to be terminated at each round. The plots are scaled to take into account the width of the bins used in the histogram.
 # 
 # Sometimes when making the histogram, the way the histogram's algorithm works to partitions the number of events into each bin can sometimes cause points to appear in a regular pattern being either too high or too low or both. This unphysical behaviour can be corrected by choosing a different number of bins, for example by doubling, plotting, re-choosing, re-plotting etc. until this effect disappears. 
 
-# In[4]:
+# In[5]:
 
 
 # Algorithm 1. Step-wise chain growth polymerisation 
@@ -305,11 +350,11 @@ for i in range(reps):
 # Fig. 11b. Left Histogram of the number of chains of mass $m$ vs. the mass $m$, (grey) and red dots on a log scale.  The solid line (blue) is the number distribution  $ n_x = n_0(1-p)^2p^{x-1}$ which is close to an exponential decrease. The average $\langle m_n\rangle = 99$ is also shown. Right, the theoretical weight distribution $w_x = x(1-p)^2p^{x-1}$ (blue) with the Monte-Carlo calculated distribution 'num_at_m x m_i' vs 'm_i' which is $m\times n_x$ vs $m$. The average $\langle M_w\rangle =200$ is also shown.
 # ______________
 # 
-# ### Algorithm 2 simulation 
+# ### Algorithm 2. Simulation 
 # 
 # An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The 'lifetime' of the chain is $1/(1-p)$ in terms of the chain length and the 'time' is $-1/(1-p)\ln(rand)$ where 'rand' is a uniformly distributed random number in the range $0\to 1$. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.
 
-# In[5]:
+# In[6]:
 
 
 # Algorithm 2. Step-wise chain growth polymerisation 
@@ -340,7 +385,19 @@ for i in range(reps):
 # 
 # $$\displaystyle n_e= \frac{-K_e+\sqrt{K_e^2+16K_e n_0} }{8}\tag{13a}$$
 # 
-# If $k_1,k_2$ are the forward and reverse rate constants the respective *rates*, $\displaystyle R_1 = k_1n_a, R_2 = k_2 n_b^2$, are equal at equilibrium and if we interpret these as probabilities per unit step the forward rate is $\displaystyle R_1=\frac{n_a}{N}$ and the backward bimolecular rate $\displaystyle R_2=\frac{n_b}{N}\left(\frac{n_b-1}{N-1}\right)$. This expression occurs because once we have chosen a site there is one less left to choose from a second time. When $n_b$ and $N$ are both far greater than one $\displaystyle R_2=\frac{n_b^2}{N^2}$ without significant error. At equilibrium $R_1 = R_2$ and $K_e$ is found using 
+# If $k_1,k_2$ are the forward and reverse rate constants the respective *rates*, 
+# 
+# $$\displaystyle R_1 = k_1n_a, R_2 = k_2 n_b^2$$
+# 
+# are equal at equilibrium and if we interpret these as probabilities per unit step the forward rate is 
+# 
+# $$\displaystyle R_1=\frac{n_a}{N}$$
+# 
+# and the backward bimolecular rate 
+# 
+# $$\displaystyle R_2=\frac{n_b}{N}\left(\frac{n_b-1}{N-1}\right)$$
+# 
+# This expression occurs because once we have chosen a site there is one less left to choose from a second time. When $n_b$ and $N$ are both far greater than one $\displaystyle R_2=\frac{n_b^2}{N^2}$ without significant error. At equilibrium $R_1 = R_2$ and $K_e$ is found using 
 # 
 # $$\displaystyle \frac{n_a}{N} = \frac{n_b^2}{N^2}$$
 # 
@@ -348,7 +405,11 @@ for i in range(reps):
 # 
 # $$\displaystyle K_e = N$$
 # 
-# which now allows us to calculate $n_e$ and hence the mole fraction of A and B molecules at equilibrium  for any $n_0$. In fact this is not quite true because the total number of sites is fixed at $N$ and each A produces two B's so there is a maximum valid number of initial A's. This is worked out by substituting for $n_e$ in $n_a = n_0-n_e$ to give $n_a=n_0-n_b/2$ and then solving for $n_0$ in $n_a=n_0-\sqrt{n_aK_e}/2$ where the definition of the equilibrium constant was used, $n_aK_e=n_b^2$. The maximum $n_0$ is $\approx 0.691N$.
+# which now allows us to calculate $n_e$ and hence the mole fraction of A and B molecules at equilibrium  for any $n_0$. In fact this is not quite true because the total number of sites is fixed at $N$ and each A produces two B's so there is a maximum valid number of initial A's. This is worked out by substituting for $n_e$ in $n_a = n_0-n_e$ to give $n_a=n_0-n_b/2$ and then solving for $n_0$ in 
+# 
+# $$\displaystyle n_a=n_0-\sqrt{n_aK_e}/2$$
+# 
+# where the definition of the equilibrium constant was used, $n_aK_e=n_b^2$. The maximum $n_0$ is $\approx 0.691N$.
 # 
 # The differential equation for the number of A molecules is
 # 
@@ -360,7 +421,7 @@ for i in range(reps):
 # 
 # This can be solved analytically but has a rather complicated solution, and it is easier to integrate numerically using, for example, the Euler method described in chapter 11-4.1. The rate constants are known from the rate expressions given above.
 # 
-# ### **Algorithm outline**
+# ### **(i) Algorithm outline**
 # 
 # An array larger than the total initial number of all molecules is made and is used to hold the 'molecules' distinguished by their value, for example, we can choose $ \mathrm{Empty=0, A=1, B=2}$. The molecule's positions are initially chosen at random. You may wish to imagine this as a 2D array partially filled with molecules of type A and B, but as we shall not insist that when A breaks up into two B's that these must be on adjacent sites, or that when 2B's react they are also adjacent, we can simply use a 1D array. We can do this only because we are counting the number of A and B at each step, we make no assumptions about any mechanism. Furthermore as the total number of sites is fixed, this is equivalent to a fixed volume, but if we change the number of molecule present the density changes, which in a real gas would be a pressure change, for example via the ideal gas equation. 
 # 
@@ -368,18 +429,18 @@ for i in range(reps):
 # 
 #  The instructions are put into a procedure (def calc():) and this in a loop for the number of repeated trials needed, for example $40000$. 
 # 
-# $$\displaystyle \begin{array}{lll}
-# (i) & \text{Choose one site at random, i.e. A, B or empty.} \\
-# (ii)& \text{If it is A, replace it by B and choose another empty site and make it B.}\\
+# $\displaystyle \begin{array}{lll}
+# (1) & \text{Choose one site at random, i.e. A, B or empty.} \\
+# (2)& \text{If it is A, replace it by B and choose another empty site and make it B.}\\
 # & \text{Change } n_A \to n_A - 1,\quad n_B \to n_B + 2\\
-# (iii) &\text{If B is chosen, choose another site at random.}\\ 
+# (3) &\text{If B is chosen, choose another site at random.}\\ 
 #     &\text{If it is B, empty this site and change the previous B chosen into A.}\\
 #     &\text{Change }n_A \to n_A + 1,\quad n_B \to n_B - 2\\
-#     (iv)&\text{If the site is empty do nothing.} \end{array}$$
+#     (4)&\text{If the site is empty do nothing.} \end{array}$
 #     
 # At each step with index $k$, we count the number of type A and type B molecules present and the mole fraction as $\mathrm{mfA[k]=n_a/(n_a+n_b)}$ for A molecules and $\mathrm{1-mfA[k]}$ for B molecules. These are plotted vs. number of tries. 
 
-# In[6]:
+# In[7]:
 
 
 #-------------------------------
@@ -466,8 +527,13 @@ while k < reps:                       # main loop of calculation
 # Fig 11c. Monte-Carlo calculation of the $A\rightleftharpoons 2B$ reaction. Left mole fractions of A and B vs. number of steps, which are proportional to time. The initial number of A was $2000$ and total number of sites was $10000$. Right: The rates of reaction become equal at equilibrium. See text for details.
 # _______
 # 
-# Figure 11c shows the mole fraction as the reaction evolves, with an initial number of $2000$ A molecules. After about $25000$ steps each mole fraction has become constant and equilibrium is reached. This can also be determined by plotting the reaction rate for $A\to 2B$ and $2B\to A$. From the discussion above the rates are $\displaystyle R_1=\frac{n_a}{N}$ and $\displaystyle R_2=\frac{n_b}{N}\left(\frac{n_b-1}{N-1}\right)$ and these are equal at equilibrium as can be seen on the right of fig 11b. As the number of 'molecules' is relatively small, $\le 10000$ fluctuations about equilibrium can be seen. Using eqn 13a the mole fraction can be calculated as $(n_0-n_e)/(n_0+n_e)$ and compared to that obtained from the simulation. For the data in fig 11b the mole fraction of A is $0.214$ while that from eqn 11a is $0.208$. The comparison the the calculated values of the mole fraction vs. the simulated ones show that the two numbers agree to two decimal places when rounded, and the largest difference being when $n_0$ is small.
+# Figure 11c shows the mole fraction as the reaction evolves, with an initial number of $2000$ A molecules. After about $25000$ steps each mole fraction has become constant and equilibrium is reached. This can also be determined by plotting the reaction rate for $A\to 2B$ and $2B\to A$. From the discussion above the rates are 
 # 
+# $$\displaystyle R_1=\frac{n_a}{N}\quad\text{ and }\quad \displaystyle R_2=\frac{n_b}{N}\left(\frac{n_b-1}{N-1}\right)$$
+# 
+# and these are equal at equilibrium as can be seen on the right of fig 11b. As the number of 'molecules' is relatively small, $\le 10000$ fluctuations about equilibrium can be seen. Using eqn 13a the mole fraction can be calculated as $(n_0-n_e)/(n_0+n_e)$ and compared to that obtained from the simulation. For the data in fig 11b the mole fraction of A is $0.214$ while that from eqn 11a is $0.208$. The comparison the the calculated values of the mole fraction vs. the simulated ones show that the two numbers agree to two decimal places when rounded, and the largest difference being when $n_0$ is small.
+# 
+# ### **(ii) Adding more A or B at equilibrium**
 # If, when equilibrium is reached, the number of A or B is changed and a new equilibrium position will be reached eventually as more A will convert to B or *vice versa*. This change is done at constant volume as the number of sites is unchanged in the simulation. This is shown in figure 11c, where there are initially $n_0=2000$ A and after $\approx 40000$ steps $1000$ more A are added to vacant sites. The final mole fractions and rates are those as if initially $n_0=3000$. 
 # 
 # When the addition is made the mole fraction of A suddenly rises and that of B falls, simply because the total mole fraction must add to one. The rates on the other hand (as shown in the right hand panel) are proportional to the numbers of A and B and we can see that as more A is injected the number of these suddenly rise then slowly fall as the predominant reaction is, until equilibrium is established, $A\to B$. The number of B rises continuously until equilibrium is re-established. If B had been added the similar behaviour is observed but with A and B reversed. This behaviour when returning to equilibrium accords with that expected when perturbing an equilibrium and expressed as the Le Chatelier principle.

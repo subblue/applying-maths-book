@@ -56,9 +56,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle p= \left(\frac{h}{\sqrt{\pi}}\right)^n\exp\left( -h^2\sum_{i=1}^nw_i(y_i-Y_i)^2\right)$$
 # 
-# ($h=1/\sqrt{2\sigma^2}$) The most likely values are obtained when this probability is at its maximum, and this is found when $\sum_{i=1}^nw_i(y_i-Y_i)^2$ has a minimum. This is the same as minimizing the $\chi^2$ therefore this is used as a measure of the 'goodness of fit' of the model function to the data. The minimum $\chi^2$ is found by differentiating this with respect to each of the parameters in the model function. This approach is quite general and is called a Maximum Likelihood method.
+# ($h=1/\sqrt{2\sigma^2}$) The most likely values are obtained when this probability is at its maximum, and this is found when 
 # 
-# To fit the straight-line model $Y = a_0 + b_0$x to experimental data $y_i$, the values a and b obtained will be the best estimates of $a_0$ and $b_0$ and therefore these are replaced with $a$ and $b$ in the equations. To find the minima, the derivatives $\partial \chi^2/\partial a$ and $\partial \chi^2/\partial b$ are calculated, 
+# $$\displaystyle \sum_{i=1}^nw_i(y_i-Y_i)^2 = minimum $$
+# 
+# This is the same as minimizing the $\chi^2$ therefore this is used as a measure of the 'goodness of fit' of the model function to the data. The minimum $\chi^2$ is found by differentiating this with respect to each of the parameters in the model function. This approach is quite general and is called a Maximum Likelihood method.
+# 
+# To fit the straight-line model 
+# 
+# $$\displaystyle Y = a_0 + b_0x$$
+# 
+# to experimental data $y_i$, the values a and b obtained will be the best estimates of $a_0$ and $b_0$ and therefore these are replaced with $a$ and $b$ in the equations. To find the minima, the derivatives $\partial \chi^2/\partial a$ and $\partial \chi^2/\partial b$ are calculated, 
 # 
 # $$\displaystyle \frac{\partial }{\partial a} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_i=0\qquad\tag{26}$$
 # $$\displaystyle \frac{\partial }{\partial b} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_ix_i=0\qquad\tag{27}$$
@@ -254,15 +262,15 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 # 
 # Other tests can be performed on the residuals to assess the goodness of fit.
 # 
-# **(i)**$\quad$ The simplest test is to look at the residuals; if they slope, oscillate, or are curved then the model does not fit the data, no matter what the statistics indicate.
+# **(a)** does not fit the data, no matter what the statistics indicate.
 # 
-# **(ii)**$\quad$ The residuals can be plotted on a normal probability plot and if they are Gaussian (normally) distributed, a straight line is produced.
+# **(b)**$\quad$ The residuals can be plotted on a normal probability plot and if they are Gaussian (normally) distributed, a straight line is produced.
 # 
-# **(iii)**$\quad$ The number of positive and negative runs in the residuals can be calculated. A 'run' occurs when consecutive residuals have the same sign, which is unlikely to occur if they are random. Therefore, if the data is random, then there are an equal number of small runs of positive and of negative numbers.
+# **(c)**$\quad$ The number of positive and negative runs in the residuals can be calculated. A 'run' occurs when consecutive residuals have the same sign, which is unlikely to occur if they are random. Therefore, if the data is random, then there are an equal number of small runs of positive and of negative numbers.
 # 
-# **(iv)**$\quad$ The autocorrelation of the data should be 1 for the first point, and randomly arranged about zero for the rest, which is expected for a sequence of random numbers.
+# **(d)**$\quad$ The autocorrelation of the data should be 1 for the first point, and randomly arranged about zero for the rest, which is expected for a sequence of random numbers.
 # 
-# **(v)**$\quad$ A scedaticity plot aims to determine if the residuals vary with the size of the data itself, i.e. if the errors are larger when the data value is larger or vice versa. The plot is of residuals vs. the experimental $y$ value. The points should be randomly distributed about zero.
+# **(e)**$\quad$ A scedaticity plot aims to determine if the residuals vary with the size of the data itself, i.e. if the errors are larger when the data value is larger or vice versa. The plot is of residuals vs. the experimental $y$ value. The points should be randomly distributed about zero.
 # 
 # A good model will produce a small residual (error) variance and if there are two or more competing models then the model with the smallest error variance should be chosen. The variance of the slope and intercept are calculated by expressing the respective equations as functions of $y_i$ (the experimental data) and using the law of propagation (combination) of errors. The gradient is the ratio $b = S_{xy} /S_{xx}$ and only the numerator depends on $y_i$. Using the relationships
 # 

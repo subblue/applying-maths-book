@@ -111,14 +111,13 @@ factor(ans)
 # 
 # $$\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\qquad\tag{12}$$
 # 
-# ### **(i) Example**
-# The equation $\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)$ is solved. 
+# ### **(i) Example $\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)$**
 # 
 # In this equation $P = 1/x$ and $Q = 3\sin(x)$. The integrating factor is simple in this case and is 
 # 
 # $$\displaystyle \int Pdx=\ln(x)$$
 # 
-# and as $\displaystyle e^{\ln(x)}=x$ then $yx = 3\int x\sin(x)dx +c $.
+# and as $\displaystyle e^{\ln(x)}=x$ then $\displaystyle yx = 3\int x\sin(x)dx +c $.
 # 
 # Integrating this by parts and rearranging, produces 
 # 
@@ -130,7 +129,11 @@ factor(ans)
 # 
 # $$\displaystyle \frac{dy}{dx} + xy = 3\sin(x)$$
 # 
-# has the integrating factor $\displaystyle e^{\large{\int xdx}}=e^{x^2/2}$. The solution is,
+# has the integrating factor 
+# 
+# $$\displaystyle e^{\large{\int xdx}}=e^{x^2/2}$$
+# 
+# The solution is,
 # 
 # $$\displaystyle ye^{{x^2/2}}=3\int e^{{x^2/2}}\sin(x)dx+c$$
 # 
@@ -147,11 +150,19 @@ factor(ans)
 # \frac{dA}{dt} &=-k_1A \\
 # \frac{dB}{dt}&=k_1A-k_2B \end{align}$$
 # 
-# If the initial amount of $A= A_0$ and $B_0 = 0$, then integrating the first equation gives $\displaystyle A = A_0e^{-k_1t}$ . Substituting this into the second and rearranging gives
+# If the initial amount of $A= A_0$ and $B_0 = 0$, then integrating the first equation gives 
+# 
+# $$\displaystyle A = A_0e^{-k_1t}$$
+# 
+# Substituting this into the second and rearranging gives
 # 
 # $$\displaystyle  \frac{dB}{dt}+k_2B =k_1Ae^{-k_1t} $$
 # 
-# which has the form $\displaystyle \frac{dB}{dt}+PB=Q$ and can be solved using the integrating factor $\displaystyle e^{\large{\int Pdt}}=e^{k_2t}$ with the solution,
+# which has the form $\displaystyle \frac{dB}{dt}+PB=Q$ and can be solved using the integrating factor 
+# 
+# $$\displaystyle e^{\large{\int Pdt}}=e^{k_2t}$$
+# 
+# with the solution,
 # 
 # $$\displaystyle Be^{k_2t}=k_1A\int e^{k_2t-k_1t}dt+c$$
 # 
@@ -165,11 +176,17 @@ factor(ans)
 # 
 # and this has the expected form; it is zero when $t = 0$ and again when $t = \infty$ and passes through a maximum when $dB/dt = 0$.
 # 
-# ## 9.4 The Bernoulli Equation 
+# ## 9.4 The Bernoulli differential equation $\displaystyle \frac{dy}{dx} + Py = Qy^n $
 # 
-# The equation $\displaystyle \frac{dy}{dx} + Py = Qy^n $, 
+# The equation 
 # 
-# where $P$ and $Q$ are functions of $x$ alone, is called the Bernoulli equation. If the integer $n = 1$ the equation is solved by separating variables in the usual way. If $n \ne 1$ the equation can be solved with an integrating factor with the substitution $\displaystyle y^{1-n} = u $.
+# $$\displaystyle \frac{dy}{dx} + Py = Qy^n $$ 
+# 
+# where $P$ and $Q$ are functions of $x$ alone, is called the Bernoulli equation which is not to be confused with an equation of the same name that shows that in a incompressible fluid its pressure plus kinetic and potential energy is a constant, see section 11.7. 
+# 
+# If the integer $n = 1$ the equation is solved by separating variables in the usual way. If $n \ne 1$ the equation can be solved with an integrating factor with the substitution 
+# 
+# $$\displaystyle y^{1-n} = u $$
 # 
 # Differentiating gives 
 # 
@@ -179,7 +196,11 @@ factor(ans)
 # 
 # $$\displaystyle \frac{du}{dx}+(1-n)Pu=(1-n)Q$$
 # 
-# The complicated equation $\displaystyle x\frac{dy}{dx}+y=x^2e^xy^2$ is seen to be of the Bernoulli form because if divided through by $x$ it becomes 
+# The complicated equation 
+# 
+# $$\displaystyle x\frac{dy}{dx}+y=x^2e^xy^2$$
+# 
+# is seen to be of the Bernoulli form because if divided through by $x$ it becomes 
 # 
 # $$\displaystyle \frac{dy}{dx}+\frac{y}{x}=xe^xy^2$$
 # 
@@ -207,11 +228,23 @@ factor(ans)
 # 
 # $$\displaystyle \frac{d^2y}{dx^2} + ay = 0$$
 # 
-# The differential is replaced by the differential operator, $\displaystyle D=\frac{dy}{dx},\;D^2=\frac{d^2y}{dx^2}  $ and so the equation becomes,
+# The differential is replaced by the differential operators, 
+# 
+# $$\displaystyle D=\frac{dy}{dx},\qquad D^2=\frac{d^2y}{dx^2}  $$ 
+# 
+# and so the equation becomes,
 # 
 # $$\displaystyle D^2 + ay = 0$$
 # 
-# Next we hypothesize that the equation is satisfied by exponential functions such as $\displaystyle y = e^{kx}$ where $k$ is a constant to be determined. The way to find $k$ is to substitute the guessed answer into the equation $\displaystyle (D^2 + a)e^{kx} = 0$ and evaluate, viz.,
+# Next we hypothesize that the equation is satisfied by exponential functions such as 
+# 
+# $$\displaystyle y = e^{kx}$$
+# 
+# where $k$ is a constant to be determined. The way to find $k$ is to substitute the guessed answer into the equation 
+# 
+# $$\displaystyle (D^2 + a)e^{kx} = 0$$
+# 
+# and evaluate, viz.,
 # 
 # $$\displaystyle (D^2 +a)e^{kx} =(k^2 +a)e^{kx} = 0$$ 
 # 
@@ -244,11 +277,11 @@ factor(ans)
 # 
 # Newton's laws are
 # 
-# **(i)**$\quad$ Every particle remains either in a state of rest or of constant speed in a straight line unless acted on by a force to change that state.
+# **(a)**$\quad$ Every particle remains either in a state of rest or of constant speed in a straight line unless acted on by a force to change that state.
 # 
-# **(ii)**$\quad$ The rate of change of the momentum of a particle is proportional to the force acting on it and is in the direction of the force.
+# **(b)**$\quad$ The rate of change of the momentum of a particle is proportional to the force acting on it and is in the direction of the force.
 # 
-# **(iii)**$\quad$ Action and reaction are equal and opposite.
+# **(c)**$\quad$ Action and reaction are equal and opposite.
 # 
 # The first law states that any acceleration experienced by a particle is caused by the action of an external force. The second law proposes that force $f$ is equal to the product of mass and acceleration since momentum is the product of mass and velocity;
 # 
@@ -266,7 +299,11 @@ factor(ans)
 # 
 # $$\displaystyle f = mg$$
 # 
-# where the acceleration due to gravity is $g=GM/R^2 = 9.81\,\mathrm{ m \,s^{-2}}$ where $M$ is the mass of the (spherical) earth. Clearly, $g$ will be different on the moon to that on the earth. The differential equation for a body falling from a height $x$ under gravity, is therefore
+# where the acceleration due to gravity is 
+# 
+# $$\displaystyle g=\frac{GM}{R^2} = 9.81\,\mathrm{ m \,s^{-2}}$$
+# 
+# where $M$ is the mass of the (spherical) earth. Clearly, $g$ will be different on the moon to that on the earth. The differential equation for a body falling from a height $x$ under gravity, is therefore
 # 
 # $$\displaystyle  \frac{d^2x}{dt^2} = g$$
 # 
@@ -302,9 +339,11 @@ factor(ans)
 # 
 # $$\displaystyle  \frac{m}{2}\left(\frac{dx}{dt}\right)^2=\int f(x)\frac{dx}{dt}dt+c =\int f(x)dx+c  \qquad\tag{14} $$
 # 
-# where $c$ is the constant of integration. This is the '_Equation of Energy_'; the left-hand side is the kinetic energy since $dx/dt$ is velocity and the right hand side is the potential energy. 
+# where $c$ is the constant of integration. This is the '_Equation of Energy_'; the left-hand side is the kinetic energy since $dx/dt$ is velocity and the right hand side is the potential energy. The time to reach position $x$ can also be found. First let 
 # 
-# The time to reach position $x$ can also be found. First let $\displaystyle \int f(x)dx+c =F(x)$, then rearrange the energy equation to
+# $$\displaystyle \int f(x)dx+c =F(x)$$
+# 
+# then rearrange the energy equation to
 # 
 # $$\displaystyle \frac{dt}{dx}=\pm\sqrt{\frac{m}{2}}\frac{1}{\sqrt{F(x)}}$$
 # 
@@ -322,9 +361,11 @@ factor(ans)
 # 
 # $$\displaystyle  mv\frac{dv}{dx}=f(x)  \qquad\tag{16}$$
 # 
-# Integrating produces $\displaystyle \frac{mv^2}{2}=\int f(x)dx+c$ which is the same as equation 14.
+# Integrating produces 
 # 
-# The calculation can be completed when different types of forces are assigned to $f(x)$. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.
+# $$\displaystyle \frac{mv^2}{2}=\int f(x)dx+c$$
+# 
+# which is the same as equation 14. The calculation can be completed when different types of forces are assigned to $f(x)$. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.
 # 
 # ## 10.3 Rockets
 # At the end of section 3.5 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity and time vs distance away from the earth's surface. To calculate the distance moved in a given time equation 15 can be used. 
@@ -378,22 +419,42 @@ factor(ans)
 # 
 # The rockets' speed only depends on the exhaust velocity and the fraction of the mass exhausted in that time interval needed to change the speed to $v$ from $v_0$. Notice also that the speed at any time does not depend on how quickly the fuel is used, this does not enter the calculation, but clearly the lower the rate of fuel consumption the longer it will take to reach a set velocity. 
 # 
-# If $m$ is the mass of the fuel and all is consumed then $M$ is the mass of the fuel empty rocket, $M_0=M+m$ and $v$ the maximum velocity, $\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)$. In a rocket it is therefore desirable to carry as much mass as fuel as possible so that $1+m/M)$ is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. $u$ is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.  
+# If $m$ is the mass of the fuel and all is consumed then $M$ is the mass of the fuel empty rocket, $M_0=M+m$ and $v$ the maximum velocity, 
+# 
+# $$\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)$$
+# 
+# In a rocket it is therefore desirable to carry as much mass as fuel as possible so that $1+m/M)$ is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. $u$ is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.  
 # 
 # ## 10.5 Hooke's Law and simple harmonic motion
-# In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke's law $f (x) = -kx$ where $k$ is the force constant and $x$ the displacement from the origin. The minus sign indicates that the force is towards the origin; when $\displaystyle d^2x/dt^2$ is negative $x$ is positive and vice versa. The equation of motion is now
+# In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke's law 
+# 
+# $$\displaystyle f (x) = -kx$$
+# 
+# where $k$ is the force constant and $x$ the displacement from the origin. The minus sign indicates that the force is towards the origin; when $\displaystyle d^2x/dt^2$ is negative $x$ is positive and vice versa. The equation of motion is now
 # 
 # $$\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x $$
 # 
-# The frequency of vibration, or oscillation, is defined as $\displaystyle  \nu =\frac{1}{2\pi}\sqrt{\frac{k}{m}}\, \mathrm{s^{-1}}$ or as $\displaystyle \omega=\sqrt{\frac{k}{m}}$ and substituting this makes the equation of motion
+# The frequency of vibration, or oscillation, is defined as 
+# 
+# $$\displaystyle  \nu =\frac{1}{2\pi}\sqrt{\frac{k}{m}}\, \mathrm{s^{-1}},\quad \text{or as}\quad \omega=\sqrt{\frac{k}{m}}$$
+# 
+# and substituting this makes the equation of motion
 # 
 # $$\displaystyle  \displaystyle\frac{d^2x}{dt^2}=-\omega^2x \qquad\tag{17}$$
 # 
-# which when integrated gives $\displaystyle \left(\frac{dx}{dt}\right)^2=-\omega ^2x^2+c^2$ (see equation 14) and the constant is made $c^2$ as this has to be positive because the velocity $dx/dt$ must be a real not a complex number. Rearranging this equation to find the time gives
+# which when integrated gives 
+# 
+# $$\displaystyle \left(\frac{dx}{dt}\right)^2=-\omega ^2x^2+c^2$$
+# 
+# (see equation 14) and the constant is made $c^2$ as this has to be positive because the velocity $dx/dt$ must be a real not a complex number. Rearranging this equation to find the time gives
 # 
 # $$\displaystyle t=\int\frac{dx}{\sqrt{c^2-\omega^2x^2}}+c_1$$
 # 
-# which is a standard integral giving $\displaystyle t=\frac{1}{\omega}\sin^{-1}\left( \frac{\omega x}{c} \right) +c_1$. Thus 
+# which is a standard integral giving 
+# 
+# $$\displaystyle t=\frac{1}{\omega}\sin^{-1}\left( \frac{\omega x}{c} \right) +c_1$$
+# 
+# Thus 
 # 
 # $$ x=\frac{c}{\omega}\sin(\omega t-\omega c_1) $$
 # 
@@ -474,18 +535,31 @@ simplify(ans)
 # 
 # $$\displaystyle m\frac{d^2x}{dt^2} = mg - T$$
 # 
-# The tension is $T = k(x + s)$ and as $mg = ks$ then $\displaystyle m\frac{d^2x}{dt^2} = -kx$, which is the same as equation (17) and has the solution (20) when the frequency squared is substituted for $k/m$. To evaluate this equation, the oscillation frequency must be found, as must $x_0$ and $v_0$, which are set by the initial conditions.
-# As $v_0 = 0$, when the mass is let go (it is not pushed), then the solution is immediately given by
+# The tension is $T = k(x + s)$ and as $mg = ks$ then 
+# 
+# $$\displaystyle m\frac{d^2x}{dt^2} = -kx$$
+# 
+# which is the same as equation (17) and has the solution (20) when the frequency squared is substituted for $k/m$. To evaluate this equation, the oscillation frequency must be found, as must $x_0$ and $v_0$, which are set by the initial conditions.
+# 
+# As $v_0 = 0$, when the mass is released (it is not pushed), then the solution is immediately given by
 # 
 # $$\displaystyle  x = x_0 \cos(\omega t)$$
 # 
-# If the initial displacement is above the equilibrium position $x_0 = -3$, therefore $x = -3\cos(\omega t)$. Finally, the frequency is found from Hooke's law. At equilibrium, $mg = ks$ and $s = 5$ is the displacement from equilibrium before the mass is moved. Therefore, the force constant $k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}$ and the frequency squared is $\omega^2 = k/m$ or $\omega = 1.4\,\mathrm{ rad\, s^{-1}}$. This corresponds to a natural frequency of $\nu = \omega /2\pi$ or $0.223\,\mathrm{ s^{-1}}$ and period $T = 1/\nu = 4.49$ seconds. The position of the mass at any time $t$ is found to be $x = -3 \cos(1.4t)$. Note that if the question stated that the _weight_ was 2 kg then this would correspond to $mg$ not $m$ and the mass to use would therefore be $2/9.81$ kg.
+# If the initial displacement is above the equilibrium position $x_0 = -3$, therefore $x = -3\cos(\omega t)$. 
+# 
+# Finally, the frequency is found from Hooke's law. At equilibrium, $mg = ks$ and $s = 5$ is the displacement from equilibrium before the mass is moved. Therefore, the force constant $k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}$ and the frequency squared is $\omega^2 = k/m$ or $\omega = 1.4\,\mathrm{ rad\, s^{-1}}$. This corresponds to a natural frequency of $\nu = \omega /2\pi$ or $0.223\,\mathrm{ s^{-1}}$ and period $T = 1/\nu = 4.49$ seconds. The position of the mass at any time $t$ is found to be $x = -3 \cos(1.4t)$. 
+# 
+# Note that if the question stated that the _weight_ was 2 kg then this would correspond to $mg$ not $m$ and the mass to use would therefore be $2/9.81$ kg.
 # 
 # ## 10.7 Total energy
 # 
 # The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion $mv^2/2$, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke's law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is $mgh$ where $h$ is the height change.
 # 
-# If the displacement at time $t$ is $x = A \sin(\omega t + B)$, then the kinetic energy is
+# If the displacement at time $t$ is 
+# 
+# $$\displaystyle x = A \sin(\omega t + B)$$
+# 
+# then the kinetic energy is
 # 
 # $$\displaystyle  KE=\frac{m}{2}\left(\frac{dx}{dt}  \right)^2=\frac{m}{2}A^2\omega^2\cos^2(\omega t+B) $$
 # 
@@ -532,7 +606,11 @@ simplify(ans)
 # Fig. 11b The geometry used to calculate the forces acting on the pendulum.
 # ____
 # 
-# Equating forces produces, $\displaystyle mL\frac{d^2\varphi }{dt^2}=-mg\sin(\varphi)$ which, by cancelling the mass and substituting for $\omega$, produces the equation of motion
+# Equating forces produces, 
+# 
+# $$\displaystyle mL\frac{d^2\varphi }{dt^2}=-mg\sin(\varphi)$$
+# 
+# which, by cancelling the mass and substituting for $\omega$, produces the equation of motion
 # 
 # $$\displaystyle  \frac{d^2\varphi }{dt^2}=-\omega^2\sin(\varphi)$$
 # 
@@ -582,7 +660,7 @@ simplify(ans)
 
 # ## 11.3 Torsional Oscillations in ethene
 # 
-# The ethylene molecule can undergo torsional motion whereby the double bond twists and so each CH$_2$ group oscillates with respect to the other. Naturally, single bonds also do this but to a much greater extent such that complete rotation of a group is possible. We shall examine just the small angle torsional oscillations of a double bond and calculate the motion using classical equations of motion. This section follows the method used in chapter V of Cohen-Tannoudji, Diu, & Laloë, 'Quantum mechanics'. 
+# The ethylene molecule can undergo torsional motion whereby the double bond twists and so each CH$_2$ group oscillates with respect to the other. Naturally, single bonds also do this but to a much greater extent such that complete rotation of a group is possible. We shall examine just the small angle torsional oscillations of a double bond and calculate the motion using classical equations of motion. This section follows the method used in chapter V of Cohen-Tannoudji, Diu, & Laloë, 'Quantum Mechanics'. 
 # 
 # The potential for the motion of the CH$_2$ is provided by the double bond and by comparison with other molecules, such as the inversion of ammonia we shall suppose that the potential has the form
 # 
@@ -628,13 +706,23 @@ simplify(ans)
 # 
 # $$\displaystyle \frac{d^2\alpha}{dt^2}=-\frac{4V_0}{I}\alpha$$
 # 
-# where the torsion frequency is $\displaystyle \omega=2\sqrt{\frac{V_0}{I}}$ by comparison with eqn. 17. A solution is $\alpha=A\sin(\omega t+B)$ where $A,B$ are constants determined by initial conditions such as $\alpha=0,t=0$ and $d\alpha/dt=\omega_0, t=0$, where $\omega_0$ is the initial torsion frequency.
+# where the torsion frequency is 
+# 
+# $$\displaystyle \omega=2\sqrt{\frac{V_0}{I}}$$
+# 
+# by comparison with eqn. 17. A solution is 
+# 
+# $$\displaystyle \alpha=A\sin(\omega t+B)$$
+# 
+# where $A,B$ are constants determined by initial conditions such as $\alpha=0,t=0$ and $d\alpha/dt=\omega_0, t=0$, where $\omega_0$ is the initial torsion frequency.
 
 # ## 11.4 The Cable equation. Voltage change in a Cell
 # 
 # The biological cell consists of a bilayer membrane, made mainly of phospholipids, encapsulating the cytoplasm. The membrane also contains various proteins that connect the inner cytoplasm to the outside of the cell. The cytoplasm is a gel-like substance that is highly conductive, unlike the membrane itself, because it contains various ions, as well as organelles, such as the mitochondria. Some cells, such as in muscles and nerves, can be stimulated to act by an electrical potential. When this potential travels along a cell it acts to trigger cellular events. 
 # 
-# The Cable model of the cell has been borrowed and simplified from a similar one of a telegraph cable first worked out by Kelvin in the 1850's. In this model the central core (the cytoplasm) has high conductivity and so low electrical resistance and the membrane low conductivity and high resistance, thus current can flow along the cell quickly with but only slowly is this lost via ions passing through ion-channel proteins in the membrane itself. The analogy with a telegraph wire is clear, the wire itself has low resistance to current flow but some small leakage to ground must also occur through any partial insulation, such as at the receivers or telegraph pole connections or through the air. Sometimes the comparison with a leaky hosepipe is also made.
+# The Cable model of the cell has been borrowed and simplified from a similar one of a telegraph cable first worked out by W. Thompson (late Lord Kelvin) in the 1850's. At that time he was scientific consultant to the Atlantic Telegraph Company trying to lay the first trans-Atlantic telegraph cable from Valencia in Ireland to Newfoundland. 
+# 
+# In our model the central core (the cytoplasm) has high conductivity and so low electrical resistance and the membrane low conductivity and high resistance, thus current can flow along the cell quickly with but only slowly is this lost via ions passing through ion-channel proteins in the membrane itself. The analogy with a telegraph wire is clear, the wire itself has low resistance to current flow but some small leakage to ground must also occur through any partial insulation, such as at the receivers or telegraph pole connections or through the air. Sometimes the comparison with a leaky hosepipe is also made.
 # 
 # The resistance can be used to compare the current flow in the cytoplasm and in the membrane. In the cytoplasm the *resistivity* $r_c$ is defined as resistance per unit length of cable and so has units $\Omega$/cm, and the resistivity of current flowing through the membrane $r_m$ is the resistance of a unit length of the membrane in $\Omega$ m. This means that the resistance is reduced as a membrane's length increases because we divide by length to obtain the resistance.  The physical reason is that there are more pores to allow current to flow through the longer the membrane is. Conversely, the cytoplasm resistance increases with length, as expected as current flows through more substance. The resistivity has units of $\Omega$/m so this is multiplied by length to obtain the resistance. The membrane also has capacitance $C_m$, (unit F/m=(C/V)/m) and the capacitance increases with length as there will be more ions with opposite charge on either side of the membrane as the length increases. 
 # 
@@ -711,7 +799,7 @@ simplify(ans)
 # 
 # where $A,B$ are constants determined by using the boundary conditions.
 # 
-# ### **Infinite length cable**
+# ### **(i) Infinite length cable**
 # 
 # If the cell (cable) is of infinite length then the potential will be zero at its end, so one condition is $x=\infty, V=0$ and the other is an initial voltage $V_0$ imposed by an electrode placed at $u=0$ .
 # 
@@ -721,7 +809,7 @@ simplify(ans)
 # 
 # which clearly shows how the potential decays away from one end with $\lambda$ as its characteristic parameter, just as the lifetime does in the first order decay of a species.
 # 
-# ### **Finite length**
+# ### **(ii) Finite length but open ended**
 # 
 # In a finite length cable of length $L$ but open at its end, the boundary conditions are changed to $V=0, x=L$, called an absorbing boundary condition and an electrode again causes a potential $V_0$ at $x=0$. 
 # 
@@ -729,21 +817,35 @@ simplify(ans)
 # 
 # $$\displaystyle V_0=A+B \quad \text{and} \quad 0=Ae^{-L/\lambda}+Be^{L/\lambda}$$
 # 
-# from which $A,B$ are calculated as $B=V_0/(1-e^{2L/\lambda}),\; A=-V_0e^{2L/\lambda}/(1-e^{2L/\lambda})$ giving
+# from which $A,B$ are calculated as 
 # 
-# $$\displaystyle V=\frac{V_0}{1-e^{2L/\lambda}}\left(- e^{(2L-x)/\lambda} + e^{x/\lambda}  \right)=\frac{V_0}{e^{L/\lambda}-e^{-L/\lambda}}\left( e^{(L-x)/\lambda} - e^{-(L-x)/\lambda } \right)$$
+# $$\displaystyle B=V_0/(1-e^{2L/\lambda}),\; A=-V_0e^{2L/\lambda}/(1-e^{2L/\lambda})$$
 # 
-# This result can also be expressed as a ratio of sinh functions as $\displaystyle V=V_0\frac{\sinh((L-u)/\lambda)}{\sinh(L/\lambda)}$,
+# giving
 # 
-# At $x=0$, $V=V_0$ as it should, and at large $x\to L$ the potential tends to zero, because $\left( e^{L-x} - e^{-(L-x) } \right)\to 0$.
+# $$\displaystyle \begin{align}V&=\frac{V_0}{1-e^{2L/\lambda}}\left(- e^{(2L-x)/\lambda} + e^{x/\lambda}  \right)\\&=\frac{V_0}{e^{L/\lambda}-e^{-L/\lambda}}\left( e^{(L-x)/\lambda} - e^{-(L-x)/\lambda } \right)\end{align}$$
 # 
-# ### **Sealed Cable**
+# This result can also be expressed as a ratio of sinh functions as 
 # 
-# If the cable is sealed at its end and has length $L$, then one initial condition must be that the gradient of the potential is zero at $x=L$, and again $x=0,V=V_0$ is imposed by an electrode. The derivative being zero produces $dV/dx=0=-Ae^{-x/\lambda}+Be^{x/\lambda}$ and so $Ae^{-x/\lambda}=Be^{x/\lambda}$. Working this through produces almost the same result as for the finite cable but with two sign changes.
+# $$\displaystyle V=V_0\frac{\sinh((L-u)/\lambda)}{\sinh(L/\lambda)}$$
+# 
+# At $x=0$, $V=V_0$ as it should, and at large $x\to L$ the potential tends to zero, because 
+# 
+# $$\displaystyle \left( e^{L-x} - e^{-(L-x) } \right)\to 0$$
+# 
+# ### **(iii) Sealed Cable**
+# 
+# If the cable is sealed at its end and has length $L$, then one initial condition must be that the gradient of the potential is zero at $x=L$, and again $x=0,V=V_0$ is imposed by an electrode. The derivative being zero produces 
+# 
+# $$\displaystyle dV/dx=0=-Ae^{-x/\lambda}+Be^{x/\lambda},\quad\text{and so}\quad  Ae^{-x/\lambda}=Be^{x/\lambda}$$
+# 
+# Working this through produces almost the same result as for the finite cable but with two sign changes.
 # 
 # $$\displaystyle V=\frac{V_0}{e^{L/\lambda}+e^{-L/\lambda}}\left( e^{(L-x)/\lambda} + e^{-(L-x)/\lambda } \right)$$
 # 
-# This result can also be expressed as a ratio of cosh functions $V=V_0\cosh((L-u)/\lambda)/\cosh(L/\lambda)$. 
+# This result can also be expressed as a ratio of cosh functions 
+# 
+# $$\displaystyle V=V_0\cosh((L-u)/\lambda)/\cosh(L/\lambda)$$ 
 # 
 # At $x=0$, $V=V_0$ as it should, and at large $L$ and when $x\to L$ and $e^L/\lambda \gg e^{-L/\lambda}$ the potential tends to $2e^{-L/\lambda}$ which clearly becomes smaller and tends to zero as $L$ increases.
 # 
@@ -850,7 +952,11 @@ simplify(ans)
 # 
 # $$\displaystyle Ae^{ik\theta}+Be^{-ik\theta} =Ae^{ik(2\pi+\theta)}+Be^{-ik(2\pi +\theta)}$$
 # 
-# which will be true for any $A$ and $B$ if $\displaystyle e^{ik\theta} = e^{−ik\theta} = 1$. This condition means that $k$ must be an integer with values $k = 0,\,\pm 1, \,\pm$ 2, $\cdots$. Conventionally the solution $\displaystyle \varphi =Ae^{ik\theta}$ is chosen and using the normalizing condition $\displaystyle N^2\int_0^{2\pi}\varphi^*\varphi d\theta=1$, the wavefunction is;
+# which will be true for any $A$ and $B$ if $\displaystyle e^{ik\theta} = e^{−ik\theta} = 1$. This condition means that $k$ must be an integer with values $k = 0,\,\pm 1, \,\pm$ 2, $\cdots$. Conventionally the solution $\displaystyle \varphi =Ae^{ik\theta}$ is chosen and using the normalizing condition 
+# 
+# $$\displaystyle N^2\int_0^{2\pi}\varphi^*\varphi d\theta=1$$
+# 
+# the wavefunction is;
 # 
 # $$\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}  e^{ik\theta} \qquad\tag{27}$$
 # 
@@ -858,7 +964,7 @@ simplify(ans)
 # 
 # As the lowest energy is zero it initially suggests that the Heisenberg uncertainty principle $\Delta \theta \Delta p \ge \hbar/2$ is not obeyed. However, when $J = 0$ the wavefunction is a constant, $1/ (2\pi)$, so we cannot know what angle the rotor has and this means that $\Delta \theta \Delta p  \ne 0$. 
 
-# ## 11.6 Bernoulli Principle, fluid flow in a pipe
+# ## 11.7 Bernoulli Principle, fluid flow in a pipe
 # 
 # The density of a flowing liquid is generally constant as the pressure changes and when this is so the liquid is considered to be *incompressible*. If a liquid flows towards a narrowing in a pipe, then the static pressure of the liquid is higher in the wider part of the pipe and the flow is slow, whereas in its narrow part the flow is increased and the static pressure reduced. This is called Bernoulli's Principle.
 # 
@@ -897,7 +1003,7 @@ simplify(ans)
 # 
 # $$\displaystyle \frac{v^2}{2}+gz+\frac{p}{\rho}=C$$
 # 
-# where $g$ is the acceleration due to gravity and is the general form of the equation. 
+# where $g$ is the acceleration due to gravity and is the general form of the equation and shows that the pressure plus the sum of kinetic and potential energy is a constant. 
 
 # In[ ]:
 

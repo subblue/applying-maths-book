@@ -1568,9 +1568,9 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-concentration-of-ion-pairs">
+    <a class="reference internal nav-link" href="#i-concentration-of-ion-pairs">
      <strong>
-      Example. Concentration of ion pairs
+      (i)  Concentration of ion pairs
      </strong>
     </a>
    </li>
@@ -1686,9 +1686,9 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-concentration-of-ion-pairs">
+    <a class="reference internal nav-link" href="#i-concentration-of-ion-pairs">
      <strong>
-      Example. Concentration of ion pairs
+      (i)  Concentration of ion pairs
      </strong>
     </a>
    </li>
@@ -1759,10 +1759,15 @@ title="Print to PDF"
 <p>To start this chapter, some details on numerical accuracy are reviewed; next simple integration methods are described with a few examples and problems. More difficult, and interesting, is the numerical integration of differential equations, some of which only have numerical solutions. The various methods used are explained. A different numerical approach is taken in the next chapter on Monte Carlo methods. Simple integration is rather slow by this method but integrating differential equations is very robust. Monte Carlo methods are very versatile at simulating physical processes, such as diffusion or fluorescence, and occasionally this is the only way to do the calculation. Simulation also provides a good way to understand the processes involved, some of which can be very complex and not always easily translated into differential equations.</p>
 <section id="rounding-errors">
 <h2>1.1 Rounding errors<a class="headerlink" href="#rounding-errors" title="Permalink to this headline">#</a></h2>
-<p>In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is expanded as the series <span class="math notranslate nohighlight">\(1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\)</span> and this is plotted close to its minimum at <span class="math notranslate nohighlight">\(x\approx 1\)</span> in Fig.1. While the scale is small, <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span>, determining the exact root of the equation numerically is difficult. Of course, we know it is at <span class="math notranslate nohighlight">\(1\)</span>, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.</p>
-<p>A real number is converted in the computer into a floating-point number represented as <span class="math notranslate nohighlight">\(x = \pm 0.d_1d_2d_3d_4 \cdot 10^y\)</span> which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction <span class="math notranslate nohighlight">\(0.d_1d_2d_3d_4\)</span>, where <span class="math notranslate nohighlight">\(d_1\)</span> etc. are the digits <span class="math notranslate nohighlight">\(0\cdots 9\)</span>. A floating-point number is usually described as a single or double precision and the number of decimal places is typically <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(14\)</span> respectively; this depends on the type of computer being used. Normally nowadays double precision is standard for example <span class="math notranslate nohighlight">\(17\)</span> digits.</p>
-<p>However, as seen in Fig. 1, 17 digits are not good enough to find the root; <span class="math notranslate nohighlight">\(25\)</span> decimal places give a far more accurate result. The instruction Digits:= 25, sets <span class="math notranslate nohighlight">\(25\)</span> decimal place precision for floating point numbers.
-Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is</p>
+<p>In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is expanded as the series</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (1 - x)^6=1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\]</div>
+<p>and this is plotted close to its minimum at <span class="math notranslate nohighlight">\(x\approx 1\)</span> in Fig.1. While the scale is small, <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span>, determining the exact root of the equation numerically is difficult. Of course, we know it is at <span class="math notranslate nohighlight">\(1\)</span>, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.</p>
+<p>A real number is converted in the computer into a floating-point number represented as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x = \pm 0.d_1d_2d_3d_4 \cdot 10^y\]</div>
+<p>which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction <span class="math notranslate nohighlight">\(0.d_1d_2d_3d_4\)</span>, where <span class="math notranslate nohighlight">\(d_1\)</span> etc. are the digits <span class="math notranslate nohighlight">\(0\cdots 9\)</span>. A floating-point number is usually described as a single or double precision and the number of decimal places is typically <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(14\)</span> respectively; naturally this depends on the type of computer being used. Normally nowadays double precision is standard for example <span class="math notranslate nohighlight">\(17\)</span> digits.</p>
+<p>However, as seen in Fig. 1, <span class="math notranslate nohighlight">\(17\)</span> digits are not good enough to find the root; <span class="math notranslate nohighlight">\(25\)</span> decimal places give a far more accurate result. Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">20.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">15.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">6</span>
@@ -1770,7 +1775,7 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 <span class="n">s</span>  <span class="o">=</span> <span class="mf">0.8</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">snew</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-10</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-12</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">snew</span>
@@ -1784,7 +1789,7 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 </div>
 </div>
 </div>
-<p>With typical double precision (<span class="math notranslate nohighlight">\(16\)</span> decimal places), the root found is <span class="math notranslate nohighlight">\(1.0030182818841857\)</span>, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with <span class="math notranslate nohighlight">\(25\)</span> digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.</p>
+<p>With typical double precision (<span class="math notranslate nohighlight">\(16\)</span> decimal places), the root found is <span class="math notranslate nohighlight">\(1.0030182818841857\)</span>, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with <span class="math notranslate nohighlight">\(25\)</span> digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.  Python has the ‘decimal’ library to deal with higher precision and also there is a third party library called mpath.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig1.png" /></p>
 <p>Figure 1. Plots of the series expansion of <span class="math notranslate nohighlight">\((1 - x)^6\)</span> with two different values of floating point precision. (Notice the axes range.)</p>
 </section>
@@ -1792,59 +1797,62 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 <section id="truncation-errors">
 <h2>1.2 Truncation errors<a class="headerlink" href="#truncation-errors" title="Permalink to this headline">#</a></h2>
 <p>In summing a series, the number of terms to be added has to be decided in advance. This automatically leads to an error that is nothing to do with arithmetical precision. The calculation should be repeated with more terms until the number of decimal places you require is continuously obtained. Rounding errors must additionally be considered, especially if the series contains alternating positive and negative terms; the errors can accumulate as the summation continues but will not be the same for all values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>Consider the series <span class="math notranslate nohighlight">\( \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\)</span> which is valid for all <span class="math notranslate nohighlight">\(x\)</span>. If the series is summed up to the term <span class="math notranslate nohighlight">\(x^n/n!\)</span> with <span class="math notranslate nohighlight">\(x \gt 0\)</span>, the error is less than <span class="math notranslate nohighlight">\(\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|\)</span>. The values of <span class="math notranslate nohighlight">\(\sin(0.5)\)</span> is <span class="math notranslate nohighlight">\(0.47942553\)</span> whether calculated directly using Python or as the summation up to the <span class="math notranslate nohighlight">\(x^7\)</span> term. If, however, <span class="math notranslate nohighlight">\(x\)</span> is large, for instance <span class="math notranslate nohighlight">\(x = 5.5\pi\)</span>, then we know by drawing a graph that  <span class="math notranslate nohighlight">\(\sin(x) = -1\)</span>, but by summation up to <span class="math notranslate nohighlight">\(x^7\)</span> the result is <span class="math notranslate nohighlight">\(-79258.34\)</span>: clearly this is ridiculous because <span class="math notranslate nohighlight">\(\sin(x) \le 1 \)</span> for all <span class="math notranslate nohighlight">\(x\)</span>. Only if the number of terms in the summation is increased to at least terms <span class="math notranslate nohighlight">\(\gt x^{59}\)</span>, and the numerical precision increased to <span class="math notranslate nohighlight">\(20\)</span> decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of <span class="math notranslate nohighlight">\(\sin(x)\)</span> are well known, but if you are summing a series whose result is unknown, then great care is necessary.</p>
+<p>Consider the series</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\]</div>
+<p>which is valid for all <span class="math notranslate nohighlight">\(x\)</span>. If the series is summed up to the term <span class="math notranslate nohighlight">\(x^n/n!\)</span> with <span class="math notranslate nohighlight">\(x \gt 0\)</span>, the error is less than <span class="math notranslate nohighlight">\(\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|\)</span>. The value of <span class="math notranslate nohighlight">\(\sin(0.5)\)</span> is <span class="math notranslate nohighlight">\(0.47942553\)</span> whether calculated directly using Python or as the summation up to the <span class="math notranslate nohighlight">\(x^7\)</span> term. If, however, <span class="math notranslate nohighlight">\(x\)</span> is large, for instance <span class="math notranslate nohighlight">\(x = 5.5\pi\)</span>, then we know by drawing a graph that  <span class="math notranslate nohighlight">\(\sin(x) = -1\)</span>, but by summation up to <span class="math notranslate nohighlight">\(x^7\)</span> the result is <span class="math notranslate nohighlight">\(-79258.34\)</span>: clearly this is ridiculous because <span class="math notranslate nohighlight">\(\sin(x) \le 1 \)</span> for all <span class="math notranslate nohighlight">\(x\)</span>. Only if the number of terms in the summation is increased to at least terms <span class="math notranslate nohighlight">\(\gt x^{59}\)</span>, and the numerical precision increased to <span class="math notranslate nohighlight">\(20\)</span> decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of <span class="math notranslate nohighlight">\(\sin(x)\)</span> are well known, but if you are summing a series whose result is unknown, then great care is necessary.</p>
 </section>
 <section id="unstable-recursion-magnification-of-errors">
 <h2>1.3 Unstable recursion: magnification of errors<a class="headerlink" href="#unstable-recursion-magnification-of-errors" title="Permalink to this headline">#</a></h2>
 <p>In solving integrals, a recursion formula can often be found, particularly when the integration is done by parts. An example met before (Q4.22) is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_n=\int_0^1 x^ne^{x-1}dx = x^ne^{x-1} \bigg|_0^1 -n\int_0^1 x^{n-1}e^{x-1} dx =1 - nI_{n-1}\]</div>
-<p>To evaluate the integral with the code below different <span class="math notranslate nohighlight">\(n\)</span>, the starting value with <span class="math notranslate nohighlight">\(n = 0\)</span> is required, which is <span class="math notranslate nohighlight">\(I_0 = 1 - 1/e\)</span>. In the recursion calculation, <span class="math notranslate nohighlight">\(s\)</span> has, arbitrarily, been chosen as the name for the integral because <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(int\)</span> are reserved names in Sympy. Recall that <span class="math notranslate nohighlight">\(\mathtt{s= 1 - n* s}\)</span>; is an assignment, meaning that the new value of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1 - n \times (current\; value)\)</span>. Some of the results are tabulated below the code, <span class="math notranslate nohighlight">\(n\)</span> is the power to which <span class="math notranslate nohighlight">\(x\)</span> is raised, <span class="math notranslate nohighlight">\(s\)</span> is the recursion answer and <span class="math notranslate nohighlight">\(f\)</span> the result of algebraic integration.</p>
+<p>To evaluate the integral with the code below different <span class="math notranslate nohighlight">\(n\)</span>, the starting value with <span class="math notranslate nohighlight">\(n = 0\)</span> is required, which is <span class="math notranslate nohighlight">\(I_0 = 1 - 1/e\)</span>. In the recursion calculation, <span class="math notranslate nohighlight">\(s\)</span> has, arbitrarily, been chosen as the name for the integral because <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(int\)</span> are reserved names in Sympy. Recall that <span class="math notranslate nohighlight">\(\mathtt{s= 1 - n* s}\)</span>; is an assignment, meaning that the new value of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1 - n \times (current\; value)\)</span>. Some of the results are tabulated below the code, <span class="math notranslate nohighlight">\(n\)</span> is the power to which <span class="math notranslate nohighlight">\(x\)</span> is raised, <span class="math notranslate nohighlight">\(s\)</span> is the recursion answer and <span class="math notranslate nohighlight">\(f(n)\)</span> the result of algebraic integration. In fact the situation is worse as the result <span class="math notranslate nohighlight">\(f(n)\)</span> depends on whether the limits used are real or integer numbers, i.e <span class="math notranslate nohighlight">\((x,0,1)\)</span> or <span class="math notranslate nohighlight">\((x,0.1,1.0)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>          <span class="c1"># use SymPy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>         <span class="c1"># use SymPy</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>                    <span class="c1"># initial value</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>                    <span class="c1"># initial value</span>
 <span class="n">ans_s</span> <span class="o">=</span> <span class="p">[]</span>                                   <span class="c1"># arrays to hold results</span>
 <span class="n">ans_f</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">s</span>                            <span class="c1"># recursion</span>
     <span class="n">ans_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>                          <span class="c1"># save values</span>
     <span class="n">eqn</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># normal algebraic integration</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># normal algebraic integration, from 0 to 1</span>
     <span class="n">ans_f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">evalf</span><span class="p">())</span>                  <span class="c1"># save result</span>
     <span class="k">pass</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;n      s      f(n)&#39;</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ans_s</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>  <span class="p">)</span>    <span class="c1"># format output</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:3d}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>  <span class="p">)</span>    <span class="c1"># format output</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n      s      f(n)
-1 0.3678794 0.3678794
-2 0.2642411 0.2642411
-3 0.2072766 0.2072766
-4 0.1708934 0.1708934
-5 0.1455329 0.1455329
-6 0.1268023 0.1268023
-7 0.1123835 0.1123835
-8 0.1009319 0.1009319
-9 0.0916122 0.0916122
-10 0.0838770 0.0838770
-11 0.0773522 0.0773522
-12 0.0717732 0.0717732
-13 0.0669477 0.0669479
-14 0.0627310 0.0627326
-15 0.0590337 0.0590209
-16 0.0554593 0.0556640
-17 0.0571918 0.0625000
-18 -0.029453 0
-19 1.5596197 -16.00000
-20 -30.19239 0
-21 635.04029 16384.000
-22 -13969.88 0
+  1 0.36787944 0.36787944
+  2 0.26424111 0.26424111
+  3 0.20727664 0.20727664
+  4 0.17089341 0.17089341
+  5 0.14553294 0.14553294
+  6 0.12680235 0.12680235
+  7 0.11238350 0.11238350
+  8 0.10093196 0.10093196
+  9 0.09161229 0.09161229
+ 10 0.08387707 0.08387707
+ 11 0.07735222 0.07735222
+ 12 0.07177324 0.07177326
+ 13 0.06694777 0.06694793
+ 14 0.06273108 0.06273269
+ 15 0.05903379 0.05902099
+ 16 0.05545930 0.05566406
+ 17 0.05719187 0.06250000
+ 18 -0.0294536 0
+ 19 1.55961974 -16.000000
+ 20 -30.192394 0
+ 21 635.040292 16384.0000
+ 22 -13969.886 0
 </pre></div>
 </div>
 </div>
@@ -1862,7 +1870,10 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 <p>where <span class="math notranslate nohighlight">\(r\)</span> is a constant and this equation is the discrete version of the logistic equation (Verhulst 1838) used to describe population growth,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dN/dt=r\,N(1-k/N)\]</div>
-<p>where <span class="math notranslate nohighlight">\(N\)</span> is the population <span class="math notranslate nohighlight">\(r\)</span> the growth rate and <span class="math notranslate nohighlight">\(k\)</span> a constant the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction <span class="math notranslate nohighlight">\(A+X\leftrightharpoons 2X,\quad X+B\to C\)</span> has the related rate equation</p>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the population <span class="math notranslate nohighlight">\(r\)</span> the growth rate and <span class="math notranslate nohighlight">\(k\)</span> a constant the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A+X\leftrightharpoons 2X,\quad X+B\to C\]</div>
+<p>has the related rate equation</p>
 <div class="math notranslate nohighlight">
 \[dX/dt=-(k_1A+k_2B)X+4k_2X^2\]</div>
 <p>if <span class="math notranslate nohighlight">\([A],[B]\)</span> are held constant.</p>
@@ -1930,7 +1941,10 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 <section id="secant-method">
 <h2>2.1 Secant method<a class="headerlink" href="#secant-method" title="Permalink to this headline">#</a></h2>
 <p>We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.</p>
-<p>The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If <span class="math notranslate nohighlight">\(f (x) = 0\)</span> is the equation whose roots or <span class="math notranslate nohighlight">\(x\)</span> values we want to find, then, in a recursive scheme, the next <span class="math notranslate nohighlight">\(x\)</span> value is given by Newton - Raphson as <span class="math notranslate nohighlight">\(x_{n+1} = x_n  f(x_n)/f'(x_n)\)</span> with <span class="math notranslate nohighlight">\(n = 0, 1, 2 \cdots\)</span> and <span class="math notranslate nohighlight">\(f'\)</span> is the derivative with respect to <span class="math notranslate nohighlight">\(x\)</span>. Notice how similar this equation is to the general form of the logistic map in the previous section, i.e <span class="math notranslate nohighlight">\(x_{n+1}=f(x_n)\)</span>.  The <span class="math notranslate nohighlight">\(x_0\)</span> value to start the calculation must be somewhere near to the root, and can be estimated by plotting the function. At the end of each step, the new value <span class="math notranslate nohighlight">\(x_{n+1}\)</span> is substituted into the right-hand side of the equation, and the process is repeated until the absolute value of the function becomes less than some preset tolerance or the number of iterations is exceeded.
+<p>The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If <span class="math notranslate nohighlight">\(f (x) = 0\)</span> is the equation whose roots or <span class="math notranslate nohighlight">\(x\)</span> values we want to find, then, in a recursive scheme, the next <span class="math notranslate nohighlight">\(x\)</span> value is given by Newton - Raphson as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_{n+1} = x_n  f(x_n)/f'(x_n),\quad n = 0, 1, 2 \cdots\]</div>
+<p>and <span class="math notranslate nohighlight">\(f'\)</span> is the derivative with respect to <span class="math notranslate nohighlight">\(x\)</span>. Notice how similar this equation is to the general form of the logistic map in the previous section, i.e <span class="math notranslate nohighlight">\(x_{n+1}=f(x_n)\)</span>.  The <span class="math notranslate nohighlight">\(x_0\)</span> value to start the calculation must be somewhere near to the root, and can be estimated by plotting the function. At the end of each step, the new value <span class="math notranslate nohighlight">\(x_{n+1}\)</span> is substituted into the right-hand side of the equation, and the process is repeated until the absolute value of the function becomes less than some preset tolerance or the number of iterations is exceeded.
 In the secant method, the derivative is approximated as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f'(x_n)\approx \frac{\Delta f}{\Delta x}=\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}\]</div>
@@ -2193,8 +2207,8 @@ quadratic function to data points rather than straight lines; the formula is</p>
 </div>
 </div>
 <p>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.</p>
-<section id="example-concentration-of-ion-pairs">
-<h3><strong>Example. Concentration of ion pairs</strong><a class="headerlink" href="#example-concentration-of-ion-pairs" title="Permalink to this headline">#</a></h3>
+<section id="i-concentration-of-ion-pairs">
+<h3><strong>(i)  Concentration of ion pairs</strong><a class="headerlink" href="#i-concentration-of-ion-pairs" title="Permalink to this headline">#</a></h3>
 <p>Bjerrum’s theory of ionic association in solution, the concentration of ion pairs is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n_{1,2}=3n_1\left( \frac{e^2}{4\pi\epsilon_0k_BT} \right)^3\left( \frac{1}{\epsilon a_0} \right)^3\int_2^be^xx^{-4}dx\]</div>
@@ -2267,13 +2281,24 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>In this form the centrifugal energy is a function of <span class="math notranslate nohighlight">\(r\)</span> and the total potential energy can be considered to be the effective potential</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle U_{eff}(r) = E_0\left(\frac{b}{r}\right)^2 + U(r)\]</div>
-<p>instead of simply <span class="math notranslate nohighlight">\(U(r)\)</span>. By definition, angular momentum is <span class="math notranslate nohighlight">\(\displaystyle L = \mu r^2\frac{dθ}{dt}\)</span> and also as <span class="math notranslate nohighlight">\(L = \mu bv_0\)</span>, therefore <span class="math notranslate nohighlight">\(\displaystyle d\theta = b v_0r^{-2}dt\)</span>.</p>
-<p>Our aim is to find <span class="math notranslate nohighlight">\(\theta\)</span> the scattering angle and, because the last equation involves <span class="math notranslate nohighlight">\(d\theta\)</span> and <span class="math notranslate nohighlight">\(dt\)</span>, an integration will be needed, and a change of variable to <span class="math notranslate nohighlight">\(r\)</span> from <span class="math notranslate nohighlight">\(t\)</span>. This change is found using the energy which, by definition, is <span class="math notranslate nohighlight">\(E = \mu(dr/dt)^2/2\)</span> giving <span class="math notranslate nohighlight">\(\displaystyle dt = \sqrt{\frac{\mu}{2E}}dr\)</span>. Combining this with <span class="math notranslate nohighlight">\(d\theta = bv_0r^{−2}dt\)</span>, substituting <span class="math notranslate nohighlight">\(E = \mu v^2/2\)</span>, using equation 7, and simplifying a little gives the differential equation;</p>
+<p>instead of simply <span class="math notranslate nohighlight">\(U(r)\)</span>. By definition, angular momentum is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L = \mu r^2\frac{dθ}{dt}\]</div>
+<p>and also as <span class="math notranslate nohighlight">\(L = \mu bv_0\)</span>, therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d\theta = b v_0r^{-2}dt\]</div>
+<p>Our aim is to find <span class="math notranslate nohighlight">\(\theta\)</span> the scattering angle and, because the last equation involves <span class="math notranslate nohighlight">\(d\theta\)</span> and <span class="math notranslate nohighlight">\(dt\)</span>, an integration will be needed, and a change of variable to <span class="math notranslate nohighlight">\(r\)</span> from <span class="math notranslate nohighlight">\(t\)</span>. This change is found using the energy which, by definition, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E = \mu(dr/dt)^2/2\]</div>
+<p>giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dt = \sqrt{\frac{\mu}{2E}}dr\]</div>
+<p>Combining this with <span class="math notranslate nohighlight">\(d\theta = bv_0r^{−2}dt\)</span>, substituting <span class="math notranslate nohighlight">\(E = \mu v^2/2\)</span>, using equation 7, and simplifying a little gives the differential equation;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\theta}{dr}=-\frac{b}{r^2}\left(1-\frac{U(r)}{E_0}-\frac{b^2}{r^2}  \right)^{-1/2} \qquad\tag{8}\]</div>
 <p>The leading negative sign is introduced because <span class="math notranslate nohighlight">\(d\theta /dr\)</span> describes the incoming particle. The angle <span class="math notranslate nohighlight">\(\theta\)</span>, which depends on energy <span class="math notranslate nohighlight">\(E_0\)</span> and impact parameter <span class="math notranslate nohighlight">\(b\)</span>,  can be calculated by integrating from its minimum value at <span class="math notranslate nohighlight">\(r = r_0\)</span> to infinity, and takes the form,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \theta_0(E_0,b) = -\int_{\infty}^{r_0} \frac{d\theta}{dr} dr =+b\int_{r_0}^{\infty}\frac{1}{r^2\sqrt{1-\frac{U(r)}{E_0} -\frac{b^2}{r^2}  }}dr \qquad\tag{9}\]</div>
+\[\displaystyle \theta_0(E_0,b) = -\int_{\infty}^{r_0} \frac{d\theta}{dr} dr =+b\int_{r_0}^{\infty}\frac{1}{r^2\sqrt{1-U(r)/E_0 -b^2/r^2  }}dr \qquad\tag{9}\]</div>
 <p>Note that the angle <span class="math notranslate nohighlight">\(\theta_0\)</span> depends on the impact parameter <span class="math notranslate nohighlight">\(b\)</span>, the initial energy of the particle <span class="math notranslate nohighlight">\(E_0\)</span>, and the potential <span class="math notranslate nohighlight">\(U\)</span>, each of which must be known, as must <span class="math notranslate nohighlight">\(r_0\)</span>, before the calculation can be completed.</p>
 <p>This equation is also conveniently rewritten as <span class="math notranslate nohighlight">\(\theta_0=\int g(r)dr\)</span> where</p>
 <div class="math notranslate nohighlight">
@@ -2291,28 +2316,38 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>The next step depends on the potential and as an example, the results of a hard sphere collision between two spheres is shown in figure 5. In this potential if the sum of the two colliding spheres is  <span class="math notranslate nohighlight">\(d\)</span> the potential is infinite when <span class="math notranslate nohighlight">\(b \le d\)</span> and zero otherwise. This means that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \theta_0= +b\int_{d}^{\infty}\frac{1}{r^2\sqrt{1 -\frac{b^2}{r^2}  }}dr \]</div>
-<p>changing the variable to <span class="math notranslate nohighlight">\(u=1/r\)</span> produces <span class="math notranslate nohighlight">\(dr=-dr/r^2\)</span> and then <span class="math notranslate nohighlight">\(\displaystyle \theta_0= \int_d^\infty (1-b^2u^2)^{-1/2}du\)</span> and this has a standard form;</p>
+<p>changing the variable to <span class="math notranslate nohighlight">\(u=1/r\)</span> produces <span class="math notranslate nohighlight">\(dr=-dr/r^2\)</span> and then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \theta_0= \sin^{-1}\left(\frac{b}{d} \right)\]</div>
-<p>and so the scattering angle is <span class="math notranslate nohighlight">\(\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)\)</span> which is independent of the collision energy. This is shown in fig 5, where <span class="math notranslate nohighlight">\(x = b/d\)</span>.</p>
+\[\displaystyle \theta_0= \int_d^\infty (1-b^2u^2)^{-1/2}du=\sin^{-1}\left(\frac{b}{d} \right)\]</div>
+<p>which is a standard integral, and so the scattering angle is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)\]</div>
+<p>which is independent of the collision energy. This is shown in fig 5, where <span class="math notranslate nohighlight">\(x = b/d\)</span>.</p>
 </section>
 <section id="the-coulomb-potential">
 <h2>3.9 The  Coulomb potential<a class="headerlink" href="#the-coulomb-potential" title="Permalink to this headline">#</a></h2>
-<p>The Coulomb potential energy between charges <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> at separation <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(U(r) = \alpha/r\)</span> where <span class="math notranslate nohighlight">\(\alpha = q_1q_2/4\pi \epsilon_0\)</span> in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This <span class="math notranslate nohighlight">\(1/r\)</span> form of potential also describes that due to gravity, where <span class="math notranslate nohighlight">\(\alpha = -Gm_1m_2\)</span>. For example, it will describe a comet being attracted to and flung around the sun or a planet, <span class="math notranslate nohighlight">\(G\)</span> being the gravitational constant and <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> the masses.</p>
+<p>The Coulomb potential energy between charges <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> at separation <span class="math notranslate nohighlight">\(r\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U(r) = \frac{\alpha}{r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha = q_1q_2/4\pi \epsilon_0\)</span> in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This <span class="math notranslate nohighlight">\(1/r\)</span> form of potential also describes that due to gravity, where <span class="math notranslate nohighlight">\(\alpha = -Gm_1m_2\)</span>. For example, it will describe a comet being attracted to and flung around the sun or a planet, <span class="math notranslate nohighlight">\(G\)</span> being the gravitational constant and <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> the masses.</p>
 <p>Considering now the Coulomb potential, the smallest separation of the particles is found from equation 11, which is a quadratic in <span class="math notranslate nohighlight">\(r_0\)</span>. The result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle r_0=\frac{\alpha \pm\sqrt{\alpha^2+4b^2E_0^2}}{2E_0} \]</div>
-<p>and the larger root should be taken. The smallest value <span class="math notranslate nohighlight">\(r_0\)</span> can take occurs when <span class="math notranslate nohighlight">\(b\)</span> = 0, and is <span class="math notranslate nohighlight">\(\alpha/E_0\)</span>, which is the minimum separation because it is limited by the initial energy. The angle <span class="math notranslate nohighlight">\(\theta_0\)</span> is given by equation 10, with <span class="math notranslate nohighlight">\(g(r)\)</span> given by <span class="math notranslate nohighlight">\(\displaystyle \frac{b}{r^2}\left( 1-\frac{\alpha}{rE_0} -\frac{b^2}{r^2}  \right)^{-1/2}\)</span>.</p>
+<p>and the larger root should be taken. The smallest value <span class="math notranslate nohighlight">\(r_0\)</span> can take occurs when <span class="math notranslate nohighlight">\(b\)</span> = 0, and is <span class="math notranslate nohighlight">\(\alpha/E_0\)</span>, which is the minimum separation because it is limited by the initial energy. The angle <span class="math notranslate nohighlight">\(\theta_0\)</span> is given by equation 10, with <span class="math notranslate nohighlight">\(g(r)\)</span> given by</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \frac{b}{r^2}\left( 1-\frac{\alpha}{rE_0} -\frac{b^2}{r^2}  \right)^{-1/2}\)</span>$</p>
 <p>The integral (10) can be solved by substituting <span class="math notranslate nohighlight">\(r=1/u\)</span> to make</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \theta_0=b\int_0^{u_0}\frac{1}{\sqrt{ 1-a u -b^2u^2  } } du\]</div>
-<p>where for clarity <span class="math notranslate nohighlight">\(a=\alpha/E_0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle u_0=1/r_0= \frac{-a\pm \sqrt{a^2+4b^2}  }{2b^2}\)</span>.</p>
+<p>where for clarity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a=\alpha/E_0\quad\text{ and }\quad u_0=1/r_0= \frac{-a\pm \sqrt{a^2+4b^2}  }{2b^2}\]</div>
 <p>This has the form of a standard integral;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int \frac{dx}{\sqrt{f+gx+hx^2}}=-\frac{1}{\sqrt{-h}}\sin^{-1}\left(  \frac{2hx+g}{g^2-4fh}\right) + const\]</div>
-<p>if <span class="math notranslate nohighlight">\(h\)</span> is negative and <span class="math notranslate nohighlight">\(const\)</span> is the integration constant. The relationship  <span class="math notranslate nohighlight">\(\displaystyle \sin^{-1}(x)=i\ln\left( ix+\sqrt{1-x^2} \right)\)</span></p>
-<p>is also needed to simplify the answer after the limits have been included.</p>
-<p>The result for the scattering angle is</p>
+<p>if <span class="math notranslate nohighlight">\(h\)</span> is negative and <span class="math notranslate nohighlight">\(const\)</span> is the integration constant. The relationship</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin^{-1}(x)=i\ln\left( ix+\sqrt{1-x^2} \right)\]</div>
+<p>is also needed to simplify the answer after the limits have been included. The result for the scattering angle is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \chi=2\sin^{-1}\left(\frac{\alpha }{\sqrt{\alpha^2+4E_0b^2}}  \right) \]</div>
 <p>which by using a right angled triangle can be recast as</p>

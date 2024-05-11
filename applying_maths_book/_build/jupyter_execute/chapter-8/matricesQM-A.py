@@ -117,17 +117,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 2.2 Summary of the method
 # 
-# **(i)**$\quad$ The wavefunctions $\psi$ are the solutions to Schroedinger's equation with Hamiltonian $H + V^1$, and $\varphi$ is the exact wavefunction to a simpler problem with Hamiltonian $H^0$, such as the harmonic oscillator or particle in a box. A linear combination of these known wavefunctions is is made to find $\psi$.
+# **(a)**$\quad$ The wavefunctions $\psi$ are the solutions to Schroedinger's equation with Hamiltonian $H + V^1$, and $\varphi$ is the exact wavefunction to a simpler problem with Hamiltonian $H^0$, such as the harmonic oscillator or particle in a box. A linear combination of these known wavefunctions is is made to find $\psi$.
 # 
-# **(ii)**$\quad$ The $\varphi$ are orthogonal to one another; to form the complete basis set they must be and it is simpler to start with each $\varphi$ normalized.
+# **(b)**$\quad$ The $\varphi$ are orthogonal to one another; to form the complete basis set they must be and it is simpler to start with each $\varphi$ normalized.
 # 
-# **(iii)**$\quad$ If the number of levels is infinite then clearly the calculation cannot be completed exactly. In this case, the $\psi$ and the corresponding energies are approximate but improve as more energy levels are added. This improvement occurs because the energy levels are coupled one to another and including more of them allow more couplings to be added.
+# **(c)**$\quad$ If the number of levels is infinite then clearly the calculation cannot be completed exactly. In this case, the $\psi$ and the corresponding energies are approximate but improve as more energy levels are added. This improvement occurs because the energy levels are coupled one to another and including more of them allow more couplings to be added.
 # 
-# **(iv)**$\quad$ If the number of levels is finite as in spin problems such as NMR, then the result is exact.
+# **(d)**$\quad$ If the number of levels is finite as in spin problems such as NMR, then the result is exact.
 # 
-# **(v)**$\quad$ A basis set of any orthogonal set of functions could be chosen for the functions $\varphi$ as shown in the generalized Fourier method, Chapter 9.4. However, it is natural to try to choose a set of basis functions that have a similar shape to those the new wavefunctions are expected to look like. A good guess will make the off-diagonal terms relatively small, and when diagonalized, which has the effect of mixing all the matrix elements together, the resulting diagonal terms will only be slightly different from the un-diagonalized ones.
+# **(e)**$\quad$ A basis set of any orthogonal set of functions could be chosen for the functions $\varphi$ as shown in the generalized Fourier method, Chapter 9.4. However, it is natural to try to choose a set of basis functions that have a similar shape to those the new wavefunctions are expected to look like. A good guess will make the off-diagonal terms relatively small, and when diagonalized, which has the effect of mixing all the matrix elements together, the resulting diagonal terms will only be slightly different from the un-diagonalized ones.
 # 
-# **(vi)**$\quad$ This is not a perturbation method; the more terms that are added, the more accurate the result becomes.
+# **(f)**$\quad$ This is not a perturbation method; the more terms that are added, the more accurate the result becomes.
 # _________
 # 
 # Returning to the quartic oscillator, using the basis set wavefunctions $\varphi$ the matrix of the eigenvalue equation now has the form
@@ -174,13 +174,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # ## 2.3 Summary of calculation
 # 
-# **(i)**$\quad$ Use the particle in a box wavefunctions to approximate the harmonic oscillator. The more of these wavefunctions that are added together to make $\psi$, the better is the approximation. The eigenvectors of the Hamiltonian matrix determine the amount of each ‘particle in a box’ wavefunction to add together; these are $v$'s of equation 11.
+# **(a)**$\quad$ Use the particle in a box wavefunctions to approximate the harmonic oscillator. The more of these wavefunctions that are added together to make $\psi$, the better is the approximation. The eigenvectors of the Hamiltonian matrix determine the amount of each ‘particle in a box’ wavefunction to add together; these are $v$'s of equation 11.
 # 
-# **(ii)**$\quad$ The expectation values (matrix elements) are formed into a matrix that will be diagonalized.
+# **(b)**$\quad$ The expectation values (matrix elements) are formed into a matrix that will be diagonalized.
 # 
-# **(ii)**$\quad$ To form the matrix the order of the basis set is the same order as the elements in the matrix.
+# **(c)**$\quad$ To form the matrix the order of the basis set is the same order as the elements in the matrix.
 # 
-# **(iv)**$\quad$ The wavefunctions $\varphi$, have indices $ 1, 2, 3,\cdots$, which form the order of the rows and columns. Element $H_{34} = \langle \varphi_3 | H | \varphi_4\rangle$  for example, appears at row 3 column 4 in the matrix. The matrix could be ordered with basis set elements as $3, 1, 2, 5, 4, 10, \cdots$ etc.; it would not make any difference as long as rows and columns are ordered in the same way and the matrix element entered at the correct position according to the indices. The ordering of the basis set and hence the matrix and corresponding quantum numbers is direct and is
+# **(d)**$\quad$ The wavefunctions $\varphi$, have indices $ 1, 2, 3,\cdots$, which form the order of the rows and columns. Element $H_{34} = \langle \varphi_3 | H | \varphi_4\rangle$  for example, appears at row 3 column 4 in the matrix. The matrix could be ordered with basis set elements as $3, 1, 2, 5, 4, 10, \cdots$ etc.; it would not make any difference as long as rows and columns are ordered in the same way and the matrix element entered at the correct position according to the indices. The ordering of the basis set and hence the matrix and corresponding quantum numbers is direct and is
 # 
 # Basis set index $ 0, 1, 2, 3, 4, 5, \cdots$  row/column order in matrix
 #  
@@ -382,17 +382,17 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # and is used from now on. The spin quantum number s should not be removed from the notation, as it is needed when the matrix elements are worked out. The matrix of expectation values has next to be constructed and diagonalized. To work out the expectation values, the interactions between two spins and between a spin and the external magnetic field have to be examined, equation (8.16). These calculations are done in the following steps.
 # 
-# **(i)**$\quad$ The spin angular momentum I can be treated as if it were a three-dimensional vector with components in the $x-, y-, z$ -directions. In the Hamiltonian $S$, the terms $\pmb{I}\cdot\pmb{B}$ and 
+# **(a)**$\quad$ The spin angular momentum I can be treated as if it were a three-dimensional vector with components in the $x, y,$ and $z$ -directions. In the Hamiltonian $S$, the terms $\pmb{I}\cdot\pmb{B}$ and 
 # 
 # $$\displaystyle I_a\cdot I_b = I_{ax}I_{bx} + I_{ay}I_{by} + I_{az}I_{bz}$$
 # 
 # for spins $a$ and $b$ have to be evaluated. The magnetic field $B$ only has a $z$ component by definition, and in practice in the NMR machine, so that $\pmb{I}\cdot\pmb{B} = I_z B_0$
 # 
-# **(ii)**$\quad$ Decide on the $s-m$ basis set order and then fill out the Hamiltonian matrix; see equation 12.
+# **(b)**$\quad$ Decide on the $s-m$ basis set order and then fill out the Hamiltonian matrix; see equation 12.
 # 
-# **(iii)**$\quad$ Evaluate each of the elements of the $4 \times 4$ matrix using the operator equations given below, and calculate the energy levels algebraically by diagonalising. Python/Sympy will be used to do this.
+# **(c)**$\quad$ Evaluate each of the elements of the $4 \times 4$ matrix using the operator equations given below, and calculate the energy levels algebraically by diagonalising. Python/Sympy will be used to do this.
 # 
-# **(iv)**$\quad$ The energy levels will be found in the limit that the spin-spin coupling $J$ is small compared to the chemical shift; this is called the AX limit.
+# **(d)**$\quad$ The energy levels will be found in the limit that the spin-spin coupling $J$ is small compared to the chemical shift; this is called the AX limit.
 # 
 # The integrals between states with angular momentum operators are well known, and  can be rigorously derived using the properties of the spherical harmonic functions; see Atkins & Friedmann (1997) or Flygare (1978) for a derivation. The angular momentum operator is conventionally labelled $L$, and the operators are $L^2, L_x, L_y L_z$. The shorthand notation of labelling the states with their quantum numbers rather than with a symbol for the wavefunction and its associated quantum numbers is the convention. The operators have the following properties:
 # 
@@ -412,7 +412,7 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # In the particular situation of nuclear spin, the angular momentum is labelled $\pmb{I}$ and this will be used from now on. It is vital to realize that the spin operator $\pmb{I}_b$ only works on nucleus $b$, and $\pmb{I}_a$ only on nucleus $a$. The operator $\pmb{I}_b$ will therefore treat all the wavefunctions $sm_a$ as constants and *vice versa*. The calculation proceeds as follows:
 # 
-# **(i)** The summation in equation 16 is the double summation $\sum_{i=1}\sum_{j=1}J_{ij}\pmb{I}_i\cdot\pmb{I}_j$ with the restriction that $i>j$ for $i$ and $j=a,b$ .
+# **(e)** The summation in equation 16 is the double summation $\sum_{i=1}\sum_{j=1}J_{ij}\pmb{I}_i\cdot\pmb{I}_j$ with the restriction that $i>j$ for $i$ and $j=a,b$ .
 # 
 # $$\displaystyle \sum_{i=1}\sum_{j=1}J_{ij}\pmb{I}_i\cdot\pmb{I}_j=J_{aa}\pmb{I}_a\cdot\pmb{I}_a+J_{ab}\pmb{I}_a\cdot\pmb{I}_b+J_{ba}\pmb{I}_b\cdot\pmb{I}_a+J_{bb}\pmb{I}_b\cdot\pmb{I}_b$$
 # 
@@ -422,13 +422,13 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # and this is the same result as $\pmb{I}_b\cdot\pmb{I}_a$ because operators with an $a$ subscript only act on spin $a$, and $\pmb{I}_b$ only on spin $b$, therefore, operating on wavefuntions in the order $I_{ax}I_{bx}$ produces the same result as operating $I_{bx} I_{ax}$.
 # 
-# **(ii)** Using this last result, equation 16 simplifies to
+# **(f)** Using this last result, equation 16 simplifies to
 # 
 # $$\displaystyle S=-\frac{q_aI_{az}}{\hbar} -\frac{q_bI_{bz} }{\hbar}+\frac{J}{\hbar^2}(I_{ax}I_{bz}+I_{ay}I_{by}+I_{az}I_{bz}) \qquad\tag{22}$$
 # 
 # with the abbreviation $q = \gamma (1 -\sigma)B_0$ for each nuclei $a$ and $b$. The first two terms contain only the $z$ component of the angular momentum, because the magnetic field of the NMR spectrometer points only in the z direction. Planck's constant is present in the equation to give $S$ units of radian s$^{-1}$, matrix elements are in radian s$^{-1}$ also. The magnetogyric ratio $\gamma$ has units of radian tesla$^{-1}$ s$^{-1}$ and $B_0$ has units of tesla, $\pmb{I}$ has the same units as $\hbar \equiv$ joule second radian$^{-1}$, and $\sigma$ is dimensionless. Overall the units of $S$ are rad s$^{-1}$ or angular frequency. The constant $J$ also has units of rad s$^{-1}$.
 # 
-# **(iii)** A basis set of four vectors can be used, however, the numbers are to be treated as symbols to represent the spin state; no arithmetic is done with them.
+# **(g)** A basis set of four vectors can be used, however, the numbers are to be treated as symbols to represent the spin state; no arithmetic is done with them.
 # 
 # $$\displaystyle \left( \begin{bmatrix} s_a \\ m_a \\ s_b \\ m_b \end{bmatrix}\right)\equiv \left( \begin{bmatrix} 1/2\\1/2\\1/2\\1/2\end{bmatrix},\begin{bmatrix} 1/2\\-1/2\\1/2\\1/2\end{bmatrix},\begin{bmatrix} 1/2\\1/2\\1/2\\-1/2\end{bmatrix},\begin{bmatrix} 1/2\\-1/2\\1/2\\-1/2\end{bmatrix}\right)\qquad\qquad\qquad\qquad  \text{(23)}$$
 # 

@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # As a second example $(\partial y/\partial x)_z$ is calculated where $(y + 1/z^2)(z - 1) = 3x$. Since it is indicated by the subscript that $z$ is a constant, differentiating gives $\displaystyle (z-1)\left(\frac{\partial y}{\partial x}  \right)_z=3$.
 # 
-# ### **Ideal gas**
+# ### **(i) Ideal gas**
 # 
 # Differentiating the pressure in the ideal gas law $p = nRT/V$ to obtain the rate of change with respect to temperature is expressed as $(\partial p/\partial T)_{n,V}$ if the number of moles, $n$, and volume are held constant. The result is
 # 
@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # is not zero. The other two derivatives are constants, $\displaystyle  \left(  \frac{\partial}{\partial T}\left(\frac{\partial}{\partial T} \frac{nR}{V}   \right)  \right)_{n,V} = \left( \frac{\partial^2 p}{\partial V^2}  \right)_{n,V} = 0 $.
 # 
-# ### **van der Waals gas**
+# ### **(ii) van der Waals gas**
 # The van der Waals equation which, although empirical, describes real gases more accurately than does the ideal gas law. The equation is 
 # 
 # $$\displaystyle \left(p + \frac{a}{V^2}\right)\left(V - b\right) = RT$$
@@ -325,11 +325,11 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # $$\displaystyle \int_1^2 dQ = Q(2) - Q(1) = \Delta Q $$
 # 
-# and $Q$ is said to be integrable. The result of integrating is just the difference in $Q$ at value of $2$ compared to that at $1$ i.e. _the integral does not depend upon the path taken from the start to the end but just the values of the function $Q$ at the start and end_.
+# and $Q$ is said to be integrable. The result of integrating is just the difference in $Q$ at value of $2$ compared to that at $1$ i.e. *the integral does not depend upon the path taken from the start to the end but just the values of the function $Q$ at the start and end*.
 # 
 # In thermodynamics, any function with the same properties as $Q$ is called a _state function_: enthalpy, entropy, temperature, and internal energy are examples of state functions. In contrast, heat and work, which depend on the path taken from start to end, are not state functions. 
 # 
-# The internal energy of a molecule consists of energy in rotational and vibrational levels. It does not matter how the energy gets into these levels, i.e. on the path that is taken to reach a certain amount of internal energy. For example, in an experiment, we might use radiation of appropriate frequencies, to excite a certain number of rotational levels first then vibrational ones later or vice versa; the result is that the same amount of internal energy is contained within the molecule. However, the amount of _work_ done to achieve this need not be the same. Another state function is gravitational potential energy, which is the energy gained on climbing a hill. You will have the same potential energy whether you run up, walk up, or parachute there from a plane, but the amount of _work done and heat generated_ to get you there, will be very different in each case.
+# The internal energy of a molecule consists of energy in rotational and vibrational levels. It does not matter how the energy gets into these levels, i.e. on the path that is taken to reach a certain amount of internal energy. For example, in an experiment, we might use radiation of appropriate frequencies, to excite a certain number of rotational levels first then vibrational ones later or vice versa; the result is that the same amount of internal energy is contained within the molecule. However, the amount of *work* done to achieve this need not be the same. Another state function is gravitational potential energy, which is the energy gained on climbing a hill. You will have the same potential energy whether you run up, walk up, or parachute there from a plane, but the amount of *work done and heat generated* to get you there, will be very different in each case.
 # 
 # The equivalence between the derivatives in equation (48) may not be true in all cases and then the differential is not exact. The integration now depends upon the path taken from $1 \to 2$ and the integration must be explicitly performed. Suppose that $\theta$ is an expression that depends on $x$ or $y$, then it can be shown that the differential equation (47) can be made exact by dividing the expression by the factor $Q$,
 # 
@@ -353,7 +353,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # $$\displaystyle \frac{dQ}{T}=\frac{1}{T}\left( \frac{\partial U}{\partial V}+p \right)dV+\frac{1}{T}\frac{\partial U}{\partial T}dT=0$$
 # 
-# To check this, start with eqn 48, calculate the derivatives again using the product rule with $A$ the term preceding $dV$ and B that preceding $dT$ in the last equation. The result is
+# To check this, start with eqn. 48, calculate the derivatives again using the product rule with $A$ the term preceding $dV$ and B that preceding $dT$ in the last equation. The result is
 # 
 # $$\displaystyle \frac{\partial A}{\partial T}=\frac{\partial }{\partial T}\left[\left( \frac{\partial U}{\partial V} \right)_T +p\right]\frac{1}{T} = \frac{1}{T}\left[ \frac{\partial^2 U }{\partial V\partial T}+\left( \frac{\partial p}{\partial T}\right)_V  \right] -\frac{1}{T^2}\left[\left( \frac{\partial U}{\partial V}\right)_T+p  \right]$$
 # 

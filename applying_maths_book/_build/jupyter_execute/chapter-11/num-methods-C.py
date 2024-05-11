@@ -113,7 +113,7 @@ for i in range(1,n):
     pass
 
 
-# The Runge - Kutta method can also be used with coupled equations in a similar way as in the last algorithm; notice how the $k$'s are defined in terms of $dydt$ and add to terms in $y$ and $L$'s to those in $x$. Based on Algorithm 11 the modified equations are only in the for loop. 
+# The Runge - Kutta method can also be used with coupled equations in a similar way as in the last algorithm; notice how the $k$'s are defined in terms of $dy/dt$ and add to terms in $y$ and $L$'s to those in $x$. Based on Algorithm 11 the modified equations are only in the for loop. 
 
 # In[4]:
 
@@ -164,13 +164,21 @@ for i in range(1,n):
 # 
 # The rate equations for a basic PCR are shown below using the notation, $D$, double strand DNA, $S$ single strand DNA, $E$ the Taq Poly enzyme and $P$ the primer.  We implicitly assume that there are enough molecules that the rate equation is accurate, and that a Monte-Carlo method is not needed. The steps taken in order my varying the temperature are
 # 
-# (A) Dissociation of DNA into two strands at the highest temperature $\approx 95^{o}$C
+# (a) Dissociation of DNA into two strands at the highest temperature $\approx 95^{o}$C
 # 
-# (B) Primer sequence attaches to single stranded DNA at the lowest temperature $\approx 72^{o}$C
+# (b) Primer sequence attaches to single stranded DNA at the lowest temperature $\approx 72^{o}$C
 # 
-# (C) The Taq enzyme adds base pairs to primer-single stranded DNA to make new double stranded DNA. This extension phase assumes the Michaelis - Menten scheme and occiurs at $\approx 85^{o}$C. 
+# (c) The Taq enzyme adds base pairs to primer-single stranded DNA to make new double stranded DNA. This extension phase assumes the Michaelis - Menten scheme and occiurs at $\approx 85^{o}$C. 
 # 
-# Each of these steps has to occur at a different temperature so this has to be closely controlled, being raised and lowered as necessary to move the reaction towards product. The order is $95 \to 72 \to 85$ which is then repeated. To calculate this numerically the rate constants have to be temperature dependent. This is done in two ways, the enzyme reaction is very specific and so a Gaussian temperature profile is used. If the temperature is too high or too low the rate constant tends to zero, i.e. $k_2$ (see below) varies as $k_2\exp(-(T_0-T)^2/\sigma)$. All the other rate constants $k_i$ must have a value of zero below a critical temperature and so are given the sigmoidal form $k_i/(1+\exp(-(T_0-T)/\sigma_0)$ which rises from zero below $\approx T_0$ to a _constant_ value $k_i$ above: $\sigma_0$ controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of $60$ seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a 'lab-on-a-chip'.
+# Each of these steps has to occur at a different temperature so this has to be closely controlled, being raised and lowered as necessary to move the reaction towards product. The order is $95 \to 72 \to 85$ which is then repeated. To calculate this numerically the rate constants have to be temperature dependent. This is done in two ways, the enzyme reaction is very specific and so a Gaussian temperature profile is used. If the temperature is too high or too low the rate constant tends to zero, i.e. $k_2$ (see below) varies as 
+# 
+# $$k_2=\displaystyle k_2^0\exp(-(T_0-T)^2/\sigma)$$
+# 
+# All the other rate constants $k_i$ must have a value of zero below a critical temperature and so are given the sigmoidal form 
+# 
+# $$\displaystyle k_i/(1+\exp(-(T_0-T)/\sigma_0))$$
+# 
+# which rises from zero below $\approx T_0$ to a _constant_ value $k_i$ above: $\sigma_0$ controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of $60$ seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a 'lab-on-a-chip'.
 # 
 # The reaction scheme is 
 # 
@@ -195,8 +203,8 @@ for i in range(1,n):
 # The result of integrating is shown in fig 11b assuming DNA segments of $b=200$ base pairs. The concentration of the double stranded DNA ($D$, red), the single strand ($S$, green) and the complex ($E\cdot SP$, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).
 # 
 # $$\displaystyle \begin{array}\\
-# k_D=3000/b, & k_{-D}=10^6,& k_{sp}=5\cdot10^5, & k_{-sp}=10^{-4},& k_1=10^8, & k_{-1}=10, & k_2=60\\
-# D_0=10^{-15}, &P_0=2\cdot10^{-7}, & E_0=5\cdot 10^{-9},& S_0=SP_0=E\cdot SP_0=0 & \sigma=8 & \sigma_0=2\\
+# k_D=3000/b, & k_{-D}=10^6,& k_{sp}=5\cdot10^5, & k_{-sp}=10^{-4}\\ k_1=10^8, & k_{-1}=10, & k_2=60\\
+# D_0=10^{-15}, &P_0=2\cdot10^{-7}, & E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot SP_0=0 & \sigma=8 & \sigma_0=2\\
 # \end{array}$$
 # 
 # Notice that only a tiny amount of DNA need be present initially but that the primer is in vast excess over this and the enzyme $E$. This makes the annealing step pseudo-first order and $k_{sp}[P] \gg k_{-sp}$, but mainly the excess dose not limit the amount of $D$ produced as $P$ is consumed in the reaction. Of course there must be also sufficient nucleotides present to make the new DNA. The amount of all these concentrations depend on the particular situation but usually this is determined when the detection limit is exceeded by a suitable margin. Similarly to primer, increasing the amount of enzyme will also produce more DNA in a given time because $k_1[E][SP]$ is increased.
@@ -215,7 +223,11 @@ for i in range(1,n):
 # Figure 11c. Plot showing variation of D with S+SR. the increase and decrease of $D$ is clear and clearly shows the amplification. The slight kink in the extension is the horizontal part of fig 11b.
 # _____
 # 
-# Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling $[D]$ into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is $\approx 89$ s. The doubling time is calculated assuming $[D]=[D_0]e^{kt}$ and using $t_2=\ln(2)/k$ just as if a half-life were calculated.
+# Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling $[D]$ into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is $\approx 89$ s. The doubling time is calculated assuming 
+# 
+# $$\displaystyle [D]=[D_0]e^{kt}$$
+# 
+# and using $t_2=\ln(2)/k$ just as if a half-life were calculated.
 # 
 # ![Drawing](num-methods-fig20b.png)
 # 
@@ -275,7 +287,7 @@ simplify(dydx)
 # Figure12 Numerical (solid line) and algebraic solution to equation 34.
 # _____
 # 
-# ### **Higher order equations**
+# ### **(i) Higher order equations**
 # 
 # The higher order equation
 # 
@@ -371,9 +383,15 @@ simplify(dydx)
 # 
 # $$\displaystyle y_{n+1}\left(1+\frac{h^2}{12}f_{n+1}\right)= 2y_n\left( 1-\frac{5h^2}{12}f_n \right) -y_{n-1}\left(1+\frac{h^2}{12}f_{n-1}  \right) \qquad\tag{ 35e}$$
 # 
-# which means that $y$ must be known at two points, $n$ and $n+1$ at the start of the calculation. Normally starting at large $x$ values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  $y_0 =0 ,\;y_1 = 0.001$ can be used. The wavefunction can be normalised at the end of the calculation ($\int\psi dx=1$) so these values are not critical. The function $f$ is known at all points via $V(x)$  but as noted the eigenvalue $E$ must be known. Note also the sign of $f(x)$ when using the Schroedinger equation $\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)$.  
+# which means that $y$ must be known at two points, $n$ and $n+1$ at the start of the calculation. Normally starting at large $x$ values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  $y_0 =0 ,\;y_1 = 0.001$ can be used. The wavefunction can be normalised at the end of the calculation ($\int\psi dx=1$) so these values are not critical. The function $f$ is known at all points via $V(x)$  but as noted the eigenvalue $E$ must be known. Note also the sign of $f(x)$ when using the Schroedinger equation 
 # 
-# As an example calculation, the wavefunction of a quantum harmonic oscillator with $V= (k/2)x^2$ is calculated using  constants $\mu=1,\;\hbar = 1,\; k = 20 $. The eigenvalues are $\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)$. This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, $\mathtt{odeint(\cdots)}$ in Python/Scipy for example.
+# $$\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)$$  
+# 
+# As an example calculation, the wavefunction of a quantum harmonic oscillator with $V= (k/2)x^2$ is calculated using  constants $\mu=1,\;\hbar = 1,\; k = 20 $. The eigenvalues are 
+# 
+# $$\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)$$
+# 
+# This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, $\mathtt{odeint(\cdots)}$ in Python/Scipy for example.
 
 # In[8]:
 

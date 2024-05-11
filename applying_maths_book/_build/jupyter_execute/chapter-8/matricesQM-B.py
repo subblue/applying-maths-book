@@ -36,7 +36,7 @@
 # 
 # which are the same rules for any matrix as shown in Chapter 7. The only difference in their usage in quantum mechanics is that the elements of the basis set must form an orthogonal set. If they are also normalised they form an orthonormal set.
 
-# ### **Summary of bra-ket properties**
+# ### **(i) Summary of bra-ket properties**
 # 
 # The complex conjugate is indicated by superscript $^*$, the adjoint by $^\dagger, A, B$ are linear operators, $a$'s numbers
 # 
@@ -195,7 +195,7 @@
 # 
 # and an example of this is $\displaystyle \langle\psi |\pmb A|\psi\rangle^*=\langle \psi |\pmb A^\dagger|\psi\rangle=\langle\psi |\pmb A|\psi\rangle$
 # 
-# ### **Rule**
+# ### **(i) Rule**
 # 
 # To obtain the Hermitian conjugate of bras, kets and operators
 # 
