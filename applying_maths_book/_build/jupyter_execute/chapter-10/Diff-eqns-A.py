@@ -80,7 +80,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$t + \delta t = \text{ number at time } t - \text {number reacted in time } \delta t $$
 # 
-# which can be written as $N(t + \delta t) = N(t) - k_1N(t)\delta t$ from which
+# which can be written as 
+# 
+# $$\displaystyle N(t + \delta t) = N(t) - k_1N(t)\delta t$$
+# 
+# from which
 # 
 # $$ \displaystyle \frac{ N(t+\delta t) -N(t)}{\delta t}= -k_1N(t) $$
 # 
@@ -108,7 +112,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle -\frac{1}{a}\frac{dA}{dt}=-\frac{1}{b}\frac{dB}{dt}=+\frac{1}{n}\frac{dN}{dt}=+\frac{1}{m}\frac{dM}{dt}$$
 # 
-# The first-order equation is found to describe many physical phenomena and is also representative of many types of equations where the _variables are separable_. This means that the equation can be written with $y$ on one side and $x$ on the other, or, for a first-order chemical reaction A on one side and $t$ on the other. The general form of the _separable equation_ is 
+# The first-order equation is found to describe many physical phenomena and is also representative of many types of equations where the *variables are separable*. This means that the equation can be written with $y$ on one side and $x$ on the other, or, for a first-order chemical reaction A on one side and $t$ on the other. The general form of the *separable equation* is 
 # 
 # $$\displaystyle Xdx + Ydy=0  \qquad\tag{2}$$
 # 
@@ -130,9 +134,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle A = A_0e^{-k_1(t-t_0)}$$
 # 
-# As species A decays it must form another B, but if this does not decay then B can be obtained from the initial conditions because the total number of molecules must be constant; therefore $\displaystyle B = A_0(1 - e^{-k_1t})$ and B rises at the same rate as A falls. If, however, B decays to C, the scheme being A $\to$ B $\to$ C, then there is another rate equation 
+# As species A decays it must form another B, but if this does not decay then B can be obtained from the initial conditions because the total number of molecules must be constant; therefore 
 # 
-# $$\displaystyle dB/dt = k_1A - k_2B$$
+# $$\displaystyle B = A_0(1 - e^{-k_1t})$$
+# 
+# and B rises at the same rate as A falls. If, however, B decays to C, the scheme being A $\to$ B $\to$ C, then there is another rate equation 
+# 
+# $$\displaystyle \frac{dB}{dt} = k_1A - k_2B$$
 # 
 # and we can substitute A into this to obtain
 # 
@@ -144,7 +152,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In many chemical schemes, after the reaction has started it enters a period where intermediate or transient species can be identified, and their rate of change is effectively zero. This does not mean, however, that their concentration has to be small but if the rate of change is zero, then most rate equations can be solved relatively easily. This is of great utility because the complete solution can be very complex and often only numerical solutions are available. An example of this situation is the scheme $A\to B\to C$ where the rate of change species B may be set to steady state but only once the reaction has started.  
 # 
-# In other situations an equilibrium can be established between two species from which a second and slow reaction may proceed reaction, an example of this is $A\rightleftharpoons B \to C$ where the rate constant $B\to C$ is small compared to those establishing the equilibrium. 
+# In other situations an equilibrium can be established between two species from which a second and slow reaction may proceed reaction, an example of this is 
+# 
+# $$\displaystyle A\rightleftharpoons B \to C$$
+# 
+# where the rate constant $B\to C$ is small compared to those establishing the equilibrium. 
 # 
 # In the scheme 
 # 
@@ -159,7 +171,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{dA}{dt} =-\frac{dC}{dt} = -\frac{k_1k_{2}}{k_{-1}+k_2}A $$
 # 
-# If the equilibrium had been established first, with $k_{-1} \gg k_2$ writing the equilibrium constant as $K_e = k_1/k_{-1}$ gives
+# If the equilibrium had been established first, with $k_{-1} \gg k_2$ writing the equilibrium constant as 
+# 
+# $$\displaystyle K_e = k_1/k_{-1}$$
+# 
+# gives
 # 
 # $$\displaystyle \frac{dA}{dt} = -K_ek_2A$$
 # 
@@ -219,7 +235,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}$$
 # 
-# where $x \le a_0$. It is not obvious from this equation how the concentration of CO increases with time because $x$ cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as $t=\cdots$ and put $t$ on the $x$-axis. The $\mathrm{[CO]}$ increases initially with a very large gradient until $x/a_0 \sim 0.8$ in a plot of $x/a_0$ vs. $t/2k_3K_e$ and then rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times $x/a_0 \to 1$. At very early times expanding both terms in $x/a_0$ gives $x/a_0\sim t^2$.  
+# where $x \le a_0$. It is not obvious from this equation how the concentration of CO increases with time because $x$ cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as $t=\cdots$ and put $t$ on the $x$-axis. The $\mathrm{[CO]}$ increases initially with a very large gradient until $x/a_0 \sim 0.8$, in a plot of $x/a_0$ vs. $t/2k_3K_e$, and then rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times $x/a_0 \to 1$. At very early times expanding both terms in $x/a_0$ gives $x/a_0\sim t^2$.  
 #  
 # 
 # ## 2.3 Fluorescence yield
@@ -247,11 +263,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To understand this behaviour a model of the quenching is made by supposing that a short lived collision complex is formed between the excited molecule $M^*$ and the quencher $Q$, i.e. $(M^*\cdots Q)$. The scheme is quite simple and is
 # 
-# $$\displaystyle \qquad\qquad\qquad\qquad\begin{align} M^* + Q &\underset{k_{-d}}{\stackrel {kd}{\rightleftharpoons}}  (M^*\cdots Q) \overset{k_R}\longrightarrow products \end{align}\qquad\qquad\qquad\qquad\qquad\text{(5a)}$$
+# $$\displaystyle \qquad\qquad\qquad\qquad\begin{align} M^* + Q &\underset{k_{-d}}{\stackrel {k_d}{\rightleftharpoons}}  (M^*\cdots Q) \overset{k_R}\longrightarrow products \end{align}\qquad\qquad\qquad\qquad\qquad\text{(5a)}$$
 # 
-# where $k_d$ is the diffusion controlled rate constant for the approach of the molecules and $k_{-d}$ and $k_R$ the first-order rate constants for the break up of the complex to reactants and products respectively.
-# 
-# The rate of change of the excited complex is 
+# where $k_d$ is the diffusion controlled rate constant for the approach of the molecules and $k_{-d}$ and $k_R$ the first-order rate constants for the break up of the complex to reactants and products respectively. The rate of change of the excited complex is 
 # 
 # $$\displaystyle \frac{[M^*\cdots Q]}{dt}= k_d[M^*][Q]-(k_{-d}+k_R)[M^*\cdots Q]$$
 # 
@@ -268,7 +282,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle k_q= \frac{k_d}{k_{-d}+k_R}k_R$$
 # 
 # ### **(i) Reaction or Activation Control**
-# When the reaction is _activation controlled_ this means that the reaction rate constant $k_R$ is small thus the reaction's activation energy is high and many, possibly millions of collisions occur before reaction takes place $k_R \ll k_{-d}$ and $\displaystyle k_q= \frac{k_d}{k_{-d}}k_R$.
+# When the reaction is _activation controlled_ this means that the reaction rate constant $k_R$ is small thus the reaction's activation energy is high and many, possibly millions of collisions occur before reaction takes place $k_R \ll k_{-d}$ and 
+# 
+# $$\displaystyle k_q= \frac{k_d}{k_{-d}}k_R$$
 # 
 # ### **(ii) Diffusion Control**
 # When the reaction is diffusion controlled $k_q=k_d$ and means that the reaction rate constant $k_R$ is so large that reaction occurs essentially on first contact of the two species and then $k_R\gg k_{-d}$. 
@@ -277,7 +293,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle k_d=\frac{8000RT}{3\eta}\qquad\qquad (\mathrm{ dm^3/mol/s})$$ 
 # 
-# where $\eta$ is the viscosity of the solution. In ethanol $k_d = 5.0\cdot 10^9\; \mathrm{dm^3 mol^{-1} s^{-1}}$ where viscosity $\eta = 1.2$ cP (cP = centiPoise = $10^{-3}$ Pa s). In glycerol $k_d = 4.4\cdot 10^6 \mathrm{dm^3 mol^{-1} s^{-1}}$ where $\eta = 14900$ cP.
+# where $\eta$ is the viscosity of the solution. This rate constant can vary widely, for example in ethanol $k_d = 5.0\cdot 10^9\; \mathrm{dm^3 mol^{-1} s^{-1}}$ where the viscosity $\eta = 1.2$ cP (cP = centiPoise = $10^{-3}$ Pa s), but in glycerol $k_d = 4.4\cdot 10^6 \mathrm{dm^3 mol^{-1} s^{-1}}$ because $\eta = 14900$ cP.
 # 
 # ### **(iii) Spin complexes**
 # The difference in quenching rate constant with molecular oxygen between singlet and triplet excited states can only be understood if the spin properties of quencher and excited state are examined.  The oxygen molecule is paramagnetic with a triplet ground state, the term symbol is $^3\Sigma_g^-$. There are two low lying excited states $^1\Delta$ at $8000\;\mathrm{cm^{-1}}$ ($\approx 1250$ nm) and $^1\Sigma_g^+$ at $13000\;\mathrm{cm^{-1}}$ ($\approx 770$ nm). Both the singlet and triplet excited state energies of the excited aromatic molecule are at least $10000\;\mathrm{cm^{-1}}$ above that of the oxygen $^1\Sigma$.
@@ -331,11 +347,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  \frac{dn}{dt} = gNn - kn$$
 # 
-# where $g$ represents the gain coefficient, $N$ the number of excited states in the gain medium, which assumes that the lower state has zero population. The rate constant for decay of photons out of the cavity $k$ accounts for all the losses. This equation is non-linear although it appears not to be. The non-linearity is introduced because the number of excited states $N$ is not expected to be constant since photons are stimulated out of it. Suppose, therefore, that by continuous external excitation, the number of excited states is kept constant at $N_0$, then $N = N_0 - \gamma n$ where $\gamma$ is a constant. The rate equation now becomes non-linear; $dn/dt = g(N_0 - \gamma n)n - kn$ which can be rewritten as
+# where $g$ represents the gain coefficient, $N$ the number of excited states in the gain medium, which assumes that the lower state has zero population. The rate constant for decay of photons out of the cavity $k$ accounts for all the losses. This equation is non-linear although it appears not to be. The non-linearity is introduced because the number of excited states $N$ is not expected to be constant since photons are stimulated out of it. Suppose, therefore, that by continuous external excitation, the number of excited states is kept constant at $N_0$, then $N = N_0 - \gamma n$ where $\gamma$ is a constant. The rate equation now becomes non-linear; 
+# 
+# $$\displaystyle \frac{dn}{dt} = g(N_0 - \gamma n)n - kn$$
+# 
+# which can be simplified to
 # 
 # $$\displaystyle  \frac{dn}{dt} = a n - b n^2$$
 # 
-# with the constant $a = gN_0 -k $ and $b =g\gamma$. If the excitation producing the excited states is weak, then $a$ is negative and the number of photons does not increase. The lasing threshold condition occurs when $a = 0$ giving the minimum $N_0$ as $k/g$. Thus, if the laser gain coefficient $g$ is high, the lasing threshold is small. If the rate of loss of photons in the cavity $k$ is small, which corresponds to a long cavity lifetime, the threshold is also small. If excitation is strong, making $N_0$ large, then $a$ is positive and the laser operates.
+# with the constant $a = gN_0 - k $ and $b =g\gamma$. 
+# 
+# If the excitation producing the excited states is weak, then $a$ is negative and the number of photons does not increase. The lasing threshold condition occurs when $a = 0$ giving the minimum $N_0$ as $k/g$. Thus, if the laser gain coefficient $g$ is high, the lasing threshold is small. If the rate of loss of photons in the cavity $k$ is small, which corresponds to a long cavity lifetime, the threshold is also small. If excitation is strong, making $N_0$ large, then $a$ is positive and the laser operates.
 # 
 # The phase portrait $dn/dt$ vs. $n$ is now an inverted curve as $a \gt 0$ and has steady states at $n_{ss} = 0$ and at $n_{ss} = \alpha/\beta$. Since the rate of change of the number of photons has to be positive for the laser to work, the gradient at threshold must be negative; see Fig. 3. The second derivative at threshold is $-a$, which is negative, and confirms the stability as $a$ is positive. The presence of the steady state means that the laser intensity will rise to a constant value, given by the pump intensity. When this is achieved, the gain must balance the loss because the rate of change of the number of photons is zero. Note that loss includes the number of photons that form the laser beam itself.
 # 
@@ -392,17 +414,27 @@ ans
 # 
 # ## 3.2 Harmonic  oscillator
 # 
-# Simple harmonic motion is described by the generic equation $\displaystyle \frac{d^2x}{dt^2}+\omega^2x=0$,
+# Simple harmonic motion is described by the generic equation 
+# 
+# $$\displaystyle \frac{d^2x}{dt^2}+\omega^2x=0$$
 # 
 # where $\omega$ is the oscillator frequency, $x$ position, and $t$ time. As the phase portrait is a plot of $dx/dt$ vs $x$, the equation has to be integrated once to get it into this form. This can be done by defining $v = dx/dt$, then 
 # 
 # $$\displaystyle \frac{d^2x}{dt^2}=\frac{dv}{dt}$$
 # 
-# Next using the chain rule $\displaystyle \frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}=v\frac{dv}{dx}$ and the equation becomes,
+# Next using the chain rule 
+# 
+# $$\displaystyle \frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}=v\frac{dv}{dx}$$
+# 
+# and the equation becomes,
 # 
 # $$\displaystyle  v\frac{dv}{dx}+\omega^2x=0$$
 # 
-# Integrating by separating variables gives $\displaystyle v^2 +ω^2x^2 = c$ where $c$ is a constant. The trajectories in the phase plane are ellipses whose exact values are determined by their initial conditions. However, all of the trajectories take the same time to complete, as only one frequency is associated with the oscillator. 
+# Integrating by separating variables gives 
+# 
+# $$\displaystyle v^2 +ω^2x^2 = c$$
+# 
+# where $c$ is a constant. The trajectories in the phase plane are ellipses whose exact values are determined by their initial conditions. However, all of the trajectories take the same time to complete, as only one frequency is associated with the oscillator. 
 # 
 # The origin of the phase portrait is a position of stable equilibrium, and corresponds to the oscillator being stationary. If a pendulum is observed, with $x$ as the initially positive angle and with an initial velocity of zero, then the starting point is on the positive x-axis. The phase plane is followed clockwise, as the pendulum increases in (negative) angular velocity to the left and the angle decreases towards zero, at which point the pendulum is vertically downwards and the angular velocity has its maximum negative value. The pendulum continues to move until the velocity is again zero at the opposite angle to the starting point. It now changes direction, the velocity reversing (becoming positive), and returns to the starting point, travelling over the top of the phase plane.
 # 
@@ -423,13 +455,27 @@ ans
 # 
 # $$\displaystyle t= \frac{1}{\omega}\sin^{-1}\left(\frac{x\omega}{\sqrt{c}} \right) $$
 # 
-# Suppose that the oscillator is a diatomic molecule with frequency $\omega$ (in radians/s) where $\omega =\sqrt{k/\mu}$, with $k$ as the force constant and $\mu$ the reduced mass. The energy is $E_n=\omega(n+1/2) $ with quantum number $n=0,1,2\cdots$. Substituting the energy for $c$ gives
+# Suppose that the oscillator is a diatomic molecule with frequency $\omega$ (in radians/s) where 
+# 
+# $$\displaystyle \omega =\sqrt{k/\mu}$$
+# 
+# with $k$ as the force constant and $\mu$ the reduced mass. The energy is 
+# 
+# $$\displaystyle E_n=\omega(n+1/2) $$
+# 
+# with quantum number $n=0,1,2\cdots$. Substituting the energy for $c$ gives
 # 
 # $$\displaystyle t=\frac{1}{\omega}\sin^{-1}\left(\frac{x\sqrt{\omega}}{\sqrt{(n+1/2)}} \right) $$
 # 
-# and to find the period of oscillation the end points of the oscillation must be found. These occur when the bond is most compressed and when most stretched and at these points the velocity is zero, hence at these points $c = ω^2x^2 = \omega(n+1/2) $ which gives the connection between bond extension $x$ and $n$ quantum number.
+# and to find the period of oscillation the end points of the oscillation must be found. These occur when the bond is most compressed and when most stretched and at these points the velocity is zero, hence at these points 
 # 
-# Substituting for both limits with $x=\pm\sqrt{(n+1/2)/\omega}$ and multiplying by two to make a round trip gives the round trip time as
+# $$\displaystyle c = ω^2x^2 = \omega(n+1/2) $$
+# 
+# which gives the connection between bond extension $x$ and $n$ quantum number. Substituting for both limits with 
+# 
+# $$\displaystyle x=\pm\sqrt{(n+1/2)/\omega}$$
+# 
+# and multiplying by two to make a round trip gives the round trip time as
 # 
 # $$\displaystyle t= \frac{4}{\omega}\sin^{-1}(1) =\frac{2\pi}{\omega}$$
 # 
@@ -477,13 +523,19 @@ ans
 # 
 # $$\displaystyle \dot q =\frac{\partial H}{\partial p},\qquad \dot p =-\frac{\partial H}{\partial q}$$
 # 
-# where $\displaystyle \dot q \equiv \frac{dq}{dt}$ and similarly for $\dot p$
+# where 
+# 
+# $$\displaystyle \dot q \equiv \frac{dq}{dt},\qquad \dot p \equiv \frac{dp}{dt} $$
 # 
 # The total energy of the oscillator is the sum of the kinetic and potential parts, thus with mass $m$ and kinetic energy $p^2/2m$ 
 # 
 # $$\displaystyle H = \frac{p^2}{2m}+D_e(1-e^{-aq})^2 $$
 # 
-# Using this equation it is clear that a contour plot of $p$ vs $q$ can be immediately produced, where the values of the contour can, for example, be chosen to be the energy of the quantum oscillator e.g. $E_n=\omega_e(n+1/2)-x_e\omega_e(n+1/2)^2$ which is only valid up to the dissociation energy.
+# Using this equation it is clear that a contour plot of $p$ vs $q$ can be immediately produced, where the values of the contour can, for example, be chosen to be the energy of the quantum oscillator e.g. 
+# 
+# $$\displaystyle E_n=\omega_e(n+1/2)-x_e\omega_e(n+1/2)^2$$
+# 
+# which is only valid up to the dissociation energy.
 # 
 # The period of the motion at each energy $E_n$ can be found by integrating $dq/dt$ and this equation is 
 # 
@@ -513,7 +565,19 @@ ans
 # 
 # $$\displaystyle t\sqrt{\frac{2}{m}}= -\frac{1}{a\sqrt{E_n-D}}\tanh^{-1}\left(\frac{2Du+2(E_n-D)}{2\sqrt{E_n-D}\sqrt{E_n -D_e(1-u)^2 }}\right)\Bigg|_{u_a}^{u_b}$$
 # 
-# The limits, which are the turning points have to be found. As these occur when the momentum is zero (bond fully stretched or compressed) these are found when  $\displaystyle E_n=D(1-e^{-aq})^2 $ which produce limits in terms of parameter $u$ of $\displaystyle u_{a,b}=1\pm\sqrt{\frac{E_n}{D}}$. The conversion $\tanh^{-1}(x)=-i\tan^{-1}(ix)$ is also needed.
+# The limits, which are the turning points have to be found. As these occur when the momentum is zero (bond fully stretched or compressed) these are found when  
+# 
+# $$\displaystyle E_n=D(1-e^{-aq})^2 $$
+# 
+# which produce limits in terms of parameter $u$ of 
+# 
+# $$\displaystyle u_{a,b}=1\pm\sqrt{\frac{E_n}{D}}$$
+# 
+# The conversion 
+# 
+# $$\displaystyle \tanh^{-1}(x)=-i\tan^{-1}(ix)$$ 
+# 
+# is also needed.
 # 
 # The term $\sqrt{E_n -D_e(1-u)^2 }$ in the denominator becomes zero with these limits, making $\tan^{-1}(\infty)=\pi/2$, and the solution is greatly simplified yielding a period of
 # 
@@ -575,11 +639,17 @@ ans
 # 
 # ## 4.2 Reversible or opposing reactions $A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$ 
 # 
-# Suppose that the reaction $A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$ reaches equilibrium there being an amount $\mathrm{[A]_0}$ initially and $\mathrm{[B]_0=[C]_0=0}$. The simplest way to integrate the equation is to let an amount $x$ react then 
+# Suppose that the reaction 
+# 
+# $$\displaystyle A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$$
+# 
+# reaches equilibrium there being an amount $\mathrm{[A]_0}$ initially and $\mathrm{[B]_0=[C]_0=0}$. The simplest way to integrate the equation is to let an amount $x$ react then 
 # 
 # $$\displaystyle a=a_0-x, \quad\text{where}\quad a=[A],\;b=[B],\;a_0=[A]_0,\;b_0=[B]_0$$
 # 
-# The equation is $\displaystyle \frac{da}{dt}=-k_1a+k_2ab$,
+# The equation is 
+# 
+# $$\displaystyle \frac{da}{dt}=-k_1a+k_2ab$$
 # 
 # substituting for $x$, the amount reacted at time $t$,  gives 
 # 
@@ -593,23 +663,51 @@ ans
 # 
 # $$\displaystyle \ln\left(\frac{-2k_2 x-k_1-\sqrt{k_1^2+4k_2k_1a_0}}{-2k_2 x-k_1+\sqrt{k_1^2+4k_2k_1a_0}} \right)-\ln\left(\frac{-k_1-\sqrt{k_1^2+4k_2k_1a_0}}{-k_1+\sqrt{k_1^2+4k_2k_1a_0}} \right)=t\sqrt{k_1^2+4k_2k_1a_0}$$
 # 
-# and from this we can see that the reaction comes to equilibrium with a first order rate constant of $\sqrt{k_1^2+4k_2k_1a_0}$. The inverse of this value is sometimes called the relaxation time.
+# and from this we can see that the reaction comes to equilibrium with a first order rate constant of 
 # 
-# This form of the equation is clearly rather messy. It is simplified if the equilibrium amounts are incorporated. At equilibrium the rate of change of A becomes zero and so $k_1(a_0-x_e)=k_2x_e^2$ where $x_e$ is the equilibrium amount and so $k_2= k_1(a_0-x_e)/x_e^2$. The equilibrium constant is by definition $K_e=k_1/k_2$. Substituting for $k_2$ and after a great deal of simplifying the result is 
+# $$\displaystyle 1/\tau= \sqrt{k_1^2+4k_2k_1a_0}$$
 # 
-# $$\displaystyle \log\left(\frac{a_0x_e+x(a_0-x_e)}{a_0(x_e-x)} \right)=k_1\frac{2a_0-x_e}{x_e}t \qquad\tag{5b}$$
+# where $\tau$ is the relaxation time or simply the lifetime.
+# 
+# This form of the equation is clearly rather messy. It is simplified if the equilibrium amounts are incorporated. At equilibrium the rate of change of A becomes zero and so 
+# 
+# $$\displaystyle k_1(a_0-x_e)=k_2x_e^2$$
+# 
+# where $x_e$ is the equilibrium amount and so 
+# 
+# $$\displaystyle k_2= k_1(a_0-x_e)/x_e^2$$
+# 
+# The equilibrium constant is by definition 
+# 
+# $$\displaystyle K_e = \frac{k_1}{k_2}$$
+# 
+# Substituting for $k_2$ and after a great deal of simplifying the result is 
+# 
+# $$\displaystyle \log\left(\frac{a_0x_e+x(a_0-x_e)}{a_0(x_e-x)} \right)= \frac{k_1(2a_0-x_e)}{x_e}t \qquad\tag{5b}$$
 # 
 # and as $x,x_e,a_0$ are all concentrations this is dimensionally correct.
 # 
 # ## 4.3 Temperature Jump; a perturbation from the equilibrium $\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $ 
 # 
-# Once a reaction has come to equilibrium, such as $\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $, a small perturbation can be used to measure the return to equilibrium which may take only a few microseconds and by so doing the individual rate constants can be obtained. The change in absorption can be measured as equilibrium is reestablished. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so. In the past heating by passing an electric current was used but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water's absorption in the infra red. An alternative is to add a dye with a low fluorescence yield to the solution, and use this to absorb visible light and so heat the solution as its excited state decays. Many enzyme's equilibria have been studied using T-jump.   
+# Once a reaction has come to equilibrium, such as 
 # 
-# Consider the general equilibrium $A = B + C$ and let $a_e, b_e, c_e$ be the equilibrium amounts of A, B and C respectively. An amount $x$ is transferred to products as a result of heating the solution  and the concentration of $a$ is $a=a_0-x$. In water $x$ is the concentration of ions. The rate equation is then
+# $$\displaystyle \mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $$
+# 
+# a small perturbation can be used to measure the return to equilibrium which may take only a few microseconds and by so doing the individual rate constants can be obtained. The change in absorption can be measured as equilibrium is reestablished. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so. In the past heating by passing an electric current was used but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water's absorption in the infra red. An alternative is to add a dye with a low fluorescence yield to the solution, and use this to absorb visible light and so heat the solution as its excited state decays. Many enzyme's equilibria have been studied using T-jump.   
+# 
+# Consider the general equilibrium 
+# 
+# $$\displaystyle A = B + C$$
+# 
+# and let $a_e, b_e, c_e$ be the equilibrium amounts of A, B and C respectively. An amount $x$ is transferred to products as a result of heating the solution  and the concentration of $a$ is $a=a_0-x$. In water $x$ is the concentration of ions. The rate equation is then
 # 
 # $$\displaystyle \frac{da}{dt}=-\frac{dx}{dt}=-k_1(a_0-x)+k_2x^2 $$
 # 
-# and at equilibrium $k_1(a_0-x_e)=k_2x_e^2 $ where $x_e$ is the equilibrium amount of A. A change in amount $x$ due to the temperature jump is $\Delta x=x-x_e$ and substituting for this gives
+# and at equilibrium 
+# 
+# $$\displaystyle k_1(a_0-x_e)=k_2x_e^2 $$
+# 
+# where $x_e$ is the equilibrium amount of A. A change in amount $x$ due to the temperature jump is $\Delta x=x-x_e$ and substituting for this gives
 # 
 # $$\displaystyle \begin{align}\frac{d\Delta x}{dt}&=\frac{dx}{dt} = k_1a_0-k_1(\Delta x+x_e)-k_2(\Delta x+x_e)^2\\&=k_1a_0-k_1(\Delta x+x_e)-k_2\Delta x^2-2k_2x_e\Delta x-k_2x_e^2 \end{align} $$
 # 
@@ -617,11 +715,19 @@ ans
 # 
 # $$\displaystyle \frac{d\Delta x}{dt} = k_1a_0-k_1(\Delta x+x_e) -2k_2x_e\Delta x-k_2x_e^2$$
 # 
-# which can be simplified using the equilibrium condition $k_1(a_0-x_e)=k_2x_e^2 $ to 
+# which can be simplified using the equilibrium condition 
+# 
+# $$\displaystyle k_1(a_0-x_e)=k_2x_e^2 $$
+# 
+# to 
 # 
 # $$\displaystyle \frac{d\Delta x}{dt} = -(k_1+2k_2x_e)\Delta x$$
 # 
-# which on integrating gives $\displaystyle \Delta x=e^{-(k_1+2k_2x_e)t} + const$, when $t=0, \Delta x=\Delta x_0$ so that 
+# which on integrating gives 
+# 
+# $$\displaystyle \Delta x=e^{-(k_1+2k_2x_e)t} + const$$
+# 
+# when $t=0, \Delta x=\Delta x_0$ so that 
 # 
 # $$\displaystyle \Delta x=\Delta x_0e^{-(k_1+2k_2x_e)t}\qquad\tag{5c}$$
 # 
@@ -659,23 +765,25 @@ ans
 # 
 # Again, using the equilibrium condition, which in this case is 
 # 
-# $$\displaystyle k_2=k_1(a_0-x_e)^2/x_e^2$$
+# $$\displaystyle k_2=\frac{k_1}{x_e^2}(a_0-x_e)^2$$
 # 
 # the equation can be simplified to 
 # 
 # $$\displaystyle \ln\left(\frac{a_0x_e+x(a_0-2x_e)}{a_0(x_e-x)} \right) = k_1\frac{2a_0(a_0-x_e)}{x_e}t\qquad\tag{5d}$$
 # 
-# Returning to $\mathrm{2HCl \rightleftharpoons H_2 + Cl_2}$ this case can be converted into $2A\rightleftharpoons C+D$ quite simply by noticing the form of the rate equation where now $k_2'$ is the back reaction rate constant
+# A reaction such as $\mathrm{2HCl \rightleftharpoons H_2 + Cl_2}$ can be converted into $A+A\rightleftharpoons C+D$ quite simply by using the form of the rate equation for $A+B\rightleftharpoons C+D$ given above but letting $k_2'$ be  the new back-reaction rate constant, i.e.
 # 
 # $$\displaystyle -\frac{dx}{dt}=-k_1(a_0-x)^2+k_2'\left(\frac{x}{2}\right)^2 $$
 # 
-# is very similar to that of A+B=C+D and the equations become the same if we make $k_2'/4=k_2$.
+# This is has the form of $A+B\rightleftharpoons C+D$ and the equations become the same if we make $k_2'=4k_2$.
 
 # ## 4.5  Hydrogen iodide equilibrium
 # 
-# One of the first reaction to be studied in the late 1800's was the dissociation of hygrogen iodide vapour at high temperatures $\approx 450$ K. It is interesting to derive the kinetic equations for $\mathrm{2HI \rightleftharpoons H_2 + I_2}$  from scratch. 
+# One of the first reaction to be studied in the late 1800's was the dissociation of hygrogen iodide vapour at high temperatures $\approx 450$ K. It is interesting to derive the kinetic equations for 
 # 
-# The rate equations are
+# $$\displaystyle \mathrm{2HI \rightleftharpoons H_2 + I_2}$$
+# 
+# from scratch. The rate equations are
 # 
 # $$\displaystyle \frac{1}{2}\frac{d[HI]}{dt} = -\frac{d[H_2]}{dt}=-\frac{d[I_2]}{dt}=k_2[H_2][I_2]-k_1[HI]^2$$
 # 
@@ -697,21 +805,33 @@ ans
 # 
 # $$\displaystyle \frac{d}{dt}[HI] = 0$$
 # 
-# and solving for the equilibrium constant $K_e=k_1/k_2$ gives
+# and solving for the equilibrium constant $\displaystyle K_e=\frac{k_1}{k_2}$ gives
 # 
 # $$\displaystyle \frac{[HI]_e}{[HI]_0}=\frac{1}{1+2\sqrt{K_e}}$$
 # 
 # 
-# To solve eqn 5f a change in notation clarifies the equation, let $a=[HI]_0,\; x=[HI]/[HI]_0$ and then the solution is the integral,
+# To solve eqn 5f a change in notation clarifies the equation, let 
+# 
+# $$\displaystyle a=[HI]_0,\qquad x=[HI]/[HI]_0$$
+# 
+# making the solution the integral,
 # 
 # 
 # $$\displaystyle    \int_0^x \frac{1}{ 4K_e x^2 -(1-x)^2 }  dx= k_2a\sqrt{K_e}\int_0^t dt $$
 # 
-# which has a similar solution to those given above but is more compact if expressed in terms of $\tanh^{-1}$ solution where $\displaystyle 2\tanh^{-1}x =\ln(1+x)-\ln(1-x)$. The solution is
+# which has a similar solution to those given above but is more compact if expressed in terms of $\tanh^{-1}$ solution where 
+# 
+# $$\displaystyle 2\tanh^{-1}x =\ln(1+x)-\ln(1-x)$$
+# 
+# The solution is
 # 
 # $$\displaystyle \tanh^{-1}\left(\frac{(4K_e-1)x+1}{2\sqrt{K_e}}\right)=ak_2\sqrt{K_e}t+const$$
 # 
-# Using the identity $\displaystyle\tanh^{-1}(u)\pm \tanh^{-1}(v) =  \tanh^{-1} \left( \frac{u\pm v}{1\pm uv}\right) $ and isolating $x$ gives
+# Using the identity 
+# 
+# $$\displaystyle\tanh^{-1}(u)\pm \tanh^{-1}(v) =  \tanh^{-1} \left( \frac{u\pm v}{1\pm uv}\right) $$
+# 
+# and isolating $x$ gives
 # 
 # $$\displaystyle x=\frac{f}{f+2\sqrt{K_e}},\qquad f=\tanh(ak_2\sqrt{K_e}t)\qquad\tag{5g}$$
 # 
@@ -728,7 +848,9 @@ ans
 # 
 # ## 4.6 Reversible reaction when only the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$ 
 # 
-# Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. As an example the  ortho to para conversion of H$_2$ with a catalyst such as Nickel on $\mathrm{Al_2O_3}$ has the form $o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2$. Other examples are cis - trans isomerisation of some hydrocarbons or of $\alpha -,\beta-$ glucoses. 
+# Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. Examples are the cis - trans isomerisation of some hydrocarbons and of $\alpha -,\beta-$ glucoses and the ortho to para conversion of H$_2$ with a catalyst such as Nickel on $\mathrm{Al_2O_3}$. This reaction has the form 
+# 
+# $$\displaystyle o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2$$
 # 
 # Letting $a\equiv o-H_2$ and $b\equiv p-H_2$ concentrations produces the rate equation
 # 
@@ -738,13 +860,19 @@ ans
 # 
 # $$\displaystyle a+b=a_0+b_0=a_e+b_e$$
 # 
-# where subscript e denotes the equilibrium.  The equilibrium constant is $\displaystyle K=\frac{k_1}{k_{-1}}=\frac{b_e}{a_e}=\frac{a_0+b_0-a_e}{a_e}$,
+# where subscript $e$ denotes the equilibrium.  The equilibrium constant is 
 # 
-# By rearranging and substituting for $K$, the rate expression becomes
+# $$\displaystyle K=\frac{k_1}{k_{-1}}=\frac{b_e}{a_e}=\frac{a_0+b_0-a_e}{a_e}$$
+# 
+# and by rearranging and substituting for $K$, the rate expression becomes
 # 
 # $$\displaystyle \begin{align}\frac{da}{dt}=&-(k_1+k_{-1})a+k_{-1}(a_0+b_0)\\=&-k_1\left(1+\frac{k_{-1}}{k_1}\right)a+k_{-1}(a_0+b_0)\\=& -k_1\left(\frac{K+1}{K} \right) a+\frac{k_1}{K}(a_0+b_0)\end{align}$$
 # 
-# Using the total amount $a_0+b_0=a_e(K+1)$ and substituting again gives
+# Using the total amount 
+# 
+# $$\displaystyle a_0+b_0=a_e(K+1)$$
+# 
+# and substituting again gives
 # 
 # $$\displaystyle \frac{da}{dt}=-k_1\frac{K+1}{K}(a-a_e)$$
 # 
@@ -760,7 +888,15 @@ ans
 # 
 # $$\displaystyle a = a_e + (a_0-a_e)e^{-k_{obs}t}$$
 # 
-# which illustrates an exponentially decaying population of $a$ (ortho hydrogen) from $a_0$ to reach a constant value of $a_e$ at equilibrium with a measured rate constant of $k_{obs}=k_1(K+1)/K$. Both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data via the standard Gibbs energy change, $\Delta G^\text{o}=-RT\ln(K)$. Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
+# which illustrates an exponentially decaying population of $a$ (ortho hydrogen) from $a_0$ to reach a constant value of $a_e$ at equilibrium with a measured rate constant of 
+# 
+# $$\displaystyle k_{obs}=\frac{k_1}{K}(K+1)$$
+# 
+# Both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data via the standard Gibbs energy change, 
+# 
+# $$\displaystyle \Delta G^\text{o}=-RT\ln(K)$$
+# 
+# Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
 # 
 # ## 4.7 Kinetics of ligand exchange using isotopes
 # 
@@ -780,9 +916,21 @@ ans
 # 
 # $$\displaystyle [AX]+[A^*X]=a,\quad [A^*X]=x,\quad [BX]+[B^*X]=b,\quad [B^*X]=y$$
 # 
-# At $t=0$, $[A^*X]=0$ and at infinite time we measure $x_{\infty},y_{\infty}$ and as mass is conserved $x+y=x_{\infty}+y_{\infty}$. At the end of the reaction the tracer is distributed in proportion the the number of moles of each that are present, thus $\displaystyle \frac{x_{\infty}}{a}=\frac{y_{\infty}}{b}$. 
+# At $t=0$, $[A^*X]=0$ and at infinite time we measure $x_{\infty},y_{\infty}$ and as mass is conserved 
 # 
-# The reaction scheme only gives the stoichiometry and does not indicate any mechanism, first or second order for example, so instead of using rate constants we use a proportionality constant $R$ which is the gross rate of exchange of ligands, which is constant because the chemical composition is constant, and has units of concentration/time. If the reaction is in fact bimolecular then $R=k_2ab$. The rate of production of $[A^*X]$ is $dx/dt=-dy/dt$, therefore
+# $$\displaystyle x+y=x_{\infty}+y_{\infty}$$
+# 
+# At the end of the reaction the tracer is distributed in proportion the the number of moles of each that are present, thus 
+# 
+# $$\displaystyle \frac{x_{\infty}}{a}=\frac{y_{\infty}}{b}$$ 
+# 
+# The reaction scheme *only gives the stoichiometry* and does not indicate any mechanism, first or second order for example, so instead of using rate constants we use a proportionality constant $R$ which is the gross rate of exchange of ligands, which is constant because the chemical composition is constant, and has units of concentration/time. If the reaction is in fact bimolecular then $R=k_2ab$. 
+# 
+# The rate of production of $[A^*X]$ is 
+# 
+# $$\displaystyle \frac{dx}{dt}=-\frac{dy}{dt}$$
+# 
+# therefore
 # 
 # $$\displaystyle \frac{dx}{dt} = R\frac{[AX][B^*X]}{ab}-R\frac{[A^*X][BX]}{ab}$$
 # 
@@ -830,11 +978,17 @@ ans
 # 
 # $$\displaystyle  r=r_{in}-(r_{in}-1)e^{-\tau}$$
 # 
-# where $r = x/x_0, \,r_{in} = x_{in}/x_0$ and $\tau=ft/V$ so that now only the ratios need be considered. 
+# where 
 # 
-# If $r_{in} \gt 1$, the concentration ratio increases with time and the lake becomes polluted. At values of $r_{in} \lt 1$, which means that $x_0 \gt x_{in}$, the lake becomes more dilute and if pure water is added, $r_{in} = 0$, the polluted lake would be cleaned after a time larger than approximately $t = 5V/f$. 
+# $$\displaystyle r = x/x_0, \quad r_{in} = x_{in}/x_0,\quad \tau=ft/V$$
 # 
-# If the initial amount could be zero, i.e. the lake is clean but becomes polluted then we can write $r=x/x_{in},\; r_0=x_0/x_{in}$ and then
+# so that now only the ratios need be considered. If $r_{in} \gt 1$, the concentration ratio increases with time and the lake becomes polluted. At values of $r_{in} \lt 1$, which means that $x_0 \gt x_{in}$, the lake becomes more dilute and if pure water is added, $r_{in} = 0$, the polluted lake would be cleaned after a time larger than approximately $t = 5V/f$. 
+# 
+# If the initial amount could be zero, i.e. the lake is clean but becomes polluted then we can write 
+# 
+# $$\displaystyle r=x/x_{in},\quad r_0=x_0/x_{in}$$
+# 
+# making
 # 
 # $$\displaystyle r= 1-(1-r_0)e^{-\tau}$$
 # 
@@ -849,15 +1003,20 @@ ans
 # 
 # ## 4.9 Dissolution kinetics 
 # 
+# ### **(i) Dissolving**
 # When a solid solute is dissolved in a solvent, the rate equation is found by considering the change in the amount dissolved in solution during a short time period. In dissolving a solid, a saturated solution will eventually be formed and this limits how much solid will dissolve. If $x_0$ is the initial amount of solid to be dissolved in $m$ grams of solvent, $s_x /m$ the saturated solution concentration, $k$ the rate of dissolution (mass s$^{-1}$) and $x$ the number of grams of solid remaining at time $t$, then
 # 
 # $\qquad\qquad$ Amount of $x$ dissolved in time $t + \delta t$ = amount $x$ at $t - $ amount dissolved in $\delta t$.
 # 
-# The amount dissolved in time $\delta t$ is proportional to the amount of solid undissolved $x$, multiplied by the difference in concentration compared to that of a saturated solution, and this product is $\displaystyle kx\left( \frac{x_s}{m}-\frac{x_0-x}{m}\right)\delta t$.  The term $(x_0 - x)/m$ is the concentration dissolved, making the rate equation,
+# The amount dissolved in time $\delta t$ is proportional to the amount of solid undissolved $x$, multiplied by the difference in concentration compared to that of a saturated solution, and this product is 
+# 
+# $$\displaystyle kx\left( \frac{x_s}{m}-\frac{x_0-x}{m}\right)\delta t$$
+# 
+# The term $(x_0 - x)/m$ is the concentration dissolved, making the rate equation,
 # 
 # $$\displaystyle  \frac{dx}{dt}=-kx\left( \frac{x_s}{m}-\frac{x_0-x}{m}\right)  \qquad\tag{6}$$
 # 
-# To solve, separate variables and with the abbreviation, $a = x_s - x_0$, then 
+# To solve, separate variables, and letting $a = x_s - x_0$ gives 
 # 
 # $$\displaystyle \int\frac{dx}{ax+x^2}=-\frac{k}{m}\int dt$$
 # 
@@ -869,12 +1028,17 @@ ans
 # 
 # $$\displaystyle \ln\left( \frac{x}{a+x} \right) =-\frac{akt}{m}+c$$
 # 
-# If $x=x_0$ at $t=0$ then $c=\ln(x_0/(a+x_0))$ and therefore
+# If $x=x_0$ at $t=0$ then 
+# 
+# $$\displaystyle c=\ln\left(\frac{x_0}{a+x_0}\right)$$
+# 
+# and therefore
 # 
 # $$\displaystyle   \ln\left(\frac{x_0(a+x)}{x(a+x_0)}  \right) =\frac{akt}{m}, \qquad a=x_s-x_0$$
 # 
 # which can be solved for $x$ if the concentration profile with time is needed. This result shows that the amount of solid $x$ decreases exponentially to a constant value determined by $x_s - x_0$ from an initial value $x_0$ provided $x_s \lt x_0$, otherwise the amount of solid material becomes zero.
 # 
+# ### **(ii) Spreading of disease**
 # A rate equation with the form of equation (6) also appears in a completely different context, which is that of spreading a disease among $N$ individuals if the rate of spread is proportional both to the number infected $x$ and the number who are not infected. The equation then has the form
 #  
 # $$\displaystyle  \frac{dx}{dt}= kx(N-x) \qquad\tag{7} $$
@@ -891,7 +1055,11 @@ ans
 # 
 # from which the number of collisions can be calculated. The mean free path can be determined by thermal diffusion or the viscosity of a gas, and was one of the early successes of the kinetic theory of gases.
 # 
-# The chance of a collision in a sufficiently small length $dL$ is proportional to that length and is independent of the path $L$ already travelled, thus we can make this chance $\beta dL$ where $\beta$ will be determined later. After a collision let the probability equal $p(L)$ that a path of length $L$ occurs. At this distance the chance of a collision in the small increment $dL$ is $\beta dL$ and the chance that no collision will occur is therefore $(1-\beta dL)$. The chance that a path of length $L$ will occur and then no collision in the next increment $dL$ is the product of the two probabilities because they are independent of one another and is $p(L+dL)=(1-\beta dL)p(L)$. The quantity $p(L+dL)$ has to be expressed in terms of $p(L)$ to be of any use. In the diagram below $dL$ is an infinitesimal. The gradient is 
+# The chance of a collision in a sufficiently small length $dL$ is proportional to that length and is independent of the path $L$ already travelled, thus we can make this chance $\beta dL$ where $\beta$ will be determined later. After a collision let the probability equal $p(L)$ that a path of length $L$ occurs. At this distance the chance of a collision in the small increment $dL$ is $\beta dL$ and the chance that no collision will occur is therefore $(1-\beta dL)$. The chance that a path of length $L$ will occur and then no collision in the next increment $dL$ is the product of the two probabilities because they are independent of one another and is 
+# 
+# $$\displaystyle p(L+dL)=(1-\beta dL)p(L)$$
+# 
+# The quantity $p(L+dL)$ has to be expressed in terms of $p(L)$ to be of any use. In the diagram below $dL$ is an infinitesimal. The gradient is 
 # 
 # $$\displaystyle \frac{dp(L)}{dL}=\frac{\Delta}{dL}$$
 # 
@@ -899,7 +1067,9 @@ ans
 # 
 # $$\displaystyle p(L+dL)= p(L)+\frac{dp(L)}{dL}dL$$
 # 
-# therefore $\displaystyle p(L)+\frac{dp(L)}{dL}dL=(1-\beta dL)p(L)$ 
+# therefore 
+# 
+# $$\displaystyle p(L)+\frac{dp(L)}{dL}dL=(1-\beta dL)p(L)$$ 
 # 
 # giving,
 # 
@@ -916,7 +1086,11 @@ ans
 # 
 # $$\displaystyle \lambda = \frac{\int_0^\infty L\beta e^{-\beta L} dL}{\int_0^\infty \beta e^{-\beta L}dL}= \frac{1}{\beta}$$
 # 
-# thus $\displaystyle p(L)=e^{- L/\lambda}=e^{- 2\gamma L/(v\bar c)}$ and shows how rapidly the chance of mean free path $L$ decreases at fixed $\gamma/v$ and also as $\gamma/v$ increases at fixed $L$. 
+# thus 
+# 
+# $$\displaystyle p(L)=e^{- L/\lambda}=e^{- 2\gamma L/(v\bar c)}$$
+# 
+# and shows how rapidly the chance of mean free path $L$ decreases at fixed $\gamma/v$ and also as $\gamma/v$ increases at fixed $L$. 
 
 # ## 5 Diffusion of heat and molecules
 # 
@@ -928,10 +1102,22 @@ ans
 # 
 # $$\displaystyle   J=-D\frac{dc}{dx}  \qquad\tag{9}$$
 # 
-# where $J$ is the flux, which is the amount of material diffused/unit area/unit time and this is a constant quantity. The diffusion coefficient is $D$ ($\mathrm{m^2\,s^{-1}}$), $c$ is the concentration, and $x$ the distance over which diffusion occurs. If these last two 'diffusion' equations were to be rearranged, they would have the mathematical form of _zero-order_ rate equations because the rate of change does not depend on $\theta$ or $c$, but is a constant quantity for example, $\displaystyle \frac{ dc}{dx} = -\frac{J}{D}$ . An example from chemical kinetics of a zero-order rate equation is $\displaystyle \frac{dc}{dt} = -k_0$.
+# where $J$ is the flux, which is the amount of material diffused/unit area/unit time and this is a constant quantity. The diffusion coefficient is $D$ ($\mathrm{m^2\,s^{-1}}$), $c$ is the concentration, and $x$ the distance over which diffusion occurs. If these last two 'diffusion' equations were to be rearranged, they would have the mathematical form of _zero-order_ rate equations because the rate of change does not depend on $\theta$ or $c$, but is a constant quantity for example, 
+# 
+# $$\displaystyle \frac{ dc}{dx} = -\frac{J}{D}$$
+# 
+# An example from chemical kinetics of a zero-order rate equation is 
+# 
+# $$\displaystyle \frac{dc}{dt} = -k_0$$
 #   
 #  ## 5.1 Heat loss
-#  The heat and diffusion equations can be used to solve a variety of different problems. For example, a fridge has a wall that is $5$ cm thick, and is kept $20^\mathrm{o}$  cooler than the room. The thermal conductivity coefficient $k = 0.1 \mathrm{J\, s^{-1}\, m^{-1}\, K^{-1}}$ ( or $0.1$ watt/metre/ kelvin ), which is typical of good insulating materials, then the steady heat flow into the fridge is $Q = -kA\Delta\theta /\Delta x = -40$ W for each m$^2$ of surface area. Because the temperature change is fixed as is the wall thickness, then $d\theta /dx = \Delta \theta /\Delta x$.
+#  The heat and diffusion equations can be used to solve a variety of different problems. For example, a fridge has a wall that is $5$ cm thick, and is kept $20^\mathrm{o}$  cooler than the room. The thermal conductivity coefficient $k = 0.1 \mathrm{J\, s^{-1}\, m^{-1}\, K^{-1}}$ ( or $0.1$ watt/metre/ kelvin ), which is typical of good insulating materials, then the steady heat flow into the fridge is 
+#  
+# $$\displaystyle Q = -kA\frac{\Delta\theta }{\Delta x} = -40 \quad \text{Watt}$$
+# 
+# for each m$^2$ of surface area. Because the temperature change is fixed as is the wall thickness, then 
+# 
+# $$\displaystyle \frac{d\theta }{dx} = \frac{\Delta \theta }{\Delta x}$$
 # 
 # ## 5.2 Ice forming
 # The following example describes ice forming on a still lake. The ice layer increases in thickness with the square root of time when the water temperature is $0^\mathrm{o}$ C and the air temperature is lower and constant. The ice acts to insulate the water from the colder air above. A quantity of heat, $dH$, is taken from the water to freeze it in time $dt$, and the rate of heat transfer is $dH/dt$. By Fourier's law, equation (8) this is proportional to the temperature gradient $\Delta \theta/x $ across the ice, therefore $dH/dt \propto \Delta\theta/x$. As the ice thickens, the temperature gradient decreases and so heat transfer is reduced per unit time, which must be proportional to the thickness $dH \propto dx$, hence $dx/dt = \alpha\Delta\theta/x$ where $\alpha$ is a constant of proportionality. When integrated, this equation shows that the ice thickness increases as the square root of time; $x \propto \sqrt{t}$. This, and the fact that ice is less dense that water means that lakes do not generally freeze solid; there are usually not enough cold days.
@@ -941,7 +1127,15 @@ ans
 # ## 5.3 Diffusion through a cell wall
 # A third example concerns diffusion. A thin porous pipe of outer diameter $b$ has gas at pressure $p_0$ flowing inside it. The inside of the pipe has diameter of $a$ and the concentration of gas outside the pipe is zero. If the diffusion coefficient through the pipe to the outside is $D$, the rate of gas loss can be calculated using Fick's first law. The 'pipe' could be, for example, a capillary in the lungs containing O$_2$ and CO$_2$.
 # 
-# The flux (mass flow) per unit area/second through the pipe is a fixed quantity, which is given by $J = -D(dc/dr)$, where $r$ is the radial distance from the centre of the pipe and $c$ the concentration of the gas. The thickness of the pipe's wall is $b - a$ and the surface area is $2\pi r$ per unit length, hence $J = -2\pi rD(dc/dr)$ per unit length. Integrating through the wall of the pipe, from $a$ to $b$ gives 
+# The flux (mass flow) per unit area/second through the pipe is a fixed quantity, which is given by 
+# 
+# $$\displaystyle J = -D\frac{dc}{dr}$$
+# 
+# where $r$ is the radial distance from the centre of the pipe and $c$ the concentration of the gas. The thickness of the pipe's wall is $b - a$ and the surface area is $2\pi r$ per unit length, hence 
+# 
+# $$\displaystyle J = -2\pi rD\frac{dc}{dr}$$
+# 
+# per unit length. Integrating through the wall of the pipe, from $a$ to $b$ gives 
 # 
 # $$\displaystyle \int dc=\frac{J}{2\pi D}\int\frac{dr}{r}$$
 # 
@@ -949,7 +1143,11 @@ ans
 # 
 # $$\displaystyle  c=\frac{J}{2\pi D}\ln(r)+q$$
 # 
-# where $q$ is the  integration constant. With the initial conditions $c(b) = 0,\, c(a) = c_0$, the constants $J$ and $q$ can be found and eliminated using $\displaystyle \frac{J}{2\pi D}\ln(b) + q = 0$ and $\displaystyle c_0=\frac{J}{2\pi D}\ln(a)+q$ which results in the concentration at position $r$ as,
+# where $q$ is the  integration constant. With the initial conditions $c(b) = 0,\, c(a) = c_0$, the constants $J$ and $q$ can be found and eliminated using 
+# 
+# $$\displaystyle \frac{J}{2\pi D}\ln(b) + q = 0,\qquad c_0=\frac{J}{2\pi D}\ln(a)+q$$
+# 
+# which results in the concentration at position $r$ as,
 # 
 # $$\displaystyle  c=c_0\frac{\ln(b/r)}{\ln(b/a)}$$
 # 
@@ -966,11 +1164,23 @@ ans
 # 
 # where $R$ is the rate of reaction, which, for simplicity, is assumed to be a constant, independent of $c$. This can be the case for O$_2$ diffusing into a cell, or the reaction of ATP molecules when their concentration is high enough. ATP is used by the molecular motor protein ATPase. In this protein, proton flow across a membrane containing the ATPase drives a rotor that then forces closed one part of the protein and thereby splits ATP to ADP and releases phosphate. The reverse reaction can occur depending on the prevailing conditions. ATP is also used to drive similar molecular motors to ATPase that operate the flagellum of a micro-organism and so enable it to move. In this case, the ATP has to diffuse down the flagellum from its base where it has a constant concentration. The possibility exists that diffusion cannot supply enough ATP molecules, and hence energy, to move the flagellum and using the diffusion equation this condition is sought. The general model is therefore of a fixed concentration $c_0$ of a species outside a boundary, which diffuses (in one dimension in this model) into the bulk where it also reacts. We want to know to how far into the bulk reaction can occur.
 # 
-# Integrating at steady state when $\partial c/\partial t = 0$ produces $\displaystyle \frac{\partial c}{\partial x}=\frac{R}{D}x+a$ and if this is zero at the end of the flagellum where $x = L$, the integration constant $a$ can be found. Integrating again produces,
+# Integrating at steady state when $\partial c/\partial t = 0$ produces 
+# 
+# $$\displaystyle \frac{\partial c}{\partial x}=\frac{R}{D}x+a$$
+# 
+# and if this is zero at the end of the flagellum where $x = L$, the integration constant $a$ can be found. Integrating again produces,
 # 
 # $$\displaystyle   c=\frac{R}{D}\left (\frac{x^2}{2}-Lx \right) +c_0$$
 # 
-# if at $x = 0,\, c = c_0$. At the end of the flagellum, the concentration is $\displaystyle c=c_0-\frac{RL^2}{2D}$ which obviously cannot be negative; the limiting condition is, therefore, that $\displaystyle c_0 \ge \frac{RL^2}{2D}$. As a figure of merit, it is found that if $\displaystyle \frac{RL^2}{DC_0} \lt 1$ diffusion is sufficient to supply enough ATP to the molecular motors or to supply O$_2$ into cells. Using typical values, reaction can only take place within $10$ microns at most from the boundary. More sophisticated reactions with, say, spherical geometry lead to similar conclusions. Thus, it is understandable why small insects, for example, have tracheal tubes to increase the O$_2$ available to diffuse into their muscles and so maintain the high metabolic rate necessary for flight.
+# if at $x = 0,\, c = c_0$. At the end of the flagellum, the concentration is 
+# 
+# $$\displaystyle c=c_0-\frac{RL^2}{2D}$$
+# 
+# which obviously cannot be negative; the limiting condition is, therefore, that 
+# 
+# $$\displaystyle c_0 \ge \frac{RL^2}{2D}$$
+# 
+# As a figure of merit, it is found that if $\displaystyle \frac{RL^2}{DC_0} \lt 1$ diffusion is sufficient to supply enough ATP to the molecular motors or to supply O$_2$ into cells. Using typical values, reaction can only take place within $10$ microns at most from the boundary. More sophisticated reactions with, say, spherical geometry lead to similar conclusions. Thus, it is understandable why small insects, for example, have tracheal tubes to increase the O$_2$ available to diffuse into their muscles and so maintain the high metabolic rate necessary for flight.
 # 
 # ## 5.5 Cooling and heating.  Trommsdorff - Norrish effect
 # The time taken to cool a cup of coffee or tea follows Newton's law of cooling. This law states that the _rate_ of cooling depends on the difference in temperature compared to the surroundings and the form that the rate of heat transferred from one body is the same as that gained by another. This means that the rate is proportional to the temperature difference or
@@ -983,21 +1193,37 @@ ans
 # 
 # Mammals cool themselves by evaporating water from their bodies, by sweating or panting. The heat balance equation must, therefore, have extra positive terms due to the chemical reactions keeping them alive (their metabolism) and negative terms due to evaporation. This last term could be incorporated into the constant $k$. Heat flow is also important in simple chemical reactions and exothermic reactions are usually cooled. If the heat loss from the reaction vessel is not sufficient, the heat generated by an exothermic reaction, such as fermentation, can result in spontaneous combustion as used to happen with hayricks.
 # 
-# In radical polymerization reactions, as the reaction proceeds towards completion, the mixture must become very viscous. This means that the termination steps cannot occur and the rate of reaction increases because this is inversely proportional to the rate of termination. Secondly, the increased viscosity means that stirring can become ineffective and the only cooling mechanism is thus thermal diffusion to the vessel walls, which is slow. Consequently, if heat gain is too great, any gases or vapours trapped in the polymer may cause it to explode. This is called the _Trommsdorff - Norrish_ effect and is an example of an auto-acceleration process or one with positive feedback. The rate of temperature change has an extra term for the heat generated and should have the generic form $\displaystyle \frac{d\theta}{dt}=k(\theta_s-\theta)+k_re^{-E_a/R\theta}$ at temperature $\theta$. The activation energy is $E_a$, and $k_r$ is a constant proportional to the pre-exponential term from the Arrhenius equation and the heat capacity of the reaction mixture.
+# In radical polymerization reactions, as the reaction proceeds towards completion, the mixture must become very viscous. This means that the termination steps cannot occur and the rate of reaction increases because this is inversely proportional to the rate of termination. Secondly, the increased viscosity means that stirring can become ineffective and the only cooling mechanism is thus thermal diffusion to the vessel walls, which is slow. Consequently, if heat gain is too great, any gases or vapours trapped in the polymer may cause it to explode. This is called the *Trommsdorff - Norrish* effect and is an example of an auto-acceleration process or one with positive feedback. The rate of temperature change has an extra term for the heat generated and should have the generic form 
+# 
+# $$\displaystyle \frac{d\theta}{dt}=k(\theta_s-\theta)+k_re^{-E_a/R\theta}$$
+# 
+# at temperature $\theta$. The activation energy is $E_a$, and $k_r$ is a constant proportional to the pre-exponential term from the Arrhenius equation and the heat capacity of the reaction mixture.
 
 # ## 6 The Centrifuge: Forced separation
 # 
 # If a cylinder of radius $r$ and width $h$ is filled with a fluid, whose several components are to be separated, is spun about its axis at a speed of $\omega\, \mathrm{rad\, s^{-1}}$, the heavier components are forced to come to equilibrium further towards the outside of the cylinder than the lighter ones do. The balance is between _centripetal_ forces acting towards the axis of rotation and the _centrifugal_ forces acting in the opposite direction. 
 # 
-# A small cylindrical shell of fluid in the region $r$ to $r + dr$ from the rotation axis, experiences a net force inwards of $2\pi hr \cdot dP$ where $P$ is pressure (Margenau & Murphy 1943). This is equal to the inwards centripetal force due to the rotational motion which is $2m\omega r$. As the mass of the cylindrical shell is $2\pi rh\rho \,dr $, with $\rho$ being the density, equating  the forces produces $2\pi rh\cdot dP = 2\pi rh\cdot\rho \omega \cdot 2rdr$ or
+# A small cylindrical shell of fluid in the region $r$ to $r + dr$ from the rotation axis, experiences a net force inwards of $2\pi hr \cdot dP$ where $P$ is pressure (Margenau & Murphy 1943). This is equal to the inwards centripetal force due to the rotational motion which is $2m\omega r$. As the mass of the cylindrical shell is $2\pi rh\rho \,dr $, with $\rho$ being the density, equating  the forces produces 
+# 
+# $$\displaystyle 2\pi rh\cdot dP = 2\pi rh\cdot\rho \omega \cdot 2rdr$$
+# 
+# or
 # 
 # $$\displaystyle  \frac{dP}{dr}=\rho\omega^2 r $$
 # 
-# In a liquid, the density $\rho$ is a constant, and integrating produces the pressure $\displaystyle P = \rho\omega ^2r^2/2 + P_0$. This also explains why, if a liquid is spun in a beaker about its vertical axis, the surface obtains a parabolic profile. This can be seen clearly if two immiscible liquids are spun and one of them is coloured with some dye.
+# In a liquid, the density $\rho$ is a constant, and integrating produces the pressure 
+# 
+# $$\displaystyle P = \rho\omega ^2r^2/2 + P_0$$
+# 
+# This also explains why, if a liquid is spun in a beaker about its vertical axis, the surface obtains a parabolic profile. This can be seen clearly if two immiscible liquids are spun and one of them is coloured with some dye.
 # 
 # In a centrifuge, imagine strips taken out of the rotating cylinder and each replaced with a tube. Several of these are spun about the axis to balance the rotor. The distance $r$ is therefore the radial distance from the axis, and $h$ the height of the tube when it is spinning in a horizontal plane, which is normally its width.
 # 
-# In an ideal gas, the pressure is proportional to the density since $P = nRT/V = RT\rho$. Solving the equation 
+# In an ideal gas, the pressure is proportional to the density since 
+# 
+# $$\displaystyle P = nRT/V = RT\rho$$
+# 
+# Solving the equation 
 # 
 # $$\displaystyle \int\frac{dP}{P}=\frac{\omega^2}{RT}\int rdr$$
 # 
@@ -1022,7 +1248,11 @@ ans
 # 
 # $$\displaystyle I=I_0e^{-\sigma nL}$$
 # 
-# which is called the *Beer–Lambert law*. The absorbed light intensity is $\displaystyle I_{abs}=I_0(1-e^{-\sigma nL})$ because the total number of photons is those absorbed plus those transmitted. In many instances, the quantity $\sigma nL$, the optical density, is replaced with $\epsilon [c]L$ where $\epsilon$ is the extinction coefficient, which depends on the wavelength and has units of $\mathrm{dm^3\,mol^{-1}\, cm^{-1}}$, $[c]$ is the solution concentration and $L$ the path length.
+# which is called the *Beer–Lambert law*. The absorbed light intensity is 
+# 
+# $$\displaystyle I_{abs}=I_0(1-e^{-\sigma nL})$$
+# 
+# because the total number of photons is those absorbed plus those transmitted. In many instances, the quantity $\sigma nL$, the optical density, is replaced with $\epsilon [c]L$ where $\epsilon$ is the extinction coefficient, which depends on the wavelength and has units of $\mathrm{dm^3\,mol^{-1}\, cm^{-1}}$, $[c]$ is the solution concentration and $L$ the path length.
 # 
 # A beam of X-rays can be scattered by the electrons in a molecule's atoms, rather than being absorbed. In a single crystal, parallel planes of atoms occur at regular intervals. The scattered intensity from the many planes similarly oriented to the X-ray beam can add in phase or cancel out, and this forms the basis of X-ray crystallography. The beam of X-rays has intensity $I$, and if a sample contains $n$ electrons per unit volume, the first layer of thickness $dL$ intercepts $ndL$ photons, each electron presenting an area of $4\pi d^2$ where $d = e^2/mc^2$ and is approximately the closest approach distance of two electrons. An equation similar to the Beer-Lambert equation describes scattering but if this is small, and as $nL$ is the number of scattering electrons in the sample, the fractional scattering of a single electron becomes $I_s/I_0 =4\pi d^2=4\pi(e^2/mc^2)^2$, see Q5.
 # 
@@ -1052,7 +1282,15 @@ ans
 # 
 # $$\displaystyle  \int\frac{dv}{1-vh}=g\int dt, \qquad -\frac{1}{h}\ln(1-vh)=gt+c$$
 # 
-# and using initial values $\displaystyle c=-\ln(1-v_0h)/h$ this produces $\displaystyle \ln\left(\frac{1-vh}{1-v_0h}  \right)=-hgt$. After substituting for $h$ and rearranging, the velocity at any time $t$ is,
+# and using initial values 
+# 
+# $$\displaystyle c=-\ln(1-v_0h)/h$$
+# 
+# this produces 
+# 
+# $$\displaystyle \ln\left(\frac{1-vh}{1-v_0h}  \right)=-hgt$$
+# 
+# After substituting for $h$ and rearranging, the velocity at any time $t$ is,
 # 
 # $$\displaystyle  v=\frac{mg}{a}-\left( \frac{mg}{a}-v_0 \right)e^{-at/m}$$
 # 

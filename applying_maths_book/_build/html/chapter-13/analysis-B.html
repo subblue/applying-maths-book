@@ -1534,6 +1534,36 @@ title="Print to PDF"
     \(\chi^2\)
    </span>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-testing-fit-to-data">
+     <strong>
+      (i) Testing fit to data
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-testing-the-hardy-weinberg-model-fit-to-genetic-data">
+     <strong>
+      (ii) Testing the Hardy-Weinberg model fit to genetic data
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-using-a-table-of-critical-values">
+     <strong>
+      (iii) Using a table of critical values
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-other-tests">
+     <strong>
+      (iv) Other tests
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#confidence-intervals">
@@ -1609,6 +1639,36 @@ title="Print to PDF"
     \(\chi^2\)
    </span>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-testing-fit-to-data">
+     <strong>
+      (i) Testing fit to data
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-testing-the-hardy-weinberg-model-fit-to-genetic-data">
+     <strong>
+      (ii) Testing the Hardy-Weinberg model fit to genetic data
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-using-a-table-of-critical-values">
+     <strong>
+      (iii) Using a table of critical values
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-other-tests">
+     <strong>
+      (iv) Other tests
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#confidence-intervals">
@@ -1742,6 +1802,7 @@ title="Print to PDF"
 <p>The following data is analysed,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{ccc}\\
+\text{Table 1}\\
 \hline
 x &amp; y &amp; \sigma\\
 \hline
@@ -1850,48 +1911,102 @@ residuals</p>
 <hr class="docutils" />
 <section id="chi-squared-chi-2">
 <h2>6.4 Chi squared, <span class="math notranslate nohighlight">\(\chi^2\)</span><a class="headerlink" href="#chi-squared-chi-2" title="Permalink to this headline">#</a></h2>
-<p>A good measure of the overall goodness of fit is the <span class="math notranslate nohighlight">\(\chi^2\)</span> parameter. This measures the dispersion between the experimental data and the fitted function. If the data is normally distributed then the <span class="math notranslate nohighlight">\(\chi^2\)</span> is expected to be equal to the number of degrees of freedom; this is the number of data points less the constraints, two in the case of a linear fit since there are two parameters. (The reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> is the same quantity as mean square error (mse) used in Algorithm 2). The reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> should have a value close to one if the data is fitted well, and the probability of obtaining this value is <span class="math notranslate nohighlight">\(50\)</span>% since half of the time the <span class="math notranslate nohighlight">\(\chi^2\)</span> should exceed the norm. Values are often either very small, which can indicate that the weighting is too small because the standard deviations used are too big, or very large because the model does not fit the data. If the data is Poisson distributed, then the standard deviation is known exactly and the <span class="math notranslate nohighlight">\(\chi^2\)</span> can be used quantitatively, otherwise, it can only be used loosely and a probability of <span class="math notranslate nohighlight">\(10\)</span>% or larger is usually acceptable.</p>
-<p>To find the probability of the <span class="math notranslate nohighlight">\(\chi^2\)</span> being greater than a certain value, say <span class="math notranslate nohighlight">\(0.843\)</span> which is the value for the data in figure 8 the distribution has to be integrated up to that value, just as was done for the normal and <span class="math notranslate nohighlight">\(t\)</span> distributions discussed earlier. Using Python/Scipy this is</p>
+<p>A very good measure of the overall goodness of fit is the <span class="math notranslate nohighlight">\(\chi^2\)</span> parameter. This measures the dispersion between the experimental data and the fitted, i.e. model or calculated function.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \chi^2=\sum_i\frac{\left(y_i-Y_i\right)^2}{\sigma^2_i}=\sum_i \frac{(Observed_i-Calculated_i)^2}{(Expected\;Error_i)^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y_i\)</span> is the value of the fitted function, this could be written also as <span class="math notranslate nohighlight">\(Y_i \equiv f(x_i)\)</span> for some function <span class="math notranslate nohighlight">\(f(x)\)</span> you are using to fit the data. If the data is normally distributed the <span class="math notranslate nohighlight">\(\chi^2\)</span> is expected to be equal to the number of degrees of freedom; this is the number of data points less the constraints, two in the case of a linear fit since there are two parameters. The distribution has a similar look to the Poisson distribution. As the number of data points and hence <span class="math notranslate nohighlight">\(k\)</span> increases the Central Limit Theorem ensures that the distribution becomes close to the normal distribution, see fig 9a.</p>
+<p>The <em>reduced</em> <span class="math notranslate nohighlight">\(\chi^2\)</span>, which is <span class="math notranslate nohighlight">\(\chi^2/k\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the number of degrees of freedom, is the same quantity as mean square error (mse) used in Algorithm 2 and should have a value close to one if the data is fitted well, and the probability of obtaining this value is <span class="math notranslate nohighlight">\(50\)</span>% since half of the time the <span class="math notranslate nohighlight">\(\chi^2\)</span> should exceed the norm. Values are often either very small, which can indicate that the weighting is too small because the standard deviations used are too big, or very large because the model does not fit the data. If the data is Poisson distributed, then the standard deviation is known exactly and the <span class="math notranslate nohighlight">\(\chi^2\)</span> can be used quantitatively, otherwise, it can only be used loosely and a probability of at least <span class="math notranslate nohighlight">\(10\)</span>%  is usually acceptable.</p>
+<p>The <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution has the form</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle f_{\chi^2}(x,k)=\frac{2^{-k/2}}{\Gamma(k/2)}x^{k/2-1}e^{-x/2} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Gamma\)</span> is the gamma function. The mean value is at <span class="math notranslate nohighlight">\(\mu=k\)</span> and the std. deviation is <span class="math notranslate nohighlight">\(\sqrt{2k}\)</span>. The integral to find the <span class="math notranslate nohighlight">\(\chi^2\)</span> probability is made from the value of <span class="math notranslate nohighlight">\(x=\chi^2\)</span> to infinity, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Q= \int_{x=\chi^2}^\infty f_{\chi^2}(x,k) dx \qquad\tag{35}\]</div>
+<p>which is done numerically below using the <span class="math notranslate nohighlight">\(\mathtt{quad()}\)</span> integrator. Fig. 9a shows an example of <span class="math notranslate nohighlight">\(Q\)</span> the integrated area. A large <span class="math notranslate nohighlight">\(\chi^2\)</span> leads to a small probability <span class="math notranslate nohighlight">\(Q\)</span>. This probability means that if your chosen function fits the data the theoretical <span class="math notranslate nohighlight">\(\chi^2\)</span> will have a value equal to or larger than the one calculated from the data (Barlow 1989).</p>
+<p>The value of <span class="math notranslate nohighlight">\(Q\)</span> gives the chance (probability) that your experimental <span class="math notranslate nohighlight">\(\chi^2\)</span> exceeds the ideal (theoretical) value. Thus if your experimental value is <span class="math notranslate nohighlight">\(30\)</span> for <span class="math notranslate nohighlight">\(k=8\)</span> this indicates that less than <span class="math notranslate nohighlight">\(1\)</span>% of the time is this value expected because the ideal <span class="math notranslate nohighlight">\(\chi^2=20.09\)</span>, see table 2 below in section (iii). To be precise the value of <span class="math notranslate nohighlight">\(Q\)</span> is <span class="math notranslate nohighlight">\(0.00021\)</span> which means that the probability that the correct model has been used is very small indeed, i.e <span class="math notranslate nohighlight">\(\approx 0.02\)</span> % and so it is reasonable to argue that this model is the wrong one. Intuitively one may see this because the peak of the distribution is at about the value of the number of degrees of freedom <span class="math notranslate nohighlight">\(k=8\)</span> (fig 9a) and the std deviation is <span class="math notranslate nohighlight">\(\sqrt{2k}= 4\)</span> so the <span class="math notranslate nohighlight">\(\chi^2\)</span> should be in the range <span class="math notranslate nohighlight">\(\approx 8\pm 4\)</span>.</p>
+<p>Nonetheless, a check could be made because if the <span class="math notranslate nohighlight">\(\chi^2\)</span> is large, perhaps this is due to the errors being under estimated, conversely if the <span class="math notranslate nohighlight">\(\chi^2\)</span> is very small then perhaps the data has been selected and is not a true reflection of the measurement. Too small a <span class="math notranslate nohighlight">\(chi^2\)</span> is not expected and it is ‘suspicious’ because noise must always be present in the data.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig9aa.png" /></p>
+<p>Figure 9a. The <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution with different degrees of freedom, <span class="math notranslate nohighlight">\(k\)</span>. The area coloured is the integral from <span class="math notranslate nohighlight">\(x=a \to \infty\)</span>. The mean value is at <span class="math notranslate nohighlight">\(\mu=k\)</span> and the std. deviation is <span class="math notranslate nohighlight">\(\sqrt{2k}\)</span>.</p>
+<hr class="docutils" />
+<section id="i-testing-fit-to-data">
+<h3><strong>(i) Testing fit to data</strong><a class="headerlink" href="#i-testing-fit-to-data" title="Permalink to this headline">#</a></h3>
+<p>To find the probability of the <span class="math notranslate nohighlight">\(\chi^2\)</span> being greater than a certain value, say <span class="math notranslate nohighlight">\(6.74\)</span>, which is the <span class="math notranslate nohighlight">\(\chi^2\)</span> for the data in figure 8, (<span class="math notranslate nohighlight">\(0.843\times 8\)</span> for <span class="math notranslate nohighlight">\(8\)</span> degrees of freedom) the distribution is integrated from this value  to infinity just as was done for the normal and <span class="math notranslate nohighlight">\(t\)</span> distributions discussed earlier. Using Python with the ‘quad’ integrating routine the calculation is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span>                <span class="c1"># degrees of freedom is n - 2 for two fitting parameters</span>
-<span class="n">chi</span><span class="o">=</span> <span class="mf">0.843</span><span class="o">*</span><span class="n">df</span>             <span class="c1"># make into normal chi squared not reduced chi.</span>
-<span class="n">cumul</span> <span class="o">=</span>  <span class="k">lambda</span> <span class="n">w</span><span class="p">,</span><span class="n">df</span><span class="p">:</span> <span class="n">chi2</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># define function </span>
-<span class="n">Q</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cumul</span><span class="p">(</span><span class="n">chi</span><span class="p">,</span><span class="n">df</span><span class="p">)</span>
-<span class="n">Q</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># k is  degrees of freedom.  data from fit fig 8 and 9.</span>
+<span class="c1"># quad integrates from x = chi^2 to infinity</span>
+<span class="n">n</span>   <span class="o">=</span> <span class="mi">10</span>                                       <span class="c1"># number data points</span>
+<span class="n">k</span>   <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span>                                    <span class="c1"># 2 parameters</span>
+<span class="n">chi</span> <span class="o">=</span> <span class="mf">0.843</span><span class="o">*</span><span class="n">k</span>                                  <span class="c1"># multiply by k to make chi^2 not reduced value </span>
+<span class="n">fchi</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">k</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># chi^2 distribution</span>
+<span class="n">Q</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span><span class="n">chi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>     <span class="c1"># returns both integral value and its numerical error</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.3g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Q = &#39;</span><span class="p">,</span><span class="n">Q</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-B_5_0.png" src="../_images/analysis-B_5_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Q =    0.564
+</pre></div>
 </div>
 </div>
-<p>and this means that the probability of obtaining a <span class="math notranslate nohighlight">\(\chi^2\)</span> greater than <span class="math notranslate nohighlight">\(0.84df\)</span> is <span class="math notranslate nohighlight">\(56\)</span>% for eight degrees of freedom, ten data points and two fitted paramaters. This is equivalent to the integral of the <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution from <span class="math notranslate nohighlight">\(\chi^2 \to \infty\)</span>. The distribution function is</p>
+</div>
+<p>and this means that the probability of obtaining a <span class="math notranslate nohighlight">\(\chi^2\)</span> greater than <span class="math notranslate nohighlight">\(8.4\)</span> is <span class="math notranslate nohighlight">\(56\)</span>% for eight degrees of freedom because there are ten data points and two fitted parameters. This value of the probability is quite reasonable.  Experience shows that a good ‘rule of thumb’ is that <span class="math notranslate nohighlight">\(\chi^2\approx k\)</span> or approximately unit for the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span>. Prest et al. 1986 (Chapter 14 Numerical Recipes) has a detailed discussion on chi squared fitting. One important point is that this test of goodness of fit is very useful when the weighting for the data is not known, because the <span class="math notranslate nohighlight">\(\chi^2 \)</span> itself cannot be used quantitatively.</p>
+</section>
+<section id="ii-testing-the-hardy-weinberg-model-fit-to-genetic-data">
+<h3><strong>(ii) Testing the Hardy-Weinberg model fit to genetic data</strong><a class="headerlink" href="#ii-testing-the-hardy-weinberg-model-fit-to-genetic-data" title="Permalink to this headline">#</a></h3>
+<p>In chapter 1-9.27 the Hardy-Weinberg Equilibrium model was described. This model is used to calculate the percentage of dominant and recessive alleles in subsequent populations. It shows that under certain well defined conditions the percentage of dominant and recessive alleles remains constant from the first generation onwards.</p>
+<p>The following experimental data is from Ford, ( E.B. Ford (1971). Ecological Genetics, London.) and given in the Wikipedia page for the ‘Hardy-Weinberg principle’. The table gives the number of scarlet tiger moths with the genetic make up YY, Yy and yy where the dominant allele is labelled Y, the recessive y.</p>
 <div class="math notranslate nohighlight">
-\[ \displaystyle f_{\chi^2}(x,n)=\frac{2^{n/2}}{\Gamma(n/2)}x^{n/2-1}e^{-x/2} \]</div>
-<p>where <span class="math notranslate nohighlight">\(\Gamma\)</span> is the gamma function. Because the distribution cannot be less than zero, it is not symmetrical and has a shape skewed towards small values. The integral to find the probability is</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \qquad\tag{35}\]</div>
-<p>which is done numerically below using the <span class="math notranslate nohighlight">\(\mathtt{quad()}\)</span> integrator.</p>
+\[\begin{split}\displaystyle \begin{array}{lll}
+\hline
+\text{Phenotype}	&amp;\text{White-spotted } (YY\equiv p)	&amp;\text{Intermediate } (Yy\equiv pq)	&amp;\text{Little spotting } (yy\equiv q) &amp;\text{total}\\
+\text{experiment}&amp;	1469	&amp; 138	 &amp; 5	&amp; 1612\\
+\text{model}     &amp;  1467.4  &amp; 141.2  &amp; 3.4  &amp; \\
+\hline\end{array}\end{split}\]</div>
+<p>In fact we do not need to know what the data represents to do the calculation, just that one set is the experimental data the other the data fitted to this using a model. The <span class="math notranslate nohighlight">\(\chi^2= 0.83\)</span> has <span class="math notranslate nohighlight">\(1\)</span> degree of freedom and the probability of getting a <span class="math notranslate nohighlight">\(\chi^2 \gt 0.83\)</span> is <span class="math notranslate nohighlight">\(0.36\)</span> which is sufficiently large to say that the model fits the data. This will often be reported in the convoluted way often used when dealing with probabilities as  ‘the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span> that the population is in Hardy - Weinberg frequencies is <em>not</em> rejected’.</p>
+</section>
+<section id="iii-using-a-table-of-critical-values">
+<h3><strong>(iii) Using a table of critical values</strong><a class="headerlink" href="#iii-using-a-table-of-critical-values" title="Permalink to this headline">#</a></h3>
+<p>Most books on statistics give tables of critical values for the <span class="math notranslate nohighlight">\(\chi^2\)</span>. These list the values at which there is, for example, a <span class="math notranslate nohighlight">\(10,\; 5,\; 2\)</span> or <span class="math notranslate nohighlight">\(1\)</span>% chance of your <span class="math notranslate nohighlight">\(\chi^2\)</span>  exceeding the tabulated value. It is of course entirely possible to exceed the tabulated value at, say the <span class="math notranslate nohighlight">\(1\)</span>% level, with the correct model just extremely unlikely.</p>
+<p>The tables can be constructed using Python and the probability density function. For example <span class="math notranslate nohighlight">\(\mathrm{ chi2.ppf(1-sig,k)}\)</span> calculates the theoretical or perfect <span class="math notranslate nohighlight">\(\chi^2\)</span> with the given <span class="math notranslate nohighlight">\(\sigma\)</span> values <span class="math notranslate nohighlight">\(\mathrm{'sig'}\)</span> and degrees of freedom <span class="math notranslate nohighlight">\(k\)</span>. The top line in brackets (see below) gives the probability as percentages, the integer on the left of each rows is <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>The  <span class="math notranslate nohighlight">\(\chi^2=0.83\)</span> from the Hardy -Weinberg model is a good fit as this value is less that the value for <span class="math notranslate nohighlight">\(10\)</span>% probability with <span class="math notranslate nohighlight">\(k=1\)</span> and so has a chance of <span class="math notranslate nohighlight">\(90\)</span>% of being correct, if it were bigger than <span class="math notranslate nohighlight">\(2.71\)</span> it would have a <span class="math notranslate nohighlight">\(&lt;10\)</span>% chance of being correct. The <span class="math notranslate nohighlight">\(\chi^2=6.74\)</span> for the least squares fit in figs 8 &amp; 9 for <span class="math notranslate nohighlight">\(k=8\)</span> has a chance of being better than <span class="math notranslate nohighlight">\(90\)</span>% correct.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mf">8.0</span>
-<span class="n">chi</span> <span class="o">=</span> <span class="mf">0.843</span><span class="o">*</span><span class="n">n</span>
-<span class="n">fchi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">Q</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span><span class="n">chi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="p">)</span>                <span class="c1"># returns both integral value and its numerical error</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;probability of getting chi sqrd &gt; &#39;</span><span class="p">,</span><span class="n">chi</span><span class="p">,</span><span class="s1">&#39; is&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">])</span>     <span class="c1"># sigma values i.e. probability values to check against</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Table 2&#39;</span><span class="p">,</span><span class="n">p</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;     ------------------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}</span><span class="s1">|&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:6.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span> <span class="p">(</span><span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sig</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>probability of getting chi sqrd &gt;   6.744  is  0.564
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table 2 [10.   5.   2.5  1. ]
+     ------------------------
+   1|  2.71  3.84  5.02  6.63
+   2|  4.61  5.99  7.38  9.21
+   3|  6.25  7.81  9.35 11.34
+   4|  7.78  9.49 11.14 13.28
+   5|  9.24 11.07 12.83 15.09
+   6| 10.64 12.59 14.45 16.81
+   7| 12.02 14.07 16.01 18.48
+   8| 13.36 15.51 17.53 20.09
+   9| 14.68 16.92 19.02 21.67
+  10| 15.99 18.31 20.48 23.21
+  11| 17.28 19.68 21.92 24.72
+  12| 18.55 21.03 23.34 26.22
 </pre></div>
 </div>
 </div>
 </div>
-<p>Generally speaking if <span class="math notranslate nohighlight">\(Q&gt;0.001\)</span> the model is acceptable, and although this seems rather lax, if the model is wrong <span class="math notranslate nohighlight">\(Q\)</span> will be <em>orders of magnitude</em> smaller.  Experience shows that several a good ‘rule of thumb’ is that the reduced chi square is units or equivalently <span class="math notranslate nohighlight">\(\chi^2\approx df\)</span>. Prest et al. 1986 (Chapter 14 Numerical Recipes) has a detailed discussion on chi squared fitting. One important point is that this test of goodness of fit is very useful when the weighting for the data is not known, because the <span class="math notranslate nohighlight">\(\chi^2 \)</span> cannot then be used quantitatively.</p>
+</section>
+<section id="iv-other-tests">
+<h3><strong>(iv) Other tests</strong><a class="headerlink" href="#iv-other-tests" title="Permalink to this headline">#</a></h3>
 <p>Other tests can be performed on the residuals to assess the goodness of fit.</p>
-<p><strong>(a)</strong> does not fit the data, no matter what the statistics indicate.</p>
+<p><strong>(a)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Does not fit the data, no matter what the statistics indicate.</p>
 <p><strong>(b)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The residuals can be plotted on a normal probability plot and if they are Gaussian (normally) distributed, a straight line is produced.</p>
 <p><strong>(c)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The number of positive and negative runs in the residuals can be calculated. A ‘run’ occurs when consecutive residuals have the same sign, which is unlikely to occur if they are random. Therefore, if the data is random, then there are an equal number of small runs of positive and of negative numbers.</p>
 <p><strong>(d)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The autocorrelation of the data should be 1 for the first point, and randomly arranged about zero for the rest, which is expected for a sequence of random numbers.</p>
@@ -1917,6 +2032,7 @@ residuals</p>
 \[\displaystyle \sigma_a^2=\frac{\sum_iw_ix_i^2}{S_wS{_{xx}}},\quad \sigma_b^2= \frac{1}{S_{xx}}\qquad\tag{39}\]</div>
 <p>These variances are calculated by using the equation for error propagation, equation 20, differentiating with respect to each <span class="math notranslate nohighlight">\(y_i\)</span>. However, these equations should not be used unless the weightings are known, which they are for photon counting experiments. If weightings are unknown and a constant weighting used instead, incorrect results are obtained because both expressions 39 now depend only on <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The covariance between the slope and intercept can also be calculated. If this is large then the slope and intercept are not independent of one another. The covariance for the data used above is <span class="math notranslate nohighlight">\(-5\cdot10^{-4}\)</span> which is very small. When several parameters are being estimated such as in a polynomial or nonlinear, least squares calculation then the covariance between pairs of parameters should be examined and is often reported as a matrix of value. Ideally, each values should be small. The covariance for the linear least squares is <span class="math notranslate nohighlight">\(\mathrm{cov} = -\sigma_\epsilon^2\langle x \rangle/(S_{xx} /S_w)\)</span> as may be seen on the code.</p>
+</section>
 </section>
 <section id="confidence-intervals">
 <h2>6.5 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h2>
@@ -2005,7 +2121,7 @@ as the <span class="math notranslate nohighlight">\(S_{xx}\)</span> and <span cl
 <p>The result of analysing data described as <span class="math notranslate nohighlight">\(y=5+10x\)</span> is shown below, where normally distributed noise is added. The results of a typical fit shown in. fig 9a (left). You can see that in this particular case the gradient of the <span class="math notranslate nohighlight">\(a+bx\)</span> fit is slightly less than the true value while that for <span class="math notranslate nohighlight">\(y=bx\)</span> is too large. After <span class="math notranslate nohighlight">\(1000\)</span> similar trials a histogram of the least squares gradient is plotted for both cases, fig. 9a (right). It is clear that while both sets of data produce a distribution of gradients, only the plot of <span class="math notranslate nohighlight">\(y=a+bx\)</span> produces, on average, the correct gradient as shown by the vertical line at <span class="math notranslate nohighlight">\(b=10\)</span>. The distribution of gradients is a gaussian whose width is proportional to the standard deviation of the slope.</p>
 <p>These plots also illustrate that although the least squares gives the best fit to the data, this is usually slightly different to the true value, which is entirely to be expected given the nature of the noise, i.e. the noise always has a distribution and this is reflected in the distribution of results obtained. These distributions also illustrate the necessity of repeated measurements, for only by repeated measurements can the true value be approached. Of course, the true value might be obtained by chance with the first measurement, however, you will not know that this is the case.</p>
 <p><img alt="Drawing" src="../_images/analysis-fig9a.png" /></p>
-<p>Figure 9a. Left. The function <span class="math notranslate nohighlight">\(y=5+10x\)</span> is shown as a thick grey line. Data points (<span class="math notranslate nohighlight">\(y\)</span>) with noise added (blue circles) from a normal distribution with <span class="math notranslate nohighlight">\(\sigma=1, \mu=0\)</span>. The blue dashed line is the fit to the same data points using <span class="math notranslate nohighlight">\(y=a+bx\)</span> and the red dashed line using <span class="math notranslate nohighlight">\(y=bx\)</span>. Right. This plot shows histograms of the gradients for the two fitting functions after <span class="math notranslate nohighlight">\(1000\)</span> calculations. The vertical line at <span class="math notranslate nohighlight">\(b=10\)</span> shows the true gradient. The gray dotted lines show the (average) standard deviation of the slope, <span class="math notranslate nohighlight">\(b\pm\sigma\)</span> for the fits making up the histogram and has a value of <span class="math notranslate nohighlight">\(\approx 0.56\)</span></p>
+<p>Figure 9b. Left. The function <span class="math notranslate nohighlight">\(y=5+10x\)</span> is shown as a thick grey line. Data points (<span class="math notranslate nohighlight">\(y\)</span>) with noise added (blue circles) from a normal distribution with <span class="math notranslate nohighlight">\(\sigma=1, \mu=0\)</span>. The blue dashed line is the fit to the same data points using <span class="math notranslate nohighlight">\(y=a+bx\)</span> and the red dashed line using <span class="math notranslate nohighlight">\(y=bx\)</span>. Right. This plot shows histograms of the gradients for the two fitting functions after <span class="math notranslate nohighlight">\(1000\)</span> calculations. The vertical line at <span class="math notranslate nohighlight">\(b=10\)</span> shows the true gradient. The gray dotted lines show the (average) standard deviation of the slope, <span class="math notranslate nohighlight">\(b\pm\sigma\)</span> for the fits making up the histogram and has a value of <span class="math notranslate nohighlight">\(\approx 0.56\)</span>. The effect of fitting with the wrong function is now clear.</p>
 </section>
 <section id="over-parameterising">
 <h2>Over-parameterising<a class="headerlink" href="#over-parameterising" title="Permalink to this headline">#</a></h2>

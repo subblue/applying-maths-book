@@ -1525,9 +1525,8 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-decay-of-an-excited-state">
      <strong>
-      (i)
+      (i) Decay of an excited state
      </strong>
-     Decay of an excited state**
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1600,9 +1599,9 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#proof-of-convolution-as-transform">
+    <a class="reference internal nav-link" href="#proof-of-convolution-as-transforms">
      <strong>
-      Proof of convolution as transform
+      Proof of convolution as transforms
      </strong>
     </a>
    </li>
@@ -1770,9 +1769,8 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-decay-of-an-excited-state">
      <strong>
-      (i)
+      (i) Decay of an excited state
      </strong>
-     Decay of an excited state**
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1845,9 +1843,9 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#proof-of-convolution-as-transform">
+    <a class="reference internal nav-link" href="#proof-of-convolution-as-transforms">
      <strong>
-      Proof of convolution as transform
+      Proof of convolution as transforms
      </strong>
     </a>
    </li>
@@ -2016,8 +2014,9 @@ title="Print to PDF"
 <section id="examples">
 <h2>7.1 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <section id="i-decay-of-an-excited-state">
-<h3><strong>(i)</strong> Decay of an excited state**<a class="headerlink" href="#i-decay-of-an-excited-state" title="Permalink to this headline">#</a></h3>
-<p>Suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope. Before doing this experiment, two questions have to be answered;</p>
+<h3><strong>(i) Decay of an excited state</strong><a class="headerlink" href="#i-decay-of-an-excited-state" title="Permalink to this headline">#</a></h3>
+<p>Suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope although in most experiments time-correlated, single-photon counting (TCSPC) will be used.</p>
+<p>Once the data is convoluted it is natural to want to un-convolute it to obtain the true molecular response. Mathematically one can un-convolute by using matrix inversion but in practice this is never a good idea because of numerical problems, mainly diving by small numbers leading to a very noisy result. In practice an iterative non-linear least-squares method is used to fit a model that is thought to describe the data, see Chapter 13.  However, before doing an experiment, two questions have to be answered;</p>
 <p><strong>(a)</strong> Is the laser used to excite the molecules of short enough duration that the molecules or atoms can be excited quickly enough before any significant number can decay back to the ground state?</p>
 <p><strong>(b)</strong> Is the detection equipment (photodiode, oscilloscope) used able to respond quickly enough to measure the decaying fluorescence properly?</p>
 <p><img alt="Drawing" src="../_images/fourier-fig24.png" /></p>
@@ -2071,7 +2070,7 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 <p>This sum evaluates just one point; to calculate the whole convolution, the index <span class="math notranslate nohighlight">\(k\)</span> must now be varied from 1 to <span class="math notranslate nohighlight">\(n\)</span>, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.</p>
 <p>The algorithm to calculate the summation has a double loop to calculate all values of <span class="math notranslate nohighlight">\(k\)</span> and to perform the summation in eqn. 32. The two functions used are those that produced Fig. 24, which are <span class="math notranslate nohighlight">\(\displaystyle f(t) = e^{-t/100}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle w(t) = e^{-(t-100)^2/1000}\)</span>, and <span class="math notranslate nohighlight">\(2^{10}\)</span> points will be also be used to mimic the data produced by an instrument.</p>
 <p>First, because the data is discrete, arrays <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are made; to hold the data points. Then two loops are made, one changes <span class="math notranslate nohighlight">\(k\)</span> from 1 to <span class="math notranslate nohighlight">\(n\)</span> the and inside one calculates <span class="math notranslate nohighlight">\(C(k)\)</span>. The indices are arranged as in equation 32. The variable <span class="math notranslate nohighlight">\(s\)</span> accumulates the sum as the inner do loop progresses. This is a relatively slow calculation because of the double loop.</p>
-<p>The calculation is shown below, the convolution is normalised down to <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>The calculation is shown below, the peak of the convolution is normalised to <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm convolution by double summation</span>
@@ -2133,9 +2132,9 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 
 <span class="c1">#------------------------------------</span>
 <span class="k">def</span> <span class="nf">toep_conv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
-    <span class="n">top_row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">top_row</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     <span class="n">top_row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                                      <span class="c1"># put first element into top row of zeros</span>
-    <span class="n">toep</span> <span class="o">=</span> <span class="n">toeplitz</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">top_row</span><span class="p">)</span>                            <span class="c1"># column is w, top row is top_row</span>
+    <span class="n">toep</span>      <span class="o">=</span> <span class="n">toeplitz</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">top_row</span><span class="p">)</span>                       <span class="c1"># column is w, top row is top_row</span>
     <span class="k">return</span> <span class="n">toep</span> <span class="o">@</span> <span class="n">f</span>                                       <span class="c1"># @ is matrix multiplication operator     </span>
 <span class="c1">#-------------------------------------</span>
 
@@ -2172,7 +2171,13 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 <section id="i-comb-spectroscopy">
 <h3><strong>(i) Comb Spectroscopy</strong><a class="headerlink" href="#i-comb-spectroscopy" title="Permalink to this headline">#</a></h3>
 <p>The advent of stable, mode-locked lasers with ultra-short pulses has led to new forms of high resolution spectroscopy using combs of these laser pulses. See N. Pique &amp; T. Hansch, Nature Photonics, 2019, v13, p146 for a review. As can be seen in fig 27a (C) the femtosecond pulse is comprised of a number of closely spaced frequencies. These are so closely spaced that they are narrower than many vibrational/rotational transitions and so can be used to measure these with great accuracy. There are several variations of this method but the simplest, direct comb spectroscopy, is shown in the next figure where the absorption of the sample is measured as if in a normal spectrophotometer. A molecular transition that is <span class="math notranslate nohighlight">\(1\,\mathrm{cm^{-1}}\)</span> wide has a frequency width of <span class="math notranslate nohighlight">\(3\cdot10^{10}\)</span> Hz so that many comb lines will cover this frequency as typically their separation is <span class="math notranslate nohighlight">\(10^8\)</span> Hz.</p>
-<p>The frequency of a mode is altered from the phase delay, <span class="math notranslate nohighlight">\(\Delta\varphi\)</span> that occurs in the laser cavity, see fig 27a. The is is due to dispersion of the pulses due to refractive index in any medium (except vacuum) changing with wavelength. This causes the group velocity, the speed of the peak of pulse envelope moves, to be different to the phase velocity, which is the speed of light in the medium. This phase changes by a fixed amount each round trip and makes the frequency of a line <span class="math notranslate nohighlight">\(f_n = nf_{rep}+f_c\)</span> where <span class="math notranslate nohighlight">\(f_c=\Delta \varphi f_{rep}/2\pi=\Delta \varphi /( 2\pi\tau)\)</span> and where <span class="math notranslate nohighlight">\(f_c\)</span> is the offset of the whole train of frequencies from zero. The offset <span class="math notranslate nohighlight">\(f_c\)</span> is called the carrier-envelope offset frequency. The phase <span class="math notranslate nohighlight">\(\varphi\)</span> can change in the range <span class="math notranslate nohighlight">\(0\to 2\pi\)</span> which means that the actual frequency of any particular comb frequency can be unknown. The phase changes due to fluctuations in for example, laser power, laser length, air currents, vibration etc. and so for high resolution spectroscopy one way to overcome this phase variation is to lock one mode either to that of a second and very stable cavity, or to radiation of a known frequency, see Pique &amp; Hansch.</p>
+<p>The frequency of a mode is altered from the phase delay, <span class="math notranslate nohighlight">\(\Delta\varphi\)</span> that occurs in the laser cavity, see fig 27a. The is is due to dispersion of the pulses due to refractive index in any medium (except vacuum) changing with wavelength. This causes the group velocity, the speed of the peak of pulse envelope moves, to be different to the phase velocity, which is the speed of light in the medium. This phase changes by a fixed amount each round trip and makes the frequency of a line</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f_n = nf_{rep}+f_c\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f_c=\Delta \varphi f_{rep}/2\pi=\Delta \varphi /( 2\pi\tau)\]</div>
+<p>with <span class="math notranslate nohighlight">\(f_c\)</span> as the offset of the whole train of frequencies from zero. The offset <span class="math notranslate nohighlight">\(f_c\)</span> is called the carrier-envelope offset frequency. The phase <span class="math notranslate nohighlight">\(\varphi\)</span> can change in the range <span class="math notranslate nohighlight">\(0\to 2\pi\)</span> which means that the actual frequency of any particular comb frequency can be unknown. The phase changes due to fluctuations in for example, laser power, laser length, air currents, vibration etc. and so for high resolution spectroscopy one way to overcome this phase variation is to lock one mode either to that of a second and very stable cavity, or to radiation of a known frequency, see Pique &amp; Hansch.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig27c.png" /></p>
 <p>Figure 27b. Schematic of how to use a comb of pulses from a mode-locked laser to measure an absorption spectrum. (After fig 1, N. Pique &amp; T. Hansch, Nature Photonics, 2019, v13, p146). The lines shown are those of the longitudinal modes of the laser and there are normally many more than shown in this schematic, their separation is <span class="math notranslate nohighlight">\(c/2L\)</span> Hz. The frequency of the <span class="math notranslate nohighlight">\(n^{th}\)</span>  mode is <span class="math notranslate nohighlight">\(nf_{rep}+f_c\)</span>. These modes are the same as are shown in fig 27a C only there an intensity envelope is added.</p>
 </section>
@@ -2180,12 +2185,13 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 <hr class="docutils" />
 <section id="the-time-course-of-drug-action">
 <h2>7.6 The time course of drug action<a class="headerlink" href="#the-time-course-of-drug-action" title="Permalink to this headline">#</a></h2>
-<p>Most of us will have taken a course of antibiotics at one time or another. Some people have to take medication each day, for example thyroxine when their thyroid is malfunctioning or has been removed through surgery. The time - course of the concentration of a drug in the body depends not only on the lifetime the drug’s removal but also how frequently it is administered. (An alternative mathematical approach to the one illustrated here is given in chapter 5 section 1.4.)</p>
-<p>Typically, a fixed dose is taken at strictly defined intervals, for example once per day, and in this case we can use convolution to predict the time course of the action. The ‘instrument function’ is a series of spikes at a constant separation, modeling the interval between the drug being taken. The decrease of the drug’s concentration we shall assume is first order, and we can use a convolution algorithm to calculate what happens. We can imagine what happens before actually doing the calculation. When the lifetime of the medication is short compared to the time interval between taking it the concentration will rapidly rise and then fall close to zero following the daily periodicity. On the other hand if the lifetime is long relative to the frequency of administration then the concentration increases exponentially on average with a lifetime of <span class="math notranslate nohighlight">\(\tau\)</span>, but with a superimposed saw-tooth and eventually, after many days, becoming on average constant but still oscillating about the mean.  This behaviour is shown in figure 27a where a tablet is taken each day and the decay lifetime (elimination lifetime) is <span class="math notranslate nohighlight">\(3\)</span> days. The amount still varies quite a lot each day, which may not matter but if it does, a smaller dose given more frequently will reach the same average value and have the effect of smoothing out this variation.</p>
+<p>Most of us will have taken a course of antibiotics at one time or another. Some people have to take medication each day, for example thyroxine when their thyroid is malfunctioning or has been removed through surgery. The time - course of the concentration of a drug in the body depends not only on the lifetime the drug’s removal but also how frequently it is administered. You may be interested in an alternative mathematical approach to the one illustrated here which is given in chapter 5 section 1.4.</p>
+<p>Typically, a fixed dose is taken at strictly defined intervals, for example once per day, and in this case we can use convolution to predict the time course of the action. The ‘instrument function’ is a series of spikes (delta functions) at a constant separation, modeling the interval between the drug being taken. By using ‘spikes’ we assume that the drug begins to act in a far shorter time than it is removed from the body, this could be the case when injected intravenously but less so if swallowed since it takes time to dissolve in the stomach and then move into the blood stream to be distributed about the body.  Convolution can still be used in this case but with a wider function than a spike.</p>
+<p>The decrease of the drug’s concentration we shall assume is first order, with lifetime <span class="math notranslate nohighlight">\(\tau\)</span>, and use a convolution algorithm to calculate what happens. However, one can also easily imagine what happens before actually doing the calculation. When the lifetime of the medication is short compared to the time interval between taking it, its concentration will initially rapidly rise and then fall close to zero. On the other hand if the lifetime is long relative to the time between administration the concentration increases exponentially, on average with a lifetime of <span class="math notranslate nohighlight">\(\tau\)</span>, but with a superimposed saw-tooth and eventually, after many days, becoming on average constant but still oscillating about the mean.  This behaviour is shown in figure 27a where a tablet is taken each day and the decay lifetime (elimination lifetime) is <span class="math notranslate nohighlight">\(3\)</span> days. The amount still varies quite a lot each day, which may not matter but if it does, a smaller dose given more frequently will reach the same average value and have the effect of smoothing out this variation.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig27a.png" /></p>
 <p>Fig 27c. The convolution of a comb function with an exponential decay, mimicking the concentration of a drug in the body. The decay with lifetime of <span class="math notranslate nohighlight">\(3\)</span> days is shown in gray at the lower left of the figure. The profile of taking the medication is the comb of spikes. The concentration in the body is the blue saw-tooth like curve showing the integrating effect as the amount of medication does not fall to zero in the time interval before the next ingestion. The three red lines show the minimum, average and maximum  concentrations achieved. The initial amount <span class="math notranslate nohighlight">\(I_0=1\)</span>.</p>
 <hr class="docutils" />
-<p>At long times the smallest amount present is <span class="math notranslate nohighlight">\(\approx \displaystyle e^{-1/\tau}/(1-e^{-1/\tau})\)</span> and the maximum is <span class="math notranslate nohighlight">\(\displaystyle \approx 1/(1-e^{-1/\tau})\)</span>. The approximate average concentration (middle red line, top right) is the average of the upper and lower limits and is <span class="math notranslate nohighlight">\(\coth(1/(2\tau))/2 \approx \tau\)</span> in the arbitrary units used. If <span class="math notranslate nohighlight">\(f\)</span> is the fraction of the final average level reached after <span class="math notranslate nohighlight">\(n\)</span> doses then <span class="math notranslate nohighlight">\(f=1-e^{-nT/\tau}\)</span> where <span class="math notranslate nohighlight">\(T\)</span> is the time interval between doses. To reach <span class="math notranslate nohighlight">\(99\)</span>% of the final average value when <span class="math notranslate nohighlight">\(\tau=3\)</span> takes <span class="math notranslate nohighlight">\(n=14\)</span> doses or the same number of days in this example.</p>
+<p>At long times the smallest amount present is <span class="math notranslate nohighlight">\(\approx \displaystyle e^{-1/\tau}/(1-e^{-1/\tau})\)</span> and the maximum is <span class="math notranslate nohighlight">\(\displaystyle \approx 1/(1-e^{-1/\tau})\)</span>. The approximate average concentration (middle red line, top right) is the average of the upper and lower limits and is <span class="math notranslate nohighlight">\(\coth(1/(2\tau))/2 \approx \tau\)</span> in the arbitrary units used. If <span class="math notranslate nohighlight">\(f\)</span> is the fraction of the final average level reached after <span class="math notranslate nohighlight">\(n\)</span> doses then <span class="math notranslate nohighlight">\(f=1-e^{-nT/\tau}\)</span> where <span class="math notranslate nohighlight">\(T\)</span> is the time interval between doses. To reach <span class="math notranslate nohighlight">\(99\)</span>% of the final average value when <span class="math notranslate nohighlight">\(\tau=3\)</span> takes <span class="math notranslate nohighlight">\(n=14\)</span> doses or for example the same number of days.</p>
 </section>
 <section id="convolution-by-fourier-transform">
 <h2>7.7 Convolution by Fourier transform<a class="headerlink" href="#convolution-by-fourier-transform" title="Permalink to this headline">#</a></h2>
@@ -2221,8 +2227,8 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 <p><span class="math notranslate nohighlight">\(\quad\)</span>(2) The transform of a convolution is the product of the transforms: <span class="math notranslate nohighlight">\(T^{-1}[f(t)\otimes w(t)]=T(f)\cdot T(w)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>(3) The transform of a product is the convolution of the transforms: <span class="math notranslate nohighlight">\(T(f\cdot w)=T(f)\otimes T(w)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>(4) The product of two functions is the reverse transform of the convolution of their transforms: <span class="math notranslate nohighlight">\(f\cdot w=T^{-1}[ T(f)\otimes T(w) ]\)</span>.</p>
-<section id="proof-of-convolution-as-transform">
-<h3><strong>Proof of convolution as transform</strong><a class="headerlink" href="#proof-of-convolution-as-transform" title="Permalink to this headline">#</a></h3>
+<section id="proof-of-convolution-as-transforms">
+<h3><strong>Proof of convolution as transforms</strong><a class="headerlink" href="#proof-of-convolution-as-transforms" title="Permalink to this headline">#</a></h3>
 <p>The proof that the convolution is a product of transforms starts with the definition in eqn 33 the transform is made and the order of integration is changed. (The limits are removed for clarity and are <span class="math notranslate nohighlight">\(u,t \pm \infty\)</span> and replaced with the variable). The first step is to convert <span class="math notranslate nohighlight">\(w\)</span> into its fourier transform, which introduces another integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{u}\int_{t} f(t)w(u-t)\,dt \,e^{-i\omega u} du =\int_{t}f(t)\left[\int_{u} w(u-t)e^{-i\omega u} du \right]\,dt \]</div>

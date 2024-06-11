@@ -114,6 +114,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The following data is analysed,
 # 
 # $$\displaystyle \begin{array}{ccc}\\
+# \text{Table 1}\\
 # \hline
 # x & y & \sigma\\
 # \hline
@@ -224,45 +225,89 @@ print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', inter
 # 
 # ## 6.4 Chi squared, $\chi^2$
 # 
-# A good measure of the overall goodness of fit is the $\chi^2$ parameter. This measures the dispersion between the experimental data and the fitted function. If the data is normally distributed then the $\chi^2$ is expected to be equal to the number of degrees of freedom; this is the number of data points less the constraints, two in the case of a linear fit since there are two parameters. (The reduced $\chi^2$ is the same quantity as mean square error (mse) used in Algorithm 2). The reduced $\chi^2$ should have a value close to one if the data is fitted well, and the probability of obtaining this value is $50$% since half of the time the $\chi^2$ should exceed the norm. Values are often either very small, which can indicate that the weighting is too small because the standard deviations used are too big, or very large because the model does not fit the data. If the data is Poisson distributed, then the standard deviation is known exactly and the $\chi^2$ can be used quantitatively, otherwise, it can only be used loosely and a probability of $10$% or larger is usually acceptable.
+# A very good measure of the overall goodness of fit is the $\chi^2$ parameter. This measures the dispersion between the experimental data and the fitted, i.e. model or calculated function. 
 # 
-# To find the probability of the $\chi^2$ being greater than a certain value, say $0.843$ which is the value for the data in figure 8 the distribution has to be integrated up to that value, just as was done for the normal and $t$ distributions discussed earlier. Using Python/Scipy this is 
+# $$\displaystyle \chi^2=\sum_i\frac{\left(y_i-Y_i\right)^2}{\sigma^2_i}=\sum_i \frac{(Observed_i-Calculated_i)^2}{(Expected\;Error_i)^2}$$
+# 
+# where $Y_i$ is the value of the fitted function, this could be written also as $Y_i \equiv f(x_i)$ for some function $f(x)$ you are using to fit the data. If the data is normally distributed the $\chi^2$ is expected to be equal to the number of degrees of freedom; this is the number of data points less the constraints, two in the case of a linear fit since there are two parameters. The distribution has a similar look to the Poisson distribution. As the number of data points and hence $k$ increases the Central Limit Theorem ensures that the distribution becomes close to the normal distribution, see fig 9a.  
+# 
+# The *reduced* $\chi^2$, which is $\chi^2/k$ where $k$ is the number of degrees of freedom, is the same quantity as mean square error (mse) used in Algorithm 2 and should have a value close to one if the data is fitted well, and the probability of obtaining this value is $50$% since half of the time the $\chi^2$ should exceed the norm. Values are often either very small, which can indicate that the weighting is too small because the standard deviations used are too big, or very large because the model does not fit the data. If the data is Poisson distributed, then the standard deviation is known exactly and the $\chi^2$ can be used quantitatively, otherwise, it can only be used loosely and a probability of at least $10$%  is usually acceptable.
+# 
+# The $\chi^2$ distribution has the form
+# 
+# $$ \displaystyle f_{\chi^2}(x,k)=\frac{2^{-k/2}}{\Gamma(k/2)}x^{k/2-1}e^{-x/2} $$
+# 
+# where $\Gamma$ is the gamma function. The mean value is at $\mu=k$ and the std. deviation is $\sqrt{2k}$. The integral to find the $\chi^2$ probability is made from the value of $x=\chi^2$ to infinity, i.e. 
+# 
+# $$\displaystyle Q= \int_{x=\chi^2}^\infty f_{\chi^2}(x,k) dx \qquad\tag{35}$$
+# 
+# which is done numerically below using the $\mathtt{quad()}$ integrator. Fig. 9a shows an example of $Q$ the integrated area. A large $\chi^2$ leads to a small probability $Q$. This probability means that if your chosen function fits the data the theoretical $\chi^2$ will have a value equal to or larger than the one calculated from the data (Barlow 1989). 
+# 
+# The value of $Q$ gives the chance (probability) that your experimental $\chi^2$ exceeds the ideal (theoretical) value. Thus if your experimental value is $30$ for $k=8$ this indicates that less than $1$% of the time is this value expected because the ideal $\chi^2=20.09$, see table 2 below in section (iii). To be precise the value of $Q$ is $0.00021$ which means that the probability that the correct model has been used is very small indeed, i.e $\approx 0.02$ % and so it is reasonable to argue that this model is the wrong one. Intuitively one may see this because the peak of the distribution is at about the value of the number of degrees of freedom $k=8$ (fig 9a) and the std deviation is $\sqrt{2k}= 4$ so the $\chi^2$ should be in the range $\approx 8\pm 4$. 
+# 
+# Nonetheless, a check could be made because if the $\chi^2$ is large, perhaps this is due to the errors being under estimated, conversely if the $\chi^2$ is very small then perhaps the data has been selected and is not a true reflection of the measurement. Too small a $chi^2$ is not expected and it is 'suspicious' because noise must always be present in the data. 
+# 
+# ![Drawing](analysis-fig9aa.png)  
+# 
+# Figure 9a. The $\chi^2$ distribution with different degrees of freedom, $k$. The area coloured is the integral from $x=a \to \infty$. The mean value is at $\mu=k$ and the std. deviation is $\sqrt{2k}$.
+# ___________
+# 
+# ### **(i) Testing fit to data**
+# To find the probability of the $\chi^2$ being greater than a certain value, say $6.74$, which is the $\chi^2$ for the data in figure 8, ($0.843\times 8$ for $8$ degrees of freedom) the distribution is integrated from this value  to infinity just as was done for the normal and $t$ distributions discussed earlier. Using Python with the 'quad' integrating routine the calculation is. 
 
 # In[3]:
 
 
-df = n - 2                # degrees of freedom is n - 2 for two fitting parameters
-chi= 0.843*df             # make into normal chi squared not reduced chi.
-cumul =  lambda w,df: chi2.cdf(w,df)  # define function 
-Q = 1 - cumul(chi,df)
-Q
+# k is  degrees of freedom.  data from fit fig 8 and 9.
+# quad integrates from x = chi^2 to infinity
+n   = 10                                       # number data points
+k   = n - 2                                    # 2 parameters
+chi = 0.843*k                                  # multiply by k to make chi^2 not reduced value 
+fchi= lambda x,k: x**(k/2-1) * exp(-x/2)/(2**(k/2)*gamma(k/2))  # chi^2 distribution
+Q, err = quad(fchi ,chi,np.inf, args=(k) )     # returns both integral value and its numerical error
+print('{:s}{:8.3g}'.format('Q = ',Q))
 
 
-# and this means that the probability of obtaining a $\chi^2$ greater than $0.84df$ is $56$% for eight degrees of freedom, ten data points and two fitted paramaters. This is equivalent to the integral of the $\chi^2$ distribution from $\chi^2 \to \infty$. The distribution function is 
+# and this means that the probability of obtaining a $\chi^2$ greater than $8.4$ is $56$% for eight degrees of freedom because there are ten data points and two fitted parameters. This value of the probability is quite reasonable.  Experience shows that a good 'rule of thumb' is that $\chi^2\approx k$ or approximately unit for the reduced $\chi^2$. Prest et al. 1986 (Chapter 14 Numerical Recipes) has a detailed discussion on chi squared fitting. One important point is that this test of goodness of fit is very useful when the weighting for the data is not known, because the $\chi^2 $ itself cannot be used quantitatively. 
 # 
-# $$ \displaystyle f_{\chi^2}(x,n)=\frac{2^{n/2}}{\Gamma(n/2)}x^{n/2-1}e^{-x/2} $$
+# ### **(ii) Testing the Hardy-Weinberg model fit to genetic data**
+# In chapter 1-9.27 the Hardy-Weinberg Equilibrium model was described. This model is used to calculate the percentage of dominant and recessive alleles in subsequent populations. It shows that under certain well defined conditions the percentage of dominant and recessive alleles remains constant from the first generation onwards.
 # 
-# where $\Gamma$ is the gamma function. Because the distribution cannot be less than zero, it is not symmetrical and has a shape skewed towards small values. The integral to find the probability is 
+# The following experimental data is from Ford, ( E.B. Ford (1971). Ecological Genetics, London.) and given in the Wikipedia page for the 'Hardy-Weinberg principle'. The table gives the number of scarlet tiger moths with the genetic make up YY, Yy and yy where the dominant allele is labelled Y, the recessive y.
 # 
-# $$\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \qquad\tag{35}$$
+# $$\displaystyle \begin{array}{lll}
+# \hline
+# \text{Phenotype}	&\text{White-spotted } (YY\equiv p)	&\text{Intermediate } (Yy\equiv pq)	&\text{Little spotting } (yy\equiv q) &\text{total}\\
+# \text{experiment}&	1469	& 138	 & 5	& 1612\\
+# \text{model}     &  1467.4  & 141.2  & 3.4  & \\
+# \hline\end{array}$$
 # 
-# which is done numerically below using the $\mathtt{quad()}$ integrator.
+# In fact we do not need to know what the data represents to do the calculation, just that one set is the experimental data the other the data fitted to this using a model. The $\chi^2= 0.83$ has $1$ degree of freedom and the probability of getting a $\chi^2 \gt 0.83$ is $0.36$ which is sufficiently large to say that the model fits the data. This will often be reported in the convoluted way often used when dealing with probabilities as  'the null hypothesis $H_0$ that the population is in Hardy - Weinberg frequencies is *not* rejected'.
+# 
+# ### **(iii) Using a table of critical values**
+# Most books on statistics give tables of critical values for the $\chi^2$. These list the values at which there is, for example, a $10,\; 5,\; 2$ or $1$% chance of your $\chi^2$  exceeding the tabulated value. It is of course entirely possible to exceed the tabulated value at, say the $1$% level, with the correct model just extremely unlikely. 
+# 
+# The tables can be constructed using Python and the probability density function. For example $\mathrm{ chi2.ppf(1-sig,k)}$ calculates the theoretical or perfect $\chi^2$ with the given $\sigma$ values $\mathrm{'sig'}$ and degrees of freedom $k$. The top line in brackets (see below) gives the probability as percentages, the integer on the left of each rows is $k$. 
+# 
+# The  $\chi^2=0.83$ from the Hardy -Weinberg model is a good fit as this value is less that the value for $10$% probability with $k=1$ and so has a chance of $90$% of being correct, if it were bigger than $2.71$ it would have a $<10$% chance of being correct. The $\chi^2=6.74$ for the least squares fit in figs 8 & 9 for $k=8$ has a chance of being better than $90$% correct.
 
 # In[4]:
 
 
-n = 8.0
-chi = 0.843*n
-fchi = lambda x: x**(n/2-1) * exp(-x/2)/(2**(n/2)*gamma(n/2))
-Q, err = quad(fchi ,chi,np.inf )                # returns both integral value and its numerical error
-print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',chi,' is', Q))
+p = np.array([0.10, 0.05, 0.025, 0.01])     # sigma values i.e. probability values to check against
+print( 'Table 2',p*100)
+print('     ------------------------')
+for k in range(1,13):
+    print('{:4d}|'.format(k), end='')
+    for sig in p:
+        print('{:6.2f}'.format (chi2.ppf(1-sig,k) ), end='' ) 
+    print('')
 
 
-# Generally speaking if $Q>0.001$ the model is acceptable, and although this seems rather lax, if the model is wrong $Q$ will be _orders of magnitude_ smaller.  Experience shows that several a good 'rule of thumb' is that the reduced chi square is units or equivalently $\chi^2\approx df$. Prest et al. 1986 (Chapter 14 Numerical Recipes) has a detailed discussion on chi squared fitting. One important point is that this test of goodness of fit is very useful when the weighting for the data is not known, because the $\chi^2 $ cannot then be used quantitatively. 
-# 
+# ### **(iv) Other tests**
 # Other tests can be performed on the residuals to assess the goodness of fit.
 # 
-# **(a)** does not fit the data, no matter what the statistics indicate.
+# **(a)**$\quad$ Does not fit the data, no matter what the statistics indicate.
 # 
 # **(b)**$\quad$ The residuals can be plotted on a normal probability plot and if they are Gaussian (normally) distributed, a straight line is produced.
 # 
@@ -410,7 +455,7 @@ f.ppf(0.99,1,8)    # f is name of distribution, see top of page, from scipy.stat
 # 
 # ![Drawing](analysis-fig9a.png) 
 # 
-# Figure 9a. Left. The function $y=5+10x$ is shown as a thick grey line. Data points ($y$) with noise added (blue circles) from a normal distribution with $\sigma=1, \mu=0$. The blue dashed line is the fit to the same data points using $y=a+bx$ and the red dashed line using $y=bx$. Right. This plot shows histograms of the gradients for the two fitting functions after $1000$ calculations. The vertical line at $b=10$ shows the true gradient. The gray dotted lines show the (average) standard deviation of the slope, $b\pm\sigma$ for the fits making up the histogram and has a value of $\approx 0.56$
+# Figure 9b. Left. The function $y=5+10x$ is shown as a thick grey line. Data points ($y$) with noise added (blue circles) from a normal distribution with $\sigma=1, \mu=0$. The blue dashed line is the fit to the same data points using $y=a+bx$ and the red dashed line using $y=bx$. Right. This plot shows histograms of the gradients for the two fitting functions after $1000$ calculations. The vertical line at $b=10$ shows the true gradient. The gray dotted lines show the (average) standard deviation of the slope, $b\pm\sigma$ for the fits making up the histogram and has a value of $\approx 0.56$. The effect of fitting with the wrong function is now clear.
 # 
 # ## Over-parameterising
 # 
