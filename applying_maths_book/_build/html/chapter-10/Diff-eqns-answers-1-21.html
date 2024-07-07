@@ -1065,7 +1065,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-D.html">
-     6 The phase plane, nullclines, and stable points
+     6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
     </a>
    </li>
    <li class="toctree-l2">
@@ -2108,10 +2108,10 @@ a-x &amp; &amp; b+x
 \[\displaystyle \frac{1}{(a_0+b_0-x)x}=\frac{1}{(a_0+b_0)}\left[\frac{1}{x}+\frac{1}{a_0+b_0-x} \right]\]</div>
 <p>which produces two log functions when integrated. The initial conditions are <span class="math notranslate nohighlight">\(x = a_0\)</span> when <span class="math notranslate nohighlight">\(t = 0\)</span> then the integration constant is <span class="math notranslate nohighlight">\(\ln(a_0/b_0)\)</span> and the rate equation,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \ln \left(\left| \frac{xb_0}{a_0(a_0+b_0-x)}     \right|  \right) =-(a_0+b_0)kt\]</div>
+\[\displaystyle  \ln \left(\left| \frac{xb_0}{a_0(a_0+b_0-x)}     \right|  \right) =(a_0+b_0)kt\]</div>
 <p>and the absolute value is added because the log cannot be negative. Rearranging produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle x = a_0\frac{a_0+b_0}{a_0+b_0e^{-(a_0+b_0)kt}} \]</div>
+\[\displaystyle x = a_0\frac{a_0+b_0}{a_0+b_0e^{(a_0+b_0)kt}} \]</div>
 <p>This and also the increase of <span class="math notranslate nohighlight">\(B\)</span> are plotted in Fig. 34.</p>
 <p>(b) The phase portrait is an inverted parabola; see Fig.34, Right. The right-hand equilibrium point is unstable, so that from any starting value, <span class="math notranslate nohighlight">\(x\)</span> will end up at zero which means complete reaction occurs. The stability is determined by <span class="math notranslate nohighlight">\(d^2x/dt^2\)</span> and is positive at <span class="math notranslate nohighlight">\(x = a_0 + b_0\)</span>, so this point is unstable and negative at <span class="math notranslate nohighlight">\(x = 0\)</span> which is a stable point.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig34.png" /></p>

@@ -111,11 +111,11 @@ for i in range(len(ans_s)):
 # 
 # $$x_{n+1} = r\,x_n(1 - x_n)$$
 # 
-# where $r$ is a constant and this equation is the discrete version of the logistic equation (Verhulst 1838) used to describe population growth, 
+# where $r$ is a constant and this equation is the discrete version of the Logistic equation (also called the Verhulst equation and first used by him in 1838) used to describe population growth, 
 # 
-# $$\displaystyle dN/dt=r\,N(1-k/N)$$
+# $$\displaystyle dN/dt=r\,N(1-N/k)$$
 # 
-# where $N$ is the population $r$ the growth rate and $k$ a constant the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction 
+# where $N$ is the population $r$ the growth rate and $k$ a constant with the same units as $N$ and is called the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction 
 # 
 # $$\displaystyle A+X\leftrightharpoons 2X,\quad X+B\to C$$
 # 

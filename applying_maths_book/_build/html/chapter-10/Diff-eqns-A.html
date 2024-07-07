@@ -1065,7 +1065,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-D.html">
-     6 The phase plane, nullclines, and stable points
+     6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1528,8 +1528,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#separable-variables">
-   1.4 Separable variables
+  <a class="reference internal nav-link" href="#separable-variables-chemical-kinetics-1">
+   1.4 Separable variables. Chemical kinetics 1.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1599,23 +1599,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autocatalytic-reactions">
+   3.2 Autocatalytic reactions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population-dynamics">
+   3.3 Population dynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#harmonic-oscillator">
-   3.2 Harmonic  oscillator
+   3.4 Harmonic  oscillator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-morse-anharmonic-oscillator">
-   3.3 The Morse anharmonic oscillator
+   3.5 The Morse anharmonic oscillator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hamilton-s-equations-of-motion">
-   3.4 Hamilton’s Equations of Motion
+   3.6 Hamilton’s Equations of Motion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chemical-kinetics">
-   4 Chemical Kinetics
+  <a class="reference internal nav-link" href="#chemical-kinetics-2">
+   4 Chemical Kinetics 2.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1786,8 +1796,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#separable-variables">
-   1.4 Separable variables
+  <a class="reference internal nav-link" href="#separable-variables-chemical-kinetics-1">
+   1.4 Separable variables. Chemical kinetics 1.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1857,23 +1867,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autocatalytic-reactions">
+   3.2 Autocatalytic reactions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population-dynamics">
+   3.3 Population dynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#harmonic-oscillator">
-   3.2 Harmonic  oscillator
+   3.4 Harmonic  oscillator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-morse-anharmonic-oscillator">
-   3.3 The Morse anharmonic oscillator
+   3.5 The Morse anharmonic oscillator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hamilton-s-equations-of-motion">
-   3.4 Hamilton’s Equations of Motion
+   3.6 Hamilton’s Equations of Motion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chemical-kinetics">
-   4 Chemical Kinetics
+  <a class="reference internal nav-link" href="#chemical-kinetics-2">
+   4 Chemical Kinetics 2.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2070,8 +2090,8 @@ title="Print to PDF"
 \[\displaystyle -\frac{\hbar ^2}{2m}\frac{d^2\psi}{dx^2} = E\psi\]</div>
 <p>The boundary conditions are <span class="math notranslate nohighlight">\(\psi(x_0) = 0\)</span> and <span class="math notranslate nohighlight">\(\psi(x_L) = 0\)</span> where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_L\)</span> define the sides of the box.</p>
 </section>
-<section id="separable-variables">
-<h2>1.4 Separable variables<a class="headerlink" href="#separable-variables" title="Permalink to this headline">#</a></h2>
+<section id="separable-variables-chemical-kinetics-1">
+<h2>1.4 Separable variables. Chemical kinetics 1.<a class="headerlink" href="#separable-variables-chemical-kinetics-1" title="Permalink to this headline">#</a></h2>
 <p>The rate of a chemical reaction can always be written down because this is proportional to the rate of loss or gain of a molecule’s population. For example, in a first-order process <span class="math notranslate nohighlight">\(A \to B\)</span>, such as a cis-trans isomerisation or decay of a radioactive nucleus or of an electronically excited state, the rate of change of species A is proportional to the amount of A left unreacted or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d[A]}{dt}=-k_1[A], \qquad  [A_0]=A_0  \tag{1} \]</div>
@@ -2199,7 +2219,7 @@ title="Print to PDF"
 <p>and by substituting <span class="math notranslate nohighlight">\((a_0-x)=z\)</span>, <span class="math notranslate nohighlight">\(-dx=dz\)</span> and integrating produces the solution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}\]</div>
-<p>where <span class="math notranslate nohighlight">\(x \le a_0\)</span>. It is not obvious from this equation how the concentration of CO increases with time because <span class="math notranslate nohighlight">\(x\)</span> cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as <span class="math notranslate nohighlight">\(t=\cdots\)</span> and put <span class="math notranslate nohighlight">\(t\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>-axis. The <span class="math notranslate nohighlight">\(\mathrm{[CO]}\)</span> increases initially with a very large gradient until <span class="math notranslate nohighlight">\(x/a_0 \sim 0.8\)</span>, in a plot of <span class="math notranslate nohighlight">\(x/a_0\)</span> vs. <span class="math notranslate nohighlight">\(t/2k_3K_e\)</span>, and then rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times <span class="math notranslate nohighlight">\(x/a_0 \to 1\)</span>. At very early times expanding both terms in <span class="math notranslate nohighlight">\(x/a_0\)</span> gives <span class="math notranslate nohighlight">\(x/a_0\sim t^2\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(x \le a_0\)</span>. It is not obvious from this equation how the concentration of CO increases with time because <span class="math notranslate nohighlight">\(x\)</span> cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as <span class="math notranslate nohighlight">\(t=\cdots\)</span> and put <span class="math notranslate nohighlight">\(t\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>-axis. The <span class="math notranslate nohighlight">\(\mathrm{[CO]}\)</span> increases initially with a very large gradient until <span class="math notranslate nohighlight">\(x/a_0 \sim 0.8\)</span>, in a plot of <span class="math notranslate nohighlight">\(x/a_0\)</span> vs. <span class="math notranslate nohighlight">\(t/2k_3K_e\)</span>, and then the gradient rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times <span class="math notranslate nohighlight">\(x/a_0 \to 1\)</span>. At very early times expanding both terms in <span class="math notranslate nohighlight">\(x/a_0\)</span> gives <span class="math notranslate nohighlight">\(x/a_0\sim t^2\)</span>.</p>
 </section>
 <section id="fluorescence-yield">
 <h2>2.3 Fluorescence yield<a class="headerlink" href="#fluorescence-yield" title="Permalink to this headline">#</a></h2>
@@ -2348,10 +2368,50 @@ title="Print to PDF"
 <p>The growth or decrease in relative population <span class="math notranslate nohighlight">\(n(t)/n_0\)</span> is shown in Fig. 4 plotted vs. reduced time <span class="math notranslate nohighlight">\(\tau= at\)</span> and with dimensionless parameter <span class="math notranslate nohighlight">\(a' = a/(bn_0)\)</span>. Making these changes reduced the equation to a simpler form;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{n(t)}{n_0}=\frac{a'}{(a'-1)e^{-\tau}+1} \]</div>
-<p>The form of the rate equations describing the laser is mathematically the same as those for an autocatalytic reaction; this is not so very surprising because in a laser one photon stimulates another. In an autocatalytic reaction, one molecule produces a copy of itself: A + B <span class="math notranslate nohighlight">\(\to\)</span> P + 2B. An autocatalytic reaction is described in question Q18.</p>
+</section>
+<section id="autocatalytic-reactions">
+<h2>3.2 Autocatalytic reactions<a class="headerlink" href="#autocatalytic-reactions" title="Permalink to this headline">#</a></h2>
+<p>The simplest autocatalytic reaction is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A+B\to 2B\]</div>
+<p>and this will lead to the characteristic ‘S’ shaped curve of the Verhulst or Logistic equation. The form of the rate equations describing the laser is mathematically the same as for this autocatalytic reaction; this is not so very surprising because in a laser one photon stimulates another. An autocatalytic reaction is also described in question Q18.</p>
+<p>The rate equations are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}=-kAB,\qquad \frac{dB}{dt}=+kAB\]</div>
+<p>and the method of solution given in the answer to Q18. To achieve this we use the initial conditions, <span class="math notranslate nohighlight">\(A=A_0,\,B=B_0\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> and because</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}+\frac{dB}{dt}=0,\qquad A+B=A_0+B_0=\text{ constant}\]</div>
+<p>Letting <span class="math notranslate nohighlight">\(x=A\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> substituting for <span class="math notranslate nohighlight">\(B\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt}=-kx(A_0+B_0-x)\]</div>
+<p>Integrating and rearranging gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{x}{A_0}=\frac{A_0+B_0}{A_0+B_0e^{(A_0+B_0)kt}}\]</div>
+<p>which shows that the amount of <span class="math notranslate nohighlight">\(A\)</span> is initially <span class="math notranslate nohighlight">\(A_0\)</span> but tends to zero at very long times. A graph of this function is in the answer to Q18 and is one form of the Logistic equation. The solution for <span class="math notranslate nohighlight">\(B\)</span> has the familiar sigmoid typical of the Logistic equation, starting with a small value but becoming constant at long times as shown in figure 4a below. This data shows the catalytic conversion of trypsinogen into trypsin, Kunitz &amp; Northrop, J. Gen. Physiol. v19, p991, 1936.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}B&amp;=A_0+B_0-A_0\frac{A_0+B_0}{A_0+B_0e^{(A_0+B_0)kt}}\\&amp;=B_0\frac{A_0+B_0}{B_0+A_0e^{-(A_0+B_0)kt} }\end{align}\end{split}\]</div>
+<p><img alt="Drawing" src="../_images/diffeqn-fig4a.png" /></p>
+<p>Fig 4a. The data points show the conversion of trypsinogen, A in our model, into trypsin B. The solid line is a fit to <span class="math notranslate nohighlight">\(B\)</span> using the last equation above knowing the concentrations <span class="math notranslate nohighlight">\(A_0, B_0\)</span> and by varying the rate constant <span class="math notranslate nohighlight">\(k\)</span>. The values used were <span class="math notranslate nohighlight">\(A_0 = 72, B_0 = 0.1, k  = 0.0175\)</span> /hour/concentration.</p>
+</section>
+<hr class="docutils" />
+<section id="population-dynamics">
+<h2>3.3 Population dynamics<a class="headerlink" href="#population-dynamics" title="Permalink to this headline">#</a></h2>
+<p>How a population of animals or humans changes with time was first examined mathematically in 1798 by Thomas Malthus. He argues that if in a small time interval <span class="math notranslate nohighlight">\(\delta t\)</span> the chance of an offspring being born is <span class="math notranslate nohighlight">\(b\delta t\)</span>, and in the same interval the chance of death is <span class="math notranslate nohighlight">\(d\delta t\)</span> and assuming that the population is large so that the number of individuals can be represented as a continuous variable then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N(t+\delta t)= N(t)+ bN(t)\delta t-dN(t)\delta t\]</div>
+<p>subtracting <span class="math notranslate nohighlight">\(N\)</span> from both sides and dividing by <span class="math notranslate nohighlight">\(\delta t\)</span> then in the limit make <span class="math notranslate nohighlight">\(\delta t\to dt\)</span> the differential equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dN}{dt}= (b-d)N,\qquad N=N_0e^{(b-d)t}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_0\)</span> are the number at time zero. Clearly when births exceed deaths the population grows without limit, a ‘Malthusian Catastrophe’.  The quantities <span class="math notranslate nohighlight">\(b,d\)</span> in chemical parlance are first order rate constants so have units of 1/time. The ratio <span class="math notranslate nohighlight">\(R_0=b/d\)</span> is called the <em>reproductive ratio</em>, as clearly when <span class="math notranslate nohighlight">\(R_0&gt;1\)</span> the population will increase.</p>
+<p>This model is clearly a good start but not that good as it allows an semi-infinite number of individuals to exist without regard for vital things such as availability of food and water. Vanhulst made a modification to the rate equation to account for limited resources that all species have to confront. The change was to add an extra term to the rate equation with a parameter that constrains the population because of environmental effect, limited food, excess heat or cold etc., the equation which is quite empirical, becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dN}{dt}=rN\left(1-\frac{N}{K} \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(r=b-d\)</span> is called the <em>nett per capita growth</em>  and <span class="math notranslate nohighlight">\(K\)</span> is the <em>environment carrying capacity</em>. An important point to notice is that the growth rate decreases as the population increases an effect that is called  <em>compensatory</em>. This equation has the form of that discovered for an autocatalytic reaction and for laser gain. It turns out that this is a poor model for estimating human populations but really quite good for predicting bacterial ones. The population is given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N=\frac{KN_0e^{rt}}{K-N_0+N_0e^{rt}}\]</div>
 </section>
 <section id="harmonic-oscillator">
-<h2>3.2 Harmonic  oscillator<a class="headerlink" href="#harmonic-oscillator" title="Permalink to this headline">#</a></h2>
+<h2>3.4 Harmonic  oscillator<a class="headerlink" href="#harmonic-oscillator" title="Permalink to this headline">#</a></h2>
 <p>Simple harmonic motion is described by the generic equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2x}{dt^2}+\omega^2x=0\]</div>
@@ -2402,7 +2462,7 @@ title="Print to PDF"
 <p>which shows that the period <span class="math notranslate nohighlight">\(t\)</span> is independent of the quantum number, just as expected for the harmonic oscillator.</p>
 </section>
 <section id="the-morse-anharmonic-oscillator">
-<h2>3.3 The Morse anharmonic oscillator<a class="headerlink" href="#the-morse-anharmonic-oscillator" title="Permalink to this headline">#</a></h2>
+<h2>3.5 The Morse anharmonic oscillator<a class="headerlink" href="#the-morse-anharmonic-oscillator" title="Permalink to this headline">#</a></h2>
 <p>The Morse potential is often used as a model of a diatomic molecule as an anharmonic oscillator because not only does the potential allows the molecule to dissociate at high energy, unlike the harmonic oscillator so is inherently more realistic but also the Schroedinger can be solved analytically with this potential. The energy (eigenvalues) are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E_n=\omega_e(n+1/2) -x_e\omega_e(n+1/2)^2\]</div>
@@ -2426,7 +2486,7 @@ title="Print to PDF"
 <p>When there are very many levels in the potential, such as when <span class="math notranslate nohighlight">\(m\)</span> is large then it is possible to excite the molecule to very close to the dissociation limit. In this case molecules can have a huge size, many hundreds of nanometres if not larger. These can be called ‘Rydberg’ molecules.</p>
 </section>
 <section id="hamilton-s-equations-of-motion">
-<h2>3.4 Hamilton’s Equations of Motion<a class="headerlink" href="#hamilton-s-equations-of-motion" title="Permalink to this headline">#</a></h2>
+<h2>3.6 Hamilton’s Equations of Motion<a class="headerlink" href="#hamilton-s-equations-of-motion" title="Permalink to this headline">#</a></h2>
 <p>The calculation of the period as was done with the harmonic oscillator is, in principle, just the same: the equation for the velocity is integrated by separating variables. However, in this case a very hard integral is produced and another and far more powerful approach can be used. Thus uses Hamilton’s formulation of mechanics and is in itself a very powerful method but is huge topic in itself and so only an brief example will be given here.</p>
 <p>The basis of the method we use is based on two equations connecting the total energy (in this example) with momentum and position. The total energy is called the Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span> and position and momentum are conventionally labelled <span class="math notranslate nohighlight">\(q,\;p\)</span> respectively.</p>
 <p>Hamilton’s ‘canonical’ equations of motion are;</p>
@@ -2481,8 +2541,8 @@ title="Print to PDF"
 <p>Figure 5c. The period of an anharmonic oscillator vs energy. The parameters are as used in figure 5b. The dissociation energy  <span class="math notranslate nohighlight">\(D=1\)</span>. The circles show the energy <span class="math notranslate nohighlight">\(E_n\)</span> for <span class="math notranslate nohighlight">\(n=0\cdots 9\)</span> the only bound energy levels in this particular potential.</p>
 </section>
 <hr class="docutils" />
-<section id="chemical-kinetics">
-<h2>4 Chemical Kinetics<a class="headerlink" href="#chemical-kinetics" title="Permalink to this headline">#</a></h2>
+<section id="chemical-kinetics-2">
+<h2>4 Chemical Kinetics 2.<a class="headerlink" href="#chemical-kinetics-2" title="Permalink to this headline">#</a></h2>
 <p>Here we describe a few examples of chemical kinetics including those reaching equilibrium, reaction with flow,  and reaction and diffusion. In sections 9.2.iv,v and vi of this chapter and Chapter 11.4.10, 11.7 and 11.8 (Numerical methods) examples of more complex reactions with diffusion or multiple steps, which can generally only be solved numerically are examined.</p>
 </section>
 <section id="bimolecular-reactions">

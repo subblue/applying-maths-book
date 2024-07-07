@@ -64,7 +64,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The boundary conditions are $\psi(x_0) = 0$ and $\psi(x_L) = 0$ where $x_0$ and $x_L$ define the sides of the box.
 # 
-# ## 1.4 Separable variables
+# ## 1.4 Separable variables. Chemical kinetics 1.
 # 
 # The rate of a chemical reaction can always be written down because this is proportional to the rate of loss or gain of a molecule's population. For example, in a first-order process $A \to B$, such as a cis-trans isomerisation or decay of a radioactive nucleus or of an electronically excited state, the rate of change of species A is proportional to the amount of A left unreacted or
 # 
@@ -235,7 +235,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}$$
 # 
-# where $x \le a_0$. It is not obvious from this equation how the concentration of CO increases with time because $x$ cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as $t=\cdots$ and put $t$ on the $x$-axis. The $\mathrm{[CO]}$ increases initially with a very large gradient until $x/a_0 \sim 0.8$, in a plot of $x/a_0$ vs. $t/2k_3K_e$, and then rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times $x/a_0 \to 1$. At very early times expanding both terms in $x/a_0$ gives $x/a_0\sim t^2$.  
+# where $x \le a_0$. It is not obvious from this equation how the concentration of CO increases with time because $x$ cannot be isolated on one side of the equation. However, a plot can be made by writing the equation as $t=\cdots$ and put $t$ on the $x$-axis. The $\mathrm{[CO]}$ increases initially with a very large gradient until $x/a_0 \sim 0.8$, in a plot of $x/a_0$ vs. $t/2k_3K_e$, and then the gradient rapidly reduces towards zero, i.e. the plot becomes almost horizontal, such that at long times $x/a_0 \to 1$. At very early times expanding both terms in $x/a_0$ gives $x/a_0\sim t^2$.  
 #  
 # 
 # ## 2.3 Fluorescence yield
@@ -410,9 +410,60 @@ ans
 # 
 # $$\displaystyle  \frac{n(t)}{n_0}=\frac{a'}{(a'-1)e^{-\tau}+1} $$
 # 
-# The form of the rate equations describing the laser is mathematically the same as those for an autocatalytic reaction; this is not so very surprising because in a laser one photon stimulates another. In an autocatalytic reaction, one molecule produces a copy of itself: A + B $\to$ P + 2B. An autocatalytic reaction is described in question Q18.
+# ## 3.2 Autocatalytic reactions
 # 
-# ## 3.2 Harmonic  oscillator
+# The simplest autocatalytic reaction is 
+# 
+# $$\displaystyle A+B\to 2B$$
+# 
+# and this will lead to the characteristic 'S' shaped curve of the Verhulst or Logistic equation. The form of the rate equations describing the laser is mathematically the same as for this autocatalytic reaction; this is not so very surprising because in a laser one photon stimulates another. An autocatalytic reaction is also described in question Q18. 
+# 
+# The rate equations are 
+# 
+# $$\displaystyle \frac{dA}{dt}=-kAB,\qquad \frac{dB}{dt}=+kAB$$
+# 
+# and the method of solution given in the answer to Q18. To achieve this we use the initial conditions, $A=A_0,\,B=B_0$ at $t=0$ and because
+# 
+# $$\displaystyle \frac{dA}{dt}+\frac{dB}{dt}=0,\qquad A+B=A_0+B_0=\text{ constant}$$
+# 
+# Letting $x=A$ at time $t$ substituting for $B$ gives
+# 
+# $$\displaystyle \frac{dx}{dt}=-kx(A_0+B_0-x)$$
+# 
+# Integrating and rearranging gives
+# 
+# $$\displaystyle \frac{x}{A_0}=\frac{A_0+B_0}{A_0+B_0e^{(A_0+B_0)kt}}$$
+# 
+# which shows that the amount of $A$ is initially $A_0$ but tends to zero at very long times. A graph of this function is in the answer to Q18 and is one form of the Logistic equation. The solution for $B$ has the familiar sigmoid typical of the Logistic equation, starting with a small value but becoming constant at long times as shown in figure 4a below. This data shows the catalytic conversion of trypsinogen into trypsin, Kunitz & Northrop, J. Gen. Physiol. v19, p991, 1936. 
+# 
+# $$\displaystyle \begin{align}B&=A_0+B_0-A_0\frac{A_0+B_0}{A_0+B_0e^{(A_0+B_0)kt}}\\&=B_0\frac{A_0+B_0}{B_0+A_0e^{-(A_0+B_0)kt} }\end{align}$$
+# 
+# ![Drawing](diffeqn-fig4a.png)
+# 
+# Fig 4a. The data points show the conversion of trypsinogen, A in our model, into trypsin B. The solid line is a fit to $B$ using the last equation above knowing the concentrations $A_0, B_0$ and by varying the rate constant $k$. The values used were $A_0 = 72, B_0 = 0.1, k  = 0.0175$ /hour/concentration.
+# ___________________________
+# 
+# ## 3.3 Population dynamics
+# 
+# How a population of animals or humans changes with time was first examined mathematically in 1798 by Thomas Malthus. He argues that if in a small time interval $\delta t$ the chance of an offspring being born is $b\delta t$, and in the same interval the chance of death is $d\delta t$ and assuming that the population is large so that the number of individuals can be represented as a continuous variable then
+# 
+# $$\displaystyle N(t+\delta t)= N(t)+ bN(t)\delta t-dN(t)\delta t$$
+# 
+# subtracting $N$ from both sides and dividing by $\delta t$ then in the limit make $\delta t\to dt$ the differential equation becomes
+# 
+# $$\displaystyle \frac{dN}{dt}= (b-d)N,\qquad N=N_0e^{(b-d)t}$$
+# 
+# where $N_0$ are the number at time zero. Clearly when births exceed deaths the population grows without limit, a 'Malthusian Catastrophe'.  The quantities $b,d$ in chemical parlance are first order rate constants so have units of 1/time. The ratio $R_0=b/d$ is called the *reproductive ratio*, as clearly when $R_0>1$ the population will increase. 
+# 
+# This model is clearly a good start but not that good as it allows an semi-infinite number of individuals to exist without regard for vital things such as availability of food and water. Vanhulst made a modification to the rate equation to account for limited resources that all species have to confront. The change was to add an extra term to the rate equation with a parameter that constrains the population because of environmental effect, limited food, excess heat or cold etc., the equation which is quite empirical, becomes
+# 
+# $$\displaystyle \frac{dN}{dt}=rN\left(1-\frac{N}{K} \right)$$
+# 
+# where $r=b-d$ is called the *nett per capita growth*  and $K$ is the *environment carrying capacity*. An important point to notice is that the growth rate decreases as the population increases an effect that is called  *compensatory*. This equation has the form of that discovered for an autocatalytic reaction and for laser gain. It turns out that this is a poor model for estimating human populations but really quite good for predicting bacterial ones. The population is given by
+# 
+# $$\displaystyle N=\frac{KN_0e^{rt}}{K-N_0+N_0e^{rt}}$$
+
+# ## 3.4 Harmonic  oscillator
 # 
 # Simple harmonic motion is described by the generic equation 
 # 
@@ -481,7 +532,7 @@ ans
 # 
 # which shows that the period $t$ is independent of the quantum number, just as expected for the harmonic oscillator.
 # 
-# ## 3.3 The Morse anharmonic oscillator
+# ## 3.5 The Morse anharmonic oscillator
 # 
 # The Morse potential is often used as a model of a diatomic molecule as an anharmonic oscillator because not only does the potential allows the molecule to dissociate at high energy, unlike the harmonic oscillator so is inherently more realistic but also the Schroedinger can be solved analytically with this potential. The energy (eigenvalues) are 
 # 
@@ -514,7 +565,7 @@ ans
 # ________________
 # When there are very many levels in the potential, such as when $m$ is large then it is possible to excite the molecule to very close to the dissociation limit. In this case molecules can have a huge size, many hundreds of nanometres if not larger. These can be called 'Rydberg' molecules.
 
-# ## 3.4 Hamilton's Equations of Motion
+# ## 3.6 Hamilton's Equations of Motion
 # The calculation of the period as was done with the harmonic oscillator is, in principle, just the same: the equation for the velocity is integrated by separating variables. However, in this case a very hard integral is produced and another and far more powerful approach can be used. Thus uses Hamilton's formulation of mechanics and is in itself a very powerful method but is huge topic in itself and so only an brief example will be given here. 
 # 
 # The basis of the method we use is based on two equations connecting the total energy (in this example) with momentum and position. The total energy is called the Hamiltonian, $H$ and position and momentum are conventionally labelled $q,\;p$ respectively.
@@ -590,7 +641,7 @@ ans
 # Figure 5c. The period of an anharmonic oscillator vs energy. The parameters are as used in figure 5b. The dissociation energy  $D=1$. The circles show the energy $E_n$ for $n=0\cdots 9$ the only bound energy levels in this particular potential.
 # ___________
 
-# ## 4 Chemical Kinetics
+# ## 4 Chemical Kinetics 2.
 # Here we describe a few examples of chemical kinetics including those reaching equilibrium, reaction with flow,  and reaction and diffusion. In sections 9.2.iv,v and vi of this chapter and Chapter 11.4.10, 11.7 and 11.8 (Numerical methods) examples of more complex reactions with diffusion or multiple steps, which can generally only be solved numerically are examined.
 # 
 # ## 4.1 Bimolecular reactions 

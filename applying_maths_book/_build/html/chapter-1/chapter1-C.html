@@ -1065,7 +1065,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-D.html">
-     6 The phase plane, nullclines, and stable points
+     6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1804,14 +1804,49 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#large-numbers-most-probable-state-and-entropy">
-   9.23 Large numbers, most probable state and Entropy.
+  <a class="reference internal nav-link" href="#large-numbers-and-most-probable-state">
+   9.23 Large numbers and most probable state.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   9.23 Large numbers and most probable state.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entropy">
    9.24 Entropy
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-improbability-of-suddenly-finding-a-vacuum">
+     <strong>
+      (i) Improbability of suddenly finding a vacuum
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-entropy-change-on-expansion">
+     <strong>
+      (ii) Entropy change on expansion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-entropy-change-on-expansion-using-an-alternative-reversible-path">
+     <strong>
+      (iii)  Entropy change on expansion using an alternative reversible path
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-mixing-two-perfect-gases">
+     <strong>
+      (iv) Mixing two perfect gases
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#poisson-distribution-see-also-chapter-13-7">
@@ -2206,14 +2241,49 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#large-numbers-most-probable-state-and-entropy">
-   9.23 Large numbers, most probable state and Entropy.
+  <a class="reference internal nav-link" href="#large-numbers-and-most-probable-state">
+   9.23 Large numbers and most probable state.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   9.23 Large numbers and most probable state.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entropy">
    9.24 Entropy
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-improbability-of-suddenly-finding-a-vacuum">
+     <strong>
+      (i) Improbability of suddenly finding a vacuum
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-entropy-change-on-expansion">
+     <strong>
+      (ii) Entropy change on expansion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-entropy-change-on-expansion-using-an-alternative-reversible-path">
+     <strong>
+      (iii)  Entropy change on expansion using an alternative reversible path
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-mixing-two-perfect-gases">
+     <strong>
+      (iv) Mixing two perfect gases
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#poisson-distribution-see-also-chapter-13-7">
@@ -2818,8 +2888,28 @@ m=0&amp;&amp;&amp;&amp;&amp;&amp;1&amp;&amp;&amp;&amp;\\
 \[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \]</div>
 <p>which is the probability that a molecule will be eluted. This is the Poisson distribution multiplied by <span class="math notranslate nohighlight">\(p\)</span>, it still has the shape of the Poisson distribution which for large average value is approximately a ‘bell shaped’ curve. In chapter 4.8 the width of the eluted curve, which needs a knowledge of integration, is examined. (This example is based on one by C. Perrin, ‘Mathematics for Chemists’ publ. Wiley 1970).</p>
 </section>
-<section id="large-numbers-most-probable-state-and-entropy">
-<h2>9.23 Large numbers, most probable state and Entropy.<a class="headerlink" href="#large-numbers-most-probable-state-and-entropy" title="Permalink to this headline">#</a></h2>
+<section id="large-numbers-and-most-probable-state">
+<h2>9.23 Large numbers and most probable state.<a class="headerlink" href="#large-numbers-and-most-probable-state" title="Permalink to this headline">#</a></h2>
+<p>An alternative way of forming the binomial coefficient <span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{m!(n-m)!}\)</span> in equation 25a is to consider many of two different types of atoms, e.g. He and Ne, or types of snooker balls, e.g. red and white which gives a reasonable analogy as He and Ne have no strong interactions between then when not in contact and neither do billiard balls. Suppose that we place the balls into a jar so that red and white layers are apparent. Next by shaking the jar this arrangement is lost and a irregular looking one is formed. In fact if shaking is continued the ordered layers are almost never going to be seen again. This means that the ordered starting point is just one possibility of a truly vast number of others and returning to the original arrangement is highly unlikely which means that the probability of this is extremely small.</p>
+<p>Suppose that there are <span class="math notranslate nohighlight">\(n=100\)</span> similar balls, <span class="math notranslate nohighlight">\(50\)</span> each red and white and that they are numbered, <span class="math notranslate nohighlight">\(1,2\cdots 100\)</span> irrespective of colour, and they are randomly placed to fill <span class="math notranslate nohighlight">\(100\)</span> positions. In placing the first ball there are <span class="math notranslate nohighlight">\(100\)</span> choices, the second can go in any of the <span class="math notranslate nohighlight">\(99\)</span> empty places so that in positioning the first two we have had <span class="math notranslate nohighlight">\(100\times 99 = 9900\)</span> choices. Continuing likewise produces <span class="math notranslate nohighlight">\(100\times 99\times 98\)</span> for the third choice and so on until the last ball is in position making the total number of choices the permutation <span class="math notranslate nohighlight">\(100\times 99 \times 98\times 97\cdots 2\times 1=100!\)</span> and each of these is equally likely to occur.</p>
+<p>If the balls are not numbered but remain coloured, and hence distinguishable, there will be a smaller number of <em>distinguishable</em> arrangements, which is the number of ways of selecting groups <span class="math notranslate nohighlight">\(m\)</span>, and this will be smaller than <span class="math notranslate nohighlight">\(n!\)</span> because exchanging any two red balls for any two white ones makes no difference (See also section 9.2). We want to split the balls into 2 groups with, in this case, 50 balls in each but we are not concerned with the order in which they are put into each group. There are <span class="math notranslate nohighlight">\(50!\)</span> ways of putting the first <span class="math notranslate nohighlight">\(50\)</span> white balls into the first half. Next, the number of ways of selecting the <span class="math notranslate nohighlight">\(m\)</span> groups multiplied by the number of permutation in the first and multiplied by the number of permutations in the second group gives the total possible number of permutations. Therefore <span class="math notranslate nohighlight">\(m\times 50!\times 50!=100!\)</span> ways and so the number of distinguishable arrangements <span class="math notranslate nohighlight">\(m\)</span> is the combination,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m =\frac{100!}{50!50!}\]</div>
+<p>Evaluating the factorials can be tricky for large numbers and care is needed when computing them, for example <span class="math notranslate nohighlight">\(100! \approx 9.3\cdot 10^{157}\)</span> and larger factorials for relatively small numbers, e.g. 200, can easily exceed the floating point capabilities of a computer. For numbers greater than about <span class="math notranslate nohighlight">\(20\)</span> the Stirling approximation is very good. There are several forms of this but the most common is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n!\approx \sqrt{2\pi n}\,n^ne^{-n}\qquad \text{or more commonly as}\qquad \ln(n!)\approx n\ln(n)-n\]</div>
+<p>producing  <span class="math notranslate nohighlight">\(m\approx 1\cdot 10^{29}\)</span>. This means that the balls must be shaken on average of <span class="math notranslate nohighlight">\(10^{29}\)</span> times before a particular arrangement of the balls is found. At one per second this would take <span class="math notranslate nohighlight">\(\approx 10^{21}\)</span> years, compared to the age of the universe <span class="math notranslate nohighlight">\(1.38\cdot 10^{10}\)</span> years; this is a long, long time even for a small number of particles. The chance of recovering the initial arrangement of layers of white and red balls is effectively zero.</p>
+<p>Evaluating <span class="math notranslate nohighlight">\(m\)</span> via the accurate Sterling approximation (above left) and when there are an equal number of balls or molecules produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m=\frac{n_0!}{((n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}\]</div>
+<p>for <span class="math notranslate nohighlight">\(n_0\)</span> in total. Thus for half a mole each of He and Ne, <span class="math notranslate nohighlight">\(n_0=6\cdot 10^{23}\)</span> so that the number of configurations is so vast it is impossible to comprehend; <span class="math notranslate nohighlight">\(m=2^{6\cdot 10^{23}}\)</span>. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room. However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such ‘single molecule’ experiments are now quite common. As will be calculate later, the chance that the gas will fill only <span class="math notranslate nohighlight">\(99%\)</span> of any volume and not <span class="math notranslate nohighlight">\(100\)</span>% is also vanishingly small.</p>
+<p>The probability of observing <em>exactly</em> <span class="math notranslate nohighlight">\(50\)</span>% is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p = \frac{m}{2^{n_0}} \sim \frac{1}{\sqrt{ n_0}}\]</div>
+<p>which tends to zero as <span class="math notranslate nohighlight">\(n_0\to \infty\)</span> which is not what we would expect. However, ‘exactly’ is a very restrictive condition and if the distribution of probabilities with different ratios is calculated, as is done next, we find that the <span class="math notranslate nohighlight">\(50\)</span>% probability is always greater than any other and that the probability is sharply peaked at <span class="math notranslate nohighlight">\(50\)</span>% chance.</p>
+</section>
+<section id="id1">
+<h2>9.23 Large numbers and most probable state.<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>An alternative way of forming the binomial coefficient <span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{m!(n-m)!}\)</span> in equation 25a is to consider many of two different types of atoms, e.g. He and Ne, or types of snooker balls, e.g. red and white which gives a reasonable analogy as He and Ne have no strong interactions between then when not in contact and neither do billiard balls. Suppose that we place the balls into a jar so that red and white layers are apparent. Next by shaking the jar this arrangement is lost and a irregular looking one is formed. In fact if shaking is continued the ordered layers are almost never going to be seen again. This means that the ordered starting point is just one possibility of a truly vast number of others and returning to the original arrangement is highly unlikely which means that the probability of this is extremely small.</p>
 <p>Suppose that there are <span class="math notranslate nohighlight">\(n=100\)</span> similar balls, <span class="math notranslate nohighlight">\(50\)</span> each red and white and that they are numbered, <span class="math notranslate nohighlight">\(1,2\cdots 100\)</span> irrespective of colour, and they are randomly placed to fill <span class="math notranslate nohighlight">\(100\)</span> positions. In placing the first ball there are <span class="math notranslate nohighlight">\(100\)</span> choices, the second can go in any of the <span class="math notranslate nohighlight">\(99\)</span> empty places so that in positioning the first two we have had <span class="math notranslate nohighlight">\(100\times 99 = 9900\)</span> choices. Continuing likewise produces <span class="math notranslate nohighlight">\(100\times 99\times 98\)</span> for the third choice and so on until the last ball is in position making the total number of choices the permutation <span class="math notranslate nohighlight">\(100\times 99 \times 98\times 97\cdots 2\times 1=100!\)</span> and each of these is equally likely to occur.</p>
 <p>If the balls are not numbered but remain coloured, and hence distinguishable, there will be a smaller number of <em>distinguishable</em> arrangements, which is the number of ways of selecting groups <span class="math notranslate nohighlight">\(m\)</span>, and this will be smaller than <span class="math notranslate nohighlight">\(n!\)</span> because exchanging any two red balls for any two white ones makes no difference (See also section 9.2). We want to split the balls into 2 groups with, in this case, 50 balls in each but we are not concerned with the order in which they are put into each group. There are <span class="math notranslate nohighlight">\(50!\)</span> ways of putting the first <span class="math notranslate nohighlight">\(50\)</span> white balls into the first half. Next, the number of ways of selecting the <span class="math notranslate nohighlight">\(m\)</span> groups multiplied by the number of permutation in the first and multiplied by the number of permutations in the second group gives the total possible number of permutations. Therefore <span class="math notranslate nohighlight">\(m\times 50!\times 50!=100!\)</span> ways and so the number of distinguishable arrangements <span class="math notranslate nohighlight">\(m\)</span> is the combination,</p>
@@ -2855,7 +2945,7 @@ m=0&amp;&amp;&amp;&amp;&amp;&amp;1&amp;&amp;&amp;&amp;\\
 <hr class="docutils" />
 <section id="entropy">
 <h2>9.24 Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h2>
-<p>Returning to  the example of using coloured balls, and starting with ordered layers, on shaking these balls became mixed up and this is a little like two gases diffusing into one another, however, we supposed that there were <span class="math notranslate nohighlight">\(100\)</span> balls and <span class="math notranslate nohighlight">\(100\)</span> slots to put them into each with the same probability. In reality, in a gas the atoms/molecules (particles) themselves occupy virtually no volume compared to the volume occupied by the gas, thus the number of spaces available is vastly more than the number of particles. If we divide the space occupied up into a  number <span class="math notranslate nohighlight">\(w\)</span> of minute cells these are far greater than the number of particles <span class="math notranslate nohighlight">\(n\)</span>. The total number of configurations is found using the similar equation as before</p>
+<p>Returning to the example of using coloured balls and starting with ordered layers, on shaking these balls became mixed up and this is a little like two gases diffusing into one another, however, we supposed that there were <span class="math notranslate nohighlight">\(100\)</span> balls and <span class="math notranslate nohighlight">\(100\)</span> slots to put them into each with the same probability. In reality, in a gas the atoms/molecules (particles) themselves occupy virtually no volume compared to the volume occupied by the gas, thus the number of spaces available is vastly more than the number of particles. We divide the space occupied up into <span class="math notranslate nohighlight">\(w\)</span> minute cells which is a number far greater than the number of particles <span class="math notranslate nohighlight">\(n\)</span>. The total number of configurations is found using the familiar equation,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle m=\frac{w!}{n!(w-n)!}\]</div>
 <p>Using the Sterling formula and simplifying gives</p>
@@ -2867,29 +2957,14 @@ m=0&amp;&amp;&amp;&amp;&amp;&amp;1&amp;&amp;&amp;&amp;\\
 <p>and then approximating <span class="math notranslate nohighlight">\(\ln(1-n/w)= -n/w\)</span> can be done without any significant error to give</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln(m)=n\ln\left(\frac{w}{n}\right)+n\]</div>
-<p>Now suppose that the volume the gas is expanded from <span class="math notranslate nohighlight">\(V_1 \to V_2\)</span> and we define <span class="math notranslate nohighlight">\(r=V_2/V_1\)</span> and therefore the number of spaces/cells <span class="math notranslate nohighlight">\(w\)</span> changes as <span class="math notranslate nohighlight">\(w \to rw\)</span>. The ratio of the number of configurations in the final to initial volume is found using the same equation again and is</p>
+<p>Now suppose that the volume the gas is irreversibly expanded from <span class="math notranslate nohighlight">\(V_1 \to V_2\)</span> and we define <span class="math notranslate nohighlight">\(r=V_2/V_1\)</span> and therefore the number of spaces/cells <span class="math notranslate nohighlight">\(w\)</span> changes as <span class="math notranslate nohighlight">\(w \to rw\)</span>. The ratio of the number of configurations in the final to initial volume is found using the same equation again and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln\left(\frac{m_2}{m_1}\right)=n\ln\left(\frac{rw}{n}\right)-n\ln\left(\frac{w}{n}\right)=n\ln(r)\]</div>
 <p>meaning that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{m_2}{m_1}=\left(\frac{V_2}{V_1}\right)^n\qquad \tag{25d}\]</div>
-<p>To connect this with the entropy, this is derived from classical thermodynamics. The change in entropy <span class="math notranslate nohighlight">\(S_2-S_1\)</span> upon expanding an ideal gas irreversibly from volume <span class="math notranslate nohighlight">\(V_1\to V_2\)</span>with no addition of heat and without doing work is calculated using</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\qquad\tag{25e}\]</div>
-<p>Entropy is always calculated using <span class="math notranslate nohighlight">\(\int Q_{rev}\)</span> so a reversible pathway is needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), <span class="math notranslate nohighlight">\(\Delta U=0\)</span> and the temperature <span class="math notranslate nohighlight">\(T\)</span> is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature <span class="math notranslate nohighlight">\(T\)</span> and this arrangement allows the volume to change  from <span class="math notranslate nohighlight">\(T_1V_1\to T_2V_2\)</span>. As the piston moves reversibly the pressure is always constant. Using the first law with <span class="math notranslate nohighlight">\(\Delta U=0\)</span> and  <span class="math notranslate nohighlight">\(dW_{rev}=-pdV\)</span> gives</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle 0=dQ_{rev}+dW_{rev}; \qquad dQ_{rev}=RT\frac{dV}{V}\]</div>
-<p>Integrating gives,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle S_2-S_1=R\ln\left(\frac{V_2}{V_1}\right)\]</div>
-<p>From our previous equation (25d) it follows that</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle S_2-S_1= \frac{R}{n}\ln\left(\frac{m_2}{m_1}\right)\]</div>
-<p>The ratio <span class="math notranslate nohighlight">\(R/n\)</span> has a special meaning when <span class="math notranslate nohighlight">\(n\)</span> is the Avogadro number when it becomes the Boltzmann constant <span class="math notranslate nohighlight">\(k_B\)</span>. It is normal to choose some reference state for the entropy, just as we choose (mean) sea level as the zero of height on a map, thus the entropy is defined as</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle S=k_B\ln(m)\qquad\tag{25f}\]</div>
-<p>which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance (e.g. a perfect crystal) at 0 K, where the substance is in perfect arrangement so that <span class="math notranslate nohighlight">\(m = 1\)</span> and <span class="math notranslate nohighlight">\(S_0=0\)</span>. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.</p>
-<p>We have found that the distribution that <span class="math notranslate nohighlight">\(m\)</span> represents is very sharply peaked at its maximum, with the effect that <span class="math notranslate nohighlight">\(m\)</span> can be replaced just by its maximum value, i.e. <span class="math notranslate nohighlight">\(m\to m_{max}\)</span> which is usually called the number of configurations.</p>
+<section id="i-improbability-of-suddenly-finding-a-vacuum">
+<h3><strong>(i) Improbability of suddenly finding a vacuum</strong><a class="headerlink" href="#i-improbability-of-suddenly-finding-a-vacuum" title="Permalink to this headline">#</a></h3>
 <p>A gas always fills the volume available, to see how improbable it would be to fill just <span class="math notranslate nohighlight">\(99\)</span>% of the volume imagine that the gas contains <span class="math notranslate nohighlight">\(10^{24}\)</span> molecules, just over a mole, and that the other <span class="math notranslate nohighlight">\(1\)</span>% of the volume is empty. Using our result <span class="math notranslate nohighlight">\(m_2/m_1=(V_2/V_1)^n\)</span>, which is the number of microstates <span class="math notranslate nohighlight">\(m_2\)</span> in volume 2, divided by those in volume 1, the probability is</p>
 <div class="math notranslate nohighlight">
 \[ \displaystyle prob= (0.99)^{10^{24}} \approx 10^{-4.3\cdot 10^{21} }\]</div>
@@ -2897,14 +2972,81 @@ m=0&amp;&amp;&amp;&amp;&amp;&amp;1&amp;&amp;&amp;&amp;\\
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathrm{1000 \times a\; million \times a\; million\times a\; million\; zeros} !\]</div>
 </section>
+<section id="ii-entropy-change-on-expansion">
+<h3><strong>(ii) Entropy change on expansion</strong><a class="headerlink" href="#ii-entropy-change-on-expansion" title="Permalink to this headline">#</a></h3>
+<p>To connect this last result with the entropy, this is derived from classical thermodynamics. The change in entropy <span class="math notranslate nohighlight">\(S_2-S_1\)</span> upon expanding an ideal gas irreversibly from volume <span class="math notranslate nohighlight">\(V_1\to V_2\)</span> with no addition of heat and without doing work is calculated using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\qquad\tag{25e}\]</div>
+<p>In Thermodynamics entropy is always calculated using <span class="math notranslate nohighlight">\(\int dQ_{rev}/T\)</span> so a reversible pathway is always needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), <span class="math notranslate nohighlight">\(\Delta U=0\)</span> and the temperature <span class="math notranslate nohighlight">\(T\)</span> is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature <span class="math notranslate nohighlight">\(T\)</span> and this arrangement allows the volume to change  from <span class="math notranslate nohighlight">\(T_1V_1\to T_2V_2\)</span>. As the piston moves reversibly the pressure on either side of the piston is always the same. Using the first law with <span class="math notranslate nohighlight">\(\Delta U=0\)</span> and  <span class="math notranslate nohighlight">\(dW_{rev}=-pdV\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 0=dQ_{rev}+dW_{rev}; \qquad dQ_{rev}=RT\frac{dV}{V}\]</div>
+<p>Integrating gives the entropy change on expansion,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1=R\ln\left(\frac{V_2}{V_1}\right)\qquad\tag{25f}\]</div>
+<p>Notice that the entropy change does not depend of the properties of the gas just its volume or mole fraction since <span class="math notranslate nohighlight">\(pV=nRT\)</span> and assuming one mole in total.  From our previous equation (25d) it follows that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1= \frac{R}{n}\ln\left(\frac{m_2}{m_1}\right)\]</div>
+<p>The ratio <span class="math notranslate nohighlight">\(R/n\)</span> has a special meaning when <span class="math notranslate nohighlight">\(n\)</span> is the Avogadro number when it becomes the Boltzmann constant <span class="math notranslate nohighlight">\(k_B\)</span>. It is normal to choose some reference state for the entropy, just as we choose (mean) sea level as the zero of height on a map, thus the entropy is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=k_B\ln(m)\qquad\tag{25g}\]</div>
+<p>which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance (e.g. a perfect crystal) at 0 K, where the substance is in perfect arrangement so that <span class="math notranslate nohighlight">\(m = 1\)</span> and <span class="math notranslate nohighlight">\(S_0=0\)</span>. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.</p>
+<p>We have found that the distribution that <span class="math notranslate nohighlight">\(m\)</span> represents is very sharply peaked at its maximum, with the effect that <span class="math notranslate nohighlight">\(m\)</span> can be replaced just by its maximum value, i.e. <span class="math notranslate nohighlight">\(m\to m_{max}\)</span> which is usually called the number of configurations.</p>
+</section>
+<section id="iii-entropy-change-on-expansion-using-an-alternative-reversible-path">
+<h3><strong>(iii)  Entropy change on expansion using an alternative reversible path</strong><a class="headerlink" href="#iii-entropy-change-on-expansion-using-an-alternative-reversible-path" title="Permalink to this headline">#</a></h3>
+<p><em>Question</em> : How great is the entropy change on the irreversible expansion of <span class="math notranslate nohighlight">\(n\)</span> moles of an ideal gas from volume <span class="math notranslate nohighlight">\(V_1\)</span> to <span class="math notranslate nohighlight">\(V_2\)</span> when expansion takes place without addition of heat <span class="math notranslate nohighlight">\(Q\)</span> and without doing work <span class="math notranslate nohighlight">\(w\)</span>?</p>
+<p><em>Answer</em>: Since no work is done or heat exchanged the internal energy <span class="math notranslate nohighlight">\(U\)</span> is unchanged, and for a perfect gas this means that the temperature <span class="math notranslate nohighlight">\(T_1\)</span> is unchanged. To calculate the entropy we must evaluate <span class="math notranslate nohighlight">\(\int dQ_{rev}/T\)</span> and this means finding a reversible pathway from <span class="math notranslate nohighlight">\(V_1 \to V_2\)</span>, and this is the example given in the previous section 9.24. As all reversible paths used to integrate <span class="math notranslate nohighlight">\(\int dQ_{rev}/T\)</span> must be the same, a different path is now chosen.</p>
+<p>To demonstrate this path suppose that the gas expands adiabatically and reversibly from <span class="math notranslate nohighlight">\(V_1\to V_2\)</span>, and so the temperature will fall from <span class="math notranslate nohighlight">\(T_1\to T_2\)</span> as the gas does work on expansion. However, the entropy remains constant because the increase in volume and thus entropy, and the decrease in temperature and decrease in entropy cancel exactly. Next heat is introduced reversibly at constant volume (<span class="math notranslate nohighlight">\(V_2\)</span>) to return the temperature to <span class="math notranslate nohighlight">\(T_1\)</span>, which completes the path from <span class="math notranslate nohighlight">\(V_1\to V_2\)</span> at temperature <span class="math notranslate nohighlight">\(T_1\)</span>. As <span class="math notranslate nohighlight">\(\Delta V = 0\)</span> then from the first law</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dU=dQ_{rev}, \qquad nC_vdT=dQ_{rev}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_V\)</span> is the constant volume heat capacity. The entropy change is.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1=RT\int_{T_2}^{T_1}\frac{dQ_{rev}}{T}=nC_V\ln\left(\frac{T_1}{T_2} \right)\]</div>
+<p>In a reversible adiabatic process</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{T_1}{T_2}=\left(\frac{V_2}{V_1}\right)^{(C_p-C_v)/C_V}\]</div>
+<p>which produces the same result as eqn. 25f because <span class="math notranslate nohighlight">\(C_p-C_V=R\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1=nR\ln\left(\frac{V_2}{V_1}\right)\]</div>
+</section>
+<section id="iv-mixing-two-perfect-gases">
+<h3><strong>(iv) Mixing two perfect gases</strong><a class="headerlink" href="#iv-mixing-two-perfect-gases" title="Permalink to this headline">#</a></h3>
+<p>The entropy change when two gases are mixed can be calculated both from classical Thermodynamics and from Statistical Mechanics and from the latter by calculating the number of complexions or states. The same method is followed if mixing is of gases, dilute solutions or in forming disordered metal alloys which is a technologically important process.</p>
+<p>We shall suppose that the experiment is that of two different types of ideal gas that are held at the same temperature and pressure and then a partition is removed between them and the gases diffuse into one another.  This is clearly an irreversible process but to calculate the entropy from <span class="math notranslate nohighlight">\(\int dQ/T\)</span> a reversible path from the start to end of the process has to be found. We also place the container holding the gases in a vacuum so that no heat is extracted or added.</p>
+<p>A reversible path from separate gases to full mixing is one that will allow the gases to mix while not changing their volume. Planck visualised this thought experiment, which does not in any way invalidate it, in which each gas is held in a cylinder with a semi-permeable end and each cylinder can slide frictionlessly into the other (Fast 1968, chapter 1). Gas A’s cylinder’s end is permeable only to gas B, and <em>vice versa</em>. Both cylinders have the same volume and are placed in a vacuum and slowly (i.e. reversibly) slid past one another. In the common space the gases mix but each gas still only fills its initial volume. Eventually the gases are entirely mixed and each gas still has its initial volume. If the cylinders are now reversibly pulled apart the same reversible states are gone through as in compression and the gases are completely separated. To calculate the entropy we need to find the integral <span class="math notranslate nohighlight">\(\int dQ/T\)</span>, however, no heat is added or removed, as we are in a vacuum, thus no heat is added or extracted and so the entropy change is zero. Thus we must conclude that any change in entropy on mixing gases is not due to the process of mixing <em>per se</em>, i.e. each gas acts independently, but has to be due to the fact that mixing is normally accompanied by an increase in volume.</p>
+<p>Before and after mixing the total entropy is given by <span class="math notranslate nohighlight">\(S=S_1+S_2\)</span>, thus just like  energy, entropy of perfect gases is an additive property, but only if each constituent occupies the same volume before and after mixing. The reversible pathway with which to calculate the entropy is that in which each of the gases are expanded separately and reversibly and isothermally to a total volume <span class="math notranslate nohighlight">\(V_1+V_2\)</span> and only here does the entropy change, and then they are mixed according to the Planck method given above. If there are <span class="math notranslate nohighlight">\(n_1\)</span> moles of gas 1 and <span class="math notranslate nohighlight">\(n_2\)</span> of gas 2 then using eqn 25f the total change in entropy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta S= Rn_1\ln\left(\frac{V_1+V_2}{V_1}\right)+Rn_2\ln\left(\frac{V_1+V_2}{V_2}\right)\]</div>
+<p>This form is not the one usually given in textbooks, but if we suppose that the pressure of the two gases is the same and as <span class="math notranslate nohighlight">\(pV=nRT\)</span> then substituting for the volume,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta S= Rn_1\ln\left(\frac{n_1+n_2}{n_1}\right)+Rn_2\ln\left(\frac{n_1+n_2}{n_2}\right)\]</div>
+<p>and is there is in total one mole <span class="math notranslate nohighlight">\(n_1+n_2=1\)</span> and <span class="math notranslate nohighlight">\(x\)</span> the mole fraction then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta S= -R\big (n_1\ln(x)+n_2\ln(1-x)\big )\]</div>
+<p>where the log is inverted hence the minus signs. In summary, diffusion into a larger volume increases the entropy, In the words of Gibbs (Fast 1968) ‘ The entropy of a mixture of perfect gases is equal to the sum of the entropies which each gas separately would have if they each occupied the volume of the mixture’.</p>
+<p>The statistical way of calculating the entropy is given above using eqns 25d to 25g.  An alternative argument supposes that there are <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(N_2\)</span> molecules that can be put into <span class="math notranslate nohighlight">\(N_1+N_2\)</span> sites. These can naturally be ordered in lots of different ways, the first molecule has <span class="math notranslate nohighlight">\(N_1+ N_2\)</span> empty sites to choose from, the second <span class="math notranslate nohighlight">\(N_1+N_2-1\)</span> ways, the third <span class="math notranslate nohighlight">\(N_1+N_2-2\)</span> etc. The total number of possibilities is <span class="math notranslate nohighlight">\((N_1+N_2)(N_1+N_2-1)\cdots=(N_1+N_2)!\)</span>. However the molecules of the same type are not distinguishable from one another and so we must divide by <span class="math notranslate nohighlight">\(N_1!N_2!\)</span> to give a multiplicity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W_{mix} = \frac{(N_1+N_2)!}{N_1!N_2!}\]</div>
+<p>We have seen in section 9.24 (i) that the entropy is the log of the ratio of multiplicities thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta S_{mix}=k_B\ln\left(\frac{W_{mix}}{W_1W_2}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(W_1,W_2\)</span> are the multiplicities of the pure molecules of type 1 and 2, and these are both unity since we cannot distinguish one configuration from another in a pure substance, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta S_{mix}=k_B\ln\left(\frac{(N_1+N_2)!}{N_1!N_2!}\right)\]</div>
+<p>Using Sterling’s approximation <span class="math notranslate nohighlight">\(\ln(N!)=N\ln(N)-N\)</span> this simplifies, after a little algebra, to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta S=-k_BN_1\ln(x_1)+N_2\ln(1-x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(x =N_1/(N_1+N_2)\)</span> the mole fraction of species 1.</p>
+</section>
+</section>
 <section id="poisson-distribution-see-also-chapter-13-7">
 <h2>9.25 Poisson distribution (see also Chapter 13.7)<a class="headerlink" href="#poisson-distribution-see-also-chapter-13-7" title="Permalink to this headline">#</a></h2>
-<p>The Poisson distribution is formed by accumulating many events, <span class="math notranslate nohighlight">\(n\)</span>, where each have a very small probability, <span class="math notranslate nohighlight">\(p\)</span>, of occurring, but the product <span class="math notranslate nohighlight">\(np\)</span>, the mean number of events, is moderate. The distribution is asymmetric and skewed for small positive numbers, <span class="math notranslate nohighlight">\(n \ge 0\)</span>, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, or the number of students absent from a class in any week. One of the earliest examples was recorded over a 20-year period during the 1800’s, and was the number of deaths of infantrymen occurred in the Prussian army after they were kicked by a horse.</p>
+<p>This law describes many common situations such as the distribution of telephone calls or waiting times in restaurants. The Poisson distribution is formed by accumulating many events, <span class="math notranslate nohighlight">\(n\)</span>, where each have a very small probability, <span class="math notranslate nohighlight">\(p\)</span>, of occurring, but the product <span class="math notranslate nohighlight">\(\mu=np\)</span>, the mean number of events, is moderate. The distribution is determined entirely by its mean <span class="math notranslate nohighlight">\(\mu\)</span>. The distribution is asymmetric and skewed for small positive numbers, <span class="math notranslate nohighlight">\(n \ge 0\)</span>, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, the number of students absent from a class in any week and the fluctuations of particles in solution at a given concentration. One of the earliest examples was recorded over a 20-year period during the 1800’s, and was the number of deaths of infantrymen that occurred in the Prussian army after they were kicked by a horse.</p>
 <p>Suppose that a sample of molecules is continuously excited, and their fluorescence viewed through a small aperture or through filters to reduce the intensity so that photons are detected one at a time by a photodiode or photomultiplier. The number of electrical pulses from the detector for, say, <span class="math notranslate nohighlight">\(1000\)</span> time intervals each of <span class="math notranslate nohighlight">\(1\)</span> second duration is recorded. If a <em>histogram</em> of the number of events recorded in each time interval is made, then this should follow a Poisson distribution.</p>
 <p>If DNA is exposed to UV light, photo-damage can occur by base pairs forming dimers. If the DNA is spliced into pieces of equal length, the number of dimers in each piece can be recorded. If the pieces are each very small, <span class="math notranslate nohighlight">\(10\)</span> base pairs for example, most will not contain a dimer, a few will contain one and fewer still will contain two or more and so on. The distribution formed will have a large value for zero dimers and become smaller as the number of dimers increases. In a second experiment, suppose that <span class="math notranslate nohighlight">\(100\)</span> base pair long segments are examined. Now only a few segments have no dimer, some have one and many have two, three, or four but fewer segments will have five or more. This distribution is now peaked at a value of, say, <span class="math notranslate nohighlight">\(2.5\)</span>. Repeating the experiment with a larger segment will cause the distribution to peak at still larger values until it closely resembles a normal or Gaussian distribution. What has changed between the experiments is only the average number of dimers detected in each segment, thus the Poisson distribution is determined by only one parameter, the average number of ‘events’. A similar argument applies to the number of photons or particles detected in progressively longer time intervals.</p>
 <p>The Poisson distribution applies when the number of events <span class="math notranslate nohighlight">\(k\)</span> that are measured is very large, but the chance <span class="math notranslate nohighlight">\(p\)</span> of any one event occurring is very small. The product <span class="math notranslate nohighlight">\(\mu = kp\)</span> is the mean or average number of events and is of moderate value. The distribution can be derived from first principles, see Hines &amp; Montgomery (1990, 6.8) for this proof, or it can be obtained from the binomial distribution when <span class="math notranslate nohighlight">\(k\)</span> is large and <span class="math notranslate nohighlight">\(p\)</span> small. The Poisson distribution is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \qquad\tag{25g}\]</div>
+\[\displaystyle P(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \qquad\tag{25h}\]</div>
 <p>also is also called the Poisson frequency distribution or ‘density’ function. The integer number of events is <span class="math notranslate nohighlight">\(k\)</span> and the mean value is <span class="math notranslate nohighlight">\(\mu\)</span>, which is not an integer. The shape of the distribution is shown below and also in Chapter 13, figure 13, for different mean values <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p><img alt="Display" src="../_images/analysis-fig13.png" /></p>
 <p>Figure 20b. The Poisson distribution</p>
@@ -2965,7 +3107,7 @@ m=0&amp;&amp;&amp;&amp;&amp;&amp;1&amp;&amp;&amp;&amp;\\
 </section>
 <section id="multinomial-distribution">
 <h2>9.26 Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Permalink to this headline">#</a></h2>
-<p>The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 9.2. When there are several choices the multinomial distribution is required and is</p>
+<p>The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 9.3. When there are several choices the multinomial distribution is required and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P_{mG}=\frac{n!}{\prod_{i=1}^r m_i!}\prod_{i=1}^rp_i^{m_i} \qquad\tag{26}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of choosing any object from the <span class="math notranslate nohighlight">\(n\)</span> boxes and <span class="math notranslate nohighlight">\(m_i\)</span> are the numbers in each of <span class="math notranslate nohighlight">\(r\)</span> groups.</p>

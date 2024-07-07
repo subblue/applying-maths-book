@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 6 The phase plane, nullclines, and stable points
+# # 6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
 
 # In[1]:
 
@@ -207,8 +207,8 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 #---------
 
 
-# ## 7 SIR model of the spread of diseases
-# 
+# # 7 The SIR model describes the spread of diseases
+
 # A very interesting, and relatively straightforward example of coupled equations is the spread of an infectious disease, because, besides being intrinsically interesting, especially during the Covid19 epidemic, it allows a clear illustration of a number of features such as the phase plane and nullclines. 
 # 
 # An epidemic is defined as the number of infected persons, increasing with time to a number above those initially infected. Kermack & McKendrick (1927), were the first to describe a realistic disease model, which they used to study the spread of a plague on the island of Bombay in 1905/6. In the SIR model, one or more infected persons are introduced into a community where all are equally susceptible to the disease. The model assumes, first, that the disease spreads by contact one to another; each person runs the course of the disease and then cannot be re-infected; and, secondly, that the duration of the infection is short compared to an individual's lifetime, so that the total number of people is constant. Finally, the number of individuals is fixed once the infection has begun; therefore this model only describes infection in a closed community and is called a compartmentalised model. This is called the S-I-R model, because individuals are either susceptible (S), infected (I), or removed (R). The scheme is
@@ -346,6 +346,30 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 
 # Algorithm: SIR model of disease
 
+def EulerSIRint(S0,In0, k1,k2):
+    h = (maxt - t0)/num
+    EulerS  = np.zeros(Np,dtype=float)
+    EulerIn = np.zeros(Np,dtype=float)
+    dtime   = np.zeros(Np,dtype=float)
+    
+    EulerS[0]  = S0
+    EulerIn[0] = In0
+    dtime[0]   = t0
+    S  = S0
+    In = In0
+    t  = 0
+    for i in range(1,Np):
+        
+        S = S  + h*dSdt(S,In)
+        In= In + h*dIndt(S,In)
+        
+        EulerS[i]  = S
+        EulerIn[i] = In
+        dtime[i]   = t
+        t = t + h
+        pass
+    return dtime, EulerS, EulerIn
+
 k2  = 0.00218        # initial k's
 k1  = 0.452
 num = 763            # number of individuals 
@@ -360,29 +384,10 @@ In0 = 1
 R0  = 0.0
 Np  = 1000      # number of points for integration
 
-h = (maxt - t0)/num
-EulerS  = np.zeros(Np,dtype=float)
-EulerIn = np.zeros(Np,dtype=float)
-dtime   = np.zeros(Np,dtype=float)
 
-EulerS[0]  = S0
-EulerIn[0] = In0
-dtime[0]   = t0
-S  = S0
-In = In0
-t  = 0
-for i in range(1,Np):
-    
-    S = S  + h*dSdt(S,In)
-    In= In + h*dIndt(S,In)
-    
-    EulerS[i]  = S
-    EulerIn[i] = In
-    dtime[i]   = t
-    t = t + h
-    pass
-#plt.plot(dtime[:], EulerS[:])  # remove # to plot
-#plt.plot(dtime[:], EulerIn[:])
+dtime, S, In = EulerSIRint(S0,In0,k1,k2)
+#plt.plot(dtime, S)                          # remove first # to plot
+#plt.plot(dtime, In)
 #plt.show()
 
 
@@ -396,6 +401,67 @@ for i in range(1,Np):
 # __________
 # 
 # After 2019 there is no shortage of data from covid-19 to illustrate the SIR type of epidemic, however, the real data only partly follows this scheme because of medical intervention, i.e. learning how best to deal with very ill patients means that the rate constants vary with time which complicates the calculation, as do the use of face masks and of course the availability, or otherwise, of vaccinations.
+
+# ## 7.7 Bacterial populations calculated via Chemical Kinetics
+# 
+# Foods provide an environment for microbes to survive and multiply because they are rich in nutrients. While some microbes are harmless others such as yeasts and molds spoil foods. Bacteria, such as the pathogens *staphylococcus aureus* and *E. coli*, also produce enterotoxins (protein toxins) which target the gastrointestinal tract and cause diarrhea and food poisoning.  
+# 
+# The life cycle of bacteria has four stages, 
+# 
+# (1) the lag (induction) phase when populations are small, 
+# 
+# (2) exponential growth, 
+# 
+# (3) a maximum population during the stationary phase, and 
+# 
+# (4) death when the population declines. 
+# 
+# and the population therefore rises rapidly then decreases slowly not unlike the infected population in fig 17 above. The bacterial population is often inferred from the optical density of a sample calibrated against known standards. 
+# 
+# Bacteria multiply by dividing so that a naive model of their increase in number follows the series $1, 2, 4, 8, \cdots 2^n$ which would naturally lead to an infinite population. The Malthusian idea is that growth occurs exponentially, 
+# 
+# $$M=M_0e^{kt},\qquad \text{Malthusian}$$
+# 
+# with rate constant, $k$ which is the difference between birth and death rate constants. This model is a good description when the population is relatively small but still predicts an infinite population eventually. The Gompertz model (a variation on the Logistic equation) has been used as a way of predicting a bacterial population, this equation has the basic form 
+# 
+# $$\displaystyle \ln\left(\frac{M}{M_0}\right) = -e^{-kt},\qquad\text{Gompertz}$$
+# 
+# and a plot of $M$ vs. $t$ looks like a sigmoidal curve becoming constant at long times. This equation, while an improvement, only approximately fits the data because microbial populations can and will eventually die out. 
+# 
+# Using a chemical kinetics based model of growth and death provides a rationale for describing bacterial populations. The bacterial are treated as if they were molecules that can be described by rate equations. The model used by Taub et al. (J. Food. Sci. p2350, v68, 2003) allows bacteria to grow by division and die away naturally as well as by reaction with an antagonistic molecule produced by the bacteria itself.  This latter species is an essential feature of the model.  We let bacteria, labelled M, divide into two others which are labelled A to distinguish them and additionally an antagonist X is produced. The fact that $A\to 2A$ provides positive feedback, or autocatalysis, so that the amount of A increases very rapidly. The species X interacts with bacteria A and cause them to die, forming species D. The bacteria also die naturally. The scheme is
+# 
+# $$\displaystyle \begin{align} & M \overset{k_1}\longrightarrow A\\ &
+# A \overset{k_2}\longrightarrow 2A+X\\&
+# A+X \overset{k_3}\longrightarrow D\\&
+# A \overset{k_4}\longrightarrow D\\&
+# M \overset{k_5}\longrightarrow D
+#  \end{align}$$
+# 
+# The first reaction is the lag phase, the second exponential growth and the and the third causes a limit to the populations and starts the death phase. The rate equations are 
+# 
+# $$\displaystyle \begin{align} \frac{dM}{dt} &= -(k_1+k_5)M \\
+# \frac{dA}{dt} &= +k_1M +k_2A -(k_3X +k_4)A\\  
+# \frac{dX}{dt} &= k_2A -k_3XA\end{align}$$
+# 
+# and the initial conditions are at time zero M is present as $M_0$ bacteria, and $A = X = 0$. Before calculating the populations quite a lot can be understood by examining these equations and to do this we shall insist that the bacteria are growing normally, i.e. the maximum population is orders of magnitude greater than the initial population. From the equations we can infer that,
+# 
+# (i) Species M decays exponentially with rate constant $k_1+k_5$. 
+# 
+# (ii) Maximum X happens when $X$ reaches steady-state, $dX/dt = 0$ and when integrated produces a constant. The maximum possible value is $X_{max}=k_2/k_3$ and this ratio has to be much greater than $1$ as the bacterial population is growing. 
+# 
+# (iii) When species X is small and $k_1M$ is also small, species A increases exponentially with a rate constant $k_2-k_4$ assuming that $k_2 \gt k_4$.
+# 
+# (iv) At long times after the maximum bacterial population is passed the bacteria decay exponentially with rate constant $k_4$. At these times $k_1M$ is very small vs. population of A, $k_2-k_3X \sim 0$ (see (iii) above), thus $dA/dt \sim -k_4 A$ which integrates to an exponential decay.
+# 
+# (v) The rate constant $k_3$ has to be small compared to the others. Since $k_3XA$ is the product of two potentially large numbers A and X then $k_3$ has to be very small to be comparable to other rate constants. If $10^8$ bacteria are to be produced then $1/k_3 \sim 10^8$
+# 
+# The Euler method can be used to integrate the rate equations and using $1000$ time steps is plenty. The code for the SIR model above can be changed to do this calculation. The time-scale needed from experience of food going bad is only a few days, thus we guess rate constants in terms of time units in days to illustrate the behaviour of the population. Some initial numbers are tried just to get going, even if fitting to a data set using a non-linear least squares method. The graph below shows the populations of M, A and X on a linear and log scale vs. time. The initial population $M_0 = 10000$, the rate constants are $k_1 = 1,  k_2 = 4, k_3 = 1\cdot 10^{-8}, k_4 = 0.5,  k_5 = 0.01$. You can see that with this set of rate constants that the lag phase is $\approx 3$ days, (fig 17a left), the exponential rise is very rapid about a day, and large $\sim 10^4$ times increase, the stationary phase short, $\approx 1$ day and the death phase long, several days. This model therefore shows all the features of the growth and death of a bacterial population. 
+# 
+# The fall in the population after reaching a maximum is due to $k_4A$ becoming greater than $k_2-k_3X$. As species A decreases the reaction $A+X\to D$ is slowed but X is still being formed from $A\to 2A+X$, so this is slowed also as A decreases under the influence of $k_4$. The result is that X becomes constant at long times since the amount formed during the exponential growth phase remains because it is no longer being formed or removed at any appreciable rate as can be seen in fig 17a.  
+# 
+# ![Drawing](num-methods-fig17a.png)
+# 
+# Figure 17a. Calculated profile of a bacterial population. The rate constants used were $k_1 = 1,  k_2 = 4, k_3 = 15\cdot10^{-8}, k_4 = 0.5,  k_5 = 0.01$. The equations show the limiting equations as described in the text applicable when $k_2\gt k_4$. In the left hand figure M is multiplied by $10^4$ so that it can be seen on the same plot as A and X. 
 
 # In[ ]:
 

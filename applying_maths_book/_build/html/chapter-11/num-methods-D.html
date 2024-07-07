@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6 The phase plane, nullclines, and stable points &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>6 The phase plane, nullclines, stable points and separatrix. The pendulum, Euler-Cromer eqns, SIR model of disease, bacterial growth. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1065,7 +1065,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6 The phase plane, nullclines, and stable points
+     6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1512,80 +1512,94 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   6.1 Introduction
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-phase-plane-2">
-   6.2 The phase plane
-   <span class="math notranslate nohighlight">
-    \(^2\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#isoclines-and-nullclines">
-   6.3 Isoclines and nullclines
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-linear-equations-the-pendulum">
-   6.4 Non-linear equations: the pendulum
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-the-separatrix">
-     <strong>
-      (i) The Separatrix
-     </strong>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     6.1 Introduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-phase-plane-2">
+     6.2 The phase plane
+     <span class="math notranslate nohighlight">
+      \(^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isoclines-and-nullclines">
+     6.3 Isoclines and nullclines
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-linear-equations-the-pendulum">
+     6.4 Non-linear equations: the pendulum
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-the-separatrix">
+       <strong>
+        (i) The Separatrix
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eulercromer-equations">
+     6.5 Euler–Cromer equations
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eulercromer-equations">
-   6.5 Euler–Cromer equations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sir-model-describes-the-spread-of-diseases">
+   7 The SIR model describes the spread of diseases
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sir-model-of-the-spread-of-diseases">
-   7 SIR model of the spread of diseases
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rate-equations">
-   7.1 Rate equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-sir-phase-plane">
-   7.2 The SIR phase plane
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#steady-states-isoclines-and-nullclines">
-   7.3 Steady states, isoclines, and nullclines
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected">
-   7.4 Threshold for an epidemic and maximum and total number infected
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sensitivity-to-rate-constant-k-2">
-   7.5 Sensitivity to rate constant
-   <span class="math notranslate nohighlight">
-    \(k_2\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculating-the-time-profile-of-an-epidemic">
-   7.6 Calculating the time profile of an epidemic
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rate-equations">
+     7.1 Rate equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sir-phase-plane">
+     7.2 The SIR phase plane
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steady-states-isoclines-and-nullclines">
+     7.3 Steady states, isoclines, and nullclines
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected">
+     7.4 Threshold for an epidemic and maximum and total number infected
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensitivity-to-rate-constant-k-2">
+     7.5 Sensitivity to rate constant
+     <span class="math notranslate nohighlight">
+      \(k_2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-time-profile-of-an-epidemic">
+     7.6 Calculating the time profile of an epidemic
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bacterial-populations-calculated-via-chemical-kinetics">
+     7.7 Bacterial populations calculated via Chemical Kinetics
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1596,7 +1610,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6 The phase plane, nullclines, and stable points</h1>
+                <h1>6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1606,80 +1620,94 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   6.1 Introduction
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-phase-plane-2">
-   6.2 The phase plane
-   <span class="math notranslate nohighlight">
-    \(^2\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#isoclines-and-nullclines">
-   6.3 Isoclines and nullclines
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-linear-equations-the-pendulum">
-   6.4 Non-linear equations: the pendulum
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-the-separatrix">
-     <strong>
-      (i) The Separatrix
-     </strong>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     6.1 Introduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-phase-plane-2">
+     6.2 The phase plane
+     <span class="math notranslate nohighlight">
+      \(^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isoclines-and-nullclines">
+     6.3 Isoclines and nullclines
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-linear-equations-the-pendulum">
+     6.4 Non-linear equations: the pendulum
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-the-separatrix">
+       <strong>
+        (i) The Separatrix
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eulercromer-equations">
+     6.5 Euler–Cromer equations
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eulercromer-equations">
-   6.5 Euler–Cromer equations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sir-model-describes-the-spread-of-diseases">
+   7 The SIR model describes the spread of diseases
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sir-model-of-the-spread-of-diseases">
-   7 SIR model of the spread of diseases
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rate-equations">
-   7.1 Rate equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-sir-phase-plane">
-   7.2 The SIR phase plane
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#steady-states-isoclines-and-nullclines">
-   7.3 Steady states, isoclines, and nullclines
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected">
-   7.4 Threshold for an epidemic and maximum and total number infected
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sensitivity-to-rate-constant-k-2">
-   7.5 Sensitivity to rate constant
-   <span class="math notranslate nohighlight">
-    \(k_2\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculating-the-time-profile-of-an-epidemic">
-   7.6 Calculating the time profile of an epidemic
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rate-equations">
+     7.1 Rate equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sir-phase-plane">
+     7.2 The SIR phase plane
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steady-states-isoclines-and-nullclines">
+     7.3 Steady states, isoclines, and nullclines
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected">
+     7.4 Threshold for an epidemic and maximum and total number infected
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensitivity-to-rate-constant-k-2">
+     7.5 Sensitivity to rate constant
+     <span class="math notranslate nohighlight">
+      \(k_2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-time-profile-of-an-epidemic">
+     7.6 Calculating the time profile of an epidemic
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bacterial-populations-calculated-via-chemical-kinetics">
+     7.7 Bacterial populations calculated via Chemical Kinetics
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1691,8 +1719,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-phase-plane-nullclines-and-stable-points">
-<h1>6 The phase plane, nullclines, and stable points<a class="headerlink" href="#the-phase-plane-nullclines-and-stable-points" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-phase-plane-nullclines-stable-points-and-separatrix-the-pendulum-euler-cromer-eqns-sir-model-of-disease-bacterial-growth">
+<h1>6 The phase plane, nullclines, stable points and separatrix. The pendulum,  Euler-Cromer eqns,  SIR model of disease,  bacterial growth.<a class="headerlink" href="#the-phase-plane-nullclines-stable-points-and-separatrix-the-pendulum-euler-cromer-eqns-sir-model-of-disease-bacterial-growth" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1866,8 +1894,9 @@ velocity,</p>
 </div>
 </div>
 </section>
-<section id="sir-model-of-the-spread-of-diseases">
-<h2>7 SIR model of the spread of diseases<a class="headerlink" href="#sir-model-of-the-spread-of-diseases" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-sir-model-describes-the-spread-of-diseases">
+<h1>7 The SIR model describes the spread of diseases<a class="headerlink" href="#the-sir-model-describes-the-spread-of-diseases" title="Permalink to this headline">#</a></h1>
 <p>A very interesting, and relatively straightforward example of coupled equations is the spread of an infectious disease, because, besides being intrinsically interesting, especially during the Covid19 epidemic, it allows a clear illustration of a number of features such as the phase plane and nullclines.</p>
 <p>An epidemic is defined as the number of infected persons, increasing with time to a number above those initially infected. Kermack &amp; McKendrick (1927), were the first to describe a realistic disease model, which they used to study the spread of a plague on the island of Bombay in 1905/6. In the SIR model, one or more infected persons are introduced into a community where all are equally susceptible to the disease. The model assumes, first, that the disease spreads by contact one to another; each person runs the course of the disease and then cannot be re-infected; and, secondly, that the duration of the infection is short compared to an individual’s lifetime, so that the total number of people is constant. Finally, the number of individuals is fixed once the infection has begun; therefore this model only describes infection in a closed community and is called a compartmentalised model. This is called the S-I-R model, because individuals are either susceptible (S), infected (I), or removed (R). The scheme is</p>
 <div class="math notranslate nohighlight">
@@ -1875,7 +1904,6 @@ velocity,</p>
 <p>and the aim is to calculate how R, S, and I change with time. In doing so we shall set up a set of rate equations and suppose that the numbers of individuals involved is sufficiently large that the integration is valid. In the case of Covid-19 the numbers are so large that this should not present a problem.</p>
 <p>The first step describes the transmission of the infection, and the second, the recovery from infection, hence, the number infected I must reach zero at long times as the infection ends. The susceptible persons become infected by reacting with someone who is already infected with a rate constant <span class="math notranslate nohighlight">\(k_2\)</span>. In chemical terms, the rate of such a second-order reaction is <span class="math notranslate nohighlight">\(k_2[S][I]\)</span>, supposing that <span class="math notranslate nohighlight">\([S]\)</span> and <span class="math notranslate nohighlight">\([I]\)</span> are concentrations. The second step, infected to removed, has a rate constant <span class="math notranslate nohighlight">\(k_1\)</span>, the reciprocal of which is the average time that an individual once infected takes to move into the removed class; the rate for this is <span class="math notranslate nohighlight">\(k_1[I]\)</span>. Out of the constant total number of individuals, <span class="math notranslate nohighlight">\(N = S + I + R\)</span>; the number <span class="math notranslate nohighlight">\(R_0\)</span> before the infection starts are those that are immune and clearly at least one infected person has initially to be present. The second equation shows that given time, all individuals will end up in the removed class R, and play no further part in the infection, being immune, isolated, or dead. In this model, the epidemic is assumed to run its course without the intervention of medication, which, given at random times to different individuals, would prematurely cause its end.</p>
 <p>If S, I, and R were chemical species, the scheme above would represent a quadratic autocatalytic reaction where R is the product that takes no further part in the reaction. To start the reaction, some initial amount of species I has to be present.</p>
-</section>
 <section id="rate-equations">
 <h2>7.1 Rate equations<a class="headerlink" href="#rate-equations" title="Permalink to this headline">#</a></h2>
 <p>The rate equations for scheme 40 are</p>
@@ -1970,6 +1998,30 @@ The strategy is to work out what is already known from the data.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: SIR model of disease</span>
 
+<span class="k">def</span> <span class="nf">EulerSIRint</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">In0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span><span class="n">k2</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxt</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">num</span>
+    <span class="n">EulerS</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">EulerIn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">dtime</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    
+    <span class="n">EulerS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">S0</span>
+    <span class="n">EulerIn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">In0</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="o">=</span> <span class="n">t0</span>
+    <span class="n">S</span>  <span class="o">=</span> <span class="n">S0</span>
+    <span class="n">In</span> <span class="o">=</span> <span class="n">In0</span>
+    <span class="n">t</span>  <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Np</span><span class="p">):</span>
+        
+        <span class="n">S</span> <span class="o">=</span> <span class="n">S</span>  <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dSdt</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">In</span><span class="p">)</span>
+        <span class="n">In</span><span class="o">=</span> <span class="n">In</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dIndt</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">In</span><span class="p">)</span>
+        
+        <span class="n">EulerS</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">S</span>
+        <span class="n">EulerIn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">In</span>
+        <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>   <span class="o">=</span> <span class="n">t</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">h</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">dtime</span><span class="p">,</span> <span class="n">EulerS</span><span class="p">,</span> <span class="n">EulerIn</span>
+
 <span class="n">k2</span>  <span class="o">=</span> <span class="mf">0.00218</span>        <span class="c1"># initial k&#39;s</span>
 <span class="n">k1</span>  <span class="o">=</span> <span class="mf">0.452</span>
 <span class="n">num</span> <span class="o">=</span> <span class="mi">763</span>            <span class="c1"># number of individuals </span>
@@ -1984,29 +2036,10 @@ The strategy is to work out what is already known from the data.</p>
 <span class="n">R0</span>  <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">Np</span>  <span class="o">=</span> <span class="mi">1000</span>      <span class="c1"># number of points for integration</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxt</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">num</span>
-<span class="n">EulerS</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">EulerIn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">dtime</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
-<span class="n">EulerS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">S0</span>
-<span class="n">EulerIn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">In0</span>
-<span class="n">dtime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="o">=</span> <span class="n">t0</span>
-<span class="n">S</span>  <span class="o">=</span> <span class="n">S0</span>
-<span class="n">In</span> <span class="o">=</span> <span class="n">In0</span>
-<span class="n">t</span>  <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Np</span><span class="p">):</span>
-    
-    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span>  <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dSdt</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">In</span><span class="p">)</span>
-    <span class="n">In</span><span class="o">=</span> <span class="n">In</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dIndt</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">In</span><span class="p">)</span>
-    
-    <span class="n">EulerS</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">S</span>
-    <span class="n">EulerIn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">In</span>
-    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>   <span class="o">=</span> <span class="n">t</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">h</span>
-    <span class="k">pass</span>
-<span class="c1">#plt.plot(dtime[:], EulerS[:])  # remove # to plot</span>
-<span class="c1">#plt.plot(dtime[:], EulerIn[:])</span>
+<span class="n">dtime</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">In</span> <span class="o">=</span> <span class="n">EulerSIRint</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">In0</span><span class="p">,</span><span class="n">k1</span><span class="p">,</span><span class="n">k2</span><span class="p">)</span>
+<span class="c1">#plt.plot(dtime, S)                          # remove first # to plot</span>
+<span class="c1">#plt.plot(dtime, In)</span>
 <span class="c1">#plt.show()</span>
 </pre></div>
 </div>
@@ -2018,6 +2051,46 @@ The strategy is to work out what is already known from the data.</p>
 <p>Figure 17. SIR data calculated for boys infected with influenza with <span class="math notranslate nohighlight">\(k_2 = 0.0022\)</span>, day<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(k_1 = 0.451\)</span> day<span class="math notranslate nohighlight">\(^{-1}\)</span> with <span class="math notranslate nohighlight">\(763\)</span> boys one of whom was initially infected. The scheme is <span class="math notranslate nohighlight">\(\displaystyle  S+I \overset{k_2}\longrightarrow 2I ; \;   I \overset{k_1} \longrightarrow  R  \)</span>.</p>
 <hr class="docutils" />
 <p>After 2019 there is no shortage of data from covid-19 to illustrate the SIR type of epidemic, however, the real data only partly follows this scheme because of medical intervention, i.e. learning how best to deal with very ill patients means that the rate constants vary with time which complicates the calculation, as do the use of face masks and of course the availability, or otherwise, of vaccinations.</p>
+</section>
+<section id="bacterial-populations-calculated-via-chemical-kinetics">
+<h2>7.7 Bacterial populations calculated via Chemical Kinetics<a class="headerlink" href="#bacterial-populations-calculated-via-chemical-kinetics" title="Permalink to this headline">#</a></h2>
+<p>Foods provide an environment for microbes to survive and multiply because they are rich in nutrients. While some microbes are harmless others such as yeasts and molds spoil foods. Bacteria, such as the pathogens <em>staphylococcus aureus</em> and <em>E. coli</em>, also produce enterotoxins (protein toxins) which target the gastrointestinal tract and cause diarrhea and food poisoning.</p>
+<p>The life cycle of bacteria has four stages,</p>
+<p>(1) the lag (induction) phase when populations are small,</p>
+<p>(2) exponential growth,</p>
+<p>(3) a maximum population during the stationary phase, and</p>
+<p>(4) death when the population declines.</p>
+<p>and the population therefore rises rapidly then decreases slowly not unlike the infected population in fig 17 above. The bacterial population is often inferred from the optical density of a sample calibrated against known standards.</p>
+<p>Bacteria multiply by dividing so that a naive model of their increase in number follows the series <span class="math notranslate nohighlight">\(1, 2, 4, 8, \cdots 2^n\)</span> which would naturally lead to an infinite population. The Malthusian idea is that growth occurs exponentially,</p>
+<div class="math notranslate nohighlight">
+\[M=M_0e^{kt},\qquad \text{Malthusian}\]</div>
+<p>with rate constant, <span class="math notranslate nohighlight">\(k\)</span> which is the difference between birth and death rate constants. This model is a good description when the population is relatively small but still predicts an infinite population eventually. The Gompertz model (a variation on the Logistic equation) has been used as a way of predicting a bacterial population, this equation has the basic form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(\frac{M}{M_0}\right) = -e^{-kt},\qquad\text{Gompertz}\]</div>
+<p>and a plot of <span class="math notranslate nohighlight">\(M\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span> looks like a sigmoidal curve becoming constant at long times. This equation, while an improvement, only approximately fits the data because microbial populations can and will eventually die out.</p>
+<p>Using a chemical kinetics based model of growth and death provides a rationale for describing bacterial populations. The bacterial are treated as if they were molecules that can be described by rate equations. The model used by Taub et al. (J. Food. Sci. p2350, v68, 2003) allows bacteria to grow by division and die away naturally as well as by reaction with an antagonistic molecule produced by the bacteria itself.  This latter species is an essential feature of the model.  We let bacteria, labelled M, divide into two others which are labelled A to distinguish them and additionally an antagonist X is produced. The fact that <span class="math notranslate nohighlight">\(A\to 2A\)</span> provides positive feedback, or autocatalysis, so that the amount of A increases very rapidly. The species X interacts with bacteria A and cause them to die, forming species D. The bacteria also die naturally. The scheme is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} &amp; M \overset{k_1}\longrightarrow A\\ &amp;
+A \overset{k_2}\longrightarrow 2A+X\\&amp;
+A+X \overset{k_3}\longrightarrow D\\&amp;
+A \overset{k_4}\longrightarrow D\\&amp;
+M \overset{k_5}\longrightarrow D
+ \end{align}\end{split}\]</div>
+<p>The first reaction is the lag phase, the second exponential growth and the and the third causes a limit to the populations and starts the death phase. The rate equations are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} \frac{dM}{dt} &amp;= -(k_1+k_5)M \\
+\frac{dA}{dt} &amp;= +k_1M +k_2A -(k_3X +k_4)A\\  
+\frac{dX}{dt} &amp;= k_2A -k_3XA\end{align}\end{split}\]</div>
+<p>and the initial conditions are at time zero M is present as <span class="math notranslate nohighlight">\(M_0\)</span> bacteria, and <span class="math notranslate nohighlight">\(A = X = 0\)</span>. Before calculating the populations quite a lot can be understood by examining these equations and to do this we shall insist that the bacteria are growing normally, i.e. the maximum population is orders of magnitude greater than the initial population. From the equations we can infer that,</p>
+<p>(i) Species M decays exponentially with rate constant <span class="math notranslate nohighlight">\(k_1+k_5\)</span>.</p>
+<p>(ii) Maximum X happens when <span class="math notranslate nohighlight">\(X\)</span> reaches steady-state, <span class="math notranslate nohighlight">\(dX/dt = 0\)</span> and when integrated produces a constant. The maximum possible value is <span class="math notranslate nohighlight">\(X_{max}=k_2/k_3\)</span> and this ratio has to be much greater than <span class="math notranslate nohighlight">\(1\)</span> as the bacterial population is growing.</p>
+<p>(iii) When species X is small and <span class="math notranslate nohighlight">\(k_1M\)</span> is also small, species A increases exponentially with a rate constant <span class="math notranslate nohighlight">\(k_2-k_4\)</span> assuming that <span class="math notranslate nohighlight">\(k_2 \gt k_4\)</span>.</p>
+<p>(iv) At long times after the maximum bacterial population is passed the bacteria decay exponentially with rate constant <span class="math notranslate nohighlight">\(k_4\)</span>. At these times <span class="math notranslate nohighlight">\(k_1M\)</span> is very small vs. population of A, <span class="math notranslate nohighlight">\(k_2-k_3X \sim 0\)</span> (see (iii) above), thus <span class="math notranslate nohighlight">\(dA/dt \sim -k_4 A\)</span> which integrates to an exponential decay.</p>
+<p>(v) The rate constant <span class="math notranslate nohighlight">\(k_3\)</span> has to be small compared to the others. Since <span class="math notranslate nohighlight">\(k_3XA\)</span> is the product of two potentially large numbers A and X then <span class="math notranslate nohighlight">\(k_3\)</span> has to be very small to be comparable to other rate constants. If <span class="math notranslate nohighlight">\(10^8\)</span> bacteria are to be produced then <span class="math notranslate nohighlight">\(1/k_3 \sim 10^8\)</span></p>
+<p>The Euler method can be used to integrate the rate equations and using <span class="math notranslate nohighlight">\(1000\)</span> time steps is plenty. The code for the SIR model above can be changed to do this calculation. The time-scale needed from experience of food going bad is only a few days, thus we guess rate constants in terms of time units in days to illustrate the behaviour of the population. Some initial numbers are tried just to get going, even if fitting to a data set using a non-linear least squares method. The graph below shows the populations of M, A and X on a linear and log scale vs. time. The initial population <span class="math notranslate nohighlight">\(M_0 = 10000\)</span>, the rate constants are <span class="math notranslate nohighlight">\(k_1 = 1,  k_2 = 4, k_3 = 1\cdot 10^{-8}, k_4 = 0.5,  k_5 = 0.01\)</span>. You can see that with this set of rate constants that the lag phase is <span class="math notranslate nohighlight">\(\approx 3\)</span> days, (fig 17a left), the exponential rise is very rapid about a day, and large <span class="math notranslate nohighlight">\(\sim 10^4\)</span> times increase, the stationary phase short, <span class="math notranslate nohighlight">\(\approx 1\)</span> day and the death phase long, several days. This model therefore shows all the features of the growth and death of a bacterial population.</p>
+<p>The fall in the population after reaching a maximum is due to <span class="math notranslate nohighlight">\(k_4A\)</span> becoming greater than <span class="math notranslate nohighlight">\(k_2-k_3X\)</span>. As species A decreases the reaction <span class="math notranslate nohighlight">\(A+X\to D\)</span> is slowed but X is still being formed from <span class="math notranslate nohighlight">\(A\to 2A+X\)</span>, so this is slowed also as A decreases under the influence of <span class="math notranslate nohighlight">\(k_4\)</span>. The result is that X becomes constant at long times since the amount formed during the exponential growth phase remains because it is no longer being formed or removed at any appreciable rate as can be seen in fig 17a.</p>
+<p><img alt="Drawing" src="../_images/num-methods-fig17a.png" /></p>
+<p>Figure 17a. Calculated profile of a bacterial population. The rate constants used were <span class="math notranslate nohighlight">\(k_1 = 1,  k_2 = 4, k_3 = 15\cdot10^{-8}, k_4 = 0.5,  k_5 = 0.01\)</span>. The equations show the limiting equations as described in the text applicable when <span class="math notranslate nohighlight">\(k_2\gt k_4\)</span>. In the left hand figure M is multiplied by <span class="math notranslate nohighlight">\(10^4\)</span> so that it can be seen on the same plot as A and X.</p>
 </section>
 </section>
 

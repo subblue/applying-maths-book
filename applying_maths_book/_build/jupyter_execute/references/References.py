@@ -118,6 +118,8 @@
 # 
 # Eyring, H., Lin, S. H., & Lin, S. M. (1980), Basic Chemical Kinetics, Wiley.
 # 
+# Fast, J. D. (1968), Entropy, Phillips Technical Library, (2nd ed.).
+# 
 # Finkelstein, A. & Ptitsyn, O. (2002), Protein Physics, Academic Press.
 # 
 # Flugge, S. (1999), Practical Quantum Mechanics, Springer.

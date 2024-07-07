@@ -401,11 +401,11 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # which produces two log functions when integrated. The initial conditions are $x = a_0$ when $t = 0$ then the integration constant is $\ln(a_0/b_0)$ and the rate equation,
 #   
-# $$\displaystyle  \ln \left(\left| \frac{xb_0}{a_0(a_0+b_0-x)}     \right|  \right) =-(a_0+b_0)kt$$
+# $$\displaystyle  \ln \left(\left| \frac{xb_0}{a_0(a_0+b_0-x)}     \right|  \right) =(a_0+b_0)kt$$
 #   
 # and the absolute value is added because the log cannot be negative. Rearranging produces 
 # 
-# $$\displaystyle x = a_0\frac{a_0+b_0}{a_0+b_0e^{-(a_0+b_0)kt}} $$
+# $$\displaystyle x = a_0\frac{a_0+b_0}{a_0+b_0e^{(a_0+b_0)kt}} $$
 # 
 # This and also the increase of $B$ are plotted in Fig. 34.
 # 
