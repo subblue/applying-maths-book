@@ -101,7 +101,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \qquad\tag{39}$$
 # 
-# is used. This produces a column vector $\pmb{M}(t)$ of the populations of each species at time $t$, $\pmb{M}_0$ being a column vector of the initial populations. The eigenvectors of matrix $\pmb{k}$ are formed into a (modal) matrix $\pmb{x}$ and $\pmb{x}^{-1}$ is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:
+# is used, see Similarity Transforms section 13.4. This produces a column vector $\pmb{M}(t)$ of the populations of each species at time $t$, $\pmb{M}_0$ being a column vector of the initial populations. The eigenvectors of matrix $\pmb{k}$ are formed into a (modal) matrix $\pmb{x}$ and $\pmb{x}^{-1}$ is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:
 # 
 # $$\displaystyle \qquad\qquad e^{\lambda t} =\begin{bmatrix} e^{\lambda_1 t} & 0 & 0 & \cdots \\ 0 & e^{\lambda_2 t}   & 0 & \cdots \\ 0 & 0 & e^{\lambda_3 t} & \cdots \\ \vdots & \vdots &\vdots & \ddots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(40)}$$
 # 
@@ -348,7 +348,7 @@ pop     = np.zeros((n,max_num),dtype=complex)     # define 2D array for results 
 M0[0] = 1.0 # initial population
 k = 1.0     # rate constant
 
-for j in range(n):                   # calculate eigenvectors (X) and eigenvalues (lam)
+for j in range(n):                      # calculate eigenvectors (X) and eigenvalues (lam)
     lam[j] = -2*k*(1-np.cos(2*np.pi*j/n))
     for k in range(n):
         X[j,k] = np.exp(2*np.pi*1j*j*k/n)
@@ -358,7 +358,7 @@ iv_X = np.conj(X)/n       # could use LA.inv(X) but not necessary if circulant, 
 for i in range(max_num):
     for j in range(n):
         exp_mat[j,j] = np.exp( lam[j]*t[i] ) # diagonal  lambda*t   
-    pop[:,i]= X @ exp_mat @ iv_X @ M0    # @ multiplies matrices, result is all species at time t[i]
+    pop[:,i]= X @ exp_mat @ iv_X @ M0        # @ multiplies matrices, result is all species at time t[i]
     pass
 for i in range(n):
     plt.plot( t[:],np.real(pop[i,:]) ,label='molec '+str(i))   # plot only real part                   
@@ -386,8 +386,198 @@ plt.show()
 # 
 # and the form of this needs explaining. First, each value in the column vector $\pmb{M}(t)$ represents the concentration of each species at time $t$, the column vector $\pmb{M}_0$ holds the initial concentrations
 # of the same species. The equation we start with is $\pmb{M}(t) = \pmb{M}_0 e^{-\pmb{k}t}$. To solve this it has to be converted into $\pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0$, and to do this a _similarity transform_ is needed.
+
+# ## 13.4 Matrix solutions. Markov Chains and Chemical Kinetics
 # 
-# ## 13.4 Similarity Transforms
+# A Markov chain is a stochastic process for predicting future behaviour based solely on the present state. These predictions are just as good as the ones that could be made knowing the process's previous history. The 'process' can be one of a number of very diverse types, a sequence of chemical reactions, diffusion on a line, the 'drunkard's walk', behaviour of the stock market, games such as 'snakes and ladders', the 'gambler's ruin' or how a company competes for sales with rivals. What is required is that the transition from one position to each of the others has a certain probability and as time progresses these probabilities are entered into a transition or transfer matrix and used to predict the future state. All that is needed is a starting state and the transition matrix to be able to predict all future behaviour. 
+# 
+# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect states and that a 'do nothing' or waiting probability is added to each species. The next figure gives an example of a three state system similar to that in fig 55a above. 
+# 
+# ![Drawing](matrices-fig55b.png)
+# 
+# figure 55b. A scheme between three sites written as a Markov process.
+# ______________________________
+# 
+# The figure gives the probabilities of transfer from one site $i$ to another $j$ as $p_{i,j}$ and the probability of remaining on a given site (or molecule) is $p_{ii}$ although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any 'site', such as a product made by a company, always add up to $1$ as something happens even if it just that the site remains unchanged, i.e. $p_{11}+p_{12}=1,\; p_{12}+p_{22}+p_{23}=1$, etc. these probabilities are, of course always positive, $0 \le p\le 1$ , and we will initially assume that they are constant in time. If a state has only a probability of reaching it and none that leave, this is called and 'absorbing' site, and eventually all the population will end up here; for example in the process $A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C $, $C$ is an absorbing site, or in chemical terms, the product. If the process describes chemical reactions then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur. 
+# 
+# The initial state is defined, as a vector of populations or number of items held at each site etc., for example if only A is present initially as $A_0$ then the row matrix of initial values is 
+# 
+# $$\displaystyle P_0=\begin{bmatrix}A_0,0,0\end{bmatrix}$$
+# 
+# and to evaluate what has changed at the next time step $t+\tau$ where $\tau$ is a small time increment, and $t$ is some arbitrary start time which could be zero, we use the transition matrix $T$ as
+# 
+# $$\displaystyle P(t+\tau) = P_0\pmb T$$
+# 
+# where each *row* in the transfer matrix contains all the probabilities for that site, for example in fig 55b,
+# 
+# $$\displaystyle T=\begin{bmatrix}p_{11}& p_{12}&0\\p_{21} & p_{22} & p_{23}\\ p_{31}& 0 & p_{33} \end{bmatrix}$$
+# 
+# and because the probabilities in each row add to unity we can write in this case
+# 
+# $$\displaystyle T=\begin{bmatrix}1-p_{12}& p_{12}&0\\p_{21} &1 - p_{21}-p_{23} & p_{23}\\p_{31}& 0 & 1 - p_{31} \end{bmatrix}$$
+# 
+# so that only the transition probabilities between species are needed. The next time step is
+# 
+# $$\displaystyle P(t+2\tau)=P(t+\tau)\pmb T= p_0 \pmb T^2$$
+# 
+# and generalising to $n$ time steps 
+# 
+# $$\displaystyle P(t+n\tau) = p_0 \pmb T^n$$
+# 
+# so it is necessary to either evaluate in a recursive way or calculate the $n^{th}$ power of the transfer matrix.  This equation can also be written using column vectors, which is much more familiar in chemistry, and then the matrix has to be transposed and the vectors $P$ are now become column vectors, i.e.
+# 
+# $$\displaystyle P(t+n\tau) =  (\pmb{T}^T)^n P_0$$
+# 
+# where superscript $T$ indicates the transpose operation and we shall now always use column vectors in any calculations. The matrix can be raised to an integer power using the Similarity Transform described below, section 13.5.  The time $t$ is taken to be zero in all further calculations.
+# 
+# ### **(i) A first order reaction $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$**
+# 
+# If the reaction is $\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ the transition matrix is 
+# 
+# $$\displaystyle \pmb T=\begin{bmatrix}1-k_{12}\tau & k_{12}\tau\\ k_{21}\tau & 1-k_{21}\tau \end{bmatrix} $$
+# 
+# where $\tau$ is a small time-step used to convert the rate constants into probabilities with values $0\le k\tau\le 1$. If the largest rate constant is $10^8$/s then $\tau$ could be $\sim 10^{-9}$ s thus making $k\tau$ less than unity and also dimensionless. In the case of chemical reactions this is important in another way since the time that a molecule exists before it reacts is not constant in time but exponentially distributed, i.e. as $e^{-kt}$ and when this is expanded at small times with $t=\tau$ then on expanding as a series $e^{-k\tau} \approx 1-k\tau$ which is now a constant and so small that any further terms are so small as to be insignificant.
+# 
+# If only the state A is initially populated the vector is $P_0=\begin{bmatrix} 1, 0\end{bmatrix}^T$. Choosing $k_{12}=4\cdot10^7, k_{21}=5\cdot10^6$ and $\tau=10^{-9}$ then in units of time $\tau$ 
+# 
+# $$\displaystyle P(1)=\begin{bmatrix}1-0.4 & 0.4\\ 0.05 & 1-0.05 \end{bmatrix}^T\begin{bmatrix}1 \\  0\end{bmatrix}=\begin{bmatrix}1-0.4 & 0.05\\ 0.4 & 1-0.05 \end{bmatrix}\begin{bmatrix}1 \\ 0 \end{bmatrix}=\begin{bmatrix}0.6\\0.4\end{bmatrix}$$
+# 
+# Using this result we can calculate the  populations at multiples of time $\tau$ and is done by recursively calculating at times $\tau, 2\tau\cdots$ or by using a Similarity Transform (see section 13.5) to raise the $T$ matrix to powers $2, 3,\cdots$ to get any particular time without calculating all the others. 
+# 
+# The calculation starts as,
+# 
+# $$\displaystyle P(0)=\begin{bmatrix}1\\0\end{bmatrix},\qquad P(1)= \begin{bmatrix}0.6\\0.4\end{bmatrix},\qquad P(2)=\begin{bmatrix}0.6 & 0.05\\ 0.4 & 0.95 \end{bmatrix}\begin{bmatrix}0.6 \\ 0.4 \end{bmatrix}=\begin{bmatrix}0.38\\0.62\end{bmatrix}\cdots\text{etc.} $$
+# 
+# and this is shown next.
+
+# In[7]:
+
+
+tau = 1e-9                 # set time to make rateconsstants into probabilities
+k12 = 4e7*tau              # choose some rate constants
+k21 = 5e6*tau              
+
+TT = np.array([[ 1 - k12, k12 ],[ k21, 1 - k21 ] ] )  #  transfer matrix
+T  = np.transpose(TT)
+p  = np.array([1,0.25])                               # initial values of A and B
+
+#evals,evecs = LA.eig(T)           # get eigenvecs for equilib amount
+#plt.axhline((A[0]+B[0])*evecs[0,1]/(evecs[0,1]+evecs[1,1]),linewidth=0.5,color='grey') # plot long time A
+
+n = 150                           # number of points
+A = np.zeros(n,dtype=float)       # array to hold calculated values
+B = np.zeros(n,dtype=float)
+A[0] = p[0]                       # initial values
+B[0] = p[1]
+t = np.linspace(0,n,n)            # time steps
+for i in range(1,n,1):
+    temp = T @ p                  # @ is matrix multiply
+    A[i] = temp[0]                # save values
+    B[i] = temp[1]
+    p = temp                      # ready for next step
+    pass
+
+plt.plot(t, A, color='blue',linewidth=1)
+plt.plot(t, B, color='red',linewidth=1)
+plt.xlim([0,n])
+plt.ylim([0,A[0]+B[0]+0.1])
+plt.ylabel('Populations')
+plt.xlabel('time /'+r'$\tau$')
+plt.text(27, A[25],'A')
+plt.show()
+
+
+# It is clear even before doing the calculation that $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ will come to a steady state at sufficiently long time. This can be found by assuming that $P_\infty=\pmb T^TP_\infty$ which is in effect an eigenvalue-eigenvector equation with eigenvalues $E=[1,1]^T$ of unity, $\pmb T^TP_\infty=EP_{\infty}$. The normalised eigenvectors are obtained from matrix $T$ and are calculated as
+
+# In[8]:
+
+
+f01 = np.array([[0.25,0.05],[0.75,0.95]])
+evals,evecs = LA.eig(T)
+evecs
+
+
+# The first eigenvector adds to zero and is ignored, the second is $[v_a,v_B]^T=[0.1240, 0.9923]^T$ and the signs can be ignored as they are both the same. The long time concentration of A and B are the fractions of the total amount,
+# 
+# $$\displaystyle A_\infty=(A_0+B_0)\frac{v_a}{(v_a+v_b)}=0.896,\qquad B_\infty=(A_0+B_0)\frac{v_b}{(v_a+v_b)}$$ 
+# 
+# otherwise B is easily found since $A_0+B_0=A_\infty+B_\infty$.
+# 
+# ### **(ii) A second order reaction $A +B \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} C$**
+# 
+# A bimolecular reaction can be considered as a sequence of instantaneous first-order processes when the time intervals are very small meaning that the first-order rate that A decays by during time interval $\tau$ is $k_{12}[B]$ and so the probability that it remains unchanged is $1-k_{12}\tau [B]$. The transition matrix is no longer a constant because of the bimolecular reaction, and at the $m^{th}$ time step this is  
+# 
+# $$\displaystyle T_m=\begin{bmatrix}1-k_{12}\tau[B]_m& 0&k_{12}\tau[B]_m/2\\0 &1 - k_{12}\tau[A]_m & k_{12}\tau[A]_m/2\\k_{21}\tau& k_{21}\tau & 1-k_{21}\tau \end{bmatrix}$$
+# 
+# where, as above, the time increment $\tau$ is used to change the rate constants into probabilities and $[A]_m,[B]_m$ are the concentrations that exist at the $m^{th}$ time increment. The populations are calculated by updating $[A]$ and $[B]$ in the transition matrix at each time step. The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from $n$ of them is $\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}$ and when $n$ is very large this is $n^2/2$ to a very good approximation. The probability is a fraction of the total which is $\displaystyle \frac{n^2}{2n} =\frac{n}{2}$. The term in the transfer matrix is therefore  $\displaystyle \frac{k}{2}\tau n$ where the rate constant is $k$. The calculation is shown next. 
+
+# In[9]:
+
+
+tau = 1e-9                 # set time to make rate constants into probabilities
+k12 = 4e7*tau              # choose some rate constants
+k21 = 1e7*tau              
+p  = np.array([1,1,0])            # initial values of A and B, C=0
+
+n = 100                           # number of points
+t = np.linspace(0,n,n)            # time steps
+A = np.zeros(n,dtype=float)       # array to hold calculated values
+B = np.zeros(n,dtype=float)
+C = np.zeros(n,dtype=float)
+A[0] = p[0]                       # initial values
+B[0] = p[1]
+C[0] = p[2]
+
+TT = np.array([[ 1 - k12*B[0], 0, k12*B[0]/2 ], [ 0, 1 - k12*A[0], k12*A[0]/2],[ k21, k21, 1 - k21] ] )  #  transfer matrix
+T  = np.transpose(TT)
+
+for i in range(1,n,1):
+    temp = T @ p                  # @ is matrix multiply
+    A[i] = temp[0]                # save values
+    B[i] = temp[1]
+    C[i] = temp[2]
+    p = temp                      # ready for next step
+    T[0,0] = 1 - k12*B[i]         # update T matrix; note T is already transposed
+    T[2,0] = k12*B[i]/2
+    T[1,1] = 1 - k12*A[i]
+    T[2,1] = k12*A[i]/2
+    pass
+
+plt.plot(t, A, color='blue',linewidth=1)
+plt.plot(t, C, color='red',linewidth=1)
+plt.xlim([0,n])
+plt.ylim([0,A[0]+C[0]])
+plt.ylabel('Populations')
+plt.xlabel('time /'+r'$\tau$')
+plt.text(17, A[15],'A')
+plt.text(17, C[10],'C')
+plt.title(r'$A+B\rightleftharpoons C$')
+plt.show()
+
+
+# As an aside, the analytic solution for this simple reaction has a difficult integration and can be determined starting with
+# 
+# $$\displaystyle \frac{dA}{dt}=-k_1AB+k_2C$$
+# 
+# where $A,B,C$ are used to represent the concentrations. If an amount $x$ reacts then $A=A_0-x, B=B_0-x, C=C_0+x$ making
+# 
+# $$\displaystyle \begin{align}\frac{dx}{dt}&=k_1(A_0-x)(B_0-x)+k_2(C_0+x)\\&=k_1A_0B_0-k_2C_0-k_1(A_0+B_0+k_2)x+k_1x^2\end{align}$$
+# 
+# On integrating this equation has the form
+# 
+# $$\displaystyle \int_0^x \frac{dx}{a+bx+cx^2}=\int_0^tdt$$
+# 
+# where $a,b,c$ are substituted for the terms in the rate equation and the solution is a standard one (Chapter 4-2.14)
+# 
+# $$\displaystyle \ln\left( \frac{2cx+b-\sqrt{q}}{2cx+b+\sqrt{q}} \right)-\ln\left( \frac{b-\sqrt{q}}{b+\sqrt{q}} \right)=t\sqrt{q}$$
+# 
+# where $q=b^2-4ac$. This can be simplified further using $\displaystyle w=\frac{b-\sqrt{q}}{2c},v=\frac{b+\sqrt{q}}{2c} $ and some rearranging to give,
+# 
+# $$\displaystyle x=\frac{vw\left(e^{\sqrt{q}t}-1\right)}{ v - we^{\sqrt{q}t} }$$
+# 
+# An alternative equation using the equilibrium amounts of $x$ is given by Wilkinson (1980), chapter 3, table 12 , agrees with these calculations.
+
+# ## 13.5 Similarity Transforms
 # 
 # In our study of molecular group theory, similar matrices were introduced. However, _similar_ matrices are used more generally. A square matrix $\pmb{W}$ is described as being _similar or conjugate_ to another square matrix $\pmb{N}$, if there exists a third, non-singular, square matrix $\pmb{X}$ such that
 # 
@@ -425,6 +615,7 @@ plt.show()
 # 
 # which is used to solve equations in chemical kinetics.
 # 
+# ### **(i) Raising matrices to a power**
 # Suppose that a matrix $\pmb{M}$ is to be raised to its $n^{th}$ power, the function $\pmb{f}(\pmb{W})$ is then $\pmb{M}^n$. The similarity transform becomes $\pmb{X}^{-1}\pmb{M}^n\pmb{X} = \pmb{\Lambda}^n$, which can be rearranged to $\pmb{M}^n=\pmb{X}\pmb{\Lambda}^n\pmb{X}^{-1} $ and so the equation can be used both ways round. This last expression is a very convenient way of raising a matrix to a large power, if $\pmb{M}$ can be diagonalized and its eigenvalues $\pmb{X}$ determined. The alternative method, is the repeated multiplication $\pmb{MMMM}\cdots$, which is impracticable should $n$ be large, $100$ for example.
 # 
 # To show that a similarity transform on $\pmb{M}$ produces a diagonal matrix of eigenvalues, consider the matrix
@@ -458,32 +649,44 @@ plt.show()
 # 
 # $$\displaystyle \pmb{M}^5=\frac{1}{9}\begin{bmatrix}-2& 5 \\1&2 \end{bmatrix}\begin{bmatrix} -7 & 0 \\ 0 & 2\end{bmatrix}^5\begin{bmatrix}-2& 5 \\1&2 \end{bmatrix}= \begin{bmatrix}-7452 & 18710\\ 3472 & -9323\end{bmatrix}$$
 
-# In[7]:
+# In[10]:
 
 
 M, Lambda = symbols('M, Lambda')
 M  = Matrix([[-2,10],[2,-3]])
 evecs,evals = M.diagonalize()
-evecs, evals
+M, evecs, evals
 
 
-# In[8]:
+# In[11]:
 
 
 Lambda = evecs.inv()* M *evecs    # eigenvalues 
 Lambda
 
 
-# In[9]:
+# In[12]:
 
 
 M5 = evecs*Lambda**5*evecs.inv()  # M^5 
 M5
 
 
-#  
+# The same calculation can be done using numpy
 
-# ## 13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
+# In[13]:
+
+
+m = np.array([[-2,10],[2,-3]])
+evals,evects = LA.eig(m)              # get eigenvalues and eigenvectors
+L = np.zeros((2,2),dtype=float)       # make new array Lambda 
+for i in range(2):
+    L[i,i]= evals[i]                  # make diagonal matrix of eigenvalues
+m5 = evects @ L**5 @ LA.inv(evects)   # matrix m to 5 th power
+m5
+
+
+# ## 13.6 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
 # A polypeptide or a protein can change from a helix to a random coil structure or vice versa, over a small range of temperatures. This sudden change is suggestive of a cooperative process and Zimm and Bragg (1959) used a statistical model and calculated the partition function for a peptide chain consisting of two types of residues, either those that form a helix or those that do not. A section of protein will be described as having an unstructured coil if it has c type amino acids and h type if they are helix forming such as alanine. A portion of the chain could be $\cdots cchccchhhcchh\cdots$ . The statistical weight of a $\cdots ch$ boundary and of continuing to grow a helix $\cdots chhh$ once formed is calculated and this statistical weight is the Boltzmann contribution to the partition function or $e^{-\Delta G/k_BT}$, where $\Delta G$ is the change in free energy when the next residue is encountered along the chain. The model is successful despite the assumption of nearest neighbour interactions whereas a helix strictly involves interactions with residues that are not just nearest neighbours.
 # 
 # The model has the following rules.
@@ -542,7 +745,7 @@ M5
 # 
 # The steps are given in the next python/Sympy calculation.
 
-# In[10]:
+# In[14]:
 
 
 s, sigma, lambda1, lambda2, N = symbols('s, sigma, lambda1, lambda2, N')
@@ -554,7 +757,7 @@ evecs,evals
 
 # Substituting for the eigenvalues and simplifying these matrices gives,
 
-# In[11]:
+# In[15]:
 
 
 Lambda =   Matrix( [ [lambda1,0], [0,lambda2] ] ) 
@@ -562,20 +765,20 @@ X = Matrix( [ [1/(lambda1-1), 1/(lambda2-1)], [1,1] ])  # X matrix, and its inve
 X
 
 
-# In[12]:
+# In[16]:
 
 
 # X.inv()    # invert matrix, remove hash to see this
 
 
-# In[13]:
+# In[17]:
 
 
 MN = X * Lambda**N* X.inv()   # raised to Nth power
 simplify(MN)
 
 
-# In[14]:
+# In[18]:
 
 
 Z = Matrix([[1,1]])*MN*Matrix([[1],[0]])

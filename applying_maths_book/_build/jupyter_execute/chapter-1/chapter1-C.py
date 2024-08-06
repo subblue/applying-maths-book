@@ -592,37 +592,11 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # An alternative way of forming the binomial coefficient $\displaystyle \frac{n!}{m!(n-m)!}$ in equation 25a is to consider many of two different types of atoms, e.g. He and Ne, or types of snooker balls, e.g. red and white which gives a reasonable analogy as He and Ne have no strong interactions between then when not in contact and neither do billiard balls. Suppose that we place the balls into a jar so that red and white layers are apparent. Next by shaking the jar this arrangement is lost and a irregular looking one is formed. In fact if shaking is continued the ordered layers are almost never going to be seen again. This means that the ordered starting point is just one possibility of a truly vast number of others and returning to the original arrangement is highly unlikely which means that the probability of this is extremely small.
 # 
-# Suppose that there are $n=100$ similar balls, $50$ each red and white and that they are numbered, $1,2\cdots 100$ irrespective of colour, and they are randomly placed to fill $100$ positions. In placing the first ball there are $100$ choices, the second can go in any of the $99$ empty places so that in positioning the first two we have had $100\times 99 = 9900$ choices. Continuing likewise produces $100\times 99\times 98$ for the third choice and so on until the last ball is in position making the total number of choices the permutation $100\times 99 \times 98\times 97\cdots 2\times 1=100!$ and each of these is equally likely to occur. 
+# Suppose that there are $n=100$ similar balls, $50$ each red and white and that they are numbered, $1,2\cdots 100$ irrespective of colour, and they are randomly placed to fill $100$ positions. In placing the first ball there are $100$ choices, the second can go in any of the $99$ empty places so that in positioning the first two we have had $100\times 99 = 9900$ choices. Continuing likewise produces $100\times 99\times 98$ for the third choice and so on until the last ball is in position making the total number of choices the permutation 
 # 
-# If the balls are not numbered but remain coloured, and hence distinguishable, there will be a smaller number of _distinguishable_ arrangements, which is the number of ways of selecting groups $m$, and this will be smaller than $n!$ because exchanging any two red balls for any two white ones makes no difference (See also section 9.2). We want to split the balls into 2 groups with, in this case, 50 balls in each but we are not concerned with the order in which they are put into each group. There are $50!$ ways of putting the first $50$ white balls into the first half. Next, the number of ways of selecting the $m$ groups multiplied by the number of permutation in the first and multiplied by the number of permutations in the second group gives the total possible number of permutations. Therefore $m\times 50!\times 50!=100!$ ways and so the number of distinguishable arrangements $m$ is the combination,
+# $$\displaystyle 100\times 99 \times 98\times 97\cdots 2\times 1=100!$$
 # 
-# $$\displaystyle m =\frac{100!}{50!50!}$$
-# 
-# Evaluating the factorials can be tricky for large numbers and care is needed when computing them, for example $100! \approx 9.3\cdot 10^{157}$ and larger factorials for relatively small numbers, e.g. 200, can easily exceed the floating point capabilities of a computer. For numbers greater than about $20$ the Stirling approximation is very good. There are several forms of this but the most common is written as
-# 
-# $$\displaystyle n!\approx \sqrt{2\pi n}\,n^ne^{-n}\qquad \text{or more commonly as}\qquad \ln(n!)\approx n\ln(n)-n$$
-# 
-# producing  $m\approx 1\cdot 10^{29}$. This means that the balls must be shaken on average of $10^{29}$ times before a particular arrangement of the balls is found. At one per second this would take $\approx 10^{21}$ years, compared to the age of the universe $1.38\cdot 10^{10}$ years; this is a long, long time even for a small number of particles. The chance of recovering the initial arrangement of layers of white and red balls is effectively zero. 
-# 
-# Evaluating $m$ via the accurate Sterling approximation (above left) and when there are an equal number of balls or molecules produces 
-# 
-# $$\displaystyle m=\frac{n_0!}{((n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}$$
-# 
-# for $n_0$ in total. Thus for half a mole each of He and Ne, $n_0=6\cdot 10^{23}$ so that the number of configurations is so vast it is impossible to comprehend; $m=2^{6\cdot 10^{23}}$. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room. However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such 'single molecule' experiments are now quite common. As will be calculate later, the chance that the gas will fill only $99%$ of any volume and not $100$% is also vanishingly small.
-# 
-# The probability of observing _exactly_ $50$% is 
-# 
-# $$\displaystyle p = \frac{m}{2^{n_0}} \sim \frac{1}{\sqrt{ n_0}}$$
-# 
-# which tends to zero as $n_0\to \infty$ which is not what we would expect. However, 'exactly' is a very restrictive condition and if the distribution of probabilities with different ratios is calculated, as is done next, we find that the $50$% probability is always greater than any other and that the probability is sharply peaked at $50$% chance.
-
-# ## 9.23 Large numbers and most probable state.
-# 
-# An alternative way of forming the binomial coefficient $\displaystyle \frac{n!}{m!(n-m)!}$ in equation 25a is to consider many of two different types of atoms, e.g. He and Ne, or types of snooker balls, e.g. red and white which gives a reasonable analogy as He and Ne have no strong interactions between then when not in contact and neither do billiard balls. Suppose that we place the balls into a jar so that red and white layers are apparent. Next by shaking the jar this arrangement is lost and a irregular looking one is formed. In fact if shaking is continued the ordered layers are almost never going to be seen again. This means that the ordered starting point is just one possibility of a truly vast number of others and returning to the original arrangement is highly unlikely which means that the probability of this is extremely small.
-# 
-# Suppose that there are $n=100$ similar balls, $50$ each red and white and that they are numbered, $1,2\cdots 100$ irrespective of colour, and they are randomly placed to fill $100$ positions. In placing the first ball there are $100$ choices, the second can go in any of the $99$ empty places so that in positioning the first two we have had $100\times 99 = 9900$ choices. Continuing likewise produces $100\times 99\times 98$ for the third choice and so on until the last ball is in position making the total number of choices the permutation $100\times 99 \times 98\times 97\cdots 2\times 1=100!$ and each of these is equally likely to occur. 
-# 
-# If the balls are not numbered but remain coloured, and hence distinguishable, there will be a smaller number of _distinguishable_ arrangements, which is the number of ways of selecting groups $m$, and this will be smaller than $n!$ because exchanging any two red balls for any two white ones makes no difference (See also section 9.2). We want to split the balls into 2 groups with, in this case, 50 balls in each but we are not concerned with the order in which they are put into each group. There are $50!$ ways of putting the first $50$ white balls into the first half. Next, the number of ways of selecting the $m$ groups multiplied by the number of permutation in the first and multiplied by the number of permutations in the second group gives the total possible number of permutations. Therefore $m\times 50!\times 50!=100!$ ways and so the number of distinguishable arrangements $m$ is the combination,
+# and each of these is equally likely to occur. If the balls are not numbered but remain coloured, and hence distinguishable, there will be a smaller number of *distinguishable* arrangements, which is the number of ways of selecting groups $m$, and this will be smaller than $n!$ because exchanging any two red balls for any two white ones makes no difference (See also section 9.2). We want to split the balls into 2 groups with, in this case, 50 balls in each but we are not concerned with the order in which they are put into each group. There are $50!$ ways of putting the first $50$ white balls into the first half. Next, the number of ways of selecting the $m$ groups multiplied by the number of permutation in the first and multiplied by the number of permutations in the second group gives the total possible number of permutations. Therefore $m\times 50!\times 50!=100!$ ways and so the number of distinguishable arrangements $m$ is the combination,
 # 
 # $$\displaystyle m =\frac{100!}{50!50!}$$
 # 
@@ -636,9 +610,9 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\displaystyle m=\frac{n_0!}{((n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}$$
 # 
-# for $n_0$ in total. Thus for half a mole each of He and Ne, $n_0=6\cdot 10^{23}$ so that the number of configurations is so vast it is impossible to comprehend; $m=2^{6\cdot 10^{23}}$. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room. However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such 'single molecule' experiments are now quite common. As will be calculate later, the chance that the gas will fill only $99%$ of any volume and not $100$% is also vanishingly small.
+# for $n_0$ in total. Thus for half a mole each of He and Ne, $n_0=6\cdot 10^{23}$ so that the number of configurations is so vast it is impossible to comprehend; $m=2^{6\cdot 10^{23}}$. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room . However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such 'single molecule' experiments are now quite common. As will be calculate later, 9.24(i), the chance that the gas will fill only $99%$ of any volume and not $100$% is also vanishingly small.
 # 
-# The probability of observing _exactly_ $50$% is 
+# The probability of observing *exactly* $50$% is 
 # 
 # $$\displaystyle p = \frac{m}{2^{n_0}} \sim \frac{1}{\sqrt{ n_0}}$$
 # 
@@ -681,11 +655,11 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\ln(w-n)=\ln(1-n/w)-\ln(w)$$
 # 
-# and then approximating $\ln(1-n/w)= -n/w$ can be done without any significant error to give 
+# and then approximating  as $\ln(1-n/w) = -n/w$ can be done without any significant error to give 
 # 
 # $$\displaystyle \ln(m)=n\ln\left(\frac{w}{n}\right)+n$$
 # 
-# Now suppose that the volume the gas is irreversibly expanded from $V_1 \to V_2$ and we define $r=V_2/V_1$ and therefore the number of spaces/cells $w$ changes as $w \to rw$. The ratio of the number of configurations in the final to initial volume is found using the same equation again and is
+# Suppose that the volume the gas is irreversibly expanded from $V_1 \to V_2$ and define $r = V_2/V_1$, therefore the number of spaces/cells $w$ changes as $w \to rw$. The ratio of the number of configurations in the final to initial volume is found using the last equation again and is
 # 
 # $$\displaystyle \ln\left(\frac{m_2}{m_1}\right)=n\ln\left(\frac{rw}{n}\right)-n\ln\left(\frac{w}{n}\right)=n\ln(r)$$
 # 
@@ -693,8 +667,10 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\displaystyle \frac{m_2}{m_1}=\left(\frac{V_2}{V_1}\right)^n\qquad \tag{25d}$$
 # 
+# We come back to this after a short diversion.
+# 
 # ### **(i) Improbability of suddenly finding a vacuum**
-# A gas always fills the volume available, to see how improbable it would be to fill just $99$% of the volume imagine that the gas contains $10^{24}$ molecules, just over a mole, and that the other $1$% of the volume is empty. Using our result $m_2/m_1=(V_2/V_1)^n$, which is the number of microstates $m_2$ in volume 2, divided by those in volume 1, the probability is
+# A gas always fills the volume available, to see how improbable it would be to fill just $99$% of the volume imagine that the gas contains $10^{24}$ molecules, just over a mole, and that the other $1$% of the volume is empty. Using the last result $m_2/m_1 = (V_2/V_1)^n$, which is the number of microstates $m_2$ in volume 2, divided by those in volume 1, the probability is
 # 
 # $$ \displaystyle prob= (0.99)^{10^{24}} \approx 10^{-4.3\cdot 10^{21} }$$
 # 
@@ -703,17 +679,17 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # $$\displaystyle \mathrm{1000 \times a\; million \times a\; million\times a\; million\; zeros} !$$
 # 
 # ### **(ii) Entropy change on expansion**
-# To connect this last result with the entropy, this is derived from classical thermodynamics. The change in entropy $S_2-S_1$ upon expanding an ideal gas irreversibly from volume $V_1\to V_2$ with no addition of heat and without doing work is calculated using 
+# To connect eqn. 25d with the entropy, this is derived from classical thermodynamics. The change in entropy $S_2 - S_1$ upon expanding an ideal gas irreversibly from volume $V_1\to V_2$ with no addition of heat and without doing work is calculated using 
 # 
 # $$\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\qquad\tag{25e}$$
 # 
-# In Thermodynamics entropy is always calculated using $\int dQ_{rev}/T$ so a reversible pathway is always needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), $\Delta U=0$ and the temperature $T$ is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature $T$ and this arrangement allows the volume to change  from $T_1V_1\to T_2V_2$. As the piston moves reversibly the pressure on either side of the piston is always the same. Using the first law with $\Delta U=0$ and  $dW_{rev}=-pdV$ gives 
+# In Thermodynamics entropy is always calculated using $\int dQ_{rev}/T$ so a reversible pathway is always needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), $\Delta U = 0$ and the temperature $T$ is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature $T$ and this arrangement allows the change from state $T_1V_1\to T_2V_2$. As the piston moves reversibly the pressure on either side of it is always the same. Using the first law with $\Delta U = 0$ and  $dW_{rev}= -pdV$ gives 
 # 
-# $$\displaystyle 0=dQ_{rev}+dW_{rev}; \qquad dQ_{rev}=RT\frac{dV}{V}$$
+# $$\displaystyle 0 = dQ_{rev}+dW_{rev}; \qquad dQ_{rev} = RT\frac{dV}{V}$$
 # 
 # Integrating gives the entropy change on expansion,
 # 
-# $$\displaystyle S_2-S_1=R\ln\left(\frac{V_2}{V_1}\right)\qquad\tag{25f}$$
+# $$\displaystyle S_2 - S_1=R\ln\left(\frac{V_2}{V_1}\right)\qquad\tag{25f}$$
 # 
 # Notice that the entropy change does not depend of the properties of the gas just its volume or mole fraction since $pV=nRT$ and assuming one mole in total.  From our previous equation (25d) it follows that
 # 
@@ -723,23 +699,23 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\displaystyle S=k_B\ln(m)\qquad\tag{25g}$$
 # 
-# which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance (e.g. a perfect crystal) at 0 K, where the substance is in perfect arrangement so that $m = 1$ and $S_0=0$. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.
+# which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance, e.g. a perfect crystal at 0 K, where the substance is in perfect arrangement so that $m = 1$ and $S_0 = 0$. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.
 # 
 # We have found that the distribution that $m$ represents is very sharply peaked at its maximum, with the effect that $m$ can be replaced just by its maximum value, i.e. $m\to m_{max}$ which is usually called the number of configurations.
 # 
 # ### **(iii)  Entropy change on expansion using an alternative reversible path**
 # 
-# *Question* : How great is the entropy change on the irreversible expansion of $n$ moles of an ideal gas from volume $V_1$ to $V_2$ when expansion takes place without addition of heat $Q$ and without doing work $w$?
+# *Question* : How great is the entropy change with the irreversible expansion of $n$ moles of an ideal gas from volume $V_1$ to $V_2$ when expansion takes place without addition of heat $Q$ and without doing work $w$?
 # 
-# *Answer*: Since no work is done or heat exchanged the internal energy $U$ is unchanged, and for a perfect gas this means that the temperature $T_1$ is unchanged. To calculate the entropy we must evaluate $\int dQ_{rev}/T$ and this means finding a reversible pathway from $V_1 \to V_2$, and this is the example given in the previous section 9.24. As all reversible paths used to integrate $\int dQ_{rev}/T$ must be the same, a different path is now chosen. 
+# *Answer*: Since no work is done or heat exchanged the internal energy $U$ is unchanged, and for a perfect gas this means that the temperature $T_1$ is unchanged. To calculate the entropy we must evaluate $\int dQ_{rev}/T$ and this means finding a reversible pathway from $V_1 \to V_2$, and this is the example given in the previous section 9.24. As all reversible paths used to integrate $\int dQ_{rev}/T$ must be equivalent, a different path is now chosen. 
 # 
-# To demonstrate this path suppose that the gas expands adiabatically and reversibly from $V_1\to V_2$, and so the temperature will fall from $T_1\to T_2$ as the gas does work on expansion. However, the entropy remains constant because the increase in volume and thus entropy, and the decrease in temperature and decrease in entropy cancel exactly. Next heat is introduced reversibly at constant volume ($V_2$) to return the temperature to $T_1$, which completes the path from $V_1\to V_2$ at temperature $T_1$. As $\Delta V = 0$ then from the first law
+# To demonstrate this path, suppose that the gas expands adiabatically and reversibly from $V_1\to V_2$, and so the temperature will fall from $T_1\to T_2$ because the gas does work on expansion. However, the entropy remains constant because the increase in volume and thus entropy, and the decrease in temperature and decrease in entropy cancel exactly. Next, heat is introduced reversibly at constant volume ($V_2$) to return the temperature to $T_1$, which completes the path from $V_1\to V_2$ at temperature $T_1$. As $\Delta V = 0$ then from the first law
 # 
 # $$\displaystyle dU=dQ_{rev}, \qquad nC_vdT=dQ_{rev}$$
 # 
 # where $C_V$ is the constant volume heat capacity. The entropy change is. 
 # 
-# $$\displaystyle S_2-S_1=RT\int_{T_2}^{T_1}\frac{dQ_{rev}}{T}=nC_V\ln\left(\frac{T_1}{T_2} \right)$$
+# $$\displaystyle S_2-S_1 = RT\int_{T_2}^{T_1}\frac{dQ_{rev}}{T}=nC_V\ln\left(\frac{T_1}{T_2} \right)$$
 # 
 # In a reversible adiabatic process 
 # 
@@ -751,27 +727,31 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # ### **(iv) Mixing two perfect gases**
 # 
-# The entropy change when two gases are mixed can be calculated both from classical Thermodynamics and from Statistical Mechanics and from the latter by calculating the number of complexions or states. The same method is followed if mixing is of gases, dilute solutions or in forming disordered metal alloys which is a technologically important process.
+# The entropy change when two gases are mixed can be calculated both from classical Thermodynamics and from Statistical Mechanics and from the latter by calculating the number of complexions or states. The same method is followed if mixing gases, dilute solutions or in forming disordered metal alloys which is a technologically important process.
 # 
-# We shall suppose that the experiment is that of two different types of ideal gas that are held at the same temperature and pressure and then a partition is removed between them and the gases diffuse into one another.  This is clearly an irreversible process but to calculate the entropy from $\int dQ/T$ a reversible path from the start to end of the process has to be found. We also place the container holding the gases in a vacuum so that no heat is extracted or added.
+# We shall suppose that the experiment is that of mixing two different types of ideal gas that are held at the same temperature and pressure and then a partition is removed between them and the gases diffuse into one another.  This is clearly an irreversible process but to calculate the entropy from $\int dQ/T$ a reversible path from the start to end of the process has to be found. We also place the container holding the gases in a vacuum so that no heat is extracted or added.
 # 
-# A reversible path from separate gases to full mixing is one that will allow the gases to mix while not changing their volume. Planck visualised this thought experiment, which does not in any way invalidate it, in which each gas is held in a cylinder with a semi-permeable end and each cylinder can slide frictionlessly into the other (Fast 1968, chapter 1). Gas A's cylinder's end is permeable only to gas B, and *vice versa*. Both cylinders have the same volume and are placed in a vacuum and slowly (i.e. reversibly) slid past one another. In the common space the gases mix but each gas still only fills its initial volume. Eventually the gases are entirely mixed and each gas still has its initial volume. If the cylinders are now reversibly pulled apart the same reversible states are gone through as in compression and the gases are completely separated. To calculate the entropy we need to find the integral $\int dQ/T$, however, no heat is added or removed, as we are in a vacuum, thus no heat is added or extracted and so the entropy change is zero. Thus we must conclude that any change in entropy on mixing gases is not due to the process of mixing *per se*, i.e. each gas acts independently, but has to be due to the fact that mixing is normally accompanied by an increase in volume. 
+# A reversible path from separate gases to full mixing is one that will allow the gases to mix while not changing their volume. Planck visualised this thought experiment, which does not in any way invalidate it, in which each gas is held in a cylinder with a semi-permeable end and each cylinder can slide frictionlessly into the other (Fast 1968, chapter 1). Gas A's cylinder's end is permeable only to gas B, and the cylinder containing gas B has an end only permeable to molecules of type A. Both cylinders have the same volume and are placed in a vacuum and slowly (i.e. reversibly) slid past one another. In the common space the gases mix but each gas still only fills its initial volume. Eventually the gases are entirely mixed and each gas still has its initial volume. If the cylinders are now reversibly pulled apart the same reversible states are gone through as in compression and the gases are completely separated. To calculate the entropy we need to find the integral $\int dQ_{rev}/T$, however, no heat is added or removed as we are in a vacuum and so the entropy change is zero. Thus we must conclude that any change in entropy on mixing gases is not due to the process of mixing *per se*, i.e. each gas acts independently, but has to be due to the fact that mixing is normally accompanied by an increase in volume. 
 # 
-# Before and after mixing the total entropy is given by $S=S_1+S_2$, thus just like  energy, entropy of perfect gases is an additive property, but only if each constituent occupies the same volume before and after mixing. The reversible pathway with which to calculate the entropy is that in which each of the gases are expanded separately and reversibly and isothermally to a total volume $V_1+V_2$ and only here does the entropy change, and then they are mixed according to the Planck method given above. If there are $n_1$ moles of gas 1 and $n_2$ of gas 2 then using eqn 25f the total change in entropy is
+# Before and after mixing the total entropy is given by $S = S_1+S_2$, thus just like  energy, entropy of perfect gases is an additive property, but only if each constituent occupies the same volume before and after mixing. The reversible pathway with which to calculate the entropy is that in which each of the gases are expanded separately, reversibly and isothermally to a total volume $V_1 + V_2$ and only here does the entropy change, and then they are mixed according to the Planck method given above. If there are $n_1$ moles of gas 1 and $n_2$ of gas 2 then using eqn. 25f the total change in entropy is
 # 
 # $$\displaystyle \Delta S= Rn_1\ln\left(\frac{V_1+V_2}{V_1}\right)+Rn_2\ln\left(\frac{V_1+V_2}{V_2}\right)$$
 # 
-# This form is not the one usually given in textbooks, but if we suppose that the pressure of the two gases is the same and as $pV=nRT$ then substituting for the volume, 
+# This form is not the one usually given in textbooks, but if we suppose that the pressure of the two gases is the same and because $pV=nRT$ substituting for the volume gives, 
 # 
 # $$\displaystyle \Delta S= Rn_1\ln\left(\frac{n_1+n_2}{n_1}\right)+Rn_2\ln\left(\frac{n_1+n_2}{n_2}\right)$$
 # 
-# and is there is in total one mole $n_1+n_2=1$ and $x$ the mole fraction then
+# and if there is in total one mole $n_1+n_2=1$ and $x$ the mole fraction then
 # 
 # $$\displaystyle \Delta S= -R\big (n_1\ln(x)+n_2\ln(1-x)\big )$$
 # 
-# where the log is inverted hence the minus signs. In summary, diffusion into a larger volume increases the entropy, In the words of Gibbs (Fast 1968) ' The entropy of a mixture of perfect gases is equal to the sum of the entropies which each gas separately would have if they each occupied the volume of the mixture'.
+# where the log is inverted hence the minus sign. In summary, diffusion into a larger volume increases the entropy. In the words of Gibbs (Fast 1968), 'The entropy of a mixture of perfect gases is equal to the sum of the entropies which each gas separately would have if they each occupied the volume of the mixture'.
 # 
-# The statistical way of calculating the entropy is given above using eqns 25d to 25g.  An alternative argument supposes that there are $N_1$ and $N_2$ molecules that can be put into $N_1+N_2$ sites. These can naturally be ordered in lots of different ways, the first molecule has $N_1+ N_2$ empty sites to choose from, the second $N_1+N_2-1$ ways, the third $N_1+N_2-2$ etc. The total number of possibilities is $(N_1+N_2)(N_1+N_2-1)\cdots=(N_1+N_2)!$. However the molecules of the same type are not distinguishable from one another and so we must divide by $N_1!N_2!$ to give a multiplicity
+# The statistical way of calculating the entropy is given above using eqns 25d to 25g.  An alternative argument supposes that there are $N_1$ and $N_2$ molecules that can be put into $N_1 + N_2$ sites. These can naturally be ordered in lots of different ways, the first molecule has $N_1+ N_2$ empty sites to choose from, the second $N_1+N_2-1$ ways, the third $N_1+N_2-2$ etc. The total number of possibilities is 
+# 
+# $$\displaystyle (N_1+N_2)(N_1+N_2-1)(N_1+N_2-2)\cdots=(N_1 + N_2)!$$
+# 
+# However, the molecules of the same type are not distinguishable from one another and so we must divide by $N_1!N_2!$ to give a multiplicity
 # 
 # $$\displaystyle W_{mix} = \frac{(N_1+N_2)!}{N_1!N_2!}$$
 # 
@@ -785,7 +765,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # Using Sterling's approximation $\ln(N!)=N\ln(N)-N$ this simplifies, after a little algebra, to
 # 
-# $$\displaystyle \Delta S=-k_BN_1\ln(x_1)+N_2\ln(1-x)$$
+# $$\displaystyle \Delta S=-k_BN_1\ln(x)+N_2\ln(1-x)$$
 # 
 # where $k_B$ is the Boltzmann constant and $x =N_1/(N_1+N_2)$ the mole fraction of species 1.
 

@@ -1599,7 +1599,7 @@ title="Print to PDF"
 </div>
 <section id="q51-answer">
 <h2>Q51 answer<a class="headerlink" href="#q51-answer" title="Permalink to this headline">#</a></h2>
-<p>The rate equations are</p>
+<p><strong>(a)</strong> The rate equations are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dA}{dt}=-k_{12}A+k_{21}B , \qquad \frac{dB}{dt}=k_{12}A-(k_2+k_{21})B,\quad \frac{dC}{dt}=k_2B-k_3C\]</div>
 <p>Species A forms B with a rate <span class="math notranslate nohighlight">\(k_{12}A\)</span> so appears as <span class="math notranslate nohighlight">\(-k_{12}A\)</span> in the first equation, but A is reformed from B at <span class="math notranslate nohighlight">\(+k_{21}B\)</span>, which is the second term. Species B is lost both to A and C, which produces its second term, but is formed only from A. C is formed from B, and lost in an unspecified species with rate constant <span class="math notranslate nohighlight">\(k_3\)</span>.
@@ -1609,8 +1609,56 @@ The matrix representation is</p>
 <p>which when multiplied out forms the three rate equations. The calculation produces the populations shown in figure 91, using the Algorithm outlined after figure 55. The initial population of A, falls rapidly, because <span class="math notranslate nohighlight">\(k_{12}\)</span> is large and <span class="math notranslate nohighlight">\([B]\)</span> rises rapidly for the same reason, but also reforms A because <span class="math notranslate nohighlight">\(k_{21} = 6\)</span>. A temporary, or dynamic equilibrium is set up as may be seen after B reaches a maximum because A and B decay at approximately the same rate to form C. C decays slowly, so its population passes through a maximum.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig91.png" /></p>
 <p>Figure 91. Scheme <span class="math notranslate nohighlight">\(A\rightleftharpoons B\to C\to\)</span> with rate constants <span class="math notranslate nohighlight">\(k_{12} = 5, k_{21} = 6, k_2 =1,k_3 =0.2\)</span>.</p>
-</section>
 <hr class="docutils" />
+<p><strong>(b)</strong> Following the method in the text, a typical calculation is shown below. Can you explain why the concentration of C initially falls ?  Next, calculate the steady state values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span> <span class="o">=</span> <span class="mf">1e-9</span>                 <span class="c1"># set time to make rate constants into probabilities</span>
+<span class="n">k12</span> <span class="o">=</span> <span class="mf">4e7</span> <span class="o">*</span><span class="n">tau</span>             <span class="c1"># choose some rate constants</span>
+<span class="n">k21</span> <span class="o">=</span> <span class="mf">5e6</span> <span class="o">*</span><span class="n">tau</span>
+<span class="n">k23</span> <span class="o">=</span> <span class="mf">2e7</span> <span class="o">*</span><span class="n">tau</span>
+<span class="n">k31</span> <span class="o">=</span> <span class="mf">7e6</span> <span class="o">*</span><span class="n">tau</span>             
+
+<span class="n">TT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k12</span><span class="p">,</span> <span class="n">k12</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],[</span> <span class="n">k21</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k21</span><span class="o">-</span><span class="n">k23</span><span class="p">,</span> <span class="n">k23</span><span class="p">]</span> <span class="p">,[</span><span class="n">k31</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">-</span><span class="n">k31</span><span class="p">]]</span> <span class="p">)</span>  <span class="c1">#  transfer matrix </span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">TT</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>             <span class="c1"># initial values of A, B and C</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">250</span>                           <span class="c1"># number of points</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>       <span class="c1"># array to hold calculated values</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                       <span class="c1"># initial values</span>
+<span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>            <span class="c1"># time steps</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">T</span> <span class="o">@</span> <span class="n">p</span>                  <span class="c1"># @ is matrix multiply</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                <span class="c1"># save values</span>
+    <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">temp</span>                      <span class="c1"># ready for next step</span>
+    <span class="k">pass</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;populations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time /&#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$\tau$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.05</span><span class="o">*</span><span class="n">A</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.05</span><span class="o">*</span><span class="n">B</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.05</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matrices-answersQ51-54_3_0.png" src="../_images/matrices-answersQ51-54_3_0.png" />
+</div>
+</div>
+</section>
 <section id="q52-answer">
 <h2>Q52 answer<a class="headerlink" href="#q52-answer" title="Permalink to this headline">#</a></h2>
 <p>The rate equation for the fourth molecule is, with <span class="math notranslate nohighlight">\(C_1 \cdots C_7\)</span> being the populations of the BChl molecules, and <span class="math notranslate nohighlight">\(k_f\)</span> the fluorescence rate constant,</p>
@@ -1767,7 +1815,7 @@ is excited even when the quenching rate is <span class="math notranslate nohighl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-answersQ51-54_11_0.png" src="../_images/matrices-answersQ51-54_11_0.png" />
+<img alt="../_images/matrices-answersQ51-54_12_0.png" src="../_images/matrices-answersQ51-54_12_0.png" />
 </div>
 </div>
 <p>Simplifying this result and letting <span class="math notranslate nohighlight">\(b=50\)</span> gives <span class="math notranslate nohighlight">\(\pmb{M}^{50}= 3^{50}a^{100}\)</span>. Notice that in the determinant, if it is assumed that 1 is small compared to <span class="math notranslate nohighlight">\(b^{50}\)</span>, which of course it is when <span class="math notranslate nohighlight">\(b=50\)</span>, and so removed from the calculation, then a serious error would be introduced, the answer would be zero: an error by a factor of <span class="math notranslate nohighlight">\(3^{50}\)</span> or <span class="math notranslate nohighlight">\(\approx 10^{23}\)</span> if a was <span class="math notranslate nohighlight">\(1\)</span>. This shows the importance of not approximating until the calculation is finished.</p>

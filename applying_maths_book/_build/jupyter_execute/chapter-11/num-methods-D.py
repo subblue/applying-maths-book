@@ -242,7 +242,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # then $dS/dt \gt 0$ and an epidemic will occur. 
 # 
-# Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria $\approx$100, (see Britton 2003), Covid-19 $gt 3, \lt 9$ (Wikipedia).
+# Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria $\approx$100, (see Britton 2003), Covid-19 $\gt 3 \lt 9$ (Wikipedia).
 # 
 # ( $^\dagger$ Many texts call the reproductive ratio $R_0$, which is unfortunately confusing with $R_0$, the initial number in the removed class.)
 
@@ -278,7 +278,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # The definition of an epidemic is that the number of individuals infected increases above those infected initially. In Fig. 16, the initial number infected is found where a curve touches the diagonal line, this is 0.25 with $S_0/N = 0.75$, and $I_N$ increases to $\approx 0.4$ at its maximum and therefore, an epidemic may occur. Starting at $S_0/N = 0.25$, the number infected decreases continuously and therefore an epidemic cannot occur. This simple approach indicates the importance of immunization and vaccination. 
 # 
-# Immunizing or vaccinating a population reduces those susceptible, reducing $S_0$ and the reproductive ratio $R_R$, and so making an epidemic less possible. To the right of $S_N^{max}$, Fig.16, an epidemic occurs, although it may not be severe if the initial value of $S_0/N$ is close to the maximum; to its left the infection dies out. The turnover from epidemic to no epidemic is the point where $S_N^{max}$ touches the diagonal. In the figure this occurs at $I_N^{max} = 1 - 1/3 = 0.66$, meaning that $66$% immunization is needed to prevent an epidemic, which is a low value. With an infectious disease such as mumps or German measles, this value has to be $\approx$ 0.85, meaning that 85% of the population has to be immunized to prevent an epidemic. Notice that not everyone needs to be immunized to prevent an epidemic; this is called *herd immunity*. A few individuals will by chance, never meet an infected person. An immunization/vaccination level of $85$% may be difficult to achieve in a population by voluntary mass vaccination. Should the level of immunization fall by only a small amount, the threshold at $S_N^{max}$ may be crossed and an epidemic could occur. The number of individuals being immunized can suddenly fall, as happened in the UK in the late 1990's and early in this century, due to poorly researched and inflammatory news media stories about the MMR vaccine for children. Some parents were reluctant to have their children vaccinated even though the risk of damage to health and even death were far greater than receiving the vaccine itself. Similar concerns have prevented many people from becoming vaccinated for Covid19 even though world-wide multiple millions of doses have been administered.
+# Immunizing or vaccinating a population reduces those susceptible, reducing $S_0$ and the reproductive ratio $R_R$, and so making an epidemic less possible. To the right of $S_N^{max}$, Fig.16, an epidemic occurs, although it may not be severe if the initial value of $S_0/N$ is close to the maximum; to its left the infection dies out. The turnover from epidemic to no epidemic is the point where $S_N^{max}$ touches the diagonal. In the figure this occurs at $I_N^{max} = 1 - 1/3 = 0.66$, meaning that $66$% immunization is needed to prevent an epidemic, which is a low value. With an infectious disease such as mumps or German measles, this value has to be $\approx$ 0.85, meaning that 85% of the population has to be immunized to prevent an epidemic. Notice that not everyone needs to be immunized to prevent an epidemic; this is called *herd immunity*. A few individuals will by chance, never meet an infected person. An immunization/vaccination level of $85$% may be difficult to achieve in a population by voluntary mass vaccination. Should the level of immunization fall by only a small amount, the threshold at $S_N^{max}$ may be crossed and an epidemic could occur. The number of individuals being immunized can suddenly fall, as happened in the UK in the late 1990's and early in this century, due to poorly researched and inflammatory news media stories about the MMR vaccine for children. Some parents were reluctant to have their children vaccinated even though the risks of damage to health and even death were far greater than receiving the vaccine itself. Similar concerns have prevented many people from becoming vaccinated for Covid19 even though world-wide multiple millions of doses have been administered.
 # 
 # ## 7.3 Steady states, isoclines, and nullclines
 # 
@@ -311,7 +311,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # When $I_0/S_0 \ll 1$, for example, if only one person is infected initially, then $\displaystyle S_N^\infty \approx e^{-k_2S_0/k_1}$. As a check, using the lowest curve in Fig. 16, which has been calculated with the ratio $k_2N/k_1 = 3, S_0 = N - I_0$ and $I_0/S_0 = 1/1000$, the fractional amount of $S$ remaining at the end of the epidemic, calculated using the approximate formula, is $S_N^\infty  \approx 0.0498$ or 4.98% of the population were never infected. This is close to the exact value of 5.94%.
 # 
-# Finally, starting with equation 45 the total number infected is approximately
+# Finally, starting with eqn. 45 the total number infected is approximately
 # 
 # $$I_{tot} \approx N-S_0e^{-k_2N/k_1} \qquad\tag{45}$$
 # 
@@ -461,7 +461,30 @@ dtime, S, In = EulerSIRint(S0,In0,k1,k2)
 # 
 # ![Drawing](num-methods-fig17a.png)
 # 
-# Figure 17a. Calculated profile of a bacterial population. The rate constants used were $k_1 = 1,  k_2 = 4, k_3 = 15\cdot10^{-8}, k_4 = 0.5,  k_5 = 0.01$. The equations show the limiting equations as described in the text applicable when $k_2\gt k_4$. In the left hand figure M is multiplied by $10^4$ so that it can be seen on the same plot as A and X. 
+# Figure 17a. The same calculated profile of a bacterial population on a linear scale (A) and log scale (B) and the A-X phase plane (C). The rate constants used were $k_1 = 1,  k_2 = 4, k_3 = 1\cdot10^{-8}, k_4 = 0.5,  k_5 = 0.01$. The equations in (B) show the limits as described in the text applicable when $k_2\gt k_4$. In figure (A), M is multiplied by $10^4$ so that it can be seen on the same plot as A and X. The vertical lines on the phase plane (C) show the maximum possible amount of X which is $k_2/k_3$ and at $X= (k_2-k_4)/k_3$ the maximum A occurs. This is given by $\displaystyle A_{max}=\frac{k_4}{k_3}\left(\ln\left(\frac{k_4}{k_2}\right) -1\right)+\frac{k_2}{k_3}$.
+# __________________________________
+# 
+# The phase plane $dA/dX$ can be found using
+# 
+# $$\displaystyle \frac{dA}{dt}=\frac{dA}{dX}\frac{dX}{dt}$$
+# 
+# which gives, after ignoring M as its value is tiny compared to A or X most of the time, 
+# 
+# $$\displaystyle \frac{dA}{dX}=\frac{k_4}{k_3X-k_2} + 1$$
+# 
+# Integrating to find A as a function of X, gives
+# 
+# $$\displaystyle A= \frac{k_4}{k_3}\ln(k_3X-k_2) + X + C$$
+# 
+# where $C$ is a constant. The initial conditions are that at $t=0, A=X=0$ making $C=k_4\ln(-k_2)/k_3$ therefore
+# 
+# $$\displaystyle A= \frac{k_4}{k_3}\ln\left(1-\frac{k_3X}{k_2}\right) + X$$
+# 
+# The maximum values of X and A are are 
+# 
+# $$\displaystyle X_{max}=\frac{k_2-k_4}{k_3},\qquad A_{max}=\frac{k_4}{k_3}\ln\left(\frac{k_4}{k_2}\right) + X_{max}$$
+# 
+# The idea of the phase plane means that if the rate constants are known, even if only approximately, then the maximum populations can easily be calculated without having to integrate the rate equations. 
 
 # In[ ]:
 

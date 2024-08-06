@@ -2207,6 +2207,9 @@ Some properties are</p>
 <p>where <span class="math notranslate nohighlight">\(P = a_{11}b_1 + a_{12}b_2 + a_{13}b_3\)</span> and <span class="math notranslate nohighlight">\(R = a_{21}b_1 + a_{22}b_2 + a_{23}b_3\)</span>.</p>
 <p>Suppose there are three matrices <span class="math notranslate nohighlight">\(\pmb{ABC}\)</span>, then the safest rule to follow is to left-multiply <span class="math notranslate nohighlight">\(\pmb{C}\)</span> by
 <span class="math notranslate nohighlight">\(\pmb{B}\)</span> first, then to left-multiply the result by <span class="math notranslate nohighlight">\(\pmb{A}\)</span>. The same rule is applied to several matrices; start at the right and work to the left. However, by the associative rule, Section 4.1, as long as the order <span class="math notranslate nohighlight">\(\pmb{ABCD}\)</span> is maintained, this product can be multiplied in any order.</p>
+<p>Should you have a row vector left multiplying a matrix and prefer to right multiply a matrix by a column vector then both vector and matrix must be transposed, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}b_1 &amp; b_2 &amp; b_3 \end{bmatrix}\begin{bmatrix} a_{11} &amp; a_{12} \\a_{21} &amp; a_{22} \\ a_{31} &amp;a_{32} \end{bmatrix} = \begin{bmatrix} a_{11} &amp; a_{21} &amp;a_{31} \\ a_{12} &amp; a_{22} &amp;a_{32} \end{bmatrix}  \begin{bmatrix} b_{1} \\ b_{2}\\b_3  \end{bmatrix} \end{split}\]</div>
 <p>The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The ‘bra-ket’ notation is shown also.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig7a.png" /></p>
 <hr class="docutils" />

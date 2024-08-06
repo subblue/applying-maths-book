@@ -390,6 +390,8 @@
 # Whittaker, J. B. (ed.) (2007), Imaging in Molecular Dynamics: Technology and Applications, Cambridge
 # University Press.
 # 
+# Wilkinson, F. 'Chemical Kinetics and Reaction Mechanisms' (1980) Van Nostrand Reinhold.
+# 
 # Wyckoff, R. (1969), Crystal Structures, vol. 6 (1), 2nd edition, Wiley.
 # 
 # Yariv, A. (1975), Quantum Electronics, 2nd edition, Wiley.

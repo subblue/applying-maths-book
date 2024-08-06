@@ -98,6 +98,8 @@
 # AX spectra    8-3.1
 #  
 # Back projection    9-14.4,   9-14.6,   9-14.7
+# 
+# Bacterial growth    11-7.7
 #  
 # Bacteriorhodopsin    6-18,   7-9
 #  
@@ -213,7 +215,7 @@
 #  
 # Chemical bond    4-12.4,   4-12.5,   7-,   7-14.2,   8-3,   11-4.7
 #  
-# Chemical kinetics    1-4,   3-1,   3-3.2,   7-4,   7-9,   7-12.4,   7-12.9,   7-13.1,   7-13.4,   10-4,   10-5,   10-12,   10-13.2,   11-5.1,   12-2.2,   13-10.1
+# Chemical kinetics    1-4,   3-1,   3-3.2,   7-4,   7-9,   7-12.4,   7-12.9,   7-13.1,   7-13.4,   7-13.4,   10-4,   10-5,   10-12,   10-13.2,   11-5.1,   11-7.7,   12-2.2,   13-10.1
 #  
 # Chemical Thermodynamics    3-3.12,   4-14
 #  
@@ -914,6 +916,8 @@
 # Magnitude of a vector    6-2.7
 #  
 # Mantissa    11-1.1
+# 
+# Markov Chains    7-13.4
 #  
 # Master equation    7-13.2
 #  

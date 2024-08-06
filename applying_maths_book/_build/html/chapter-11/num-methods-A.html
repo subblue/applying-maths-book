@@ -2128,20 +2128,26 @@ x &amp; 0.01 &amp; 0.1 &amp; 1 &amp; 10 &amp; 100 \\[0.25cm]
 <p>Trapezoidal integration is also straightforward. The equation to approximate the
 integral is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I_T=\int_a^b f(x)dx \approx \frac{b-a}{2N}\bigg(f(x_1)+2f(x_2)+2f(x_3)+\cdots + f(x_N)\bigg) \qquad\tag{3}\]</div>
-<p>whereby the integration is again split into <span class="math notranslate nohighlight">\(N\)</span> strips, Fig. 3, and <span class="math notranslate nohighlight">\(N\)</span> must be an even number. Calculating points <span class="math notranslate nohighlight">\(x_1,\, x_2,\cdots\)</span>  is easily done because they are related to the gap between the points; <span class="math notranslate nohighlight">\(x_2 =x_1 +h,\,x_3 =x_1 +2h\)</span> ,and so forth; see Fig.3, and <span class="math notranslate nohighlight">\(h=(b-a)/N\)</span> is the width of one strip.</p>
-<p>The integral can be calculated either, as in equation (3), by adding up the first and last value of <span class="math notranslate nohighlight">\(f\)</span> and twice all the rest and then multiplying by <span class="math notranslate nohighlight">\(h/2\)</span>, or by adding up all the values of <span class="math notranslate nohighlight">\(f\)</span> then subtracting half the value of the first and last points and finally multiplying the result by <span class="math notranslate nohighlight">\(h\)</span>. Usually, as with all numerical methods, the result is calculated with several increasing values of <span class="math notranslate nohighlight">\(N\)</span> to see if convergence is achieved. The error <span class="math notranslate nohighlight">\(\epsilon\)</span> indicates how many decimal places the result is accurate to and is reduced as <span class="math notranslate nohighlight">\(1/N^2\)</span>, the same as for the mid-point rule.</p>
+\[\displaystyle I_T=\int_a^b f(x)dx \approx \frac{b-a}{2N}\bigg(f(x_0)+2f(x_1)+2f(x_2)+\cdots + f(x_N)\bigg)+\epsilon \qquad\tag{3}\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_T=h\sum_{k = 1}^{N-1} f(x_k)+h\frac{f(0)+f(x_N)}{2}+\epsilon\]</div>
+<p>whereby the integration is again split into <span class="math notranslate nohighlight">\(N\)</span> strips, Fig. 3, and <span class="math notranslate nohighlight">\(N\)</span> must be an even number and <span class="math notranslate nohighlight">\(h=(b-a)/N\)</span> is the width of one strip. The error is <span class="math notranslate nohighlight">\(\epsilon\)</span>. Calculating points <span class="math notranslate nohighlight">\(x_0,\, x_1,\cdots\)</span>  is easily done because they are related to the gap between the points; <span class="math notranslate nohighlight">\(x_1 = x_0 +h,\,x_2 = x_0 +2h\)</span>, and so forth; see Fig.3. The error can be approximated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \epsilon = -\frac{(b-a)^3f''(c)}{12N^2}\to \frac{h^2}{12}(f'(b)-f'(a)) \]</div>
+<p>and as this is negative indicates that this method over estimates the integral. The integral can be calculated either, as in equation (3), by adding up the first and last value of <span class="math notranslate nohighlight">\(f\)</span> and twice all the rest and then multiplying by <span class="math notranslate nohighlight">\(h/2\)</span>, or by adding up all the values of <span class="math notranslate nohighlight">\(f\)</span> then subtracting half the value of the first and last points and finally multiplying the result by <span class="math notranslate nohighlight">\(h\)</span>. Usually, as with all numerical methods, the result is calculated with several increasing values of <span class="math notranslate nohighlight">\(N\)</span> to see if convergence is achieved. The error <span class="math notranslate nohighlight">\(\epsilon\)</span> should indicate how many decimal places the result is accurate to and is reduced as <span class="math notranslate nohighlight">\(1/N^2\)</span>, and is the same as for the mid-point rule, but at large <span class="math notranslate nohighlight">\(N\)</span> becomes too small to be realistic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 6; Trapezoid rule</span>
 <span class="c1">#------------------------------</span>
 <span class="k">def</span> <span class="nf">Tzoid</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>              <span class="c1"># last value is N, first 0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span> <span class="p">):</span>              <span class="c1"># last value is N, first 0</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">h</span> <span class="p">)</span>
         
-    <span class="n">ss</span><span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>  <span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>  <span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+    
     <span class="k">return</span> <span class="n">ss</span>
 <span class="c1">#--------------------------------</span>
 
@@ -2150,13 +2156,14 @@ integral is</p>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">ans</span><span class="o">=</span> <span class="n">Tzoid</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sum = &#39;</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">ansv</span> <span class="o">=</span> <span class="n">Tzoid</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sum = &#39;</span><span class="p">,</span> <span class="n">ans</span> <span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum =  0.74667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum =  0.75488
 </pre></div>
 </div>
 </div>
@@ -2167,7 +2174,7 @@ integral is</p>
 <p>Simpson’s rule is slightly more sophisticated than the trapezoidal method, as it fits a
 quadratic function to data points rather than straight lines; the formula is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I_S=\int_a^b f(x)dx \approx \frac{b-a}{3N}\left(f(x_1)+4\sum_{j\,=\,odd}f(x_i)+2\sum_{j\,=\,even}f(x_i) \cdots + f(x_N)\right) \qquad\tag{4}\]</div>
+\[\displaystyle I_S=\int_a^b f(x)dx \approx \frac{b-a}{3N}\left(f(x_1)+4\sum_{j\,=\,odd}f(x_i)+2\sum_{j\,=\,even}f(x_i) + f(x_N)\right) \qquad\tag{4}\]</div>
 <p>The sum is made by adding the first and last point to four times the sum of the odd indexed points, and to twice the sum of the even numbered points. The number of data points must be an even number. The error is reduced as <span class="math notranslate nohighlight">\(1/N^4\)</span> so decreases rapidly as the number of data points increase. The method is incorporated into a procedure called a def in Python. Values are passed to this to do the calculation. A similar process could be used to make procedures of the other integration methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

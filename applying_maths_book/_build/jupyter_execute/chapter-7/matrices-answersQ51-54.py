@@ -17,7 +17,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q51 answer
-# The rate equations are
+# **(a)** The rate equations are
 # 
 # $$\displaystyle \frac{dA}{dt}=-k_{12}A+k_{21}B , \qquad \frac{dB}{dt}=k_{12}A-(k_2+k_{21})B,\quad \frac{dC}{dt}=k_2B-k_3C$$
 # 
@@ -32,6 +32,51 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Figure 91. Scheme $A\rightleftharpoons B\to C\to$ with rate constants $k_{12} = 5, k_{21} = 6, k_2 =1,k_3 =0.2$.
 # __________
+# 
+# **(b)** Following the method in the text, a typical calculation is shown below. Can you explain why the concentration of C initially falls ?  Next, calculate the steady state values.
+
+# In[2]:
+
+
+tau = 1e-9                 # set time to make rate constants into probabilities
+k12 = 4e7 *tau             # choose some rate constants
+k21 = 5e6 *tau
+k23 = 2e7 *tau
+k31 = 7e6 *tau             
+
+TT = np.array([[ 1 - k12, k12, 0 ],[ k21, 1 - k21-k23, k23] ,[k31,0,1-k31]] )  #  transfer matrix 
+T = np.transpose(TT)
+p = np.array([1,0,1])             # initial values of A, B and C
+
+n = 250                           # number of points
+A = np.zeros(n,dtype=float)       # array to hold calculated values
+B = np.zeros(n,dtype=float)
+C = np.zeros(n,dtype=float)
+A[0] = p[0]                       # initial values
+B[0] = p[1]
+C[0] = p[2]
+t = np.linspace(0,n,n)            # time steps
+for i in range(1,n,1):
+    temp = T @ p                  # @ is matrix multiply
+    A[i] = temp[0]                # save values
+    B[i] = temp[1]
+    C[i] = temp[2]
+    p = temp                      # ready for next step
+    pass
+
+plt.plot(t, A, color='blue',linewidth=1)
+plt.plot(t, B, color='red',linewidth=1)
+plt.plot(t, C, color='green',linewidth=1)
+plt.xlim([0,n])
+plt.ylim([0,A[0]+B[0]+C[0]+0.1])
+plt.ylabel('populations')
+plt.xlabel('time /'+r'$\tau$')
+plt.text(100, 1.05*A[100],'A')
+plt.text(100, 1.05*B[100],'B')
+plt.text(100, 1.05*C[100],'C')
+
+plt.show()
+
 
 # ## Q52 answer
 # The rate equation for the fourth molecule is, with $C_1 \cdots C_7$ being the populations of the BChl molecules, and $k_f$ the fluorescence rate constant,
@@ -64,7 +109,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Note that when the off-diagonal terms are calculated (shown below) $M[i,j] = kC[j,i]$ to obtain the correct rate constant. As it happens in this calculation $k_{i,j} = k_{j,i}$ because the energy transfer from molecule $a\to b$ is the same as $b\to a$ therefore this ordering of indices has no effect, but if this were not true it would produce erroneous results.
 
-# In[2]:
+# In[3]:
 
 
 n   = 7                            # number of molecules
@@ -108,7 +153,7 @@ for i in range(n):                   # make M matrix of rate constants
 M[0,:]       # check values
 
 
-# In[3]:
+# In[4]:
 
 
 evals,evecs = LA.eig(M)              # eigenvalues;  eigenvectors
@@ -116,7 +161,7 @@ evals,evecs = LA.eig(M)              # eigenvalues;  eigenvectors
 for i in range(n) : print('{:10.4f}'.format(evals[i]),end='' )  # eigenvalues
 
 
-# In[4]:
+# In[5]:
 
 
 exp_mat = np.zeros((n,n),dtype = float)      # make diagonal exp(eigvals *t)
@@ -149,7 +194,7 @@ print('{:s} {:8.5f}'.format('sum of population should be 1 only if kf = 0', sum(
 # 
 # The calculation using Sympy is
 
-# In[5]:
+# In[6]:
 
 
 a, b = symbols('a, b')
@@ -160,14 +205,14 @@ X, Lambda
 
 # The eigenvalue matrix can be raised to the $50^{th}$ power directly to give $\displaystyle \Lambda=a^{50}\begin{bmatrix} 3^{50} & 0\\0 & 1 \end{bmatrix}$, but we want $\pmb{M}^{50}$ therefore the next step is to use the similarity transform as $\pmb{M}^{50}=\pmb{X}\Lambda^{50}\pmb{X}^{-1}$. To make the calculation general, and to keep the result algebraic, rather than numerical, $\pmb{M}$ is raised to power $b$ 
 
-# In[6]:
+# In[7]:
 
 
 Mtob = X*Lambda**b * X.inv()  # with sympy * is matrix multiply (unlike python/numpy)
 simplify(Mtob) 
 
 
-# In[7]:
+# In[8]:
 
 
 Mtob.det()
@@ -217,7 +262,7 @@ Mtob.det()
 # $$\displaystyle \pmb{M}^n=\pmb{X}\Lambda^n\pmb{X}^{-1} \tag{76}$$
 # 
 
-# In[8]:
+# In[9]:
 
 
 n, BB0, BA0, AA0 = symbols('n, BB0, BA0, AA0', integer = True)
@@ -225,7 +270,7 @@ M = Matrix([[1,1/2,0],[0,1/2,1],[0,0,0]])
 M
 
 
-# In[9]:
+# In[10]:
 
 
 B0 = Matrix([[BB0],[BA0],[AA0]])
@@ -233,14 +278,14 @@ X, evals = M.diagonalize()
 X, evals
 
 
-# In[10]:
+# In[11]:
 
 
 Lambda= X.inv()*M*X
 Lambda
 
 
-# In[11]:
+# In[12]:
 
 
 Lambda = Matrix( [ [0,0,0], [0,(1/2)**n,0], [0,0,1] ]  )  # Lambda^n

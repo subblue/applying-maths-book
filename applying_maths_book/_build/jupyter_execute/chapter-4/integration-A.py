@@ -427,7 +427,7 @@ print( ans)
 # 
 # $\displaystyle \int  \frac{1}{a^{2} x^{2} - b^{2}} \;dx =  \frac{\log{\left (x - \frac{b}{a} \right )} - \log{\left (x + \frac{b}{a} \right )}}{2 a b} $
 # 
-# $\displaystyle \int\frac{1}{a+bx+cx^2}\;dx =\frac{1}{\sqrt{W}}\log\left( \frac{b + 2cx - \sqrt{W}}{b + 2cx +\sqrt{ W} } \right)\qquad W=b^2-4ac $
+# $\displaystyle \int\frac{1}{a+bx+cx^2}\;dx =\frac{1}{\sqrt{q}}\log\left( \frac{b + 2cx - \sqrt{q}}{b + 2cx +\sqrt{ q} } \right),\qquad q=b^2-4ac $
 # 
 # $\displaystyle \int  \frac{1}{\sqrt{a^{2} x^{2} - b^{2}}} \;dx =  \begin{cases} \frac{\operatorname{acosh}{\left (\frac{x \left|{a}\right|}{b} \right )}}{\left|{a}\right|} & \text{for}\: a^{2} \left|{\frac{x^{2}}{b^{2}}}\right| > 1 \\- \frac{i \operatorname{asin}{\left (\frac{x \left|{a}\right|}{b} \right )}}{\left|{a}\right|} & \text{otherwise} \end{cases} $
 # 

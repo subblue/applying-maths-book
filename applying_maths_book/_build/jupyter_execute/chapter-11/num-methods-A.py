@@ -381,11 +381,17 @@ print('{:s} {:6.5f}'.format('sum = ', mid_point(f,a,b,n)) )
 # Trapezoidal integration is also straightforward. The equation to approximate the
 # integral is
 # 
-# $$\displaystyle I_T=\int_a^b f(x)dx \approx \frac{b-a}{2N}\bigg(f(x_1)+2f(x_2)+2f(x_3)+\cdots + f(x_N)\bigg) \qquad\tag{3}$$
+# $$\displaystyle I_T=\int_a^b f(x)dx \approx \frac{b-a}{2N}\bigg(f(x_0)+2f(x_1)+2f(x_2)+\cdots + f(x_N)\bigg)+\epsilon \qquad\tag{3}$$
 # 
-# whereby the integration is again split into $N$ strips, Fig. 3, and $N$ must be an even number. Calculating points $x_1,\, x_2,\cdots$  is easily done because they are related to the gap between the points; $x_2 =x_1 +h,\,x_3 =x_1 +2h$ ,and so forth; see Fig.3, and $h=(b-a)/N$ is the width of one strip.
+# hence
 # 
-# The integral can be calculated either, as in equation (3), by adding up the first and last value of $f$ and twice all the rest and then multiplying by $h/2$, or by adding up all the values of $f$ then subtracting half the value of the first and last points and finally multiplying the result by $h$. Usually, as with all numerical methods, the result is calculated with several increasing values of $N$ to see if convergence is achieved. The error $\epsilon$ indicates how many decimal places the result is accurate to and is reduced as $1/N^2$, the same as for the mid-point rule.
+# $$\displaystyle I_T=h\sum_{k = 1}^{N-1} f(x_k)+h\frac{f(0)+f(x_N)}{2}+\epsilon$$
+# 
+# whereby the integration is again split into $N$ strips, Fig. 3, and $N$ must be an even number and $h=(b-a)/N$ is the width of one strip. The error is $\epsilon$. Calculating points $x_0,\, x_1,\cdots$  is easily done because they are related to the gap between the points; $x_1 = x_0 +h,\,x_2 = x_0 +2h$, and so forth; see Fig.3. The error can be approximated as 
+# 
+# $$\displaystyle \epsilon = -\frac{(b-a)^3f''(c)}{12N^2}\to \frac{h^2}{12}(f'(b)-f'(a)) $$
+# 
+# and as this is negative indicates that this method over estimates the integral. The integral can be calculated either, as in equation (3), by adding up the first and last value of $f$ and twice all the rest and then multiplying by $h/2$, or by adding up all the values of $f$ then subtracting half the value of the first and last points and finally multiplying the result by $h$. Usually, as with all numerical methods, the result is calculated with several increasing values of $N$ to see if convergence is achieved. The error $\epsilon$ should indicate how many decimal places the result is accurate to and is reduced as $1/N^2$, and is the same as for the mid-point rule, but at large $N$ becomes too small to be realistic.
 
 # In[9]:
 
@@ -393,12 +399,13 @@ print('{:s} {:6.5f}'.format('sum = ', mid_point(f,a,b,n)) )
 # Algorithm 6; Trapezoid rule
 #------------------------------
 def Tzoid(f,a,b,N):
-    h = (b - a)/(N)
+    h = (b - a)/N
     s = 0.0
-    for j in range(N+1):              # last value is N, first 0
+    for j in range(N+1 ):              # last value is N, first 0
         s = s + 2*f( a + j*h )
         
-    ss= h*(s -(f(a) + f(b))  )/2.0
+    ss = h*(s -(f(a) + f(b))  )/2.0
+    
     return ss
 #--------------------------------
 
@@ -407,8 +414,9 @@ f = lambda x: np.exp(-x**2)     # define function
 a = 0.0
 b = 1.0
 N = 20
-ans= Tzoid(f,a,b,N)
-print('{:s} {:6.5f}'.format('sum = ', ans) )
+ansv = Tzoid(f,a,b,N)
+
+print('{:s} {:6.5f}'.format('sum = ', ans ))
 
 
 # ## 3.4 Simpson's rule integration
@@ -416,7 +424,7 @@ print('{:s} {:6.5f}'.format('sum = ', ans) )
 # Simpson's rule is slightly more sophisticated than the trapezoidal method, as it fits a
 # quadratic function to data points rather than straight lines; the formula is
 # 
-# $$\displaystyle I_S=\int_a^b f(x)dx \approx \frac{b-a}{3N}\left(f(x_1)+4\sum_{j\,=\,odd}f(x_i)+2\sum_{j\,=\,even}f(x_i) \cdots + f(x_N)\right) \qquad\tag{4}$$
+# $$\displaystyle I_S=\int_a^b f(x)dx \approx \frac{b-a}{3N}\left(f(x_1)+4\sum_{j\,=\,odd}f(x_i)+2\sum_{j\,=\,even}f(x_i) + f(x_N)\right) \qquad\tag{4}$$
 # 
 # The sum is made by adding the first and last point to four times the sum of the odd indexed points, and to twice the sum of the even numbered points. The number of data points must be an even number. The error is reduced as $1/N^4$ so decreases rapidly as the number of data points increase. The method is incorporated into a procedure called a def in Python. Values are passed to this to do the calculation. A similar process could be used to make procedures of the other integration methods.
 

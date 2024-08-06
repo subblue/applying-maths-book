@@ -280,6 +280,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Suppose there are three matrices $\pmb{ABC}$, then the safest rule to follow is to left-multiply $\pmb{C}$ by
 # $\pmb{B}$ first, then to left-multiply the result by $\pmb{A}$. The same rule is applied to several matrices; start at the right and work to the left. However, by the associative rule, Section 4.1, as long as the order $\pmb{ABCD}$ is maintained, this product can be multiplied in any order.
 # 
+# Should you have a row vector left multiplying a matrix and prefer to right multiply a matrix by a column vector then both vector and matrix must be transposed, i.e.
+# 
+# $$\displaystyle \begin{bmatrix}b_1 & b_2 & b_3 \end{bmatrix}\begin{bmatrix} a_{11} & a_{12} \\a_{21} & a_{22} \\ a_{31} &a_{32} \end{bmatrix} = \begin{bmatrix} a_{11} & a_{21} &a_{31} \\ a_{12} & a_{22} &a_{32} \end{bmatrix}  \begin{bmatrix} b_{1} \\ b_{2}\\b_3  \end{bmatrix} $$
+# 
+# 
 # The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The 'bra-ket' notation is shown also. 
 # 
 # ![Drawing](matrices-fig7a.png) 
