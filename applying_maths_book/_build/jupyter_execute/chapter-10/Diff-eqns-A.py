@@ -440,7 +440,7 @@ ans
 # 
 # ![Drawing](diffeqn-fig4a.png)
 # 
-# Fig 4a. The data points show the conversion of trypsinogen, A in our model, into trypsin B. The solid line is a fit to $B$ using the last equation above knowing the concentrations $A_0, B_0$ and by varying the rate constant $k$. The values used were $A_0 = 72, B_0 = 0.1, k  = 0.0175$ /hour/concentration.
+# Fig 4a. The data points show the conversion of trypsinogen, A in our model, into trypsin B. The solid line is a fit to $B$ using the last equation above knowing the concentrations $A_0, B_0$ and by varying the rate constant $k$. The values used were $A_0 = 72, B_0 = 0.1, k  = 0.0175$ /hour/concentration.  (Data points from Kunitz & Northrop, J. Gen. Physiol. v19, p991, 1936)
 # ___________________________
 # 
 # ## 3.3 Population dynamics
@@ -641,8 +641,8 @@ ans
 # Figure 5c. The period of an anharmonic oscillator vs energy. The parameters are as used in figure 5b. The dissociation energy  $D=1$. The circles show the energy $E_n$ for $n=0\cdots 9$ the only bound energy levels in this particular potential.
 # ___________
 
-# ## 4 Chemical Kinetics 2.
-# Here we describe a few examples of chemical kinetics including those reaching equilibrium, reaction with flow,  and reaction and diffusion. In sections 9.2.iv,v and vi of this chapter and Chapter 11.4.10, 11.7 and 11.8 (Numerical methods) examples of more complex reactions with diffusion or multiple steps, which can generally only be solved numerically are examined.
+# ## 4 Chemical Kinetics 2
+# Here we describe a few examples of chemical kinetics including those reaching equilibrium, reaction with flow,  and reaction and diffusion. In sections 9.2.iv,v and vi of this chapter and Chapter 11.4.10, 11.7 and 11.8 (Numerical methods) examples of more complex reactions with diffusion or multiple steps, which can generally only be solved numerically, are examined.
 # 
 # ## 4.1 Bimolecular reactions 
 # 
@@ -666,7 +666,7 @@ ans
 # 
 # $$\displaystyle   \ln\left( \frac{b_0(a_0-x)}{a_0(b_0-x)} \right) = (a_0-b_0)k_2t$$
 # 
-# which can easily be solved for $x$, the amount reacted, at time $t$ by first exponentiating.
+# which can easily be solved for $x$, the amount reacted, at time $t$ by first exponentiating the rearranging.
 # 
 # In the case when $2\mathrm{A}\rightarrow \mathrm{B + C}$ the rate equation is 
 # 
@@ -694,31 +694,46 @@ ans
 # 
 # $$\displaystyle A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$$
 # 
-# reaches equilibrium there being an amount $\mathrm{[A]_0}$ initially and $\mathrm{[B]_0=[C]_0=0}$. The simplest way to integrate the equation is to let an amount $x$ react then 
+# reaches equilibrium there being an amount $\mathrm{[A]_0}$ initially and $\mathrm{[B]_0=[C]_0}$. The simplest way to integrate the equation is to let an amount $x$ react then 
 # 
-# $$\displaystyle a=a_0-x, \quad\text{where}\quad a=[A],\;b=[B],\;a_0=[A]_0,\;b_0=[B]_0$$
+# $$\displaystyle a=a_0-x, b=b_0+x, c=c_0+x\quad\text{where}\quad a=[A],\;b=[B]=[C],\;a_0=[A]_0,\;b_0=[B]_0$$
 # 
 # The equation is 
 # 
-# $$\displaystyle \frac{da}{dt}=-k_1a+k_2ab$$
+# $$\displaystyle \frac{da}{dt}=-k_1a+k_2b^2$$
 # 
-# substituting for $x$, the amount reacted at time $t$,  gives 
+# letting $b_0=c_0=0$ substituting for $x$, the amount reacted at time $t$,  gives 
 # 
-# $$\displaystyle -\frac{dx}{dt}=-k_1(a_0-x)+k_2x^2,\qquad \int_0^x \frac{1}{k_1(a_0-x)-k_2x^2}dx=\int_0^tdt$$
+# $$\displaystyle \frac{dx}{dt}=+k_1(a_0-x)-k_2x^2,\qquad \int_0^x \frac{1}{k_1(a_0-x)-k_2x^2}dx=\int_0^tdt$$
 # 
 # This equation has a standard form
 # 
-# $$\displaystyle \int\frac{1}{\alpha x^2+bx+c}dx=\frac{1}{\sqrt{b^2-4\alpha c}}\ln\left(\frac{2\alpha x+b-\sqrt{b^2-4\alpha c}}{2\alpha x+b+\sqrt{b^2-4\alpha c}} \right)+const, \quad b^2\gt 4\alpha c \tag{5a}$$
+# $$\displaystyle \int\frac{1}{\alpha +\beta x+\gamma x^2}dx=\frac{1}{\sqrt{\beta^2-4\alpha \gamma}}\ln\left(\frac{2\gamma x+\beta-\sqrt{\beta^2-4\alpha \gamma}}{2\gamma x+\beta+\sqrt{\beta^2-4\alpha \gamma}} \right)+const, \quad \beta^2\gt 4\alpha \gamma \tag{5a}$$
 # 
-# where $\alpha = -k_2,\; b=-k_1,\; c=k_1a_0$  and the condition is that $k_1^2 \gt -4k_2k_1a_0$ which is true. Substituting produces $\sqrt{b^2-4\alpha c} = \sqrt{k_1^2+4k_2k_1a_0}$ and also evaluating the constant, gives
+# where $\alpha = k_1a_0,\; \beta=-k_1,\; \gamma=-k_2$  and the condition is that $\beta^2-4\alpha \gamma>0$ which is true. Substituting produces 
 # 
-# $$\displaystyle \ln\left(\frac{-2k_2 x-k_1-\sqrt{k_1^2+4k_2k_1a_0}}{-2k_2 x-k_1+\sqrt{k_1^2+4k_2k_1a_0}} \right)-\ln\left(\frac{-k_1-\sqrt{k_1^2+4k_2k_1a_0}}{-k_1+\sqrt{k_1^2+4k_2k_1a_0}} \right)=t\sqrt{k_1^2+4k_2k_1a_0}$$
+# $$\displaystyle \sqrt{\beta^2-4\alpha \gamma} = \sqrt{k_1^2+4k_2k_1a_0}=q$$
+# 
+# and also evaluating the constant, gives
+# 
+# $$\displaystyle \ln\left(\frac{-2k_2 x-k_1-q}{-2k_2 x-k_1+q} \right)-\ln\left(\frac{-k_1-q}{-k_1+q} \right)=qt$$
 # 
 # and from this we can see that the reaction comes to equilibrium with a first order rate constant of 
 # 
-# $$\displaystyle 1/\tau= \sqrt{k_1^2+4k_2k_1a_0}$$
+# $$\displaystyle \sqrt{k_1^2+4k_2k_1a_0}=1/\tau$$
 # 
-# where $\tau$ is the relaxation time or simply the lifetime.
+# where $\tau$ is the relaxation time or simply the lifetime. It would be a mistake to think that the decay was exponential, however, as this is true only at longer times, see fig. 5d.
+
+# Making substitutions $\displaystyle w=\frac{k_1+q}{2k_2},\;v=\frac{k_1-q}{2k_2}$ and exponentiating gives
+# 
+# $$\displaystyle \frac{x+w}{x+v}=\frac{w}{v}e^{qt}, \qquad x=\frac{vw(e^{qt}-1)}{v-we^{qt}}$$ 
+# 
+# with limits at $t=0,\; x\to 0$ and at long times $t\to \infty,\; x\to -v$ and $v$ is negative because $q>k_1$.
+# 
+# ![Drawing](diffeqn-fig5d1.png)
+# 
+# Figure 5d. Comparison of the true decay (circles) vs. that by making the approximation that $x^2$ is small (solid line). The equilibrium (long time) amount has been subtracted from the true decay (circles) eqn. 5c, to make the form of the decay clearer. The straight line is eqn. 5d and is the same as produced when $x^2$ is small as described in section 4.3 where a temperature jump is described.
+# _______________
 # 
 # This form of the equation is clearly rather messy. It is simplified if the equilibrium amounts are incorporated. At equilibrium the rate of change of A becomes zero and so 
 # 
@@ -734,23 +749,33 @@ ans
 # 
 # Substituting for $k_2$ and after a great deal of simplifying the result is 
 # 
-# $$\displaystyle \log\left(\frac{a_0x_e+x(a_0-x_e)}{a_0(x_e-x)} \right)= \frac{k_1(2a_0-x_e)}{x_e}t \qquad\tag{5b}$$
+# $$\displaystyle \ln\left(\frac{a_0x_e+x(a_0-x_e)}{a_0(x_e-x)} \right)= \frac{k_1(2a_0-x_e)}{x_e}t \qquad\tag{5b}$$
 # 
 # and as $x,x_e,a_0$ are all concentrations this is dimensionally correct.
-# 
+
+# In[ ]:
+
+
+
+
+
 # ## 4.3 Temperature Jump; a perturbation from the equilibrium $\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $ 
 # 
-# Once a reaction has come to equilibrium, such as 
+# Once a reversible reaction such as
+# 
+# $$\displaystyle A\overset{k_1}{\underset{k_2} \rightleftharpoons }B+C $$
+# 
+# or specifically
 # 
 # $$\displaystyle \mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $$
 # 
-# a small perturbation can be used to measure the return to equilibrium which may take only a few microseconds and by so doing the individual rate constants can be obtained. The change in absorption can be measured as equilibrium is reestablished. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so. In the past heating by passing an electric current was used but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water's absorption in the infra red. An alternative is to add a dye with a low fluorescence yield to the solution, and use this to absorb visible light and so heat the solution as its excited state decays. Many enzyme's equilibria have been studied using T-jump.   
+# comes to equilibrium a small perturbation, such as a temperature jump, can be used to measure the return to equilibrium. This may take only a few microseconds, and from this the rate constants $k_1,k_2$ can be obtained. After a perturbation the change in absorption in the visible or IR, or fluoresce is commonly measured, but sometimes optical rotation or light scattering can used to instead. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so, called T-jump and by using this method numerous enzyme equilibria have been studied. In the past heating was achieved by passing an electric current but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water's $1.9$ micron absorption in the infra red. This can be achieved via the Raman effect by passing a nanosecond duration $1064$ nm YAG laser through a gas, such as hydrogen, at very high pressure, $20 - 60$ bar. Alternatively a dye with a low fluorescence yield, such as crystal violet, is added to the solution. This dye will absorb visible laser light which will indirectly heat the solution as its excited state decays.
 # 
 # Consider the general equilibrium 
 # 
-# $$\displaystyle A = B + C$$
+# $$\displaystyle A \rightleftharpoons B + C$$
 # 
-# and let $a_e, b_e, c_e$ be the equilibrium amounts of A, B and C respectively. An amount $x$ is transferred to products as a result of heating the solution  and the concentration of $a$ is $a=a_0-x$. In water $x$ is the concentration of ions. The rate equation is then
+# and let $a_e, b_e, c_e$ be the equilibrium amounts of A, B and C respectively. An amount $x$ is transferred to products as a result of heating the solution and the concentration of $a$ is $a = a_0-x$. The rate equation is 
 # 
 # $$\displaystyle \frac{da}{dt}=-\frac{dx}{dt}=-k_1(a_0-x)+k_2x^2 $$
 # 
@@ -760,9 +785,9 @@ ans
 # 
 # where $x_e$ is the equilibrium amount of A. A change in amount $x$ due to the temperature jump is $\Delta x=x-x_e$ and substituting for this gives
 # 
-# $$\displaystyle \begin{align}\frac{d\Delta x}{dt}&=\frac{dx}{dt} = k_1a_0-k_1(\Delta x+x_e)-k_2(\Delta x+x_e)^2\\&=k_1a_0-k_1(\Delta x+x_e)-k_2\Delta x^2-2k_2x_e\Delta x-k_2x_e^2 \end{align} $$
+# $$\displaystyle \begin{align}\frac{d\Delta x}{dt}&= k_1a_0-k_1(\Delta x+x_e)-k_2(\Delta x+x_e)^2\\&=k_1a_0-k_1(\Delta x+x_e)-k_2\Delta x^2-2k_2x_e\Delta x-k_2x_e^2 \end{align} $$
 # 
-# and as the change is small the term in $\Delta x^2$ is very small compared to the others and may be ignored giving,
+# This equation has the form $\displaystyle \frac{d\Delta x}{dt}=a+b\Delta x+ c\Delta x^2$ where $a,\;b,\;c$ are constants which can be integrated using a standard form, see the previous section (4.2) or chapter 4-2.14, however, as $\Delta x$ is small the term in $\Delta x^2$ is very small compared to the others and may be ignored giving a far simpler equation which fig 5d shows is only valid at longer times,
 # 
 # $$\displaystyle \frac{d\Delta x}{dt} = k_1a_0-k_1(\Delta x+x_e) -2k_2x_e\Delta x-k_2x_e^2$$
 # 
@@ -782,9 +807,9 @@ ans
 # 
 # $$\displaystyle \Delta x=\Delta x_0e^{-(k_1+2k_2x_e)t}\qquad\tag{5c}$$
 # 
-# which has a relaxation time of $1/(k_1+2k_2x_e)$. If the equilibrium constant is also known then both rate constants can be evaluated because $K_e=k_1/k_2$.
+# which has a relaxation lifetime of $1/(k_1+2k_2x_e)$. If the equilibrium constant is also known then both rate constants can be evaluated because $K_e=k_1/k_2$.
 # 
-# In water at pH = $7$ and $298$ K the relaxation time is measured to be 37 microseconds. The equilibrium constant is 
+# In water at *p*H = $7$ and $298$ K the relaxation time is measured to be 37 microseconds. The equilibrium constant is 
 # 
 # $$\displaystyle K_e=\frac{k_1}{k_2}=\frac{x_e^2}{(a_0-x_e)}= \frac{K_w}{55.55}$$
 # 
@@ -796,7 +821,8 @@ ans
 # 
 # $$\displaystyle k_D=\frac{8RT}{3\eta}\;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}$$
 # 
-# which gives a value of $6.6\cdot 10^9 \;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}$ in water with a viscosity $\eta=0.001$ Pa S. This is clearly way-off the measured value, but the formula was derived for neutral species and therefore ignores the fact that ions are involved which in this case are attracted to one another. Adding a correction (Wilkinson, 1980) increases $k_2$ by a factor of around twenty (depending on ion separation) bringing the value towards $10^{11}$ much closer to the experimental measurement.
+# which gives a value of $6.6\cdot 10^9 \;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}$ in water with a viscosity $\eta=0.001$ Pa S. This is clearly way-off the measured value, but the formula was derived for neutral species and therefore ignores the fact that ions are involved which in this case are attracted to one another. Adding a correction (Wilkinson, 1980) increases $k_2$ by a factor of around twenty (depending on ion separation) bringing the value towards $10^{11}\;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}$ much closer to the experimental measurement.
+# 
 # 
 # ## 4.4 Reversible reactions $A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D$ 
 # 
@@ -890,11 +916,11 @@ ans
 # 
 # $$\displaystyle x=\frac{1}{1+2f\sqrt{K_e}}\qquad\tag{5h}$$
 # 
-# The approach to equilibrium both starting with HI and with Hydrogen and iodine is shown in figure 5d. The data was recorded in 1899 by Bodenstein and are replotted below. The temperature was $448^\text{o}$ C. The lines are fitted from the integrated equations. The quantity labelled as $x=[HI]/[HI]_0$
+# The approach to equilibrium both starting with HI and with Hydrogen and iodine is shown in figure 5e. The data was recorded in 1899 by Bodenstein and are replotted below. The temperature was $448^\text{o}$ C. The lines are fitted from the integrated equations. The quantity labelled as $x=[HI]/[HI]_0$
 # 
 # ![Drawing](diffeqn-fig5d.png)
 # 
-# Figure 5d. $\mathrm{2HI \rightleftharpoons H_2 + I_2}$ reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value $x_e=0.786$ at $448^\text{o}$ C. The curves show that the same equilibrium is reached starting either with products or reactants. 
+# Figure 5e. $\mathrm{2HI \rightleftharpoons H_2 + I_2}$ reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value $x_e=0.786$ at $448^\text{o}$ C. The curves show that the same equilibrium is reached starting either with products or reactants. 
 # ____________
 # 
 # ## 4.6 Reversible reaction when only the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$ 

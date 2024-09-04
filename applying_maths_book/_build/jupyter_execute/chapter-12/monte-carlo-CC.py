@@ -62,7 +62,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # \hline
 # \end{array}$$
 # 
-# ## 3.3 Simulation of one-dimensional diffusion, Brownian motion
+# ## 3.3 Simulation of one-dimensional diffusion. Brownian motion &  Ehrenfest Diffusion 
+# 
+# ### **(i) Brownian motion**
 # 
 # In diffusion, time, and distance are linked by Fick's second law; Chapter 10.6.2 (iv). However, in a simulation, this equation is not used and the position where the walk ends after a fixed number of total jumps is calculated. This is repeated many times and a histogram made of the final positions. To make the walk last a longer time, a larger total number of jumps is taken because each jump is supposed to take an equal time. In the Monte Carlo simulation, the total number of steps, s, must be decided beforehand. The walk must start at only one place, say $x_0$, and as there is an equal chance of moving to the right or left, the starting place of the walk will also be the mean value $\langle x_0 \rangle$. The root mean square distance the walker moves in taking $s$ steps, is $\sqrt{s}$.
 # 
@@ -145,6 +147,133 @@ for i in range(1,steps,1):
 # Figure 10a. One trajectory of a 2D random walk on a grid, where each step is randomly $\pm1$ or zero jump in $x$ and $y$. Many such trajectories would produce a 2D gaussian profile. The color roughly indicates the time taken by the walk, starting with green and ending in red.
 # ___________________________
 # 
+# ### **(ii) The Ehrenfeld Diffusion problem or Two Dogs and Fleas**
+# 
+# The Ehrenfest model is used to describe the self-diffusion of a gas between two bulbs A and B of equal volume by means of a single pore in a semi-permeable membrane separating them. The volumes remain fixed and isolated, thus the temperature is constant and no heat exchanged with the surroundings and no work is done. The simulation calculates, at each  time step, the chance of just two molecules travelling from volume A to B or vice versa so that the number in each volume remains the same. The particles (molecules) are 'labelled' so that the change in their numbers can be followed. The process is stochastic and has been described as similar to the transfer of fleas from one dog to another. Although the molecules are supposed to be identical nevertheless they have to be labelled and so identified for the purposes of calculation.  In a real experiment we would have to use molecules as identical in their properties as possible, for example, ortho- and para-hydrogen, or a gas such as SF$_6$ with different S isotopes such that the mass is only changed by $1$% or less. Diffusion will effectively be the same for every molecule but these can be identified in an experiment, and this means that this model has at least a reasonable chance of being able to be confirmed by experiment. 
+# 
+# If molecules of a given type are all initially in one volume, and an equal number of others in the second volume once diffusion is allowed to start, say by removing a partition, after some time the molecules will both be spread more or less evenly between the two volumes. However, by the same arguments that says that they will spread one way they could also be expected to return, i.e. there is clearly a chance that after a time all the molecules that were initially in volume A will return to A again, and repeatedly do so, but this breaks the second law of thermodynamics and more importantly goes against experience of how a large volume of gas behaves. If all molecules of one type are in A, initially doubling their volume by diffusing into B increases their entropy by $R\ln(2)$ and, clearly, if they are subsequently all back in A again then the entropy is reduced by the same amount. This *recurrence* effect or rather the lack of observing it in normal experiments provided Boltzmann with considerable difficulties in trying to explain thermodynamics in terms of the kinetic theory. This was because Poincare, treating the molecules as a dynamical system, showed unequivocally that the initial state will be reformed to an arbitrary degree of accuracy, i.e. one should expect to see all the molecules return to their original state. However, this is never observed in normal life, the gas in a room does not suddenly leave a void here and there. Similarly, a drop of a dye when added to a solution will diffuse to fill all the volume and then later on one never finds it has reformed into the initial drop. These things should and could happen but are not observed and this is why this nearly wrecked Boltzmann's work. It was mainly through the work of Ehrenfest and Smoluchowski that the situation was resolved, and the answer to not observing recurrence, was in Boltzmann's words, 'you wait!'. With the Ehrenfest model the time you have to wait for $n$ molecules to return to their original state after starting to diffuse is $\sim 2^{2n}$, which looks quite innocuous but if you work it out even for as few as $n=1000$ molecules it is a time longer than the age of the universe for all reasonable transitions lasting fractions of a second. Hence you wait, and kinetic theory as described by Boltzmann and Poincare's objection are reconciled. The recurrence takes so long because there is an overwhelmingly large number of initial states and returning to that one is therefore highly unlikely. This also reconciles classical thermodynamics and the statistical mechanics interpretations of entropy, and shows that entropy is a statistical law reliant on there being vast numbers of particles involved. With the advent of experiments to observe the behaviour of single molecules we should expect to see that the second law can be broken but only in special circumstances. 
+# 
+# Recurrence in a dynamical system can be observed in the dynamics of the excited state of molecules when excited by a very short, picosecond or femtosecond laser pulse. The pulse has a wise spectrum as it is of short duration and can therefore excite several energy levels which then come into and go out of phase, the rotational and vibrational recurrences being seen as the wavefunctions propagates, see Chapter 5-9.
+# 
+# ### **Simulation. Time taken to reach equilibrium**
+# To simulate diffusion between the two volumes we start with $n$ white balls in A (which we will call volume 1) and label these as $w_1$ and $n$ black ones in B (volume 2) as $b_2$ and in each step of the process three choices are made to decide what happens. Two random numbers, $r_1,r_2$, are chosen between $0$ and $1$ so that they cover the range of a probability. Next, calculate the probability of transfer for type w particles which is $p_w = w_1/n$, and for b particles $p_b = b_2/n$. If both the random numbers ($r_1,r_2$ fig 10b) are larger than these probabilities we increase by one the number of $w_1$ in volume 1 and $b_2$ in volume 2 because a white ball was selected from volume 2 and a black one from volume 1.  Similarly,  decrease by one the molecule numbers of $w_1$ and $b_2$ if $r_1$ and $r_2$ are both less than their respective probabilities ($p_w,p_b$) meaning that a black ball was selected from volume 2 and a white one from volume 1. Any other choice replaces white with white and black with black so there is no change, so do nothing, see fig 10b. The number $w_1$ and $b_2$ in each volume is recorded and the process repeated. Figure 10c shows the outcome where the number of $w_1$ is plotted vs. the number of steps taken.  Note that the molecule are identical in each bulb but we must label them as $w$ or $b$ just for housekeeping during the calculation. The number of steps taken is equivalent to time.
+# 
+# ![Drawing](monte-carlo-fig10b.png)
+# 
+# Figure 10b. Diagram to show how choices are made when particles move from one volume to another. $r_1, r_2$ are the two random numbers taken from a uniform distribution between zero and one, $p_A = w_1/n,p_B=b_2/n$ are the probabilities of transfer from volume 1 and from volume 2 and are updated at each step.
+# __________________________
+# 
+# The algorithm works by checking which of the four cases shown in fig 10b is chosen and the changes to $w_1,b_2$ are made accordingly. The number remaining in volume 1 is plotted vs. the number of steps and is shown in fig 10c for two different numbers of molecules.
+
+# In[4]:
+
+
+# Ehrenfest Simulation.  
+# Based on algorithm by P. Nahin,'Duelling Idiots and other Probability Puzzles' publ. Princeton University Press.
+# n = same number on each side
+# white in volume 1, black in volume 2
+
+n = 500                                 # number of molecules in each volume
+steps = 500*n                           # number of steps taken
+fract = np.zeros(steps,dtype=float)     # array to save results
+rng   = np.random.default_rng()         # initialise random number generator  
+
+def sim(n):                             # Ehrenfeld simulation algorithm
+    pw1 = 1                             # prob of white in volume 1
+    pb2 = 1                             # prob of black in volume 2
+    
+    w1 = n                              # number of w in volume 1 is n initially
+    b2 = n                              # number of b in volume 2 is n initially
+    
+    fract[0] = 1                        # initial value
+    for i in range(1,steps,1):          # loop starting at index 1
+        R1 = rng.random()               # get random number 0 to 1 
+        R2 = rng.random()
+        if R1 <= pw1 and R2 <= pb2:     # swap. w1 and b2 chosen top right hand image in fig 10b   
+            b2 = b2 - 1                 # decrease black in vol 2
+            w1 = w1 - 1                 # decrease white in vol 1
+        elif R1 > pw1 and R2 > pb2:     # swap. b1 and w2 chosen 
+            b2 = b2 + 1
+            w1 = w1 + 1
+        # any other combination just swaps w to w, b to b
+        pw1 = w1/n                      # update probability of white in vol 1
+        pb2 = b2/n
+        fract[i]= pw1                   # save result
+    return fract
+
+# plot result
+#t = np.linspace(0,steps,steps)        
+#plt.plot(t,sim(n),linewidth=1,color='red',zorder=10)
+#plt.show()
+
+
+# ![Drawing](monte-carlo-fig10c.png)
+# 
+# Figure 10c. The Ehrenfest simulation when $n=50$ and $500$. The normalised number of molecules is plotted, $w_1/n$. The smooth curves are the predicted behaviour $w_1/n=(1+e^{-2t/n})/2$ as described in the text.
+# __________________
+# 
+# Figure 10c shows clearly that the number of white particles in volume 1 (or equivalently black ones in 2) produces a decay that is far noisier when there are fewer particles involved as is expected intuitively; the standard deviation of the noise is typically reduced as $\sqrt{n}/2$ which is approximately what the noise on these plots show over long times. The lifetime by which equilibrium is reached, $w_1/n=0.5$ is bigger when the number of particles is larger, also as expected. The smooth decay curves are the function $w_1/n=(1+e^{-2t/n})/2$. Empirically, by fitting the simulation made with different initial numbers $n$ the lifetime $\tau$ is clearly very close to $n/2$ which is a good approximation to the exact value of $\tau=-1/\ln(1-2/n)$ when $2/n \lt 1$ as shown next.
+# 
+# The probabilities of reducing the number of molecules from $n\to n-1$ is $n_t/n$, and therefore of increasing is $1-n_t/n$. The number of transfers from time $t \to t+1$ is by definition the number already present plus the chance of increasing by one and of decreasing by one and has the recursive relation,
+# 
+# $$\displaystyle  n_{t+1} =n_t +\left(1-\frac{n_t}{n}\right)-\frac{n_t}{n}=\left(1-\frac{2}{n}\right)n_t+1$$
+# 
+# in the next time period the process is repeated since there is a chance of increasing or decreasing
+# 
+# $$\displaystyle   n_{t+2} =\left(1-\frac{2}{n}\right) n_{t+1}+1 $$
+# $$\displaystyle   n_{t+3} =\left(1-\frac{2}{n}\right) n_{t+2}+1 $$
+# 
+# and so on with the next values depending on the previous one obtains by substituting, for example 
+# 
+# $$\displaystyle   n_{t+2} =\left(1-\frac{2}{n}\right)\left(\left(1-\frac{2}{n}\right) n_t+1\right)+1 $$
+# 
+# If we start with $t=0$ with $n_0$ molecules then at $t$ events and after much simplifying we get
+# 
+# $$\displaystyle   n_{t}  = \frac{n}{2}+\left(1-\frac{2}{n}\right)^t\left(n_0-\frac{n}{2}\right)$$
+# 
+# The first few substitutions are easily found using Sympy as shown below. 
+
+# In[5]:
+
+
+n,n0,n1,n2,n3,n4=symbols('n,n0,n1,n2,n3,n4')
+
+n1 = (1-2/n)*n0+1
+n2 = (1-2/n)*n1+1
+n3 = (1-2/n)*n2+1
+n4 = (1-2/n)*n3+1
+ans = collect(expand(n4),n0)
+ans
+
+
+# By induction the general case $ n_t$ can be found as given above. It is useful in the derivation to notice how the terms outside the bracket in the Sympy result are related to those inside. In this derivation $t$ is a discrete number but if we associate this with time and these time steps are made very small we may consider $t$ as a variable and then we can write the equation as
+# 
+# $$\displaystyle   n_{t}  = \frac{n}{2}+  \exp\left(t\ln\left(1-\frac{2}{n}\right)\right)  \left(n_0-\frac{n}{2}\right)$$
+# 
+# which can be simplified because $2/n\lt 1$ and the log can be expanded as a series giving
+# 
+# $$\displaystyle  n_{t}  = \frac{n}{2}+  e^{-2t/n}  \left(n_0-\frac{n}{2}\right)$$
+# 
+# which gives a lifetime of $\tau =n/2$ as found empirically. If $n_0=n$ then
+# 
+# $$\displaystyle   n_{t}  = \frac{n}{2}(1+  e^{-2t/n}) $$
+# 
+# which is the curve plotted in fig 10c. At long times the average value is $n/2$ also as observed in the simulation.
+# 
+# ### **Recurrence**
+# To calculate recurrence a very long sequence of steps is needed, typically several million when $n=10$, because recurrence becomes increasingly rare as $n$ increases. The number of these is recorded when the initial state is re-formed. The *gaps* between these numbers is now saved and a histogram of them produces an exponential decay which shows that the recurrence times are exponentially distributed, $c \sim e^{-t/\tau_n}$ where 'c' represents the number of gaps with a given value, i.e. the histogram and $\tau_n$ the decay lifetime for $n$ molecules. A semi-log plot of the counts has values that closely follow the behaviour $y=2^{2n}$ as shown in figure 10d.
+# 
+# ![Drawing](monte-carlo-fig10d.png)
+# 
+# Figure 10d. Left. The histogram of time gaps when the random walk recurs. The lifetime, in this case where $n=5$, is $270$ steps and has the equation counts $\sim e^{-t/270}$. Right. This plot shows log10 of the lifetimes $\tau$ for the decays of the type shown on the left *vs*. $n$, and the line for $2^{2n}$. The points much greater than $10$ take a very long time to accumulate enough points to form a measureable decay as shown in the left this figure, with $n=10$ typically only $\approx 30$ recurrences occur after five million steps. 
+# ______________________
+# 
+# The recurrence time has been calculated analytically by M. Kac (American Mathematical Monthly, v54, p369, 1947) and if a state with $m$ white balls occurs the number of steps needed to recur is given, on average, by
+# 
+# $$\displaystyle \frac{(n+m)!(n-m)!}{(2n)!}2^{2n}$$
+# 
+# When $n \gt m$ the recurrence time is short as the ratio of factorials is $ \ll 1$. When $m \approx n$ the factorials evaluate to a number close to one and the recurrence time is maximised and is $\sim 2^{2n}$ as found by our simulation. Smoluchowski was probably first to understand that if one starts with a large number of molecules the recurrence time is so long that the process is for all practical purposes irreversible, but mathematically its not, but as the time needed soon becomes far, far longer than the age of the universe this is irrelevant.  
+# 
 # ## 3.4 Reacting molecules.
 # 
 # ### **(i) Reaction $A\to B$**
@@ -173,7 +302,7 @@ for i in range(1,steps,1):
 # 
 # The Python code is shown below with 50000 events placed in a histogram of $500$ bins. The reaction lifetime $\tau = 50$. In the simulation, the time - scale need not be explicitly defined; each time unit could be femtoseconds or years; it all depends on the reaction.
 
-# In[4]:
+# In[6]:
 
 
 rng = np.random.default_rng()                # initialise random number generator
@@ -309,7 +438,7 @@ for i in range(events):
 # 
 # Sometimes when making the histogram, the way the histogram's algorithm works to partitions the number of events into each bin can sometimes cause points to appear in a regular pattern being either too high or too low or both. This unphysical behaviour can be corrected by choosing a different number of bins, for example by doubling, plotting, re-choosing, re-plotting etc. until this effect disappears. 
 
-# In[5]:
+# In[7]:
 
 
 # Algorithm 1. Step-wise chain growth polymerisation 
@@ -354,7 +483,7 @@ for i in range(reps):
 # 
 # An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The 'lifetime' of the chain is $1/(1-p)$ in terms of the chain length and the 'time' is $-1/(1-p)\ln(rand)$ where 'rand' is a uniformly distributed random number in the range $0\to 1$. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.
 
-# In[6]:
+# In[8]:
 
 
 # Algorithm 2. Step-wise chain growth polymerisation 
@@ -440,7 +569,7 @@ for i in range(reps):
 #     
 # At each step with index $k$, we count the number of type A and type B molecules present and the mole fraction as $\mathrm{mfA[k]=n_a/(n_a+n_b)}$ for A molecules and $\mathrm{1-mfA[k]}$ for B molecules. These are plotted vs. number of tries. 
 
-# In[7]:
+# In[9]:
 
 
 #-------------------------------

@@ -391,22 +391,24 @@ plt.show()
 # 
 # A Markov chain is a stochastic process for predicting future behaviour based solely on the present state. These predictions are just as good as the ones that could be made knowing the process's previous history. The 'process' can be one of a number of very diverse types, a sequence of chemical reactions, diffusion on a line, the 'drunkard's walk', behaviour of the stock market, games such as 'snakes and ladders', the 'gambler's ruin' or how a company competes for sales with rivals. What is required is that the transition from one position to each of the others has a certain probability and as time progresses these probabilities are entered into a transition or transfer matrix and used to predict the future state. All that is needed is a starting state and the transition matrix to be able to predict all future behaviour. 
 # 
-# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect states and that a 'do nothing' or waiting probability is added to each species. The next figure gives an example of a three state system similar to that in fig 55a above. 
+# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect states and that a 'do nothing' or waiting probability is added to each species, although this could be zero. The next figure gives an example of a three state system similar to that in fig 55a above. 
 # 
 # ![Drawing](matrices-fig55b.png)
 # 
-# figure 55b. A scheme between three sites written as a Markov process.
+# Figure 55b. A scheme between three sites written as a Markov process. The transition matrix for this scheme is shown below, eqn. 41b.
 # ______________________________
 # 
-# The figure gives the probabilities of transfer from one site $i$ to another $j$ as $p_{i,j}$ and the probability of remaining on a given site (or molecule) is $p_{ii}$ although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any 'site', such as a product made by a company, always add up to $1$ as something happens even if it just that the site remains unchanged, i.e. $p_{11}+p_{12}=1,\; p_{12}+p_{22}+p_{23}=1$, etc. these probabilities are, of course always positive, $0 \le p\le 1$ , and we will initially assume that they are constant in time. If a state has only a probability of reaching it and none that leave, this is called and 'absorbing' site, and eventually all the population will end up here; for example in the process $A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C $, $C$ is an absorbing site, or in chemical terms, the product. If the process describes chemical reactions then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur. 
+# The figure gives the probabilities of transfer from one site $i$ to another $j$ as $p_{i,j}$ and the probability of remaining on a given site (or molecule) is $p_{ii}$ although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any 'site', such as a product made by a company, always add up to $1$ as something happens even if it just that the site remains unchanged, i.e. $p_{11}+p_{12}=1,\; p_{12}+p_{22}+p_{23}=1$, etc. these probabilities are, of course always positive, $0 \le p\le 1$ , and we will initially assume that they are constant in time. Such square matrices with non-negative entries and where the row sums add up to $1$ are called *stochastic* matrices. If a state has only a probability of reaching it and none that leave, this is called an 'absorbing' state, and eventually all the population will end up here; for example in the process $A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C $, $C$ is an absorbing site, or in chemical terms, the product. If the process describes chemical reactions then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur. 
+# 
+# The *state space* is the set of possible values that the process can take, for example in a football match it will be the scores of each side that increase in time $0\to 90$ mins (the parameter space) as $(x,y)= 0, 1, 2, 3,\cdots$ and has values as $(0,0),(1,0), (0,1)$ etc. with the process starting at $(0,0)$ and with each goal the transition is $x\to x+1$ or $y\to y+1$.
 # 
 # The initial state is defined, as a vector of populations or number of items held at each site etc., for example if only A is present initially as $A_0$ then the row matrix of initial values is 
 # 
 # $$\displaystyle P_0=\begin{bmatrix}A_0,0,0\end{bmatrix}$$
 # 
-# and to evaluate what has changed at the next time step $t+\tau$ where $\tau$ is a small time increment, and $t$ is some arbitrary start time which could be zero, we use the transition matrix $T$ as
+# and to evaluate what has changed at the next time-step $t+\tau$ where $\tau$ is a small time increment, and $t$ is some arbitrary start time which could be zero and so we let $t=0$. The transition matrix $T$ after one time step $\tau$ is 
 # 
-# $$\displaystyle P(t+\tau) = P_0\pmb T$$
+# $$\displaystyle P(\tau) = P_0\pmb T$$
 # 
 # where each *row* in the transfer matrix contains all the probabilities for that site, for example in fig 55b,
 # 
@@ -414,23 +416,134 @@ plt.show()
 # 
 # and because the probabilities in each row add to unity we can write in this case
 # 
-# $$\displaystyle T=\begin{bmatrix}1-p_{12}& p_{12}&0\\p_{21} &1 - p_{21}-p_{23} & p_{23}\\p_{31}& 0 & 1 - p_{31} \end{bmatrix}$$
+# $$\displaystyle T=\begin{bmatrix}1-p_{12}& p_{12}&0\\p_{21} &1 - p_{21}-p_{23} & p_{23}\\p_{31}& 0 & 1 - p_{31} \end{bmatrix}\qquad\qquad\qquad\text{41b}$$
 # 
 # so that only the transition probabilities between species are needed. The next time step is
 # 
-# $$\displaystyle P(t+2\tau)=P(t+\tau)\pmb T= p_0 \pmb T^2$$
+# $$\displaystyle\begin{align} P(2\tau)&=P(\tau)\pmb T= P_0 \pmb T^2\\
+#  P(3\tau)&=P(2\tau)\pmb T= P(\tau)\pmb T^2= p_0 \pmb T^3\end{align}$$
 # 
-# and generalising to $n$ time steps 
+# so that the $n^{th}$ time can be found by multiplying the $(n-1)^{th}$ by the transition matrix $\pmb T$ or by multiplying the first vector by $\pmb T^n$ as
 # 
-# $$\displaystyle P(t+n\tau) = p_0 \pmb T^n$$
+# $$\displaystyle P(n\tau) = P_0 \pmb T^n$$
 # 
-# so it is necessary to either evaluate in a recursive way or calculate the $n^{th}$ power of the transfer matrix.  This equation can also be written using column vectors, which is much more familiar in chemistry, and then the matrix has to be transposed and the vectors $P$ are now become column vectors, i.e.
+# so it is necessary to either evaluate in a repetitive way or calculate the $n^{th}$ power of the transfer matrix.  This equation can also be written using column vectors, which is much more familiar in chemistry, and then the matrix has to be transposed and the vectors $P$ are now become column vectors, i.e.
 # 
-# $$\displaystyle P(t+n\tau) =  (\pmb{T}^T)^n P_0$$
+# $$\displaystyle P(n\tau) =  (\pmb{T}^T)^n P_0$$
 # 
-# where superscript $T$ indicates the transpose operation and we shall now always use column vectors in any calculations. The matrix can be raised to an integer power using the Similarity Transform described below, section 13.5.  The time $t$ is taken to be zero in all further calculations.
+# where superscript $T$ indicates the transpose operation. The matrix can be raised to an integer power using the Similarity Transform described below, section 13.5, and this is a far better way to do this than repeated matrix multiplications which can introduce numerical errors.
+
+# ### **(i) Equilibrium distribution**
+# At long times when steady state is achieved the vector of probabilities $ P$ is conventionally replaced by vector $\Pi$ such that
 # 
-# ### **(i) A first order reaction $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$**
+# $$\displaystyle \Pi=\Pi\; T^n$$
+# 
+# and this set of simultaneous equations solved. This can be done by making it into an eigenvalue-eigenevctor equation or, if the matrix is small as set of equations by letting $\Pi =\begin{bmatrix}\pi_0&\pi_1&\pi_2\cdots\end{bmatrix} $ and using the equation $\pi_0+\pi_1+\pi_2\cdots=1$ and
+# 
+# $$\displaystyle \begin{bmatrix}\pi_0& \pi_1& \pi_2\cdots\end{bmatrix}=\begin{bmatrix}\pi_0& \pi_1& \pi_2\cdots\end{bmatrix}\begin{bmatrix}p_{00}& p_{01}\cdots\\p_{10}&p_{11}\cdots\\\vdots&\vdots\end{bmatrix}$$
+# 
+# the first two equations are
+# 
+# $$\displaystyle \begin{align}\pi_0&=\pi_0p_{00}+\pi_1p_{10} +\pi_2p_{20}\cdots\\
+# \pi_1&=\pi_0p_{01}+\pi_1p_{11} +\pi_2p_{21}\cdots\end{align}\qquad\qquad\text{41c}$$
+# 
+# Consider the transition matrix for a state space of $(0,1)$. The process will be a sequence of $0$'s and $1$'s and if the probability of a transition is $a$ or $b$ the the transition matrix is
+# 
+# $$\displaystyle \pmb T=\begin{bmatrix}1-a&a\\b&1-b\end{bmatrix}, \qquad (0\le a,b\le 1)$$
+# 
+# When both $a=b=0$ then nothing happens as time progresses because the transition matrix is the unit diagonal matrix $\displaystyle \begin{bmatrix}1&0\\0&1\end{bmatrix}$, where as if both are one the state changes from $a$ to $b$ on alternate steps
+# 
+# $$\displaystyle \begin{align}P(\tau)&=[1,0]\begin{bmatrix}0&1\\1&0\end{bmatrix}=[0,1]\\P(2\tau)&=[0,1]\begin{bmatrix}0&1\\1&0\end{bmatrix}=[1,0]\end{align}$$
+# 
+# and there is no equilibrium established. In the case when $a=0$ and $b$ is not zero or one, or vice versa, then the states are absorbing so that when the particle reaches the next state it state there. The more interesting case is then when $0\lt a,b\lt 1$  then in the limit if equilibrium is established there will be no change in the state $P$, which, at equilibrium, we conventionally label $\Pi$
+# 
+# $$\displaystyle \Pi = \Pi \begin{bmatrix}1-a&a\\b&1-b\end{bmatrix}$$
+# 
+# If we let $\Pi= \begin{bmatrix} \pi_0 & \pi_1 \end{bmatrix}$ then the set of equations is
+# 
+# $$\displaystyle 1=\pi_0 +\pi_1,\quad \pi_0=\pi_0(1-a)+\pi_1b, \quad \pi_1=\pi_0a +\pi_1(1-b)$$
+# 
+# from which $\pi_0=b/(a+b),\;\pi_1=a/(a+b)$ which is independent of the initial state and therefore $\pi_0,\pi_1$ are the equilibrium probabilities. 
+# 
+# When the matrix is large it is easier to use the computer by finding the eigenvalues and eigenvectors, and forming a similarity matrix to raise the matrix to a power, see section 13.5(i). The eigenvalues are $1$ and $1-a-b$ and we shall need to use them as diagonals in a square matrix $\pmb\Lambda$ and for simplicity letting $\lambda=1-a-b$ and so $\lambda <1$,
+# 
+# $$\displaystyle \pmb \Lambda=\begin{bmatrix}1&0 \\ 0&\lambda\end{bmatrix}$$
+# 
+# and as this is diagonal when raised to the $n^{th}$ power becomes
+# 
+# $$\displaystyle \pmb \Lambda^n=\begin{bmatrix}1&0 \\ 0&\lambda^n \end{bmatrix}$$
+# 
+# The eigenvectors are 
+# 
+# $$\displaystyle \pmb X=\begin{bmatrix}b/a &1\\-1&1\end{bmatrix}$$
+# 
+# and using eqn 44 (below) then to raise to power $n$ the equation is 
+# 
+# $$\displaystyle \pmb X \pmb \Lambda^n \pmb X^{-1}=\begin{bmatrix}1 &-a/b\\1&1\end{bmatrix}\begin{bmatrix}1&0 \\ 0&\lambda^n\end{bmatrix} \begin{bmatrix}b&a\\-b&b\end{bmatrix}\frac{1}{a+b}$$
+# 
+# At equilibrium $n\to \infty$ and as $\lambda <1$ this makes $\lambda^n \to 0$ and the matrix product becomes
+# 
+# $$\displaystyle \begin{align}\pmb X \pmb \Lambda^\infty \pmb X^{-1}&=\begin{bmatrix}1 &-a/b\\1&1\end{bmatrix}\begin{bmatrix}1&0 \\ 0&0\end{bmatrix} \begin{bmatrix}b&a\\-b&b\end{bmatrix}\frac{1}{a+b}\\&=\frac{1}{a+b}\begin{bmatrix} b&a\\b&a\end{bmatrix}\\& = \frac{1}{a+b}\begin{bmatrix}1\\1\end{bmatrix}\begin{bmatrix}b&a\end{bmatrix}\equiv \pmb 1 \pmb \pi \end{align}$$
+# 
+# which means that $\pi_0=b/(a+b)$ and $\pi_1=a/(a+b)$ as was found above. In general if an equilibrium distribution exists then $\pmb 1$ is a unit column vector and $\pmb \pi$ the equilibrium distribution. See Coleman 'Stochastic Process' publ. George Allen & Unwin 1974, on which this and the next problem is based, and includes many others involving Markov Chains.
+
+# 
+# ### **(ii) A rat in a maze.**
+# 
+# A rat is put into the maze shown below. At each time step it changes from one 'room' to another choosing at random which door to take. The transition matrix from time $n\to n+1$ is constructed by looking at the maze and making sure that the sum of the probabilities in each row add to one. In a room with one door the probability should be $1$ as only one exit exists, with three exits the probability of each is $1/3$. The probabilities of each row add to unity so that from room $1$ the rats has three choices, and the row in the matrix shows $1/3$ probability each to rooms $0,\; 2,\;4$ as shown. From these probabilities the long time population can be obtained, but we can say what is likely to happen and that is that rooms $2,\;3,\;5$ will have the smallest populations because the probability of entering is $1/2$ but of leaving it is $1$. Naturally after a  long time the chance on average of finding a rat in these rooms is small but not zero.
+# 
+# ![Drawing](matrices-fig55c.png)
+# 
+# Figure 55c. Left shows the maze with doors to other rooms. Right. The transition matrix.
+# ______________________________
+# 
+# The long time calculation is shown below where Sympy is used to solve the simultaneous equations 41c. The results show that room $1$ has the greatest average population and $2,3,5$ the least as explained. The similarity matrix approach could also be used in this case and is shown below.
+
+# In[7]:
+
+
+# Rat in a maze, long time (equilibrium) calculation solved using Sympy.
+# notice that the equations are all made equal to zero i.e. 1 = p0+p1+p2+p3+p4+p5 
+# becomes 1-p0-p1-p2-p3-p4-p5
+
+p0,p1,p2,p3,p4,p5 = symbols('p0,p1,p2,p3,p4,p5')
+
+eqns=[ p0 - p1/3 - p3,\
+       p1 - p0/2 - p2 - p4/2,\
+       p2 - p1/3,\
+       p3 - p0/2,\
+       p4 - p1/3 - p5,\
+       p5 - p4/2,\
+       1 - p0 - p1 - p2 - p3 - p4 - p5 ]
+solve(eqns)                              # solve simultaneous equations
+
+
+# The calculation using the Similarity transform is shown below. The resulting values are the same  as $p0$ to $p5$ in the previous line, when normalised to the same total value.
+
+# In[8]:
+
+
+# Rat in a maze equilibrium solved by a matrix method.
+M = np.array([[0,  1/2, 0,  1/2,    0,   0 ],\
+              [1/3, 0,  1/3,  0,    1/3, 0 ],\
+              [0,  1,   0,    0,    0,   0 ],\
+              [1,  0,   0,    0,    0,   0 ],\
+              [0,  1/2, 0,    0,    0,  1/2],\
+              [0,  0,   0,    0,    1,   0 ]])
+
+L = np.zeros((6,6),dtype = float)
+evals,evecs = LA.eig(np.transpose(M) )       # transpose as we right multply by column vector q below
+for i in range(6):
+    L[i,i] = evals[i]**15                    # diagonal matrix raised to power 15 or any positive number
+    
+q = np.array([1,1,1,1,1,1] )                 # initial values
+
+Pi = evecs @ L @ LA.inv(evecs) @ q           # Similarity transform times initial values
+mx = sum(Pi)
+print( np.array2string(Pi/mx, precision = 3) ) 
+
+
+# ### **(iii) A first order reaction $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$**
 # 
 # If the reaction is $\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ the transition matrix is 
 # 
@@ -450,7 +563,7 @@ plt.show()
 # 
 # and this is shown next.
 
-# In[7]:
+# In[9]:
 
 
 tau = 1e-9                 # set time to make rateconsstants into probabilities
@@ -460,9 +573,6 @@ k21 = 5e6*tau
 TT = np.array([[ 1 - k12, k12 ],[ k21, 1 - k21 ] ] )  #  transfer matrix
 T  = np.transpose(TT)
 p  = np.array([1,0.25])                               # initial values of A and B
-
-#evals,evecs = LA.eig(T)           # get eigenvecs for equilib amount
-#plt.axhline((A[0]+B[0])*evecs[0,1]/(evecs[0,1]+evecs[1,1]),linewidth=0.5,color='grey') # plot long time A
 
 n = 150                           # number of points
 A = np.zeros(n,dtype=float)       # array to hold calculated values
@@ -483,25 +593,27 @@ plt.xlim([0,n])
 plt.ylim([0,A[0]+B[0]+0.1])
 plt.ylabel('Populations')
 plt.xlabel('time /'+r'$\tau$')
+plt.axhline(((p[0]+p[1])*0.889),linewidth=0.2,color='grey')
 plt.text(27, A[25],'A')
 plt.show()
 
 
 # It is clear even before doing the calculation that $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ will come to a steady state at sufficiently long time. This can be found by assuming that $P_\infty=\pmb T^TP_\infty$ which is in effect an eigenvalue-eigenvector equation with eigenvalues $E=[1,1]^T$ of unity, $\pmb T^TP_\infty=EP_{\infty}$. The normalised eigenvectors are obtained from matrix $T$ and are calculated as
 
-# In[8]:
+# In[10]:
 
 
-f01 = np.array([[0.25,0.05],[0.75,0.95]])
+#f01 = np.array([[0.25,0.05],[0.75,0.95]])
 evals,evecs = LA.eig(T)
 evecs
+0.1240/(0.1240+0.9923),0.9923/(0.124+0.9923)
 
 
-# The first eigenvector adds to zero and is ignored, the second is $[v_a,v_B]^T=[0.1240, 0.9923]^T$ and the signs can be ignored as they are both the same. The long time concentration of A and B are the fractions of the total amount,
+# The first eigenvector adds to zero and is ignored, the second is $[v_a,v_B]^T=[0.1240, 0.9923]^T$ and the signs can be ignored as they are both the same. The long time concentration of A and B are the fractions of the total amount present, viz,
 # 
-# $$\displaystyle A_\infty=(A_0+B_0)\frac{v_a}{(v_a+v_b)}=0.896,\qquad B_\infty=(A_0+B_0)\frac{v_b}{(v_a+v_b)}$$ 
+# $$\displaystyle A_\infty=(A_0+B_0)\frac{v_b}{(v_a+v_b)}=0.889(A_0+B_0),\qquad B_\infty=(A_0+B_0)\frac{v_a}{(v_a+v_b)}$$ 
 # 
-# otherwise B is easily found since $A_0+B_0=A_\infty+B_\infty$.
+# otherwise B is easily found since at all times $A_0+B_0=A_\infty+B_\infty$. The amount $A_\infty$ is shown in the plot.  In part(i) where equilibrium is considered it is shown that at equilibrium the fractional amounts are also given by  $k_{12}/(k_{12}+k_{21})$ and $k_{21}/(k_{12}+k_{21})$.
 # 
 # ### **(ii) A second order reaction $A +B \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} C$**
 # 
@@ -511,11 +623,11 @@ evecs
 # 
 # where, as above, the time increment $\tau$ is used to change the rate constants into probabilities and $[A]_m,[B]_m$ are the concentrations that exist at the $m^{th}$ time increment. The populations are calculated by updating $[A]$ and $[B]$ in the transition matrix at each time step. The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from $n$ of them is $\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}$ and when $n$ is very large this is $n^2/2$ to a very good approximation. The probability is a fraction of the total which is $\displaystyle \frac{n^2}{2n} =\frac{n}{2}$. The term in the transfer matrix is therefore  $\displaystyle \frac{k}{2}\tau n$ where the rate constant is $k$. The calculation is shown next. 
 
-# In[9]:
+# In[11]:
 
 
-tau = 1e-9                 # set time to make rate constants into probabilities
-k12 = 4e7*tau              # choose some rate constants
+tau = 1e-9                        # set time to make rate constants into probabilities
+k12 = 4e7*tau                     # choose some rate constants
 k21 = 1e7*tau              
 p  = np.array([1,1,0])            # initial values of A and B, C=0
 
@@ -561,7 +673,7 @@ plt.show()
 # 
 # where $A,B,C$ are used to represent the concentrations. If an amount $x$ reacts then $A=A_0-x, B=B_0-x, C=C_0+x$ making
 # 
-# $$\displaystyle \begin{align}\frac{dx}{dt}&=k_1(A_0-x)(B_0-x)+k_2(C_0+x)\\&=k_1A_0B_0-k_2C_0-k_1(A_0+B_0+k_2)x+k_1x^2\end{align}$$
+# $$\displaystyle \begin{align}\frac{dx}{dt}&=k_1(A_0-x)(B_0-x)-k_2(C_0+x)\\&=k_1A_0B_0-k_2C_0-(k_2+k_1(A_0+B_0))x+k_1x^2\end{align}$$
 # 
 # On integrating this equation has the form
 # 
@@ -649,7 +761,7 @@ plt.show()
 # 
 # $$\displaystyle \pmb{M}^5=\frac{1}{9}\begin{bmatrix}-2& 5 \\1&2 \end{bmatrix}\begin{bmatrix} -7 & 0 \\ 0 & 2\end{bmatrix}^5\begin{bmatrix}-2& 5 \\1&2 \end{bmatrix}= \begin{bmatrix}-7452 & 18710\\ 3472 & -9323\end{bmatrix}$$
 
-# In[10]:
+# In[12]:
 
 
 M, Lambda = symbols('M, Lambda')
@@ -658,14 +770,14 @@ evecs,evals = M.diagonalize()
 M, evecs, evals
 
 
-# In[11]:
+# In[13]:
 
 
 Lambda = evecs.inv()* M *evecs    # eigenvalues 
 Lambda
 
 
-# In[12]:
+# In[14]:
 
 
 M5 = evecs*Lambda**5*evecs.inv()  # M^5 
@@ -674,7 +786,7 @@ M5
 
 # The same calculation can be done using numpy
 
-# In[13]:
+# In[15]:
 
 
 m = np.array([[-2,10],[2,-3]])
@@ -745,7 +857,7 @@ m5
 # 
 # The steps are given in the next python/Sympy calculation.
 
-# In[14]:
+# In[16]:
 
 
 s, sigma, lambda1, lambda2, N = symbols('s, sigma, lambda1, lambda2, N')
@@ -757,7 +869,7 @@ evecs,evals
 
 # Substituting for the eigenvalues and simplifying these matrices gives,
 
-# In[15]:
+# In[17]:
 
 
 Lambda =   Matrix( [ [lambda1,0], [0,lambda2] ] ) 
@@ -765,20 +877,20 @@ X = Matrix( [ [1/(lambda1-1), 1/(lambda2-1)], [1,1] ])  # X matrix, and its inve
 X
 
 
-# In[16]:
+# In[18]:
 
 
 # X.inv()    # invert matrix, remove hash to see this
 
 
-# In[17]:
+# In[19]:
 
 
 MN = X * Lambda**N* X.inv()   # raised to Nth power
 simplify(MN)
 
 
-# In[18]:
+# In[20]:
 
 
 Z = Matrix([[1,1]])*MN*Matrix([[1],[0]])

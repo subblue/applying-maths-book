@@ -1523,9 +1523,39 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation-of-one-dimensional-diffusion-brownian-motion">
-   3.3 Simulation of one-dimensional diffusion, Brownian motion
+  <a class="reference internal nav-link" href="#simulation-of-one-dimensional-diffusion-brownian-motion-ehrenfest-diffusion">
+   3.3 Simulation of one-dimensional diffusion. Brownian motion &amp;  Ehrenfest Diffusion
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-brownian-motion">
+     <strong>
+      (i) Brownian motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-the-ehrenfeld-diffusion-problem-or-two-dogs-and-fleas">
+     <strong>
+      (ii) The Ehrenfeld Diffusion problem or Two Dogs and Fleas
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation-time-taken-to-reach-equilibrium">
+     <strong>
+      Simulation. Time taken to reach equilibrium
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recurrence">
+     <strong>
+      Recurrence
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reacting-molecules">
@@ -1648,9 +1678,39 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation-of-one-dimensional-diffusion-brownian-motion">
-   3.3 Simulation of one-dimensional diffusion, Brownian motion
+  <a class="reference internal nav-link" href="#simulation-of-one-dimensional-diffusion-brownian-motion-ehrenfest-diffusion">
+   3.3 Simulation of one-dimensional diffusion. Brownian motion &amp;  Ehrenfest Diffusion
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-brownian-motion">
+     <strong>
+      (i) Brownian motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-the-ehrenfeld-diffusion-problem-or-two-dogs-and-fleas">
+     <strong>
+      (ii) The Ehrenfeld Diffusion problem or Two Dogs and Fleas
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation-time-taken-to-reach-equilibrium">
+     <strong>
+      Simulation. Time taken to reach equilibrium
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recurrence">
+     <strong>
+      Recurrence
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reacting-molecules">
@@ -1806,8 +1866,10 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 \hline
 \end{array}\end{split}\]</div>
 </section>
-<section id="simulation-of-one-dimensional-diffusion-brownian-motion">
-<h2>3.3 Simulation of one-dimensional diffusion, Brownian motion<a class="headerlink" href="#simulation-of-one-dimensional-diffusion-brownian-motion" title="Permalink to this headline">#</a></h2>
+<section id="simulation-of-one-dimensional-diffusion-brownian-motion-ehrenfest-diffusion">
+<h2>3.3 Simulation of one-dimensional diffusion. Brownian motion &amp;  Ehrenfest Diffusion<a class="headerlink" href="#simulation-of-one-dimensional-diffusion-brownian-motion-ehrenfest-diffusion" title="Permalink to this headline">#</a></h2>
+<section id="i-brownian-motion">
+<h3><strong>(i) Brownian motion</strong><a class="headerlink" href="#i-brownian-motion" title="Permalink to this headline">#</a></h3>
 <p>In diffusion, time, and distance are linked by Fick’s second law; Chapter 10.6.2 (iv). However, in a simulation, this equation is not used and the position where the walk ends after a fixed number of total jumps is calculated. This is repeated many times and a histogram made of the final positions. To make the walk last a longer time, a larger total number of jumps is taken because each jump is supposed to take an equal time. In the Monte Carlo simulation, the total number of steps, s, must be decided beforehand. The walk must start at only one place, say <span class="math notranslate nohighlight">\(x_0\)</span>, and as there is an equal chance of moving to the right or left, the starting place of the walk will also be the mean value <span class="math notranslate nohighlight">\(\langle x_0 \rangle\)</span>. The root mean square distance the walker moves in taking <span class="math notranslate nohighlight">\(s\)</span> steps, is <span class="math notranslate nohighlight">\(\sqrt{s}\)</span>.</p>
 <p>Using a random number generator in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span> to determine the direction of each step, the position where the walker ends after completing the total number of steps is recorded. This value is stored in an array. It is important to remember to calculate the result only where the walker stops after the total number of steps is completed, and to record this value. To prevent the walker leaving either end of the array used to hold the final positions, we could make the array many times   s so the walk cannot reach the end within the number of allotted steps. Alternatively, and more reliably, we can check when the ends are reached, but this will make the calculation a little slower. Finally, the calculation is repeated to improve the statistics.</p>
 <p>Start the walk at the centre of the array prob, by making its length an odd number n, then the centre is at <span class="math notranslate nohighlight">\((n - 1)/2\)</span>. If the walk consists of an even number of steps, then the walker must end up an even number of positions away from the starting point, <span class="math notranslate nohighlight">\(0,\; \pm 2,\; \pm 4\)</span>, and so forth. Stored in an array, these steps leave every odd-numbered array index as zero. To avoid having a graph with every other point as zero, the change in the number of positions away from the starting point can be divided by two, because it is an even number, and then added to the index of the starting point <span class="math notranslate nohighlight">\((n - 1)/2\)</span>. The variable m in the code below is the number of jumps away from the start. The algorithm below only works, as written, for an even number of steps in a walk, or as <span class="math notranslate nohighlight">\(2n\)</span> steps for odd-numbered <span class="math notranslate nohighlight">\(n\)</span>. To calculate the distance moved, a second array must contain only even numbers with the value zero at the starting point index <span class="math notranslate nohighlight">\((n - 1)/2\)</span>; this is array <span class="math notranslate nohighlight">\(\mathtt{xdata}\)</span>. Each jump is taken to be one time step; therefore, the number of jumps is equivalent to time.</p>
@@ -1880,6 +1942,121 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <p>Figure 10a. One trajectory of a 2D random walk on a grid, where each step is randomly <span class="math notranslate nohighlight">\(\pm1\)</span> or zero jump in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Many such trajectories would produce a 2D gaussian profile. The color roughly indicates the time taken by the walk, starting with green and ending in red.</p>
 </section>
 <hr class="docutils" />
+<section id="ii-the-ehrenfeld-diffusion-problem-or-two-dogs-and-fleas">
+<h3><strong>(ii) The Ehrenfeld Diffusion problem or Two Dogs and Fleas</strong><a class="headerlink" href="#ii-the-ehrenfeld-diffusion-problem-or-two-dogs-and-fleas" title="Permalink to this headline">#</a></h3>
+<p>The Ehrenfest model is used to describe the self-diffusion of a gas between two bulbs A and B of equal volume by means of a single pore in a semi-permeable membrane separating them. The volumes remain fixed and isolated, thus the temperature is constant and no heat exchanged with the surroundings and no work is done. The simulation calculates, at each  time step, the chance of just two molecules travelling from volume A to B or vice versa so that the number in each volume remains the same. The particles (molecules) are ‘labelled’ so that the change in their numbers can be followed. The process is stochastic and has been described as similar to the transfer of fleas from one dog to another. Although the molecules are supposed to be identical nevertheless they have to be labelled and so identified for the purposes of calculation.  In a real experiment we would have to use molecules as identical in their properties as possible, for example, ortho- and para-hydrogen, or a gas such as SF<span class="math notranslate nohighlight">\(_6\)</span> with different S isotopes such that the mass is only changed by <span class="math notranslate nohighlight">\(1\)</span>% or less. Diffusion will effectively be the same for every molecule but these can be identified in an experiment, and this means that this model has at least a reasonable chance of being able to be confirmed by experiment.</p>
+<p>If molecules of a given type are all initially in one volume, and an equal number of others in the second volume once diffusion is allowed to start, say by removing a partition, after some time the molecules will both be spread more or less evenly between the two volumes. However, by the same arguments that says that they will spread one way they could also be expected to return, i.e. there is clearly a chance that after a time all the molecules that were initially in volume A will return to A again, and repeatedly do so, but this breaks the second law of thermodynamics and more importantly goes against experience of how a large volume of gas behaves. If all molecules of one type are in A, initially doubling their volume by diffusing into B increases their entropy by <span class="math notranslate nohighlight">\(R\ln(2)\)</span> and, clearly, if they are subsequently all back in A again then the entropy is reduced by the same amount. This <em>recurrence</em> effect or rather the lack of observing it in normal experiments provided Boltzmann with considerable difficulties in trying to explain thermodynamics in terms of the kinetic theory. This was because Poincare, treating the molecules as a dynamical system, showed unequivocally that the initial state will be reformed to an arbitrary degree of accuracy, i.e. one should expect to see all the molecules return to their original state. However, this is never observed in normal life, the gas in a room does not suddenly leave a void here and there. Similarly, a drop of a dye when added to a solution will diffuse to fill all the volume and then later on one never finds it has reformed into the initial drop. These things should and could happen but are not observed and this is why this nearly wrecked Boltzmann’s work. It was mainly through the work of Ehrenfest and Smoluchowski that the situation was resolved, and the answer to not observing recurrence, was in Boltzmann’s words, ‘you wait!’. With the Ehrenfest model the time you have to wait for <span class="math notranslate nohighlight">\(n\)</span> molecules to return to their original state after starting to diffuse is <span class="math notranslate nohighlight">\(\sim 2^{2n}\)</span>, which looks quite innocuous but if you work it out even for as few as <span class="math notranslate nohighlight">\(n=1000\)</span> molecules it is a time longer than the age of the universe for all reasonable transitions lasting fractions of a second. Hence you wait, and kinetic theory as described by Boltzmann and Poincare’s objection are reconciled. The recurrence takes so long because there is an overwhelmingly large number of initial states and returning to that one is therefore highly unlikely. This also reconciles classical thermodynamics and the statistical mechanics interpretations of entropy, and shows that entropy is a statistical law reliant on there being vast numbers of particles involved. With the advent of experiments to observe the behaviour of single molecules we should expect to see that the second law can be broken but only in special circumstances.</p>
+<p>Recurrence in a dynamical system can be observed in the dynamics of the excited state of molecules when excited by a very short, picosecond or femtosecond laser pulse. The pulse has a wise spectrum as it is of short duration and can therefore excite several energy levels which then come into and go out of phase, the rotational and vibrational recurrences being seen as the wavefunctions propagates, see Chapter 5-9.</p>
+</section>
+<section id="simulation-time-taken-to-reach-equilibrium">
+<h3><strong>Simulation. Time taken to reach equilibrium</strong><a class="headerlink" href="#simulation-time-taken-to-reach-equilibrium" title="Permalink to this headline">#</a></h3>
+<p>To simulate diffusion between the two volumes we start with <span class="math notranslate nohighlight">\(n\)</span> white balls in A (which we will call volume 1) and label these as <span class="math notranslate nohighlight">\(w_1\)</span> and <span class="math notranslate nohighlight">\(n\)</span> black ones in B (volume 2) as <span class="math notranslate nohighlight">\(b_2\)</span> and in each step of the process three choices are made to decide what happens. Two random numbers, <span class="math notranslate nohighlight">\(r_1,r_2\)</span>, are chosen between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> so that they cover the range of a probability. Next, calculate the probability of transfer for type w particles which is <span class="math notranslate nohighlight">\(p_w = w_1/n\)</span>, and for b particles <span class="math notranslate nohighlight">\(p_b = b_2/n\)</span>. If both the random numbers (<span class="math notranslate nohighlight">\(r_1,r_2\)</span> fig 10b) are larger than these probabilities we increase by one the number of <span class="math notranslate nohighlight">\(w_1\)</span> in volume 1 and <span class="math notranslate nohighlight">\(b_2\)</span> in volume 2 because a white ball was selected from volume 2 and a black one from volume 1.  Similarly,  decrease by one the molecule numbers of <span class="math notranslate nohighlight">\(w_1\)</span> and <span class="math notranslate nohighlight">\(b_2\)</span> if <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> are both less than their respective probabilities (<span class="math notranslate nohighlight">\(p_w,p_b\)</span>) meaning that a black ball was selected from volume 2 and a white one from volume 1. Any other choice replaces white with white and black with black so there is no change, so do nothing, see fig 10b. The number <span class="math notranslate nohighlight">\(w_1\)</span> and <span class="math notranslate nohighlight">\(b_2\)</span> in each volume is recorded and the process repeated. Figure 10c shows the outcome where the number of <span class="math notranslate nohighlight">\(w_1\)</span> is plotted vs. the number of steps taken.  Note that the molecule are identical in each bulb but we must label them as <span class="math notranslate nohighlight">\(w\)</span> or <span class="math notranslate nohighlight">\(b\)</span> just for housekeeping during the calculation. The number of steps taken is equivalent to time.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig10b.png" /></p>
+<p>Figure 10b. Diagram to show how choices are made when particles move from one volume to another. <span class="math notranslate nohighlight">\(r_1, r_2\)</span> are the two random numbers taken from a uniform distribution between zero and one, <span class="math notranslate nohighlight">\(p_A = w_1/n,p_B=b_2/n\)</span> are the probabilities of transfer from volume 1 and from volume 2 and are updated at each step.</p>
+<hr class="docutils" />
+<p>The algorithm works by checking which of the four cases shown in fig 10b is chosen and the changes to <span class="math notranslate nohighlight">\(w_1,b_2\)</span> are made accordingly. The number remaining in volume 1 is plotted vs. the number of steps and is shown in fig 10c for two different numbers of molecules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ehrenfest Simulation.  </span>
+<span class="c1"># Based on algorithm by P. Nahin,&#39;Duelling Idiots and other Probability Puzzles&#39; publ. Princeton University Press.</span>
+<span class="c1"># n = same number on each side</span>
+<span class="c1"># white in volume 1, black in volume 2</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">500</span>                                 <span class="c1"># number of molecules in each volume</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">500</span><span class="o">*</span><span class="n">n</span>                           <span class="c1"># number of steps taken</span>
+<span class="n">fract</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>     <span class="c1"># array to save results</span>
+<span class="n">rng</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>         <span class="c1"># initialise random number generator  </span>
+
+<span class="k">def</span> <span class="nf">sim</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                             <span class="c1"># Ehrenfeld simulation algorithm</span>
+    <span class="n">pw1</span> <span class="o">=</span> <span class="mi">1</span>                             <span class="c1"># prob of white in volume 1</span>
+    <span class="n">pb2</span> <span class="o">=</span> <span class="mi">1</span>                             <span class="c1"># prob of black in volume 2</span>
+    
+    <span class="n">w1</span> <span class="o">=</span> <span class="n">n</span>                              <span class="c1"># number of w in volume 1 is n initially</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">n</span>                              <span class="c1"># number of b in volume 2 is n initially</span>
+    
+    <span class="n">fract</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                        <span class="c1"># initial value</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">steps</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>          <span class="c1"># loop starting at index 1</span>
+        <span class="n">R1</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>               <span class="c1"># get random number 0 to 1 </span>
+        <span class="n">R2</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">R1</span> <span class="o">&lt;=</span> <span class="n">pw1</span> <span class="ow">and</span> <span class="n">R2</span> <span class="o">&lt;=</span> <span class="n">pb2</span><span class="p">:</span>     <span class="c1"># swap. w1 and b2 chosen top right hand image in fig 10b   </span>
+            <span class="n">b2</span> <span class="o">=</span> <span class="n">b2</span> <span class="o">-</span> <span class="mi">1</span>                 <span class="c1"># decrease black in vol 2</span>
+            <span class="n">w1</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">-</span> <span class="mi">1</span>                 <span class="c1"># decrease white in vol 1</span>
+        <span class="k">elif</span> <span class="n">R1</span> <span class="o">&gt;</span> <span class="n">pw1</span> <span class="ow">and</span> <span class="n">R2</span> <span class="o">&gt;</span> <span class="n">pb2</span><span class="p">:</span>     <span class="c1"># swap. b1 and w2 chosen </span>
+            <span class="n">b2</span> <span class="o">=</span> <span class="n">b2</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">w1</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># any other combination just swaps w to w, b to b</span>
+        <span class="n">pw1</span> <span class="o">=</span> <span class="n">w1</span><span class="o">/</span><span class="n">n</span>                      <span class="c1"># update probability of white in vol 1</span>
+        <span class="n">pb2</span> <span class="o">=</span> <span class="n">b2</span><span class="o">/</span><span class="n">n</span>
+        <span class="n">fract</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">pw1</span>                   <span class="c1"># save result</span>
+    <span class="k">return</span> <span class="n">fract</span>
+
+<span class="c1"># plot result</span>
+<span class="c1">#t = np.linspace(0,steps,steps)        </span>
+<span class="c1">#plt.plot(t,sim(n),linewidth=1,color=&#39;red&#39;,zorder=10)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig10c.png" /></p>
+<p>Figure 10c. The Ehrenfest simulation when <span class="math notranslate nohighlight">\(n=50\)</span> and <span class="math notranslate nohighlight">\(500\)</span>. The normalised number of molecules is plotted, <span class="math notranslate nohighlight">\(w_1/n\)</span>. The smooth curves are the predicted behaviour <span class="math notranslate nohighlight">\(w_1/n=(1+e^{-2t/n})/2\)</span> as described in the text.</p>
+<hr class="docutils" />
+<p>Figure 10c shows clearly that the number of white particles in volume 1 (or equivalently black ones in 2) produces a decay that is far noisier when there are fewer particles involved as is expected intuitively; the standard deviation of the noise is typically reduced as <span class="math notranslate nohighlight">\(\sqrt{n}/2\)</span> which is approximately what the noise on these plots show over long times. The lifetime by which equilibrium is reached, <span class="math notranslate nohighlight">\(w_1/n=0.5\)</span> is bigger when the number of particles is larger, also as expected. The smooth decay curves are the function <span class="math notranslate nohighlight">\(w_1/n=(1+e^{-2t/n})/2\)</span>. Empirically, by fitting the simulation made with different initial numbers <span class="math notranslate nohighlight">\(n\)</span> the lifetime <span class="math notranslate nohighlight">\(\tau\)</span> is clearly very close to <span class="math notranslate nohighlight">\(n/2\)</span> which is a good approximation to the exact value of <span class="math notranslate nohighlight">\(\tau=-1/\ln(1-2/n)\)</span> when <span class="math notranslate nohighlight">\(2/n \lt 1\)</span> as shown next.</p>
+<p>The probabilities of reducing the number of molecules from <span class="math notranslate nohighlight">\(n\to n-1\)</span> is <span class="math notranslate nohighlight">\(n_t/n\)</span>, and therefore of increasing is <span class="math notranslate nohighlight">\(1-n_t/n\)</span>. The number of transfers from time <span class="math notranslate nohighlight">\(t \to t+1\)</span> is by definition the number already present plus the chance of increasing by one and of decreasing by one and has the recursive relation,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  n_{t+1} =n_t +\left(1-\frac{n_t}{n}\right)-\frac{n_t}{n}=\left(1-\frac{2}{n}\right)n_t+1\]</div>
+<p>in the next time period the process is repeated since there is a chance of increasing or decreasing</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   n_{t+2} =\left(1-\frac{2}{n}\right) n_{t+1}+1 \]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle   n_{t+3} =\left(1-\frac{2}{n}\right) n_{t+2}+1 \]</div>
+<p>and so on with the next values depending on the previous one obtains by substituting, for example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   n_{t+2} =\left(1-\frac{2}{n}\right)\left(\left(1-\frac{2}{n}\right) n_t+1\right)+1 \]</div>
+<p>If we start with <span class="math notranslate nohighlight">\(t=0\)</span> with <span class="math notranslate nohighlight">\(n_0\)</span> molecules then at <span class="math notranslate nohighlight">\(t\)</span> events and after much simplifying we get</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   n_{t}  = \frac{n}{2}+\left(1-\frac{2}{n}\right)^t\left(n_0-\frac{n}{2}\right)\]</div>
+<p>The first few substitutions are easily found using Sympy as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span><span class="n">n0</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n3</span><span class="p">,</span><span class="n">n4</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n,n0,n1,n2,n3,n4&#39;</span><span class="p">)</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">n0</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">n4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">n3</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">n4</span><span class="p">),</span><span class="n">n0</span><span class="p">)</span>
+<span class="n">ans</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/monte-carlo-CC_9_0.png" src="../_images/monte-carlo-CC_9_0.png" />
+</div>
+</div>
+<p>By induction the general case <span class="math notranslate nohighlight">\( n_t\)</span> can be found as given above. It is useful in the derivation to notice how the terms outside the bracket in the Sympy result are related to those inside. In this derivation <span class="math notranslate nohighlight">\(t\)</span> is a discrete number but if we associate this with time and these time steps are made very small we may consider <span class="math notranslate nohighlight">\(t\)</span> as a variable and then we can write the equation as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   n_{t}  = \frac{n}{2}+  \exp\left(t\ln\left(1-\frac{2}{n}\right)\right)  \left(n_0-\frac{n}{2}\right)\]</div>
+<p>which can be simplified because <span class="math notranslate nohighlight">\(2/n\lt 1\)</span> and the log can be expanded as a series giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  n_{t}  = \frac{n}{2}+  e^{-2t/n}  \left(n_0-\frac{n}{2}\right)\]</div>
+<p>which gives a lifetime of <span class="math notranslate nohighlight">\(\tau =n/2\)</span> as found empirically. If <span class="math notranslate nohighlight">\(n_0=n\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   n_{t}  = \frac{n}{2}(1+  e^{-2t/n}) \]</div>
+<p>which is the curve plotted in fig 10c. At long times the average value is <span class="math notranslate nohighlight">\(n/2\)</span> also as observed in the simulation.</p>
+</section>
+<section id="recurrence">
+<h3><strong>Recurrence</strong><a class="headerlink" href="#recurrence" title="Permalink to this headline">#</a></h3>
+<p>To calculate recurrence a very long sequence of steps is needed, typically several million when <span class="math notranslate nohighlight">\(n=10\)</span>, because recurrence becomes increasingly rare as <span class="math notranslate nohighlight">\(n\)</span> increases. The number of these is recorded when the initial state is re-formed. The <em>gaps</em> between these numbers is now saved and a histogram of them produces an exponential decay which shows that the recurrence times are exponentially distributed, <span class="math notranslate nohighlight">\(c \sim e^{-t/\tau_n}\)</span> where ‘c’ represents the number of gaps with a given value, i.e. the histogram and <span class="math notranslate nohighlight">\(\tau_n\)</span> the decay lifetime for <span class="math notranslate nohighlight">\(n\)</span> molecules. A semi-log plot of the counts has values that closely follow the behaviour <span class="math notranslate nohighlight">\(y=2^{2n}\)</span> as shown in figure 10d.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig10d.png" /></p>
+<p>Figure 10d. Left. The histogram of time gaps when the random walk recurs. The lifetime, in this case where <span class="math notranslate nohighlight">\(n=5\)</span>, is <span class="math notranslate nohighlight">\(270\)</span> steps and has the equation counts <span class="math notranslate nohighlight">\(\sim e^{-t/270}\)</span>. Right. This plot shows log10 of the lifetimes <span class="math notranslate nohighlight">\(\tau\)</span> for the decays of the type shown on the left <em>vs</em>. <span class="math notranslate nohighlight">\(n\)</span>, and the line for <span class="math notranslate nohighlight">\(2^{2n}\)</span>. The points much greater than <span class="math notranslate nohighlight">\(10\)</span> take a very long time to accumulate enough points to form a measureable decay as shown in the left this figure, with <span class="math notranslate nohighlight">\(n=10\)</span> typically only <span class="math notranslate nohighlight">\(\approx 30\)</span> recurrences occur after five million steps.</p>
+<hr class="docutils" />
+<p>The recurrence time has been calculated analytically by M. Kac (American Mathematical Monthly, v54, p369, 1947) and if a state with <span class="math notranslate nohighlight">\(m\)</span> white balls occurs the number of steps needed to recur is given, on average, by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{(n+m)!(n-m)!}{(2n)!}2^{2n}\]</div>
+<p>When <span class="math notranslate nohighlight">\(n \gt m\)</span> the recurrence time is short as the ratio of factorials is <span class="math notranslate nohighlight">\( \ll 1\)</span>. When <span class="math notranslate nohighlight">\(m \approx n\)</span> the factorials evaluate to a number close to one and the recurrence time is maximised and is <span class="math notranslate nohighlight">\(\sim 2^{2n}\)</span> as found by our simulation. Smoluchowski was probably first to understand that if one starts with a large number of molecules the recurrence time is so long that the process is for all practical purposes irreversible, but mathematically its not, but as the time needed soon becomes far, far longer than the age of the universe this is irrelevant.</p>
+</section>
+</section>
 <section id="reacting-molecules">
 <h2>3.4 Reacting molecules.<a class="headerlink" href="#reacting-molecules" title="Permalink to this headline">#</a></h2>
 <section id="i-reaction-a-to-b">

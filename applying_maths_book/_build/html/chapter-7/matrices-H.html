@@ -1591,9 +1591,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b">
+    <a class="reference internal nav-link" href="#i-equilibrium-distribution">
      <strong>
-      (i) A first order reaction
+      (i) Equilibrium distribution
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-a-rat-in-a-maze">
+     <strong>
+      (ii) A rat in a maze.
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b">
+     <strong>
+      (iii) A first order reaction
       <span class="math notranslate nohighlight">
        \(A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B\)
       </span>
@@ -1729,9 +1743,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b">
+    <a class="reference internal nav-link" href="#i-equilibrium-distribution">
      <strong>
-      (i) A first order reaction
+      (i) Equilibrium distribution
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-a-rat-in-a-maze">
+     <strong>
+      (ii) A rat in a maze.
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b">
+     <strong>
+      (iii) A first order reaction
       <span class="math notranslate nohighlight">
        \(A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B\)
       </span>
@@ -2127,35 +2155,140 @@ of the same species. The equation we start with is <span class="math notranslate
 <section id="matrix-solutions-markov-chains-and-chemical-kinetics">
 <h2>13.4 Matrix solutions. Markov Chains and Chemical Kinetics<a class="headerlink" href="#matrix-solutions-markov-chains-and-chemical-kinetics" title="Permalink to this headline">#</a></h2>
 <p>A Markov chain is a stochastic process for predicting future behaviour based solely on the present state. These predictions are just as good as the ones that could be made knowing the process’s previous history. The ‘process’ can be one of a number of very diverse types, a sequence of chemical reactions, diffusion on a line, the ‘drunkard’s walk’, behaviour of the stock market, games such as ‘snakes and ladders’, the ‘gambler’s ruin’ or how a company competes for sales with rivals. What is required is that the transition from one position to each of the others has a certain probability and as time progresses these probabilities are entered into a transition or transfer matrix and used to predict the future state. All that is needed is a starting state and the transition matrix to be able to predict all future behaviour.</p>
-<p>The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect states and that a ‘do nothing’ or waiting probability is added to each species. The next figure gives an example of a three state system similar to that in fig 55a above.</p>
+<p>The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect states and that a ‘do nothing’ or waiting probability is added to each species, although this could be zero. The next figure gives an example of a three state system similar to that in fig 55a above.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig55b.png" /></p>
-<p>figure 55b. A scheme between three sites written as a Markov process.</p>
+<p>Figure 55b. A scheme between three sites written as a Markov process. The transition matrix for this scheme is shown below, eqn. 41b.</p>
 <hr class="docutils" />
-<p>The figure gives the probabilities of transfer from one site <span class="math notranslate nohighlight">\(i\)</span> to another <span class="math notranslate nohighlight">\(j\)</span> as <span class="math notranslate nohighlight">\(p_{i,j}\)</span> and the probability of remaining on a given site (or molecule) is <span class="math notranslate nohighlight">\(p_{ii}\)</span> although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any ‘site’, such as a product made by a company, always add up to <span class="math notranslate nohighlight">\(1\)</span> as something happens even if it just that the site remains unchanged, i.e. <span class="math notranslate nohighlight">\(p_{11}+p_{12}=1,\; p_{12}+p_{22}+p_{23}=1\)</span>, etc. these probabilities are, of course always positive, <span class="math notranslate nohighlight">\(0 \le p\le 1\)</span> , and we will initially assume that they are constant in time. If a state has only a probability of reaching it and none that leave, this is called and ‘absorbing’ site, and eventually all the population will end up here; for example in the process <span class="math notranslate nohighlight">\(A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C \)</span>, <span class="math notranslate nohighlight">\(C\)</span> is an absorbing site, or in chemical terms, the product. If the process describes chemical reactions then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur.</p>
+<p>The figure gives the probabilities of transfer from one site <span class="math notranslate nohighlight">\(i\)</span> to another <span class="math notranslate nohighlight">\(j\)</span> as <span class="math notranslate nohighlight">\(p_{i,j}\)</span> and the probability of remaining on a given site (or molecule) is <span class="math notranslate nohighlight">\(p_{ii}\)</span> although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any ‘site’, such as a product made by a company, always add up to <span class="math notranslate nohighlight">\(1\)</span> as something happens even if it just that the site remains unchanged, i.e. <span class="math notranslate nohighlight">\(p_{11}+p_{12}=1,\; p_{12}+p_{22}+p_{23}=1\)</span>, etc. these probabilities are, of course always positive, <span class="math notranslate nohighlight">\(0 \le p\le 1\)</span> , and we will initially assume that they are constant in time. Such square matrices with non-negative entries and where the row sums add up to <span class="math notranslate nohighlight">\(1\)</span> are called <em>stochastic</em> matrices. If a state has only a probability of reaching it and none that leave, this is called an ‘absorbing’ state, and eventually all the population will end up here; for example in the process <span class="math notranslate nohighlight">\(A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C \)</span>, <span class="math notranslate nohighlight">\(C\)</span> is an absorbing site, or in chemical terms, the product. If the process describes chemical reactions then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur.</p>
+<p>The <em>state space</em> is the set of possible values that the process can take, for example in a football match it will be the scores of each side that increase in time <span class="math notranslate nohighlight">\(0\to 90\)</span> mins (the parameter space) as <span class="math notranslate nohighlight">\((x,y)= 0, 1, 2, 3,\cdots\)</span> and has values as <span class="math notranslate nohighlight">\((0,0),(1,0), (0,1)\)</span> etc. with the process starting at <span class="math notranslate nohighlight">\((0,0)\)</span> and with each goal the transition is <span class="math notranslate nohighlight">\(x\to x+1\)</span> or <span class="math notranslate nohighlight">\(y\to y+1\)</span>.</p>
 <p>The initial state is defined, as a vector of populations or number of items held at each site etc., for example if only A is present initially as <span class="math notranslate nohighlight">\(A_0\)</span> then the row matrix of initial values is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P_0=\begin{bmatrix}A_0,0,0\end{bmatrix}\]</div>
-<p>and to evaluate what has changed at the next time step <span class="math notranslate nohighlight">\(t+\tau\)</span> where <span class="math notranslate nohighlight">\(\tau\)</span> is a small time increment, and <span class="math notranslate nohighlight">\(t\)</span> is some arbitrary start time which could be zero, we use the transition matrix <span class="math notranslate nohighlight">\(T\)</span> as</p>
+<p>and to evaluate what has changed at the next time-step <span class="math notranslate nohighlight">\(t+\tau\)</span> where <span class="math notranslate nohighlight">\(\tau\)</span> is a small time increment, and <span class="math notranslate nohighlight">\(t\)</span> is some arbitrary start time which could be zero and so we let <span class="math notranslate nohighlight">\(t=0\)</span>. The transition matrix <span class="math notranslate nohighlight">\(T\)</span> after one time step <span class="math notranslate nohighlight">\(\tau\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(t+\tau) = P_0\pmb T\]</div>
+\[\displaystyle P(\tau) = P_0\pmb T\]</div>
 <p>where each <em>row</em> in the transfer matrix contains all the probabilities for that site, for example in fig 55b,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle T=\begin{bmatrix}p_{11}&amp; p_{12}&amp;0\\p_{21} &amp; p_{22} &amp; p_{23}\\ p_{31}&amp; 0 &amp; p_{33} \end{bmatrix}\end{split}\]</div>
 <p>and because the probabilities in each row add to unity we can write in this case</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle T=\begin{bmatrix}1-p_{12}&amp; p_{12}&amp;0\\p_{21} &amp;1 - p_{21}-p_{23} &amp; p_{23}\\p_{31}&amp; 0 &amp; 1 - p_{31} \end{bmatrix}\end{split}\]</div>
+\[\begin{split}\displaystyle T=\begin{bmatrix}1-p_{12}&amp; p_{12}&amp;0\\p_{21} &amp;1 - p_{21}-p_{23} &amp; p_{23}\\p_{31}&amp; 0 &amp; 1 - p_{31} \end{bmatrix}\qquad\qquad\qquad\text{41b}\end{split}\]</div>
 <p>so that only the transition probabilities between species are needed. The next time step is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(t+2\tau)=P(t+\tau)\pmb T= p_0 \pmb T^2\]</div>
-<p>and generalising to <span class="math notranslate nohighlight">\(n\)</span> time steps</p>
+\[\begin{split}\displaystyle\begin{align} P(2\tau)&amp;=P(\tau)\pmb T= P_0 \pmb T^2\\
+ P(3\tau)&amp;=P(2\tau)\pmb T= P(\tau)\pmb T^2= p_0 \pmb T^3\end{align}\end{split}\]</div>
+<p>so that the <span class="math notranslate nohighlight">\(n^{th}\)</span> time can be found by multiplying the <span class="math notranslate nohighlight">\((n-1)^{th}\)</span> by the transition matrix <span class="math notranslate nohighlight">\(\pmb T\)</span> or by multiplying the first vector by <span class="math notranslate nohighlight">\(\pmb T^n\)</span> as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(t+n\tau) = p_0 \pmb T^n\]</div>
-<p>so it is necessary to either evaluate in a recursive way or calculate the <span class="math notranslate nohighlight">\(n^{th}\)</span> power of the transfer matrix.  This equation can also be written using column vectors, which is much more familiar in chemistry, and then the matrix has to be transposed and the vectors <span class="math notranslate nohighlight">\(P\)</span> are now become column vectors, i.e.</p>
+\[\displaystyle P(n\tau) = P_0 \pmb T^n\]</div>
+<p>so it is necessary to either evaluate in a repetitive way or calculate the <span class="math notranslate nohighlight">\(n^{th}\)</span> power of the transfer matrix.  This equation can also be written using column vectors, which is much more familiar in chemistry, and then the matrix has to be transposed and the vectors <span class="math notranslate nohighlight">\(P\)</span> are now become column vectors, i.e.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(t+n\tau) =  (\pmb{T}^T)^n P_0\]</div>
-<p>where superscript <span class="math notranslate nohighlight">\(T\)</span> indicates the transpose operation and we shall now always use column vectors in any calculations. The matrix can be raised to an integer power using the Similarity Transform described below, section 13.5.  The time <span class="math notranslate nohighlight">\(t\)</span> is taken to be zero in all further calculations.</p>
-<section id="i-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b">
-<h3><strong>(i) A first order reaction <span class="math notranslate nohighlight">\(A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B\)</span></strong><a class="headerlink" href="#i-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b" title="Permalink to this headline">#</a></h3>
+\[\displaystyle P(n\tau) =  (\pmb{T}^T)^n P_0\]</div>
+<p>where superscript <span class="math notranslate nohighlight">\(T\)</span> indicates the transpose operation. The matrix can be raised to an integer power using the Similarity Transform described below, section 13.5, and this is a far better way to do this than repeated matrix multiplications which can introduce numerical errors.</p>
+<section id="i-equilibrium-distribution">
+<h3><strong>(i) Equilibrium distribution</strong><a class="headerlink" href="#i-equilibrium-distribution" title="Permalink to this headline">#</a></h3>
+<p>At long times when steady state is achieved the vector of probabilities <span class="math notranslate nohighlight">\( P\)</span> is conventionally replaced by vector <span class="math notranslate nohighlight">\(\Pi\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Pi=\Pi\; T^n\]</div>
+<p>and this set of simultaneous equations solved. This can be done by making it into an eigenvalue-eigenevctor equation or, if the matrix is small as set of equations by letting <span class="math notranslate nohighlight">\(\Pi =\begin{bmatrix}\pi_0&amp;\pi_1&amp;\pi_2\cdots\end{bmatrix} \)</span> and using the equation <span class="math notranslate nohighlight">\(\pi_0+\pi_1+\pi_2\cdots=1\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}\pi_0&amp; \pi_1&amp; \pi_2\cdots\end{bmatrix}=\begin{bmatrix}\pi_0&amp; \pi_1&amp; \pi_2\cdots\end{bmatrix}\begin{bmatrix}p_{00}&amp; p_{01}\cdots\\p_{10}&amp;p_{11}\cdots\\\vdots&amp;\vdots\end{bmatrix}\end{split}\]</div>
+<p>the first two equations are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\pi_0&amp;=\pi_0p_{00}+\pi_1p_{10} +\pi_2p_{20}\cdots\\
+\pi_1&amp;=\pi_0p_{01}+\pi_1p_{11} +\pi_2p_{21}\cdots\end{align}\qquad\qquad\text{41c}\end{split}\]</div>
+<p>Consider the transition matrix for a state space of <span class="math notranslate nohighlight">\((0,1)\)</span>. The process will be a sequence of <span class="math notranslate nohighlight">\(0\)</span>’s and <span class="math notranslate nohighlight">\(1\)</span>’s and if the probability of a transition is <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span> the the transition matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb T=\begin{bmatrix}1-a&amp;a\\b&amp;1-b\end{bmatrix}, \qquad (0\le a,b\le 1)\end{split}\]</div>
+<p>When both <span class="math notranslate nohighlight">\(a=b=0\)</span> then nothing happens as time progresses because the transition matrix is the unit diagonal matrix <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix}\)</span>, where as if both are one the state changes from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span> on alternate steps</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}P(\tau)&amp;=[1,0]\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}=[0,1]\\P(2\tau)&amp;=[0,1]\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}=[1,0]\end{align}\end{split}\]</div>
+<p>and there is no equilibrium established. In the case when <span class="math notranslate nohighlight">\(a=0\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is not zero or one, or vice versa, then the states are absorbing so that when the particle reaches the next state it state there. The more interesting case is then when <span class="math notranslate nohighlight">\(0\lt a,b\lt 1\)</span>  then in the limit if equilibrium is established there will be no change in the state <span class="math notranslate nohighlight">\(P\)</span>, which, at equilibrium, we conventionally label <span class="math notranslate nohighlight">\(\Pi\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \Pi = \Pi \begin{bmatrix}1-a&amp;a\\b&amp;1-b\end{bmatrix}\end{split}\]</div>
+<p>If we let <span class="math notranslate nohighlight">\(\Pi= \begin{bmatrix} \pi_0 &amp; \pi_1 \end{bmatrix}\)</span> then the set of equations is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1=\pi_0 +\pi_1,\quad \pi_0=\pi_0(1-a)+\pi_1b, \quad \pi_1=\pi_0a +\pi_1(1-b)\]</div>
+<p>from which <span class="math notranslate nohighlight">\(\pi_0=b/(a+b),\;\pi_1=a/(a+b)\)</span> which is independent of the initial state and therefore <span class="math notranslate nohighlight">\(\pi_0,\pi_1\)</span> are the equilibrium probabilities.</p>
+<p>When the matrix is large it is easier to use the computer by finding the eigenvalues and eigenvectors, and forming a similarity matrix to raise the matrix to a power, see section 13.5(i). The eigenvalues are <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(1-a-b\)</span> and we shall need to use them as diagonals in a square matrix <span class="math notranslate nohighlight">\(\pmb\Lambda\)</span> and for simplicity letting <span class="math notranslate nohighlight">\(\lambda=1-a-b\)</span> and so <span class="math notranslate nohighlight">\(\lambda &lt;1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb \Lambda=\begin{bmatrix}1&amp;0 \\ 0&amp;\lambda\end{bmatrix}\end{split}\]</div>
+<p>and as this is diagonal when raised to the <span class="math notranslate nohighlight">\(n^{th}\)</span> power becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb \Lambda^n=\begin{bmatrix}1&amp;0 \\ 0&amp;\lambda^n \end{bmatrix}\end{split}\]</div>
+<p>The eigenvectors are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb X=\begin{bmatrix}b/a &amp;1\\-1&amp;1\end{bmatrix}\end{split}\]</div>
+<p>and using eqn 44 (below) then to raise to power <span class="math notranslate nohighlight">\(n\)</span> the equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb X \pmb \Lambda^n \pmb X^{-1}=\begin{bmatrix}1 &amp;-a/b\\1&amp;1\end{bmatrix}\begin{bmatrix}1&amp;0 \\ 0&amp;\lambda^n\end{bmatrix} \begin{bmatrix}b&amp;a\\-b&amp;b\end{bmatrix}\frac{1}{a+b}\end{split}\]</div>
+<p>At equilibrium <span class="math notranslate nohighlight">\(n\to \infty\)</span> and as <span class="math notranslate nohighlight">\(\lambda &lt;1\)</span> this makes <span class="math notranslate nohighlight">\(\lambda^n \to 0\)</span> and the matrix product becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\pmb X \pmb \Lambda^\infty \pmb X^{-1}&amp;=\begin{bmatrix}1 &amp;-a/b\\1&amp;1\end{bmatrix}\begin{bmatrix}1&amp;0 \\ 0&amp;0\end{bmatrix} \begin{bmatrix}b&amp;a\\-b&amp;b\end{bmatrix}\frac{1}{a+b}\\&amp;=\frac{1}{a+b}\begin{bmatrix} b&amp;a\\b&amp;a\end{bmatrix}\\&amp; = \frac{1}{a+b}\begin{bmatrix}1\\1\end{bmatrix}\begin{bmatrix}b&amp;a\end{bmatrix}\equiv \pmb 1 \pmb \pi \end{align}\end{split}\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(\pi_0=b/(a+b)\)</span> and <span class="math notranslate nohighlight">\(\pi_1=a/(a+b)\)</span> as was found above. In general if an equilibrium distribution exists then <span class="math notranslate nohighlight">\(\pmb 1\)</span> is a unit column vector and <span class="math notranslate nohighlight">\(\pmb \pi\)</span> the equilibrium distribution. See Coleman ‘Stochastic Process’ publ. George Allen &amp; Unwin 1974, on which this and the next problem is based, and includes many others involving Markov Chains.</p>
+</section>
+<section id="ii-a-rat-in-a-maze">
+<h3><strong>(ii) A rat in a maze.</strong><a class="headerlink" href="#ii-a-rat-in-a-maze" title="Permalink to this headline">#</a></h3>
+<p>A rat is put into the maze shown below. At each time step it changes from one ‘room’ to another choosing at random which door to take. The transition matrix from time <span class="math notranslate nohighlight">\(n\to n+1\)</span> is constructed by looking at the maze and making sure that the sum of the probabilities in each row add to one. In a room with one door the probability should be <span class="math notranslate nohighlight">\(1\)</span> as only one exit exists, with three exits the probability of each is <span class="math notranslate nohighlight">\(1/3\)</span>. The probabilities of each row add to unity so that from room <span class="math notranslate nohighlight">\(1\)</span> the rats has three choices, and the row in the matrix shows <span class="math notranslate nohighlight">\(1/3\)</span> probability each to rooms <span class="math notranslate nohighlight">\(0,\; 2,\;4\)</span> as shown. From these probabilities the long time population can be obtained, but we can say what is likely to happen and that is that rooms <span class="math notranslate nohighlight">\(2,\;3,\;5\)</span> will have the smallest populations because the probability of entering is <span class="math notranslate nohighlight">\(1/2\)</span> but of leaving it is <span class="math notranslate nohighlight">\(1\)</span>. Naturally after a  long time the chance on average of finding a rat in these rooms is small but not zero.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig55c.png" /></p>
+<p>Figure 55c. Left shows the maze with doors to other rooms. Right. The transition matrix.</p>
+<hr class="docutils" />
+<p>The long time calculation is shown below where Sympy is used to solve the simultaneous equations 41c. The results show that room <span class="math notranslate nohighlight">\(1\)</span> has the greatest average population and <span class="math notranslate nohighlight">\(2,3,5\)</span> the least as explained. The similarity matrix approach could also be used in this case and is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rat in a maze, long time (equilibrium) calculation solved using Sympy.</span>
+<span class="c1"># notice that the equations are all made equal to zero i.e. 1 = p0+p1+p2+p3+p4+p5 </span>
+<span class="c1"># becomes 1-p0-p1-p2-p3-p4-p5</span>
+
+<span class="n">p0</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">,</span><span class="n">p5</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;p0,p1,p2,p3,p4,p5&#39;</span><span class="p">)</span>
+
+<span class="n">eqns</span><span class="o">=</span><span class="p">[</span> <span class="n">p0</span> <span class="o">-</span> <span class="n">p1</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="n">p3</span><span class="p">,</span>\
+       <span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">p4</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>\
+       <span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>\
+       <span class="n">p3</span> <span class="o">-</span> <span class="n">p0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>\
+       <span class="n">p4</span> <span class="o">-</span> <span class="n">p1</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="n">p5</span><span class="p">,</span>\
+       <span class="n">p5</span> <span class="o">-</span> <span class="n">p4</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>\
+       <span class="mi">1</span> <span class="o">-</span> <span class="n">p0</span> <span class="o">-</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">p3</span> <span class="o">-</span> <span class="n">p4</span> <span class="o">-</span> <span class="n">p5</span> <span class="p">]</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">eqns</span><span class="p">)</span>                              <span class="c1"># solve simultaneous equations</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matrices-H_15_0.png" src="../_images/matrices-H_15_0.png" />
+</div>
+</div>
+<p>The calculation using the Similarity transform is shown below. The resulting values are the same  as <span class="math notranslate nohighlight">\(p0\)</span> to <span class="math notranslate nohighlight">\(p5\)</span> in the previous line, when normalised to the same total value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rat in a maze equilibrium solved by a matrix method.</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span> <span class="p">],</span>\
+              <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>\
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span> <span class="p">],</span>\
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span> <span class="p">],</span>\
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span>\
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span> <span class="p">]])</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="n">evals</span><span class="p">,</span><span class="n">evecs</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="p">)</span>       <span class="c1"># transpose as we right multply by column vector q below</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">evals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">15</span>                    <span class="c1"># diagonal matrix raised to power 15 or any positive number</span>
+    
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>                 <span class="c1"># initial values</span>
+
+<span class="n">Pi</span> <span class="o">=</span> <span class="n">evecs</span> <span class="o">@</span> <span class="n">L</span> <span class="o">@</span> <span class="n">LA</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">evecs</span><span class="p">)</span> <span class="o">@</span> <span class="n">q</span>           <span class="c1"># Similarity transform times initial values</span>
+<span class="n">mx</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="n">Pi</span><span class="o">/</span><span class="n">mx</span><span class="p">,</span> <span class="n">precision</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.2 0.3 0.1 0.1 0.2 0.1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iii-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b">
+<h3><strong>(iii) A first order reaction <span class="math notranslate nohighlight">\(A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B\)</span></strong><a class="headerlink" href="#iii-a-first-order-reaction-a-overset-k-12-underset-k-21-rightleftharpoons-b" title="Permalink to this headline">#</a></h3>
 <p>If the reaction is <span class="math notranslate nohighlight">\(\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B\)</span> the transition matrix is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb T=\begin{bmatrix}1-k_{12}\tau &amp; k_{12}\tau\\ k_{21}\tau &amp; 1-k_{21}\tau \end{bmatrix} \end{split}\]</div>
@@ -2178,9 +2311,6 @@ of the same species. The equation we start with is <span class="math notranslate
 <span class="n">T</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">TT</span><span class="p">)</span>
 <span class="n">p</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">])</span>                               <span class="c1"># initial values of A and B</span>
 
-<span class="c1">#evals,evecs = LA.eig(T)           # get eigenvecs for equilib amount</span>
-<span class="c1">#plt.axhline((A[0]+B[0])*evecs[0,1]/(evecs[0,1]+evecs[1,1]),linewidth=0.5,color=&#39;grey&#39;) # plot long time A</span>
-
 <span class="n">n</span> <span class="o">=</span> <span class="mi">150</span>                           <span class="c1"># number of points</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>       <span class="c1"># array to hold calculated values</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -2200,35 +2330,34 @@ of the same species. The equation we start with is <span class="math notranslate
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Populations&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time /&#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$\tau$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(((</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mf">0.889</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-H_13_0.png" src="../_images/matrices-H_13_0.png" />
+<img alt="../_images/matrices-H_19_0.png" src="../_images/matrices-H_19_0.png" />
 </div>
 </div>
 <p>It is clear even before doing the calculation that <span class="math notranslate nohighlight">\(A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B\)</span> will come to a steady state at sufficiently long time. This can be found by assuming that <span class="math notranslate nohighlight">\(P_\infty=\pmb T^TP_\infty\)</span> which is in effect an eigenvalue-eigenvector equation with eigenvalues <span class="math notranslate nohighlight">\(E=[1,1]^T\)</span> of unity, <span class="math notranslate nohighlight">\(\pmb T^TP_\infty=EP_{\infty}\)</span>. The normalised eigenvectors are obtained from matrix <span class="math notranslate nohighlight">\(T\)</span> and are calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.05</span><span class="p">],[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.95</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#f01 = np.array([[0.25,0.05],[0.75,0.95]])</span>
 <span class="n">evals</span><span class="p">,</span><span class="n">evecs</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 <span class="n">evecs</span>
+<span class="mf">0.1240</span><span class="o">/</span><span class="p">(</span><span class="mf">0.1240</span><span class="o">+</span><span class="mf">0.9923</span><span class="p">),</span><span class="mf">0.9923</span><span class="o">/</span><span class="p">(</span><span class="mf">0.124</span><span class="o">+</span><span class="mf">0.9923</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.70710678, -0.12403473],
-       [ 0.70710678, -0.99227788]])
-</pre></div>
+<img alt="../_images/matrices-H_21_0.png" src="../_images/matrices-H_21_0.png" />
 </div>
 </div>
-</div>
-<p>The first eigenvector adds to zero and is ignored, the second is <span class="math notranslate nohighlight">\([v_a,v_B]^T=[0.1240, 0.9923]^T\)</span> and the signs can be ignored as they are both the same. The long time concentration of A and B are the fractions of the total amount,</p>
+<p>The first eigenvector adds to zero and is ignored, the second is <span class="math notranslate nohighlight">\([v_a,v_B]^T=[0.1240, 0.9923]^T\)</span> and the signs can be ignored as they are both the same. The long time concentration of A and B are the fractions of the total amount present, viz,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle A_\infty=(A_0+B_0)\frac{v_a}{(v_a+v_b)}=0.896,\qquad B_\infty=(A_0+B_0)\frac{v_b}{(v_a+v_b)}\]</div>
-<p>otherwise B is easily found since <span class="math notranslate nohighlight">\(A_0+B_0=A_\infty+B_\infty\)</span>.</p>
+\[\displaystyle A_\infty=(A_0+B_0)\frac{v_b}{(v_a+v_b)}=0.889(A_0+B_0),\qquad B_\infty=(A_0+B_0)\frac{v_a}{(v_a+v_b)}\]</div>
+<p>otherwise B is easily found since at all times <span class="math notranslate nohighlight">\(A_0+B_0=A_\infty+B_\infty\)</span>. The amount <span class="math notranslate nohighlight">\(A_\infty\)</span> is shown in the plot.  In part(i) where equilibrium is considered it is shown that at equilibrium the fractional amounts are also given by  <span class="math notranslate nohighlight">\(k_{12}/(k_{12}+k_{21})\)</span> and <span class="math notranslate nohighlight">\(k_{21}/(k_{12}+k_{21})\)</span>.</p>
 </section>
 <section id="ii-a-second-order-reaction-a-b-overset-k-12-underset-k-21-rightleftharpoons-c">
 <h3><strong>(ii) A second order reaction <span class="math notranslate nohighlight">\(A +B \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} C\)</span></strong><a class="headerlink" href="#ii-a-second-order-reaction-a-b-overset-k-12-underset-k-21-rightleftharpoons-c" title="Permalink to this headline">#</a></h3>
@@ -2238,8 +2367,8 @@ of the same species. The equation we start with is <span class="math notranslate
 <p>where, as above, the time increment <span class="math notranslate nohighlight">\(\tau\)</span> is used to change the rate constants into probabilities and <span class="math notranslate nohighlight">\([A]_m,[B]_m\)</span> are the concentrations that exist at the <span class="math notranslate nohighlight">\(m^{th}\)</span> time increment. The populations are calculated by updating <span class="math notranslate nohighlight">\([A]\)</span> and <span class="math notranslate nohighlight">\([B]\)</span> in the transition matrix at each time step. The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from <span class="math notranslate nohighlight">\(n\)</span> of them is <span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}\)</span> and when <span class="math notranslate nohighlight">\(n\)</span> is very large this is <span class="math notranslate nohighlight">\(n^2/2\)</span> to a very good approximation. The probability is a fraction of the total which is <span class="math notranslate nohighlight">\(\displaystyle \frac{n^2}{2n} =\frac{n}{2}\)</span>. The term in the transfer matrix is therefore  <span class="math notranslate nohighlight">\(\displaystyle \frac{k}{2}\tau n\)</span> where the rate constant is <span class="math notranslate nohighlight">\(k\)</span>. The calculation is shown next.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span> <span class="o">=</span> <span class="mf">1e-9</span>                 <span class="c1"># set time to make rate constants into probabilities</span>
-<span class="n">k12</span> <span class="o">=</span> <span class="mf">4e7</span><span class="o">*</span><span class="n">tau</span>              <span class="c1"># choose some rate constants</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span> <span class="o">=</span> <span class="mf">1e-9</span>                        <span class="c1"># set time to make rate constants into probabilities</span>
+<span class="n">k12</span> <span class="o">=</span> <span class="mf">4e7</span><span class="o">*</span><span class="n">tau</span>                     <span class="c1"># choose some rate constants</span>
 <span class="n">k21</span> <span class="o">=</span> <span class="mf">1e7</span><span class="o">*</span><span class="n">tau</span>              
 <span class="n">p</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>            <span class="c1"># initial values of A and B, C=0</span>
 
@@ -2281,7 +2410,7 @@ of the same species. The equation we start with is <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-H_17_0.png" src="../_images/matrices-H_17_0.png" />
+<img alt="../_images/matrices-H_23_0.png" src="../_images/matrices-H_23_0.png" />
 </div>
 </div>
 <p>As an aside, the analytic solution for this simple reaction has a difficult integration and can be determined starting with</p>
@@ -2289,7 +2418,7 @@ of the same species. The equation we start with is <span class="math notranslate
 \[\displaystyle \frac{dA}{dt}=-k_1AB+k_2C\]</div>
 <p>where <span class="math notranslate nohighlight">\(A,B,C\)</span> are used to represent the concentrations. If an amount <span class="math notranslate nohighlight">\(x\)</span> reacts then <span class="math notranslate nohighlight">\(A=A_0-x, B=B_0-x, C=C_0+x\)</span> making</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}\frac{dx}{dt}&amp;=k_1(A_0-x)(B_0-x)+k_2(C_0+x)\\&amp;=k_1A_0B_0-k_2C_0-k_1(A_0+B_0+k_2)x+k_1x^2\end{align}\end{split}\]</div>
+\[\begin{split}\displaystyle \begin{align}\frac{dx}{dt}&amp;=k_1(A_0-x)(B_0-x)-k_2(C_0+x)\\&amp;=k_1A_0B_0-k_2C_0-(k_2+k_1(A_0+B_0))x+k_1x^2\end{align}\end{split}\]</div>
 <p>On integrating this equation has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^x \frac{dx}{a+bx+cx^2}=\int_0^tdt\]</div>
