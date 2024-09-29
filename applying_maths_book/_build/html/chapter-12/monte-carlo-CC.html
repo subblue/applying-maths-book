@@ -1555,6 +1555,13 @@ title="Print to PDF"
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy">
+     <strong>
+      Entropy
+     </strong>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1707,6 +1714,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#recurrence">
      <strong>
       Recurrence
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy">
+     <strong>
+      Entropy
      </strong>
     </a>
    </li>
@@ -2055,6 +2069,10 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{(n+m)!(n-m)!}{(2n)!}2^{2n}\]</div>
 <p>When <span class="math notranslate nohighlight">\(n \gt m\)</span> the recurrence time is short as the ratio of factorials is <span class="math notranslate nohighlight">\( \ll 1\)</span>. When <span class="math notranslate nohighlight">\(m \approx n\)</span> the factorials evaluate to a number close to one and the recurrence time is maximised and is <span class="math notranslate nohighlight">\(\sim 2^{2n}\)</span> as found by our simulation. Smoluchowski was probably first to understand that if one starts with a large number of molecules the recurrence time is so long that the process is for all practical purposes irreversible, but mathematically its not, but as the time needed soon becomes far, far longer than the age of the universe this is irrelevant.</p>
+</section>
+<section id="entropy">
+<h3><strong>Entropy</strong><a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h3>
+<p>As there is no heat of mixing, and the temperature and pressure are constant, entropy increase is the only process by which the free energy can decrease as the gases increase their volume and so mix, i.e. <span class="math notranslate nohighlight">\(\Delta G=-T\Delta S\)</span>. Figure 10c shows that eventually this ‘system’ comes to equilibrium and from thermodynamics the entropy should therefore be at a maximum. The entropy has the form <span class="math notranslate nohighlight">\(S=k\ln(W)\)</span> after Boltzmann where <span class="math notranslate nohighlight">\(W\)</span> is the number of configurations the atoms or molecules can have. In this example the configuration <span class="math notranslate nohighlight">\(W=1\)</span> at the start of the simulation because there are no white balls (molecules) mixed in with the black ones and vice versa thus the entropy is zero. When fully mixed at equilibrium the number of configurations is given by the binomial coefficients <span class="math notranslate nohighlight">\(\displaystyle W=\frac{n!}{m!(n-m)!}\)</span> because there are only two volumes, and there are <span class="math notranslate nohighlight">\(n\)</span> white molecules in total and at any time <span class="math notranslate nohighlight">\(m\)</span> black ones mixed in with them, where <span class="math notranslate nohighlight">\(m=0,1\cdots n\)</span>. This function <span class="math notranslate nohighlight">\(W\)</span> has a maximum when <span class="math notranslate nohighlight">\(m=n/2\)</span> as you can confirm by differentiating and using the Sterling approximation (Chapter 1-8). The maximum entropy is thus <span class="math notranslate nohighlight">\(S_{max} = k\ln(2^n)\)</span>. Perhaps this is to be expected because the volume doubles there are a maximum of <span class="math notranslate nohighlight">\(2^n\)</span> ways of being in this new larger volume.</p>
 </section>
 </section>
 <section id="reacting-molecules">

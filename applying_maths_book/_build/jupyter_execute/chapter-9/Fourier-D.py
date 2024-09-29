@@ -808,21 +808,21 @@ plt.show()
 # 
 # $$\displaystyle \begin{align}\int_0^{t_m} f^*(t)f(t+\tau)+ f(t)f^*(t+\tau) dt &= a^2\int_0^{t_m}e^{-i\omega_0 t}e^{i\omega_0 (t+\tau)}+e^{+i\omega_0 t}e^{-i\omega_0 (t+\tau)}dt\\ &=a^2t_m (e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})\end{align}$$
 #  
-# making 
+# Combining the two lots of integrals and collecting the constants as $C=a^2\beta t_m$ gives
 # 
-# $$\displaystyle I(\tau)= (2+e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})C$$
+# $$\displaystyle I(\tau)= C(2+e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})$$
 # 
-# collecting the constants as $C=a^2\beta t_m$. As $\displaystyle 2\cos(\omega_0\tau)=e^{i\omega_0 \tau}+e^{-i\omega_0 \tau}$, then
+# As $\displaystyle 2\cos(\omega_0\tau)=e^{i\omega_0 \tau}+e^{-i\omega_0 \tau}$, then
 # 
 # $$\displaystyle I(\tau)=C (1+\cos(\omega_0\tau) )$$
 # 
-# which shows the sinusoidal variation on top of a constant signal. Recall that as $\tau =d/c$ the time delay is equivalent to a distance moved by the mirror in the interferometer. As the delay $\tau$ is changed this signal will follow a sinusoidal pattern, but this equation is only at one frequency $\omega_0$. As all frequencies are combined on the detector the same variation will occur at each individual frequency but the peaks and troughs will occur at different $\tau$ and so combined signal will be recorded at each time delay. At short $\tau$ waves will only be out of step by a small amount, and so a large signal is expected but as the waves differ more in wavelength they will cancel one another and so the signal will become smaller and oscillate about the average value. 
+# which shows a sinusoidal variation on top of a constant signal. Recall that as $\tau =d/c$ the time delay is equivalent to a distance moved by the mirror in the interferometer. As the delay $\tau$ is changed this signal will follow a sinusoidal pattern, but this equation is only at one frequency $\omega_0$. As all frequencies are combined on the detector the same variation will occur at each individual frequency but the peaks and troughs will occur at different $\tau$ and so combined signal will be recorded at each time delay. At short $\tau$ waves will only be out of step by a small amount, and so a large signal is expected but as the waves differ more in wavelength they will cancel one another and so the signal will become smaller and oscillate about the average value. 
 # 
 # Molecules naturally have many vibrational and rotational transitions, think of the HCl rotational/vibration spectrum for example, and therefore the field at the detector will be the sum of many different frequencies, we call this distribution $B(\omega)$, which is the spectrum we hope to measure, and therefore integrating $I(\tau)$ over all frequencies produces,
 # 
 # $$\displaystyle I(\tau) =\int_0^\infty B(\omega)(1+\cos(\omega\tau) )d\omega$$
 # 
-# where the constant is absorbed into $B$ and the integral is added because the detector measures all frequencies $\omega$ at the same time. At zero delay $\tau=0,\, I(0)=2\int B(\omega)d\omega$ which is a constant and shows that at time zero twice the total signal is measured. After rearranging 
+# where all the constants are absorbed into $B$ and the integral is added because the detector measures all frequencies $\omega$ at the same time. At zero delay $\tau=0,\, I(0)=2\int B(\omega)d\omega$ which is a constant and shows that at time zero twice the total signal is measured. After rearranging 
 # 
 # $$ I(\tau)- I(0)/2=\int_0^\infty B(\omega)\cos(\omega\tau) d \omega$$
 # 
@@ -830,7 +830,7 @@ plt.show()
 # 
 # $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\qquad\tag{46b}$$
 # 
-# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that 
+# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both path-length change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that 
 # 
 # $$\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$$
 # 
@@ -840,13 +840,13 @@ plt.show()
 # 
 # So far we have tried to explain how the fourier transfer picks out transition _frequencies_ but their _magnitudes_ are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the _phase of the combined wave_ (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude $a_i$ of a wave of frequency $\omega_i$ contributes to the sum 
 # 
-# $$\displaystyle \sum_i a_ie^{i\omega_i \tau}=a_0\sum_i e^{i\omega_i \tau+i\varphi_i}$$
+# $$\displaystyle \sum_i a_ie^{i\omega_i \tau}\equiv a_0\sum_i e^{i\omega_i \tau+i\varphi_i}$$
 # 
-# and so the phase of the autocorrelation vs. $\tau$ is changed. This is shown in figure 34a for two transitions, in the first row of panels, the lower frequency is of greater intensity, and in the lower panel they are swapped in intensity but still have the same frequencies. The left most column (A, and D) shows the two waves vs. mirror displacement $\tau$ in the two cases. The yellow shading (around $\tau=90$) shows where the difference between them is most obvious, of course this repeats at each period. The centre panels  (B & E; autocorrelations) shows the combined waves vs. displacement $\tau$ and on the right the spectrum obtained by fourier transform of the autocorrelations.
+# and so the phase of the autocorrelation $\varphi$ vs. $\tau$ is changed. This is shown in figure 34a for two transitions, in the first row of panels, the lower frequency is of greater intensity, and in the lower panel they are swapped in intensity but retain their frequencies. The left most column (A, and D) shows the two waves vs. mirror displacement $\tau$ in the two cases. The yellow shading (around $\tau=90$) shows where the difference between them is most obvious, of course this repeats at each period. The centre panels (B & E; autocorrelations) shows the combined waves vs. displacement $\tau$ and on the right the spectrum obtained by fourier transform of the autocorrelations.
 # 
 # ![Drawing](fourier-fig34a.png)
 # 
-# Figure 34a. Left column shows individual amplitudes of the waves of frequency $\omega_0, \omega_1$. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After A.Lipson 2011.
+# Figure 34a. Left column shows individual amplitudes of the waves of frequency $\omega_0, \omega_1$. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After A. Lipson 2011.
 # ______
 # 
 # ## 8.8 Spectral resolution
