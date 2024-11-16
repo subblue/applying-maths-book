@@ -1533,8 +1533,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-division">
+     5.4 Integer division
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simple-statements-printing-formats">
-     5.4 Simple statements,  printing formats
+     5.5 Simple statements,  printing formats
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1549,7 +1554,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numerics-are-much-faster-with-numpy">
-     7 Numerics are much faster with numpy.
+     7 Numerics are much faster with NumPy.
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1627,7 +1632,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algebraic-solution-using-sympy">
-     15.1 Algebraic solution using Sympy
+     15.1 Algebraic solution using SymPy
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1734,8 +1739,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-division">
+     5.4 Integer division
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simple-statements-printing-formats">
-     5.4 Simple statements,  printing formats
+     5.5 Simple statements,  printing formats
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1750,7 +1760,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numerics-are-much-faster-with-numpy">
-     7 Numerics are much faster with numpy.
+     7 Numerics are much faster with NumPy.
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1828,7 +1838,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algebraic-solution-using-sympy">
-     15.1 Algebraic solution using Sympy
+     15.1 Algebraic solution using SymPy
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1934,7 +1944,7 @@ title="Print to PDF"
 <p>(4) Division takes two forms, a/b for normal floating point, i.e. 3/2=1.5 and a//b for integer division, i.e 3//2=1</p>
 <p>(5) Functions sin cos or your own use round brackets i.e. <span class="math notranslate nohighlight">\(\mathtt{np.tan(x)}\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be floating point or integer and the function is evaluated at hat value.</p>
 <p>(6) Arrays/lists use square brackets, e.g. <span class="math notranslate nohighlight">\(\mathtt{myary[i]}\)</span> and integer index, <span class="math notranslate nohighlight">\(i\)</span>, and returns the value at that index.</p>
-<p>(7) Normal functions sin, cos etc. are unknown and have to be accessed <em>via</em> numpy as <span class="math notranslate nohighlight">\(\mathtt{np.sin(x), \;np.exp(x),\; np.pi }\)</span> etc. Use numpy for any numerical calculation other than trivial ones as it is fast.</p>
+<p>(7) Normal functions sin, cos etc. are unknown and have to be accessed <em>via</em> NumPy as <span class="math notranslate nohighlight">\(\mathtt{np.sin(x), \;np.exp(x),\; np.pi }\)</span> etc. Use NumPy for any numerical calculation other than trivial ones as it is fast.</p>
 <p>(8) Powers are made as <span class="math notranslate nohighlight">\(\mathtt{x**(1J+3)}\)</span> etc.</p>
 <p>(9) Indexing lists, sets, and arrays all start at zero, i.e. the first element of mylist is, <span class="math notranslate nohighlight">\(\mathtt{mylist[ 0 ]}\)</span>. If the list is of length <span class="math notranslate nohighlight">\(n\)</span> the last element is <span class="math notranslate nohighlight">\(\mathtt{mylist[n-1]}\)</span></p>
 <p>(10) When using <em>for loops,  while loops, subroutines, if</em> statements, etc. the first line ends in a colon: for example</p>
@@ -1955,7 +1965,7 @@ title="Print to PDF"
 </div>
 <p>and all lines in the loop are inset by 4 spaces or a tab.</p>
 <p>(11) Loops, subroutines, if etc. have no end statements; the tabbing is enough to delimit the range, however, it is acceptable to add the word <em>pass</em> as the last statement as it often makes reading easier.</p>
-<p>(12) There are objects called <em>list comprehensions</em> that are an alternative to loops in many cases. (They are more consise but for speed or complex cases use loops).</p>
+<p>(12) There are objects called <em>list comprehensions</em> that are an alternative to loops in many cases. (They are more concise but for speed or complex cases use loops).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>    <span class="c1"># makes list of 6 values, i=0 to 5 see below for details</span>
@@ -1967,8 +1977,8 @@ title="Print to PDF"
 <img alt="../_images/Python crib_5_0.png" src="../_images/Python crib_5_0.png" />
 </div>
 </div>
-<p>Arrays are usually called <em>lists</em> and enclosed by square brackets [] and indexed by square brackets,
-eg <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</span> and so to print use</p>
+<p>Arrays are usually called <em>lists</em> and enclosed by square brackets <span class="math notranslate nohighlight">\([\; ]\)</span>  and indexed by square brackets,
+e.g. <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</span> and so to print use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">mylist</span><span class="p">[</span> <span class="mi">0</span> <span class="p">]</span> <span class="p">)</span> 
@@ -1996,12 +2006,12 @@ eg <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</spa
 </div>
 </div>
 </div>
-<p>2d lists are called as <span class="math notranslate nohighlight">\(\mathtt{A[ i ][ j ]}\)</span> , i.e. two separate brackets.</p>
-<p>Numpy arrays are called in a similar manner however, two D arrays can be called differently as <span class="math notranslate nohighlight">\(\mathtt{A[ i, j ]}\)</span> with one square bracket.</p>
+<p>2D lists are called as <span class="math notranslate nohighlight">\(\mathtt{A[ i ][ j ]}\)</span> , i.e. two separate brackets.</p>
+<p>NumPy arrays are called in a similar manner however, 2D arrays can be called differently as <span class="math notranslate nohighlight">\(\mathtt{A[ i, j ]}\)</span> with one square bracket.</p>
 </section>
 <section id="functions">
 <h2>5.2 Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
-<p>There are two types of user defined functions, as in a multiline subroutine or procedure e.g.</p>
+<p>There are two types of user defined functions, as in a multi-line subroutine or procedure e.g.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>           <span class="c1"># use this for complicated function with if else etc</span>
@@ -2034,13 +2044,15 @@ eg <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</spa
 </section>
 <section id="importing-packages">
 <h2>5.3 Importing packages<a class="headerlink" href="#importing-packages" title="Permalink to this headline">#</a></h2>
-<p>It is necessary to import other packages for specific calculations, <em>numpy</em> for fast numerical calculations, <em>scipy</em> for special functions (such as error func), integrations, non-linear least squares etc. and <em>matplotlib</em> for plotting.</p>
-<p>SymPy is used for algebraic calculations.</p>
-<p>Print statements are always enclosed in brackets, eg. print(x**2)      [  This is different to python 2.7  ]</p>
-<p>The other main different to python 2.7 is that 3/2 is treated as real division,i.e. 1.5. To get integer division use 3//2 = 1. This is important if the division is then to be used as an index as these can only be integers.</p>
+<p>It is necessary to import other packages for specific calculations, NumPy for fast numerical calculations, SciPy for special functions (such as error func), integrations, non-linear least squares etc. and matplotlib for plotting. SymPy is used for algebraic calculations.</p>
+<p>Print statements are always enclosed in brackets, eg. <span class="math notranslate nohighlight">\(\text{ print(x**2) }\)</span></p>
+</section>
+<section id="integer-division">
+<h2>5.4 Integer division<a class="headerlink" href="#integer-division" title="Permalink to this headline">#</a></h2>
+<p>The other main different to earlier python than version 3 is that 3/2 is treated as real division,i.e. 1.5. To get integer division use 3//2 = 1. This is important if the division is then to be used as an index as these can only be integers.</p>
 </section>
 <section id="simple-statements-printing-formats">
-<h2>5.4 Simple statements,  printing formats<a class="headerlink" href="#simple-statements-printing-formats" title="Permalink to this headline">#</a></h2>
+<h2>5.5 Simple statements,  printing formats<a class="headerlink" href="#simple-statements-printing-formats" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">2.1</span><span class="o">**</span><span class="mf">3.1</span>               <span class="c1"># raise to power</span>
@@ -2168,8 +2180,8 @@ printing b[4][1] will lead to an error e.g.
 </div>
 </section>
 <section id="numerics-are-much-faster-with-numpy">
-<h2>7 Numerics are much faster with numpy.<a class="headerlink" href="#numerics-are-much-faster-with-numpy" title="Permalink to this headline">#</a></h2>
-<p>Import numpy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic python.</p>
+<h2>7 Numerics are much faster with NumPy.<a class="headerlink" href="#numerics-are-much-faster-with-numpy" title="Permalink to this headline">#</a></h2>
+<p>Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># make x range from 0 to 10pi in 5 steps. </span>
@@ -2289,14 +2301,14 @@ sum of whole list is  7.885735968708085
 </section>
 <section id="id1">
 <h2>9 Functions.<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>There are standard functions <em>sin, cos, exp</em> etc. that we use numpy to call as <em>np.sin(x)</em> etc. There are also two main types of user defined function that can take arguments.</p>
+<p>There are standard functions <em>sin, cos, exp</em> etc. that we use NumPy to call as <em>np.sin(x)</em> etc. There are also two main types of user defined function that can take arguments.</p>
 </section>
 <section id="lambda-functions">
 <h2>9.1 Lambda functions.<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">#</a></h2>
 <p>These are single line functions and can be used for straightforward functions. They have the form</p>
 <p><em>aname =  lambda variable1, variable 2, etc.  :  expression in variables 1, 2 etc.</em></p>
 <p>note the word lambda and the colon.</p>
-<p>These function are called using normal <strong>curved brackets</strong>  <em>aname(3.0,2.0,…)</em>  Note that lists use square brackets.</p>
+<p>These function are called using normal parentheses, i.e. <strong>curved brackets</strong> as <span class="math notranslate nohighlight">\(\text{aname(3.0,2.0,...)}\)</span>  Note that lists use square brackets.</p>
 <p>It is also possible to use if statements inside a lambda and an example is given but it is usually better to use a def type function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2332,7 +2344,7 @@ func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 <p>These are the more general type of user defined functions and allow for any sort of complicated function. They are the equivalent of subroutines in other languages.</p>
 <p>The answers you want are obtained by using a <em>return</em> statement.</p>
 <p>The variables inside the function are local, i.e. if you use x inside its different to the x outside. <strong>However, there are rules on local and global variables that need checking</strong>.</p>
-<p>The syntax for <em>def</em> functions is shown below. Note also that we can now plot negative values of aour function,not possible with the way the lambdat functio was defined.</p>
+<p>The syntax for <em>def</em> functions is shown below. Note also that we can now plot negative values of our function, not possible with the way the lambda function was defined.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">afunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>                              <span class="c1"># define afunc to be function of x and z</span>
@@ -2485,10 +2497,10 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </section>
 <section id="algebraic-and-numerical-integration-of-a-function">
 <h2>11 Algebraic and numerical integration of a function<a class="headerlink" href="#algebraic-and-numerical-integration-of-a-function" title="Permalink to this headline">#</a></h2>
-<p>Now we will do some integration, both algebraic and numerically; we have already imported integrate from scipy; see top of document.</p>
+<p>Now we will do some integration, both algebraic and numerically; we have already imported integrate from SciPy; see top of document.</p>
 <p>The function to integrate is first defined and plotted.</p>
 <p>The calculation of nearest neighbour distances  from one molecule to another has been worked out see Chandrashkar, Rev Mod Phys 1943.</p>
-<p>Let <span class="math notranslate nohighlight">\(w(r)\)</span> be the probability that the nearest neighbour occurs between distance  <em>r</em> and <em>r</em>+<em>dr</em>. This must be the probability than no molecules exist closer to the victim molecule that one occurs at a distance <em>r</em> and that this molecule axists in the shell <em>r</em> to <em>r</em>+<em>dr</em>. Thus,</p>
+<p>Let <span class="math notranslate nohighlight">\(w(r)\)</span> be the probability that the nearest neighbour occurs between distance  <em>r</em> and <em>r</em>+<em>dr</em>. This must be the probability than no molecules exist closer to the victim molecule that one occurs at a distance <em>r</em> and that this molecule exists in the shell <em>r</em> to <em>r</em>+<em>dr</em>. Thus,</p>
 <div class="math notranslate nohighlight">
 \[ w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n\]</div>
 <p>where <em>n</em> is the average number of molecules / unit volume. (1 mol <span class="math notranslate nohighlight">\(\equiv 10^3N_A/10^{27} = 0.6023 \)</span> molecules / nm<span class="math notranslate nohighlight">\(^3\)</span>).</p>
@@ -2549,7 +2561,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <p>The same calculation can be done numerically of course, but in that case <em>n</em> has to be defined in each instance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using scipy numerical integration  quad(func, x_start, x_end, arg( arguments in user function other than x))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using SciPy numerical integration  quad(func, x_start, x_end, arg( arguments in user function other than x))</span>
 <span class="c1"># the quad() returns two values the integration and the error bound. </span>
 <span class="c1"># the user define function below if called func (we are so imaginative) </span>
 <span class="c1"># but could also de defined as _def myfunc(r,n):_ etc.</span>
@@ -2585,8 +2597,8 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </section>
 <section id="some-other-algebraic-calculations-differentiation-and-series">
 <h2>13 Some other algebraic calculations, differentiation  and series<a class="headerlink" href="#some-other-algebraic-calculations-differentiation-and-series" title="Permalink to this headline">#</a></h2>
-<p>Sympy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are very obscure ansd so a couple of examples are given below.</p>
-<p>First differentiating then generating series expansion of the funtion produced.  The first step is to define the symbols to be used. We will use the nearest neighbour distribution to begin with.  The best output results are found without using print() as shown below. If you do use print as in print(Q.doit() ) a code type output is produced and the nice output supressed.</p>
+<p>SymPy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are very obscure and so a couple of examples are given below.</p>
+<p>First differentiating then generating series expansion of the function produced.  The first step is to define the symbols to be used. We will use the nearest neighbour distribution to begin with.  The best output results are found without using print() as shown below. If you do use print as in print(Q.doit() ) a code type output is produced and the nice output suppressed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assume sympy already loaded.</span>
@@ -2687,12 +2699,12 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </section>
 <section id="numerical-integration-of-differential-equations">
 <h2>15 Numerical integration of differential equations<a class="headerlink" href="#numerical-integration-of-differential-equations" title="Permalink to this headline">#</a></h2>
-<p>As an example the scheme <span class="math notranslate nohighlight">\(A  \leftrightharpoons B \rightarrow C \)</span> is integrated. This is then done algebraically using sympy in lower down in the document.</p>
+<p>As an example the scheme <span class="math notranslate nohighlight">\(A  \leftrightharpoons B \rightarrow C \)</span> is integrated. This is then done algebraically using SymPy in lower down in the document.</p>
 <p>The equations are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align} dA/dt&amp;= -k_1A +k_{-1}B \\ dB/dt&amp;= +k_1A -k_{-1}B - k_2B \\ dC/dt&amp; = k_2B \end{align}\end{split}\]</div>
 <p>and the initial conditions at <span class="math notranslate nohighlight">\(t=0\)</span> are <span class="math notranslate nohighlight">\(A[0] = X_0, \; B[0] = 0.0, \; C[0] = 0.0\)</span> where <span class="math notranslate nohighlight">\(X_0\)</span> is defined in the code as the initial amount of <em>A</em> present.</p>
-<p>The method by which to do this is shown in the code. (For clarity the reverse rate const is now called km1 instead of <span class="math notranslate nohighlight">\(k_{-1}\)</span>)</p>
+<p>The method by which to do this is shown in the code. (For clarity the reverse rate constant is now called km1 instead of <span class="math notranslate nohighlight">\(k_{-1}\)</span>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>      <span class="c1"># import odeint used for numerical integration of differential equations</span>
@@ -2755,7 +2767,7 @@ dCdt=+k2*B
 </div>
 </section>
 <section id="algebraic-solution-using-sympy">
-<h2>15.1 Algebraic solution using Sympy<a class="headerlink" href="#algebraic-solution-using-sympy" title="Permalink to this headline">#</a></h2>
+<h2>15.1 Algebraic solution using SymPy<a class="headerlink" href="#algebraic-solution-using-sympy" title="Permalink to this headline">#</a></h2>
 <p>The equations are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align} dA/dt&amp;= -k_1A +k_{-1}B \\ dB/dt&amp;= +k_1A -k_{-1}B - k_2B \\ dC/dt&amp; = k_2B \end{align}\end{split}\]</div>
@@ -2783,7 +2795,7 @@ dCdt=+k2*B
 <img alt="../_images/Python crib_55_0.png" src="../_images/Python crib_55_0.png" />
 </div>
 </div>
-<p>Because constants are produced it is necessary to evaluate these before any further calcuation. At <em>t</em>=0 as <em>B</em>=0 then  <span class="math notranslate nohighlight">\(C_1+C_2=0\)</span> and as the total magnitude of the signal does not matter we can set <span class="math notranslate nohighlight">\(C_1=1\)</span> and <span class="math notranslate nohighlight">\(C_2=-1\)</span>. The plot below shows the algebraic solution for <em>B</em>.</p>
+<p>Because constants are produced it is necessary to evaluate these before any further calcuation. At <span class="math notranslate nohighlight">\(t =0\)</span> as <span class="math notranslate nohighlight">\(B =0\)</span> then  <span class="math notranslate nohighlight">\(C_1+C_2=0\)</span> and as the total magnitude of the signal does not matter we can set <span class="math notranslate nohighlight">\(C_1=1\)</span> and <span class="math notranslate nohighlight">\(C_2=-1\)</span>. The plot below shows the algebraic solution for <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="mf">2.0</span>                                <span class="c1">#  rate const A</span>
@@ -2812,8 +2824,8 @@ dCdt=+k2*B
 </section>
 <section id="reading-data-from-files-and-make-a-3d-plot-from-sdf-data">
 <h2>16 Reading data from files and make a 3D plot from .sdf data<a class="headerlink" href="#reading-data-from-files-and-make-a-3d-plot-from-sdf-data" title="Permalink to this headline">#</a></h2>
-<p>Python has several different ways of reading data and numpy has even more sophisticated methods.
-The best way to start with is to use the script <strong><em>with open() as f:</em></strong> as shown below as this aoutmatically closes the file . Use <strong>f.readlines()</strong> get the whole lot of the data. It reads a list so may be text numbers or a mixture; it is up to you to sort this out later on.</p>
+<p>Python has several different ways of reading data and NumPy has even more sophisticated methods.
+The best way to start with is to use the script <strong><em>with open() as f:</em></strong> as shown below as this automatically closes the file . Use <strong>f.readlines()</strong> get the whole lot of the data. It reads a list so can be text, numbers or a mixture; it is up to you to sort this out later on.</p>
 <p>The example reads an .sdf file. The first 4 lines are header, line 4 contains the number of atoms and number of connections and this is followed by x y z &amp; atom symbol and then the  connections list. If there are many lines of data the number of atoms and connections can merge so it is necessary to specifically look for this and correct for it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -41,7 +41,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The effect we observe on rotation is that the molecule will appear to move in an arc around $(0, 0)$ or the centre of the axes; the arc atom '$a$' follows has a radius $\sqrt{x_1^2+x_2^2}\equiv\sqrt{x_{R1}^2+x_{R2}^2}$. If we wanted the molecule to rotate about its own centre then we would have to place the centre of the axes at the centre of the molecule; this can be done by subtracting the coordinates of the centre from each atom, rotating the molecule then replacing these co- ordinates onto every atom.
 # 
-# Using Sympy the rotation matrix is 
+# Using SymPy the rotation matrix is 
 
 # In[2]:
 
@@ -264,7 +264,7 @@ plt.show()
 # In[4]:
 
 
-# Algorthim: Algebraic calculation using a Jacobian using Sympy
+# Algorthim: Algebraic calculation using a Jacobian using SymPy
 
 r, theta, fx, fy, P, fxx, fyy = symbols('r, theta, fx, fy, P, fxx, fyy')
 

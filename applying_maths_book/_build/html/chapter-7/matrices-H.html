@@ -1902,7 +1902,7 @@ scheme is</p>
 \vdots &amp; \vdots &amp;\ddots &amp;\vdots \\
 \cdots &amp; \cdots &amp; \cdots &amp; x_{nn}\end{bmatrix}^{\large{-1}}  \begin{bmatrix} M_{01}(t)\\ M_{02}(t)\\ \vdots \\ \vdots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(41)}\end{split}\]</div>
 <p>where each eigenvector is a column in the <span class="math notranslate nohighlight">\(x\)</span> matrix and the notation <span class="math notranslate nohighlight">\(k_{12}\)</span> is the rate constant from species <span class="math notranslate nohighlight">\(1(a) \to 2(b)\)</span> etc.  The populations of each species are the rows of the <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> column vector.</p>
-<p>The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.</p>
+<p>The calculation, using python/SymPy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.</p>
 </section>
 <section id="iii-algebraic-solution-of-a-to-b-to-c">
 <h3><strong>(iii) Algebraic solution of <span class="math notranslate nohighlight">\(A \to B \to C\)</span></strong><a class="headerlink" href="#iii-algebraic-solution-of-a-to-b-to-c" title="Permalink to this headline">#</a></h3>
@@ -2045,10 +2045,10 @@ scheme is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dp_0(t)}{dt}= -k_{0\to 1}-k_{0\to 3} + k_{1\to 0} +k_{3\to  0}\]</div>
 <p>which means that species 0 decays to species 1 and 3 with a rate constant <span class="math notranslate nohighlight">\(k\)</span> and receives energy from species 1 and 3 each with rate constant <span class="math notranslate nohighlight">\(k\)</span>. Molecule 2 is not involved as it is not a near neighbour to molecule 0. All the rate constants are the same because we choose only to consider nearest neighbours and the molecules are equally spaced from one another.</p>
-<p>To solve these equations we can use the method outlined with the <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> determinant with which this has great similarity. The determinant to solve for the characteristic equation is</p>
+<p>To solve these equations we can use the method outlined with the Huckel determinant with which this has great similarity. The determinant to solve for the characteristic equation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{vmatrix} -2k &amp; k &amp; 0  &amp; k \\ k &amp; -2k &amp; k &amp; 0 \\0&amp; k &amp; -2k &amp; k \\k &amp; 0 &amp; k &amp; -2k\end{vmatrix}\end{split}\]</div>
-<p>and has a special form as it is <em>circulant</em>, which is to say that each row is the same as the others but rotated by one place, additionally each diagonal contains the same entry. <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> determinants on benzene or other planar rings has the same form as this.</p>
+<p>and has a special form as it is <em>circulant</em>, which is to say that each row is the same as the others but rotated by one place, additionally each diagonal contains the same entry. Huckel determinants on benzene or other planar rings has the same form as this.</p>
 <p>If <span class="math notranslate nohighlight">\(\lambda\)</span> are the roots of the polynomial represented by the determinant then we write down the secular equation as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{vmatrix} -2k-\lambda &amp; k &amp; 0  &amp; k \\ k &amp; -2k-\lambda &amp; k &amp; 0 \\0&amp; k &amp; -2k-\lambda &amp; k \\k &amp; 0 &amp; k &amp; -2k-\lambda\end{vmatrix}=0\end{split}\]</div>
@@ -2232,7 +2232,7 @@ of the same species. The equation we start with is <span class="math notranslate
 <p><img alt="Drawing" src="../_images/matrices-fig55c.png" /></p>
 <p>Figure 55c. Left shows the maze with doors to other rooms. Right. The transition matrix.</p>
 <hr class="docutils" />
-<p>The long time calculation is shown below where Sympy is used to solve the simultaneous equations 41c. The results show that room <span class="math notranslate nohighlight">\(1\)</span> has the greatest average population and <span class="math notranslate nohighlight">\(2,3,5\)</span> the least as explained. The similarity matrix approach could also be used in this case and is shown below.</p>
+<p>The long time calculation is shown below where SymPy is used to solve the simultaneous equations 41c. The results show that room <span class="math notranslate nohighlight">\(1\)</span> has the greatest average population and <span class="math notranslate nohighlight">\(2,3,5\)</span> the least as explained. The similarity matrix approach could also be used in this case and is shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rat in a maze, long time (equilibrium) calculation solved using Sympy.</span>
@@ -2584,7 +2584,7 @@ eigenvalues of <span class="math notranslate nohighlight">\(\lambda_1 = -7\)</sp
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle \sigma\rangle =\frac{\sigma}{Z}\frac{dZ}{d\sigma}\]</div>
 <p>at constant <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(N\)</span>. Typical values of <span class="math notranslate nohighlight">\(s = 0 \to 3\)</span> and of <span class="math notranslate nohighlight">\(\sigma=10^{-3} \to 1/2\)</span>. <span class="math notranslate nohighlight">\(N\)</span> can range from <span class="math notranslate nohighlight">\(10 \to 1000\)</span>. For further details, see Daune (1999) or Jackson (2006).</p>
-<p>The steps are given in the next python/Sympy calculation.</p>
+<p>The steps are given in the next python/SymPy calculation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">lambda1</span><span class="p">,</span> <span class="n">lambda2</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;s, sigma, lambda1, lambda2, N&#39;</span><span class="p">)</span>

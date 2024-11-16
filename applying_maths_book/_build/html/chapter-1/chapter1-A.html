@@ -2249,7 +2249,7 @@ for <span class="math notranslate nohighlight">\(N - a^2\)</span> and rearrangin
 <p>which can be put into the more complicated formula,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mu_H=m\frac{1}{\sum_{i=1}^m\frac{1}{\large{ n_i}} }\]</div>
-<p>This mean is used when the quantity <span class="math notranslate nohighlight">\(n_i\)</span> is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is <span class="math notranslate nohighlight">\(2d\)</span>. If the first leg is travelled at <span class="math notranslate nohighlight">\(60\)</span> mph and the return at <span class="math notranslate nohighlight">\(30\)</span> the average is  <span class="math notranslate nohighlight">\(2d/(d/60 + d/30)=40\)</span> mph not <span class="math notranslate nohighlight">\(45\)</span> as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.</p>
+<p>This mean is used when the quantity <span class="math notranslate nohighlight">\(n_i\)</span> is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is <span class="math notranslate nohighlight">\(2d\)</span>. If the first leg is travelled at <span class="math notranslate nohighlight">\(60\)</span> mph and the return at <span class="math notranslate nohighlight">\(30\)</span> we use speed = distance/time to find the average as  <span class="math notranslate nohighlight">\(\displaystyle \frac{2d}{(d/60 + d/30)}=40\)</span> mph not <span class="math notranslate nohighlight">\(45\)</span> as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.</p>
 </section>
 </section>
 <section id="golden-ratio">
@@ -2567,6 +2567,13 @@ a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} &amp; \displaystyle \log(a)-\log
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln(1+x)=\ln(x)- \sum_{n=1}^\infty (-1)^{n}\frac{x^{-n}}{n},\quad |x|&gt;1\]</div>
 <p>where we used <span class="math notranslate nohighlight">\(\ln(1+x)-\ln(x)=\ln(1+1/x)\)</span>. Notice that the power of <span class="math notranslate nohighlight">\(x\)</span> is now negative. Log and other series are described in Chapter 5.</p>
+<p>An alternative way of calculating <span class="math notranslate nohighlight">\(\ln(x)\)</span> where <span class="math notranslate nohighlight">\(x&gt;0\)</span> is to expand the logs <span class="math notranslate nohighlight">\(\ln(1+w)\)</span> and <span class="math notranslate nohighlight">\(\ln(1-w)\)</span> and subtract which gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(\frac{1+w}{1-w}\right)=2w+\frac{2}{3}w^3+\frac{2}{5}w^5 + \cdots\]</div>
+<p>and then substitute <span class="math notranslate nohighlight">\(\displaystyle x=\frac{1+w}{1-w}\)</span> which gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(x)= 2\left(\frac{x-1}{x+1}\right)+\frac{2}{3}\left(\frac{x-1}{x+1}\right)^3+\frac{2}{5}\left(\frac{x-1}{x+1}\right)^{5} +  \cdots\]</div>
+<p>The accuracy of a numerical result can be improved by adding more terms.</p>
 <p><img alt="drawing" src="../_images/chapter1-fig8.png" /></p>
 <p>Figure 8 Graph of exponential and log functions with the straight line <span class="math notranslate nohighlight">\(y = x\)</span>. The symmetry between <span class="math notranslate nohighlight">\(e^x\)</span> and <span class="math notranslate nohighlight">\(\ln(x)\)</span> is clear.</p>
 </section>

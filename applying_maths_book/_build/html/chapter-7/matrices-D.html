@@ -1594,7 +1594,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle R_{180}=\begin {bmatrix} -1 &amp;0 \\ 0 &amp; -1 \end{bmatrix}, \quad R_{90}=\begin {bmatrix} 0 &amp;1 \\ -1 &amp; 0 \end{bmatrix},\quad  R_{45}=\frac{1}{\sqrt{2}}\begin {bmatrix} 1 &amp;1 \\ -1 &amp; -1 \end{bmatrix}  \end{split}\]</div>
 <p>The effect we observe on rotation is that the molecule will appear to move in an arc around <span class="math notranslate nohighlight">\((0, 0)\)</span> or the centre of the axes; the arc atom ‘<span class="math notranslate nohighlight">\(a\)</span>’ follows has a radius <span class="math notranslate nohighlight">\(\sqrt{x_1^2+x_2^2}\equiv\sqrt{x_{R1}^2+x_{R2}^2}\)</span>. If we wanted the molecule to rotate about its own centre then we would have to place the centre of the axes at the centre of the molecule; this can be done by subtracting the coordinates of the centre from each atom, rotating the molecule then replacing these co- ordinates onto every atom.</p>
-<p>Using Sympy the rotation matrix is</p>
+<p>Using SymPy the rotation matrix is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>  <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;theta, a, b&#39;</span><span class="p">)</span>  <span class="c1"># use Sympy</span>
@@ -1791,7 +1791,7 @@ H6= \begin{bmatrix} -2.738&amp; -0.167&amp; 1.117 \end{bmatrix} &amp;\text{H on 
 \[\displaystyle \frac{\partial^2}{\partial x^2}+ \frac{\partial^2}{\partial y^2}\equiv \frac{\partial^2}{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorthim: Algebraic calculation using a Jacobian using Sympy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorthim: Algebraic calculation using a Jacobian using SymPy</span>
 
 <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">fxx</span><span class="p">,</span> <span class="n">fyy</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r, theta, fx, fy, P, fxx, fyy&#39;</span><span class="p">)</span>
 

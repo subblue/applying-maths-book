@@ -35,7 +35,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots, alter at will
 # 
 # (6) Arrays/lists use square brackets, e.g. $\mathtt{myary[i]}$ and integer index, $i$, and returns the value at that index.
 # 
-# (7) Normal functions sin, cos etc. are unknown and have to be accessed _via_ numpy as $\mathtt{np.sin(x), \;np.exp(x),\; np.pi }$ etc. Use numpy for any numerical calculation other than trivial ones as it is fast.
+# (7) Normal functions sin, cos etc. are unknown and have to be accessed _via_ NumPy as $\mathtt{np.sin(x), \;np.exp(x),\; np.pi }$ etc. Use NumPy for any numerical calculation other than trivial ones as it is fast.
 # 
 # (8) Powers are made as $\mathtt{x**(1J+3)}$ etc.
 # 
@@ -56,7 +56,7 @@ print(f01[:])
 # 
 # (11) Loops, subroutines, if etc. have no end statements; the tabbing is enough to delimit the range, however, it is acceptable to add the word _pass_ as the last statement as it often makes reading easier.
 # 
-# (12) There are objects called _list comprehensions_ that are an alternative to loops in many cases. (They are more consise but for speed or complex cases use loops).
+# (12) There are objects called _list comprehensions_ that are an alternative to loops in many cases. (They are more concise but for speed or complex cases use loops).
 
 # In[3]:
 
@@ -65,8 +65,8 @@ mylist = [i+2 for i in range(6)]    # makes list of 6 values, i=0 to 5 see below
 mylist[:]
 
 
-# Arrays are usually called _lists_ and enclosed by square brackets [] and indexed by square brackets, 
-# eg $\mathtt{mylist=[ 2,3,4 ]}$ and so to print use 
+# Arrays are usually called _lists_ and enclosed by square brackets $[\; ]$  and indexed by square brackets, 
+# e.g. $\mathtt{mylist=[ 2,3,4 ]}$ and so to print use 
 
 # In[4]:
 
@@ -83,15 +83,14 @@ print(mylist)   # or
 print(mylist[ : ])
 
 
-# 2d lists are called as $\mathtt{A[ i ][ j ]}$ , i.e. two separate brackets. 
+# 2D lists are called as $\mathtt{A[ i ][ j ]}$ , i.e. two separate brackets. 
 # 
-# Numpy arrays are called in a similar manner however, two D arrays can be called differently as $\mathtt{A[ i, j ]}$ with one square bracket.
-# 
+# NumPy arrays are called in a similar manner however, 2D arrays can be called differently as $\mathtt{A[ i, j ]}$ with one square bracket.
 # 
 # 
 # ## 5.2 Functions
 # 
-# There are two types of user defined functions, as in a multiline subroutine or procedure e.g. 
+# There are two types of user defined functions, as in a multi-line subroutine or procedure e.g. 
 
 # In[6]:
 
@@ -113,16 +112,16 @@ print(myfunc(np.pi/3) )
 
 # ## 5.3 Importing packages
 # 
-# It is necessary to import other packages for specific calculations, _numpy_ for fast numerical calculations, _scipy_ for special functions (such as error func), integrations, non-linear least squares etc. and _matplotlib_ for plotting. 
+# It is necessary to import other packages for specific calculations, NumPy for fast numerical calculations, SciPy for special functions (such as error func), integrations, non-linear least squares etc. and matplotlib for plotting. SymPy is used for algebraic calculations.
 # 
-# SymPy is used for algebraic calculations.
+# Print statements are always enclosed in brackets, eg. $\text{ print(x**2) }$ 
 # 
-# Print statements are always enclosed in brackets, eg. print(x**2)      [  This is different to python 2.7  ] 
+# ## 5.4 Integer division
 # 
-# The other main different to python 2.7 is that 3/2 is treated as real division,i.e. 1.5. To get integer division use 3//2 = 1. This is important if the division is then to be used as an index as these can only be integers.
+# The other main different to earlier python than version 3 is that 3/2 is treated as real division,i.e. 1.5. To get integer division use 3//2 = 1. This is important if the division is then to be used as an index as these can only be integers.
 # 
 # 
-# ## 5.4 Simple statements,  printing formats 
+# ## 5.5 Simple statements,  printing formats 
 
 # In[8]:
 
@@ -195,9 +194,9 @@ print('printing b[4][1] will lead to an error e.g.')
 #print(b[4][1])       the error produced here will stop the notebook code cell from continuing until it is fixed.
 
 
-# ## 7 Numerics are much faster with numpy.
+# ## 7 Numerics are much faster with NumPy.
 # 
-# Import numpy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic python.
+# Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic python.
 
 # In[12]:
 
@@ -286,7 +285,7 @@ plt.show()                            # this must be last plotting instruction
 
 # ## 9 Functions.
 # 
-# There are standard functions _sin, cos, exp_ etc. that we use numpy to call as _np.sin(x)_ etc. There are also two main types of user defined function that can take arguments.
+# There are standard functions _sin, cos, exp_ etc. that we use NumPy to call as _np.sin(x)_ etc. There are also two main types of user defined function that can take arguments.
 # 
 # ## 9.1 Lambda functions.
 # 
@@ -296,7 +295,7 @@ plt.show()                            # this must be last plotting instruction
 # 
 # note the word lambda and the colon. 
 # 
-# These function are called using normal **curved brackets**  _aname(3.0,2.0,...)_  Note that lists use square brackets.
+# These function are called using normal parentheses, i.e. **curved brackets** as $\text{aname(3.0,2.0,...)}$  Note that lists use square brackets.
 # 
 # It is also possible to use if statements inside a lambda and an example is given but it is usually better to use a def type function.
 
@@ -328,7 +327,7 @@ plt.show()
 # 
 # The variables inside the function are local, i.e. if you use x inside its different to the x outside. **However, there are rules on local and global variables that need checking**.
 # 
-# The syntax for _def_ functions is shown below. Note also that we can now plot negative values of aour function,not possible with the way the lambdat functio was defined.
+# The syntax for _def_ functions is shown below. Note also that we can now plot negative values of our function, not possible with the way the lambda function was defined.
 
 # In[17]:
 
@@ -440,13 +439,13 @@ print("\nremove ' and , from output", str(alpha).replace("'",'').replace(',','')
 
 # ## 11 Algebraic and numerical integration of a function
 # 
-# Now we will do some integration, both algebraic and numerically; we have already imported integrate from scipy; see top of document.
+# Now we will do some integration, both algebraic and numerically; we have already imported integrate from SciPy; see top of document.
 # 
 # The function to integrate is first defined and plotted.
 # 
 # The calculation of nearest neighbour distances  from one molecule to another has been worked out see Chandrashkar, Rev Mod Phys 1943.
 # 
-# Let $w(r)$ be the probability that the nearest neighbour occurs between distance  _r_ and _r_+_dr_. This must be the probability than no molecules exist closer to the victim molecule that one occurs at a distance _r_ and that this molecule axists in the shell _r_ to _r_+_dr_. Thus, 
+# Let $w(r)$ be the probability that the nearest neighbour occurs between distance  _r_ and _r_+_dr_. This must be the probability than no molecules exist closer to the victim molecule that one occurs at a distance _r_ and that this molecule exists in the shell _r_ to _r_+_dr_. Thus, 
 # 
 # $$ w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n$$
 # 
@@ -503,7 +502,7 @@ av
 # In[23]:
 
 
-# using scipy numerical integration  quad(func, x_start, x_end, arg( arguments in user function other than x))
+# using SciPy numerical integration  quad(func, x_start, x_end, arg( arguments in user function other than x))
 # the quad() returns two values the integration and the error bound. 
 # the user define function below if called func (we are so imaginative) 
 # but could also de defined as _def myfunc(r,n):_ etc.
@@ -531,9 +530,9 @@ else:
 
 # ## 13 Some other algebraic calculations, differentiation  and series
 # 
-# Sympy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are very obscure ansd so a couple of examples are given below.
+# SymPy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are very obscure and so a couple of examples are given below.
 # 
-# First differentiating then generating series expansion of the funtion produced.  The first step is to define the symbols to be used. We will use the nearest neighbour distribution to begin with.  The best output results are found without using print() as shown below. If you do use print as in print(Q.doit() ) a code type output is produced and the nice output supressed.
+# First differentiating then generating series expansion of the function produced.  The first step is to define the symbols to be used. We will use the nearest neighbour distribution to begin with.  The best output results are found without using print() as shown below. If you do use print as in print(Q.doit() ) a code type output is produced and the nice output suppressed.
 
 # In[24]:
 
@@ -616,7 +615,7 @@ plt.show()                       # last plot statement note that this is plt. no
 
 # ## 15 Numerical integration of differential equations
 # 
-# As an example the scheme $A  \leftrightharpoons B \rightarrow C $ is integrated. This is then done algebraically using sympy in lower down in the document.
+# As an example the scheme $A  \leftrightharpoons B \rightarrow C $ is integrated. This is then done algebraically using SymPy in lower down in the document.
 # 
 # The equations are 
 # 
@@ -624,7 +623,7 @@ plt.show()                       # last plot statement note that this is plt. no
 # 
 # and the initial conditions at $t=0$ are $A[0] = X_0, \; B[0] = 0.0, \; C[0] = 0.0$ where $X_0$ is defined in the code as the initial amount of _A_ present.
 # 
-# The method by which to do this is shown in the code. (For clarity the reverse rate const is now called km1 instead of $k_{-1}$) 
+# The method by which to do this is shown in the code. (For clarity the reverse rate constant is now called km1 instead of $k_{-1}$) 
 
 # In[28]:
 
@@ -677,7 +676,7 @@ plt.legend()
 plt.show()
 
 
-# ## 15.1 Algebraic solution using Sympy
+# ## 15.1 Algebraic solution using SymPy
 # 
 # The equations are 
 # 
@@ -706,7 +705,7 @@ s
 #print(s)
 
 
-# Because constants are produced it is necessary to evaluate these before any further calcuation. At _t_=0 as _B_=0 then  $C_1+C_2=0$ and as the total magnitude of the signal does not matter we can set $C_1=1$ and $C_2=-1$. The plot below shows the algebraic solution for _B_. 
+# Because constants are produced it is necessary to evaluate these before any further calcuation. At $t =0$ as $B =0$ then  $C_1+C_2=0$ and as the total magnitude of the signal does not matter we can set $C_1=1$ and $C_2=-1$. The plot below shows the algebraic solution for $B$. 
 
 # In[30]:
 
@@ -731,12 +730,10 @@ plt.show()
 
 # ## 16 Reading data from files and make a 3D plot from .sdf data
 # 
-# Python has several different ways of reading data and numpy has even more sophisticated methods.
-# The best way to start with is to use the script **_with open() as f:_** as shown below as this aoutmatically closes the file . Use **f.readlines()** get the whole lot of the data. It reads a list so may be text numbers or a mixture; it is up to you to sort this out later on.  
+# Python has several different ways of reading data and NumPy has even more sophisticated methods.
+# The best way to start with is to use the script **_with open() as f:_** as shown below as this automatically closes the file . Use **f.readlines()** get the whole lot of the data. It reads a list so can be text, numbers or a mixture; it is up to you to sort this out later on.  
 # 
 # The example reads an .sdf file. The first 4 lines are header, line 4 contains the number of atoms and number of connections and this is followed by x y z & atom symbol and then the  connections list. If there are many lines of data the number of atoms and connections can merge so it is necessary to specifically look for this and correct for it.
-# 
-# 
 
 # In[31]:
 

@@ -197,14 +197,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Constants always differentiate to zero because a graph of $y$ = constant has a zero gradient.
 # 
-# ## 3.6 Differentiation using Sympy
+# ## 3.6 Differentiation using SymPy
 
 # In[2]:
 
 
 x,y,a,b,n = symbols('x,y,a,b,n')  # define some symbols
 
-diff(x**n,x)           # differentiate x**n once with respect to x
+diff(x**n,x)                      # differentiate x**n once with respect to x
 
 
 # In[3]:

@@ -1543,7 +1543,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluating-determinants-using-python-and-sympy">
-   2.4 Evaluating determinants using Python and Sympy
+   2.4 Evaluating determinants using Python and SymPy
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1627,7 +1627,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluating-determinants-using-python-and-sympy">
-   2.4 Evaluating determinants using Python and Sympy
+   2.4 Evaluating determinants using Python and SymPy
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1784,8 +1784,8 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(vi)</strong> The determinant of the product of two matrices and the product of each matrix’s determinant, <span class="math notranslate nohighlight">\(|AB|=|A||B|\)</span></p>
 </section>
 <section id="evaluating-determinants-using-python-and-sympy">
-<h2>2.4 Evaluating determinants using Python and Sympy<a class="headerlink" href="#evaluating-determinants-using-python-and-sympy" title="Permalink to this headline">#</a></h2>
-<p>The numerical vale of a determinant is calculated by first defining the matrix size and filling in the values. If the matrix is very big the entries will have to be input via a algorithm, which means giving each row and column a value by setting up a double loop. To manipulate the matrix the linear algebra package is needed and this is imported at the top of this document where numpy and scipy are imported.  Notice that an ‘array’ is used (rather than a ‘matrix’) and that there are a pair of square brackets surrounding the middle three sets of numbers.</p>
+<h2>2.4 Evaluating determinants using Python and SymPy<a class="headerlink" href="#evaluating-determinants-using-python-and-sympy" title="Permalink to this headline">#</a></h2>
+<p>The numerical vale of a determinant is calculated by first defining the matrix size and filling in the values. If the matrix is very big the entries will have to be input via a algorithm, which means giving each row and column a value by setting up a double loop. To manipulate the matrix the linear algebra package is needed and this is imported at the top of this document where NumPy and SciPy are imported.  Notice that an ‘array’ is used (rather than a ‘matrix’) and that there are a pair of square brackets surrounding the middle three sets of numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">36</span><span class="p">],</span> <span class="p">[</span><span class="mi">49</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">81</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
@@ -1799,7 +1799,7 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 </div>
 </div>
 </div>
-<p>Using Sympy enables an algebraic determination of a determinant. In this case the matrix is defined slightly differently using the word Matrix(). The determinant is easily computed and produces a polynomial.</p>
+<p>Using SymPy enables an algebraic determination of a determinant. In this case the matrix is defined slightly differently using the word Matrix(). The determinant is easily computed and produces a polynomial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1842,7 +1842,7 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 <p>The determinant <span class="math notranslate nohighlight">\(\displaystyle \begin{vmatrix} x &amp; 1 &amp; 1\\ 1 &amp; x &amp; 1 \\ 1 &amp; 1 &amp; x \\\end{vmatrix}=0\)</span> is another way of writing a polynomial. Since there are three occurrences of x the determinant should produce a cubic equation. Expanding by using cofactors, as in equation (7.2), produces</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{vmatrix} x &amp; 1 &amp; 1\\ 1 &amp; x &amp; 1 \\ 1 &amp; 1 &amp; x \\\end{vmatrix}=x(x^2-1)-(x-1)+(1-x)=x^3-3x+2=0\end{split}\]</div>
-<p>The solution of this characteristic polynomial may be seen by inspection, which often means by trial and error; there are two roots with <span class="math notranslate nohighlight">\(x = 1\)</span> and one with <span class="math notranslate nohighlight">\(x = -2\)</span>. If you are not sure, substitute these answers into the equation, or use Sympy as shown below.</p>
+<p>The solution of this characteristic polynomial may be seen by inspection, which often means by trial and error; there are two roots with <span class="math notranslate nohighlight">\(x = 1\)</span> and one with <span class="math notranslate nohighlight">\(x = -2\)</span>. If you are not sure, substitute these answers into the equation, or use SymPy as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1948,7 +1948,7 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 E=\alpha+\frac{\beta}{2}(1+\sqrt{5})=\alpha-0.618\beta, \quad E=\alpha+\frac{\beta}{2}(1+\sqrt{5})=\alpha+1.618\beta\end{split}\]</div>
 <p>Figure 4 shows the <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> energy levels for butadiene measured as changes from <span class="math notranslate nohighlight">\(\alpha\)</span>. The integral <span class="math notranslate nohighlight">\(\beta\)</span> is negative.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig4-5.png" /></p>
-<p>Left, Figure 4. Right Fig. 5. Left. <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> energy levels for butadiene measured relative to <span class="math notranslate nohighlight">\(\alpha\)</span>. The integral <span class="math notranslate nohighlight">\(\beta\)</span> is negative. Right. Figure 5. Graphical solution of the characteristic polynomial for butadiene.</p>
+<p>Left, Figure 4. Right Fig. 5. Left. Huckel energy levels for butadiene measured relative to <span class="math notranslate nohighlight">\(\alpha\)</span>. The integral <span class="math notranslate nohighlight">\(\beta\)</span> is negative. Right. Figure 5. Graphical solution of the characteristic polynomial for butadiene.</p>
 <hr class="docutils" />
 <p>Notice that when the energies are plotted out, Fig 4, they symmetrically span the energy <span class="math notranslate nohighlight">\(\alpha\)</span>, which is the self-energy of the <span class="math notranslate nohighlight">\(\pi\)</span> electrons. If the interaction was zero because <span class="math notranslate nohighlight">\(\beta = 0\)</span>, then the determinant would be diagonal and all the electrons would be degenerate with energy <span class="math notranslate nohighlight">\(E = \alpha\)</span>. The initial energy, or rather the energy of <span class="math notranslate nohighlight">\(4\pi\)</span> electrons is <span class="math notranslate nohighlight">\(4\alpha\)</span>; after the molecular orbital has formed the energy is <span class="math notranslate nohighlight">\(2(\alpha + 1.618\beta) + 2(\alpha + 0.618\beta)\)</span>, a difference of <span class="math notranslate nohighlight">\(2(1.618 + 0.618)\beta\)</span> or <span class="math notranslate nohighlight">\(4.472\beta\)</span> and this is the energy gained or the stabilization energy, <span class="math notranslate nohighlight">\(\beta\)</span> being negative. This can be seen in the figure also. However, this is not really what is of interest because if the MO covers all the atoms, as it must, then the delocalization energy is of interest as it is the energy saved compared to two individual double bonds; these are equivalent to the <span class="math notranslate nohighlight">\(\pi\)</span> energy of two ethylene molecules which is <span class="math notranslate nohighlight">\(4(\alpha + \beta)\)</span>. The delocalization energy saving is then</p>
 <div class="math notranslate nohighlight">
@@ -2036,7 +2036,7 @@ x &amp; 1 &amp; 0 &amp; 1 \\
 </section>
 <section id="slater-determinants">
 <h2>3.2 Slater Determinants<a class="headerlink" href="#slater-determinants" title="Permalink to this headline">#</a></h2>
-<p>Finding a solution to the electronic Schroedinger equation for molecules allows the calculation of molecular geometry and the corresponding energy levels. The electronic Schroedinger equation calculates the energy of the electrons at a fixed nuclear separation, i.e. after the Born-Oppenheimer approximation is invoked. This approximation is made to simplify the equations and is valid as the mass of the electron is far less than that of a proton or neutron and so the electrons can realise their minimum energy without being influenced any change in the motion of the nuclei. A potential energy surface is then made by repeatedly solving at different but fixed nuclear positions, i.e. the electronic energy is minimized in the field of the point charges of the nuclei. An excellent description of the theory is given by A. Szabo and N. Ostlund ‘Modern Quantum Chemistry’ publ Dover 1982. The description that follows is based on chapter 2 of that book.</p>
+<p>Finding a solution to the electronic Schroedinger equation for molecules allows the calculation of molecular geometry and the corresponding energy levels. The electronic Schroedinger equation calculates the energy of the electrons at a fixed nuclear separation, i.e. after the Born-Oppenheimer approximation is invoked. This approximation is made to simplify the equations and is valid as the mass of the electron is far less than that of a proton or neutron and so the electrons can realise their minimum energy without being influenced any change in the motion of the nuclei. A potential energy surface is then made by repeatedly solving at different but fixed nuclear positions, i.e. the electronic energy is minimized in the field of the point charges of the nuclei. An excellent description of the theory is given by A. Szabo and N. Ostlund ‘Modern Quantum Chemistry’ publ. Dover 1982. The description that follows is based on chapter 2 of that book.</p>
 <p>The electronic Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> in the Schroedinger equation consists of terms in the kinetic energy of each electron <span class="math notranslate nohighlight">\(-\hbar^2/(2m)d^2/dr^2\)</span> and the potential energy of interaction of each electron (<span class="math notranslate nohighlight">\(i\)</span>) with every other one (<span class="math notranslate nohighlight">\(j\)</span>) which is <span class="math notranslate nohighlight">\(+e^2/r_{i,j}\)</span> and with each nucleus <span class="math notranslate nohighlight">\(-Z_ae/r_{a,j}\)</span> and the total energy must also include a term <span class="math notranslate nohighlight">\(Z_aZ_b/R_{ab}\)</span> for nuclear-nuclear repulsion. The equation is <span class="math notranslate nohighlight">\(H_{elec}\phi=\epsilon_{elec}\phi\)</span> where <span class="math notranslate nohighlight">\(\phi\)</span> is the electronic wavefunction whose value depends on the vector describing the electrons positions <span class="math notranslate nohighlight">\(\bar r \equiv x,y,z\)</span> and parametrically on the nuclear positions <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <p>The Hamiltonian describing the motion of <span class="math notranslate nohighlight">\(N\)</span> electrons in the field of <span class="math notranslate nohighlight">\(M\)</span> nuclei, written in atomic units (see chapter 1) is</p>
 <div class="math notranslate nohighlight">

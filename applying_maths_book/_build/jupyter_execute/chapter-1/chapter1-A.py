@@ -315,7 +315,7 @@ for i in range(m):                          # do iteration
 
 
 # If you try this algorithm with other values of $N$, you will soon realize that from a very wide range of initial values, convergence takes only a few iterations; it is far more efficient than the algorithm calculating $\pi$. You will need to increase $m$ a little to get more iterations with larger $N$, but eventually the arithmetical precision of Python comes into play and to get more digits better precision is needed, such as with the mpmath or Decimal libraries.
-
+# 
 # ## 2.3 Average or mean values. Arithmetic, Geometric and Harmonic
 # 
 # ### **(i) Arithmetic mean** 
@@ -352,8 +352,8 @@ for i in range(m):                          # do iteration
 # 
 # $$\displaystyle \mu_H=m\frac{1}{\sum_{i=1}^m\frac{1}{\large{ n_i}} }$$
 # 
-# This mean is used when the quantity $n_i$ is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is $2d$. If the first leg is travelled at $60$ mph and the return at $30$ the average is  $2d/(d/60 + d/30)=40$ mph not $45$ as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.
-
+# This mean is used when the quantity $n_i$ is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is $2d$. If the first leg is travelled at $60$ mph and the return at $30$ we use speed = distance/time to find the average as  $\displaystyle \frac{2d}{(d/60 + d/30)}=40$ mph not $45$ as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.
+# 
 # ## 2.4 Golden ratio 
 # 
 # The golden ratio $1.618033 \cdots$ was thought by the ancient Greeks to be the perfect ratio of width to the height of a picture, but to me it appears a little too wide for its height. The golden ratio has been written about extensively and has somewhat of a cult following. In *ca* 300 BC Euclid divided the line, figure 5, so that AC is to AB as AB is to BC. This is the ratio of the total length and of the larger section, to the ratio of the larger to small sections. As an equation  $\displaystyle \phi=\frac{AC}{AB}=\frac{AB}{BC}$ , then
@@ -369,7 +369,7 @@ for i in range(m):                          # do iteration
 # The golden ratio appears in unusual places, such as in rectangles and pentagons, as well as the coordinates of the edges of an icosahedron. These can be found from the values $(0, \pm 1, \pm \phi)$ and making a circular shift of these values. The icosahedron is formed only of triangles, fig6. Boron suboxide, $\mathrm{B_6O}$ forms particles of icosahedral symmetry.
 # 
 # Fullerenes, such as $\mathrm{C_{60}}$, and soccer balls, have a truncated icosahedral structure in which the vertices of the icosahedron are cut away to reveal a regular solid with sides of pentagons and hexagons. The truncated icosahedron is one of the Archimedean solids. In both cases the coordinates of the vertices are related by the golden ratio. The C$_{60}$ is formed of hexagons and pentagons and also has vertices given in terms of the golden ratio.
-
+# 
 # ![drawing](chapter1-fig6.png) 
 # 
 # Figure 6. An icosahedron (left) and a truncated icosahedron (right) which is the shape of a football and C$_{60}$ molecules.
@@ -693,6 +693,16 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # where we used $\ln(1+x)-\ln(x)=\ln(1+1/x)$. Notice that the power of $x$ is now negative. Log and other series are described in Chapter 5.
 # 
+# An alternative way of calculating $\ln(x)$ where $x>0$ is to expand the logs $\ln(1+w)$ and $\ln(1-w)$ and subtract which gives 
+# 
+# $$\displaystyle \ln\left(\frac{1+w}{1-w}\right)=2w+\frac{2}{3}w^3+\frac{2}{5}w^5 + \cdots$$
+# 
+# and then substitute $\displaystyle x=\frac{1+w}{1-w}$ which gives
+# 
+# $$\displaystyle \ln(x)= 2\left(\frac{x-1}{x+1}\right)+\frac{2}{3}\left(\frac{x-1}{x+1}\right)^3+\frac{2}{5}\left(\frac{x-1}{x+1}\right)^{5} +  \cdots$$
+# 
+# The accuracy of a numerical result can be improved by adding more terms.
+# 
 # ![drawing](chapter1-fig8.png)
 # 
 # Figure 8 Graph of exponential and log functions with the straight line $y = x$. The symmetry between $e^x$ and $\ln(x)$ is clear.
@@ -709,6 +719,12 @@ for i in range(1,12):      # increase number if does not comverge
 # $$\displaystyle \Delta G^\text{o}=-RT\ln(K_P)$$ 
 # 
 # causes problems: the log cannot have units.  The way round this is to divide $K_p$ by $1$ unit for example $1$ atm. or $1$ bar, or whatever units are being used.  However, care is needed because if your pressures are in Torr ($750$ torr =$1$ bar) then the conversion will be needed. As an example if the pressure is in torr and $K_P=2$ then $\Delta G=-RT\ln(2)$ but as we work in SI units with $RT$ then so must be the pressure producing $\displaystyle -RT\ln\left(\frac{2}{750}\frac{\text{bar}}{1\, \text{bar}}\right)$.
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

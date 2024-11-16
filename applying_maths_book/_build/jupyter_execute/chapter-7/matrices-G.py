@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # A set of simultaneous equations can conventionally be written as shown below, but the matrix equation is equivalent and clearer.
 # 
 # $$\displaystyle \qquad\qquad \begin{matrix}
-# 3x+4y+z=6\\ x-3y+7z=-3\\ 2x-y+4z=0\\ \end{matrix}
+# 3x+4y+z=6\\ x-3y+6z=-3\\ 2x-y+4z=0\\ \end{matrix}
 # \qquad\text{ or} \qquad  
 # \begin{bmatrix} 3&4&1\\1& -3 & 6\\ 2&-1 &4 \end{bmatrix}\begin{bmatrix} x\\y\\ z \end{bmatrix}=\begin{bmatrix} 6\\-3\\ 0 \end{bmatrix}\qquad\qquad\qquad\qquad \text{(29)}$$
 # 
@@ -59,7 +59,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix $\pmb{M}$, and performing a matrix multiplication with $\vec C$.
 # 
 # ### **(i) Solving simultaneous equations with the computer**
-# In practice, you will generally want to use the computer to solve simultaneous equations and this is illustrated in two ways below using Python. In the matrix method, $\vec C$ is a column matrix and $\pmb{M}$ has rows of the equation coefficients. Some methods are shown below. The first two using numpy, which gives a numerical answer, the second using Sympy which gives the result algebraically but can be converted to real numbers by multiplying by $1.0$. When using numpy the $\mathtt{linalg.inv(..)}$ produces the inverse of the matrix, the dot product $\mathtt{np.dot(..,..)}$ performs the matrix multiplication. 
+# In practice, you will generally want to use the computer to solve simultaneous equations and this is illustrated in two ways below using Python. In the matrix method, $\vec C$ is a column matrix and $\pmb{M}$ has rows of the equation coefficients. Some methods are shown below. The first two using NumPy, which gives a numerical answer, the second using SymPy which gives the result algebraically but can be converted to real numbers by multiplying by $1.0$. When using NumPy the $\mathtt{linalg.inv(..)}$ produces the inverse of the matrix, the dot product $\mathtt{np.dot(..,..)}$ performs the matrix multiplication. 
 # 
 # The equation to be solved is eqn. 29 above. 
 
@@ -72,7 +72,7 @@ answer = np.dot( np.linalg.inv( M), C )
 answer
 
 
-# An alternative is to use the numpy linear algebra package $\mathtt{linalg}$, see the top of this section for how to include it, i.e $\mathtt{from\; numpy\; import\; linalg\; as\; LA}$.  The solve routine may be more numerically robust than matrix inversion. 
+# An alternative is to use the NumPy linear algebra package $\mathtt{linalg}$, see the top of this section for how to include it, i.e $\mathtt{from\; numpy\; import\; linalg\; as\; LA}$.  The solve routine may be more numerically robust than matrix inversion. 
 
 # In[3]:
 
@@ -82,7 +82,7 @@ C = np.array([6,-3,0])
 LA.solve(M,C)
 
 
-# This example uses Sympy which gives an exact answer as a fraction.  
+# This example uses SymPy which gives an exact answer as a fraction.  
 
 # In[4]:
 
@@ -93,7 +93,7 @@ C = Matrix([6,-3,0])
 M**(-1)*C
 
 
-# Care has to be taken to note the order of the results which may not be the same as that of used to form the matrix $\pmb M$ defining $x, y$ and $z$, and therefore we cannot necessarily tell which answer is which. An alternative method, uses the Sympy solve routine, which does tells us which is which. Notice that the constant must be moved to the left hand side so that all the equations equal zero.
+# Care has to be taken to note the order of the results which may not be the same as that of used to form the matrix $\pmb M$ defining $x, y$ and $z$, and therefore we cannot necessarily tell which answer is which. An alternative method, uses the SymPy solve routine, which does tells us which is which. Notice that the constant must be moved to the left hand side so that all the equations equal zero.
 
 # In[5]:
 
@@ -164,7 +164,7 @@ print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 # 
 # $$ (m_C +m_H)r^2 +m_Hs^2 +2m_Hrs-\frac{\hbar}{12\pi B_H}=0\\ (m_C +m_D)r^2 +m_Ds^2 +2m_Drs-\frac{\hbar}{12\pi B_D}=0$$
 # 
-# Solving for $r$ and $s$ using Sympy can give an algebraic answer, which is not of much interest, but a numerical one is also possible as shown below:
+# Solving for $r$ and $s$ using SymPy can give an algebraic answer, which is not of much interest, but a numerical one is also possible as shown below:
 
 # In[7]:
 
@@ -205,13 +205,13 @@ for i in range(len(ans)):             # do this only to print clearly
 # \text{O} : & 3x_1&=&12x_2+4x_3+x_4+x_5\\
 # \end{array}$$
 # 
-# which is going to be very tricky to unravel by hand. Using Sympy is one option as in example 1, however, there are more equations that species so that the solution is only found in terms of other $x$'s.  
+# which is going to be very tricky to unravel by hand. Using SymPy is one option as in example 1, however, there are more equations that species so that the solution is only found in terms of other $x$'s.  
 # 
 # Placing the coefficients of $x$ in each equation into matrix form with column's in order $x_0,x_1$ etc. and rows as $\text{Fe,S}\cdots$ as above, gives
 # 
 # $$\displaystyle \begin{bmatrix}1&0&2&0&0&0\\2&0&3&1&0&0\\0&1&0&2&2&0\\0&1&0&0&0&1\\0&2&12&4&1&1 \end{bmatrix}$$
 # 
-# and the matrix has size $6\times 5$ and so we cannot use equation 30 because a non-square matrix cannot be inverted. The way around this problem is to convert the matrix into the row echelon form. This means changing the matrix by adding/multiplying/swapping rows until all the (now altered) values lie above the diagonal and the rest of the matrix is zero. There is a standard way to do this called *Gaussian Elimination*. A built-in Sympy function ($\mathtt{.rref()}$) will be used to do this, and although it is not difficult to do by hand it is fiddly and errors are easily made. 
+# and the matrix has size $6\times 5$ and so we cannot use equation 30 because a non-square matrix cannot be inverted. (This is not strictly true, we can use the pseudo-inverse, but this will not help here.) The way around this problem is to convert the matrix into the row echelon form. This means changing the matrix by adding/multiplying/swapping rows until all the (now altered) values lie above the diagonal and the rest of the matrix is zero. There is a standard way to do this called *Gaussian Elimination*. A built-in SymPy function ($\mathtt{.rref()}$) will be used to do this, and although it is not difficult to do by hand it is fiddly and errors are easily made. 
 # 
 # In the echelon form the last column contains the coefficient or a ratio of them from which the coefficients are obtained by clearing any fractions by multiplying by the same constant. This constant produces the missing coefficient. Although it is not necessary the results are clearer if reactant values are negative integers and products positive, this ensures that all proper values are either all positive or all negative and in the latter case the sign is ignored. Finally, zero value in any of the the calculated coefficients indicate an error.
 
@@ -226,8 +226,8 @@ mFeS2
 # In[9]:
 
 
-# echelon form. (We can ignore detals of calaution in temp)
-ans,temp = mFeS2.rref()   # reduced echelon form of matrix . Ignore temp as it is unimportant here.
+# echelon form. (We can ignore temp in this calculation)
+ans,temp = mFeS2.rref()   # reduced echelon form of matrix.
 ans
 
 
@@ -253,7 +253,7 @@ mCO
 # In[11]:
 
 
-ans, temp = mCO.rref()   # reduced echelon form of matrix . Ignore temp as it is unimportant here.
+ans, temp = mCO.rref()   # reduced echelon form of matrix . Ignore temp.
 ans
 
 
@@ -345,7 +345,7 @@ test
 # 
 # The result of calculating all values is a matrix of cofactors whose columns are the un-normalised eigenvectors. The $n\times n$ matrix of eigenvectors (as columns) a sometimes called the *modal* matrix.
 # 
-# We can use Python with Numpy (for fast numerical solutions) or Sympy (for algebraic solutions) to do most of the matrix diagonalization. When the matrix is formed both eigenvectors and eigenvalues can be produced together. The position of any eigenvalue - eigenvector pair that the computer produces is arbitrary, and this order does not, unless accidentally, correspond to the ordering of the basis set, but the eigenvalue and its corresponding eigenvector are always produced in the same relative positions. Also notice that eigenvectors are Note that the syntax is different for Numpy and for Sympy. It is assumed that these libraries are already loaded. 
+# We can use Python with NumPy (for fast numerical solutions) or SymPy (for algebraic solutions) to do most of the matrix diagonalization. When the matrix is formed both eigenvectors and eigenvalues can be produced together. The position of any eigenvalue - eigenvector pair that the computer produces is arbitrary, and this order does not, unless accidentally, correspond to the ordering of the basis set, but the eigenvalue and its corresponding eigenvector are always produced in the same relative positions. Also notice that eigenvectors are Note that the syntax is different for NumPy and for SymPy. It is assumed that these libraries are already loaded. 
 
 # In[13]:
 
@@ -379,7 +379,7 @@ ev1 = ans[1][2][0]  # get second eigenvector
 ev1
 
 
-# Another alternative is to use the sympy function matrix $\mathtt{.diagonalize() }$ that returns eigenvectors and eigenvalues in matrix form, i.e. 
+# Another alternative is to use the SymPy function matrix $\mathtt{.diagonalize() }$ that returns eigenvectors and eigenvalues in matrix form, i.e. 
 
 # In[16]:
 
@@ -631,7 +631,7 @@ evals,evecs
 # 
 # $$\displaystyle I\cdot S= \frac{a}{4}\begin{bmatrix} 1 & 0 & 0 & 0\\0 & -1 &2 & 0\\0 & 2 & -1 &0\\ 0 & 0 & 0 & 1 \end{bmatrix}$$
 # 
-# where $a$ is a constant. This matrix is essentially the same as that derived in equation (8.25), which describes an NMR spectrum but here with the magnetic field $B$ set to zero. The interaction of state $\beta\alpha$ with $\alpha\beta$, is matrix element $(3, 2)$ and is the same as the interaction of element $(2, 3)$ of state $\alpha\beta$ with $\beta\alpha$. The matrix is Hermitian real and symmetrical, meaning that the eigenvalues will be real and eigenvectors orthogonal to one another. As the matrix is block diagonal containing two $1 \times 1$ and one $2 \times 2$ matrix, the eigenvalues can easily be found by hand. The same solution is produced by python/sympy, which will also be used to find the eigenvectors. The wavefunctions for states where there is interaction between the basis states, is in general,
+# where $a$ is a constant. This matrix is essentially the same as that derived in equation (8.25), which describes an NMR spectrum but here with the magnetic field $B$ set to zero. The interaction of state $\beta\alpha$ with $\alpha\beta$, is matrix element $(3, 2)$ and is the same as the interaction of element $(2, 3)$ of state $\alpha\beta$ with $\beta\alpha$. The matrix is Hermitian real and symmetrical, meaning that the eigenvalues will be real and eigenvectors orthogonal to one another. As the matrix is block diagonal containing two $1 \times 1$ and one $2 \times 2$ matrix, the eigenvalues can easily be found by hand. The same solution is produced by python/SymPy, which will also be used to find the eigenvectors. The wavefunctions for states where there is interaction between the basis states, is in general,
 # 
 # $$\displaystyle \psi = \vec c_1|\alpha\alpha\rangle + \vec c_2|\alpha\beta\rangle + \vec c_3|\beta\alpha\rangle + \vec c_4|\beta\beta\rangle$$
 # 
@@ -643,7 +643,7 @@ evals,evecs
 # 
 # which has solutions $E = 1$ or $-3$. These are the new states and contain a mixture of the $\alpha\alpha$ and $\beta\beta$ states. The amounts of each old state in the new one are given by the eigenvectors. We know that $\alpha\alpha$ and $\beta\beta$ are single states because they are from $1 \times 1$ matrix. 
 # 
-# To find the eigenvectors we can use Python/Sympy
+# To find the eigenvectors we can use Python/SymPy
 
 # In[17]:
 

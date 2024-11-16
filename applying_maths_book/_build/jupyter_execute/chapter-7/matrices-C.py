@@ -611,7 +611,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-# Rotation matrices for d-orbitals using Sympy
+# Rotation matrices for d-orbitals using SymPy
 
 x,y,z,theta,n = symbols('x,y,z,theta,n')
 

@@ -277,7 +277,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}'.format('r =  ',r,' area = ', area(r,x0) ) )
 # 
 # and this can be made into an algorithm. 
 # 
-# (b) The equation is $x^9= 79$ has a solution $1.62498$ and the solution, for $\displaystyle \left( \frac{11}{9971} \right)^{30/91}$ as below, $0.1059378$.
+# (b) The equation is $x^9- 79=0$ and has a solution $1.62498$ and the solution, for $\displaystyle x-\left( \frac{11}{9971} \right)^{30/91}=0$ as below, $0.1059378$.
 
 # In[9]:
 

@@ -9,6 +9,7 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
+import numpy.linalg as La
 import matplotlib.pyplot as plt
 from sympy import *
 init_printing()                      # allows printing of SymPy results in typeset maths format
@@ -20,11 +21,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The rest of this chapter describes the properties and uses of matrices. The determinant described in the previous sections can be considered as one of the many properties of a matrix. In several places, reference is made to eigenvalues and eigenvectors before they have been fully explained, which is done in Section 12.3. The meaning of these words is outlined below but how they are obtained is left unanswered for the moment.
 # The eigenvalue - eigenvector equation is met, for example, in solving problems in Quantum Mechanics and Chemical Kinetics and has the form,
 # 
-# $$\displaystyle  \mathrm{operator \times function = constant \times same\; function}$$
+# $$\displaystyle  \mathrm{operator \otimes function = constant \otimes same\; function}$$
 # 
-# provided the function is not zero. In matrix form, the eigenvector - eigenvalue equation is
+# provided the function is not zero. The operator $\otimes$ means matrix multiplication but we never need use it as we will always know when vectors and or matrices are being multiplied together, not only from the context but also because these are written as bold characters. In matrix form, the eigenvector - eigenvalue equation is
 # 
-# $$\displaystyle \pmb{Ax}=\lambda \pmb{x}$$
+# $$\displaystyle \pmb{A x} = \lambda \pmb{x}$$
 # 
 # where $\pmb A$ is an $n \times n$ square matrix, $\pmb x$ is one of possibly $n$, one-dimensional column matrices (column vectors) each of length $n$ and each one is called an *eigenvector*, $\lambda$  represents one of $n$ numbers, and each $\lambda$ is called an *eigenvalue*. What this equation shows us is that the operator (matrix $\pmb A$) changes a vector $\pmb x$ by stretching or contracting it by an amount $\lambda$ but leaves it pointing in the same direction.
 # 
@@ -87,6 +88,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$Tr(\pmb{ABC}) = Tr(\pmb{CAB}) = Tr(\pmb{BCA})$$
 # 
 # This fact is very useful in group theory because the trace of a matrix forms a _representation_ of a molecule's symmetry. Because of this rule, the trace, and hence representation, is independent of the basis set used to describe the symmetry.
+# 
+# The trace of a square matrix is the sum of its eigenvalues $\lambda$, i.e.
+# 
+# $$\displaystyle Tr(\pmb M) = \sum_i\lambda_i$$
+# 
+# and the determinant of such a matrix is the product of eigenvalues 
+# 
+# $$\displaystyle |\pmb M|= \prod_i \lambda_i$$
 # 
 # ## 4.5 Matrix transpose $\pmb{M}^T$
 # 
@@ -168,7 +177,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 4.9 Inverse of a square matrix, $\pmb{M}^{-1}$
 # 
-# One matrix cannot be divided into another or into a constant so the operation $1/\pmb{M}$ is not allowed; instead the matrix inverse must be formed. Furthermore the inverse is defined only for a square matrix and then only if its determinant is not zero, $|\pmb{M}| \ne 0$. 
+# One matrix cannot be divided into another or into a constant so the operation $1/\pmb{M}$ is not allowed; instead the matrix inverse must be formed, this is labelled  $\pmb{M}^{-1}$ where the $-1$ superscript indicates the operations involved in forming the inverse. Furthermore the conventional inverse is defined only for a square matrix and then only if its determinant is not zero, $|\pmb{M}| \ne 0$. If the columns or rows of a determinant are the same this could be a sign that an error has occurred somewhere else in the calculation. However, if the determinant is zero a pseudo-inverse can be made via singular value decomposition (SVD), which avoids dividing by the determinant, and is called the Moore-Penrose inverse.
 # 
 # The inverse is another matrix labelled $\pmb{M}^{-1}$, such that
 # 
@@ -178,14 +187,36 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle (\pmb{M}^{-1})_{i,j}=\frac{(-1)^{i+j}}{|\pmb{M}|}|\pmb{C}_{j,i}|$$
 # 
-# where $| \pmb{M} | \ne 0$ is the determinant and $| \pmb{C}_{j,i} |$ is the cofactor matrix of row $j$ and column $i$. Note the change in ordering of the indices. Cofactors were described in Section 2.2. Generally, it is best to use Python/Sympy to calculate the inverse, because, besides being tedious, the chance of making an error is very high. The matrix inverse is met again when solving equations.
+# where $| \pmb{M} | \ne 0$ is the determinant and $| \pmb{C}_{j,i} |$ is the cofactor matrix of row $j$ and column $i$. Note the change in ordering of the indices. Cofactors were described in Section 2.2. Generally, it is best to use Python/NymPy to calculate the inverse, because, besides being tedious, the chance of making an error is very high. The matrix inverse is met again when solving equations.
 # 
+# Using Python/ NumPy to invert a matrix is shown next. The NumPy linear algebra module has to be imported first as done at the top of this page.
+
+# In[2]:
+
+
+M    = np.array([ [2,2,3],[-1,0,4],[6,5,4] ])   # make matrix
+invM = La.inv(M)
+invM             # inverse
+
+
+# Now check that this is the inverse $\pmb{MM}^{-1} =\pmb{1}$.  The ampersand @ is the matrix multiplier operator.
+
+# In[3]:
+
+
+M @ invM
+
+
+# which shows this is the inverse to numerical accuracy.
+# 
+# ### **(i) Inverse of a diagonal matrix**
 # If the matrix is diagonal then its inverse comprises the reciprocal of each term.
 # 
 # $$\displaystyle\begin{bmatrix} a & 0 & 0 \\ 0 & b & 0 \\0 & 0 & c  \end{bmatrix}^{-1}= \begin{bmatrix} 1/a & 0 & 0\\0 & 1/b & 0\\ 0 & 0 & 1/c\end{bmatrix}$$
 # 
 # and this is used in the calculation of vibrational normal modes.
 # 
+# ### **(ii) Inverse of the rotation matrix**
 # The rotation matrix is often needed when using molecular point groups
 # 
 # $$\displaystyle \pmb M_R=\begin{bmatrix} \cos(\theta)&\sin(\theta) &0\\ -\sin(\theta)&\cos(\theta) &0\\0&0&1\end{bmatrix}$$
@@ -198,7 +229,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 4.10 Singular matrix, determinant $|\pmb{M}|=0$
 # 
-# The determinant is zero and the matrix has no inverse. This is not the same as the null matrix, $\pmb{0}$. Odd sized $n \times n$, anti-symmetric matrices are singular, see section 4.6.
+# The determinant is zero and the matrix has no inverse. This is not the same as the null matrix, $\pmb{0}$. Odd sized $n \times n$, anti-symmetric matrices are singular.
 # 
 # 
 # ## 4.11 Unitary matrix $\pmb M^\dagger = \pmb M^{-1}$ or $\pmb {M}^\dagger \pmb{M} = \pmb{1}$ or $\pmb {M} \pmb{M}^\dagger = \pmb{1}$ and $ |\pmb {M} | = 1$
@@ -248,9 +279,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \pmb{A} \qquad \pmb{B}\qquad \pmb{C}\\
 # (n\times m)(m\times r) \to (n\times r)\\ 
-# \qquad \text{same number of columns in A as rows in B}$$
+#  \text{same number of columns in A as rows in B}$$
 # 
-# The calculation below shows the multiplication $\pmb{C} = \pmb{AB}$; the arrows show how the top element in $\pmb{C}$ is calculated as the product of element 1 of row 1 with element 1 of column 1. To this value is added the product of element 2 of row 1 and element 2 of column 1 and so on for all the elements in a row. This is why the number of rows and columns must be the same. You can also envisage the multiplication as the dot product of the each row with each column in turn.
+# The calculation below shows the multiplication $\pmb{C} = \pmb{AB}$; the arrows show how the top element in $\pmb{C}$ is calculated as the product of element 1 of row 1 with element 1 of column 1. To this value is added the product of element 2 of row 1 and element 2 of column 1 and so on for all the elements in a row. This is why the number of rows and columns must be the same. You can also envisage the multiplication as the dot product of the each row with each column in turn and this is shown diagrammatically below.
 # 
 # ![Drawing](matrix-pics2.png) 
 # 
@@ -280,12 +311,24 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Suppose there are three matrices $\pmb{ABC}$, then the safest rule to follow is to left-multiply $\pmb{C}$ by
 # $\pmb{B}$ first, then to left-multiply the result by $\pmb{A}$. The same rule is applied to several matrices; start at the right and work to the left. However, by the associative rule, Section 4.1, as long as the order $\pmb{ABCD}$ is maintained, this product can be multiplied in any order.
 # 
-# Should you have a row vector left multiplying a matrix and prefer to right multiply a matrix by a column vector then both vector and matrix must be transposed, i.e.
+# Should you have a row vector left multiplying a matrix and prefer to right multiply a matrix by a column vector then both vector and matrix must be transposed, and their order reversed i.e.
 # 
 # $$\displaystyle \begin{bmatrix}b_1 & b_2 & b_3 \end{bmatrix}\begin{bmatrix} a_{11} & a_{12} \\a_{21} & a_{22} \\ a_{31} &a_{32} \end{bmatrix} = \begin{bmatrix} a_{11} & a_{21} &a_{31} \\ a_{12} & a_{22} &a_{32} \end{bmatrix}  \begin{bmatrix} b_{1} \\ b_{2}\\b_3  \end{bmatrix} $$
 # 
 # 
-# The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The 'bra-ket' notation is shown also. 
+# ### **Schematic of matrix multiplication by dot products**
+# If you are familiar with taking the dot product of two vectors then the simplest way to do a matrix multiplication by hand can follow the scheme shown below. Each row and column chosen becomes, in effect, a vector making it easy, knowing the row and column indices, where the resultant dot product, which is a number, has to go. You can also immediately appreciate *via* the dot product why the number of columns in the left-hand matrix has to be equal to the number of rows in the right-hand one. This method can not be used when right multiplying a column by a row as in the outer product. 
+# 
+# ![Drawing](matrix-pics3.png)
+# ______________________
+# 
+# ### **Outer product vector multiplication**
+# In the case of the outer product the calculation is
+# 
+# $$\displaystyle \begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix}\begin{bmatrix} a_1 & a_2 & a_3 \cdots\end{bmatrix}=\begin{bmatrix}b_1a_1 & b_1a_2 & b_1a_3\cdots \\ b_2a_1 & b_2a_2 &\cdots \\ \vdots & \vdots& \ddots\end{bmatrix} $$
+# 
+# ### **Schematics of matrix multiplication**
+# The diagrams in Fig. 7 (below) show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The 'bra-ket' notation is shown also. 
 # 
 # ![Drawing](matrices-fig7a.png) 
 # _____
@@ -378,7 +421,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### **(ii) Trace**
 # 
-# The trace is $ Tr(\pmb{M})=A+D$
+# The trace is $ Tr(\pmb{M}) = A + D $
 # 
 # ### **(iii) Inverse**
 # 
@@ -402,13 +445,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The eigenvectors are $\displaystyle v_1=k \begin{bmatrix} B\\\lambda_1-A \end{bmatrix}$ and $\displaystyle v_2=k\begin{bmatrix} B\\\lambda_2-A \end{bmatrix}$ where $k$ is an arbitrary constant, for example to normalise the eigenvectors.
 # 
-# ## 5.8 Using matrices in Python and Sympy.
+# ## 5.8 Using matrices in Python and SymPy.
 # 
-# The is a distinction between doing numerical and symbolic calculations. Python/numpy is used for numerical work and Sympy for algebraic/symbolic calculations. The notation is slightly different depending on whether you use Sympy or numpy.
+# The is a distinction between doing numerical and symbolic calculations. Python/NumPy is used for numerical work and SymPy for algebraic/symbolic calculations. The notation is slightly different depending on whether you use SymPy or NumPy.
 # 
-# ### **(i) Symbolic calculations using Sympy**
+# ### **(i) Symbolic calculations using SymPy**
 
-# In[2]:
+# In[4]:
 
 
 M, N, a, b, c, d = symbols('M, N, a, b, c, d')    # define symbols to use        
@@ -416,13 +459,13 @@ M = Matrix( [[a, b], [c, d]]   )              # note double sets of brackets and
 M
 
 
-# In[3]:
+# In[5]:
 
 
 M.det()                         # determinant
 
 
-# In[4]:
+# In[6]:
 
 
 N = Matrix([[d,a],[c,b] ])
@@ -430,104 +473,104 @@ N = Matrix([[d,a],[c,b] ])
 N*M                             # matrix multiply
 
 
-# In[5]:
+# In[7]:
 
 
 M*N                              # matrix multiply 
 
 
-# In[6]:
+# In[8]:
 
 
 N*M - M*N                        # M and N do not commute
 
 
-# In[7]:
+# In[9]:
 
 
 V = Matrix([2,3])                # define vector column
 V
 
 
-# In[8]:
+# In[10]:
 
 
 W = Matrix ([5,4])
 V.dot(W)                         # dot product is a scalar number
 
 
-# In[9]:
+# In[11]:
 
 
 Transpose(V)*W                   # same as dot product 
 
 
-# In[10]:
+# In[12]:
 
 
 V*transpose(W)                   # outer product is a matrix see figure 7
 
 
-# ### **(ii) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy** 
+# ### **(ii) Using NumPy for numerical calculation.  Note that the notation is different to that of SymPy** 
 
-# In[11]:
+# In[13]:
 
 
-a = np.array([[1, 3],  [5, 1]])  # note that an array is now a treated as amatrix
+a = np.array([[1, 3],  [5, 1]])  # note that an array is now a treated as a matrix
 b = np.array([[4, 1], [2, 2]])
 print('a and b')
 a,b
 
 
-# In[12]:
+# In[14]:
 
 
 np.matmul(a, b)     # matrix multiply
 
 
-# In[13]:
+# In[15]:
 
 
 a @ b               # equivalent to np.matmul(a,b) 
 
 
-# In[14]:
+# In[16]:
 
 
 a * b               # this is NOT matrix multiply but element by element multiply 
 
 
-# In[15]:
+# In[17]:
 
 
 v = np.array([2,3])
 
 
-# In[16]:
+# In[18]:
 
 
 v.dot(v)            # dot product with itself is scalar
 
 
-# In[17]:
+# In[19]:
 
 
 np.dot(v, v)        # alternative way of doing dot product
 
 
-# In[18]:
+# In[20]:
 
 
 v @ a               # will automatically make transpose
 
 
-# In[19]:
+# In[21]:
 
 
 a @ v               # will automatically make transpose
 
 
-# In[20]:
+# In[22]:
 
 
 a @ b - b @ a       # commute ? No!

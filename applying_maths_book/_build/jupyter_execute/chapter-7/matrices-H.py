@@ -120,7 +120,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where each eigenvector is a column in the $x$ matrix and the notation $k_{12}$ is the rate constant from species $1(a) \to 2(b)$ etc.  The populations of each species are the rows of the $\pmb{M}(t)$ column vector.
 # 
-# The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.
+# The calculation, using python/SymPy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.
 # 
 # ### **(iii) Algebraic solution of $A \to B \to C$**
 # 
@@ -265,11 +265,11 @@ plt.show()
 # 
 # which means that species 0 decays to species 1 and 3 with a rate constant $k$ and receives energy from species 1 and 3 each with rate constant $k$. Molecule 2 is not involved as it is not a near neighbour to molecule 0. All the rate constants are the same because we choose only to consider nearest neighbours and the molecules are equally spaced from one another.
 # 
-# To solve these equations we can use the method outlined with the $\mathrm{H\overset{\cdot\cdot}uckel }$ determinant with which this has great similarity. The determinant to solve for the characteristic equation is 
+# To solve these equations we can use the method outlined with the Huckel determinant with which this has great similarity. The determinant to solve for the characteristic equation is 
 # 
 # $$\displaystyle \begin{vmatrix} -2k & k & 0  & k \\ k & -2k & k & 0 \\0& k & -2k & k \\k & 0 & k & -2k\end{vmatrix}$$
 # 
-# and has a special form as it is *circulant*, which is to say that each row is the same as the others but rotated by one place, additionally each diagonal contains the same entry. $\mathrm{H\overset{\cdot\cdot}uckel }$ determinants on benzene or other planar rings has the same form as this. 
+# and has a special form as it is *circulant*, which is to say that each row is the same as the others but rotated by one place, additionally each diagonal contains the same entry. Huckel determinants on benzene or other planar rings has the same form as this. 
 # 
 # If $\lambda$ are the roots of the polynomial represented by the determinant then we write down the secular equation as
 # 
@@ -497,7 +497,7 @@ plt.show()
 # Figure 55c. Left shows the maze with doors to other rooms. Right. The transition matrix.
 # ______________________________
 # 
-# The long time calculation is shown below where Sympy is used to solve the simultaneous equations 41c. The results show that room $1$ has the greatest average population and $2,3,5$ the least as explained. The similarity matrix approach could also be used in this case and is shown below.
+# The long time calculation is shown below where SymPy is used to solve the simultaneous equations 41c. The results show that room $1$ has the greatest average population and $2,3,5$ the least as explained. The similarity matrix approach could also be used in this case and is shown below.
 
 # In[7]:
 
@@ -855,7 +855,7 @@ m5
 # 
 # at constant $s$ and $N$. Typical values of $s = 0 \to 3$ and of $\sigma=10^{-3} \to 1/2$. $N$ can range from $10 \to 1000$. For further details, see Daune (1999) or Jackson (2006).
 # 
-# The steps are given in the next python/Sympy calculation.
+# The steps are given in the next python/SymPy calculation.
 
 # In[16]:
 

@@ -95,7 +95,7 @@
 # 
 # $$\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N$$
 # 
-# making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/\sin(x)$.
+# making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/(ax)$.
 # 
 # ### **(iii) Transitions between stationary states**
 # 
@@ -192,7 +192,11 @@
 # 
 # Mathematically, when $T\to\infty$ in the limit the integral in $T$ becomes $\infty$ and thus the exponential becomes $e^{-\infty}=0$ and the luminescence intensity is zero. When $T\to 0$ the first exponential becomes zero, $e^{-E/0}=e^{-\infty}=0$ and $I_T=0$.
 # 
-# To find the temperature of maximum luminescence the equation for the intensity is differentiated and set to zero. This will use some of the methods described so far, product rule and differentiating an integral (see 3.15), viz. $\displaystyle \frac{d}{dx}\int_a^x f(u)du =f(x)$ and so,
+# To find the temperature of maximum luminescence the equation for the intensity is differentiated and set to zero. This will use some of the methods described so far, product rule and differentiating an integral (see 3.15), viz. 
+# 
+# $$\displaystyle \frac{d}{dx}\int_a^x f(u)du =f(x)$$
+# 
+# and so,
 # 
 # $$\displaystyle \frac{dI_T}{dT}=n_0k_0\frac{E}{k_BT^2}e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT}\right)-n_0k_0e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT} \right)\frac{k_0}{\beta}e^{-E/k_BT} =0$$
 # 
@@ -200,7 +204,7 @@
 # 
 # $$\displaystyle k_0k_BT_m^2e^{-E/(k_BT_m)}-E\beta=0$$
 # 
-# This result can only be solved numerically, such as by the Newton-Raphson method, to find the trap depth, $E$ when the maximum temperature $T_m$ is known from experiment. 
+# This result can only be solved numerically, such as by the Newton-Raphson method, to find the trap depth $E$ when the maximum temperature $T_m$ is known from experiment. 
 # 
 # ![Drawing](differen-fig13b.png)
 # 
