@@ -1075,7 +1075,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-E.html">
-     8 Reaction schemes with feedback
+     8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1581,8 +1581,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm">
-   2.3 Integrating 1/x and 1/(ax+b) produces a logarithm
+  <a class="reference internal nav-link" href="#integrating-displaystyle-1-x-and-displaystyle-1-ax-b-produces-a-logarithm">
+   2.3 Integrating
+   <span class="math notranslate nohighlight">
+    \(\displaystyle 1/x\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(\displaystyle 1/(ax+b)\)
+   </span>
+   produces a logarithm
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1616,7 +1624,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">
-   2.8 Mean value theorem for integrals
+   2.8 Mean Value Theorem for integrals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1737,8 +1745,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm">
-   2.3 Integrating 1/x and 1/(ax+b) produces a logarithm
+  <a class="reference internal nav-link" href="#integrating-displaystyle-1-x-and-displaystyle-1-ax-b-produces-a-logarithm">
+   2.3 Integrating
+   <span class="math notranslate nohighlight">
+    \(\displaystyle 1/x\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(\displaystyle 1/(ax+b)\)
+   </span>
+   produces a logarithm
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1772,7 +1788,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">
-   2.8 Mean value theorem for integrals
+   2.8 Mean Value Theorem for integrals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1959,8 +1975,8 @@ initial or starting value and the upper limit the final value no matter which is
 \[\begin{split}\displaystyle \begin{array}{lll} \int 1dx= \int dx=x+c  &amp; \int 2dx =2\int dx=2x+c \\[8px] \int d\ln(x) =\ln(x)+c &amp; \int d\sin(x) =\sin(x)+c\end{array}\end{split}\]</div>
 <p>and so on; <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant.</p>
 </section>
-<section id="integrating-1-x-and-1-ax-b-produces-a-logarithm">
-<h2>2.3 Integrating 1/x and 1/(ax+b) produces a logarithm<a class="headerlink" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm" title="Permalink to this headline">#</a></h2>
+<section id="integrating-displaystyle-1-x-and-displaystyle-1-ax-b-produces-a-logarithm">
+<h2>2.3 Integrating <span class="math notranslate nohighlight">\(\displaystyle 1/x\)</span> and <span class="math notranslate nohighlight">\(\displaystyle 1/(ax+b)\)</span> produces a logarithm<a class="headerlink" href="#integrating-displaystyle-1-x-and-displaystyle-1-ax-b-produces-a-logarithm" title="Permalink to this headline">#</a></h2>
 <p>The <span class="math notranslate nohighlight">\(\displaystyle \frac{x^{n+1}}{n + 1}\)</span> rule is not going to work when <span class="math notranslate nohighlight">\(n = -1\)</span> as this will produce <span class="math notranslate nohighlight">\(1/0\)</span> which is infinity. In the case of reciprocal <span class="math notranslate nohighlight">\(x\)</span> the integral is:</p>
 <div class="math notranslate nohighlight">
 \[\int \frac{dx}{x}= \ln(x)+c \qquad \int_a^b \frac{dx}{x}=\ln(b)-\ln(a)=\ln\left(\frac{b}{a}\right)  \qquad\tag{7}\]</div>
@@ -1973,10 +1989,10 @@ initial or starting value and the upper limit the final value no matter which is
 <p>Suppose that there are a large number of sites on a surface that can accept and react with a molecule reaching this from solution. Any one of the sites can either be occupied or empty. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance of being occupied at time <span class="math notranslate nohighlight">\(t\)</span>, let <span class="math notranslate nohighlight">\(k_d \delta t\)</span> be the chance of becoming unoccupied (desorbing) in the interval <span class="math notranslate nohighlight">\(\delta t\)</span>. The average fraction becoming unoccupied is then <span class="math notranslate nohighlight">\(k_d p(t)\delta t\)</span> in the interval <span class="math notranslate nohighlight">\(t\to t+\delta t\)</span>. Similarly, let the chance becoming occupied in the same time be <span class="math notranslate nohighlight">\(k_ap(t)\delta t\)</span> where <span class="math notranslate nohighlight">\(k_a\)</span> is the adsorption rate constant. The fraction of sites occupied is then <span class="math notranslate nohighlight">\(k_ap(t)(1 - p(t))\delta t\)</span> which is the chance of being occupied multiplied by the chance that there is an empty site. The total rate of change in the limit <span class="math notranslate nohighlight">\(\delta t\to dt\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dp}{dt}=k_a p(1-p) - k_d p, \qquad \int\frac{dp}{k_a p(1-p) - k_d p}=\int dt\]</div>
-<p>Integrating this by hand and using the table in section 2.14 or by using Sympy produces, after some  simplification,</p>
+<p>Integrating this by hand is a bit tricky so use the integration table (section 2.14) to look for <span class="math notranslate nohighlight">\(\int 1/(a+bx+cx^2)dx\)</span> or use SymPy. After some  simplification,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \ln\left(\frac{k_a(p-1)+k_d}{k_ap} \right)=(k_d-k_a)t +const\]</div>
-<p>Note that as <span class="math notranslate nohighlight">\(p\)</span> is a probability it is dimensionless, <span class="math notranslate nohighlight">\(k_a,k_d\)</span> have units of s<span class="math notranslate nohighlight">\(^{-1}\)</span>.  The constant is determined by letting <span class="math notranslate nohighlight">\(p_0\)</span> be the value of <span class="math notranslate nohighlight">\(p\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+\[\displaystyle \ln\left(\frac{k_d-k_a(1-p)}{k_ap} \right)=(k_d-k_a)t +const\]</div>
+<p>Note that as <span class="math notranslate nohighlight">\(p\)</span> is a probability it is dimensionless and in the range <span class="math notranslate nohighlight">\(0\le p \le 1\)</span>, <span class="math notranslate nohighlight">\(k_a\)</span> and <span class="math notranslate nohighlight">\(k_d\)</span> have units of s<span class="math notranslate nohighlight">\(^{-1}\)</span>.  The constant is determined by letting <span class="math notranslate nohighlight">\(p_0\)</span> be the value of <span class="math notranslate nohighlight">\(p\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
 <p>This model has also been used to describe how populations of animals change when many different sites are available for them to occupy and also compete for; see Briton (2003).</p>
 </section>
 </section>
@@ -2048,7 +2064,7 @@ initial or starting value and the upper limit the final value no matter which is
 <p>Differentiating the sine or cosine produces one from another and so it should not come as
 a surprise that the same happens upon integration. For example,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{}{}\cos(3x+2)==-3\sin(3x+2)\]</div>
+\[\displaystyle \frac{d}{dx}\cos(3x+2)=-3\sin(3x+2)\]</div>
 <p>integrating both sides and rearranging produces, <span class="math notranslate nohighlight">\(\displaystyle \int\sin(3x+2)=-\frac{1}{3}\cos(3x+2)+c\)</span>. Similarly the general forms are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\sin(ax+b)=-\frac{1}{a}\cos(ax+b)+c  \qquad\tag{10} \]</div>
@@ -2077,8 +2093,8 @@ a surprise that the same happens upon integration. For example,</p>
 <p>where the exponentials are converted back to a sine in the last step. Similarly integrations of the form <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx,\; \int e^x \cosh(x)dx\)</span>, and so forth can be evaluated by converting to their exponential form first.</p>
 </section>
 <section id="mean-value-theorem-for-integrals">
-<h2>2.8 Mean value theorem for integrals<a class="headerlink" href="#mean-value-theorem-for-integrals" title="Permalink to this headline">#</a></h2>
-<p>The <em>first mean value theorem</em> states that for a point <span class="math notranslate nohighlight">\(s\)</span> in the range of an integration, <span class="math notranslate nohighlight">\(a \le s \le b\)</span> then</p>
+<h2>2.8 Mean Value Theorem for integrals<a class="headerlink" href="#mean-value-theorem-for-integrals" title="Permalink to this headline">#</a></h2>
+<p>The first <em>Mean Value Theorem</em> states that for a point <span class="math notranslate nohighlight">\(s\)</span> in the range of an integration, <span class="math notranslate nohighlight">\(a \le s \le b\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b f(x)dx = (b-a) \overline{f(s)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(s\)</span> is the value of <span class="math notranslate nohighlight">\(x\)</span> when <span class="math notranslate nohighlight">\(\overline{f(s)}\)</span> is the <em>average value</em> of <span class="math notranslate nohighlight">\(f\)</span>. This is a very convenient way of calculating averages and is described further in Section 8.</p>
@@ -2172,7 +2188,7 @@ a surprise that the same happens upon integration. For example,</p>
 <p>To make your own table make a list then loop over values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n,a,b,c&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>                <span class="c1"># use Sympy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n,a,b,c&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>                <span class="c1"># use SymPy</span>
 <span class="n">eqns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)]</span>                <span class="c1"># list of integrals here </span>
 <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span>  <span class="n">i</span><span class="p">,</span> <span class="n">eqn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eqns</span><span class="p">):</span> 

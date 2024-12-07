@@ -29,11 +29,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The walk is random and also unbiased, which means that the chance of moving to the right or to the left at any step is equal to $1/2$. Suppose that a walk can have only two steps, then there are four ways of moving and only three places the walk can end up, which is either where it started, or two steps to the left, or two to the right. The chance of two left moving steps, or a left and a right, is $1/4$. Similarly, the chance of a right-hand step and then a left-hand one, or of two right steps, is $1/4$. The chance, therefore, of returning to the starting place is $1/2$, and it is $1/4$ of moving, either two places to the right, or two to the left, of the start. After three steps, the walker can have moved three steps to the right or to the left, or two right and one left, and vice versa, or two left and one right, and vice versa. After an odd number of steps, the walker cannot be at the start of the walk. Clearly, the number of combinations of left and right steps soon becomes complicated but it is, nevertheless, calculable. The probability of ending up at different positions is shown in the table. The sums of each row add to one as these entries represent probability. These probabilities can be calculated by the binomial distribution, and, when fractions are cleared, Pascal's triangle results.
 # 
-# In an unbiased random event if $p$ is the probability of success in any single event, the probability of $k$ successes after $n$ attempts is the binomial distribution
+# In an unbiased random event if $p$ is the probability of success in any single event, the probability of $k$ successes after $n$ attempts is the Binomial distribution
 # 
-# $$\displaystyle  P(k,n,p)=\frac{n!}{k!(n-k)!}p^k\left( 1-p \right)^{n-k}$$
+# $$\displaystyle  B(n,k,p)=\frac{n!}{k!(n-k)!}p^k\left( 1-p \right)^{n-k}$$
 # 
-# and for example the chance of throwing a die three times so that each time the same number appears is $P(3, 3, 1/6) = 1/63$, the $1/6$ appears because there a 6 sides on a die. The factor 
+# and for example the chance of throwing a die three times so that each time the same number appears is $B(3, 3, 1/6) = 1/63$, the $1/6$ appears because there a 6 sides on a die. The factor 
 # 
 # $$\displaystyle \frac{n!}{k!(n-k)!}=\binom{n}{k}$$
 # 
@@ -41,11 +41,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In terms of the random walk, 'success' means that after a total of $n$ steps, the walker is at position $k$ steps away from the starting point. To calculate this probability, suppose that in a random walk of length $2n$, there are $x$ steps taken to the right, then $2n - x$ must be taken to the left. Therefore, the walker ends at position $x -(2n - x) = 2(x - n)$. If $x$ steps are taken to the right out of a total of $2n$ then the probability of this is
 # 
-# $$\displaystyle P(x,2n,p)= \frac{(2n)!}{k!(2n-k)!}p^x\left( 1-p \right)^{2n-x}$$
+# $$\displaystyle B(2n,x,p)= \frac{(2n)!}{x!(2n-x)!}p^x\left( 1-p \right)^{2n-x}$$
 # 
 # however, this can only be true if the walk ends at position $2(x-n)=2k$. Therefore $x=n+k$, giving
 # 
-# $$\displaystyle P(n+k,2n,p)= \frac{(2n)!}{(n+k)!(n-k)!}p^{n+k}\left( 1-p \right)^{n-k}$$
+# $$\displaystyle B(2n,n+k,p)= \frac{(2n)!}{(n+k)!(n-k)!}p^{n+k}\left( 1-p \right)^{n-k}$$
 # 
 # as the probability of being at $k$ after $2n$ steps. When $p = 1/2$ and four steps are taken $(n = 2,\; k = 2)$ this equation gives a probability of $1/16$ as shown by the bottom right entry in the table.
 # 

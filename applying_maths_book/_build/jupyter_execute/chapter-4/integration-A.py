@@ -184,7 +184,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and so on; $c$ is an arbitrary constant.
 # 
-# ## 2.3 Integrating 1/x and 1/(ax+b) produces a logarithm
+# ## 2.3 Integrating $\displaystyle 1/x$ and $\displaystyle 1/(ax+b)$ produces a logarithm
 # 
 # The $\displaystyle \frac{x^{n+1}}{n + 1}$ rule is not going to work when $n = -1$ as this will produce $1/0$ which is infinity. In the case of reciprocal $x$ the integral is:
 # 
@@ -202,11 +202,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \frac{dp}{dt}=k_a p(1-p) - k_d p, \qquad \int\frac{dp}{k_a p(1-p) - k_d p}=\int dt$$
 # 
-# Integrating this by hand and using the table in section 2.14 or by using Sympy produces, after some  simplification,
+# Integrating this by hand is a bit tricky so use the integration table (section 2.14) to look for $\int 1/(a+bx+cx^2)dx$ or use SymPy. After some  simplification,
 # 
-# $$\displaystyle \ln\left(\frac{k_a(p-1)+k_d}{k_ap} \right)=(k_d-k_a)t +const$$
+# $$\displaystyle \ln\left(\frac{k_d-k_a(1-p)}{k_ap} \right)=(k_d-k_a)t +const$$
 # 
-# Note that as $p$ is a probability it is dimensionless, $k_a,k_d$ have units of s$^{-1}$.  The constant is determined by letting $p_0$ be the value of $p$ at $t=0$. 
+# Note that as $p$ is a probability it is dimensionless and in the range $0\le p \le 1$, $k_a$ and $k_d$ have units of s$^{-1}$.  The constant is determined by letting $p_0$ be the value of $p$ at $t=0$. 
 # 
 # This model has also been used to describe how populations of animals change when many different sites are available for them to occupy and also compete for; see Briton (2003). 
 # 
@@ -282,7 +282,7 @@ integrate(eq, x )
 # Differentiating the sine or cosine produces one from another and so it should not come as
 # a surprise that the same happens upon integration. For example, 
 # 
-# $$\displaystyle \frac{}{}\cos(3x+2)==-3\sin(3x+2)$$
+# $$\displaystyle \frac{d}{dx}\cos(3x+2)=-3\sin(3x+2)$$
 # 
 # integrating both sides and rearranging produces, $\displaystyle \int\sin(3x+2)=-\frac{1}{3}\cos(3x+2)+c$. Similarly the general forms are 
 # 
@@ -320,9 +320,9 @@ integrate(eq, x )
 # 
 # where the exponentials are converted back to a sine in the last step. Similarly integrations of the form $\int e^x\sin(x)dx,\; \int e^x \cosh(x)dx$, and so forth can be evaluated by converting to their exponential form first.
 # 
-# ## 2.8 Mean value theorem for integrals
+# ## 2.8 Mean Value Theorem for integrals
 # 
-# The _first mean value theorem_ states that for a point $s$ in the range of an integration, $a \le s \le b$ then
+# The first *Mean Value Theorem* states that for a point $s$ in the range of an integration, $a \le s \le b$ then
 # 
 # $$\displaystyle \int_a^b f(x)dx = (b-a) \overline{f(s)}$$
 # 
@@ -451,7 +451,7 @@ print( ans)
 # In[5]:
 
 
-x,n,a,b,c = symbols('x,n,a,b,c', positive = True)                # use Sympy
+x,n,a,b,c = symbols('x,n,a,b,c', positive = True)                # use SymPy
 eqns = [x**n, 1/(a*x), exp(a*x + b), 1/(a*x + b)]                # list of integrals here 
 ans = []
 for  i, eqn in enumerate(eqns): 

@@ -1075,7 +1075,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-E.html">
-     8 Reaction schemes with feedback
+     8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1516,6 +1516,24 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#clever-substitution-can-help-to-solve-an-integral">
    3.1 Clever substitution can help to solve an integral
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-substitutions">
+     <strong>
+      (i)
+     </strong>
+     Substitutions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-tangent-half-angle-substitution">
+     <strong>
+      (ii)
+     </strong>
+     Tangent half-angle substitution
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-1-trig-formulas">
@@ -1898,6 +1916,24 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#clever-substitution-can-help-to-solve-an-integral">
    3.1 Clever substitution can help to solve an integral
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-substitutions">
+     <strong>
+      (i)
+     </strong>
+     Substitutions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-tangent-half-angle-substitution">
+     <strong>
+      (ii)
+     </strong>
+     Tangent half-angle substitution
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-1-trig-formulas">
@@ -2284,6 +2320,8 @@ title="Print to PDF"
 <h1>3 Integration by substitution and ‘by parts’. Differentiation and the Leibniz formula. Feynman’s ‘Trick’<a class="headerlink" href="#integration-by-substitution-and-by-parts-differentiation-and-the-leibniz-formula-feynman-s-trick" title="Permalink to this headline">#</a></h1>
 <section id="clever-substitution-can-help-to-solve-an-integral">
 <h2>3.1 Clever substitution can help to solve an integral<a class="headerlink" href="#clever-substitution-can-help-to-solve-an-integral" title="Permalink to this headline">#</a></h2>
+<section id="i-substitutions">
+<h3><strong>(i)</strong> Substitutions<a class="headerlink" href="#i-substitutions" title="Permalink to this headline">#</a></h3>
 <p>It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.</p>
 <p>There are three parts to the method, which will be illustrated with <span class="math notranslate nohighlight">\(\displaystyle\int \sin^2(x)\cos(x)dx\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(1)</strong> Change a complex expression in <span class="math notranslate nohighlight">\(x\)</span> into a simpler one in another variable <span class="math notranslate nohighlight">\(u\)</span> by a substitution,</p>
@@ -2307,6 +2345,25 @@ title="Print to PDF"
 \[4\int\sin^2(\theta)d\theta = 2\theta -2\sin(\theta)\cos(\theta)+c=2\sin^{-1}\left(\frac{x}{2}\right)-\frac{x}{2}\sqrt{4-x^2}+c\]</div>
 </section>
 <hr class="docutils" />
+<section id="ii-tangent-half-angle-substitution">
+<h3><strong>(ii)</strong> Tangent half-angle substitution<a class="headerlink" href="#ii-tangent-half-angle-substitution" title="Permalink to this headline">#</a></h3>
+<p>This substitution is useful for integrals such as <span class="math notranslate nohighlight">\(\int dx/\sin(x)\)</span> and is based on the identities</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin(x)=\frac{2\tan(x/2)}{1+\tan^2(x/2)},\qquad \cos(x)=\frac{1-\tan^2(x/2)}{1+\tan^2(x/2)}\]</div>
+<p>and the substitution used is <span class="math notranslate nohighlight">\(t=\tan(x/2)\)</span>, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin(x) \to \frac{2t}{1+t^2},\qquad \cos(x)\to \frac{1-t^2}{1+t^2},\qquad dx\to\frac{2}{1+t^2}dt\]</div>
+<p>and for the integral <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dx}{1+\cos(x)}\)</span> the substitution gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{dx}{1+\cos(x)} =\int \frac{1}{1+\frac{1-t^2}{1+t^2}}\frac{2}{1+t^2}dt=\int 1dt=\tan\left(\frac{x}{2}\right)\]</div>
+<p>The integral <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dx}{1-\sin(x)}\)</span> is done in the same way but is a little more complicated</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{dx}{1+\sin(x)} =\int \frac{1}{1-\frac{2t}{1+t^2}}\frac{2}{1+t^2}dt =\int \frac{2dt}{1-2t+t^2}= \int \frac{2dt}{(1-t)^2}\]</div>
+<p>This integral has the form <span class="math notranslate nohighlight">\(\int dx/(ax+b)^2\)</span> and from table in section 2.14,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 2\int \frac{dt}{(1-t)^2}=2\frac{1}{1-t}=\frac{2}{1-\tan(x/2)}\]</div>
+</section>
+</section>
 <section id="table-1-trig-formulas">
 <h2>3.2 Table 1 Trig formulas<a class="headerlink" href="#table-1-trig-formulas" title="Permalink to this headline">#</a></h2>
 <p><img alt="Drawing" src="../_images/integration-table1.png" /></p>
@@ -2318,6 +2375,7 @@ title="Print to PDF"
 \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &amp;\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}&amp;\displaystyle \tan(\theta)=\frac{x}{a} \\
 \hline \end{array}\end{split}\]</div>
 </section>
+<hr class="docutils" />
 <section id="definite-integrals-with-substitution">
 <h2>3.3 Definite integrals with substitution<a class="headerlink" href="#definite-integrals-with-substitution" title="Permalink to this headline">#</a></h2>
 <p>When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also <em>necessary to change the limits</em>, thus making it unnecessary to reverse the substitution to obtain the result.</p>
@@ -2524,7 +2582,7 @@ method recursive in this instance. Rearranging gives</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/integration-B_5_0.png" src="../_images/integration-B_5_0.png" />
+<img alt="../_images/integration-B_6_0.png" src="../_images/integration-B_6_0.png" />
 </div>
 </div>
 <p>As a check the integral is calculated directly,</p>
@@ -2535,7 +2593,7 @@ method recursive in this instance. Rearranging gives</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/integration-B_7_0.png" src="../_images/integration-B_7_0.png" />
+<img alt="../_images/integration-B_8_0.png" src="../_images/integration-B_8_0.png" />
 </div>
 </div>
 <p>If limits of <span class="math notranslate nohighlight">\(0\to \infty\)</span> are added to the integral then the last result becomes</p>
@@ -2572,7 +2630,13 @@ method recursive in this instance. Rearranging gives</p>
 </section>
 <section id="vi-using-summation-and-by-parts-to-evaluate-the-integral-int-0-infty-frac-x-3-e-x-1-dx-from-the-debye-model">
 <h3><strong>(vi)  Using summation and ‘by-parts’ to evaluate the integral <span class="math notranslate nohighlight">\(\int_0^\infty \frac{x^3}{e^x -1}dx\)</span> from the Debye model</strong><a class="headerlink" href="#vi-using-summation-and-by-parts-to-evaluate-the-integral-int-0-infty-frac-x-3-e-x-1-dx-from-the-debye-model" title="Permalink to this headline">#</a></h3>
-<p>In calculating the heat capacity of a crystal at low temperatures using the Debye model the integral to be solved is <span class="math notranslate nohighlight">\(I=\displaystyle \int_0^{\theta/T} \frac{x^3}{e^x -1}dx\)</span>. At low temperatures the parameter <span class="math notranslate nohighlight">\(x =\theta/T\)</span> is large and so, without adding any significant error the integral becomes <span class="math notranslate nohighlight">\(I=\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx\)</span>. The parameter <span class="math notranslate nohighlight">\(\theta\)</span> is the Debye temperature, a constant for each substance.  At first sight this seems very a daunting integral but if the argument is re-written it allows a series expansion to be used because at low temperature only <span class="math notranslate nohighlight">\(e^{-x}\lt 1\)</span>,</p>
+<p>In calculating the heat capacity of a crystal at low temperatures using the Debye model the integral to be solved is</p>
+<div class="math notranslate nohighlight">
+\[I=\displaystyle \int_0^{\theta/T} \frac{x^3}{e^x -1}dx\]</div>
+<p>At low temperatures the parameter <span class="math notranslate nohighlight">\(\theta/T\)</span> is large and so, without adding any significant error the integral becomes</p>
+<div class="math notranslate nohighlight">
+\[I=\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx\]</div>
+<p>The parameter <span class="math notranslate nohighlight">\(\theta\)</span> is the Debye temperature, a constant for each substance.  At first sight this seems very a daunting integral. However, if the argument is re-written it allows a series expansion to be used, but only at low temperatures because here <span class="math notranslate nohighlight">\(e^{-x}\lt 1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\frac{x^3}{e^x -1}&amp;=x^3\frac{e^{-x}}{1-e^{-x}}=x^3e^{-x}(1+e^{-x}+e^{-2x}+\cdots)\\&amp;=\sum_{n=1}^\infty e^{-nx}x^3 \end{align}\end{split}\]</div>
 <p>The integral is now</p>
@@ -2697,7 +2761,7 @@ f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^
 <p>and the derivative of the integral is found using the Leibniz formula (with simplification (c) ) and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dT}\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx=-\frac{\theta}{T^2}\frac{(\theta/T)^3}{(e^{\theta/T}-1)}\tag{iii}\]</div>
-<p>To form the internal energy add <span class="math notranslate nohighlight">\({i}+{ii}\)</span> and multiply by <span class="math notranslate nohighlight">\(RT^2\)</span> and after simplification the internal energy is</p>
+<p>To form the internal energy add equations (i) and (ii) and multiply by <span class="math notranslate nohighlight">\(RT^2\)</span> and after simplification the internal energy is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{U}{R}=9T\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx\]</div>
 <p>The heat capacity <span class="math notranslate nohighlight">\(C_V\)</span> is found by differentiating this result by <span class="math notranslate nohighlight">\(T\)</span> and is</p>

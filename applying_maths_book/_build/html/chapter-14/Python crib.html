@@ -1075,7 +1075,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-E.html">
-     8 Reaction schemes with feedback
+     8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1581,8 +1581,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lambda-functions">
-     9.1 Lambda functions.
+    <a class="reference internal nav-link" href="#lambda-functions-more-examples">
+     9.1 Lambda functions; more examples
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1606,8 +1606,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algebraic-integration-example-to-find-average-distance">
-     12.1 Algebraic integration; example to find average distance
+    <a class="reference internal nav-link" href="#symbolic-algebraic-integration-example-to-find-average-distance">
+     12.1 Symbolic algebraic integration; example to find average distance
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1787,8 +1787,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lambda-functions">
-     9.1 Lambda functions.
+    <a class="reference internal nav-link" href="#lambda-functions-more-examples">
+     9.1 Lambda functions; more examples
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1812,8 +1812,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algebraic-integration-example-to-find-average-distance">
-     12.1 Algebraic integration; example to find average distance
+    <a class="reference internal nav-link" href="#symbolic-algebraic-integration-example-to-find-average-distance">
+     12.1 Symbolic algebraic integration; example to find average distance
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1920,7 +1920,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First import all python add-ons etc that will be needed later on</span>
-<span class="c1"># the next line is specific &#39;magic&#39; instruction to jupyter notebook ; do not add anything to that line</span>
+<span class="c1"># the next line is specific &#39;magic&#39; instruction to jupyter notebook ; do not add anything ele to that line</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline                       
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>               <span class="c1"># general python    fast numerical calculation</span>
@@ -1930,7 +1930,6 @@ title="Print to PDF"
 
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>              <span class="c1"># algebraic solution of equations, only add if doing algebraic things </span>
 <span class="n">init_printing</span><span class="p">()</span>                  <span class="c1"># allows printing of SymPy results in typeset maths format</span>
-
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots, alter at will.</span>
 </pre></div>
 </div>
@@ -1938,22 +1937,22 @@ title="Print to PDF"
 </div>
 <section id="basic-syntax-python-3-is-assumed">
 <h2>5.1 Basic syntax. Python 3 is assumed.<a class="headerlink" href="#basic-syntax-python-3-is-assumed" title="Permalink to this headline">#</a></h2>
-<p>(1) The position an instruction starts on a line is important. Normally position zero starts a line but in loops or after conditional statements indented by 4 spaces or a tab. In general it seems that the spaces and tabs cannot be mixed.</p>
-<p>(2) Python is case sensitive, i.e. a name <span class="math notranslate nohighlight">\(\mathtt{Func}\)</span> is different to <span class="math notranslate nohighlight">\(\mathtt{func}\)</span>. Names should not start with a number.</p>
-<p>(3) <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span> is given the symbol <span class="math notranslate nohighlight">\(\mathtt{1j}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{1J}\)</span></p>
-<p>(4) Division takes two forms, a/b for normal floating point, i.e. 3/2=1.5 and a//b for integer division, i.e 3//2=1</p>
-<p>(5) Functions sin cos or your own use round brackets i.e. <span class="math notranslate nohighlight">\(\mathtt{np.tan(x)}\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be floating point or integer and the function is evaluated at hat value.</p>
-<p>(6) Arrays/lists use square brackets, e.g. <span class="math notranslate nohighlight">\(\mathtt{myary[i]}\)</span> and integer index, <span class="math notranslate nohighlight">\(i\)</span>, and returns the value at that index.</p>
-<p>(7) Normal functions sin, cos etc. are unknown and have to be accessed <em>via</em> NumPy as <span class="math notranslate nohighlight">\(\mathtt{np.sin(x), \;np.exp(x),\; np.pi }\)</span> etc. Use NumPy for any numerical calculation other than trivial ones as it is fast.</p>
-<p>(8) Powers are made as <span class="math notranslate nohighlight">\(\mathtt{x**(1J+3)}\)</span> etc.</p>
-<p>(9) Indexing lists, sets, and arrays all start at zero, i.e. the first element of mylist is, <span class="math notranslate nohighlight">\(\mathtt{mylist[ 0 ]}\)</span>. If the list is of length <span class="math notranslate nohighlight">\(n\)</span> the last element is <span class="math notranslate nohighlight">\(\mathtt{mylist[n-1]}\)</span></p>
-<p>(10) When using <em>for loops,  while loops, subroutines, if</em> statements, etc. the first line ends in a colon: for example</p>
+<p><strong>(1)</strong> The position an instruction starts on a line is important. Normally position zero starts a line but in loops or after conditional statements indented by 4 spaces or a tab. In general it seems that the spaces and tabs cannot be mixed.</p>
+<p><strong>(2)</strong> Python is case sensitive, i.e. a name <span class="math notranslate nohighlight">\(\mathtt{Func}\)</span> is different to <span class="math notranslate nohighlight">\(\mathtt{func}\)</span>. Names should not start with a number.</p>
+<p><strong>(3)</strong> <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span> is given the symbol <span class="math notranslate nohighlight">\(\mathtt{1j}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{1J}\)</span></p>
+<p><strong>(4)</strong> Division takes two forms, a/b for normal floating point, i.e. 3/2 = 1.5 and a//b for integer division, i.e. 3//2 = 1</p>
+<p><strong>(5)</strong> Functions sin, cos or your own function use round brackets i.e. <span class="math notranslate nohighlight">\(\mathtt{np.tan(x)}\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be floating point or integer and the function is evaluated at hat value.</p>
+<p><strong>(6)</strong> Arrays/lists use square brackets, e.g. <span class="math notranslate nohighlight">\(\mathtt{myary[i]}\)</span> and integer index, <span class="math notranslate nohighlight">\(i\)</span>, and returns the value at that index.</p>
+<p><strong>(7)</strong> Normal functions sin, cos etc. are unknown and have to be accessed <em>via</em> NumPy as <span class="math notranslate nohighlight">\(\mathtt{np.sin(x), \;np.exp(x),\; np.pi }\)</span> etc. Use NumPy for any numerical calculation other than trivial ones as it is fast.</p>
+<p><strong>(8)</strong> Powers are made as <span class="math notranslate nohighlight">\(\mathtt{x**(1J+3)}\)</span> etc.</p>
+<p><strong>(9)</strong> Indexing lists, sets, and arrays all start at zero, i.e. the first element of mylist is, <span class="math notranslate nohighlight">\(\mathtt{mylist[ 0 ]}\)</span>. If the list is of length <span class="math notranslate nohighlight">\(n\)</span> the last element is <span class="math notranslate nohighlight">\(\mathtt{mylist[n-1]}\)</span></p>
+<p><strong>(10)</strong> When using <em>for loops,  while loops, subroutines, if</em> statements, etc. the first line ends in a colon: for example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f01</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>   <span class="c1"># define list</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>             <span class="c1"># this has values ten values, i from  0 to 9  end in :</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f01</span> <span class="o">=</span> <span class="p">[</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">]</span>   <span class="c1"># define list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>                 <span class="c1"># this has values ten values, i from  0 to 9  end in :</span>
     <span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mf">10.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f01</span><span class="p">[:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f01</span><span class="p">[:])</span>                       <span class="c1"># the colon means use whole list</span>
 </pre></div>
 </div>
 </div>
@@ -1964,11 +1963,11 @@ title="Print to PDF"
 </div>
 </div>
 <p>and all lines in the loop are inset by 4 spaces or a tab.</p>
-<p>(11) Loops, subroutines, if etc. have no end statements; the tabbing is enough to delimit the range, however, it is acceptable to add the word <em>pass</em> as the last statement as it often makes reading easier.</p>
-<p>(12) There are objects called <em>list comprehensions</em> that are an alternative to loops in many cases. (They are more concise but for speed or complex cases use loops).</p>
+<p><strong>(11)</strong> Loops, subroutines, if etc. have no end statements; the tabbing is enough to delimit the range, however, it is acceptable to add the word <em>pass</em> as the last statement as it often makes reading easier.</p>
+<p><strong>(12)</strong> There are objects called <em>list comprehensions</em> that are an alternative to loops in many cases. They are more concise but for speed or complex cases use loops.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>    <span class="c1"># makes list of 6 values, i=0 to 5 see below for details</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="p">]</span>    <span class="c1"># makes list of 6 values, i = 0 to 5 see below for details</span>
 <span class="n">mylist</span><span class="p">[:]</span>
 </pre></div>
 </div>
@@ -1978,7 +1977,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Arrays are usually called <em>lists</em> and enclosed by square brackets <span class="math notranslate nohighlight">\([\; ]\)</span>  and indexed by square brackets,
-e.g. <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</span> and so to print use</p>
+e.g. <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2, 3, 4 ]}\)</span> and so to print use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">mylist</span><span class="p">[</span> <span class="mi">0</span> <span class="p">]</span> <span class="p">)</span> 
@@ -1991,10 +1990,12 @@ e.g. <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</s
 </div>
 </div>
 </div>
-<p>to print the first element or to print the whole thing.</p>
+<p>to print the first element.</p>
+<p><strong>(13)</strong>  In Python 3 notice that print statements are always enclosed in round brackets.
+To print the whole list use,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>   <span class="c1"># or</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>             <span class="c1"># or</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span> <span class="p">:</span> <span class="p">])</span>
 </pre></div>
 </div>
@@ -2006,8 +2007,38 @@ e.g. <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</s
 </div>
 </div>
 </div>
-<p>2D lists are called as <span class="math notranslate nohighlight">\(\mathtt{A[ i ][ j ]}\)</span> , i.e. two separate brackets.</p>
+<p><strong>(14)</strong> Printing using  f’’  notation</p>
+<p>A new and quick method to print is using <em>f</em> notation, thus to print ‘ one fifth = 1/6 ‘ we could use</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;one sixth =&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># or formatted as </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;one sixth =&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one sixth = 0.16666666666666666
+one sixth = 0.167
+</pre></div>
+</div>
+</div>
+</div>
+<p>we can use the <em>f</em> format but note that only the last occurrence of this is printed in any cell</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;one sixth = </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="si">:</span><span class="s1">6.3f</span><span class="si">}</span><span class="s1">&#39;</span>  <span class="c1"># the .3 gives 3 decimal places, the 6 is ignored but can be included</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;one sixth =  0.167&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>(15)</strong> 2D lists are called as <span class="math notranslate nohighlight">\(\mathtt{A[ i ][ j ]}\)</span> , i.e. two separate brackets.</p>
 <p>NumPy arrays are called in a similar manner however, 2D arrays can be called differently as <span class="math notranslate nohighlight">\(\mathtt{A[ i, j ]}\)</span> with one square bracket.</p>
+<p><strong>(16)</strong> To convert an array to a NumPy array use <span class="math notranslate nohighlight">\(\mathtt{ np.array([2,3,4]) }\)</span></p>
 </section>
 <section id="functions">
 <h2>5.2 Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
@@ -2044,8 +2075,7 @@ e.g. <span class="math notranslate nohighlight">\(\mathtt{mylist=[ 2,3,4 ]}\)</s
 </section>
 <section id="importing-packages">
 <h2>5.3 Importing packages<a class="headerlink" href="#importing-packages" title="Permalink to this headline">#</a></h2>
-<p>It is necessary to import other packages for specific calculations, NumPy for fast numerical calculations, SciPy for special functions (such as error func), integrations, non-linear least squares etc. and matplotlib for plotting. SymPy is used for algebraic calculations.</p>
-<p>Print statements are always enclosed in brackets, eg. <span class="math notranslate nohighlight">\(\text{ print(x**2) }\)</span></p>
+<p>It is necessary to import other packages for specific calculations, NumPy for fast numerical calculations, SciPy for special functions (such as error function), integrations, non-linear least squares etc. and matplotlib for plotting. SymPy is used for algebraic calculations.</p>
 </section>
 <section id="integer-division">
 <h2>5.4 Integer division<a class="headerlink" href="#integer-division" title="Permalink to this headline">#</a></h2>
@@ -2077,14 +2107,14 @@ The value of b is -0.16115, c is  123
 </section>
 <section id="lists-and-list-comprehension">
 <h2>6 Lists and List  comprehension<a class="headerlink" href="#lists-and-list-comprehension" title="Permalink to this headline">#</a></h2>
-<p>Often a list (array in other languages) has <em>n</em> values that can be addressed later on. In python these can be number or strings of letters etc. or a mixture of these. Strings are enclosed in parenthesis as  ‘a’.</p>
-<p>Usually a name is chosen and then values added in a loop of some kind. In many cases in python this can be done in one go. This is called <strong>list comprehension</strong>, see how <em>a</em> is generated below. Also shown is how different values can be extracted. The <em>range(5)</em> has values 0 to 4 because the first value in the list has zero index so is given by a[0].</p>
+<p>Often a list (called an array in other languages) has <em>n</em> values that can be addressed later on. In python these can be number or strings of letters etc. or a mixture of these. Strings are enclosed in parenthesis as  ‘a’.</p>
+<p>Usually a name is chosen and then values added in a loop of some kind. In many cases in python this can be done in one go. This is called <strong>list comprehension</strong>, see how <em>a</em> is generated below. Also shown is how different values can be extracted. The statement <span class="math notranslate nohighlight">\(\mathtt{range(5)}\)</span> in the code below has values 0 to 4 because the first value in the list has zero index so is given by a[0].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># printing and intro to list comprehension</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>  <span class="c1"># list comprehension, range makes list of 5 values where i varies from 0 to 4</span>
-                                   <span class="c1"># this is alternative to a &#39;for&#39; loop</span>
+                                           <span class="c1"># this is alternative to a &#39;for&#39; loop</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list is &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4th value is a[3] = &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>                  <span class="c1"># print 4th value as index starts at zero</span>
@@ -2181,7 +2211,7 @@ printing b[4][1] will lead to an error e.g.
 </section>
 <section id="numerics-are-much-faster-with-numpy">
 <h2>7 Numerics are much faster with NumPy.<a class="headerlink" href="#numerics-are-much-faster-with-numpy" title="Permalink to this headline">#</a></h2>
-<p>Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic python.</p>
+<p>Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># make x range from 0 to 10pi in 5 steps. </span>
@@ -2216,8 +2246,8 @@ printing b[4][1] will lead to an error e.g.
 <p>Appending one value at a time to a list is a very useful way of lengthening a list when the final length is unknown. Can be useful when reading datafile whose length is unknown. Start with an empty list then use a loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>                  <span class="c1"># empty list</span>
-<span class="n">lim_value</span> <span class="o">=</span> <span class="mi">3</span>                <span class="c1"># e.g. some value determined by programme else where</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>                    <span class="c1"># empty list</span>
+<span class="n">lim_value</span> <span class="o">=</span> <span class="mi">3</span>                  <span class="c1"># e.g. some value determined by programme else where</span>
 
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">lim_value</span><span class="p">:</span>
@@ -2268,7 +2298,7 @@ sum of whole list is  7.885735968708085
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numx</span> <span class="o">=</span> <span class="mi">300</span>                              <span class="c1"># number of points</span>
 <span class="n">f01</span>  <span class="o">=</span> <span class="p">[</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numx</span><span class="p">)]</span>      <span class="c1"># make list full of zeros</span>
-<span class="c1"># you could also use </span>
+<span class="c1"># you could also use NumPy to do this  </span>
 <span class="c1"># f01 = np.zeros(n,type=float)</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">numx</span><span class="p">)</span>         <span class="c1"># make numx values evenly spaces between 0 and 2pi</span>
@@ -2281,7 +2311,7 @@ sum of whole list is  7.885735968708085
     <span class="k">pass</span>
 
 <span class="c1">#print(f01)    # printing disabled as 300 points</span>
-<span class="n">figx</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">figx</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f01</span><span class="p">)</span>                       <span class="c1"># must have imported matplotlib, this is done at top of worksheet</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span> <span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
@@ -2294,7 +2324,7 @@ sum of whole list is  7.885735968708085
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_28_0.png" src="../_images/Python crib_28_0.png" />
+<img alt="../_images/Python crib_32_0.png" src="../_images/Python crib_32_0.png" />
 </div>
 </div>
 <p>If you want to plot two graphs together then it is a bit more complicated. First it is necessary to define a <em>figure</em> and then define <em>axes</em> on which to draw the data and add subplots as the two figures. This is shown below.</p>
@@ -2303,13 +2333,13 @@ sum of whole list is  7.885735968708085
 <h2>9 Functions.<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>There are standard functions <em>sin, cos, exp</em> etc. that we use NumPy to call as <em>np.sin(x)</em> etc. There are also two main types of user defined function that can take arguments.</p>
 </section>
-<section id="lambda-functions">
-<h2>9.1 Lambda functions.<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">#</a></h2>
-<p>These are single line functions and can be used for straightforward functions. They have the form</p>
-<p><em>aname =  lambda variable1, variable 2, etc.  :  expression in variables 1, 2 etc.</em></p>
+<section id="lambda-functions-more-examples">
+<h2>9.1 Lambda functions; more examples<a class="headerlink" href="#lambda-functions-more-examples" title="Permalink to this headline">#</a></h2>
+<p>These are very useful single line functions. They have the form</p>
+<p><strong>aname =  lambda variable1, variable 2, etc.  :  expression in variables 1, 2 etc.</strong></p>
 <p>note the word lambda and the colon.</p>
-<p>These function are called using normal parentheses, i.e. <strong>curved brackets</strong> as <span class="math notranslate nohighlight">\(\text{aname(3.0,2.0,...)}\)</span>  Note that lists use square brackets.</p>
-<p>It is also possible to use if statements inside a lambda and an example is given but it is usually better to use a def type function.</p>
+<p>These function are called using normal parentheses, i.e. <strong>curved brackets</strong> as <span class="math notranslate nohighlight">\(\text{aname(3.0,2.0,...)}\)</span>  Note that in contrast, lists use square brackets.</p>
+<p>It is also possible to use if statements inside a lambda and an example is given but it is usually better to use a <em>def</em> type function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">z</span><span class="p">)</span>        <span class="c1"># define function in x and z</span>
@@ -2335,7 +2365,7 @@ sum of whole list is  7.885735968708085
 func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 </pre></div>
 </div>
-<img alt="../_images/Python crib_31_1.png" src="../_images/Python crib_31_1.png" />
+<img alt="../_images/Python crib_35_1.png" src="../_images/Python crib_35_1.png" />
 </div>
 </div>
 </section>
@@ -2380,13 +2410,13 @@ func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>returned values are Q, 2*x and sin(z), i.e. -0.5211115802791633 6.2 -0.8715757724135881
 </pre></div>
 </div>
-<img alt="../_images/Python crib_33_1.png" src="../_images/Python crib_33_1.png" />
+<img alt="../_images/Python crib_37_1.png" src="../_images/Python crib_37_1.png" />
 </div>
 </div>
 </section>
 <section id="recursive-functions">
 <h2>9.3 Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">#</a></h2>
-<p>It is possible to make functions recursive, calculating a factorial as n! = n.(n-1).(n-2)….1   is the commonly used example and is given below as is one to calculate Hermite polynomials used in determining harmonic oscillator wavefunctions.</p>
+<p>It is possible to make functions recursive, calculating a factorial as <span class="math notranslate nohighlight">\(n! = n.(n-1).(n-2)\cdots 1\)</span>   is the commonly used example and is given below as is one to calculate Hermite polynomials used in determining harmonic oscillator wavefunctions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                    <span class="c1"># factorial cannot be used for huge values</span>
@@ -2442,7 +2472,7 @@ func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_36_0.png" src="../_images/Python crib_36_0.png" />
+<img alt="../_images/Python crib_40_0.png" src="../_images/Python crib_40_0.png" />
 </div>
 </div>
 </section>
@@ -2532,26 +2562,27 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_40_0.png" src="../_images/Python crib_40_0.png" />
+<img alt="../_images/Python crib_44_0.png" src="../_images/Python crib_44_0.png" />
 </div>
 </div>
 </section>
-<section id="algebraic-integration-example-to-find-average-distance">
-<h2>12.1 Algebraic integration; example to find average distance<a class="headerlink" href="#algebraic-integration-example-to-find-average-distance" title="Permalink to this headline">#</a></h2>
-<p>The average distance given the distribution <span class="math notranslate nohighlight">\(w(r)\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \langle r \rangle = \int_0^\infty rw(r)dr\)</span>. The integral can be performed in the normal way but we use SymPy to illustrate this. THe steps are to define symbolic constants then do the integration. In SymPy infinity is oo (two lower case letter o). The <em>conds=’none’</em> removes any periodic conditions and so simplified the result.</p>
+<section id="symbolic-algebraic-integration-example-to-find-average-distance">
+<h2>12.1 Symbolic algebraic integration; example to find average distance<a class="headerlink" href="#symbolic-algebraic-integration-example-to-find-average-distance" title="Permalink to this headline">#</a></h2>
+<p>The average distance given the distribution <span class="math notranslate nohighlight">\(w(r)\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \langle r \rangle = \int_0^\infty rw(r)dr\)</span>. The integral can be performed in the normal way but we use SymPy to illustrate this. The steps are to define symbolic constants then do the integration.</p>
+<p>In SymPy infinity is oo (two lower case letter o). The <em>conds=’none’</em> removes any periodic conditions and so simplified the result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># average distance algebraically</span>
-<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; n, r&#39;</span><span class="p">)</span>                       <span class="c1"># define symbols to use . Note also that pi and exp are known by sympy.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># average distance algebraically using SymPy</span>
+<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; n, r&#39;</span><span class="p">)</span>                       <span class="c1"># define symbols to use SymPy . Note also that pi and exp are known by SymPy.</span>
 
 <span class="n">f01</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>       <span class="c1"># note that we do not use np.exp or np.pi as SymPy knows functions</span>
-<span class="n">av</span><span class="o">=</span>  <span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>  <span class="c1"># use conds =&#39;none&#39; if you are happy that no funny results are expected.</span>
+<span class="n">av</span><span class="o">=</span>  <span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span> <span class="n">conds</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>  <span class="c1"># use conds =&#39;none&#39; if you are happy that no funny results are expected.</span>
 <span class="n">av</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_42_0.png" src="../_images/Python crib_42_0.png" />
+<img alt="../_images/Python crib_46_0.png" src="../_images/Python crib_46_0.png" />
 </div>
 </div>
 <p>The result contains the gamma function, if you type <span class="math notranslate nohighlight">\(\mathtt{av.evalf()}\)</span> you can evaluate the numerical parts and find that <span class="math notranslate nohighlight">\(\displaystyle \langle r \rangle = 0.55396n^{-1/3}\)</span>.</p>
@@ -2573,7 +2604,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>     <span class="c1"># user define function to integrate,</span>
 
                             <span class="c1"># r is variable  to integrate over, this need not be defined as quad() defines this.</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="o">*</span><span class="mf">0.6023</span>             <span class="c1"># molecules /nm^3</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="o">*</span><span class="mf">0.6023</span>             <span class="c1"># number molecules 1 mol/dm^3 equals this number at  1 mol /nm^3</span>
 <span class="n">maxr</span> <span class="o">=</span> <span class="mf">30.0</span>                 <span class="c1"># integration range</span>
 <span class="n">minr</span> <span class="o">=</span> <span class="mf">0.0</span>
 
@@ -2597,13 +2628,14 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </section>
 <section id="some-other-algebraic-calculations-differentiation-and-series">
 <h2>13 Some other algebraic calculations, differentiation  and series<a class="headerlink" href="#some-other-algebraic-calculations-differentiation-and-series" title="Permalink to this headline">#</a></h2>
-<p>SymPy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are very obscure and so a couple of examples are given below.</p>
+<p>SymPy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are complicated and so a couple of examples are given below.</p>
 <p>First differentiating then generating series expansion of the function produced.  The first step is to define the symbols to be used. We will use the nearest neighbour distribution to begin with.  The best output results are found without using print() as shown below. If you do use print as in print(Q.doit() ) a code type output is produced and the nice output suppressed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assume sympy already loaded.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assume SymPy already loaded.</span>
 
-<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, r&#39;</span><span class="p">)</span>                       <span class="c1"># define symbols to use . Note also that pi and exp are known by sympy.</span>
+<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, r&#39;</span><span class="p">)</span>                       <span class="c1"># define symbols to use .</span>
+                                            <span class="c1"># Note also that pi and exp are known by SymPy.</span>
 
 <span class="n">f01</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 
@@ -2614,7 +2646,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_46_0.png" src="../_images/Python crib_46_0.png" />
+<img alt="../_images/Python crib_50_0.png" src="../_images/Python crib_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2625,7 +2657,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_47_0.png" src="../_images/Python crib_47_0.png" />
+<img alt="../_images/Python crib_51_0.png" src="../_images/Python crib_51_0.png" />
 </div>
 </div>
 <p>If you want to use the result in subsequent code the ‘big O’ notation can be removed as shown below</p>
@@ -2637,13 +2669,13 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_49_0.png" src="../_images/Python crib_49_0.png" />
+<img alt="../_images/Python crib_53_0.png" src="../_images/Python crib_53_0.png" />
 </div>
 </div>
 </section>
 <section id="drawing-two-or-more-plots">
 <h2>14 Drawing two or more plots<a class="headerlink" href="#drawing-two-or-more-plots" title="Permalink to this headline">#</a></h2>
-<p>In this case it is necessary to define a figure and axes rather than using plt. as for just a single graph. Using a figure also allows the plot size to be defined rather than having to use the default.</p>
+<p>In this case it is necessary to define a figure and axes rather than using <em>plt</em> as for just a single graph. Using a figure also allows the plot size to be defined rather than having to use the default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define an inline (lambda) function</span>
@@ -2654,7 +2686,8 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>           <span class="c1"># etc second plot.</span>
 <span class="c1"># ax2 = fig1.add_subplot(2,2,4)         # if you remove hash then three plots are drawn </span>
 
-<span class="c1"># the notation on subplot is not very clear!   to draw 4 plots in a square use (2,2,1) (2,2,2), (2,2,3) &amp; (2,2,4)</span>
+<span class="c1"># the notation on subplot is not very clear!   </span>
+<span class="c1"># to draw 4 plots in a square use (2,2,1) (2,2,2), (2,2,3) &amp; (2,2,4)</span>
 <span class="c1"># if only two axes are defined then only two are drawn; others are left blank</span>
 <span class="c1"># the way the title limits etc are used is different when subplots are used.</span>
 
@@ -2693,7 +2726,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function with x=2 &amp; k=5, is  4.5399929762484854e-05
 </pre></div>
 </div>
-<img alt="../_images/Python crib_51_1.png" src="../_images/Python crib_51_1.png" />
+<img alt="../_images/Python crib_55_1.png" src="../_images/Python crib_55_1.png" />
 </div>
 </div>
 </section>
@@ -2707,13 +2740,13 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <p>The method by which to do this is shown in the code. (For clarity the reverse rate constant is now called km1 instead of <span class="math notranslate nohighlight">\(k_{-1}\)</span>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>      <span class="c1"># import odeint used for numerical integration of differential equations</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>    <span class="c1"># import odeint used for numerical integration of differential equations</span>
 
-<span class="n">dAdt</span><span class="o">=</span> <span class="s1">&#39;-k1*A + km1*B&#39;</span>                   <span class="c1">#  rate equations,put as strings so will not evaluate until variables defined</span>
+<span class="n">dAdt</span><span class="o">=</span> <span class="s1">&#39;-k1*A + km1*B&#39;</span>                 <span class="c1">#  rate equations,put as strings so will not evaluate until variables defined</span>
 <span class="n">dBdt</span><span class="o">=</span> <span class="s1">&#39;+k1*A -(km1+k2)*B&#39;</span>
 <span class="n">dCdt</span><span class="o">=</span> <span class="s1">&#39;+k2*B&#39;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:s}</span><span class="se">\n</span><span class="si">{:s}{:s}</span><span class="se">\n</span><span class="si">{:s}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dAdt=&#39;</span><span class="p">,</span><span class="n">dAdt</span><span class="p">,</span><span class="s1">&#39;dBdt =&#39;</span><span class="p">,</span><span class="n">dBdt</span><span class="p">,</span><span class="s1">&#39;dCdt=&#39;</span><span class="p">,</span><span class="n">dCdt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:s}</span><span class="se">\n</span><span class="si">{:s}{:s}</span><span class="se">\n</span><span class="si">{:s}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dAdt =&#39;</span><span class="p">,</span><span class="n">dAdt</span><span class="p">,</span><span class="s1">&#39;dBdt =&#39;</span><span class="p">,</span><span class="n">dBdt</span><span class="p">,</span><span class="s1">&#39;dCdt =&#39;</span><span class="p">,</span><span class="n">dCdt</span><span class="p">))</span>
 
 <span class="n">k1</span> <span class="o">=</span> <span class="mf">2.0</span>                                <span class="c1">#  rate const A</span>
 <span class="n">km1</span><span class="o">=</span> <span class="mf">1.0</span>                                <span class="c1">#  rate const back to A</span>
@@ -2757,12 +2790,12 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dAdt=-k1*A + km1*B
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dAdt =-k1*A + km1*B
 dBdt =+k1*A -(km1+k2)*B
-dCdt=+k2*B
+dCdt =+k2*B
 </pre></div>
 </div>
-<img alt="../_images/Python crib_53_1.png" src="../_images/Python crib_53_1.png" />
+<img alt="../_images/Python crib_57_1.png" src="../_images/Python crib_57_1.png" />
 </div>
 </div>
 </section>
@@ -2792,7 +2825,7 @@ dCdt=+k2*B
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_55_0.png" src="../_images/Python crib_55_0.png" />
+<img alt="../_images/Python crib_59_0.png" src="../_images/Python crib_59_0.png" />
 </div>
 </div>
 <p>Because constants are produced it is necessary to evaluate these before any further calcuation. At <span class="math notranslate nohighlight">\(t =0\)</span> as <span class="math notranslate nohighlight">\(B =0\)</span> then  <span class="math notranslate nohighlight">\(C_1+C_2=0\)</span> and as the total magnitude of the signal does not matter we can set <span class="math notranslate nohighlight">\(C_1=1\)</span> and <span class="math notranslate nohighlight">\(C_2=-1\)</span>. The plot below shows the algebraic solution for <span class="math notranslate nohighlight">\(B\)</span>.</p>
@@ -2818,7 +2851,7 @@ dCdt=+k2*B
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_57_0.png" src="../_images/Python crib_57_0.png" />
+<img alt="../_images/Python crib_61_0.png" src="../_images/Python crib_61_0.png" />
 </div>
 </div>
 </section>
@@ -2915,7 +2948,7 @@ The best way to start with is to use the script <strong><em>with open() as f:</e
 number of atoms =  18 number of connections =  18
 </pre></div>
 </div>
-<img alt="../_images/Python crib_59_1.png" src="../_images/Python crib_59_1.png" />
+<img alt="../_images/Python crib_63_1.png" src="../_images/Python crib_63_1.png" />
 </div>
 </div>
 </section>
@@ -3076,7 +3109,7 @@ Covarience Matrix
 Normalised total residual squared   0.0228
 </pre></div>
 </div>
-<img alt="../_images/Python crib_63_1.png" src="../_images/Python crib_63_1.png" />
+<img alt="../_images/Python crib_67_1.png" src="../_images/Python crib_67_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3119,7 +3152,7 @@ Normalised total residual squared   0.0228
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_64_0.png" src="../_images/Python crib_64_0.png" />
+<img alt="../_images/Python crib_68_0.png" src="../_images/Python crib_68_0.png" />
 </div>
 </div>
 </section>

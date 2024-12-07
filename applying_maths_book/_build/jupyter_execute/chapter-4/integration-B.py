@@ -17,6 +17,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # ## 3.1 Clever substitution can help to solve an integral
 # 
+# ### **(i)** Substitutions
 # It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.
 # 
 # There are three parts to the method, which will be illustrated with $\displaystyle\int \sin^2(x)\cos(x)dx$. 
@@ -51,8 +52,30 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # This is now a standard form and can be converted to an exponential form (or looked up in Section 4.2.13) and then converted back to $x$ using trig functions.
 # 
 # $$4\int\sin^2(\theta)d\theta = 2\theta -2\sin(\theta)\cos(\theta)+c=2\sin^{-1}\left(\frac{x}{2}\right)-\frac{x}{2}\sqrt{4-x^2}+c$$
-# ____
+# _______________
 # 
+# ### **(ii)** Tangent half-angle substitution
+# 
+# This substitution is useful for integrals such as $\int dx/\sin(x)$ and is based on the identities
+# 
+# $$\displaystyle \sin(x)=\frac{2\tan(x/2)}{1+\tan^2(x/2)},\qquad \cos(x)=\frac{1-\tan^2(x/2)}{1+\tan^2(x/2)}$$
+# 
+# and the substitution used is $t=\tan(x/2)$, thus
+# 
+# $$\displaystyle \sin(x) \to \frac{2t}{1+t^2},\qquad \cos(x)\to \frac{1-t^2}{1+t^2},\qquad dx\to\frac{2}{1+t^2}dt$$
+# 
+# and for the integral $\displaystyle \int\frac{dx}{1+\cos(x)}$ the substitution gives
+# 
+# $$\displaystyle \int\frac{dx}{1+\cos(x)} =\int \frac{1}{1+\frac{1-t^2}{1+t^2}}\frac{2}{1+t^2}dt=\int 1dt=\tan\left(\frac{x}{2}\right)$$
+# 
+# The integral $\displaystyle \int\frac{dx}{1-\sin(x)}$ is done in the same way but is a little more complicated
+# 
+# $$\displaystyle \int\frac{dx}{1+\sin(x)} =\int \frac{1}{1-\frac{2t}{1+t^2}}\frac{2}{1+t^2}dt =\int \frac{2dt}{1-2t+t^2}= \int \frac{2dt}{(1-t)^2}$$
+# 
+# This integral has the form $\int dx/(ax+b)^2$ and from table in section 2.14,
+# 
+# $$\displaystyle 2\int \frac{dt}{(1-t)^2}=2\frac{1}{1-t}=\frac{2}{1-\tan(x/2)}$$
+
 # ## 3.2 Table 1 Trig formulas
 # 
 # ![Drawing](integration-table1.png)
@@ -63,6 +86,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # \displaystyle \cos(\theta)=\frac{\sqrt{x^2-a^2}}{a} & \displaystyle \cos(\theta)=\frac{a}{x} &\displaystyle \cos(\theta)=\frac{a}{\sqrt{a^2+x^2}}  \\
 # \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}&\displaystyle \tan(\theta)=\frac{x}{a} \\
 # \hline \end{array}$$
+# 
+# _______________
 
 # ## 3.3 Definite integrals with substitution
 # 
@@ -373,7 +398,15 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # ### **(vi)  Using summation and 'by-parts' to evaluate the integral $\int_0^\infty \frac{x^3}{e^x -1}dx$ from the Debye model** 
 # 
-# In calculating the heat capacity of a crystal at low temperatures using the Debye model the integral to be solved is $I=\displaystyle \int_0^{\theta/T} \frac{x^3}{e^x -1}dx$. At low temperatures the parameter $x =\theta/T$ is large and so, without adding any significant error the integral becomes $I=\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx$. The parameter $\theta$ is the Debye temperature, a constant for each substance.  At first sight this seems very a daunting integral but if the argument is re-written it allows a series expansion to be used because at low temperature only $e^{-x}\lt 1$,
+# In calculating the heat capacity of a crystal at low temperatures using the Debye model the integral to be solved is 
+# 
+# $$I=\displaystyle \int_0^{\theta/T} \frac{x^3}{e^x -1}dx$$
+# 
+# At low temperatures the parameter $\theta/T$ is large and so, without adding any significant error the integral becomes 
+# 
+# $$I=\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx$$
+# 
+# The parameter $\theta$ is the Debye temperature, a constant for each substance.  At first sight this seems very a daunting integral. However, if the argument is re-written it allows a series expansion to be used, but only at low temperatures because here $e^{-x}\lt 1$,
 # 
 # $$\displaystyle \begin{align}\frac{x^3}{e^x -1}&=x^3\frac{e^{-x}}{1-e^{-x}}=x^3e^{-x}(1+e^{-x}+e^{-2x}+\cdots)\\&=\sum_{n=1}^\infty e^{-nx}x^3 \end{align}$$
 # 
@@ -537,7 +570,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # $$\displaystyle \frac{d}{dT}\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx=-\frac{\theta}{T^2}\frac{(\theta/T)^3}{(e^{\theta/T}-1)}\tag{iii}$$
 # 
-# To form the internal energy add ${i}+{ii}$ and multiply by $RT^2$ and after simplification the internal energy is 
+# To form the internal energy add equations (i) and (ii) and multiply by $RT^2$ and after simplification the internal energy is 
 # 
 # $$\displaystyle \frac{U}{R}=9T\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx$$
 # 

@@ -24,19 +24,23 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The first equation can be separated to give 
 # 
-# $$\displaystyle \int \frac{dS}{R-S/\tau}= t +c $$
+# $$\displaystyle \int_{S_0}^S \frac{dS}{R-S/\tau}= \int_0^t dt  $$
 # 
-# where the abbreviation $\tau =1/(k_f+k_S)$ is made, and $\tau$ is called the excited state lifetime. Integrating gives 
+# with initial conditions at time zero, $S(0) = S_0$ and where normally $S_0\gt R\tau$. $R$ has units of moles of photons/volume/time.  The abbreviation $\tau =1/(k_f+k_S)$ is now made, and $\tau$ is called the excited state lifetime. Integrating gives 
 # 
-# $$\displaystyle -\tau \ln(R - S/\tau) = t + c$$
+# $$\displaystyle -\tau \ln(-R\tau + S)+ \tau \ln(-R\tau + S_0)= t $$
 # 
-# and with initial conditions at time zero, $S(0) = S_0$ gives after rearranging,
+# and after rearranging,
 # 
-# $$\displaystyle  S=R\tau-(R\tau-S_0)e^{-t/\tau}$$
+# $$\displaystyle  S = R\tau+(S_0-R\tau)e^{-t/\tau}$$
 # 
 # The singlet state population therefore increases or decreases with a lifetime $\tau$ to reach a steady state value of $R\tau$ at long times, its initial value being $S_0$. This happens because in this example the molecules are continuously excited and so the population changes until steady state is reached. In the case that illumination begins at $t = 0$, the initial singlet state population is zero. If the steady state has already been achieved thus $S_0 \gt 0$ and then the illumination intensity is changed the the equation also describes this behaviour. 
 # 
-# Substituting for $S$, the second equation becomes $\displaystyle \frac{dT}{dt}+k_TT=k_SR\tau-k_S(R\tau-S_0)e^{-t/\tau}$ which can be integrated using the integrating factor method. The factor is $\displaystyle e^{k_TT}$ and the solution,
+# Substituting for $S$, the second equation becomes 
+# 
+# $$\displaystyle \frac{dT}{dt}+k_TT=k_SR\tau-k_S(R\tau-S_0)e^{-t/\tau}$$
+# 
+# which can be integrated using the integrating factor method. The factor is $\displaystyle e^{k_TT}$ and the solution,
 # 
 # $$\displaystyle Te^{k_Tt}=k_S\int e^{k_Tt}R\tau-(R\tau-S_0)e^{(k_T-k_f-k_s)t}dt+c \\ =k_Se^{k_Tt}\left( \frac{R\tau}{k_T}-\frac{(R\tau-S_0)}{(k_T-k_f-k_S)}e^{-t/\tau} \right)+c$$
 # 
@@ -44,7 +48,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  T= k_S \frac{R\tau}{k_T}-k_S\frac{(R\tau-S_0)}{(k_T-k_f-k_S)}e^{-t/\tau} -k_S\left( \frac{R\tau}{k_T}-\frac{(R\tau-S_0)}{(k_T-k_f-k_S)} \right)e^{-k_Tt}$$
 # 
-# This equation shows that the triplet population is initially zero, and depending on the relative values of the rate constants it rises to a maximum then falls to the steady state value or simply rises to the steady state. The steady state or infinite time value of the triplet population is $\displaystyle I_{abs}\sigma[G]\frac{k_S}{(k_f+k_S)k_T}$ which is proportional to the number of singlet states initially formed multiplied by the fraction of those forming the triplet state $k_S /(k_f + k_S)$ and multiplied by the decay time of the triplet $1/k_T$.
+# This equation shows that the triplet population is initially zero, and depending on the relative values of the rate constants it rises to a maximum then falls to the steady state value or simply rises to the steady state. The steady state or infinite time value of the triplet population is 
+# 
+# $$\displaystyle I_{abs}\sigma[G]\frac{k_S}{(k_f+k_S)k_T}$$
+# 
+# which is proportional to the number of singlet states initially formed multiplied by the fraction of those forming the triplet state $k_S /(k_f + k_S)$ and multiplied by the decay time of the triplet $1/k_T$.
 # 
 # ![Drawing](diffeqn-fig38a.png)
 # 
@@ -79,7 +87,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When $k_a \to \infty$ the pulse is very short and the population of A decays as $ \displaystyle A = A_0e^{-k_St}$. At the other extreme, when the laser pulse is very long, $k_a \to 0$ and $e^{-k_at} \to 1$, then 
 # 
-# $$\displaystyle A=\frac{k_aI_0}{k_S}\left(A_0-\frac{k_aI_0}{k_S}  \right)e^{-k_St}$$
+# $$\displaystyle A=\left(A_0-\frac{k_aI_0}{k_S}  \right)e^{-k_St}$$
 # 
 # and there is an increase in population as the pulse is switched on and which continues for a time of $\approx 5/k_S$ or five lifetimes, which is approximately the time an exponential takes to reach about $90$% of its final value.
 # 

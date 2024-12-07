@@ -359,22 +359,29 @@ from sympy import *
 # 
 # The binomial distribution is used when an experiment has two outcomes, often labelled as success or failure. A ligand binding to a molecule can be considered a success and therefore not binding, a failure. If the molecule is a protein then the terms 'on' and 'off' or 'bound' and 'unbound' are often used to describing binding and not binding. 
 # 
-# Success may be considered to be a head when tossing a coin, and so a tail is a failure, or throwing a $2$ when tossing a die and any other number a failure and so forth. In a trial let the chance of success be called $p$ and of failure, therefore, $1-p=q$ as the total chance must be unity. When there are $n$ trials (coins for example) the chance of achieving $n$ successes is $p^n$ and thus the chance of failure $(1-p)^n$. If we want $m$ successes and therefore accompanied by $(m-n)$ failures the chance of this happening is
+# Success may be considered to be a head when tossing a coin, and so a tail is a failure, or throwing a $2$ when tossing a die and any other number a failure and so forth. In a trial let the chance of success be called $p$ and of failure, therefore, $1-p=q$ as the total chance must be unity. When there are $n$ trials (coins for example) the chance of achieving $n$ successes is $p^n$ and thus the chance of failure $(1-p)^n$. If we want $m$ successes (say heads) and therefore accompanied by $(m-n)$ failures (tails) the sequence of heads and tails could $hhthtthh\cdots$ with probability $P=ppqpqqpp\cdots$ which with $m$ successes is for this specific sequence the probability is
 # 
-# $$\displaystyle p^m(1-p)^{n-m}$$
+# $$\displaystyle P = p^mq^{n-m}=p^m(1-p)^{n-m}$$
 # 
-# ### **(i) Multiplicity W**
-# There are $n$ ways of choosing the first coin, and $(n-1)$ the second, $(n-2)$ the third and so on making $n!$ ways in total, because each choice in independent of all others. However, we want $m$ of these coins to be heads (success), and so $(n-m)$ must be a failure.  The $m$ successes and $(n-m)$ failures can occur in any order during the $n$ trials as each trial is independent and is either a success or a failure. However, there are many ways in which $m$ successes can be achieved in $n$ trials and we are only interested in the total number of successes not in what order they occurred. The number $n!$ clearly over counts the number of possibilities and so we have to reduce this number by $m!$ ways of obtaining a success and by $(n-m)!$ for failures. The number of ways that success can be achieved is therefore
+# where $n$ and $m$ must be integers. We cannot have, for example, 3.5 coins or 4.1 successes.
+# 
+# ### **(i) Multiplicity or Binomial Coefficient W**
+# 
+# Usually we are not interested in a specific sequence but in sequences that have the same number $m$ of successes and so we need to find the number these. To do this we imagine filling $n$ boxes with a head or tail coin where each choice in independent of all others. There are $n$ ways of choosing the first box, and $(n-1)$ the second as one is already filled, $(n-2)$ the third and so on making $n!$ ways in total. 
+# 
+# $$\displaystyle n(n-1)(n-2)(n-3) \cdots 2\cdot 1= n!$$
+# 
+# However, we want $m$ of these coins to be heads (success), and so $(n-m)$ must be a failure.  The $m$ successes and $(n-m)$ failures can occur in any order during the $n$ trials as each trial is independent and is either a success or a failure. However, there are many ways in which $m$ successes can be achieved in $n$ trials and we are only interested in the total number of successes not in what order they occurred. The number $n!$ clearly over counts the number of possibilities and so we have to reduce this number by $m!$ ways of obtaining a success and by $(n-m)!$ for failures. The number of ways that success can be achieved is therefore
 # 
 # $$\displaystyle W = \frac{n!}{m!(n-m)!}$$
 # 
-# and this is also the number of combinations $\displaystyle C^n_m=\binom{n}m$. When the factorials are large   Stirling's formula provides an accurate way of evaluation.
+# and this is also the number of Combinations $\displaystyle C^n_m=\binom{n}m$. This can be explained in another way. Since 'heads' can be distributed in $m!$ ways and similarly 'tails' in $(n-m)!$ ways the total number $n!$ must be divided by $m!(n-m)!$ ways. As the factorials are often large and difficult to calculate Stirling's formula provides an accurate way of doing this.
 # 
 # ### **(ii) Binomial distribution**
 # 
 # The probability of achieving $m$ successes in any order from $n$ trials is the multiplicity $W$ multiplied by the probability $ p^m(1-p)^{n-m}$ which is 
 # 
-# $$\displaystyle P(n,m,p)=\frac{n!}{m!(n-m)!}p^m(1- p)^{n-m}\qquad\tag{25a}$$
+# $$\displaystyle B(n,m,p)=\frac{n!}{m!(n-m)!}p^m(1- p)^{n-m}\qquad\tag{25a}$$
 # 
 # and is called the Binomial Distribution because the Binomial expansion is
 # 
@@ -382,7 +389,14 @@ from sympy import *
 # 
 # and the coefficients in this distribution are the multiplicity $W$. The probability $p$ is not generally $1/2$ and this is like throwing a biased coin, which favours either heads or tails.
 # 
-# This distribution is normalized $\sum_{m=0}^n P(n,m,p)=1$ because $p+q=1$ and so $(p+q)^n =1$. The maximum of the  distribution is at $n(1-p)$ which is also its average or mean value. The binomial distribution, and the Gaussian and Poisson distributions which are derived from it, are examined in more detail in Chapter 13 where descriptive statistics are discussed.
+# This distribution is normalized $\sum_{m=0}^n B(n,m,p)=1$ because $p+q=1$ and so $(p+q)^n =1$. The average value of the  distribution is at $m$ equal to $\mu=np$ which gives its maximum value when $\mu$ is substituted for $m$. The variance is $\sigma^2= np(1-p)$. 
+# 
+# The binomial distribution, and the Gaussian and Poisson distributions which are derived from it, are examined in more detail in Chapter 13 where descriptive statistics are discussed.
+# 
+# ![Display](chapter1-fig20e.png)
+# 
+# Figure 20b. The Binomial distribution with $n=15, p=1/4$, left with black dots and $n=30, p=1/4$, right, blue dots. The distribution is shown only at discrete points $m$ with a line joining these only to guide the eye.
+# __________
 # 
 # ### **(ii) Binomial Expansion**
 # 
@@ -425,28 +439,28 @@ from sympy import *
 # ### **(iv) Chance of drawing red cards from many packs**
 # In calculating the probabilities, the values of $p$ have to be found from the problem at hand. For instance, to find the chance that no red cards are drawn in a single attempt from each of seven packs of cards, we need to know that half the cards are red. As $p = 1/2$ this chance is
 # 
-# $$\displaystyle P(7,0,1/2)=\frac{7!}{0!(7-0)!}\left( \frac{1}{2}\right)^0 \left(1- \frac{1}{2}\right)^{7-0}=\frac{1}{2^7}=\frac{1}{128}$$
+# $$\displaystyle B(7,0,1/2)=\frac{7!}{0!(7-0)!}\left( \frac{1}{2}\right)^0 \left(1- \frac{1}{2}\right)^{7-0}=\frac{1}{2^7}=\frac{1}{128}$$
 # 
 # The chance of picking four red cards from the same number of packs is 
 # 
-# $$\displaystyle P(7,4,1/2)=\frac{7!}{4!(7-4)!}\left( \frac{1}{2}\right)^4 \left(1- \frac{1}{2}\right)^{7-4}=\frac{35}{128}$$
+# $$\displaystyle B(7,4,1/2)=\frac{7!}{4!(7-4)!}\left( \frac{1}{2}\right)^4 \left(1- \frac{1}{2}\right)^{7-4}=\frac{35}{128}$$
 # 
 # and of picking four picture cards (12 in each pack) out of five packs of $52$ cards each, is
 # 
-# $$\displaystyle P(5,4,12/52)=\frac{5!}{4!(5-4)!}\left( \frac{12}{52}\right)^4 \left(1- \frac{12}{52}\right)^{5-4}=0.0109$$
+# $$\displaystyle B(5,4,12/52)=\frac{5!}{4!(5-4)!}\left( \frac{12}{52}\right)^4 \left(1- \frac{12}{52}\right)^{5-4}=0.0109$$
 # 
 # The chance of obtaining an even number of aces from six packs of cards, is $313201/4826809 \approx 0.065$ and is the sum of choosing 2, 4 and 6 aces, each with a chance $p = 4/52$.
 # 
 # ### **(v) Chance of getting the same number in many throws of a die.**
 # What is the chance that after $12$ tosses of a die the number $3$ will appear twice or less. The chance of getting a $3$ (or any number) in any throw is, of course, $1/6$. The probability that a $3$ will not appear is when $m=0$ in eqn 25a or, 
 # 
-# $$\displaystyle P(12,0,1/6)=\frac{12!}{0!(12-0)!}\left( \frac{1}{6}\right)^{0} \left(1- \frac{1}{6}\right)^{12-0}=\left(\frac{5}{6}\right)^{12}=0.112$$
+# $$\displaystyle B(12,0,1/6)=\frac{12!}{0!(12-0)!}\left( \frac{1}{6}\right)^{0} \left(1- \frac{1}{6}\right)^{12-0}=\left(\frac{5}{6}\right)^{12}=0.112$$
 # 
 # Similarly, the chance that the number $3$ will be seen once is
 # 
-# $$\displaystyle P(12,1,1/6)=\frac{12!}{1!(12-1)!}\left( \frac{1}{6}\right)^{1} \left(1- \frac{1}{6}\right)^{12-1}=0.269$$
+# $$\displaystyle B(12,1,1/6)=\frac{12!}{1!(12-1)!}\left( \frac{1}{6}\right)^{1} \left(1- \frac{1}{6}\right)^{12-1}=0.269$$
 # 
-# and appear twice is $P(12,2,1/6)=0.296$ and the probability of $3$ appearing twice or less is the sum of these and is $0.874$.  This fraction goes down as the number of trials $n$ increases, and this is because the total probability must be unity and as the number of trials increases the number of other possibilities increases making the chance of $0+1+2$ smaller. The calculation is shown below.
+# and appear twice is $B(12,2,1/6)=0.296$ and the probability of $3$ appearing twice or less is the sum of these and is $0.874$.  This fraction goes down as the number of trials $n$ increases, and this is because the total probability must be unity and as the number of trials increases the number of other possibilities increases making the chance of $0+1+2$ smaller. The calculation is shown below.
 
 # In[2]:
 
@@ -457,7 +471,7 @@ n, m, p = symbols('n, m, p')
 n = 12
 p = 1/6
 prob = lambda n,m,p: factorial(n)/(factorial(m)*factorial(n-m))*(p)**m*(1-p)**(n-m)
-print('{:s} '.format('   m  P(n,m,p)    sum' ) )
+print('{:s} '.format('   m  B(n,m,p)    sum' ) )
 s = 0
 for m in range(n):                    
     s = s + prob(n,m,p)
@@ -468,10 +482,10 @@ for m in range(n):
 # 
 # A coin is tossed $12$ times, what is the most probable number of tails and what is the most probable number? THe probability of obtaining a tail on any toss is found using eqn 25a with $n=12, p=1/2$ leaving $m$ to be determined, viz
 # 
-# $$\displaystyle P(12,m,1/2)=\frac{12!}{m!(12-m)!}\left(\frac{1}{2}\right)^m\left(1- 
+# $$\displaystyle B(12,m,1/2)=\frac{12!}{m!(12-m)!}\left(\frac{1}{2}\right)^m\left(1- 
 # \frac{1}{2}\right)^{12-m}$$
 # 
-# The simplest approach is to use the computer to calculate the values. Sympy has a built in factorial (and binomial) function. From the results the most probable number of tails is six with a probability of $0.225$. In fact the most probable is always $n/2$ as the distribution is symmetrical.
+# The simplest approach is to use the computer to calculate the values. SymPy has a built in factorial (and binomial) function. From the results the most probable number of tails is six with a probability of $0.225$. In fact the most probable is always $n/2$ as the distribution is symmetrical.
 # 
 # ## 9.17 Chance of getting $4$ heads in $12$ coin flips 
 # 
@@ -485,19 +499,19 @@ for m in range(n):
 # 
 # and so the chance of throwing a sequence of $12$ coins with $4$ heads is $495 /4096$. Of course, equation 25a could be used directly with $p=1/2, q=1-p=1/2, n=12, m=4$ or
 # 
-# $$\displaystyle p(12,4,1/2)=\binom{12}{4}\left(\frac{1}{2}\right)^4\left(\frac{1}{2}\right)^{12-4}=\frac{495}{4096}$$
+# $$\displaystyle B(12,4,1/2)=\binom{12}{4}\left(\frac{1}{2}\right)^4\left(\frac{1}{2}\right)^{12-4}=\frac{495}{4096}$$
 # 
 # ## 9.18 Similar random digits
 # 
 # What is the probability of finding at least $m=100$ similar digits such as $0$ or $3$ etc., in $n=1000$ random digits. There are only $10$ types of digits, so using the binomial distribution the probability for $m$ similar digits gives (eqn. 25a)
 # 
-# $$\displaystyle p(1000,m,1/10) =\binom{1000}{m}\left(\frac{1}{10}\right)^m\left(1-\frac{1}{10}\right)^{(1000-m)}$$
+# $$\displaystyle B(1000,m,1/10) =\binom{1000}{m}\left(\frac{1}{10}\right)^m\left(1-\frac{1}{10}\right)^{(1000-m)}$$
 # 
 # but this has to be summed from $m\to n$ to find at least $m$ so that the probability becomes 
 # 
-# $$\displaystyle \sum_{k=m}^n p(n,k,q)=0.515$$
+# $$\displaystyle \sum_{k=m}^n B(n,k,q)=0.515$$
 # 
-# As $m$ increases this probability falls rapidly. The calculation is shown below using Sympy. The factorials are extremely large, and Sympy has a factorial function that will calculate these, as shown below, and there is also a $binom(n,m)$ function that calculates the binomial coefficient directly.  The same result can checked by repeatedly making a random list of $n$ digits and checking how many are equal to or larger than $m$.
+# As $m$ increases this probability falls rapidly. The calculation is shown below using SymPy. The factorials are extremely large, and SymPy has a factorial function that will calculate these, as shown below, and there is also a $binom(n,m)$ function that calculates the binomial coefficient directly.  The same result can checked by repeatedly making a random list of $n$ digits and checking how many are equal to or larger than $m$.
 
 # In[3]:
 
@@ -511,16 +525,24 @@ print(prob(12,1,1/6))
 s = 0
 for i in range(m,n,1):
     s = s + prob(n,i,p)
-print('{:s} {:8.6g}'.format('probability ', s) )
+print('{:s}{:6.3g}'.format('probability B =', s) )
 
 
 # ## 9.19 How many fragments are there in a well in a 96 well plate?
 # 
-# Labelled DNA fragments are randomly distributed into a $96$ well plate for fluorescence analysis. There are $100$ fragments, what is the chance of having more that one fragment in a well? Using the Binomial distribution  with $p(n=100, m, q=1/96)$, gives the chance of $m$ fragments. Calculating the fraction with $m=0$ and $m=1$ and subtracting these from unity gives the probability. The calculation for $m$ present is
+# Labelled DNA fragments are randomly distributed into a $N=96$ well plate for fluorescence analysis. There are $n=100$ fragments, what is the chance of having more that one fragment in a well? 
 # 
-# $$\displaystyle p(100,m,1/96) = \binom{100}{m}\left(\frac{1}{96}\right)^m\left(1-\frac{1}{96}\right)^{(100-m)}$$
+# Using the Binomial distribution the probability of being in a well (a positive result) is $p=1/96$, therefore $B(n=100, m, p=1/96)$, gives the chance of $m$ fragments in a well. The average number is $\mu=n/N$. This calculation is just the same as putting coins into boxes as we can consider each well as a box. Calculating the fraction with none $m=0$ and one present $m=1$ and subtracting these from unity gives the probability of more than one fragment in a well. The calculation for $m$ present is
 # 
-# which is $35.1$% empty wells and $36.9$% with one fragment and $28$% have more than one fragment.
+# $$\displaystyle B(100,m,1/96) = \binom{100}{m}\left(\frac{1}{96}\right)^m\left(1-\frac{1}{96}\right)^{(100-m)}$$
+# 
+# which is $35.1$% empty wells and $36.9$% with one fragment and therefore $28$% have more than one fragment.
+# 
+# ![Display](chapter1-fig20d.png)
+# 
+# Fig20c. Distribution of fragments in a plate. The wells are equivalent to boxes into which particles (or coins etc.) are placed when working out the probabilities.
+# ___________________
+# 
 # 
 # ## 9.20 Red shifted Tryptophan fluorescence
 # 
@@ -535,9 +557,9 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # Consider finding the chance that at least one atom in C$_{60}$ is a $^{13}$C. This isotope is only present at  $1.109$% and $^{12}$C as $98.89$% because carbon only has two stable isotopes.  If we find the chance that no $^{13}$C is present then one minus this number is the chance that at least one is present. Of course, it is also possible to find the chance that $1,2,\cdots$ only are present.
 # 
-# There are $60$ atoms therefore out of $n = 60$ only $m$ will be $^{13}$C and so $(n-m)$ $^{12}$C. We shall choose $m = 0$, i.e. the 'success' that none are present. The probability $q = 0.01109$ and the calculation that there is no $^{13}$C is present sets $m=0$, i.e $P(60,\,0,\,0.01109)$. To calculate this may seem odd but  $1-P$ is the chance that at least one atom is present and is what is sought.
+# There are $60$ atoms therefore out of $n = 60$ only $m$ will be $^{13}$C and so $(n-m)$ $^{12}$C. We shall choose $m = 0$, i.e. the 'success' that none are present. The probability $q = 0.01109$ and the calculation that there is no $^{13}$C is present sets $m=0$, i.e $B(60,\,0,\,0.01109)$. To calculate this may seem odd but  $1-B$ is the chance that at least one atom is present and is what is sought.
 # 
-# $$\displaystyle P(60,0,q)=\frac{60!}{0!(60-0)!}q^0 p^{60-0} = 0.512$$
+# $$\displaystyle B(60,0,q)=\frac{60!}{0!(60-0)!}q^0 p^{60-0} = 0.512$$
 # 
 # which means that there is $\approx 49$% chance that at least one $^{13}$C is present in each C$_{60}$ molecule, which is a good outcome if one is doing a $^{13}$C NMR experiment.
 # 
@@ -566,9 +588,9 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # Repeating the process produces the binomial distribution and at the $r^{th}$ plate after $n$ steps, which means a volume $nV_m/N$ of mobile phase has passed through the column $V_m$ being the total mobile volume of the column, the total amount is
 # 
-# $$\displaystyle m_r = m_0C^n_r p^r(1-p)^{n-r}$$
+# $$\displaystyle \frac{m_r}{m_0} =C^n_r p^r(1-p)^{n-r} = B(n,r,p)$$
 # 
-# and $m_r/m_0$ can be interpreted as the 'probability that the molecule will have achieved $r$ successes in $n$ tries'. The molecule is most likely to be found at the $np^{th}$ plate which is the mean value of the distribution. 
+# which is the Binomial distribution and $m_r/m_0$ can be interpreted as the 'probability that the molecule will have achieved $r$ successes in $n$ tries'. The molecule is most likely to be found at the $np^{th}$ plate which is the mean value of the distribution. 
 # 
 # To be of any use the parameter $p$ has to be related to the properties of the column, in particular to the partition constant $K$. If $V_s$ and $V_m$ are the total volumes of the stationary and mobile phases in the column respectively, then each plate has volume $(V_s+V_m)/N$. The equilibrium in each plate is found from the partition between mobile and stationary phases, and we have used $p$ as the fraction of solute in the mobile phase and hence $(1-p)$ is in the stationary phase. The partition constant $K$ is therefore the ratio of the amount of the solute in stationary to that in the mobile phase or
 # 
@@ -610,7 +632,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\displaystyle m=\frac{n_0!}{((n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}$$
 # 
-# for $n_0$ in total. Thus for half a mole each of He and Ne, $n_0=6\cdot 10^{23}$ so that the number of configurations is so vast it is impossible to comprehend; $m=2^{6\cdot 10^{23}}$. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room . However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such 'single molecule' experiments are now quite common. As will be calculate later, 9.24(i), the chance that the gas will fill only $99%$ of any volume and not $100$% is also vanishingly small.
+# for $n_0$ in total. Thus for half a mole each of He and Ne, $n_0=6\cdot 10^{23}$ so that the number of configurations is so vast it is impossible to comprehend; $m=2^{6\cdot 10^{23}}$. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room . However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such 'single molecule' experiments are now quite common. As will be calculate later, 9.24(i), the chance that the gas will fill only $99$% of any volume and not $100$% is also vanishingly small.
 # 
 # The probability of observing *exactly* $50$% is 
 # 
@@ -638,7 +660,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # ![Display](chapter1-fig20b.png)
 # 
-# Figure 20b. The peak normalised probability function  $\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n}$ vs $k/n$ for different $n$. The the data only exists for integer values as shown as circles for $n=20$, at larger $n$ a line is drawn as the points become too congested. The curve for $n=10000$ is in red. At large $n$ the distribution becomes very narrow and the maximum value at $n/2$ is greater than all others combined and the distribution can be approximated by its maximum value.
+# Figure 20d. The peak normalised probability function  $\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n}$ vs $k/n$ for different $n$. The the data only exists for integer values as shown as circles for $n=20$, at larger $n$ a line is drawn as the points become too congested. The curve for $n=10000$ is in red. At large $n$ the distribution becomes very narrow and the maximum value at $n/2$ is greater than all others combined and the distribution can be approximated by its maximum value.
 # ___________
 
 # ## 9.24 Entropy 
@@ -683,7 +705,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\qquad\tag{25e}$$
 # 
-# In Thermodynamics entropy is always calculated using $\int dQ_{rev}/T$ so a reversible pathway is always needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), $\Delta U = 0$ and the temperature $T$ is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature $T$ and this arrangement allows the change from state $T_1V_1\to T_2V_2$. As the piston moves reversibly the pressure on either side of it is always the same. Using the first law with $\Delta U = 0$ and  $dW_{rev}= -pdV$ gives 
+# In Thermodynamics entropy is always calculated using $\int dQ_{rev}/T$ so a reversible pathway always has to be found even if it is not realisable experimentally. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), $\Delta U = 0$ and the temperature $T$ is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature $T$ and this arrangement allows the change from state $T_1V_1\to T_2V_2$. As the piston moves reversibly the pressure on either side of it is always the same. Using the first law with $\Delta U = 0$ and  $dW_{rev}= -pdV$ gives 
 # 
 # $$\displaystyle 0 = dQ_{rev}+dW_{rev}; \qquad dQ_{rev} = RT\frac{dV}{V}$$
 # 
@@ -699,7 +721,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # $$\displaystyle S=k_B\ln(m)\qquad\tag{25g}$$
 # 
-# which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance, e.g. a perfect crystal at 0 K, where the substance is in perfect arrangement so that $m = 1$ and $S_0 = 0$. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.
+# which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance, e.g. a perfect crystal at 0 K, where the substance is in perfect arrangement so that $m = 1$ and $S_0 = 0$. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation, i.e. energetically orientation CO-CO is little different to CO-OC.
 # 
 # We have found that the distribution that $m$ represents is very sharply peaked at its maximum, with the effect that $m$ can be replaced just by its maximum value, i.e. $m\to m_{max}$ which is usually called the number of configurations.
 # 
@@ -707,7 +729,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # *Question* : How great is the entropy change with the irreversible expansion of $n$ moles of an ideal gas from volume $V_1$ to $V_2$ when expansion takes place without addition of heat $Q$ and without doing work $w$?
 # 
-# *Answer*: Since no work is done or heat exchanged the internal energy $U$ is unchanged, and for a perfect gas this means that the temperature $T_1$ is unchanged. To calculate the entropy we must evaluate $\int dQ_{rev}/T$ and this means finding a reversible pathway from $V_1 \to V_2$, and this is the example given in the previous section 9.24. As all reversible paths used to integrate $\int dQ_{rev}/T$ must be equivalent, a different path is now chosen. 
+# *Answer*: Since no work is done or heat exchanged the internal energy $U$ is unchanged, and for a perfect gas this means that the temperature $T_1$ is unchanged. This absence or rather a minute temperature change, was first observed experimentally by Joule in the 1840's by expanding a gas into a vacuum. To calculate the entropy we must evaluate $\int dQ_{rev}/T$ and this means finding a reversible pathway from $V_1 \to V_2$, and this is the example given in the previous section 9.24. As all reversible paths used to integrate $\int dQ_{rev}/T$ must be equivalent, a different path is now chosen. 
 # 
 # To demonstrate this path, suppose that the gas expands adiabatically and reversibly from $V_1\to V_2$, and so the temperature will fall from $T_1\to T_2$ because the gas does work on expansion. However, the entropy remains constant because the increase in volume and thus entropy, and the decrease in temperature and decrease in entropy cancel exactly. Next, heat is introduced reversibly at constant volume ($V_2$) to return the temperature to $T_1$, which completes the path from $V_1\to V_2$ at temperature $T_1$. As $\Delta V = 0$ then from the first law
 # 
@@ -769,11 +791,11 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # where $k_B$ is the Boltzmann constant and $x =N_1/(N_1+N_2)$ the mole fraction of species 1.
 
-# ## 9.25 Poisson distribution (see also Chapter 13.7)
+# ## 9.25 Poisson distribution (see also Chapter 13.3, Monte-Carlo simulations)
 # 
-# This law describes many common situations such as the distribution of telephone calls or waiting times in restaurants. The Poisson distribution is formed by accumulating many events, $n$, where each have a very small probability, $p$, of occurring, but the product $\mu=np$, the mean number of events, is moderate. The distribution is determined entirely by its mean $\mu$. The distribution is asymmetric and skewed for small positive numbers, $n \ge 0$, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, the number of students absent from a class in any week and the fluctuations of particles in solution at a given concentration. One of the earliest examples was recorded over a 20-year period during the 1800's, and was the number of deaths of infantrymen that occurred in the Prussian army after they were kicked by a horse.
+# This law describes many common situations such as the distribution of telephone calls or waiting times in restaurants. The Poisson distribution is formed by accumulating many events, $n$, where each has a very small probability, $p$, of occurring, but the product $\mu=np$, the mean number of events, is moderate. The distribution is determined entirely by its mean $\mu$. The distribution is asymmetric and skewed for small positive numbers, $n \ge 0$, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, the number of students absent from a class in any week and the fluctuations of particles in solution at a given concentration. One of the earliest examples was recorded over a 20-year period during the 1800's, and was the number of deaths of infantrymen that occurred in the Prussian army after they were kicked by a horse.
 # 
-# Suppose that a sample of molecules is continuously excited, and their fluorescence viewed through a small aperture or through filters to reduce the intensity so that photons are detected one at a time by a photodiode or photomultiplier. The number of electrical pulses from the detector for, say, $1000$ time intervals each of $1$ second duration is recorded. If a _histogram_ of the number of events recorded in each time interval is made, then this should follow a Poisson distribution. 
+# Suppose that a sample of molecules is continuously excited, and their fluorescence viewed through a small aperture or through filters to reduce the intensity so that photons are detected one at a time by a photodiode or photomultiplier. The number of electrical pulses from the detector for, say, $1000$ time intervals each of $1$ second duration is recorded. If a *histogram* of the number of events recorded in each time interval is made, then this should follow a Poisson distribution. 
 # 
 # If DNA is exposed to UV light, photo-damage can occur by base pairs forming dimers. If the DNA is spliced into pieces of equal length, the number of dimers in each piece can be recorded. If the pieces are each very small, $10$ base pairs for example, most will not contain a dimer, a few will contain one and fewer still will contain two or more and so on. The distribution formed will have a large value for zero dimers and become smaller as the number of dimers increases. In a second experiment, suppose that $100$ base pair long segments are examined. Now only a few segments have no dimer, some have one and many have two, three, or four but fewer segments will have five or more. This distribution is now peaked at a value of, say, $2.5$. Repeating the experiment with a larger segment will cause the distribution to peak at still larger values until it closely resembles a normal or Gaussian distribution. What has changed between the experiments is only the average number of dimers detected in each segment, thus the Poisson distribution is determined by only one parameter, the average number of 'events'. A similar argument applies to the number of photons or particles detected in progressively longer time intervals.
 # 
@@ -785,7 +807,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # ![Display](analysis-fig13.png)
 # 
-# Figure 20b. The Poisson distribution
+# Figure 20e. The Poisson distribution
 # ________
 # 
 # Notice that, when the mean becomes larger, the distribution resembles a normal distribution and is almost symmetrical. But at small $\mu$, the distribution is very asymmetrical with the mean always to larger $k$ than the peak (the mode or most probable value) of the distribution. The standard deviation of the distribution is also shown and this is
@@ -810,7 +832,7 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # ![Display](chapter1-fig20c.png)
 # 
-# Figure 20c. Harmonic, displaced Potential energy profiles. The spectrum is sketched on the left with the envelope in yellow.
+# Figure 20f. Harmonic, displaced Potential energy profiles. The spectrum is sketched on the left with the envelope in yellow.
 # 
 # ![Display](integration-fig57.png)
 # 
@@ -819,47 +841,66 @@ print('{:s} {:8.6g}'.format('probability ', s) )
 # 
 # ### **(ii) Sequential rate equations**
 # 
-# A concatemer of identical proteins can be unfolded one at a time using an atomic force microscope (AFM). Each protein unfolds with the same rate constant. The scheme is $p_1 \to p_2\to p_3 \to \cdots$. As the rate constant for any step is the same the chance that the transition from protein, $n\to m$ is Poisson distributed. The calculation is described in full in chapter 10 (Differential equations) section 7. As the rate constants are all the same the unfolding is not sequential so any protein has the same chance of unfolding at a given applied force from the AFM.
+# A concatamer of identical proteins can be unfolded one at a time using an atomic force microscope (AFM). Each protein unfolds with the same rate constant. The scheme is $p_1 \to p_2\to p_3 \to \cdots$. As the rate constant for any step is the same the chance that the transition from protein, $n\to m$ is Poisson distributed. The calculation is described in full in chapter 10 (Differential equations) section 7. As the rate constants are all the same the unfolding is not sequential so any protein has the same chance of unfolding at a given applied force from the AFM.
 # 
 # 
 # ### **(iii) Poisson distribution derived from the binomial**
 # 
-# In the previous section the binomial distribution found by analysing a chromatography column was simplified to the Poisson distribution. The binomial distribution is
+# The binomial distribution can be simplified to produce the Poisson distribution when $n\to \infty, p \to 0$ but $\mu$ is constant.  The binomial distribution is
 # 
-# $$\displaystyle P(n,m,q)=\frac{n!}{m!(n-m)!}q^m (1-q)^{n-m} $$
+# $$\displaystyle B(n,k,p)=\frac{n!}{k!(n-k)!}p^k (1-p)^{n-k} $$
 # 
-# which is the total probability of choosing $m$ objects from $n$ positions and $q$ is the chance of choosing any one.
+# which is the total probability of choosing $m$ objects from $n$ positions and $p$ is the chance of choosing any one. If we imagine putting particles into boxes as described for 96 well plates in section 9.19, the probability is $p=1/N$ for $N$ wells and the average is $\mu=np$ which means $n=\mu N$. Substituting for $p$ gives
 # 
-# In the limit that $q$ is very small and $n\to \infty$ i.e. is very large the factorials can be simplified because $n! \sim (n-m)!$ thus 
+# $$\displaystyle B(n,k,p)=\frac{n!}{k!(n-k)!}\left(\frac{\mu}{n}\right)^k \left(1-\frac{\mu}{n}\right)^{n-k} $$
 # 
-# $$\displaystyle \frac{n!}{m!(n-m)!}q^m\quad \to\quad \frac{q^m}{m!}$$
+# We now rearrange this equation and simplify using elementary steps (Haken 1978). The most difficult step is to notice that
 # 
-# The term $\displaystyle (1-q)^{n-m}=\frac{(1-q)^n}{(1-q)^m}$ and as $q$ is small ($\ll 1$) $1-q \to 1$ and so 
+# $$\displaystyle \frac{n!}{(n-k)!}= n(n-1)(n-2)(n-3)\cdots(n-k+1)$$
 # 
-# $$\displaystyle \frac{(1-q)^n}{(1-q)^m} \quad \to\quad (1-q)^n\quad \to \quad e^{-q}$$
+# using this in the Binomial distribution gives
 # 
-# which follows from the definition of the exponential (section 3) and combining the terms gives $\displaystyle \frac{q^me^{-q}}{m!}$ which is the Poisson distribution.
+# $$\displaystyle B(n,m,p)=\frac{n(n-1)(n-2)(n-3)\cdots(n-k+1)}{k!}\left(\frac{\mu}{n}\right)^k \left(1-\frac{\mu}{n}\right)^{n-k} $$
+# 
+# Now we rearrange this equation and split the last term into powers of $n$ and $-k$
+# 
+# $$\displaystyle B(n,k,p)=\frac{\mu^k}{k!} \left(1-\frac{\mu}{n}\right)^n\left(\frac{n(n-1)(n-2)(n-3)\cdots(n-k+1)}{n^k} \right)\left(1-\frac{\mu}{n}\right)^{-k}$$
+# 
+# now dividing by $n^k$ in the  fraction gives
+# 
+# $$\displaystyle B(n,k,p)=\frac{\mu^k}{k!} \underbrace{\left(1-\frac{\mu}{n}\right)^n}_{A}\underbrace{\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\left(1-\frac{3}{n}\right)\cdots\left(1-\frac{(k+1)}{n}\right) \left(1-\frac{\mu}{n}\right)^{-k}}_{B}$$
+# 
+# The first term remains as it is and the term underlined as A becomes the definition of an exponential when $n\to \infty$, i.e.
+# 
+# $$\displaystyle \left(1-\frac{\mu}{n}\right)^n \to e^{-\mu}$$
+# 
+# and the term B becomes $1$ as $n\to \infty$. This completes the conversion to the Poisson distribution 
+# 
+# giving
+# 
+# $$\displaystyle P(k,\mu) = \frac{\mu^k}{k!}e^{-\mu}$$
+# 
 
 # ### **(iv) Time-correlated Single-Photon counting** 
 # 
 # Possibly the most versatile method of measuring fluorescence lifetimes, when they are not too short, is to use time-correlated single-photon counting. The method uses a short light pulse, a few picoseconds duration is sufficient, which excites the sample. The method repeatedly measures the times at which an electronically excited molecule remains in its excited state. This is done by recording when a photon is detected either on a fast responding sensitive photomultiplier or microchannel plate detector, relative to the time that the light excited the sample. This time difference is usually measured by a time-to-amplitude converter circuit. In effect this circuit starts charging a capacitor when the sample is excited and stops when the photon is detected. The charge is then converted to a voltage and stored in one bin of a histogram. In many repeated experiments a histogram of the number of photons detected at each time bin is made, see Lakowicz, 2004 for a summary or the web site of commercial instruments. The resulting histogram looks like the simulation in chapter 12-3.4. In practice decays of four to five decades in intensity can be measured. Because of time jitter in the electronics, lifetimes are restricted to no shorter than about $20$ ps but this is obtained only after convolution. For shorter decays fluorescence upconversion can be used, see G Beddard, et al. Chemical Physics, Vol. 61, pp. 17-23,1981 & G. Beddard et al. Nature Vol. 294, p. 145, 1981.    
 # 
-# It is clearly important to know whether or not one photon produces one event at the detector, and it seems obvious that it should, but statistically this can be confirmed. We let $p_n$ be the chance that $n$ photons reach the detector and $p_{nx}$ the chance that $n$ photons will eject $x$ electrons in the detector. These are assumed to be given by a Poisson and Binomial distribution respectively, viz
+# It is clearly important to know whether or not one photon produces one event at the detector, and it seems obvious that it should, but statistically this can be confirmed. We let $P_n$ be the chance that $n$ photons reach the detector and $B_{nx}$ the chance that $n$ photons will eject $x$ electrons in the detector. These are assumed to be given by a Poisson and Binomial distribution respectively, viz
 # 
-# $$\displaystyle \begin{align} p_n&=\frac{\mu^ne^{-\mu}}{n!}\\p_{nx}&=\frac{n!}{x!(n-x)!}q^x(1-q)^{n-x}\end{align}$$
+# $$\displaystyle \begin{align} P_n&=\frac{\mu^ne^{-\mu}}{n!}\\B_{nx}&=\frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}\end{align}$$
 # 
-# where $\mu$ is the average number of photons detected from all those produced by excitation, and $q$ the quantum efficiency of the light sensitive part of the detector, i.e. the photocathode in a photomultiplier or semiconductor otherwise. The Poisson distribution gives the probability of measuring an event where many events are possible but each has a low chance of occurring, and the Binomial gives the probability of $x$ events occurring out of $n$ possible ones where each has a chance $q$.
+# where $\mu$ is the average number of photons detected from all those produced by excitation, and $p$ the quantum efficiency of the light sensitive part of the detector, i.e. the photocathode in a photomultiplier or semiconductor otherwise. The Poisson distribution gives the probability of measuring an event where many events are possible but each has a low chance of occurring, and the Binomial gives the probability of $x$ events occurring out of $n$ possible ones where each has a chance $p$.
 # 
 # The probability that $x$ electrons are produced by $\mu$ photons is the product of the distributions and summed over all possible $x$ values. The summation is expanded, as shown below, and after simplification the exponential series is identified leading to the final result.
 # 
-# $$\displaystyle \begin{align}P &=\sum_{n=x}^\infty p_np_{nx}\\& =\sum_{n=x}^\infty \frac{\mu^ne^{-\mu}}{x!(n-x)!}q^x(1-q)^{n-x}\\& =\frac{e^{-\mu}q^x}{x!}\left( \frac{\mu^x}{0!} + \frac{\mu^{x+1} }{1!}(1-q) +\frac{\mu^{x+2} }{2!}(1-q)^2 +\cdots +\frac{\mu^{x+n} }{n!}(1-q)^n+\cdots  \right)\\&=\frac{e^{-\mu}(\mu q)^x}{x!}\left( 1 + \frac{\mu }{1!}(1-q) +\frac{\mu^2 }{2!}(1-q)^2 +\cdots +\frac{\mu^n }{n!}(1-q)^n+\cdots  \right)\\& =\frac{e^{-\mu}(\mu q)^x}{x!}e^{\mu(1-q)}\\&=\frac{(\mu q)^x}{x!}e^{-\mu q}\end{align}$$
+# $$\displaystyle \begin{align}P &=\sum_{n=x}^\infty P_nB_{nx}\\& =\sum_{n=x}^\infty \frac{\mu^ne^{-\mu}}{x!(n-x)!}p^x(1-p)^{n-x}\\& =\frac{e^{-\mu}p^x}{x!}\left( \frac{\mu^x}{0!} + \frac{\mu^{x+1} }{1!}(1-p) +\frac{\mu^{x+2} }{2!}(1-p)^2 +\cdots +\frac{\mu^{x+n} }{n!}(1-p)^n+\cdots  \right)\\&=\frac{e^{-\mu}(\mu p)^x}{x!}\left( 1 + \frac{\mu }{1!}(1-p) +\frac{\mu^2 }{2!}(1-p)^2 +\cdots +\frac{\mu^n }{n!}(1-p)^n+\cdots  \right)\\& =\frac{e^{-\mu}(\mu p)^x}{x!}e^{\mu(1-p)}\\&=\frac{(\mu p)^x}{x!}e^{-\mu p}\end{align}$$
 # 
 # Suppose there are $N$ pulses from the detector per second this number is found by summing over all the of electrons, and hence pulses from the detector, that could be produced. Expanding the exponential in the summation gives
 # 
-# $$\displaystyle \begin{align} N &=\sum_{x=1}^\infty P\\&= \mu q - \frac{(\mu q)^2}{2!}+\cdots\end{align}$$
+# $$\displaystyle \begin{align} N &=\sum_{x=1}^\infty P\\&= \mu p - \frac{(\mu p)^2}{2!}+\cdots\end{align}$$
 # 
-# and as long as $\mu q\gg (\mu q)^2/2$ then the number of pulses detected is directly proportional to the number of photons. This is achieved by only detecting a photon from no more than $1$% of the times the sample is excited, i.e keeping $\mu$ the average number of photons small. For example, if the detector efficiency $q=0.5$ and on average $\mu=0.01$ then $(\mu q)^2/2 \ll \mu q$ and the number of pulses detected is directly proportional the number of photons to better than $1$%. 
-
+# and as long as $\mu p\gg (\mu p)^2/2$ then the number of pulses detected is directly proportional to the number of photons. This is achieved by only detecting a photon from no more than $1$% of the times the sample is excited, i.e. keeping $\mu$ the average number of photons small. For example, if the detector efficiency $p=0.5$ and on average $\mu=0.01$ then $(\mu p)^2/2 \ll \mu p$ and the number of pulses detected is directly proportional the number of photons to better than $1$%. this is important in time resolved photon counting because the emission decay can be measured over five orders of magnitude.
+# 
 # ## 9.26 Multinomial distribution
 # 
 # The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 9.3. When there are several choices the multinomial distribution is required and is

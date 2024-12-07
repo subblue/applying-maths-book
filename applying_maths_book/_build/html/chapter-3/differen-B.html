@@ -1075,7 +1075,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-E.html">
-     8 Reaction schemes with feedback
+     8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1523,6 +1523,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repeated-differentiation">
+   3.11 Repeated differentiation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differentiating-logarithms">
    3.12 Differentiating logarithms
   </a>
@@ -1631,6 +1636,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-trig-functions-tan-sec-and-hyperbolic-functions-sinh-cosh-and-their-inverse">
    3.10 Other trig functions, tan, sec  and hyperbolic functions sinh, cosh and their inverse.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repeated-differentiation">
+   3.11 Repeated differentiation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1771,6 +1781,19 @@ title="Print to PDF"
 \[\displaystyle \frac{dy}{dx}=\frac{2x}{\sqrt{1-x^4}}\]</div>
 <p>The Pythagoras right-angled triangle can also be used to convert between trig functions. See Chapter 1.5 and a table of many functions is given in section 4.17.</p>
 </section>
+<section id="repeated-differentiation">
+<h2>3.11 Repeated differentiation<a class="headerlink" href="#repeated-differentiation" title="Permalink to this headline">#</a></h2>
+<p>The sine, cosine and exponential functions are capable of endless repeated differentiation as shown in section 3.9. If <span class="math notranslate nohighlight">\(\displaystyle y=e^{-ax}\)</span> differentiating twice produces,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2}{dx^2}e^{-ax}=-\frac{d}{dx}e^{-{ax}}=a^2e^{-ax}=a^2y\]</div>
+<p>Continuing the differentiation, the powers of <span class="math notranslate nohighlight">\(a\)</span> increase and the sign alternates being positive for even powers and negative for odd ones. The <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^n}{dx^n}e^{-ax}=(-1)^n=a^ne^{-ax}\]</div>
+<p>which is simply the differential equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^n}{dx^n}y=(-1)^na^ny\]</div>
+<p>Importantly, this tells us that the solution to equations of this type are exponentials.</p>
+</section>
 <section id="differentiating-logarithms">
 <h2>3.12 Differentiating logarithms<a class="headerlink" href="#differentiating-logarithms" title="Permalink to this headline">#</a></h2>
 <p>In a 1697 paper Johann Bernoulli states ( Dunham 2018),</p>
@@ -1789,7 +1812,7 @@ title="Print to PDF"
 <p><strong>(a)</strong> The van’t Hoff equation of chemical thermodynamics has this last form,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}\]</div>
-<p>This equation describes the change of an equilibrium constant <span class="math notranslate nohighlight">\(K_p\)</span> for a reaction carried out at constant pressure with temperature <span class="math notranslate nohighlight">\(T\)</span> and quantifies the Le Chatelier principle. <span class="math notranslate nohighlight">\(\Delta_rH^{\mathrm{o}}\)</span> is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.</p>
+<p>This equation describes the change of an equilibrium constant <span class="math notranslate nohighlight">\(K_p\)</span> for a reaction carried out at constant pressure with temperature <span class="math notranslate nohighlight">\(T\)</span> and quantifies the Le Chatelier principle. <span class="math notranslate nohighlight">\(\Delta_rH^{\mathrm{o}}\)</span> is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt. temperature.</p>
 <p><strong>(b)</strong> A particularly cunning and somewhat complicated example using this log derivative is to solve the equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle R\frac{d^2S}{dx^2}+2\frac{dR}{dx}\frac{dS}{dx}=0\]</div>
@@ -1936,7 +1959,7 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-B_5_0.png" src="../_images/differen-B_5_0.png" />
+<img alt="../_images/differen-B_7_0.png" src="../_images/differen-B_7_0.png" />
 </div>
 </div>
 </section>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 8 Reaction schemes with feedback
+# # 8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) & Nerve impulses  (Fitzhugh-Nagumo) equations.
 
 # ## Introduction
 # Feedback in a chemical reaction implies that there are at least two reactions for which the product of one is the reactant for the other, and vice versa; for example, 
@@ -12,7 +12,7 @@
 # 
 # Feedback is also common in biology, in the interactions of animals with one another, such as the synchronizing of the flashing of fireflies and of the behaviour of predators and prey. In physiology, the electrical response of nerve and cardiac muscle cells show feedback and the physio-chemical system is termed excitable, meaning that under certain specified conditions, far from equilibrium, oscillations in the concentration of different species, or of electrical impulses can occur. See Scott (1995) for a detailed description of oscillating chemical reactions, and Strogatz (1994) for non-linear processes in general. Examples of a few of these processes are now presented.
 # 
-# ## 8.1 Predator - prey equations
+# ## 8.1 Predator - prey or Lotka-Volterra equations
 # 
 # One of the simplest set of reactions was first studied by Lotka (1925), it involves two species X and Y where some amount of each is present initially.
 # 
@@ -28,7 +28,19 @@
 # 
 # "The first case I have considered is that of two associated species, of which one, finding sufficient food in its environment, would multiply indefinitely when left to itself, while the other would perish for lack of nourishment if left alone; but the second feeds upon the first, and so the two species can coexist together. The proportional rate of increase of the prey diminishes as the number of individuals of the predator increases, while the augmentation of the predator increases with the increase of the number of the prey."
 # 
-# The longest time series of this oscillatory behaviour appears to be the record of the number of lynx and hare pelts sold by trappers to the Hudson Bay Company in Canada over the period 1848 to 1907. The actual data, while oscillatory, is also rather chaotic, illustrating that the actual behaviour of animals is always going to be rather difficult to model due to the uncontrolled nature of the experiment. Nevertheless, some insight into predator - prey behaviour can be obtained with the rate equations;
+# The scheme was originally devised to explain the temporal oscillation of the numbers of fish in the Adriatic Sea, however, the longest time series of this oscillatory behaviour appears to be the record of the number of lynx and hare pelts sold by trappers to the Hudson Bay Company in Canada over the period 1848 to 1907. The actual data, while oscillatory, is also rather chaotic, illustrating that the actual behaviour of animals is always going to be rather difficult to model due to the uncontrolled nature of the experiment. Nevertheless, some insight into predator - prey behaviour can be obtained with rate equations which have the general form
+# 
+# $$\displaystyle \text{rate of change}_i = gain_i -loss_i$$
+# 
+# for each species $i = X,Y $. Thus the prey, we associate with species $Y$ grow in the absence of predators as
+# 
+# $$\displaystyle gain_Y=k_1Y$$
+# 
+# and are eaten by predators with a rate proportional by their own number and that of the predators, which is  
+# 
+# $$\displaystyle loss_Y=k_2YX$$
+# 
+# Turning our attention to the predators, as they live  by eating prey they have a gain proportional to the number of prey and their own number which is $k_2YX$ and their death is only by natural causes thus their loss term is $ k_3X$. Combining these terms gives
 # 
 # $$\displaystyle \qquad\qquad\begin{array}{lll}\\
 # \displaystyle \frac{dY}{dt} & = & k_1Y -k_2 YX & \text{prey}\\

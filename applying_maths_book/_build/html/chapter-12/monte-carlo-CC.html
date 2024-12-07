@@ -1075,7 +1075,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-E.html">
-     8 Reaction schemes with feedback
+     8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1852,19 +1852,19 @@ title="Print to PDF"
 <p>As an example, consider simulating one-dimensional molecular diffusion. This could describe the diffusion of a molecule inside a long nanotube, along a channel in a zeolite or along a path into an enzyme’s active site. At any particular point, the molecule could be buffeted by a solvent molecule and knocked forwards or backwards. To idealize the problem we assume that each displacement or step is of the same length. More colourfully, it has become the convention in textbooks to describe a random walk as the meanderings of the proverbial drunkard.
 In the simulation of a random walk, only discrete steps can be taken <span class="math notranslate nohighlight">\(1, 2, 3 \cdots\)</span> and so on. A random walk of this discrete type is described as a Markov chain of events in which the next event to occur depends only on the current situation or state and has no history of past events because each event has to be independent of all others.</p>
 <p>The walk is random and also unbiased, which means that the chance of moving to the right or to the left at any step is equal to <span class="math notranslate nohighlight">\(1/2\)</span>. Suppose that a walk can have only two steps, then there are four ways of moving and only three places the walk can end up, which is either where it started, or two steps to the left, or two to the right. The chance of two left moving steps, or a left and a right, is <span class="math notranslate nohighlight">\(1/4\)</span>. Similarly, the chance of a right-hand step and then a left-hand one, or of two right steps, is <span class="math notranslate nohighlight">\(1/4\)</span>. The chance, therefore, of returning to the starting place is <span class="math notranslate nohighlight">\(1/2\)</span>, and it is <span class="math notranslate nohighlight">\(1/4\)</span> of moving, either two places to the right, or two to the left, of the start. After three steps, the walker can have moved three steps to the right or to the left, or two right and one left, and vice versa, or two left and one right, and vice versa. After an odd number of steps, the walker cannot be at the start of the walk. Clearly, the number of combinations of left and right steps soon becomes complicated but it is, nevertheless, calculable. The probability of ending up at different positions is shown in the table. The sums of each row add to one as these entries represent probability. These probabilities can be calculated by the binomial distribution, and, when fractions are cleared, Pascal’s triangle results.</p>
-<p>In an unbiased random event if <span class="math notranslate nohighlight">\(p\)</span> is the probability of success in any single event, the probability of <span class="math notranslate nohighlight">\(k\)</span> successes after <span class="math notranslate nohighlight">\(n\)</span> attempts is the binomial distribution</p>
+<p>In an unbiased random event if <span class="math notranslate nohighlight">\(p\)</span> is the probability of success in any single event, the probability of <span class="math notranslate nohighlight">\(k\)</span> successes after <span class="math notranslate nohighlight">\(n\)</span> attempts is the Binomial distribution</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  P(k,n,p)=\frac{n!}{k!(n-k)!}p^k\left( 1-p \right)^{n-k}\]</div>
-<p>and for example the chance of throwing a die three times so that each time the same number appears is <span class="math notranslate nohighlight">\(P(3, 3, 1/6) = 1/63\)</span>, the <span class="math notranslate nohighlight">\(1/6\)</span> appears because there a 6 sides on a die. The factor</p>
+\[\displaystyle  B(n,k,p)=\frac{n!}{k!(n-k)!}p^k\left( 1-p \right)^{n-k}\]</div>
+<p>and for example the chance of throwing a die three times so that each time the same number appears is <span class="math notranslate nohighlight">\(B(3, 3, 1/6) = 1/63\)</span>, the <span class="math notranslate nohighlight">\(1/6\)</span> appears because there a 6 sides on a die. The factor</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{n!}{k!(n-k)!}=\binom{n}{k}\]</div>
 <p>is called the binomial coefficient.</p>
 <p>In terms of the random walk, ‘success’ means that after a total of <span class="math notranslate nohighlight">\(n\)</span> steps, the walker is at position <span class="math notranslate nohighlight">\(k\)</span> steps away from the starting point. To calculate this probability, suppose that in a random walk of length <span class="math notranslate nohighlight">\(2n\)</span>, there are <span class="math notranslate nohighlight">\(x\)</span> steps taken to the right, then <span class="math notranslate nohighlight">\(2n - x\)</span> must be taken to the left. Therefore, the walker ends at position <span class="math notranslate nohighlight">\(x -(2n - x) = 2(x - n)\)</span>. If <span class="math notranslate nohighlight">\(x\)</span> steps are taken to the right out of a total of <span class="math notranslate nohighlight">\(2n\)</span> then the probability of this is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(x,2n,p)= \frac{(2n)!}{k!(2n-k)!}p^x\left( 1-p \right)^{2n-x}\]</div>
+\[\displaystyle B(2n,x,p)= \frac{(2n)!}{x!(2n-x)!}p^x\left( 1-p \right)^{2n-x}\]</div>
 <p>however, this can only be true if the walk ends at position <span class="math notranslate nohighlight">\(2(x-n)=2k\)</span>. Therefore <span class="math notranslate nohighlight">\(x=n+k\)</span>, giving</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(n+k,2n,p)= \frac{(2n)!}{(n+k)!(n-k)!}p^{n+k}\left( 1-p \right)^{n-k}\]</div>
+\[\displaystyle B(2n,n+k,p)= \frac{(2n)!}{(n+k)!(n-k)!}p^{n+k}\left( 1-p \right)^{n-k}\]</div>
 <p>as the probability of being at <span class="math notranslate nohighlight">\(k\)</span> after <span class="math notranslate nohighlight">\(2n\)</span> steps. When <span class="math notranslate nohighlight">\(p = 1/2\)</span> and four steps are taken <span class="math notranslate nohighlight">\((n = 2,\; k = 2)\)</span> this equation gives a probability of <span class="math notranslate nohighlight">\(1/16\)</span> as shown by the bottom right entry in the table.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{c|cccccccc}

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8 Reaction schemes with feedback &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses (Fitzhugh-Nagumo) equations. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1075,7 +1075,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     8 Reaction schemes with feedback
+     8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1518,8 +1518,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predator-prey-equations">
-   8.1 Predator - prey equations
+  <a class="reference internal nav-link" href="#predator-prey-or-lotka-volterra-equations">
+   8.1 Predator - prey or Lotka-Volterra equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1541,7 +1541,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>8 Reaction schemes with feedback</h1>
+                <h1>8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) & Nerve impulses  (Fitzhugh-Nagumo) equations.</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1557,8 +1557,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predator-prey-equations">
-   8.1 Predator - prey equations
+  <a class="reference internal nav-link" href="#predator-prey-or-lotka-volterra-equations">
+   8.1 Predator - prey or Lotka-Volterra equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1581,8 +1581,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="reaction-schemes-with-feedback">
-<h1>8 Reaction schemes with feedback<a class="headerlink" href="#reaction-schemes-with-feedback" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="reaction-schemes-with-feedback-predator-prey-lotka-volterra-nerve-impulses-fitzhugh-nagumo-equations">
+<h1>8 Reaction schemes with feedback. Predator -Prey (Lotka-Volterra) &amp; Nerve impulses  (Fitzhugh-Nagumo) equations.<a class="headerlink" href="#reaction-schemes-with-feedback-predator-prey-lotka-volterra-nerve-impulses-fitzhugh-nagumo-equations" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Feedback in a chemical reaction implies that there are at least two reactions for which the product of one is the reactant for the other, and vice versa; for example,</p>
@@ -1591,8 +1591,8 @@ title="Print to PDF"
 <p>Interesting dynamics can be observed in reactions with feedback, because a product that is also a reactant catalyses its own production, i.e. is autocatalytic. There are many such reactions that are now known for example the Belousov - Zhabotinsky ( bromomalonic acid / <span class="math notranslate nohighlight">\(\mathrm{Ru^{2+}\,/\,BrO_3^-}\)</span> and traces of <span class="math notranslate nohighlight">\(\mathrm{BrO_2}\)</span> ) and chlorine dioxide / I<span class="math notranslate nohighlight">\(_2\)</span> / malonic acid reactions, which involve a complex series of coupled chemical reactions inhibiting and also feeding back on one another, and so catalysing the reaction. Many biological reactions rely on feedback, The production of ATP, for example, is produced through a succession of reactions in the glycolytic cycle that involve ATP, thus to produce ATP we need ATP, similarly to produce a cell, a cell is needed.</p>
 <p>Feedback is also common in biology, in the interactions of animals with one another, such as the synchronizing of the flashing of fireflies and of the behaviour of predators and prey. In physiology, the electrical response of nerve and cardiac muscle cells show feedback and the physio-chemical system is termed excitable, meaning that under certain specified conditions, far from equilibrium, oscillations in the concentration of different species, or of electrical impulses can occur. See Scott (1995) for a detailed description of oscillating chemical reactions, and Strogatz (1994) for non-linear processes in general. Examples of a few of these processes are now presented.</p>
 </section>
-<section id="predator-prey-equations">
-<h2>8.1 Predator - prey equations<a class="headerlink" href="#predator-prey-equations" title="Permalink to this headline">#</a></h2>
+<section id="predator-prey-or-lotka-volterra-equations">
+<h2>8.1 Predator - prey or Lotka-Volterra equations<a class="headerlink" href="#predator-prey-or-lotka-volterra-equations" title="Permalink to this headline">#</a></h2>
 <p>One of the simplest set of reactions was first studied by Lotka (1925), it involves two species X and Y where some amount of each is present initially.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad \begin{array}{lll}\\
@@ -1603,7 +1603,16 @@ X &amp; \overset{k_3}\longrightarrow D \\
 <p>The amount of species <span class="math notranslate nohighlight">\(Y\)</span> is doubled in the first step and is then lost by reaction with <span class="math notranslate nohighlight">\(X\)</span> to produce more <span class="math notranslate nohighlight">\(X\)</span> in the second. Initially, <span class="math notranslate nohighlight">\(Y\)</span> increases rapidly, but as it does so, the rate of reaction with <span class="math notranslate nohighlight">\(X\)</span> increases. This makes more <span class="math notranslate nohighlight">\(X\)</span> which accelerates the reaction, and <span class="math notranslate nohighlight">\(Y\)</span> is eventually consumed more rapidly than it is formed and its population falls. The population of <span class="math notranslate nohighlight">\(X\)</span> then falls, and the process repeats itself.</p>
 <p>Later, Volterra (1926), who was studying the variation of animal populations, described the same set of reactions in this way.</p>
 <p>“The first case I have considered is that of two associated species, of which one, finding sufficient food in its environment, would multiply indefinitely when left to itself, while the other would perish for lack of nourishment if left alone; but the second feeds upon the first, and so the two species can coexist together. The proportional rate of increase of the prey diminishes as the number of individuals of the predator increases, while the augmentation of the predator increases with the increase of the number of the prey.”</p>
-<p>The longest time series of this oscillatory behaviour appears to be the record of the number of lynx and hare pelts sold by trappers to the Hudson Bay Company in Canada over the period 1848 to 1907. The actual data, while oscillatory, is also rather chaotic, illustrating that the actual behaviour of animals is always going to be rather difficult to model due to the uncontrolled nature of the experiment. Nevertheless, some insight into predator - prey behaviour can be obtained with the rate equations;</p>
+<p>The scheme was originally devised to explain the temporal oscillation of the numbers of fish in the Adriatic Sea, however, the longest time series of this oscillatory behaviour appears to be the record of the number of lynx and hare pelts sold by trappers to the Hudson Bay Company in Canada over the period 1848 to 1907. The actual data, while oscillatory, is also rather chaotic, illustrating that the actual behaviour of animals is always going to be rather difficult to model due to the uncontrolled nature of the experiment. Nevertheless, some insight into predator - prey behaviour can be obtained with rate equations which have the general form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \text{rate of change}_i = gain_i -loss_i\]</div>
+<p>for each species <span class="math notranslate nohighlight">\(i = X,Y \)</span>. Thus the prey, we associate with species <span class="math notranslate nohighlight">\(Y\)</span> grow in the absence of predators as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle gain_Y=k_1Y\]</div>
+<p>and are eaten by predators with a rate proportional by their own number and that of the predators, which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle loss_Y=k_2YX\]</div>
+<p>Turning our attention to the predators, as they live  by eating prey they have a gain proportional to the number of prey and their own number which is <span class="math notranslate nohighlight">\(k_2YX\)</span> and their death is only by natural causes thus their loss term is <span class="math notranslate nohighlight">\( k_3X\)</span>. Combining these terms gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{array}{lll}\\
 \displaystyle \frac{dY}{dt} &amp; = &amp; k_1Y -k_2 YX &amp; \text{prey}\\

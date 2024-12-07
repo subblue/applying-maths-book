@@ -15,6 +15,8 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
+# 
+
 # ## 3.9 Differentiating sine and cosine
 # 
 # Sine and cosine functions are almost mirror images of one another when differentiated,
@@ -54,6 +56,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The Pythagoras right-angled triangle can also be used to convert between trig functions. See Chapter 1.5 and a table of many functions is given in section 4.17.
 # 
+# ## 3.11 Repeated differentiation
+# 
+# The sine, cosine and exponential functions are capable of endless repeated differentiation as shown in section 3.9. If $\displaystyle y=e^{-ax}$ differentiating twice produces,
+# 
+# $$\displaystyle \frac{d^2}{dx^2}e^{-ax}=-\frac{d}{dx}e^{-{ax}}=a^2e^{-ax}=a^2y$$
+# 
+# Continuing the differentiation, the powers of $a$ increase and the sign alternates being positive for even powers and negative for odd ones. The $n^{th}$ derivative is
+# 
+# $$\displaystyle \frac{d^n}{dx^n}e^{-ax}=(-1)^n=a^ne^{-ax}$$
+# 
+# which is simply the differential equation
+# 
+# $$\displaystyle \frac{d^n}{dx^n}y=(-1)^na^ny$$
+# 
+# Importantly, this tells us that the solution to equations of this type are exponentials.
+
 # ## 3.12 Differentiating logarithms
 # 
 # In a 1697 paper Johann Bernoulli states ( Dunham 2018), 
@@ -76,7 +94,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}$$
 # 
-# This equation describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and quantifies the Le Chatelier principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.
+# This equation describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and quantifies the Le Chatelier principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt. temperature.
 # 
 # **(b)** A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
 # 
@@ -107,8 +125,6 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # and 
 # 
 # $$\displaystyle \frac{d}{dx}\sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)= -\sum_{n=1}^\infty\frac{2x}{n^2-x^2}$$
-# 
-# 
 # 
 # ## 3.13 Differentiating $x$ as a power, factorials $x!$ and absolute values $|x|$ 
 # 
