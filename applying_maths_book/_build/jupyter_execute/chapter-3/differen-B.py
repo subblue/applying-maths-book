@@ -40,7 +40,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 3.10 Other trig functions, tan, sec  and hyperbolic functions sinh, cosh and their inverse.
 # 
-# There are many other trigonometric and closely related hyperbolic functions besides sine and cosine, and most can be treated by the differentiation methods described in the next few sections based on basic differentiation. One useful way is to convert to the exponential form first. Sine and cosine can easily be differentiated this way, then converted back to a trig form. A tangent, for example, is the ratio of sine/cosine and is treated as a ratio. Others functions such as sec(x) which is 1/cos(x) can be treated as a function of a function, Section 5.1, either in the trig or exponential form. The hyperbolic functions cosh, sinh, and tanh also have exponential representations. 
+# There are many other trigonometric and closely related hyperbolic functions besides sine and cosine, and most can be treated by the differentiation methods described in the next few sections based on basic differentiation. One useful way is to convert to the exponential form first. Sine and cosine can easily be differentiated this way, then converted back to a trig form. A tangent, for example, is the ratio of sine/cosine and is treated as a ratio. Others functions such as sec(x) which is 1/cos(x) can be treated as a function of a function, Section 5.1, either in the trig or exponential form. The hyperbolic functions cosh, sinh, and tanh also have exponential representations. The Pythagoras right-angled triangle can also be used to convert between trig functions, see Chapter 1.5.
 # 
 # The inverse functions $\displaystyle y=\sin^{−1}(x),\; y = \cosh^{-1}(x)$, and so forth can be treated by rearranging the equation, for instance,
 # 
@@ -54,8 +54,41 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{dy}{dx}=\frac{2x}{\sqrt{1-x^4}}$$
 # 
-# The Pythagoras right-angled triangle can also be used to convert between trig functions. See Chapter 1.5 and a table of many functions is given in section 4.17.
+# The general case when $\displaystyle  y=\sin^{-1}(ax+b) $ has the differential
 # 
+# $$\displaystyle \frac{dy}{dx}=\frac{a}{\sqrt{1+(ax+b)^2}}$$
+# 
+# and this result and others are given in the table of derivatives in section 3.17.
+
+# ### **(i) Rainbows**
+# 
+# In forming a rainbow light is refracted and reflected in raindrops back towards then observer. The angle  light returns at relative to the observer is $\approx 42^\mathrm{o}$ to the sun. The colours are due to the changing refractive index (dispersion) with wavelength, the index being larger at shorter wavelengths. The semicircular nature of the rainbow is due to the cylindrical symmetry about the rays from the sun and if the sun is very low in the sky or you are on a hill, the rainbow can effectively become circular. Descartes first explained the rainbow in circa 1637. 
+# 
+# The figure below shows the geometry. The ray enters at A with an incidence angle $i$ and is refracted by the water droplet at angle $r$ according to Snell's law 
+# 
+# $$\displaystyle \frac{\sin(i)}{\sin(r)}=n$$
+# 
+# where $n$ is the refractive index at the wavelength chosen, for example, $n=1.3370$ at $450$ nm and $1.331$ in the red at $650$ nm. The ray is totally internally reflected at angle $r$, the incident. and reflected angles are the same in reflection, and then leaves at C after being refracted again. The total angle between the incident and outgoing ray is $\displaystyle \theta =4r-2i$, which can be found from straightforward geometry.
+# 
+# ![Drawing](differen-fig5b.png)
+# 
+# figure 5a. The ray from the sun arriving at A is refracted according to Snell's Law, totally internally reflected at B and exits the raindrop at C and travels towards the observer's eye. The angle $\theta$ is the acute angular change in direction and is labelled $\theta_R=\approx 42^o$ when a rainbow is observed. Rays entering parallel to that at A (not shown) but do so closer to the centre line also cluster around angle $ \theta_R$ for a given wavelength.
+# ___________
+# 
+# Substituting for Snell's law produces 
+# 
+# $$\displaystyle \theta = 4\sin^{-1}\left(\frac{\sin(i)}{n}\right) -2i$$
+# 
+# where $\theta$ is a function of the incident angle $i$. This function has a maximum called the rainbow angle $\theta_R$ when its derivative is zero. To find the derivative the method above could be used but gives a rather complicated answer. It is better in this case to use the general formula by letting $ax= sin(i)/n$ and $b=0$ but remember that you must multiply by the derivative of $ \sin(i)/n$ as in the function of function method. The result is 
+# 
+# $$\displaystyle \frac{d\theta}{di}=\frac{4\cos(i)}{n\sqrt{1-\sin^2(i)/n^2}}-2$$
+# 
+# and the value of $i$ when the function is at its maximum is found when the derivative is zero, and after some simplification, this is
+# 
+# $$\cos(i)= \sqrt{\frac{n^2-1}{3}}$$
+# 
+# This value for $i$ has to be used to find $\theta_{R}$, which is the minimum deviation angle. At $450$ nm using the refractive index given above the angle is $\theta_R = 41.5^\mathrm{o}$ and at $650$ nm $42.37^\mathrm{o}$ so red light is scattered through a greater angle than blue light. Although these angle are only slightly different over the distance involved are enough to cause the colours to separate. If the angle $\theta$ is not about $42^\mathrm{o}$ then the intensity will be low and no rainbow observed. The geometry of the rain droplet returns light preferentially at angles clustered about $\theta_R$ and much less over other angles. For example if the sun were high enough to make the angle greater that $\theta_R$ with respect to the observer no rainbow could be seen. 
+
 # ## 3.11 Repeated differentiation
 # 
 # The sine, cosine and exponential functions are capable of endless repeated differentiation as shown in section 3.9. If $\displaystyle y=e^{-ax}$ differentiating twice produces,
@@ -90,13 +123,16 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \qquad\tag{11}$$
 # 
-# **(a)** The van't Hoff equation of chemical thermodynamics has this last form, 
+# ### **Example (i) The Van't Hoff equation**
+# 
+# The van't Hoff equation of chemical thermodynamics has this last form, 
 # 
 # $$\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}$$
 # 
 # This equation describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and quantifies the Le Chatelier principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt. temperature.
 # 
-# **(b)** A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
+# ### **Example (ii)** 
+# A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
 # 
 # $$\displaystyle R\frac{d^2S}{dx^2}+2\frac{dR}{dx}\frac{dS}{dx}=0$$
 # 
@@ -118,7 +154,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $C$ is a constant. The reason $C$ is there is that this is the general form and is simplified from the derivative of a log, since $\displaystyle \frac{d}{dx}\ln(Cx)=\frac{1}{x}$. 
 # 
-# **(c)** The product $\displaystyle \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right)$ cannot be easily differentiated but its log can be and so
+# ### **Example (iii) An infinite product** 
+# The product $\displaystyle \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right)$ cannot be easily differentiated but its log can be and so
 # 
 # $$\displaystyle \log\left( \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right) \right)= \sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)$$
 # 

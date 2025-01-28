@@ -72,10 +72,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # where the transpose (superscript $T$) changes the row vector into a column.
 # 
-# In the special case of proteins, the angles are defined to be between $- 180^\text{o}$ and $+180^\text{o}$ and a check has to be made because the cosine can be positive between $-90^\text{o} \to 90^\text{o}$ and negative between $-180^\text{o} \to 90^\text{o}$ and again from $90^\text{o} \to 180^\text{o}$ and one cannot tell from the
-# cosine alone what the angle should be. For example, a cosine of $-0.77$ could be $140^\text{o}$ or $-140^\text{o}$. By calculating the sign of the dot product $\vec a\cdot\vec n$, the quadrant in which the cosine lies can be determined by multiplying the angle by this sign which is $-1$ or $+1$. In Python there is a function to do determine the sign, which is np.sign(...).
+# In the special case of proteins, the angles are defined to be between $- 180^\text{o}$ and $+180^\text{o}$ and a check has to be made because the cosine can be positive between $-90^\text{o} \to 90^\text{o}$ and negative between $-180^\text{o} \to 90^\text{o}$ and again from $90^\text{o} \to 180^\text{o}$ and one cannot tell from the cosine alone what the angle should be. For example, a cosine of $-0.77$ could be $140^\text{o}$ or $-140^\text{o}$. One way to overcome this if $|angle| \gt 90^\text{o}$ it is subtracted from $180$ otherwise the absolute value of the angle is used, i.e. $\text{180 - abs(angle) if abs(angle) > 90 else abs(angle)}$. This will force the dihedral angle to be in the range $0\to 90^\text{o}$. If this is not what is wanted then instead multiply the angle by $\text{np.sign(np.dot(vec_a,n))}$ where the sign function is $\pm 1$. Both cases are calculated below.
 # 
-# Figure 42 shows two residues of strand B of the structure of insulin (www.rcsb.org/ pdf/home.od 2INS.pdb). The torsion angle between the aromatic planes of the phenylalanine and tyrosine residues can be calculated since the coordinates of the atoms are known. It is necessary to choose which atoms are to be involved and to order them to form head to tail vectors. These are shown in the figure.
+# Figure 42 shows two residues of strand B of the structure of insulin (www.rcsb.org with name 2INS.pdb). The torsion angle between the aromatic planes of the phenylalanine and tyrosine residues can be calculated since the coordinates of the atoms are known. It is necessary to choose which atoms are to be involved and to order them to form head to tail vectors. These are shown in the figure.
 # 
 # ![Drawing](vectors-fig42.png)
 # 
@@ -103,11 +102,12 @@ tyrcd2 = np.array([ -1.869, 14.466,  4.723])
 vec_a = phecd2 - phecd1 
 vec_b = tyrcd1 - phecd2  
 vec_c = tyrcd2 - tyrcd1 
-
 m = np.cross(vec_a,vec_b)
 n = np.cross(vec_b,vec_c)
-psi = np.sign(np.dot(vec_a,n))*np.arccos(np.dot(n,m)/( np.sqrt(np.dot(n,n)) *np.sqrt(np.dot(m,m)) ) )
-print('{:s}{:6.2f}{:s}'.format('dihedral angle =',psi*180/np.pi,' degrees') )
+psi = np.arccos(np.dot(n,m)/( np.sqrt(np.dot(n,n)) *np.sqrt(np.dot(m,m)) ) )*180/np.pi # in degrees
+angle = 180 - abs(psi) if abs(psi) > 90 else abs(psi)
+print('{:s}{:6.2f}{:s}'.format('Dihedral angle =',angle,' degrees') )
+print('{:s}{:6.2f}{:s}'.format('The alternative is ', np.sign(np.dot(vec_a,n))*psi,' degrees') )
 
 
 # ## 19 Torsion angles in sugars and DNA

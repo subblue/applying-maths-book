@@ -1914,7 +1914,8 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>The summation in figure 59 was calculated as follows where <span class="math notranslate nohighlight">\(A_0\)</span> is the autocorrelation.</p>
 <p><span class="math notranslate nohighlight">\(\text{S0 = [ 0.0  for  i  in  range( numt) ] }\)</span></p>
-<p><span class="math notranslate nohighlight">\(\text{for  i  in  range( numt ): S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\text{for  i  in  range( numt ):}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad \text{S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )}\)</span></p>
 </section>
 <section id="q19-answer">
 <h2>Q19 answer<a class="headerlink" href="#q19-answer" title="Permalink to this headline">#</a></h2>
@@ -1950,8 +1951,8 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>The figure shows that data is clearly swamped by noise. The next step is to apodise by multiplying by an exponential. This decreases the noise relative to the signal as this is largest at earlier times. The decay time can be chosen by trial and error  to best illustrate the features wanted.</p>
 <p>#.. define a new list to hold the apodised FID</p>
-<p><span class="math notranslate nohighlight">\(\text{fid1 = [0 for i in range( n )]  }\qquad \)</span> # make new list to hold new FID
-<span class="math notranslate nohighlight">\(\text{for i in range(n):}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\text{fid1 = np.zeros(n,dtype=float) }\qquad \)</span> # make new NumPy array to hold new FID</p>
+<p><span class="math notranslate nohighlight">\(\text{for i in range(n):}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\qquad \text{    fid1[ i ] = fid0[i]*np.exp(-i/1000)}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\text{fft1 = np.fft.rfft( fid1 ).imag  }\qquad \)</span> # calculate FFT</p>
 <p>#…. plot data as above</p>
@@ -1962,7 +1963,7 @@ title="Print to PDF"
 <section id="q20-answer">
 <h2>Q20 answer<a class="headerlink" href="#q20-answer" title="Permalink to this headline">#</a></h2>
 <p>Plotting the data with and without noise, shows that the pulse lasts for about 2 ps, and examining this close to the maximum time, indicates that the smallest period is about 60 fs. Therefore, <span class="math notranslate nohighlight">\(n\)</span> = 2<sup>12</sup> points will be more than adequate for the Fourier transforms.</p>
-<p>The pulse has the form <span class="math notranslate nohighlight">\(\displaystyle \sin(x^2/200^2 )\exp(- (x-800.0)^2/200.0^2)\)</span> and the noise, with an amplitude from <span class="math notranslate nohighlight">\(\pm\)</span>1, is added by including randn(). The plot shows the chirped pulse (pure pulse), and with the noise added, this forms the ‘experimental’ data. The pure pulse and the recovered data are shown in the second set of figures below.</p>
+<p>The pulse has the form <span class="math notranslate nohighlight">\(\displaystyle \sin(x^2/200^2 )\exp(- (x-800.0)^2/200.0^2)\)</span> and the noise, with an amplitude from <span class="math notranslate nohighlight">\(\pm\)</span>1, is added by including randn(). The plot shows the chirped pulse (pure pulse), and with the noise added, this forms the ‘experimental’ data. The pure pulse and the recovered data are shown in the second set of figures below. The calculation will be a lot quicker if NumPy arrays are used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span>

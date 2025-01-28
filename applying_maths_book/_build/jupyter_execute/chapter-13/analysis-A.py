@@ -12,8 +12,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 from scipy.integrate import quad
-from scipy.stats import t,norm      # statistical functions
-init_printing()                     # allows printing of SymPy results in typeset maths format
+from scipy.stats import t,norm          # statistical functions
+init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -40,11 +40,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \qquad\tag{2}$$
 # 
-# and is sometimes called the root mean square (or *rms*) deviation. This formula produces an unbiased estimate of $s$, but note that some authors define the standard deviation by dividing by $n$ rather than $n - 1$; there is not a single definition of $s$; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called _dispersion indices_ ; range, quantile, skew, and kurtosis (peakedness) are others.
+# and is sometimes called the root mean square (or *rms*) deviation. This formula produces an unbiased estimate of $s$, but note that some authors define the standard deviation by dividing by $n$ rather than $n - 1$; there is not a single definition of $s$; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called *dispersion indices*; range, quantile, skew, and kurtosis (peakedness) are others.
 # 
 # In words, the formula for s says 'for each of the n measurements, subtract the average $\langle x\rangle$ from each $x$ value, square the result and then add up all the answers. Next, divide by the total number of measurements less one and finally take the square root'.
 # 
-# The principle of _least squares_ is widely used in modelling or analysing data; see Section 5.2, and this approach minimizes a function such as
+# The principle of *Least Squares* is widely used in modelling or analysing data; see Section 5.2, and this approach minimizes a function such as
 # 
 # $$\displaystyle \sum_{i=1}^n ( x_i - M )^2  $$
 # 
@@ -58,9 +58,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # showing that, indeed, $M = \langle x \rangle$. The mean value makes the sum of squares a minimum, and in this sense it is the best estimate of the deviation.
 # 
-# Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean $\mu$, called the _population mean_ , and its standard deviation is $\sigma$; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13 which approximates the normal when its mean is $\approx 10$ or greater.) The sample mean $\langle x \rangle$ is more likely than not to be different to the population mean $\mu$. If it can be shown that the average of all sample means s equals the population or true mean value μ, then the sample mean is an unbiased estimate of the population mean.
+# Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean $\mu$, called the *population mean*, and its standard deviation is $\sigma$; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13, which approximates the normal when its mean is $\approx 10$ or greater.) The sample mean $\langle x \rangle$ is more likely than not to be different to the population mean $\mu$. If it can be shown that the average of all sample means s equals the population or true mean value $\mu$, then the sample mean is an unbiased estimate of the population mean.
 # 
-# The standard deviation and variance can also be defined with reference to the parent distribution and then this _population_ or _parent variance_ $\sigma^2$ is
+# The standard deviation and variance can also be defined with reference to the parent distribution and then this *population* or *parent variance*, $\sigma^2$ is
 # 
 # $$\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2 \qquad\tag{3}$$
 # 
@@ -78,11 +78,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $\langle m \rangle$ is the average of the means of $N$ separate experiments. To evaluate this summation directly would require a huge number of experiments, viz; $nN$; however, a satisfactory formula is obtained by statistical theory and is
 # 
-# $$\displaystyle s_m=\frac{s}{\sqrt{N}}$$
+# $$\displaystyle s_m = \frac{s}{\sqrt{N}}$$
 # 
 # Experimentally, the square root makes improving precision quite a slow process; $100$ measurements are needed to improve the signal to noise by $10$ times, which means reducing the $s_m$ relative to the mean by $10$ times. The Hadamard transform method, Chapter 9, enables the experimenter to measure in groups and the noise can then be reduced more rapidly than $N$.
 # 
-# The quantity $s_m$ is sometimes called the _estimated standard error on the mean_ or just the _standard error on the mean_ or simply the _standard error_. To relate this to the population standard deviation,
+# The quantity $s_m$ is sometimes called the *estimated standard error on the mean* or just the *standard error on the mean* or simply the *standard error*. To relate this to the population standard deviation,
 # 
 # $$\displaystyle \sigma_m=\frac{\sigma}{\sqrt{N}}$$
 # 
@@ -106,7 +106,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 2. Uniform distribution and the (normalized) histogram formed by sampling pairs of numbers.
 # ______
 # 
-# Using Python the Central Limit theorem can be demonstrated more convincingly as shown with the next algorithm. The random numbers are chosen from a uniform, i.e. flat, distribution between zero and one. Five samples are taken each time and the process repeated five thousand times; see figure 3 for the result. It can be seen that the sample averages that form the histogram are more closely clustered about the population mean and are therefore less variable than the original data. It can be shown that the variation in the mean, which is the uncertainty in the mean, equals the variation in $\langle x\rangle$ divided by the sample size,  $\sigma^2/n$. With this in mind the normal distribution plotted on top of the histogram of the data is
+# Using Python the Central Limit Theorem can be demonstrated more convincingly as shown with the next algorithm. The random numbers are chosen from a uniform, i.e. flat, distribution between zero and one. Five samples are taken each time and the process repeated five thousand times; see figure 3 for the result. It can be seen that the sample averages that form the histogram are more closely clustered about the population mean and are therefore less variable than the original data. It can be shown that the variation in the mean, which is the uncertainty in the mean, equals the variation in $\langle x\rangle$ divided by the sample size,  $\sigma^2/n$. With this in mind the normal distribution plotted on top of the histogram of the data is
 # 
 # $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2/n}}e^{-\large{ (x-\mu)^2/(2\sigma^2/n)} }$$
 # 
@@ -114,7 +114,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](analysis-fig3.png)
 # 
-# Figure 3. Illustrating the central limit theorem.
+# Figure 3. Illustrating the Central Limit Theorem.
 # ______
 
 # In[2]:
@@ -148,7 +148,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 
 # ## 3 Confidence intervals
 # 
-# The central limit theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean $\mu$ and variance $\sigma^2/n$ for n separate measurements. The mean $\mu$ may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.
+# The Central Limit Theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean $\mu$ and variance $\sigma^2/n$ for $n$ separate measurements. The mean $\mu$ may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.
 # 
 # The standard deviation of the mean is often referred to as the standard error on the mean and defined as 
 # 
@@ -195,7 +195,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # However, the 'five sigma' statement can also be used with the normal distribution and this is far more common, particularly in particle physics. By integrating the distribution from $-\infty\to x$ the cumulative distribution is obtained. Thus there is a $50$% chance of being within $0.675\sigma$, (this is sometimes called the probable error), a $68.5$% chance of being within $1\sigma$ and a $95$% chance of being within $1.96\sigma$, and $95.45$% chance of being within $2\sigma$ and so on. For $5\sigma$ the chance is $99.9999$%, pretty much a 'dead cert'. 
 # 
-# ## 3.1 The normal and standard normal distribution
+# ## 3.1 The Normal and Standard Normal distribution
 # 
 # The normal (Gaussian) distribution with mean $\mu$ and variance $\sigma^2$ has the form
 # 
@@ -209,7 +209,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # $$\displaystyle \int_{-\infty}^\infty (x-\mu)^2p(x)dx=\sigma^2\equiv \langle x^2\rangle-\langle x\rangle^2 $$
 # 
-# The _standard normal distribution_ describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,
+# The standard normal distribution describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,
 # 
 # $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi}}e^{-\large{ (x-\mu)^2/2} }\qquad\tag{7}$$
 # 
@@ -217,11 +217,21 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # $$\displaystyle p(x)=\int_{-x}^x e^{-x^2/2}dx=\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\qquad\tag{8}$$
 # 
-# The area within limits $\pm 1.96$ is $\mathrm{erf}(1.96/\sqrt{2}) = 0.950$; hence this is the $95$% chance as described by equation 6. In figure 4, the total area in yellow adds up to $5$% of the total, meaning that a value that differs from the mean should exceed $\pm 1.96$ by pure chance only on $5$% of all measurements.
+# The area within limits of $\pm 1.96$ is $\mathrm{erf}(1.96/\sqrt{2}) = 0.950$; hence this is the $95$% chance as described by equation 6. In figure 4, the total area in yellow adds up to $5$% of the total, meaning that a value that differs from the mean should exceed $\pm 1.96$ by pure chance only on $5$% of all measurements.
 # 
 # The probable error $p_e$ divides the normal distribution area into two with areas placed symmetrically about zero. The areas are $1/4:1/2:1/4$; the distribution's $x$ value is $p_e = \pm 0.6745\sigma$. Some values of the area and hence the chance of a value occurring within different standard deviations of the mean is shown in Table 1.
 # 
-# Specific areas may be calculated using the _cumulative distribution_ function, or directly by integrating the normal distribution from $-\inf \to x$. For the reverse process - starting with the area to obtain the $x$ value producing that area - the quantile function is used. For example, with the normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example usimng $\sigma/2$, see table 1, as the value and using Python/Sympy
+# ### Cumulative Distribution Function (CDF)
+# 
+# In any distribution specific areas may be calculated using the Cumulative Distribution Function (CDF), which is found by integrating a distribution from $-\infty \to x$. If $p(x)$ is a probability function often called the Probability Density Function the Cumulative Distribution is the area given by the integral 
+# 
+# $$\displaystyle P(x)=\int_{-\infty}^x p(x)dx $$
+# 
+# and so the probability density function is
+# 
+# $$\displaystyle  p(x)=\frac{dP}{dx}$$
+# 
+# For the reverse process - starting with the area to obtain the $x$ value producing that area - the Quantile function is used. For example, with the normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example using $\sigma/2$, see table 1, as the value and using Python/SymPy.
 
 # In[3]:
 
@@ -265,10 +275,34 @@ cumul(w)
 
 
 qtile = lambda w: norm.ppf(w )
+qtile(0.69146 )
 
-qtile(0.69146246 )
+
+# You can make your own ppf function if you wish by defining a function and using the Newton-Raphson method. If the distribution is $f(x)$ then the equation to solve for $w$ is 
+# 
+# $$\displaystyle \int_{-\infty}^w f(x)dx-c=0$$
+# 
+# where $c$ is the cumulative value, say $0.69$ and $w$ is the value that produces $c$. A small piece of code illustrates this.
+
+# In[8]:
 
 
+dfdx = lambda x :np.exp(-x**2/2)/np.sqrt(2*np.pi)   # define normal distribution as derivative, sigma =1
+c = 0.69146
+w = 0.18                                 # initial guess for iterations
+for i in range(4):                       # guess number of interations needed
+    ans,err= quad(dfdx,-np.inf, w)       # integrate to value x from -infty to get f(x)
+    w = w - (ans-c)/dfdx(w)              # calculate new value of w (the root) from previous values
+    print(i,' w = ',w)
+
+
+# This value off $w$ is the same answer as the in-built function.
+# 
+# ![Drawing](analysis-fig4.png)
+# 
+# Figure 4. Standard normal distribution where the sum of both the area coloured yellow is $5$%. A measurement that differs from the mean by $\pm 1.96\sigma/\sqrt{n}$ should by chance alone exceed this value only $5$% of the time.
+# __________
+# 
 # In figure 4 the areas $\pm 1.96\sigma$ are shaded. Calculating shows that the area from $-\infty \to 1.96\sigma = 0.975$ Thus $0.025$ is left and is the $2.5$% shown as shaded on the right of the figure. Accounting for both extreme regions gives the middle area as $1 - 2(1-0.975) = 0.95$, and is the chance shown in table 1. If the distribution is not normal, for instance the $t$ or $\chi^2$ distribution a similar calculation applies but, naturally, produces different percentages.
 # 
 # The general form for a $(100 -\alpha)$% confidence limit when the population standard deviation $\sigma$ is known is
@@ -350,7 +384,13 @@ qtile(0.69146246 )
 # 
 # To use Python to find the $t$ values for $n$ points with $\alpha/2 = 0.025$ we follow the method used for the normal distribution but now with the $t$ distribution. This means loading the library as 'from scipy.stats import t,norm' as shown at the top of this page.  Looking at Table 3, with $v=5$ and at $95$% the value is $2.571$. Using the t.cdf function produces $0.975$ which is the value fro $-\infty\to 2.571$ and so the two tailed value is $0.95$ or $95$%.
 
-# In[8]:
+# In[ ]:
+
+
+
+
+
+# In[9]:
 
 
 w = 2.571
@@ -361,9 +401,9 @@ cumult(w,v)
 
 # Note that the 95% confidence level has $\alpha/2 = 0.025$ which is $5/2$% because the table is for 'two-tailed' values on the distribution and $\alpha = 5$. The $t$ value at $95$% and for seven points (or six degrees of freedom) is written as $t_{0.025,6}$. Figure 4 shows two-tailed values on the normal distribution.
 # 
-# The quantiles, the values in Table 3, are found using the $\mathtt{ppf()}$ function, i.e inverting the cdf and give
+# The quantiles, the values in Table 3, are found using the $\mathtt{ppf()}$ function, i.e. inverting the cdf and give
 
-# In[9]:
+# In[10]:
 
 
 x = 0.975
@@ -374,6 +414,20 @@ quant(x,n)
 
 # which is the value in the table under $95$% and $v=5$.
 # 
+# 
+# ## Table of Distribution Functions
+# 
+# $$\begin{array}{l|lccl}
+# \text{Distribution} & \text{function} & \text{mean (expected value)} & \text{variance}\\
+# \hline
+# \text{Normal} & p(x,\mu,\sigma^2)= \frac{1}{\sigma\sqrt{2\pi}}e^{(-(x-\mu)/(2\sigma^2))} & \mu & \sigma^2 & x=-\infty,\cdots \infty\\
+# \text{Binomial} & B(p,n,k)=\binom{n}kp^kq^{n-k}&np & npq & n,k=0,1,2\cdots;\quad  p+q=1\\
+# \text{Poisson}& P(k,\lambda)=\frac{\lambda^k}{k!}e^{-\lambda}& \lambda & \lambda & k=0,1,2\cdots\\
+# \text{Exponential} & f(x,\lambda)=\lambda e^{-\lambda x}& 1/\lambda & 1/\lambda^2& x=0\dots \infty\\
+# \hline\\
+# \end{array}$$
+# $\binom{n}k = \frac{n!}{k!(n-k)!}$
+
 # ## 3.4 Hypothesis testing
 # 
 # Suppose that a micro-analytical laboratory has to be certified and one of the tests it has to perform is to determine the ratio of $^{12}$C / $^{14}$N on an unknown compound. The examiners know that the ratio should be $50$ and a standard deviation of $1/2$ is acceptable. The laboratory produces the following set of data,
@@ -480,7 +534,7 @@ quant(x,n)
 # 
 # where erf is the error function. An example is shown below, and as the $1-p$ is greater than $1/(2n)$ we do not reject the data point. If the value were $130$ this method would indicate that it should be removed.
 
-# In[10]:
+# In[11]:
 
 
 # Algorithm: Chauvenet criterion to test for outliers
@@ -580,7 +634,7 @@ else:
 # 
 # Completing the differentiations and substituting values gives $\sigma_T=3.15$ K. The final answer produces a boiling temperature = $353 \pm 3$ K. The Python/Sympy calculation, which also performs the differentiation, is
 
-# In[11]:
+# In[12]:
 
 
 m, p, c, sm, sc, sT = symbols('m, p, c, sm, sc, sT')
@@ -590,7 +644,7 @@ sigTsqrd = (diff(T,m))**2*sm**2+(diff(T,c))**2*sc**2
 sigTsqrd
 
 
-# In[12]:
+# In[13]:
 
 
 sig = sqrt(sigTsqrd)

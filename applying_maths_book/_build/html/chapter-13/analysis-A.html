@@ -1548,9 +1548,14 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-normal-and-standard-normal-distribution">
-   3.1 The normal and standard normal distribution
+   3.1 The Normal and Standard Normal distribution
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">
+     Cumulative Distribution Function (CDF)
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-estimating-the-k-content-of-glass">
      <strong>
@@ -1598,6 +1603,11 @@ title="Print to PDF"
     t
    </em>
    distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-distribution-functions">
+   Table of Distribution Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1764,9 +1774,14 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-normal-and-standard-normal-distribution">
-   3.1 The normal and standard normal distribution
+   3.1 The Normal and Standard Normal distribution
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">
+     Cumulative Distribution Function (CDF)
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-estimating-the-k-content-of-glass">
      <strong>
@@ -1814,6 +1829,11 @@ title="Print to PDF"
     t
    </em>
    distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-distribution-functions">
+   Table of Distribution Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1945,8 +1965,8 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span><span class="n">norm</span>      <span class="c1"># statistical functions</span>
-<span class="n">init_printing</span><span class="p">()</span>                     <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span><span class="n">norm</span>          <span class="c1"># statistical functions</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1970,9 +1990,9 @@ title="Print to PDF"
 <p>A measure of the spread of the results is the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span>. The square of the standard deviation is called the <em>variance</em> . The sample standard deviation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \qquad\tag{2}\]</div>
-<p>and is sometimes called the root mean square (or <em>rms</em>) deviation. This formula produces an unbiased estimate of <span class="math notranslate nohighlight">\(s\)</span>, but note that some authors define the standard deviation by dividing by <span class="math notranslate nohighlight">\(n\)</span> rather than <span class="math notranslate nohighlight">\(n - 1\)</span>; there is not a single definition of <span class="math notranslate nohighlight">\(s\)</span>; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called <em>dispersion indices</em> ; range, quantile, skew, and kurtosis (peakedness) are others.</p>
+<p>and is sometimes called the root mean square (or <em>rms</em>) deviation. This formula produces an unbiased estimate of <span class="math notranslate nohighlight">\(s\)</span>, but note that some authors define the standard deviation by dividing by <span class="math notranslate nohighlight">\(n\)</span> rather than <span class="math notranslate nohighlight">\(n - 1\)</span>; there is not a single definition of <span class="math notranslate nohighlight">\(s\)</span>; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called <em>dispersion indices</em>; range, quantile, skew, and kurtosis (peakedness) are others.</p>
 <p>In words, the formula for s says ‘for each of the n measurements, subtract the average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> from each <span class="math notranslate nohighlight">\(x\)</span> value, square the result and then add up all the answers. Next, divide by the total number of measurements less one and finally take the square root’.</p>
-<p>The principle of <em>least squares</em> is widely used in modelling or analysing data; see Section 5.2, and this approach minimizes a function such as</p>
+<p>The principle of <em>Least Squares</em> is widely used in modelling or analysing data; see Section 5.2, and this approach minimizes a function such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{i=1}^n ( x_i - M )^2  \]</div>
 <p>with respect to <span class="math notranslate nohighlight">\(M\)</span>, where <span class="math notranslate nohighlight">\(M\)</span> might represent some ‘model’ which is an equation or single value describing a set of data. In the definition of the standard deviation <span class="math notranslate nohighlight">\(s\)</span>, it appears that <span class="math notranslate nohighlight">\(M = \langle x \rangle\)</span>, therefore, if <span class="math notranslate nohighlight">\(s\)</span> is a least squares estimate, the summation should be at a minimum when <span class="math notranslate nohighlight">\(M = \langle x \rangle\)</span>. Differentiating the sum of squares with respect to <span class="math notranslate nohighlight">\(M\)</span> and setting the result to zero produces</p>
@@ -1982,8 +2002,8 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[ \displaystyle M=\frac{1}{n}\sum_{i=1}^n x_i\]</div>
 <p>showing that, indeed, <span class="math notranslate nohighlight">\(M = \langle x \rangle\)</span>. The mean value makes the sum of squares a minimum, and in this sense it is the best estimate of the deviation.</p>
-<p>Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean <span class="math notranslate nohighlight">\(\mu\)</span>, called the <em>population mean</em> , and its standard deviation is <span class="math notranslate nohighlight">\(\sigma\)</span>; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13 which approximates the normal when its mean is <span class="math notranslate nohighlight">\(\approx 10\)</span> or greater.) The sample mean <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> is more likely than not to be different to the population mean <span class="math notranslate nohighlight">\(\mu\)</span>. If it can be shown that the average of all sample means s equals the population or true mean value μ, then the sample mean is an unbiased estimate of the population mean.</p>
-<p>The standard deviation and variance can also be defined with reference to the parent distribution and then this <em>population</em> or <em>parent variance</em> <span class="math notranslate nohighlight">\(\sigma^2\)</span> is</p>
+<p>Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean <span class="math notranslate nohighlight">\(\mu\)</span>, called the <em>population mean</em>, and its standard deviation is <span class="math notranslate nohighlight">\(\sigma\)</span>; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13, which approximates the normal when its mean is <span class="math notranslate nohighlight">\(\approx 10\)</span> or greater.) The sample mean <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> is more likely than not to be different to the population mean <span class="math notranslate nohighlight">\(\mu\)</span>. If it can be shown that the average of all sample means s equals the population or true mean value <span class="math notranslate nohighlight">\(\mu\)</span>, then the sample mean is an unbiased estimate of the population mean.</p>
+<p>The standard deviation and variance can also be defined with reference to the parent distribution and then this <em>population</em> or <em>parent variance</em>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2 \qquad\tag{3}\]</div>
 <p>which assumes that <span class="math notranslate nohighlight">\(\mu\)</span> is known, whereas <span class="math notranslate nohighlight">\(s\)</span>, equation 2, is obtained only from the data itself. The variance is the single most important parameter when describing the parent population. To calculate <span class="math notranslate nohighlight">\(\sigma^2,\; \mu\)</span> has to be known, but <span class="math notranslate nohighlight">\(\mu\)</span> can never be exactly known in any set of measurements. The best estimate of this has to be used instead and is obtained from the set of measurements; this is usually taken to be</p>
@@ -1998,7 +2018,7 @@ title="Print to PDF"
 \[\displaystyle s_m=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(m_i-\langle m \rangle)^2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\langle m \rangle\)</span> is the average of the means of <span class="math notranslate nohighlight">\(N\)</span> separate experiments. To evaluate this summation directly would require a huge number of experiments, viz; <span class="math notranslate nohighlight">\(nN\)</span>; however, a satisfactory formula is obtained by statistical theory and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle s_m=\frac{s}{\sqrt{N}}\]</div>
+\[\displaystyle s_m = \frac{s}{\sqrt{N}}\]</div>
 <p>Experimentally, the square root makes improving precision quite a slow process; <span class="math notranslate nohighlight">\(100\)</span> measurements are needed to improve the signal to noise by <span class="math notranslate nohighlight">\(10\)</span> times, which means reducing the <span class="math notranslate nohighlight">\(s_m\)</span> relative to the mean by <span class="math notranslate nohighlight">\(10\)</span> times. The Hadamard transform method, Chapter 9, enables the experimenter to measure in groups and the noise can then be reduced more rapidly than <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <p>The quantity <span class="math notranslate nohighlight">\(s_m\)</span> is sometimes called the <em>estimated standard error on the mean</em> or just the <em>standard error on the mean</em> or simply the <em>standard error</em>. To relate this to the population standard deviation,</p>
 <div class="math notranslate nohighlight">
@@ -2017,12 +2037,12 @@ always necessary to check the equation being used, which unfortunately, is not a
 <p><img alt="Drawing" src="../_images/analysis-table-1.png" /> <img alt="Drawing" src="../_images/analysis-fig2.png" /></p>
 <p>Figure 2. Uniform distribution and the (normalized) histogram formed by sampling pairs of numbers.</p>
 <hr class="docutils" />
-<p>Using Python the Central Limit theorem can be demonstrated more convincingly as shown with the next algorithm. The random numbers are chosen from a uniform, i.e. flat, distribution between zero and one. Five samples are taken each time and the process repeated five thousand times; see figure 3 for the result. It can be seen that the sample averages that form the histogram are more closely clustered about the population mean and are therefore less variable than the original data. It can be shown that the variation in the mean, which is the uncertainty in the mean, equals the variation in <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> divided by the sample size,  <span class="math notranslate nohighlight">\(\sigma^2/n\)</span>. With this in mind the normal distribution plotted on top of the histogram of the data is</p>
+<p>Using Python the Central Limit Theorem can be demonstrated more convincingly as shown with the next algorithm. The random numbers are chosen from a uniform, i.e. flat, distribution between zero and one. Five samples are taken each time and the process repeated five thousand times; see figure 3 for the result. It can be seen that the sample averages that form the histogram are more closely clustered about the population mean and are therefore less variable than the original data. It can be shown that the variation in the mean, which is the uncertainty in the mean, equals the variation in <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> divided by the sample size,  <span class="math notranslate nohighlight">\(\sigma^2/n\)</span>. With this in mind the normal distribution plotted on top of the histogram of the data is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2/n}}e^{-\large{ (x-\mu)^2/(2\sigma^2/n)} }\]</div>
 <p>Many other initial distributions can be chosen to start with besides the uniform distribution illustrated here. For (almost) all distributions, a normal distribution will eventually be formed, although this may require a huge number of calculations.</p>
 <p><img alt="Drawing" src="../_images/analysis-fig3.png" /></p>
-<p>Figure 3. Illustrating the central limit theorem.</p>
+<p>Figure 3. Illustrating the Central Limit Theorem.</p>
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2057,7 +2077,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </section>
 <section id="confidence-intervals">
 <h2>3 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h2>
-<p>The central limit theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span> for n separate measurements. The mean <span class="math notranslate nohighlight">\(\mu\)</span> may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.</p>
+<p>The Central Limit Theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> separate measurements. The mean <span class="math notranslate nohighlight">\(\mu\)</span> may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.</p>
 <p>The standard deviation of the mean is often referred to as the standard error on the mean and defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_m = \sigma/\sqrt{n}\]</div>
@@ -2098,7 +2118,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </section>
 </section>
 <section id="the-normal-and-standard-normal-distribution">
-<h2>3.1 The normal and standard normal distribution<a class="headerlink" href="#the-normal-and-standard-normal-distribution" title="Permalink to this headline">#</a></h2>
+<h2>3.1 The Normal and Standard Normal distribution<a class="headerlink" href="#the-normal-and-standard-normal-distribution" title="Permalink to this headline">#</a></h2>
 <p>The normal (Gaussian) distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\large{ (x-\mu)^2/(2\sigma^2)} }\]</div>
@@ -2108,15 +2128,23 @@ always necessary to check the equation being used, which unfortunately, is not a
 <p>and the variance is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{-\infty}^\infty (x-\mu)^2p(x)dx=\sigma^2\equiv \langle x^2\rangle-\langle x\rangle^2 \]</div>
-<p>The <em>standard normal distribution</em> describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,</p>
+<p>The standard normal distribution describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi}}e^{-\large{ (x-\mu)^2/2} }\qquad\tag{7}\]</div>
 <p>The total area under the curve is one and the area between symmetrically placed <span class="math notranslate nohighlight">\(x\)</span> values gives the probability of falling within that area. The area <span class="math notranslate nohighlight">\(p(x)\)</span> is the probability of an observation being between <span class="math notranslate nohighlight">\(\pm x\)</span>;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\int_{-x}^x e^{-x^2/2}dx=\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\qquad\tag{8}\]</div>
-<p>The area within limits <span class="math notranslate nohighlight">\(\pm 1.96\)</span> is <span class="math notranslate nohighlight">\(\mathrm{erf}(1.96/\sqrt{2}) = 0.950\)</span>; hence this is the <span class="math notranslate nohighlight">\(95\)</span>% chance as described by equation 6. In figure 4, the total area in yellow adds up to <span class="math notranslate nohighlight">\(5\)</span>% of the total, meaning that a value that differs from the mean should exceed <span class="math notranslate nohighlight">\(\pm 1.96\)</span> by pure chance only on <span class="math notranslate nohighlight">\(5\)</span>% of all measurements.</p>
+<p>The area within limits of <span class="math notranslate nohighlight">\(\pm 1.96\)</span> is <span class="math notranslate nohighlight">\(\mathrm{erf}(1.96/\sqrt{2}) = 0.950\)</span>; hence this is the <span class="math notranslate nohighlight">\(95\)</span>% chance as described by equation 6. In figure 4, the total area in yellow adds up to <span class="math notranslate nohighlight">\(5\)</span>% of the total, meaning that a value that differs from the mean should exceed <span class="math notranslate nohighlight">\(\pm 1.96\)</span> by pure chance only on <span class="math notranslate nohighlight">\(5\)</span>% of all measurements.</p>
 <p>The probable error <span class="math notranslate nohighlight">\(p_e\)</span> divides the normal distribution area into two with areas placed symmetrically about zero. The areas are <span class="math notranslate nohighlight">\(1/4:1/2:1/4\)</span>; the distribution’s <span class="math notranslate nohighlight">\(x\)</span> value is <span class="math notranslate nohighlight">\(p_e = \pm 0.6745\sigma\)</span>. Some values of the area and hence the chance of a value occurring within different standard deviations of the mean is shown in Table 1.</p>
-<p>Specific areas may be calculated using the <em>cumulative distribution</em> function, or directly by integrating the normal distribution from <span class="math notranslate nohighlight">\(-\inf \to x\)</span>. For the reverse process - starting with the area to obtain the <span class="math notranslate nohighlight">\(x\)</span> value producing that area - the quantile function is used. For example, with the normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example usimng <span class="math notranslate nohighlight">\(\sigma/2\)</span>, see table 1, as the value and using Python/Sympy</p>
+<section id="cumulative-distribution-function-cdf">
+<h3>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Permalink to this headline">#</a></h3>
+<p>In any distribution specific areas may be calculated using the Cumulative Distribution Function (CDF), which is found by integrating a distribution from <span class="math notranslate nohighlight">\(-\infty \to x\)</span>. If <span class="math notranslate nohighlight">\(p(x)\)</span> is a probability function often called the Probability Density Function the Cumulative Distribution is the area given by the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(x)=\int_{-\infty}^x p(x)dx \]</div>
+<p>and so the probability density function is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  p(x)=\frac{dP}{dx}\]</div>
+<p>For the reverse process - starting with the area to obtain the <span class="math notranslate nohighlight">\(x\)</span> value producing that area - the Quantile function is used. For example, with the normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example using <span class="math notranslate nohighlight">\(\sigma/2\)</span>, see table 1, as the value and using Python/SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -2170,8 +2198,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qtile</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">w</span> <span class="p">)</span>
-
-<span class="n">qtile</span><span class="p">(</span><span class="mf">0.69146246</span> <span class="p">)</span>
+<span class="n">qtile</span><span class="p">(</span><span class="mf">0.69146</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2179,6 +2206,35 @@ always necessary to check the equation being used, which unfortunately, is not a
 <img alt="../_images/analysis-A_13_0.png" src="../_images/analysis-A_13_0.png" />
 </div>
 </div>
+<p>You can make your own ppf function if you wish by defining a function and using the Newton-Raphson method. If the distribution is <span class="math notranslate nohighlight">\(f(x)\)</span> then the equation to solve for <span class="math notranslate nohighlight">\(w\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^w f(x)dx-c=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the cumulative value, say <span class="math notranslate nohighlight">\(0.69\)</span> and <span class="math notranslate nohighlight">\(w\)</span> is the value that produces <span class="math notranslate nohighlight">\(c\)</span>. A small piece of code illustrates this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>   <span class="c1"># define normal distribution as derivative, sigma =1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.69146</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mf">0.18</span>                                 <span class="c1"># initial guess for iterations</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>                       <span class="c1"># guess number of interations needed</span>
+    <span class="n">ans</span><span class="p">,</span><span class="n">err</span><span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">dfdx</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>       <span class="c1"># integrate to value x from -infty to get f(x)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="p">(</span><span class="n">ans</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>              <span class="c1"># calculate new value of w (the root) from previous values</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39; w = &#39;</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0  w =  0.4858003988492107
+1  w =  0.49994371987767855
+2  w =  0.4999930084466303
+3  w =  0.49999300905393207
+</pre></div>
+</div>
+</div>
+</div>
+<p>This value off <span class="math notranslate nohighlight">\(w\)</span> is the same answer as the in-built function.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig4.png" /></p>
+<p>Figure 4. Standard normal distribution where the sum of both the area coloured yellow is <span class="math notranslate nohighlight">\(5\)</span>%. A measurement that differs from the mean by <span class="math notranslate nohighlight">\(\pm 1.96\sigma/\sqrt{n}\)</span> should by chance alone exceed this value only <span class="math notranslate nohighlight">\(5\)</span>% of the time.</p>
+<hr class="docutils" />
 <p>In figure 4 the areas <span class="math notranslate nohighlight">\(\pm 1.96\sigma\)</span> are shaded. Calculating shows that the area from <span class="math notranslate nohighlight">\(-\infty \to 1.96\sigma = 0.975\)</span> Thus <span class="math notranslate nohighlight">\(0.025\)</span> is left and is the <span class="math notranslate nohighlight">\(2.5\)</span>% shown as shaded on the right of the figure. Accounting for both extreme regions gives the middle area as <span class="math notranslate nohighlight">\(1 - 2(1-0.975) = 0.95\)</span>, and is the chance shown in table 1. If the distribution is not normal, for instance the <span class="math notranslate nohighlight">\(t\)</span> or <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution a similar calculation applies but, naturally, produces different percentages.</p>
 <p>The general form for a <span class="math notranslate nohighlight">\((100 -\alpha)\)</span>% confidence limit when the population standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> is known is</p>
 <div class="math notranslate nohighlight">
@@ -2187,6 +2243,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle\pm Z_{\alpha/2}\frac{s}{\sqrt{n}}\qquad\tag{11}\]</div>
 <p>The term <span class="math notranslate nohighlight">\(Z_{\alpha/2}\)</span> is the percentage point of the standard normal distribution, i.e. the ‘% chance’ in table 1.</p>
+</section>
 <section id="i-estimating-the-k-content-of-glass">
 <h3><strong>(i) Estimating the K<span class="math notranslate nohighlight">\(^+\)</span> content of glass</strong><a class="headerlink" href="#i-estimating-the-k-content-of-glass" title="Permalink to this headline">#</a></h3>
 <p>Two hundred samples taken at random were obtained for the K<span class="math notranslate nohighlight">\(^+\)</span> content of the glass used to make Pyrex flasks. The mean value was found to be <span class="math notranslate nohighlight">\(136.48\;\mathrm{\mu g}\)</span> with a sample standard deviation of <span class="math notranslate nohighlight">\(25.31\;\mathrm{\mu g}\)</span>. The calculation of <span class="math notranslate nohighlight">\(95\)</span>% and <span class="math notranslate nohighlight">\(99\)</span>% confidence limits about the mean mass follows directly from equation 11;</p>
@@ -2264,11 +2321,11 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_15_0.png" src="../_images/analysis-A_15_0.png" />
+<img alt="../_images/analysis-A_18_0.png" src="../_images/analysis-A_18_0.png" />
 </div>
 </div>
 <p>Note that the 95% confidence level has <span class="math notranslate nohighlight">\(\alpha/2 = 0.025\)</span> which is <span class="math notranslate nohighlight">\(5/2\)</span>% because the table is for ‘two-tailed’ values on the distribution and <span class="math notranslate nohighlight">\(\alpha = 5\)</span>. The <span class="math notranslate nohighlight">\(t\)</span> value at <span class="math notranslate nohighlight">\(95\)</span>% and for seven points (or six degrees of freedom) is written as <span class="math notranslate nohighlight">\(t_{0.025,6}\)</span>. Figure 4 shows two-tailed values on the normal distribution.</p>
-<p>The quantiles, the values in Table 3, are found using the <span class="math notranslate nohighlight">\(\mathtt{ppf()}\)</span> function, i.e inverting the cdf and give</p>
+<p>The quantiles, the values in Table 3, are found using the <span class="math notranslate nohighlight">\(\mathtt{ppf()}\)</span> function, i.e. inverting the cdf and give</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.975</span>
@@ -2279,10 +2336,24 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_17_0.png" src="../_images/analysis-A_17_0.png" />
+<img alt="../_images/analysis-A_20_0.png" src="../_images/analysis-A_20_0.png" />
 </div>
 </div>
 <p>which is the value in the table under <span class="math notranslate nohighlight">\(95\)</span>% and <span class="math notranslate nohighlight">\(v=5\)</span>.</p>
+</section>
+<section id="table-of-distribution-functions">
+<h2>Table of Distribution Functions<a class="headerlink" href="#table-of-distribution-functions" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|lccl}
+\text{Distribution} &amp; \text{function} &amp; \text{mean (expected value)} &amp; \text{variance}\\
+\hline
+\text{Normal} &amp; p(x,\mu,\sigma^2)= \frac{1}{\sigma\sqrt{2\pi}}e^{(-(x-\mu)/(2\sigma^2))} &amp; \mu &amp; \sigma^2 &amp; x=-\infty,\cdots \infty\\
+\text{Binomial} &amp; B(p,n,k)=\binom{n}kp^kq^{n-k}&amp;np &amp; npq &amp; n,k=0,1,2\cdots;\quad  p+q=1\\
+\text{Poisson}&amp; P(k,\lambda)=\frac{\lambda^k}{k!}e^{-\lambda}&amp; \lambda &amp; \lambda &amp; k=0,1,2\cdots\\
+\text{Exponential} &amp; f(x,\lambda)=\lambda e^{-\lambda x}&amp; 1/\lambda &amp; 1/\lambda^2&amp; x=0\dots \infty\\
+\hline\\
+\end{array}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\binom{n}k = \frac{n!}{k!(n-k)!}\)</span></p>
 </section>
 <section id="hypothesis-testing">
 <h2>3.4 Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h2>
@@ -2482,7 +2553,7 @@ retain point
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_21_0.png" src="../_images/analysis-A_21_0.png" />
+<img alt="../_images/analysis-A_25_0.png" src="../_images/analysis-A_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2494,7 +2565,7 @@ retain point
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_22_0.png" src="../_images/analysis-A_22_0.png" />
+<img alt="../_images/analysis-A_26_0.png" src="../_images/analysis-A_26_0.png" />
 </div>
 </div>
 </section>

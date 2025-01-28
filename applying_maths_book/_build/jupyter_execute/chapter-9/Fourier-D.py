@@ -18,7 +18,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # ## Motivation and concept
 # 
-# Instruments measure everything: for example, mass, energy, number of particles, wavelength of light, voltage, current, and images. However, every instrument distorts the data to a greater or lesser extent, and obviously we try to make these distortions insignificant but this is not always possible. In cases when a detector may not respond quickly enough to an event, when very wide slits have to be used in a spectrometer to detect a weak signal, or an electronic circuit does not respond in a linear manner to the input voltage, a distortion to the data is unavoidable. The effect is to *convolute* the ideal response, as defined by the physics behind the experiment, with the instrumental response. Fortunately Fourier transforms can usually be used to unravel the effect of convolution, however, in some circumstances this may not be possible.
+# Instruments measure everything: for example, mass, energy, number of particles, wavelength of light, voltage, current, and images. However, every instrument distorts the data to a greater or lesser extent, and obviously we try to make these distortions insignificant but this is not always possible. In cases when a detector may not respond quickly enough to an event, when very wide slits have to be used in a spectrometer to detect a weak signal, or an electronic circuit does not respond in a linear manner to the input voltage, a distortion to the data is unavoidable. The effect is to *convolute* the ideal response, as defined by the physics behind the experiment, with the instrumental response. 
+# 
+# If the instrument has a profile $w$ and the experiment has an expected response $f$ the convolution $C$ at point $u$ is the integral
+# 
+# $$\displaystyle C(u)=\int f(t)w(u-t)dt$$
+# 
+# where $t$ is the dummy variable of the integration. When the data is from an instrument it will be digitised and then at data index $k$ the convolution is the summation
+# 
+# $$\displaystyle C(k) = \sum_{i=1}^{k+1} f_i w_{(k - i )}   $$
+# 
+# Examples of convolution and how these equations are evaluated is examined in the following sections.
 # 
 # ## 7.1 Examples
 # 
@@ -38,12 +48,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If either one or both of these conditions cannot be met, then the data will be distorted by the relatively slow response of the instrument. The convolution curve in fig. 24 shows how this distortion affects some data. In this figure, the top curve is the ideal decay of the excited state, but it could represent any ideal response. This behaviour would be observed if the molecules could be excited with an infinitesimally narrow laser pulse and measured with a photo-detector with an unlimited time response. The second curve is the actual shape of the laser pulse, and/or detector response, and is the 'instrument response' drawn on the same timescale. Clearly, this has a width and a rise and decay time that is not so very different to that of the ideal response. The lower curve is the convolution of the ideal response with the instrument response, and is what would be measured experimentally and clearly has characteristics of both curves. A log plot of the data would show that only at long times does the convoluted response have the same slope as the ideal one. It makes no difference if the instrument response consists of a slow 'driving force' for the experiment, in this case a long-lived light-pulse, or a slowly responding detector or both, because the effect producing the convolution is the same. Fortunately, convolution can be calculated easily and rapidly using Fourier transforms.
 # 
+# ### **(ii) Width of a spectral line**
+# As a second example, consider measuring the width or position of one particular spectral line, such as from a star or a sample of molecules in the lab. The spectrometer has slits on its entrance and exit and these, with the number of grooves in the grating, control the resolution of the spectrometer. Typically, this is $0.1$ nm/mm of slit width for a moderately good spectrometer and 1 nm/mm for a general purpose one. If the slits cannot be closed to more than $0.1$ mm, then the resolution of the general purpose instrument will be approximately 0.1 nm and a narrow spectral line will appear to have this value even it is many times narrower. This is because the grating is rotated while measuring the spectrum and the spectral line is swept across the slits. The effect is to sequentially place a spectral line at all possible points, and hence wavelengths, across the slit. A signal is recorded at all these wavelengths rather than being measured only at its proper one, and the response measured is the convolution of the ideal width of the spectral line with the instrument response, which is the finite width of the slit. In many instruments, a CCD camera measures all wavelengths simultaneously, and a slit is not needed nor is the grating scanned. However, the same reasoning applies because the individual elements of the camera have a finite width, which therefore act as individual slits.
+# 
 # ![Drawing](fourier-fig25.png)
 # Figure 25. The convolution of a narrow spectral line with a wide slit in a spectrometer.
 # ____
-# 
-# ### **(ii) Width of a spectral line**
-# As a second example, consider measuring the width or position of one particular spectral line, such as from a star or a sample of molecules in the lab. The spectrometer has slits on its entrance and exit and these, with the number of grooves in the grating, control the resolution of the spectrometer. Typically, this is $0.1$ nm/mm of slit width for a moderately good spectrometer and 1 nm/mm for a general purpose one. If the slits cannot be closed to more than $0.1$ mm, then the resolution of the general purpose instrument will be approximately 0.1 nm and a narrow spectral line will appear to have this value even it is many times narrower. This is because the grating is rotated while measuring the spectrum and the spectral line is swept across the slits. The effect is to sequentially place a spectral line at all possible points, and hence wavelengths, across the slit. A signal is recorded at all these wavelengths rather than being measured only at its proper one, and the response measured is the convolution of the ideal width of the spectral line with the instrument response, which is the finite width of the slit. In many instruments, a CCD camera measures all wavelengths simultaneously, and a slit is not needed nor is the grating scanned. However, the same reasoning applies because the individual elements of the camera have a finite width, which therefore act as individual slits.
 # 
 # ### **(iii) Smoothing data**
 # A final use of convolution is to smooth data. Because convoluting one function with another involves integration, this has the effect of summing or averaging. The rolling or moving average method (Section 10.4) is in effect a convolution, and effectively smooths spiky data.
@@ -385,7 +395,7 @@ plt.show()
 # 
 # ##  8.1 Applications 
 # 
-# Applications of autocorrelations are very varied such as from medical ultra-sound imaging to improving GPS location to predicting trends in finance i.e. non-randomness in data. In ultra-fast (femtosecond) laser spectroscopy, autocorrelations are used to measure the length of the laser pulse because no electronic device is fast enough to do this, as they are limited to a time resolution of a few tens of picoseconds at best, but laser pulses can be less than $10$ fs in duration. Fluorescence correlation spectroscopy measures the time correlation of fluorescence fluctuations from a small number of fluorophores in a sample and is used to measure diffusion coefficients, particle size and concentration.  However, probably the most important application in Chemistry is in FTIR spectroscopy. 
+# Applications of autocorrelations are very varied such as from medical ultra-sound imaging to improving GPS location to predicting trends in finance i.e. non-randomness in data. It is also used in data analysis where the autocorrelation of residuals, the data less the fitting function, is assessed to show if the residuals are random, hence a good fit to the data might be expected, or not. In ultra-fast (femtosecond) laser spectroscopy, autocorrelations are used to measure the length of the laser pulse. This is because no electronic device is fast enough to do this being limited to a time resolution of a few tens of picoseconds at best, but laser pulses can be less than $10$ fs in duration. Fluorescence correlation spectroscopy measures the time correlation of fluorescence fluctuations from a small number of fluorophores in a sample and is used to measure diffusion coefficients, particle size and concentration.  However, probably the most important application in Chemistry is in FTIR spectroscopy as it is what is measured before being fourier transformed to produce the spectrum. 
 # 
 # The signal from an FTIR spectrometer is the autocorrelation of the infra-red radiation because in this instrument one arm of the (Michaelson) interferometer is moved relative to the other thus changing the i.r. radiation's path-length. The two beams interfere on the detector forming the autocorrelation, see section 5.2 and figure 12. More details are given in section 8.7. 
 # 
@@ -512,7 +522,7 @@ def toep_corrl(f,w):
 # 
 # $$\displaystyle A^c(u)=\int f(t)w(u+t)dt\qquad \text{correlation}$$
 # 
-# and as with a convolution, an autocorrelation can be represented as a fourier transform. To show this start by  replacing $f$ and $w$ by their transforms which we call $g$ and $h$ respectively, and to be general suppose that $f$ and $w$ are complex then the change is $f\to f^*$ which is its complex conjugate. 
+# and differs only in the sign in the integral. As with a convolution, an autocorrelation can be represented as a fourier transform. To show this start by  replacing $f$ and $w$ by their transforms which we call $g$ and $h$ respectively, and to be general suppose that $f$ and $w$ are complex then the change is $f\to f^*$ which is its complex conjugate. 
 # 
 # $$\displaystyle A^c(u)=\int_{-\infty}^\infty \left[\int_{-\infty}^\infty g^*(\omega)e^{i\omega t} d\omega\right]\left[ \int h(\omega' ) e^{-i\omega'(t+ u)}d\omega'\right]dt $$
 # 

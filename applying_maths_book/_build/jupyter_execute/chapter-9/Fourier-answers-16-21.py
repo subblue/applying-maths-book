@@ -283,7 +283,9 @@ for i in range(6):       # 6 iterations are enough
 # 
 # $\text{S0 = [ 0.0  for  i  in  range( numt) ] }$
 # 
-# $\text{for  i  in  range( numt ): S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )}$
+# $\text{for  i  in  range( numt ):}$
+# 
+# $\qquad \text{S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )}$
 # 
 # ## Q19 answer
 # The method to use similar to that used in the example. However, when the raw data is plotted the signal is buried in the noise, Fourier transforming produces an ambiguous result where it is not clear where to set the filter to extract the data. Apodising, by multiplying the data by an exponential decreases the noise in the longer part of the data and helps to identify the frequencies present. The initial FID and its Fourier transform is shown in the figure.
@@ -326,7 +328,8 @@ fft0 = np.fft.rfft(fid0).imag    # as FID contais sine waves FFT is imaginary.
 # 
 # #.. define a new list to hold the apodised FID
 # 
-# $\text{fid1 = [0 for i in range( n )]  }\qquad $ # make new list to hold new FID
+# $\text{fid1 = np.zeros(n,dtype=float) }\qquad $ # make new NumPy array to hold new FID
+# 
 # $\text{for i in range(n):}$
 # 
 # $\qquad \text{    fid1[ i ] = fid0[i]*np.exp(-i/1000)}$
@@ -338,13 +341,12 @@ fft0 = np.fft.rfft(fid0).imag    # as FID contais sine waves FFT is imaginary.
 # ![Drawing](fourier-fig62.png)
 # 
 # Figure 62. The apodised FID (left) is transformed into the spectrum thereby retrieving the two frequencies. The original frequencies, although not perfectly isolated,  are at approx 0.2 and can clearly be identified from the noise.
-# 
-# ____
+# ________
 # 
 # ## Q20 answer
 # Plotting the data with and without noise, shows that the pulse lasts for about 2 ps, and examining this close to the maximum time, indicates that the smallest period is about 60 fs. Therefore, $n$ = 2<sup>12</sup> points will be more than adequate for the Fourier transforms.
 # 
-# The pulse has the form $\displaystyle \sin(x^2/200^2 )\exp(- (x-800.0)^2/200.0^2)$ and the noise, with an amplitude from $\pm$1, is added by including randn(). The plot shows the chirped pulse (pure pulse), and with the noise added, this forms the 'experimental' data. The pure pulse and the recovered data are shown in the second set of figures below. 
+# The pulse has the form $\displaystyle \sin(x^2/200^2 )\exp(- (x-800.0)^2/200.0^2)$ and the noise, with an amplitude from $\pm$1, is added by including randn(). The plot shows the chirped pulse (pure pulse), and with the noise added, this forms the 'experimental' data. The pure pulse and the recovered data are shown in the second set of figures below. The calculation will be a lot quicker if NumPy arrays are used.
 
 # In[16]:
 

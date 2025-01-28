@@ -299,7 +299,7 @@
 # 
 # The cosine and sine terms are sometimes called the _geometric structure factors_ because they are functions of coordinates $x_j,y_j,z_j$ of the $j^{th}$ atom in the unit cell. Notice that $F_{hkl}$ can be zero, positive, negative, real or complex. The detector measures an $hkl$ reflexion as
 # 
-# $$\displaystyle I_{hkl}=|F_{hkl}|^2=\left(\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2+\left(\sum_i^Nf_j^{hkl}\sin\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2\qquad\tag{58}$$
+# $$\displaystyle \qquad\qquad\begin{align}I_{hkl}=|F_{hkl}|^2&=\left(\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2\\&+\left(\sum_i^Nf_j^{hkl}\sin\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2\end{align}\qquad\qquad\qquad\text{(58)}$$
 # 
 # and this is true for all crystals whatever their symmetry. Whenever there is a centre of symmetry, such as in Rutile (TiO$_2$), the sine terms in the aggregate evaluate to zero and this is because for each angle $\theta$ there is one at $-\theta$ and $-\sin(\theta)=\sin(-\theta)$.  
 # 
@@ -380,7 +380,7 @@
 # 
 # The reliability or $R$ factor is used to measure the goodness of fit between the structure factor using experimental data and that calculated and has the form;
 # 
-# $$\displaystyle R=\frac{\sum|\;|F_{expt}|-|F_{calc}|\;|}{\sum|F_{expt}|}\qquad\tag{58}$$
+# $$\displaystyle R=\frac{\sum|\;|F_{expt}|-|F_{calc}|\;|}{\sum|F_{expt}|}\qquad\tag{58'}$$
 # 
 # The absolute values used in $R$ just means that all $F$ are positive. An $R$ value of less that $\approx 0.2$ may be acceptable as an initial fit, but half this value or better is expected for a refined fit to the data. The $R$ factor between the two structures, fig. 85, is $0.26$ showing that the agreement between them is poor as is clear from the images of the projections. The bond lengths Ti to oxygen 1 (or 2) is only changed by 0.023 nm in a bond length of 0.20 nm and this shows how sensitive x-ray diffraction is to small changes in geometry. The bond length Ti to oxygen 3 (or 4) is similar to that for the other two oxygens and is $0.196$ nm but looks less because of the projection down the $c$ axis.
 # 
