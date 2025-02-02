@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $t$ is the dummy variable of the integration. When the data is from an instrument it will be digitised and then at data index $k$ the convolution is the summation
 # 
-# $$\displaystyle C(k) = \sum_{i=1}^{k+1} f_i w_{(k - i )}   $$
+# $$\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )}   $$
 # 
 # Examples of convolution and how these equations are evaluated is examined in the following sections.
 # 
@@ -71,33 +71,49 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The light pulses occur at each point in the red instrument response curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function $f$, the ideal experimental response $w$, and the convolution $C$. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times $1, 2, 3$, and so forth; $f_6$, for example, represents the value of $f$ at the sixth time position. The first point of the impulse is $f_1$ and this produces the response
 # 
-# $$\displaystyle f_1[w_1 + w_1 + w_3 + \cdots]$$
+# $$\displaystyle f_1(w_1 + w_1 + w_3 + \cdots)$$
 # 
 # The second and third impulses produce
 # 
-# $$\displaystyle f_2[w_1 + w_2 + w_3 + \cdots]\quad \text{and}\quad f_3[w_1 + w_2 + w_3 + \cdots]$$
+# $$\displaystyle f_2(w_1 + w_2 + w_3 + \cdots)\quad \text{and}\quad f_3(w_1 + w_2 + w_3 + \cdots)$$
 # 
 # The convolution is the sum of these terms at times 1, 2, 3, and so on therefore;
 # 
 # $$\displaystyle\begin{align}
-# C_1 & = f_1w_1\\
-# C_2 & = f_1w_2 + f_2w_1\\
-# C_3 & = f_1w_3 + f_2w_2 + f_3w_1\\
-# C_4 & = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
+# C_2 & = f_1w_1\\
+# C_3 & = f_1w_2 + f_2w_1\\
+# C_4 & = f_1w_3 + f_2w_2 + f_3w_1\\
+# C_5 & = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
+# C_6 & = \cdots
 # \end{align}$$
 # 
-# These sums are shown in Fig. 27 by adding the products of $f$ and $w$ vertically. Clearly, only where both $f$ and $w$ are not zero, will this product have a value. The symmetry in these sums soon becomes apparent, each being the product of one series running to the right, and the other to the left; for instance, look at $C$(4). The name convolution arises from just this effect; the word also means 'folded' and this is shown in the form of the series where each function is folded back onto the other. Convolution is also the distribution of one function in accordance with a 'law' specified by another function (Steward 1987) because the whole of one function $w$, is multiplied with each ordinate of the other $f$, and the results added. The ideal response (the 'one function') is distributed, i.e. spread out according to the law or shape of the driving function $f$.
+# and as a check notice that the sum of the subscripts of each row add to the same value. This total is also the index for $C$ and is used to be consistent with eqn 32 below. These sums are shown in Fig. 27 by adding the products of $f$ and $w$ vertically. Clearly, only where both $f$ and $w$ are not zero, will this product have a value. The symmetry in these sums soon becomes apparent, each being the product of one series running to the right, and the other to the left; for instance, look at $C$(4). The name convolution arises from just this effect; the word also means 'folded' and this is shown in the form of the series where each function is folded back onto the other. Convolution is also the distribution of one function in accordance with a 'law' specified by another function (Steward 1987) because the whole of one function $w$, is multiplied with each ordinate of the other $f$, and the results added. The ideal response (the 'one function') is distributed, i.e. spread out according to the law or shape of the driving function $f$.
 # 
 # ![Drawing](fourier-fig27.png)
 # 
-# Figure 27. Diagram showing the notation used to calculate a convolution.
+# Figure 27. Diagram showing the terms used to calculate a convolution. The subscripts for $w$ are shown above the dots, the subscript for $f$ is taken from the baseline and the value used is that value that is below $w_1$ in each case. The sum is taken vertically.
 # ______
+
+# When $f$ and $w$ are of different length the convolution can still be calculated but we must assume that any values with subscripts outside their range are zero. Suppose that we have $f=[f_1,f_2,f_3,f_4]$ with subscripts $1\to 4$ only and $w=[w_1,w_2,w_3,w_4,w_5]$ with subscripts $1\to 5$ only. As there are nine values adding together those of $f$ and $w$ there will be this number of rows to evaluate, however, many terms will be zero as shown below by crossings out.
 # 
-# ## 7.3 Convolution by summation
+# $$\displaystyle \require{cancel}\begin{align}\\
+# C_1&=\cancel{f_1w_{0}} \\
+# C_2&=f_1w_1\cancel{+f_2w_0} \\
+# C_3&=f_1w_2+f_2w_1\\
+# C_4&=f_1w_3+f_2w_2+f_3w_1\\
+# C_5&=f_1w_4+f_2w_3+f_3w_2+f_4w_1+\cancel{f_5w_0}\\
+# C_6&=f_1w_5+f_2w_4+f_3w_3+f_4w_2+\cancel{f_5w_1+f_6w_0}\\
+# C_7&=\cancel{f_1w_6}+f_2w_5+f_3w_4+f_4w_3+\cancel{f_5w_2+f_6w_1+f_7w_0}\\
+# C_8&=\cancel{f_1w_7+f_2w_6}+f_3w_5+f_4w_4+\cancel{f_5w3+f_6w_2+f_7w_1+f_8w_0}\\
+# C_9&=\cancel{f_1w_8+f_2w_7+f_3w_6}+f_4w_5+\cancel{f_5w_4+f_6w_3+f_7w_2+f_8w_1+f_9w_0}\\
+# \end{align}$$
+#  
+
+# ## 7.3 Calculating the convolution by double summation
 # 
 # Written as a summation, the convolution at point $k$ is
 # 
-# $$\displaystyle C(k) = \sum_{i=1}^{k+1} f_i w_{(k - i )}   \qquad\tag{32}$$
+# $$\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )} \equiv  \sum_{i=1} f_{(k-i)} w_i   \qquad\tag{32}$$
 # 
 # This sum evaluates just one point; to calculate the whole convolution, the index $k$ must now be varied from 1 to $n$, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.
 # 
@@ -115,7 +131,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 def do_convolution(f,w):   # f and w are arrays 
     # Sigma f(n-m)w(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc 
     n = len(f)
-    c = [0.0 for i in range(n)]
+    c = np.zeros(n,dtype=float)   # alternative is c=[0.0 for i in range(n)]
     for k in range(n):
         s = 0.0
         for i in range(k):
@@ -127,7 +143,7 @@ def do_convolution(f,w):   # f and w are arrays
 
 n = 2**10
 w = [ np.exp(-i/100.0)  for i in range(n)]         # molecular decay
-f = [ np.exp(-(i-120)**2/1e3) for i in range(n)]   # instrument
+f = [ np.exp(-(i-120)**2/1000) for i in range(n)]   # instrument
 t = [i for i in range(n)]
 
 C = do_convolution(f,w)

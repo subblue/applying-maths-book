@@ -603,9 +603,17 @@ collect(expand(ans),exp(-2*x))
 # 
 # $$\displaystyle \frac{d^2}{dt^2}\left(x-\frac{W}{\omega^2}  \right) +2h\frac{dx}{dt}\left( x-\frac{W}{\omega^2} \right)+\omega^2\left( x-\frac{W}{\omega^2} \right)=0$$
 # 
-# for which solutions are already given in Section 4.10 provided $x$ is replaced by $\displaystyle x'=x−W/\omega^2$. 
+# for which solutions are already given in Section 12.11 provided $x$ is replaced by $\displaystyle x'=x−W/\omega^2$. In $D$ notation the equation is $\displaystyle D^2 +2hD+\omega^2x'=0$.
 # 
-# In $D$ notation the equation is $\displaystyle D^2 +2hD+\omega^2x'=0$.
+# There is a analogy between these differential equations describing motion to those describing the relaxation of an $LCR$ electrical circuit. The force on the particle has an equation describing its acceleration and displacement $x$ as in section 12.11 but now with an extra driving force $W$ producing acceleration  then 
+# 
+# $$\displaystyle m\frac{d^2x}{dt^2} + c\frac{dx}{dt} +kx = W$$
+# 
+# where $m$ is mass, $k$ the restoring force constant and $c$ the damping constant. The equation for a circuit where there is an inductor, $L$ capacator $C$ and resistor  $R$ in series and connected to a emf $E$ i.e. an $LCR$ circuit then
+# 
+# $$\displaystyle L\frac{d^2q}{dt^2} +R\frac{dq}{dt} +\frac{q}{C}= E$$
+# 
+# where $q$ is the charge on the condenser. It can be seen that $L$ corresponds to mass, $R$ to the damping constant and $1/C$ to the force constant.
 # 
 # ### **(ii) Varying external force**
 # When the driving force is not constant then its form is clearly going to determine the nature of the solution. The general equation is

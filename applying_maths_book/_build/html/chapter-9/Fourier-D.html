@@ -1551,8 +1551,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convolution-by-summation">
-   7.3 Convolution by summation
+  <a class="reference internal nav-link" href="#calculating-the-convolution-by-double-summation">
+   7.3 Calculating the convolution by double summation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1795,8 +1795,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convolution-by-summation">
-   7.3 Convolution by summation
+  <a class="reference internal nav-link" href="#calculating-the-convolution-by-double-summation">
+   7.3 Calculating the convolution by double summation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2015,7 +2015,7 @@ title="Print to PDF"
 \[\displaystyle C(u)=\int f(t)w(u-t)dt\]</div>
 <p>where <span class="math notranslate nohighlight">\(t\)</span> is the dummy variable of the integration. When the data is from an instrument it will be digitised and then at data index <span class="math notranslate nohighlight">\(k\)</span> the convolution is the summation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C(k) = \sum_{i=1}^{k+1} f_i w_{(k - i )}   \]</div>
+\[\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )}   \]</div>
 <p>Examples of convolution and how these equations are evaluated is examined in the following sections.</p>
 </section>
 <section id="examples">
@@ -2052,28 +2052,42 @@ Figure 25. The convolution of a narrow spectral line with a wide slit in a spect
 <p>To understand how convolution works, suppose that the overall instrument response is made up of a series of <span class="math notranslate nohighlight">\(\delta\)</span>-function impulses. These can be infinitesimally narrow light pulses that excite a molecule. Suppose these impulses are made at ever shorter time intervals, then the effect is that of smoothly exciting the molecule. Each of the impulses elicits an ideal response but because there are many of them, their responses must be added together. The result is the convolution; the effect is shown in Fig. 26. It is always assumed in the convolution that the response is linear with the impulse, which simply means that doubling the impulse doubles the response and so forth.</p>
 <p>The light pulses occur at each point in the red instrument response curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function <span class="math notranslate nohighlight">\(f\)</span>, the ideal experimental response <span class="math notranslate nohighlight">\(w\)</span>, and the convolution <span class="math notranslate nohighlight">\(C\)</span>. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times <span class="math notranslate nohighlight">\(1, 2, 3\)</span>, and so forth; <span class="math notranslate nohighlight">\(f_6\)</span>, for example, represents the value of <span class="math notranslate nohighlight">\(f\)</span> at the sixth time position. The first point of the impulse is <span class="math notranslate nohighlight">\(f_1\)</span> and this produces the response</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f_1[w_1 + w_1 + w_3 + \cdots]\]</div>
+\[\displaystyle f_1(w_1 + w_1 + w_3 + \cdots)\]</div>
 <p>The second and third impulses produce</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f_2[w_1 + w_2 + w_3 + \cdots]\quad \text{and}\quad f_3[w_1 + w_2 + w_3 + \cdots]\]</div>
+\[\displaystyle f_2(w_1 + w_2 + w_3 + \cdots)\quad \text{and}\quad f_3(w_1 + w_2 + w_3 + \cdots)\]</div>
 <p>The convolution is the sum of these terms at times 1, 2, 3, and so on therefore;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{align}
-C_1 &amp; = f_1w_1\\
-C_2 &amp; = f_1w_2 + f_2w_1\\
-C_3 &amp; = f_1w_3 + f_2w_2 + f_3w_1\\
-C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
+C_2 &amp; = f_1w_1\\
+C_3 &amp; = f_1w_2 + f_2w_1\\
+C_4 &amp; = f_1w_3 + f_2w_2 + f_3w_1\\
+C_5 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
+C_6 &amp; = \cdots
 \end{align}\end{split}\]</div>
-<p>These sums are shown in Fig. 27 by adding the products of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> vertically. Clearly, only where both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are not zero, will this product have a value. The symmetry in these sums soon becomes apparent, each being the product of one series running to the right, and the other to the left; for instance, look at <span class="math notranslate nohighlight">\(C\)</span>(4). The name convolution arises from just this effect; the word also means ‘folded’ and this is shown in the form of the series where each function is folded back onto the other. Convolution is also the distribution of one function in accordance with a ‘law’ specified by another function (Steward 1987) because the whole of one function <span class="math notranslate nohighlight">\(w\)</span>, is multiplied with each ordinate of the other <span class="math notranslate nohighlight">\(f\)</span>, and the results added. The ideal response (the ‘one function’) is distributed, i.e. spread out according to the law or shape of the driving function <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>and as a check notice that the sum of the subscripts of each row add to the same value. This total is also the index for <span class="math notranslate nohighlight">\(C\)</span> and is used to be consistent with eqn 32 below. These sums are shown in Fig. 27 by adding the products of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> vertically. Clearly, only where both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are not zero, will this product have a value. The symmetry in these sums soon becomes apparent, each being the product of one series running to the right, and the other to the left; for instance, look at <span class="math notranslate nohighlight">\(C\)</span>(4). The name convolution arises from just this effect; the word also means ‘folded’ and this is shown in the form of the series where each function is folded back onto the other. Convolution is also the distribution of one function in accordance with a ‘law’ specified by another function (Steward 1987) because the whole of one function <span class="math notranslate nohighlight">\(w\)</span>, is multiplied with each ordinate of the other <span class="math notranslate nohighlight">\(f\)</span>, and the results added. The ideal response (the ‘one function’) is distributed, i.e. spread out according to the law or shape of the driving function <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig27.png" /></p>
-<p>Figure 27. Diagram showing the notation used to calculate a convolution.</p>
-</section>
+<p>Figure 27. Diagram showing the terms used to calculate a convolution. The subscripts for <span class="math notranslate nohighlight">\(w\)</span> are shown above the dots, the subscript for <span class="math notranslate nohighlight">\(f\)</span> is taken from the baseline and the value used is that value that is below <span class="math notranslate nohighlight">\(w_1\)</span> in each case. The sum is taken vertically.</p>
 <hr class="docutils" />
-<section id="convolution-by-summation">
-<h2>7.3 Convolution by summation<a class="headerlink" href="#convolution-by-summation" title="Permalink to this headline">#</a></h2>
+<p>When <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are of different length the convolution can still be calculated but we must assume that any values with subscripts outside their range are zero. Suppose that we have <span class="math notranslate nohighlight">\(f=[f_1,f_2,f_3,f_4]\)</span> with subscripts <span class="math notranslate nohighlight">\(1\to 4\)</span> only and <span class="math notranslate nohighlight">\(w=[w_1,w_2,w_3,w_4,w_5]\)</span> with subscripts <span class="math notranslate nohighlight">\(1\to 5\)</span> only. As there are nine values adding together those of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> there will be this number of rows to evaluate, however, many terms will be zero as shown below by crossings out.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \require{cancel}\begin{align}\\
+C_1&amp;=\cancel{f_1w_{0}} \\
+C_2&amp;=f_1w_1\cancel{+f_2w_0} \\
+C_3&amp;=f_1w_2+f_2w_1\\
+C_4&amp;=f_1w_3+f_2w_2+f_3w_1\\
+C_5&amp;=f_1w_4+f_2w_3+f_3w_2+f_4w_1+\cancel{f_5w_0}\\
+C_6&amp;=f_1w_5+f_2w_4+f_3w_3+f_4w_2+\cancel{f_5w_1+f_6w_0}\\
+C_7&amp;=\cancel{f_1w_6}+f_2w_5+f_3w_4+f_4w_3+\cancel{f_5w_2+f_6w_1+f_7w_0}\\
+C_8&amp;=\cancel{f_1w_7+f_2w_6}+f_3w_5+f_4w_4+\cancel{f_5w3+f_6w_2+f_7w_1+f_8w_0}\\
+C_9&amp;=\cancel{f_1w_8+f_2w_7+f_3w_6}+f_4w_5+\cancel{f_5w_4+f_6w_3+f_7w_2+f_8w_1+f_9w_0}\\
+\end{align}\end{split}\]</div>
+</section>
+<section id="calculating-the-convolution-by-double-summation">
+<h2>7.3 Calculating the convolution by double summation<a class="headerlink" href="#calculating-the-convolution-by-double-summation" title="Permalink to this headline">#</a></h2>
 <p>Written as a summation, the convolution at point <span class="math notranslate nohighlight">\(k\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C(k) = \sum_{i=1}^{k+1} f_i w_{(k - i )}   \qquad\tag{32}\]</div>
+\[\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )} \equiv  \sum_{i=1} f_{(k-i)} w_i   \qquad\tag{32}\]</div>
 <p>This sum evaluates just one point; to calculate the whole convolution, the index <span class="math notranslate nohighlight">\(k\)</span> must now be varied from 1 to <span class="math notranslate nohighlight">\(n\)</span>, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.</p>
 <p>The algorithm to calculate the summation has a double loop to calculate all values of <span class="math notranslate nohighlight">\(k\)</span> and to perform the summation in eqn. 32. The two functions used are those that produced Fig. 24, which are <span class="math notranslate nohighlight">\(\displaystyle f(t) = e^{-t/100}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle w(t) = e^{-(t-100)^2/1000}\)</span>, and <span class="math notranslate nohighlight">\(2^{10}\)</span> points will be also be used to mimic the data produced by an instrument.</p>
 <p>First, because the data is discrete, arrays <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are made; to hold the data points. Then two loops are made, one changes <span class="math notranslate nohighlight">\(k\)</span> from 1 to <span class="math notranslate nohighlight">\(n\)</span> the and inside one calculates <span class="math notranslate nohighlight">\(C(k)\)</span>. The indices are arranged as in equation 32. The variable <span class="math notranslate nohighlight">\(s\)</span> accumulates the sum as the inner do loop progresses. This is a relatively slow calculation because of the double loop.</p>
@@ -2085,7 +2099,7 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 <span class="k">def</span> <span class="nf">do_convolution</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>   <span class="c1"># f and w are arrays </span>
     <span class="c1"># Sigma f(n-m)w(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc </span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># alternative is c=[0.0 for i in range(n)]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
@@ -2097,7 +2111,7 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
 <span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>         <span class="c1"># molecular decay</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>   <span class="c1"># instrument</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>   <span class="c1"># instrument</span>
 <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="n">C</span> <span class="o">=</span> <span class="n">do_convolution</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
@@ -2112,7 +2126,7 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_3_0.png" src="../_images/Fourier-D_3_0.png" />
+<img alt="../_images/Fourier-D_5_0.png" src="../_images/Fourier-D_5_0.png" />
 </div>
 </div>
 </section>
@@ -2300,7 +2314,7 @@ C_4 &amp; = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_9_0.png" src="../_images/Fourier-D_9_0.png" />
+<img alt="../_images/Fourier-D_11_0.png" src="../_images/Fourier-D_11_0.png" />
 </div>
 </div>
 </section>
@@ -2464,7 +2478,7 @@ A_5= w_6f_6+w_5f_5+w_4f_4+w_3f_3+w_2f_2+w_1f_1\end{array}\end{split}\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_13_0.png" src="../_images/Fourier-D_13_0.png" />
+<img alt="../_images/Fourier-D_15_0.png" src="../_images/Fourier-D_15_0.png" />
 </div>
 </div>
 </section>
@@ -2489,7 +2503,7 @@ A_5= w_6f_6+w_5f_5+w_4f_4+w_3f_3+w_2f_2+w_1f_1\end{array}\end{split}\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_15_0.png" src="../_images/Fourier-D_15_0.png" />
+<img alt="../_images/Fourier-D_17_0.png" src="../_images/Fourier-D_17_0.png" />
 </div>
 </div>
 <p>from which it is seen that the normalised autocorrelation is also a cosine <span class="math notranslate nohighlight">\(\displaystyle G(u) = \cos\left(2\pi \frac{u}{T}\right)\)</span>. If the initial cosine is written as <span class="math notranslate nohighlight">\(\cos(\omega t + \varphi)\)</span> then the period is <span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>.</p>
@@ -2530,7 +2544,7 @@ A_5= w_6f_6+w_5f_5+w_4f_4+w_3f_3+w_2f_2+w_1f_1\end{array}\end{split}\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_17_0.png" src="../_images/Fourier-D_17_0.png" />
+<img alt="../_images/Fourier-D_19_0.png" src="../_images/Fourier-D_19_0.png" />
 </div>
 </div>
 <p>The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when <span class="math notranslate nohighlight">\(u\)</span> = 0. The normalization equation is therefore <span class="math notranslate nohighlight">\(\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}\)</span>. The normalized autocorrelation <span class="math notranslate nohighlight">\(G(u)\)</span> is also a Gaussian, with a value <span class="math notranslate nohighlight">\(\displaystyle G(u)=e^{-u^2/(2a^2)}\)</span>. The <em>fwhm</em> of this function is calculated when <span class="math notranslate nohighlight">\(G(u)=1/2\)</span> and is <span class="math notranslate nohighlight">\(a\sqrt{2\ln(2)}\)</span> and that of the original pulse is <span class="math notranslate nohighlight">\(a\sqrt{\ln(2)}\)</span> therefore, the autocorrelation is <span class="math notranslate nohighlight">\(\sqrt{2} \approx\)</span> 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.</p>
@@ -2589,7 +2603,7 @@ A_5= w_6f_6+w_5f_5+w_4f_4+w_3f_3+w_2f_2+w_1f_1\end{array}\end{split}\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_19_0.png" src="../_images/Fourier-D_19_0.png" />
+<img alt="../_images/Fourier-D_21_0.png" src="../_images/Fourier-D_21_0.png" />
 </div>
 </div>
 <p>Fig. 33 Normalized autocorrelations of <span class="math notranslate nohighlight">\(250\)</span> random numbers with an average of <span class="math notranslate nohighlight">\(0\)</span> (left) and an average of <span class="math notranslate nohighlight">\(1/2\)</span> (right). Only the right-hand half of the autocorrelation is calculated and plotted. The left-hand part is the exact mirror image.</p>

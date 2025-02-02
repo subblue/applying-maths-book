@@ -290,7 +290,7 @@ qtile(0.69146 )
 dfdx = lambda x :np.exp(-x**2/2)/np.sqrt(2*np.pi)   # define normal distribution as derivative, sigma =1
 c = 0.69146
 w = 0.18                                 # initial guess for iterations
-for i in range(4):                       # guess number of interations needed
+for i in range(5):                       # guess number of interations needed
     ans,err= quad(dfdx,-np.inf, w)       # integrate to value x from -infty to get f(x)
     w = w - (ans-c)/dfdx(w)              # calculate new value of w (the root) from previous values
     print(i,' w = ',w)
@@ -417,16 +417,18 @@ quant(x,n)
 # 
 # ## Table of Distribution Functions
 # 
-# $$\begin{array}{l|lccl}
-# \text{Distribution} & \text{function} & \text{mean (expected value)} & \text{variance}\\
+# $$\displaystyle\begin{array}{l|lccl}
+# \text{Distribution} & \qquad\text{function} & \text{mean } & \text{variance}\\
 # \hline
 # \text{Normal} & p(x,\mu,\sigma^2)= \frac{1}{\sigma\sqrt{2\pi}}e^{(-(x-\mu)/(2\sigma^2))} & \mu & \sigma^2 & x=-\infty,\cdots \infty\\
-# \text{Binomial} & B(p,n,k)=\binom{n}kp^kq^{n-k}&np & npq & n,k=0,1,2\cdots;\quad  p+q=1\\
+# \text{Binomial} & B(p,n,k)=\binom{n}kp^kq^{n-k} ;\quad p+q=1&np & npq & n,k=0,1,2\cdots  \\
 # \text{Poisson}& P(k,\lambda)=\frac{\lambda^k}{k!}e^{-\lambda}& \lambda & \lambda & k=0,1,2\cdots\\
 # \text{Exponential} & f(x,\lambda)=\lambda e^{-\lambda x}& 1/\lambda & 1/\lambda^2& x=0\dots \infty\\
-# \hline\\
+# \text{Chi-Squared} & f(x,n)= \frac{1}{2^{n/2}\Gamma(n/2)}x^{n/2}e^{-x/2} & n & 2n &x=0\cdots\infty\\
+# \text{Student's t}& f(x,n)=\frac{\Gamma((n+1)/2)}{\sqrt{n\pi}\Gamma(n/2)}(1+x^2/n)^{-(n+1)/2} & 0 \text{ if } n\gt 1 & \frac{n}{n-2},\text{ if } n\gt 2& x=-\infty\cdots \infty\\
+# \hline
 # \end{array}$$
-# $\binom{n}k = \frac{n!}{k!(n-k)!}$
+# $\binom{n}k = \frac{n!}{k!(n-k)!}$. The mean is also called the expected value.
 
 # ## 3.4 Hypothesis testing
 # 

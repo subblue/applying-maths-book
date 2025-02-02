@@ -2215,7 +2215,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>   <span class="c1"># define normal distribution as derivative, sigma =1</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mf">0.69146</span>
 <span class="n">w</span> <span class="o">=</span> <span class="mf">0.18</span>                                 <span class="c1"># initial guess for iterations</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>                       <span class="c1"># guess number of interations needed</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>                       <span class="c1"># guess number of interations needed</span>
     <span class="n">ans</span><span class="p">,</span><span class="n">err</span><span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">dfdx</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>       <span class="c1"># integrate to value x from -infty to get f(x)</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="p">(</span><span class="n">ans</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>              <span class="c1"># calculate new value of w (the root) from previous values</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39; w = &#39;</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
@@ -2227,6 +2227,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 1  w =  0.49994371987767855
 2  w =  0.4999930084466303
 3  w =  0.49999300905393207
+4  w =  0.4999930090539324
 </pre></div>
 </div>
 </div>
@@ -2344,16 +2345,18 @@ v &amp; &amp; &amp;\\
 <section id="table-of-distribution-functions">
 <h2>Table of Distribution Functions<a class="headerlink" href="#table-of-distribution-functions" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{l|lccl}
-\text{Distribution} &amp; \text{function} &amp; \text{mean (expected value)} &amp; \text{variance}\\
+\[\begin{split}\displaystyle\begin{array}{l|lccl}
+\text{Distribution} &amp; \qquad\text{function} &amp; \text{mean } &amp; \text{variance}\\
 \hline
 \text{Normal} &amp; p(x,\mu,\sigma^2)= \frac{1}{\sigma\sqrt{2\pi}}e^{(-(x-\mu)/(2\sigma^2))} &amp; \mu &amp; \sigma^2 &amp; x=-\infty,\cdots \infty\\
-\text{Binomial} &amp; B(p,n,k)=\binom{n}kp^kq^{n-k}&amp;np &amp; npq &amp; n,k=0,1,2\cdots;\quad  p+q=1\\
+\text{Binomial} &amp; B(p,n,k)=\binom{n}kp^kq^{n-k} ;\quad p+q=1&amp;np &amp; npq &amp; n,k=0,1,2\cdots  \\
 \text{Poisson}&amp; P(k,\lambda)=\frac{\lambda^k}{k!}e^{-\lambda}&amp; \lambda &amp; \lambda &amp; k=0,1,2\cdots\\
 \text{Exponential} &amp; f(x,\lambda)=\lambda e^{-\lambda x}&amp; 1/\lambda &amp; 1/\lambda^2&amp; x=0\dots \infty\\
-\hline\\
+\text{Chi-Squared} &amp; f(x,n)= \frac{1}{2^{n/2}\Gamma(n/2)}x^{n/2}e^{-x/2} &amp; n &amp; 2n &amp;x=0\cdots\infty\\
+\text{Student's t}&amp; f(x,n)=\frac{\Gamma((n+1)/2)}{\sqrt{n\pi}\Gamma(n/2)}(1+x^2/n)^{-(n+1)/2} &amp; 0 \text{ if } n\gt 1 &amp; \frac{n}{n-2},\text{ if } n\gt 2&amp; x=-\infty\cdots \infty\\
+\hline
 \end{array}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\binom{n}k = \frac{n!}{k!(n-k)!}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\binom{n}k = \frac{n!}{k!(n-k)!}\)</span>. The mean is also called the expected value.</p>
 </section>
 <section id="hypothesis-testing">
 <h2>3.4 Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h2>
