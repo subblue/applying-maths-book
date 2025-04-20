@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-C.html">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1541,6 +1541,29 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#differentiation-with-respect-to-a-function">
    4.6 Differentiation with respect to a function
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-example-gibbs-helmholtz-eqn">
+     <strong>
+      ( i )  Example, Gibbs-Helmholtz eqn.
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-example-van-t-hoff-isotherm">
+     <strong>
+      (ii) Example, van’t Hoff isotherm
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-example-found-in-euler-lagrange-eqns">
+     <strong>
+      (iii) Example found in Euler-Lagrange eqns.
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implicit-differentiation">
@@ -1692,6 +1715,29 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#differentiation-with-respect-to-a-function">
    4.6 Differentiation with respect to a function
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-example-gibbs-helmholtz-eqn">
+     <strong>
+      ( i )  Example, Gibbs-Helmholtz eqn.
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-example-van-t-hoff-isotherm">
+     <strong>
+      (ii) Example, van’t Hoff isotherm
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-example-found-in-euler-lagrange-eqns">
+     <strong>
+      (iii) Example found in Euler-Lagrange eqns.
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implicit-differentiation">
@@ -1826,8 +1872,9 @@ title="Print to PDF"
 <section id="function-of-a-function-or-chain-rule">
 <h2>4.1 Function-of-a-function or Chain rule<a class="headerlink" href="#function-of-a-function-or-chain-rule" title="Permalink to this headline">#</a></h2>
 <p>The method when one function is a function of another is to</p>
-<p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> differentiate the main or ‘outside function’,</p>
-<p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> then multiply this by the differential of the inside function.</p>
+<blockquote>
+<div><p><strong>differentiate the main or ‘outside function’, then multiply this by the differential of the inside function.</strong></p>
+</div></blockquote>
 <p>This simple but powerful method is most easily explained by examples; (i) to (iv) below are typical. The general formula is given in the next section. To differentiate the functions, use the table or various sections above to remind you of the rules.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span> (a) <span class="math notranslate nohighlight">\(\displaystyle y=\sin(ax^2+x^{-3}),\qquad\qquad \;\;\)</span>     (b) <span class="math notranslate nohighlight">\(\displaystyle y=e^{ax^2+\sin(ax)}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span> (c) <span class="math notranslate nohighlight">\(\displaystyle p=\ln(e^{aq})\)</span> and find <span class="math notranslate nohighlight">\(dp/dq,\qquad\)</span> (d) <span class="math notranslate nohighlight">\(\displaystyle y^n=\sin(ax^3)\)</span></p>
@@ -1873,8 +1920,12 @@ title="Print to PDF"
 <section id="the-product-rule">
 <h2>4.3 The Product Rule<a class="headerlink" href="#the-product-rule" title="Permalink to this headline">#</a></h2>
 <p>When there are products or ratios of functions, differentiation is done in two steps;</p>
-<p><span class="math notranslate nohighlight">\(\qquad\)</span> First, differentiate one function leaving the other alone,<br />
-<span class="math notranslate nohighlight">\(\qquad\)</span> then add to this the result of differentiating the second, leaving the first alone.</p>
+<blockquote>
+<div><p><strong>Differentiate one function leaving the other alone.</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Add to this the result of differentiating the second function, leaving the first alone.</strong></p>
+</div></blockquote>
 <p>An example should make this clear. To differentiate <span class="math notranslate nohighlight">\(\displaystyle y = (x^2 + a)(x^3 + x)\)</span> let the first function be <span class="math notranslate nohighlight">\((x^2 + a)\)</span> and differentiate this to <span class="math notranslate nohighlight">\(2x\)</span> and multiply by the second function <span class="math notranslate nohighlight">\((x^3 + x)\)</span>, then do this the other way round and add the two terms together.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{dy}{dx}=2x(x^3+x)+(x^2+a)(3x^2+1)\]</div>
@@ -1919,6 +1970,8 @@ title="Print to PDF"
 <h2>4.6 Differentiation with respect to a function<a class="headerlink" href="#differentiation-with-respect-to-a-function" title="Permalink to this headline">#</a></h2>
 <p>Sometimes in thermodynamics, but also elsewhere, equations are put in the form <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{d(1/x)}\)</span> rather than <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\)</span>. For example, at constant pressure the Gibbs - Helmholtz equation, the derivative of the change of (Gibbs) free energy <span class="math notranslate nohighlight">\(\Delta G\)</span> with temperature, can be written as
 <span class="math notranslate nohighlight">\(\displaystyle \frac{d(\Delta G/T)}{d(1/T)}\)</span> rather than <span class="math notranslate nohighlight">\(\displaystyle \frac{d\Delta G}{dT}\)</span>. The reason for doing this is largely historical and relates to a time not so long ago when computers were not readily available, and so the equation was simplified making it easier to integrate or plot by hand on graph paper.</p>
+<section id="i-example-gibbs-helmholtz-eqn">
+<h3><strong>( i )  Example, Gibbs-Helmholtz eqn.</strong><a class="headerlink" href="#i-example-gibbs-helmholtz-eqn" title="Permalink to this headline">#</a></h3>
 <p>To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation <span class="math notranslate nohighlight">\(dG = Vdp - SdT\)</span>. At constant pressure <span class="math notranslate nohighlight">\(dp = 0\)</span>, and taking the derivative gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial G}{\partial T} \right)_p=-S\]</div>
@@ -1937,6 +1990,9 @@ title="Print to PDF"
 <p>So far, this is what we have done several times in one form or another. The next step is to find the derivative with respect to <span class="math notranslate nohighlight">\(1/T\)</span>. The best way to proceed is to recast the equation with substitution, for example, <span class="math notranslate nohighlight">\(u = 1/T\)</span> makes <span class="math notranslate nohighlight">\(\displaystyle du = −dT/T^2\)</span>. Substituting for <span class="math notranslate nohighlight">\(dT\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle -\frac{1}{T^2}\frac{d}{du}\left(\frac{\Delta G}{T}  \right)=-\frac{\Delta H}{T^2}\)</span>, therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d(\Delta G/T)}{d(1/T)}=\Delta H\]</div>
+</section>
+<section id="ii-example-van-t-hoff-isotherm">
+<h3><strong>(ii) Example, van’t Hoff isotherm</strong><a class="headerlink" href="#ii-example-van-t-hoff-isotherm" title="Permalink to this headline">#</a></h3>
 <p>A second commonly met equation is the van’t Hoff isotherm</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\partial \ln(K_p)}{\partial T}=\frac{\Delta H^\text{o}}{RT^2}\]</div>
@@ -1944,6 +2000,23 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d\ln(K_p)}{d(1/T)}=-\frac{\Delta H^{\text{o}}}{R}\]</div>
 <p>Therefore, a plot of the log of the equilibrium constant vs reciprocal temperature is a horizontal line of intercept <span class="math notranslate nohighlight">\(-\Delta H^{\text{o}}/R\)</span>. If the line is not constant, but sloping or varying, then <span class="math notranslate nohighlight">\(\Delta H^{\text{o}}\)</span> depends on temperature.</p>
+</section>
+<section id="iii-example-found-in-euler-lagrange-eqns">
+<h3><strong>(iii) Example found in Euler-Lagrange eqns.</strong><a class="headerlink" href="#iii-example-found-in-euler-lagrange-eqns" title="Permalink to this headline">#</a></h3>
+<p>In the study of mechanics, i.e. the motion of the pendulum, and of planets etc, the Euler-Lagrange equation is of considerable utility as demonstrated in section 6 of this chapter (Calculus of Variations). This equation has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x}-\frac{\partial L}{\partial x}=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the Lagrangian (see section 6) but notice the the derivative is with respect to <span class="math notranslate nohighlight">\(\dot x\)</span>. In mechanics a dot is used by convention to mean a time derivative, i.e. <span class="math notranslate nohighlight">\(\dot x=dx/dt\)</span>; it takes a bit of getting used to. So how do we differentiate using <span class="math notranslate nohighlight">\(\dot x\)</span>?. In fact it is simple but easy to get confused. We imagine that <span class="math notranslate nohighlight">\(\dot x\)</span> is simply <span class="math notranslate nohighlight">\(x\)</span> and use the normal rules of differentiation. Thus if</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L=\frac{1}{2}m(\dot x^2+\dot y^2)\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial L}{\partial \dot x} = m\dot x\]</div>
+<p>and taking the time derivative</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x}=m\ddot x\]</div>
+<p>which is the second derivative if <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(d^2x/dt^2\)</span>.</p>
+</section>
 </section>
 <section id="implicit-differentiation">
 <h2>4.7 Implicit differentiation<a class="headerlink" href="#implicit-differentiation" title="Permalink to this headline">#</a></h2>

@@ -57,57 +57,70 @@ R*v                  # rotates about zero.  Unlike numpy * is matrix rotation
 # ![Drawing](matrices-fig30.png)
 # 
 # Figure 30. Rotating a line or vector (shown as an arrow) by $60^{\text{o}}\equiv\pi/3$ clockwise about the origin.
-# 
 # _____
 # 
 # To rotate in three directions, three $3 \times 3$ matrices are needed because rotation about each axis can be performed separately. By multiplication we can combine these into a single matrix, but the elements are complicated and it is easier to use them separately as each has the simple sine/cosine pattern similar to equation 11. Next, the axes and rotation angles have to be defined; however, different authors use different labelling systems therefore when doing three-dimensional rotations it is important to notice how the axes are defined. It does not matter which labelling you use as long as you are consistent and know what they are. We use the Euler angles defined in the same manner as Goldstein (1980), the first rotation is anticlockwise looking down the z-axis, the next two rotations are anti-clockwise about the new axes B then C that are formed as shown in Figure 31. The original axes are indicated in the figure.
-# 
-# The first rotation is around the axis $A$ though angle $\varphi$. The matrix is
-# 
-# $$\displaystyle \qquad\qquad\begin {bmatrix} \cos(\varphi) &\sin(\varphi) & 0 \\ -\sin(\varphi) & \cos(\varphi) \\ 0 & 0 & 1 \end{bmatrix} \qquad\qquad\qquad\qquad\text{(13)}$$
 # 
 # ![Drawing](matrices-fig31.png)
 # 
 # Figure 31. Ordering of rotations. (Figure based on Goldstein 1980, chapter 4)
 # _____
 # 
+# ### **Three rotation matrices**
+# 
+# The first rotation is around the axis $A$ though angle $\varphi$. The matrix is
+# 
+# $$\displaystyle \qquad\qquad A(\varphi)=\begin {bmatrix} \cos(\varphi) &\sin(\varphi) & 0 \\ -\sin(\varphi) & \cos(\varphi) \\ 0 & 0 & 1 \end{bmatrix} \qquad\qquad\qquad\qquad\text{(13)}$$
+# 
 # The second is round the axis labelled $B$ and is by $\theta$ also shown in Figure 31. The matrix is
 # 
-# $$\displaystyle \qquad\qquad B(\theta)=\begin {bmatrix} 1 & 0 & 0\\ 0 &\cos(\varphi) &\sin(\varphi)  \\ 0 &-\sin(\varphi) & \cos(\varphi)  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(14)}$$
+# $$\displaystyle \qquad\qquad B(\theta)=\begin {bmatrix} 1 & 0 & 0\\ 0 &\cos(\theta) &\sin(\theta)  \\ 0 &-\sin(\theta) & \cos(\theta)  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(14)}$$
 # 
 # The final rotation by angle $\psi$ is about the axis labelled $C$, giving
 # 
-# $$\displaystyle \qquad\qquad C(\psi)=\begin {bmatrix} 1 & 0 & 0\\ 0 &\cos(\varphi) &\sin(\varphi)  \\ 0 &-\sin(\varphi) & \cos(\varphi)  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(15)}$$
-# 
-# and the full rotation matrix is the triple multiplication $\pmb{R} = \pmb{ABC}$.
+# $$\displaystyle \qquad\qquad C(\psi)=\begin {bmatrix} \cos(\psi) &\sin(\psi) & 0 \\ -\sin(\psi) & \cos(\psi) \\ 0 & 0 & 1 \end{bmatrix} \qquad\qquad\qquad\qquad\text{(15)}$$
 # 
 # A point $(x, y, z)$ whose coordinates are defined by a column matrix after anticlockwise rotation by $\psi$, then $\theta$, and then $\varphi$ radians is now at
 # 
 # $$\displaystyle \qquad\qquad C(\psi)=\begin {bmatrix} x_R \\ y_R  \\ z_R  \end{bmatrix} = A(\psi)B(\theta)C(\varphi)\begin {bmatrix} x_1\\ y_1  \\ z_1  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(16)}$$
 # 
-# and this is just about all you need to know about rotating molecules!
+# and the full rotation matrix is the triple multiplication $\pmb{R} = \pmb{ABC}$.
 # 
-# An algorithm in Python using rotation matrices to rotate a molecules image starts by defining the coordinates, in this example of ethanol. These coordinates are
+# ### **Notes**
+# 
+# **(i)** Keep in mind the order of matrix multiplication because it is not commutative thus the order of multiplying matters, i.e. $\pmb{AB} \ne \pmb{BA}$. A real life example is flying an aeroplane. First rotate in pitch, nose up by $45^\text{o}$. Pitch is always up or down with respect to the plane containing the fuselage and wings. Next roll $90^\text{o}$ to the right and now you will be in a different altitude than if you first rolled by $90^\text{o}$ then pitched up by $45^\text{o}$. Matrix multiplication is associative which means that a single matrix can be used for two or more rotations for example rotation through the angles $\varphi$ then $\theta$ is 
+# 
+# $$\displaystyle \qquad\qquad \begin{align}A(\varphi)B(\theta)&=\begin {bmatrix} \cos(\varphi) &\sin(\varphi) & 0 \\ -\sin(\varphi) & \cos(\varphi) \\ 0 & 0 & 1 \end{bmatrix}\begin {bmatrix} 1 & 0 & 0\\ 0 &\cos(\theta) &\sin(\theta)  \\ 0 &-\sin(\theta) & \cos(\theta)  \end{bmatrix} \\&=\begin {bmatrix} \cos(\varphi) &\sin(\varphi)\cos(\theta) & \sin(\varphi)\sin(\theta) \\ -\sin(\theta) & \cos(\varphi)\cos(\theta)&\cos(\varphi)\sin(\theta) \\ 0 &  -\sin(\theta) &\cos(\theta) \end{bmatrix}\end{align}$$
+# 
+# and  taking the angles in the opposite order gives a different result viz,
+# 
+# $$\displaystyle B(\theta)A(\varphi) =\begin {bmatrix} \cos(\varphi) &\sin(\varphi) & 0 \\ -\sin(\varphi) \cos(\theta) & \cos(\varphi)\cos(\theta)&\sin(\theta) \\  \sin(\varphi)\sin(\theta) &-\cos(\varphi)\sin(\theta) & \cos(\theta) \end{bmatrix}$$
+# 
+# **(ii)** Finally remember to move coordinates to the centre of geometry and rotate about this then move the molecule back to its position. If this is not done the coordinates are moved on an arc about zero and will not be what you wanted to do. 
+# 
+# ### **Example calculation**
+# 
+# This algorithm using rotation matrices to rotate a molecules coordinates and hence image starts by defining the coordinates, in this example of ethanol. These are
 # 
 # $$\displaystyle \begin{array}{lll}\\
-# C1= \begin{bmatrix} -0.968& -0.008& -0.167\end{bmatrix} & \text{carbon in CH2OH} \\
-# Ox= \begin{bmatrix} -0.953& 1.395 & -0.142 \end{bmatrix} & \text{O atom}  \\
-# H1 =\begin{bmatrix}  0.094& -0.344& -0.200 \end{bmatrix} &\text{H on C1}\\
-# C2= \begin{bmatrix} -1.683& -0.523& 1.084 \end{bmatrix} &\text{Carbon in CH3}\\ 
-# H2= \begin{bmatrix} -1.490& -0.319& -1.102 \end{bmatrix} &\text{H on C1}\\
-# H3= \begin{bmatrix} -1.842& 1.688 & -0.250 \end{bmatrix} &\text{H on O atom}\\
-# H4= \begin{bmatrix} -1.698& -1.638& 1.101 \end{bmatrix} &\text{H on C2}\\
-# H5= \begin{bmatrix} -1.171& -0.174& 2.011 \end{bmatrix} &\text{H on C2}\\
-# H6= \begin{bmatrix} -2.738& -0.167& 1.117 \end{bmatrix} &\text{H on C2}\\ \end{array} $$
+# \mathrm{C_1}= \begin{bmatrix} -0.968& -0.008 & -0.167 \end{bmatrix} &\text{carbon in CH2OH} \\
+# \mathrm{Ox} = \begin{bmatrix} -0.953&  1.395 & -0.142 \end{bmatrix} &\text{O atom}  \\
+# \mathrm{H_1}= \begin{bmatrix}  0.094& -0.344 & -0.200 \end{bmatrix} &\text{H on C1}\\
+# \mathrm{C_2}= \begin{bmatrix} -1.683& -0.523 & 1.084  \end{bmatrix} &\text{Carbon in CH3}\\ 
+# \mathrm{H_2}= \begin{bmatrix} -1.490& -0.319 & -1.102 \end{bmatrix} &\text{H on C1}\\
+# \mathrm{H_3}= \begin{bmatrix} -1.842&  1.688 & -0.250 \end{bmatrix} &\text{H on O atom}\\
+# \mathrm{H_4}= \begin{bmatrix} -1.698& -1.638 & 1.101  \end{bmatrix} &\text{H on C2}\\
+# \mathrm{H_5}= \begin{bmatrix} -1.171& -0.174 & 2.011  \end{bmatrix} &\text{H on C2}\\
+# \mathrm{H_6}= \begin{bmatrix} -2.738& -0.167 & 1.117  \end{bmatrix} &\text{H on C2}\\ \end{array} $$
 # 
-# The input to the procedure must have the three rotation angles and the coordinates of the molecule. A graph of the molecule will be plotted in the usual chemical way after rotation. The labelled structure is shown in Figure 32.
+# The input to the procedure must have the three rotation angles and the coordinates of the molecule. A graph of the molecule will be plotted in the usual way after rotation. The labelled structure is shown in Figure 32.
 # 
 # ![Drawing](matrices-fig32.png)
 # 
 # Figure 32 Ethanol, with H atoms replaced by their labels.
 # _______
 # 
-# If a molecule is plotted only as points showing where the atoms are, it will usually be impossible to decide what its structure is; therefore bonds must be drawn, and this means joining up the atoms in a sensible way with lines. A 'connectivity' list showing which atoms are joined to which has to be made, and this might be done automatically by examining the distances between atoms and deciding which atoms are connected to which depending upon their separation. Ethanol is sufficiently small that the list of atoms and lines between them can be made directly so that the 'pen' is not lifted from the 'paper' when drawing the structure. Clearly, this means going over the same bonds twice and back and forth between some atoms many times. There are several ways of doing this depending on where you start, but the list of atoms below will draw the molecule. Notice how some atoms have to be included more than once.
+# If a molecule is plotted only as points showing where the atoms are, it will usually be impossible to decide what its structure is therefore bonds must be drawn, and this means joining up the atoms in a sensible way with lines. A 'connectivity' list showing which atoms are joined to which has to be made, and this might be done automatically by examining the distances between atoms and deciding which atoms are connected to which depending upon their separation. Ethanol is sufficiently small that the list of atoms and lines between them can be made directly so that the 'pen' is not lifted from the 'paper' when drawing the structure. Clearly, this means going over the same bonds twice and back and forth between some atoms many times. There are several ways of doing this depending on where you start, but the list of atoms below will draw the molecule. Notice how some atoms have to be included more than once.
 
 # In[3]:
 
@@ -139,7 +152,7 @@ def plot_mol(M,ax):
     n = len(M)
     for i in range(n):
         col='blue'
-        if i == 1 : col='red'
+        if i == 1   : col='red'
         if i == n-1 : col='orange'
         ax.scatter( M[i,0], M[i,1], M[i,2], s = 200, marker = 'o',color=col )
         if i < n-1:
@@ -188,7 +201,7 @@ arot = rotate_molecule( psi, theta, phi) # calc rotation matrix
 
 new =[mol]             # copy array
 
-new = mol @ arot       # rotate coordinates    
+new = mol @ arot       # rotate coordinates.  @ is matrix rotation operator  
     
 #remove_grid(ax0)      # remove grid when plotting and add labels
 #remove_grid(ax1)
@@ -294,5 +307,5 @@ simplify(C)
 
 fxx = diff(C[0],r)*cos(theta)-diff(C[0],theta)*sin(theta)/r     # second order derivatives
 fyy = diff(C[1],r)*sin(theta)+diff(C[1],theta)*cos(theta)/r
-simplify(fxx+fyy )
+simplify(fxx + fyy )
 

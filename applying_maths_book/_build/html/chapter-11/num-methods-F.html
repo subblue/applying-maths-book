@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="num-methods-C.html">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1638,7 +1638,6 @@ title="Print to PDF"
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
-
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1659,7 +1658,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>Suppose the equation we want to solve is the one examined before in Section 5.2,</p>
 <div class="math notranslate nohighlight">
-\[ \frac{d^y}{dx^2}+3\frac{dy}{dx}+5y=0   \qquad\tag{51}\]</div>
+\[ \frac{d^2y}{dx^2}+3\frac{dy}{dx}+5y=0   \qquad\tag{51}\]</div>
 <p>but now with boundary conditions <span class="math notranslate nohighlight">\(y_0 = 1\)</span> and <span class="math notranslate nohighlight">\(y_2 = 0\)</span>. This last condition means that the value of <span class="math notranslate nohighlight">\(y\)</span> is fixed at zero when <span class="math notranslate nohighlight">\(x = 2\)</span>. Because this equation can only be solved with initial conditions, the condition <span class="math notranslate nohighlight">\(y_2 = 0\)</span> must be replaced with <span class="math notranslate nohighlight">\(dy/dx |_0 = a\)</span>, and <span class="math notranslate nohighlight">\(a\)</span> must be found so that when the equation is solved, <span class="math notranslate nohighlight">\(y_2 = 0\)</span>. The method to be used is a kind of trial and error techniques called shooting.</p>
 <p>An outline shooting algorithm, using the particular initial conditions <span class="math notranslate nohighlight">\(y_0 = a\)</span> and <span class="math notranslate nohighlight">\(y_2 = b\)</span> is;</p>
 <p><strong>(1)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Set  <span class="math notranslate nohighlight">\(y_0 = a\)</span>.  Guess  initial  <span class="math notranslate nohighlight">\(a, b\)</span></p>
@@ -1909,7 +1908,10 @@ alpha_0 -11.892761
 </div>
 <p>The eigenvalues for two different potentials are shown in Fig. 28. The harmonic oscillator</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\displaystyle V(x) = (k/2)x^2,\; k=20$\\and the double well, \\$$\displaystyle V(x) = x^4 - 13x^2 + 169/4\end{aligned}\end{align} \]</div>
+\[\displaystyle V(x) = (k/2)x^2,\; k=20\]</div>
+<p>and the double well,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V(x) = x^4 - 13x^2 + 169/4\]</div>
 <p>which has a minimum of zero and a barrier height of 42.25. A few eigenvalues for the harmonic potential are listed below, and the agreement between the numerical and exact eigenvalue energy is good to at least five decimal places.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{c c c}\\
@@ -1927,7 +1929,7 @@ n &amp; \text{numerical} &amp; \text{exact}\\
    20  &amp;   91.678788  &amp; 91.678787\\
 \hline
 \end{array}\end{split}\]</div>
-<p>The code used the shooting method with Python/Scipy method ‘odeint’ to integrate the Schroedinger equation. For simplicity the mass and <span class="math notranslate nohighlight">\(\hbar = 1\)</span>. The calculation using atomic units is described in section 10.2.</p>
+<p>The code used the shooting method with Python/SciPy method ‘odeint’ to integrate the Schroedinger equation. For simplicity the mass and <span class="math notranslate nohighlight">\(\hbar = 1\)</span>. The calculation using atomic units is described in section 10.2.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig28.png" /></p>
 <p>Figure 28 Potential energy and eigenvalues. Left the harmonic potential <span class="math notranslate nohighlight">\(V(x) = 10x^2\)</span>. Right The double well potential <span class="math notranslate nohighlight">\(V(x) = x^4 - 13x^2 + 169/4\)</span>.</p>
 <hr class="docutils" />

@@ -400,13 +400,13 @@ plt.show()
 # 
 # ## 8 Autocorrelation and Cross-Correlation
 # 
-# A correlation is a function that measures the similarity of one set of data to another. A cross-correlation is formed if the data are dissimilar, an autocorrelation if there is only one set of data. The data might be a voltage from a detector, it might be an image or residuals from fitting a set of data.  In Fig. 30 part of a noisy sinusoidal curve is shown in black and labelled 1. The second curve (2, red) is displaced only a little from the first and is clearly only slightly different; the third (3, grey) which is displaced by more is clearly different from the first as it is positive at large $x$ when the first curve is negative. The right-hand figure shows the autocorrelation of the curve (1) shown on the left, and as this is an oscillating curve, the autocorrelation also oscillates but eventually reaches zero. The oscillation is a result of the fact that a sinusoidal curve is similar to itself after each period, and the autocorrelation measures this similarity by increasing and decreasing. The autocorrelation is also less noisy that the data because it involves summing or integrating over many data points. 
+# A correlation is a function that measures the similarity of one set of data to another. A cross-correlation is formed if the data are dissimilar, an autocorrelation if there is only one set of data. The data might be a voltage from a detector, it might be an image or residuals from fitting a set of data. In Fig. 30 part of a noisy sinusoidal curve is shown in black and labelled $1$. The second curve ($2$, red) is displaced only a little from the first and is clearly only slightly different; the third ($3$, grey) which is displaced by more is clearly different from the first as it is positive at large $x$ when the first curve is negative. The right-hand figure shows the autocorrelation of curve $1$ shown on the left, and as this is an oscillating curve, the autocorrelation also oscillates but eventually reaches zero. The oscillation is a result of the fact that a sinusoidal curve is similar to itself after each period, and the autocorrelation measures this similarity by increasing and decreasing with delay between signals. The zeros in the autocorrelation for a pure sine wave start at half a period (or wavelength) and repeat at each further period, the fourier transform of the autocorrelation would therefore have a single frequency. If several sine-waves are superimposed then the fourier transform produces the sine-wave frequencies, and this fact is used in FTIR spectroscopy, see section 8.7. The autocorrelation is always less noisy that the data because it involves summing or integrating over many data points. 
 # 
 # A random signal with an average of zero will have an autocorrelation that averages to zero at all points except the first, whereas the autocorrelation of an exponential and similar functions will be not be zero, but decay away in some manner. The autocorrelation is a likened to a measure of the 'memory' a function has, that is, how similar one part of the data is with an earlier or later part. A zero average random signal has no memory because it is random, and each point is independent of its predecessor; this is not true of any other signal. The correlation is therefore a process by which we can compare patterns in data. In data analysis, the residuals, which are the difference between the data and a fitted function, should be random if the fit is correct; the shape of the autocorrelation is therefore a way of testing this.
 # 
 # ![Drawing](fourier-fig30.png)
 # 
-# Figure 30. A sketch showing the first $120$ points of a set of noisy data of $250$ points. The data is still somewhat similar to itself when displaced by only a few points but much less so, when displaced by many, dashed grey curve. The autocorrelation of all the data is shown on the right. Notice also how as autocorrelation integrates the data, the noise is reduced.
+# Figure 30. A sketch showing the first $150$ points of a set of noisy data of $250$ points. The data is still somewhat similar to itself when displaced by only a few points but much less so, when displaced by many, dashed grey curve. The autocorrelation of all the data is shown on the right. Notice also how as the autocorrelation integrates the data, the noise is reduced. The two red circles show the size of the autocorrelation evaluated at delays shown by positions $2$ and $3$ in the left-hand plot.
 # _________
 # 
 # ##  8.1 Applications 
@@ -798,31 +798,31 @@ plt.show()
 # 
 # Figure 34. Left: Power spectra (or spectral density) vs. frequency for a signal that has an exponential autocorrelation function, the decay lifetimes of the exponentials are from $1 \to 100$ ps. The density of the fluctuation in the noise is almost constant at lower frequencies and this is called 'white noise'. 
 
-# ## 8.7 FTIR supplement
+# ## 8.7 FTIR supplement 
 # 
-# An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and a single detector is used. This is unlike the situation in a uv-vis spectrophotometer where the light is split and passes separately through a sample and a reference cell and the signals from two detectors compared. 
+# An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and are combined on a single detector. This is quite unlike the situation in a uv-vis spectrophotometer where the light is split into two parts which then pass separately through a sample and a reference cell and the signals from two detectors compared. 
 # 
-# Recall that the FTIR instrument is a Michelson interferometer in which the input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter, and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. If $d$ is the difference in distance travelled by the beams they arrive at the detector at times separated by a delay of $\tau=d/c$ seconds. The detector measures the _intensity_ $I$ which is the complex square of the amplitude of any wave 
+# Recall that the FTIR instrument is a Michelson interferometer. The input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter (see fig 12), and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. These fringes are the oscillating autocorrelation signal produced by several sinusoidal waves, such as an i.r. electromagnetic waves, is shown in fig 30. If $d$ is the difference in distance travelled by the beams they arrive at the detector at times separated by a time delay of $\tau=d/c$ seconds. The detector measures the *intensity* $I$ which is the complex square of the amplitude $f$ of a wave, where $f$ is the electric field $E$,
 # 
-# $$\displaystyle f^*f = |f|^2$$
+# $$\displaystyle I= f^*f = |f|^2$$
 # 
-# If the i.r. radiation is hypothetically monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally varying signal as the pathlength $\tau$ varies because the i.r. waves become in and out of phase with one another.
+# If the i.r. radiation is monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally varying signal as the path-length $\tau$ varies because the i.r. waves become in and out of phase with one another, see fig 30.
 # 
 # The overall equation relating the autocorrelation of the radiation's electric field $f$ and at time delays $\tau$ is, via the Weiner-Kinchin equation, where $F(\cdots)$ is the fourier transform
 # 
-# $$\displaystyle F\bigg(\int_{-\infty}^\infty f(t)f^*(t+\tau)\bigg)= |F(f(t)|^2=|f(\omega|^2=spectrum $$
+# $$\displaystyle F\bigg(\int_{-\infty}^\infty f^*(t)f(t+\tau)\bigg)= |F(f(t))|^2=|f(\omega)|^2=spectrum $$
 # 
-# in other words the fourier transform of the autocorrelation is the spectrum. The i.r detector is a 'square-law' detector which means that the intensity $f^*(\omega)f(\omega)$ is detected rather than the field $f(\omega)$. A typical detector material would consist of HgCdTe. 
+# in other words the fourier transform of the autocorrelation is the spectrum. The i.r. detector is a 'Square-Law' detector which means that the *intensity* $f^*(\omega)f(\omega)$ is detected rather than the field $f(\omega)$. A typical i.r. detector material would consist of HgCdTe. 
 # 
-# To analyse what the detector measures we consider what happens at each delay. Each position of the movable mirror causes a time delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$.  The _amplitude_ or field of the i.r. radiation is 
+# To analyse what the detector measures we consider what happens at each delay. Each position of the movable mirror causes a time delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$. The *amplitude* or field of the i.r. radiation is, with constant $a$, 
 # 
 # $$\displaystyle f=ae^{i\omega_0 t}$$
 # 
 # at frequency $\omega_0$ ($\omega= 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
 # 
-# $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \qquad\tag{46a}$$
+# $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \tag{46a}$$
 # 
-# to form the autocorrelation. The constant $\beta$ is the product of reflectivity and transmission of the beam splitter. The signal is averaged at each time delay $\tau$ for a small time $t_m$, say a second. Expanding out (and ignoring limits for clarity) gives
+# to form the autocorrelation. The constant $\beta$ is the product of reflectivity and transmission of the beam splitter and constant $a$. The signal is averaged at each time delay $\tau$ for a small time $t_m$, say a second. Expanding out (and ignoring limits for clarity) gives
 # 
 # $$\displaystyle \begin{align} \frac{I(\tau)}{\beta} &= \int\; \Big(f^*(t)+f^*(t+\tau)\Big) \Big( f(t)+f(t+\tau) \Big)\;dt\\&=\int f^*(t)f(t)dt+\int f^*(t)f(t+\tau)dt +\int f(t)f^*(t+\tau)dt +\int f^*(t+\tau)f(t+\tau)dt\end{align}$$
 # 
@@ -830,7 +830,7 @@ plt.show()
 # 
 # $$\displaystyle \int_0^{t_m} f^*(t+\tau)f(t+\tau)dt=a^2\int_0^{t_m} e^{-i\omega_0((t+\tau)}e^{+i\omega_0((t+\tau)} dt=a^2t_m$$
 # 
-# where $a$ is a constant. The other integrals are autocorrelations
+# where again $a$ is a constant. The other integrals are autocorrelations
 # 
 # $$\displaystyle \begin{align}\int_0^{t_m} f^*(t)f(t+\tau)+ f(t)f^*(t+\tau) dt &= a^2\int_0^{t_m}e^{-i\omega_0 t}e^{i\omega_0 (t+\tau)}+e^{+i\omega_0 t}e^{-i\omega_0 (t+\tau)}dt\\ &=a^2t_m (e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})\end{align}$$
 #  
@@ -864,7 +864,7 @@ plt.show()
 # 
 # At very long times there can no longer be any correlation between the two arms and the signal remaining is due to that of the two separate arms, the constant terms from eqn 46a, making the long time value $I(0)/2$.  
 # 
-# So far we have tried to explain how the fourier transfer picks out transition _frequencies_ but their _magnitudes_ are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the _phase of the combined wave_ (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude $a_i$ of a wave of frequency $\omega_i$ contributes to the sum 
+# So far we have tried to explain how the fourier transfer picks out transition *frequencies* but their *magnitudes* are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the *phase of the combined wave* (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude $a_i$ of a wave of frequency $\omega_i$ contributes to the sum 
 # 
 # $$\displaystyle \sum_i a_ie^{i\omega_i \tau}\equiv a_0\sum_i e^{i\omega_i \tau+i\varphi_i}$$
 # 
@@ -872,7 +872,7 @@ plt.show()
 # 
 # ![Drawing](fourier-fig34a.png)
 # 
-# Figure 34a. Left column shows individual amplitudes of the waves of frequency $\omega_0, \omega_1$. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After A. Lipson 2011.
+# Figure 34a. Left column shows individual amplitudes of the waves of frequency $\omega_0, \omega_1$. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After Lipson & Lipson 2011.
 # ______
 # 
 # ## 8.8 Spectral resolution

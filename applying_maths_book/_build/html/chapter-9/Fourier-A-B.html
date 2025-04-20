@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-C.html">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1746,14 +1746,14 @@ title="Print to PDF"
 <p>The Taylor and Maclaurin series reconstruct functions as an infinite series in the powers <span class="math notranslate nohighlight">\(x^n\)</span>, and the coefficients needed to do this are the derivatives of the function. These series have rather tight restrictions placed upon them; the function must be differentiable <span class="math notranslate nohighlight">\(n\)</span> times over and the remainder must approach zero. These are described in Chapter 5. In a Fourier series, the expansion is performed instead, as trigonometric series in sines and cosines, with two sets of coefficients, <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, to describe the <span class="math notranslate nohighlight">\(n^\text{th}\)</span> term, and which are evaluated by integration. The series formally extends to infinity, but in practice, at most only a few tens of terms are needed to replicate most functions to an acceptable level of approximation. The advantage of using a Fourier rather than a Taylor/Maclaurin series is that a wide class of functions can be described by the series, including discontinuous ones. However, by their very nature, Fourier series can only represent <em>periodic functions</em>, and this must not be forgotten. Periodic means that the function repeats itself; the repeat interval is normally taken to be <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(+\pi\)</span> but can be extended to the range <span class="math notranslate nohighlight">\(-L\)</span> to <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(L\)</span> can even be made infinite.</p>
 <p>To illustrate that it is possible to make an arbitrary shaped function by adding a number of sine and cosine waves, four such waves are shown in Fig.1. It is possible to imagine, without any difficulty, that waveforms that are more complex can be formed by using more sine or cosine terms. The lowest and most complicated waveform is simply the sum of the individual waves, and repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. This waveform could be the signal that is measured on an oscilloscope or spectrometer and recorded on a computer. It might alternatively, be part of an image that is formed from adjacent columns of different waveforms. Periodic components present in a signal represent information in the waveform or image can be retrieved by performing a Fourier transform. This unravelling process is discussed later on but now the Fourier series is considered.</p>
 <p><img alt="Display" src="../_images/fourier-fig1.png" /></p>
-<p>Figure 1. A complex and <em>periodic</em> waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function <em>exactly</em> when an infinite number of terms are included in the summation. The phase and period shown with arrows relate only to the cosine (red waveform) with a period of <span class="math notranslate nohighlight">\(2\pi\)</span>. The phase is the distance the peak of the waveform is when measured from zero, and the amplitude the size of the wave at its maximum, measured from zero displacement which is the thin horizontal line.</p>
+<p>Figure 1. A complex and <em>periodic</em> waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function <em>exactly</em> when an infinite number of terms are included in the summation. The phase and period shown with arrows relate only to the cosine (red waveform) with a period of <span class="math notranslate nohighlight">\(2\pi\)</span>. The wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> is the distance when <span class="math notranslate nohighlight">\(x/\pi=2\)</span>. The phase is the distance the peak of the waveform is at when measured from <span class="math notranslate nohighlight">\(x=0\)</span>, and the amplitude the size of the wave at its maximum, measured from zero displacement shown as the thin horizontal line.</p>
 </section>
 <hr class="docutils" />
 <section id="the-fourier-series">
 <h2>1.2 The Fourier Series<a class="headerlink" href="#the-fourier-series" title="Permalink to this headline">#</a></h2>
 <p>A Fourier series aims to reconstruct a function, such as a waveform, using the weighted sums of sine and cosine functions or their exponential representations. The great importance and usefulness of the Fourier series is that they represents the best fit, in a least-squares way, to a function <span class="math notranslate nohighlight">\(f(x)\)</span> because</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int_{-L}^{L}[f(x)-g(x)]^2dx\]</div>
+\[\displaystyle \int_{-L}^{L}\big( f(x)-g(x)\big)^2dx\]</div>
 <p>is minimized when <span class="math notranslate nohighlight">\(g(x)\)</span> is the Fourier series expansion of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <p>Because the Fourier series can extend to infinity, many more sine and cosine terms can be used to exactly reproduce a waveform, such as that shown in Fig. 1, than were used to produce it in the first place. The Fourier series cannot somehow magically pick out just those sine and cosine waves used to make the original function, therefore very many terms each with a unique frequency are needed to faithfully reconstruct a waveform.</p>
 <p>If the waveform shown in Fig. 1 were truncated so that it was zero outside <span class="math notranslate nohighlight">\(x = \pm \pi\)</span>, for example, then its Fourier series would have to match this new waveform which suddenly becomes zero and do so a series must contain a sufficiently large number terms  not only to cancel out to zero outside the range <span class="math notranslate nohighlight">\(x = \pm \pi\)</span>, but also to reproduce the function inside the range.</p>
@@ -1996,7 +1996,7 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <p>where <span class="math notranslate nohighlight">\(n = 1, 2, \cdots\)</span>, and there is a similar set for the cosines with <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\ge\)</span> 0. Any desired accuracy can be achieved, provided that <span class="math notranslate nohighlight">\(N\)</span> is large enough. If the basis set functions are also normalized, the set is <em>orthonormal</em> rather than just orthogonal.</p>
 <p>Basis sets often seem rather abstract because we do not often need to use them explicitly. For example, although not normally described in this way, the exponential function</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle e^x = 1 + x + x^2/2! + x^3/3! \cdots \]</div>
+\[\displaystyle e^x = \frac{e^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} \cdots=1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} \cdots \]</div>
 <p>is, by contrast, an expansion in the basis set of <span class="math notranslate nohighlight">\(x^n\)</span> and the coefficients are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{0!}, \frac{1}{1!}, \frac{1}{2!},\frac{1}{3!} \cdots \frac{1}{n!} \cdots\]</div>

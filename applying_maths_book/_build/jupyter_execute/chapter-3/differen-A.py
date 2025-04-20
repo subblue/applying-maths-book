@@ -77,10 +77,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The derivative can be written in a number of different ways besides $\displaystyle \frac{dy}{dx}$, although this is by far the most common. The following forms are equivalent:
 # 
-# $$\displaystyle \qquad\qquad\begin{align}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
+# $$\displaystyle \begin{aligned}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
 # & \equiv \frac{df}{dx}\equiv \frac{df(x)}{dx}\equiv \frac{d}{dx}f(x)\\
 # &\equiv y' \equiv f(x)' \equiv f' \equiv \dot f\\
-# &\equiv Dy \equiv Df \equiv Df(x) \end{align}\qquad\qquad\text{(3)}$$
+# &\equiv Dy \equiv Df \equiv Df(x) \end{aligned}\qquad\qquad\qquad\text{(3)}$$
 # 
 # The derivative $df/dx$ is the _gradient of the function_ $f(x)$ _at point_ $x$. The gradient is also the tangent to the curve at the point $x$; a line at right angles to the tangent is called the _normal_ to the curve, Fig. 3.
 # 

@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-C.html">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1641,7 +1641,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0850
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0650
 </pre></div>
 </div>
 </div>
@@ -1695,7 +1695,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0864 +/-   0.0079
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0800 +/-   0.0080
 </pre></div>
 </div>
 </div>
@@ -1719,7 +1719,8 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^te^{-kx}dx=\frac{1-e^{-kt}}{k}\]</div>
 <p>The second step is to normalize the distribution over the range of the integration, which is the integral</p>
-<p><span class="math notranslate nohighlight">\(\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}\]</div>
 <p>Finally, the normalized cumulative distribution is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1-e^{-kt}}{1-e^{-kb}}\]</div>
@@ -1754,7 +1755,7 @@ title="Print to PDF"
 <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">b</span><span class="p">))</span><span class="o">/</span><span class="n">k</span>         <span class="c1"># normalisation </span>
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>                                     <span class="c1"># summation</span>
 <span class="n">s2</span><span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">20000</span>                                   <span class="c1"># number of trials</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">50000</span>                                   <span class="c1"># number of trials</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">k</span>  <span class="c1"># get random value</span>
     <span class="n">Q</span> <span class="o">=</span> <span class="n">N</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">p</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>                         <span class="c1"># get sampled  values eqn 7</span>
@@ -1770,12 +1771,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral =  0.881007 +/- 0.001886 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral =  0.880592 +/- 0.001193 
 </pre></div>
 </div>
 </div>
 </div>
-<p>The result is that the integral typically has the value <span class="math notranslate nohighlight">\(0.882\pm 0.002\)</span>. The same integral, calculated by the mean-value method, had an error ± 0.01, which is a considerably larger error for the same number of samples. The accurate result is <span class="math notranslate nohighlight">\(0.88208\)</span>.</p>
+<p>The result is that the integral typically has the value <span class="math notranslate nohighlight">\(0.882\pm 0.001\)</span>. The same integral, calculated by the mean-value method, had an error ± 0.01, which is a considerably larger error for the same number of samples. The accurate result is <span class="math notranslate nohighlight">\(0.88208\)</span>.</p>
 </section>
 <section id="limits-tending-to-infinity">
 <h2>1.4 Limits tending to infinity<a class="headerlink" href="#limits-tending-to-infinity" title="Permalink to this headline">#</a></h2>

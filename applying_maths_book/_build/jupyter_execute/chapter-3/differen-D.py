@@ -24,9 +24,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The method when one function is a function of another is to
 # 
-# $\qquad\qquad$ differentiate the main or 'outside function',
-# 
-# $\qquad\qquad$ then multiply this by the differential of the inside function.
+# >**differentiate the main or 'outside function', then multiply this by the differential of the inside function.**
 # 
 # This simple but powerful method is most easily explained by examples; (i) to (iv) below are typical. The general formula is given in the next section. To differentiate the functions, use the table or various sections above to remind you of the rules. 
 # 
@@ -90,8 +88,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When there are products or ratios of functions, differentiation is done in two steps;
 # 
-# $\qquad$ First, differentiate one function leaving the other alone,\
-# $\qquad$ then add to this the result of differentiating the second, leaving the first alone.
+# >**Differentiate one function leaving the other alone.**
+# 
+# >**Add to this the result of differentiating the second function, leaving the first alone.**
 # 
 # An example should make this clear. To differentiate $\displaystyle y = (x^2 + a)(x^3 + x)$ let the first function be $(x^2 + a)$ and differentiate this to $2x$ and multiply by the second function $(x^3 + x)$, then do this the other way round and add the two terms together.
 # 
@@ -147,6 +146,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Sometimes in thermodynamics, but also elsewhere, equations are put in the form $\displaystyle \frac{d}{d(1/x)}$ rather than $\displaystyle \frac{d}{dx}$. For example, at constant pressure the Gibbs - Helmholtz equation, the derivative of the change of (Gibbs) free energy $\Delta G$ with temperature, can be written as
 # $\displaystyle \frac{d(\Delta G/T)}{d(1/T)}$ rather than $\displaystyle \frac{d\Delta G}{dT}$. The reason for doing this is largely historical and relates to a time not so long ago when computers were not readily available, and so the equation was simplified making it easier to integrate or plot by hand on graph paper. 
 # 
+# ### **( i )  Example, Gibbs-Helmholtz eqn.** 
 # To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation $dG = Vdp - SdT$. At constant pressure $dp = 0$, and taking the derivative gives 
 # 
 # $$\displaystyle \left( \frac{\partial G}{\partial T} \right)_p=-S$$
@@ -171,6 +171,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  \frac{d(\Delta G/T)}{d(1/T)}=\Delta H$$
 # 
+# ### **(ii) Example, van't Hoff isotherm**
+# 
 # A second commonly met equation is the van't Hoff isotherm
 # 
 # $$\displaystyle  \frac{\partial \ln(K_p)}{\partial T}=\frac{\Delta H^\text{o}}{RT^2}$$
@@ -180,6 +182,26 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle  \frac{d\ln(K_p)}{d(1/T)}=-\frac{\Delta H^{\text{o}}}{R}$$
 # 
 # Therefore, a plot of the log of the equilibrium constant vs reciprocal temperature is a horizontal line of intercept $-\Delta H^{\text{o}}/R$. If the line is not constant, but sloping or varying, then $\Delta H^{\text{o}}$ depends on temperature.
+# 
+# ### **(iii) Example found in Euler-Lagrange eqns.**
+# 
+# In the study of mechanics, i.e. the motion of the pendulum, and of planets etc, the Euler-Lagrange equation is of considerable utility as demonstrated in section 6 of this chapter (Calculus of Variations). This equation has the form
+# 
+# $$\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x}-\frac{\partial L}{\partial x}=0$$
+# 
+# where $L$ is the Lagrangian (see section 6) but notice the the derivative is with respect to $\dot x$. In mechanics a dot is used by convention to mean a time derivative, i.e. $\dot x=dx/dt$; it takes a bit of getting used to. So how do we differentiate using $\dot x$?. In fact it is simple but easy to get confused. We imagine that $\dot x$ is simply $x$ and use the normal rules of differentiation. Thus if 
+# 
+# $$\displaystyle L=\frac{1}{2}m(\dot x^2+\dot y^2)$$ 
+# 
+# then
+# 
+# $$\displaystyle \frac{\partial L}{\partial \dot x} = m\dot x$$
+# 
+# and taking the time derivative
+# 
+# $$\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x}=m\ddot x$$
+# 
+# which is the second derivative if $x$ or $d^2x/dt^2$.
 # 
 # ## 4.7 Implicit differentiation
 # 

@@ -304,7 +304,7 @@
 # a \propto b & a \text{ is proportional to } b\\
 # a\approx b & a\text{ is approximately equal to }b\\
 # a\sim b & a\text{ is of the order of }b, \text{ or a changes at the same rate as }b\\
-# 373 \overset{\text{^}}= 100\,^\text{o} & \text{Indicates change of units to equivalent value}\\
+# 373\,\text{K}\, {\overset{\text{^}}=}\, 100\,^\text{o}\text{C} & \text{Indicates change of units to equivalent value}\\
 # \pm a & \text{Values are plus and minus }a\\
 # \mp a & \text{Values are minus and plus }a\\
 # a \text{^} b & a\text{ raised to power }b\\

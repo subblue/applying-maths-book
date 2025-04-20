@@ -161,7 +161,7 @@ print('{:8.4f} {:s} {:8.4f}'.format( av_f, '+/-',  sig ) )
 # 
 # The second step is to normalize the distribution over the range of the integration, which is the integral 
 # 
-# $\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}$$
+# $$\displaystyle \int_0^b e^{-kx}dx = \frac{(1 - e^{-kb})}{k}$$
 # 
 # Finally, the normalized cumulative distribution is 
 # 
@@ -214,7 +214,7 @@ c = np.exp(-k*a) - np.exp(-k*b)             # constant in r =Integration/Normali
 N = (np.exp(-k*a) - np.exp(-k*b))/k         # normalisation 
 s = 0.0                                     # summation
 s2= 0.0
-n = 20000                                   # number of trials
+n = 50000                                   # number of trials
 for i in range(n):
     t = -np.log( 1.0-np.random.ranf()*c)/k  # get random value
     Q = N*f(t)/p(t)                         # get sampled  values eqn 7
@@ -228,7 +228,7 @@ std_dev = (np.sqrt((av_f2 - av_f**2)/n))
 print('{:s} {:f}{:s} {:f} '.format( 'integral = ',av_f,' +/-',std_dev ) )
 
 
-# The result is that the integral typically has the value $0.882\pm 0.002$. The same integral, calculated by the mean-value method, had an error ± 0.01, which is a considerably larger error for the same number of samples. The accurate result is $0.88208$.
+# The result is that the integral typically has the value $0.882\pm 0.001$. The same integral, calculated by the mean-value method, had an error ± 0.01, which is a considerably larger error for the same number of samples. The accurate result is $0.88208$.
 # 
 # ## 1.4 Limits tending to infinity
 # 

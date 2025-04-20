@@ -857,7 +857,7 @@ plt.show()
 # 
 # To solve the equation it is far easier to convert it into matrix form. This means calculating all the spatial dimension terms before calculating in time. Its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in $\psi^{j+1}$ and in $\psi^j$ as
 # 
-# $$\displaystyle - \sigma\psi_{k-1}^{j+1}+(1+2\sigma)\psi_k^{j+1}- \sigma\psi_{k+1}^{j+1}+i V_k\psi_k^{j+1}\Delta t = \sigma \psi_{k-1}^{j}+(1-2\sigma)\psi_k^{j}+ \sigma\psi_{k+1}^{j} -i V_k\psi_k^j\Delta t  \qquad\tag{31c}$$
+# $$\displaystyle - \sigma\psi_{k-1}^{j+1}+(1+2\sigma)\psi_k^{j+1}- \sigma\psi_{k+1}^{j+1}+i V_k\psi_k^{j+1}\Delta t = \sigma \psi_{k-1}^{j}+(1-2\sigma)\psi_k^{j}+ \sigma\psi_{k+1}^{j} -i V_k\psi_k^j\Delta t  \qquad\text{31c}$$
 # 
 # where $\sigma=i\Delta t/(2(\Delta x)^2)$. The tri-diagonal form the equations have can be seen in the $k-1,\, k,\,k+1$ terms on either side of the equation. Thus, given the initial wavefunction/wavepacket and the boundary conditions that $\psi\to 0 $ at $x\to \pm \infty$, $\psi$ can be calculated at later times.
 # 
@@ -1091,6 +1091,7 @@ plt.show()
 
 
 # Figure 10 d. The figure above shows the probability $\psi^*\psi$ vs $x$ at different times. The scattering of the wavepacket and its subsequent re-phasing is clear. The $\displaystyle e^{ik_0x}$ term of the wavepacket generates high spatial frequencies which are observed when the wavepacket is dephased at the barrier. Subsequently these reform and a smooth wavepacket is reproduced.  The probability is scaled to the maximum value at any time, the area is the same in each plot as the wavepacket is normalised.  The real part of the wavepacket is show above its envelope. This shows oscillatory behaviour due to the  $e^{ik_0x}$ term. 
+# _____________
 # 
 # ### **(ii) Wavepacket Animation**
 # 

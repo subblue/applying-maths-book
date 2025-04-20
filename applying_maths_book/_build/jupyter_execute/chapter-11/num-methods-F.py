@@ -13,7 +13,6 @@ from scipy.integrate import odeint
 from scipy.optimize import fsolve
 from sympy import *
 init_printing()                      # allows printing of SymPy results in typeset maths format
-
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -38,7 +37,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Suppose the equation we want to solve is the one examined before in Section 5.2,
 # 
-# $$ \frac{d^y}{dx^2}+3\frac{dy}{dx}+5y=0   \qquad\tag{51}$$
+# $$ \frac{d^2y}{dx^2}+3\frac{dy}{dx}+5y=0   \qquad\tag{51}$$
 # 
 # but now with boundary conditions $y_0 = 1$ and $y_2 = 0$. This last condition means that the value of $y$ is fixed at zero when $x = 2$. Because this equation can only be solved with initial conditions, the condition $y_2 = 0$ must be replaced with $dy/dx |_0 = a$, and $a$ must be found so that when the equation is solved, $y_2 = 0$. The method to be used is a kind of trial and error techniques called shooting.
 # 
@@ -308,7 +307,7 @@ for i in range(s):
 
 # The eigenvalues for two different potentials are shown in Fig. 28. The harmonic oscillator 
 # 
-# $$\displaystyle V(x) = (k/2)x^2,\; k=20$
+# $$\displaystyle V(x) = (k/2)x^2,\; k=20$$
 # 
 # and the double well, 
 # 
@@ -332,7 +331,7 @@ for i in range(s):
 # \hline
 # \end{array}$$
 # 
-# The code used the shooting method with Python/Scipy method 'odeint' to integrate the Schroedinger equation. For simplicity the mass and $\hbar = 1$. The calculation using atomic units is described in section 10.2.
+# The code used the shooting method with Python/SciPy method 'odeint' to integrate the Schroedinger equation. For simplicity the mass and $\hbar = 1$. The calculation using atomic units is described in section 10.2.
 # 
 # ![Drawing](num-methods-fig28.png) 
 # 
@@ -386,7 +385,7 @@ for i in range(s):
 # ![Drawing](num-methods-fig30.png)
 # 
 # Figure 30. Calculated energy levels and potential energy function for the inversion or 'umbrella mode' vibration in ammonia. The $n$ = 0 and 1 levels are split but are too close to be drawn separately. The $n=2$ and 3 levels are just separated by enough energy to be seen individually. The $n=4$ level is just above the barrier's top.
-# ____
+# _________________
 # 
 # The first few energy levels (cm$^{-1}$)  are 
 # 

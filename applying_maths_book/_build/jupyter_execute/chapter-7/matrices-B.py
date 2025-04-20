@@ -302,7 +302,13 @@ M @ invM
 # &\quad\quad \uparrow \qquad \qquad\qquad\quad \uparrow \qquad\qquad \uparrow \\ 
 # &\text{ 3 cols 2 rows } \qquad  \text{2 cols 3 rows  }\qquad  \text{2 by 2 matrix} \end{align} $$
 # 
-# where element $R=a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}$ and element $S= a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32}$. A $2 \times 3$ and a $3 \times 1$ matrix produce a $2 \times 1$ column matrix
+# where element $R$ is the dot product  
+# 
+# $$\displaystyle \begin{bmatrix} a_{21}& a_{22}&a_{23}\end{bmatrix}\times  \begin{bmatrix} b_{11}\\ b_{21}\\b_{31}\end{bmatrix}=a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}$$
+# 
+# and element $S= a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32}$. 
+# 
+# A $2 \times 3$ and a $3 \times 1$ matrix produce a $2 \times 1$ column matrix
 # 
 # $$\displaystyle \qquad\qquad\begin{bmatrix} a_{11} & a_{12} &a_{13} \\ a_{21} & a_{22} &a_{23} \end{bmatrix} \times \begin{bmatrix} b_{1} \\ b_{2}\\b_3  \end{bmatrix} =\begin{bmatrix} P \\ R \end{bmatrix} \qquad\qquad \qquad\qquad\text{(7)}$$
 # 

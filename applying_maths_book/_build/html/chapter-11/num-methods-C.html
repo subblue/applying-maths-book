@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5 Coupled equations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1560,7 +1560,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>5 Coupled equations</h1>
+                <h1>5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1619,8 +1619,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="coupled-equations">
-<h1>5 Coupled equations<a class="headerlink" href="#coupled-equations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="coupled-differential-equations-the-polymerase-chain-reaction-pcr-and-the-numerov-method">
+<h1>5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method<a class="headerlink" href="#coupled-differential-equations-the-polymerase-chain-reaction-pcr-and-the-numerov-method" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1799,9 +1799,9 @@ E + SP &amp;\overset{{\large k_{1}}}{\underset{{\large k_{-1}}} \rightleftharpoo
 \end{align}\end{split}\]</div>
 <p>The result of integrating is shown in fig 11b assuming DNA segments of <span class="math notranslate nohighlight">\(b=200\)</span> base pairs. The concentration of the double stranded DNA (<span class="math notranslate nohighlight">\(D\)</span>, red), the single strand (<span class="math notranslate nohighlight">\(S\)</span>, green) and the complex (<span class="math notranslate nohighlight">\(E\cdot SP\)</span>, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{array}\\
+\[\begin{split}\displaystyle \begin{array}{lll}\\
 k_D=3000/b, &amp; k_{-D}=10^6,&amp; k_{sp}=5\cdot10^5, &amp; k_{-sp}=10^{-4}\\ k_1=10^8, &amp; k_{-1}=10, &amp; k_2=60\\
-D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot SP_0=0 &amp; \sigma=8 &amp; \sigma_0=2\\
+D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot SP_0=0, &amp; \sigma=8, &amp; \sigma_0=2\\
 \end{array}\end{split}\]</div>
 <p>Notice that only a tiny amount of DNA need be present initially but that the primer is in vast excess over this and the enzyme <span class="math notranslate nohighlight">\(E\)</span>. This makes the annealing step pseudo-first order and <span class="math notranslate nohighlight">\(k_{sp}[P] \gg k_{-sp}\)</span>, but mainly the excess dose not limit the amount of <span class="math notranslate nohighlight">\(D\)</span> produced as <span class="math notranslate nohighlight">\(P\)</span> is consumed in the reaction. Of course there must be also sufficient nucleotides present to make the new DNA. The amount of all these concentrations depend on the particular situation but usually this is determined when the detection limit is exceeded by a suitable margin. Similarly to primer, increasing the amount of enzyme will also produce more DNA in a given time because <span class="math notranslate nohighlight">\(k_1[E][SP]\)</span> is increased.</p>
 <p>The unusual oscillatory behaviour is due to the temperature cycling which causes the rate constants to turn on and off. The decreasing region in <span class="math notranslate nohighlight">\(D\)</span> is due to the temperature increasing which starts DNA denaturing into two strands <span class="math notranslate nohighlight">\(S\)</span> which correspondingly increases (green). More double stranded DNA <span class="math notranslate nohighlight">\(D\)</span> is produced as the enzyme reaction <span class="math notranslate nohighlight">\(E+SP\)</span> starts and which stops when the temperature changes making <span class="math notranslate nohighlight">\([D]\)</span> constant. Recall that the temperature range is narrow over which this reaction occurs, i.e. <span class="math notranslate nohighlight">\(k \sim\exp(-(T_0-T)^2/\sigma)\)</span> as described above so the increase in <span class="math notranslate nohighlight">\(D\)</span> is short lived.</p>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+# # 5 Trig, hyperbolic and inverse functions, waves, spherical & polar coordinates,  factorials
 
 # In[1]:
 
@@ -293,6 +293,8 @@ asinh(x).rewrite('log')
 # 
 # There are other ways of defining a point in space and some of them will be used when the situation requires it. In crystallography, for example, it is often sensible to define axes of particular crystal types that are not always at 90$^\text{o}$ to one another and of unequal length. Monoclinic and trigonal crystal types, among others, have these 'sloping' axes. On the surface of a sphere, such as the earth, there are no straight lines, and latitude and longitude, which are angles, are used to define a location. In other situations, for example defining the three-dimensional shapes of atomic orbitals, spherical polar coordinates are used and in these coordinates, two angles and a radius define a point. These coordinates are used because they reflect the underlying symmetry of the problem and equations become easier to solve. In the hydrogen molecule, prolate spheroidal coordinates are used. These have two origins, one at each atom, see Figure 30 for a sketch of coordinates. In other situations, cylindrical coordinates are used. There are many other coordinate systems, see Arkfen (1970) for a description.
 # 
+# 
+# ### **Spherical polar coordinates**.
 # The reason for using different coordinate systems is not to make life difficult, far from it, but is that calculations are often easier done in these coordinates than in Cartesians; the disadvantage of these other coordinate systems is only unfamiliarity. In each case, it is possible to convert from one coordinate 'system' to another. In spherical polar coordinates the radius $r$ is the distance of a point from the origin, $\theta$ is the polar angle measured from the z-axis and $\phi$ the azimuthal or equatorial angle measured in the x-y plane from the x- to the y-axis. The conversion between Cartesian and _spherical polar_ coordinates is
 # 
 # $$\displaystyle \begin{align} x &= r \sin(\theta)\cos(\phi),\qquad &y = r \sin(\theta)\sin(\phi)\\
@@ -303,6 +305,9 @@ asinh(x).rewrite('log')
 # ![Drawing](chapter1-fig17.png)
 # 
 # Figure 17 Spherical polar coordinates. The point at $(x,\; y,\; z)$ in Cartesian coordinates is at $(r,\; \theta, \; \phi)$  in spherical polar coordinates. 
+# 
+# 
+# ### **Plane Polar coordinates**
 # 
 # In two dimensions, _plane polar_ coordinates are used to define a point in the x-y plane. If z is included then these coordinates become the cylindrical coordinates. The relationship of plane polar to Cartesian coordinates is
 # 

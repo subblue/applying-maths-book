@@ -102,6 +102,8 @@
 # 
 # Cotton, F. A. (1990), Chemical Applications of Group Theory, 3rd edition, Wiley.
 # 
+# Courchamp, F., Berec, L., & Gascoigne, J. 'Allee Effects in Ecology and Conservation', Oxford University Press. 2008.
+# 
 # Crank, J. (1979), The Mathematics of Diffusion, Oxford University Press.
 # 
 # Crouse, D., (2007) J. Chem. Educ., 84: 803.
@@ -353,6 +355,8 @@
 # Stone, A. J. (1996), The Theory of Intermolecular Forces, Clarendon Press. 
 # 
 # Strogatz, S. (1994), Nonlinear Dynamics and Chaos, Perseus Books. 
+# 
+# Susskind L. & Hrabovsky G. (2014) Classical Mechanics, The Theoretical Minimum, Pengiun Books.
 # 
 # Svelto, O. (1982), Principles of Lasers, Plenum Press.
 # 

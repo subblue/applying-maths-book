@@ -32,11 +32,11 @@ from sympy import *
 # 
 # A permutation is an _ordered_ arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are two others. It is implicitly assumed that the each number/letter/object is chosen with equal probability and there is an equal chance of filling any place in the list that is produced. Note that there are no repeated letters, or numbers (objects), in any list.
 # 
-# If there are five different objects ($n=5$) then there are $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ permutations. The proof is straightforward: starting with five vacant places in a row, one letter, the letter E, for example, can be put into any one of five different places. There are now $n-1 = 4$ letters left and if D is now chosen then it can only be placed in four, i.e. $n-1$ different positions as E occupies one of them. This means that the first two numbers can be placed in $n(n-1)$ different ways. The third letter chosen can only be put into three ($n-2$) empty positions and so the first three numbers can be placed in $n(n-1)(n-2)$ different ways and so forth. The number of permutations when all $n$ objects are chosen is therefore the product of the numbers of ways in which to put the letters and this is $n(n - 1)(n - 2) \cdots 1= n!$. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of $n$ objects is written as
+# If there are five different objects ($n=5$) then there are $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ permutations. The proof is straightforward: starting with five vacant places in a row, one letter, the letter E, for example, can be put into any one of five different places. There are now $n-1 = 4$ letters left and if D is now chosen then it can only be placed in four, i.e. $n-1$ different positions as E occupies one of them. This means that the first two numbers can be placed in $n(n-1)$ different ways. The third letter chosen can only be put into three ($n-2$) empty positions and so the first three numbers can be placed in $n(n-1)(n-2)$ different ways and so forth. The number of permutations when all $n$ objects are chosen is therefore the product of the numbers of ways in which to put the letters and this is $n(n - 1)(n - 2) \cdots 1= n!$. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA and any permutation is distinguishable from all others. The permutation of $n$ objects is $n$ objects in $p=n$ boxes and written as
 # 
 # $$\displaystyle P(n, n) = n!$$
 # 
-# When only some number $p$ of the $n$ objects are chosen, the permutations will be fewer, we effectively stop before $n$ choices have been made. We saw above that if only two choices are made out of $n$ the number different choices is $n(n-1)$. Suppose that either $p$ objects at a time are chosen out of $n$, or that $p$ objects are placed into $n$ boxes so that no more than one is in any box, then the number of different ways of doing this _'p from n'_ calculation is
+# When only some number $p$ of the $n$ objects are chosen, the permutations will be fewer, we effectively stop before $n$ choices have been made. We saw above that if only two choices are made out of $n$ the number different choices is $n(n-1)$. Suppose that either $p$ objects at a time are chosen out of $n$, or that $p$ objects are placed into $n$ boxes so that no more than one is in any box, then the number of different ways of doing this *'p from n'* calculation is
 # 
 # $$\displaystyle P(n, p) = n(n - 1)(n - 2) \cdots (n - p + 1) =\frac{n!}{(n-p)!}\qquad\tag{19}$$
 # 
@@ -78,7 +78,7 @@ from sympy import *
 # 
 # $$\displaystyle  \frac{26!}{3!3!2!2!4!3!2!2!2!}\approx 2.4\cdot10^{21}$$
 # 
-# ways of arranging a chain. Nature has had to search in the 'space' of all combinations to find an effective protein (one that causes pain when you are stung) and has had a very long time to do so. However, this number of permutations is still so large that even producing a different sequence at one a minute, supposing that this were possible, would have taken $\approx 5 \cdot 10^{15}$ years, which is far longer than the age of the Earth. This is, of course, a misleading calculation for two reasons at least. One is that it assumes that the protein always had $26$ amino acids whereas, in the distant past, it was probably far smaller but was nevertheless effective  enough  to give the bee's ancient ancestor an evolutionary advantage. Secondly, many permutations of even a few amino acids will not have the stability to form any structure other than a random coil and so could never exist as a functioning protein. Those that do form some stable structure and are effective are then preserved and passed down to the next generation, and by mating and random mutations, improved. Therefore the whole of the possible permutation space is never searched, but the search algorithm that is natural selection very effectively finds a working solution and one that is usually close to the optimum.
+# ways of arranging a chain. Nature has had to search in the 'space' of all combinations to find an effective protein (one that causes pain when you are stung) and has had a very long time to do so. However, this number of permutations is still so large that even producing a different sequence at one a minute, supposing that this were possible, would have taken $\approx 5 \cdot 10^{15}$ years, which is far longer than the age of the Earth. This is a questionable calculation for two reasons at least. One is that it assumes that the protein always had $26$ amino acids whereas, in the distant past, it was probably far smaller but was nevertheless effective  enough  to give the bee's ancient ancestor an evolutionary advantage. Secondly, many permutations of even a few amino acids will not have the stability to form any structure other than a random coil and so could never exist as a functioning protein. Those that do form some stable structure and are effective are then preserved and passed down to the next generation, and by mating and random mutations, improved. (Those that do not offer improvement produce fewer offspring and are eventually after some generations removed from the population). Therefore the whole of the possible permutation space is never searched, but the search algorithm that is natural selection very effectively finds a working solution and one that is usually close to the optimum.
 
 # ## 9.4 Combinations
 # 
@@ -104,11 +104,11 @@ from sympy import *
 # 
 # $$\displaystyle C(48,6)=\frac{48!}{6!42!}=\frac{48\cdot 47\cdot 46 \cdot45 \cdot 44 \cdot 43}{6 \cdot 5\cdot 4 \cdot 3 \cdot 2}=12,271,512$$
 # 
-# possible choices or just under one in twelve million chances of winning, as the chance of any one combination being chosen is just as likely as any other, then its probability is $1/C(n, p)$. If $\approx 12$ million people play each week, then on average one might expect one winner each week, assuming that the numbers are equally likely to be chosen by the players.
+# possible choices or just under one in twelve million chances of winning. As the chance of any one combination being chosen is just as likely as any other, then its probability is $1/C(n, p)$. If $\approx 12$ million people play each week, then on average one might expect one winner each week, assuming that the numbers are equally likely to be chosen by the players.
 # 
 # ## 9.6 Choosing groups
 # 
-# If you are making choices when two or more conditions apply, then the combinations are multiplied together. For example, suppose that a study is to be conducted in which $25$ patients are to be placed into three groups of equal size. The control group must contain $8$ persons and therefore so must the experimental groups. These must be selected from $25 - 8 = 17$ and $9$ persons each. The number of ways of making this choice is huge even for such small numbers, and is
+# If you are making choices when two or more conditions apply, then the combinations are multiplied together. For example, suppose that a study is to be conducted in which $25$ patients are to be placed into three groups of equal size. The control group must contain $8$ persons and therefore so must the experimental groups. These must be selected from $25 - 8 = 17$ and $9$ persons each. The number of ways of making this choice is vast even for such small numbers, and is
 # 
 # $$\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230,637,794,250$$
 # 
@@ -125,59 +125,161 @@ from sympy import *
 # Instead of thinking of determinants, suppose that there are a number of energy levels, or boxes if you wish, into which particles are placed such that only one is allowed into any level. If, for example, there are $72$ levels and $42$ particles what are the number of ways that these can be placed? The number of combinations is $\displaystyle \binom{72}{42}=\frac{72!}{42!30!}=1.6\cdot 10^{20}$ which is vast. Next, suppose that only the lowest $42$ levels are occupied how many ways can we move a single particle at a time to an empty level. This would correspond to singly excited determinants and is the number of choices by which one particle can be moved and that is $30$ and so for all particles is $42\cdot 30 = 1260$. Now if two are moved at a time (a doubly excited determinant) then the number is $\displaystyle \binom{42}{2}\binom{72-42}{2}=374535$. The extension to moving three at a time is clear but we cannot move all of them at once because there are more particles than empty spaces. You can appreciate just how many integrals have to be evaluated when calculating benzene's molecular orbitals. 
 # 
 
-# ## 9.9 Indistinguishable objects
+# ## 9.9 Indistinguishable and distinguishable particles
 # 
-# The cards in a pack of playing cards are clearly distinguishable; it would be pointless if they were not. White tennis balls are generally indistinguishable from one another and so would golf balls be if they were not numbered after manufacture to enable players to identify one from another. Atoms or photons are truly indistinguishable; we cannot label them to tell one from another. The number of ways of placing (distributing) $n$ indistinguishable objects into $p$ distinguishable boxes with $p \ge n$ and with any number of objects being allowed in any one box is,
+# The cards in a pack of playing cards are clearly distinguishable; it would be pointless if they were not. White tennis balls are generally indistinguishable from one another and so would golf balls be if they were not numbered after manufacture to enable players to identify one from another. Atoms or photons are truly indistinguishable; we cannot label them to tell one from another. 
 # 
-# $$\displaystyle C(n+p-1,n)=\frac{(n+p-1)!}{n!(p-1)!}\qquad \tag{22}$$
+# ### **Bose-Einstein case** 
 # 
-# The proof is involved and given in Margenau & Murphy (1943). We note here only that there are $(n + p - 1)!$ permutations when the $n$ objects are placed in $p - 1$ boxes. Using only $p - 1$ boxes is correct because if there is just one box then there are $n!$ permutations if we suppose, for the moment, that the objects are distinguishable. However, if the objects are indistinguishable, the number of permutations has to be divided by $n!$. (There is only one permutation of $n$ indistinguishable objects in one box.) Finally, there are $(p - 1)!$ permutations of the (distinguishable) boxes for a given configuration and therefore equation 22 follows. If there are $n = 2$ objects and $p = 3$ boxes in which to place them, then there
-# should be 4!/2!2! = 6 arrangements. Labelling both objects $x$ these are
+# Particles with zero or integer spin angular momentum, such as photons and deuterons, obey Bose - Einstein statistics. Any number of these indistinguishable particles can occupy a single distinguishable orbital. When dealing with atoms and molecules and distributing particles among their energy levels, the number of boxes $p$, becomes the degeneracy ($g$) of any energy level. We shall use $g$ from now on in this section. The number of ways of placing (distributing) $n$ indistinguishable objects into $g$ distinguishable boxes, with $g \ge n$ and with any number of objects being allowed in any one box is the combination,
 # 
-# $$\displaystyle \begin{bmatrix}
+# $$\displaystyle C(n+g-1,n)=\frac{(n+g-1)!}{n!(g-1)!}\qquad \tag{22}$$
+# 
+# This combination corresponds to a single energy level in which there are $n$ particles and which is $g$-fold degenerate. To derive this result is more difficult than for our other examples. Suppose that there are $3$ objects in the first box, $5$ in the second and $1$ in the third etc., but as the objects are indistinguishable we do not know which $3$ of the $n$ are in the fist box and which $5$ in the second and so forth. If we label any object with an $x$ and separate boxes with a vertical line then this arrangement looks like
+# 
+# $$\displaystyle  xxx\;|\;xxxxx\;|\;x\;|\cdots |\;xx $$
+# 
+# where there are $n$ crosses and $g-1$ vertical partitions in total. If we could label the particles the number of permutations of the $n$ objects and $g-1$ boxes taken together would be $(n+g-1)!$ and each of these arrangements is equivalent to one another. However, we must now account for the indistinguishable nature of the particles and this means that there are $n!$ permutations of the crosses in each arrangement and so it is necessary to divide by this number. This is because in reality the particles cannot be distinguished one from another i.e. in counting $(n+g-1)!$ we assumed that the particles were ordered as for example $x_1x_2x_3$ but being indistinguishable means that this ordering cannot be distinguished from $x_3x_1x_2$ or any other ordering and so the number of permutations was over-counted. There are also $(g-1)!$ orderings of the partitions. In the list we could re-order a partition and its contents which would increase the number of arrangements but change nothing else, for example we could change the list above by swapping the second and third entries to give $ xxx\;|\;x|\;xxxxx|\cdots $, thus, again, we initially over counted and must divide $(n+g-1)!$ by both permutations as described to obtain eqn. 22.
+# 
+# To illustrate what the arrangements look like suppose that there are $n = 2$ objects and $g = 3$ boxes in which to place them, then there will be 4!/2!2! = 6 arrangements. Showing an object as $x$ these are
+# 
+# $$\displaystyle \begin{matrix}
+# 1&2&3\\
+# \hline
 # xx & - & -\\
 # - & xx & -\\
 # - & - & xx\\
 # x & x & -\\
+# x & - & x\\
 # - & x & x\\
-# x & - & x-\\
-# \end{bmatrix}$$
+# \hline
+# \end{matrix}$$
 # 
-# Particles with zero or integer spin angular momentum, such as photons and deuterons, obey Bose - Einstein statistics. Any number of them can occupy a quantum state. When dealing with atoms and molecules and distributing particles among their energy levels, the number of boxes $p$, becomes the degeneracy $g$ of any energy level. The multiplicity is the number of states belonging to one level, i.e. the size of the degeneracy. Degeneracy and multiplicity do tend to be used interchangeably. If the angular momentum quantum number is $S$, then this state has a multiplicity of  $g = 2S + 1$ and is  $g = 2S + 1$ degenerate unless some specific interaction alters this. If there are $i = 1 \cdots N$ energy levels then the total number of ways of distributing particles among the levels is 
+# In an atom or molecule there are many energy levels (or equivalently wavefunctions ) and eqn. 22 applies to each. If there are $i = 1 \cdots N$ energy levels and $n_i$ in level $i$, then the total number of ways of distributing particles among the levels is the product
 # 
-# $$\displaystyle W = \prod_{i=1}^N\frac{(n+g_i-1)!}{n_i!(g_i-1)!}$$
+# $$\displaystyle W = \prod_{i=1}^N\frac{(n_i+g_i-1)!}{n_i!(g_i-1)!}$$
 # 
-# where $g_i$ is the degeneracy of level $i$. (see Margenau & Murphy 1943, Chapter 12). For one level, the number of combinations is $C(n + p - 1, n)$ and the chance of observing any one distinguishable arrangement is considered to be equal in Bose - Einstein statistics and is $1/C(n + p - 1, n)$.
+# where $g_i$ is the degeneracy of level $i$. The total $W$ can be simplified by taking logs which changes the product into a summation and using Stirling's approximation for large factorials produces, with $g-1\approx g$ when $g$ is large,
 # 
-# Fermions are half integer spin particles and include electrons, protons, and atoms such as $^{14}$N, which are made up of an odd number of fermions. They obey Fermi - Dirac statistics and are restricted so that no more than one of them can be in any quantum state. By the Pauli exclusion principle, a fermion's wavefunction has to be asymmetric to the exchange of coordinates, and each fermion must have a unique set of quantum numbers. In apparent contradiction an orbital can contain zero, one, or two electrons. Two electrons are allowed to be in an orbital if they have different quantum numbers and are therefore different fermions. An electron's spin quantum number is $S = 1/2$ but there is a second quantum number $m_s = \pm 1/2$ who's value is related to the spin's orientation, colloquially spin 'up' or 'down', so that an orbital can have up to two different fermions in it. However, no more than one of them is in any one quantum state. 
+# $$\displaystyle \ln(W)=\sum_i\left(g_i\ln\left(\frac{g_i+n_i}{g_i}\right)+n_i\ln\left(\frac{g_i+n_i}{n_i}\right) \right)$$
 # 
-# There are only two sets of the electrons' quantum numbers with which to label the electrons (1/2, 1/2) and (1/2, -1/2), and so no more that two electrons can be in any orbital. If an (imaginary) particle had $S = 1$ then $m_s$ would be $0, \pm 1$ and a maximum of three of them could fill any orbital.
+# ### **Fermi-Dirac case**
 # 
-# With indistinguishable particles there are now only $C(p,n)$ ways of choosing $p$ singly occupied states from the $p$ available, and if these distributions are equally likely then $1/C(p,n)$ is the probability that any one is occupied. Again, if there are $n = 2$ fermions to be placed in $p = 3$ levels then the only possible arrangements are
+# Fermions are half-integer spin particles and include electrons, protons, and atoms such as $^{14}$N, which are made up of an odd number of fermions. They obey Fermi - Dirac statistics and are restricted so that no more than one of them can be in any quantum state. By the Pauli Exclusion Principle, a fermion's wavefunction has to be asymmetric to the exchange of coordinates, and each fermion must have a unique set of quantum numbers. In apparent contradiction an orbital can contain zero, one, or two electrons. Two electrons are allowed to be in an orbital if they have different quantum numbers and are therefore different fermions. An electron's spin quantum number is $S = 1/2$ but there is a second quantum number $m_s = \pm 1/2$ who's value is related to the spin's orientation, colloquially spin 'up' or 'down', so that an orbital can have up to two different fermions in it, however, no more than one of them is in any one quantum state. There are only two sets of the electrons' quantum numbers with which to label the electrons (1/2, 1/2) and (1/2, -1/2), and so no more that two electrons can be in any orbital. If an (imaginary) particle had $S = 1$ then $m_s$ would be $0, \pm 1$ and a maximum of three of them could fill any orbital.
 # 
-# $$\displaystyle \begin{bmatrix}
-# a & a & -\\
-# - & a & a\\
-# a & - & a
-# \end{bmatrix}$$
+# Suppose that there are $n$ indistinguishable particles to fill an orbital with degeneracy $g$ and for fermions $n\le g$.  With indistinguishable particles there are now only $C(g,n)$ ways of choosing $n$ from the number of $g$ distinguishable orbitals. The distribution is
+# 
+# $$\displaystyle C(g,n)=\frac{g!}{n!(g-n)!}=\binom{g}{n} \tag{21'}$$
+# 
+# If there are $n = 2$ fermions to be placed in $p = 3$ levels then the only possible arrangements are
+# 
+# $$\displaystyle \begin{matrix}
+# 1&2&3\\
+# \hline
+# x & x & -\\
+# x & - & x\\
+# - & x & x\\
+# \hline
+# \end{matrix}$$
 # 
 # which is $C(3, 2) = 3!/(2!1!) = 3$
 # 
-# The number of combinations just described also answers an apparently harder question. If there are $n$ boxes, and $p \lt n$ indistinguishable objects to be placed in the boxes so that no more than one is in any box, then the number of ways of doing this is $C(n, p)$. The assignment into boxes is the same as selecting $p$ out of $n$ objects. In an atom when calculating the term symbols, the number of microstates in a configuration must be enumerated. If there are two electrons to be placed into the three 2p orbitals, a $p^2$ configuration, then there are $C(6, 2) = 6!/(2!4!) = 15$ microstates. Why the 6 when there are only three p orbitals? The electrons must each have a unique set of quantum numbers therefore the spin states are unique; spin up is different from spin down. (See Steinfeld (1981) and also Foote (2005) for a diagrammatic way of calculating term symbols.)
+# The number of combinations just described also answers an apparently harder question. If there are $g$ boxes, and $n\lt g$ indistinguishable objects to be placed in the boxes so that no more than one is in any box, then the number of ways of doing this is $C(g, n)$. The assignment into boxes is the same as selecting $n$ out of $g$ objects. In an atom when calculating the term symbols, the number of microstates in a configuration must be enumerated. If there are two electrons to be placed into the three 2p orbitals, a $p^2$ configuration, then there are $C(6, 2) = 6!/(2!4!) = 15$ microstates. Why the $6$ when there are only three p orbitals? The electrons must each have a unique set of quantum numbers therefore the spin states are unique; spin up is different from spin down. (See Steinfeld (1981) and also Foote (2005) for a diagrammatic way of calculating Term Symbols.)
 # 
+# There are $C(g,n)$ ways of selecting the first orbital, thus for $i=1,2\cdots$ orbitals there are 
+# 
+# $$\displaystyle W=\prod_i \frac{g_i!}{n_i!(g_i-n_i)!}$$
+# 
+# ways. Evaluating by taking logs and using Stirling's approximation gives
+# 
+# $$\displaystyle \ln(W)=\sum_i\left(-g_i\ln\left(\frac{g_i-n_i}{g_i}\right)+n_i\ln\left(\frac{g_i-n_i}{n_i}\right) \right)$$
+
+# ### Summary
+# 
+# We imagine placing particles into energy levels, or more mundanely objects into boxes with objects being distinguishable or indistinguishable and then place restrictions on the number of particles (objects) vs number of energy levels (containers).
+# 
+# **Case (A)**. The number of ways that $n$ distinguishable objects can be placed into $r$ distinguishable boxes so that the boxes have $p_0, p_1\cdots$ etc. objects each and where only *one type of object* is in any box.  See section 9.3.
+# 
+# $$\displaystyle  P_G= \frac{n!}{p_0!p_1!\cdots}=\frac{n!}{\prod_{i=0}^r p_i!}$$
+# 
+# **Case (B)**. The number of ways of placing $n$ distinguishable objects into $p$ distinguishable boxes where $n \lt p$ is the same as the number of permutations of $n$ objects taken $p$ at a time and with a limit of no more than one object in any box, is,
+# 
+# $$\displaystyle P(n,p)= \frac{n!}{(n-p)!}$$
+# 
+# Placing two  balls labelled x and o, into three numbered boxes has the distribution
+# 
+# $$\displaystyle \begin{matrix}
+# 1&2&3\\
+# \hline
+# x & o & -\\
+# o & x & -\\
+# x & - & o\\
+# o & - & x\\
+# - & o & x\\
+# - & x & o\\
+# \hline
+# \end{matrix}$$
+# 
+# which is $3!/(3-2)!=6$ arrangements.
+# 
+# **Case (C)**. The number of ways of putting $n$ distinguishable objects into $p$ distinguishable boxes with no limit on how many may be in a box is,
+# 
+# $$\displaystyle W= p^n$$
+# 
+# Placing two  balls labelled x and o, into three numbered boxes has the distribution
+# 
+# $$\displaystyle \begin{matrix}
+# 1&2&3\\
+# \hline
+# xo & - & -\\
+# x & o & -\\
+# o & x & -\\
+# x & - & o\\
+# o & - & x\\
+# - & xo & -\\
+# - & x  &o\\
+# - & o  &x\\
+# - & -  &xo\\
+# \hline
+# \end{matrix}$$
+# 
+# making $3^2=9$ in total.
+# 
+# **Case (D)**. The number of ways of selecting $n$ *indistinguishable* objects from a set $p$ distinguishable boxes where there is a limit of no more than one per box ($n \lt p$) is the same as the number of combination of choosing $n$ objects taken $p$ at a time, see section  9.4 and 9.9.
+# 
+# $$\displaystyle C(n,p)=\frac{n!}{p!(n-p)!}=\binom{n}{p} \tag{21'}$$
+# 
+# Case (E). The number of ways of placing $n$ *indistinguishable* objects into $p$ distinguishable boxes with no restriction of the number of objects in any box (such as in Bose-Einstein statistics, section 9.9) is the combination,
+# 
+# $$\displaystyle C(n+p-1,n)=\frac{(p+n-1)!}{n!(p-1)!} \tag{22'}$$
+
 # ## 9.10 Sampling with replacement
 # 
 # If a bag contains $n$ objects and we choose $p$ of them but return each object to the bag before making the next choice, then there are $n^p$ ways of choosing them: there are always $n$ ways of choosing, and this is done $p$ times over. If there are four letters ABCD, then choosing three of them produces $4^3 = 64$ possible samples. The number of samples under permutation rules is $4!/1! = 24$ and $4!/(3!1!) = 2$ under combination rules.
 # 
-# The number of UK car registration plates can be calculated by 'sampling with replacement'. Although the way that number plates are labelled has recently changed, there are still many cars with the form of a letter to identify the year of manufacture, a three digit number and three letters. A plate such as K 446 LPW is typical. In this form, each year there are $3^{10} \times 3^{26} = 150 094 635 296 999 121 \approx 10^{17}$ possible registrations; a ridiculously large number even when many are not used for various reasons. Even if only nine numbers and ten letters were used, there would still be more that $10^9$ possible registrations.
+# **(i)** The number of UK car registration plates can be calculated by 'sampling with replacement'. Although the way that number plates are labelled has recently changed, there are still many cars with the form of a letter to identify the year of manufacture, a three digit number and three letters. A plate such as K 446 LPW is typical. In this form, each year there are $3^{10} \times 3^{26} = 150 094 635 296 999 121 \approx 10^{17}$ possible registrations; a ridiculously large number even when many are not used for various reasons. Even if only nine numbers and ten letters were used, there would still be more that $10^9$ possible registrations.
 # 
-# Braille is a representation of letters and numbers using a pattern that can be felt by the fingertips, and which enables blind people to read. The pattern consists of raised dots and gaps in a rectangular shape whose height is greater than its width. There are six dots and gaps combined making $2^6 = 64$ ways of arranging the patterns and that is enough to encode all the letters, numbers, and punctuation marks commonly used.
+# **(ii)** Braille is a representation of letters and numbers using a pattern that can be felt by the fingertips, and which enables blind people to read. The pattern consists of raised dots and gaps in a rectangular shape whose height is greater than its width. There are six dots and gaps combined making $2^6 = 64$ ways of arranging the patterns and that is enough to encode all the letters, numbers, and punctuation marks commonly used.
 # 
-# The molecular motor ATPase reversibly converts ADP into ATP + phosphate (Pi). The protein crystal structure has been determined to high precision; see the Brookhaven Database (pdb) entry 1E79 and also Gibbons et al. (Nature Structural Biology 7, 1055, 2000). The protein called $F_1$ contains the rotor part of the motor, has threefold symmetry, and three sites at which the reaction can occur. The reaction site has four possible states
+# **(iii)** The molecular motor ATPase reversibly converts ADP into ATP + phosphate (Pi). The protein crystal structure has been determined to high precision; see the Brookhaven Database (pdb) entry 1E79 and also Gibbons et al. (Nature Structural Biology 7, 1055, 2000). The protein called $F_1$ contains the rotor part of the motor, has threefold symmetry, and three sites at which the reaction can occur. The reaction site has four possible states
 # 
 # $$\displaystyle \mathrm{Empty}\leftrightharpoons \mathrm{ (ATP)_{bound}} \leftrightharpoons \mathrm{(ADP + Pi)_{bound} }\leftrightharpoons\mathrm{ (ADP)_{bound} }\leftrightharpoons \mathrm{Empty }$$
 # 
 # therefore, there are $4^3 = 64$ possible binding states in the protein at any one time.
+# 
+# __________________________________
+# 
+# ## Sampling Table
+# 
+# This table gives the number of possible samples of size $p$ out of a number of $n$ objects, i.e. energy levels, atoms, balls, playing cards etc. under different assumptions.
+# 
+# $$\displaystyle \bbox[1px,border:1px solid black]{ \begin{array}{c|cc}
+#  & \text{Order matters} & \text{Order does not matter}\\
+#  \hline
+#  \text{with replacement} & \displaystyle n^p & \displaystyle\binom{n+p-1}p =\frac{(n+p-1)!}{p!(n-1)!}\\
+#  \text{without replacement}&\displaystyle \frac{n!}{(n-p)!} & \displaystyle\binom{n}{p}=\frac{n!}{p!(n-p)!}
+#  \end{array}  }$$
+# ________________________
 
 # ## 9.11 Probability
 # 
@@ -363,7 +465,11 @@ from sympy import *
 # 
 # $$\displaystyle P = p^mq^{n-m}=p^m(1-p)^{n-m}$$
 # 
-# where $n$ and $m$ must be integers. We cannot have, for example, 3.5 coins or 4.1 successes.
+# where $n$ and $m$ must be integers, we cannot have, for example, 3.5 coins or 4.1 successes. 
+# 
+# A binomial distribution thus requires three conditions to be met, 
+# 
+# >a fixed number of trials $n$, a constant chance of success $p$ and each test independent of all others. 
 # 
 # ### **(i) Multiplicity or Binomial Coefficient W**
 # 
@@ -854,7 +960,7 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # $$\displaystyle B(n,k,p)=\frac{n!}{k!(n-k)!}p^k (1-p)^{n-k} $$
 # 
-# which is the total probability of choosing $m$ objects from $n$ positions and $p$ is the chance of choosing any one. If we imagine putting particles into boxes as described for 96 well plates in section 9.19, the probability is $p=1/N$ for $N$ wells and the average is $\mu=np$ which means $n=\mu N$. Substituting for $p$ gives
+# which is the total probability of choosing $m$ objects from $n$ positions and $p$ is the (fixed) chance of choosing any one. If we imagine putting particles into boxes as described for 96 well plates in section 9.19, the probability is $p=1/N$ for $N$ wells and the average is $\mu=np$ which means $n=\mu N$. Substituting for $p$ gives
 # 
 # $$\displaystyle B(n,k,p)=\frac{n!}{k!(n-k)!}\left(\frac{\mu}{n}\right)^k \left(1-\frac{\mu}{n}\right)^{n-k} $$
 # 
@@ -887,13 +993,13 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 
 # ### **(iv) Time-correlated Single-Photon counting** 
 # 
-# Possibly the most versatile method of measuring fluorescence lifetimes, when they are not too short, is to use time-correlated single-photon counting. The method uses a short light pulse, a few picoseconds duration is sufficient, which excites the sample. The method repeatedly measures the times at which an electronically excited molecule remains in its excited state. This is done by recording when a photon is detected either on a fast responding sensitive photomultiplier or microchannel plate detector, relative to the time that the light excited the sample. This time difference is usually measured by a time-to-amplitude converter circuit. In effect this circuit starts charging a capacitor when the sample is excited and stops when the photon is detected. The charge is then converted to a voltage and stored in one bin of a histogram. In many repeated experiments a histogram of the number of photons detected at each time bin is made, see Lakowicz, 2004 for a summary or the web site of commercial instruments. The resulting histogram looks like the simulation in chapter 12-3.4. In practice decays of four to five decades in intensity can be measured. Because of time jitter in the electronics, lifetimes are restricted to no shorter than about $20$ ps but this is obtained only after convolution. For shorter decays fluorescence upconversion can be used, see G Beddard, et al. Chemical Physics, Vol. 61, pp. 17-23,1981 & G. Beddard et al. Nature Vol. 294, p. 145, 1981.    
+# Possibly the most versatile method of measuring fluorescence lifetimes, when they are not too short, is to use time-correlated single-photon counting. The method uses a short light pulse, a few picoseconds duration is sufficient, which excites the sample. The method repeatedly measures the times at which an electronically excited molecule remains in its excited state. This is done by recording when a photon is detected either on a fast responding and sensitive photomultiplier or a solid-state microchannel plate detector, relative to the time that the light pulse excited the sample. This time difference is usually measured by a time-to-amplitude converter circuit. In effect this circuit starts charging a capacitor when the sample is excited and stops when the photon is detected. The charge is then converted to a voltage and stored in one bin of a histogram. In many repeated experiments a histogram of the number of photons detected at each time bin is made, see Lakowicz, 2004 for a summary or the web sites of commercial instrument makers. The resulting histogram looks like the simulation shown in chapter 12-3.4. In practice decays of four to five decades in intensity can be measured. Because of time jitter in the electronics, lifetimes are restricted to no shorter than about $20$ ps but this is obtained only after convolution. For shorter decays fluorescence upconversion can be used, see G Beddard, et al. Chemical Physics, Vol. 61, pp. 17-23,1981 & G. Beddard et al. Nature Vol. 294, p. 145, 1981.    
 # 
-# It is clearly important to know whether or not one photon produces one event at the detector, and it seems obvious that it should, but statistically this can be confirmed. We let $P_n$ be the chance that $n$ photons reach the detector and $B_{nx}$ the chance that $n$ photons will eject $x$ electrons in the detector. These are assumed to be given by a Poisson and Binomial distribution respectively, viz
+# It is clearly important to know whether or not one photon produces one event at the detector, and it seems obvious that it should, but statistically this can be confirmed. We let $P_n$ be the chance that $n$ photons reach the detector and $B_{nx}$ the chance that $n$ photons will eject $x$ electrons into the detector. These are assumed to be given by a Poisson and Binomial distribution respectively, viz
 # 
 # $$\displaystyle \begin{align} P_n&=\frac{\mu^ne^{-\mu}}{n!}\\B_{nx}&=\frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}\end{align}$$
 # 
-# where $\mu$ is the average number of photons detected from all those produced by excitation, and $p$ the quantum efficiency of the light sensitive part of the detector, i.e. the photocathode in a photomultiplier or semiconductor otherwise. The Poisson distribution gives the probability of measuring an event where many events are possible but each has a low chance of occurring, and the Binomial gives the probability of $x$ events occurring out of $n$ possible ones where each has a chance $p$.
+# where $\mu$ is the average number of photons detected from all those produced by excitation, and $p$ the quantum efficiency of the light sensitive part of the detector, i.e. the photocathode in a photomultiplier or semiconductor otherwise. The Poisson distribution gives the probability of measuring an event where many events are possible but each has a low chance of occurring, and the Binomial gives the probability of $x$ events occurring out of $n$ possible ones where each has a fixed chance $p$.
 # 
 # The probability that $x$ electrons are produced by $\mu$ photons is the product of the distributions and summed over all possible $x$ values. The summation is expanded, as shown below, and after simplification the exponential series is identified leading to the final result.
 # 
@@ -903,7 +1009,7 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # $$\displaystyle \begin{align} N &=\sum_{x=1}^\infty P\\&= \mu p - \frac{(\mu p)^2}{2!}+\cdots\end{align}$$
 # 
-# and as long as $\mu p\gg (\mu p)^2/2$ then the number of pulses detected is directly proportional to the number of photons. This is achieved by only detecting a photon from no more than $1$% of the times the sample is excited, i.e. keeping $\mu$ the average number of photons small. For example, if the detector efficiency $p=0.5$ and on average $\mu=0.01$ then $(\mu p)^2/2 \ll \mu p$ and the number of pulses detected is directly proportional the number of photons to better than $1$%. this is important in time resolved photon counting because the emission decay can be measured over five orders of magnitude.
+# and as long as $\mu p\gg (\mu p)^2/2$ then the number of pulses detected is directly proportional to the number of photons. This is achieved by only detecting a photon from no more than $1$% of the times the sample is excited, i.e. keeping $\mu$ the average number of photons small. For example, if the detector efficiency $p=0.5$ and on average $\mu=0.01$ then $(\mu p)^2/2 \ll \mu p$ and the number of pulses detected is directly proportional the number of photons to better than $1$%. This is important in time resolved photon counting because the emission decay can be measured over five orders of magnitude.
 # 
 # ## 9.26 Multinomial distribution
 # 
@@ -923,7 +1029,7 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # Mendel discovered that pure bred but different strains of peas gave rise to offspring that showed different features but did so in definite proportions. His peas had yellow and green seeds, but 75.05% of the offspring in 8023 trials were yellow, and the remainder, green. Others have since found very similar numbers in even larger trials and in other organisms, such as fruit flies or mice (Maynard Smith 1995). The genetic information we now know is encoded in DNA. The regions involved in transmitting genetic information are called genes, and these form part of a chromosome of which several different types are present in an organism. 
 # 
-# We are familiar with the observation that the probability with which molecules react is exponentially distributed, which is expressed in the Arrhenius rate equation, the rate being probability/time. In genetics, the situation is entirely different. The probability distribution is flat and the chance that genes mix genetic information occurs with the same constant probability as if they were selected out of boxes, each one being equally probable. Although these genes 'mix' during reproduction, they still retain their own identity and are passed down through the generations. An individual needs two genes to express a trait; yellow vs green seeds or stumpy vs normal wings in a fruit fly, and these mix freely from both parents to produce offspring. These traits are usually called *phenotypes*. The traits the offspring show are expected to be those of the parents, but depending on the genetic make up (*genotype*) of the parent, some traits appear less than would be expected from simple numerology. The reason for this is that some genes are *recessive* to others, which are called *dominant*, and therefore a characteristic trait does not manifest itself in the presence of a dominant gene. Only when the genotype is examined can the true make-up of an individual be found.
+# We are familiar with the observation that the probability with which molecules react is exponentially distributed, which is expressed in a first-order rate equation, the rate being probability/time. In genetics, the situation is entirely different. The probability distribution is flat and the chance that genes mix genetic information occurs with the same constant probability as if they were selected out of boxes, each one being equally probable. Although these genes 'mix' during reproduction, they still retain their own identity and are passed down through the generations. An individual needs two genes to express a trait; yellow vs green seeds or stumpy vs normal wings in a fruit fly, and these mix freely from both parents to produce offspring. These traits are usually called *phenotypes*. The traits the offspring show are expected to be those of the parents, but depending on the genetic make up (*genotype*) of the parent, some traits appear less than would be expected from simple numerology. The reason for this is that some genes are *recessive* to others, which are called *dominant*, and therefore a characteristic trait does not manifest itself in the presence of a dominant gene. Only when the genotype is examined can the true make-up of an individual be found.
 # 
 # ![Drawing](chapter1-fig21.png)  
 # 
@@ -952,35 +1058,34 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # ### **(ii) The Punnett square**
 # The Punnett square or matrix is a convenient pictorial way of assessing the outcomes of mixing genes. All of the possible genotypes of one parent are placed on the top row, and those of the other parent in the first column and the genotypes of the offspring fill the matrix. The crossing of the F1 hybrids in Fig. 1.21 is represented as
 # 
-# $$\displaystyle \begin{array}{c|cc}
+# $$\displaystyle \bbox[1px,border:1px solid black]{\begin{array}{c|cc}
 # &  Y & y\\
 # \hline
 # Y & YY & Yy\\
-# y & Yy & yy\\
-# \hline
-# \end{array}$$
+# y & Yy & yy
+# \end{array} }$$
 # 
 # which gives the same result as in  figure 21 but in more compact form.
 # 
 # In many cases there are two genes that encode for a phenotype, and we assume that the genes are located on different chromosomes and are therefore independent. We can predict the fraction of the types of offspring of, for example, mice with brown vs white coats, brown being dominant and short vs long tails, short being dominant. The genotypes are labelled as $B$ and $b$ for the colour, and $T$ and $t$ for the tails, so that the genotypes are $BT,\; Bt,\; bT,\; bt$, the lower case being recessive. If these animals are mated, the offspring genotypes are shown in the table, where each entry is arranged with $B/b$ as the first label and $T/t$ as
 # the second, and the dominant before the recessive.
 # 
-# $$\displaystyle \begin{array}{c|cccc}
+# $$\displaystyle \bbox[1px,border:1px solid black]{\begin{array}{c|cccc}
 #    & BT & Bt & bT & bt\\
 #  \hline
 #  BT & BBTT & BBTt& BbTT & BbTt\\
 #  Bt & BBTt & \pmb{BBtt} & BbTt & \pmb{Bbtt}\\
 #  bT & BbTT & BtTt & bbTT & bbTt\\
-#  bt & BbTt & \pmb{Bbtt} & bbTt & bbtt\\
-#  \hline \end{array}$$
+#  bt & BbTt & \pmb{Bbtt} & bbTt & bbtt
+#  \end{array} }$$
 #  
-# An offspring's phenotypes can be characterised using the dash - to mean $B/b$ or $T/t$ as appropriate. The table shows that
+# An offspring's phenotypes can be characterised using $X$ to mean $B/b$ or $T/t$ as appropriate. The table shows that
 # 
-# **(i)** $9/16$ of genotype $(B\;-\;T\;-\;)$ has phenotype: brown, long tailed
+# **(i)** $9/16$ of genotype $(B\;X\;T\;X\;)$ has phenotype: brown, long tailed
 # 
-# **(ii)** $3/16$ as $(b\;b\;T\;- )\equiv$ white, long tail
+# **(ii)** $3/16$ as $(b\;b\;T\;X )\equiv$ white, long tail
 # 
-# **(iii** $3/16$ as $(B\;-\;t\;t)\equiv$ brown,short-tail (shown as bold in the square)
+# **(iii** $3/16$ as $(B\;X\;t\;t)\equiv$ brown,short-tail (shown as bold in the square)
 # 
 # **(iv)** $1/16$ as $(b\;b\;t\;t) \equiv$ white short tail.
 # 
@@ -1001,13 +1106,12 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # also applies. The Punnet square can now be re-written to include these probabilities as,
 # 
-# $$\displaystyle \begin{array}{c|cc}
+# $$\displaystyle \bbox[1px,border:1px solid black]{\begin{array}{c|cc}
 # &  Y & y\\
 # \hline
 # Y & YY\;(p^2) & Yy\;(pq)\\
-# y & Yy\;(pq) & yy\;(q^2)\\
-# \hline
-# \end{array}$$
+# y & Yy\;(pq) & yy\;(q^2)
+# \end{array} }$$
 # 
 # The hybrid phenotype (yY and Yy) is present as fraction $2pq$ and the homogeneous ones as fractions $p^2$ and $q^2$. 
 # 
@@ -1021,7 +1125,7 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # These are just the same as the original fractions of y and Y thus after the first generation all subsequent generations have the same fixed proportions and so the recessive allele is always present and the dominant one not entirely dominant. 
 # 
-# In experiments there is always 'noise' added to the data. This is,naturally, also true in genetics experiments and manifests itself a the numbers of each type of phenotype measured. It is then possible to check whether the Hardy-Weinberg still applies in the presence of noise by performing a $\chi^2$ test. These tests are described in Chapter 13. 
+# In experiments there is always 'noise' added to the data. This is,naturally, also true in genetics experiments and manifests itself as the numbers of each type of phenotype measured. It is then possible to check whether the Hardy-Weinberg still applies in the presence of noise by performing a $\chi^2$ test. These tests are described in Chapter 13. 
 # 
 # ### **(iv) Example**
 # Suppose that in a population of $1000$ individuals $190$ have characteristics that show the the presence of the recessive allele y and $810$ show the dominant allele Y.  Let the probability (frequency) of the recessive allele y be $q$. The fraction (frequency or probability) of individuals in the population with yy is therefore $q^2$, 
@@ -1030,13 +1134,12 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # As Y is dominant the number of individuals with this allele (the phenotype), YY and Yy, is $ p^2+2pq $ so cannot be obtained until $p$ is known.  As $p+q=1$, the dominant allele is present as the fraction $p = 1 - 0.436 = 0.564, \quad p^2=0.318$ and the fraction of hybrid individuals is therefore $2pq= 0.491$. The Punnet square becomes 
 # 
-# $$\displaystyle \begin{array}{c|cc}
+# $$\displaystyle \bbox[1px,border:1px solid black]{\begin{array}{c|cc}
 # &  Y & y\\
 # \hline
 # Y & p^2=0.318 & pq=0.246\\
-# y & pq=0.246 & q^2=0.190\\
-# \hline
-# \end{array}$$
+# y & pq=0.246 & q^2=0.190
+# \end{array} }$$
 # 
 # The number of individuals with YY is $p^2\times 1000 = 318$, those with Yy is $2pq\times 1000 = 492$ and those with yy are $q^2\times 1000 = 190$ which make $1000$ in total as it should. 
 # 
@@ -1054,13 +1157,12 @@ print('{:s}{:6.3g}'.format('probability B =', s) )
 # 
 # The amount $f_{Yy}$ is divided by two as this represents $2pq$ and only half comes from the dominant Y. As $p+q=1$, therefore $q = 0.3$. The Punnet square is 
 # 
-# $$\displaystyle \begin{array}{c|cc}
+# $$\displaystyle \bbox[1px,border:1px solid black]{\begin{array}{c|cc}
 # &  Y & y\\
 # \hline
 # Y & p^2=0.49 & pq=0.21\\
-# y & pq=0.21 & q^2=0.09\\
-# \hline
-# \end{array}$$
+# y & pq=0.21 & q^2=0.09
+# \end{array} }$$
 # 
 # In the next generation the amounts transmitted from the previous generation are for the recessive allele y,
 # 

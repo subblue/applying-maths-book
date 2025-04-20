@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-C.html">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1516,6 +1516,29 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#rotation-matrices">
    7 Rotation matrices
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-rotation-matrices">
+     <strong>
+      Three rotation matrices
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     <strong>
+      Notes
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-calculation">
+     <strong>
+      Example calculation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-jacobians-to-calculate-derivatives-in-polar-coordinates">
@@ -1545,6 +1568,29 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#rotation-matrices">
    7 Rotation matrices
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-rotation-matrices">
+     <strong>
+      Three rotation matrices
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     <strong>
+      Notes
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-calculation">
+     <strong>
+      Example calculation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-jacobians-to-calculate-derivatives-in-polar-coordinates">
@@ -1614,40 +1660,54 @@ title="Print to PDF"
 <p>Figure 30. Rotating a line or vector (shown as an arrow) by <span class="math notranslate nohighlight">\(60^{\text{o}}\equiv\pi/3\)</span> clockwise about the origin.</p>
 <hr class="docutils" />
 <p>To rotate in three directions, three <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrices are needed because rotation about each axis can be performed separately. By multiplication we can combine these into a single matrix, but the elements are complicated and it is easier to use them separately as each has the simple sine/cosine pattern similar to equation 11. Next, the axes and rotation angles have to be defined; however, different authors use different labelling systems therefore when doing three-dimensional rotations it is important to notice how the axes are defined. It does not matter which labelling you use as long as you are consistent and know what they are. We use the Euler angles defined in the same manner as Goldstein (1980), the first rotation is anticlockwise looking down the z-axis, the next two rotations are anti-clockwise about the new axes B then C that are formed as shown in Figure 31. The original axes are indicated in the figure.</p>
-<p>The first rotation is around the axis <span class="math notranslate nohighlight">\(A\)</span> though angle <span class="math notranslate nohighlight">\(\varphi\)</span>. The matrix is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \qquad\qquad\begin {bmatrix} \cos(\varphi) &amp;\sin(\varphi) &amp; 0 \\ -\sin(\varphi) &amp; \cos(\varphi) \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \qquad\qquad\qquad\qquad\text{(13)}\end{split}\]</div>
 <p><img alt="Drawing" src="../_images/matrices-fig31.png" /></p>
 <p>Figure 31. Ordering of rotations. (Figure based on Goldstein 1980, chapter 4)</p>
 <hr class="docutils" />
+<section id="three-rotation-matrices">
+<h3><strong>Three rotation matrices</strong><a class="headerlink" href="#three-rotation-matrices" title="Permalink to this headline">#</a></h3>
+<p>The first rotation is around the axis <span class="math notranslate nohighlight">\(A\)</span> though angle <span class="math notranslate nohighlight">\(\varphi\)</span>. The matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad A(\varphi)=\begin {bmatrix} \cos(\varphi) &amp;\sin(\varphi) &amp; 0 \\ -\sin(\varphi) &amp; \cos(\varphi) \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \qquad\qquad\qquad\qquad\text{(13)}\end{split}\]</div>
 <p>The second is round the axis labelled <span class="math notranslate nohighlight">\(B\)</span> and is by <span class="math notranslate nohighlight">\(\theta\)</span> also shown in Figure 31. The matrix is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \qquad\qquad B(\theta)=\begin {bmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp;\cos(\varphi) &amp;\sin(\varphi)  \\ 0 &amp;-\sin(\varphi) &amp; \cos(\varphi)  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(14)}\end{split}\]</div>
+\[\begin{split}\displaystyle \qquad\qquad B(\theta)=\begin {bmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp;\cos(\theta) &amp;\sin(\theta)  \\ 0 &amp;-\sin(\theta) &amp; \cos(\theta)  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(14)}\end{split}\]</div>
 <p>The final rotation by angle <span class="math notranslate nohighlight">\(\psi\)</span> is about the axis labelled <span class="math notranslate nohighlight">\(C\)</span>, giving</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \qquad\qquad C(\psi)=\begin {bmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp;\cos(\varphi) &amp;\sin(\varphi)  \\ 0 &amp;-\sin(\varphi) &amp; \cos(\varphi)  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(15)}\end{split}\]</div>
-<p>and the full rotation matrix is the triple multiplication <span class="math notranslate nohighlight">\(\pmb{R} = \pmb{ABC}\)</span>.</p>
+\[\begin{split}\displaystyle \qquad\qquad C(\psi)=\begin {bmatrix} \cos(\psi) &amp;\sin(\psi) &amp; 0 \\ -\sin(\psi) &amp; \cos(\psi) \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \qquad\qquad\qquad\qquad\text{(15)}\end{split}\]</div>
 <p>A point <span class="math notranslate nohighlight">\((x, y, z)\)</span> whose coordinates are defined by a column matrix after anticlockwise rotation by <span class="math notranslate nohighlight">\(\psi\)</span>, then <span class="math notranslate nohighlight">\(\theta\)</span>, and then <span class="math notranslate nohighlight">\(\varphi\)</span> radians is now at</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad C(\psi)=\begin {bmatrix} x_R \\ y_R  \\ z_R  \end{bmatrix} = A(\psi)B(\theta)C(\varphi)\begin {bmatrix} x_1\\ y_1  \\ z_1  \end{bmatrix} \qquad\qquad\qquad\qquad\text{(16)}\end{split}\]</div>
-<p>and this is just about all you need to know about rotating molecules!</p>
-<p>An algorithm in Python using rotation matrices to rotate a molecules image starts by defining the coordinates, in this example of ethanol. These coordinates are</p>
+<p>and the full rotation matrix is the triple multiplication <span class="math notranslate nohighlight">\(\pmb{R} = \pmb{ABC}\)</span>.</p>
+</section>
+<section id="notes">
+<h3><strong>Notes</strong><a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h3>
+<p><strong>(i)</strong> Keep in mind the order of matrix multiplication because it is not commutative thus the order of multiplying matters, i.e. <span class="math notranslate nohighlight">\(\pmb{AB} \ne \pmb{BA}\)</span>. A real life example is flying an aeroplane. First rotate in pitch, nose up by <span class="math notranslate nohighlight">\(45^\text{o}\)</span>. Pitch is always up or down with respect to the plane containing the fuselage and wings. Next roll <span class="math notranslate nohighlight">\(90^\text{o}\)</span> to the right and now you will be in a different altitude than if you first rolled by <span class="math notranslate nohighlight">\(90^\text{o}\)</span> then pitched up by <span class="math notranslate nohighlight">\(45^\text{o}\)</span>. Matrix multiplication is associative which means that a single matrix can be used for two or more rotations for example rotation through the angles <span class="math notranslate nohighlight">\(\varphi\)</span> then <span class="math notranslate nohighlight">\(\theta\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad \begin{align}A(\varphi)B(\theta)&amp;=\begin {bmatrix} \cos(\varphi) &amp;\sin(\varphi) &amp; 0 \\ -\sin(\varphi) &amp; \cos(\varphi) \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\begin {bmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp;\cos(\theta) &amp;\sin(\theta)  \\ 0 &amp;-\sin(\theta) &amp; \cos(\theta)  \end{bmatrix} \\&amp;=\begin {bmatrix} \cos(\varphi) &amp;\sin(\varphi)\cos(\theta) &amp; \sin(\varphi)\sin(\theta) \\ -\sin(\theta) &amp; \cos(\varphi)\cos(\theta)&amp;\cos(\varphi)\sin(\theta) \\ 0 &amp;  -\sin(\theta) &amp;\cos(\theta) \end{bmatrix}\end{align}\end{split}\]</div>
+<p>and  taking the angles in the opposite order gives a different result viz,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle B(\theta)A(\varphi) =\begin {bmatrix} \cos(\varphi) &amp;\sin(\varphi) &amp; 0 \\ -\sin(\varphi) \cos(\theta) &amp; \cos(\varphi)\cos(\theta)&amp;\sin(\theta) \\  \sin(\varphi)\sin(\theta) &amp;-\cos(\varphi)\sin(\theta) &amp; \cos(\theta) \end{bmatrix}\end{split}\]</div>
+<p><strong>(ii)</strong> Finally remember to move coordinates to the centre of geometry and rotate about this then move the molecule back to its position. If this is not done the coordinates are moved on an arc about zero and will not be what you wanted to do.</p>
+</section>
+<section id="example-calculation">
+<h3><strong>Example calculation</strong><a class="headerlink" href="#example-calculation" title="Permalink to this headline">#</a></h3>
+<p>This algorithm using rotation matrices to rotate a molecules coordinates and hence image starts by defining the coordinates, in this example of ethanol. These are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{lll}\\
-C1= \begin{bmatrix} -0.968&amp; -0.008&amp; -0.167\end{bmatrix} &amp; \text{carbon in CH2OH} \\
-Ox= \begin{bmatrix} -0.953&amp; 1.395 &amp; -0.142 \end{bmatrix} &amp; \text{O atom}  \\
-H1 =\begin{bmatrix}  0.094&amp; -0.344&amp; -0.200 \end{bmatrix} &amp;\text{H on C1}\\
-C2= \begin{bmatrix} -1.683&amp; -0.523&amp; 1.084 \end{bmatrix} &amp;\text{Carbon in CH3}\\ 
-H2= \begin{bmatrix} -1.490&amp; -0.319&amp; -1.102 \end{bmatrix} &amp;\text{H on C1}\\
-H3= \begin{bmatrix} -1.842&amp; 1.688 &amp; -0.250 \end{bmatrix} &amp;\text{H on O atom}\\
-H4= \begin{bmatrix} -1.698&amp; -1.638&amp; 1.101 \end{bmatrix} &amp;\text{H on C2}\\
-H5= \begin{bmatrix} -1.171&amp; -0.174&amp; 2.011 \end{bmatrix} &amp;\text{H on C2}\\
-H6= \begin{bmatrix} -2.738&amp; -0.167&amp; 1.117 \end{bmatrix} &amp;\text{H on C2}\\ \end{array} \end{split}\]</div>
-<p>The input to the procedure must have the three rotation angles and the coordinates of the molecule. A graph of the molecule will be plotted in the usual chemical way after rotation. The labelled structure is shown in Figure 32.</p>
+\mathrm{C_1}= \begin{bmatrix} -0.968&amp; -0.008 &amp; -0.167 \end{bmatrix} &amp;\text{carbon in CH2OH} \\
+\mathrm{Ox} = \begin{bmatrix} -0.953&amp;  1.395 &amp; -0.142 \end{bmatrix} &amp;\text{O atom}  \\
+\mathrm{H_1}= \begin{bmatrix}  0.094&amp; -0.344 &amp; -0.200 \end{bmatrix} &amp;\text{H on C1}\\
+\mathrm{C_2}= \begin{bmatrix} -1.683&amp; -0.523 &amp; 1.084  \end{bmatrix} &amp;\text{Carbon in CH3}\\ 
+\mathrm{H_2}= \begin{bmatrix} -1.490&amp; -0.319 &amp; -1.102 \end{bmatrix} &amp;\text{H on C1}\\
+\mathrm{H_3}= \begin{bmatrix} -1.842&amp;  1.688 &amp; -0.250 \end{bmatrix} &amp;\text{H on O atom}\\
+\mathrm{H_4}= \begin{bmatrix} -1.698&amp; -1.638 &amp; 1.101  \end{bmatrix} &amp;\text{H on C2}\\
+\mathrm{H_5}= \begin{bmatrix} -1.171&amp; -0.174 &amp; 2.011  \end{bmatrix} &amp;\text{H on C2}\\
+\mathrm{H_6}= \begin{bmatrix} -2.738&amp; -0.167 &amp; 1.117  \end{bmatrix} &amp;\text{H on C2}\\ \end{array} \end{split}\]</div>
+<p>The input to the procedure must have the three rotation angles and the coordinates of the molecule. A graph of the molecule will be plotted in the usual way after rotation. The labelled structure is shown in Figure 32.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig32.png" /></p>
 <p>Figure 32 Ethanol, with H atoms replaced by their labels.</p>
 <hr class="docutils" />
-<p>If a molecule is plotted only as points showing where the atoms are, it will usually be impossible to decide what its structure is; therefore bonds must be drawn, and this means joining up the atoms in a sensible way with lines. A ‘connectivity’ list showing which atoms are joined to which has to be made, and this might be done automatically by examining the distances between atoms and deciding which atoms are connected to which depending upon their separation. Ethanol is sufficiently small that the list of atoms and lines between them can be made directly so that the ‘pen’ is not lifted from the ‘paper’ when drawing the structure. Clearly, this means going over the same bonds twice and back and forth between some atoms many times. There are several ways of doing this depending on where you start, but the list of atoms below will draw the molecule. Notice how some atoms have to be included more than once.</p>
+<p>If a molecule is plotted only as points showing where the atoms are, it will usually be impossible to decide what its structure is therefore bonds must be drawn, and this means joining up the atoms in a sensible way with lines. A ‘connectivity’ list showing which atoms are joined to which has to be made, and this might be done automatically by examining the distances between atoms and deciding which atoms are connected to which depending upon their separation. Ethanol is sufficiently small that the list of atoms and lines between them can be made directly so that the ‘pen’ is not lifted from the ‘paper’ when drawing the structure. Clearly, this means going over the same bonds twice and back and forth between some atoms many times. There are several ways of doing this depending on where you start, but the list of atoms below will draw the molecule. Notice how some atoms have to be included more than once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm. Rotating a Molecule</span>
@@ -1677,7 +1737,7 @@ H6= \begin{bmatrix} -2.738&amp; -0.167&amp; 1.117 \end{bmatrix} &amp;\text{H on 
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">col</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span>   <span class="p">:</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">col</span> <span class="p">)</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
@@ -1726,7 +1786,7 @@ H6= \begin{bmatrix} -2.738&amp; -0.167&amp; 1.117 \end{bmatrix} &amp;\text{H on 
 
 <span class="n">new</span> <span class="o">=</span><span class="p">[</span><span class="n">mol</span><span class="p">]</span>             <span class="c1"># copy array</span>
 
-<span class="n">new</span> <span class="o">=</span> <span class="n">mol</span> <span class="o">@</span> <span class="n">arot</span>       <span class="c1"># rotate coordinates    </span>
+<span class="n">new</span> <span class="o">=</span> <span class="n">mol</span> <span class="o">@</span> <span class="n">arot</span>       <span class="c1"># rotate coordinates.  @ is matrix rotation operator  </span>
     
 <span class="c1">#remove_grid(ax0)      # remove grid when plotting and add labels</span>
 <span class="c1">#remove_grid(ax1)</span>
@@ -1752,6 +1812,7 @@ H6= \begin{bmatrix} -2.738&amp; -0.167&amp; 1.117 \end{bmatrix} &amp;\text{H on 
 </div>
 </div>
 <p>Figure 33. The left structure shows the original orientation <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>, and right after rotation by <span class="math notranslate nohighlight">\(\psi = 0, \theta = 0\)</span> and <span class="math notranslate nohighlight">\(\varphi = 70^\text{o}\)</span> using the procedure in Algorithm 7.4. The small black dot is at zero the point about which rotation occurs.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="using-jacobians-to-calculate-derivatives-in-polar-coordinates">
@@ -1836,7 +1897,7 @@ H6= \begin{bmatrix} -2.738&amp; -0.167&amp; 1.117 \end{bmatrix} &amp;\text{H on 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fxx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">-</span><span class="n">diff</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="n">r</span>     <span class="c1"># second order derivatives</span>
 <span class="n">fyy</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">+</span><span class="n">diff</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="n">r</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">fxx</span><span class="o">+</span><span class="n">fyy</span> <span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">fxx</span> <span class="o">+</span> <span class="n">fyy</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>

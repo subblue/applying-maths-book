@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
+     5 Trig, hyperbolic and inverse functions, waves, spherical &amp; polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -1055,7 +1055,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-C.html">
-     5 Coupled equations
+     5 Coupled differential equations, the Polymerase Chain reaction (PCR) and the Numerov method
     </a>
    </li>
    <li class="toctree-l2">
@@ -1549,25 +1549,34 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#extrema-maxima-minima-and-inflection-points">
    7 Extrema: maxima, minima and inflection points
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   7.1 Summary
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
+    <a class="reference internal nav-link" href="#i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-maximum-value-and-numerically-solving-for-a-root">
      <strong>
-      (i) Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root
+      (i) Luminescence from phosphors. An example with differentiation of an integral, maximum value and  numerically solving for a root
      </strong>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-calculus-of-variations">
-   8 The Calculus of Variations
+  <a class="reference internal nav-link" href="#summary">
+   7.1 Summary
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-calculus-of-variations-the-euler-lagrange-equation">
+   8 The Calculus of Variations. The Euler-Lagrange Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-euler-lagrange-equation">
+     <strong>
+      (i) Euler-Lagrange Equation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calculating-the-shape-of-the-minimum-surface-of-revolution">
@@ -1579,6 +1588,101 @@ title="Print to PDF"
    8.2 The Brachistochrone, the Tautochrone and the Cycloid
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#euler-lagrange-equation-in-mechanics-action-and-the-lagrangian">
+   8.3 Euler-Lagrange Equation in Mechanics. Action and the Lagrangian.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notation">
+     <strong>
+      Notation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-vertical-motion-under-gravity">
+     <strong>
+      (i) Vertical motion under gravity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-simple-harmonic-motion">
+     <strong>
+      (ii) Simple Harmonic motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-simple-pendulum">
+     <strong>
+      (iii) Simple Pendulum
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-circular-motion-with-a-central-force-planetary-orbits">
+     <strong>
+      (iv) Circular motion with a central force. Planetary orbits
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-effective-potential-depends-on-v-and-the-angular-momentum-mathbb-l">
+       <strong>
+        The effective potential depends on
+        <span class="math notranslate nohighlight">
+         \(V\)
+        </span>
+        and the angular momentum
+        <span class="math notranslate nohighlight">
+         \(\mathbb L\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysing-the-effective-potential-v-eff">
+       <strong>
+        Analysing the effective potential
+        <span class="math notranslate nohighlight">
+         \(V_{eff}\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#circular-orbit-at-minimum-energy-e-min">
+       <strong>
+        Circular orbit at minimum energy
+        <span class="math notranslate nohighlight">
+         \(E_{min}\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#elliptical-orbits-e-min-e-0">
+       <strong>
+        Elliptical orbits
+        <span class="math notranslate nohighlight">
+         \(E_{min} &lt; E &lt;0\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kepler-s-laws">
+       <strong>
+        Kepler’s Laws
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -1588,7 +1692,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations</h1>
+                <h1>6 Limits, l’Hopital’s rule, Maximum & Minimum. Calculus of Variations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1635,25 +1739,34 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#extrema-maxima-minima-and-inflection-points">
    7 Extrema: maxima, minima and inflection points
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   7.1 Summary
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
+    <a class="reference internal nav-link" href="#i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-maximum-value-and-numerically-solving-for-a-root">
      <strong>
-      (i) Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root
+      (i) Luminescence from phosphors. An example with differentiation of an integral, maximum value and  numerically solving for a root
      </strong>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-calculus-of-variations">
-   8 The Calculus of Variations
+  <a class="reference internal nav-link" href="#summary">
+   7.1 Summary
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-calculus-of-variations-the-euler-lagrange-equation">
+   8 The Calculus of Variations. The Euler-Lagrange Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-euler-lagrange-equation">
+     <strong>
+      (i) Euler-Lagrange Equation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calculating-the-shape-of-the-minimum-surface-of-revolution">
@@ -1665,6 +1778,101 @@ title="Print to PDF"
    8.2 The Brachistochrone, the Tautochrone and the Cycloid
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#euler-lagrange-equation-in-mechanics-action-and-the-lagrangian">
+   8.3 Euler-Lagrange Equation in Mechanics. Action and the Lagrangian.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notation">
+     <strong>
+      Notation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-vertical-motion-under-gravity">
+     <strong>
+      (i) Vertical motion under gravity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-simple-harmonic-motion">
+     <strong>
+      (ii) Simple Harmonic motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-simple-pendulum">
+     <strong>
+      (iii) Simple Pendulum
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-circular-motion-with-a-central-force-planetary-orbits">
+     <strong>
+      (iv) Circular motion with a central force. Planetary orbits
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-effective-potential-depends-on-v-and-the-angular-momentum-mathbb-l">
+       <strong>
+        The effective potential depends on
+        <span class="math notranslate nohighlight">
+         \(V\)
+        </span>
+        and the angular momentum
+        <span class="math notranslate nohighlight">
+         \(\mathbb L\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysing-the-effective-potential-v-eff">
+       <strong>
+        Analysing the effective potential
+        <span class="math notranslate nohighlight">
+         \(V_{eff}\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#circular-orbit-at-minimum-energy-e-min">
+       <strong>
+        Circular orbit at minimum energy
+        <span class="math notranslate nohighlight">
+         \(E_{min}\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#elliptical-orbits-e-min-e-0">
+       <strong>
+        Elliptical orbits
+        <span class="math notranslate nohighlight">
+         \(E_{min} &lt; E &lt;0\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kepler-s-laws">
+       <strong>
+        Kepler’s Laws
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -1675,11 +1883,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="limits-l-hopital-s-rule-maximum-minimum-and-calculus-of-variations">
-<h1>6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations<a class="headerlink" href="#limits-l-hopital-s-rule-maximum-minimum-and-calculus-of-variations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="limits-l-hopital-s-rule-maximum-minimum-calculus-of-variations">
+<h1>6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations<a class="headerlink" href="#limits-l-hopital-s-rule-maximum-minimum-calculus-of-variations" title="Permalink to this headline">#</a></h1>
 <section id="l-hopital-s-rule">
 <h2>6  l’ Hopital’s rule<a class="headerlink" href="#l-hopital-s-rule" title="Permalink to this headline">#</a></h2>
-<p>In many calculations limits are encountered. For example, in the theory of diffraction the function <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(x)}{x}\)</span> is met which, when <span class="math notranslate nohighlight">\(x \to 0\)</span>, has the form <span class="math notranslate nohighlight">\(0/0\)</span> and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as <span class="math notranslate nohighlight">\(\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty\)</span> and l’Hopital’s rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l’Hopital who was one of his pupils.</p>
+<p>In many calculations limits are encountered. For example, in the theory of diffraction the function <span class="math notranslate nohighlight">\(\sin(x)/x\)</span> is met which, when <span class="math notranslate nohighlight">\(x \to 0\)</span>, has the form <span class="math notranslate nohighlight">\(0/0\)</span> and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as <span class="math notranslate nohighlight">\(\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty\)</span> and l’Hopital’s rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l’Hopital who was one of his pupils.</p>
 <p>The method is</p>
 <p>(a) Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.</p>
 <p>(b) Differentiate top and bottom separately with respect to the limit variable.</p>
@@ -1690,7 +1898,7 @@ title="Print to PDF"
 <p>and the limiting value of <span class="math notranslate nohighlight">\(x = 0\)</span> is only applied in the last step. As a check, one way to determine any limits close to zero is to plot the function. You will see that <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}\)</span> does indeed have a value of 1 at <span class="math notranslate nohighlight">\(x = 0\)</span>. See question 47 for other examples.</p>
 <p>Expressions such as <span class="math notranslate nohighlight">\(\displaystyle \frac{e^x-1}{x^2}\)</span> often need to be evaluated when <span class="math notranslate nohighlight">\(x \to 0\)</span> or <span class="math notranslate nohighlight">\(x \to \infty\)</span>. In statistical mechanics, for example, <span class="math notranslate nohighlight">\(x\)</span> may be <span class="math notranslate nohighlight">\(-E/k_BT\)</span>, a ratio of energies where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> temperature. When <span class="math notranslate nohighlight">\(x \to 0\)</span>, which corresponds to high temperatures, the function <span class="math notranslate nohighlight">\(\displaystyle(e^x - 1)/x^2\)</span> appears to have the indeterminate form <span class="math notranslate nohighlight">\(0/0\)</span>, but the limit by l’Hopital’s is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\frac{1}{2} \text{ this is wrong!}\]</div>
+\[\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\frac{1}{2}\qquad \text{      !!!   this is wrong!}\]</div>
 <p>where differentiation was performed twice over.  However, this is <em>wrong</em>: no check for an indeterminate  ratio was made after the first differentiation and doing this gives,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}= \frac{1}{0}=\infty\]</div>
@@ -1773,26 +1981,12 @@ title="Print to PDF"
 <p>The function shown in Fig. 12 is the equation <span class="math notranslate nohighlight">\(y = 2(x - 2)^3 - x^2 + 4\)</span>, which has three roots, where <span class="math notranslate nohighlight">\(x = 0\)</span> at <span class="math notranslate nohighlight">\(x \approx 0.8, 2\)</span>, and <span class="math notranslate nohighlight">\(\approx 3.7\)</span>. The first derivative is <span class="math notranslate nohighlight">\(y' = 6(x - 3)(x - 4/3)\)</span>, which has roots at <span class="math notranslate nohighlight">\(x = 4/3\)</span> and <span class="math notranslate nohighlight">\(3\)</span>, which from the graph (left) are the maximum and minimum. The second derivative <span class="math notranslate nohighlight">\(y'' = 12x - 26\)</span> is negative where <span class="math notranslate nohighlight">\(x \lt 13/6\)</span> (<span class="math notranslate nohighlight">\(\approx 2.2\)</span>) as can also be seen from the graph.</p>
 <p><img alt="Drawing" src="../_images/differen-fig12.png" /></p>
 <p>Figure 12. The curve <span class="math notranslate nohighlight">\(f(x) = 2(x - 2)^3 - x^2 + 4\)</span> showing its maximum and minimum, and its first <span class="math notranslate nohighlight">\(f'(x)\)</span> and second <span class="math notranslate nohighlight">\(f''(x)\)</span> derivatives. Notice how the first derivative is zero at the maximum and also the minimum and that the second derivative determines which is which in cases when a plot is not made.</p>
-</section>
 <hr class="docutils" />
-<section id="summary">
-<h2>7.1 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
-<p>A function <span class="math notranslate nohighlight">\(f(x)\)</span> has a maximum or minimum when <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}f(x)=0 \qquad\tag{25}\)</span></p>
-<p>The maximum occurs when <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2}f(x) \lt 0\qquad\tag{26}\)</span></p>
-<p>The minimum occurs when <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2}f(x) \gt 0 \qquad\tag{27}\)</span></p>
-<p>If both first and second derivatives are zero at the same <span class="math notranslate nohighlight">\(x\)</span> then this is a <em>point of inflexion</em>.</p>
-<p><img alt="Drawing" src="../_images/differen-fig13.png" /></p>
-<p>Figure. 13(a) Left. A point of inflexion occurs when both first and second derivatives are 0 at the same point on the curve, in this curve <span class="math notranslate nohighlight">\(y=2(x-1)^3\)</span> +1 this is at the point {1,1}. Fig 13b Right. shows the curve <span class="math notranslate nohighlight">\(y=1/(1+x^2)\)</span> and its inflexion points.</p>
-<hr class="docutils" />
-<p>The curve <span class="math notranslate nohighlight">\(\displaystyle y=\frac{1}{1+x^2}\)</span> has inflection points as shown in fig 13(b).  The first and second derivatives are</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle   y'=-\frac{2x}{(1+x^2)^2}, \qquad y''=\frac{6x^2-2}{(1+x^2)^3}\]</div>
-<p>The first derivative is zero at <span class="math notranslate nohighlight">\(x=0\)</span>, and the second zero at <span class="math notranslate nohighlight">\(\displaystyle x=\pm\frac{1}{\sqrt{3}}\)</span>  and <span class="math notranslate nohighlight">\(\displaystyle y=\pm\frac{3}{4}\)</span></p>
-<section id="i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
-<h3><strong>(i) Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root</strong><a class="headerlink" href="#i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root" title="Permalink to this headline">#</a></h3>
-<p>Many compounds such as ZnS-Cu and zinc silicates-Mn and many other crystalline minerals, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists after being buried perhaps for millenia. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat (i.e. as phonons), with relatively low energy impurity ‘traps’. The excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valence band) and the empty ones at higher energy (excited state or conduction band).</p>
-<p>In ceramics heating during firing the clay releases all the previously trapped electrons and effectively sets the clock to zero. Subsequently the compounds in the ceramic are continuously energised via the breakdown of radioactive elements in their environment, the total amount growing with the time they are buried. After millenia there are enough trapped electrons to produce a measureable amount of phosphorescence when the material either is exposed to strong light, often a few seconds exposure to daylight is sufficient, or heated. The time-range with this method is from approximately <span class="math notranslate nohighlight">\(2000 \to 350,000\)</span> years ago.</p>
-<p>If there are <span class="math notranslate nohighlight">\(n\)</span> electrons liberated their decay into a trap can be described by a first order scheme as,</p>
+<section id="i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-maximum-value-and-numerically-solving-for-a-root">
+<h3><strong>(i) Luminescence from phosphors. An example with differentiation of an integral, maximum value and  numerically solving for a root</strong><a class="headerlink" href="#i-luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-maximum-value-and-numerically-solving-for-a-root" title="Permalink to this headline">#</a></h3>
+<p>Many compounds such as ZnS-Cu and zinc silicates-Mn and many other crystalline minerals, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists after being buried perhaps for millenia. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat (i.e. as phonons) from relatively low energy impurity ‘traps’. The excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valence band) and the empty ones at higher energy (excited state or conduction band).</p>
+<p>In ceramics heating during firing the clay releases all the previously trapped electrons and effectively sets the clock to zero. Subsequently the compounds in the ceramic are continuously energised via the breakdown of radioactive elements in their environment the total amount growing with the amount of time they are buried. After millenia there are enough trapped electrons to produce a measureable amount of phosphorescence when the material is either exposed to strong light, often a few seconds exposure to daylight is sufficient, or heated. The time-range of this method is from approximately <span class="math notranslate nohighlight">\(2000 \to 350,000\)</span> years ago.</p>
+<p>If there are <span class="math notranslate nohighlight">\(n\)</span> electrons liberated their decay into a trap can be described by a first order process as,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dn}{dt}=-k_1n\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_1\)</span> is the rate constant. This itself is given by an Arrhenius expression <span class="math notranslate nohighlight">\(k_1=k_0e^{-E/{k_BT}}\)</span> where <span class="math notranslate nohighlight">\(E\)</span> is the trap depth giving</p>
@@ -1804,7 +1998,7 @@ title="Print to PDF"
 <p>with <span class="math notranslate nohighlight">\(n_0\)</span> as the initial number of <span class="math notranslate nohighlight">\(n\)</span>. The intensity of luminescence (photons/sec) is the rate of being trapped, <span class="math notranslate nohighlight">\(-dn/dt\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle k_1n =n_0k_0e^{-E/k_BT} e^{\large -k_0te^{-E/k_BT}}\]</div>
-<p>Integrating over all time (<span class="math notranslate nohighlight">\(t=0\to \infty\)</span>) produces a total intensity of <span class="math notranslate nohighlight">\(n_0\)</span>, i.e. every <span class="math notranslate nohighlight">\(n\)</span> has found a trap as is to be expected.</p>
+<p>Integrating over all time (<span class="math notranslate nohighlight">\(t=0\to \infty\)</span>) produces a total intensity of <span class="math notranslate nohighlight">\(n_0\)</span>, i.e. every electron has found a trap as is to be expected.</p>
 <p>In many experiments the temperature is increased as the luminescence is decaying and the total luminescence measured vs. temperature. The temperature is ramped so that <span class="math notranslate nohighlight">\(dT =\beta dt\)</span> where <span class="math notranslate nohighlight">\(\beta\)</span> is the rate of heating, in <span class="math notranslate nohighlight">\(\mathrm{degrees\,s^{-1}}\)</span>.</p>
 <p>Integrating the left-hand side of 27a and substituting for <span class="math notranslate nohighlight">\(dt\)</span> into the right hand side and integrating gives,</p>
 <div class="math notranslate nohighlight">
@@ -1820,52 +2014,69 @@ title="Print to PDF"
 \[\displaystyle \frac{d}{dx}\int_a^x f(u)du =f(x)\]</div>
 <p>and so,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dI_T}{dT}=n_0k_0\frac{E}{k_BT^2}e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT}\right)-n_0k_0e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT} \right)\frac{k_0}{\beta}e^{-E/k_BT} =0\]</div>
+\[\begin{split}\displaystyle \begin{align}\frac{dI_T}{dT}=&amp;n_0k_0\frac{E}{k_BT^2}e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT}\right)\\&amp;-n_0k_0e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT} \right)\frac{k_0}{\beta}e^{-E/k_BT} =0\end{align}\end{split}\]</div>
 <p>which greatly simplifies to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle k_0k_BT_m^2e^{-E/(k_BT_m)}-E\beta=0\]</div>
 <p>This result can only be solved numerically, such as by the Newton-Raphson method, to find the trap depth <span class="math notranslate nohighlight">\(E\)</span> when the maximum temperature <span class="math notranslate nohighlight">\(T_m\)</span> is known from experiment.</p>
 <p><img alt="Drawing" src="../_images/differen-fig13b.png" /></p>
-<p>Figure 13b. Luminescence heating curves from eqn 27c for a crystal containing impurity traps of depth <span class="math notranslate nohighlight">\(E\)</span>. The intensity divided by the rate of heating is plotted. This means that the curves show the number of photons liberated at each temperature and so the area under each curve is <span class="math notranslate nohighlight">\(n_0\)</span> the total number of electrons present initially. Recombination of electrons and traps produces a photon. The parameters user were <span class="math notranslate nohighlight">\(n_0=1000,\; k_0 = 3\cdot 10^9\,\mathrm{s^{-1}}\)</span>, <span class="math notranslate nohighlight">\(E = 5000\,\mathrm{cm^{-1}}\)</span> the heating rate <span class="math notranslate nohighlight">\(\beta=0.5\)</span> and <span class="math notranslate nohighlight">\(5.5\)</span> degrees/second is shown on the plot. The temperature at the maximun luminescence intensity is <span class="math notranslate nohighlight">\(300.8\)</span> and <span class="math notranslate nohighlight">\(331.3\)</span> K respectively for the <span class="math notranslate nohighlight">\(\beta\)</span> shown and were calculated using the Newton-Raphson method.</p>
+<p>Figure 13(a). Luminescence heating curves from eqn 27c for a crystal containing impurity traps of depth <span class="math notranslate nohighlight">\(E\)</span>. The intensity divided by the rate of heating is plotted. This means that the curves show the number of photons liberated at each temperature and so the area under each curve is <span class="math notranslate nohighlight">\(n_0\)</span> the total number of electrons present initially. Recombination of electrons and traps produces a photon. The parameters user were <span class="math notranslate nohighlight">\(n_0=1000,\; k_0 = 3\cdot 10^9\,\mathrm{s^{-1}}\)</span>, <span class="math notranslate nohighlight">\(E = 5000\,\mathrm{cm^{-1}}\)</span> the heating rate <span class="math notranslate nohighlight">\(\beta=0.5\)</span> and <span class="math notranslate nohighlight">\(5.5\)</span> degrees/second is shown on the plot. The temperature at the maximun luminescence intensity is <span class="math notranslate nohighlight">\(300.8\)</span> and <span class="math notranslate nohighlight">\(331.3\)</span> K respectively for the <span class="math notranslate nohighlight">\(\beta\)</span> shown and were calculated using the Newton-Raphson method.</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="the-calculus-of-variations">
-<h2>8 The Calculus of Variations<a class="headerlink" href="#the-calculus-of-variations" title="Permalink to this headline">#</a></h2>
-<p>Instead of finding the maximum or minimum of a curve, consider finding the shortest distance between two points on the earth’s surface or on a cone, or finding the equation giving the minimum area of a surface, or the curve of fastest descent between two points. The <em>Calculus of Variations</em> allows us to work out solutions to problems of this type.</p>
-<p>You can imagine a graph that shows the many possible different curves that will fit between any two points. A practical example would be all the different routes by which you could travel from, say, Paris to Berlin.  The calculus of variations is so named because it varies any path by an amount <span class="math notranslate nohighlight">\(\delta y\)</span> and, as the variation, <span class="math notranslate nohighlight">\(\delta y \to 0\)</span>, the path along <span class="math notranslate nohighlight">\(y\)</span> becomes the same as that along <span class="math notranslate nohighlight">\(y + \delta y\)</span>. Because the whole path is sought, the problem is to find a function <span class="math notranslate nohighlight">\(f\)</span> that, provided that it exists, will make an <em>integral have a stationary</em> value, also called an <em>extremal</em>, which usually means that it has the smallest possible value. This condition is written as</p>
+<section id="summary">
+<h2>7.1 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>A function <span class="math notranslate nohighlight">\(f(x)\)</span> has a maximum or minimum when <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}f(x)=0 \qquad\tag{25}\)</span></p>
+<p>The maximum occurs when <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2}f(x) \lt 0\qquad\tag{26}\)</span></p>
+<p>The minimum occurs when <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2}f(x) \gt 0 \qquad\tag{27}\)</span></p>
+<p>If both first and second derivatives are zero at the same <span class="math notranslate nohighlight">\(x\)</span> then this is a <em>point of inflexion</em>.</p>
+<p><img alt="Drawing" src="../_images/differen-fig13.png" /></p>
+<p>Figure. 13(b) Left. A point of inflexion occurs when both first and second derivatives are 0 at the same point on the curve, in this curve <span class="math notranslate nohighlight">\(y=2(x-1)^3\)</span> +1 this is at the point {1,1}. Fig 13b Right. shows the curve <span class="math notranslate nohighlight">\(y=1/(1+x^2)\)</span> and its inflexion points.</p>
+<hr class="docutils" />
+<p>The curve <span class="math notranslate nohighlight">\(\displaystyle y=\frac{1}{1+x^2}\)</span> has inflection points as shown in fig 13(b).  The first and second derivatives are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   I=\int_a^b f\left(x,y,\frac{dy}{dx}\right)\; dx \qquad\tag{28}\]</div>
-<p>Notice that the function <span class="math notranslate nohighlight">\(f(\cdots)\)</span> normally includes three terms, one in the independent variable <span class="math notranslate nohighlight">\(x\)</span>, the next in the dependent one <span class="math notranslate nohighlight">\(y\)</span> and the last in the derivative <span class="math notranslate nohighlight">\(dy/dx\)</span>. Although this equation contains an integral, when solved to find its minimum, differentiation is mainly involved. You may need to consult Chapter 4 on integration to complete the last step in this type of problem.</p>
-<p>Consider, for example, finding the equation that describes the minimum value of <em>all</em> possible surfaces of revolution. A surface of revolution is the surface obtained by rotating a curve, such as a parabola, about an axis; Fig. 8 (Q31) shows the shape of a parabola and its surface of revolution is shaped somewhat like a bowl. Whatever the equation, <span class="math notranslate nohighlight">\(y = \cdots\)</span> is, the surface area is always given by the integral</p>
+\[\displaystyle   y'=-\frac{2x}{(1+x^2)^2}, \qquad y''=\frac{6x^2-2}{(1+x^2)^3}\]</div>
+<p>The first derivative is zero at <span class="math notranslate nohighlight">\(x=0\)</span>, and the second zero at <span class="math notranslate nohighlight">\(\displaystyle x=\pm\frac{1}{\sqrt{3}}\)</span>  and <span class="math notranslate nohighlight">\(\displaystyle y=\pm\frac{3}{4}\)</span></p>
+</section>
+<section id="the-calculus-of-variations-the-euler-lagrange-equation">
+<h2>8 The Calculus of Variations. The Euler-Lagrange Equation<a class="headerlink" href="#the-calculus-of-variations-the-euler-lagrange-equation" title="Permalink to this headline">#</a></h2>
+<p>Consider finding the shortest distance between two points on the earth’s surface or finding the equation giving the minimum area of a surface, or the curve of fastest descent between two points. The Calculus of Variations allows us to work out solutions to problems of this type  where the function describing the solution has to go through a starting and ending point and also has the restraint, usually, of being the minimum distance, area or energy (Arkfen 1970, Boas 1983). In addition the this calculus uses the Euler-Lagrange equation which usually how these types of problems are solved and is invaluable in the study of mechanics as it allows Newtons Laws of Motion to be applied to many interesting situations that are otherwise very hard to solve (Susskind 2014).</p>
+<p>You can imagine a graph that shows the many possible different curves that will fit between any two points. A practical example would be all the different routes by which you could fly from e.g, Paris to Sydney. Each one slightly different from all others but we want to find the one having the minimum path-length. This is obviously trivial on a flat surface as the straight line is shortest but it is not obvious on a sphere. The Calculus of Variations is so named because finds a function that results from varying a path by an amount <span class="math notranslate nohighlight">\(\delta y\)</span> and, as the variation, <span class="math notranslate nohighlight">\(\delta y \to 0\)</span>, the path along <span class="math notranslate nohighlight">\(y\)</span> becomes the same as that along <span class="math notranslate nohighlight">\(y + \delta y\)</span>. Because the whole path is sought, the problem is to find a function <span class="math notranslate nohighlight">\(f\)</span> that, provided it exists, will make an <em>integral have a stationary</em> value, also called an <em>extremal</em>, which usually means that it has the smallest possible value. This as yet unknown function is one of a infinite number that could satisfy the integral but by imposing that condition that makes the integral unchanging, i.e. stationary, the function is found. This is written in general terms as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   2\pi \int_a^b y ds=2\pi \int_a^b y\sqrt{1+\left( \frac{dy}{dx} \right)^2}dx  \qquad\tag{29}\]</div>
-<p>and a straightforward integration with the parabola <span class="math notranslate nohighlight">\(y = 2\sqrt{ax}\)</span> will produce the parabola’s surface area. The term in the square root is the length of a small element of the curve, see Fig. 19 (Q51) and the integral has the form of equation (28).</p>
-<p>Imagine now a surface film suspended between two similar wire hoops at <span class="math notranslate nohighlight">\(x = a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, in practice this could be a soap film, see Fig. 13(b). Now, suppose that the problem is to find that one particular curve, of all possible curves, that will produce the minimum surface area within the two rings; this minimum area surface is the surface formed by a soap film, and its profile is called the Catenary. The equation for the film <span class="math notranslate nohighlight">\(y = \cdots\)</span> was not known before starting the calculation. The calculus of variations allows it be found by first finding <span class="math notranslate nohighlight">\(dy/dx\)</span> and then integrating it.</p>
+\[\displaystyle   I=\int_a^b f\left(x,y,\frac{dy}{dx}\right)\; dx   \tag{28}\]</div>
+<p>Notice that the function <span class="math notranslate nohighlight">\(f(x,y,dy/dx)\)</span> normally includes three terms, one in the independent variable <span class="math notranslate nohighlight">\(x\)</span>, the next in the dependent one <span class="math notranslate nohighlight">\(y\)</span> and the last is the derivative <span class="math notranslate nohighlight">\(dy/dx\)</span>. Although this equation contains an integral, when solved to find its minimum, differentiation is mainly involved. You may need to consult Chapter 4 (integration) to complete the last step in this type of problem.</p>
+<p>Consider, for example, finding the equation that describes the minimum value of any possible surface of revolution. A surface of revolution is the surface obtained by rotating a curve, such as a parabola, about an axis; Fig. 8 (Q31) shows the shape of a parabola and its surface of revolution is shaped somewhat like a bowl. Figure 13c show the surface of revolution of a soap film formed between two rings. Whatever the equation describing the function to form the surface is, <span class="math notranslate nohighlight">\(y = \cdots\)</span> is, the surface area is always given by the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   2\pi \int_a^b y ds=2\pi \int_a^b y\sqrt{1+\left( \frac{dy}{dx} \right)^2}dx  \tag{29}\]</div>
+<p>If we know the function <span class="math notranslate nohighlight">\(y\)</span> straightforward integration for example with the parabola <span class="math notranslate nohighlight">\(y = 2\sqrt{ax}\)</span> will produce the parabola’s surface area. This approach can be applied to any other normal function. The term in the square root is the length of a small element of the curve, see Chapter 4, Fig. 19 (Q51) and the integral has the form of equation (28). To obtain an arc-length we need to find the integral <span class="math notranslate nohighlight">\(\int ds\)</span> where <span class="math notranslate nohighlight">\(ds\)</span> is a small length of the curve and this is found by using a right angled triangle with hypotenuse <span class="math notranslate nohighlight">\(ds\)</span> and sides <span class="math notranslate nohighlight">\(dx,dy\)</span> giving <span class="math notranslate nohighlight">\(\displaystyle ds=\sqrt{dx^2+dy^2}\)</span> thus <span class="math notranslate nohighlight">\(\displaystyle \sqrt{dx^2+dy^2} = \sqrt{1+(dy/dx)^2}dx\)</span> and so we form eqn. 29.</p>
+<p>Imagine now a surface film suspended between two similar wire hoops at <span class="math notranslate nohighlight">\(x = a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, in practice this could be a soap film, see Fig. 13(b). Now, suppose that the problem is to find that one particular curve, of all possible curves, that will produce the minimum surface area within the two rings; this minimum area surface is the surface formed by a soap film, and its profile is called the Catenary. The equation for the film <span class="math notranslate nohighlight">\(y = \cdots\)</span> is not known before starting the calculation. The Calculus of Variations allows it be found by using the Euler-Lagrange equation and then integrating. This is described next.</p>
 <p><img alt="Drawing" src="../_images/differen-fig27.png" /></p>
-<p>Figure 13(b). Surface of revolution, soap film between rings of radius <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>Figure 13(c). Surface of revolution of a soap film between rings of radius <span class="math notranslate nohighlight">\(r=0.5\)</span> where <span class="math notranslate nohighlight">\(\cosh(x/r)=(e^{x/r}+e^{-x/r})/2\)</span>.</p>
 <hr class="docutils" />
-<p>The calculus of variations defines a formula, variously called the Euler or the Euler - Lagrange equation, by which it is possible to evaluate the integral (28) <em>so that it has its minimum value</em>. The Euler equation is</p>
+<section id="i-euler-lagrange-equation">
+<h3><strong>(i) Euler-Lagrange Equation</strong><a class="headerlink" href="#i-euler-lagrange-equation" title="Permalink to this headline">#</a></h3>
+<p>The Calculus of Variations defines a formula, variously called the Euler or the Euler - Lagrange equation, by which it is possible to evaluate the integral (28) <em>so that it has its minimum value</em>. The Euler equation is derived in several maths texts, for example Arkfen (1970), Boas (1983) and Susskind (2014) and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   \frac{\partial f}{\partial y}-\frac{d}{dx}\frac{\partial f}{\partial y_x}=0 \qquad\tag{30}\]</div>
-<p>where in this instance the function <span class="math notranslate nohighlight">\(f\)</span> is</p>
+\[\displaystyle  \frac{d}{dx}\frac{\partial f}{\partial y_x}-\frac{\partial f}{\partial y}=0 \tag{30}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_x = dy/dx\)</span>. Some texts use <span class="math notranslate nohighlight">\(y'=dy/dx\)</span> and in mechanics a dot is usually placed above the symbol to indicate the time derivative derivative, <span class="math notranslate nohighlight">\(\dot y = dy/dt\)</span>.</p>
+<p>In our example to calculate the surface of revolution the function <span class="math notranslate nohighlight">\(f\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  f= y\sqrt{1+\left( \frac{dy}{dx} \right)^2} \]</div>
-<p>and <span class="math notranslate nohighlight">\(y_x = dy/dx\)</span> is the expression we want to find, which, when integrated, produces <span class="math notranslate nohighlight">\(y\)</span>, the equation of the curve required. Notice that the equation tells us to differentiate with respect to <span class="math notranslate nohighlight">\(dy_x\)</span>; see Section 5.6, which describes differentiation with respect to a function. Should the equation for <span class="math notranslate nohighlight">\(f\)</span> <em>not explicitly contain</em> <span class="math notranslate nohighlight">\(x\)</span> then a simpler version can be used which is</p>
+<p>and <span class="math notranslate nohighlight">\(y_x \)</span> is the expression we want to find, which, when integrated, produces <span class="math notranslate nohighlight">\(y\)</span>, the equation of the curve required. Notice that the equation tells us to differentiate with respect to <span class="math notranslate nohighlight">\(dy_x\)</span>; see Section 5.6, which describes differentiation with respect to a function. Should the equation for <span class="math notranslate nohighlight">\(f\)</span> <em>not explicitly contain</em> <span class="math notranslate nohighlight">\(x\)</span> then a simpler version can be used which is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   \frac{\partial f}{\partial y}-\frac{d}{dx}\left(f-y_x\frac{\partial f}{\partial y_x}\right)=0 \qquad\tag{31}\]</div>
+\[\displaystyle   \frac{\partial f}{\partial y}-\frac{d}{dx}\left(f-y_x\frac{\partial f}{\partial y_x}\right)=0 \tag{31}\]</div>
 <p>and the extremal is found from</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  f-y_x\frac{\partial f}{\partial y_x} = const \qquad\tag{32}\]</div>
 <p>This is sometimes called the ‘Beltrami’ identity. The words ‘not explicit’ mean that <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(y\)</span> or <span class="math notranslate nohighlight">\(dy/dx\)</span> such as <span class="math notranslate nohighlight">\( f = y^2 + dy/dx\)</span> which does <em>not</em> explicitly depend on <span class="math notranslate nohighlight">\(x\)</span>; the function <span class="math notranslate nohighlight">\(f = x^2\)</span> explicitly depends on <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
+</section>
 <section id="calculating-the-shape-of-the-minimum-surface-of-revolution">
 <h2>8.1 Calculating the shape of the minimum surface of revolution.<a class="headerlink" href="#calculating-the-shape-of-the-minimum-surface-of-revolution" title="Permalink to this headline">#</a></h2>
-<p>Using the Euler equation is actually not that difficult and as an example the minimum surface of revolution of all possible surfaces for a film suspended between two rings is calculated.  A surface of revolution is given by equation (29) but if the surface is to be a minimum then (30) or (32) must also apply. The latter equation is easier to use with <span class="math notranslate nohighlight">\(f =y \sqrt{1 + (dy/dx)^2}\)</span> because this does not explicitly contain <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>Using the notation <span class="math notranslate nohighlight">\(\displaystyle y_x = \frac{dy}{dx}\)</span> then <span class="math notranslate nohighlight">\(f =y \sqrt{1 + y_x^2}\)</span> and the derivative in eqn 32 becomes,</p>
+<p>The Euler equation is usually not that difficult to use and as an example the minimum surface of revolution of all possible surfaces for a soap film suspended between two rings is calculated. The surface is known to have the minimum energy so we have the minimise and integral such as eqn 28. A surface of revolution is given by equation (29) but if the surface is to be a minimum then (30) or (32) must also apply. The latter equation is easier to use with <span class="math notranslate nohighlight">\(\displaystyle f = y \sqrt{1 + (dy/dx)^2}\)</span> because this does not explicitly contain <span class="math notranslate nohighlight">\(x\)</span>. The derivative in eqn. 32 becomes,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\partial f }{\partial y_x}  = \frac{1}{2}(1+y_x^2)^{-1/2}2y_x\]</div>
-<p>Substituting into eqn 32 and changing to full notation produces</p>
+<p>Substituting into eqn. 32 and changing to full notation produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   y\left[ 1+\left(\frac{dy}{dx}\right)^2   \right]^{1/2}  - y\left(\frac{dy}{dx} \right)^2 \left[ 1+\left(\frac{dy}{dx}\right)^2  \right]^{-1/2}=y\left[   1+\left(\frac{dy}{dx} \right)^2\right]^{-1/2}= a\]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant. Rearranging the result leads to</p>
@@ -1874,7 +2085,7 @@ title="Print to PDF"
 <p>which, when integrated, gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y = a \cosh\left(\frac{x}{a} + b\right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(b\)</span> is a constant of integration. The constant <span class="math notranslate nohighlight">\(b\)</span> sets the position of the minimum of the curve; <span class="math notranslate nohighlight">\(b = 0\)</span> sets the minimum at <span class="math notranslate nohighlight">\(x = 0\)</span>, whereas <span class="math notranslate nohighlight">\(a\)</span> determines the depth of the curve . This equation describes the Catenary or the curve describing the shape of the edge of the minimum surface of revolution as in a soap film supported on rings, see fig 13(b). It is also the shape produced by a flexible cable or chain hanging under its own weight i.e. under a constant uniform force such as gravity. The shape is very close to, but distinct from that of  parabola.</p>
+<p>where <span class="math notranslate nohighlight">\(b\)</span> is a constant of integration. In fig. 13(c) , <span class="math notranslate nohighlight">\(a=0.5, b=0\)</span>. The constant <span class="math notranslate nohighlight">\(b\)</span> sets the position of the minimum of the curve; <span class="math notranslate nohighlight">\(b = 0\)</span> sets the minimum at <span class="math notranslate nohighlight">\(x = 0\)</span>, whereas <span class="math notranslate nohighlight">\(a\)</span> determines the depth of the curve . This equation describes the Catenary or the curve describing the shape of the edge of the minimum surface of revolution as in a soap film supported on rings, see fig 13(c). It is also the shape produced by a flexible cable or chain hanging under its own weight i.e. under a constant uniform force such as gravity. The shape is very close to, but distinct from that of  parabola.</p>
 </section>
 <section id="the-brachistochrone-the-tautochrone-and-the-cycloid">
 <h2>8.2 The Brachistochrone, the Tautochrone and the Cycloid<a class="headerlink" href="#the-brachistochrone-the-tautochrone-and-the-cycloid" title="Permalink to this headline">#</a></h2>
@@ -1907,8 +2118,203 @@ title="Print to PDF"
 <p>Integrating produces with <span class="math notranslate nohighlight">\(cx\lt 1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  y=\frac{\sin^{-1}\left(\sqrt{1-cx}\right)}{c}+\sqrt{\frac{x(1-cx)}{c}}+c_1\]</div>
-<p>where <span class="math notranslate nohighlight">\(c_1\)</span> is a second constant of integration. If the particle starts at the origin then <span class="math notranslate nohighlight">\(y = 0\)</span> when <span class="math notranslate nohighlight">\(x = 0\)</span> and therefore <span class="math notranslate nohighlight">\(c_1 = -\pi/2c\)</span>. This is the curve shown in fig. 14 but plotted with axes as shown and not in the conventional way.</p>
-<p>The solution to this problem was found independently by the Bernoulli brothers, and by Leibniz, Huygens and Newton towards the end of the seventeenth and beginning of the eighteenth centuries.</p>
+<p>where <span class="math notranslate nohighlight">\(c_1\)</span> is a second constant of integration. If the particle starts at the origin then <span class="math notranslate nohighlight">\(y = 0\)</span> when <span class="math notranslate nohighlight">\(x = 0\)</span> and therefore <span class="math notranslate nohighlight">\(c_1 = -\pi/2c\)</span>. This is the curve shown in fig. 14 but plotted with axes as shown and not in the conventional way. The solution to this problem was found independently by the Bernoulli brothers, and by Leibniz, Huygens and Newton towards the end of the seventeenth and beginning of the eighteenth centuries.</p>
+</section>
+<section id="euler-lagrange-equation-in-mechanics-action-and-the-lagrangian">
+<h2>8.3 Euler-Lagrange Equation in Mechanics. Action and the Lagrangian.<a class="headerlink" href="#euler-lagrange-equation-in-mechanics-action-and-the-lagrangian" title="Permalink to this headline">#</a></h2>
+<p>A very important application of the Euler-Lagrange equation is to mechanics. Newton’s second law, force  equals mass time acceleration <span class="math notranslate nohighlight">\(F=ma\)</span> is a fundamental equation. An equivalent assumption is called <em>Hamilton’s principle</em> and is that the <em>Action</em> of a trajectory, this being the position a particle takes with time as it moves, is given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=\int_{t_1}^{t_2}(T-V) dt \]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the kinetic energy and <span class="math notranslate nohighlight">\(V\)</span> the potential energy and <span class="math notranslate nohighlight">\(t\)</span> is time. This integral is ‘stationary’. By being stationary means that any small change in the path a particle takes (trajectory) does not change the value of the integral.  We define the Lagrangian as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L = T - V\]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the kinetic and <span class="math notranslate nohighlight">\(V\)</span> the potential energy of a particle or system of them. Notice that to solve these dynamical problems only the kinetic and potential energies are used not the forces involved, and this usually simplifies the problem. As we now deal with time and position the Euler-Lagrange equation (eqn. 28) is written in terms of these variables as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x}-\frac{\partial L}{\partial x}=0\tag{32a}\]</div>
+<p>and using this equation enables us to minimise the Action integral and so work out the equation of motion via the Lagrangian.  The proof of this is given in many textbooks (Arkfen 1970, Boas 1983, Susskind &amp; Hrabovsky 2014). If the motion is in more than one dimension then there is an equation is each of <span class="math notranslate nohighlight">\(x,y,z\)</span>, or <span class="math notranslate nohighlight">\(r,\theta,\phi\)</span> in spherical polar coordinates and so forth.</p>
+<p>The method of solving mechanics problems is usually to work out the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates, and then differentiate both to get the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> velocities. If necessary convert into angular coordinates, polar, spherical, for example, and finally workout the kinetic energy.  The potential energy is usually already known from how the problem is presented but any coordinates may have to be changed into angular coordinates.</p>
+<section id="notation">
+<h3><strong>Notation</strong><a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h3>
+<p>The notation used with time derivatives is for the first derivative, the velocity, <span class="math notranslate nohighlight">\(\displaystyle \frac{dx}{dt}\equiv \dot x\)</span>, the second derivative <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2x}{dt^2}\equiv \ddot x\)</span>. When using polar coordinates the derivatives will be with <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> as <span class="math notranslate nohighlight">\(\dot r, \dot \varphi\)</span> etc. Differentiating with say <span class="math notranslate nohighlight">\(\dot x\)</span> is easier if you treat it as if it were just plain <span class="math notranslate nohighlight">\(x\)</span>, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{d\dot x}(\dot x^2)=2\dot x,\qquad  \displaystyle \frac{d}{d x}(\dot x^2)=0,\qquad  \frac{d}{d \dot x}(x\dot x^2)=2x\dot x,\qquad \frac{d}{d  x}(x\dot x^2)=\dot x^2\]</div>
+<p>and so the power of <span class="math notranslate nohighlight">\(\dot x\)</span> is lowered. Only by differentiating with time can the higher derivative be formed, i.e. <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt}\dot x \to \ddot x\)</span></p>
+</section>
+<section id="i-vertical-motion-under-gravity">
+<h3><strong>(i) Vertical motion under gravity</strong><a class="headerlink" href="#i-vertical-motion-under-gravity" title="Permalink to this headline">#</a></h3>
+<p>Suppose that a single particle is moving vertically near the earth’s surface under gravity. This can of course be worked out directly using Newton’s Laws but here the Lagrangian method is illustrated. The kinetic energy is <span class="math notranslate nohighlight">\(T=\frac{1}{2}m\dot z^2\)</span> (where <span class="math notranslate nohighlight">\(\dot z=dz/dt\)</span>) and the potential energy <span class="math notranslate nohighlight">\(V=mgz\)</span> where <span class="math notranslate nohighlight">\(z\)</span> is the height above ground level and <span class="math notranslate nohighlight">\(g\)</span> the acceleration due to gravity. To make the action <span class="math notranslate nohighlight">\(I\)</span> stationary we use the Lagrangian which is is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L=T-V= \frac{1}{2}m\dot z^2 - mgz\]</div>
+<p>The terms in the Euler-Lagrange equation (32a) are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial L}{\partial \dot z}=m\dot z,\qquad \frac{d}{dt}\frac{\partial L}{\partial \dot z}=m\ddot z\]</div>
+<p>where the first of these two equations is the momentum and the second the force, (mass times acceleration). The <span class="math notranslate nohighlight">\(z\)</span> derivative is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial L}{\partial z} = mg\]</div>
+<p>therefore the equation of motion is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ddot z + g = 0,\qquad\text{or}\qquad \frac{d^2z}{dt^2} = -g\]</div>
+<p>This equation can be integrated to give velocity <span class="math notranslate nohighlight">\(\displaystyle v = v_0 + gt \)</span> where <span class="math notranslate nohighlight">\(v=\dot z = dz/dt\)</span> and again to give position  <span class="math notranslate nohighlight">\(z = z_0 + v_0t - gt^2/2 \)</span> where <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity, which could be zero, and <span class="math notranslate nohighlight">\(z_0\)</span> the initial height above ground level <span class="math notranslate nohighlight">\(z=0\)</span>. If the motion had not been vertical we would have needed to evaluate similar equations in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> as well and in that case components of the gravitational force in all directions would be needed.</p>
+</section>
+<section id="ii-simple-harmonic-motion">
+<h3><strong>(ii) Simple Harmonic motion</strong><a class="headerlink" href="#ii-simple-harmonic-motion" title="Permalink to this headline">#</a></h3>
+<p>In the simple harmonic motion of a particle the potential energy is <span class="math notranslate nohighlight">\(V= \frac{1}{2}kx^2\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the force constant which has units N/m. A mass on a string can exhibit simple harmonic motion where the force is minus the derivative of the potential <span class="math notranslate nohighlight">\(dV/dx = -kx\)</span>. The sign is negative because the force of the spring resists extension. The kinetic energy is <span class="math notranslate nohighlight">\(T = \frac{1}{2}m\dot x^2\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the mass. The Lagrangian is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L=\frac{1}{2}m\dot x - \frac{1}{2}kx^2\]</div>
+<p>and the derivatives in the Euler-Lagrange equation are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial L}{\partial \dot x}=m\dot x,\qquad \frac{d}{dt}m\dot x=\frac{1}{2}m\ddot x,\qquad \frac{\partial L}{\partial x}=-kx\]</div>
+<p>and so the Euler-Lagrange equation (32a) gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\ddot x-kx=0,\qquad \text{ or}\qquad\ddot x-\frac{k}{m}x=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle \ddot x\equiv \frac{d^2x}{dt^2}\)</span>. This is the equation of the harmonic oscillator. Often the substitution <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span> as this simplifies the solution when this differential equation is solved. The units of <span class="math notranslate nohighlight">\(k/m\)</span> are N/(m kg ) <span class="math notranslate nohighlight">\(\equiv\)</span> kg m s<span class="math notranslate nohighlight">\(^{-2}\)</span>/(m kg) = s<span class="math notranslate nohighlight">\(^{-2}\)</span>. The method to solve such a differential equation is shown in Chapter 10 section 12.</p>
+</section>
+<section id="iii-simple-pendulum">
+<h3><strong>(iii) Simple Pendulum</strong><a class="headerlink" href="#iii-simple-pendulum" title="Permalink to this headline">#</a></h3>
+<p>A derivation of a simple pendulum’s motion is given in Chapter 10-9 but here we use the Euler-Lagrange equation. The pendulum has a weight of mass <span class="math notranslate nohighlight">\(m\)</span> on the end of a weightless but rigid rod. The kinetic and potential energy is calculated via the <span class="math notranslate nohighlight">\(x,y\)</span> displacement in terms of the pendulum’s angle from the vertical <span class="math notranslate nohighlight">\(\varphi\)</span> and length, <span class="math notranslate nohighlight">\(\ell\)</span>, viz,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x=\ell\sin(\varphi),\qquad y=-\ell\cos(\varphi)\]</div>
+<p>The velocity, and so the kinetic energy <span class="math notranslate nohighlight">\(T\)</span>, is calculated by differentiating the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> displacements. The potential energy is the amount the pendulum bob is raised, this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V=mgy=-mg\ell\cos(\varphi)\]</div>
+<p>As the pendulum’s length <span class="math notranslate nohighlight">\(\ell\)</span> is fixed the only variable is the angle making kinetic energy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T=\frac{1}{2}m(\dot x^2+\dot y^2) = \frac{1}{2}m\ell^2\dot \varphi^2\]</div>
+<p>and the Langrangian,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L=T-V = \frac{1}{2}m\ell^2\dot \varphi^2 + mg\ell\cos(\varphi)\]</div>
+<p><img alt="Drawing" src="../_images/differen-fig14a.png" /></p>
+<p>Figure 14a. Geometry of the simple pendulum. The <span class="math notranslate nohighlight">\(x\)</span> coordinate is horizontal, the <span class="math notranslate nohighlight">\(y\)</span> vertical so the pendulum hangs in the <span class="math notranslate nohighlight">\(-y\)</span> direction.</p>
+<hr class="docutils" />
+<p>Using the Euler-Lagrange equation (32a) gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(\frac{d}{dt}\frac{\partial}{\partial \dot \varphi}-\frac{\partial}{\partial \varphi} \right)L=  m\ell^2\ddot\varphi +mg\ell\sin(\varphi)=0\]</div>
+<p>which, using the angular frequency <span class="math notranslate nohighlight">\(\omega=\sqrt{g/\ell}\)</span> (in radians/sec), simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\varphi}{dt^2} =-\omega^2\sin(\varphi)\]</div>
+<p>This equation does not have an analytic solution but does so when the displacement, and therefore angle, is small making <span class="math notranslate nohighlight">\(\sin(\varphi)\to \varphi\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\varphi}{dt^2} =-\omega^2\varphi\]</div>
+<p>which has solutions in sine and cosine i.e. <span class="math notranslate nohighlight">\(\displaystyle \varphi=a\sin(\omega t)+b\cos(\omega t)\)</span> where the constants <span class="math notranslate nohighlight">\(a,b\)</span> depend on the initial conditions.  There are two conditions as the differential equation is integrated twice. One condition is in respect of the velocity one the position at, for example <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+</section>
+<section id="iv-circular-motion-with-a-central-force-planetary-orbits">
+<h3><strong>(iv) Circular motion with a central force. Planetary orbits</strong><a class="headerlink" href="#iv-circular-motion-with-a-central-force-planetary-orbits" title="Permalink to this headline">#</a></h3>
+<p>When dealing with circular motion working in Cartesian coordinates directly is usually very difficult and it is helpful to change to other types such as polar or cylindrical. Doing this replaces the <span class="math notranslate nohighlight">\(x,y\)</span> coordinates by a radial distance from the origin <span class="math notranslate nohighlight">\(r\)</span> and an angular displacement <span class="math notranslate nohighlight">\(\varphi\)</span>. The importance of the using the Euler-Lagrange equation now becomes apparent as all that is involved is replacing the <span class="math notranslate nohighlight">\(x,y,z\)</span> coordinates with new ones and differentiating in these new coordinates to get the velocity and thus the kinetic energy. As an example we calculate the motion of bodies moving with a central potential that attracts one to the other. These bodies could be a planet and its moon, a sun and a planet or two atoms/ions attracted by an electrostatic potential. In each case the force attracting them together, such as gravity,  does not depend on the angle only their separation and is called a <em>central force</em>.  If there was only this force then a planet and its moon would have collided long ago, there has to be angular motion as well, i.e. angular momentum in the two bodies to prevent collision and to keep them orbiting about one another. Casually put, a planet is always falling into its sun but never getting there.</p>
+<p>Although motion is in 3D space with a central forces this is always reduced to motion in a plane so we can ignore any <span class="math notranslate nohighlight">\(z\)</span> dependence. The motion is described using cylindrical or plane polar coordinates where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x=r\cos(\varphi),\qquad y=r\sin(\varphi), \quad z=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is the radial distance from the origin, often called the radius vector, and <span class="math notranslate nohighlight">\(\varphi\)</span> the angle from the x-axis towards the y-axis. The z-axis is out of plane and <span class="math notranslate nohighlight">\(z\)</span> is zero for in-plane motion and can be ignored. The potential energy is <span class="math notranslate nohighlight">\(V\)</span> and this depends only on <span class="math notranslate nohighlight">\(r\)</span> not <span class="math notranslate nohighlight">\(\varphi\)</span>. The kinetic energy is the sum of the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> direction velocity, where the velocity is <span class="math notranslate nohighlight">\(v=\dot x^2+\dot y^2\)</span> therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T=\frac{1}{2}m(\dot x^2 + \dot y^2)\]</div>
+<p>To convert to circular cylindrical coordinates we convert to terms of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> and differentiate both <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> with respect to time,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\dot x &amp;= \dot r\cos(\varphi)-r\sin(\varphi)\dot\varphi\\ \dot y &amp;= \dot r\sin(\varphi)+r\cos(\varphi)\dot\varphi\end{align}\end{split}\]</div>
+<p>Next, square these equations and add. The terms in <span class="math notranslate nohighlight">\(\sin(\varphi)\times\cos(\varphi)\)</span> cancel and we use <span class="math notranslate nohighlight">\(\cos^2(\varphi)+\sin^2(\varphi)=1\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \dot x^2+\dot y^2 = \dot r^2+r^2\dot \varphi^2\]</div>
+<p>which means that we can work in one dimension <span class="math notranslate nohighlight">\(r\)</span> rather than two dimensions in the same equation. The total energy is a constant of the motion and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E = T + V = \frac{1}{2}m\left(\dot r^2 + r^2 \dot \varphi^2\right)+ V(r)\]</div>
+<p>with potential energy <span class="math notranslate nohighlight">\(V(r)\)</span>, similarly the Laplacian is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L = T - V = \frac{1}{2}m\left(\dot r^2 + r^2 \dot \varphi^2\right)- V(r)\tag{32b}\]</div>
+<p>The Euler-Lagrange equations in <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot r}-\frac{\partial L}{\partial r} = 0 ,\qquad \frac{d}{dt}\frac{\partial L}{\partial \dot \varphi}-\frac{\partial L}{\partial \varphi} = 0 \tag{32c}\]</div>
+<p>We have left <span class="math notranslate nohighlight">\(V\)</span> undefined as yet but as it depends on <span class="math notranslate nohighlight">\(r\)</span> only, the derivative is <span class="math notranslate nohighlight">\(dV/dr\)</span> and <span class="math notranslate nohighlight">\(dV/d \varphi=0\)</span>. These are the partial forces, since force is the (negative) gradient of a potential, in the <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> directions.</p>
+<p>Differentiating <span class="math notranslate nohighlight">\(L\)</span> in <span class="math notranslate nohighlight">\(\dot r\)</span> and then in <span class="math notranslate nohighlight">\(r\)</span> gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}(m\dot r)-mr\dot\varphi^2+\frac{d }{d r}V(r)=0\tag{32d}\]</div>
+<p>where the term <span class="math notranslate nohighlight">\(mr\dot \varphi^2\)</span> is the <em>centrifugal force</em> and acts in the opposite direction to the potential. Differentiating 32c in <span class="math notranslate nohighlight">\(\dot \varphi\)</span> and in <span class="math notranslate nohighlight">\(\varphi\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}(mr^2\dot \varphi)=0\tag{32e}\]</div>
+<p>This equation shows us that <span class="math notranslate nohighlight">\(mr^2\dot \varphi\)</span> is a constant since its derivative is zero, and this is called the <em>angular momentum</em>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathbb L= mr^2\dot \varphi\tag{32f}\]</div>
+<section id="the-effective-potential-depends-on-v-and-the-angular-momentum-mathbb-l">
+<h4><strong>The effective potential depends on <span class="math notranslate nohighlight">\(V\)</span> and the angular momentum <span class="math notranslate nohighlight">\(\mathbb L\)</span></strong><a class="headerlink" href="#the-effective-potential-depends-on-v-and-the-angular-momentum-mathbb-l" title="Permalink to this headline">#</a></h4>
+<p>Returning now to the radial equation 32b. Differentiating and rearranging a little gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\ddot r=mr\dot \varphi^2-\frac{d V}{d r}\]</div>
+<p>or in more familiar notation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{\partial^2 r}{\partial t^2} =mr \left(\frac{\partial \varphi}{\partial t} \right)^2-\frac{\partial V}{\partial r}\]</div>
+<p>The equation has the form mass <span class="math notranslate nohighlight">\(\times\)</span> acceleration equals force. Next substituting for the angular momentum gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}m\ddot r &amp;= mr\dot \varphi^2-\frac{dV}{dr}\\
+&amp;=\frac{\mathbb L^2}{mr^3}-\frac{dV}{dr}\\
+&amp;= -\frac{d}{dr}V_{eff}\end{align}\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_{eff}= V(r)+\frac{\mathbb L^2}{2mr^2}\]</div>
+<p>thus the angular motion and the radial or central potential together act as an effective potential.  Notice that the units of <span class="math notranslate nohighlight">\(dV/dr \)</span> are <span class="math notranslate nohighlight">\(\mathrm{kg\, m/s^{-2}}\)</span> as are <span class="math notranslate nohighlight">\( mr\dot \varphi^2\)</span> which confirms this term as  a force. The units of <span class="math notranslate nohighlight">\(\ddot r\)</span> are <span class="math notranslate nohighlight">\(\mathrm{m\,s^{-2}}\)</span> or acceleration.</p>
+<p>If the potential is electrostatic then</p>
+<div class="math notranslate nohighlight">
+\[V(r)=-\frac{q_1q_2}{4\pi\epsilon_0 }\frac{1}{r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> are the charges, and if the potential is that of a gravitation field then the potential is</p>
+<div class="math notranslate nohighlight">
+\[V(r)=-G\frac{Mm}{r}=-\alpha\frac{m}{r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(M\)</span> the mass of the much heavier star and <span class="math notranslate nohighlight">\(m\)</span> the mass of the planet or moon.</p>
+<p>making the effective potential</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_{eff}= -\alpha\frac{m}{r}+\frac{\mathbb L^2}{2mr^2}\tag{32g}\]</div>
+</section>
+<section id="analysing-the-effective-potential-v-eff">
+<h4><strong>Analysing the effective potential <span class="math notranslate nohighlight">\(V_{eff}\)</span></strong><a class="headerlink" href="#analysing-the-effective-potential-v-eff" title="Permalink to this headline">#</a></h4>
+<p>We can see that this potential has a minimum when <span class="math notranslate nohighlight">\(dV_{eff}/dr = 0\)</span> and becomes infinite when <span class="math notranslate nohighlight">\(r\to 0\)</span> and zero when <span class="math notranslate nohighlight">\(r\to \infty\)</span>. The shape should be familiar as it has the same form, although not in detail, as the Lennard-Jones intermolecular potential or the Morse potential for an anharmonic oscillator. The term containing the angular momentum is sometimes called the <em>centrifugal barrier</em> and it prevents the two bodies colliding at small <span class="math notranslate nohighlight">\(r\)</span> but only when angular momentum is present. The minimum potential energy and its radius is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_{eff}^{min}=-\frac{\alpha^2m^3}{2\mathbb L^2}\quad\text{at}\qquad  r_{min}= \frac{\mathbb L^2}{\alpha m^2}\]</div>
+<p>as shown in fig 14b. Notice that the minimum of the effective potential is larger as the angular momentum increases, the centrifugal force <span class="math notranslate nohighlight">\(mr\dot \varphi^2\)</span> is ‘pushing’ the planet away from its sun. An asteroid or comet with positive <span class="math notranslate nohighlight">\(V_{eff}\)</span> would still be attracted to a planet but eventually be repelled by the centrifugal barrier and never form a stable orbit. If the angular momentum is not large enough a collision will occur because here the centrifugal barrier moves towards zero distance, effectively at the surface of the heavier mass.</p>
+<p><img alt="Drawing" src="../_images/differen-fig14b.png" /></p>
+<p>Figure 14b. Effective potential <span class="math notranslate nohighlight">\(V_{eff}\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> with arbitrary units of <span class="math notranslate nohighlight">\(\alpha =1.5, \mathbb L=2, m=1/2\)</span>, red curve and <span class="math notranslate nohighlight">\(\mathbb L= 4\)</span>, blue curve. This latter curve illustrates that the orbital distance increases with angular momentum. The black dot is at the minimum energy. The line at <span class="math notranslate nohighlight">\(-0.02\)</span> illustrates that except at the minimum a stable orbit is an ellipse (see text). The positive and negative components of <span class="math notranslate nohighlight">\(V_{eff}\)</span> (with <span class="math notranslate nohighlight">\(\mathbb{L}=2\)</span>, grey dotted curves) are labelled. The orbital turning points are <span class="math notranslate nohighlight">\(r_0,r_1\)</span> when the energy is not at its minimum.</p>
+</section>
+<hr class="docutils" />
+<section id="circular-orbit-at-minimum-energy-e-min">
+<h4><strong>Circular orbit at minimum energy <span class="math notranslate nohighlight">\(E_{min}\)</span></strong><a class="headerlink" href="#circular-orbit-at-minimum-energy-e-min" title="Permalink to this headline">#</a></h4>
+<p>If the body is exactly at the minimum of the potential, recalling that it must also have angular momentum it follows an  exactly circular path about the origin (the Sun for example) with angular velocity <span class="math notranslate nohighlight">\(\displaystyle \dot\varphi =\frac{\mathbb L}{mr_{min}^2}\)</span>.</p>
+</section>
+<section id="elliptical-orbits-e-min-e-0">
+<h4><strong>Elliptical orbits <span class="math notranslate nohighlight">\(E_{min} &lt; E &lt;0\)</span></strong><a class="headerlink" href="#elliptical-orbits-e-min-e-0" title="Permalink to this headline">#</a></h4>
+<p>If the energy is above the minimum but less than zero, as happens to planets in our solar system, each will follow an elliptical orbit round the Sun. The Sun is at one focal point of the ellipse. The elliptical motion  is understood by realising that above the minimum energy there are two turning points on the orbit that have the same energy, i.e. there is a maximum and a minimum separation <span class="math notranslate nohighlight">\(r\)</span>, see fig 14b. All radii in-between these have the same energy. This can only occur in a stable orbit if this is elliptical which means that the distance from a sun varies periodically with time, which in turn means that, although the total energy is constant, there is a periodic exchange between kinetic and potential energy. One way of understanding how this results from fig 14b is to recall that this shows all the motion around the orbit projected into one graph, i.e. all <span class="math notranslate nohighlight">\(\varphi\)</span> values are shown together. Thus all the distance between the minimum at <span class="math notranslate nohighlight">\(r_0\)</span> to the maximum <span class="math notranslate nohighlight">\(r_1\)</span> are shown together as a line. Clearly, each radius must be ever so slightly different from the one present a moment earlier and so on so that smooth motion of the planet results. In this case only an ellipse describes the motion.</p>
+</section>
+<section id="kepler-s-laws">
+<h4><strong>Kepler’s Laws</strong><a class="headerlink" href="#kepler-s-laws" title="Permalink to this headline">#</a></h4>
+<p>The Danish astronomer Tycho Brahe made careful measurements of the motion of the planets before the age of telescopes. In 1609 his assistant Johannes Kepler put these measurements to good use and described how the planets moved. He did not understand why they moved as they did, this was before Newton discovered his laws of motion and law of gravity, but he did get the facts correct.</p>
+<p>His laws are</p>
+<p><strong>K1</strong> The orbit of a planet is an ellipse with the Sun at its focus.</p>
+<p><strong>K2</strong> A line joining a planet to the Sun sweeps out equal areas in equal time.</p>
+<p><strong>K3</strong> The square of the orbital period is directly proportional to the cube of the radius of its orbit.</p>
+<p>Each of these laws may be explained by Newtons Laws of motion.</p>
+<p><strong>K1</strong> We have seen how the effective potential predicts elliptical orbits when the energy is above the minimum and less than zero. The circular orbit at the minimum is thus a limiting case.</p>
+<p><strong>K2</strong> It is clear that for a circular orbit where the planet moves at constant speed (angular velocity) that equal areas must be swept out in equal time, but it is not so obvious for an ellipse. However, it turns out that Kepler’s second law is equivalent to a statement of the conservation of angular momentum which means the shape of the orbit, as long as it repeats itself, does not matter. To calculate the area a small angle from a the radius vector <span class="math notranslate nohighlight">\(r\)</span> is taken so that <span class="math notranslate nohighlight">\(\varphi\to \varphi +\delta\varphi\)</span> and the area of the resulting triangle calculated, see fig 14c.</p>
+<p><img alt="Drawing" src="../_images/differen-fig14d.png" /></p>
+<p>Figure 14c. Calculating the area formed when the angle changes by a small amount <span class="math notranslate nohighlight">\(d\varphi\)</span>.</p>
+<hr class="docutils" />
+<p>The area of the triangle is half the base times the height which is <span class="math notranslate nohighlight">\(\displaystyle \delta A=\frac{r}{2}r\delta\varphi\)</span>. Dividing by a small time interval to make an infinitesimal change gives the <em>areal</em> velocity <span class="math notranslate nohighlight">\(dA/dt\)</span>, which is the area swept out in time <span class="math notranslate nohighlight">\(dt\)</span>, or,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}=\frac{1}{2}r^2\frac{d\varphi}{dt}\]</div>
+<p>Equation 32e shows that the angular momentum is constant <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt}(mr^2\dot \varphi)=0\)</span> and from this equation it follows that the same must be true for the areal velocity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\left(\frac{1}{2}r^2\dot\varphi\right)=0\]</div>
+<p>which constitutes the proof that equal areas are swept out in equal times.</p>
+<p><strong>(K3)</strong> To work out the third law we equate the inwards force due to gravity with the outwards force due to angular acceleration which is the centrifugal force. Thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \alpha\frac{m}{r^2}= m\omega ^2 r\]</div>
+<p>where we have used <span class="math notranslate nohighlight">\(\omega\)</span> for the angular frequency <span class="math notranslate nohighlight">\(\omega\equiv \dot \varphi\)</span>. Rearranging produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega^2=\alpha \frac{1}{r^3}\]</div>
+<p>A period <span class="math notranslate nohighlight">\(\tau\)</span> is defined as the time to complete a loop of an orbit, therefore by definition</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tau=\frac{1}{2\pi\omega}\]</div>
+<p>and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tau^2=\frac{1}{4\pi^2 \alpha}r^3=\frac{1}{4\pi^2 GM}r^3\]</div>
+<p>which proves Kepler’s third law. This equation also allows us to ‘weigh’ the Sun. However, in practice a more detailed calculation is needed and this results in replacing <span class="math notranslate nohighlight">\(r\)</span> by the half the width of the ellipse <span class="math notranslate nohighlight">\(a\)</span>, the semi-major axis for a particular planet, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tau^2=\frac{4\pi^2}{  GM}a^3\]</div>
+<p>thus by knowing the gravitational constant <span class="math notranslate nohighlight">\(G\)</span>, first measured by Cavendish in 1798, and measuring the period and the major axis of the planet, <span class="math notranslate nohighlight">\(M\)</span> is determined. Using the modern accepted gravitational constant <span class="math notranslate nohighlight">\(G=6.673\cdot 10^{-11}\)</span>, average sun to earth distance of <span class="math notranslate nohighlight">\(148.24 \cdot 10^6\)</span> km and the number of seconds in a year gives the solar mass as <span class="math notranslate nohighlight">\(M=1.93\cdot 10^{30}\)</span> kg very close to the modern value, <span class="math notranslate nohighlight">\(1.988\cdot 10^{30}\)</span> kg.</p>
+</section>
+</section>
 </section>
 </section>
 
