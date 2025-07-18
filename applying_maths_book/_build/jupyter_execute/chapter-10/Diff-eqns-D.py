@@ -174,8 +174,89 @@
 # 
 # Fig. 16 Magnetization vs. time when $T_1 = T_2/2 = 200$ (left) and when $T_1 = 2T_2 = 400$. The magnetization starts at at $x,\,y,\,z = 1, 1, 0$ which is at the end of the red line, (green dot). This line represents the initial magnetisation. The magnetisation vector ends on the z-axis at point $M_0 = 1$, red dot.
 # ________
+
+# ## 13.4 A scheme with an equilibrium and reaction .  $A\to C, A\rightleftharpoons B \to C$
 # 
-# ## 13.4 Second-order equations. Coupled springs
+# Reactions where two species could form an equilibrium and at the same time one or the other or both react to form another species are not uncommon. The scheme is related to the 'circular' scheme given in chapter 7, 13.2(v). 
+# 
+# Our example is of delayed fluorescence of which there are two types. First the inter-molecular process of triplet-triplet annihilation which can produce a spin-statistically limited excited singlet state after two excited triplet states collide (Chapter 10, Q21) and the intra-molecular process of thermally repopulating the singlet state from the triplet and is called thermally activated delayed fluorescence or TADF. This latter process must have a triplet state only slighter lower in energy than the singlet if reverse crossing to the singlet, which is the process that produces delayed fluorescence, is to occur, see scheme fig 16a. The rate constant repopulating the singlet from the triplet is temperature dependent as $\displaystyle k_r=k_r'e^{-\Delta E/k_BT}$, there $\Delta E$ is the energy gap, $k_B$ the Boltzmann constant and $T$ temperature in degrees Kelvin, see figure 16a. This rate constant and therefore the delayed fluorescence is highly temperature sensitive. The TAPD process is nowadays technologically very important as a process by which to improve the emission efficiency of molecules used as organic light emitting diodes OLEDs although the effect was observed decades earlier in the dye eosin by Parker and  Hatchard (Trans. Faraday Soc. 1894, v 57, 1961)) it has until now remained somewhat of a curiosity. 
+# 
+# The scheme in figure 16a shows the processes involved and these produce two coupled first-order differential equations. We know that fluorescence with rate constant $k_f$ is a spin allowed process but phosphorescence $k_p$ is not, hence $k_f \gg k_p$. As the reverse intersystem crossing $k_r$ is thermally activated then $k_i \gt k_r$. The fluorescence rate constant $k_f$ and intersystemn crossing $k_i$ are usually of similar magnitude. The prompt fluorescence decay lifetime is $\displaystyle \tau_f =\frac{1}{k_f+k_i}$ and the prompt fluorescence yield  $\displaystyle \phi_f=\frac{k_f}{k_f+k_i} =k_f\tau_f$. 
+# 
+# ![Drawing](diffeqn-fig16a.png)
+# 
+# figure 16a. Scheme showing the rate constants in thermally activated delayed fluorescence. The term $\Delta E/k_BT$ needs to be as small as possible to make the rate constant $k_r$ large enough to significantly repopulate the singlet.
+# ________________________________
+# 
+# The equations describing the the singlet $S$ and triplet  $T$ populations are 
+# 
+#  $$\displaystyle \frac{dS}{dt}=-(k_f+k_i)S+k_rT,\qquad \frac{dT}{dt}=k_iS-(k_r+k_p)T$$
+#  
+# which we simplify by letting $k_0 = k_f+k_i$ and $k_1=k_r+k_p$,
+# 
+#  $$\displaystyle \frac{dS}{dt}=-k_0S+k_rT,\qquad \frac{dT}{dt}=k_iS-k_1T\tag{37}$$
+#  
+# The method to solve these is quite general using the 'D' operator method. There are two simultaneous equations which allow us to isolate S or T resulting in a second order equation and then we use the 'D' method to find the solution.  Rewriting the equations using the 'D' operator gives,
+#  
+#  $$(D+k_0)S - k_rT = 0,\qquad (D+k_1)T - k_iS = 0\tag{37a}$$ 
+# 
+# It is necessary now to obtain an equation in either S or T. Multiplying the second of equations 37a by $(D+k_0)/k_i$ gives 
+# 
+# $$\displaystyle \frac{1}{k_i}(D+k_1)(D+k_0)T - S(D+k_0) = 0$$
+# 
+# and subtracting the first equation produces,
+# 
+# $$\displaystyle (D+k_1)(D+k_0)T - k_ik_rT = 0,\qquad \text{or}\qquad (D^2+ (k_0+k_1)D+k_1k_0-k_ik_r)T=0$$
+# 
+# which is now a second order differential equation that can be solved for $T$, and $S$ can be found by substitution using this solution. To solve this quadratic and only for clarity we let $a=1,b=k_0+k_i$ and $c=k_ik_0-k_ik_r$ then
+# 
+# $$\displaystyle m_+=\frac{-b+\sqrt{b^2-4ac}}{2a},\qquad m_-=\frac{-b-\sqrt{b^2-4ac}}{2a}$$
+# 
+# which gives the solution
+# 
+# $$\displaystyle T=c_1e^{\large{+tm_+}}+c_2e^{\large{+tm_-}}$$
+# 
+# where $c_1,c_2$ are constants to be determined from the initial conditions. These are that at $t=0, S=S_0, T=0$ thus $c_1=-c_2$ and therefore substituting gives
+# 
+# $$\displaystyle T=c_1\left(e^{\large{-t(k_0+k_1-q)/2}}-e^{\large{-t(k_0+k_1+q)/2}}\right),\qquad q=\sqrt{(k_1-k_0)^2+4k_ik_r}$$
+# 
+# If we differentiate this solution then we can use $\displaystyle dT/dt=-k_iS+k_1T$ to find $S$. Doing this gives
+# 
+#  $$\displaystyle -m_+c_1e^{tm_+}+ m_-c_1e^{tm_-}=-k_iS+k_1(c_1e^{tm_+}-c_1e^{tm_-})$$
+#  
+# 
+# and from which we can find $c_1$ because $S=S_0$ when $t=0$ making $\displaystyle c_1=k_iS_0/q$ and finally
+#  
+# $$\displaystyle T=\frac{k_iS_0}{q}\left(e^{\large{-t(k_0+k_1-q)/2}}-e^{\large{-t(k_0+k_1+q)/2}}\right)$$
+#  
+# After some very fiddly algebra,
+#  
+#  $$\displaystyle S=\frac{2k_ik_rS_0}{q}\left( \frac{e^{\large{-t(k_0+k_1-q)/2}}}{k_0-k_1+q}+ \frac{e^{\large{-t(k_0+k_1+q)/2}}}{k_1-k_0+q}   \right)$$
+# 
+# where $q$ is given above. 
+
+# We know from our statement of the kinetics that the triplet is not present initially and must decay to zero at long times, and we can see from the form of these equations that the triplet population is indeed zero at $t=0$ and zero at $t=\infty$ so must reach a maximum at some finite time and so is described by the difference of two exponentials.  The singlet decays from its initial value $S_0$ with an initial decay due to 'prompt' fluorescence and a longer decay due to re-population of $S_1$ from the triplet, causing the delayed fluorescence, so the singlet is expected to decay as the sum of two exponentials, as is confirmed by its equation. The two excited state lifetimes are 
+# 
+# $$\displaystyle \tau_1=\frac{2}{k_0+k_1+q},\qquad \displaystyle \tau_2=\frac{2}{k_0+k_1-q}$$
+# 
+# and as $q$ is positive $\tau_1$ this must be the shorter lifetime. Using the values to generate figure 16b, $k_f=0.1, k_i=0.1$, $  k_r = 0.1e^{-4} = 1.8\cdot10^{-3},$ $ k_p = 5\cdot10^{-4}$ ns$^{-1}$ then $\tau_1 = 4.98$ ns, which is almost the same as $1/k_0$, and $\tau_2 = 709$ ns. The large difference in these values is the result of the large energy gap from the triplet to the ground state and spin-forbidden nature of the phosphorescence. 
+# 
+# ![Drawing](diffeqn-fig16b.png)
+# 
+# Figure 16b. Prompt fluorescence (solid grey line), total fluorescence (red) and phosphorescence (dashed) vs. time on a log-log scale. The delayed fluorescence is the difference between the prompt and total fluorescence. The rate constants used were (in units of ns$^{-1}$),  $k_f=0.1,k_i=0.1,k_r=0.1e^{-4}=1.8\cdot10^{-3}, k_p=5\cdot10^{-4}$
+# ______________________ 
+# 
+# The direct and delayed fluorescence, and the phosphorescence yields can be calculated by integrating the S and T decay profiles either analytically or numerically. Doing this for the rate constants used in the figure gave a direct fluorescence yield of $0.5$ and an additional delayed yield of $0.32$ which is a considerable increase. This may seem strange looking at the figure because the prompt fluorescence has decayed by so much before the delayed emission seems to start. However, the log time-scale is misleading and because this emission is present for such a long time, compared to the prompt fluorescence, and this makes its yield larger than it appears to be. The delayed fluorescence yield can also be worked out analytically, (C. Baleizao & M. Berberan-Santos, J. Chem. Phys, 2007, v. 126, p. 204510).  For the purposes of calculation they supposed that the energy moved sequentially from singlet to triplet  as $S^{(1)}\to T^{(1)} \to S^{(2)}\to T^{(2)} \cdots$ and worked out the chance of returning to the singlet at each step $1,2,3 \cdots$, and so fluorescing at each. The initial chance is simply the fluorescence yield $\phi_f$ but now a fraction $\phi_i$ moves to the triplet and a fraction $\phi_r$ of this returns and so the total chance so far is $\phi_f(1+\phi_i\phi_r)$. At the next step only the fraction $(\phi_i\phi_r)^2$ returns and by induction $(\phi_i\phi_r)^3$ and so on for further steps, giving 
+# 
+# $$\displaystyle \phi_{f-total}=\phi_f(1+\phi_i\phi_r+(\phi_i\phi_r)^2+(\phi_i\phi_r)^3\cdots) =\frac{\phi_f}{1-\phi_i\phi_r}$$
+# 
+# where $\displaystyle\phi_f=\frac{k_f}{k_f+k_i}$ is the prompt yield and $\displaystyle\phi_r=\frac{k_r}{k_p+k_r}$ and $\displaystyle\phi_i=\frac{k_i}{k_f+k_i}=1-\phi_f$. The delayed fluorescence yield can be worked out from the total fluorescence by subtracting the prompt fluorescence and is 
+# 
+# $$\displaystyle \phi_D= \phi_f\frac{\phi_i\phi_r}{1-\phi_i\phi_r}$$
+# 
+# To produce a large total fluorescence yield the general conditions are  $k_f \lt k_i, k_r\lt k_f$ and $ k_p$ and $k_r$ are small than compared to other rate constants. If $k_r$ can be made comparable to $k_i$ or larger then the total yield can be increased but this is not generally possible unless unrealistically high temperatures are used.
+
+# ## 13.5 Second-order equations. Coupled springs
 # 
 # Pairs of second-order equations can be solved using the operator method. In this example, the motion of a pair of masses and springs is calculated. This calculation is an alternative to the matrix method of Chapter 7.12.
 # 

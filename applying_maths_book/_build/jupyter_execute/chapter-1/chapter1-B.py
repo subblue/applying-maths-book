@@ -27,12 +27,27 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)}$$
 # 
-# The cosine is the projection of the hypotenuse onto the x-axis, and the sine the projection onto the y- or vertical axis. The tangent is the gradient of the hypotenuse.
+# The cosine is the projection of the hypotenuse onto the x-axis, and the sine the projection onto the y- or vertical axis. The tangent is the gradient of the hypotenuse, see fig. 9. 
 # 
-# There are very many relationships between the trig functions; some of the most commonly met are, for angles $x$ and $y$ are shown below
+# ![Drawing](chapter1-fig9.png)
 # 
-# $$\displaystyle \textbf{Table of trig relationships}$$
-# $$\displaystyle \begin{array}{lll}\\
+# Figure 9 Trigonometric relationships in a right-angled triangle and relationships to the x- and y-axes.
+# 
+# A simple way of remembering these function at certain angles in degrees is shown in the table. Cosines are in the reverse order compared to sines.
+# 
+# $$\displaystyle \textbf{Table of some sine and tangent values}$$
+# $$\displaystyle\begin{array}{c|cccc}
+# &\theta = 0 & 30 & 45 & 60 & 90\\
+# \hline
+# \sin(\theta)& \frac{\sqrt{0}}{2}&\frac{\sqrt{1}}{2} &\frac{\sqrt{2}}{2} &\frac{\sqrt{3}}{2} &\frac{\sqrt{4}}{2} \\
+# \tan(\theta)& \frac{0}{\sqrt{3}}& \frac{1}{\sqrt{3}}& \frac{\sqrt{3}}{\sqrt{3}}&\frac{\sqrt{3}}{1}&\frac{\sqrt{3}}{0}\\
+# \hline
+# \end{array}$$
+# 
+# There are very many relationships between the trig functions, some of the most commonly met ones are shown below where angles $x$ and $y$ are in radians. (There are $2\pi$ radians in a circle and therefore are equivalent to $360^\text{o}$). 
+# 
+# $$\displaystyle \begin{array}{ll}\\
+# \textbf{Table of trig relationships}\\
 # \hline
 # \sin(-x) =-\sin(x) & \cos(-x)=\cos(x)\\[5pt]
 # \cos^2(x)+\sin^2(x)=1 & \cos^2(x)-\sin^2(x)=2\cos^2(x)-1 = \cos(2x) &\\[5pt]
@@ -53,10 +68,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # The word tangent derives from the Latin _tangere_, which means to touch, and this is also the usage when the tangent is used to define the gradient of a curve at a given point, Figure 10. If the curve is a circle, the tangent is perpendicular to the radius.
 # 
 # Although hand-held calculators usually use degrees to calculate trigonometric functions, this disguises the fact that these functions require the angle to be in _radians_. A radian is the angle subtended at the centre of a circle by travelling a distance around the circumference that is equal to its radius, thus a complete rotation of $360^\text{o} \equiv 2\pi$ radians and 1 radian is approximately $57.5^{\text{o}}$. Radians are not always included as units; the exception is in the study of NMR where the magnetogyric ratio $\gamma$, which is the constant that relates the magnetic dipole to the magnetic field, is always quoted in $\mathrm{rad\, T^{-1} s^{-1}}$, the T here representing the unit Tesla. In spectroscopy generally, frequencies are usually quoted either as $\mathrm{s^{-1}}$, with the symbol $\upsilon$,  or as angular frequencies, $\omega$ in rad s$^{-1}$. These are related as $2\pi \upsilon = \omega$.
-# 
-# ![Drawing](chapter1-fig9.png)
-# 
-# Figure 9 Trigonometric relationships in a right-angled triangle and relationships to the x- and y-axes.
 #     
 # ![Drawing](chapter1-fig10.png)
 # 
@@ -256,7 +267,7 @@ simplify( cosh(x)**2 + sinh(x)**2 )
 # 
 # However, not all functions have an inverse. When plotted the observation is that one function is the reflection of the other through a straight line of gradient $\pm 1 $, such as shown in  figure 8 for the positive exponential and log. More formally, the function and its inverse must have a one-to-one relationship. If an inverse exists when the function $f (x)$ is solved for $x$, then $x$ and $y$ exchanged and the result substituted into the original equation, $x$ results. For example, if $f(x) \equiv y = (x + 2)/3$ then $x = 3y - 2$, the inverse function is found by swapping $y$ for $x$, giving $f^{-1}(x) = 3x - 2$, and then substituting back $f^{-1}[f(x)] = 3(x + 2)/3 - 2 = x$.
 # 
-# The function $y = \sin(x)$ has $y = \sin^{-1}(x)$ as its inverse function, which can be written as $\sin(y) = x$, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions $\cos^{-1}(x)$ and $\tan^{-1}(x)$. Notice that the computer notation is different to the mathematical one; for example, $\sin^{-1}(x) \equiv \arcsin(x)$, the prefix 'arc' being added to these inverse functions, but this notation is not universal and in some languages asin may be used instead of arcsin etc.
+# The function $y = \sin(x)$ has $y = \sin^{-1}(x)$ as its inverse function, which can be written as $\sin(y) = x$, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions $\cos^{-1}(x)$ and $\tan^{-1}(x)$. Notice that the computer notation is different to the mathematical one; for example, $\sin^{-1}(x) \equiv \arcsin(x)$, the prefix 'arc' being added to these inverse functions, but this notation is not universal and in some computer languages asin may be used instead of arcsin etc.
 # 
 # The inverse trig functions are multi-valued; the principal range for $\sin^{-1}(x)$ and $\cos^{-1}(x)$ is $x = \pm 1$ and the function's principal values lie between $y = \pm \pi/2$. The inverse function $\tan^{-1}(x)$ is also multi-valued and ranges from $x = \pm \infty$ and has principal values between $y = \pm\pi/4$.
 # 

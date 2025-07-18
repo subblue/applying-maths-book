@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
+     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -2773,8 +2773,24 @@ o &amp; - &amp; x\\
 <p>The problem can be tackled in another way. The chance that the first person has a birthday on any day is obviously <span class="math notranslate nohighlight">\(365/365\)</span>, the second person now only has 364 days to be born on so their chance is <span class="math notranslate nohighlight">\(364/365\)</span>, and so on to the last person with chance <span class="math notranslate nohighlight">\(341/365\)</span>. The complement of the product of all these numbers gives the answer above.</p>
 <p><img alt="Drawing" src="../_images/chapter1-fig20a.png" /></p>
 <p>figure 20a. Probability that two people in a group of <span class="math notranslate nohighlight">\(n_A\)</span> have the same birthday.</p>
-</section>
 <hr class="docutils" />
+<p>This problem can be stated in a different way. If you know <span class="math notranslate nohighlight">\(n\)</span> peoples birthdays is it more likely or not of two of them being on the same day and month (Rouse Ball &amp; Coxeter, 1987). If everyone has a different birthday, so that there is a random selection of <span class="math notranslate nohighlight">\(n\)</span> days out of <span class="math notranslate nohighlight">\(365\)</span>, the total number of selections is <span class="math notranslate nohighlight">\(365^n\)</span>. As each day should only be counted once the number of selections becomes <span class="math notranslate nohighlight">\(365\cdot364\cdots (365-n+1)\)</span>, thus the probability is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{365\cdot364\cdots (365-n+1)}{365^n}\]</div>
+<p>Let the occurrence be just as likely as not then the probability is <span class="math notranslate nohighlight">\(1/2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{365\cdot364\cdots (365-n+1)}{365^n}=\frac{1}{2}\]</div>
+<p>and we can evaluate this by rearranging. The first three terms are  <span class="math notranslate nohighlight">\(\displaystyle \frac{365}{365}\frac{364}{365}\frac{363}{365} = \frac{365-1}{365}\frac{365-2}{365}=\left(1-\frac{1}{365}\right)\left(1-\frac{2}{365}\right)\)</span> and so the product is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(1-\frac{1}{365}\right)\left(1-\frac{2}{365}\right)\cdots \left(1-\frac{n-1}{365}\right)=\frac{1}{2}\]</div>
+<p>taking logs of both sides and using the log expansion as each term is small ( <span class="math notranslate nohighlight">\(\ln(1+x)=x )\)</span> produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{365}+\frac{2}{365}+\cdots +\frac{n-1}{365}=\ln(2)\]</div>
+<p>which is <span class="math notranslate nohighlight">\(\displaystyle 1+2+\cdots n-1=365\ln(2)\)</span> and the summation is equal to <span class="math notranslate nohighlight">\(n(n-1)/2\)</span> making the result</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n(n-1)=2\cdot 365\ln(2)\]</div>
+<p>from which <span class="math notranslate nohighlight">\(n= 23\)</span> to the nearest whole number. You can see from the plot above that this value of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1/2\)</span>.</p>
+</section>
 <section id="viii-conditional-probability-throwing-coins">
 <h3><strong>(viii) Conditional probability. Throwing coins</strong><a class="headerlink" href="#viii-conditional-probability-throwing-coins" title="Permalink to this headline">#</a></h3>
 <p>Sometimes conditional probabilities are required; for example, tossing three coins and deciding what is the chance that the outcome is at least two tails (outcome A) and knowing that the first coin to fall is a head (outcome B). Tossing three coins can only produce the patterns</p>
@@ -2807,7 +2823,13 @@ o &amp; - &amp; x\\
 <p>where <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> must be integers, we cannot have, for example, 3.5 coins or 4.1 successes.</p>
 <p>A binomial distribution thus requires three conditions to be met,</p>
 <blockquote>
-<div><p>a fixed number of trials <span class="math notranslate nohighlight">\(n\)</span>, a constant chance of success <span class="math notranslate nohighlight">\(p\)</span> and each test independent of all others.</p>
+<div><p>a fixed number of trials <span class="math notranslate nohighlight">\(n\)</span>,</p>
+</div></blockquote>
+<blockquote>
+<div><p>a constant chance of success <span class="math notranslate nohighlight">\(p\)</span> and</p>
+</div></blockquote>
+<blockquote>
+<div><p>each test independent of all others.</p>
 </div></blockquote>
 <section id="i-multiplicity-or-binomial-coefficient-w">
 <h3><strong>(i) Multiplicity or Binomial Coefficient W</strong><a class="headerlink" href="#i-multiplicity-or-binomial-coefficient-w" title="Permalink to this headline">#</a></h3>

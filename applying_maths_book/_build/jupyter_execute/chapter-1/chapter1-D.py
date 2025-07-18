@@ -17,44 +17,48 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # ## 10.1 Modulo arithmetic
 # 
-# Clock time is usually measured to base $60$ for minutes, and $12$ for hours. For example, if you arrange to meet someone at $10:35$ and they are $40$ minutes late, then rather than noting the time as $10:75$ we say it is $11:15$. This is an easy mental calculation expressed more awkwardly and mathematically as 
+# Clock time is usually measured in base $60$ for minutes and base $12$ for hours. For example, if you arrange to meet someone at $10:35$ and they are $40$ minutes late, then rather than noting the time as $10:75$ we say it is $11:15$. This is an easy mental calculation expressed mathematically and confusingly as, 
 # 
-# $$\displaystyle 35 + 40 \equiv \,15 \; \mathrm{mod} \; 60$$
+# $$\displaystyle 35 + 40 \equiv \,15\, \mathrm{mod}\, 60 $$
 # 
-# Symbolically, if the difference between two integers $a$ and $b$ is divided by an integer $m$, or $(a - b)/m$, and if the result is also an integer, then $a$ and $b$ are said to be 'congruent modulo m'; hardly an expression that flows naturally off the tongue. As an identity, this is written as
+# which shows that integer division $75/60$ has a remainder of $15$. The modulus in this case is $60$. For instance working in modulo $6$ we have
 # 
-# $$\displaystyle a \equiv b \text{ mod } m$$
+# $$\displaystyle 3+4 \equiv 1,\qquad 3-4\equiv 5,\qquad 3 \times 4\equiv 0$$
 # 
-# which means that $a$ is _equivalent_ to $b \text{ mod } m$. More familiarly, it means that integer division $a/m$ produces the _remainder_ $b$; thus $75/60 = 1$ with remainder $15$. Integer division measures only how many times one integer goes into another, ignoring any remainder; thus $3/2 = 1,\, 23/4 = 5$, and so forth.
+# where the subtraction is equivalent to moving anticlockwise around a circle numbered $0 \to 5$.
 # 
-# However, the usage in most computer languages is different to this. In python this is written as 
+# If the difference between two integers $a$ and $b$ is an exact multiple of integer $m$, or $(a - b)/m$ is a whole number, this means '$a$ and $b$ are *congruent modulo* $m$'; hardly an expression that flows naturally off the tongue. Congruence here means 'in agreement with'. This is the case in our example of clock time, integer division $(35+40-15)/60 = 1$ with no remainder. As an identity, this is written as
+# 
+# $$\displaystyle a\equiv b\,\mathrm{mod}\,m \qquad \text{or as}\qquad a\equiv b(\,\mathrm{ mod }\,m)$$
+# 
+# which means that $a$ is *equivalent* to $b\,\mathrm{mod}\,m$. More familiarly, it means that integer division $a/m$ produces the *remainder* $b$; thus $75/60 = 1$ with remainder $15$. Integer division measures only how many times one integer goes into another, ignoring any remainder; thus $3/2 = 1,\, 23/4 = 5$, and so forth.
+# 
+# However, the usage in most computer languages is different to this. In python the modulo calculation is written as 
 # 
 # $$\displaystyle  \mathtt{a = b} \text{ % }\mathtt{ m}$$
 # 
-# which means that $a$ is the _remainder_ of integer division of $b$ by $m$, this is equivalent to $b-b//m$ where // means integer division. 
+# which means that $a$ is the *remainder* of integer division of $b$ by $m$, this is equivalent to $b-(b//m)$ where // means integer division.
 # 
-# In some computer languages this may be written as 
+# Using Python,
 # 
-# $$\displaystyle a=b\text{ mod } m$$
+# $$\displaystyle  75 \text{ % }  60 \qquad \text{ produces } 15 $$
 # 
-# and notice the = sign. The equation means that $a$ is the remainder of dividing a positive number $b$ by $m$ a whole number of times. Using python gives
+# because integer division $75/60 = 1$ with a remainder of $15$. 
 # 
-# $$\displaystyle  39 \text{ % }  9 \qquad \text{ produces } 9 $$
+# When $b$ is a negative integer, the result is the same as calculating $m - (+b \text{ % } m)$, and as mentioned above, is the same as moving anticlockwise round a circle. For example,
 # 
-# because integer division $39/10 = 3$ with a remainder of $9$. 
-# 
-# When $b$ is a negative integer, the result is the same as calculating $m - (+b \text{ % } m)$. For example,
-# 
-# $$\displaystyle -39 \text{ % } 9 \qquad \text{ produces } 9 \\
-# 10-39 \text{ % } 9 \qquad \text{ produces } 9 $$
+# $$\displaystyle \begin{align} +39 \text{ % } 8 \qquad &\text{ produces } 7\\
+# -39 \text{ % } 8 \qquad &\text{ produces } 1 \\
+# 8-(+39 \text{ % } 8) \qquad &\text{ produces } 1 \end{align}$$
 # 
 # ## 10.2 CAS registry number and Check digits
+# 
 # An important example is found in the CAS registry number, which is used to uniquely identify every chemical compound.  There are at least 35 million compounds known, so uniqueness is important. The last digit in the CAS number is a check digit, used to confirm the uniqueness of the number. The check digit is obtained by multiplying each preceding digit by its position in the number; taken in reverse order, starting by multiplying the last digit by $1$, the second to last by $2$, etc. then adding the result and calculating modulo $10$ of the number produced. The CAS number for naphthalene is $(91 - 20 -3)$; the $3$ is the check digit. This is obtained with the following sum, $0 \times 1 + 2 \times 2 + 1 \times 3 + 9 \times 4 = 43 $ and finally, $43 \text{ mod } 10 = 3$, where the $3$ is the remainder of a whole number of divisions of $10$ into $43$.
 # 
 # In transmitting digital data, check digit information is added to ensure that the data has not been corrupted and is calculated as for the CAS example .
 # 
 # ## 10.3 Musical scales
-# Musical scales and clock time use circular arithmetic. The equal temperament scale has $12$ frequencies in each octave given by $2^{n/12}$ times the base frequency where $n = 0 \to 12$, this being the scale that most people find is most pleasing to their ears. The next octave, above or below, has exactly the same ratio of frequencies and so follows modulo $12$ arithmetic. 
+# Musical scales and clock time use circular arithmetic. The equal temperament scale has $12$ frequencies in each octave given by $2^{n/12}$ times the base frequency where $n = 1 \to 12$, this being the scale that most people find is most pleasing to their ears. The next octave, above or below, has exactly the same ratio of frequencies and so follows modulo $12$ arithmetic. 
 # 
 # ## 10.4 Algorithm converting a decimal number to another base
 # If we want to know what 123 in decimal is in octal (or any other base) the calculation can be done by starting at the beginning and working out what $2,3,4$ etc are in the new base, which is hardly practical for a large number. We use modulo arithmetic and start with the decimal and cut it into parts. We have to use integer division which mean whole number division and ignoring any fractional value, thus $3//2 = 1$ where $//$ means integer division. In comparison $ 3 \text{ mod } 2 = 1$ which is the remainder.
@@ -77,9 +81,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # convert a decimal number (num) to another base.
 
 def convert_base(base,num):
-    newn= []
+    if base < 2:
+        return
+    newn = []
     while num > 0:
-        rem = num % base               # modulus
+        rem = num % base               # modulo
         if rem > 9:
             rem = chr(65 - 10 + rem)   # make into letter if > 9, look up ascii code numbers
         newn.append( rem  )
@@ -88,12 +94,12 @@ def convert_base(base,num):
     return newn
 #------------------------
 
-base = 8
-num  = 2130
+base = 8                               # base 8 is octal
+num  = 1372
 
 ans = convert_base(base,num)
 
-print(num,' in base ',base,' is ', ans[::-1] )  # [::-1] reverses order 
+print(num,' in base ',base,' is ', ans[::-1] )  # [::-1] reverses the order of elements
 
 
 # ## 11 Delta functions,  Krokecker and Dirac
@@ -153,7 +159,7 @@ print(num,' in base ',base,' is ', ans[::-1] )  # [::-1] reverses order
 # Estimating quantities is sometimes relatively easy to do and can often be used to help design experiments. An accurate number is not sought; just an order of magnitude estimate is often sufficient. A straightforward example is to estimate the minimum useful concentration of a sample knowing the sensitivity of an instrument. This can be put the other way around. At the maximum allowable sample concentration, we can estimate what the size of the signal will be and whether the method proposed will work or whether another more sensitive instrument should be used. Other forms of estimation can be used to obtain quantities that would otherwise seem impossible, such as calculating the weight of a mountain or the weight of the atmosphere. In these types of problems, we make some simplifying, but not unreasonable assumptions to be able to reach a sensible conclusion; the mountain could reasonably be approximated by a cone or a hemisphere depending on its shape. Several interesting estimation examples are given by Adam (2003).
 # 
 # ## 13.1 X-rays
-# In an X-ray experiment on crystalline Be, suppose that the detector(e.g.a CCD type camera) can respond to single X-ray photons; estimate the least number of electrons that there must be in the crystal's scattering plane for a signal to be detected. What does this imply for the size of the crystal? (Assume that the scattering from $n$ electrons is $n$ times that from a single one and the following data is assumed to be known.)
+# In an X-ray experiment on crystalline Be, suppose that the detector (e.g.a CCD type camera) can respond to single X-ray photons; estimate the least number of electrons that there must be in the crystal's scattering plane for a signal to be detected. What does this imply for the size of the crystal? (Assume that the scattering from $n$ electrons is $n$ times that from a single one and the following data is assumed to be known.)
 # The fractional intensity, $I/I_0$, of X-ray scattering by a single electron is approximately given by
 # 
 # $$\displaystyle \frac{I}{I_0}= \frac{e^4}{(4\pi\epsilon _0)^2m^2c^4}\frac{1}{R^2}\frac{(1+\cos^2(\phi))}{2}$$
@@ -179,7 +185,7 @@ print(num,' in base ',base,' is ', ans[::-1] )  # [::-1] reverses order
 # The atmospheric mass is therefore $\approx 5.18 \cdot 10^{19}/g = 5.27 \cdot 10^{18}$ kg where $g$ is the acceleration due to gravity $9.81$ m s$^{-2}$.
 # 
 # ## 13.3 Benjamin Franklin and a pond
-# The American Benjamin Franklin is famously remembered for flying a kite with an attached wire into a thunderstorm in an attempt to capture lightning and store it in a Leyden jar (Bernal 1973). Luckily, he survived. He is less well known for changing the florid opening of the American Constitution to read 'We hold these truths to be self - evident, that all men are created equal'. He travelled to England in 1757 to help with the tax situation of Pennsylvanians, and while sailing noticed that oil on water calmed waves, something that had been noticed since the time of the Greeks. Being interested in surface phenomena, when again in London in 1770, he poured no more than a teaspoon of oil on a pond on Clapham Common and observed that the oil spread of its own volition over the pond, sweeping leaves and other debris out of the way as it did so. He estimated that the oil covered about half an acre of the pond ($2023\;\mathrm{m^2}$ ), and he repeated this experiment everywhere he went from then on. He also recorded seeing colours due to thin film interference effects but could not have explained this, nor could he have realized that a monolayer of molecules was formed because the idea of atoms and molecules was not clearly understood at that time. He appears not to have worked out the thickness of the oil layer. 
+# The American Benjamin Franklin is famously remembered for flying a kite with an attached wire into a thunderstorm in an attempt to capture lightning and store it in a Leyden jar (Bernal 1973). Luckily, he survived. He is less well known for changing the florid opening of the American Constitution to read 'We hold these truths to be self - evident, that all men are created equal'. He travelled to England in 1757 to help with the tax situation of Pennsylvanians, and while sailing noticed that oil on water calmed waves, something that had been noticed since the time of the Greeks. Being interested in surface phenomena, when again in London in 1770, he poured no more than a teaspoon of oil on a pond on Clapham Common and observed that the oil spread of its own volition over the pond, sweeping leaves and other debris out of the way as it did so. He estimated that the oil covered about half an acre of the pond ($2023\;\mathrm{m^2}$ ), and he repeated this experiment everywhere he went from then on. He also recorded seeing colours due to thin film interference effects but could not have explained this, nor could he have realized that a monolayer of molecules was formed because the idea of atoms and molecules was not clearly understood at that time. Surprisingly, he appears not to have worked out the thickness of the oil layer. 
 # 
 # To calculate the monolayer thickness, a teaspoon holds approximately 4.5 ml and half an acre is $2023\;\mathrm{ m^2}$. From the amount of oil used, the thickness of the layer was $4.5\cdot 10^{-6}\; \mathrm{m}^3/2023\; \mathrm{m}^2 =2.2$ nm. This is approximately the thickness of a close-packed, one-molecule thick layer of a long chain fatty acid monolayer, and gives a simple and direct estimate of the length of the oil molecules used. Oleic acid is a major constituent of olive oil and is a by-product of making candles; it has an 18-carbon chain so when fully extended would be about 2.8 nm long, remarkably similar to our estimate.
 # 

@@ -34,7 +34,7 @@
 # 
 # Barrow, G. M. (1979), Physical Chemistry, 4th edition, McGraw-Hill.
 # 
-# Bell, G. (1978), 'Models for the Specific Adhesion of Cells to Cells’, Science 200: 618.
+# Bell, G. (1978), Models for the Specific Adhesion of Cells to Cells, Science 200: 618.
 # 
 # Bennett, R. G. & Kellogg, R. E. (1967), Progress in Reaction Kinetics, vol. 4, edited by G. Porter,
 # Pergamon.
@@ -44,8 +44,8 @@
 # Bernstein, R. B. (1982), Chemical Dynamics via Molecular Beam and Laser Techniques, Oxford Science,
 # Clarendon Press.
 # 
-# Bertinotti, F. & Giacomello, G. (1956), 'The Structure of Heterocyclic Compounds Containing
-# Nitrogen. I. Crystal and Molecular Structure of s-Tetrazine’, Acta Cryst. 9: 510.
+# Bertinotti, F. & Giacomello, G. (1956), The Structure of Heterocyclic Compounds Containing
+# Nitrogen. I. Crystal and Molecular Structure of s-Tetrazine, Acta Cryst. 9: 510.
 # 
 # Bevington, P. R. (1969), Data Analysis and Error Reduction for the Physical Sciences, McGraw-Hill.
 # 
@@ -66,30 +66,32 @@
 # 
 # Britton, N. (2003), Essential Mathematical Biology, Springer.
 # 
-# Brockwell, D., Paci, E., Zinober, R., Beddard, G., Olmsted, P., Smith, D., & Radford, S. (2003), 'Pulling
-# Geometry Defines the Mechanical Resistance of a B-Sheet Protein’, Nature Structural Biology, 10: 731. 
+# Brockwell, D., Paci, E., Zinober, R., Beddard, G., Olmsted, P., Smith, D., & Radford, S. (2003), Pulling
+# Geometry Defines the Mechanical Resistance of a B-Sheet Protein, Nature Structural Biology, 10: 731. 
 # 
 # Bronson, R. (1994), Schaum’s Outline of Theory and Problems, Differential Equations, McGraw Hill. 
 # 
-# Brown, R. (1828), 'A brief account of microscopical observations made in the months of June, July and
+# Brown, R. (1828), A brief account of microscopical observations made in the months of June, July and
 # August, 1827, on the particles contained in the pollen of plants; and on the general existence of active
-# molecules in organic and inorganic bodies', Philosophical Magazine 4: 161. 
+# molecules in organic and inorganic bodies, Philosophical Magazine 4: 161. 
 # 
-# Bunn, C. (1961) 'Chemical Crystallography' OUP.
+# Bunn, C. (1961), Chemical Crystallography. OUP.
 # 
 # Butkov, E. (1968), Mathematical Physics, Addison-Wesley.
 # 
 # Carlsaw, H. S. & Jaeger, J. C. (1959), Conduction of Heat in Solids, Clarendon Press. 
 # 
-# Carrington, A. & McLachlan, A. (1969), Introduction to Magnetic Resonance, Harper. Carter, R. (1997), Molecular Symmetry and Group Theory, Wiley.
+# Carrington, A. & McLachlan, A. (1969), Introduction to Magnetic Resonance, Harper. 
 # 
-# Cherepanov, D. A. & Junge, W. (2001), 'Viscoelastic Dynamics of Actin Filaments Coupled to Rotary F- ATPase: Curvature as an Indicator of the Torque’, Biophys. J. 81: 1234.
+# Carter, R. (1997), Molecular Symmetry and Group Theory, Wiley.
 # 
-# Chandrasekhar, S. (1943) 'Stochastic problems in physics and astronomy', Rev. Mod. Phys. 15: 1.
+# Cherepanov, D. A. & Junge, W. (2001), Viscoelastic Dynamics of Actin Filaments Coupled to Rotary F- ATPase: Curvature as an Indicator of the Torque, Biophys. J. 81: 1234.
 # 
-# Chandrasekhar, S. (1968) 'An Introduction to the Study of Stellar Structure', Dover.
+# Chandrasekhar, S. (1943) Stochastic problems in physics and astronomy, Rev. Mod. Phys. 15: 1.
 # 
-# Christie, M., Norrish, R., & Porter, G. (1952), 'The Recombination of Atoms. I. Iodine Atoms in the Rare Gases’, Proceedings of the Royal Society London 216A: 152.
+# Chandrasekhar, S. (1968) An Introduction to the Study of Stellar Structure, Dover.
+# 
+# Christie, M., Norrish, R., & Porter, G. (1952), The Recombination of Atoms. I. Iodine Atoms in the Rare Gases, Proceedings of the Royal Society London 216A: 152.
 # 
 # Cochran, W., Crick, F., & Vand, V., (1952) Acta Crystallog. 5: 581.
 # 
@@ -97,26 +99,26 @@
 # 
 # Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1977), Quantum Mechanics, Wiley-Interscience.
 # 
-# Cooley, J. W. & Tukey, J. W. (1965), 'An Algorithm for Machine Calculation of Complex Fourier Series’,
+# Cooley, J. W. & Tukey, J. W. (1965), An Algorithm for Machine Calculation of Complex Fourier Series,
 # Mathematics of Computation 19: 297.
 # 
 # Cotton, F. A. (1990), Chemical Applications of Group Theory, 3rd edition, Wiley.
 # 
-# Courchamp, F., Berec, L., & Gascoigne, J. 'Allee Effects in Ecology and Conservation', Oxford University Press. 2008.
+# Courchamp, F., Berec, L., & Gascoigne,  Allee, J. (2008), Effects in Ecology and Conservation, OUP. 
 # 
 # Crank, J. (1979), The Mathematics of Diffusion, Oxford University Press.
 # 
 # Crouse, D., (2007) J. Chem. Educ., 84: 803.
 # 
-# Daune, M. (1999), Molecular Biophysics, Oxford University Press.
+# Daune, M. (1999), Molecular Biophysics, OUP.
 # 
 # Davidson, N. (1962), Statistical Mechanics, McGraw Hill.
 # 
 # Dence, J. (1975), Mathematical Techniques in Chemistry, Wiley.
 # 
-# Dunham W. (2018), The Calculus Gallery' Princeton University Press.
+# Dunham W. (2018), The Calculus Gallery, Princeton University Press.
 # 
-# Evans, E. & Ritchie, K. (1997), 'Dynamic Strength of Molecular Adhesion Bonds’, Biophysics J. 72: 1541. 
+# Evans, E. & Ritchie, K. (1997), Dynamic Strength of Molecular Adhesion Bonds, Biophysics J. 72: 1541. 
 # 
 # Eyring, H., Lin, S. H., & Lin, S. M. (1980), Basic Chemical Kinetics, Wiley.
 # 
@@ -130,26 +132,24 @@
 # 
 # Foote, C. (2005), Atomic Physics, Oxford University Press.
 # 
-# Förster, T. (1959), 'Transfer Mechanisms of Electronic Excitation’, Discussion Faraday Soc. 27: 7. 
+# Förster, T. (1959), Transfer Mechanisms of Electronic Excitation, Discussion Faraday Soc. 27: 7. 
 # 
 # Frenkel. D. & Smit, B. (1996), Understanding Molecular Simulation, Academic Press.
 # 
 # Gerrard, A. & Burch, J. M. (1975), Introduction to Matrix Methods in Optics, Wiley.
 # 
 # Giacovazzo, C., Monaco, H. L., Viterbo, D., Scordari, F., Gilli, G., Zanotti, G., & Catti, M. (1992), IUCR
-# Texts on Crystallography: vol. 2 Fundamentals of Crystallography, edited by C. Giacovazzo, Oxford
-# University Press.
+# Texts on Crystallography: vol. 2 Fundamentals of Crystallography, edited by C. Giacovazzo, OUP.
 # 
 # Gibbons, C., Montgomery, M. G., Leslie, A. G. W., & Walker, J. E. (2000), 'The Structure of the Central
 # Stalk in Bovine F1-ATPase at 2.4 Å Resolution’, Nature Structural Biology 7: 1055.
 # 
-# Gibbs, J. W. (1899), 'Fourier’s Series’, Nature 59: 606.
+# Gibbs, J. W. (1899), Fourier’s Series, Nature 59: 606.
 # 
-# Gillespie, D. J. (1977), 'Exact Stochastic Simulation of Coupled Chemical Reactions’, Phys. Chem. 81:
+# Gillespie, D. J. (1977), Exact Stochastic Simulation of Coupled Chemical Reactions, Phys. Chem. 81:
 # 2340.
 # 
-# Gillespie, D. J. (2007), 'Stochastic Simulation of Chemical Kinetics’, Annual Reviews of Physical
-# Chemistry 58: 35.
+# Gillespie, D. J. (2007), Stochastic Simulation of Chemical Kinetics, Ann. Rev. Phys. Chem. 58: 35.
 # 
 # Goldberg, S. (1986), Probability, An Introduction, Dover.
 # 
@@ -157,8 +157,8 @@
 # 
 # Gordy, W., Smith, W., & Trambarulo, R. (1953), Microwave Spectroscopy, Dover.
 # 
-# Gorry, P. A. (1990), 'General Least-Squares Smoothing and Differentiation by the Convolution
-# (Savitzky-Golay) Method’, Analytical Chemistry 63: 570.
+# Gorry, P. A. (1990), General Least-Squares Smoothing and Differentiation by the Convolution
+# (Savitzky-Golay) Method, Analytical Chemistry 63: 570.
 # 
 # Gould, H., Tobochnik, J., & Christian, W. (2007), An Introduction to Computer Simulation Methods, 3rd
 # edition, Pearson.
@@ -189,21 +189,21 @@
 # 
 # James, J. F. (1995), A Student’s Guide to Fourier Transforms, Cambridge University Press.
 # 
-# Jeans, J. (1982) 'An Introduction to the Kinetic Theory of Gases' Cambridge University Press.
+# Jeans, J. (1982) An Introduction to the Kinetic Theory of Gases, Cambridge University Press.
 # 
 # Jeffery, A. (1990), Linear Algebra and Ordinary Differential Equations, Blackwell Scientific.
 # 
 # Jolliffe, I. T. (2002), Principal Component Analysis, Springer.
 # 
-# Kermack, W. O. & McKendrick, A. G. (1927), 'A Contribution to the Mathematical Theory of
-# Epidemics’, Proceedings of the Royal Society London A 115: 700.
+# Kermack, W. O. & McKendrick, A. G. (1927), A Contribution to the Mathematical Theory of
+# Epidemics, Proc. Roy. Soc. London A 115: 700.
 # 
 # Knobel, P. (2000), An Introduction to the Mathematical Theory of Waves, American Mathematical
 # Society.
 # 
 # Koryta, J., Dvorak, J., & Kavan, L. (1993), Principles of Electrochemistry, Wiley.
 # 
-# Kosloff, R. J. (1988), 'Time-Dependent Quantum-Mechanical Methods for Molecular Dynamics’, Phys.
+# Kosloff, R. J. (1988), Time-Dependent Quantum-Mechanical Methods for Molecular Dynamics, Phys.
 # Chem. 92: 2087.
 # 
 # Krauth, W. (2006), Algorithms & Computations, Oxford University Press.
@@ -212,10 +212,11 @@
 # Assemblies, Supramolecular Machines, Wiley.
 # 
 # Lacowicz, J. (2004), Principles of Fluorescence Spectroscopy, Springer.
+# 
 # Lamb, H. (1947), Dynamics, Cambridge University Press.
 # 
-# Lengyel, I., Rabai, G., & Epstein, I. J. (1990), 'Experimental and Modeling Study of Oscillations in the
-# Chlorine Dioxide-Iodine-Malonic Acid Reaction’, Amer. Chem. Soc. 112: 9104.
+# Lengyel, I., Rabai, G., & Epstein, I. J. (1990), Experimental and Modeling Study of Oscillations in the
+# Chlorine Dioxide-Iodine-Malonic Acid Reaction, Amer. Chem. Soc. 112: 9104.
 # 
 # Levine, I. N. (2001), Quantum Chemistry, 5th edition, Prentice Hall.
 # 
@@ -223,7 +224,7 @@
 # 
 # Lewis & Randall (1961) Thermodynamics, 2nd edition.  McGraw Hill  and revised by Pitzer & Brewer.
 # 
-# Linthorne, N. (2006), 'A New Angle on Throwing’, Physics World 19(June): 29.
+# Linthorne, N. (2006), A New Angle on Throwing, Physics World 19(June): 29.
 # 
 # Lipson, A. Lipson, G.  & Lipson H. (2011), 'Optical Physics. 4th ed. CUP.
 # 
@@ -238,15 +239,15 @@
 # 
 # Marshall, A. G. (1982), Fourier, Hadamard and Hilbert Transforms in Chemistry, Plenum.
 # 
-# Martin, R. & Davidson, E. (1988), 'Electronic Structure of the Sodium Trimer’, Molecular Physics 35:
+# Martin, R. & Davidson, E. (1988), Electronic Structure of the Sodium Trimer, Molecular Physics 35:
 # 1713.
 # 
-# May, R. (1974), 'Biological Populations with Non-overlapping Generations: Stable Points, Stable Cycles,
-# and Chaos’, Science 186: 645.
+# May, R. (1974), Biological Populations with Non-overlapping Generations: Stable Points, Stable Cycles,
+# and Chaos, Science 186: 645.
 # 
-# May, R. (1987), 'Chaos and the Dynamics of Biological Populations’, Proceedings of the Royal Society, 779 London A 413: 27.
+# May, R. (1987), Chaos and the Dynamics of Biological Populations, Proc. Roy. Soc., 779 London A 413: 27.
 # 
-# May, R. & Oster, G. (1976), 'Bifurcations and Dynamic Complexity in Simple Ecological Models’, American Naturalist 110: 573.
+# May, R. & Oster, G. (1976), Bifurcations and Dynamic Complexity in Simple Ecological Models, American Naturalist 110: 573.
 # 
 # Maynard Smith, J. (1995), The Theory of Evolution, Cambridge University Press.
 # 
@@ -255,8 +256,8 @@
 # McQuarrie, D. A. & Simon, J. D. (1997), Physical Chemistry, A molecular Approach, University Science
 # Books.
 # 
-# Metropolis, N., Rosenbluth, A. M., Teller, A., & Teller, E. J. (1953), 'Equation of State Calculations by
-# Fast Computing Machines’, Chem. Phys. 21: 1087.
+# Metropolis, N., Rosenbluth, A. M., Teller, A., & Teller, E. J. (1953), Equation of State Calculations by
+# Fast Computing Machines, Chem. Phys. 21: 1087.
 # 
 # Miller, J. & Miller, J. C. (2005), Statistics and Chemometrics for Analytical Chemistry, Prentice Hall. 
 # 
@@ -265,7 +266,7 @@
 # 
 # Molloy, K. (2004), Group Theory for Chemists, Horwood.
 # 
-# Morse, P. M. (1929), 'Diatomic Molecules According to the Wave Mechanics. II. Vibrational Levels’,
+# Morse, P. M. (1929), Diatomic Molecules According to the Wave Mechanics. II. Vibrational Levels,
 # Physical Review 34: 57.
 # 
 # Murray, J. D. (2002), Mathematical Biology 1 An Introduction, Springer.
@@ -276,13 +277,13 @@
 # 
 # O’Connor, D. V. & Phillips, D. (1984), Time-Correlated Single Photon Counting, Academic Press. 
 # 
-# Onsager, L. (1944), 'Crystal Statistics, I. A Two-Dimensional Model with an Order-Disorder
-# Transition’, Phys. Ret. 65: 117.
+# Onsager, L. (1944), Crystal Statistics, I. A Two-Dimensional Model with an Order-Disorder
+# Transition, Phys. Ret. 65: 117.
 # 
-# Pain, H. (1993), The Physics of Vibrations and Wates, Wiley.
+# Pain, H. (1993), The Physics of Vibrations and Waves, Wiley.
 # 
-# Pänke, O., Cherepanov, D. A., Gumbiowski, K., Engelbrecht, S., & Junge, W. (2001), 'Viscoelastic
-# Dynamics of Actin Filaments Coupled to Rotary F-ATPase: Angular Torque Profile of the Enzyme’,
+# Pänke, O., Cherepanov, D. A., Gumbiowski, K., Engelbrecht, S., & Junge, W. (2001), Viscoelastic
+# Dynamics of Actin Filaments Coupled to Rotary F-ATPase: Angular Torque Profile of the Enzyme,
 # Biophysics J. 81: 1220.
 # 
 # Parratt, L. G. (1971), Probability and Experimental Errors in Science, Dover.
@@ -297,34 +298,35 @@
 # 
 # Pilling, M. J. & Seakins, P. (2005), Reaction Kinetics, Oxford University Press.
 # 
-# Polanyi, J. & Schreiber, J. (1977), 'The Reaction $\mathrm{F + H_2 \to HF + H}$: A Case Study in Reaction Dynamics’,
-# Faraday Disc. Chem. Soc. 62: 267.
+# Polanyi, J. & Schreiber, J. (1977), The Reaction $\mathrm{F + H_2 \to HF + H}$: A Case Study in Reaction Dynamics, Faraday Disc. Chem. Soc. 62: 267.
 # 
-# Porter, G. & Smith, J. (1961), 'The Recombination of Atoms. III. Temperature Coefficients of Iodine
-# Atom Recombination’, Proceedings of the Royal Society London, Series A 261: 28.
+# Porter, G. & Smith, J. (1961), The Recombination of Atoms. III. Temperature Coefficients of Iodine
+# Atom Recombination, Proc. Roy. Soc. London, Series A 261: 28.
 # 
 # Porter, G. (1967), Nobel Symposium 5. Fast Reactions and Primary. Processes in Reaction Kinetics, edited
 # by Claesson, Interscience.
 # 
-# Praly, J. & Lemieux, R. (1987), 'Influence of Solvent on the Magnitude of the Anomeric Effect’,
+# Praly, J. & Lemieux, R. (1987), Influence of Solvent on the Magnitude of the Anomeric Effect,
 # Canadian. J. Chem. 65: 213.
 # 
 # Prest, W., Flannery, B., Teutolsky, S., & Vetterling, W. (1986), Numerical Recipes, Cambridge University
 # Press.
 # 
-# RasMol http://rasmol.org/, http://www.bernstein-plus-sons.com/software/rasmol/, or via 'software
-# tools’ link at http://www.rcsb.org/pdb/home/home.do
+# RasMol http://rasmol.org/, http://www.bernstein-plus-sons.com/software/rasmol/, or via software
+# tools link at http://www.rcsb.org/pdb/home/home.do
 # 
 # Ratner, M. & Schatz, G. (2001), Introduction to Quantum Mechanics in Chemistry, Prentice Hall.
 # 
-# Reif, M., Gautel, M., Oesterhelt, F., Fernandez, J. M., & Gaub, H. E. (1977), 'Reversible Unfolding of
-# Individual Titin Immunoglobulin Domains by AFM’, Science 276: 1109.
+# Reif, M., Gautel, M., Oesterhelt, F., Fernandez, J. M., & Gaub, H. E. (1977), Reversible Unfolding of
+# Individual Titin Immunoglobulin Domains by AFM, Science 276: 1109.
 # 
 # Rigby, M., Smith, E. B., Wakenham, W. A., & Maitland, G. C. (1986), The Forces between Molecules,
 # Oxford Science Clarendon Press.
 # 
-# Sage, G. & Klemperer, W. J. (1963), 'Far-Infrared Spectrum and Barrier to Internal Rotation of Ethyl
-# Fluoride’, Chem. Phys. 39: 371.
+# Rouse Ball, W, & Coxeter, H. (1987), Mathematical Recreations and Essays, Dover 
+# 
+# Sage, G. & Klemperer, W. J. (1963), Far-Infrared Spectrum and Barrier to Internal Rotation of Ethyl
+# Fluoride, Chem. Phys. 39: 371.
 # 
 # Sahimi, M. (1994), Applications of Percolation Theory, Taylor & Francis.
 # 
@@ -335,14 +337,14 @@
 # 
 # Scott, S. K. (1995), Oscillations, Waves and Chaos in Chemical Kinetics, Oxford University Press.
 # 
-# Senent, M. L., Smeyers, Y. G., Dominquez-Gómes, R., & Villa, M. J. (2000), 'Ab initio Determination of
-# the Far Infrared Spectra of Some Isotopic Varieties of Ethanol’, Chem. Phys. 112: 5809.
+# Senent, M. L., Smeyers, Y. G., Dominquez-Gómes, R., & Villa, M. J. (2000), Ab-initio Determination of
+# the Far Infrared Spectra of Some Isotopic Varieties of Ethanol, Chem. Phys. 112: 5809.
 # 
-# Shey, H. (1993), Dit, Grad, Curl and All That, W. Norton.
+# Shey, H. (1993), Div, Grad, Curl and All That, W. Norton.
 # 
 # Siegman, A. (1986), Lasers, University Science Books.
 # 
-# Simmons, J. (1971), 'Echolocation in Bats: Signal Processing of Echoes for Target Range’, Science 171:
+# Simmons, J. (1971), Echolocation in Bats: Signal Processing of Echoes for Target Range, Science 171:
 # 925.
 # 
 # Squires, G. L. (1995), Problems in Quantum Mechanics, Cambridge University Press. Steinfeld, J. (1981), Molecules and Radiation, MIT Press.
@@ -350,17 +352,19 @@
 # Steinfeld, J., Fransisco, J., & Hase, W. (1999), Chemical Kinetics & Dynamics, Prentice Hall. 
 # 
 # Stephenson, G. (1996), Partial Differential Equations for Scientists and Engineers, Imperial College Press.
-# Steward, E. G. (1987), Fourier Optics: An Introduction, 2nd edition, Wiley. Stewart, I. (1998), The Magical Maze, Phœnix.
+# Steward, E. G. (1987), Fourier Optics: An Introduction, 2nd edition, Wiley. Stewart, I. (1998), The Magical Maze, Phoenix.
 # 
 # Stone, A. J. (1996), The Theory of Intermolecular Forces, Clarendon Press. 
 # 
 # Strogatz, S. (1994), Nonlinear Dynamics and Chaos, Perseus Books. 
 # 
-# Susskind L. & Hrabovsky G. (2014) Classical Mechanics, The Theoretical Minimum, Pengiun Books.
+# Susskind L. & Hrabovsky G. (2014) Classical Mechanics, The Theoretical Minimum, Penguin Books.
 # 
 # Svelto, O. (1982), Principles of Lasers, Plenum Press.
 # 
-# Swalen, J. & Ibers, J. J. (1962), 'Potential Function for the Inversion of Ammonia’, Chem. Phys. 36: 1914. Szabo, A. & Ostlund, N. (1982), Modern Quantum Chemistry, Dover.
+# Swalen, J. & Ibers, J. J. (1962), Potential Function for the Inversion of Ammonia, Chem. Phys. 36: 1914. 
+# 
+# Szabo, A. & Ostlund, N. (1982), Modern Quantum Chemistry, Dover.
 # 
 # Thompson, J., Braun, G., Tierney, D.,  Wessel L., &  Schmitzer, H., (2018) Am. J. Phys. 86: 95
 # 
@@ -368,33 +372,33 @@
 # 
 # Turro, N. (1978), Molecular Photochemistry, Benjamin-Cummings.
 # 
-# Turton, D. A., Reid, G. D. & Beddard, G. S. (2003), 'Accurate Analysis of Fluorescence Decays from Single 
-# Molecules in Photon Counting Experiments’, Analytical Chemistry 75: 4182.
+# Turton, D. A., Reid, G. D. & Beddard, G. S. (2003), Accurate Analysis of Fluorescence Decays from Single 
+# Molecules in Photon Counting Experiments, Analytical Chemistry 75: 4182.
 # 
-# Verlet, L. (1967), 'Computer “Experiments” on Classical Fluids. I. Thermodynamical Properties of Lennard-Jones Molecules’, Physical Retiew 159: 98.
+# Verlet, L. (1967), Computer 'Experiments' on Classical Fluids. I. Thermodynamical Properties of Lennard-Jones Molecules’, Physical Review 159: 98.
 # 
-# Verlet, L. (1967), 'Computer “Experiments” on Classical Fluids. II. Equilibrium Correlation Functions’, Physical Retiew 165: 201.
+# Verlet, L. (1967), Computer 'Experiments' on Classical Fluids. II. Equilibrium Correlation Functions, Physical Review 165: 201.
 # 
 # Vincent, A. (2001), Molecular Symmetry and Group Theory, Wiley.
 # 
-# Volterra, V. (1926 ), 'Fluctuations in the abundance of a species considered mathematically’, Nature 118:
+# Volterra, V. (1926 ), Fluctuations in the abundance of a species considered mathematically, Nature 118:
 # 558.
 # 
-# Vrakking, M. J., Villeneuve, D. M., & Stolow, A. (1996), 'Observation of Fractional Revivals of a
-# Molecular Wave Packet’, Physical Retiew 54: R37.
+# Vrakking, M. J., Villeneuve, D. M., & Stolow, A. (1996), Observation of Fractional Revivals of a
+# Molecular Wave Packet, Physical Review 54: R37.
 # 
-# Waller, A. & Liddington, R. C. (1990), 'Refinement of a Partially Oxygenated T State Human
-# Haemoglobin at 1.5 Å Resolution’, Acta Cryst. B 46: 409.
+# Waller, A. & Liddington, R. C. (1990), Refinement of a Partially Oxygenated T State Human
+# Haemoglobin at 1.5 Å Resolution, Acta Cryst. B 46: 409.
 # 
 # Weast, R. C. (ed.) CRC Handbook of Chemistry and Physics, Chemical Rubber Co. (Any edition will do.
-# This book is colloquially known as the 'Rubber Book’.)
+# This book is colloquially known as the ' Rubber Book ’.)
 # 
-# Weisstein, E. W. 'Box-Muller Transformation’, www.mathworld.wolfram.com
+# Weisstein, E. W. Box-Muller Transformation, www.mathworld.wolfram.com
 # 
 # Whittaker, J. B. (ed.) (2007), Imaging in Molecular Dynamics: Technology and Applications, Cambridge
 # University Press.
 # 
-# Wilkinson, F. 'Chemical Kinetics and Reaction Mechanisms' (1980) Van Nostrand Reinhold.
+# Wilkinson, F.(1980), Chemical Kinetics and Reaction Mechanisms, Van Nostrand Reinhold.
 # 
 # Wyckoff, R. (1969), Crystal Structures, vol. 6 (1), 2nd edition, Wiley.
 # 
@@ -403,5 +407,5 @@
 # Zewail, A. (1994), Femtochemistry: Ultrafast Dynamics of the Chemical Bond, Vols 1 & 2, World
 # Scientific.
 # 
-# Zimm. B. H. & Bragg, J. K. J. (1959), 'Theory of the Phase Transition between Helix and Random Coil in
-# Polypeptide Chains’, Chem. Phys. 31: 526.
+# Zimm. B. H. & Bragg, J. K. J. (1959), Theory of the Phase Transition between Helix and Random Coil in
+# Polypeptide Chains, Chem. Phys. 31: 526.

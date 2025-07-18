@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
+     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1572,9 +1572,20 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iv-chromatography-average-value-and-width-of-eluted-profile">
+    <a class="reference internal nav-link" href="#iv-mean-square-displacement-due-to-brownian-motion-langle-x-2-rangle-see-also-chapter-10-12-13">
      <strong>
-      (iv) Chromatography. Average value and width of eluted profile
+      (iv) Mean square displacement due to Brownian motion
+      <span class="math notranslate nohighlight">
+       \(\langle x^2\rangle\)
+      </span>
+      . See also Chapter 10-12.13
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-chromatography-average-value-and-width-of-eluted-profile">
+     <strong>
+      (v) Chromatography. Average value and width of eluted profile
      </strong>
     </a>
    </li>
@@ -1695,9 +1706,20 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iv-chromatography-average-value-and-width-of-eluted-profile">
+    <a class="reference internal nav-link" href="#iv-mean-square-displacement-due-to-brownian-motion-langle-x-2-rangle-see-also-chapter-10-12-13">
      <strong>
-      (iv) Chromatography. Average value and width of eluted profile
+      (iv) Mean square displacement due to Brownian motion
+      <span class="math notranslate nohighlight">
+       \(\langle x^2\rangle\)
+      </span>
+      . See also Chapter 10-12.13
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-chromatography-average-value-and-width-of-eluted-profile">
+     <strong>
+      (v) Chromatography. Average value and width of eluted profile
      </strong>
     </a>
    </li>
@@ -1766,7 +1788,7 @@ title="Print to PDF"
 </div>
 <section id="average-value">
 <h2>8 Average value.<a class="headerlink" href="#average-value" title="Permalink to this headline">#</a></h2>
-<p>You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution P of the quantity must be known.</p>
+<p>You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution <span class="math notranslate nohighlight">\(P\)</span> of the quantity must be known. Although this a chanter on integration it is useful to give some examples of calculating  an average using summation. This topic is revisited in chapter 5 where more involved summations are examined.</p>
 </section>
 <section id="the-average-as-a-summation">
 <h2>8.1 The average as a summation<a class="headerlink" href="#the-average-as-a-summation" title="Permalink to this headline">#</a></h2>
@@ -1870,7 +1892,7 @@ title="Print to PDF"
 \[\displaystyle P(t)dt=e^{-t/\tau}dt\]</div>
 <p>which is the chance the molecule has of still being excited during a time interval <span class="math notranslate nohighlight">\(dt\)</span> from <span class="math notranslate nohighlight">\(t \to t + dt\)</span>, if <span class="math notranslate nohighlight">\(\tau\)</span> is its lifetime, and it was already excited at time <span class="math notranslate nohighlight">\(t\)</span>. The lifetime is defined as the time an ensemble of the excited molecules take to decay to <span class="math notranslate nohighlight">\(1/e\)</span>, or <span class="math notranslate nohighlight">\(\approx 37 \text{%}\)</span>  of their initial number. The reciprocal of the lifetime is the rate constant. The half-life is the time taken to halve an initial population but half-lives are nowadays rarely used except for radioactive species. Using equation 28,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)t}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \qquad\tag{29}\]</div>
+\[\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)dt}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \qquad\tag{29}\]</div>
 <p>Note that the integration limits start at <span class="math notranslate nohighlight">\(t = 0\)</span> and extend to infinity. Both integrals are ones met before, and can be found using Section 2.13,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \int_0^\infty t e^{-t/\tau}dt=\tau^2  \qquad \int_0^\infty e^{-t/\tau}dt =\tau \]</div>
@@ -1929,8 +1951,45 @@ title="Print to PDF"
 <p>The moment about the x-axis is <span class="math notranslate nohighlight">\(\displaystyle M_x =\frac{1}{2}\int_0^1 x^{2/3}dx=\frac{3}{10}\)</span> and the centroid is at <span class="math notranslate nohighlight">\(\langle y\rangle = M_x/A = 2/5\)</span>.</p>
 <p>The moment about the y-axis is <span class="math notranslate nohighlight">\(\displaystyle M_y =\frac{1}{2}\int_0^1 x^{4/3}dx=\frac{3}{7}\)</span> and the centroid is at <span class="math notranslate nohighlight">\(\langle x\rangle =M_y/A=4/7\)</span></p>
 </section>
-<section id="iv-chromatography-average-value-and-width-of-eluted-profile">
-<h3><strong>(iv) Chromatography. Average value and width of eluted profile</strong><a class="headerlink" href="#iv-chromatography-average-value-and-width-of-eluted-profile" title="Permalink to this headline">#</a></h3>
+<section id="iv-mean-square-displacement-due-to-brownian-motion-langle-x-2-rangle-see-also-chapter-10-12-13">
+<h3><strong>(iv) Mean square displacement due to Brownian motion <span class="math notranslate nohighlight">\(\langle x^2\rangle\)</span>. See also Chapter 10-12.13</strong><a class="headerlink" href="#iv-mean-square-displacement-due-to-brownian-motion-langle-x-2-rangle-see-also-chapter-10-12-13" title="Permalink to this headline">#</a></h3>
+<p>A theoretical analysis can be made of the Brownian motion by comparing the molecules in a liquid with the motion of bulky molecules of a different substance distributed uniformly amongst the smaller ones of the pure liquid. The larger molecule undergoes a random walk independent of any other, caused by the thermal energy of the solution which allows the small solvent molecules to continually and randomly jostle not only one another but also the larger ones. Einstein calculated, during 1905, that the motion in the <span class="math notranslate nohighlight">\(x\)</span> direction at time <span class="math notranslate nohighlight">\(t\)</span> could be described by the diffusion equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial f}{\partial t}= D\frac{\partial^2 f}{\partial x^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is a distribution function describing the chance that particles are at position <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. The solution of this differential equation depends on the starting (boundary) conditions and some examples are given in Chapter 10-15.6. It is assumed that <span class="math notranslate nohighlight">\(x=0\)</span> corresponds to the centre of gravity of the particles and then <span class="math notranslate nohighlight">\(f(x,t)dx\)</span> gives the number of particles in the period from zero to time <span class="math notranslate nohighlight">\(t=t\)</span> whose coordinate <span class="math notranslate nohighlight">\(x\)</span> has changed to <span class="math notranslate nohighlight">\(x+dx\)</span>. The time <span class="math notranslate nohighlight">\(t\)</span> must be small compared to any observation time but long enough that the motions of any two adjacent molecules are not correlated. Furthermore <span class="math notranslate nohighlight">\(f\)</span> must satisfy the diffusion equation, but there are also constraints since at <span class="math notranslate nohighlight">\(t=0\)</span> the function <span class="math notranslate nohighlight">\(f\)</span> must be zero except at <span class="math notranslate nohighlight">\(x=0\)</span>, i.e. all particles start out at <span class="math notranslate nohighlight">\(x=0\)</span>, giving <span class="math notranslate nohighlight">\(f(x\ne 0,t=0) = 0\)</span> and secondly the number of particles is fixed, hence <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty f(x,t)dx=n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> particles. The problem then corresponds to that of diffusion in the <span class="math notranslate nohighlight">\(\pm x\)</span> direction from a point. The function that Einstein worked out is, for <span class="math notranslate nohighlight">\(n\)</span> particles,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,t)= n\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}\]</div>
+<p>and has the same form as that describing random errors as might be anticipated for random motion. Clearly this equation cannot be applied when <span class="math notranslate nohighlight">\(t=0\)</span> but only from some small time thereafter, which, as mentioned, means a time that is small (far less than nanoseconds) but long enough that motions are independent of one another.  The average distance <span class="math notranslate nohighlight">\(\lambda\)</span> a particle has moved in the <span class="math notranslate nohighlight">\(x\)</span> direction from its starting point, after a time <span class="math notranslate nohighlight">\(t\)</span> is the square root of its mean square displacement or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda \equiv \sqrt{\langle x^2\rangle}=\sqrt{2Dt}\]</div>
+<p>making it proportional to the square root of time. The average distance <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> is zero, mathematically because <span class="math notranslate nohighlight">\(\displaystyle\int_{-\infty}^\infty xf(x,t)dx\)</span> is an odd function, but physically because the motion of a particle is random as it is jostled by the smaller solvent molecules and there is no flow or concentration gradient present. The calculation to obtain the squared average is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\langle x^2\rangle=\frac{1}{n}\int_{-\infty}^\infty x^2f(x,t)dx\]</div>
+<p>and by substituting</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x^2\rangle=\frac{1}{\sqrt{4\pi Dt}}\int_{-\infty}^\infty x^2e^{-x^2/(4Dt)}dx\]</div>
+<p>and the normalisation term is simply <span class="math notranslate nohighlight">\(n\)</span>. As the integral is even the limits can be changed to <span class="math notranslate nohighlight">\(0\to \infty\)</span>  solving starts by making the substitution, <span class="math notranslate nohighlight">\(\displaystyle y=x^2/(4Dt)\)</span> and so <span class="math notranslate nohighlight">\(dy=2xdx/(4Dt)\)</span>. Simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x^2\rangle=\frac{4Dt}{\sqrt{\pi}}\int_{0}^\infty \sqrt{y}\;e^{-y}dy\]</div>
+<p>which can be integrated by parts to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x^2\rangle=\frac{4Dt}{\sqrt{\pi}}\big(-ye^{-y}\big|_0^\infty -\frac{1}{2}\int_0^\infty\frac{-e^{-y}}{\sqrt{y}}dy\big)=\frac{4Dt}{\sqrt{\pi}}\frac{1}{2}\int_0^\infty\frac{e^{-y}}{\sqrt{y}}dy\]</div>
+<p>and the remaining integral is easily solved with a substitution <span class="math notranslate nohighlight">\(y=u^2\)</span> and <span class="math notranslate nohighlight">\(dy=2udu\)</span> giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{2}\int_0^\infty\frac{e^{-y}}{\sqrt{y}}dy=\int_0^\infty e^{-u^2}du=\frac{\sqrt{\pi}}{2}\]</div>
+<p>where the integral was looked up in table 2.14. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x^2\rangle=2Dt\]</div>
+<p>Although this calculation only considers one dimension <span class="math notranslate nohighlight">\(x\)</span> the true displacement is <span class="math notranslate nohighlight">\(r^2=x^2+y^2+z^2 \)</span>, which is also true for the average values and as each average is the same, <span class="math notranslate nohighlight">\(\langle r^2\rangle = 3\langle x^2\rangle\)</span> and so in three dimensions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle r^2\rangle=6Dt\]</div>
+<p>The diffusion coefficient for a small protein such as insulin is <span class="math notranslate nohighlight">\(\sim 10^{-10}\mathrm{m^2s^{-1}}\)</span> meaning that such a protein will diffuse only <span class="math notranslate nohighlight">\(\approx 190\)</span> microns in a minute.  Einstein had also calculated what the diffusion coefficient was in terms of the solution viscosity <span class="math notranslate nohighlight">\(\eta\)</span> and molecule radius <span class="math notranslate nohighlight">\(r\)</span>, assuming a spherical molecule, and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle D=\frac{RT}{N}\frac{1}{6\pi\eta r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant, <span class="math notranslate nohighlight">\(T\)</span> temperature and <span class="math notranslate nohighlight">\(N\)</span> Avogadro’s constant. He suggested that, as the average distance diffused could be measured, by combing our last two equations this would lead to a direct method of measuring molecular size.</p>
+</section>
+<section id="v-chromatography-average-value-and-width-of-eluted-profile">
+<h3><strong>(v) Chromatography. Average value and width of eluted profile</strong><a class="headerlink" href="#v-chromatography-average-value-and-width-of-eluted-profile" title="Permalink to this headline">#</a></h3>
 <p>In chapter 1 section 9.10 a probabilistic model was developed to describe the shape of a chromatogram the result was a distribution <span class="math notranslate nohighlight">\(P(n)\)</span> closely related to the Poisson distribution was found,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \qquad\tag{35a}\]</div>
@@ -2055,7 +2114,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/integration-D_5_0.png" src="../_images/integration-D_5_0.png" />
+<img alt="../_images/integration-D_7_0.png" src="../_images/integration-D_7_0.png" />
 </div>
 </div>
 <p>The calculation for the momentum is a bit more involved as the derivative of <span class="math notranslate nohighlight">\(\psi\)</span> has to be taken first,</p>
@@ -2078,7 +2137,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/integration-D_7_0.png" src="../_images/integration-D_7_0.png" />
+<img alt="../_images/integration-D_9_0.png" src="../_images/integration-D_9_0.png" />
 </div>
 </div>
 </section>

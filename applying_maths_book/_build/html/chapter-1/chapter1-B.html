@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
+     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1750,12 +1750,24 @@ title="Print to PDF"
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)}\]</div>
-<p>The cosine is the projection of the hypotenuse onto the x-axis, and the sine the projection onto the y- or vertical axis. The tangent is the gradient of the hypotenuse.</p>
-<p>There are very many relationships between the trig functions; some of the most commonly met are, for angles <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are shown below</p>
+<p>The cosine is the projection of the hypotenuse onto the x-axis, and the sine the projection onto the y- or vertical axis. The tangent is the gradient of the hypotenuse, see fig. 9.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig9.png" /></p>
+<p>Figure 9 Trigonometric relationships in a right-angled triangle and relationships to the x- and y-axes.</p>
+<p>A simple way of remembering these function at certain angles in degrees is shown in the table. Cosines are in the reverse order compared to sines.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \textbf{Table of trig relationships}\]</div>
+\[\displaystyle \textbf{Table of some sine and tangent values}\]</div>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{array}{lll}\\
+\[\begin{split}\displaystyle\begin{array}{c|cccc}
+&amp;\theta = 0 &amp; 30 &amp; 45 &amp; 60 &amp; 90\\
+\hline
+\sin(\theta)&amp; \frac{\sqrt{0}}{2}&amp;\frac{\sqrt{1}}{2} &amp;\frac{\sqrt{2}}{2} &amp;\frac{\sqrt{3}}{2} &amp;\frac{\sqrt{4}}{2} \\
+\tan(\theta)&amp; \frac{0}{\sqrt{3}}&amp; \frac{1}{\sqrt{3}}&amp; \frac{\sqrt{3}}{\sqrt{3}}&amp;\frac{\sqrt{3}}{1}&amp;\frac{\sqrt{3}}{0}\\
+\hline
+\end{array}\end{split}\]</div>
+<p>There are very many relationships between the trig functions, some of the most commonly met ones are shown below where angles <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are in radians. (There are <span class="math notranslate nohighlight">\(2\pi\)</span> radians in a circle and therefore are equivalent to <span class="math notranslate nohighlight">\(360^\text{o}\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ll}\\
+\textbf{Table of trig relationships}\\
 \hline
 \sin(-x) =-\sin(x) &amp; \cos(-x)=\cos(x)\\[5pt]
 \cos^2(x)+\sin^2(x)=1 &amp; \cos^2(x)-\sin^2(x)=2\cos^2(x)-1 = \cos(2x) &amp;\\[5pt]
@@ -1773,8 +1785,6 @@ title="Print to PDF"
 \[\displaystyle\sin(x)=\frac{e^{ix}-e^{-ix} }{2i}, \qquad \cos(x)=\frac{e^{ix}+e^{-ix}}{2}\]</div>
 <p>The word tangent derives from the Latin <em>tangere</em>, which means to touch, and this is also the usage when the tangent is used to define the gradient of a curve at a given point, Figure 10. If the curve is a circle, the tangent is perpendicular to the radius.</p>
 <p>Although hand-held calculators usually use degrees to calculate trigonometric functions, this disguises the fact that these functions require the angle to be in <em>radians</em>. A radian is the angle subtended at the centre of a circle by travelling a distance around the circumference that is equal to its radius, thus a complete rotation of <span class="math notranslate nohighlight">\(360^\text{o} \equiv 2\pi\)</span> radians and 1 radian is approximately <span class="math notranslate nohighlight">\(57.5^{\text{o}}\)</span>. Radians are not always included as units; the exception is in the study of NMR where the magnetogyric ratio <span class="math notranslate nohighlight">\(\gamma\)</span>, which is the constant that relates the magnetic dipole to the magnetic field, is always quoted in <span class="math notranslate nohighlight">\(\mathrm{rad\, T^{-1} s^{-1}}\)</span>, the T here representing the unit Tesla. In spectroscopy generally, frequencies are usually quoted either as <span class="math notranslate nohighlight">\(\mathrm{s^{-1}}\)</span>, with the symbol <span class="math notranslate nohighlight">\(\upsilon\)</span>,  or as angular frequencies, <span class="math notranslate nohighlight">\(\omega\)</span> in rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>. These are related as <span class="math notranslate nohighlight">\(2\pi \upsilon = \omega\)</span>.</p>
-<p><img alt="Drawing" src="../_images/chapter1-fig9.png" /></p>
-<p>Figure 9 Trigonometric relationships in a right-angled triangle and relationships to the x- and y-axes.</p>
 <p><img alt="Drawing" src="../_images/chapter1-fig10.png" /></p>
 <p>Figure 10 The tangent touches the curve at a point and defines the gradient at that point.</p>
 </section>
@@ -1922,7 +1932,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle f^{-1}[f(x)] = x\]</div>
 <p>However, not all functions have an inverse. When plotted the observation is that one function is the reflection of the other through a straight line of gradient <span class="math notranslate nohighlight">\(\pm 1 \)</span>, such as shown in  figure 8 for the positive exponential and log. More formally, the function and its inverse must have a one-to-one relationship. If an inverse exists when the function <span class="math notranslate nohighlight">\(f (x)\)</span> is solved for <span class="math notranslate nohighlight">\(x\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> exchanged and the result substituted into the original equation, <span class="math notranslate nohighlight">\(x\)</span> results. For example, if <span class="math notranslate nohighlight">\(f(x) \equiv y = (x + 2)/3\)</span> then <span class="math notranslate nohighlight">\(x = 3y - 2\)</span>, the inverse function is found by swapping <span class="math notranslate nohighlight">\(y\)</span> for <span class="math notranslate nohighlight">\(x\)</span>, giving <span class="math notranslate nohighlight">\(f^{-1}(x) = 3x - 2\)</span>, and then substituting back <span class="math notranslate nohighlight">\(f^{-1}[f(x)] = 3(x + 2)/3 - 2 = x\)</span>.</p>
-<p>The function <span class="math notranslate nohighlight">\(y = \sin(x)\)</span> has <span class="math notranslate nohighlight">\(y = \sin^{-1}(x)\)</span> as its inverse function, which can be written as <span class="math notranslate nohighlight">\(\sin(y) = x\)</span>, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span>. Notice that the computer notation is different to the mathematical one; for example, <span class="math notranslate nohighlight">\(\sin^{-1}(x) \equiv \arcsin(x)\)</span>, the prefix ‘arc’ being added to these inverse functions, but this notation is not universal and in some languages asin may be used instead of arcsin etc.</p>
+<p>The function <span class="math notranslate nohighlight">\(y = \sin(x)\)</span> has <span class="math notranslate nohighlight">\(y = \sin^{-1}(x)\)</span> as its inverse function, which can be written as <span class="math notranslate nohighlight">\(\sin(y) = x\)</span>, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span>. Notice that the computer notation is different to the mathematical one; for example, <span class="math notranslate nohighlight">\(\sin^{-1}(x) \equiv \arcsin(x)\)</span>, the prefix ‘arc’ being added to these inverse functions, but this notation is not universal and in some computer languages asin may be used instead of arcsin etc.</p>
 <p>The inverse trig functions are multi-valued; the principal range for <span class="math notranslate nohighlight">\(\sin^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> is <span class="math notranslate nohighlight">\(x = \pm 1\)</span> and the function’s principal values lie between <span class="math notranslate nohighlight">\(y = \pm \pi/2\)</span>. The inverse function <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span> is also multi-valued and ranges from <span class="math notranslate nohighlight">\(x = \pm \infty\)</span> and has principal values between <span class="math notranslate nohighlight">\(y = \pm\pi/4\)</span>.</p>
 <p>The equations defining inverse trig and hyperbolic functions are shown below, and some of which were obtained using Sympy for example,</p>
 <div class="cell docutils container">

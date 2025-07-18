@@ -142,8 +142,8 @@ print( '{:s} {:8.2f}'.format('value = ', LA.det(M) ) )
 # Algorithm  Huckel Calculation Cyclic polyenes
 
 n, M, x = symbols('n, M, x')      # define symbols to use
-n = 6                         # define size of linear polyene
-M = zeros(n,n)                # make an array of zeros 
+n = 6                             # define size of linear polyene
+M = zeros(n,n)                    # make an array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
@@ -151,7 +151,7 @@ for i in range(n):
         M[i+1, i] = 1
         
     pass
-M[0, n-1] = 1                  # n-1 because index runs from 0 to n-1, for n values
+M[0, n-1] = 1                      # n-1 because index runs from 0 to n-1, for n values
 M[n-1, 0] = 1
 M
 
@@ -173,7 +173,8 @@ factor(char_eqn)
 # _________
 # 
 # ## Q8 answer
-# Starting with the matrix, using the method of Algorithm 1 with $n = 6$, modify the matrix to connect atom $2$ atom $6$ as in the structure; the atoms $2$ and $3$ 3 are connected already because adjacent atoms always connect in the numbering scheme. Adding the following line, as was done in the previous problem, links atoms $2$ and $6$,
+# 
+# **(a)** Starting with the matrix, using the method of Algorithm 1 with $n = 6$, modify the matrix to connect atom $2$ atom $6$ as in the structure; the atoms $2$ and $3$ are connected already because adjacent atoms always connect in the numbering scheme, see question. Adding the following line, as was done in the previous problem, links atoms $2$ and $6$.
 # 
 
 # In[10]:
@@ -181,8 +182,8 @@ factor(char_eqn)
 
 # Algorithm  Huckel Calculation Fulvalene
 n, M, x = symbols('n, M, x')      # define symbols to use
-n = 6                         # define size of linear polyene
-M = zeros(n,n)                # make an array of zeros 
+n = 6                             # define size of linear polyene
+M = zeros(n,n)                    # make an array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
@@ -190,7 +191,7 @@ for i in range(n):
         M[i+1, i] = 1
         
     pass
-M[1,5] = 1     # 1 and 5 not 2 and 6, as index runs from zero
+M[1,5] = 1                        # 1 and 5 not 2 and 6, as index runs from zero
 M[5,1] = 1
 M
 
@@ -207,8 +208,8 @@ print(char_eqn)
 
 solns = solve(char_eqn,x)
 
-for i,j in enumerate(solns):      # print out each solution in a table, j is sqrt(-1)
-    print('x = {:8.4g} '.format( complex(solns[i].evalf() )) )
+for i,j in enumerate(solns):      # print out  each solution in a table
+    print('x = {:12.6g} '.format( (complex(solns[i].evalf() )) ) )
 
 
 # The solution contains complex numbers, which is quite a surprise as the energies must always be real; perhaps there is a mistake? However, in this example this is a limitation of the numerical method used to solve the determinant. Notice how small the values of the imaginary part of the complex numbers are (the part containing $j$), they are all $\lt 10^{-20}$ and so insignificant compared to the real part and can safely be ignored. To convince you of this plot the characteristic equation; the six roots are clearly real numbers, Fig. 75, and are the solutions to $x+1=0,x^2 -x-1=0$ and $x^3 -4x+1=0$.
@@ -220,6 +221,78 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # Figure 75. Roots of the Fulvalene Huckel MO characteristic equation.
 # _______
 # 
+# **(b)** The calculation for Naphthalene and Azulene is given below. Notice how the atoms are connected in each case. The same algorithms are used as above and the roots of the characteristic equations printed.
+
+# In[13]:
+
+
+# Calculation for Naphthalene
+n, M, x = symbols('n, M, x')      # define symbols to use
+n = 10                            # define size of linear polyene
+M = zeros(n,n)                    # make an array of zeros 
+for i in range(n):
+    M[i,i] = x
+    if (i > -1) and (i < n-1):
+        M[i, i+1] = 1
+        M[i+1, i] = 1
+        
+    pass
+M[4,9] = 1           
+M[9,4] = 1
+M[9,0] = 1
+M[0,9] = 1
+
+M
+
+
+# In[14]:
+
+
+char_eqn = factor(M.det()) 
+print(char_eqn)
+
+solns = sorted( solve(char_eqn,x) )
+
+for i,j in enumerate(solns):      # print out the real part of each solution in a table. 
+    print('x = {:8.4g} '.format( re(complex(solns[i].evalf() ))  )  ) 
+
+
+# In[15]:
+
+
+# Calculation for Azulene
+n, M, x = symbols('n, M, x')      # define symbols to use
+n = 10                         # define size of linear polyene
+M = zeros(n,n)                # make an array of zeros 
+for i in range(n):
+    M[i,i] = x
+    if (i > -1) and (i < n-1):
+        M[i, i+1] = 1
+        M[i+1, i] = 1
+        
+    pass
+M[5,9] = 1   
+M[9,5] = 1
+M[9,0] = 1
+M[0,9] = 1
+
+M
+
+
+# In[16]:
+
+
+char_eqn = factor(M.det()) 
+print(char_eqn)
+
+solns = sorted( solve(char_eqn,x) )
+
+for i,j in enumerate(solns):      # print out each solution in a table, j is sqrt(-1)
+    print('x = {:8.4g} '.format( re(complex(solns[i].evalf() ))  )  ) 
+
+
+# There are $10$ $\pi$ electrons in napthalene and azulene, therefore the lowest transition is from the filled to lowest unfilled orbital or $0.618-(-0.618)\approx 0.1.24$ for naphthalene, and $0.4004-(-0.4773)\approx 0.88$ for azulene which shows that this transition has far lower energy and is consistent with it absorbing in the visible part of the spectrum, whereas naphthalene absorbs in the UV and appears as a white solid.  If the Mulliken charges are calculated they show that the $7$ membered ring is positive and the smaller ring negative consistent with there being a dipole.
+
 # ## Q9 answer
 # (a) Using the notation $x = (\alpha - E)/\beta$ the Huckel determinant for the linear molecule is
 # 
@@ -265,7 +338,7 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # 
 # (b) Calculating the recursion in Python/Sympy is very easy also.
 
-# In[13]:
+# In[17]:
 
 
 x, m = symbols('x, m')

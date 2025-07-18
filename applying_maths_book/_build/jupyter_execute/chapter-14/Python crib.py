@@ -490,12 +490,13 @@ r = np.linspace(0, maxr, numr)         # make list of distances
 
 for i in range(1,5):                   # note :  range 1 to 4  
     n = n0*1e-3*i                      # 1e-3 to make millimolar; convert to number/nm^3
-    plt.plot( r, w(r,n), label = str('{:4.3e}'.format(n)) + 'M')   # can put print format into string 
+    plt.plot( r, w(r,n), label = str('{:4.1e}'.format(i*1e-3)) + 'M')   # can put print format into string 
 
 plt.ylabel('w(r)')
 plt.xlabel('x /nm')
 plt.title('Nearest neighbour distributions')
-plt.legend()  
+plt.legend() 
+plt.xlim([0,15])
 plt.show()
 
 
@@ -515,7 +516,7 @@ av=  integrate(f01,(r,0,oo), conds = 'none')  # use conds ='none' if you are hap
 av
 
 
-# The result contains the gamma function, if you type $\mathtt{av.evalf()}$ you can evaluate the numerical parts and find that $\displaystyle \langle r \rangle = 0.55396n^{-1/3}$.
+# The result contains the gamma function, if you type $\mathtt{av.evalf()}$ you can evaluate the numerical parts and find that $\displaystyle \langle r \rangle = 0.55396n^{-1/3}$, which is $6.56$ nm at $10^{-3}$ M.
 # 
 # ## 12.2 Numerical integration
 # 
@@ -908,7 +909,7 @@ with open(dataname) as f:
 from scipy.optimize import curve_fit
 from matplotlib import gridspec                                     # get this to force size of graphs
 
-fig1= plt.figure(figsize=(9.5, 10))
+fig1= plt.figure(figsize=(8.5, 9))
 fig1.suptitle('Curve Fitting')
 gs = gridspec.GridSpec(2, 1,width_ratios=[1],height_ratios=[1,4])   # make plots different sizes
 ax1 = fig1.add_subplot(gs[0])

@@ -17,7 +17,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # ## 8 Average value.
 # 
-# You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution P of the quantity must be known.
+# You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution $P$ of the quantity must be known. Although this a chanter on integration it is useful to give some examples of calculating  an average using summation. This topic is revisited in chapter 5 where more involved summations are examined.
 # 
 # ## 8.1 The average as a summation
 # 
@@ -160,7 +160,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which is the chance the molecule has of still being excited during a time interval $dt$ from $t \to t + dt$, if $\tau$ is its lifetime, and it was already excited at time $t$. The lifetime is defined as the time an ensemble of the excited molecules take to decay to $1/e$, or $\approx 37 \text{%}$  of their initial number. The reciprocal of the lifetime is the rate constant. The half-life is the time taken to halve an initial population but half-lives are nowadays rarely used except for radioactive species. Using equation 28,
 # 
-# $$\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)t}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \qquad\tag{29}$$
+# $$\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)dt}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \qquad\tag{29}$$
 # 
 # Note that the integration limits start at $t = 0$ and extend to infinity. Both integrals are ones met before, and can be found using Section 2.13,
 # 
@@ -240,8 +240,59 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # The moment about the x-axis is $\displaystyle M_x =\frac{1}{2}\int_0^1 x^{2/3}dx=\frac{3}{10}$ and the centroid is at $\langle y\rangle = M_x/A = 2/5$. 
 # 
 # The moment about the y-axis is $\displaystyle M_y =\frac{1}{2}\int_0^1 x^{4/3}dx=\frac{3}{7}$ and the centroid is at $\langle x\rangle =M_y/A=4/7$
+
+# ### **(iv) Mean square displacement due to Brownian motion $\langle x^2\rangle$. See also Chapter 10-12.13**
 # 
-# ### **(iv) Chromatography. Average value and width of eluted profile** 
+# A theoretical analysis can be made of the Brownian motion by comparing the molecules in a liquid with the motion of bulky molecules of a different substance distributed uniformly amongst the smaller ones of the pure liquid. The larger molecule undergoes a random walk independent of any other, caused by the thermal energy of the solution which allows the small solvent molecules to continually and randomly jostle not only one another but also the larger ones. Einstein calculated, during 1905, that the motion in the $x$ direction at time $t$ could be described by the diffusion equation
+# 
+# $$\displaystyle \frac{\partial f}{\partial t}= D\frac{\partial^2 f}{\partial x^2}$$
+# 
+# where $f$ is a distribution function describing the chance that particles are at position $x$ at time $t$. The solution of this differential equation depends on the starting (boundary) conditions and some examples are given in Chapter 10-15.6. It is assumed that $x=0$ corresponds to the centre of gravity of the particles and then $f(x,t)dx$ gives the number of particles in the period from zero to time $t=t$ whose coordinate $x$ has changed to $x+dx$. The time $t$ must be small compared to any observation time but long enough that the motions of any two adjacent molecules are not correlated. Furthermore $f$ must satisfy the diffusion equation, but there are also constraints since at $t=0$ the function $f$ must be zero except at $x=0$, i.e. all particles start out at $x=0$, giving $f(x\ne 0,t=0) = 0$ and secondly the number of particles is fixed, hence $\displaystyle \int_{-\infty}^\infty f(x,t)dx=n$ for $n$ particles. The problem then corresponds to that of diffusion in the $\pm x$ direction from a point. The function that Einstein worked out is, for $n$ particles,
+# 
+# $$\displaystyle f(x,t)= n\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}$$
+# 
+# and has the same form as that describing random errors as might be anticipated for random motion. Clearly this equation cannot be applied when $t=0$ but only from some small time thereafter, which, as mentioned, means a time that is small (far less than nanoseconds) but long enough that motions are independent of one another.  The average distance $\lambda$ a particle has moved in the $x$ direction from its starting point, after a time $t$ is the square root of its mean square displacement or
+# 
+# $$\displaystyle \lambda \equiv \sqrt{\langle x^2\rangle}=\sqrt{2Dt}$$
+# 
+# making it proportional to the square root of time. The average distance $\langle x\rangle$ is zero, mathematically because $\displaystyle\int_{-\infty}^\infty xf(x,t)dx$ is an odd function, but physically because the motion of a particle is random as it is jostled by the smaller solvent molecules and there is no flow or concentration gradient present. The calculation to obtain the squared average is
+# 
+# $$\displaystyle\langle x^2\rangle=\frac{1}{n}\int_{-\infty}^\infty x^2f(x,t)dx$$
+# 
+# and by substituting
+# 
+# $$\displaystyle \langle x^2\rangle=\frac{1}{\sqrt{4\pi Dt}}\int_{-\infty}^\infty x^2e^{-x^2/(4Dt)}dx$$
+# 
+# and the normalisation term is simply $n$. As the integral is even the limits can be changed to $0\to \infty$  solving starts by making the substitution, $\displaystyle y=x^2/(4Dt)$ and so $dy=2xdx/(4Dt)$. Simplifying gives
+# 
+# $$\displaystyle \langle x^2\rangle=\frac{4Dt}{\sqrt{\pi}}\int_{0}^\infty \sqrt{y}\;e^{-y}dy$$
+# 
+# which can be integrated by parts to give
+# 
+# $$\displaystyle \langle x^2\rangle=\frac{4Dt}{\sqrt{\pi}}\big(-ye^{-y}\big|_0^\infty -\frac{1}{2}\int_0^\infty\frac{-e^{-y}}{\sqrt{y}}dy\big)=\frac{4Dt}{\sqrt{\pi}}\frac{1}{2}\int_0^\infty\frac{e^{-y}}{\sqrt{y}}dy$$
+# 
+# and the remaining integral is easily solved with a substitution $y=u^2$ and $dy=2udu$ giving
+# 
+# $$\displaystyle \frac{1}{2}\int_0^\infty\frac{e^{-y}}{\sqrt{y}}dy=\int_0^\infty e^{-u^2}du=\frac{\sqrt{\pi}}{2}$$
+# 
+# where the integral was looked up in table 2.14. The result is 
+# 
+# $$\displaystyle \langle x^2\rangle=2Dt$$
+# 
+# 
+# 
+# Although this calculation only considers one dimension $x$ the true displacement is $r^2=x^2+y^2+z^2 $, which is also true for the average values and as each average is the same, $\langle r^2\rangle = 3\langle x^2\rangle$ and so in three dimensions 
+# 
+# $$\displaystyle \langle r^2\rangle=6Dt$$
+# 
+# The diffusion coefficient for a small protein such as insulin is $\sim 10^{-10}\mathrm{m^2s^{-1}}$ meaning that such a protein will diffuse only $\approx 190$ microns in a minute.  Einstein had also calculated what the diffusion coefficient was in terms of the solution viscosity $\eta$ and molecule radius $r$, assuming a spherical molecule, and is
+# 
+# $$\displaystyle D=\frac{RT}{N}\frac{1}{6\pi\eta r}$$
+# 
+# where $R$ is the gas constant, $T$ temperature and $N$ Avogadro's constant. He suggested that, as the average distance diffused could be measured, by combing our last two equations this would lead to a direct method of measuring molecular size.
+# 
+
+# ### **(v) Chromatography. Average value and width of eluted profile** 
 # 
 # In chapter 1 section 9.10 a probabilistic model was developed to describe the shape of a chromatogram the result was a distribution $P(n)$ closely related to the Poisson distribution was found,  
 # 

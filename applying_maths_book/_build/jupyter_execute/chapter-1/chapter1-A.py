@@ -122,11 +122,11 @@ plt.rcParams.update({'font.size': 16}) # set font size for plots
 # 
 # So familiar are numbers and counting that we hardly give them much thought and automatically use different types of numbers and ways of counting as the situation dictates. Integer numbers are either prime, when the number is only divisible by itself and 1, or composite and the product of two other integers. Besides the positive and negative integers, there are the rational numbers or fractions, generated from their ratios, $n/m$, such as $1/2,\, 2/3$, etc. A fraction is called proper when the numerator is less than the denominator, $2/3$ for instance, and a fraction improper if the numerator is greater.
 # 
-# It is common to express fractions as decimal expansions such as $0.500$, or $1.36348 \cdots$ etc., which are called real numbers. In some countries, real numbers are expressed with a comma $0,500$ or $1,36348$ instead of a decimal point, and the comma is the international system of units (SI) recommended symbol, although it is never used in the English-speaking world.
+# It is common to express fractions as decimal expansions such as $0.500$, or $1.36348 \cdots$ etc., which are called real numbers. In some countries, real numbers are expressed with a comma $0,500$ or $1,36348$ instead of a decimal point, and the comma is the international system of units (SI) recommended symbol, although it is almost never used in the English-speaking world.
 # 
-# In fractions, such as $98/77$, there are repeats of the sequence of digits; this fraction has a $2$ digit repeat and is $1.272727 \cdots$ while $98/78 = 1.256410256410 \cdots$ has a 6 digit repeat. The irrational fractions can also be expanded in decimal notation, $\sqrt{2} \approx 1.4142135 \cdots$ , however, the sequence of digits does not repeat itself.
+# In fractions, such as $98/77$, there are repeats of the sequence of digits; this fraction has a $2$ digit repeat and is $1.272727 \cdots$ while $98/78 = 1.256410256410 \cdots$ has a 6 digit repeat. The irrational numbers can also be expanded in decimal notation, $\sqrt{2} \approx 1.4142135 \cdots$ , however, the sequence of digits does not repeat itself. Similarly with fractions containing an irrational number.
 # 
-# The decimal numbers, as the name implies, use a base of $10$ for counting, however, we are also quite happy using other counting systems; base $60$ to count time, with $60$ seconds in a minute and $60$ minutes in an hour, as well as base $12$ or $24$ for counting the hours. Angles such as latitude and longitude, essential for navigation, are based on the $360^\text{o}$ of a circle with the degrees each split into $60$ minutes and then into $60$ seconds of arc. Engineers used to use _grads_, which divide the circle into $400$ parts, and perhaps some still do. In measuring weights, the old Imperial units, pounds (lb) and ounces (oz), where $16$ oz = $1$ lb and $14$ lb = $1$ stone are still used, although this is being replaced by the decimal units based kg and g. Distances in the UK and in North America are measured in miles, an arbitrary measure of $5280$ ft, based on a yard of $3$ ft with each foot containing $12$ inches, although the km, m, and cm are replacing these older measurements. Eight km is approximately $5$ miles and $1$ inch $\equiv 25.4$ mm. A distance of $3$ yards, $1$ ft and $4$ inches is often written as $3,\, 1'\, 4''$ and a similar notation used for degrees, minutes, and seconds of arc, $25^\text{o}\, 12''\, 3''$.
+# The decimal numbers, as the name implies, use a base of $10$ for counting, however, we are also quite happy using other counting systems; base $60$ to count time, with $60$ seconds in a minute and $60$ minutes in an hour, as well as base $12$ or $24$ for counting the hours. Angles such as latitude and longitude, essential for navigation, are based on the $360^\text{o}$ of a circle with the degrees each split into $60$ minutes and then into $60$ seconds of arc. Engineers used to use _grads_, which divide the circle into $400$ parts, and perhaps some still do. In measuring weights, the old Imperial units, pounds (lb) and ounces (oz), where $16$ oz = $1$ lb and $14$ lb = $1$ stone are still used, although this is being replaced by the decimal units based kg and g. Distances in the UK and in North America are measured in miles, an arbitrary measure of $5280$ ft, based on a yard of $3$ ft with each foot containing $12$ inches, although the km, m, and cm are replacing these older measurements. Eight km is approximately $5$ miles and $1$ inch $\equiv 25.4$ mm. A distance of $3$ yards, $1$ ft and $4$ inches is often written as $3,\, 1'\, 4''$ and a similar notation used for degrees, minutes, and seconds of arc, $25^\text{o}\, 12'\, 3''$.
 # 
 # Because computers are now so fast in performing calculations, it is almost never necessary to write code at the binary level, which is base two. Binary means calculating at the bit and byte level; the numbers used are $0$ and $1$ only. In octal, numbers based on $0$ to $7$ only are used and in hexadecimal numbers are on base $16$. These are chosen by convention to have the numbers and letters, $0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F$. Thus $10$ in decimal is $A$ in hexadecimal, $15$ in decimal is $F$ in hex and $16$ in decimal is $10$, pronounced as '1 zero', in hex. 
 # 
@@ -660,16 +660,18 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # $$\displaystyle \ln(x)=\ln(10)\log(x)\qquad\tag{15}$$
 # 
-# which is $\ln(x)=2.30258\log(x)$.
+# which is $\ln(x)=2.30258\log(x)$ and $\log$ is by the usual convention $\log_{10}$.
 # 
 # ## 4.2 Summary of logs and powers: definition $x=b^{\log_b(x)}$
-# $$\displaystyle \begin{array}{lll}
+# $$\displaystyle \begin{array}{l|ll}
 # \hline
-# a^0 = 1& \log(0)=-\infty& \log(1)=0,\quad \log(\infty)=\infty\\[10pt]
-# a^{n+m}=a^ma^n & \log(a)+\log(b)=\log(a\cdot b) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
-# a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} & \displaystyle \log(a)-\log(b)=\log\left(\frac{a}{b}\right) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
-# \left(a^m \right)^n=a^{m\cdot n} & \log(a^n)=n\log(a)& \text{ if } a \gt 0 ; n\ne 0\\[10pt]
-# \text{ change base } &\log_a(x)=\log_a(b)\log_b(x)\\
+# a^0 = 1& \log(0)=-\infty,\; \log(1)=0 \\
+# & \log(\infty)=\infty\\[10pt]
+# a^{n+m}=a^ma^n & \log(a)+\log(b)=\log(a\cdot b) & \text{ if } a \gt 0,\, b\gt 0\\[10pt]
+# a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} & \displaystyle \log(a)-\log(b)=\log\left(\frac{a}{b}\right) & \text{ if } a \gt 0,\, b\gt 0\\[10pt]
+# \left(a^m \right)^n=a^{m\cdot n} & \log(a^n)=n\log(a)& \text{ if } a \gt 0,\, n\ne 0\\[10pt]
+#  &\text{ change base } \\
+# &\log_a(x)=\log_a(b)\log_b(x)\\
 # \hline
 # \end{array}$$
 #     

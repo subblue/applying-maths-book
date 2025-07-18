@@ -214,7 +214,7 @@
 # 
 # If the operator is $\displaystyle H= \frac{d^n}{dx^n}$,
 # 
-# (a) Show that a possible wavefunction is $e^{\alpha^x}$ with eigenvalue $\alpha^n$. 
+# (a) Show that a possible wavefunction is $e^{\alpha x}$ with eigenvalue $\alpha^n$. 
 # 
 # (b) Is $\sin(\alpha x)$ a possible wavefunction?
 # 

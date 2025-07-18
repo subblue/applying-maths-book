@@ -15,8 +15,6 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# 
-
 # ## 3.9 Differentiating sine and cosine
 # 
 # Sine and cosine functions are almost mirror images of one another when differentiated,

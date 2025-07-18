@@ -36,7 +36,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle S_N=1+x+x^2 +x^3 +x^4 +\cdots+x^N $$
 # 
-# multiply both sides by $x$ and subtract the two expressions
+# then multiply both sides by $x$ and subtract the two expressions
 # 
 # $$\displaystyle \begin{align}xS_N& = x+x^2 +x^3 +x^4 +\cdots+x^{N+1}\\ 
 # (1-x)S_n&=(1+x+x^2 +x^3 +x^4 +\cdots+x^N)-(x+x^2 +x^3 +x^4 +\cdots+x^{N+1}) \\&=(1-x^{N+1})\end{align}$$
@@ -49,12 +49,35 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 #            
 # $$\displaystyle\sum_{n=0}^\infty x^n = \frac{1}{1-x }  \qquad\tag{2b} $$
 #  
-# but only if $-1\lt x\lt 1$.
-# 
-# If the summation starts at $1$ then 
+# but only if $-1\lt x\lt 1$. If the summation starts at $1$ then 
 # 
 # $$\displaystyle \sum_{n=1}^N x^n=\frac{x(1-x^N)}{1-x}\qquad\tag{2c}$$
 # 
+# ### **(i) Quantised linear oscillator**
+# 
+# In a quantised linear oscillator the energy is given by $E=nh\nu$ where $n$ is a positive integer or zero, $h$ is Planck's constant and $\nu$ the oscillator frequency. The Boltzmann distribution gives the chance of having energy with $n$ quanta as 
+# 
+# $$\displaystyle p_n = e^{-nhv/(k_BT)}$$
+# 
+# with $k_B$ as the Boltzmann constant, $T$ temperature. Summing over all levels gives 
+# 
+# $$\displaystyle \sum_0^\infty e^{-nhv/k_BT}= \sum_0^\infty \left(e^{-hv/(k_BT)}\right)^n $$
+# 
+# This sum is easily worked out by letting $\displaystyle x=e^{-hv/(k_BT)}$ and then from equation 2b,
+# 
+# $$\displaystyle \sum_0^\infty e^{-nhv/(k_BT)}= \frac{1}{1- e^{-hv/(k_BT)}} $$
+# 
+# The total or average energy is, by definition,
+# 
+# $$\displaystyle E= \frac{\sum\limits_{n=0}^\infty nh\nu\, p_n}{\sum\limits_{n=0}^\infty p_n}$$
+# 
+# and the sum in the numerator is given in the table below (section 2.1) and evaluated using the substitution just described. The result is 
+# 
+# $$\displaystyle E=\frac{h\nu}{e^{h\nu/(k_BT)}-1}$$
+# 
+# In the limit of high temperatures or very small values of $\nu$, where the exponential can be expanded as a series, the classical result is obtained, $E=k_BT$. Series expansion is described further in section 6.
+# 
+# ### (ii) Approximating a function as a series.
 # 
 # The function  $f(x)  = 1/(1-x) $ (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if $-1\, x \, \lt 1$. The polynomial is calculated as
 # 
@@ -66,7 +89,120 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The expansion of $1/(1 + x)$ and of $1/(1 + ax)$, for example, follows immediately by substitution of $x \rightarrow -x $ and $x \rightarrow ax$  into the series of equation (1). In the latter case for the series to be valid $|\, ax \,| < 1$, where $a$ is a constant.
 # 
-# ## 1.2 Summation of waves
+# Figure 1, below, shows the function
+# 
+# $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots$$
+# 
+# and several approximations which are ever longer series with increasing powers of $x$. Expanding the series as far as $x^6$ only matches the $f(x)$ well up to about $x = 0.5$ indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows how a function may be approximated by its first couple of terms when the variable $x$ is very small.  This is a very common procedure to account for a perturbation. Series expansion is described further in section 6.
+
+# In[2]:
+
+
+# A Power Series calculation
+
+fig1 = plt.figure(figsize=(5, 5))
+plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+m    = 8                             # maximum power of series is m
+numx = 100                           # number of points to plot
+maxy = 15                            # max y axis
+s = [0.0 for i in range(numx)]       # make array of zeros
+x = np.linspace(0.0,0.999,numx)
+
+sers = lambda x,j: sum( n*x**(n-1) for n in range(1,j+1) )  # sum =1+2x+3x^2 + + nx^(n-1) ... 1/(1-x)^2
+j = 1
+while j <= m:
+    for i in range(numx):
+        s[i]= sers(x[i],j)  
+    plt.plot(x,s)
+    j = j + 1
+    pass
+
+plt.plot(x, 1.0/(1.0 - x)**2,color='black')            # exact expression 
+
+txt = [ ' n = '+ str(i) for i in range(1,m+1) ]
+for i, q in enumerate(txt):
+    yval = sers(x[numx-1],i+1)
+    if yval< maxy: 
+        plt.text(1.0,yval,q,verticalalignment='center')
+    pass
+plt.title(r"$f\;'(x)=1+2x+3x^2+\cdots+nx^{n-1}+\cdots$",fontsize=14)  # r"$...$" uses markdown
+plt.xlabel(r'$x$')
+plt.ylabel(r"$f\;'(x)$")
+plt.axis([0.0,1.0,0.0,maxy] )
+plt.tight_layout()
+plt.show()
+
+
+# Figure 1. The function $1/(1-x)^2 $ (top black line) and its series approximations  $\displaystyle \sum_n nx^{n-1}$ with $n$ = 1, 2, $\cdots$. 
+# _____
+# 
+# ## 2 Making new series
+# 
+# ### **(i) Differentiating an existing series**
+# 
+# New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn. 2,
+#  
+# $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \qquad\tag{3}$$
+#          
+# and if $| \,x\, | \lt 1$ this is the expansion of $ 1/(1 - x)^2$, which can be written as
+# 
+# $$\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \qquad\tag{4}$$
+# 
+# ### **(ii) Substituting $x \to -x $**
+#  
+# Substituting $x \to -x $ gives the series
+# 
+# $$\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \qquad\tag{5}$$
+# 
+# The summation expression is 
+# 
+# $$\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}$$
+# 
+# and the $\displaystyle (-1)^n$ ensures that alternate terms are positive and negative.
+# 
+# ### **(iii)  Summation** 
+# 
+# $$\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1$$
+# 
+# and the new sum $\displaystyle \sum_{n=0}^\infty x(1-x)^n$ can be found with this result by substituting $y=1-x$ then 
+# 
+# $$\displaystyle \sum_{n=0}^\infty y(1-y)^n = 1,\qquad |y-1|\lt 1$$
+# 
+# but notice that there are now new limits.
+# 
+# ## 2.1 Table of Summations
+# 
+# $$\displaystyle \small \begin{array}{lll}
+# \hline
+# \sum_0^\infty\limits x^n = \displaystyle\frac{1}{1-x}, & |x|<1&
+# \sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},&  |x|<1&\\
+# \sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},& |x-1|<1&
+# \sum_0^\infty\limits (1-x)x^n =1,& |x|<1\\
+# \sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},& |x-1|<1&
+# \sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},& |x-1|<1\\
+# \sum_0^\infty\limits n(1-x)x^{n-1} =\displaystyle\frac{1}{1-x},& |x|<1&
+# \sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},& |x|<1\\
+# \sum_0^\infty\limits n(1-x)x^n =\displaystyle\frac{x}{1-x},& |x|<1\\
+# \hline
+# \end{array}$$
+# 
+# ## 2.2 Convergence. Ratio test
+# 
+# In summing a series, it is important to ensure that it converges to some sensible expression such as $1/(1 - x)$, and is not going to be infinite or undefined. With many series, the summation is infinite and cannot therefore be expressed in a simple form. There are a number of convergence tests to ensure that a series has a finite result; many of these are complex, but a ratio test is a good way of determining if the series will be finite.
+# In the ratio test, the ratio of any term $w$ in the series to its preceding term is calculated
+# 
+# $$\displaystyle r=\lim_{n=+\infty} \left| \frac{w_{n+1}}{w^n} \right| $$
+# 
+# and then the limit is taken as $n$ tends to infinity. If the $(n + 1)^\text{th}$ term is smaller than the $n^\text{th}$, then the series is converging. The second step is to check whether $r \lt 1$, as $n$ goes to infinity.
+# 
+# In the series expansion of $\displaystyle (1 - x)^{-1} = 1 + x + x^2 \cdots$ any individual term in the series is $x^n$ so the ratio $\displaystyle r = \lim_{n \rightarrow \infty} \left| \frac{x^{n+1}}{x^n} \right | = |x|$ is less than 1 only if $|x| \lt 1$; therefore when this is true the series converges. The interval of convergence for this sum is 0 $\le x \lt 1$, and the radius of convergence $s = 1$. For any other values this series diverges. 
+# 
+# Should the radius $s$ be infinity the series is convergent for all values of $x$; for instance, the exponential series is convergent for all $x$. Testing for convergence properly is far more complicated than this example leads us to believe and a maths textbook should be consulted to understand how to do this rigorously.
+# 
+# In general, a series converges if $x$ is smaller than some number $s$, so that $|x_0 - x| \lt s$ where $x_0$ is a displacement about which the series converges; see Section 6 describing Taylor series for examples of this. The number $s$ can be determined from the convergence test, Fig. 1. A useful property is that if a power series converges to some number and if each term of it is differentiated, the resulting series can be shown also to converge.
+
+# ## 3.1 Summation of waves
 # The summation of waves occurs in fourier analysis, a wave in its general form is $e^{-i\omega t}$ which propagates at frequency $\omega$ and time $t$. The sum of many waves of different frequency and in phase with one another produces a pulse, this is how a pulse is formed in a mode-locked laser. It is also how diffraction from an array of scatterers, (electrons in atoms) produces a spot in a x-ray diffraction pattern from a single crystal. The sum to $N$ terms is formed from waves at frequencies $n\omega$, 
 # 
 # $$\displaystyle S=\sum_{n=-N}^N e^{-in\omega t}$$
@@ -89,9 +225,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A mode-locked laser produces a continuous train of short light pulses and these can be very short indeed, just a few femtoseconds, for example $20\cdot10^{-15}$ seconds, is quite easily obtained from a Ti-sapphire laser. In these lasers the gain material consists of Ti ions doped into $\mathrm{Al_2O_3}$ (sapphire) crystals. The short pulses are possible because the Ti ions are in a wide variety of environments so that their emission spectrum is wide. The connection between pulse width and energy(frequency) spread is $\Delta t \sim k/\Delta \nu$ where $k$ is a constant of order of unity. (The value of $k$ depends on the shape of the laser pulse, 0.44 for a gaussian shaped (transform limited) pulse). Thus a gas-laser with a narrow atomic emission line can only produce pulse of $\sim 0.1$ ns but a Ti sapphire laser with a fwhm of $\sim 700 \to 900$ nanometres which is a frequency spread of $\Delta \nu \approx 3175\,\mathrm{cm^{-1}}$ can potentially produce a pulse of $\Delta t = 10$ fs duration. 
 # 
-# Suppose that the laser is running in a continuous way (continuous wave or cw), in this case the phases of the waves is random. This means that the standing waves at each of many wavelengths that exist in the cavity are oscillating independently of one another. To make a pulse these modes have all to be made to oscillate together, i.e. in phase with one another, thus these numerous modes must be locked together. Mode-locking can be produced in a variety of ways but this always involves modifying the 'gain' in the laser cavity, where 'gain' means the amplification of the light.
+# Suppose that the laser is running in a continuous way (continuous wave or cw), in this case the phases of the waves are random. This means that the standing waves at each of many wavelengths that exist in the cavity are oscillating independently of one another. To make a pulse these modes have all to be made to oscillate together, i.e. in phase with one another, thus these numerous modes must be locked together. Mode-locking can be produced in a variety of ways but this always involves modifying the 'gain' in the laser cavity, where 'gain' means the amplification of the light.
 # 
-# If the the laser cavity is perturbed in some way it is possible for the most intense part of the circulating light to produce more gain at the expense of the less intense parts. These more intense modes will then become more intense and so on, and eventually more of them become locked together simply because these are the only ones left with any amplitude. The result is that a pulse moves end to end in the cavity with a small amount of this being lost through the output coupler mirror each round trip which produces a train of pulses. Each pulse is separated by the round trip time $2L/c$ seconds from its neighbour, where $L$ is the path-length in the laser and $c$ the speed of light, thus for a $1.5$ m cavity pulses are produced $10$ ns apart. The perturbation to start mode-locking can be in the form on an acoustic modulator inside the cavity, a saturable absorber or in the case of Ti-sapphire lasers by tapping one mirror. This minor motion causes the gain to oscillate and so a pulse is formed as the most intense part of this stimulates more photons and so on to form a pulse. 
+# If the the laser cavity is perturbed in some way it is possible for the most intense part of the circulating light to produce more gain at the expense of the less intense parts. These more intense modes will then become more intense and so on, and eventually more of them become locked together simply because these are the only ones left with any amplitude. The result is that a pulse moves end to end in the cavity with a small amount of this being lost through the output coupler mirror each round trip which produces a train of pulses. Each pulse is separated by the round trip time $2L/c$ seconds from its neighbour, where $L$ is the optical path-length in the laser and $c$ the speed of light, thus for a $1.5$ m cavity pulses are produced $10$ ns apart. The perturbation to start mode-locking can be in the form on an acoustic modulator inside the cavity, a saturable absorber or in the case of Ti-sapphire lasers by tapping one mirror. This minor motion causes the gain to oscillate and so a pulse is formed as the most intense part of this stimulates more photons and so on to form a pulse. 
 # 
 # The total electric field of the radiation inside the cavity has very many modes, these are called *longitudinal* modes (Svelto, 1982). Such a mode is a wave that that has an integer number $n$ of half wavelengths and so fits exactly into the cavity. Not all wavelengths will do this and so do not exist in the laser output. At a wavelength $\lambda_n$ the condition is $n\lambda_n/2 = L$. However, at a slightly different wavelength $(n+1)\lambda_{n+1}=2L$ is also true. The typical length for a mode-locked laser is $1.5$ m and if the wavelength is $800$ nm then $n=3750000$ making the next mode at a wavelength of $3/3750001= 799.99978$ nm thus these modes are extremely close in wavelength, and consequently there are a vast number of modes making up the laser pulse. Instead of calculating the change in wavelength frequency can be used making the  separation of the modes $\Delta \nu=c/2L$ Hz or $\tau=2L/c$ seconds. The pulse moving round the cavity means that the phase of these modes is locked together and it is this effect that makes the pulse; random phases of sine waves would cancel one another out, see fig 18 in section 5.7 of this chapter.
 # 
@@ -108,10 +244,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](series-fig00a.png)
 # 
-# fig 1. Mode-locked laser pulses, calculated as the square of the amplitude of the electric field, ten modes were used in the calculation each with equal amplitude.
+# fig 1a. Mode-locked laser pulses, calculated as the square of the amplitude of the electric field, ten modes were used in the calculation each with equal amplitude.
 # __________________________
 # 
-# ## 1.3 Diffraction
+# ## 3.2 Diffraction
 # Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 1a. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period $d$, and at an angle $theta$ we would like to know how the intensity of the summed waves varies as $\theta$ is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed. 
 # 
 # The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.
@@ -120,7 +256,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](series-fig0.png)
 # 
-# Figure 1a. An array of $N$ coherent oscillators separated by spacing $d$. The path difference measured from the first oscillator is $n\delta$ where $n=0,1\cdots N-1$. At the angle shown $2\delta =\lambda$ where $\lambda$ is the wavelength.
+# Figure 1b. An array of $N$ coherent oscillators separated by spacing $d$. The path difference measured from the first oscillator is $n\delta$ where $n=0,1\cdots N-1$. At the angle shown $2\delta =\lambda$ where $\lambda$ is the wavelength.
 # ______
 # 
 # The general form is a wave is $e^{i(kr-\omega t)}$ where $\omega$ is the frequency and $k=2\pi/\lambda$ is the wavevector. If all the emitters have the same amplitude then the total wave is 
@@ -169,7 +305,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is a _sinc_ function, i.e. a central lobe plus decreasing oscillations to either side.
 
-# ## 1.4  Average concentration from the time course of drug action
+# ## 3.3  Average concentration from the time course of drug action
 # 
 # When an antibiotic is administered the course normally lasts for several days, typically with tablets taken $2$ or $3$ times daily. The medication has to enter the blood stream to be dispersed to other organs, then acts on its target site and from here or from the blood it is excreted. Ideally, when taken the drug's concentration rises rapidly compared to its removal and thus gradually decreases in concentration as time proceeds. It rises rapidly again with each dose taken. The concentration vs time therefore has a saw-tooth profile whose *average* value rises initially then reaches a steady value. An oscillating steady value may be reached when the amount decayed  balances the amount added in the dose. If the time between doses is to large, the steady state can never be reached in a sensible amount of time. Conversely, if the time between doses is too short the accumulated amount may become far too large to be a safe dose. An alternative way of calculating the time profile is given in Chapter 9-7.3 (Fourier Transforms). 
 # 
@@ -177,14 +313,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \begin {align}\overset{k_0}\longrightarrow & A\overset{k_{12},k_{21}}\rightleftharpoons B \\ & \downarrow k_3\end{align}$$
 # 
-# where $A$ represents blood and $B$ the target site for the drug. Clearly this is a complicated kinetic scheme and which can be solved by matrix methods described in chapter 10. When multiple doses are given the algebra becomes extremely complicated, however, if we concentrate just on the points at which the medication is administered the maximum, minimum and average dosage can be found using some of the series just described. To make the equations simpler we shall ignore species B, and suppose that species A is instantaneously populated, such as by intra-venous injection, and further that A decays by first order kinetics. These are all rather drastic simplifications but will serve, nevertheless, to illustrate the nature of what actually happens. The time profile is shown in figure 1b. 
+# where $A$ represents blood and $B$ the target site for the drug. Clearly this is a complicated kinetic scheme and which can be solved by matrix methods described in chapter 10. When multiple doses are given the algebra becomes extremely complicated, however, if we concentrate just on the points at which the medication is administered the maximum, minimum and average dosage can be found using some of the series just described. To make the equations simpler we shall ignore species B, and suppose that species A is instantaneously populated, such as by intra-venous injection, and further that A decays by first order kinetics. These are all rather drastic simplifications but will serve, nevertheless, to illustrate the nature of what actually happens. The time profile is shown in figure 1c. 
 # 
 # ![Drawing](series-fig0a.png)
 # 
-# Fig. 1b. The concentration profile of a drug as more doses are taken at intervals $\tau$. It is assumed that the uptake of the drug is effectively instantaneous (say by intra-venous injection) and is removed from the body by a first -order process. (i.e. by exponential decay). The points $a_1\cdots$ and $b_1\cdots$  are used to calculate the steady state maximum/minimum and average concentration. The lower curve shows the decay from the first dose. It is present over the whole time range as is that from every other dose. These are not shown for clarity. The dots show the average concentration at the point of each new dose,  the short horizontal lines the maximum and minimum amounts as calculated below $c_{a_N},c_{b_N}$. In plotting this figure $\tau =1$ and $k=1/2$.
+# Fig. 1c. The concentration profile of a drug as more doses are taken at intervals $\tau$. It is assumed that the uptake of the drug is effectively instantaneous (say by intra-venous injection) and is removed from the body by a first - order process. (i.e. by exponential decay). The points $a_1\cdots$ and $b_1\cdots$  are used to calculate the steady state maximum/minimum and average concentration. The lower curve shows the decay from the first dose. It is present over the whole time range as is that from every other dose. These are not shown for clarity. The dots show the average concentration at the point of each new dose,  the short horizontal lines the maximum and minimum amounts as calculated below $c_{a_N},c_{b_N}$. In plotting this figure $\tau =1$ and $k=1/2$.
 # ________________________________
 # 
-# The time between taking the drug is constant at $\tau$ and we let it decay away with rate constant $k$. The decay is shown in fig 1b as the lower grey line. The same decay occurs, of course, from every dose and so adds into the total as time proceeds. Calculating the whole time profile is rather complicated and needs the use of the Heaviside function (a step function) introduced at each dosage point. (The Heaviside function prevents the exponential terms becoming $e^{+k(t-t_a)}$ when $t_a \gt t$ rather than decaying as $e^{-k(t-t_a)}$).
+# The time between taking the drug is constant at $\tau$ and we let it decay away with rate constant $k$. The decay is shown in fig 1c as the lower grey line. The same decay occurs, of course, from every dose and so adds into the total as time proceeds. Calculating the whole time profile is rather complicated and needs the use of the Heaviside function (a step function) introduced at each dosage point. (The Heaviside function prevents the exponential terms becoming $e^{+k(t-t_a)}$ when $t_a \gt t$ rather than decaying as $e^{-k(t-t_a)}$).
 # 
 # If each dose is $c_0$ then first dose decays as $c=c_0e^{-kt}$, and at time $\tau$ (point $a_1$ in the figure) the amount present is 
 # 
@@ -216,115 +352,6 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and as $k\tau$ is a constant the steady state is found when $e^{-k\tau (N+1)} \ll e^{-k\tau}$ which happens when $N$ is large enough so that $e^{-k\tau N} \ll 1$. In the figure above $k\tau =1/2$ so that when $N=6$, $e^{-k\tau N} \approx 0.05$ and as can be seen in the figure, when this is the case steady-state is almost reached.
 
-# ## 2 Making new series
-# 
-# ### **(i) Differentiating an existing series**
-# 
-# New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn. 2,
-#  
-# $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \qquad\tag{3}$$
-#          
-# and if $| \,x\, | \lt 1$ this is the expansion of $ 1/(1 - x)^2$, which can be written as
-# 
-# $$\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \qquad\tag{4}$$
-# 
-# ### **(ii)Substituting $x \to -x $**
-#  
-# Substituting $x \to -x $ gives the series
-# 
-# $$\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \qquad\tag{5}$$
-# 
-# The summation expression is 
-# 
-# $$\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}$$
-# 
-# and the $\displaystyle (-1)^n$ ensures that alternate terms are positive and negative.
-# 
-# ### **(iii)  Summation** 
-# 
-# $$\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1$$
-# 
-# and the new sum $\displaystyle \sum_{n=0}^\infty x(1-x)^n$ can be found with this result by substituting $y=1-x$ then 
-# 
-# $$\displaystyle \sum_{n=0}^\infty y(1-y)^n = 1,\qquad |y-1|\lt 1$$
-# 
-# but notice that there are now new limits. We can of course change notation and replace $y$ with $x$ or $p$ or any other symbol.
-# 
-# ## 2.1 Table of Summations
-# 
-# $$\displaystyle \small \begin{array}{l|l|l}
-# \hline
-# \sum_0^\infty\limits x^n = \displaystyle\frac{1}{1-x},\quad |x|<1&
-# \sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|<1&
-# \sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},\quad |x|<1\\
-# \sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},\quad |x-1|<1&
-# \sum_0^\infty\limits (1-x)x^n =1,\quad |x|<1&
-# \sum_0^\infty\limits n(1-x)x^n =\displaystyle\frac{x}{1-x},\quad |x|<1\\
-# \sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},\quad |x-1|<1&
-# \sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},\quad |x-1|<1&
-# \sum_0^\infty\limits n(1-x)x^{n-1} =\displaystyle\frac{1}{1-x},\quad |x|<1\\
-# \hline
-# \end{array}$$
-# 
-# Figure 1c, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of $x$. Expanding the series as far as $x^6$ only matches the $f(x)$ well up to about $x = 0.5$ indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable $x$ is very small.  This is a very common procedure to account for a perturbation.
-
-# In[2]:
-
-
-# power series calculation
-
-fig1 = plt.figure(figsize=(5, 5))
-plt.rcParams.update({'font.size': 14})  # set font size for plots
-
-m    = 8                             # maximum power of series is m
-numx = 100                           # number of points to plot
-maxy = 15                            # max y axis
-s = [0.0 for i in range(numx)]       # make array of zeros
-x = np.linspace(0.0,0.999,numx)
-
-sers = lambda x,j: sum( n*x**(n-1) for n in range(1,j+1) )  # sum =1+2x+3x^2 + + nx^(n-1) ... 1/(1-x)^2
-j = 1
-while j <= m:
-    for i in range(numx):
-        s[i]= sers(x[i],j)  
-    plt.plot(x,s)
-    j = j + 1
-    pass
-
-plt.plot(x, 1.0/(1.0 - x)**2,color='black')            # exact expression 
-
-txt = [ ' n = '+ str(i) for i in range(1,m+1) ]
-for i, q in enumerate(txt):
-    yval = sers(x[numx-1],i+1)
-    if yval< maxy: 
-        plt.text(1.0,yval,q,verticalalignment='center')
-    pass
-plt.title(r"$f\;'(x)=1+2x+3x^2+\cdots+nx^{n-1}+\cdots$",fontsize=14)  # r"$...$" uses markdown
-plt.xlabel(r'$x$')
-plt.ylabel(r"$f\;'(x)$")
-plt.axis([0.0,1.0,0.0,maxy] )
-plt.tight_layout()
-plt.show()
-
-
-# Figure 1c. The function $1/(1-x)^2 $ (top black line) and its series approximations  $\Sigma_n nx^{n-1}$ with $n$ = 1, 2, $\cdots$. 
-# _____
-# 
-# ## 3 Convergence
-# 
-# In summing a series, it is important to ensure that it converges to some sensible expression such as $1/(1 - x)$, and is not going to be infinite or undefined. With many series, the summation is infinite and cannot therefore be expressed in a simple form. There are a number of convergence tests to ensure that a series has a finite result; many of these are complex, but a ratio test is a good way of determining if the series will be finite.
-# In the ratio test, the ratio of any term $w$ in the series to its preceding term is calculated
-# 
-# $$\displaystyle r=\lim_{n=+\infty} \left| \frac{w_{n+1}}{w^n} \right| $$
-# 
-# and then the limit is taken as $n$ tends to infinity. If the $(n + 1)$<sup>th</sup> term is smaller than the $n^th$, then the series is converging. The second step is to check whether $r \lt 1$, as $n$ goes to infinity.
-# 
-# In the series expansion of $\displaystyle (1 - x)^{-1} = 1 + x + x^2 \cdots$ any individual term in the series is $x^n$ so the ratio $\displaystyle r = \lim_{n \rightarrow \infty} \left| \frac{x^{n+1}}{x^n} \right | = |x|$ is less than 1 only if $|x| \lt 1$; therefore when this is true the series converges. The interval of convergence for this sum is 0 $\le x \lt 1$, and the radius of convergence $s = 1$. For any other values this series diverges. 
-# 
-# Should the radius $s$ be infinity the series is convergent for all values of $x$; for instance, the exponential series is convergent for all $x$. Testing for convergence properly is far more complicated than this example leads us to believe and a maths textbook should be consulted to understand how to do this rigorously.
-# 
-# In general, a series converges if $x$ is smaller than some number $s$, so that $|x_0 - x| \lt s$ where $x_0$ is a displacement about which the series converges; see Section 6 describing Taylor series for examples of this. The number $s$ can be determined from the convergence test, Fig. 2. A useful property is that if a power series converges to some number and if each term of it is differentiated, the resulting series can be shown also to converge.
-# 
 # ## 4 Average quantities
 # 
 # Any quantity, $x$, which is one of a set of measurements has an average value
@@ -408,7 +435,7 @@ plt.show()
 
 # ## 4.3 Sequence repeats in DNA
 # 
-# Our DNA is packaged into $46$ chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of $n$ base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, $\sim 10^6$ base pairs, that there are equal amounts of GCAT bases. If the sequence to identify is $n=8$ bases long and is GGCATGGA then the chance of finding the first G is $1/4$ and of the second adjacent G is $ 1/16$ and as each event is independent of any other the probabilities multiply to give $\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}$, thus for $n=8$ the chance of finding any specified consecutive sequence is very small $1/4^8=1/65536$. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of _not_ seeing the next sequence in $m$ moves is $(1-1/4^n)^{m-1} $ and then seeing one in the next move is the product
+# Our DNA is packaged into $46$ chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of $n$ base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, $\sim 10^6$ base pairs, that overall there are equal amounts of GCAT bases. If the sequence to identify is $n=8$ bases long and is GGCATGGA then the chance of finding the first G is $1/4$ and of the second adjacent G is $ 1/16$ and as each event is independent of any other the probabilities multiply to give $\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}$, thus for $n=8$ the chance of finding any specified consecutive sequence is very small $1/4^8=1/65536$. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of _not_ seeing the next sequence in $m$ moves is $(1-1/4^n)^{m-1} $ and then seeing one in the next move is the product
 # 
 # $$\displaystyle p(m)=\left(1-\frac{1}{4^n}\right)^{m-1}\frac{1}{4^n}$$
 # 
@@ -420,7 +447,7 @@ plt.show()
 # 
 # $$\displaystyle \mu = \frac{1}{p}=4^n$$
 # 
-# which means that when the sequence is long a huge number of base pairs are needed, on average, if the sequence is to be present more than once. This is important in PCR where a sequence of perhaps $15 \to 30 $ primer base pairs are used to identify and so amplify the DNA. This primer sequence is so long that the probability of this occurring by random is tiny in fragmented DNA with only a few thousand base pairs. This makes the PCR amplification very specific indeed, i.e if the target sequence is not there, amplification is highly unlikely to occur by random chance.    
+# which means that when the sequence is long a huge number of base pairs are needed, on average, if the sequence is to be present more than once. This is important in PCR where a sequence of perhaps $15 \to 30 $ primer base pairs are used to identify and so amplify the DNA. This primer sequence is sufficiently long that the probability of this occurring by random is tiny in fragmented DNA with only a few thousand base pairs. This makes the PCR amplification very specific indeed, i.e. if the target sequence is not there, amplification is highly unlikely to occur by random chance.    
 
 # 
 # 
@@ -489,7 +516,7 @@ plt.show()
 # 
 # ![Drawing](series-fig2b.png) 
 # 
-# Figure 1e. Probability of an all trans chain vs the ratio $E_g/k_BT$ for butane and then for a ten fold longer chain of butane like repeat units. Large $E_g/k_BT$ corresponds to low temperature or small energy $E_g$.
+# Figure 1e. Probability of an all trans chain vs the ratio $E_g/k_BT$ for butane and then for a ten fold longer chain of butane like repeat units. Large $E_g/k_BT$ corresponds to low temperature.
 # 
 # ___________________________
 # 

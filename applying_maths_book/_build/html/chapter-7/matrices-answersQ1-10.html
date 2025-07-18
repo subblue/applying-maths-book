@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
+     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1814,8 +1814,8 @@ value =    880.00
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm  Huckel Calculation Cyclic polyenes</span>
 
 <span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                         <span class="c1"># define size of linear polyene</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                <span class="c1"># make an array of zeros </span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                             <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make an array of zeros </span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -1823,7 +1823,7 @@ value =    880.00
         <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         
     <span class="k">pass</span>
-<span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># n-1 because index runs from 0 to n-1, for n values</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                      <span class="c1"># n-1 because index runs from 0 to n-1, for n values</span>
 <span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">M</span>
 </pre></div>
@@ -1853,13 +1853,13 @@ value =    880.00
 <hr class="docutils" />
 <section id="q8-answer">
 <h2>Q8 answer<a class="headerlink" href="#q8-answer" title="Permalink to this headline">#</a></h2>
-<p>Starting with the matrix, using the method of Algorithm 1 with <span class="math notranslate nohighlight">\(n = 6\)</span>, modify the matrix to connect atom <span class="math notranslate nohighlight">\(2\)</span> atom <span class="math notranslate nohighlight">\(6\)</span> as in the structure; the atoms <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> 3 are connected already because adjacent atoms always connect in the numbering scheme. Adding the following line, as was done in the previous problem, links atoms <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(6\)</span>,</p>
+<p><strong>(a)</strong> Starting with the matrix, using the method of Algorithm 1 with <span class="math notranslate nohighlight">\(n = 6\)</span>, modify the matrix to connect atom <span class="math notranslate nohighlight">\(2\)</span> atom <span class="math notranslate nohighlight">\(6\)</span> as in the structure; the atoms <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> are connected already because adjacent atoms always connect in the numbering scheme, see question. Adding the following line, as was done in the previous problem, links atoms <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(6\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm  Huckel Calculation Fulvalene</span>
 <span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                         <span class="c1"># define size of linear polyene</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                <span class="c1"># make an array of zeros </span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                             <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make an array of zeros </span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -1867,7 +1867,7 @@ value =    880.00
         <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         
     <span class="k">pass</span>
-<span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># 1 and 5 not 2 and 6, as index runs from zero</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                        <span class="c1"># 1 and 5 not 2 and 6, as index runs from zero</span>
 <span class="n">M</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">M</span>
 </pre></div>
@@ -1895,18 +1895,18 @@ value =    880.00
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solns</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out each solution in a table, j is sqrt(-1)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out  each solution in a table</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:12.6g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =    -1+0j 
-x = -0.618+0j 
-x = 1.618+0j 
-x = 0.2541-5.294e-23j 
-x = 1.861+6.776e-21j 
-x = -2.115+2.647e-23j 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =        -1+0j 
+x = -0.618034+0j 
+x =   1.61803+0j 
+x = 0.254102-5.29396e-23j 
+x = 1.86081+6.77626e-21j 
+x = -2.11491+2.64698e-23j 
 </pre></div>
 </div>
 </div>
@@ -1915,8 +1915,120 @@ x = -2.115+2.647e-23j
 <p>The MO energies are calculated using <span class="math notranslate nohighlight">\(E = \alpha -x\beta\)</span>. The stabilization energy is the difference the <span class="math notranslate nohighlight">\(\pi\)</span> bond system has compared to the energy of all its isolated p electrons. In this molecule, the there are six p electrons with energy <span class="math notranslate nohighlight">\(6\alpha\)</span>, and the stabilization energy is <span class="math notranslate nohighlight">\(2(2.115 + 1 + 0.618)\beta\)</span> because two electrons fill each of the lowest three orbitals and <span class="math notranslate nohighlight">\(\beta\)</span> is a negative number. This stabilization energy is <span class="math notranslate nohighlight">\(7.46\beta\)</span>, which is less than the <span class="math notranslate nohighlight">\(8\beta\)</span> calculated for benzene, and the delocalization energy compared to three double bonds is <span class="math notranslate nohighlight">\(1.46\beta\)</span> smaller than the <span class="math notranslate nohighlight">\(2\beta\)</span> of benzene.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig75.png" /></p>
 <p>Figure 75. Roots of the Fulvalene Huckel MO characteristic equation.</p>
-</section>
 <hr class="docutils" />
+<p><strong>(b)</strong> The calculation for Naphthalene and Azulene is given below. Notice how the atoms are connected in each case. The same algorithms are used as above and the roots of the characteristic equations printed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation for Naphthalene</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                            <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make an array of zeros </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        
+    <span class="k">pass</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>           
+<span class="n">M</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1\\1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
+
+<span class="n">solns</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out the real part of each solution in a table. </span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">re</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span>  <span class="p">)</span>  <span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(x - 1)*(x + 1)*(x**2 - x - 3)*(x**2 - x - 1)*(x**2 + x - 3)*(x**2 + x - 1)
+x =   -2.303 
+x =   -1.618 
+x =   -1.303 
+x =   -1.000 
+x =  -0.6180 
+x =   0.6180 
+x =    1.000 
+x =    1.303 
+x =    1.618 
+x =    2.303 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation for Azulene</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                         <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                <span class="c1"># make an array of zeros </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        
+    <span class="k">pass</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>   
+<span class="n">M</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0 &amp; 1\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; x &amp; 1\\1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; x\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
+
+<span class="n">solns</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out each solution in a table, j is sqrt(-1)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">re</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span>  <span class="p">)</span>  <span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(x**4 - x**3 - 3*x**2 + x + 1)*(x**6 + x**5 - 7*x**4 - 5*x**3 + 13*x**2 + 6*x - 4)
+x =   -2.310 
+x =   -1.652 
+x =   -1.356 
+x =  -0.8870 
+x =  -0.4773 
+x =   0.4004 
+x =   0.7376 
+x =    1.579 
+x =    1.869 
+x =    2.095 
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are <span class="math notranslate nohighlight">\(10\)</span> <span class="math notranslate nohighlight">\(\pi\)</span> electrons in napthalene and azulene, therefore the lowest transition is from the filled to lowest unfilled orbital or <span class="math notranslate nohighlight">\(0.618-(-0.618)\approx 0.1.24\)</span> for naphthalene, and <span class="math notranslate nohighlight">\(0.4004-(-0.4773)\approx 0.88\)</span> for azulene which shows that this transition has far lower energy and is consistent with it absorbing in the visible part of the spectrum, whereas naphthalene absorbs in the UV and appears as a white solid.  If the Mulliken charges are calculated they show that the <span class="math notranslate nohighlight">\(7\)</span> membered ring is positive and the smaller ring negative consistent with there being a dipole.</p>
+</section>
 <section id="q9-answer">
 <h2>Q9 answer<a class="headerlink" href="#q9-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) Using the notation <span class="math notranslate nohighlight">\(x = (\alpha - E)/\beta\)</span> the Huckel determinant for the linear molecule is</p>

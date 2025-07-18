@@ -427,7 +427,31 @@ from sympy import *
 # ![Drawing](chapter1-fig20a.png)
 # 
 # figure 20a. Probability that two people in a group of $n_A$ have the same birthday.
-# _____
+# _____________
+# 
+# This problem can be stated in a different way. If you know $n$ peoples birthdays is it more likely or not of two of them being on the same day and month (Rouse Ball & Coxeter, 1987). If everyone has a different birthday, so that there is a random selection of $n$ days out of $365$, the total number of selections is $365^n$. As each day should only be counted once the number of selections becomes $365\cdot364\cdots (365-n+1)$, thus the probability is 
+# 
+# $$\displaystyle \frac{365\cdot364\cdots (365-n+1)}{365^n}$$
+# 
+# Let the occurrence be just as likely as not then the probability is $1/2$,
+# 
+# $$\displaystyle \frac{365\cdot364\cdots (365-n+1)}{365^n}=\frac{1}{2}$$
+# 
+# and we can evaluate this by rearranging. The first three terms are  $\displaystyle \frac{365}{365}\frac{364}{365}\frac{363}{365} = \frac{365-1}{365}\frac{365-2}{365}=\left(1-\frac{1}{365}\right)\left(1-\frac{2}{365}\right)$ and so the product is 
+# 
+# $$\displaystyle \left(1-\frac{1}{365}\right)\left(1-\frac{2}{365}\right)\cdots \left(1-\frac{n-1}{365}\right)=\frac{1}{2}$$
+# 
+# taking logs of both sides and using the log expansion as each term is small ( $\ln(1+x)=x )$ produces
+# 
+# $$\displaystyle \frac{1}{365}+\frac{2}{365}+\cdots +\frac{n-1}{365}=\ln(2)$$
+# 
+# which is $\displaystyle 1+2+\cdots n-1=365\ln(2)$ and the summation is equal to $n(n-1)/2$ making the result 
+# 
+# $$\displaystyle n(n-1)=2\cdot 365\ln(2)$$
+# 
+# from which $n= 23$ to the nearest whole number. You can see from the plot above that this value of $n$ is $1/2$.
+
+# 
 # ### **(viii) Conditional probability. Throwing coins**
 # Sometimes conditional probabilities are required; for example, tossing three coins and deciding what is the chance that the outcome is at least two tails (outcome A) and knowing that the first coin to fall is a head (outcome B). Tossing three coins can only produce the patterns
 # 
@@ -469,7 +493,11 @@ from sympy import *
 # 
 # A binomial distribution thus requires three conditions to be met, 
 # 
-# >a fixed number of trials $n$, a constant chance of success $p$ and each test independent of all others. 
+# >a fixed number of trials $n$,
+# 
+# >a constant chance of success $p$ and 
+# 
+# >each test independent of all others. 
 # 
 # ### **(i) Multiplicity or Binomial Coefficient W**
 # 

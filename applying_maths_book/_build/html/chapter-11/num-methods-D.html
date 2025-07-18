@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
+     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1595,8 +1595,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-reproductive-ratio">
+     7.7 The reproductive ratio
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bacterial-populations-calculated-via-chemical-kinetics">
-     7.7 Bacterial populations calculated via Chemical Kinetics
+     7.8 Bacterial populations calculated via Chemical Kinetics
     </a>
    </li>
   </ul>
@@ -1703,8 +1708,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-reproductive-ratio">
+     7.7 The reproductive ratio
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bacterial-populations-calculated-via-chemical-kinetics">
-     7.7 Bacterial populations calculated via Chemical Kinetics
+     7.8 Bacterial populations calculated via Chemical Kinetics
     </a>
    </li>
   </ul>
@@ -1895,6 +1905,7 @@ velocity,</p>
 </div>
 </section>
 </section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="the-sir-model-describes-the-spread-of-diseases">
 <h1>7 The SIR model describes the spread of diseases<a class="headerlink" href="#the-sir-model-describes-the-spread-of-diseases" title="Permalink to this headline">#</a></h1>
 <p>A very interesting, and relatively straightforward example of coupled equations is the spread of an infectious disease, because, besides being intrinsically interesting, especially during the Covid19 epidemic, it allows a clear illustration of a number of features such as the phase plane and nullclines.</p>
@@ -1920,8 +1931,8 @@ N &amp;= I + S + R
 <div class="math notranslate nohighlight">
 \[\displaystyle t = 0;\; dI/dt\big|_{t = 0} = I_0(k_2S_0 − k_1)\quad\text{ if }\quad k_2S_0 \gt k_1\]</div>
 <p>then <span class="math notranslate nohighlight">\(dS/dt \gt 0\)</span> and an epidemic will occur.</p>
-<p>Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria <span class="math notranslate nohighlight">\(\approx\)</span>100, (see Britton 2003), Covid-19 <span class="math notranslate nohighlight">\(\gt 3 \lt 9\)</span> (Wikipedia).</p>
-<p>( <span class="math notranslate nohighlight">\(^\dagger\)</span> Many texts call the reproductive ratio <span class="math notranslate nohighlight">\(R_0\)</span>, which is unfortunately confusing with <span class="math notranslate nohighlight">\(R_0\)</span>, the initial number in the removed class.)</p>
+<p>Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 15; malaria <span class="math notranslate nohighlight">\(\approx\)</span>100, (see Britton 2003), Covid-19 <span class="math notranslate nohighlight">\(\gt 3 \lt 9\)</span> (Wikipedia).</p>
+<p>( <span class="math notranslate nohighlight">\(^\dagger\)</span> Many texts call the reproductive ratio <span class="math notranslate nohighlight">\(R_0\)</span>, which is unfortunately confusing with <span class="math notranslate nohighlight">\(R_0\)</span>, the initial number in the removed class. The importance of reproductive ratio is described in more detail below.)</p>
 </section>
 <section id="the-sir-phase-plane">
 <h2>7.2 The SIR phase plane<a class="headerlink" href="#the-sir-phase-plane" title="Permalink to this headline">#</a></h2>
@@ -2052,15 +2063,23 @@ The strategy is to work out what is already known from the data.</p>
 <hr class="docutils" />
 <p>After 2019 there is no shortage of data from covid-19 to illustrate the SIR type of epidemic, however, the real data only partly follows this scheme because of medical intervention, i.e. learning how best to deal with very ill patients means that the rate constants vary with time which complicates the calculation, as do the use of face masks and of course the availability, or otherwise, of vaccinations.</p>
 </section>
+<section id="the-reproductive-ratio">
+<h2>7.7 The reproductive ratio<a class="headerlink" href="#the-reproductive-ratio" title="Permalink to this headline">#</a></h2>
+<p>The reproductive ratio <span class="math notranslate nohighlight">\(R_R\)</span> shows how difficult or easy it will be to eradicate a disease. If the reproductive ratio can be made to be less that unity then the disease cannot increase in the population and must die out in the locality where this happens. Suppose therefore, that either by restricting contacts with infected persons  or by immunisation or both, a critical fraction <span class="math notranslate nohighlight">\(p\)</span> of the population is reached such that <span class="math notranslate nohighlight">\(p\)</span> obeys <span class="math notranslate nohighlight">\((1-p)R_R = 1\)</span>, then the disease can be controlled. Rewriting this equation gives the critical fraction <span class="math notranslate nohighlight">\(\displaystyle p=1-\frac{1}{R_R}\)</span> and this function is shown in figure 17a together with some data. The <span class="math notranslate nohighlight">\(R_R\)</span> values given above are for smallpox <span class="math notranslate nohighlight">\(R_R= 4\)</span>; mumps = <span class="math notranslate nohighlight">\(5\)</span>; German measles (rubella) = <span class="math notranslate nohighlight">\(6\)</span>; measles = <span class="math notranslate nohighlight">\(15\)</span>; malaria <span class="math notranslate nohighlight">\(\approx\)</span>100, (see Britton 2003), Covid-19 <span class="math notranslate nohighlight">\(\gt 3 \lt 9\)</span> depending on variant (Wikipedia).</p>
+<p>From the figure we can see that it is much easier to eliminate smallpox where <span class="math notranslate nohighlight">\(p=0.75\)</span> than measles where <span class="math notranslate nohighlight">\(p=0.95\)</span> even though cheap and effective vaccines are available for both. A value of <span class="math notranslate nohighlight">\(p=0.95\)</span> means that <span class="math notranslate nohighlight">\(95\)</span>% of the population has to be made no longer susceptible to the disease, through vaccination, isolation, recovery or removal, i.e. death.  Wayne &amp; Bolker, (’ Infectious Diseases’ publ. OUP 2023) present a clear discussion of this and other aspects of controlling diseases.</p>
+<p><img alt="Drawing" src="../_images/num-methods-fig17b.png" /></p>
+<p>Figure 17a. The critical fraction of a population <span class="math notranslate nohighlight">\(p=1-1/R_R\)</span> that makes the reproductive ratio <span class="math notranslate nohighlight">\(R_R=1\)</span> for different diseases. (Figure based on fig 2 in Wayne &amp; Bolker.)</p>
+</section>
+<hr class="docutils" />
 <section id="bacterial-populations-calculated-via-chemical-kinetics">
-<h2>7.7 Bacterial populations calculated via Chemical Kinetics<a class="headerlink" href="#bacterial-populations-calculated-via-chemical-kinetics" title="Permalink to this headline">#</a></h2>
+<h2>7.8 Bacterial populations calculated via Chemical Kinetics<a class="headerlink" href="#bacterial-populations-calculated-via-chemical-kinetics" title="Permalink to this headline">#</a></h2>
 <p>Foods provide an environment for microbes to survive and multiply because they are rich in nutrients. While some microbes are harmless others such as yeasts and molds spoil foods. Bacteria, such as the pathogens <em>staphylococcus aureus</em> and <em>E. coli</em>, also produce enterotoxins (protein toxins) which target the gastrointestinal tract and cause diarrhea and food poisoning.</p>
 <p>The life cycle of bacteria has four stages,</p>
-<p>(1) the lag (induction) phase when populations are small,</p>
-<p>(2) exponential growth,</p>
-<p>(3) a maximum population during the stationary phase, and</p>
-<p>(4) death when the population declines.</p>
-<p>and the population therefore rises rapidly then decreases slowly not unlike the infected population in fig 17 above. The bacterial population is often inferred from the optical density of a sample calibrated against known standards.</p>
+<p><strong>(1)</strong> The lag (induction) phase when populations are small,</p>
+<p><strong>(2)</strong> Exponential growth,</p>
+<p><strong>(3)</strong> A maximum population during the stationary phase, and</p>
+<p><strong>(4)</strong> Death when the population declines.</p>
+<p>The population therefore rises rapidly then decreases slowly not unlike the infected population in fig 17 above. The bacterial population is often inferred from the optical density of a sample calibrated against known standards.</p>
 <p>Bacteria multiply by dividing so that a naive model of their increase in number follows the series <span class="math notranslate nohighlight">\(1, 2, 4, 8, \cdots 2^n\)</span> which would naturally lead to an infinite population. The Malthusian idea is that growth occurs exponentially,</p>
 <div class="math notranslate nohighlight">
 \[M=M_0e^{kt},\qquad \text{Malthusian}\]</div>
@@ -2082,15 +2101,15 @@ M \overset{k_5}\longrightarrow D
 \frac{dA}{dt} &amp;= +k_1M +k_2A -(k_3X +k_4)A\\  
 \frac{dX}{dt} &amp;= k_2A -k_3XA\end{align}\end{split}\]</div>
 <p>and the initial conditions are at time zero M is present as <span class="math notranslate nohighlight">\(M_0\)</span> bacteria, and <span class="math notranslate nohighlight">\(A = X = 0\)</span>. Before calculating the populations quite a lot can be understood by examining these equations and to do this we shall insist that the bacteria are growing normally, i.e. the maximum population is orders of magnitude greater than the initial population. From the equations we can infer that,</p>
-<p>(i) Species M decays exponentially with rate constant <span class="math notranslate nohighlight">\(k_1+k_5\)</span>.</p>
-<p>(ii) Maximum X happens when <span class="math notranslate nohighlight">\(X\)</span> reaches steady-state, <span class="math notranslate nohighlight">\(dX/dt = 0\)</span> and when integrated produces a constant. The maximum possible value is <span class="math notranslate nohighlight">\(X_{max}=k_2/k_3\)</span> and this ratio has to be much greater than <span class="math notranslate nohighlight">\(1\)</span> as the bacterial population is growing.</p>
-<p>(iii) When species X is small and <span class="math notranslate nohighlight">\(k_1M\)</span> is also small, species A increases exponentially with a rate constant <span class="math notranslate nohighlight">\(k_2-k_4\)</span> assuming that <span class="math notranslate nohighlight">\(k_2 \gt k_4\)</span>.</p>
-<p>(iv) At long times after the maximum bacterial population is passed the bacteria decay exponentially with rate constant <span class="math notranslate nohighlight">\(k_4\)</span>. At these times <span class="math notranslate nohighlight">\(k_1M\)</span> is very small vs. population of A, <span class="math notranslate nohighlight">\(k_2-k_3X \sim 0\)</span> (see (iii) above), thus <span class="math notranslate nohighlight">\(dA/dt \sim -k_4 A\)</span> which integrates to an exponential decay.</p>
-<p>(v) The rate constant <span class="math notranslate nohighlight">\(k_3\)</span> has to be small compared to the others. Since <span class="math notranslate nohighlight">\(k_3XA\)</span> is the product of two potentially large numbers A and X then <span class="math notranslate nohighlight">\(k_3\)</span> has to be very small to be comparable to other rate constants. If <span class="math notranslate nohighlight">\(10^8\)</span> bacteria are to be produced then <span class="math notranslate nohighlight">\(1/k_3 \sim 10^8\)</span></p>
-<p>The Euler method can be used to integrate the rate equations and using <span class="math notranslate nohighlight">\(1000\)</span> time steps is plenty. The code for the SIR model above can be changed to do this calculation. The time-scale needed from experience of food going bad is only a few days, thus we guess rate constants in terms of time units in days to illustrate the behaviour of the population. Some initial numbers are tried just to get going, even if fitting to a data set using a non-linear least squares method. The graph below shows the populations of M, A and X on a linear and log scale vs. time. The initial population <span class="math notranslate nohighlight">\(M_0 = 10000\)</span>, the rate constants are <span class="math notranslate nohighlight">\(k_1 = 1,  k_2 = 4, k_3 = 1\cdot 10^{-8}, k_4 = 0.5,  k_5 = 0.01\)</span>. You can see that with this set of rate constants that the lag phase is <span class="math notranslate nohighlight">\(\approx 3\)</span> days, (fig 17a left), the exponential rise is very rapid about a day, and large <span class="math notranslate nohighlight">\(\sim 10^4\)</span> times increase, the stationary phase short, <span class="math notranslate nohighlight">\(\approx 1\)</span> day and the death phase long, several days. This model therefore shows all the features of the growth and death of a bacterial population.</p>
-<p>The fall in the population after reaching a maximum is due to <span class="math notranslate nohighlight">\(k_4A\)</span> becoming greater than <span class="math notranslate nohighlight">\(k_2-k_3X\)</span>. As species A decreases the reaction <span class="math notranslate nohighlight">\(A+X\to D\)</span> is slowed but X is still being formed from <span class="math notranslate nohighlight">\(A\to 2A+X\)</span>, so this is slowed also as A decreases under the influence of <span class="math notranslate nohighlight">\(k_4\)</span>. The result is that X becomes constant at long times since the amount formed during the exponential growth phase remains because it is no longer being formed or removed at any appreciable rate as can be seen in fig 17a.</p>
+<p><strong>(i)</strong> Species M decays exponentially with rate constant <span class="math notranslate nohighlight">\(k_1+k_5\)</span>.</p>
+<p><strong>(ii)</strong> Maximum X happens when <span class="math notranslate nohighlight">\(X\)</span> reaches steady-state, <span class="math notranslate nohighlight">\(dX/dt = 0\)</span> and when integrated produces a constant. The maximum possible value is <span class="math notranslate nohighlight">\(X_{max}=k_2/k_3\)</span> and this ratio has to be much greater than <span class="math notranslate nohighlight">\(1\)</span> as the bacterial population is growing.</p>
+<p><strong>(iii)</strong> When species X is small and <span class="math notranslate nohighlight">\(k_1M\)</span> is also small, species A increases exponentially with a rate constant <span class="math notranslate nohighlight">\(k_2-k_4\)</span> assuming that <span class="math notranslate nohighlight">\(k_2 \gt k_4\)</span>.</p>
+<p><strong>(iv)</strong> At long times after the maximum bacterial population is passed the bacteria decay exponentially with rate constant <span class="math notranslate nohighlight">\(k_4\)</span>. At these times <span class="math notranslate nohighlight">\(k_1M\)</span> is very small vs. population of A, <span class="math notranslate nohighlight">\(k_2-k_3X \sim 0\)</span> (see (iii) above), thus <span class="math notranslate nohighlight">\(dA/dt \sim -k_4 A\)</span> which integrates to an exponential decay.</p>
+<p><strong>(v)</strong> The rate constant <span class="math notranslate nohighlight">\(k_3\)</span> has to be small compared to the others. Since <span class="math notranslate nohighlight">\(k_3XA\)</span> is the product of two potentially large numbers A and X then <span class="math notranslate nohighlight">\(k_3\)</span> has to be very small to be comparable to other rate constants. If <span class="math notranslate nohighlight">\(10^8\)</span> bacteria are to be produced then <span class="math notranslate nohighlight">\(1/k_3 \sim 10^8\)</span></p>
+<p>The Euler method can be used to integrate the rate equations and using <span class="math notranslate nohighlight">\(1000\)</span> time steps is plenty. The code for the SIR model above can be changed to do this calculation. The time-scale needed from experience of food going bad is only a few days, thus we guess rate constants in terms of time units in days to illustrate the behaviour of the population. Some initial numbers are tried just to get going, even if we are fitting to a data set using a non-linear, least-squares method. The graph below shows the populations of M, A and X on a linear and log scale vs. time. The initial population <span class="math notranslate nohighlight">\(M_0 = 10000\)</span>, the rate constants are <span class="math notranslate nohighlight">\(k_1 = 1,  k_2 = 4, k_3 = 1\cdot 10^{-8}, k_4 = 0.5,  k_5 = 0.01\)</span>. You can see that with this set of rate constants that the lag phase is <span class="math notranslate nohighlight">\(\approx 3\)</span> days, (fig 17b left), the exponential rise is very rapid about a day, and large <span class="math notranslate nohighlight">\(\sim 10^4\)</span> times increase, the stationary phase short, <span class="math notranslate nohighlight">\(\approx 1\)</span> day and the death phase long, several days. This model therefore shows all the features of the growth and death of a bacterial population.</p>
+<p>The fall in the population after reaching a maximum is due to <span class="math notranslate nohighlight">\(k_4A\)</span> becoming greater than <span class="math notranslate nohighlight">\(k_2-k_3X\)</span>. As species A decreases the reaction <span class="math notranslate nohighlight">\(A+X\to D\)</span> is slowed but X is still being formed from <span class="math notranslate nohighlight">\(A\to 2A+X\)</span>, so this is slowed also as A decreases under the influence of <span class="math notranslate nohighlight">\(k_4\)</span>. The result is that X becomes constant at long times since the amount formed during the exponential growth phase remains because it is no longer being formed or removed at any appreciable rate as can be seen in fig 17b.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig17a.png" /></p>
-<p>Figure 17a. The same calculated profile of a bacterial population on a linear scale (A) and log scale (B) and the A-X phase plane (C). The rate constants used were <span class="math notranslate nohighlight">\(k_1 = 1,  k_2 = 4, k_3 = 1\cdot10^{-8}, k_4 = 0.5,  k_5 = 0.01\)</span>. The equations in (B) show the limits as described in the text applicable when <span class="math notranslate nohighlight">\(k_2\gt k_4\)</span>. In figure (A), M is multiplied by <span class="math notranslate nohighlight">\(10^4\)</span> so that it can be seen on the same plot as A and X. The vertical lines on the phase plane (C) show the maximum possible amount of X which is <span class="math notranslate nohighlight">\(k_2/k_3\)</span> and at <span class="math notranslate nohighlight">\(X= (k_2-k_4)/k_3\)</span> the maximum A occurs. This is given by <span class="math notranslate nohighlight">\(\displaystyle A_{max}=\frac{k_4}{k_3}\left(\ln\left(\frac{k_4}{k_2}\right) -1\right)+\frac{k_2}{k_3}\)</span>.</p>
+<p>Figure 17b. The same calculated profile of a bacterial population on a linear scale (A) and log scale (B) and the A-X phase plane (C). The rate constants used were <span class="math notranslate nohighlight">\(k_1 = 1,  k_2 = 4, k_3 = 1\cdot10^{-8}, k_4 = 0.5,  k_5 = 0.01\)</span>. The equations in (B) show the limits as described in the text applicable when <span class="math notranslate nohighlight">\(k_2\gt k_4\)</span>. In figure (A), M is multiplied by <span class="math notranslate nohighlight">\(10^4\)</span> so that it can be seen on the same plot as A and X. The vertical lines on the phase plane (C) show the maximum possible amount of X which is <span class="math notranslate nohighlight">\(k_2/k_3\)</span> and at <span class="math notranslate nohighlight">\(X= (k_2-k_4)/k_3\)</span> the maximum A occurs. This is given by <span class="math notranslate nohighlight">\(\displaystyle A_{max}=\frac{k_4}{k_3}\left(\ln\left(\frac{k_4}{k_2}\right) -1\right)+\frac{k_2}{k_3}\)</span>.</p>
 <hr class="docutils" />
 <p>The phase plane <span class="math notranslate nohighlight">\(dA/dX\)</span> can be found using</p>
 <div class="math notranslate nohighlight">

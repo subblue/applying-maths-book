@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 9 First order equations & Integrating factors. Second order equations, Newton's laws and equations of motion.
+# # 9 First order equations & Integrating Factors. Second order equations, Newton's laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
 
 # In[1]:
 
@@ -109,7 +109,7 @@ factor(ans)
 # 
 # It follows that the solution of the differential equation becomes the two integrals,
 # 
-# $$\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\qquad\tag{12}$$
+# $$\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\qquad\tag{12a}$$
 # 
 # ### **(i) Example $\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)$**
 # 
@@ -140,6 +140,7 @@ factor(ans)
 # and the remaining integral is now a difficult one with the answer involving the error function.
 # 
 # ### **(ii) Coupled chemical kinetic equations**
+# 
 # One particularly useful application of this method is to solve coupled kinetic equations. If a molecule reacts in a scheme 
 # 
 # $$\displaystyle A \stackrel {k_1} \longrightarrow B \stackrel  {k_2}\longrightarrow  C$$
@@ -176,6 +177,71 @@ factor(ans)
 # 
 # and this has the expected form; it is zero when $t = 0$ and again when $t = \infty$ and passes through a maximum when $dB/dt = 0$.
 # 
+# ### **(iii) Exciting molecules with sinusoidally varying light**
+# 
+# Suppose molecules are excited by a sinusoidally varying light source at a frequency $w$ which, in practice, has a period longer than the fluorescence decay's lifetime, $\tau = 1/k$ where $k$ is the rate constant. Let the excited state population be $c$ at time $t$ therefore the rate equation is
+# 
+# $$\displaystyle \frac{dc}{dt }= E_0(1+M\sin(wt))-kc $$
+# 
+# where  $M$ the modulation depth of the exciting light with average intensity $E_0$ and $M\lt E_0$. We can see from this equation that the fluorescence intensity, which is proportional to the amount of the excited state $c$, will follow the changes caused by the sinusoidal excitation. This rate equation can be integrated starting by using the integrating factor method and then by the 'by parts' method or by converting the sine into its exponential form. The rate equation has the form of eqn. 12 viz,
+# 
+# $$\displaystyle  \frac{dy}{dx} +Py = Q $$
+# 
+# where $\displaystyle Q = E_0(1+M\sin(wt)),\, P=k$, and the integrating factor is $\displaystyle e^{k\int dt}$. 
+# 
+# Using eqn. 12a gives
+# 
+# $$\displaystyle ce^{{k\int dt}}=\int E_0(1+M\sin(wt))e^{k\int dt}dt +const$$
+# 
+# which simplifies to
+# 
+# $$\displaystyle ce^{kt}=\int E_0(1+M\sin(wt))e^{kt}dt +const$$
+# 
+# The integral can be done by parts, twice over and after some effort the solution is 
+# 
+# $$\displaystyle c=c_0e^{-kt} +\frac{E_0M}{k^2+w^2}\left(k\sin(wt)-w\cos(wt) \right) +\frac{E_0}{k}$$
+# 
+# where the constant $c_0$ has been added so that it is the initial amount of excited state at $t=0$. The exponential term soon decays to zero when the modulation frequency $w$ is less than the rate constant $k$ which is the usual experimental condition and is therefore ignored from now on.  
+# 
+# As the sine and cosine have the same frequency it should be possible to replace them with a sine wave of the same frequency but with a phase change. This can be done using the expansion formulas for $\sin(a+b)$. With this assumption let 
+# 
+# $$\displaystyle k\sin(wt)- w\cos(wt)= A\sin(wt+\phi)$$
+# 
+# and we will find $A$ and $\phi$. Doing this (see note below) gives
+# 
+# $$\displaystyle A=\sqrt{k^2+w^2},\quad \cos(\phi) = k/\sqrt{k^2+w^2},\quad \sin(\phi)=w/\sqrt{k^2+w^2},\quad \tan(\phi)=w/k$$
+# 
+# then 
+# 
+# $$\displaystyle k\sin(wt)- w\cos(wt)= \sqrt{k^2+w^2}\sin\left(wt+\tan^{-1}(w/k)\right)$$
+# 
+# The exponential term is effectively zero because $k\gt\gt w$, therefore we can ignore it making
+# 
+# $$\displaystyle c= \frac{E_0}{k}+\frac{E_0M}{k^2+w^2}\sqrt{k^2+w^2}\sin\left(wt+\tan^{-1}(w/k)\right)$$
+# 
+# $$\displaystyle c= \frac{E_0}{k}+\frac{E_0M}{\sqrt{k^2+w^2}}\sin\left(wt+\tan^{-1}(w/k)\right) $$
+# 
+# The effect of the fluorescence decay is to delay the emission relative to the excitation, by the phase $\tan^{-1}(w/k)$ as might be anticipated. As the phase angle caused by the fluorescence is small the arc-tangent can be expanded to give
+# 
+# $$\displaystyle c\approx \frac{E_0}{k}+\frac{E_0M}{\sqrt{k^2+w^2}}\sin(wt+w/k) $$
+# 
+# This has to be compared to the driving signal profile which is just the sine wave without the extra phase. The result means that the decay time measured is entirely dependent on the values of $\tan ^{-1}(w/k)$. On the whole the phase shift is very small in this phase method although it can be measured over many waves which will increase precision, and measured at different frequencies. Typical values of $w/k$ are $10^8/10^9=0.1$. Compared to single photon counting this is an inferior method of measuring accurate fluorescence decay profiles.
+# 
+# 
+# ### **Calculation of trig terms**
+# 
+# As the sine and cosine have the same frequency only then can we use the identity, 
+# 
+# $$\displaystyle A\sin(wt+\phi)=A\cos(\phi)\sin(wt)+ A\sin(\phi)\cos(wt)$$
+# 
+# now let us define another equation as
+# 
+# $$\displaystyle m\cos(wt)+n\sin(wt) = A\cos(\phi)\sin(wt)+ A\sin(\phi)\cos(wt)$$
+# 
+# and so $m=A\cos(\phi), n=A\sin(\phi)$ and so $m^2+n^2=A^2$. Then substituting $m=-w, n=k$ gives
+# 
+# $$\displaystyle A=\sqrt{k^2+w^2},\quad \cos(\phi) = k/\sqrt{k^2+w^2},\quad \sin(\phi)=w/\sqrt{k^2+w^2},\quad \tan(\phi)=w/k$$
+
 # ## 9.4 The Bernoulli differential equation $\displaystyle \frac{dy}{dx} + Py = Qy^n $
 # 
 # The equation 
@@ -867,7 +933,7 @@ simplify(ans)
 # 
 # where $V(x)$ is the potential energy, $m$ the mass of the particle and $E$ the total energy. The length of the box is $L$. In the box, $V(x) = 0$ and additionally the boundary conditions are that the wavefunction $\psi$, which is a function of position $x$, is zero, i.e. always  has a node at the ends of the box; the sides of the box are vertical and assumed to be infinitely high so the particle cannot tunnel into the walls. The equation to solve is
 # 
-# $$\displaystyle \frac{d^2\psi}{dx^2}+\omega^2\psi=0, \qquad \omega^2=\frac{2mE}{\hbar^2} $$
+# $$\displaystyle \frac{d^2\psi}{dx^2}+\omega^2\psi=0, \qquad \omega^2=\frac{2mE}{\hbar^2}\tag{24a} $$
 # 
 # and the solution can be written down directly from equation (19) and is 
 # 
@@ -881,9 +947,9 @@ simplify(ans)
 # 
 # When $n = 0$ then $\psi = 0$, which is not a physically acceptable solution. Positive and negative integers $n$ each produce acceptable solutions, but they are not independent of one another; therefore $n = 1, 2, 3, \cdots$ are used to give unique solutions. As the sine function is periodic, increasing $n$ means that waves with smaller periods can fit into the same box; the $n^{th}$ wavefunction has $n - 1$ nodes between the walls, the lowest wavefunction having no nodes is just half a sine wave.
 # 
-# The constant $\alpha$ can be obtained by using the normalization condition $\displaystyle N^2\int_0^L \psi_n^*\psi_n dx = 1$ and then $N = 2/L$ . The normalized wavefunctions are
+# The constant $\alpha$ can be obtained by normalization the condition which is $\int_0^L \psi_n^*\psi_n dx = 1$ and then $\alpha^2 = 2/L$ . The normalized wavefunctions are
 # 
-# $$\displaystyle \psi_n = \sqrt{  \frac{2}{L} } \sin\left(\frac{n\pi x}{L}\right)  \qquad n=1,2,3,\cdots  \qquad\tag{24}$$
+# $$\displaystyle \psi_n = \sqrt{  \frac{2}{L} } \sin\left(\frac{n\pi x}{L}\right)  \qquad n=1,2,3,\cdots  \qquad\tag{24b}$$
 # 
 # The energy of the $n^{th}$ energy level is found by putting $\psi_n$ back into the Schroedinger eqn. and is
 # 
@@ -910,7 +976,9 @@ simplify(ans)
 # Figure 11f. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is $1$ nm in length. Notice how the energy levels move apart as $n$ increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.
 # _________
 # 
-# ## 11.6 The Rigid Rotor and a Particle on a Ring
+# ## 11.6 The Rigid Rotor, particle on a Ring and particle in a sphere
+# 
+# ### **(i) The Rigid Rotor, particle on a Ring** 
 # 
 # If the distance between two atoms is fixed, or if a particle is constrained to move on a circle, then the Schroedinger equation takes a simple form and the equation is essentially the same as for a harmonic oscillator. To describe motion in more than one dimension, the Schroedinger equation has coordinates in $x$ and $y$ if two dimensional, or $x$, $y$, and $z$ if the motion is three dimensional. Ratner & Schatz (2001) give a clear description of this problem and others in quantum mechanics relevant to Chemistry.
 # 
@@ -963,6 +1031,69 @@ simplify(ans)
 # The quantum numbers are $k = 0, \pm 1, \pm 2, \cdots$ and as the lowest value is zero, this means that the minimum energy is zero and the rotor is stationary. As $k \ne 0$ can be positive or negative it indicates that the rotor moves to the right or left and that these levels are each doubly degenerate. 
 # 
 # As the lowest energy is zero it initially suggests that the Heisenberg uncertainty principle $\Delta \theta \Delta p \ge \hbar/2$ is not obeyed. However, when $J = 0$ the wavefunction is a constant, $1/ (2\pi)$, so we cannot know what angle the rotor has and this means that $\Delta \theta \Delta p  \ne 0$. 
+
+# ###  **(ii) Particle in a sphere**
+# 
+# Suppose that we want to calculate the energy of a particle in a spherical box i.e. a sphere, rather than in a linear box. The boundary conditions will be that at the centre and at the circumference of the sphere the wavefunction will be zero. In this case we must work in three dimensions and the Schroedinger equation is 
+# 
+# $$\displaystyle -\frac{\hbar^2}{2m}\nabla^2 +V(x,y,z)\psi=E\psi $$
+# 
+# where 
+# 
+# $$\displaystyle \nabla ^2= \frac{\partial ^2\psi}{\partial x^2}+\frac{\partial ^2\psi}{\partial y^2}+\frac{\partial ^2\psi}{\partial z^2}$$
+# 
+# and $V$ is the potential. To make the calculation simpler that it otherwise would be we shall assume that the angular momentum is zero and the potential $V$ is also zero.  This Schroedinger equation will be easier to solve if we convert to spherical polar coordinates, in variables $ r, \theta,\phi$. The calculation to do this conversion is rather complex and the result is also complicated and is
+# 
+# $$\displaystyle \nabla^2= \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r} \right)+ \frac{1}{r^2\sin^2(\theta)}\frac{\partial}{\partial \theta}\sin(\theta)\frac{\partial}{\partial \theta} +\frac{1}{r^2\sin^2(\theta)}\frac{\partial^2}{\partial \phi^2}$$
+# 
+# however, as we have no angular momentum the angular parts are zero as it does not matter at which angle the particle takes, only its distance $r$ from the origin will matter and thus the Schroedinger equation becomes one dimensional in $r$,
+# 
+# $$\displaystyle -\frac{\hbar^2}{2m}\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial \psi}{\partial r} \right)=E\psi$$
+# 
+# and as there is no dependence on angle we can replace $\partial$ with $d$ in the derivatives. This equation still appears to be rather hard to solve but if we work out the differentiations this will help. 
+# 
+# $$\displaystyle \begin{align}\frac{1}{r^2}\frac{d \psi}{d r}\left(r^2\frac{d}{d r} \right)&= \frac{2}{r}\frac{d \psi}{d r} + \frac{d^2 \psi}{d r^2}\\& =\frac{1}{r}\frac{d^2 }{d r^2}(r\psi) \end{align} $$
+# 
+# To see the last step differentiate twice and rearrange. The Schroedinger equation now becomes, after some rearranging, 
+# 
+# $$\displaystyle \frac{d^2 (r\psi)}{dr^2}+ \omega^2r\psi=0,\qquad \omega^2 = \frac{2mE}{\hbar^2}$$
+# 
+# which is identical to eqn 24a for a particle in a box if we make the substitution $\varphi = r\psi$, then
+# 
+# $$\displaystyle \frac{d^2 \varphi}{dr^2}+ \omega^2\varphi=0$$
+# 
+# and the solution can be written down directly from equation (19) and is 
+# 
+# $$\displaystyle  \varphi = \alpha \sin(\omega r) + \beta \cos(\omega r)$$
+# 
+# or
+# 
+# $$\displaystyle  \psi = \frac{\alpha}{r} \sin(\omega r) + \frac{\beta}{r} \cos(\omega r) $$
+# 
+# where $\alpha$ and $\beta$ are constants.  We now use the boundary conditions. When $r=0, \psi =0$ then
+# 
+# $$\displaystyle 0 = \alpha\frac{0}{0}+ \frac{\beta}{0} $$
+# 
+# which means that $\beta=0$ and $\alpha$ is finite or zero, but $\alpha \ne 0$ because the wavefunction would be zero everywhere. At the outer limit when $r=R$ then
+# 
+# $$\displaystyle 0 = \alpha\frac{0}{R}+ \frac{\beta}{R} $$
+# 
+# which shows that $\beta=0$ and that $\sin(\omega R) = 0$, then $\omega R = 0, \pi, 2\pi\cdots,n\pi$, where $n=0,1,2\cdots$ is an integer but $n=0$ is not possible because zero energy would imply zero momentum and so not in accord with the uncertainty principle as the sphere has a finite radius.  The allowed stack of energies are therefore
+# 
+# $$\displaystyle E=\frac{\hbar^2}{2m}\left(\frac{n\pi}{R}\right)^2, \qquad n=1,2\cdots$$
+# 
+# and just as in the linear box, the larger the area the particle is in the lower is its energy and momentum.
+# 
+# The wavefunction is $\displaystyle \psi = \alpha\sin(n\pi r/R)$. To find the constant normalisation is used which means
+# 
+# $$\displaystyle \alpha^2\int_0^R \sin^2\left(n\pi\frac{ r}{R} \right)dr=1,\qquad n=1,2,\cdots $$
+# 
+# therefore $\alpha^2= 2/R $ and the wavefunction is essentially the same as for a 1D box,
+# 
+# $$\displaystyle \psi = \sqrt{\frac{2}{R}}\sin\left(n\pi \frac{r}{R}\right)$$
+# 
+# and there are $n$ levels with zero angular momentum, but if angular momentum is not zero there are also stacks of levels with one, two three etc. units of this., see Fluge (1999) for a worked example.
+#  
 
 # ## 11.7 Bernoulli Principle, fluid flow in a pipe
 # 
