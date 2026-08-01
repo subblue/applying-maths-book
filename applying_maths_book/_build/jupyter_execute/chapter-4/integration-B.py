@@ -8,8 +8,8 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -54,23 +54,27 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $$4\int\sin^2(\theta)d\theta = 2\theta -2\sin(\theta)\cos(\theta)+c=2\sin^{-1}\left(\frac{x}{2}\right)-\frac{x}{2}\sqrt{4-x^2}+c$$
 # _______________
 # 
-# ### **(ii)** Tangent half-angle substitution
+# ### **(ii)** Tangent half-angle substitution, $\displaystyle t=\tan\left(\frac{x}{2}\right)$
 # 
-# This substitution is useful for integrals such as $\int dx/\sin(x)$ and is based on the identities
+# This substitution is useful for integrals such as $\displaystyle \int \frac{dx}{\sin(x)}$ and is based on the identities
 # 
 # $$\displaystyle \sin(x)=\frac{2\tan(x/2)}{1+\tan^2(x/2)},\qquad \cos(x)=\frac{1-\tan^2(x/2)}{1+\tan^2(x/2)}$$
 # 
-# and the substitution used is $t=\tan(x/2)$, thus
+# and the substitution used is 
+# 
+# $$\displaystyle t=\tan\left(\frac{x}{2}\right)$$
+# 
+# thus
 # 
 # $$\displaystyle \sin(x) \to \frac{2t}{1+t^2},\qquad \cos(x)\to \frac{1-t^2}{1+t^2},\qquad dx\to\frac{2}{1+t^2}dt$$
 # 
 # and for the integral $\displaystyle \int\frac{dx}{1+\cos(x)}$ the substitution gives
 # 
-# $$\displaystyle \int\frac{dx}{1+\cos(x)} =\int \frac{1}{1+\frac{1-t^2}{1+t^2}}\frac{2}{1+t^2}dt=\int 1dt=\tan\left(\frac{x}{2}\right)$$
+# $$\displaystyle \int\frac{dx}{1+\cos(x)} =\int \frac{1}{1+\frac{1-t^2}{1+t^2}}\cdot\frac{2}{1+t^2}dt=\int 1dt=t=\tan\left(\frac{x}{2}\right)$$
 # 
 # The integral $\displaystyle \int\frac{dx}{1-\sin(x)}$ is done in the same way but is a little more complicated
 # 
-# $$\displaystyle \int\frac{dx}{1+\sin(x)} =\int \frac{1}{1-\frac{2t}{1+t^2}}\frac{2}{1+t^2}dt =\int \frac{2dt}{1-2t+t^2}= \int \frac{2dt}{(1-t)^2}$$
+# $$\displaystyle \int\frac{dx}{1-\sin(x)} =\int \frac{1}{1-\frac{2t}{1+t^2}}\cdot\frac{2}{1+t^2}dt =\int \frac{2dt}{1-2t+t^2}= \int \frac{2dt}{(1-t)^2}$$
 # 
 # This integral has the form $\int dx/(ax+b)^2$ and from table in section 2.14,
 # 
@@ -334,16 +338,17 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-# Use Sympy to do an algebraic calculation by recursion
-n,x,a = symbols('n,x,a',positive=True)
+# Use SymPy to do an algebraic calculation by recursion
 
-def xnexp(n):                                     # define I(n)= x^n.exp(-ax)/a+I(n-1)
+n,x,a = sp.symbols('n,x,a',positive=True)
+
+def xnexp(n):                                       # define I(n)= x^n.exp(-ax)/a + I(n-1)
     if n == 0 :
-        return -exp(-a*x)/a                      # value of integral I0
+        return -sp.exp(-a*x)/a                      # value of integral I0
     else:
-        return -x**n*exp(-a*x)/a + (n/a)*xnexp(n-1) 
+        return -x**n*sp.exp(-a*x)/a + (n/a)*xnexp(n-1) 
 
-simplify(xnexp(3) )                               # n=3 
+sp.simplify(xnexp(3) )                               # n=3 
 
 
 # As a check the integral is calculated directly,
@@ -351,8 +356,7 @@ simplify(xnexp(3) )                               # n=3
 # In[3]:
 
 
-simplify(integrate(x**3*exp(-a*x),x) )
-
+sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 
 
 # If limits of $0\to \infty$ are added to the integral then the last result becomes
@@ -515,11 +519,11 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # There are three forms to be aware of when using this equation. 
 # 
-# (a) When the limits are functions of $t$ and $f$ is a function of $t$ and $x$, then the full equation (eqn 16D) is used.
+# **(a)** When the limits are functions of $t$ and $f$ is a function of $t$ and $x$, then the full equation (eqn 16D) is used.
 # 
-# (b) When the limits are constants then eqn. 16A can be used, and
+# **(b)** When the limits are constants then eqn. 16A can be used, and
 # 
-# (c) If the limits are functions of $t$, but $f$ is not a function of $t$, and thus integrates to zero then only the first two terms in eqn. 16D are used.
+# **(c)** If the limits are functions of $t$, but $f$ is not a function of $t$, and thus integrates to zero then only the first two terms in eqn. 16D are used.
 
 # ### **Examples**
 # 
@@ -552,7 +556,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # The internal energy of a system is calculated from the partition function as $\displaystyle U = RT^2\frac{\partial }{\partial T^2}\ln(Z)$ and the heat capacity $\displaystyle C_V=\frac{\partial U}{\partial T}$ both at constant volume. 
 # 
-# In part 5 example v, the integral in the partition function for the Debye crystal was simplified, here we find the internal energy and heat capacity by differentiating the integral.
+# In part 5 example (v), the integral in the partition function for the Debye crystal was simplified, here we find the internal energy and heat capacity by differentiating the integral.
 # 
 # The Debye temperature is $\theta=\hbar\omega/k_B$ where $k_B$ is the Boltzmann constant and the Debye frequency $\omega$ is the highest frequency a phonon can have in the crystal's lattice. For silver $\theta$ = $225$ K. The partition function is given by 
 # 
@@ -654,7 +658,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 
 # ## 5.3 Nearest Neighbour Distribution
 # 
-# We shall now take a small diversion. One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, see Chandrasekhar(1943). This also applies to colloids, proteins and even galaxies.
+# We shall now take a small diversion. One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (i.e. closest or first) neighbour molecules in a solution, see Chandrasekhar(1943). This also applies to colloids, proteins and even galaxies.
 # 
 # Let $w(r)$ be the probability that the nearest neighbour occurs between distance $r$ and $r + dr$. This must be the probability than no molecules exist up to $r$ and that the next molecule exists in the shell $r \to r + dr$. The molecules are assumed to be positioned at random in the solution. Thus, 
 # 
@@ -824,11 +828,15 @@ simplify(integrate(x**3*exp(-a*x),x) )
 
 # ### **(iv) Harmonic Oscillator**
 # 
-# The wavefunctions for the Harmonic oscillator, as used to describe the vibrational energy levels of a diatomic molecule, have the form $\psi_n=N_nH_ne^{-a x^2/2}$ where $n$ is the quantum number, $N_n$ is the normalisation, $H_n$ a Hermite polynomial. The parameter $x=r-r_e$ where $r_e$ is the equilibrium bond length and $a=\sqrt{\mu k}/\hbar$. The first few wavefunctions are
+# The wavefunctions for the Harmonic oscillator, as used to describe the vibrational energy levels of a diatomic molecule, have the form 
 # 
-# $$\displaystyle \begin{align}&\psi_0=N_0e^{-a x^2/2},\qquad \psi_1=N_1xe^{-a x^2/2}\\& \psi_2=N_2(2a x^2-1)e^{-a x^2/2}\qquad \psi_3=N_3(2a x^3-3x)e^{-a x^2/2}\end{align}$$
+# $$\displaystyle \psi_n=N_nH_ne^{-a x^2/2}$$
 # 
-# and these wavefunctions have the general form $x^se^{-ax^2/2}$, where $s=0,1,\cdots$. The normalisation is given by $N_n^2\displaystyle \int_{-\infty}^\infty\psi_n^*\psi_n dx=1$ which means integrating equations such as $\displaystyle \int_{-\infty}^\infty x^se^{-ax^2}dx$ where $s$ is always an even number. If $s$ is odd then the integral is an odd function and will be zero over any symmetrical integration limits. First the integrations are evaluated then the normalisation calculated. 
+# where $n$ is the quantum number, $N_n$ is the normalisation, $H_n$ a Hermite polynomial. The parameter $x=r-r_e$ where $r_e$ is the equilibrium bond length and $\displaystyle a=\frac{\sqrt{\mu k}}{\hbar}$. The first few wavefunctions are
+# 
+# $$\displaystyle \begin{array}\psi_0= N_0e^{-a x^2/2}, & \psi_1 = N_1xe^{-a x^2/2}\\ \psi_2 = N_2(2a x^2-1)e^{-a x^2/2} & \psi_3  = N_3(2a x^3-3x)e^{-a x^2/2}\end{array}$$
+# 
+# and these wavefunctions have the general form $\displaystyle x^se^{-ax^2/2}$, where $s=0,1,\cdots$. The normalisation is given by $N_n^2\displaystyle \int_{-\infty}^\infty\psi_n^*\psi_n dx=1$ which means integrating equations such as $\displaystyle \int_{-\infty}^\infty x^se^{-ax^2}dx$ where $s$ is always an even number. If $s$ is odd then the integral is an odd function and will be zero over any symmetrical integration limits. First the integrations are evaluated then the normalisation calculated. 
 # 
 # The integration can be done 'by parts' but also by the Feynman method, the only integration we need to know is the first
 # 
@@ -869,7 +877,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and the normalisations for the other wavefunctions are done similarly, although they are more complicated, without having to do any integrations.
 # 
-# #### **(a) Expectation values and uncertainty principle**
+# ### **(a) Expectation values and uncertainty principle**
 # 
 # The expectation values can now be very easily calculated, for example to calculate the average momentum $\langle p\rangle>$ or  distance or average square distance $\langle x\rangle, \langle x^2\rangle$. 
 # 
@@ -879,7 +887,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and $\hat Q$ is the operator. The operator is just multiplication by $x$ for calculating average distance but for momentum is $\displaystyle -i\hbar\frac{d}{dx}$. 
 # 
-# #### **(b) Average position and its uncertainty**
+# ### **(b) Average position and its uncertainty**
 # 
 # The average displacement for is by definition $\langle x\rangle$ and for the harmonic oscillator $\langle x\rangle =0$ for any quantum number as this will always be an odd function. Physically this makes sense as the potential is symmetrical about $r_e$ for any $n$.  
 # 
@@ -895,7 +903,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and is a measure of the uncertainty in a measurement. Knowing both values for position when $n=1$ gives $\displaystyle \sigma_x=\sqrt{\frac{3}{2a}}$
 # 
-# #### **(c) Average momentum**
+# ### **(c) Average momentum**
 # 
 # To calculate the expectation values for momentum the operator is $\displaystyle -i\hbar\frac{d}{dx}$ thus
 #  

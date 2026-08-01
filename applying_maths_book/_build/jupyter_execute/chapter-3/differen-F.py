@@ -1,30 +1,33 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 6 Limits, l'Hopital's rule, Maximum & Minimum. Calculus of Variations 
+# # 6 Limits, l'Hopital's rule, Maximum & Minimum. Calculus of Variations. Lagrangian & Euler-Lagrange equations .
 
 # ## 6  l' Hopital's rule
+# 
 # In many calculations limits are encountered. For example, in the theory of diffraction the function $\sin(x)/x$ is met which, when $x \to 0$, has the form $0/0$ and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as $\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty$ and l'Hopital's rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l'Hopital who was one of his pupils.
 # 
 # The method is
 # 
-# (a) Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.
+# **(a)** Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.
 # 
-# (b) Differentiate top and bottom separately with respect to the limit variable. 
+# **(b)** Differentiate top and bottom separately with respect to the limit variable. 
 # 
-# (c) Substitute in the limit and check if the ratio is still indeterminate. If it is return to (b) if not the answer has been found.
+# **(c)** Substitute in the limit and check if the ratio is still indeterminate. If it is return to (b) if not the answer has been found.
 # 
-# An example should make this clearer; the ratio $\displaystyle \frac{\sin(x)}{x}$ appears to be $0/0$ as $x \to  0$ but it has a finite value which is determined using l'Hopital's Rule:
+# ### **(i) Some examples**
+# 
+# **(a)** The ratio $\displaystyle \frac{\sin(x)}{x}$ appears to be $0/0$ as $x \to  0$ but it has a finite value which is determined using l'Hopital's Rule:
 # 
 # $$\displaystyle  \lim_{x\to o} \frac{\sin(x)}{x} \to \frac{\frac{d}{dx}\sin(x)}{\frac{d}{dx}x}=\frac{\cos(x)}{1}=1$$
 # 
 # and the limiting value of $x = 0$ is only applied in the last step. As a check, one way to determine any limits close to zero is to plot the function. You will see that $\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}$ does indeed have a value of 1 at $x = 0$. See question 47 for other examples.
 # 
-# Expressions such as $\displaystyle \frac{e^x-1}{x^2}$ often need to be evaluated when $x \to 0$ or $x \to \infty$. In statistical mechanics, for example, $x$ may be $-E/k_BT$, a ratio of energies where $k_B$ is the Boltzmann constant and $T$ temperature. When $x \to 0$, which corresponds to high temperatures, the function $\displaystyle(e^x - 1)/x^2$ appears to have the indeterminate form $0/0$, but the limit by l'Hopital's is
+# **(b)** Expressions such as $\displaystyle \frac{e^x-1}{x^2}$ often need to be evaluated when $x \to 0$ or $x \to \infty$. In statistical mechanics, for example, $x$ may be $-E/k_BT$, a ratio of energies where $k_B$ is the Boltzmann constant and $T$ temperature. When $x \to 0$, which corresponds to high temperatures, the function $\displaystyle(e^x - 1)/x^2$ appears to have the indeterminate form $0/0$, but the limit by l'Hopital's is
 # 
 # $$\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\frac{1}{2}\qquad \text{      !!!   this is wrong!}$$
 # 
-# where differentiation was performed twice over.  However, this is _wrong_: no check for an indeterminate  ratio was made after the first differentiation and doing this gives, 
+# where differentiation was performed twice over.  However, this is *wrong*: no check for an indeterminate ratio was made after the first differentiation and doing this gives, 
 # 
 # $$\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}= \frac{1}{0}=\infty$$
 # 
@@ -38,17 +41,33 @@
 # 
 # $$\displaystyle  \lim_{x\to \infty}\frac{e^{-x} -1}{x^2-3}\to \frac{-e^{-x}}{2x}\to \frac{e^{-x}}{2}=0$$
 # 
-# When the limit is a product this must be rearranged first, for instance $\displaystyle \lim_{x\to 0} x \ln(x)$ should be rearranged to
+# **(c)** When the limit is a product this must be rearranged first, for instance $\displaystyle \lim_{x\to 0} x \ln(x)$ should be rearranged to
 # 
 # $$\displaystyle  \lim_{x\to 0} \frac{ \ln(x) }{ 1/x } \to \frac{1}{ x(-x^{-2})}=-x \to 0$$
 # 
-# Fractions are treated similarly; the following fraction is nominally undefined as $\infty -\infty$  but is rearranged into a ratio to become undefined as $0/0$;
+# **(d)** Fractions are treated similarly; the following fraction is nominally undefined as $\infty -\infty$  but is rearranged into a ratio to become undefined as $0/0$;
 # 
 # $$\displaystyle   \lim_{x\to 0} \left(\frac{1}{x}-\frac{1}{\sin(x)}\right)= \lim_{x\to 0} \frac{\sin(x)-x}{x\sin(x)}\to \frac{\cos(x)-1}{x\cos(x)+\sin(x)}  \to \frac{-\sin(x)}{-x\sin(x)+2\cos(x)} \to 0$$
 # 
 # In the last step substituting for $x=0$ gives the ratio as $0/1$ so  the limit is zero.
 # 
-# ### **(i) Chemical equilibria**
+# **(e)** When $x\to 1$ the fraction $\displaystyle \frac{(x^m -1)}{(x^n -1)}$ appears to be $0/0$ but the true limit is 
+# 
+# $$\displaystyle \lim_{x\to 1}\frac{x^m -1}{x^n -1}= \lim_{x\to 1}\frac{mx^{m-1}}{nx^{n-1}}=\frac{m}{n}$$
+# 
+# **(f)** In a numerical solution of a differential equation the gradient, say $df/dt$ has to be evaluated. In such calculations the time step, call this $h$, has to be very small to obtain an accurate solution. The gradient can then be obtained as $\delta f/\delta t$. The question then is how to calculate this accurately so that in the limit $h\to 0$ this is the derivative. Suppose we are solving at time point $a$ then the function to form the gradient is $f(a)$ and to calculate $df/dt$ we take a point at time $h$ ahead of point $a$ and a point at $-h$ before point $a$, so the time step is $2h$ and the gradient is 
+# 
+# $$\displaystyle \frac{f(a+h)-f(a-h)}{2h}$$
+# 
+# In the limit when $h\to 0$ then, using the notation where $f'$ is the derivative, gives
+# 
+# $$\displaystyle \lim_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}=\lim_{h\to 0}\frac{f'(a+h)+h'(a-h)}{2}=f'(h)$$
+# 
+# which shows that this ratio is indeed the gradient. Using a similar approach the ratio
+# 
+# $$\displaystyle \lim_{h\to 0}\frac{f(a+h)+f(a-h)-2f(a)}{h^2}=\lim_{h\to 0}\frac{f'(a+h)-f'(a-h)}{2h}\to \to f''(a)$$
+# 
+# ### **(ii) Chemical equilibria**
 # 
 # In a second order reaction of the form 
 # 
@@ -79,8 +98,8 @@
 # $$\displaystyle \frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\to \frac{A_0(1-\frac{1}{2}K_e^{-1/2})}{1}=\frac{A_0}{2}$$
 # 
 # which makes sense as there are equal moles initially of $A$ and $B$ so in total $2A_0$ and equal concentrations for each species but only in this particular case.
-# 
-# ### **(ii) Diffraction intensity**
+
+# ### **(iii) Diffraction intensity**
 # The intensity of line of $N$ emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by
 # 
 # $$\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}$$
@@ -97,7 +116,7 @@
 # 
 # making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/(ax)$.
 # 
-# ### **(iii) Transitions between stationary states**
+# ### **(iv) Transitions between stationary states**
 # 
 # When a molecule absorbs light it can undergo a transition from, for example the ground state to the first excited state. This might be a vibrational or rotational transition or an electronic one in which a new electronic state is produced. This type of transition is called an electric dipole transition. The probability for this depends on the radiation's (light) frequency $\nu$ in that the Bohr condition is obeyed $E_1-E_0=h\nu$ where the energy levels are $E_0,E_1$. The probability of absorption is 
 # 
@@ -115,7 +134,17 @@
 # 
 # ## 6.1 Beware of 'False fractions'
 # 
-# Sometimes a limit is required but the expression is not really a fraction, for example $\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} $ which looks like a fraction but is simplified to $\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} $ and because the value $x = 1$ is never reached ( we are seeking the limit to not the value at $x = 1$) the $x-1$ terms can be cancelled out leaving $\lim_{x\to 1} (x^3+x^2+x+1)=4 $
+# Sometimes a limit is required but the expression is not really a fraction, for example 
+# 
+# $$\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} $$
+# 
+# which looks like a fraction but is simplified to 
+# 
+# $$\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} $$
+# 
+# and because the value $x = 1$ is never reached ( we are seeking the limit to $x=1$ not the value at $x = 1$) the $x-1$ terms can be cancelled out leaving 
+# 
+# $$\lim_{x\to 1} (x^3+x^2+x+1)=4 $$
 # 
 # ## 7 Extrema: maxima, minima and inflection points
 # 
@@ -323,11 +352,11 @@
 
 # ## 8.3 Euler-Lagrange Equation in Mechanics. Action and the Lagrangian.
 # 
-# A very important application of the Euler-Lagrange equation is to mechanics. Newton's second law, force  equals mass time acceleration $F=ma$ is a fundamental equation. An equivalent assumption is called *Hamilton's principle* and is that the *Action* of a trajectory, this being the position a particle takes with time as it moves, is given by
+# A very important application of the Euler-Lagrange equation is to mechanics. Newton's second law, force  equals mass time acceleration $F=ma$ is a fundamental equation. An equivalent assumption is called *Hamilton's principle* and is that the *Action* of a trajectory, $I$, this being the position a particle takes with time as it moves, is given by
 # 
 # $$\displaystyle I=\int_{t_1}^{t_2}(T-V) dt $$
 # 
-# where $T$ is the kinetic energy and $V$ the potential energy and $t$ is time. This integral is 'stationary'. By being stationary means that any small change in the path a particle takes (trajectory) does not change the value of the integral.  We define the Lagrangian as
+# where $T$ is the kinetic energy and $V$ the potential energy and $t$ is time. This integral is 'stationary'. By being stationary means that any small change in the path a particle takes (trajectory) does not change the value of the integral.  The Lagrangian is defined as
 # 
 # $$\displaystyle L = T - V$$
 # 
@@ -338,6 +367,8 @@
 # and using this equation enables us to minimise the Action integral and so work out the equation of motion via the Lagrangian.  The proof of this is given in many textbooks (Arkfen 1970, Boas 1983, Susskind & Hrabovsky 2014). If the motion is in more than one dimension then there is an equation is each of $x,y,z$, or $r,\theta,\phi$ in spherical polar coordinates and so forth.
 # 
 # The method of solving mechanics problems is usually to work out the $x$ and $y$ coordinates, and then differentiate both to get the $x$ and $y$ velocities. If necessary convert into angular coordinates, polar, spherical, for example, and finally workout the kinetic energy.  The potential energy is usually already known from how the problem is presented but any coordinates may have to be changed into angular coordinates.
+# 
+# Note that the Lagrangian is used with the Euler-Lagrange equation to derive the differential equations of motion. These then have to be solved by whatever method is possible. Chapter 10 describes some of these methods.
 # 
 # ### **Notation**
 # 
@@ -367,7 +398,7 @@
 # 
 # This equation can be integrated to give velocity $\displaystyle v = v_0 + gt $ where $v=\dot z = dz/dt$ and again to give position  $z = z_0 + v_0t - gt^2/2 $ where $v_0$ is the initial velocity, which could be zero, and $z_0$ the initial height above ground level $z=0$. If the motion had not been vertical we would have needed to evaluate similar equations in $x$ and $y$ as well and in that case components of the gravitational force in all directions would be needed.
 # 
-# ### **(ii) Simple Harmonic motion**
+# ### **(iia) Simple Harmonic motion**
 # 
 # In the simple harmonic motion of a particle the potential energy is $V= \frac{1}{2}kx^2$ where $k$ is the force constant which has units N/m. A mass on a string can exhibit simple harmonic motion where the force is minus the derivative of the potential $dV/dx = -kx$. The sign is negative because the force of the spring resists extension. The kinetic energy is $T = \frac{1}{2}m\dot x^2$ where $m$ is the mass. The Lagrangian is
 # 
@@ -379,9 +410,39 @@
 # 
 # and so the Euler-Lagrange equation (32a) gives
 # 
-# $$\displaystyle m\ddot x-kx=0,\qquad \text{ or}\qquad\ddot x-\frac{k}{m}x=0$$
+# $$\displaystyle m\ddot x-kx=0,\quad \text{ or}\quad\ddot x-\frac{k}{m}x=0,\quad\text{ or}\quad\ddot x-\omega^2 x=0 $$
 # 
-# where $\displaystyle \ddot x\equiv \frac{d^2x}{dt^2}$. This is the equation of the harmonic oscillator. Often the substitution $\omega^2 = k/m$ as this simplifies the solution when this differential equation is solved. The units of $k/m$ are N/(m kg ) $\equiv$ kg m s$^{-2}$/(m kg) = s$^{-2}$. The method to solve such a differential equation is shown in Chapter 10 section 12.
+# where $\displaystyle \ddot x\equiv \frac{d^2x}{dt^2}$. This is the equation of the harmonic oscillator. Often the substitution $\omega^2 = k/m$ as this simplifies the solution when this differential equation is solved. The units of $k/m$ are N/(m kg ) $\equiv$ kg m s$^{-2}$/(m kg) = s$^{-2}$ and therefore has units of frequency squared. The method to solve such a differential equation is shown in Chapter 10 section 12 and there it is shown that the solution is an exponential or sine or cosine depending on initial conditions. If we assume a solution such as $x=A\cos(\omega t+\varphi)$ and differentiate in $t$ twice to obtain $\ddot x$ the result is $A\omega^2\cos(\omega t+\varphi)$ and this is the same as $\omega^2 x$ showing the cosine is a solution.
+# 
+# ### **(iib) Two linked masses sliding on a plane undergoing SHM**
+# 
+# When there are two masses the equations are a little more involved. Let the two masses be $m_1,m_2$ connected by a spring with force constant $k_2$. Mass 1 is also connected to a rigid wall by spring with force constant $k_1$. The situation is therefore: $wall-spring_1-mass_1-spring_2-mass_2$, see figure 17 chapter 10, and the masses move frictionlessly on a horizontal plane. We want to know the equations of motion when one or both masses are moved from their equilibrium positions and then released. Let the displacements from equilibrium be $x_1$ and $x_2$ and we shall assume Hook's law, thus for a small displacement, $x$, the potential energy stored in a spring is $kx^2/2$.
+# 
+# The kinetic energy is 
+# 
+# $$\displaystyle T= \frac{1}{2}m_1 \dot x_1^2 + \frac{1}{2}m_2 \dot x_2^2$$
+# 
+# where $\dot x$ is the velocity, and the potential energy
+# 
+# $$\displaystyle V= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2$$
+# 
+# where the second term is the energy stored in spring 2 and this is proportional to the difference in position of the two masses. (The second spring is contracted by displacement $x_1$ and extended by displacement $x_2$). The Lagrangian is
+# 
+# $$\displaystyle L= \frac{1}{2}\left(m_1 \dot x_1^2 + m_2 \dot x_2^2-k_1x_1^2 - k_2(x_2-x_1)^2\right)$$
+# 
+# Using the Euler-Lagrange equation involves differentiating wrt. both $x_1$ and $x_2$ and gives
+# 
+# $$\displaystyle \frac{\partial L}{\partial x_1}=-k_1x_1+k_2x_2-k_2x_1\qquad \frac{\partial L}{\partial x_2}=-k_2x_2+k_2x_1$$ 
+# 
+# Next, the derivatives wrt. $\dot x$ and time $t$  are 
+# 
+# $$\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x_1}=\frac{d}{dt} m_1\dot x_1=m_1\ddot x_1\qquad\text{and}\qquad \frac{d}{dt}\frac{\partial L}{\partial \dot x_2}=\frac{d}{dt} m_2\dot x_2=m_2\ddot x_2$$
+# 
+# and using eqn. 32a the equations of motion are
+# 
+# $$\displaystyle m_1\ddot x_1+(k_1+k_2)x_1-k_2x_2 = 0,\qquad\text{and}\qquad  m_2\ddot x_2-k_2x_1+k_2x_2 = 0$$
+# 
+# The solution to these equations is given in the paragraphs describing how to solve simultaneous equations in Chapter 10, section 13.5.
 # 
 # ### **(iii) Simple Pendulum**
 # 

@@ -10,10 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-from scipy.optimize import fsolve
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+from scipy.integrate import quad
+sp.init_printing()                         # print SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -34,17 +33,18 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction $0.d_1d_2d_3d_4$, where $d_1$ etc. are the digits $0\cdots 9$. A floating-point number is usually described as a single or double precision and the number of decimal places is typically $7$ and $14$ respectively; naturally this depends on the type of computer being used. Normally nowadays double precision is standard for example $17$ digits.
 # 
-# However, as seen in Fig. 1, $17$ digits are not good enough to find the root; $25$ decimal places give a far more accurate result. Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is 
+# However, as seen in Fig. 1, $17$ digits are not good enough to find the root; $25$ decimal places give a far more accurate result. Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately as its value depends on the initial guess and does not improve as the cut-off value is made smaller,$10^{-5} \to  10^{-12}$. The method is 
 
 # In[2]:
 
 
-f = lambda x:  1.0 - 6.0*x + 15*x**2 - 20.0*x**3 + 15.0*x**4 - 6.0*x**5 + x**6
-df= lambda x: -6.0 + 30.0*x - 60.0*x**2 + 60.0*x**3 - 30.0*x**4 + 6.0*x**5      # derivative
-s  = 0.8
+# Newton-Raphson 
+f = lambda x:  1.0 -  6.0*x + 15*x**2  -  20.0*x**3 + 15.0*x**4 - 6.0*x**5 + x**6 # function
+df= lambda x: -6.0 + 30.0*x - 60.0*x**2 + 60.0*x**3 - 30.0*x**4 + 6.0*x**5        # derivative
+s  = 0.8                     # initial guess
 for i in range(100):
     snew = s - f(s)/df(s)
-    if abs(snew-s) < 1e-12:
+    if abs(snew-s) < 1e-5:   # stop when change is small
         break
     else:
         s = snew
@@ -79,21 +79,21 @@ print(s)
 # In[3]:
 
 
-x, n = symbols('x, n',positive=True)         # use SymPy
+x, n = sp.symbols('x, n',positive=True)         # SymPy, define symbols
 
-s = 1.0 - 1.0/exp(1.0)                    # initial value
+s = 1.0 - 1.0/sp.exp(1.0)                       # initial value
 ans_s = []                                   # arrays to hold results
 ans_f = []
 for n in range(1,23):
     s = 1.0 - n*s                            # recursion
     ans_s.append(s)                          # save values
-    eqn = x**n*exp(x - 1)
-    f = integrate(eqn,(x,0.0,1.0) )          # normal algebraic integration, from 0 to 1
+    eqn = x**n*sp.exp(x - 1)
+    f = sp.integrate(eqn,(x,0.0,1.0) )          # SymPy function. Algebraic integration, from 0 to 1
     ans_f.append(f.evalf())                  # save result
     pass
-print('{:s}'.format('n      s      f(n)'))
+print('  {:s}'.format('n     s(recursion) f(n)(SymPy function)'))
 for i in range(len(ans_s)):
-    print('{:3d} {:s} {:s}'.format(i+1,str(ans_s[i])[0:10], str(ans_f[i])[0:10])  )    # format output
+    print('{:3d}     {:s}   {:s}'.format(i+1,str(ans_s[i])[0:10], str(ans_f[i])[0:10])  )    # format output
     pass
 
 
@@ -157,14 +157,15 @@ for i in range(len(ans_s)):
 # In[4]:
 
 
-# Algorithm 1;  Logistic eqn. & Bifurcation. This is quite  slow calculation
+# Algorithm 1;  Logistic eqn. & Bifurcation.
+# remove # as necessary below this point to plot results
 
-#fig1= plt.figure( figsize=(6,6) )    # remove # to plot
+#fig1= plt.figure( figsize=(10,10) )    
 #plt.rcParams.update({'font.size': 16})
 
-Leqn = lambda r,x: r*x*(1.0 - x)        # logistic map eqn
+Leqn = lambda r,x: r*x*(1.0 - x)      # logistic map eqn
 
-n = 100                               # increase this for more detail, e.g 200
+n = 200                               # increase this for more detail, e.g 200
 dn= 100                               # ditto
 m = n + dn
 popl = np.zeros((n,n),dtype=float)    # define 2D array
@@ -182,9 +183,8 @@ for j in range(n):
         pass
     x = x + 1.0/n                     # increment x
     pass
-
-#for i in range(n):                   # remove # to pot results
-#    plt.scatter(r[:],popl[:,i],marker='.',s = 0.01,color='blue')  # plot 
+#for i in range(n):                   # remove # to plot results
+#    plt.scatter(r[:],popl[:,i],color='black',marker='o',s=0.1)    # plot 
 #    
 #plt.xlim([r0,4])
 #plt.ylim([0,1])
@@ -459,7 +459,7 @@ ss = simp(f,a,b,N)
 print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 
-# and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
+# ### and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
 # 
 # ### **(i)  Concentration of ion pairs**
 # Bjerrum's theory of ionic association in solution, the concentration of ion pairs is
@@ -476,18 +476,18 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 # 
 # $$\displaystyle \mathrm{a_0 = \frac{(1.602 \cdot 10^{-19} C)^2}{8\pi \cdot 8.854 \cdot 10^{-12} Fm^{-1} \cdot 1.381 \cdot 10^{-23} JK^{-1}\cdot298 K \cdot 80}}$$
 # 
-# The unit is $\mathrm{C^2/(Fm^{-1}JK^{-1}K)}$ and it is not immediately obviously that this is metres. A farad (F) is a coulomb/volt and a volt is joule/coulomb, therefore a farad is $\mathrm{F = C^2J^{-1}}$ giving $a_0$ units of distance. Returning now to the numerical calculation, the integral at $b = 2$ is clearly zero, starting at $b = 3$ and incrementing by $9$ to $30$ in a loop, gives range of values.
+# The unit is $\mathrm{C^2/(Fm^{-1}JK^{-1}K)}$ and it is not immediately obviously that this is metres. A farad (F) is a coulomb/volt and a volt is joule/coulomb, therefore a farad is $\mathrm{F = C^2J^{-1}}$ giving $a_0$ units of distance. Returning now to the numerical calculation, the integral at $b = 2$ is clearly zero, starting at $b = 3$ and incrementing by $3$ to $30$ in a loop, gives range of values.
 
 # In[11]:
 
 
 # integral in Byerrum equation using Simpson's method
 
-f = lambda x: np.exp(x)*x**(-4)                      # function to ingtegrate
+f = lambda x: np.exp(x)*x**(-4)                      # function to integrate
 a = 2.0
 N = 200
 print('{:s}'.format('limit b    integral'))
-for k in range(3,30,5):                              # start 3 , end 30, step 5
+for k in range(3,30,3):                              # start 3 , end 30, step 3
     b = k
     s = simp(f,a,b,N)                                # use Simpson's rule
     print('{:4d}      {:10.6g}'.format(b, s) )
@@ -734,6 +734,8 @@ def bisect(f,x1,x2):               # bisection method
         pass
     return xm
 #-------------------------------
+
+# remove # to plot results
 
 #fig1 = plt.figure(figsize=(6,6))         # define figure size
 #plt.axhline(0,linewidth=1,color='grey')

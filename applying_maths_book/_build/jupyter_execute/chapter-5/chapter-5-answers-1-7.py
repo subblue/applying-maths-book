@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -39,9 +39,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 #  using symbolic algebra SymPy to find the series, infinity is oo (two lc letter o together)
-x, a = symbols('x, a')         
+x, a = sp.symbols('x, a')         
 f01 = (1/(1 + a*x)**3 )
-series(f01,x)
+sp.series(f01,x)
 
 
 # ## Q3 answer
@@ -194,8 +194,7 @@ print('\n{:s}{:f}{:s}{:f}'.format('total population N2 =  ', sum(pN), ' and I2 =
 # In[7]:
 
 
-fig = plt.figure(figsize=(6,6))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig = plt.figure(figsize=(4,4))
 
 kB   = 1.38054e-23          # J /K
 h    = 6.62559e-34          # SI units  Js
@@ -210,7 +209,7 @@ av_n = lambda T,nu : 1.0/( np.exp( h*c*nu/(kB*T) ) - 1)
 plt.plot(T,av_n(T,nu_I2),color='blue')
 plt.plot(T,av_n(T,nu_N2),color='red')
 
-plt.title(r'$1/(e^{+h\nu/k_BT}-1)$'+' for iodine molecules',fontsize=14)
+plt.title(r'$1/(e^{+h\nu/k_BT}-1)$'+' for iodine molecules',fontsize=12)
 plt.xlabel('T/K')
 plt.ylabel(r'$\langle n \rangle$')
 plt.axis([0,maxT,0,1])
@@ -219,3 +218,9 @@ plt.show()
 
 # Figure 18. Plot of the average number of vibrational quanta $\langle n \rangle$ populated vs temperature for I$_2$. Notice how small a number this is at room temperature. The similar curve for N$_2$ (red) is so close to zero that it is barely visible on this temperature scale.
 # 
+
+# In[ ]:
+
+
+
+

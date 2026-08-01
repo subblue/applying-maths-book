@@ -10,10 +10,15 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.optimize import fsolve
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+
+# In[2]:
+
+
+from scipy.optimize import fsolve       # for numerical evaluation
 
 
 # ## Q43 answer
@@ -76,11 +81,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The result using SymPy is
 
-# In[2]:
+# In[3]:
 
 
-c, x = symbols('c, x')
-ans = c*integrate( x/sqrt(1-c**2*x**2),x, conds='none')
+c, x = sp.symbols('c, x')
+ans = c*sp.integrate( x/sp.sqrt(1-c**2*x**2),x, conds='none')
 ans
 
 
@@ -121,11 +126,12 @@ ans
 # 
 # as this is the log of the expression the limit is therefore $e^{0} = 1$. SymPy obtains the result directly.
 
-# In[3]:
+# In[4]:
 
 
-x = symbols('x')
-ans = limit( sin(x)**tan(x), x, pi/2 )
+x = sp.symbols('x')
+pi  = sp.pi
+ans = sp.limit( sp.sin(x)**sp.tan(x), x, pi/2 )
 ans
 
 
@@ -191,21 +197,21 @@ ans
 # 
 # which means that the function must be differentiated twice to produce a constant on the denominator; $u^2 \to 2u \to 2$. Using Sympy gives
 
-# In[4]:
-
-
-u,g,t= symbols('u, g, t')
-ftop = log((exp(g*t*u) + exp(-g*t*u)) /2 )
-fbot = g*u**2
-ans1 = diff(ftop,u) /diff(fbot,u)   # differentiate once  to and botton , limit still 0/0
-ans1
-
-
 # In[5]:
 
 
-ans2 = diff(ftop,u,u) /diff(fbot,u,u)   # differentiate top /bottom twice each
-expand(ans2)
+u,g,t= sp.symbols('u, g, t')
+ftop = sp.log((sp.exp(g*t*u) + sp.exp(-g*t*u)) /2 )
+fbot = g*u**2
+ans1 = sp.diff(ftop,u) /sp.diff(fbot,u)   # differentiate once  to and botton , limit still 0/0
+ans1
+
+
+# In[6]:
+
+
+ans2 = sp.diff(ftop,u,u) /sp.diff(fbot,u,u)   # differentiate top /bottom twice each
+sp.expand(ans2)
 
 
 # Using the expansion above, the limit $u\to 0$ is $\displaystyle \frac{gt^2}{2}$ and when $v_\infty \to\infty$, $\displaystyle x=\frac{gt^2}{2}$.
@@ -261,9 +267,10 @@ expand(ans2)
 # 
 # (c) First,define the constants in SI units, putting mass $m$ into kg. Let the speed distribution be a function of speed $u$ and temperature $T$. The python code below plots $P(u)$ vs $u$ at the temperatures shown
 
-# In[6]:
+# In[7]:
 
 
+# use python and numpy
 fig1= plt.figure(figsize=(9,4))          # set figure size
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
@@ -378,22 +385,22 @@ plt.show()
 # 
 # The derivative is quite easily calculated by hand but is a long process; using SymPy it is,
 
-# In[7]:
+# In[8]:
 
 
-x, v, g, h =symbols('x, v, g, h')
+x, v, g, h =sp.symbols('x, v, g, h')
 
-R  = v**2*x*sqrt(1-x**2)/g*(1+sqrt(1+2*g*h/(v*x)**2))
-ans= diff(R,x)
-simplify(ans)  
+R  = v**2*x*sp.sqrt(1 - x**2)/g*(1 + sp.sqrt(1+2*g*h/(v*x)**2))
+ans= sp.diff(R,x)
+sp.simplify(ans)  
 
 
 # The maximum is found by solving the derivative when it equals zero.
 
-# In[8]:
+# In[9]:
 
 
-xmax = solve(ans,x)
+xmax = sp.solve(ans,x)
 xmax
 
 
@@ -415,7 +422,7 @@ xmax
 # 
 # To calculate angle as a function of the distance the man walks, it might be tempting to solve the tractrix equation for $x$ and put this into the equation for the angle. However, solving for $x$ is going to be very difficult and produce a complicated result, but is not necessary by plotting $y$ vs $\theta$ with $x$ as a variable, i.e. plot parametrically. The python to do this is shown below
 
-# In[9]:
+# In[10]:
 
 
 fig1 = plt.figure(figsize=(5,4))         # set figure size
@@ -467,7 +474,7 @@ plt.show()
 # 
 # and simplifying produces $3-8k^2+k^4=0$, and, remarkably, this equation is independent of the material's properties $Y$ and $M$. Using Python to solve this equation produces
 
-# In[10]:
+# In[11]:
 
 
 # must include fsolve using from scipy.optimize import fsolve
@@ -516,18 +523,18 @@ print('{:s} {:6.3f}'.format('k value at minumum =', ans[0]) )
 # 
 # from which $\omega = \omega_0$ at the maximum. The maximum, as might be expected, occurs when the applied radiation at frequency $\omega$ is exactly at resonance. The derivative is also zero when $\omega =\pm\infty$ and this is the minimum value of the function; when $\omega \to \infty$ the 1 in the denominator is unimportant and because the power of $\omega$ is larger here, and the function tends to zero.
 # 
-# The maximum has a value $\tau/\pi$ and the fwhm the value when $g(\omega)=\tau/2\pi$ gives $\displaystyle \frac{1}{2}=\frac{1}{1+\tau^2(\omega-\omega_0)^2}$ and rearranging produces $\omega=\tau^{-1}+\omega_0$, therefore the full-width is$2/\tau$.
+# The maximum has a value $\tau/\pi$ and the fwhm. the value when $g(\omega)=\tau/2\pi$ gives $\displaystyle \frac{1}{2}=\frac{1}{1+\tau^2(\omega-\omega_0)^2}$ and rearranging produces $\omega=\tau^{-1}+\omega_0$, therefore the full-width is$2/\tau$.
 # 
-# (b) The derivative has to be differentiated again to find the maximum and minimum. Although this can easily be done by hand, Sympy can help.
+# (b) The derivative has to be differentiated again to find the maximum and minimum. Although this can easily be done by hand, SymPy can help.
 
-# In[11]:
+# In[12]:
 
 
-tau, omega, omega0, g = symbols('tau, omega, omega0, g')
-
+tau, omega, omega0, g = sp.symbols('tau, omega, omega0, g')
+pi = sp.pi
 g  = (tau/pi)*(1/(1 + tau**2*(omega - omega0)**2))
-ans= diff(g,omega,omega)
-simplify(ans)
+ans= sp.diff(g,omega,omega)
+sp.simplify(ans)
 
 
 # and as this result must equal zero then $\displaystyle \omega = \omega_0+\frac{1}{\tau\sqrt{3}}$. The separation between maximum and minimum is therefore $2/(\tau\sqrt{3})$.
@@ -571,19 +578,20 @@ simplify(ans)
 # The same calculation using SymPy is shown below. The solution generated has evaluated the square roots; $1.581=\sqrt{5/2}$.
 # _____
 
-# In[12]:
-
-
-a,x = symbols('a, x')             # define symbols to use 
-psi = ( a/(4*pi))**(1/4)*(2*a*x**2 - 1)*exp( -(a/2)*x**2 )
-ans = diff(psi**2,x)           # differentiate psi^2
-ans
-
-
 # In[13]:
 
 
-solve(ans,x)                   # solve equation
+a,x = sp.symbols('a, x')             # define symbols to use 
+pi  = sp.pi
+psi = ( a/(4*pi))**(1/4)*(2*a*x**2 - 1)*sp.exp( -(a/2)*x**2 )
+ans = sp.diff(psi**2,x)           # differentiate psi^2
+ans
+
+
+# In[14]:
+
+
+sp.solve(ans,x)                   # solve equation
 
 
 # ## Q67 answer
@@ -644,7 +652,7 @@ solve(ans,x)                   # solve equation
 # 
 # (c) The calculation, assuming discrete quantum numbers, is shown below and in cm$^{-1}$ for simplicity. The differences in the energy of the $n^{th}$ and $(n + 1)^{th}$ terms are checked and as long as $E_{n+1} \gt E_n$ the quantum numbers $n$ are incremented.
 
-# In[14]:
+# In[15]:
 
 
 nu = 2989.7
@@ -692,7 +700,7 @@ print('{:s} {:d}{:s} {:8.2f}'.format('n_max =',n, ', D_e =', E(n)) )
 # ____
 # (b) Using the numerical values given, $\displaystyle \ln\left(\frac{4\xi_{eq}^2}{1-\xi_{eq}^2} \right)=1.78$. The equation can be solved to find $\xi_{eq}$ and the equilibrium constant $K_p$. This can be done by hand and also numerically using python with scipy as follows
 
-# In[15]:
+# In[16]:
 
 
 DeltaGN2O4 = 97.79*1000  # J/mol

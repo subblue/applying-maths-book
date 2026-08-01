@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1639,8 +1639,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1710,7 +1710,7 @@ n=3 \qquad&amp; \frac{(x+2)!}{(x-1)!}=\frac{(x+2)(x+1)x(x-1)(x-2)\cdots}{(x-1)(x
 <p>Using the same method as Algorithm 6 with appropriate changes produces the results</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n&#39;</span><span class="p">)</span>     <span class="c1">#  Legendre  change  n-&gt; n-1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n&#39;</span><span class="p">)</span>     <span class="c1">#  Legendre  change  n-&gt; n-1</span>
 
 <span class="k">def</span> <span class="nf">Legen</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> 
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1721,7 +1721,7 @@ n=3 \qquad&amp; \frac{(x+2)!}{(x-1)!}=\frac{(x+2)(x+1)x(x-1)(x-2)\cdots}{(x-1)(x
         <span class="k">return</span> <span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">Legen</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Legen</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="c1">#---------------</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">expand</span><span class="p">(</span> <span class="n">Legen</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span> <span class="n">Legen</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1738,7 +1738,7 @@ n=3 \qquad&amp; \frac{(x+2)!}{(x-1)!}=\frac{(x+2)(x+1)x(x-1)(x-2)\cdots}{(x-1)(x
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n&#39;</span><span class="p">)</span>  <span class="c1">#  Chebychev</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n&#39;</span><span class="p">)</span>  <span class="c1">#  Chebychev</span>
 
 <span class="k">def</span> <span class="nf">Cheb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> 
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1749,7 +1749,7 @@ n=3 \qquad&amp; \frac{(x+2)!}{(x-1)!}=\frac{(x+2)(x+1)x(x-1)(x-2)\cdots}{(x-1)(x
         <span class="k">return</span>  <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">Cheb</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">Cheb</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="c1">#------------------</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">expand</span><span class="p">(</span> <span class="n">Cheb</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span> <span class="n">Cheb</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1967,7 +1967,7 @@ i     f_n   f_n/f_(n-1)
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

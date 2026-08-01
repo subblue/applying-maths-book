@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -46,10 +46,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-theta, a, b  = symbols('theta, a, b')  # use Sympy
-R = Matrix([ [cos(theta),sin(theta)],[-sin(theta),cos(theta)] ])
-v = Matrix([a,b])    # define a vector 
-R*v                  # rotates about zero.  Unlike numpy * is matrix rotation
+theta, a, b  = sp.symbols('theta, a, b')  # use SymPy
+R = sp.Matrix([ [sp.cos(theta),sp.sin(theta)],[-sp.sin(theta),sp.cos(theta)] ])
+v = sp.Matrix([a,b])    # define a vector 
+R*v                     # rotates about zero.  Unlike numpy * is matrix rotation
 
 
 # Note that the vector is rotated about zero not the first coordinate $a$. To rotate about $a$ the vector must be changed to $[0,b-a]$ and then $a$ added back to the resulting rotated vector.
@@ -250,7 +250,7 @@ plt.show()
 # 
 # $$ \displaystyle \begin{bmatrix} \cos(\theta) &\sin(\theta)\\ -r\sin(\theta)  &r\cos(\theta)  \end{bmatrix}  $$
 # 
-# Working out $\pmb{J}^{-1}$ can be done using Sympy, but it is easier to look up the inverse of a $2 \times 2$ matrix which defined in Section 5.7. This gives
+# Working out $\pmb{J}^{-1}$ can be done using SymPy, but it is easier to look up the inverse of a $2 \times 2$ matrix which defined in Section 5.7. This gives
 # 
 # $$ \displaystyle \pmb{J}^{-1}=\begin{bmatrix} \cos(\theta) &-\sin(\theta)/r\\ \sin(\theta)  &\cos(\theta)/r  \end{bmatrix}  $$
 # 
@@ -279,19 +279,19 @@ plt.show()
 
 # Algorthim: Algebraic calculation using a Jacobian using SymPy
 
-r, theta, fx, fy, P, fxx, fyy = symbols('r, theta, fx, fy, P, fxx, fyy')
+r, theta, fx, fy, P, fxx, fyy = sp.symbols('r, theta, fx, fy, P, fxx, fyy')
 
-fx = r*cos(theta)
-fy = r*sin(theta)
-f  = Function('f')(r,theta)         # define some function f in r and theta
-J  = Matrix([ [diff(fx,r),diff(fy,r)] , [diff(fx,theta),diff(fy,theta)]]  )  # Jacobian
+fx = r*sp.cos(theta)
+fy = r*sp.sin(theta)
+f  = sp.Function('f')(r,theta)         # define some function f in r and theta
+J  = sp.Matrix([ [sp.diff(fx,r),sp.diff(fy,r)] , [sp.diff(fx,theta),sp.diff(fy,theta)]]  )  # Jacobian
 J
 
 
 # In[5]:
 
 
-P = Matrix( [ diff(f,r),diff(f,theta) ] )
+P = sp.Matrix( [ sp.diff(f,r), sp.diff(f,theta) ] )
 P
 
 
@@ -299,13 +299,19 @@ P
 
 
 C = J**(-1) * P
-simplify(C)
+sp.simplify(C)
 
 
 # In[7]:
 
 
-fxx = diff(C[0],r)*cos(theta)-diff(C[0],theta)*sin(theta)/r     # second order derivatives
-fyy = diff(C[1],r)*sin(theta)+diff(C[1],theta)*cos(theta)/r
-simplify(fxx + fyy )
+fxx = sp.diff(C[0],r)*sp.cos(theta) - sp.diff(C[0],theta)*sp.sin(theta)/r     # second order derivatives
+fyy = sp.diff(C[1],r)*sp.sin(theta) + sp.diff(C[1],theta)*sp.cos(theta)/r
+sp.simplify(fxx + fyy )
+
+
+# In[ ]:
+
+
+
 

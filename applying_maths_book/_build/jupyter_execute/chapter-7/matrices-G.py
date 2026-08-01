@@ -9,10 +9,10 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
+#from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -79,7 +79,7 @@ answer
 
 M = np.array([ [3,4,1],[1,-3,6],[2,-1,4] ] )
 C = np.array([6,-3,0])
-LA.solve(M,C)
+np.linalg.solve(M,C)
 
 
 # This example uses SymPy which gives an exact answer as a fraction.  
@@ -87,9 +87,9 @@ LA.solve(M,C)
 # In[4]:
 
 
-M, C = symbols('M, C')
-M = Matrix([ [3,4,1],[1,-3,6],[2,-1,4] ])
-C = Matrix([6,-3,0])
+M, C = sp.symbols('M, C')
+M = sp.Matrix([ [3,4,1],[1,-3,6],[2,-1,4] ])
+C = sp.Matrix([6,-3,0])
 M**(-1)*C
 
 
@@ -98,12 +98,12 @@ M**(-1)*C
 # In[5]:
 
 
-x, y, z = symbols('x, y, z')
+x, y, z = sp.symbols('x, y, z')
 eq1 = 3*x +4*y   +z -6
 eq2 =   x -3*y +6*z +3
 eq3 = 2*x   -y +4*z
 
-ans = solve((eq1,eq2,eq3))
+ans = sp.solve((eq1,eq2,eq3))
 ans
 
 
@@ -130,7 +130,7 @@ ans
 
 M = np.array( [[2.0, 5.5, 1], [1.5, 4.5, 2.47], [1, 1, 1]] )
 C = np.array( [2.7, 2.9, 1] )
-ans = LA.solve(M,C)
+ans = np.linalg.solve(M,C)                     # use linear algebra package
 print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 
 
@@ -169,8 +169,9 @@ print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 # In[7]:
 
 
-r, s, c, hbar, B_H, B_D, m_H, m_D, m_C = symbols('r, s, c, hbar, B_H, B_D, m_H, m_D, m_C')
+r, s, c, hbar, B_H, B_D, m_H, m_D, m_C = sp.symbols('r, s, c, hbar, B_H, B_D, m_H, m_D, m_C')
 
+pi  = sp.pi
 m_C = 1.992648e-26   # mass C
 m_H = 1.673534e-27
 m_D = 3.344497e-27
@@ -182,9 +183,9 @@ B_H = 0.18960*c
 eq1 = (m_C + m_H)*r**2 + m_H*s**2 + 2*m_H*r*s - hbar/(12*pi*B_H)
 eq2 = (m_C + m_D)*r**2 + m_D*s**2 + 2*m_D*r*s - hbar/(12*pi*B_D)
 
-ans = solve((eq1,eq2),(r,s) )  # order returned r , s
+ans = sp.solve((eq1,eq2),(r,s) )  # order returned r , s
 for i in range(len(ans)):             # do this only to print clearly
-    print('{:4d} {:8.4e}  {:8.4e}'.format(i, ans[i][0],ans[i][1]) )
+    print('{:<4d}  {:>10.4g}  {:>10.4g}'.format(i, ans[i][0],ans[i][1]) )
 
 
 # The only physically meaningful roots of these equations are when both are positive, i.e. $r = 0.13973 $ nm for the CC bond length and $s = 0.10843$ nm for the CH bond length. The results are quoted to 5 figures, as this is the precision of the initial data.
@@ -218,8 +219,9 @@ for i in range(len(ans)):             # do this only to print clearly
 # In[8]:
 
 
+# still using SymPy
 # matrix of x_0, x_1 values with reactants negative and products positive
-mFeS2 = Matrix([ [-1,0,2,0,0,0],[-2,0,3,1,0,0],[0,-1,0,2,2,0],[0,-1,0,0,0,1],[0,-3,12,4,1,1]   ] )
+mFeS2 = sp.Matrix([ [-1,0,2,0,0,0],[-2,0,3,1,0,0],[0,-1,0,2,2,0],[0,-1,0,0,0,1],[0,-3,12,4,1,1]   ] )
 mFeS2
 
 
@@ -246,7 +248,7 @@ ans
 # In[10]:
 
 
-mCO = Matrix([ [-1,-1,0,1,0], [-1,-2,0,0,1], [0,0,-2,4,2]  ] )
+mCO = sp.Matrix([ [-1,-1,0,1,0], [-1,-2,0,0,1], [0,0,-2,4,2]  ] )
 mCO
 
 
@@ -354,7 +356,7 @@ test
 
 M = np.array( [ [2,4], [3,1] ] )     # is a matrix in numpy
 
-evals,evecs = LA.eig(M)           # eigenvals and eigenvectors are returned
+evals,evecs = np.linalg.eig(M)           # eigenvals and eigenvectors are returned
 
 print('{:s}{:f} {:f}'.format('eigenvalues = ',evals[0],evals[1]) )
 print('normalised columns of eigenvectors')
@@ -365,9 +367,9 @@ print(evecs)
 
 
 # with Sympy, algebraic solution
-M = symbols('M')
-M = Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
-# M.eigenvals()                        # use if eigenvals only are wanted 
+M = sp.symbols('M')
+M = sp.Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
+# M.eigenvals()                           # use if eigenvals only are wanted 
 ans = M.eigenvects()     # returns in order : eigenvalue, multiplicity, eigenvectors not normalised
 ans
 
@@ -384,10 +386,10 @@ ev1
 # In[16]:
 
 
-M = symbols('M')
-M = Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
+M = sp.symbols('M')
+M = sp.Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
 
-evecs, evals = M.diagonalize()         # note order of returned matrices
+evecs, evals = M.diagonalize()             # note order of returned matrices
 evals,evecs
 
 
@@ -466,7 +468,7 @@ evals,evecs
 # 
 # $$\displaystyle \begin{bmatrix}2&-2&-2\\0&2\sqrt{2}i&-2\sqrt{2}i\\2&2&2\end{bmatrix}\qquad \overset{normalize} \longrightarrow x_1=\begin{bmatrix}1\\0\\1\end{bmatrix}\quad x_2=\begin{bmatrix}-1\\i\sqrt{2}\\1\end{bmatrix}\quad x_3=\begin{bmatrix}-1\\-i\sqrt{2}\\1\end{bmatrix}$$
 
-# The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.
+# The same calculation using Python or SymPy is far easier and, in practice, you will always do the calculation in this way.
 # 
 # ## 12.7 Properties of eigenvalues and eigenvectors
 # Some of the more important properties of eigenvalues and eigenvectors are listed here.
@@ -648,8 +650,8 @@ evals,evecs
 # In[17]:
 
 
-M = symbols('M')
-M = Matrix([[1,0,0,0],[0,-1,2,0],[0,2,-1,0],[0,0,0,1]])
+M = sp.symbols('M')
+M = sp.Matrix([[1,0,0,0],[0,-1,2,0],[0,2,-1,0],[0,0,0,1]])
 
 
 # In[18]:
@@ -666,7 +668,7 @@ M.eigenvects()    # eigenvalues and eigenvectors. second number in each (1 , 3) 
 
 # The eigenvalues confirm the previous calculation. The eigenvalue equal to $-3$ is singly degenerate, that of $1$ is triply degenerate.  The second eigenvector $[1,0,0,0]^T$ belongs to state $\alpha\alpha$, and the fourth $[0,0,0,1]^T$ to state $\beta\beta$ or vice versa; it makes no difference. The wavefunctions are $\psi = |\alpha\alpha\rangle$ and $\psi = | \beta\beta\rangle$, and both have energy $E = 1$ but are accidentally degenerate. The other two wavefunctions are constructed as $\alpha\beta+\beta\alpha$ and $\alpha\beta-\beta\alpha$ because their eigenvectors are $[0, \pm 1, 1, 0]^T$, which is in the same order as the basis set. The normalization constant for this pair of eigenvectors is $1\sqrt{2}$, making the normalized wavefunctions for the mixed states $\displaystyle\psi = \frac{1}{\sqrt{2}}|\alpha\beta \rangle\pm |\beta\alpha\rangle$ with energies $E=1$ and $-3$.
 # 
-# A simpler notation can be found is using (sympy) diagonalisation where the eigenvector's matrix is returned first.
+# A simpler notation can be found is using (SymPy) diagonalisation where the eigenvector's matrix is returned first.
 
 # In[20]:
 

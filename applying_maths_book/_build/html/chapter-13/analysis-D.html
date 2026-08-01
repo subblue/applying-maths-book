@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1518,8 +1518,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#least-absolute-deviation">
-   10.2 Least absolute deviation
+  <a class="reference internal nav-link" href="#least-absolute-deviation-lad">
+   10.2 Least absolute deviation, LAD
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1552,8 +1552,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#least-absolute-deviation">
-   10.2 Least absolute deviation
+  <a class="reference internal nav-link" href="#least-absolute-deviation-lad">
+   10.2 Least absolute deviation, LAD
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1578,12 +1578,10 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on </span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">lina</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span> 
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1665,7 +1663,7 @@ y &amp;14   &amp; 13   &amp;10  &amp;6   &amp;9   &amp;8   &amp;7   &amp;3  &amp
     <span class="n">xval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     <span class="n">yval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">wv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>               <span class="c1"># counting weighting</span>
+        <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>    <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">wv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>            <span class="c1"># counting weighting</span>
         <span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="n">yval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span>
@@ -1763,8 +1761,10 @@ total experimental counts =    5925
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fchi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># chi sqrd function</span>
-<span class="n">Q</span><span class="p">,</span><span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span> <span class="n">chiA</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="p">)</span>    <span class="c1"># integrate from chisqrd to infinity</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gamma function is found in sympy so used as sp.gamma(etc)</span>
+
+<span class="n">fchi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>    <span class="c1"># chi sqrd function</span>
+<span class="n">Q</span><span class="p">,</span><span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span> <span class="n">chiA</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="p">)</span>                <span class="c1"># integrate from chisqrd to infinity</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;probability of getting chi-sqrd &gt; &#39;</span><span class="p">,</span><span class="n">chiA</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39; is&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1779,12 +1779,12 @@ total experimental counts =    5925
 <p>Figure 14. Non-linear least squares fit to  <span class="math notranslate nohighlight">\(\displaystyle Y = c_1e^{-c_2x} + c_3\)</span> with <span class="math notranslate nohighlight">\(c_1= 2128, c_2 = 0.1\)</span>, and <span class="math notranslate nohighlight">\(c_3 = 5.05\)</span>.</p>
 <p>The calculation produces a <span class="math notranslate nohighlight">\(\chi^2= 0.9\)</span> and that corresponds to a probability of <span class="math notranslate nohighlight">\(63\)</span>% which is near perfect; a perfect value of <span class="math notranslate nohighlight">\(1\)</span> produces a <span class="math notranslate nohighlight">\(50\)</span>% chance. The model curve clearly fits the data as shown in Figure 14. The total counts predicted by the model are almost the same as in the data itself, also indicating a close fit. The normalized residuals are calculated as <span class="math notranslate nohighlight">\((y_i - Y_i)/y_i\)</span>.</p>
 </section>
-<section id="least-absolute-deviation">
-<h2>10.2 Least absolute deviation<a class="headerlink" href="#least-absolute-deviation" title="Permalink to this headline">#</a></h2>
+<section id="least-absolute-deviation-lad">
+<h2>10.2 Least absolute deviation, LAD<a class="headerlink" href="#least-absolute-deviation-lad" title="Permalink to this headline">#</a></h2>
 <p>Any least squares method is very sensitive to outliers in the data; see figure 15. You can ‘eyeball’ data and see roughly where a straight line should go through the majority of the data points; however, the least squares line will generally not follow this trend because it is pulled off by the outliers. In such cases, the function to minimize is the absolute value of the deviation rather than the <span class="math notranslate nohighlight">\(\chi^2\)</span> and for an unweighted straight-line fit is the sum</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_i |y_i-a-bx_i|\]</div>
-<p>Using this function now produces a far better fit to the data, but there is no <span class="math notranslate nohighlight">\(\chi^2\)</span> with which to estimate how good this fit is. Taking the absolute value of the distance from the best fit line, rather than the square of the distance, means that the effect of large deviations is reduced. Prest et al. (1986) give an algorithm with which to calculate the minimum deviation line and this is shown in figure 15.</p>
+<p>Using this function now produces a far better fit to the data, but there is no <span class="math notranslate nohighlight">\(\chi^2\)</span> with which to estimate how good this fit is. Taking the absolute value of the distance from the best fit line, rather than the square of the distance, means that the effect of large deviations is reduced. Prest et al. (1986) give an algorithm (medfit) in chapter 14 (Robust Estimation) with which to calculate the minimum deviation line and this is shown in figure 15.</p>
 <p><img alt="Drawing" src="../_images/analysis-fig15.png" /></p>
 <p>Figure 15. Outliers produce a least squares fit that does not reflect the trend exhibited by most of the data points. The line passing mainly through the data is the least absolute deviation LAD line.</p>
 </section>
@@ -1879,7 +1879,7 @@ total experimental counts =    5925
     <span class="k">pass</span> 
 <span class="n">X</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">means</span>                           <span class="c1"># subtract mean </span>
 <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>            <span class="c1"># make covariance matrix ( @ is matrix multiply)</span>
-<span class="p">(</span><span class="n">eigval</span><span class="p">,</span><span class="n">eigvec</span><span class="p">)</span> <span class="o">=</span> <span class="n">lina</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>              <span class="c1"># eigvals, eigvects of covariance. eigvects normalised</span>
+<span class="p">(</span><span class="n">eigval</span><span class="p">,</span><span class="n">eigvec</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>              <span class="c1"># eigvals, eigvects of covariance. eigvects normalised</span>
 
 <span class="n">indx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">eigval</span><span class="p">)</span>               
 
@@ -1966,7 +1966,7 @@ total experimental counts =    5925
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

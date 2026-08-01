@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-import numpy.linalg as npalg     # linear algebra library for determinants and matrices
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -140,22 +139,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 2.4 Evaluating determinants using Python and SymPy
 # 
-# The numerical vale of a determinant is calculated by first defining the matrix size and filling in the values. If the matrix is very big the entries will have to be input via a algorithm, which means giving each row and column a value by setting up a double loop. To manipulate the matrix the linear algebra package is needed and this is imported at the top of this document where NumPy and SciPy are imported.  Notice that an 'array' is used (rather than a 'matrix') and that there are a pair of square brackets surrounding the middle three sets of numbers.
+# The numerical vale of a determinant is calculated by first defining the matrix size and filling in the values. If the matrix is very big the entries will have to be input via a algorithm, which means giving each row and column a value by setting up a double loop. To manipulate the matrix the linear algebra package is needed and this is used by invoking the linear algebra package e.g. $\mathtt{np.linalg.det(M)}$.   Notice that an 'array' is used (rather than a 'matrix') and that there are a pair of square brackets surrounding the middle three sets of numbers.
 
 # In[2]:
 
 
-M = np.array( [ [1,4,9], [16,25,36], [49,64,81] ] )
-print(npalg.det(M))
+M = np.array( [ [1, 4, 9], [16, 25, 36 ], [49, 64, 81 ] ] )
+print(np.linalg.det(M))
 
 
-# Using SymPy enables an algebraic determination of a determinant. In this case the matrix is defined slightly differently using the word Matrix(). The determinant is easily computed and produces a polynomial.
+# Using SymPy enables an algebraic determination of a determinant. In this case the matrix is defined slightly differently using  $\mathtt{sp.Matrix( [  etc  ] )}$. The determinant is easily computed and produces a polynomial.
 
 # In[3]:
 
 
-x = symbols('x')
-M = Matrix([ [x,1,0], [1,x,x],[1,x,1] ])  # notice how the square brackets [] are arranged
+x = sp.symbols('x')
+M = sp.Matrix([ [x,1,0], [1,x,x],[1,x,1] ])  # notice how the square brackets [] are arranged
 M
 
 
@@ -191,9 +190,9 @@ M.det()  # determinant produces a polynomial
 # In[5]:
 
 
-x = symbols('x')
-M = Matrix([ [x,1,1], [1,x,1],[1,1,x] ])
-solve(M.det(),x)
+x = sp.symbols('x')
+M = sp.Matrix([ [x,1,1], [1,x,1],[1,1,x] ])
+sp.solve(M.det(),x)
 
 
 # ## 3 The Huckel MO method 
@@ -246,10 +245,10 @@ solve(M.det(),x)
 # Huckel determinant linear polyene  
 # The calculation is slow for large matrices n > 20 due to determinant evaluation
 
-n, M, x = symbols('n, M, x') # use Sympy, define symbolic variables 
-n = 4                        # size of matrix
-M = zeros(n,n)               # define empty matrix
-for i in range(n):           # fill matrix according to rules above
+n, M, x = sp.symbols('n, M, x') # use Sympy, define symbolic variables 
+n = 4                           # size of matrix
+M = sp.zeros(n,n)               # define sympy empty matrix
+for i in range(n):              # fill matrix according to rules above
     M[i,i] = x
     if (i > -1) and (i<n-1):
         M[i,i+1] = 1
@@ -268,13 +267,13 @@ char_eqn
 # In[8]:
 
 
-solve(char_eqn)            # algebraically solve for roots 
+sp.solve(char_eqn)         # algebraically solve for roots using SymPy
 
 
 # In[9]:
 
 
-solve( char_eqn.evalf() )   # always use numberical solution for larger polynomials
+sp.solve( char_eqn.evalf() )   # Use .evalf() for numerical solution of larger polynomials
 
 
 # The solutions give each of the values of $x$ and as $\displaystyle x=\frac{\alpha-\beta}{\beta}$ the four energies given by $E=\alpha-\beta x$ and are,
@@ -512,6 +511,12 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # which shows that the probability is finite when $\bar r_i=\bar r_2$. 
 # 
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

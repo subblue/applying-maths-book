@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
+import sympy as sp
 from scipy.integrate import quad     # integrator
-init_printing()                      # allows printing of SymPy results in typeset maths format
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -106,9 +106,9 @@ print('pythod quad integrator answer ',quad(f,0,10)[0]  )    # use Python built-
 # In[3]:
 
 
-b, r, d = symbols('b, r, d', positive = True)
-f = 1/(r*sqrt(r**2-b**2))
-integrate(f,r )
+b, r, d = sp.symbols('b, r, d', positive = True)
+f = 1/(r*sp.sqrt(r**2-b**2))
+sp.integrate(f,r )
 
 
 # where the solution is $\displaystyle\chi=\pi+2b\frac{1}{b}\sin^{-1}\left(\frac{b}{r}\right)\bigg|_d^\infty = \pi-2\sin^{-1}\left(\frac{b}{d}\right)$ because $\sin^{-1}(0)=0$.

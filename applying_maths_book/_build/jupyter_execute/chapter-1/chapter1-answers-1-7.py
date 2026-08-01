@@ -10,8 +10,6 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 

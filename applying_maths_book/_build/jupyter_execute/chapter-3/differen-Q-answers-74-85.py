@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -45,9 +45,9 @@ for i in range(20):          # Newton-Raphson, assume 20 iterations is plenty
 # In[3]:
 
 
-x = symbols('x')
+x = sp.symbols('x')
 f01 = 3 - 8*x**2 + x**4
-ans = solve(f01,x)
+ans = sp.solve(f01,x)
 ans
 
 
@@ -192,13 +192,13 @@ print('{:s} {:f}'.format('beta = ',x) )
 # (b) The deeper well ($-12 V_0$) has three levels at $1801, 6963$ and $13976\,\mathrm{ cm^{-1}}$. The corresponding infinite well energies are at $3032, 12130$, and $27293\,\mathrm{ cm^{-1}}$. The spectrum of the finite quantum well has two lines, corresponding to transitions from $n = 1 \to 2$ at $5161$ and from $n = 2 \to 3$ at $7013\,\mathrm{ cm^{-1}}$, then a continuous absorption starting at approximately $784\,\mathrm{ cm^{-1}}$. The product of the symmetry of the wavefunctions and the transition moment limit transitions to those between odd-even levels only. The large energy gap between the first two levels means that at room temperature ($k_BT \approx 210\,\mathrm{ cm^{-1}}$ ) hardly any population will be in the second level.
 # 
 # ## 82 answer
-# (a) The radius  of the rings is fixed at unity as $y = 1$. The constant $r$ can found from the equation, $1 = r \cosh(x/r)$ which is transcendental and cannot be solved for $r$, other than numerically, but can be solved for $x$ with $r$ as the variable; the equation is $x = r \cosh^{-1}(1/r)$. The plot of this function is shown in Fig. 59. The maximum $x$ occurs when $dx/dr = 0$. Using Sympy, the derivative is
+# (a) The radius  of the rings is fixed at unity as $y = 1$. The constant $r$ can found from the equation, $1 = r \cosh(x/r)$ which is transcendental and cannot be solved for $r$, other than numerically, but can be solved for $x$ with $r$ as the variable; the equation is $x = r \cosh^{-1}(1/r)$. The plot of this function is shown in Fig. 59. The maximum $x$ occurs when $dx/dr = 0$. Using SymPy, the derivative is
 
 # In[6]:
 
 
-r = symbols('r ')
-diff(r*acosh(1/r),r) 
+r = sp.symbols('r ')
+sp.diff(r*sp.acosh(1/r),r) 
 
 
 # this can be simplified to 
@@ -228,10 +228,11 @@ diff(r*acosh(1/r),r)
 # In[7]:
 
 
-x, r = symbols('x r')
-f   = r*cosh(x/r)**2               # acosh is cosh^{-1}
-ans = integrate(4*pi*f, (x,0,x) )  # integrate x from 0 to x
-simplify(ans)
+x, r = sp.symbols('x r')
+pi=sp.pi
+f   = r*sp.cosh(x/r)**2               # acosh is cosh^{-1}
+ans = sp.integrate(4*pi*f, (x,0,x) )  # integrate x from 0 to x
+sp.simplify(ans)
 
 
 # thus 

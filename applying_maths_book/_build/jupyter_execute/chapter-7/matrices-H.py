@@ -9,14 +9,14 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
+#from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 13.1 Linear kinetic schemes
+# ## 13.1 Linear Chemical kinetic schemes. Populations are sums of exponentials.
 # 
 # The equations of chemical kinetics can quite easily become complicated even with simple schemes. The sequential scheme 
 # 
@@ -24,9 +24,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # is quite difficult to solve by direct integration of the equations involved, and if a reversible step is introduced, such as 
 # 
-# $$\displaystyle A \underset{k_{-1}}{\stackrel{k_1}{\leftrightharpoons}} B \overset{k_2} \longrightarrow C$$
+# $$\displaystyle A \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} B \overset{k_2} \longrightarrow C$$
 # 
-# then solving the rate equations becomes a difficult task. When performing transient kinetics experiments using, for instance, the stopped-flow, flash - photolysis, or femtosecond pump - probe methods, the time profiles of the species present have to be calculated, so that they can be fitted to data to obtain rate coefficients. The transient species present, such as B above, are identified both by their time profile and by spectra. 
+# then algebraically solving the rate equations becomes a difficult task. When performing transient kinetics experiments using, for instance, the stopped-flow, flash - photolysis, or femtosecond pump - probe methods, the time profiles of the species present have to be calculated, so that they can be fitted to data to obtain rate coefficients. The transient species present, such as B above, are identified both by their time profile and by spectra. 
 # 
 # A kinetic scheme is always written in terms of the rate of change of the species present; for example, the first-order decay of species $A$ is
 # 
@@ -48,7 +48,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In solving these differential equations the initial conditions must always be defined. This means defining the concentration of all possible species present in the reaction scheme at time zero. Often it is assumed that only some amount of $A$ present is present, say $A_0$, and that $B_0 = C_0 = 0$. You will notice that, since we cannot create or destroy atoms in a chemical process, the total amount of all species is constant at all time, so that $A_0 + B_0 + C_0 = A + B + C$, which means that C can always be calculated as the difference $C = A_0 + B_0 + C_0 - A - B$ so there are really only two differential equations. However, if $C$ decomposes with time to another species, we cannot use this last relationship.
 # 
-# We know from direct integration that $\displaystyle A = A_0e^{-k_1t}$, and from the theory of coupled linear differential equations that the solution in general for all species are _sums of exponential_ terms, see Chapter 10.7. If the initial concentration of $A = A_0$ and initially $B = C =0$, then the concentration of $B$ is
+# We know from direct integration that $\displaystyle A = A_0e^{-k_1t}$, and from the theory of coupled linear differential equations that the solution in general for all species are *sums of exponential* terms  see Chapter 10.7. If the initial concentration of $A = A_0$ and initially $B = C =0$, then the concentration of $B$ is
 # 
 # $$\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \qquad\tag{36}$$
 # 
@@ -72,36 +72,43 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 13.2 Matrix solutions. Master Equations.
 # 
-# Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as $k_2AB$ are not allowed. For very complex schemes, consisting of hundreds of equations, the Master Equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a 'system' to occupy any one of a discrete set of states.
+# Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as $k_2AB$ are not allowed and when such bimolecular terms are present in the reaction scheme the Markov Chain method should be used, see Section 13.4 below.
+# 
+# For very complex schemes, consisting of hundreds of equations, the Master Equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a 'system' to occupy any one of a discrete set of states.
 # 
 # The matrix method is described first and justified in the next section. Returning to the sequential scheme 35, the three equations can be reproduced in matrix form as
 # 
-# $$\displaystyle \frac{d\pmb{M}}{dt}=\pmb{KM}$$
+# $$\displaystyle \frac{d\pmb{M}}{dt} = \pmb{KM}$$
+# 
 # the solution of which is formally
 # 
 # $$\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \qquad\tag{37}$$
 # 
-# where $\pmb{M}$ is a column matrix of concentrations at time $t$, $\pmb{M}_0$ the matrix of their initial values, and $\pmb K$ is a square matrix of rate constants organised as in the rate equation. In the master Equation approach the rate equations 35 are rewritten in matrix form as
+# where $\pmb{M}$ is a column matrix of concentrations at time $t$, $\pmb{M}_0$ the matrix of their initial values, and $\pmb K$ is a square matrix of rate constants organised as in the rate equation. In the Master Equation approach the rate equations 35 are rewritten in matrix form as
 # 
 # $$\displaystyle \qquad\qquad\begin{bmatrix} \displaystyle\frac{dA}{dt}\\ \displaystyle\frac{dB}{dt}\\ \displaystyle\frac{dC}{dt}\end{bmatrix} =\begin{bmatrix} -k_1 & 0 & 0\\ k_1 & -k_2 & 0\\0 & k_2 & 0\\\end{bmatrix}\begin{bmatrix}A\\B\\C \end{bmatrix} \qquad\qquad\qquad\qquad\text{(38)}$$
 # 
-# Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. The position of a row of  rate constants in the matrix is the same as in the rate equation for that species.  Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal. The next sections illustrate how the solution is determined.
+# Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. In this scheme $C$ does not decay so has zero in the diagonal. The positions in a row of rate constants in the matrix is the same as in the rate equation for that species.  Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal. The next sections illustrate how the solution is determined.
 # 
 # ### **(i) Secular Determinant**
 # 
-# Solving the matrix equation 37 is done in two steps. First the eigenvalues $\lambda$ are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3; we use it first. The secular determinant of matrix $\pmb{k}$ is
+# Solving the matrix equation 37 is done in two steps. First the eigenvalues $\lambda$ are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3. The secular determinant of matrix $\pmb{k}$ is
 # 
 # $$\displaystyle \begin{vmatrix}-k_1-\lambda & 0 & 0\\ k_1& -k_2-\lambda & 0 \\ 0 & k_2 & -\lambda \end{vmatrix}=0$$
 # 
-# whose characteristic equation is $(k_1 + \lambda)(k_2 + \lambda)\lambda = 0$ and from which, by inspection, $λ_1 =-k_1,\; \lambda_2 =-k_2$,and $\lambda_3 =0$.
+# whose characteristic equation is 
+# 
+# $$\displaystyle (k_1 + \lambda)(k_2 + \lambda)\lambda = 0$$
+# 
+# and from which, by inspection, $λ_1 =-k_1,\; \lambda_2 =-k_2$,and $\lambda_3 =0$.
 # 
 # ### **(ii) Time profiles**
 # 
-# To calculate the populations, or concentrations, using the Master equation approach the matrix equation
+# To calculate the populations, or concentrations, using the Master equation approach the following matrix equation
 # 
-# $$\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \qquad\tag{39}$$
+# $$\displaystyle \pmb{M}(t)=\pmb{x}\;[\pmb{e}^{\lambda t}]\;\pmb{x}^{-1}\pmb{M}_0 \qquad\tag{39}$$
 # 
-# is used, see Similarity Transforms section 13.4. This produces a column vector $\pmb{M}(t)$ of the populations of each species at time $t$, $\pmb{M}_0$ being a column vector of the initial populations. The eigenvectors of matrix $\pmb{k}$ are formed into a (modal) matrix $\pmb{x}$ and $\pmb{x}^{-1}$ is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:
+# is used, see Similarity Transforms section 13.4. This produces a column vector $\pmb{M}(t)$ of the populations of each species at time $t$, $\pmb{M}_0$ being a column vector of the initial populations. The columns of eigenvectors of matrix $\pmb{k}$ are formed into a (modal) matrix $\pmb{x}$ where $\pmb{x}^{-1}$ is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:
 # 
 # $$\displaystyle \qquad\qquad e^{\lambda t} =\begin{bmatrix} e^{\lambda_1 t} & 0 & 0 & \cdots \\ 0 & e^{\lambda_2 t}   & 0 & \cdots \\ 0 & 0 & e^{\lambda_3 t} & \cdots \\ \vdots & \vdots &\vdots & \ddots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(40)}$$
 # 
@@ -118,39 +125,39 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # \vdots & \vdots &\ddots &\vdots \\
 # \cdots & \cdots & \cdots & x_{nn}\end{bmatrix}^{\large{-1}}  \begin{bmatrix} M_{01}(t)\\ M_{02}(t)\\ \vdots \\ \vdots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(41)}$$
 # 
-# where each eigenvector is a column in the $x$ matrix and the notation $k_{12}$ is the rate constant from species $1(a) \to 2(b)$ etc.  The populations of each species are the rows of the $\pmb{M}(t)$ column vector.
+# where each eigenvector is a column in the $x$ matrix and the subscript notation $12$ identifies a transition from species $1 \to 2$ etc.  The populations of each species are the rows of the $\pmb{M}(t)$ column vector.
 # 
-# The calculation, using python/SymPy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.
+# The calculation, using Python/SymPy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.
 # 
-# ### **(iii) Algebraic solution of $A \to B \to C$**
+# ### **(iii) Matrix solution of $A \to B \to C$**
 # 
-# It is assumed that the rate constants are $k_1$ and $k_2$, and that, at time zero, the amount of $A$ present $A_0 = 1$, and that $B_0 = C_0 = 0$; This code will calculate any $A \leftrightharpoons B \leftrightharpoons C$ when the $\pmb{k}$ matrix is modified.
+# It is assumed that the rate constants are $k_1$ and $k_2$, and that, at time zero, the amount of $A$ present $A_0 = 1$, and that $B_0 = C_0 = 0$; This code will calculate any $A \leftrightharpoons B \leftrightharpoons C$ when the $\pmb{k}$ matrix is modified to include back reactions.
 
 # In[2]:
 
 
-# algorithm: Kinetic scheme A -> B -> C . Using sympy for algeric result
+# Algorithm: Kinetic scheme A -> B -> C. Using SymPy for algebraic result.
 
-t, k1, k2, A0, B0, C0= symbols('t, k1, k2, A0, B0, C0')
-
-k_matrix = Matrix([ [-k1,0,0],[k1,-k2,0],[0,k2,0]    ])  # set up matrix 
+t, k1, k2, A0, B0, C0, n= sp.symbols('t, k1, k2, A0, B0, C0 n')
+n = 3                                                    # number of equations
+k_matrix = sp.Matrix([ [-k1,0,0],[k1,-k2,0],[0,k2,0]    ])  # set up matrix 
 k_matrix
 
 
 # In[3]:
 
 
-vec, val = k_matrix.diagonalize()        # returns eigenvectors and eigenvalues
-vec,val                                  
+vec, val = k_matrix.diagonalize()    # returns eigenvectors and eigenvalues
+vec,val                              # vec is a matrix on eigenvector columns.                              
 
 
 # In[4]:
 
 
-M0 = Matrix([[A0,0,0]])                  # Initial condition, only A is present in this example
-exp_matrix = zeros(3,3)                  # make matrix full of zeros
-for i in range(3):
-    exp_matrix[i,i]= exp(val[i,i]*t)     # fill diagonals 
+M0 = sp.Matrix([[A0,0,0]])                  # Initial condition, only A is present in this example
+exp_matrix = sp.zeros(n,n)                  # make matrix full of zeros
+for i in range(n):
+    exp_matrix[i,i]= sp.exp(val[i,i]*t)     # fill diagonals 
 
 populations = vec * exp_matrix * vec.inv() * M0.transpose() 
 populations
@@ -163,26 +170,37 @@ populations
 # Figure 55. Populations of species $A, \;B$, and $C$ with time when $k_1 = 1,\; k_2 = 1.5$ with initial concentrations $A_0 =1,\;B_0 =C_0 =0$. The scheme is $\displaystyle A \overset{k_1}\longrightarrow B \overset{k_2}\longrightarrow C$.
 # ________
 # 
-# ### **(iv) Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$ using the Master Equation** 
+# ### **(iv) Numerical solution of $\displaystyle A \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons} } B \underset{k_{-2}}{\stackrel{k_2}{\rightleftharpoons} } C $ using the Master Equation**
+# 
+# We can modify the matrix of rate constants to include back reactions and / or allow  C to decay etc. We need only write down the rate equations then add the terms to the matrix. The rate equations are
+# 
+# $$\displaystyle \begin{align}\frac{dA}{dt}&=-k_1A+k_{-1}B\\ \frac{dB}{dt}&= k_1A-B(k_2+k_{-1})+k_{-2}C\\ \frac{dC}{dt}&= k_2B-k_{-2}C \end{align}$$
+# 
+# The matrix equation is 
+# 
+# $$\displaystyle \begin{bmatrix}dA/dt\\dB/dt\\dC/dt\end{bmatrix}=\begin{bmatrix}-k_1 & k_{-1} & 0\\k_1 &  -(k_{-1} + k_2) & k_{-2}\\ 0 & k_2 & -k_{-2} \end{bmatrix} \begin{bmatrix}A\\B\\C\end{bmatrix}$$
 
 # In[5]:
 
 
-# Master Equation numerical calculation using python/numpy
+# Master Equation numerical calculation using Python/NumPy
 
-max_num = 200
+max_num = 200                     # number of time points
 t  = np.linspace(0,10,max_num)    # range 0 to 10, 200 points 
 M0 = np.array([1,0,0])            # initial concentrations, only A is present in this example
 n  = 3                            # number of equations
-k1 = 1.0                          # rate constnat
+k1 = 1.0                          # rate constants
 k2 = 1.5
-M = np.array([ [-k1,0,0], [k1,-k2,0], [0,k2,0]    ])   # rate constant matrix
+km1= 0.0                          # back reaction k(-1)  set to zero to compare with previous scheme
+km2= 0.0                          # back reaction k(-2)
 
-val,vec = LA.eig(M)              # eigenvalues;  eigenvectors
+M = np.array([ [-k1,km1,0], [k1,-k2-km1,km2], [0,k2,-km2]    ])   # rate constant matrix
+
+val, vec = np.linalg.eig(M)              # eigenvalues;  eigenvectors. Calls NumPy linalg
 #print('eigenval, eigenvec', val,'\n', vec)
 
-iv_vec = LA.inv(vec)                       # invert once and save 
-f01 = lambda m,k: np.exp( val[m]*t[k] )    # define diagonal in matrix 
+inv_vec = np.linalg.inv(vec)                      # invert once and save 
+f01 = lambda m,k: np.exp( val[m]*t[k] )    # define diagonal terms in matrix 
 exp_mat = np.zeros((n,n),dtype=float)      # define matrix 
 
 pop = np.zeros((n,max_num),dtype=float)    # define 2D array for results 
@@ -190,18 +208,46 @@ pop = np.zeros((n,max_num),dtype=float)    # define 2D array for results
 for i in range(max_num):
     for j in range(n):
         exp_mat[j,j] = f01(j,i)
-    pop[:,i]= vec @ exp_mat @ iv_vec @ M0  # multiply, pop is all species at time t[i]
+    pop[:,i]= vec @ exp_mat @ inv_vec @ M0  # multiply, pop is all species at time t[i]
 
-plt.plot(t[:],pop[1,:])                    # species B
+plt.plot(t[:],pop[1,:])                     # index 1 is species B
+plt.ylim([0,0.5])
 plt.show()
 
 
-# Plotting the three curves of pop[...] will produce figure 55.
+# Note that plotting the three curves in pop[ ] will produce the profiles of figure 55.
 # ____________
+
+# ### **(v) Multi-subunit proteins**
 # 
+# Proteins can have identical subunits that independently undergo conformational transitions. As an example consider a three-subunit protein A$_3$ which follows the scheme whereby each subunit of type A of the protein independently undergoes a transition to a subunit of type B and so through a series of transitions will form state $\mathrm{B_3}$ in equilibrium with all intermediates, i.e.
+# 
+# $$\displaystyle A_3 \underset{k_{-1}}{\stackrel{3k_1}{\rightleftharpoons} } A_2B_1 \underset{2k_{-1}}{\stackrel{2k_1}{\rightleftharpoons} } A_1B_2 \underset{3k_{-1}}{\stackrel{k_1}{\rightleftharpoons} } B_3$$
+# 
+# Each subunit A of the protein transforms via a first order process to conformation B and vice versa, which causes the symmetry in the rate constants. The rate constant from A$_3$ is trebled as each subunit acts in the same way and independently of any other. The matrix equation is 
+# 
+# $$\displaystyle \begin{bmatrix}dA_3/dt\\dA_2B_1/dt\\dA_1B_2/dt\\dB_3dt\end{bmatrix}=\begin{bmatrix}-3k_1 & k_{-1} & 0 &0\\3k_1 &  -(2k_1+k_{-1} ) & 2k_{-1}&0\\ 0 & 2k_1 & -(k_1+2k_{-1})&3k_{-1}\\0 & 0 & k_1 & -3k_{-1} \end{bmatrix} \begin{bmatrix}A_3\\A_2B_1\\A_1B_2\\B_3\end{bmatrix}$$
+# 
+# These equations can be solved numerically as described in section iv, and the scheme is very similar to that one. However, in this case the eigenvalues of the matrix of rate constants found from the secular equation, have an interesting form. These are
+# 
+# $$\displaystyle \lambda_0=0,\quad \lambda_1 = -(k_1+k_{-1}),\quad \lambda_2 = -2(k_1+k_{-1}),\quad \lambda_2 = -3(k_1+k_{-1})$$
+# 
+# which means that the solution for the populations each has a constant term (eigenvalue zero) plus three exponentially decaying terms, one as the sum of the rate constants term plus one with as twice the sum and one with three times the sum. The population of B$_{3}$ is given by
+# 
+# $$\displaystyle [B_3] =A_0 \left(\tau k_1(1-e^{-t/\tau})\right)^3, \qquad \frac{1}{\tau}=k_1+k_{-1}$$
+# 
+# where A$_0$ is the initial amount of A$_3$ present. This form of equation has a sigmoidal appearance. You can work out the equations for each species using the method of section (iii) above.
+# 
+# If the calculation is repeated for $n$ subunits then the appearance of the last species B$_n$ has the same form of equation as above but now raised to the $n^\text{th}$ instead of the third power. It will take some time for the final state B$ _n$ to be formed and as there are many intermediate states such as $A_{n-m}B_m$ and its population will be low and therefore, on average, the protein will rarely be in state B$_n$. The next figure shows the effect of $1,2,4,6$ and $8$ subunits on the population of B$_n$. The curves are normalised to unity at long times.
+# 
+# ![Drawing](matrices-fig55aa.png)
+# 
+# Figure 55aa. The normalised populations for species $B_n$ in an $n$-fold multi-subunit protein $A_n \to\to B_n$. The values of $n$ shown left to right are $1,2,4,6,8$.
+# ___________________________
+
 # ### **(v) Circular reaction scheme**
 # 
-# When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. We can see that equilibrium will be established for all three species as there is no pathway for any species to react other than to the others. We can also guess at the concentration vs time if only one species is populated initially, which is that this species decays and the others increase until equilibrium is reached.
+# When the rate equations are more complex then a numerical solution is usually to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. We can see that equilibrium will be established for all three species as there is no pathway for any species to react other than to the others. We can also guess at the concentration vs. time if only one species is populated initially, which is that this species decays and the others increase until equilibrium is reached and do so exponentially.
 # 
 # ![Drawing](matrices-fig55a.png)
 # 
@@ -255,13 +301,13 @@ plt.show()
 # 
 # If molecules are placed at the vertices of a regular polygon a set of first order rate equations can be written down to define the probability of finding excitation on any molecule at any given time. If the molecules are all of the same type and orientation, only one rate constant $k$ is needed. As time passes the excitation spreads out among all the molecules and if we suppose that the intrinsic decay rate constant (reciprocal fluorescence or excited state lifetime) is far smaller than that for energy transfer the population will come to an equilibrium value with equal excitation on each molecule. For simplicity the normal decay of the excited state is ignored.
 # 
-# Suppose that the molecules are on the corners of a square and for simplicity only near-neighbour transfer is allowed, then the rate equations are
+# Suppose that the molecules are on the corners of a square and for simplicity only near-neighbour transfer is allowed, then the rate equations are,  
 # 
 # $$\displaystyle \qquad\qquad\begin{bmatrix}\dot p_0\\ \dot p_1\\ \dot p_2\\ \dot p_3 \end{bmatrix}=\begin{bmatrix} -2k & k & 0  & k \\ k & -2k & k & 0 \\0& k & -2k & k \\k & 0 & k & -2k\end{bmatrix}\begin{bmatrix}p_0(0)\\p_1(0)\\  p_2(0)\\ p_3(0) \end{bmatrix} \qquad\qquad\begin{matrix}  0 &\cdots & 1\\ \vdots & &\vdots\\ 3 &\cdots& 2\end{matrix}\qquad\qquad\qquad\qquad\text{(41a)}$$
 # 
-# The initial amounts excited are $p_i(0)$ where $i=0,\cdots, 3$ which we make zero except for $p_0(0)=1$. The first equation when written out in the usual way is  
+# where a dot above a letter $p$ indicates a time derivative. The initial amounts excited are $p_i(0)$ where $i=0,\cdots, 3$ which we make zero except for $p_0(0)=1$. The first equation has the terms  
 # 
-# $$\displaystyle \frac{dp_0(t)}{dt}= -k_{0\to 1}-k_{0\to 3} + k_{1\to 0} +k_{3\to  0}$$
+# $$\displaystyle  -k_{0\to 1}-k_{0\to 3} + k_{1\to 0} +k_{3\to  0}$$
 # 
 # which means that species 0 decays to species 1 and 3 with a rate constant $k$ and receives energy from species 1 and 3 each with rate constant $k$. Molecule 2 is not involved as it is not a near neighbour to molecule 0. All the rate constants are the same because we choose only to consider nearest neighbours and the molecules are equally spaced from one another.
 # 
@@ -389,63 +435,84 @@ plt.show()
 
 # ## 13.4 Matrix solutions. Markov Chains and Chemical Kinetics
 # 
-# A Markov chain is a stochastic process for predicting future behaviour based solely on the present state. These predictions are just as good as the ones that could be made knowing the process's previous history. The 'process' can be one of a number of very diverse types, a sequence of chemical reactions, diffusion on a line, the 'drunkard's walk', behaviour of the stock market, games such as 'snakes and ladders', the 'gambler's ruin' or how a company competes for sales with rivals. What is required is that the transition from one position to each of the others has a certain probability and as time progresses these probabilities are entered into a transition or transfer matrix and used to predict the future state. All that is needed is a starting state and the transition matrix to be able to predict all future behaviour. 
+# A Markov chain is a stochastic process for predicting future behaviour based solely on the present state, i.e. there is no memory of any previous state, what happens next depends only on the present state. Here the 'state' is the list of probabilities that each entity or site or species has as time passes. The 'process' forming the Markov chain can be one of a number of very diverse types; a sequence of chemical reactions, diffusion along a line, the 'drunkard's walk', behaviour of the stock market, games such as 'snakes and ladders', the 'gambler's ruin' and how a company competes for sales with rivals. What is required is that the transition probability from one site to each of the others is known. These probabilities are entered into a transition or transfer matrix and used to predict the future state. All that is needed to be able to predict any future behaviour is a starting state, e.g. the initial chance that each site has of being populated and the transition matrix. Once the chain starts there is an initial transient stage where the probabilities of being at any site vary up and down but eventually an equilibrium or steady-state is reached when the site probabilities become constant.
 # 
-# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect states and that a 'do nothing' or waiting probability is added to each species, although this could be zero. The next figure gives an example of a three state system similar to that in fig 55a above. 
+# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect sites and that a 'do nothing' or waiting probability is added to each site, although this could be zero. The next figure gives an example of a three site system similar to that in fig 55a above. 
 # 
 # ![Drawing](matrices-fig55b.png)
 # 
 # Figure 55b. A scheme between three sites written as a Markov process. The transition matrix for this scheme is shown below, eqn. 41b.
 # ______________________________
 # 
-# The figure gives the probabilities of transfer from one site $i$ to another $j$ as $p_{i,j}$ and the probability of remaining on a given site (or molecule) is $p_{ii}$ although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any 'site', such as a product made by a company, always add up to $1$ as something happens even if it just that the site remains unchanged, i.e. $p_{11}+p_{12}=1,\; p_{12}+p_{22}+p_{23}=1$, etc. these probabilities are, of course always positive, $0 \le p\le 1$ , and we will initially assume that they are constant in time. Such square matrices with non-negative entries and where the row sums add up to $1$ are called *stochastic* matrices. If a state has only a probability of reaching it and none that leave, this is called an 'absorbing' state, and eventually all the population will end up here; for example in the process $A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C $, $C$ is an absorbing site, or in chemical terms, the product. If the process describes chemical reactions then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur. 
+# The figure shows the probabilities of transfer from one site $i$ to another $j$ as $p_{i,j}$ and the probability of remaining on a given site (or molecule) is $p_{ii}$ although this is not included in any chemical rate equation it has to be in this method. In the simple Markov process the probabilities belonging to any site, such as a product made by a company, always add up to $1$ as something happens even if it just that the site remains unchanged in that step, i.e. 
 # 
-# The *state space* is the set of possible values that the process can take, for example in a football match it will be the scores of each side that increase in time $0\to 90$ mins (the parameter space) as $(x,y)= 0, 1, 2, 3,\cdots$ and has values as $(0,0),(1,0), (0,1)$ etc. with the process starting at $(0,0)$ and with each goal the transition is $x\to x+1$ or $y\to y+1$.
+# $$\displaystyle p_{11}+p_{12}=1,\; p_{21}+p_{22}+p_{23}=1, \text{ etc. }$$
 # 
-# The initial state is defined, as a vector of populations or number of items held at each site etc., for example if only A is present initially as $A_0$ then the row matrix of initial values is 
+# these probabilities are, naturally, always positive, $0 \le p\le 1$, and we will initially assume that they are constant in time. Such square matrices with non-negative entries and where the row sums add up to $1$ are called *Stochastic* matrices. If a site has only pathways of reaching it and none that leave it, this is called an 'absorbing' site, and eventually all the population will end up here, for example in the process $A \overset{p_{12}}{ \underset{ p_{21}}  \rightleftharpoons} B\to C $, $C$ is an absorbing site, or in chemical terms, the product. If the process describes a chemical reaction then the situation is more complex and it is necessary to consider how to calculate the probabilities when first, second or third order reactions occur. This is examined in section (iii) below. 
+# 
+# The initial state is defined, as a vector of probabilities (the State Space) proportional to the populations or number of items held at each site, for example in fig. 55b, if only A is present initially, written $A_0$, then the row matrix of initial values is 
 # 
 # $$\displaystyle P_0=\begin{bmatrix}A_0,0,0\end{bmatrix}$$
 # 
-# and to evaluate what has changed at the next time-step $t+\tau$ where $\tau$ is a small time increment, and $t$ is some arbitrary start time which could be zero and so we let $t=0$. The transition matrix $T$ after one time step $\tau$ is 
+# and to evaluate what has changed at the next time step $t+\tau$ where $\tau$ is a small time increment, and $t$ is some arbitrary start time, which could be zero. The transition matrix $T$ after one time step $\tau$ is 
 # 
 # $$\displaystyle P(\tau) = P_0\pmb T$$
 # 
 # where each *row* in the transfer matrix contains all the probabilities for that site, for example in fig 55b,
 # 
-# $$\displaystyle T=\begin{bmatrix}p_{11}& p_{12}&0\\p_{21} & p_{22} & p_{23}\\ p_{31}& 0 & p_{33} \end{bmatrix}$$
+# $$\displaystyle \pmb T=\begin{bmatrix}p_{11}& p_{12}&p_{13}\\p_{21} & p_{22} & p_{23}\\ p_{31}& p_{32} & p_{33} \end{bmatrix}$$
 # 
-# and because the probabilities in each row add to unity we can write in this case
+# In figure 55b, the probabilities $p_{13}= 0, p_{32}= 0$, and because the probabilities in each row add to unity we can write in this case
 # 
-# $$\displaystyle T=\begin{bmatrix}1-p_{12}& p_{12}&0\\p_{21} &1 - p_{21}-p_{23} & p_{23}\\p_{31}& 0 & 1 - p_{31} \end{bmatrix}\qquad\qquad\qquad\text{41b}$$
+# $$\displaystyle \pmb T=\begin{bmatrix}1-p_{12}& p_{12}&0\\p_{21} &1 - p_{21}-p_{23} & p_{23}\\p_{31}& 0 & 1 - p_{31} \end{bmatrix}\qquad\qquad\qquad\qquad\text{(41b)}$$
 # 
-# so that only the transition probabilities between species are needed. The next time step is
+# The next time step is
 # 
-# $$\displaystyle\begin{align} P(2\tau)&=P(\tau)\pmb T= P_0 \pmb T^2\\
-#  P(3\tau)&=P(2\tau)\pmb T= P(\tau)\pmb T^2= p_0 \pmb T^3\end{align}$$
+# $$\displaystyle\begin{align} P(2\tau)&=P(\tau)\pmb T= P_0\pmb T \pmb T=P_0 \pmb T^2\\
+#  P(3\tau)&=P(2\tau)\pmb T= P(\tau)\pmb T^2= P_0 \pmb T^3\end{align}$$
 # 
-# so that the $n^{th}$ time can be found by multiplying the $(n-1)^{th}$ by the transition matrix $\pmb T$ or by multiplying the first vector by $\pmb T^n$ as
+# so that the result at the $n^{th}$ step can be found either by multiplying by the previous result at step $(n-1)$ by the transition matrix $\pmb T$, or by multiplying the first vector $p_0$ by $\pmb T^n$ as
 # 
-# $$\displaystyle P(n\tau) = P_0 \pmb T^n$$
+# $$\displaystyle P(n\tau) = P_0 \pmb T^n$$ 
 # 
-# so it is necessary to either evaluate in a repetitive way or calculate the $n^{th}$ power of the transfer matrix.  This equation can also be written using column vectors, which is much more familiar in chemistry, and then the matrix has to be transposed and the vectors $P$ are now become column vectors, i.e.
+# This equation can also be written using column vectors, which is much more familiar in chemistry, and then the transition matrix has to be transposed and the vectors $P$ must now be column vectors, i.e.
 # 
-# $$\displaystyle P(n\tau) =  (\pmb{T}^T)^n P_0$$
+# $$\displaystyle P(n\tau) =  (\pmb{T}^T)^n P_0 \tag{41c}$$
 # 
-# where superscript $T$ indicates the transpose operation. The matrix can be raised to an integer power using the Similarity Transform described below, section 13.5, and this is a far better way to do this than repeated matrix multiplications which can introduce numerical errors.
+# where superscript $T$ indicates the transpose operation. A matrix can be raised to an integer power using the Similarity Transform as described below in Section 13.5, but a convenient way is also to calculate recursively in a loop, for example,
+# 
+# >$\displaystyle \begin{array}{lll}
+# P = P_0\\
+# TT = T^T\\
+# \text{loop }i = 1 \to n\\
+#     \qquad temp = TT\cdot P\\
+#     \qquad\text{save } temp\\
+#     \qquad P = temp\end{array}$
+# 
+# As in any recursive scheme one should always be aware of the possibility that rounding/ precision errors becoming important even if the results look sensible. The alternative is to use the similarity matrix approach and although this involves more computation nowadays this may not be of any significance.
+# 
+# Perhaps a surprising feature of a Markov chain is that the probabilities of being on site A, B or C oscillate as the chain progresses from day 1 to day 2 or state 1 to state 2 and so on, but eventually this transient stage ends and a steady-state or equilibrium set of probabilities is reached. Using the scheme of figure 55b and the plot in figure 55c, it can be seen that if A is initially populated, C cannot be reached directly and has to wait until B has been populated and then C's population rises. However, C's population falls as it is connected to B and A, and eventually the change in populations even out after multiple transfers and equilibrium is reached. The equilibrium values are the same from whichever site or combination of these is initially populated.
+# 
+# We can show this behaviour numerically as shown in figure 55b by using equation 41c repeatedly with $n = 0,1,2,3,4\cdots$ and defining the initial state at $[1,0,0]$ in other words, starting with A and nothing in B and C.
+# 
+# ![Drawing](matrices-fig55d.png)
+# 
+# Figure 55c. The probabilities or populations of A, B and C shown in figure 55b vs. the number of steps taken. The transition matrix used is also shown, see eqn. 41b. The figure shows how the transient oscillations die away to reach equilibrium or steady-state values. We can see (Fig. 55b) that because a direct transition from A to C is not possible, C is not is not reached until after B has been populated.
+# ________________________
 
 # ### **(i) Equilibrium distribution**
-# At long times when steady state is achieved the vector of probabilities $ P$ is conventionally replaced by vector $\Pi$ such that
+# At long times when steady-state is achieved the probabilities at step $n$ are the same as at step $n-1$. In this situation the vector of probabilities $P$ is conventionally replaced by vector $\Pi$ and now
 # 
-# $$\displaystyle \Pi=\Pi\; T^n$$
+# $$\displaystyle \Pi=\Pi\;\pmb T^n$$
 # 
-# and this set of simultaneous equations solved. This can be done by making it into an eigenvalue-eigenevctor equation or, if the matrix is small as set of equations by letting $\Pi =\begin{bmatrix}\pi_0&\pi_1&\pi_2\cdots\end{bmatrix} $ and using the equation $\pi_0+\pi_1+\pi_2\cdots=1$ and
+# and this set of simultaneous equations solved. This can be done by making it into an eigenvalue-eigenvector equation or, if the matrix is small as set of equations by letting $\Pi =\begin{bmatrix}\pi_0&\pi_1&\pi_2\cdots\end{bmatrix} $ and using the equation $\pi_0+\pi_1+\pi_2\cdots=1$ and
 # 
 # $$\displaystyle \begin{bmatrix}\pi_0& \pi_1& \pi_2\cdots\end{bmatrix}=\begin{bmatrix}\pi_0& \pi_1& \pi_2\cdots\end{bmatrix}\begin{bmatrix}p_{00}& p_{01}\cdots\\p_{10}&p_{11}\cdots\\\vdots&\vdots\end{bmatrix}$$
 # 
 # the first two equations are
 # 
 # $$\displaystyle \begin{align}\pi_0&=\pi_0p_{00}+\pi_1p_{10} +\pi_2p_{20}\cdots\\
-# \pi_1&=\pi_0p_{01}+\pi_1p_{11} +\pi_2p_{21}\cdots\end{align}\qquad\qquad\text{41c}$$
+# \pi_1&=\pi_0p_{01}+\pi_1p_{11} +\pi_2p_{21}\cdots\end{align}\qquad\qquad\text{(41d)}$$
 # 
 # Consider the transition matrix for a state space of $(0,1)$. The process will be a sequence of $0$'s and $1$'s and if the probability of a transition is $a$ or $b$ the the transition matrix is
 # 
@@ -465,7 +532,7 @@ plt.show()
 # 
 # from which $\pi_0=b/(a+b),\;\pi_1=a/(a+b)$ which is independent of the initial state and therefore $\pi_0,\pi_1$ are the equilibrium probabilities. 
 # 
-# When the matrix is large it is easier to use the computer by finding the eigenvalues and eigenvectors, and forming a similarity matrix to raise the matrix to a power, see section 13.5(i). The eigenvalues are $1$ and $1-a-b$ and we shall need to use them as diagonals in a square matrix $\pmb\Lambda$ and for simplicity letting $\lambda=1-a-b$ and so $\lambda <1$,
+# When the matrix is large it is easier to use the computer by finding the eigenvalues and eigenvectors, and forming a similarity matrix to raise the matrix to a power, see section 13.5. The eigenvalues are $1$ and $1-a-b$ and we shall need to use them as diagonals in a square matrix $\pmb\Lambda$ and for simplicity letting $\lambda=1-a-b$ and so $\lambda <1$,
 # 
 # $$\displaystyle \pmb \Lambda=\begin{bmatrix}1&0 \\ 0&\lambda\end{bmatrix}$$
 # 
@@ -477,7 +544,7 @@ plt.show()
 # 
 # $$\displaystyle \pmb X=\begin{bmatrix}b/a &1\\-1&1\end{bmatrix}$$
 # 
-# and using eqn 44 (below) then to raise to power $n$ the equation is 
+# and using eqn. 44 (below) then to raise to power $n$ the equation is 
 # 
 # $$\displaystyle \pmb X \pmb \Lambda^n \pmb X^{-1}=\begin{bmatrix}1 &-a/b\\1&1\end{bmatrix}\begin{bmatrix}1&0 \\ 0&\lambda^n\end{bmatrix} \begin{bmatrix}b&a\\-b&b\end{bmatrix}\frac{1}{a+b}$$
 # 
@@ -494,19 +561,19 @@ plt.show()
 # 
 # ![Drawing](matrices-fig55c.png)
 # 
-# Figure 55c. Left shows the maze with doors to other rooms. Right. The transition matrix.
+# Figure 55d. Left shows the maze with doors to other rooms. Right. The transition matrix.
 # ______________________________
 # 
-# The long time calculation is shown below where SymPy is used to solve the simultaneous equations 41c. The results show that room $1$ has the greatest average population and $2,3,5$ the least as explained. The similarity matrix approach could also be used in this case and is shown below.
+# The long time calculation is shown below where SymPy is used to solve the simultaneous equations 41d. The results show that room $1$ has the greatest average population and $2,3,5$ the least as explained. The similarity matrix approach could also be used in this case and is shown below.
 
 # In[7]:
 
 
-# Rat in a maze, long time (equilibrium) calculation solved using Sympy.
+# Rat in a maze, long time (equilibrium) calculation solved using SymPy.
 # notice that the equations are all made equal to zero i.e. 1 = p0+p1+p2+p3+p4+p5 
 # becomes 1-p0-p1-p2-p3-p4-p5
 
-p0,p1,p2,p3,p4,p5 = symbols('p0,p1,p2,p3,p4,p5')
+p0,p1,p2,p3,p4,p5 = sp.symbols('p0,p1,p2,p3,p4,p5')
 
 eqns=[ p0 - p1/3 - p3,\
        p1 - p0/2 - p2 - p4/2,\
@@ -515,7 +582,7 @@ eqns=[ p0 - p1/3 - p3,\
        p4 - p1/3 - p5,\
        p5 - p4/2,\
        1 - p0 - p1 - p2 - p3 - p4 - p5 ]
-solve(eqns)                              # solve simultaneous equations
+sp.solve(eqns)                              # solve simultaneous equations
 
 
 # The calculation using the Similarity transform is shown below. The resulting values are the same  as $p0$ to $p5$ in the previous line, when normalised to the same total value.
@@ -524,6 +591,7 @@ solve(eqns)                              # solve simultaneous equations
 
 
 # Rat in a maze equilibrium solved by a matrix method.
+
 M = np.array([[0,  1/2, 0,  1/2,    0,   0 ],\
               [1/3, 0,  1/3,  0,    1/3, 0 ],\
               [0,  1,   0,    0,    0,   0 ],\
@@ -532,20 +600,20 @@ M = np.array([[0,  1/2, 0,  1/2,    0,   0 ],\
               [0,  0,   0,    0,    1,   0 ]])
 
 L = np.zeros((6,6),dtype = float)
-evals,evecs = LA.eig(np.transpose(M) )       # transpose as we right multply by column vector q below
+evals,evecs = np.linalg.eig(np.transpose(M) )       # transpose as we right multply by column vector q below
 for i in range(6):
-    L[i,i] = evals[i]**15                    # diagonal matrix raised to power 15 or any positive number
-    
+    L[i,i] = evals[i]**15                    # diagonal matrix raised to power 15
+                                             # or any large-ish positive number
 q = np.array([1,1,1,1,1,1] )                 # initial values
 
-Pi = evecs @ L @ LA.inv(evecs) @ q           # Similarity transform times initial values
+Pi = evecs @ L @ np.linalg.inv(evecs) @ q           # Similarity transform times initial values
 mx = sum(Pi)
 print( np.array2string(Pi/mx, precision = 3) ) 
 
 
-# ### **(iii) A first order reaction $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$**
+# ### **(iii) A reversible first order reaction $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$**
 # 
-# If the reaction is $\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ the transition matrix is 
+# In calculating the populations in chemical reaction the transition matrix has a slightly different form to that used so far. If the reaction is $\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ the transition matrix is 
 # 
 # $$\displaystyle \pmb T=\begin{bmatrix}1-k_{12}\tau & k_{12}\tau\\ k_{21}\tau & 1-k_{21}\tau \end{bmatrix} $$
 # 
@@ -561,30 +629,33 @@ print( np.array2string(Pi/mx, precision = 3) )
 # 
 # $$\displaystyle P(0)=\begin{bmatrix}1\\0\end{bmatrix},\qquad P(1)= \begin{bmatrix}0.6\\0.4\end{bmatrix},\qquad P(2)=\begin{bmatrix}0.6 & 0.05\\ 0.4 & 0.95 \end{bmatrix}\begin{bmatrix}0.6 \\ 0.4 \end{bmatrix}=\begin{bmatrix}0.38\\0.62\end{bmatrix}\cdots\text{etc.} $$
 # 
-# and this is shown next.
+# thus the value of vector $P$ is saved at each time step and then matrix multiplied in the next time step as $T@P$. The  saved values at each time step are then plotted.  
 
 # In[9]:
 
 
-tau = 1e-9                 # set time to make rateconsstants into probabilities
+# Markov Chain method to solve rate equation A=B
+# by the iterative method.
+
+tau = 1e-9                 # set small time to make rate constants into probabilities
 k12 = 4e7*tau              # choose some rate constants
 k21 = 5e6*tau              
 
-TT = np.array([[ 1 - k12, k12 ],[ k21, 1 - k21 ] ] )  #  transfer matrix
+TT = np.array([[ 1 - k12, k12 ],[ k21, 1 - k21 ] ] )  # transfer matrix
 T  = np.transpose(TT)
-p  = np.array([1,0.25])                               # initial values of A and B
+p  = np.array([1,0.25])                               # guess initial values of A and B
 
 n = 150                           # number of points
-A = np.zeros(n,dtype=float)       # array to hold calculated values
+A = np.zeros(n,dtype=float)       # A, B arrays to hold calculated values
 B = np.zeros(n,dtype=float)
 A[0] = p[0]                       # initial values
 B[0] = p[1]
 t = np.linspace(0,n,n)            # time steps
-for i in range(1,n,1):
+for i in range(1,n,1):            # start at 1 step by 1
     temp = T @ p                  # @ is matrix multiply
     A[i] = temp[0]                # save values
     B[i] = temp[1]
-    p = temp                      # ready for next step
+    p = temp                      # new p value for next step
     pass
 
 plt.plot(t, A, color='blue',linewidth=1)
@@ -593,38 +664,51 @@ plt.xlim([0,n])
 plt.ylim([0,A[0]+B[0]+0.1])
 plt.ylabel('Populations')
 plt.xlabel('time /'+r'$\tau$')
-plt.axhline(((p[0]+p[1])*0.889),linewidth=0.2,color='grey')
+plt.axhline((A[0]+B[0])*(k21/(k12+k21)),linewidth=0.2,color='grey')
 plt.text(27, A[25],'A')
+plt.title(r'$A\rightleftharpoons B$'+ ' via a Markov Chain')
 plt.show()
 
 
-# It is clear even before doing the calculation that $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ will come to a steady state at sufficiently long time. This can be found by assuming that $P_\infty=\pmb T^TP_\infty$ which is in effect an eigenvalue-eigenvector equation with eigenvalues $E=[1,1]^T$ of unity, $\pmb T^TP_\infty=EP_{\infty}$. The normalised eigenvectors are obtained from matrix $T$ and are calculated as
+# #### **Steady State**
+# 
+# It is clear even before doing the calculation that $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ will come to a steady state at sufficiently long time. This state can be found by assuming that $P_\infty=\pmb T^TP_\infty$ which is an eigenvalue-eigenvector equation with eigenvalues $E=[1,1]^T$ of unity, $\pmb T^TP_\infty=EP_{\infty}$. The normalised eigenvectors are obtained from matrix $T$ and are calculated as follows;
 
 # In[10]:
 
 
-#f01 = np.array([[0.25,0.05],[0.75,0.95]])
-evals,evecs = LA.eig(T)
+evals,evecs = np.linalg.eig(T)
 evecs
-0.1240/(0.1240+0.9923),0.9923/(0.124+0.9923)
 
 
 # The first eigenvector adds to zero and is ignored, the second is $[v_a,v_B]^T=[0.1240, 0.9923]^T$ and the signs can be ignored as they are both the same. The long time concentration of A and B are the fractions of the total amount present, viz,
 # 
 # $$\displaystyle A_\infty=(A_0+B_0)\frac{v_b}{(v_a+v_b)}=0.889(A_0+B_0),\qquad B_\infty=(A_0+B_0)\frac{v_a}{(v_a+v_b)}$$ 
 # 
-# otherwise B is easily found since at all times $A_0+B_0=A_\infty+B_\infty$. The amount $A_\infty$ is shown in the plot.  In part(i) where equilibrium is considered it is shown that at equilibrium the fractional amounts are also given by  $k_{12}/(k_{12}+k_{21})$ and $k_{21}/(k_{12}+k_{21})$.
+# otherwise B is easily found since at all times $A_0+B_0=A_\infty+B_\infty$. The amount $A_\infty$ is shown in the plot.
 # 
-# ### **(ii) A second order reaction $A +B \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} C$**
+# ### **(iv) The reversible reaction  $A\rightleftharpoons B\rightleftharpoons C$**
+# 
+# If the scheme is $\displaystyle A \underset{k_{21}}{\stackrel{k_{12}}{\rightleftharpoons} } B \underset{k_{32}}{\stackrel{k_{23}}{\rightleftharpoons} } C $,  as in 13.2(iv) above, we can also use a Markov chain to find the populations.  We proceed to form the transition matrix as in the previous example by placing the probability of leaving a species in each row and making sure the total probability in each row is unity. The matrix is. 
+# 
+# $$\displaystyle \pmb T=\begin{bmatrix}1-k_{12}\tau & k_{12}\tau & 0\\ k_{21}\tau & 1-k_{21}\tau-k_{23}\tau &k_{23}\tau\\ 0 & k_{32}\tau & 1-k_{32}\tau\end{bmatrix} $$
+# 
+# and this can be used to calculate the populations as shown in the previous example.
+# 
+# ### **(v) A second order reaction $A +B \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} C$**
 # 
 # A bimolecular reaction can be considered as a sequence of instantaneous first-order processes when the time intervals are very small meaning that the first-order rate that A decays by during time interval $\tau$ is $k_{12}[B]$ and so the probability that it remains unchanged is $1-k_{12}\tau [B]$. The transition matrix is no longer a constant because of the bimolecular reaction, and at the $m^{th}$ time step this is  
 # 
 # $$\displaystyle T_m=\begin{bmatrix}1-k_{12}\tau[B]_m& 0&k_{12}\tau[B]_m/2\\0 &1 - k_{12}\tau[A]_m & k_{12}\tau[A]_m/2\\k_{21}\tau& k_{21}\tau & 1-k_{21}\tau \end{bmatrix}$$
 # 
-# where, as above, the time increment $\tau$ is used to change the rate constants into probabilities and $[A]_m,[B]_m$ are the concentrations that exist at the $m^{th}$ time increment. The populations are calculated by updating $[A]$ and $[B]$ in the transition matrix at each time step. The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from $n$ of them is $\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}$ and when $n$ is very large this is $n^2/2$ to a very good approximation. The probability is a fraction of the total which is $\displaystyle \frac{n^2}{2n} =\frac{n}{2}$. The term in the transfer matrix is therefore  $\displaystyle \frac{k}{2}\tau n$ where the rate constant is $k$. The calculation is shown next. 
+# where the time increment $\tau$ is used to change the rate constants into probabilities and $[A]_m,[B]_m$ are the concentrations that exist at the $m^{th}$ time increment. The populations are calculated by updating $[A]$ and $[B]$ in the transition matrix at each time step. (The zeros appear because there is no transition A to B or vice versa).
+# 
+# The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from $n$ of them is $\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}$ and when $n$ is very large this is $n^2/2$ to a very good approximation. The probability is the fraction of the total which is $\displaystyle \frac{n^2/2}{n} =\frac{n}{2}$. The term in the transfer matrix is therefore  $\displaystyle \frac{k}{2}\tau n$ where the rate constant is $k$. The calculation is shown next. 
 
 # In[11]:
 
+
+# Markov Chain method to solve rate equation A = B -> C
 
 tau = 1e-9                        # set time to make rate constants into probabilities
 k12 = 4e7*tau                     # choose some rate constants
@@ -648,7 +732,7 @@ for i in range(1,n,1):
     A[i] = temp[0]                # save values
     B[i] = temp[1]
     C[i] = temp[2]
-    p = temp                      # ready for next step
+    p = temp                      # new p value ready for next step
     T[0,0] = 1 - k12*B[i]         # update T matrix; note T is already transposed
     T[2,0] = k12*B[i]/2
     T[1,1] = 1 - k12*A[i]
@@ -656,14 +740,14 @@ for i in range(1,n,1):
     pass
 
 plt.plot(t, A, color='blue',linewidth=1)
-plt.plot(t, C, color='red',linewidth=1)
+plt.plot(t, C, color='red' ,linewidth=1)
 plt.xlim([0,n])
-plt.ylim([0,A[0]+C[0]])
+plt.ylim([0, A[0] + C[0]])
 plt.ylabel('Populations')
 plt.xlabel('time /'+r'$\tau$')
 plt.text(17, A[15],'A')
 plt.text(17, C[10],'C')
-plt.title(r'$A+B\rightleftharpoons C$')
+plt.title(r'$A+B\rightleftharpoons C$'+ ' via a Markov Chain')
 plt.show()
 
 
@@ -728,7 +812,7 @@ plt.show()
 # which is used to solve equations in chemical kinetics.
 # 
 # ### **(i) Raising matrices to a power**
-# Suppose that a matrix $\pmb{M}$ is to be raised to its $n^{th}$ power, the function $\pmb{f}(\pmb{W})$ is then $\pmb{M}^n$. The similarity transform becomes $\pmb{X}^{-1}\pmb{M}^n\pmb{X} = \pmb{\Lambda}^n$, which can be rearranged to $\pmb{M}^n=\pmb{X}\pmb{\Lambda}^n\pmb{X}^{-1} $ and so the equation can be used both ways round. This last expression is a very convenient way of raising a matrix to a large power, if $\pmb{M}$ can be diagonalized and its eigenvalues $\pmb{X}$ determined. The alternative method, is the repeated multiplication $\pmb{MMMM}\cdots$, which is impracticable should $n$ be large, $100$ for example.
+# Suppose that a matrix $\pmb{M}$ is to be raised to its $n^{th}$ power, the function $\pmb{f}(\pmb{W})$ is then $\pmb{M}^n$. The similarity transform becomes $\pmb{X}^{-1}\pmb{M}^n\pmb{X} = \pmb{\Lambda}^n$, which can be rearranged to $\pmb{M}^n=\pmb{X}\pmb{\Lambda}^n\pmb{X}^{-1} $ and so the equation can be used both ways round. This last expression is a very convenient way of raising a matrix to a large power, if $\pmb{M}$ can be diagonalized and its eigenvalue matrix $\pmb{\Lambda}$ determined. The alternative method, is the repeated multiplication $\pmb{MMMM}\cdots$, which is impracticable should $n$ be large, $100$ for example.
 # 
 # To show that a similarity transform on $\pmb{M}$ produces a diagonal matrix of eigenvalues, consider the matrix
 # 
@@ -764,8 +848,8 @@ plt.show()
 # In[12]:
 
 
-M, Lambda = symbols('M, Lambda')
-M  = Matrix([[-2,10],[2,-3]])
+M, Lambda = sp.symbols('M, Lambda')
+M  = sp.Matrix([[-2,10],[2,-3]])
 evecs,evals = M.diagonalize()
 M, evecs, evals
 
@@ -790,11 +874,11 @@ M5
 
 
 m = np.array([[-2,10],[2,-3]])
-evals,evects = LA.eig(m)              # get eigenvalues and eigenvectors
+evals,evects = np.linalg.eig(m)              # get eigenvalues and eigenvectors
 L = np.zeros((2,2),dtype=float)       # make new array Lambda 
 for i in range(2):
     L[i,i]= evals[i]                  # make diagonal matrix of eigenvalues
-m5 = evects @ L**5 @ LA.inv(evects)   # matrix m to 5 th power
+m5 = evects @ L**5 @ np.linalg.inv(evects)   # matrix m to 5 th power
 m5
 
 
@@ -855,14 +939,14 @@ m5
 # 
 # at constant $s$ and $N$. Typical values of $s = 0 \to 3$ and of $\sigma=10^{-3} \to 1/2$. $N$ can range from $10 \to 1000$. For further details, see Daune (1999) or Jackson (2006).
 # 
-# The steps are given in the next python/SymPy calculation.
+# The steps are given in the next Python/SymPy calculation.
 
 # In[16]:
 
 
-s, sigma, lambda1, lambda2, N = symbols('s, sigma, lambda1, lambda2, N')
+s, sigma, lambda1, lambda2, N = sp.symbols('s, sigma, lambda1, lambda2, N')  # Using SymPy
 
-M = Matrix( [ [1,1], [s*sigma,s] ] )
+M = sp.Matrix( [ [1,1], [s*sigma,s] ] )
 evecs,evals  = M.diagonalize()
 evecs,evals
 
@@ -872,8 +956,8 @@ evecs,evals
 # In[17]:
 
 
-Lambda =   Matrix( [ [lambda1,0], [0,lambda2] ] ) 
-X = Matrix( [ [1/(lambda1-1), 1/(lambda2-1)], [1,1] ])  # X matrix, and its inverse 
+Lambda =   sp.Matrix( [ [lambda1,0], [0,lambda2] ] ) 
+X = sp.Matrix( [ [1/(lambda1-1), 1/(lambda2-1)], [1,1] ])  # X matrix, and its inverse 
 X
 
 
@@ -886,15 +970,15 @@ X
 # In[19]:
 
 
-MN = X * Lambda**N* X.inv()   # raised to Nth power
-simplify(MN)
+MN = X * Lambda**N * X.inv()   # raised to Nth power
+sp.simplify(MN)
 
 
 # In[20]:
 
 
-Z = Matrix([[1,1]])*MN*Matrix([[1],[0]])
-simplify(Z)
+Z = sp.Matrix([[1,1]])*MN*sp.Matrix([[1],[0]])
+sp.simplify(Z)
 
 
 # In[ ]:

@@ -10,10 +10,7 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-init_printing()                         # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q17 answer
@@ -154,15 +151,17 @@ alldata = [int(i) for i in temp]     # make list of integers
 
 Lh = len(alldata)
 day = np.linspace(0,Lh,Lh)
-plt.scatter(day[:],alldata[::-1],s=2,color='red')
-
+plt.scatter(day[:],alldata[::-1],s = 0.5,color='red')
+plt.xlabel('day')
+plt.ylabel('total Covid deaths')
 plt.show()
 
 
-# In[ ]:
+# In[4]:
 
 
-
+# list some data
+alldata[0:10]
 
 
 # In[ ]:

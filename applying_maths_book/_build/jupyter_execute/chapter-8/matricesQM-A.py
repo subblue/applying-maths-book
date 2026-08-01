@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -216,26 +215,26 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and individual cases have be evaluated.
 # 
-# Using sympy to calculate these integrals gives
+# Using symPy to calculate these integrals gives
 
 # In[2]:
 
 
-n, m = symbols('n, m', integer =True)
-x,L,k = symbols('x,L,k')
+n, m  = sp.symbols('n, m', integer =True)
+x,L,k = sp.symbols('x,L,k')
+pi = sp.pi
+psi_n = sp.sin(n*pi*x/L)
+psi_m = sp.sin(m*pi*x/L)
 
-psi_n = sin(n*pi*x/L)
-psi_m = sin(m*pi*x/L)
-
-Hnn=integrate((k/L)* psi_n**2*(x - L/2)**2, (x,0,L) , conds='none')
-factor(Hnn)
+Hnn = sp.integrate((k/L)* psi_n**2*(x - L/2)**2, (x,0,L) , conds='none')
+sp.factor(Hnn)
 
 
 # In[3]:
 
 
-Hnm = integrate((k/L)* psi_n*psi_m*(x - L/2)**2, (x,0,L) , conds='none')
-factor(Hnm)
+Hnm = sp.integrate((k/L)* psi_n*psi_m*(x - L/2)**2, (x,0,L) , conds='none')
+sp.factor(Hnm)
 
 
 # ___________
@@ -286,7 +285,7 @@ for n in range(num):
     for m in range(num):
         Hnm[n,m]= Hintegrals(n,m) 
         
-vals,vecs = LA.eigh(Hnm)  
+vals,vecs = np.linalg.eigh(Hnm)  
 
 indx = np.argsort(vals)              # find index of sorted array
 print('{:s} {:d}'.format('   n  matrix/J   exact/J. Matrix size = ',num))
@@ -390,7 +389,7 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # **(b)**$\quad$ Decide on the $s-m$ basis set order and then fill out the Hamiltonian matrix; see equation 12.
 # 
-# **(c)**$\quad$ Evaluate each of the elements of the $4 \times 4$ matrix using the operator equations given below, and calculate the energy levels algebraically by diagonalising. Python/Sympy will be used to do this.
+# **(c)**$\quad$ Evaluate each of the elements of the $4 \times 4$ matrix using the operator equations given below, and calculate the energy levels algebraically by diagonalising. Python/SymPy will be used to do this.
 # 
 # **(d)**$\quad$ The energy levels will be found in the limit that the spin-spin coupling $J$ is small compared to the chemical shift; this is called the AX limit.
 # 
@@ -490,13 +489,13 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # In total the $H_{23}$ term has a matrix entry of $J/2$. Since the matrix is Hermitian, as are all quantum matrices, it is real and symmetrical and therefore, $H_{23} = H_{32}$.
 # 
-# You can see how tricky it is to evaluate these integrals, but only because the notation is very complicated. Python/Sympy can help with the notation and do the calculation. First, define the integrals, which are called Ix, Iy, and Iz, and are equations 19 to 21.
+# You can see how tricky it is to evaluate these integrals, but only because the notation is very complicated. Python/SymPy can help with the notation and do the calculation. First, define the integrals, which are called Ix, Iy, and Iz, and are equations 19 to 21.
 
 # In[6]:
 
 
 Ix, Iy, Iz, sa, sb, ma, mb, hbar, qa, qb, m1, m11, m2, m22, Ixyz, J\
-= symbols('Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J')
+= sp.symbols('Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J')
 
 #------------------------------------------
 def Iz(sa,ma,sb,mb):
@@ -504,13 +503,13 @@ def Iz(sa,ma,sb,mb):
     else:        return 0
 #---------------------------------
 def Iy(sa,ma,sb,mb):  # -i<sm|Iy|sm +1/-1 >
-    if mb == ma+1:    return ( 1j*hbar/2)*sqrt(sa*(sa+1)-ma*(ma+1) )
-    elif mb == ma-1:  return (-1j*hbar/2)*sqrt(sa*(sa+1)-ma*(ma-1) )
+    if mb == ma+1:    return ( 1j*hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma+1) )
+    elif mb == ma-1:  return (-1j*hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma-1) )
     else: return 0
 #---------------------------------    
 def Ix(sa,ma,sb,mb):  # <sm|Ix|sm +1/-1 >
-    if mb == ma+1:    return ( hbar/2)*sqrt(sa*(sa+1)-ma*(ma+1) )
-    elif mb == ma-1:  return ( hbar/2)*sqrt(sa*(sa+1)-ma*(ma-1) )
+    if mb == ma+1:    return ( hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma+1) )
+    elif mb == ma-1:  return ( hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma-1) )
     else: return 0
 #---------------------------------
 def delta(p,q):
@@ -519,10 +518,10 @@ def delta(p,q):
 #---------------------------------    
     
 n = 4
-H = Matrix([ [0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0] ] )  # define zero matrix
+H = sp.Matrix([ [0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0] ] )  # define zero matrix
 
-ma = Matrix([ [1/2, 1/2, -1/2, -1/2] ])
-mb = Matrix([ [1/2, -1/2, 1/2, -1/2] ])
+ma = sp.Matrix([ [1/2, 1/2, -1/2, -1/2] ])
+mb = sp.Matrix([ [1/2, -1/2, 1/2, -1/2] ])
 
 for i in range(n):
     for k in range(n): 
@@ -542,9 +541,19 @@ H
 # In[7]:
 
 
-eigvals = H.eigenvals()   # calculate eigenvalues: H.eigenevcts() gets eigenvectors and eigenvalues
+eigvals = H.eigenvals()   # calculate eigenvalues: H.eigenvects() gets eigenvectors and eigenvalues
 for i in range(n): 
     print( (list( eigvals.keys())[i] ) )  # print values
+
+
+# In[8]:
+
+
+# alternative method 
+evects,eigvals = H.diagonalize()
+print('eigenvalues')
+for i in range(n):
+    print(sp.simplify(eigvals[i,i]) )  # the ordering may not be the same as above
 
 
 # The eigenvalues are

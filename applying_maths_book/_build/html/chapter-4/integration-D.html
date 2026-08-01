@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1779,8 +1779,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -2107,9 +2107,11 @@ title="Print to PDF"
 <p>which is not zero and is a standard integral (see table in section 2.13) having a value <span class="math notranslate nohighlight">\(1/2\alpha\)</span>, thus <span class="math notranslate nohighlight">\(\Delta x = \sqrt{ -1/2\alpha}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">hbar</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha,x,hbar&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">psi0</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">integrate</span><span class="p">(</span> <span class="n">psi0</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">psi0</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">hbar</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha, x, hbar&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pi</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">inf</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>  <span class="c1"># sp.oo is infinity </span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span> <span class="n">psi0</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">psi0</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -2132,7 +2134,7 @@ title="Print to PDF"
 <p>(footnote: Squaring <span class="math notranslate nohighlight">\(-i\)</span> in the momentum operator is tricky, and is <span class="math notranslate nohighlight">\((-1\, i)(-1\, i)=1\, i\, i=-1\)</span>. Alternatively as <span class="math notranslate nohighlight">\(-i=1/i\)</span> then <span class="math notranslate nohighlight">\((1/i)^2=-1\)</span>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">integrate</span><span class="p">(</span> <span class="n">psi0</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span> <span class="n">psi0</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># sp.oo is infinity as limit</span>
 </pre></div>
 </div>
 </div>
@@ -2143,7 +2145,18 @@ title="Print to PDF"
 </section>
 <section id="ii-particle-in-a-box">
 <h3><strong>(ii) particle in a box</strong><a class="headerlink" href="#ii-particle-in-a-box" title="Permalink to this headline">#</a></h3>
-<p>Following the method outlined above the calculation for a particle in a box always produces <span class="math notranslate nohighlight">\(\Delta x\Delta p\gt\hbar/2\)</span>. If the box is of length <span class="math notranslate nohighlight">\(0\to a\)</span> ( and the integration is taken over this range ) and for the lowest energy level with quantum number <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\( \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar \)</span> which is greater than <span class="math notranslate nohighlight">\(\hbar/2\)</span> and consistent with the uncertainty principle. The similar result is found for all <span class="math notranslate nohighlight">\(n\)</span> where the values increase with <span class="math notranslate nohighlight">\(n\)</span>, for example when <span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\( \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar \)</span>, thus we find that there is no requirement for <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> to be equal to <span class="math notranslate nohighlight">\(\hbar/2\)</span> for any quantum number. The general trend is <span class="math notranslate nohighlight">\(\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar\)</span> and the normalised wavefunction is <span class="math notranslate nohighlight">\(\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)\)</span>.</p>
+<p>Following the method outlined above the calculation for a particle in a box always produces <span class="math notranslate nohighlight">\(\Delta x\Delta p\gt\hbar/2\)</span>. If the box is of length <span class="math notranslate nohighlight">\(0\to a\)</span> ( and the integration is taken over this range ) and for the lowest energy level with quantum number <span class="math notranslate nohighlight">\(n=1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar \]</div>
+<p>which is greater than <span class="math notranslate nohighlight">\(\hbar/2\)</span> and consistent with the uncertainty principle. The similar result is found for all <span class="math notranslate nohighlight">\(n\)</span> where the values increase with <span class="math notranslate nohighlight">\(n\)</span>, for example when <span class="math notranslate nohighlight">\(n=2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar \]</div>
+<p>thus we find that there is no requirement for <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> to be equal to <span class="math notranslate nohighlight">\(\hbar/2\)</span> for any quantum number. The general trend is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar\]</div>
+<p>and the normalised wavefunction is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)\]</div>
 </section>
 </section>
 <section id="higher-averages-moments-and-variance">
@@ -2211,7 +2224,7 @@ title="Print to PDF"
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

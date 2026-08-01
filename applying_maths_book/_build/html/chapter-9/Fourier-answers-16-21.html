@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1609,9 +1609,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1625,13 +1624,13 @@ title="Print to PDF"
 <p>where the limits are <span class="math notranslate nohighlight">\(\pm \infty\)</span>. As a check that <span class="math notranslate nohighlight">\(\int E(t)dt=\int E(u+t)dt\)</span>. SymPy can be used to perform the integrals. It is easier to help by converting the cosines to exponentials first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;omega, a, t, u&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">f01</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>         <span class="c1"># define electric fields</span>
-<span class="n">f02</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ef01</span>   <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
-<span class="n">intf01</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">ef01</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">intf01</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;omega, a, t, u&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                                         <span class="c1"># sp.oo is SymPy infinity</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>         <span class="c1"># define electric fields</span>
+<span class="n">f02</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ef01</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">))</span>
+<span class="n">intf01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">ef01</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>  
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">intf01</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1642,9 +1641,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and for the t+u function</span>
-<span class="n">ef02</span>   <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">f02</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
-<span class="n">intf02</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">ef02</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">intf02</span><span class="p">)</span>
+<span class="n">ef02</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f02</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">))</span>
+<span class="n">intf02</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">ef02</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">intf02</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1656,9 +1655,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the cross term E(t)E(t+u)</span>
-<span class="n">fcross</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">*</span><span class="n">ef02</span><span class="p">))</span>
-<span class="n">intfcross</span><span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">fcross</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">intfcross</span><span class="p">)</span>
+
+<span class="n">fcross</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">*</span><span class="n">ef02</span><span class="p">))</span>
+<span class="n">intfcross</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">fcross</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">intfcross</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1704,17 +1704,17 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to calculate G^2(u)</span>
-<span class="n">omega</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;omega, a, t, u&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">f01</span><span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>          <span class="c1"># define electric fields</span>
-<span class="n">f02</span><span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ef01</span>   <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>             <span class="c1"># change into exponential form to ease integration</span>
-<span class="n">ef02</span>   <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">f02</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+<span class="n">omega</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;omega, a, t, u&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                                           <span class="c1"># sp.oo is SymPy infinity</span>
+<span class="n">f01</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>          <span class="c1"># define electric fields</span>
+<span class="n">f02</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ef01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">))</span>             <span class="c1"># change into exponential form to ease integration</span>
+<span class="n">ef02</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f02</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">))</span>
 
 <span class="c1"># normalisation # int E(t)^4</span>
-<span class="n">ef01_4</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">norml4</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">ef01_4</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">factor</span><span class="p">(</span><span class="n">norml4</span><span class="p">)</span>
+<span class="n">ef01_4</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">norml4</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">ef01_4</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">norml4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1725,9 +1725,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integration E(t) x E(t+u)^3 and vice versa</span>
-<span class="n">ef13</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">*</span><span class="n">ef02</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">term13</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">ef13</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">factor</span><span class="p">(</span><span class="n">term13</span><span class="p">)</span>
+<span class="n">ef13</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">*</span><span class="n">ef02</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">term13</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">ef13</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>  
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">term13</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1738,10 +1738,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integration E(t)^2 x E(t+u)^2</span>
-<span class="n">ef02</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">f02</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
-<span class="n">ef22</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">ef02</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">term22</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">ef22</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">factor</span><span class="p">(</span><span class="n">term22</span><span class="p">)</span>
+<span class="n">ef02</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f02</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">))</span>
+<span class="n">ef22</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">ef01</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">ef02</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">term22</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">ef22</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">term22</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1801,10 +1801,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># outline pulse , ****   ignore cosine ****</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, a, u&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">f011</span><span class="o">=</span> <span class="p">(</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">4</span>     <span class="c1"># define electric fields</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f011</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">expand</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, a, u&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                                         <span class="c1"># sp.oo is SymPy infinity</span>
+<span class="n">f011</span><span class="o">=</span> <span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">4</span>     <span class="c1"># define electric fields</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f011</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1847,10 +1848,11 @@ title="Print to PDF"
 <p>The fwhm can be found by solving the autocorrelation for the value <span class="math notranslate nohighlight">\(u\)</span> when <span class="math notranslate nohighlight">\(A(u)\)</span>=0.5. This is easily done to sufficient accuracy using the Newton - Raphson method outlined below and in chapter 3.1. The method is recursive, if x is the required solution then <span class="math notranslate nohighlight">\(x=x-f(x)/f'(x)\)</span> is repeatedly calculated where <span class="math notranslate nohighlight">\(f(x)\)</span> is the function and <span class="math notranslate nohighlight">\(f'(x)\)</span> the first derivative wrt. <span class="math notranslate nohighlight">\(x\)</span>. To find the half width <span class="math notranslate nohighlight">\(A(u)\)</span>-1/2 is the function to find the root.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># this is necessary to get solution</span>
-<span class="n">eqn</span><span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">u</span><span class="p">)</span><span class="o">+</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">Au</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span> <span class="p">)</span>  <span class="p">)</span>  <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use SymPy</span>
+<span class="n">u</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u,x&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># this is necessary to get solution</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                                         <span class="c1"># sp.oo is SymPy infinity</span>
+<span class="n">eqn</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">u</span><span class="p">)</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">Au</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span><span class="n">inf</span> <span class="p">)</span>  <span class="p">)</span>  <span class="p">)</span>    <span class="c1"># sp.oo is sympy infinity</span>
 <span class="n">Au</span>
 </pre></div>
 </div>
@@ -1861,8 +1863,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">Au</span><span class="p">,</span><span class="n">u</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">factor</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Au</span><span class="p">,</span><span class="n">u</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2002,6 +2004,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from FFT plot choose frequencies to include in reverse transform</span>
+
 <span class="nb">filter</span> <span class="o">=</span> <span class="p">[</span> <span class="n">fft0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">&gt;</span><span class="mf">0.0</span> <span class="ow">and</span> <span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">&lt;</span><span class="mf">0.02</span><span class="p">)</span>   <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span>
 
 <span class="n">fft1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
@@ -2103,7 +2106,7 @@ title="Print to PDF"
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

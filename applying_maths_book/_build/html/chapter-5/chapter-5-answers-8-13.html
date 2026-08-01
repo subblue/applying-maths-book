@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1627,8 +1627,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                 <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                 <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1643,11 +1643,11 @@ title="Print to PDF"
 <p>(c) The vibrational partition function is <span class="math notranslate nohighlight">\( \displaystyle Z = e^{-h\nu/2k_BT}/(1 - e^{-h\nu/k_BT})\)</span> and differentiating <span class="math notranslate nohighlight">\(\ln(Z)\)</span> with respect to temperature to obtain the energy and multiplying by <span class="math notranslate nohighlight">\(k_BT^2\)</span> and differentiating again gives the heat capacity <span class="math notranslate nohighlight">\(C_V\)</span>. This is the calculation for one vibrational mode. At the end the values for all <span class="math notranslate nohighlight">\(n\)</span> modes will have to be added.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">kB</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;h, nu, kB, T&#39;</span><span class="p">)</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">ln</span><span class="p">(</span><span class="n">Z</span><span class="p">),</span><span class="n">T</span><span class="p">))</span>
-<span class="n">cv</span><span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">T</span><span class="p">)</span> 
-<span class="n">simplify</span><span class="p">(</span><span class="n">cv</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">kB</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;h, nu, kB, T&#39;</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">Z</span><span class="p">),</span><span class="n">T</span><span class="p">))</span>
+<span class="n">cv</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">T</span><span class="p">)</span> 
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">cv</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1673,6 +1673,7 @@ k_B\left(\frac{\theta}{T}\right)^2\frac{e^{\theta/T}}{e^{2\theta/T}-2e^{\theta/T
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>                            <span class="c1"># import fsolve</span>
+
 <span class="n">nu</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">3019</span><span class="p">,</span><span class="mi">1623</span><span class="p">,</span><span class="mi">1342</span><span class="p">,</span><span class="mi">3075</span><span class="p">,</span><span class="mi">1236</span><span class="p">,</span><span class="mi">949</span><span class="p">,</span><span class="mi">943</span><span class="p">,</span><span class="mi">3105</span><span class="p">,</span> <span class="mi">810</span><span class="p">,</span><span class="mi">2989</span><span class="p">,</span><span class="mi">1443</span><span class="p">]</span> <span class="c1"># frequencies in wavenumbers</span>
 <span class="n">h</span>  <span class="o">=</span> <span class="mf">6.6256e-34</span>      <span class="c1"># J s</span>
 <span class="n">kB</span> <span class="o">=</span> <span class="mf">1.3805e-23</span>      <span class="c1"># J/K</span>
@@ -1742,8 +1743,9 @@ Result by Newton-Raphson
 <p>The partition function is the same but the numerator is now more difficult to evaluate. This can be done by summing as <span class="math notranslate nohighlight">\(\displaystyle \sum n^2n^x\)</span> and then substituting <span class="math notranslate nohighlight">\(\displaystyle E \equiv n,\; x=\exp(-1/k_BT)\)</span>. Using the computer algebra package SymPy gives the following result;</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">)</span>
-<span class="n">s0</span> <span class="o">=</span> <span class="n">Sum</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                 <span class="c1"># sp.oo is sympy infinity</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>  
 <span class="n">s0</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1756,8 +1758,9 @@ Result by Newton-Raphson
 <p>and doing the same for the partition function gives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">Sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                 <span class="c1"># sp.oo is sympy infinity</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>
 <span class="n">s</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1773,7 +1776,7 @@ Result by Newton-Raphson
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate average energies and CV</span>
 <span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">14.5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+
 <span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
@@ -1823,9 +1826,9 @@ Result by Newton-Raphson
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use symbpy to differentiate C_V= dE/dT</span>
-<span class="n">k_B</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k_B, T&#39;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))),</span><span class="n">T</span><span class="p">)</span>
-<span class="n">CV</span><span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">k_B</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k_B, T&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))),</span><span class="n">T</span><span class="p">)</span>
+<span class="n">CV</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">CV</span>
 </pre></div>
 </div>
@@ -1872,8 +1875,8 @@ Result by Newton-Raphson
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Caluation of average energy vs temperature.</span>
-<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">fig2</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span> 
+
 <span class="n">B</span>    <span class="o">=</span> <span class="mi">10</span>                       <span class="c1"># Tesla</span>
 <span class="n">g</span>    <span class="o">=</span> <span class="mf">26.4e7</span>                   <span class="c1"># magnetogyric ratio  radian Tesla Hz</span>
 <span class="n">hbar</span> <span class="o">=</span> <span class="mf">6.62607e-34</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>    <span class="c1"># J s  h/(2 pi)</span>
@@ -1913,8 +1916,7 @@ Result by Newton-Raphson
 <p>To calculate each partition function, add either the odd (ortho) or the even (para) numbered rotational levels together as shown in the next calculation. The fraction of ortho is plotted vs temperature.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig3</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
 <span class="n">B</span>    <span class="o">=</span> <span class="mf">60.8</span>                 <span class="c1"># rotational constant cm^(-1)</span>
 <span class="n">k_B</span>  <span class="o">=</span> <span class="mf">1.3805e-23</span><span class="o">*</span><span class="mf">5.034e22</span>  <span class="c1"># Boltzmann constant in cm^(-1)</span>
@@ -1943,7 +1945,7 @@ Result by Newton-Raphson
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">maxT</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ratio ortho/total as %&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39; T /K&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;percent ortho hydrogen vs temperature&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;percent ortho hydrogen vs temperature&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1982,7 +1984,7 @@ Result by Newton-Raphson
 \[\displaystyle C_V= \left( \frac{Z''}{Z} - \left (\frac{Z'}{Z}\right)^2 \right) \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig4</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
@@ -2018,7 +2020,7 @@ Result by Newton-Raphson
 <span class="n">ax0</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$U\,/\,\mathrm{cm^{-1}}$&#39;</span><span class="p">)</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39; T /K&#39;</span><span class="p">)</span>
-<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Internal energy ortho &amp;</span><span class="se">\n</span><span class="s1"> para hydrogen vs temperature&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Internal energy ortho &amp;</span><span class="se">\n</span><span class="s1"> para hydrogen vs temperature&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Cvp</span><span class="p">(</span><span class="n">T</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;para&#39;</span> <span class="p">)</span>
@@ -2030,7 +2032,7 @@ Result by Newton-Raphson
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">maxT</span><span class="p">])</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_V\,/\,\mathrm{cm^{-1}}$&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39; T /K&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Heat Capacity ortho &amp; </span><span class="se">\n</span><span class="s1"> para hydrogen vs temperature&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Heat Capacity ortho &amp; </span><span class="se">\n</span><span class="s1"> para hydrogen vs temperature&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -2039,7 +2041,9 @@ Result by Newton-Raphson
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-answers-8-13_19_0.png" src="../_images/chapter-5-answers-8-13_19_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1100x800 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <p>Figure 23 Left: Internal energy (in cm<span class="math notranslate nohighlight">\(^{-1}\)</span>) for ortho- and para- hydrogen. Right: Heat capacity <span class="math notranslate nohighlight">\(C_V\)</span> in cm<span class="math notranslate nohighlight">\({-1}\)</span> K<span class="math notranslate nohighlight">\(^{-1}\)</span> at constant volume.The natural or normal H curve consists of the equilibrium mixture of <span class="math notranslate nohighlight">\(3/4\)</span> ortho- and <span class="math notranslate nohighlight">\(1/4\)</span> para- molecules. The horizontal line is the classical or high temperature limit to the heat capacity per molecule and is <span class="math notranslate nohighlight">\(k_B = 0.694\,\mathrm{ cm^{-1}}\)</span>.</p>
@@ -2055,9 +2059,10 @@ Result by Newton-Raphson
 <p>(b) If the distribution is normalized then <span class="math notranslate nohighlight">\( \sum_{L=0}^\infty (1-1/4^n)^{L-1}(1/4^n)=1\)</span> and if <span class="math notranslate nohighlight">\(x=1/4^n\)</span> then the sum is <span class="math notranslate nohighlight">\(x\sum_{L=0}^\infty (1-x)^{L-1}\)</span>. As <span class="math notranslate nohighlight">\(x \lt 1\)</span> the summation is valid as shown by SymPy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, L&#39;</span><span class="p">)</span>
-<span class="n">f01</span><span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">Sum</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">f01</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, L&#39;</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                 <span class="c1"># sp.oo is sympy infinity</span>
+<span class="n">f01</span><span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">Sum</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>  
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">f01</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2076,8 +2081,9 @@ Result by Newton-Raphson
 <p>evaluating the numerator</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span> <span class="s1">&#39;x, L&#39;</span><span class="p">)</span>
-<span class="n">f01</span> <span class="o">=</span> <span class="n">Sum</span><span class="p">(</span><span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>  <span class="c1"># note capital S</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span> <span class="s1">&#39;x, L&#39;</span><span class="p">)</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                 <span class="c1"># sp.oo is sympy infinity</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>  <span class="c1"># note capital S, </span>
 <span class="n">f01</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2148,7 +2154,7 @@ Result by Newton-Raphson
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -66,20 +66,20 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # \sigma_V'' \equiv \begin{bmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\1 & 0 & 0 \end{bmatrix} ,\;
 #          E \equiv \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\0 & 0 & 1 \end{bmatrix}    $$
 # 
-# A simple way to check the table is to use Sympy to multiply out the matrices and then check the product. The product always has to be member of the group so it is only necessary to check which one this is via a look up table of names.
+# A simple way to check the table is to use SymPy to multiply out the matrices and then check the product. The product always has to be member of the group so it is only necessary to check which one this is via a look up table of names.
 
 # In[2]:
 
 
 # Algorithm   Matrix Products
-E, C3p, C3m, sigV, sigVd, sigVdd = symbols('E, C3p, C3m, sigV, sigVd, sigVdd' )
+E, C3p, C3m, sigV, sigVd, sigVdd = sp.symbols('E, C3p, C3m, sigV, sigVd, sigVdd' )
 
-E     = Matrix([[1,0,0],[0,1,0],[0,0,1]])
-C3p   = Matrix([[0,0,1],[1,0,0],[0,1,0]])  # C3 plus 
-C3m   = Matrix([[0,1,0],[0,0,1],[1,0,0]])  # C3 minus
-sigV  = Matrix([[0,1,0],[1,0,0],[0,0,1]])
-sigVd = Matrix([[1,0,0],[0,0,1],[0,1,0]])  # sigma V'
-sigVdd= Matrix([[0,0,1],[0,1,0],[1,0,0]])
+E     = sp.Matrix([[1,0,0],[0,1,0],[0,0,1]])
+C3p   = sp.Matrix([[0,0,1],[1,0,0],[0,1,0]])  # C3 plus 
+C3m   = sp.Matrix([[0,1,0],[0,0,1],[1,0,0]])  # C3 minus
+sigV  = sp.Matrix([[0,1,0],[1,0,0],[0,0,1]])
+sigVd = sp.Matrix([[1,0,0],[0,0,1],[0,1,0]])  # sigma V'
+sigVdd= sp.Matrix([[0,0,1],[0,1,0],[1,0,0]])
 
 alist = [ E, C3p, C3m, sigV, sigVd, sigVdd ]
 n = len(alist)
@@ -203,8 +203,8 @@ A2
 # In[5]:
 
 
-C2, M, Ha, Hb, C, Fa, Fb = symbols('C2, M, Ha, Hb, C, Fa, Fb')
-C2 = zeros(6,6)
+C2, M, Ha, Hb, C, Fa, Fb = sp.symbols('C2, M, Ha, Hb, C, Fa, Fb')
+C2 = sp.zeros(6,6)           # sympy matrix of zeros
 C2[0,1] = 1
 C2[1,0] = 1
 C2[2,2] = 1
@@ -222,7 +222,7 @@ C2
 # In[7]:
 
 
-M = Matrix([Ha, Hb, C, C, Fa, Fb] )
+M = sp.Matrix([Ha, Hb, C, C, Fa, Fb] )
 C2*M
 
 
@@ -372,17 +372,17 @@ C2*M
 # In[8]:
 
 
-v1,v2,v3,v4,v5,v6,v7,v8,v9,v10 = symbols('v1,v2,v3,v4,v5,v6,v7,v8,v9,v10',positive=True)
+v1,v2,v3,v4,v5,v6,v7,v8,v9,v10 = sp.symbols('v1,v2,v3,v4,v5,v6,v7,v8,v9,v10',positive=True)
 
-psi1 = Matrix([2*v1,0,0,2*v4,-2*v5,0,0,+2*v8,0,0])   # each length 10
-psi2 = Matrix([0,2*v2,-2*v3,0,0,-2*v6,+2*v7,0,0,0])
-psi3 = Matrix([0,0,0,0,0,0,0,0,4*v9,-4*v10])
+psi1 = sp.Matrix([2*v1,0,0,2*v4,-2*v5,0,0,+2*v8,0,0])   # each length 10
+psi2 = sp.Matrix([0,2*v2,-2*v3,0,0,-2*v6,+2*v7,0,0,0])
+psi3 = sp.Matrix([0,0,0,0,0,0,0,0,4*v9,-4*v10])
 
 
 # In[9]:
 
 
-GramSchmidt([psi1,psi2,psi3],True)  # orthogonalise and normalise
+sp.GramSchmidt([psi1,psi2,psi3],True)  # orthogonalise and normalise
 
 
 # The expectation values are the product of the terms including the wavefunctions. Remember that these are really ten elements long with the coefficients for the missing ts set to zero. If a wavefunction is written as 
@@ -439,16 +439,16 @@ GramSchmidt([psi1,psi2,psi3],True)  # orthogonalise and normalise
 # \hline
 # \end{array}$$
 # 
-# The top row produces the mode pattern for the totally symmetric vibration which is $v_1 + v_2 + v_3$ and shows that in this normal mode each bond stretches together, much as the vectors in the sketch. The normalized vector is $(v_1 + v_2 + v_3)/\sqrt{3}$. The vectors for the doubly degenerate mode,$2v_1 -v_2 -v_3$ and $-v_1 +2v_2 -v_3$ are calculated by taking vector 1 then 2 but the results are not orthogonal. To check this form, the dot product which is $[2 -1 -1] [-1 2 -1]^T = -3$. Using Sympy these can be made orthogonal, they do not need to be normalized to do this, but the 'True' in the GramSchmidt command normalises the vectors.
+# The top row produces the mode pattern for the totally symmetric vibration which is $v_1 + v_2 + v_3$ and shows that in this normal mode each bond stretches together, much as the vectors in the sketch. The normalized vector is $(v_1 + v_2 + v_3)/\sqrt{3}$. The vectors for the doubly degenerate mode,$2v_1 -v_2 -v_3$ and $-v_1 +2v_2 -v_3$ are calculated by taking vector 1 then 2 but the results are not orthogonal. To check this form, the dot product which is $[2 -1 -1] [-1 2 -1]^T = -3$. Using SymPy these can be made orthogonal, they do not need to be normalized to do this, but the 'True' in the GramSchmidt command normalises the vectors.
 
 # In[10]:
 
 
-e1, e2 = symbols('e1, e2')
+e1, e2 = sp.symbols('e1, e2')
 
-e1 = Matrix([2,-1,-1])
-e2 = Matrix([-1,2,-1])
-GramSchmidt([e1,e2],True)
+e1 = sp.Matrix([2,-1,-1])
+e2 = sp.Matrix([-1,2,-1])
+sp.GramSchmidt([e1,e2],True)
 
 
 # The resulting orthogonal and normalised vectors are $(2v_1-v_2-v-3)\sqrt{6}$ and $(v_2-v_3)\sqrt{2}$, see figure 84.

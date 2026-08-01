@@ -3,20 +3,6 @@
 
 # # Questions 1 - 7
 
-# In[1]:
-
-
-# import all python add-ons etc that will be needed later on
-get_ipython().run_line_magic('matplotlib', 'inline')
-import numpy as np
-import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-from scipy.optimize import fsolve
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
-
-
 # ## Q1 Logistic example
 # The equation $x_{n+1} = cx_n(1 - x_n)$ maps $cx_n(1 - x_n)$ onto $x$, 
 # 

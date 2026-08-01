@@ -10,16 +10,16 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## 1.1 Power series
 # 
-# The series expansions of exponential, sine, and cosine functions have been described in earlier chapters and there is nothing unusual or special about these. Any regular function can be expanded in a similar manner in powers of $x$, to produce its unique power series, which is in general
+# The arithmetic and geometric series, the series expansions of exponential, sine, and cosine functions have been described in earlier chapters. Any regular function can be expanded in a similar manner to sine, cosine, etc. in powers of $x$, to produce its unique power series, which in general has the form
 # 
-# $$\displaystyle  f=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots = \sum_n a_nx^n $$
+# $$\displaystyle  f = a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots = \sum_n a_nx^n $$
 #  
 # where the $a$'s are positive or negative constants. The capital $\sum$ is used to indicate a summation, with sub- and superscripts as necessary. In the reverse process, some series can be
 # summed to form a function. The power series
@@ -38,7 +38,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # then multiply both sides by $x$ and subtract the two expressions
 # 
-# $$\displaystyle \begin{align}xS_N& = x+x^2 +x^3 +x^4 +\cdots+x^{N+1}\\ 
+# $$\displaystyle \begin{align}xS_N & = x+x^2 +x^3 +x^4 +\cdots+x^{N+1}\\ 
 # (1-x)S_n&=(1+x+x^2 +x^3 +x^4 +\cdots+x^N)-(x+x^2 +x^3 +x^4 +\cdots+x^{N+1}) \\&=(1-x^{N+1})\end{align}$$
 # 
 # and the summation is 
@@ -59,7 +59,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle p_n = e^{-nhv/(k_BT)}$$
 # 
-# with $k_B$ as the Boltzmann constant, $T$ temperature. Summing over all levels gives 
+# with $k_B$ as the Boltzmann constant and $T$ temperature. Summing over all $n$ levels gives, 
 # 
 # $$\displaystyle \sum_0^\infty e^{-nhv/k_BT}= \sum_0^\infty \left(e^{-hv/(k_BT)}\right)^n $$
 # 
@@ -77,9 +77,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the limit of high temperatures or very small values of $\nu$, where the exponential can be expanded as a series, the classical result is obtained, $E=k_BT$. Series expansion is described further in section 6.
 # 
-# ### (ii) Approximating a function as a series.
+# ### **(ii) Approximating a function as a series**
 # 
-# The function  $f(x)  = 1/(1-x) $ (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if $-1\, x \, \lt 1$. The polynomial is calculated as
+# The function  
+# 
+# $$\displaystyle f(x)  = \frac{1}{1-x} $$
+# 
+# (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if $-1\, x \, \lt 1$. The polynomial is calculated as
 # 
 # $$\displaystyle f(0) = 1, \quad f(1/2) = 1 + 1/2 + 1/4 + 1/8 + \cdots$$
 # 
@@ -89,7 +93,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The expansion of $1/(1 + x)$ and of $1/(1 + ax)$, for example, follows immediately by substitution of $x \rightarrow -x $ and $x \rightarrow ax$  into the series of equation (1). In the latter case for the series to be valid $|\, ax \,| < 1$, where $a$ is a constant.
 # 
-# Figure 1, below, shows the function
+# Figure 1, below, shows the derivative of each term in $f(x)$
 # 
 # $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots$$
 # 
@@ -100,7 +104,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # A Power Series calculation
 
-fig1 = plt.figure(figsize=(5, 5))
+fig1 = plt.figure(figsize=(5, 4))
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 m    = 8                             # maximum power of series is m
@@ -124,9 +128,9 @@ txt = [ ' n = '+ str(i) for i in range(1,m+1) ]
 for i, q in enumerate(txt):
     yval = sers(x[numx-1],i+1)
     if yval< maxy: 
-        plt.text(1.0,yval,q,verticalalignment='center')
+        plt.text(1.0,yval,q,verticalalignment='center',fontsize=10)
     pass
-plt.title(r"$f\;'(x)=1+2x+3x^2+\cdots+nx^{n-1}+\cdots$",fontsize=14)  # r"$...$" uses markdown
+plt.title(r"$f\;'(x)=1+2x+3x^2+\cdots+nx^{n-1}+\cdots$",fontsize=12)  # r"$...$" uses markdown
 plt.xlabel(r'$x$')
 plt.ylabel(r"$f\;'(x)$")
 plt.axis([0.0,1.0,0.0,maxy] )
@@ -240,19 +244,23 @@ plt.show()
 # $$\displaystyle \begin{align}E(t)& =A(t)e^{i\omega_0 t}\\A(t)&=E_0
 # \frac{\sin\big((2N+1)(\Delta\omega t+\varphi)/2\big)}{\sin\big(( \Delta\omega t+\varphi)/2\big)}\end{align}$$
 # 
-# The intensity measured on a photodiode or other 'square law' detector is $E(t)E^*(t)=A(t)^2$ where $E^*$ is the complex conjugate. Some pulses are shown in the figure. The sine terms ensure that the pulse repeats itself at intervals of $\tau=2L/c$. The pulse width is $\displaystyle \Delta \tau \approx \frac{2\pi}{(2n+1)\Delta \omega}$ which shows that a large number of oscillating modes, and hence a broad emission spectrum, are needed to produce a short pulse. 
+# The intensity measured on a photodiode or other 'square law' detector is $E(t)E^*(t)=A(t)^2$ where $E^*$ is the complex conjugate. Some pulses are shown in the figure. The sine terms ensure that the pulse repeats itself at intervals of $\tau=2L/c$. The pulse width is 
+# 
+# $$\displaystyle \Delta \tau \approx \frac{2\pi}{(2n+1)\Delta \omega}$$
+# 
+# which shows that a large number of oscillating modes, and hence a broad emission spectrum, are needed to produce a short pulse. 
 # 
 # ![Drawing](series-fig00a.png)
 # 
-# fig 1a. Mode-locked laser pulses, calculated as the square of the amplitude of the electric field, ten modes were used in the calculation each with equal amplitude.
+# fig 1a. Mode-locked laser pulses, calculated as the square of the amplitude of the electric field, only ten modes were used in the calculation each with equal amplitude and it is clear that pulses are produced even with this small number of modes.
 # __________________________
 # 
 # ## 3.2 Diffraction
-# Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 1a. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period $d$, and at an angle $theta$ we would like to know how the intensity of the summed waves varies as $\theta$ is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed. 
+# Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 1b. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period $d$, and at an angle $theta$ we would like to know how the intensity of the summed waves varies as $\theta$ is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed. 
 # 
 # The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.
 # 
-# Using figure 1a, the difference in path-length between $r_1$ and $r_0$ is $r_1-r_0=\delta$ and at the angle drawn $2\delta=\lambda $. The distance between $r_2-r_1=2\delta$ and so on thus $n\delta=r_n-r_0$. 
+# Using figure 1b, the difference in path-length between $r_1$ and $r_0$ is $r_1-r_0=\delta$ and at the angle drawn $2\delta=\lambda $. The distance between $r_2-r_1=2\delta$ and so on thus $n\delta=r_n-r_0$. 
 # 
 # ![Drawing](series-fig0.png)
 # 
@@ -303,15 +311,15 @@ plt.show()
 # 
 # $$\displaystyle I=I_0\frac{\sin^2\big(Nkd\sin(\theta)/2\big)}{\sin^2\big(kd\sin(\theta)/2\big)}\qquad \tag{2e}$$
 # 
-# which is a _sinc_ function, i.e. a central lobe plus decreasing oscillations to either side.
+# which is the square of a *sinc$ function, i.e. a central lobe plus decreasing oscillations to either side.
 
 # ## 3.3  Average concentration from the time course of drug action
 # 
-# When an antibiotic is administered the course normally lasts for several days, typically with tablets taken $2$ or $3$ times daily. The medication has to enter the blood stream to be dispersed to other organs, then acts on its target site and from here or from the blood it is excreted. Ideally, when taken the drug's concentration rises rapidly compared to its removal and thus gradually decreases in concentration as time proceeds. It rises rapidly again with each dose taken. The concentration vs time therefore has a saw-tooth profile whose *average* value rises initially then reaches a steady value. An oscillating steady value may be reached when the amount decayed  balances the amount added in the dose. If the time between doses is to large, the steady state can never be reached in a sensible amount of time. Conversely, if the time between doses is too short the accumulated amount may become far too large to be a safe dose. An alternative way of calculating the time profile is given in Chapter 9-7.3 (Fourier Transforms). 
+# When an antibiotic is administered the course normally lasts for several days, typically with tablets taken $2$ or $3$ times daily. The medication has to enter the blood stream to be dispersed to other organs, then acts on its target site and from here or from the blood it is excreted. Ideally, when taken the drug's concentration rises rapidly compared to its removal and thus gradually decreases in concentration as time proceeds. It rises rapidly again with each dose taken. The concentration vs time therefore has a saw-tooth profile whose *average* value rises initially then reaches a steady value. An oscillating steady value may be reached when the amount decayed  balances the amount added in the dose. If the time between doses is to large, the steady-state can never be reached in a sensible amount of time. Conversely, if the time between doses is too short the accumulated amount may become far too large to be a safe dose. An alternative way of calculating the time profile is given in Chapter 9-7.3 (Fourier Transforms). 
 # 
 # Typically a two compartment model is used to describe the kinetics involved. This can be represented as 
 # 
-# $$\displaystyle \begin {align}\overset{k_0}\longrightarrow & A\overset{k_{12},k_{21}}\rightleftharpoons B \\ & \downarrow k_3\end{align}$$
+# $$\displaystyle \large \begin {align}\overset{k_0}\longrightarrow & A\overset{k_{12},k_{21}}\rightleftharpoons B \\ & \downarrow k_3\end{align}$$
 # 
 # where $A$ represents blood and $B$ the target site for the drug. Clearly this is a complicated kinetic scheme and which can be solved by matrix methods described in chapter 10. When multiple doses are given the algebra becomes extremely complicated, however, if we concentrate just on the points at which the medication is administered the maximum, minimum and average dosage can be found using some of the series just described. To make the equations simpler we shall ignore species B, and suppose that species A is instantaneously populated, such as by intra-venous injection, and further that A decays by first order kinetics. These are all rather drastic simplifications but will serve, nevertheless, to illustrate the nature of what actually happens. The time profile is shown in figure 1c. 
 # 
@@ -435,7 +443,11 @@ plt.show()
 
 # ## 4.3 Sequence repeats in DNA
 # 
-# Our DNA is packaged into $46$ chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of $n$ base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, $\sim 10^6$ base pairs, that overall there are equal amounts of GCAT bases. If the sequence to identify is $n=8$ bases long and is GGCATGGA then the chance of finding the first G is $1/4$ and of the second adjacent G is $ 1/16$ and as each event is independent of any other the probabilities multiply to give $\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}$, thus for $n=8$ the chance of finding any specified consecutive sequence is very small $1/4^8=1/65536$. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of _not_ seeing the next sequence in $m$ moves is $(1-1/4^n)^{m-1} $ and then seeing one in the next move is the product
+# Our DNA is packaged into $46$ chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of $n$ base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, $\sim 10^6$ base pairs, that overall there are equal amounts of GCAT bases. If the sequence to identify is $n=8$ bases long and is GGCATGGA then the chance of finding the first G is $1/4$ and of the second adjacent G is $ 1/16$ and as each event is independent of any other the probabilities multiply to give 
+# 
+# $$\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}$$
+# 
+# thus for $n=8$ the chance of finding any specified consecutive sequence is very small $1/4^8=1/65536$. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of _not_ seeing the next sequence in $m$ moves is $(1-1/4^n)^{m-1} $ and then seeing one in the next move is the product
 # 
 # $$\displaystyle p(m)=\left(1-\frac{1}{4^n}\right)^{m-1}\frac{1}{4^n}$$
 # 
@@ -443,7 +455,15 @@ plt.show()
 # 
 # $$ \mu= \frac{\sum_{m=0}^\infty\limits m\left(1-p\right)^{m-1}p}{\sum_{m=0}^\infty\limits \left(1-p\right)^{m-1}p}$$
 # 
-# The normalisation (denominator) is the sum $\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits \left(1-p\right)^{m}p=  \frac{1}{1-p}\to 1$ because $p\lt\lt 1$. The numerator is $\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits mp\left(1-p\right)^m= \frac{1}{p}$ so the average is
+# The normalisation (denominator) is the sum 
+# 
+# $$\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits \left(1-p\right)^{m}p=  \frac{1}{1-p}\to 1$$
+# 
+# because $p\lt\lt 1$. The numerator is 
+# 
+# $$\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits mp\left(1-p\right)^m= \frac{1}{p}$$
+# 
+# so the average is
 # 
 # $$\displaystyle \mu = \frac{1}{p}=4^n$$
 # 
@@ -455,19 +475,19 @@ plt.show()
 # 
 # One of the commonest uses of the summation of a series of terms is in the calculation of the partition function. These are met formally in statistical mechanics but are also used in kinetic theory and in spectroscopy.
 # 
-# The partition function is the _sum over states_ of the distribution of energy levels usually assumed to follow Boltzmann's exponential law (or distribution), which describes the probability
+# The partition function is the *sum over states* of the distribution of energy levels usually assumed to follow Boltzmann's exponential law (or distribution), which describes the probability
 # 
 # $$\displaystyle pdE = ge^{-E/k_BT}dE$$
 # 
 # that an atom or molecule has energy in the range $E$ to $E + dE$ and where $g$ is the degeneracy of the energy level, $k_B$ is the Boltzmann constant  ($1.3805 \cdot 10^{-23}\,\mathrm{ J K^{-1} }$) and $T$ the temperature. This distribution is obtained by considering the most probable way of arranging a fixed number of particles among all the available energy levels in a constant volume and with a constant total energy. Related distributions, but applicable only in certain circumstances, are the Fermi-Dirac and Bose-Einstein.
 # 
-# The German word for the partition function, _Zustandssumme,_  translates as 'sum over states'. In English, it is called the partition function because it describes how much energy is in one level compared to the total, i.e. how energy is partitioned when the system, an ensemble of molecules for example, is in contact with a heat bath. A distribution based on being in thermal equilibrium with a heat bath is also called a _canonical_ distribution. Once the partition function is calculated all the various thermodynamic properties, such as heat capacity, entropy and free energy, can be calculated. 
+# The German word for the partition function, *Zustandssumme*,  translates as 'sum over states'. In English, it is called the partition function because it describes how much energy is in one level compared to the total, i.e. how energy is partitioned when the system, an ensemble of molecules for example, is in contact with a heat bath. A distribution based on being in thermal equilibrium with a heat bath is called a *canonical* distribution. Once the partition function is calculated all the various thermodynamic properties, such as heat capacity, entropy and free energy, can be calculated. 
 # 
 # The partition function is the summation over all the energy levels
 # 
 # $$\displaystyle Z = \sum_{i=0}^m g_ie^{-E_i/k_BT}  \qquad\tag{11}$$
 # 
-# which extends over all energy levels from $i = 0 \cdots m$. The energy of the $i^th$ level is $E_i$, its degeneracy $g_i$. A state is degenerate if it has more than one energy level, the number of these levels is called the _multiplicity._ The vibrational levels in molecules are singly or non-degenerate, the rotational levels are degenerate and have a multiplicity that increases with the quantum number and is $g_J = 2J + 1$ where $J$ is the quantum number. In some situations, such as the harmonic oscillator, there is an infinite number of levels to sum in the partition function and $m = \infty$; in others, such as when an atom is in a magnetic field, there is a finite number.
+# which extends over all energy levels from $i = 0 \cdots m$. The energy of the $i^th$ level is $E_i$, its degeneracy $g_i$. A state is degenerate if it has more than one energy level, the number of these levels is called the *multiplicity*. The vibrational levels in molecules are singly or non-degenerate, the rotational levels are degenerate and have a multiplicity that increases with the quantum number and is $g_J = 2J + 1$ where $J$ is the quantum number. In some situations, such as the harmonic oscillator, there is an infinite number of levels to sum in the partition function and $m = \infty$; in others, such as when an atom is in a magnetic field, there is a finite number.
 # 
 # The fractional population in any one level is the ratio 
 # 
@@ -545,15 +565,15 @@ plt.show()
 # 
 # $$ \displaystyle \langle n\rangle =\frac{k_BT^2}{\epsilon Z} \frac{d Z}{dT}$$
 # 
-# Using python Sympy to do the algebra gives
+# Using python SymPy to do the algebra gives
 
 # In[3]:
 
 
-g, N, epsilon, k, T = symbols('g, N, epsilon, k, T')
+g, N, epsilon, k, T = sp.symbols('g, N, epsilon, k, T')
 
-Z   = (1 - (g**N*exp(-N*epsilon/(k*T))))/(1 - g*exp(-epsilon/(k*T))) 
-avn = (1/epsilon)*simplify( ( k*T**2*diff(Z,T)/Z) )
+Z   = (1 - (g**N*sp.exp(-N*epsilon/(k*T))))/(1 - g*sp.exp(-epsilon/(k*T))) 
+avn = (1/epsilon)*sp.simplify( ( k*T**2*sp.diff(Z,T)/Z) )
 avn
 
 
@@ -681,20 +701,20 @@ avn
 # In[4]:
 
 
-# entropy of atoms
-h   = 6.62607e-34  # J s
-N_A = 6.02214e23   # 1/mol
-kB  = 1.38065e-23  # J/K
-amu = 1.66054e-27  # kg
+# Entropy of atoms   Now using numpy
+h   = 6.62607e-34  # Planck constant, J s
+N_A = 6.02214e23   # Avogadro number, 1/mol
+kB  = 1.38065e-23  # Boltzmann constant, J/K
+amu = 1.66054e-27  # atomic mass unit, kg
 cmJ = 1.96e-23     # wavenumber to joules 
-p   = 101325.0     # pascal
-R   = N_A*kB       # J/mol/K
+p   = 101325.0     # Pressure, pascal
+R   = N_A*kB       # Ideal gas constant, J/mol/K
 
 T = 300
 
-# carbon from NIST WebBook
+# carbon data from NIST WebBook
 m = 12.011
-En= [0.0000000 ,16.4167130,43.4134567]
+En= [0.0000000 ,16.4167130, 43.4134567]
 J = [0,1,2]
 
 V = R*T/p
@@ -702,7 +722,7 @@ Ztrans = V*(2*np.pi*m*amu*kB*T/h**2)**(3/2)
 #print('{:s}{:10.4g}'.format('Z trans',Ztrans))
 
 S_trans= R*(5/2*np.log(T) + np.log(kB/p) + 3/2*np.log(2*np.pi*m*amu*kB/h**2)  + 5/2 )
-print('{:s} {:8.4f} {:s}'.format('S translation',S_trans, 'J/mol/K') )
+print('{:s} {:8.4f} {:s}'.format('S translation',S_trans, ' J/mol/K') )
 
 ZE = 0.0
 Z  = 0.0

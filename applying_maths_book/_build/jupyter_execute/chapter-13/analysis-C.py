@@ -10,11 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy import linalg
-from scipy.integrate import quad,odeint
-from scipy.stats import t, norm, chi2, f
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+from scipy.integrate import quad
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -85,8 +83,8 @@ sz  = np.sum(z)
 A = np.array([[sxx,sxy,sx],[sxy,syy,sy],[sx,sy,n]]) # A matrix of S values.
 b = np.array([sxz,syz,sz]) 
 
-fit = linalg.inv(A) @ b.T                         # @ is matrix multiply 
-                                                  # b is a row matrix so transpose with .T
+fit = np.linalg.inv(A) @ b.T                         # @ is matrix multiply 
+                                                     # b is a row matrix so transpose with .T
 
 print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1], ', c = ',fit[2]) )
 
@@ -188,6 +186,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 
 
 # Algorithm: Least Squares  polynomial fit
+# gamma function is in sympy so sp.gamma(etc ) in fchi
 
 yval = np.array([352.3,1039,1705,2340,2961,3553,4113,4652,5153,5613,6040,6433,6780,7083,7335])
 n    = len(yval)
@@ -214,7 +213,7 @@ chisqr = np.sum( w**2*(yval-line(xval))**2 ) /(n-m-1)  # reduced chi sqr
 print('{:s} {:6.3f}'.format('chi^2 = ',chisqr) )
 
 df = n - m                                             # using chi squared function directly
-fchi = lambda x: x**(df/2-1) * exp(-x/2)/(2**(df/2)*gamma(df/2))
+fchi = lambda x: x**(df/2-1) * sp.exp(-x/2)/(2**(df/2)*sp.gamma(df/2)) 
 Q,err = quad(fchi ,chisqr,np.inf )
 
 print('{:s} {:6.3f} {:s} {:6.3g}'.format('probability of getting chi^2 > ',chisqr,' is', Q))
@@ -444,3 +443,15 @@ print('{:s} {:6.1f}'.format('% chance different',100*(2*ans-1) ) )
 # $$\displaystyle \Delta s=\sqrt{\frac{s_b^2}{n_b}+\frac{s_{sb}^2}{n_{sb}}}$$
 # 
 # for $n_{sb}$ sets of signal measurements and $n_b$ background.
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -75,21 +75,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int_C (x+y)dx=-4\int_0^\pi \big(\cos(t)+\sin(t)\big)\sin(t)dt =-2\pi$$
 # 
-# Using Sympy to do the integral gives
+# Using SymPy to do the integral gives
 
 # In[2]:
 
 
-t = symbols('t',positive=True)
-eq = cos(t)*sin(t)
-integrate(eq,t)
+t = sp.symbols('t',positive=True)
+eq = sp.cos(t)*sp.sin(t)
+sp.integrate(eq,t)
 
 
 # In[3]:
 
 
-eq = sin(t)**2
-integrate(eq,t)
+eq = sp.sin(t)**2
+sp.integrate(eq,t)
 
 
 # 
@@ -138,14 +138,14 @@ integrate(eq,t)
 # 
 # $$\displaystyle \int_0^\theta \sqrt{1+\theta^2}d\theta$$
 # 
-# over angles $\theta=0\to\theta$. Using Sympy produces $\displaystyle S=\frac{a}{2}\left(\theta\sqrt{1+\theta^2}+\sinh^{-1}(\theta)\right)$
+# over angles $\theta=0\to\theta$. Using SymPy produces $\displaystyle S=\frac{a}{2}\left(\theta\sqrt{1+\theta^2}+\sinh^{-1}(\theta)\right)$
 
 # In[4]:
 
 
-theta = symbols('theta',positive=True)
-eq = sqrt(1 + theta**2)
-integrate(eq, theta )
+theta = sp.symbols('theta',positive=True)
+eq = sp.sqrt(1 + theta**2)
+sp.integrate(eq, theta )
 
 
 # ## 13.5 A surface defined by two functions

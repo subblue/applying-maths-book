@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -202,37 +202,37 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x,y,a,b,n = symbols('x,y,a,b,n')  # define some symbols
+x,y,a,b,n = sp.symbols('x,y,a,b,n')  # define some symbols
 
-diff(x**n,x)                      # differentiate x**n once with respect to x
+sp.diff(x**n,x)                      # differentiate x**n once with respect to x
 
 
 # In[3]:
 
 
-eq0 = sin(a*x)*tan(b*x**2)
-diff(eq0,x) 
+eq0 = sp.sin(a*x)*sp.tan(b*x**2)
+sp.diff(eq0,x) 
 
 
 # In[4]:
 
 
-eq1 = sin(x**3)
-diff(eq1,x,2)           # differentiate twice wrt x
+eq1 = sp.sin(x**3)
+sp.diff(eq1,x,2)           # differentiate twice wrt x
 
 
 # In[5]:
 
 
-eq1.diff(x,2)           # alternative syntax
+eq1.diff(x,2)           # alternative syntax as eq1 is already sp.sin(x**3)
 
 
 # In[6]:
 
 
-y = Function('y')(x)    # differentiate y**2 where y is a function of x , y**3=ln(x)
-eq2 = y**3 - ln(x)
-diff(eq2, x)
+y = sp.Function('y')(x)    # differentiate y**2 where y is a function of x , y**3=ln(x)
+eq2 = y**3 - sp.ln(x)
+sp.diff(eq2, x)
 
 
 # ## 3.7 Repeated Differentiation

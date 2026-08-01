@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -317,10 +317,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x, y = symbols('x, y')
-y = Function('y')
-f01 = diff(y(x),x,x)+diff(y(x),x)-6*y(x)-10-exp(4*x)
-ans = dsolve(f01)
+x, y = sp.symbols('x, y')
+y = sp.Function('y')
+f01 = sp.diff(y(x),x,x) + sp.diff(y(x),x) - 6*y(x) - 10 - sp.exp(4*x)
+ans = sp.dsolve(f01)
 ans
 
 
@@ -361,10 +361,10 @@ ans
 # In[3]:
 
 
-x, y = symbols('x, y')
-y=Function('y')
-f02 = 2*diff(y(x),x,x)-5*diff(y(x),x)-3*y(x)-7*sin(4*x)
-ans2= dsolve(f02)
+x, y = sp.symbols('x, y')
+y   = sp.Function('y')
+f02 = 2*sp.diff(y(x),x,x) -5*sp.diff(y(x),x) - 3*y(x) - 7*sp.sin(4*x)
+ans2= sp.dsolve(f02)
 ans2
 
 
@@ -466,13 +466,13 @@ ans2
 # In[4]:
 
 
-n, m, x, y, f = symbols('n, m, x, y, f')
+n, m, x, y, f = sp.symbols('n, m, x, y, f')
 
-f = x**3*exp(-2*x)
+f = x**3*sp.exp(-2*x)
 m = 1
 n = -2
-ans = exp(n*x)*integrate( exp((m-n)*x) * integrate(exp(-m*x)*f,x) , x)
-collect(expand(ans),exp(-2*x))
+ans = sp.exp(n*x)*sp.integrate( sp.exp((m-n)*x) * sp.integrate( sp.exp(-m*x)*f,x) , x)
+sp.collect(sp.expand(ans),sp.exp(-2*x))
 
 
 # which gives the same result as (33) when simplified a little further. It does not ultimately matter which root, $k_1$ or $k_2$, is placed first when doing the calculation. However, the order does make a difference for this part, but when combined with the homogeneous solution and the limits are added, the result is the same. Finally, note that if the differential equation has three roots then the particular integral has one more level of nesting, viz.;
@@ -714,10 +714,10 @@ collect(expand(ans),exp(-2*x))
 # In[5]:
 
 
-m, s, t, gamma, kT, C1, C2 = symbols('m, s, t, gamma, kT, C1, C2')
-s = Function('s')
-f01 = m*diff(s(t),t,t) + gamma*diff(s(t),t) - 2*kT
-ans = dsolve(f01)
+m, s, t, gamma, kT, C1, C2 = sp.symbols('m, s, t, gamma, kT, C1, C2')
+s = sp.Function('s')
+f01 = m*sp.diff(s(t),t,t) + gamma*sp.diff(s(t),t) - 2*kT
+ans = sp.dsolve(f01)
 ans
 
 

@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q39 answer
@@ -193,13 +193,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-alpha,beta,R,d=symbols('alpha,beta,R,d')
+alpha,beta,R,d = sp.symbols('alpha,beta,R,d')
 
-muXa = beta*Matrix( [-1, 1, -1] )/sqrt(3)   # x dipole axial
-muXe = beta*Matrix( [-1,-1,  1] )/sqrt(3)   # x dipole equatorial
-muOa = alpha*Matrix([1, -1,  1] )/sqrt(3)   # O dipole axial
-muOe = alpha*Matrix([-1,-1, -1] )/sqrt(3) # O dipole equatorial
-R    = d*Matrix([1,-1,-1])/sqrt(3)      # vector between dipoles
+muXa = beta *sp.Matrix( [-1, 1, -1] )/sp.sqrt(3)   # x dipole axial
+muXe = beta *sp.Matrix( [-1,-1,  1] )/sp.sqrt(3)   # x dipole equatorial
+muOa = alpha*sp.Matrix([1, -1,  1] ) /sp.sqrt(3)   # O dipole axial
+muOe = alpha*sp.Matrix([-1,-1, -1] ) /sp.sqrt(3) # O dipole equatorial
+R    = d*sp.Matrix([1,-1,-1])/sp.sqrt(3)      # vector between dipoles
 energy_axial_axial= (muOa.T * muXa)/d**3 - 3*(muOa.T *R)*(muXa.T*R)/d**5
 energy_axial_axial
 
@@ -298,18 +298,6 @@ mu1_R   = np.dot(nmu1,nR)
 mu2_R   = np.dot(nmu2,nR)
 chi     = mu1_mu2 - 3*mu1_R*mu2_R
 print('{:s}{:6.3f}'.format('chi squared = ', chi**2) )
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:

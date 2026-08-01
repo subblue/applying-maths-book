@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1689,8 +1689,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1737,18 +1737,18 @@ title="Print to PDF"
  \sigma_V' \equiv \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\0 &amp; 1 &amp; 0 \end{bmatrix} ,\;
 \sigma_V'' \equiv \begin{bmatrix} 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\1 &amp; 0 &amp; 0 \end{bmatrix} ,\;
          E \equiv \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 1 \end{bmatrix}    \end{split}\]</div>
-<p>A simple way to check the table is to use Sympy to multiply out the matrices and then check the product. The product always has to be member of the group so it is only necessary to check which one this is via a look up table of names.</p>
+<p>A simple way to check the table is to use SymPy to multiply out the matrices and then check the product. The product always has to be member of the group so it is only necessary to check which one this is via a look up table of names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm   Matrix Products</span>
-<span class="n">E</span><span class="p">,</span> <span class="n">C3p</span><span class="p">,</span> <span class="n">C3m</span><span class="p">,</span> <span class="n">sigV</span><span class="p">,</span> <span class="n">sigVd</span><span class="p">,</span> <span class="n">sigVdd</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E, C3p, C3m, sigV, sigVd, sigVdd&#39;</span> <span class="p">)</span>
+<span class="n">E</span><span class="p">,</span> <span class="n">C3p</span><span class="p">,</span> <span class="n">C3m</span><span class="p">,</span> <span class="n">sigV</span><span class="p">,</span> <span class="n">sigVd</span><span class="p">,</span> <span class="n">sigVdd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E, C3p, C3m, sigV, sigVd, sigVdd&#39;</span> <span class="p">)</span>
 
-<span class="n">E</span>     <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">C3p</span>   <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># C3 plus </span>
-<span class="n">C3m</span>   <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># C3 minus</span>
-<span class="n">sigV</span>  <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">sigVd</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># sigma V&#39;</span>
-<span class="n">sigVdd</span><span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">E</span>     <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">C3p</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># C3 plus </span>
+<span class="n">C3m</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># C3 minus</span>
+<span class="n">sigV</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">sigVd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># sigma V&#39;</span>
+<span class="n">sigVdd</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 
 <span class="n">alist</span> <span class="o">=</span> <span class="p">[</span> <span class="n">E</span><span class="p">,</span> <span class="n">C3p</span><span class="p">,</span> <span class="n">C3m</span><span class="p">,</span> <span class="n">sigV</span><span class="p">,</span> <span class="n">sigVd</span><span class="p">,</span> <span class="n">sigVdd</span> <span class="p">]</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
@@ -1891,8 +1891,8 @@ C &amp; C &amp; E &amp; B \end{array}\end{split}\]</div>
 <p>To check the calculation with Sympy, the matrix is formed containing only zeros and then the six non-zero elements are then added.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Ha</span><span class="p">,</span> <span class="n">Hb</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">Fa</span><span class="p">,</span> <span class="n">Fb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C2, M, Ha, Hb, C, Fa, Fb&#39;</span><span class="p">)</span>
-<span class="n">C2</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Ha</span><span class="p">,</span> <span class="n">Hb</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">Fa</span><span class="p">,</span> <span class="n">Fb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C2, M, Ha, Hb, C, Fa, Fb&#39;</span><span class="p">)</span>
+<span class="n">C2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>           <span class="c1"># sympy matrix of zeros</span>
 <span class="n">C2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">C2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">C2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1916,7 +1916,7 @@ C &amp; C &amp; E &amp; B \end{array}\end{split}\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">Ha</span><span class="p">,</span> <span class="n">Hb</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">Fa</span><span class="p">,</span> <span class="n">Fb</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">Ha</span><span class="p">,</span> <span class="n">Hb</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">Fa</span><span class="p">,</span> <span class="n">Fb</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">C2</span><span class="o">*</span><span class="n">M</span>
 </pre></div>
 </div>
@@ -2053,18 +2053,18 @@ L_{Au} &amp; v_2 &amp; -v_3 &amp;  -v_7 &amp; v_6 &amp; v_6 &amp; -v_7 &amp; -v_
 <p>The calculation is shown below. Note that a vector such as <span class="math notranslate nohighlight">\(v_2-v_3+v_6-v_7\)</span> when used in a programme has to be written with each term with a separate index in a 1D matrix or list, i.e. as <span class="math notranslate nohighlight">\([v_2,-v_3,+v_6,-v_7]\)</span>.  As each <span class="math notranslate nohighlight">\(v\)</span> vector is real and has unit length then <span class="math notranslate nohighlight">\({v^*\cdot v}=v^2=1\)</span> and this simplifies the normalisation terms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span><span class="p">,</span><span class="n">v4</span><span class="p">,</span><span class="n">v5</span><span class="p">,</span><span class="n">v6</span><span class="p">,</span><span class="n">v7</span><span class="p">,</span><span class="n">v8</span><span class="p">,</span><span class="n">v9</span><span class="p">,</span><span class="n">v10</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;v1,v2,v3,v4,v5,v6,v7,v8,v9,v10&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span><span class="p">,</span><span class="n">v4</span><span class="p">,</span><span class="n">v5</span><span class="p">,</span><span class="n">v6</span><span class="p">,</span><span class="n">v7</span><span class="p">,</span><span class="n">v8</span><span class="p">,</span><span class="n">v9</span><span class="p">,</span><span class="n">v10</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;v1,v2,v3,v4,v5,v6,v7,v8,v9,v10&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">psi1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">v1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">v4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># each length 10</span>
-<span class="n">psi2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v6</span><span class="p">,</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">psi3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">v9</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">v10</span><span class="p">])</span>
+<span class="n">psi1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">v1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">v4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># each length 10</span>
+<span class="n">psi2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v6</span><span class="p">,</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">psi3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">v9</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">v10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GramSchmidt</span><span class="p">([</span><span class="n">psi1</span><span class="p">,</span><span class="n">psi2</span><span class="p">,</span><span class="n">psi3</span><span class="p">],</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># orthogonalise and normalise</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">GramSchmidt</span><span class="p">([</span><span class="n">psi1</span><span class="p">,</span><span class="n">psi2</span><span class="p">,</span><span class="n">psi3</span><span class="p">],</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># orthogonalise and normalise</span>
 </pre></div>
 </div>
 </div>
@@ -2119,14 +2119,14 @@ L_{E'} &amp; 2v_1 &amp; -v_1 &amp; -v_3 &amp; 0 &amp; 0 &amp; 0 &amp; 2v_1 &amp;
 L_{E'} &amp; 2v_1 &amp; -v_3 &amp; -v_1 &amp; 0 &amp; 0 &amp; 0 &amp; 2v_2 &amp; -v_3 &amp; -v_1 &amp; 0 &amp; 0 &amp; 0 \\
 \hline
 \end{array}\end{split}\]</div>
-<p>The top row produces the mode pattern for the totally symmetric vibration which is <span class="math notranslate nohighlight">\(v_1 + v_2 + v_3\)</span> and shows that in this normal mode each bond stretches together, much as the vectors in the sketch. The normalized vector is <span class="math notranslate nohighlight">\((v_1 + v_2 + v_3)/\sqrt{3}\)</span>. The vectors for the doubly degenerate mode,<span class="math notranslate nohighlight">\(2v_1 -v_2 -v_3\)</span> and <span class="math notranslate nohighlight">\(-v_1 +2v_2 -v_3\)</span> are calculated by taking vector 1 then 2 but the results are not orthogonal. To check this form, the dot product which is <span class="math notranslate nohighlight">\([2 -1 -1] [-1 2 -1]^T = -3\)</span>. Using Sympy these can be made orthogonal, they do not need to be normalized to do this, but the ‘True’ in the GramSchmidt command normalises the vectors.</p>
+<p>The top row produces the mode pattern for the totally symmetric vibration which is <span class="math notranslate nohighlight">\(v_1 + v_2 + v_3\)</span> and shows that in this normal mode each bond stretches together, much as the vectors in the sketch. The normalized vector is <span class="math notranslate nohighlight">\((v_1 + v_2 + v_3)/\sqrt{3}\)</span>. The vectors for the doubly degenerate mode,<span class="math notranslate nohighlight">\(2v_1 -v_2 -v_3\)</span> and <span class="math notranslate nohighlight">\(-v_1 +2v_2 -v_3\)</span> are calculated by taking vector 1 then 2 but the results are not orthogonal. To check this form, the dot product which is <span class="math notranslate nohighlight">\([2 -1 -1] [-1 2 -1]^T = -3\)</span>. Using SymPy these can be made orthogonal, they do not need to be normalized to do this, but the ‘True’ in the GramSchmidt command normalises the vectors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;e1, e2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;e1, e2&#39;</span><span class="p">)</span>
 
-<span class="n">e1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">e2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">GramSchmidt</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span><span class="n">e2</span><span class="p">],</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">GramSchmidt</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span><span class="n">e2</span><span class="p">],</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2192,7 +2192,7 @@ L_{E'} &amp; 2v_1 &amp; -v_3 &amp; -v_1 &amp; 0 &amp; 0 &amp; 0 &amp; 2v_2 &amp;
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

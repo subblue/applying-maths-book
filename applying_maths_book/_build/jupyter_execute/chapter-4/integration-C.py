@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -39,9 +39,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-a, b, x = symbols('a, b, x', positive=True)
-eq  = b*sqrt(1 -x**2/a**2)
-ans = integrate(eq,(x,0,a))
+a, b, x = sp.symbols('a, b, x', positive=True)
+eq  = b*sp.sqrt(1 -x**2/a**2)
+ans = sp.integrate(eq,(x,0,a))
 ans
 
 
@@ -128,9 +128,10 @@ ans
 # In[3]:
 
 
-theta,a = symbols('theta,a')
-eq = a**2/2*(1+cos(theta))**2
-integrate(eq,(theta,-pi,pi))
+theta,a = sp.symbols('theta,a')
+pi = sp.pi                          # sympy pi
+eq = a**2/2*(1 + sp.cos(theta))**2
+sp.integrate(eq,(theta,-pi,pi))
 
 
 # The cardioid in Cartesian coordinates is the quartic $\displaystyle (x^2+y^2-ax)^2-a^2(x^2+y^2)=0$ which would have to be solved to obtain $y =\cdots$  before integration. Looking at this equation it is easy to appreciate how much simpler the polar equation is to integrate.

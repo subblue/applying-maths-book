@@ -32,7 +32,7 @@
 # 
 # ![Drawing](vectors-fig1.png)
 # 
-# Figure 1 Diagram showing some examples of adding and subtracting vectors.
+# Figure 1 Diagram showing some examples of adding and subtracting vectors. In ($iv$) we could write $\vec A-\vec B-\vec D=0$ and for ($v$) $\vec V_2+\vec V-\vec V_1=0$. 
 # ________
 # In Fig. 2, OA and OB are vectors and because both start at the origin, they are called _position vectors_ . The basis set for OA and OB are unit vectors along the $x$- and $y$-axes only, because they are two dimensional. Vector OA comprises 3 units of the $x$-axis base vector and 2 units of the $y$-axis base vector. Later on, we will find that to solve some problems this basis set will have to be written explicitly as $(i, j)$ where $i$ and $j$ are the unit vectors along $x$ and $y$, but before doing this the properties of positional vectors are described and some problems solved.
 # 
@@ -208,6 +208,11 @@
 # 
 # because the scattering is elastic $|\vec v_r|=|\vec v_r'|$ and $\vec v_r =\vec v_1-\vec v_2$ which are the original velocities of species 1 and 2. However, without knowing what the vectors are in terms of numbers, i.e. in a basis set, the angle $\chi$ cannot be found.
 # 
+# ![Drawing](vectors-fig3.png)
+# 
+# Figure 3. Left: Vector $\vec A$ with components $a$ and $b$ on the $x$- and $y$- axes; $a = |\vec A|\cos(\theta), b = |\vec A\sin(\theta)$. Middle and right: Projection of vector $A$ on $B$ which is $|\vec A|\cos(\theta)$ and of $B$ on $A$ which is $|\vec B|\cos(\theta)$.
+# _______
+# 
 # ## 2.2 Cross product
 # 
 # The dot product is not the only way we can multiply two vectors, this can be done so that
@@ -230,11 +235,6 @@
 # 
 # ## 2.4 Parallel vectors
 # If two vectors are parallel, $\displaystyle \vec A\cdot \vec B=|\vec A||\vec A|\cos(0) =|\vec A||\vec B|$, because the angle between them is zero. Therefore, the dot product of a vector with itself is the square of its magnitude, $\displaystyle \vec A\cdot \vec A=|\vec A|^2$ and this is a convenient way of calculating its length.  The cross product of two three-dimensional vectors is zero $\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(0)\vec n=0$.
-# 
-# ![Drawing](vectors-fig3.png)
-# 
-# Figure 3. Left: Vector $\vec A$ with components $a$ and $b$ on the $x$- and $y$- axes; $a = |\vec A|\cos(\theta), b = |\vec A\sin(\theta)$. Middle and right: Projection of vector $A$ on $B$ which is $|\vec A|\cos(\theta)$ and of $B$ on $A$ which is $|\vec B|\cos(\theta)$.
-# _______
 
 # ## 2.5 Basis sets
 # 

@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -167,19 +166,19 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # which is twice the $\pmb{I}_z$ matrix as this contains only the $m$ values.
 # 
 # 
-# (d) The calculation is easier if Python/Sympy is used to order and check the terms. Alternatively the method of (a) could be used. The example shows the matrix for a spin of $3$. $\pmb{L}^-$ is calculated although it can be found as the transpose of $\pmb{L}^+$.
+# (d) The calculation is easier if Python/SymPy is used to order and check the terms. Alternatively the method of (a) could be used. The example shows the matrix for a spin of $3$. $\pmb{L}^-$ is calculated although it can be found as the transpose of $\pmb{L}^+$.
 
 # In[2]:
 
 
-L, m, spin, n = symbols('L, m, spin, n')
-Iplus = lambda L,m: sqrt(L*(L+1)-m*(m+1))
-Iminus= lambda L,m: sqrt(L*(L+1)-m*(m-1))
+L, m, spin, n = sp.symbols('L, m, spin, n')
+Iplus = lambda L,m: sp.sqrt(L*(L+1)-m*(m+1))
+Iminus= lambda L,m: sp.sqrt(L*(L+1)-m*(m-1))
 spin  = 3
 n     = 2*spin + 1
-mz    = zeros(n,1)
-Lplus = zeros(n,n)
-Lminus= zeros(n,n)
+mz    = sp.zeros(n,1)                        # sympy zero matrix
+Lplus = sp.zeros(n,n)
+Lminus= sp.zeros(n,n)
 j = 0
 for i in range(-spin,spin+1,1):
     mz[j] = i

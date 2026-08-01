@@ -11,8 +11,8 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import quad
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -159,10 +159,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-#using SymPy to do the indefinite integration
-x, n = symbols('x, n', positive = True)
-func = x**2*cos(n*x)/pi
-a_n = integrate(func,x, conds='none')      # coefficients a_n
+# using SymPy to do the indefinite integration
+x, n = sp.symbols('x, n', positive = True)
+pi = sp.pi
+func = x**2*sp.cos(n*x)/pi
+a_n = sp.integrate(func,x, conds='none')      # coefficients a_n
 a_n
 
 
@@ -266,16 +267,17 @@ plt.show()
 # 
 # $$\displaystyle b_n=\frac{1}{\pi}\int_{-\pi}^\pi x^3\sin(nx)dx$$
 # 
-# This and similar integrals can be integrated 'by parts' or the sine converted to an exponential and then integrated; in either case the sine or exponential part is integrated first, so that the power of $x$ is reduced in the second term of the 'by parts' integration. Using sympy the result is shown below.
+# This and similar integrals can be integrated 'by parts' or the sine converted to an exponential and then integrated; in either case the sine or exponential part is integrated first, so that the power of $x$ is reduced in the second term of the 'by parts' integration. Using SymPy the result is shown below.
 
 # In[4]:
 
 
-x = symbols('x' )
-n = symbols('n',integer=True)
-f01 = x**3*sin(n*x)/pi
-bn = integrate(f01,(x,-pi,pi),conds='none')
-simplify(bn)
+x = sp.symbols('x' )
+n = sp.symbols('n',integer=True)
+pi  = sp.pi
+f01 = x**3*sp.sin(n*x)/pi
+bn  = sp.integrate(f01,(x,-pi,pi),conds='none')
+sp.simplify(bn)
 
 
 # As the sine terms are all zero and the cosines alternate 1 for even $n$ or -1 for odd $n$ in the limits $x=\pm n\pi$ and with $n \gt$ 0, the integral is $b_n=2(-1)^{n+1}(\pi^2/n - 6/n^3) $. The expansion of $x^3$ is therefore,
@@ -515,18 +517,20 @@ plt.show()
 # In[7]:
 
 
-x, u = symbols('x, u')
-f01 = exp(-u**2 + 2*x*u)          # expand terms to get series to u^10
-s = series(f01,u,n = 10)
+# use SymPy
+x, u = sp.symbols('x, u')
+
+f01 = sp.exp(-u**2 + 2*x*u)          # expand terms to get series to u^10
+s = sp.series(f01,u,n = 10)
 print('Hermite Polynomials H(n,x) from n =1 to 9')
 for n in range(1,10):
-    print('H(',n,',x) ', s.coeff(u**n)*factorial(n))  # extract coefficients. factorial is inbuilt in SymPy
-# now plot data 
+    print('H(',n,',x) ', s.coeff(u**n)*sp.factorial(n))  # extract coefficients. factorial is inbuilt in SymPy
 
+# now plot data 
 xx  = np.linspace(-2,2,100)
 cols=['red','blue','green']
 for i,k in enumerate( [5,6,7] ):
-    f01 = lambdify(x, s.coeff(u**k)*factorial(k) )     # make algeraic answer into function 
+    f01 = sp.lambdify(x, s.coeff(u**k)*sp.factorial(k) )        # make algeraic answer into function 
     plt.plot(xx, f01(xx),color=cols[i],label='H('+str(k)+',x)')
 
 plt.axhline(0,color='grey', linewidth=1)
@@ -547,12 +551,13 @@ plt.show()
 # In[8]:
 
 
-x = symbols('x')
+x = sp.symbols('x')
 f01 = x/(1 - x - x**2)                    # expand terms to get series to u^10
-s = series(f01,x,n = 30)
+s = sp.series(f01,x,n = 30)
+
 print('Fibonacci from n = 1 to 20')
 for n in range(1,21):
-    print(' ', s.coeff(x**n),end='')  # extract coefficients.
+    print(' ', s.coeff(x**n),end='')      # extract coefficients.
 
 
 # Other generating functions can, for example, be used to work out the number of ways of selecting several items from a list, where the same item can be picked many times.

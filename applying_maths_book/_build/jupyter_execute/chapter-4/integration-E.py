@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -77,14 +77,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$ \displaystyle \int \left(a-2a^2x^2-\delta(x)\right)e^{-2ax^2}=-1+\int \left(a-2a^2x^2\right)e^{-2ax^2}$$
 # 
-# The $-1$ comes from the integral of the delta function. The limits are $\pm \infty$ and remaining integral is found using Sympy
+# The $-1$ comes from the integral of the delta function. The limits are $\pm \infty$ and remaining integral is found using SymPy.
 
 # In[2]:
 
 
-a, x = symbols('a,x', positive = True)  # use Sympy
-eq = exp(-2*a*x**2)*(a-2*a**2*x**2)
-integrate( eq, (x,-oo,oo) )
+a, x = sp.symbols('a,x', positive = True)    # use SymPy
+inf = sp.oo                       # sp.oo is infinity
+eq = sp.exp(-2*a*x**2)*(a-2*a**2*x**2)
+sp.integrate( eq, (x,-inf,inf) )        
 
 
 # The variational energy is therefore

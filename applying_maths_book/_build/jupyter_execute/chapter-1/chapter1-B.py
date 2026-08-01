@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -229,8 +229,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x = symbols('x')
-simplify( cosh(x)**2 + sinh(x)**2 )
+x = sp.symbols('x')
+sp.simplify( sp.cosh(x)**2 + sp.sinh(x)**2 )
 
 
 # produces the result $\cosh(2x)$. 
@@ -255,29 +255,47 @@ simplify( cosh(x)**2 + sinh(x)**2 )
 # 
 # ![Drawing](chapter1-fig15.png)
 # 
-# Figure 15. Some of the hyperbolic and normal trigonometric functions. Notice how  $\tan(x)$ goes to $\pm\infty$ in multiples of $x = \pm\pi/2$.
+# Figure 15. Some of the hyperbolic and normal trigonometric functions. Notice how  $\tan(x)$ goes to $\pm\infty$ in multiples of $x = \pm\pi/2$. The vertical dashed lines are at $\pm \pi/2$.
 # 
 # ________
 
 # ## 6 Inverse functions
 # 
-# The log and exponential functions are inverses of one another, and similarly $x^n$ and $x^{1/n}$ because when one is made a function of the other, the result is $x;\; \ln(e^x) = x$ and $(x^{1/n})^n = x$. If the function is written as $f(x)$ then the inverse is $f^{-1}(x)$, therefore
+# The log and exponential functions are the inverse of one another, because when one is made a function of the other, the result is $x$, i.e.$\ln(e^x) = x$. If the function is written as $f(x)$ then the inverse is $f^{-1}(x)$, therefore
 # 
-# $$\displaystyle f^{-1}[f(x)] = x$$
+# $$\displaystyle f^{-1}\big(f(x)\big) = x$$
 # 
-# However, not all functions have an inverse. When plotted the observation is that one function is the reflection of the other through a straight line of gradient $\pm 1 $, such as shown in  figure 8 for the positive exponential and log. More formally, the function and its inverse must have a one-to-one relationship. If an inverse exists when the function $f (x)$ is solved for $x$, then $x$ and $y$ exchanged and the result substituted into the original equation, $x$ results. For example, if $f(x) \equiv y = (x + 2)/3$ then $x = 3y - 2$, the inverse function is found by swapping $y$ for $x$, giving $f^{-1}(x) = 3x - 2$, and then substituting back $f^{-1}[f(x)] = 3(x + 2)/3 - 2 = x$.
+# However, not all functions have an inverse over the whole range of $x$, $x^2$ for example, so the range of $x$ over which the inverse exists should always be defined. When plotted one function is seen to be the reflection of the other through a straight line of gradient $\pm 1 $, such as shown in figure 8 for the positive exponential and log. The function and its inverse must have a one-to-one relationship. 
 # 
-# The function $y = \sin(x)$ has $y = \sin^{-1}(x)$ as its inverse function, which can be written as $\sin(y) = x$, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions $\cos^{-1}(x)$ and $\tan^{-1}(x)$. Notice that the computer notation is different to the mathematical one; for example, $\sin^{-1}(x) \equiv \arcsin(x)$, the prefix 'arc' being added to these inverse functions, but this notation is not universal and in some computer languages asin may be used instead of arcsin etc.
+# If an inverse exists when the function $f(x)$ is solved for $x$, then $x$ and $y$ exchanged and the result substituted into the original equation, $x$ results. For example, if 
 # 
-# The inverse trig functions are multi-valued; the principal range for $\sin^{-1}(x)$ and $\cos^{-1}(x)$ is $x = \pm 1$ and the function's principal values lie between $y = \pm \pi/2$. The inverse function $\tan^{-1}(x)$ is also multi-valued and ranges from $x = \pm \infty$ and has principal values between $y = \pm\pi/4$.
+# $$\displaystyle y\equiv f(x)  = \frac{(x + 2)}{3}$$
 # 
-# The equations defining inverse trig and hyperbolic functions are shown below, and some of which were obtained using Sympy for example,
+# then 
+# 
+# $$\displaystyle x = 3y - 2$$
+# 
+# the inverse function is found by swapping $y$ for $x$, giving 
+# 
+# $$\displaystyle f^{-1}(x) = 3x - 2$$
+# 
+# and then as a check substituting back gives
+# 
+# $$\displaystyle f^{-1}\big(f(x)\big) = 3\left(\frac{x + 2}{3}\right) - 2 = x$$
+# 
+# If the function is $f(x)=x^2$ then $x=\pm\sqrt{y}$ but as the square-root can be positive or negative there is not a unique result so it is necessary to state that, for example, $f^{-1}(x)=+\sqrt{x}$, when $x>0$. 
+# 
+# The function $y = \sin(x)$ has many values along the x-axis as may be seen by plotting the sine and drawing a horizontal line. The range of the inverse must contain only a single value of $\sin(x)$ and is $-\pi/2\to \pi/2$. We write the inverse as $y = \sin^{-1}(x)$, rather than as a series in $x$, as its inverse function. This can also can be written as $\sin(y) = x$, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions $\cos^{-1}(x)$ and $\tan^{-1}(x)$. Notice that the computer notation is different to the mathematical one; for example, $\sin^{-1}(x) \equiv \arcsin(x)$, the prefix 'arc' being added to these inverse functions, but this notation is not universal and in some computer languages asin may be used instead of arcsin etc.
+# 
+# The inverse trig functions are multi-valued; the principal range for $\sin^{-1}(x)$ and $\cos^{-1}(x)$ is $x = \pm 1$ and the function's principal values lie between $y = \pm \pi/2$. The inverse function $\tan^{-1}(x)$ is also multi-valued and ranges from $x = \pm \infty$ and has principal values between $y = \pm\pi/4$. The range over which the inverse is true should, therefore, always be stated.  
+# 
+# The equations defining inverse trig and hyperbolic functions are shown below, and some of which were obtained using SymPy, for example as,
 
 # In[3]:
 
 
-x = symbols('x')
-asinh(x).rewrite('log')
+x = sp.symbols('x')
+sp.asinh(x).rewrite('log')
 
 
 # ________
@@ -331,7 +349,7 @@ asinh(x).rewrite('log')
 # Figure 18. Plane polar coordinates.
 # _______
 
-# ## 8 Factorials, Stirling's formula, gamma function
+# ## 8 Factorials, Stirling's formula and Gamma function
 # 
 # The factorial function is the product of a set of _positive integers_ from 1 up to n;
 # 
@@ -372,6 +390,8 @@ asinh(x).rewrite('log')
 # $$ x(x+1)(x+2)\cdots (x+n-1)=\frac{(x+n-1)!}{(x-1)!} \qquad\tag{17}$$
 # 
 # is sometimes given the symbol $(x)_n$ which is called the Pochhammer symbol, although this notation is not universal. Ratios of factorials similar to these occur in quantum mechanics, particularly when angular momentum quantum numbers are involved.
+# 
+# Factorials are met again in the Binomial Theorem (section 9 of this chapter) and in many problems involving probabilities.
 # 
 # ###  **(i) Large factorials. Stirling's formula**
 # 
@@ -451,14 +471,14 @@ print(fact(15))
 # 
 # $$\displaystyle H_2(x) = 2xH_1(x) - 2H_0(x) = 4x^2 - 2$$
 # 
-# All other values can be obtained in a similar way using the recursion formula given above. Using Sympy this can be automated
+# All other values can be obtained in a similar way using the recursion formula given above. Using SymPy this can be automated
 
 # In[6]:
 
 
 #### Algorithm. Hermite Polynomial Recursion.  (This is slow for large n )
 
-x, n = symbols('x, n')       # define n and x in SymPy
+x, n = sp.symbols('x, n')       # define n and x in SymPy
 
 #----------------------
 def herm(n, x):             # define recursion equations returns the nth hermite with argument x 
@@ -469,7 +489,7 @@ def herm(n, x):             # define recursion equations returns the nth hermite
     else: 
         return (2*x*herm(n - 1, x))  - 2*(n- 1)*herm(n - 2, x) 
 #----------------------    
-expand(herm(10,x))          # return 10th Hermite as polynomial
+sp.expand(herm(10,x))          # return 10th Hermite as polynomial
 
 
 # In[ ]:

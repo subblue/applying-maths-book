@@ -10,10 +10,15 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.optimize import fsolve
-init_printing()               # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+
+# In[2]:
+
+
+from scipy.optimize import fsolve  # inbuilt function for numerical evaluation
 
 
 # ## Q12 answer
@@ -90,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # ## Q15 answer
 # (a) Although it is not too difficult to do the differentiation by hand, Python/SymPy is used not only for this but also to plot the equation. It is easier to make $x$ and $y$ functions of $t$ so that $t$ can be passed as a parameter; 
 
-# In[2]:
+# In[3]:
 
 
 fig = plt.figure(figsize=(12,5))           # plot using matplotlib 
@@ -124,23 +129,23 @@ plt.plot()
 # 
 # _____
 
-# In[3]:
+# In[4]:
 
 
 # do differentiation symbolically
 
-t, xx, yy = symbols(' t, xx, yy')  # used SymPy 
+t, xx, yy = sp.symbols(' t, xx, yy')  # used SymPy 
 
-xx = sin(t) - sin(2*t)**3
-yy = cos(t) - cos(2*t)**3
+xx = sp.sin(t) - sp.sin(2*t)**3
+yy = sp.cos(t) - sp.cos(2*t)**3
 
-dxdt = diff(xx,t)
-dydt = diff(yy,t)
+dxdt = sp.diff(xx,t)
+dydt = sp.diff(yy,t)
 print('dx/dt = ',dxdt)
 print('dy/dt = ',dydt)
 
 #calculate dy/dx as the ratio
-simplify(dydt/dxdt)
+sp.simplify(dydt/dxdt)
 
 
 # The vertical tangents are found when 
@@ -151,7 +156,7 @@ simplify(dydt/dxdt)
 # 
 # **Exercise:** Using the Newton - Raphson method find the roots of $dx/dt$; Use the plot this derivative first to help you find the starting points for the numerical method. Find the horizontal tangents.
 
-# In[4]:
+# In[5]:
 
 
 # from scipy.optimize import fsolve     # should be included at top of script.
@@ -194,21 +199,20 @@ print('coordinates',  x(ans[0]),y(ans[0]) )
 # Figure 40. Cardiod with horizontal tangents.
 # _____
 
-# In[5]:
-
-
-# the calculations are shown below
-t = symbols(' t', positive = True)      # use SymPy
-dydx = cos(t) + cos(2*t)
-ans = solve(dydx, t, check = False)     # use check = False so as not to miss root
-ans
-
-
 # In[6]:
 
 
-for j,i in enumerate(ans):
-    print((ans[j].evalf()))   # imag part is so small that numbers are real.
+# the calculations are shown below
+t = sp.symbols(' t', positive = True)      # use SymPy
+dydx = sp.cos(t) + sp.cos(2*t)
+ans = sp.solve(dydx, t, check = False)     # use check = False so as not to miss root
+ans
+
+
+# In[ ]:
+
+
+
 
 
 # ## Q17 answer
@@ -256,12 +260,12 @@ for j,i in enumerate(ans):
 # In[7]:
 
 
-a, s, x, y, f = symbols('a, s, x, y, f')
-y = Function('y')
-x = Function('x')
-f = y(s)*exp(-a*x(s))
-ans = diff(f,s)
-simplify(ans)
+a, s, x, y, f = sp.symbols('a, s, x, y, f')
+y = sp.Function('y')
+x = sp.Function('x')
+f = y(s)*sp.exp(-a*x(s))
+ans = sp.diff(f,s)
+sp.simplify(ans)
 
 
 # ## Q21 answer
@@ -297,15 +301,15 @@ simplify(ans)
 # In[8]:
 
 
-x,y,n = symbols('x, y, n')
-ans = simplify(diff(x**n*ln(x),x)  )   # 1st derivative
+x,y,n = sp.symbols('x, y, n')
+ans = sp.simplify(sp.diff(x**n*sp.ln(x),x)  )   # 1st derivative
 ans
 
 
 # In[9]:
 
 
-simplify(diff(ans,x) )               # second derivative
+sp.simplify(sp.diff(ans,x) )               # second derivative
 
 
 # ## Q22 answer
@@ -525,12 +529,12 @@ simplify(diff(ans,x) )               # second derivative
 # In[10]:
 
 
-CB, Kw,Ka,H,pH = symbols('CB, Kw, Ka, H, pH')
+CB, Kw,Ka,H,pH = sp.symbols('CB, Kw, Ka, H, pH')
 
 B =  Kw/H-H+CB*Ka/(Ka+H)
-pH= -log(H)
-ans= diff(B,H)/diff(pH,H)
-simplify(ans)
+pH= -sp.log(H)
+ans= sp.diff(B,H)/sp.diff(pH,H)
+sp.simplify(ans)
 
 
 # (b) Plotting $\beta$ produces the graph below where the buffer capacity is a maximum just above pH = 4 which is close to the value of the p$K_a$. The width of the peak demonstrates the ability of the buffer to resist changes in pH. The total base concentration is $0.02$ M.
@@ -559,6 +563,7 @@ simplify(ans)
 # In[11]:
 
 
+# using numpy
 Ka = 10**(-4.2)
 CB = 0.01
 Kw = 1e-14
@@ -645,22 +650,22 @@ print('{:s} {:6.3g} {:s} {:6.3g}'.format( 'Ka =', Ka,' H+ =', float(ans) ))
 # 
 # $$\displaystyle E= \frac{3}{2}\hbar\sqrt{\frac{k}{\mu}}$$
 # 
-# Using Sympy a result of zero is produced after some more simplification that the programme fails to do unless the instruction $\mathtt{,positive =True}$ is added to the first line as an argument to $\mathtt{symbols}$.
+# Using SymPy a result of zero is produced after some more simplification that the programme fails to do unless the instruction $\mathtt{,positive =True}$ is added to the first line as an argument to $\mathtt{sp.symbols}$. You can see that the result is zero by looking at the two square root terms in the bracket. 
 
 # In[12]:
 
 
-psi,x,hbar,E,k,alpha,mu = symbols('psi, x, hbar, E, k, alpha, mu ') # to get zero add ..' ,positive=True)
+psi,x,hbar,E,k,alpha,mu = sp.symbols('psi, x, hbar, E, k, alpha, mu ') # to get zero add ..' ,positive=True)
 
-alpha = sqrt(mu*k/hbar**2)
+alpha = sp.sqrt(mu*k/hbar**2)
 
-E = (3/2)*hbar*sqrt(k/mu)
+E = (3/2)*hbar*sp.sqrt(k/mu)
 
-psi = lambda x: sqrt(sqrt(4*alpha**3/pi))*x*exp(-(alpha/2)*x**2)
+psi = lambda x: sp.sqrt(sp.sqrt(4*alpha**3/sp.pi))*x*sp.exp(-(alpha/2)*x**2)
 
-eqn = ( (-hbar**2/(2*mu))*diff(psi(x),x,x) +((1/2)*k*x**2-E)*psi(x)) 
+eqn = ( (-hbar**2/(2*mu))*sp.diff(psi(x),x,x) +((1/2)*k*x**2-E)*psi(x)) 
  
-simplify((eqn) )
+sp.simplify(eqn)
 
 
 # ## Q37 answer
@@ -698,20 +703,24 @@ simplify((eqn) )
 # 
 # and when $r=r_e$ the curvature is $\rho_{r_e}=1/2k$.
 # 
-# (b) The Morse potential calculation is effectively the same but more involved and is done using Sympy as follows,
+# (b) The Morse potential calculation is effectively the same but more involved and is done using SymPy as follows,
 
 # In[13]:
 
 
-Vm,De,r,re,beta,V,k=symbols('Vm, De, r, re, beta, V, k')
+Vm,De,r,re,beta,V,k = sp.symbols('Vm, De, r, re, beta, V, k')
 
-Vm = De*(1 - exp(-(r-re)*beta))**2             # Morse potential
+Vm = De*(1 - sp.exp(-(r-re)*beta))**2             # Morse potential
 
-ans= ( 1 + (diff(Vm,r))**2)**(3/2)/( diff(Vm,r,r) )
-simplify(ans)
+ans= ( 1 + (sp.diff(Vm,r))**2)**(3/2)/( sp.diff(Vm,r,r) )
+sp.simplify(ans)
 
 
-# Substituting $r = r_e$  (and using $e^0=1$) into this complex result produces considerable simplification making radius of curvature $\displaystyle \rho=\frac{1}{2D_e\beta^2}$. Sympy also finds this result.
+# Substituting $r = r_e$  (and using $e^0=1$) into this complex result produces considerable simplification making radius of curvature 
+# 
+# $$\displaystyle \rho=\frac{1}{2D_e\beta^2}$$
+# 
+# SymPy also finds this result.
 
 # In[14]:
 

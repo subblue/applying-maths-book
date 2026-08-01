@@ -10,39 +10,39 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad
+import sympy as sp
+from scipy.integrate import quad        # numerical integration
 from scipy.stats import t,norm          # statistical functions
-init_printing()                         # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 14})  # set font size for plots
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
+plt.rcParams.update({'font.size': 14})  # set font size for plots 
 
 
 # ## 1.1 The Mean or Average value
 # 
-# If several readings have been taken of a quantity $x$, for example a titration is performed $N$ times with identical solutions in an attempt to be precise, the titration's end-point volume will be quoted as the arithmetic sample average $\langle x\rangle$ of all the $n$ measurements. This is sometimes also labelled $\bar x$ (pronounced 'x-bar') and the word 'mean' is often used instead of average. The arithmetic average is
+# If several readings have been taken of some quantity $x$, for example a titration is performed $N$ times with identical solutions in an attempt to be precise, the titration's end-point volume will be quoted as the arithmetic sample average $\langle x\rangle$ of all the $n$ measurements. This is sometimes also labelled $\bar x$ (pronounced 'x-bar') and the word 'mean' is often used instead of average. We always assume that the differences between measurements are due to random effects inherent in the experiment and that no systematic faults are present due to bad experimental techniques. The arithmetic average is
 # 
 # $$\displaystyle \langle x\rangle =\frac{1}{n}\sum_{i=1}^{i=n} x_i=\frac{1}{n}(x_1+x_2+x_3\cdots x_n)\qquad\tag{1}$$
 # 
-# where $x_1+x_2+x_3\cdots x_n$ are the measurements. This average value will probably not be the same as any individual value and these will always be spread either side of the mean. The sum of the difference between each point and the average, is always zero; 
+# where $x_1,x_2,x_3\cdots x_n$ are the measurements. This average value will probably not be the same as any individual value and these will always be spread either side of the mean. The sum of the difference between each point and the average, is always zero, which means that the data points are randomly distributed about their mean value, viz, 
 # 
 # $$\displaystyle \sum_i(x_i-\langle x\rangle)=0$$
 # 
 # ![Drawing](analysis-fig1.png)
 # 
-# Figure 1. The experimental average value $\langle x\rangle$  tends towards the population or theoretical mean $\mu$ as the number of samples increase. The sample standard deviation $s$ is also shown and this tends to a constant value of 1/4 as $n$ increases. (Note the logarithmic abscissa scale). The samples are taken from a Normal distribution with $\mu = 1/2$ and $\sigma = 1/4$.
+# Figure 1. The mean and standard deviation are shown vs. the number $n$ of measurements or samples taken. Samples are randomly drawn from a Normal (Gaussian) distribution with mean $\mu = 1/2$ and standard deviation  $\sigma = 1/4$ .The experimental average value $\langle x\rangle$ tends towards the population or theoretical mean $\mu$ as the number of samples increase. The sample standard deviation $s$ is also shown and this tends to a constant value of 1/4 as $n$ increases. (Note the logarithmic abscissa scale). 
 # ________________
 # 
-# One trajectory showing the way the mean value is approached as the number of experiments is increased is shown in figure 1; the sample standard deviation $s$ (equation 2) is also shown. The samples at each $n$ are from a new list of length $n$ selected at random a normal distribution (figure 4) with a mean $1/2$ and a standard deviation $1/4$. In many experiments, the inherent accuracy of each measurement may not be the same and then the mean and standard deviation have to be _weighted_ to reflect this. This is described in Section 3.8.
+# One trajectory showing the way the mean value is approached as the number of experiments is increased is shown in figure 1; the sample standard deviation $s$ (equation 2) is also shown. The samples at each $n$ are from a new list of length $n$ selected at random a Normal (Gaussian) distribution (fig. 4) with a mean $1/2$ and a standard deviation $1/4$. In many experiments the inherent accuracy of each measurement may not be the same and then the mean and standard deviation have to be *weighted* to reflect this. This is described in Section 3.8.
 # 
 # ## 1.2 Sample Standard Deviation and parent or population Variance
 # 
-# A measure of the spread of the results is the sample standard deviation $s$. The square of the standard deviation is called the _variance_ . The sample standard deviation is
+# A measure of the spread of the results is the sample standard deviation $s$. The square of the standard deviation is called the *variance*. The sample standard deviation is
 # 
 # $$\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \qquad\tag{2}$$
 # 
 # and is sometimes called the root mean square (or *rms*) deviation. This formula produces an unbiased estimate of $s$, but note that some authors define the standard deviation by dividing by $n$ rather than $n - 1$; there is not a single definition of $s$; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called *dispersion indices*; range, quantile, skew, and kurtosis (peakedness) are others.
 # 
-# In words, the formula for s says 'for each of the n measurements, subtract the average $\langle x\rangle$ from each $x$ value, square the result and then add up all the answers. Next, divide by the total number of measurements less one and finally take the square root'.
+# In words, the formula for $s$ says 'for each of the $n$ measurements, subtract the average $\langle x\rangle$ from each $x$ value, square the result and then add up all the answers. Next, divide by the total number of measurements less one and finally take the square root'.
 # 
 # The principle of *Least Squares* is widely used in modelling or analysing data; see Section 5.2, and this approach minimizes a function such as
 # 
@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # showing that, indeed, $M = \langle x \rangle$. The mean value makes the sum of squares a minimum, and in this sense it is the best estimate of the deviation.
 # 
-# Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean $\mu$, called the *population mean*, and its standard deviation is $\sigma$; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13, which approximates the normal when its mean is $\approx 10$ or greater.) The sample mean $\langle x \rangle$ is more likely than not to be different to the population mean $\mu$. If it can be shown that the average of all sample means s equals the population or true mean value $\mu$, then the sample mean is an unbiased estimate of the population mean.
+# Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean $\mu$, called the *population mean*, and its standard deviation is $\sigma$; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13, which approximates the normal when its mean is $\approx 10$ or greater.) The sample mean $\langle x \rangle$ is more likely than not to be different to the population mean $\mu$. If it can be shown that the average of all sample means $s$ equals the population or true mean value $\mu$, then the sample mean is an unbiased estimate of the population mean.
 # 
 # The standard deviation and variance can also be defined with reference to the parent distribution and then this *population* or *parent variance*, $\sigma^2$ is
 # 
@@ -99,7 +99,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The reasoning put more technically is that the sample mean $\langle x\rangle$, although an unbiased estimate, is unlikely to be exactly equal to the true population mean $\mu$ and is itself subject to random variation. By repeating the sampling process, i.e. by repeating the whole set of measurements, a number of different estimates of $\langle x\rangle$ are obtained which are distributed about the true value $\mu$. To simulate this and illustrate the central limit theorem, suppose that there are five measurements A, B, C, D, and E and each is an experimental result with values $1, 2, 3, 4$, and $5$ respectively. Any other numbers could be used but these are easy to average. The distribution of the numbers is uniform as shown in figure 2.
 # 
-# Suppose that randomly selected pairs of these values are taken making $2$5 possible samples. The pairs are shown on the left of the table and the corresponding average (sample mean) is shown on the right. Looking at this table there are five entries with a value of $3$, and only $1$ entry each with a value of $1$ or $5$. If plotted as a histogram, this begins to look a little like a normal distribution; figure 2.
+# Suppose that randomly selected pairs of these values are taken making $25$ possible samples. The pairs are shown on the left of the table and the corresponding average (sample mean) is shown on the right. Looking at this table there are five entries with a value of $3$, and only $1$ entry each with a value of $1$ or $5$. If plotted as a histogram, this begins to look a little like a normal distribution; figure 2.
 # 
 # ![Drawing](analysis-table-1.png) ![Drawing](analysis-fig2.png)
 # 
@@ -114,13 +114,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](analysis-fig3.png)
 # 
-# Figure 3. Illustrating the Central Limit Theorem.
+# Figure 3. Illustrating the Central Limit Theorem. The initial distribution is the horizontal line.
 # ______
 
 # In[2]:
 
 
-# Algorithm: Central limit
+# Algorithm: Central Limit Theorem
 
 m = 5000                        # number of reeat calculations
 av= np.zeros(m,dtype=float)     # array to hold data
@@ -132,9 +132,9 @@ av_x= np.sum(av)/m                              # average x
 
 sig = np.sqrt( np.sum( (np.random.rand(m) - av_x )**2  )/m   )    # sigma calculated 
 
-gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)  # gaus distribution
+gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n) # gausian distribution
 
-# #remove hash symbols to plot data as in fig 3
+# #remove hash to plot data as in fig 3
 #fig = plt.figure(figsize=(8,6) )
 #plt.rcParams.update({'font.size': 16})  # set font size for plot
 #plt.plot(x,gaus(x,sig),color='red')                                    # plot gaussian function with mu and sigma 
@@ -148,7 +148,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 
 # ## 3 Confidence intervals
 # 
-# The Central Limit Theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean $\mu$ and variance $\sigma^2/n$ for $n$ separate measurements. The mean $\mu$ may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.
+# The Central Limit Theorem shows that repeated measurements follow a Normal distribution (see Section 3.1) with a mean $\mu$ and variance $\sigma^2/n$ for $n$ separate measurements. The mean $\mu$ may be known from theoretical considerations or from other experimental data. The properties of the Normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.
 # 
 # The standard deviation of the mean is often referred to as the standard error on the mean and defined as 
 # 
@@ -191,13 +191,12 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 99.9999 & & 5\sigma\\
 # \hline \end{array}$$
 # 
-# Sometimes, a statement may be made along the lines that a measurement has produced a result that is more than 'five sigma from the mean'. This means that the chance of this occurring is $1/25 \equiv 4$%, which would suggest that it does not belong to the same distribution as other measurements. However, if only a few data points have been taken then there would be less confidence in assuming this, as to opposed to perhaps $100$ values in the data set with the mean and standard deviation properly established. 
 # 
-# However, the 'five sigma' statement can also be used with the normal distribution and this is far more common, particularly in particle physics. By integrating the distribution from $-\infty\to x$ the cumulative distribution is obtained. Thus there is a $50$% chance of being within $0.675\sigma$, (this is sometimes called the probable error), a $68.5$% chance of being within $1\sigma$ and a $95$% chance of being within $1.96\sigma$, and $95.45$% chance of being within $2\sigma$ and so on. For $5\sigma$ the chance is $99.9999$%, pretty much a 'dead cert'. 
+# The 'five sigma' statement is used with the Normal distribution and is common, particularly in particle physics. By integrating the distribution from $-\infty\to x$ the cumulative distribution is obtained. Thus there is a $50$% chance of being within $0.675\sigma$, (this is sometimes called the probable error), a $68.5$% chance of being within $1\sigma$ and a $95$% chance of being within $1.96\sigma$, and $95.45$% chance of being within $2\sigma$ and so on. For $5\sigma$ the chance is $99.9999$%, pretty much a 'dead cert'. 
 # 
 # ## 3.1 The Normal and Standard Normal distribution
 # 
-# The normal (Gaussian) distribution with mean $\mu$ and variance $\sigma^2$ has the form
+# The Normal (Gaussian) distribution with mean $\mu$ and variance $\sigma^2$ has the form
 # 
 # $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\large{ (x-\mu)^2/(2\sigma^2)} }$$
 # 
@@ -209,7 +208,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # $$\displaystyle \int_{-\infty}^\infty (x-\mu)^2p(x)dx=\sigma^2\equiv \langle x^2\rangle-\langle x\rangle^2 $$
 # 
-# The standard normal distribution describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,
+# The Standard Normal distribution describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,
 # 
 # $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi}}e^{-\large{ (x-\mu)^2/2} }\qquad\tag{7}$$
 # 
@@ -219,7 +218,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # The area within limits of $\pm 1.96$ is $\mathrm{erf}(1.96/\sqrt{2}) = 0.950$; hence this is the $95$% chance as described by equation 6. In figure 4, the total area in yellow adds up to $5$% of the total, meaning that a value that differs from the mean should exceed $\pm 1.96$ by pure chance only on $5$% of all measurements.
 # 
-# The probable error $p_e$ divides the normal distribution area into two with areas placed symmetrically about zero. The areas are $1/4:1/2:1/4$; the distribution's $x$ value is $p_e = \pm 0.6745\sigma$. Some values of the area and hence the chance of a value occurring within different standard deviations of the mean is shown in Table 1.
+# The probable error $p_e$ divides the Normal distribution area into two with areas placed symmetrically about zero. The areas are $1/4:1/2:1/4$; the distribution's $x$ value is $p_e = \pm 0.6745\sigma$. Some values of the area and hence the chance of a value occurring within different standard deviations of the mean is shown in Table 1.
 # 
 # ### Cumulative Distribution Function (CDF)
 # 
@@ -231,14 +230,15 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # $$\displaystyle  p(x)=\frac{dP}{dx}$$
 # 
-# For the reverse process - starting with the area to obtain the $x$ value producing that area - the Quantile function is used. For example, with the normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example using $\sigma/2$, see table 1, as the value and using Python/SymPy.
+# For the reverse process - starting with the area to obtain the $x$ value producing that area - the Quantile function is used. For example, with the Normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example using $\sigma/2$, see table 1, as the value and using Python/SymPy.
 
 # In[3]:
 
 
-x = symbols('x')
+x = sp.symbols('x')
 w = 0.5
-ans = integrate(exp(-x**2/2)/sqrt(2*pi),(x,-oo,w))  # integrate -infinity to w 
+pi = sp.pi
+ans = sp.integrate(sp.exp(-x**2/2)/sp.sqrt(2*pi),(x,-sp.oo,w))  # integrate -infinity to w, sp.oo is sympy infinity 
 float(ans)
 
 
@@ -291,7 +291,7 @@ dfdx = lambda x :np.exp(-x**2/2)/np.sqrt(2*np.pi)   # define normal distribution
 c = 0.69146
 w = 0.18                                 # initial guess for iterations
 for i in range(5):                       # guess number of interations needed
-    ans,err= quad(dfdx,-np.inf, w)       # integrate to value x from -infty to get f(x)
+    ans,err = quad(dfdx,-np.inf, w)      # integrate to value x from -infty to get f(x)
     w = w - (ans-c)/dfdx(w)              # calculate new value of w (the root) from previous values
     print(i,' w = ',w)
 
@@ -333,7 +333,7 @@ for i in range(5):                       # guess number of interations needed
 # 
 # ## 3.2 Small sample confidence limits: Student’s $t$ distribution
 # 
-# When the number of samples is small, s may not be a very good estimate of $\sigma$ and, in this case, Student's '$t$' test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter $v = n - 1$ where $n$ is the number of samples being averaged, and $v$ is called its 'degrees of freedom'. When the sample size increases, the $t$ distribution approaches the normal one. Using a similar argument to that for the normal distribution, the $t$ distribution produces confidence limits,
+# When the number of samples is small, $s$ may not be a very good estimate of $\sigma$ and, in this case, Student's '$t$' test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter $v = n - 1$ where $n$ is the number of samples being averaged, and $v$ is called its 'degrees of freedom'. When the sample size increases, the $t$ distribution approaches the normal one. Using a similar argument to that for the normal distribution, the $t$ distribution produces confidence limits,
 # 
 # $$\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\qquad\tag{12}$$
 # 
@@ -384,12 +384,6 @@ for i in range(5):                       # guess number of interations needed
 # 
 # To use Python to find the $t$ values for $n$ points with $\alpha/2 = 0.025$ we follow the method used for the normal distribution but now with the $t$ distribution. This means loading the library as 'from scipy.stats import t,norm' as shown at the top of this page.  Looking at Table 3, with $v=5$ and at $95$% the value is $2.571$. Using the t.cdf function produces $0.975$ which is the value fro $-\infty\to 2.571$ and so the two tailed value is $0.95$ or $95$%.
 
-# In[ ]:
-
-
-
-
-
 # In[9]:
 
 
@@ -428,7 +422,8 @@ quant(x,n)
 # \text{Student's t}& f(x,n)=\frac{\Gamma((n+1)/2)}{\sqrt{n\pi}\Gamma(n/2)}(1+x^2/n)^{-(n+1)/2} & 0 \text{ if } n\gt 1 & \frac{n}{n-2},\text{ if } n\gt 2& x=-\infty\cdots \infty\\
 # \hline
 # \end{array}$$
-# $\binom{n}k = \frac{n!}{k!(n-k)!}$. The mean is also called the expected value.
+# 
+# $\displaystyle \binom{n}k = \frac{n!}{k!(n-k)!}$. The mean is also called the expected value.
 
 # ## 3.4 Hypothesis testing
 # 
@@ -542,9 +537,9 @@ quant(x,n)
 # Algorithm: Chauvenet criterion to test for outliers
 
 c = np.array([89,120,94,110,105,108,85,83,101,95])  # data assumed positive
+indx = 1                   # position of point to check in the list. Index starts at zero
 
-indx = 1           # point to check in the list. index starts at zero
-n = len(c)
+n    = len(c)
 limit= 1/(2*n)
 xbar = np.sum(c)/n
 x0   = c[indx]
@@ -555,16 +550,16 @@ if x0 >= xbar:
 else:
     a = xbar - delta
     b = xbar + delta  
-print('{:s}{:6.3f} {:6.3f}'.format('limits ', a,b))
+print('{:s}{:6.3f} and {:6.3f}'.format('limits ', a ,b))
 s = 0
 for i in range(n):
     s = s + (c[i] - xbar)**2
 sig = np.sqrt(s/(n-1))
 print('{:s}{:6.3f} {:6.3f}'.format('mean and std dev ',xbar,sig))   
 
-p = 0.5*(erf((b - xbar)/(sig*np.sqrt(2.0) )) - erf((a - xbar)/(sig*np.sqrt(2.0) )) )
+p = 0.5*(sp.erf((b - xbar)/(sig*np.sqrt(2.0) )) - sp.erf((a - xbar)/(sig*np.sqrt(2.0) )) ) # use sympy error function
 
-print('{:s} {:6.3g} {:s} {:6.3f}'.format('1-p =', 1.0-p, ', 1/(2n) =', 1/(2*n)))
+print('{:s} {:6.3g} {:s} {:6.3f}'.format('1 - p =', 1.0-p, ', 1/(2n) =', 1/(2*n)))
 if 1 - p > 1/(2*n):
     print('retain point')
 else:
@@ -639,17 +634,17 @@ else:
 # In[12]:
 
 
-m, p, c, sm, sc, sT = symbols('m, p, c, sm, sc, sT')
+m, p, c, sm, sc, sT = sp.symbols('m, p, c, sm, sc, sT')
 
-T = m/(ln(p) - c)
-sigTsqrd = (diff(T,m))**2*sm**2+(diff(T,c))**2*sc**2
+T = m/(sp.ln(p) - c)
+sigTsqrd = (sp.diff(T,m))**2*sm**2 + (sp.diff(T,c))**2*sc**2
 sigTsqrd
 
 
 # In[13]:
 
 
-sig = sqrt(sigTsqrd)
+sig = sp.sqrt(sigTsqrd)
 sigT = sig.subs(p,760).subs(m,-5390).subs(c,21.89).subs(sm,33).subs(sc, 0.099)
 sigT.evalf(3)
 
@@ -663,7 +658,7 @@ sigT.evalf(3)
 # 
 # ## 4.1 Table of some error propagation formulae
 # 
-# The following table gives some examples of frequently met functions. The variances $\sigma_u^2$ and $\sigma_v^22$ are assumed to be known. The total variance $\sigma^2$ is shown; remember to take the square root before using and note that σ 2 is always positive. The equation to use for many variables is
+# The following table gives some examples of frequently met functions. The variances $\sigma_u^2$ and $\sigma_v^2$ are assumed to be known. The total variance $\sigma^2$ is shown; remember to take the square root before using and note that $\sigma^ 2$ is always positive. The equation to use for many variables is
 # 
 # $$\displaystyle \sigma_y^2=\sum_i\left(\frac{\partial y}{\partial u_i}\right)^2\sigma_i^2\qquad\tag{22}$$
 # 
@@ -672,24 +667,24 @@ sigT.evalf(3)
 # y=f(x) & \sigma_y  && y=f(u,v)  & \sigma_y\\
 # \hline
 # mx+c   & m\sigma_x && u\pm v & \sqrt{\sigma_x^2+\sigma_y^2}\\
-# mx^n+c & m nx^{n-1}\sigma_x && uv & \sqrt{s_{u}^{2} v^{2} + s_{v}^{2} u^{2}}\\
-# e^{\pm ax} & a\sigma_x e^{\pm ax} && u/v &\displaystyle\sqrt{\frac{s_{u}^{2} v^{2} + s_{v}^{2} u^{2}}{v^{4}}}\\
-# e^{\pm a/x} & \displaystyle \frac{a\sigma_x}{x^2}e^{\pm a/x} && \displaystyle \frac{1}{u}\pm  \frac{1}{v} & \displaystyle\sqrt{\frac{s_{u}^{2}}{u^{4}} + \frac{s_{v}^{2}}{v^{4}}}\\
-# \sin(\pm ax) & \displaystyle a\sigma_x\cos(ax) && u\ln(av) & \displaystyle\sqrt{s_{u}^{2} \log{\left(a v \right)}^{2} + \frac{s_{v}^{2} u^{2}}{v^{2}}}\\
-# \ln(ax) &\displaystyle \frac{\sigma_x}{a}&& ue^{av} & e^{av}\sqrt{a^{2} s_{v}^{2} u^{2} + s_{u}^{2} }\\
+# mx^n+c & m nx^{n-1}\sigma_x && uv & \sqrt{\sigma_{u}^{2} v^{2} + \sigma_{v}^{2} u^{2}}\\
+# e^{\pm ax} & a\sigma_x e^{\pm ax} && u/v &\displaystyle\sqrt{\frac{\sigma_{u}^{2} v^{2} + \sigma_{v}^{2} u^{2}}{v^{4}}}\\
+# e^{\pm a/x} & \displaystyle \frac{a\sigma_x}{x^2}e^{\pm a/x} && \displaystyle \frac{1}{u}\pm  \frac{1}{v} & \displaystyle\sqrt{\frac{\sigma_{u}^{2}}{u^{4}} + \frac{\sigma_{v}^{2}}{v^{4}}}\\
+# \sin(\pm ax) & \displaystyle a\sigma_x\cos(ax) && u\ln(av) & \displaystyle\sqrt{\sigma_{u}^{2} \log{\left(a v \right)}^{2} + \frac{\sigma_{v}^{2} u^{2}}{v^{2}}}\\
+# \ln(ax) &\displaystyle \frac{\sigma_x}{a}&& ue^{av} & e^{av}\sqrt{a^{2} \sigma_{v}^{2} u^{2} + \sigma_{u}^{2} }\\
 # \hline
 # \end{array}$$
 # 
 # ## 4.2  Matrix formulation of errors
 # Barlow (1989) demonstrates that equation 20 can be written in a matrix form, which does not immediately seem to offer any advantage, but this becomes clearer for problems that are more complex. The matrix equation is
 # 
-# $$\displaystyle V=GV_\sigma^2G^T \qquad\tag{23}$$
+# $$\displaystyle V=GV_{\sigma^2}G^T \qquad\tag{23}$$
 # 
-# where $V_\sigma^2$ is a square matrix of variances and $G$ a (Jacobian) matrix of partial derivatives. $V$ is the matrix of the variances for each variable. The total variance is the sum of the terms in $V$, which may be calculated as
+# where $V_{\sigma^2}$ is a square matrix of variances and $G$ a Jacobian matrix of partial derivatives, see Chapter 4-10. $V$ is the matrix of the variances for each variable. The total variance is the sum of the terms in $V$, which may be calculated as
 # 
 # $$\displaystyle \sigma^2=UV\qquad\tag{24}$$
 # 
-# where $U$ is a row matrix where each term is one. In example (vii) the matrix equation is written as
+# where $U$ is a row matrix where each term is one. In example (ii) the matrix equation is written as
 # 
 # $$\displaystyle 
 # V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&\displaystyle\frac{\partial T}{\partial c} \end{bmatrix} 
@@ -704,7 +699,11 @@ sigT.evalf(3)
 # 
 # The variance and mean have been used in our calculations on the assumption that they were the 'best estimation' of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call $x_i$.
 # 
-# A series of measurements of the same thing will always have a probability distribution $f(x,\theta)$ with measured values $x_1,x_2\cdots$ and the distribution will always depend on some unknown parameter $\theta$, for example it could be the the mean. The likelihood function of observing a series of events is therefore the product of individual events, viz, $L(\theta) = f(x_1,\theta) f(x_2,\theta) f(x_3,\theta)\cdots f(x_n,\theta)$. What we want to know is what quantity best describes the quantity $\theta$, i.e what is the most likely value of this quantity.  This can be found by differentiating $L$ with respect to this quantity which is often the mean or variance, then setting the value to zero in the usual way of finding a maximum.
+# A series of measurements of the same thing will always have a probability distribution $f(x,\theta)$ with measured values $x_1,x_2\cdots$ and the distribution will always depend on some unknown parameter $\theta$, for example it could be the the mean. The likelihood function of observing a series of events is therefore the product of individual events, viz, 
+# 
+# $$\displaystyle L(\theta) = f(x_1,\theta) f(x_2,\theta) f(x_3,\theta)\cdots f(x_n,\theta)$$
+# 
+# What we want to know is what quantity best describes the quantity $\theta$, i.e. what is the most likely value of this quantity.  This can be found by differentiating $L$ with respect to this quantity which is often the mean or variance, then setting the value to zero in the usual way of finding a maximum.
 # 
 # Suppose that the process measured follows a normal distribution but with an unknown mean $\mu$ but known variance $\sigma^2$. The likelihood function is
 # 
@@ -727,7 +726,7 @@ sigT.evalf(3)
 # 
 # $$\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n (x_i-\langle x\rangle)^2$$
 # 
-# The Poisson distribution, used for particle/photon  counting or other infrequent but numerous random events (see section 7) has the likelihood function
+# The Poisson distribution, used for particle/photon counting or other infrequent but numerous random events (see section 7), has the likelihood function;
 # 
 # $$\displaystyle L(\mu)=\prod_{i=0}^n \frac{\mu^{x_i} e^{-\mu}}{x_i!}$$
 # 

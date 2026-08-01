@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1734,8 +1734,8 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1848,10 +1848,11 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <p>When <span class="math notranslate nohighlight">\(n\gt\)</span> 0, <span class="math notranslate nohighlight">\(a_n\)</span> can be evaluated using integration by parts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#using SymPy to do the indefinite integration</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">func</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span>
-<span class="n">a_n</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>      <span class="c1"># coefficients a_n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using SymPy to do the indefinite integration</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span>
+<span class="n">a_n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>      <span class="c1"># coefficients a_n</span>
 <span class="n">a_n</span>
 </pre></div>
 </div>
@@ -1947,14 +1948,15 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <p>The series for <span class="math notranslate nohighlight">\(x^3\)</span> is calculated first and as this is an odd function, all the even cosine terms are zero; therefore, all the <span class="math notranslate nohighlight">\(a\)</span> coefficients are zero and the series only contains sine or <span class="math notranslate nohighlight">\(b\)</span> terms of the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle b_n=\frac{1}{\pi}\int_{-\pi}^\pi x^3\sin(nx)dx\]</div>
-<p>This and similar integrals can be integrated ‘by parts’ or the sine converted to an exponential and then integrated; in either case the sine or exponential part is integrated first, so that the power of <span class="math notranslate nohighlight">\(x\)</span> is reduced in the second term of the ‘by parts’ integration. Using sympy the result is shown below.</p>
+<p>This and similar integrals can be integrated ‘by parts’ or the sine converted to an exponential and then integrated; in either case the sine or exponential part is integrated first, so that the power of <span class="math notranslate nohighlight">\(x\)</span> is reduced in the second term of the ‘by parts’ integration. Using SymPy the result is shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="p">)</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span>
-<span class="n">bn</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">bn</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pi</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span>
+<span class="n">bn</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">bn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2164,18 +2166,20 @@ the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the e
 <p>Using SymPy to do this is simpler, the coefficients in <span class="math notranslate nohighlight">\(x\)</span> of <span class="math notranslate nohighlight">\(u^n/n!\)</span> are the Hermite polynomials</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, u&#39;</span><span class="p">)</span>
-<span class="n">f01</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">u</span><span class="p">)</span>          <span class="c1"># expand terms to get series to u^10</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use SymPy</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, u&#39;</span><span class="p">)</span>
+
+<span class="n">f01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">u</span><span class="p">)</span>          <span class="c1"># expand terms to get series to u^10</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hermite Polynomials H(n,x) from n =1 to 9&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H(&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;,x) &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># extract coefficients. factorial is inbuilt in SymPy</span>
-<span class="c1"># now plot data </span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H(&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;,x) &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># extract coefficients. factorial is inbuilt in SymPy</span>
 
+<span class="c1"># now plot data </span>
 <span class="n">xx</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span> <span class="p">):</span>
-    <span class="n">f01</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>     <span class="c1"># make algeraic answer into function </span>
+    <span class="n">f01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>        <span class="c1"># make algeraic answer into function </span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">f01</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;H(&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,x)&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -2208,12 +2212,13 @@ H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
 <p>It is worth noting in passing that generating functions play a more general role in mathematics than is described here and are used to form various distribution functions and series of numbers. The generating function <span class="math notranslate nohighlight">\(1/(1 - x)\)</span> produces a square wave or <span class="math notranslate nohighlight">\(-1, +1\)</span> repeating sequence; the function <span class="math notranslate nohighlight">\(1/(1 - ax)\)</span> produces the sequence of increasing integer powers of <span class="math notranslate nohighlight">\(a\)</span>; and <span class="math notranslate nohighlight">\(x/(1 - x - x^2)\)</span> generates the Fibonacci sequence. For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                    <span class="c1"># expand terms to get series to u^10</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fibonacci from n = 1 to 20&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># extract coefficients.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>      <span class="c1"># extract coefficients.</span>
 </pre></div>
 </div>
 </div>
@@ -2278,7 +2283,7 @@ H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

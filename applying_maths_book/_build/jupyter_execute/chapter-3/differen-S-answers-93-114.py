@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -35,9 +35,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-z, x, y = symbols('z, x, y')
-z = (x**2 + y**2)*sin(y/x)
-simplify(diff(z,x,y) )
+z, x, y = sp.symbols('z, x, y')
+z = (x**2 + y**2)*sp.sin(y/x)
+sp.simplify(sp.diff(z,x,y) )
 
 
 # ## Q94 answer
@@ -78,10 +78,10 @@ simplify(diff(z,x,y) )
 # In[3]:
 
 
-x, D, c0, t = symbols('x, D, c0, t')
-
-f= c0/sqrt(4*pi*D*t)*exp(-x**2/(4*D*t))
-if simplify((D*diff(f,x,x)  - diff( f,t))) == 0:
+x, D, c0, t = sp.symbols('x, D, c0, t')
+pi= sp.pi
+f = c0/sp.sqrt(4*pi*D*t)*sp.exp(-x**2/(4*D*t))
+if sp.simplify((D*sp.diff(f,x,x)  - sp.diff( f,t))) == 0:
     print('true')
 else:
     print('false')
@@ -122,24 +122,24 @@ else:
 # In[4]:
 
 
-a, b, R, T, p, V = symbols(' a, b, R, T, p, V') 
+a, b, R, T, p, V = sp.symbols(' a, b, R, T, p, V') 
 
 pvdw = R*T/(V - b) - a/V**2   # pressure in vdw equation
-dpdv = diff(pvdw,V)       # dpdV
+dpdv = sp.diff(pvdw,V)       # dpdV
 dpdv
 
 
 # In[5]:
 
 
-dpdv2 = diff(pvdw,V,V)   # d^2pdV^2
+dpdv2 = sp.diff(pvdw,V,V)   # d^2pdV^2
 dpdv2
 
 
 # In[6]:
 
 
-ans = solve( (dpdv, dpdv2),(T, V) )  # answer solving simultanoeus eqns gives T and V in that order
+ans = sp.solve( (dpdv, dpdv2),(T, V) )  # answer solving simultanoeus eqns gives T and V in that order
 ans
 
 

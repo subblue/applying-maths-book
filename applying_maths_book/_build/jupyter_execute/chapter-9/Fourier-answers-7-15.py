@@ -10,9 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.integrate import quad
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -170,23 +169,23 @@ plt.show()
 # In[3]:
 
 
-t0, t, k, phi = symbols('t0, t, k, phi',real=True)
+t0, t, k, phi = sp.symbols('t0, t, k, phi',real=True)
+pi= sp.pi
+g = 1/(sp.sqrt(2*pi))*sp.integrate( sp.sin(2*pi*t/t0 +phi)*sp.exp(-1J*k*t) ,(t,-t0,t0), conds='none')
 
-g = 1/(sqrt(2*pi))*integrate( sin(2*pi*t/t0 +phi)*exp(-1J*k*t) ,(t,-t0,t0), conds='none')
-
-simplify(g)
+sp.simplify(g)
 
 
 # In[4]:
 
 
-simplify(re(g))
+sp.simplify(sp.re(g))
 
 
 # In[5]:
 
 
-simplify(im(g))
+sp.simplify(sp.im(g))
 
 
 # (b) when $\varphi = n\pi$ and $n = 0, 1, 2, \cdots$ then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, $\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}$ and the form of the transform is a damped sine wave because the sine is divided by $k^2$.
@@ -229,9 +228,13 @@ plt.show()
 # 
 # ## Q13 answer
 # 
-# Using the result from Q12, the transform is $\displaystyle \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}[\delta(x-a)+\delta(x+a)]e^{-ikx} dx = \frac{1}{\sqrt{2\pi}} (e^{-ika}+e^{+ika})$ 
+# Using the result from Q12, the transform is 
 # 
-# and because $\displaystyle 2\cos(ka)=e^{-ika}+e^{+ika}$ the transform is $\displaystyle P_k=\frac{2}{\sqrt{2\pi}}\cos(ka)$.
+# $$\displaystyle \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}[\delta(x-a)+\delta(x+a)]e^{-ikx} dx = \frac{1}{\sqrt{2\pi}} (e^{-ika}+e^{+ika})$$ 
+# 
+# and because $\displaystyle 2\cos(ka)=e^{-ika}+e^{+ika}$ the transform is 
+# 
+# $$\displaystyle P_k=\frac{2}{\sqrt{2\pi}}\cos(ka)$$
 # 
 # The probability density is simply the square of this because $P$ is real, and shows that the scattering depends on the separation of the centres being maximal when $ka=\pi n$ if $n$ is an integer.
 # 
@@ -288,11 +291,13 @@ plt.show()
 # 
 # The transform is 
 # 
-# $$\displaystyle \frac{1}{\sqrt(2\pi}\int_o^\infty e^{-ax}e^{-ikt}dt = \frac{1}{\sqrt(2\pi}\frac{a}{a+ik}$$
+# $$\displaystyle \frac{1}{\sqrt{2\pi}}\int_o^\infty e^{-ax}e^{-ikt}dt = \frac{1}{\sqrt{2\pi}}\left(\frac{a}{a+ik}\right)$$
 # 
-# and the integration gives $\displaystyle -\frac{1}{\sqrt(2\pi}\frac{a}{a-ik}$. 
+# and the integration gives $\displaystyle -\frac{1}{\sqrt{2\pi}}\left(\frac{a}{a-ik}\right)$. 
 # 
-# Adding these results produces $\displaystyle f_k=\frac{1}{\sqrt(2\pi}\frac{2a}{a^2+k^2}$. 
+# Adding these results produces 
+# 
+# $$\displaystyle f_k=\frac{1}{\sqrt{2\pi}}\left(\frac{2a}{a^2+k^2}\right)$$ 
 # 
 # When plotted this looks something like a bell-shaped curve but is more pointed at the top; it has a Lorentzian shape. The full width at half maximum is $\displaystyle k_{fwhm}=2a(  4/\sqrt{2\pi}-a ) $ which for a $10$ fs pulse is $0.65 \cdot 10^{14}\, s^{-1}$. The central wavelength of the laser is $800$ nm or $12500\,\mathrm{ cm^{-1}}$, the frequency spread then $12500 \pm 0.6505 \cdot 10^{14}/c/2\, \mathrm{cm^{-1}}$ or $14670 \to 10329 \,\mathrm{cm^{-1}}$ which is $681.7 \to 968.1$ nm and covers most of the deep red part of the visible spectrum and spreads into a wavelength region where the eye is insensitive. As a consequence, lasers such as these, titanium sapphire is an example, appear very faint when in fact they could be very intense.
 # 

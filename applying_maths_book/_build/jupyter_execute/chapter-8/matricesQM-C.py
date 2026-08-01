@@ -11,9 +11,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # %matplotlib notebook
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-init_printing()                      # allows printing of SymPy results in typeset maths format
+from scipy.integrate import quad
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -83,10 +81,10 @@ num = 8                                           # number of terms in series  f
 L = 4
 m = 100
 wf = np.zeros(m,dtype = float)                    # array to hold calculated wavefunction
-x = np.linspace(0,L,m)                            # make m  x values  0 to L
+x  = np.linspace(0,L,m)                            # make m  x values  0 to L
 
 psi = lambda x,n: np.sqrt(2/L)*np.sin(n*np.pi*x/L)
-f   = lambda x:64-(2-x)**6;                       # target function
+f   = lambda x:64 -(2 - x)**6;                       # target function
 
 q = lambda x,n: psi(x,n)*f(x)                     #  function to integrate using quad()
 
@@ -94,7 +92,7 @@ for n in range(num):                              # sum over numer of terms
     coef = quad( q ,0, L, args = (n))[0]          # calculate coefficients c eqn (8.34)
     wf[:]= wf[:] + psi(x[:],n)*coef               # add up over all x
     
-#plt.plot(x,wf,color='red')                       # plot fig 5
+#plt.plot(x,wf   ,color='red')                    # plot fig 5
 #plt.plot(x,f(x) ,color='green')
 #plt.show()
 

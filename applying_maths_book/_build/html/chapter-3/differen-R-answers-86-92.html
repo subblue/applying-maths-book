@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1629,10 +1629,16 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>       <span class="c1"># for numerical evaluation</span>
 </pre></div>
 </div>
 </div>
@@ -1642,10 +1648,11 @@ title="Print to PDF"
 <p>When <span class="math notranslate nohighlight">\(\omega = 0\)</span>, the function has the value nominally <span class="math notranslate nohighlight">\(0/0\)</span> and l’Hopital’s rule can be used to find its true value. This gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega \tau)}{\omega\tau}\to \frac{\cos(\omega \tau)}{\tau} = 1\]</div>
-<p>then the hwhm is the solution to <span class="math notranslate nohighlight">\(\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}\)</span> which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width <span class="math notranslate nohighlight">\(H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)\)</span> and the value of <span class="math notranslate nohighlight">\(\omega\)</span>  when <span class="math notranslate nohighlight">\(H\)</span> is zero found. The derivative needed is <span class="math notranslate nohighlight">\(H'(\omega) = \pi/2 - \tau \cos(\omega\tau)\)</span>. Using the Newton - Raphson method some experimenting with initial guesses for <span class="math notranslate nohighlight">\(\omega\)</span> is necessary to obtain a sensible answer. Using Sympy and defining the function <span class="math notranslate nohighlight">\(H\)</span> and then its derivative as <span class="math notranslate nohighlight">\(dH\)</span> gives</p>
+<p>then the hwhm is the solution to <span class="math notranslate nohighlight">\(\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}\)</span> which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width <span class="math notranslate nohighlight">\(H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)\)</span> and the value of <span class="math notranslate nohighlight">\(\omega\)</span>  when <span class="math notranslate nohighlight">\(H\)</span> is zero found. The derivative needed is <span class="math notranslate nohighlight">\(H'(\omega) = \pi/2 - \tau \cos(\omega\tau)\)</span>. Using the Newton - Raphson method some experimenting with initial guesses for <span class="math notranslate nohighlight">\(\omega\)</span> is necessary to obtain a sensible answer. Using SymPy and defining the function <span class="math notranslate nohighlight">\(H\)</span> and then its derivative as <span class="math notranslate nohighlight">\(dH\)</span> gives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">tau</span><span class="p">)</span>      <span class="c1"># function H;  w = omega</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using  python and numpy to get numerical answer</span>
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">tau</span><span class="p">)</span>      <span class="c1"># function H;  w = omega</span>
 <span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">tau</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">tau</span><span class="p">)</span>    <span class="c1"># derivative</span>
 
 <span class="n">tau</span> <span class="o">=</span> <span class="mf">3.0</span>
@@ -1710,22 +1717,11 @@ title="Print to PDF"
 <p>Using Newton-Raphson to solve the equation gives <span class="math notranslate nohighlight">\(x = 2.309,\, y = 1.446\)</span> The calculation is shown next using SymPy to do the differentiations</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, f, g, L&#39;</span><span class="p">)</span>  <span class="c1"># use L instead of lambda </span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># function</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span> <span class="p">)</span>        <span class="c1"># constraint</span>
-<span class="n">dfdg_dx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">L</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># eq 37 diff wrt x</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">dfdg_dx</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/differen-R-answers-86-92_7_0.png" src="../_images/differen-R-answers-86-92_7_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdg_dy</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">L</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># eq 37 , diff wrt y</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">dfdg_dy</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, f, g, L&#39;</span><span class="p">)</span>  <span class="c1"># use L instead of lambda </span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># function</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span> <span class="p">)</span>        <span class="c1"># constraint</span>
+<span class="n">dfdg_dx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">L</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># eq 37 diff wrt x</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dfdg_dx</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -1733,16 +1729,27 @@ title="Print to PDF"
 <img alt="../_images/differen-R-answers-86-92_8_0.png" src="../_images/differen-R-answers-86-92_8_0.png" />
 </div>
 </div>
-<p>hence <span class="math notranslate nohighlight">\(\displaystyle \lambda =\frac{y}{\sqrt{x^2+y^2}}\)</span>. Next substitute <span class="math notranslate nohighlight">\(\lambda \)</span> into the result dfdf_dx and at the same time substitute also for <span class="math notranslate nohighlight">\(y=\sqrt{(4-x)^3/x}\)</span> so that an expression in <span class="math notranslate nohighlight">\(x\)</span> only  results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="n">dfdg_dx</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span> <span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span> <span class="n">y</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdg_dy</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">L</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># eq 37 , diff wrt y</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dfdg_dy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-R-answers-86-92_10_0.png" src="../_images/differen-R-answers-86-92_10_0.png" />
+<img alt="../_images/differen-R-answers-86-92_9_0.png" src="../_images/differen-R-answers-86-92_9_0.png" />
+</div>
+</div>
+<p>hence <span class="math notranslate nohighlight">\(\displaystyle \lambda =\frac{y}{\sqrt{x^2+y^2}}\)</span>. Next substitute <span class="math notranslate nohighlight">\(\lambda \)</span> into the result dfdf_dx and at the same time substitute also for <span class="math notranslate nohighlight">\(y=\sqrt{(4-x)^3/x}\)</span> so that an expression in <span class="math notranslate nohighlight">\(x\)</span> only  results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="n">dfdg_dx</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span> <span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span> <span class="n">y</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/differen-R-answers-86-92_11_0.png" src="../_images/differen-R-answers-86-92_11_0.png" />
 </div>
 </div>
 <p>The equation remaining is</p>
@@ -1821,22 +1828,22 @@ title="Print to PDF"
 <p>and their derivatives in <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> are set to zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, z, f, g, h, M, L&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, z, f, g, h, M, L&#39;</span><span class="p">)</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">z</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">Q</span> <span class="o">=</span> <span class="n">f</span> <span class="o">+</span> <span class="n">L</span><span class="o">*</span><span class="n">g</span> <span class="o">+</span> <span class="n">M</span><span class="o">*</span><span class="n">h</span>
-<span class="n">diff_x</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">diff_y</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">diff_z</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">solve</span><span class="p">((</span><span class="n">diff_x</span><span class="p">,</span><span class="n">diff_y</span><span class="p">,</span><span class="n">diff_z</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">M</span><span class="p">))</span>
+<span class="n">diff_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">diff_y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">diff_z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">((</span><span class="n">diff_x</span><span class="p">,</span> <span class="n">diff_y</span><span class="p">,</span> <span class="n">diff_z</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">L</span> <span class="p">,</span><span class="n">M</span><span class="p">))</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-R-answers-86-92_13_0.png" src="../_images/differen-R-answers-86-92_13_0.png" />
+<img alt="../_images/differen-R-answers-86-92_14_0.png" src="../_images/differen-R-answers-86-92_14_0.png" />
 </div>
 </div>
 <p>The order of the solutions is the same as in the solve command thus <span class="math notranslate nohighlight">\(x =\pm \sqrt{2}/10\; y=\pm(1+4\sqrt{2}/5)\; z=\pm 7\sqrt{2}/10\; \lambda = -3, \mu=\pm 5/\sqrt{2}\)</span>. The two values give the maximum and minimum values thus <span class="math notranslate nohighlight">\(f_{max}=10.07\)</span> and <span class="math notranslate nohighlight">\(f_{min}=-4.07\)</span>.</p>
@@ -1893,7 +1900,7 @@ title="Print to PDF"
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

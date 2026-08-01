@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()            # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()            # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -113,15 +113,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x,y,n = symbols('x y n')    # define symbols to use 
-ans = diff(x**n,x,x,x,x,x)  # differentiate 5 times   
-factor(ans)
+x,y,n = sp.symbols('x y n')    # define symbols to use 
+ans = sp.diff(x**n,x,x,x,x,x)  # differentiate 5 times   
+sp.factor(ans)
 
 
 # In[3]:
 
 
-print(ans.subs(n,5),factorial(5) )  # substitute into ans and check answer is a factorial
+print(ans.subs(n,5),sp.factorial(5) )  # substitute into ans and check answer is a factorial
 
 
 # ## Q6 answer
@@ -188,10 +188,10 @@ print(ans.subs(n,5),factorial(5) )  # substitute into ans and check answer is a 
 # In[4]:
 
 
-A,B,c,g = symbols(' A B c g')     # use g instead of gamma 
-lngamma = -A*sqrt(c)/(1+B*sqrt(c))
-ans = diff(lngamma,c)
-simplify(ans*c)                   # don't forget to multiply by c after differentiating
+A,B,c,g = sp.symbols(' A B c g')     # use g instead of gamma 
+lngamma = -A*sp.sqrt(c)/(1+B*sp.sqrt(c))
+ans = sp.diff(lngamma,c)
+sp.simplify(ans*c)                   # don't forget to multiply by c after differentiating
 
 
 # ## Q11 answer
@@ -204,9 +204,9 @@ simplify(ans*c)                   # don't forget to multiply by c after differen
 # In[5]:
 
 
-a,x = symbols(' a x')
-f = integrate( x**2/(exp(-x)-1 ),(x,0,a/x) )
-ans = diff(f,x)
+a,x = sp.symbols(' a x')
+f = sp.integrate( x**2/(sp.exp(-x) - 1 ),(x,0,a/x) )
+ans = sp.diff(f,x)
 ans
 
 

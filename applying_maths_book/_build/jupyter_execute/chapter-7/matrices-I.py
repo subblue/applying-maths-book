@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                   # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                   # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -423,7 +422,7 @@ print(K)
 # In[3]:
 
 
-eigvls, eigvct = LA.eig(K)            # eigenvalues = lambda = eigvls
+eigvls, eigvct = np.linalg.eig(K)            # eigenvalues = lambda = eigvls
 print('eigenvalues \n',eigvls)
 print('eigenvectors \n',eigvct)       # as columns and are normalised
 
@@ -440,10 +439,10 @@ for i in [0,1,2]:
 # In[5]:
 
 
-s1, s2, s3 = symbols(' s1, s2, s3')
+s1, s2, s3 = sp.symbols(' s1, s2, s3')
 
-s = Matrix( [ [s1,s2,s3] ] )          # mass weighted coordinates 
-q = (LA.inv(G) @ s.T )*np.sqrt(U)     # invert G &  convert back to SI units   
+s = sp.Matrix( [ [s1,s2,s3] ] )          # mass weighted coordinates 
+q = (np.linalg.inv(G) @ s.T )*np.sqrt(U)     # invert G &  convert back to SI units   
 q                          
 
 

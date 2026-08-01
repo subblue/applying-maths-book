@@ -10,8 +10,6 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                    # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -412,7 +410,7 @@ dtime, S, In = EulerSIRint(S0,In0,k1,k2)
 # 
 # ![Drawing](num-methods-fig17b.png)
 # 
-# Figure 17a. The critical fraction of a population $p=1-1/R_R$ that makes the reproductive ratio $R_R=1$ for different diseases. (Figure based on fig 2 in Wayne & Bolker.)
+# Figure 17a. The critical fraction of a population $p=1-1/R_R$ that makes the reproductive ratio $R_R=1$ for different diseases. (Figure based on fig 2 in Wayne & Bolker (2015)).
 # ________________________________________
 
 # ## 7.8 Bacterial populations calculated via Chemical Kinetics

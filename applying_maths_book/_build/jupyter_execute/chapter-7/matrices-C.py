@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -613,16 +613,16 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # Rotation matrices for d-orbitals using SymPy
 
-x,y,z,theta,n = symbols('x,y,z,theta,n')
+x,y,z,theta,n = sp.symbols('x,y,z,theta,n')
 
 def rotated(theta):
-    xd =  x*cos(theta) - y*sin(theta)
-    yd =  x*sin(theta) + y*cos(theta)
+    xd =  x*sp.cos(theta) - y*sp.sin(theta)
+    yd =  x*sp.sin(theta) + y*sp.cos(theta)
     zd = z
     f01=[(xd**2 - yd**2)/2, xd*yd, xd*zd, yd*zd, zd*zd]
     f02=[]
     for i in range(5):
-        f02.append(simplify(expand(f01[i] ) )  )
+        f02.append(sp.simplify(sp.expand(f01[i] ) )  )
     return f02
 
 rotated(theta)
@@ -633,6 +633,7 @@ rotated(theta)
 
 # Example C2 rotation 
 n = 2
+pi=sp.pi
 theta = 2*pi/n    
 theta*180/pi,rotated(theta)
 
@@ -737,7 +738,7 @@ theta*180/pi,rotated(theta)
 # 
 # $$\displaystyle L_M=\frac{d}{h}\sum_{j=1\cdots h}\chi_j^MO^S_j \tag{9.21}$$
 # 
-# where $M$ is the Mulliken symmetry species label, $A_g, B_{3g}$, and so forth, $h$ is the order of the group, $d$ the dimension of the irreducible representation, and the sum is over all the classes. Since we only want to know which orbital belongs to which symmetry species $d/h$ can be ignored. The function $L_M$ is the list of orbital names ($d_{xy}$ etc.) which belong to symmetry species $M$. The simplest way to perform the calculation, and avoid arithmetic slips, is to use some code and use Sympy for symbolic calculation. The matrix F below contains the orbital changes for each operation in $C_{4V}$ and PG is the character table. Matrices AB and Dorb are just for labelling the results.
+# where $M$ is the Mulliken symmetry species label, $A_g, B_{3g}$, and so forth, $h$ is the order of the group, $d$ the dimension of the irreducible representation, and the sum is over all the classes. Since we only want to know which orbital belongs to which symmetry species $d/h$ can be ignored. The function $L_M$ is the list of orbital names ($d_{xy}$ etc.) which belong to symmetry species $M$. The simplest way to perform the calculation, and avoid arithmetic slips, is to use some code and use SymPy for symbolic calculation. The matrix F below contains the orbital changes for each operation in $C_{4V}$ and PG is the character table. Matrices AB and Dorb are just for labelling the results.
 # 
 # The calculation shows that the orbitals belong to symmetry species as follows
 # 
@@ -761,17 +762,17 @@ theta*180/pi,rotated(theta)
 
 # projection operator method for d-orbitals in C4V point group
 
-f1,f2,f3,f4,f5,row,col, F,PG = symbols('f1,f2,f3,f4,f5,row,col,F,PG')
+f1,f2,f3,f4,f5,row,col, F,PG = sp.symbols('f1,f2,f3,f4,f5,row,col,F,PG')
 
 # matrix of d-orbital changes f1,..f5 as in text
-F  = Matrix([[f1,-f1,-f1, f1,f1, f1,-f1,-f1],[f2,-f2,-f2, f2,-f2,-f2, f2,f2]\
+F  = sp.Matrix([[f1,-f1,-f1, f1,f1, f1,-f1,-f1],[f2,-f2,-f2, f2,-f2,-f2, f2,f2]\
            , [f3,-f4, f4,-f3,f3,-f3,-f4, f4],[f4, f3,-f3,-f4,-f4, f4,-f3,f3],[f5,f5,f5,f5,f5,f5,f5,f5]])
 
-PG = Matrix([[1, 1, 1,1,1,1, 1, 1],[1, 1, 1,1,-1,-1,-1,-1],\
+PG = sp.Matrix([[1, 1, 1,1,1,1, 1, 1],[1, 1, 1,1,-1,-1,-1,-1],\
              [1,-1,-1,1,1,1,-1,-1],[1,-1,-1,1,-1,-1, 1, 1],[2,0,0,-2,0,0,0,0]])  # point group
 
-AB   = Matrix(['A1','A2','B1','B2','E'])              # Mulliken labels
-Dorb = Matrix(['d(x2-y2)','dxy','dxz','dyz','dz2'])   # symmetry operations.
+AB   = sp.Matrix(['A1','A2','B1','B2','E'])              # Mulliken labels
+Dorb = sp.Matrix(['d(x2-y2)','dxy','dxz','dyz','dz2'])   # symmetry operations.
 F,PG
 
 
@@ -816,15 +817,15 @@ for i in range(arow):               #  rows of orbitals
 # 
 # $$\displaystyle \pmb{A} = \begin{bmatrix} 0&1&0\\ 1&0&0\\0&0&1\end{bmatrix}\begin{bmatrix} 0&0&1\\ 1&0&0\\0&1&0\end{bmatrix}\begin{bmatrix} 0&1&0\\ 1&0&0\\0&0&1\end{bmatrix}= \begin{bmatrix} 0&1&0\\ 0&0&1\\1&0&0\end{bmatrix}=C_3^+$$
 # 
-# The matrix multiplication can be checked using Sympy.
+# The matrix multiplication can be checked using SymPy.
 
 # In[6]:
 
 
-A, C3, SV = symbols('A, C3, SV')
+A, C3, SV = sp.symbols('A, C3, SV')
 
-SV = Matrix([[0,1,0],[1,0,0],[0,0,1]]  )  # sigma V matrix
-C3 = Matrix([[0,0,1],[1,0,0],[0,1,0]]  )  # C3 minus matrix
+SV = sp.Matrix([[0,1,0],[1,0,0],[0,0,1]]  )  # sigma V matrix
+C3 = sp.Matrix([[0,0,1],[1,0,0],[0,1,0]]  )  # C3 minus matrix
 A  = SV**(-1)*C3*SV
 A
 
@@ -1491,6 +1492,12 @@ A
 # 
 # $^\dagger$ If $A$ and $B$ are two normalised functions add and subtract them to make them orthonormal $\int(A+B)(A-B)d\tau=\int A^2 - \int B^2 - \int AB + \int BA =0$ as each integral is unity.
 # 
+
+# In[21]:
+
+
+
+
 
 # In[ ]:
 

@@ -33,7 +33,7 @@
 # (b) What is the chance that all molecules occupy $V_A$, if the volumes are equal, and there are $100$, and
 # then $1000$ gas molecules in the total volume?
 # 
-# (c) If the entropy is defined as $S = k_B\ln(\Omega)$ where $k_B$ is Boltzmann's constant and $\Omega$ the probability what is the entropy change upon isothermally expanding $N$ gas molecules from $V_A \to V_A + V_B$?
+# (c) If the entropy is defined as $S = k_B\ln(\Omega)$, where $k_B$ is Boltzmann's constant and $\Omega$ the probability, what is the entropy change upon isothermally expanding $N$ gas molecules from $V_A \to V_A + V_B$?
 # 
 # ## Q21 DNA bases
 # (a)  In DNA there are four bases labelled G, C, A, T. If three bases encode an amino acid, how many amino acids could there be ?
@@ -57,10 +57,10 @@
 # 
 # ![Drawing](chapter1-fig24.png)
 # 
-# Figure 24 Some of the distributions of five quanta among seven levels
+# Figure 23 Some of the distributions of five quanta among seven levels
 # ____
 # 
-# ## Q27 $\mathrm{H_2 + D_2 = 2HD}$ equilibrium constant
+# ## Q27 Equilibrium constant of $\mathrm{H_2 + D_2 = 2HD}$ 
 # It is tempting to suppose that the reaction $\mathrm{H_2 + D_2 = 2HD}$ has an equilibrium constant $K = 1$, because of the random distribution of H and D isotopes, but this would be wrong, because $K = 4$. If $f_H$ is the fraction of H atoms (protium) and $f_D$ that of deuterium the fraction by random mixing in H$_2$ is $f_H^2$, in D$_2$ is $f_D^2$ and in HD is $2f_D f_H$. The factor 2 arises because of the two ways of arranging H and D - just as with two coins. The equilibrium constant is therefore 
 # 
 # $$\displaystyle K = \frac{(2f_{H}f_D)^2}{f_H^2f_D^2} = 4$$
@@ -113,10 +113,23 @@
 # ## Q33 Binomial coefficients
 # Prove the following relationships between binomial coefficients
 # 
-# $$(a)\quad q\binom{n}{q}=n\binom{n-1}{q-1}, \qquad (b) \quad \binom{n}{q}=\binom{n-1}{q-1}+\binom{n-1}{q}$$
+# (a)$\displaystyle\qquad  q\binom{n}{q}=n\binom{n-1}{q-1}$
 # 
-# ## Q34 CAS registry numbers
-# The CAS registry numbers for pheophytin-a (chlorophyll-a with the Mg atom replaced by two H atoms), retinal and trans-stilbene are $100759 - 86 - x,\; 116 - 31 - x$, and $103 - 30 - x$ respectively. Work out their check-sum numbers $x$ then look them up to confirm their values. Pheophytin-A also has the index $603-17-x$ so work this one out as well.
+# (b)$\displaystyle\qquad  \binom{n}{q}=\binom{n-1}{q}+\binom{n-1}{q-1}$
+# 
+# (c) If the equation in (b) is written as $\displaystyle\qquad y(n,q)=y(n-1,q)+\binom{n-1}{q-1}$
+# 
+# show that $\displaystyle\qquad y(n+1,q)=\left(\frac{n+1}{n+1-q}\right)y(n,q)$
+# 
+# which is a recurrence method to calculate a binomial coefficient without needing to calculate a factorial. Show that this works by finding what the first value $y(n=q,q)$is.
+# 
+# ## Q34 Bayes formula
+# 
+# A sample of ions composed of $90$% Na$^+$ plus $10$% k$^+$ ions is analysed by a technique supposed to be sensitive only to Na$^+$. In practice the analysis is only $92$% efficient for Na$^+$ and has a probability of $6$% of accidentally detecting $K^+$. 
+# 
+# (a) What is the probability of detecting Na$^+$, and (b) what is the probability of no result from the analysis?
+# 
+# **Strategy** Use Bayes formula. We want the probability $p(Na^+|+)$, where the '+' means positive detection in the analysis, but are given $p(+|Na^+)$. To get to the answer we shall need to work out $p(+)$, the total positive analysis result. 
 
 # In[ ]:
 

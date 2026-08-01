@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1619,8 +1619,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1635,13 +1635,13 @@ title="Print to PDF"
 <p>This new number is one of a new class called <em>complex numbers</em>. These are not numbers in the elementary sense used in counting or measuring, but constitute new mathematical objects and have an existence of their own. These numbers are called ‘complex’ only because they contain two parts and can always be written in the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z=a+ ib \qquad\tag{1}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a\)</span> is called the <em>real</em> (Re) part and <span class="math notranslate nohighlight">\(b\)</span> the <em>imaginary</em> (Im) part of the number. The complex number <span class="math notranslate nohighlight">\(z = i\)</span>, if written in the form of equation 1, has a real part <span class="math notranslate nohighlight">\(a = 0\)</span> and an imaginary part <span class="math notranslate nohighlight">\(b = 1\)</span>. The latter is rather a misnomer as <span class="math notranslate nohighlight">\(b\)</span> is just as ‘real’ as is <span class="math notranslate nohighlight">\(a\)</span>; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an <em>Argand</em> diagram, if drawn with the real part <span class="math notranslate nohighlight">\(a\)</span> along the conventional x-axis and <span class="math notranslate nohighlight">\(b\)</span> along the y-axis; the area defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is also called the Argand or Gauss plane. The imaginary number <span class="math notranslate nohighlight">\(i\)</span> has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.</p>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are ordinary numbers and <span class="math notranslate nohighlight">\(a\)</span> is called the <em>real</em> (Re) part and <span class="math notranslate nohighlight">\(b\)</span> the <em>imaginary</em> (Im) part of the number. The complex number <span class="math notranslate nohighlight">\(z = i\)</span>, if written in the form of equation 1, has a real part <span class="math notranslate nohighlight">\(a = 0\)</span> and an imaginary part <span class="math notranslate nohighlight">\(b = 1\)</span>. The latter is rather a misnomer as <span class="math notranslate nohighlight">\(b\)</span> is just as ‘real’ as is <span class="math notranslate nohighlight">\(a\)</span>; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an <em>Argand</em> diagram, if drawn with the real part <span class="math notranslate nohighlight">\(a\)</span> along the conventional x-axis and <span class="math notranslate nohighlight">\(b\)</span> along the y-axis; the area defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is also called the Argand or Gauss plane. The imaginary number <span class="math notranslate nohighlight">\(i\)</span> has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig1.png" /></p>
 <p>Figure 1. The Argand diagram showing two complex numbers in the form <span class="math notranslate nohighlight">\(z = a + ib\)</span>, <span class="math notranslate nohighlight">\(r\)</span> is the modulus of the complex number <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> the argument measured anticlockwise from the real axis.</p>
 <hr class="docutils" />
 <p>The Argand diagram is not like a normal graph in which a function such as <span class="math notranslate nohighlight">\(y = x^3\)</span> is plotted, because the value of <span class="math notranslate nohighlight">\(y\)</span> on the graph normally shows how large the function is at a given value of <span class="math notranslate nohighlight">\(x\)</span>. The Argand diagram shows one point in the real and imaginary plane for each complex number so is more like a map that locates a place with latitude or longitude.</p>
 <p>Performing algebra with complex numbers is no more difficult than with ‘normal’ numbers, because the prime rule of algebra still applies:</p>
-<p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span>’<em>Whatever I do to one side of an equation I do to the other side</em>’</p>
+<p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span>’<em>Whatsoever I do to one side of an equation I do to the other side</em>’</p>
 <p>The normal rules for addition and multiplication apply but with the additional rule that additions and subtractions are kept separate for the real and imaginary parts, as is done for components of vectors. A complex number can be divided in the usual way by a real number. Dividing by a complex number has the additional step that the top and bottom of the expression are first multiplied by the complex conjugate of the denominator. This is explained below. Although <span class="math notranslate nohighlight">\(i\)</span> is a complex number, <span class="math notranslate nohighlight">\(i^2 = -1\)</span> and is a real number:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle i=\sqrt{-1}, \qquad -i=-\sqrt{-1}, \qquad i^2=-1, \qquad i=\frac{-1}{i} \]</div>
@@ -1727,11 +1727,11 @@ title="Print to PDF"
 <h2>1.5 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are real numbers, then the complex number is</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(z^* = a - ib = r\left(\cos(\theta) - i \sin(\theta)\right)\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(a = Re(z)\)</span> is the real part of <span class="math notranslate nohighlight">\(z\)</span></p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(b = Im(z)\)</span> is the imaginary part of <span class="math notranslate nohighlight">\(z\)</span></p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(r =|z|= \sqrt{z^*z}=\sqrt{a^2+b^2}\)</span> is the <em>modulus</em> of <span class="math notranslate nohighlight">\(z\)</span>, or <em>absolute value, magnitude</em> or <em>norm</em>.</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(\displaystyle \theta = \tan^{-1}\left(\frac{b}{a}\right)= \tan^{-1}\left( \frac{Im(z)}{Re(z)} \right)\)</span> is the argument of <span class="math notranslate nohighlight">\(z\)</span>, also called the <em>polar angle</em> or <em>phase</em>.</p>
-<p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(z^* = a - ib = r\left(\cos(\theta) - i \sin(\theta)\right)\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(zz^* = | z |^2 = | z^* |^2\)</span> is the <em>absolute value squared</em> is always a positive real number.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig4.png" /></p>
 <p>Figure 4. As the angle (argument) <span class="math notranslate nohighlight">\(\theta\)</span> varies anticlockwise from <span class="math notranslate nohighlight">\(0\to 2\pi\)</span>, the complex number changes from <span class="math notranslate nohighlight">\(1 \to i\)</span> to <span class="math notranslate nohighlight">\(-1\)</span> to <span class="math notranslate nohighlight">\(-i\)</span> according to Euler’s theorem, equation 19. A unit circle has radius of <span class="math notranslate nohighlight">\(1\)</span>.</p>
@@ -1739,18 +1739,16 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="using-python-and-sympy">
 <h2>2 Using Python and Sympy<a class="headerlink" href="#using-python-and-sympy" title="Permalink to this headline">#</a></h2>
-<p>When using a computer language the complex number <span class="math notranslate nohighlight">\(a+ib\)</span> is not usually written in the mathematical way. In Python <span class="math notranslate nohighlight">\(\mathtt{1J}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{1j}\)</span> is used instead of <span class="math notranslate nohighlight">\(i\)</span>, thus <span class="math notranslate nohighlight">\(\mathtt{3*1j}\)</span> is permissible, however, so is <span class="math notranslate nohighlight">\(\mathtt{3j}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{5J}\)</span>. The parts of a complex number can be extracted by using the <span class="math notranslate nohighlight">\(\mathtt{re()}\)</span> and <span class="math notranslate nohighlight">\(\mathtt{im()}\)</span> functions. An alternative is to use <span class="math notranslate nohighlight">\(\mathtt{z.real,\; z.imag}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{z.conjugate()}\)</span> (notice brackets) as shown below. In Sympy <span class="math notranslate nohighlight">\(\mathtt{I}\)</span> is used to represent <span class="math notranslate nohighlight">\(i\)</span>, so care has to be taken not to use this as a variable or constant.</p>
+<p>When using a computer language the complex number <span class="math notranslate nohighlight">\(a+ib\)</span> is not usually written in the mathematical way. In Python <span class="math notranslate nohighlight">\(\mathtt{1J}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{1j}\)</span> is used instead of <span class="math notranslate nohighlight">\(i\)</span>, thus <span class="math notranslate nohighlight">\(\mathtt{3*1j}\)</span> is permissible, however, so is <span class="math notranslate nohighlight">\(\mathtt{3j}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{5J}\)</span>. The parts of a complex number can be extracted by using <span class="math notranslate nohighlight">\(\mathtt{z.real,\; z.imag}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{z.conjugate()}\)</span> (notice brackets) as shown below. In Sympy <span class="math notranslate nohighlight">\(sp.I\)</span> is used to represent <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z0</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span><span class="n">j</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="p">(</span><span class="n">z0</span><span class="p">),</span> <span class="n">im</span><span class="p">(</span><span class="n">z0</span><span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">z0</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">z0</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">z0</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.00000000000000 5.00000000000000
-3.0 5.0 (3-5j)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0 5.0 (3-5j)
 </pre></div>
 </div>
 </div>
@@ -1758,7 +1756,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="mi">1</span><span class="n">J</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z0</span><span class="o">*</span><span class="n">z1</span><span class="p">,</span><span class="n">z0</span><span class="o">/</span><span class="n">z1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z0</span><span class="o">*</span><span class="n">z1</span><span class="p">,</span> <span class="n">z0</span><span class="o">/</span><span class="n">z1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1768,11 +1766,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>In Sympy, however, <span class="math notranslate nohighlight">\(\mathtt{I}\)</span> is used to represent <span class="math notranslate nohighlight">\(i\)</span> but care has also to be taken in defining terms, for example</p>
+<p>In SymPy, however, <span class="math notranslate nohighlight">\(sp.I\)</span> is used to represent <span class="math notranslate nohighlight">\(i\)</span>, for example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     <span class="c1">#  Tell Sympy that x is not complex</span>
-<span class="n">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>              <span class="c1"># try to expand e^ix as sine and cosine </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>        <span class="c1">#  Tell Sympy that x is not complex</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>              <span class="c1"># try to expand e^ix as sine and cosine </span>
 </pre></div>
 </div>
 </div>
@@ -1783,7 +1781,7 @@ title="Print to PDF"
 <p>which is not very helpful, instead <span class="math notranslate nohighlight">\(x\)</span> has to be defined as well as the <span class="math notranslate nohighlight">\(\mathtt{expand( \cdots )}\)</span> instruction being told that the expression is complex.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="nb">complex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="nb">complex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1793,13 +1791,23 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">I</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">I</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span> <span class="nb">complex</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="nb">complex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># an alternative way</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/chapter2-A_10_0.png" src="../_images/chapter2-A_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="nb">complex</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter2-A_11_0.png" src="../_images/chapter2-A_11_0.png" />
 </div>
 </div>
 </section>
@@ -1855,7 +1863,7 @@ title="Print to PDF"
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

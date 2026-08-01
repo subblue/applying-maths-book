@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1568,6 +1568,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration">
+     and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-concentration-of-ion-pairs">
      <strong>
       (i)  Concentration of ion pairs
@@ -1686,6 +1691,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration">
+     and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-concentration-of-ion-pairs">
      <strong>
       (i)  Concentration of ion pairs
@@ -1747,10 +1757,9 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># print SymPy results</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1767,15 +1776,16 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle x = \pm 0.d_1d_2d_3d_4 \cdot 10^y\]</div>
 <p>which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction <span class="math notranslate nohighlight">\(0.d_1d_2d_3d_4\)</span>, where <span class="math notranslate nohighlight">\(d_1\)</span> etc. are the digits <span class="math notranslate nohighlight">\(0\cdots 9\)</span>. A floating-point number is usually described as a single or double precision and the number of decimal places is typically <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(14\)</span> respectively; naturally this depends on the type of computer being used. Normally nowadays double precision is standard for example <span class="math notranslate nohighlight">\(17\)</span> digits.</p>
-<p>However, as seen in Fig. 1, <span class="math notranslate nohighlight">\(17\)</span> digits are not good enough to find the root; <span class="math notranslate nohighlight">\(25\)</span> decimal places give a far more accurate result. Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is</p>
+<p>However, as seen in Fig. 1, <span class="math notranslate nohighlight">\(17\)</span> digits are not good enough to find the root; <span class="math notranslate nohighlight">\(25\)</span> decimal places give a far more accurate result. Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately as its value depends on the initial guess and does not improve as the cut-off value is made smaller,<span class="math notranslate nohighlight">\(10^{-5} \to  10^{-12}\)</span>. The method is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">20.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">15.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">6</span>
-<span class="n">df</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.0</span> <span class="o">+</span> <span class="mf">30.0</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">30.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span>      <span class="c1"># derivative</span>
-<span class="n">s</span>  <span class="o">=</span> <span class="mf">0.8</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Newton-Raphson </span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="mf">1.0</span> <span class="o">-</span>  <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>  <span class="o">-</span>  <span class="mf">20.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">15.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">6</span> <span class="c1"># function</span>
+<span class="n">df</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.0</span> <span class="o">+</span> <span class="mf">30.0</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">30.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span>        <span class="c1"># derivative</span>
+<span class="n">s</span>  <span class="o">=</span> <span class="mf">0.8</span>                     <span class="c1"># initial guess</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">snew</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-12</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-5</span><span class="p">:</span>   <span class="c1"># stop when change is small</span>
         <span class="k">break</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">snew</span>
@@ -1810,49 +1820,49 @@ title="Print to PDF"
 <p>To evaluate the integral with the code below different <span class="math notranslate nohighlight">\(n\)</span>, the starting value with <span class="math notranslate nohighlight">\(n = 0\)</span> is required, which is <span class="math notranslate nohighlight">\(I_0 = 1 - 1/e\)</span>. In the recursion calculation, <span class="math notranslate nohighlight">\(s\)</span> has, arbitrarily, been chosen as the name for the integral because <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(int\)</span> are reserved names in Sympy. Recall that <span class="math notranslate nohighlight">\(\mathtt{s= 1 - n* s}\)</span>; is an assignment, meaning that the new value of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1 - n \times (current\; value)\)</span>. Some of the results are tabulated below the code, <span class="math notranslate nohighlight">\(n\)</span> is the power to which <span class="math notranslate nohighlight">\(x\)</span> is raised, <span class="math notranslate nohighlight">\(s\)</span> is the recursion answer and <span class="math notranslate nohighlight">\(f(n)\)</span> the result of algebraic integration. In fact the situation is worse as the result <span class="math notranslate nohighlight">\(f(n)\)</span> depends on whether the limits used are real or integer numbers, i.e <span class="math notranslate nohighlight">\((x,0,1)\)</span> or <span class="math notranslate nohighlight">\((x,0.1,1.0)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>         <span class="c1"># use SymPy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>         <span class="c1"># SymPy, define symbols</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>                    <span class="c1"># initial value</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>                       <span class="c1"># initial value</span>
 <span class="n">ans_s</span> <span class="o">=</span> <span class="p">[]</span>                                   <span class="c1"># arrays to hold results</span>
 <span class="n">ans_f</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">s</span>                            <span class="c1"># recursion</span>
     <span class="n">ans_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>                          <span class="c1"># save values</span>
-    <span class="n">eqn</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># normal algebraic integration, from 0 to 1</span>
+    <span class="n">eqn</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># SymPy function. Algebraic integration, from 0 to 1</span>
     <span class="n">ans_f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">evalf</span><span class="p">())</span>                  <span class="c1"># save result</span>
     <span class="k">pass</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;n      s      f(n)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;n     s(recursion) f(n)(SymPy function)&#39;</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ans_s</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:3d}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>  <span class="p">)</span>    <span class="c1"># format output</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:3d}</span><span class="s1">     </span><span class="si">{:s}</span><span class="s1">   </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>  <span class="p">)</span>    <span class="c1"># format output</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n      s      f(n)
-  1 0.36787944 0.36787944
-  2 0.26424111 0.26424111
-  3 0.20727664 0.20727664
-  4 0.17089341 0.17089341
-  5 0.14553294 0.14553294
-  6 0.12680235 0.12680235
-  7 0.11238350 0.11238350
-  8 0.10093196 0.10093196
-  9 0.09161229 0.09161229
- 10 0.08387707 0.08387707
- 11 0.07735222 0.07735222
- 12 0.07177324 0.07177326
- 13 0.06694777 0.06694793
- 14 0.06273108 0.06273269
- 15 0.05903379 0.05902099
- 16 0.05545930 0.05566406
- 17 0.05719187 0.06250000
- 18 -0.0294536 0
- 19 1.55961974 -16.000000
- 20 -30.192394 0
- 21 635.040292 16384.0000
- 22 -13969.886 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  n     s(recursion) f(n)(SymPy function)
+  1     0.36787944   0.36787944
+  2     0.26424111   0.26424111
+  3     0.20727664   0.20727664
+  4     0.17089341   0.17089341
+  5     0.14553294   0.14553294
+  6     0.12680235   0.12680235
+  7     0.11238350   0.11238350
+  8     0.10093196   0.10093196
+  9     0.09161229   0.09161229
+ 10     0.08387707   0.08387707
+ 11     0.07735222   0.07735222
+ 12     0.07177324   0.07177326
+ 13     0.06694777   0.06694793
+ 14     0.06273108   0.06273269
+ 15     0.05903379   0.05902099
+ 16     0.05545930   0.05566406
+ 17     0.05719187   0.06250000
+ 18     -0.0294536   0
+ 19     1.55961974   -16.000000
+ 20     -30.192394   0
+ 21     635.040292   16384.0000
+ 22     -13969.886   0
 </pre></div>
 </div>
 </div>
@@ -1896,14 +1906,15 @@ title="Print to PDF"
 <p>The code to do this calculation, which produces a plot such as figure 2, is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 1;  Logistic eqn. &amp; Bifurcation. This is quite  slow calculation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 1;  Logistic eqn. &amp; Bifurcation.</span>
+<span class="c1"># remove # as necessary below this point to plot results</span>
 
-<span class="c1">#fig1= plt.figure( figsize=(6,6) )    # remove # to plot</span>
+<span class="c1">#fig1= plt.figure( figsize=(10,10) )    </span>
 <span class="c1">#plt.rcParams.update({&#39;font.size&#39;: 16})</span>
 
-<span class="n">Leqn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">:</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>        <span class="c1"># logistic map eqn</span>
+<span class="n">Leqn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">:</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>      <span class="c1"># logistic map eqn</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>                               <span class="c1"># increase this for more detail, e.g 200</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span>                               <span class="c1"># increase this for more detail, e.g 200</span>
 <span class="n">dn</span><span class="o">=</span> <span class="mi">100</span>                               <span class="c1"># ditto</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">dn</span>
 <span class="n">popl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>    <span class="c1"># define 2D array</span>
@@ -1921,9 +1932,8 @@ title="Print to PDF"
         <span class="k">pass</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">n</span>                     <span class="c1"># increment x</span>
     <span class="k">pass</span>
-
-<span class="c1">#for i in range(n):                   # remove # to pot results</span>
-<span class="c1">#    plt.scatter(r[:],popl[:,i],marker=&#39;.&#39;,s = 0.01,color=&#39;blue&#39;)  # plot </span>
+<span class="c1">#for i in range(n):                   # remove # to plot results</span>
+<span class="c1">#    plt.scatter(r[:],popl[:,i],color=&#39;black&#39;,marker=&#39;o&#39;,s=0.1)    # plot </span>
 <span class="c1">#    </span>
 <span class="c1">#plt.xlim([r0,4])</span>
 <span class="c1">#plt.ylim([0,1])</span>
@@ -2213,7 +2223,9 @@ quadratic function to data points rather than straight lines; the formula is</p>
 </div>
 </div>
 </div>
-<p>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.</p>
+<section id="and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration">
+<h3>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.<a class="headerlink" href="#and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration" title="Permalink to this headline">#</a></h3>
+</section>
 <section id="i-concentration-of-ion-pairs">
 <h3><strong>(i)  Concentration of ion pairs</strong><a class="headerlink" href="#i-concentration-of-ion-pairs" title="Permalink to this headline">#</a></h3>
 <p>Bjerrum’s theory of ionic association in solution, the concentration of ion pairs is</p>
@@ -2226,16 +2238,16 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>Before doing the calculation, the function <span class="math notranslate nohighlight">\(e^x x^{-4}\)</span> should be examined. It changes slowly with <span class="math notranslate nohighlight">\(x\)</span>, as may be seen by plotting, and has a minimum at <span class="math notranslate nohighlight">\(x = 4\)</span>, where the ions are at separation <span class="math notranslate nohighlight">\(a_0\)</span>. At larger values of <span class="math notranslate nohighlight">\(x\)</span>, the function rises rapidly as the exponential term dominates the <span class="math notranslate nohighlight">\(x^{-4}\)</span> term. The value of <span class="math notranslate nohighlight">\(a_0\)</span> for a 1-1 electrolyte is <span class="math notranslate nohighlight">\(0.350\)</span> nm in water at <span class="math notranslate nohighlight">\(25\,^\text{o}\)</span>C taking the dielectric constant to be <span class="math notranslate nohighlight">\(80\)</span>. The calculation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathrm{a_0 = \frac{(1.602 \cdot 10^{-19} C)^2}{8\pi \cdot 8.854 \cdot 10^{-12} Fm^{-1} \cdot 1.381 \cdot 10^{-23} JK^{-1}\cdot298 K \cdot 80}}\]</div>
-<p>The unit is <span class="math notranslate nohighlight">\(\mathrm{C^2/(Fm^{-1}JK^{-1}K)}\)</span> and it is not immediately obviously that this is metres. A farad (F) is a coulomb/volt and a volt is joule/coulomb, therefore a farad is <span class="math notranslate nohighlight">\(\mathrm{F = C^2J^{-1}}\)</span> giving <span class="math notranslate nohighlight">\(a_0\)</span> units of distance. Returning now to the numerical calculation, the integral at <span class="math notranslate nohighlight">\(b = 2\)</span> is clearly zero, starting at <span class="math notranslate nohighlight">\(b = 3\)</span> and incrementing by <span class="math notranslate nohighlight">\(9\)</span> to <span class="math notranslate nohighlight">\(30\)</span> in a loop, gives range of values.</p>
+<p>The unit is <span class="math notranslate nohighlight">\(\mathrm{C^2/(Fm^{-1}JK^{-1}K)}\)</span> and it is not immediately obviously that this is metres. A farad (F) is a coulomb/volt and a volt is joule/coulomb, therefore a farad is <span class="math notranslate nohighlight">\(\mathrm{F = C^2J^{-1}}\)</span> giving <span class="math notranslate nohighlight">\(a_0\)</span> units of distance. Returning now to the numerical calculation, the integral at <span class="math notranslate nohighlight">\(b = 2\)</span> is clearly zero, starting at <span class="math notranslate nohighlight">\(b = 3\)</span> and incrementing by <span class="math notranslate nohighlight">\(3\)</span> to <span class="math notranslate nohighlight">\(30\)</span> in a loop, gives range of values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integral in Byerrum equation using Simpson&#39;s method</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>                      <span class="c1"># function to ingtegrate</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>                      <span class="c1"># function to integrate</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;limit b    integral&#39;</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>                              <span class="c1"># start 3 , end 30, step 5</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>                              <span class="c1"># start 3 , end 30, step 3</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">k</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">simp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>                                <span class="c1"># use Simpson&#39;s rule</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}</span><span class="s1">      </span><span class="si">{:10.6g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">)</span>
@@ -2246,11 +2258,14 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>limit b    integral
    3        0.325655
-   8         1.99552
-  13          24.625
+   6         1.04077
+   9         2.95028
+  12         13.4088
+  15          92.939
   18         826.557
-  23         42707.6
-  28      2.76659e+06
+  21          8519.5
+  24         96929.2
+  27      1.18534e+06
 </pre></div>
 </div>
 </div>
@@ -2442,6 +2457,8 @@ quadratic function to data points rather than straight lines; the formula is</p>
     <span class="k">return</span> <span class="n">xm</span>
 <span class="c1">#-------------------------------</span>
 
+<span class="c1"># remove # to plot results</span>
+
 <span class="c1">#fig1 = plt.figure(figsize=(6,6))         # define figure size</span>
 <span class="c1">#plt.axhline(0,linewidth=1,color=&#39;grey&#39;)</span>
 <span class="n">clr</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>               <span class="c1"># colour of plot lines.</span>
@@ -2529,7 +2546,7 @@ quadratic function to data points rather than straight lines; the formula is</p>
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

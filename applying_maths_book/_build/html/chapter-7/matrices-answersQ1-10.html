@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1649,9 +1649,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1674,14 +1673,14 @@ title="Print to PDF"
 <p>The characteristic polynomial is the polynomial resulting from expansion of the determinant and made equal to zero,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \quad \begin{vmatrix} x &amp; a &amp; b \\ a &amp; x &amp; b \\a &amp; b &amp; x \end{vmatrix}=x(x^2-b^2)-a(ax-ab)+b(ab-ax)=0\end{split}\]</div>
-<p>Factoring produces <span class="math notranslate nohighlight">\((x-b)\left[ x(x+b)-a(a+b) \right]=0\)</span> with the solution <span class="math notranslate nohighlight">\(x=b\)</span>. The other solutions are found from the quadratic in square brackets. This produces <span class="math notranslate nohighlight">\(x=-b -a\)</span> and <span class="math notranslate nohighlight">\(x=a\)</span>. Using Sympy is easy also, after factoring the solve step is really not necessary.</p>
+<p>Factoring produces <span class="math notranslate nohighlight">\((x-b)\left[ x(x+b)-a(a+b) \right]=0\)</span> with the solution <span class="math notranslate nohighlight">\(x=b\)</span>. The other solutions are found from the quadratic in square brackets. This produces <span class="math notranslate nohighlight">\(x=-b -a\)</span> and <span class="math notranslate nohighlight">\(x=a\)</span>. Using SymPy is easy also, after factoring the solve step is really not necessary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a, b&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a, b&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
 <span class="n">char_eqn</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
 
-<span class="n">factor</span><span class="p">(</span><span class="n">char_eqn</span> <span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">char_eqn</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1691,7 +1690,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1710,7 +1709,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>  <span class="c1"># numerical method  </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">LA</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>            <span class="c1"># LA calls linear algebra package defined at top of document</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>            <span class="c1"># LA calls linear algebra package defined at top of document</span>
 </pre></div>
 </div>
 </div>
@@ -1722,8 +1721,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>                                                 <span class="c1"># symbolic algebra</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>                                                 <span class="c1"># symbolic algebra</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
 <span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1744,7 +1743,7 @@ title="Print to PDF"
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">LA</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>        <span class="c1"># LA calls linear algebra package defined at top of document</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>        <span class="c1"># Calls numpy linear algebra package </span>
 </pre></div>
 </div>
 </div>
@@ -1794,7 +1793,7 @@ title="Print to PDF"
         <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">anum</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
         <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;value = &#39;</span><span class="p">,</span> <span class="n">LA</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;value = &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1813,9 +1812,9 @@ value =    880.00
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm  Huckel Calculation Cyclic polyenes</span>
 
-<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                             <span class="c1"># define size of linear polyene</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make an array of zeros </span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                                <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make a SymPy array of zeros </span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -1837,7 +1836,7 @@ value =    880.00
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
-<span class="n">factor</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1857,9 +1856,9 @@ value =    880.00
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm  Huckel Calculation Fulvalene</span>
-<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                             <span class="c1"># define size of linear polyene</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make an array of zeros </span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>                                <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make a SymPy array of zeros </span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -1880,7 +1879,7 @@ value =    880.00
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1893,7 +1892,7 @@ value =    880.00
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solns</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solns</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out  each solution in a table</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:12.6g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
@@ -1920,9 +1919,9 @@ x = -2.11491+2.64698e-23j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation for Naphthalene</span>
-<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                            <span class="c1"># define size of linear polyene</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make an array of zeros </span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                               <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make a SymPy array of zeros </span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -1946,13 +1945,13 @@ x = -2.11491+2.64698e-23j
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
 
-<span class="n">solns</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">solns</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># sorted is python function</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out the real part of each solution in a table. </span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">re</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span>  <span class="p">)</span>  <span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span>  <span class="p">)</span>  <span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -1975,9 +1974,9 @@ x =    2.303
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation for Azulene</span>
-<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                         <span class="c1"># define size of linear polyene</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                <span class="c1"># make an array of zeros </span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span>      <span class="c1"># define symbols to use</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                               <span class="c1"># define size of linear polyene</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>                    <span class="c1"># make a Sympy array of zeros </span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -2001,13 +2000,13 @@ x =    2.303
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">char_eqn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">())</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>
 
-<span class="n">solns</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">solns</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>         <span class="c1"># sorted is a python function</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">solns</span><span class="p">):</span>      <span class="c1"># print out each solution in a table, j is sqrt(-1)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">re</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span>  <span class="p">)</span>  <span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="si">{:8.4g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">solns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">))</span>  <span class="p">)</span>  <span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -2060,17 +2059,17 @@ x =    2.095
 <p>1,3-Butadiene with two bonds and four carbons produces <span class="math notranslate nohighlight">\(f_4(x)=x^4-3x^2+1=(x^2-1)^2-x^2\)</span>, Using the algorithm in the text (algorithm 1) with <span class="math notranslate nohighlight">\(n=5\)</span> <span class="math notranslate nohighlight">\(f_5(x)=x^5-4x^3\)</span>.</p>
 <p>Now there are more than enough terms to try to relate these formulae to one another. If the suggested formula in the question is correct, then starting with <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_2\)</span> the recursion formula suggests that <span class="math notranslate nohighlight">\(f_3(x) = xf_2(x) - f_1(x)\)</span>. Using the values above <span class="math notranslate nohighlight">\(f_3(x) = x(x^2 - 1) - x\)</span>, which is the same equation as the characteristic equation calculated from the Huckel determinant for propene. The formula seems to be correct at least for these two terms. We can calculate another term as a check. For example, <span class="math notranslate nohighlight">\(f_5(x) = xf_4(x) - f_3(x)\)</span> which is also correct, and as both examples work, this sufficient to ‘prove’ the recursion formula <span class="math notranslate nohighlight">\(f_n(x) = xf_{n-1}(x) - f_{n-2}(x)\)</span>.</p>
 <p>The Huckel energies for any linear polyene can now be calculated, provided the polynomial equations can be solved! If they cannot, you can always draw graphs to find the roots of the equations, and use the Newton-Raphson method, not that elegant, but does give good numerical values.</p>
-<p>(b) Calculating the recursion in Python/Sympy is very easy also.</p>
+<p>(b) Calculating the recursion in Python/SymPy is very easy also.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, m&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, m&#39;</span><span class="p">)</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">f01</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>   <span class="c1"># save values as we go along</span>
 <span class="n">f01</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
 <span class="n">f01</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
     <span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2142,7 +2141,7 @@ x =    2.095
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

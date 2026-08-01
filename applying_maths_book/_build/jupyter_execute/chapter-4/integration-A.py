@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp    # with this definition as in these pages we must use sp.etc before any sympy function
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -39,11 +39,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### **(i) A note on notation**
 # 
-# The integration operation be written either as $\int f(x)dx$ or $\int dx f(x)$. The latter is often used in physics texts particularly when $f(x)$ is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following $dx$. As an aside, the symbol $\int$ was first introduced by Leibniz (1646 - 1716) is the stylized $S$ from the Latin word _summa_, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus _summatorius_. An integral is also sometimes called an anti-derivative.
+# The integration operation be written either as $\int f(x)dx$ or $\int dx f(x)$. The latter is often used in physics texts particularly when $f(x)$ is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following $dx$. As an aside, the symbol $\int$ was first introduced by Leibniz (1646 - 1716) is the stylized $S$ from the Latin word *Summa*, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus *Summatorius*. An indefinite integral is also sometimes called an anti-derivative.
 # 
 # ## 1.2 Indefinite and Definite Integrals
 # 
-# Integrating a function, $f(x)$, called the _integrand_, produces a new function $g(x)$, the _integral_, when the integration operator $\int \cdots dx$ is used; the notation is
+# Integrating a function, $f(x)$, called the *integrand*, produces a new function $g(x)$, the *integral*, when the integration operator $\int \cdots dx$ is used; the notation is
 # 
 # $$\displaystyle  \int f(x)dx = g(x) + constant. \qquad\tag{1}$$
 # 
@@ -56,27 +56,27 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int_a^b f(x)dx = g(x) \bigg|_a^b = g(b)-g(a)  \qquad\tag{2}$$
 # 
-# The symbol $ \bigg|_a^b$ is the substitution symbol. Because neither $g(b)$ nor $g(a)$ are functions of $x$, $g(b) - g(a)$ is a _number_ and differentiating the result with respect to $x$ would produce zero. The definite integral, equation 2, is sometimes called the _fundamental theorem of calculus_.
+# The symbol $ \bigg|_a^b$ is the substitution symbol. Because neither $g(b)$ nor $g(a)$ are functions of $x$, $g(b) - g(a)$ is a _number_ and differentiating the result with respect to $x$ would produce zero. The definite integral, equation 2, is sometimes called the *Fundamental Theorem of Calculus*.
 # 
 # ![Drawing](integration-fig2-3.png) 
 # 
-# Figure 2 left, and 3 right. Left. The integral of $x^2$ from $1 \to 4$, changing the limits changes the value of the integral. Right, integration limits $a, \, b $ and $s$.
+# Figure 2 left, and 3 right. Left. The integral of $x^2$ from $1 \to 4$, changing the limits changes the value of the integral. Right, integration limits could be $a,\to b $, $a\to s$ or $b\to s$.
 # _______
 # 
 # ### **Work done by gas**
 # An example met early on in studying thermodynamics is to calculate the work $w$ done on an ideal gas, as its volume changes. Work is force $\times$ distance moved, pressure is force divided by area, so work is also the pressure $\times$ change in volume. To account for a series of infinitesimal volume changes, $dV$, made under reversible conditions, the quantity $pdV$ must be integrated. The integral is
 # 
-# $$\displaystyle W_{rev}=-\int pdV $$
+# $$\displaystyle w_{rev}=-\int pdV $$
 # 
 # and, by convention, the negative sign indicates that work is done on the gas. As it stands, this integral cannot yet be solved because we need to know how $p$ and $V$ are related. The next step is to use the ideal gas law, $pV = nRT$, to make an integral in $V$ alone, giving
 # 
-# $$\displaystyle W_{rev}=-nRT\int \frac{1}{V}dV $$
+# $$\displaystyle w_{rev}=-nRT\int \frac{1}{V}dV $$
 # 
 # This equation tells us that the work done on the gas is linearly proportional to the number of moles $n$ present and to the gas constant $R$ times the temperature $T$. It also tells us that the work is the area under the curve of $1/V$ as $V$ is changed. Assuming that we already know how to do the integration, which is explained below, the result is
 # 
 # $$\displaystyle w_{rev} = -nRT \ln(V ) + const$$
 # 
-# The constant appears because no upper or lower limit on the volume was defined and so the value of the constant is unknown. Mathematically this equation is fine as it stands, but to add real numbers the log has to be dimensionless, however, volume has dimensions of m$^3$ therefore $V$ in the equation is made dimensionless by  simply taking its numerical value. Doing this is not strictly correct but as the constant is arbitrary until some values are added, the equation is better rewritten as 
+# The constant appears because no upper or lower limit on the volume was defined and so the value of the constant is unknown. Mathematically this equation is fine as it stands, but to add real numbers the log has to be dimensionless, however, volume has dimensions of m$^3$ therefore $V$ in the equation is made dimensionless by  simply taking its numerical value. This gives the same as dividing each volume by $1\,m^3$ which is the proper way to do this. The equation can also be rewritten as 
 # 
 # $$\displaystyle w_{rev} = -nRT \ln(V/V_c)$$
 # 
@@ -86,7 +86,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle p=\frac{nRT}{\left(V-b\right)}- \frac{an^2}{V^2}$$
 # 
-# where $a$ and $b$ are constants depending on the particular gas. 
+# where $a$ and $b$ are constants depending on the particular gas. Integrating this equation is proposed in Q10.
 # 
 # 
 # ## 1.3 Changing limits, integrating odd and even functions
@@ -100,9 +100,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int_a^b f(x)dx= \int_a^s f(x)dx +\int_s^b f(x)dx \qquad\tag{3}$$
 # 
-# which is shown in figure 3 above.
-# 
-# When the limits are $\pm a$ and 0 the relationship 
+# which is shown in figure 3 above. When the limits are $\pm a$ and 0 the relationship 
 # 
 # $$\displaystyle \int_{-a}^0 f(x)dx= \int_0^a f(-x)dx  \qquad\tag{4}$$
 # 
@@ -114,7 +112,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and this is also very useful in determining whether the integral is zero or not. 
 # 
-# An _odd_ function has the property $f(-x) = -f(x)$, and when integrated about the symmetrical limits $-a \to +a$ the integral will always be zero. An _even_ function has the property $f(-x) = f(x)$; the integral from $-a \to +a$ may perhaps be small but is not exactly zero. Determining whether integrals are zero or not is important in the study of quantum mechanics and spectroscopy. However, the part of Group Theory dealing with Point Groups has to be used to examine more complex functions than is apparent from simple 'odd-even' behaviour. An introduction is given in chapter 7 Matrices.
+# An *odd* function has the property $f(-x) = -f(x)$, and when integrated about the symmetrical limits $-a \to +a$ the integral will always be zero. An *even* function has the property $f(-x) = f(x)$; the integral from $-a \to +a$ may perhaps be small but is not exactly zero. Determining whether integrals are zero or not is important in the study of quantum mechanics and spectroscopy. However, the part of Group Theory dealing with Point Groups has to be used to examine more complex functions than is apparent from simple 'odd-even' behaviour. An introduction is given in chapter 7 Matrices.
 # 
 # The left graph, figure 4, shows an odd function, $x^3 - x$. There are many others; for example, $\sin(x)$ over the range $\pi \to \pi$, where the area from zero to $-x$ is equal but opposite to that from $0 \to x$ making zero in total. The integral 
 # 
@@ -125,11 +123,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![Drawing](integration-fig4.png)
 # 
 # Figure 4. left. An odd function $x^3-x$. The symmetrical range of the integration is shaded, $a=3/4$ and the integral is zero. Right. The even function $x^4-x^2$ where the integral is not zero but is negative.
-# 
 # _______
-# ## **(i) Summary**
 # 
-# Only with symmetrical limits
+# ### **Only with symmetrical limits
 # 
 # $$\displaystyle I=\int_{-a}^a f(x)dx \begin{cases}\text{if} f(x) \text{ is odd }, f(-x) = -f(x) \text{ and } I = 0\\[2ex]
 # \text{if }f(x) \text{ is even, } f(-x) = f(x) \text{ and }I \ne 0\end{cases}$$
@@ -147,17 +143,25 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int\frac{1}{c}dc=-k\int dt$$
 # 
-# This example shows that the integration takes us from describing the rate of a process to the actual quantity, in this case, from the rate of change of $c$ with time, to the amount of $c$ at any time: $\ln(c) = -kt + const$. To make sure that the log is dimensionless, the equation can again be rewritten in an equivalent form as $\ln(c/c_0) = -kt$, where $c_0$ is a constant equal to the amount of $c$ present at $t = 0$. Solving differential equations is described in detail in Chapter 10.
+# This example shows that the integration takes us from describing the rate of a process to the actual quantity, in this case, from the rate of change of $c$ with time, to the amount of $c$ at any time: 
 # 
-# To show how integration can solve many chemical and physical problems is one aim of this chapter, but first, the mechanics of performing integration must be understood.
+# $$\displaystyle \ln(c) = -kt + const$$
+# 
+# To make sure that the log is dimensionless, the equation can again be rewritten in an equivalent form as 
+# 
+# $$\displaystyle \ln\left(\frac{c}{c_0}\right) = -kt$$
+# 
+# where $c_0$ is a constant equal to the amount of $c$ present at $t = 0$. Solving differential equations is described in detail in Chapter 10.
 # 
 # ## 2 Mechanics of integration
+# 
+# To show how integration can solve many chemical and physical problems is one aim of this chapter, but first, the mechanics of performing integration must be understood.
 # 
 # Integration is often a trial and error process, and some experimenting with different options is necessary even when using the computer. Start by simplifying expressions, perhaps by using partial fractions, then look for standard formulas and standard methods such as integration by parts. If none are found suitable, substitutions can be tried, then standard forms and methods looked for again because only with these can an integration be found. If all else fails, numerical methods have to be used; see Chapter 11.
 # 
 # The integration formulae for various functions can be derived in a similar way to that for differentiation by taking small values of $dx$ and $dy$ and then calculating $x + dx$ and $y + dy$. The method is now well established and most results are given below without derivation. Understanding the physical world is hard enough work without having to prove all of mathematics before we can use it!
 # 
-# Several integrations are listed in Section 13, and Sympy can be used to do even more complex integrations. Why then, you might ask, should you bother to learn how to do integration? Calculations are done 'by hand' not only because it is often easier and quicker to do so, but also because it encourages a greater understanding of how the result was obtained. Additionally computer methods do not always work, and if you have an answer how will you know that it is correct if you have no understanding of the processes involved.
+# Several integrations are listed in Section 13, and SymPy can be used to do even more complex integrations. Why then, you might ask, should you bother to learn how to do integration? Calculations are done 'by hand' not only because it is often easier and quicker to do so, but also because it encourages a greater understanding of how the result was obtained. Additionally computer methods do not always work, and if you have an answer how will you know that it is correct if you have no understanding of the processes involved.
 # 
 # ## 2.1 integrating powers of x, but not 1/x
 # 
@@ -221,8 +225,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x = symbols('x')
-factor( x**2 - 2*x - 15 )
+x = sp.symbols('x')               # now using SymPy
+sp.factor( x**2 - 2*x - 15 )
 
 
 # The function to integrate becomes
@@ -241,15 +245,15 @@ factor( x**2 - 2*x - 15 )
 # 
 # $$\displaystyle \int\frac{x-3}{x^2-2x-15}dx =\int \frac{3}{4(x+3)}+\frac{1}{4(x-5)}=\frac{3}{4}\ln(x+3)+\frac{1}{4}\ln(x-5)+const$$
 # 
-# Of course we could use Sympy to do the whole integration
+# Of course we could use SymPy to do the whole integration
 
 # In[3]:
 
 
-x = symbols('x')
+x = sp.symbols('x')
 
 eq = (x-3)/(x**2-2*x-15)
-integrate(eq, x )
+sp.integrate(eq, x )
 
 
 # ## 2.5 Integrating exponentials
@@ -318,7 +322,7 @@ integrate(eq, x )
 # $$\displaystyle   \int \sin^2(x)dx =\int \left(\frac{e^{ix}-e^{-ix}}{2i}\right)^2dx=-\frac{1}{4}\int \left(e^{2ix}-2+e^{-2ix}\right) dx\\
 # =-\frac{1}{4}\left(\frac{e^{2ix}}{2i}-2x-\frac{e^{-2ix}}{2i}  \right)=\frac{1}{4}\left(2x-\sin(2x)\right)$$
 # 
-# where the exponentials are converted back to a sine in the last step. Similarly integrations of the form $\int e^x\sin(x)dx,\; \int e^x \cosh(x)dx$, and so forth can be evaluated by converting to their exponential form first.
+# where the exponentials are converted back to a sine in the last step. Similarly integrations of the form $\displaystyle \int e^x\sin(x)dx,\; \int e^x \cosh(x)dx$, and so forth can be evaluated by converting to their exponential form first.
 # 
 # ## 2.8 Mean Value Theorem for integrals
 # 
@@ -326,7 +330,7 @@ integrate(eq, x )
 # 
 # $$\displaystyle \int_a^b f(x)dx = (b-a) \overline{f(s)}$$
 # 
-# where $s$ is the value of $x$ when $\overline{f(s)}$ is the _average value_ of $f$. This is a very convenient way of calculating averages and is described further in Section 8. 
+# where $s$ is the value of $x$ when $\overline{f(s)}$ is the *average value* of $f$. This is a very convenient way of calculating averages and is described further in Section 8. An average value can also be written as $\langle f(s)\rangle$.
 # 
 # This theorem also proves to be useful when performing numerical integrations with the Monte Carlo method, Chapter 12, where the equation is worked backwards, $f(s)$ is calculated directly to produce the integral.
 # 
@@ -352,13 +356,21 @@ integrate(eq, x )
 # 
 # ## 2.10 Improper and undefined integrals
 # 
-# A number of functions when integrated produce infinity. These are conventionally called improper integrals, although there is nothing 'improper' about them, e.g. $\displaystyle \int_0^\infty \frac{e^x}{x}dx=\infty$.  The integrand $f(x)$ usually has a point in the range of integration at which it becomes infinite. This can often be spotted, and surprisingly, only sometimes does this produce an infinite result. As an example, in the integral $\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx$  the reciprocal of the square root becomes infinite at $x = 0$. Ignoring this for the moment, integrating using equation 6 then working out the limits produces a finite answer, 
+# A number of functions when integrated produce infinity. These are conventionally called improper integrals, although there is nothing 'improper' about them, e.g. $\displaystyle \int_0^\infty \frac{e^x}{x}dx=\infty$.  The integrand $f(x)$ usually has a point in the range of integration at which it becomes infinite. This can often be spotted, and surprisingly, only sometimes does this produce an infinite result. As an example, in the integral 
+# 
+# $$\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx$$
+# 
+# the reciprocal of the square root becomes infinite at $x = 0$. Ignoring this for the moment, integrating using equation 6 then working out the limits produces a finite answer, 
 # 
 # $$\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx=2\sqrt{x}\bigg|_0^1=2$$
 # 
 # This is unexpected because the function is infinite at exactly $x=0$ so one would expect an infinite area from 0 to 1 but the area  is actually finite.
 # 
-# Conversely the integrals of the form  $\displaystyle \int_0^\infty \frac{1}{x^2}dx$ or $\displaystyle \int_0^\infty \frac{1}{x-1}dx$ and many similar reciprocal functions produce infinity and so are undefined or improper. Infinity is a strange beast.  Not surprisingly, if the range of the integration is changed so that the integrand is not infinite in the range, the integrals behave normally and give a finite result.
+# Conversely the integrals of the form  
+# 
+# $$\displaystyle \int_0^\infty \frac{1}{x^2}dx,\quad\text{or} \quad  \int_0^\infty \frac{1}{x-1}dx$$
+# 
+# and many similar reciprocal functions produce infinity and so are undefined or improper. Infinity is a strange beast.  Unsurprisingly, if the range of the integration is changed so that the integrand is not infinite in the range, the integrals behave normally and give a finite result.
 # 
 # 
 # ## 2.11 Integrals with infinite limits
@@ -382,15 +394,15 @@ integrate(eq, x )
 # 
 # Many integrals can be obtained using SymPy or other algebraic engines.
 # 
-# Using Sympy the following method will work in most cases.
+# Using SymPy the following method will work in most cases.
 
 # In[4]:
 
 
-x,b = symbols('x,b')
-a,n = symbols('a,n', nonzero = True)
-eqn = tan( a*x + b)
-ans = integrate(eqn,x)
+x,b = sp.symbols('x,b')                 # using sympy
+a,n = sp.symbols('a,n', nonzero = True)
+eqn = sp.tan( a*x + b)
+ans = sp.integrate(eqn,x)
 print( ans)
 
 
@@ -451,13 +463,16 @@ print( ans)
 # In[5]:
 
 
-x,n,a,b,c = symbols('x,n,a,b,c', positive = True)                # use SymPy
-eqns = [x**n, 1/(a*x), exp(a*x + b), 1/(a*x + b)]                # list of integrals here 
-ans = []
+x,n,a,b,c = sp.symbols('x,n,a,b,c', positive = True)                   # use SymPy
+
+eqns = [x**n, 1/(a*x), sp.exp(a*x + b), 1/(a*x + b), 1/sp.sin(x)]      # list of integrals here 
+
+ans = []                                                               # define empty array
 for  i, eqn in enumerate(eqns): 
-    ans.append( [ eqns[i],   simplify(integrate(eqn, x) ) ] )     # append make list of answers
+    ans.append( [ eqns[i],  sp.simplify(sp.integrate(eqn, x) ) ] )     # .append(etc) makes list of answers
     pass
-ans
+
+ans[:]
 
 
 # In[ ]:

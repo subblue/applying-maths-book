@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1963,35 +1963,35 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>        <span class="c1"># numerical integration</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span><span class="n">norm</span>          <span class="c1"># statistical functions</span>
-<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots </span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="the-mean-or-average-value">
 <h2>1.1 The Mean or Average value<a class="headerlink" href="#the-mean-or-average-value" title="Permalink to this headline">#</a></h2>
-<p>If several readings have been taken of a quantity <span class="math notranslate nohighlight">\(x\)</span>, for example a titration is performed <span class="math notranslate nohighlight">\(N\)</span> times with identical solutions in an attempt to be precise, the titration’s end-point volume will be quoted as the arithmetic sample average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> of all the <span class="math notranslate nohighlight">\(n\)</span> measurements. This is sometimes also labelled <span class="math notranslate nohighlight">\(\bar x\)</span> (pronounced ‘x-bar’) and the word ‘mean’ is often used instead of average. The arithmetic average is</p>
+<p>If several readings have been taken of some quantity <span class="math notranslate nohighlight">\(x\)</span>, for example a titration is performed <span class="math notranslate nohighlight">\(N\)</span> times with identical solutions in an attempt to be precise, the titration’s end-point volume will be quoted as the arithmetic sample average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> of all the <span class="math notranslate nohighlight">\(n\)</span> measurements. This is sometimes also labelled <span class="math notranslate nohighlight">\(\bar x\)</span> (pronounced ‘x-bar’) and the word ‘mean’ is often used instead of average. We always assume that the differences between measurements are due to random effects inherent in the experiment and that no systematic faults are present due to bad experimental techniques. The arithmetic average is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle =\frac{1}{n}\sum_{i=1}^{i=n} x_i=\frac{1}{n}(x_1+x_2+x_3\cdots x_n)\qquad\tag{1}\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_1+x_2+x_3\cdots x_n\)</span> are the measurements. This average value will probably not be the same as any individual value and these will always be spread either side of the mean. The sum of the difference between each point and the average, is always zero;</p>
+<p>where <span class="math notranslate nohighlight">\(x_1,x_2,x_3\cdots x_n\)</span> are the measurements. This average value will probably not be the same as any individual value and these will always be spread either side of the mean. The sum of the difference between each point and the average, is always zero, which means that the data points are randomly distributed about their mean value, viz,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_i(x_i-\langle x\rangle)=0\]</div>
 <p><img alt="Drawing" src="../_images/analysis-fig1.png" /></p>
-<p>Figure 1. The experimental average value <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>  tends towards the population or theoretical mean <span class="math notranslate nohighlight">\(\mu\)</span> as the number of samples increase. The sample standard deviation <span class="math notranslate nohighlight">\(s\)</span> is also shown and this tends to a constant value of 1/4 as <span class="math notranslate nohighlight">\(n\)</span> increases. (Note the logarithmic abscissa scale). The samples are taken from a Normal distribution with <span class="math notranslate nohighlight">\(\mu = 1/2\)</span> and <span class="math notranslate nohighlight">\(\sigma = 1/4\)</span>.</p>
+<p>Figure 1. The mean and standard deviation are shown vs. the number <span class="math notranslate nohighlight">\(n\)</span> of measurements or samples taken. Samples are randomly drawn from a Normal (Gaussian) distribution with mean <span class="math notranslate nohighlight">\(\mu = 1/2\)</span> and standard deviation  <span class="math notranslate nohighlight">\(\sigma = 1/4\)</span> .The experimental average value <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> tends towards the population or theoretical mean <span class="math notranslate nohighlight">\(\mu\)</span> as the number of samples increase. The sample standard deviation <span class="math notranslate nohighlight">\(s\)</span> is also shown and this tends to a constant value of 1/4 as <span class="math notranslate nohighlight">\(n\)</span> increases. (Note the logarithmic abscissa scale).</p>
 <hr class="docutils" />
-<p>One trajectory showing the way the mean value is approached as the number of experiments is increased is shown in figure 1; the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span> (equation 2) is also shown. The samples at each <span class="math notranslate nohighlight">\(n\)</span> are from a new list of length <span class="math notranslate nohighlight">\(n\)</span> selected at random a normal distribution (figure 4) with a mean <span class="math notranslate nohighlight">\(1/2\)</span> and a standard deviation <span class="math notranslate nohighlight">\(1/4\)</span>. In many experiments, the inherent accuracy of each measurement may not be the same and then the mean and standard deviation have to be <em>weighted</em> to reflect this. This is described in Section 3.8.</p>
+<p>One trajectory showing the way the mean value is approached as the number of experiments is increased is shown in figure 1; the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span> (equation 2) is also shown. The samples at each <span class="math notranslate nohighlight">\(n\)</span> are from a new list of length <span class="math notranslate nohighlight">\(n\)</span> selected at random a Normal (Gaussian) distribution (fig. 4) with a mean <span class="math notranslate nohighlight">\(1/2\)</span> and a standard deviation <span class="math notranslate nohighlight">\(1/4\)</span>. In many experiments the inherent accuracy of each measurement may not be the same and then the mean and standard deviation have to be <em>weighted</em> to reflect this. This is described in Section 3.8.</p>
 </section>
 <section id="sample-standard-deviation-and-parent-or-population-variance">
 <h2>1.2 Sample Standard Deviation and parent or population Variance<a class="headerlink" href="#sample-standard-deviation-and-parent-or-population-variance" title="Permalink to this headline">#</a></h2>
-<p>A measure of the spread of the results is the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span>. The square of the standard deviation is called the <em>variance</em> . The sample standard deviation is</p>
+<p>A measure of the spread of the results is the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span>. The square of the standard deviation is called the <em>variance</em>. The sample standard deviation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \qquad\tag{2}\]</div>
 <p>and is sometimes called the root mean square (or <em>rms</em>) deviation. This formula produces an unbiased estimate of <span class="math notranslate nohighlight">\(s\)</span>, but note that some authors define the standard deviation by dividing by <span class="math notranslate nohighlight">\(n\)</span> rather than <span class="math notranslate nohighlight">\(n - 1\)</span>; there is not a single definition of <span class="math notranslate nohighlight">\(s\)</span>; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called <em>dispersion indices</em>; range, quantile, skew, and kurtosis (peakedness) are others.</p>
-<p>In words, the formula for s says ‘for each of the n measurements, subtract the average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> from each <span class="math notranslate nohighlight">\(x\)</span> value, square the result and then add up all the answers. Next, divide by the total number of measurements less one and finally take the square root’.</p>
+<p>In words, the formula for <span class="math notranslate nohighlight">\(s\)</span> says ‘for each of the <span class="math notranslate nohighlight">\(n\)</span> measurements, subtract the average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> from each <span class="math notranslate nohighlight">\(x\)</span> value, square the result and then add up all the answers. Next, divide by the total number of measurements less one and finally take the square root’.</p>
 <p>The principle of <em>Least Squares</em> is widely used in modelling or analysing data; see Section 5.2, and this approach minimizes a function such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{i=1}^n ( x_i - M )^2  \]</div>
@@ -2002,7 +2002,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[ \displaystyle M=\frac{1}{n}\sum_{i=1}^n x_i\]</div>
 <p>showing that, indeed, <span class="math notranslate nohighlight">\(M = \langle x \rangle\)</span>. The mean value makes the sum of squares a minimum, and in this sense it is the best estimate of the deviation.</p>
-<p>Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean <span class="math notranslate nohighlight">\(\mu\)</span>, called the <em>population mean</em>, and its standard deviation is <span class="math notranslate nohighlight">\(\sigma\)</span>; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13, which approximates the normal when its mean is <span class="math notranslate nohighlight">\(\approx 10\)</span> or greater.) The sample mean <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> is more likely than not to be different to the population mean <span class="math notranslate nohighlight">\(\mu\)</span>. If it can be shown that the average of all sample means s equals the population or true mean value <span class="math notranslate nohighlight">\(\mu\)</span>, then the sample mean is an unbiased estimate of the population mean.</p>
+<p>Suppose that there is an underlying parent distribution whose width determines the standard deviation. This has a mean <span class="math notranslate nohighlight">\(\mu\)</span>, called the <em>population mean</em>, and its standard deviation is <span class="math notranslate nohighlight">\(\sigma\)</span>; Greek letters being reserved for parent quantities, then this parent distribution is what an infinite number of ideal experimental results would produce. This ideal distribution is assumed to be the normal (Gaussian) distribution, see Figs 3 and 4. (The other common distribution is the Poisson, figure 13, which approximates the normal when its mean is <span class="math notranslate nohighlight">\(\approx 10\)</span> or greater.) The sample mean <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> is more likely than not to be different to the population mean <span class="math notranslate nohighlight">\(\mu\)</span>. If it can be shown that the average of all sample means <span class="math notranslate nohighlight">\(s\)</span> equals the population or true mean value <span class="math notranslate nohighlight">\(\mu\)</span>, then the sample mean is an unbiased estimate of the population mean.</p>
 <p>The standard deviation and variance can also be defined with reference to the parent distribution and then this <em>population</em> or <em>parent variance</em>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2 \qquad\tag{3}\]</div>
@@ -2033,7 +2033,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi \sigma^2}}e^{\large{-\frac{(x-\mu)^2}{2\sigma^2}} }\qquad\tag{4}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean of the distribution and <span class="math notranslate nohighlight">\(\sigma\)</span> the standard deviation. The central limit theorem forms the basis by which the standard deviation of a normal distribution is used to characterize data.</p>
 <p>The reasoning put more technically is that the sample mean <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, although an unbiased estimate, is unlikely to be exactly equal to the true population mean <span class="math notranslate nohighlight">\(\mu\)</span> and is itself subject to random variation. By repeating the sampling process, i.e. by repeating the whole set of measurements, a number of different estimates of <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> are obtained which are distributed about the true value <span class="math notranslate nohighlight">\(\mu\)</span>. To simulate this and illustrate the central limit theorem, suppose that there are five measurements A, B, C, D, and E and each is an experimental result with values <span class="math notranslate nohighlight">\(1, 2, 3, 4\)</span>, and <span class="math notranslate nohighlight">\(5\)</span> respectively. Any other numbers could be used but these are easy to average. The distribution of the numbers is uniform as shown in figure 2.</p>
-<p>Suppose that randomly selected pairs of these values are taken making <span class="math notranslate nohighlight">\(2\)</span>5 possible samples. The pairs are shown on the left of the table and the corresponding average (sample mean) is shown on the right. Looking at this table there are five entries with a value of <span class="math notranslate nohighlight">\(3\)</span>, and only <span class="math notranslate nohighlight">\(1\)</span> entry each with a value of <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(5\)</span>. If plotted as a histogram, this begins to look a little like a normal distribution; figure 2.</p>
+<p>Suppose that randomly selected pairs of these values are taken making <span class="math notranslate nohighlight">\(25\)</span> possible samples. The pairs are shown on the left of the table and the corresponding average (sample mean) is shown on the right. Looking at this table there are five entries with a value of <span class="math notranslate nohighlight">\(3\)</span>, and only <span class="math notranslate nohighlight">\(1\)</span> entry each with a value of <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(5\)</span>. If plotted as a histogram, this begins to look a little like a normal distribution; figure 2.</p>
 <p><img alt="Drawing" src="../_images/analysis-table-1.png" /> <img alt="Drawing" src="../_images/analysis-fig2.png" /></p>
 <p>Figure 2. Uniform distribution and the (normalized) histogram formed by sampling pairs of numbers.</p>
 <hr class="docutils" />
@@ -2042,11 +2042,11 @@ always necessary to check the equation being used, which unfortunately, is not a
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2/n}}e^{-\large{ (x-\mu)^2/(2\sigma^2/n)} }\]</div>
 <p>Many other initial distributions can be chosen to start with besides the uniform distribution illustrated here. For (almost) all distributions, a normal distribution will eventually be formed, although this may require a huge number of calculations.</p>
 <p><img alt="Drawing" src="../_images/analysis-fig3.png" /></p>
-<p>Figure 3. Illustrating the Central Limit Theorem.</p>
+<p>Figure 3. Illustrating the Central Limit Theorem. The initial distribution is the horizontal line.</p>
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Central limit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Central Limit Theorem</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">5000</span>                        <span class="c1"># number of reeat calculations</span>
 <span class="n">av</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>     <span class="c1"># array to hold data</span>
@@ -2058,9 +2058,9 @@ always necessary to check the equation being used, which unfortunately, is not a
 
 <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">-</span> <span class="n">av_x</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="p">)</span><span class="o">/</span><span class="n">m</span>   <span class="p">)</span>    <span class="c1"># sigma calculated </span>
 
-<span class="n">gaus</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">sig</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">av_x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># gaus distribution</span>
+<span class="n">gaus</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">sig</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">av_x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="c1"># gausian distribution</span>
 
-<span class="c1"># #remove hash symbols to plot data as in fig 3</span>
+<span class="c1"># #remove hash to plot data as in fig 3</span>
 <span class="c1">#fig = plt.figure(figsize=(8,6) )</span>
 <span class="c1">#plt.rcParams.update({&#39;font.size&#39;: 16})  # set font size for plot</span>
 <span class="c1">#plt.plot(x,gaus(x,sig),color=&#39;red&#39;)                                    # plot gaussian function with mu and sigma </span>
@@ -2077,7 +2077,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </section>
 <section id="confidence-intervals">
 <h2>3 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h2>
-<p>The Central Limit Theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> separate measurements. The mean <span class="math notranslate nohighlight">\(\mu\)</span> may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.</p>
+<p>The Central Limit Theorem shows that repeated measurements follow a Normal distribution (see Section 3.1) with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> separate measurements. The mean <span class="math notranslate nohighlight">\(\mu\)</span> may be known from theoretical considerations or from other experimental data. The properties of the Normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.</p>
 <p>The standard deviation of the mean is often referred to as the standard error on the mean and defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_m = \sigma/\sqrt{n}\]</div>
@@ -2113,13 +2113,12 @@ always necessary to check the equation being used, which unfortunately, is not a
 99.73 &amp; &amp;3\sigma\\
 99.9999 &amp; &amp; 5\sigma\\
 \hline \end{array}\end{split}\]</div>
-<p>Sometimes, a statement may be made along the lines that a measurement has produced a result that is more than ‘five sigma from the mean’. This means that the chance of this occurring is <span class="math notranslate nohighlight">\(1/25 \equiv 4\)</span>%, which would suggest that it does not belong to the same distribution as other measurements. However, if only a few data points have been taken then there would be less confidence in assuming this, as to opposed to perhaps <span class="math notranslate nohighlight">\(100\)</span> values in the data set with the mean and standard deviation properly established.</p>
-<p>However, the ‘five sigma’ statement can also be used with the normal distribution and this is far more common, particularly in particle physics. By integrating the distribution from <span class="math notranslate nohighlight">\(-\infty\to x\)</span> the cumulative distribution is obtained. Thus there is a <span class="math notranslate nohighlight">\(50\)</span>% chance of being within <span class="math notranslate nohighlight">\(0.675\sigma\)</span>, (this is sometimes called the probable error), a <span class="math notranslate nohighlight">\(68.5\)</span>% chance of being within <span class="math notranslate nohighlight">\(1\sigma\)</span> and a <span class="math notranslate nohighlight">\(95\)</span>% chance of being within <span class="math notranslate nohighlight">\(1.96\sigma\)</span>, and <span class="math notranslate nohighlight">\(95.45\)</span>% chance of being within <span class="math notranslate nohighlight">\(2\sigma\)</span> and so on. For <span class="math notranslate nohighlight">\(5\sigma\)</span> the chance is <span class="math notranslate nohighlight">\(99.9999\)</span>%, pretty much a ‘dead cert’.</p>
+<p>The ‘five sigma’ statement is used with the Normal distribution and is common, particularly in particle physics. By integrating the distribution from <span class="math notranslate nohighlight">\(-\infty\to x\)</span> the cumulative distribution is obtained. Thus there is a <span class="math notranslate nohighlight">\(50\)</span>% chance of being within <span class="math notranslate nohighlight">\(0.675\sigma\)</span>, (this is sometimes called the probable error), a <span class="math notranslate nohighlight">\(68.5\)</span>% chance of being within <span class="math notranslate nohighlight">\(1\sigma\)</span> and a <span class="math notranslate nohighlight">\(95\)</span>% chance of being within <span class="math notranslate nohighlight">\(1.96\sigma\)</span>, and <span class="math notranslate nohighlight">\(95.45\)</span>% chance of being within <span class="math notranslate nohighlight">\(2\sigma\)</span> and so on. For <span class="math notranslate nohighlight">\(5\sigma\)</span> the chance is <span class="math notranslate nohighlight">\(99.9999\)</span>%, pretty much a ‘dead cert’.</p>
 </section>
 </section>
 <section id="the-normal-and-standard-normal-distribution">
 <h2>3.1 The Normal and Standard Normal distribution<a class="headerlink" href="#the-normal-and-standard-normal-distribution" title="Permalink to this headline">#</a></h2>
-<p>The normal (Gaussian) distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> has the form</p>
+<p>The Normal (Gaussian) distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\large{ (x-\mu)^2/(2\sigma^2)} }\]</div>
 <p>which is normalised to one; <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty p(x)dx=1\)</span>. The mean, average, or expectation value of <span class="math notranslate nohighlight">\(x\)</span> is</p>
@@ -2128,14 +2127,14 @@ always necessary to check the equation being used, which unfortunately, is not a
 <p>and the variance is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{-\infty}^\infty (x-\mu)^2p(x)dx=\sigma^2\equiv \langle x^2\rangle-\langle x\rangle^2 \]</div>
-<p>The standard normal distribution describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,</p>
+<p>The Standard Normal distribution describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi}}e^{-\large{ (x-\mu)^2/2} }\qquad\tag{7}\]</div>
 <p>The total area under the curve is one and the area between symmetrically placed <span class="math notranslate nohighlight">\(x\)</span> values gives the probability of falling within that area. The area <span class="math notranslate nohighlight">\(p(x)\)</span> is the probability of an observation being between <span class="math notranslate nohighlight">\(\pm x\)</span>;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\int_{-x}^x e^{-x^2/2}dx=\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\qquad\tag{8}\]</div>
 <p>The area within limits of <span class="math notranslate nohighlight">\(\pm 1.96\)</span> is <span class="math notranslate nohighlight">\(\mathrm{erf}(1.96/\sqrt{2}) = 0.950\)</span>; hence this is the <span class="math notranslate nohighlight">\(95\)</span>% chance as described by equation 6. In figure 4, the total area in yellow adds up to <span class="math notranslate nohighlight">\(5\)</span>% of the total, meaning that a value that differs from the mean should exceed <span class="math notranslate nohighlight">\(\pm 1.96\)</span> by pure chance only on <span class="math notranslate nohighlight">\(5\)</span>% of all measurements.</p>
-<p>The probable error <span class="math notranslate nohighlight">\(p_e\)</span> divides the normal distribution area into two with areas placed symmetrically about zero. The areas are <span class="math notranslate nohighlight">\(1/4:1/2:1/4\)</span>; the distribution’s <span class="math notranslate nohighlight">\(x\)</span> value is <span class="math notranslate nohighlight">\(p_e = \pm 0.6745\sigma\)</span>. Some values of the area and hence the chance of a value occurring within different standard deviations of the mean is shown in Table 1.</p>
+<p>The probable error <span class="math notranslate nohighlight">\(p_e\)</span> divides the Normal distribution area into two with areas placed symmetrically about zero. The areas are <span class="math notranslate nohighlight">\(1/4:1/2:1/4\)</span>; the distribution’s <span class="math notranslate nohighlight">\(x\)</span> value is <span class="math notranslate nohighlight">\(p_e = \pm 0.6745\sigma\)</span>. Some values of the area and hence the chance of a value occurring within different standard deviations of the mean is shown in Table 1.</p>
 <section id="cumulative-distribution-function-cdf">
 <h3>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Permalink to this headline">#</a></h3>
 <p>In any distribution specific areas may be calculated using the Cumulative Distribution Function (CDF), which is found by integrating a distribution from <span class="math notranslate nohighlight">\(-\infty \to x\)</span>. If <span class="math notranslate nohighlight">\(p(x)\)</span> is a probability function often called the Probability Density Function the Cumulative Distribution is the area given by the integral</p>
@@ -2144,12 +2143,13 @@ always necessary to check the equation being used, which unfortunately, is not a
 <p>and so the probability density function is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  p(x)=\frac{dP}{dx}\]</div>
-<p>For the reverse process - starting with the area to obtain the <span class="math notranslate nohighlight">\(x\)</span> value producing that area - the Quantile function is used. For example, with the normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example using <span class="math notranslate nohighlight">\(\sigma/2\)</span>, see table 1, as the value and using Python/SymPy.</p>
+<p>For the reverse process - starting with the area to obtain the <span class="math notranslate nohighlight">\(x\)</span> value producing that area - the Quantile function is used. For example, with the Normal distribution with a mean of zero and standard deviation of one the calculation of the cumulative value is, for example using <span class="math notranslate nohighlight">\(\sigma/2\)</span>, see table 1, as the value and using Python/SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">w</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">w</span><span class="p">))</span>  <span class="c1"># integrate -infinity to w </span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span><span class="n">w</span><span class="p">))</span>  <span class="c1"># integrate -infinity to w, sp.oo is sympy infinity </span>
 <span class="nb">float</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2216,7 +2216,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 <span class="n">c</span> <span class="o">=</span> <span class="mf">0.69146</span>
 <span class="n">w</span> <span class="o">=</span> <span class="mf">0.18</span>                                 <span class="c1"># initial guess for iterations</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>                       <span class="c1"># guess number of interations needed</span>
-    <span class="n">ans</span><span class="p">,</span><span class="n">err</span><span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">dfdx</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>       <span class="c1"># integrate to value x from -infty to get f(x)</span>
+    <span class="n">ans</span><span class="p">,</span><span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">dfdx</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>      <span class="c1"># integrate to value x from -infty to get f(x)</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="p">(</span><span class="n">ans</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>              <span class="c1"># calculate new value of w (the root) from previous values</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39; w = &#39;</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
 </pre></div>
@@ -2264,7 +2264,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </section>
 <section id="small-sample-confidence-limits-students-t-distribution">
 <h2>3.2 Small sample confidence limits: Student’s <span class="math notranslate nohighlight">\(t\)</span> distribution<a class="headerlink" href="#small-sample-confidence-limits-students-t-distribution" title="Permalink to this headline">#</a></h2>
-<p>When the number of samples is small, s may not be a very good estimate of <span class="math notranslate nohighlight">\(\sigma\)</span> and, in this case, Student’s ‘<span class="math notranslate nohighlight">\(t\)</span>’ test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter <span class="math notranslate nohighlight">\(v = n - 1\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of samples being averaged, and <span class="math notranslate nohighlight">\(v\)</span> is called its ‘degrees of freedom’. When the sample size increases, the <span class="math notranslate nohighlight">\(t\)</span> distribution approaches the normal one. Using a similar argument to that for the normal distribution, the <span class="math notranslate nohighlight">\(t\)</span> distribution produces confidence limits,</p>
+<p>When the number of samples is small, <span class="math notranslate nohighlight">\(s\)</span> may not be a very good estimate of <span class="math notranslate nohighlight">\(\sigma\)</span> and, in this case, Student’s ‘<span class="math notranslate nohighlight">\(t\)</span>’ test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter <span class="math notranslate nohighlight">\(v = n - 1\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of samples being averaged, and <span class="math notranslate nohighlight">\(v\)</span> is called its ‘degrees of freedom’. When the sample size increases, the <span class="math notranslate nohighlight">\(t\)</span> distribution approaches the normal one. Using a similar argument to that for the normal distribution, the <span class="math notranslate nohighlight">\(t\)</span> distribution produces confidence limits,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\qquad\tag{12}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that <span class="math notranslate nohighlight">\(v\)</span> is one less than the number of data points.)</p>
@@ -2322,7 +2322,7 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_18_0.png" src="../_images/analysis-A_18_0.png" />
+<img alt="../_images/analysis-A_17_0.png" src="../_images/analysis-A_17_0.png" />
 </div>
 </div>
 <p>Note that the 95% confidence level has <span class="math notranslate nohighlight">\(\alpha/2 = 0.025\)</span> which is <span class="math notranslate nohighlight">\(5/2\)</span>% because the table is for ‘two-tailed’ values on the distribution and <span class="math notranslate nohighlight">\(\alpha = 5\)</span>. The <span class="math notranslate nohighlight">\(t\)</span> value at <span class="math notranslate nohighlight">\(95\)</span>% and for seven points (or six degrees of freedom) is written as <span class="math notranslate nohighlight">\(t_{0.025,6}\)</span>. Figure 4 shows two-tailed values on the normal distribution.</p>
@@ -2337,7 +2337,7 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_20_0.png" src="../_images/analysis-A_20_0.png" />
+<img alt="../_images/analysis-A_19_0.png" src="../_images/analysis-A_19_0.png" />
 </div>
 </div>
 <p>which is the value in the table under <span class="math notranslate nohighlight">\(95\)</span>% and <span class="math notranslate nohighlight">\(v=5\)</span>.</p>
@@ -2356,7 +2356,7 @@ v &amp; &amp; &amp;\\
 \text{Student's t}&amp; f(x,n)=\frac{\Gamma((n+1)/2)}{\sqrt{n\pi}\Gamma(n/2)}(1+x^2/n)^{-(n+1)/2} &amp; 0 \text{ if } n\gt 1 &amp; \frac{n}{n-2},\text{ if } n\gt 2&amp; x=-\infty\cdots \infty\\
 \hline
 \end{array}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\binom{n}k = \frac{n!}{k!(n-k)!}\)</span>. The mean is also called the expected value.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \binom{n}k = \frac{n!}{k!(n-k)!}\)</span>. The mean is also called the expected value.</p>
 </section>
 <section id="hypothesis-testing">
 <h2>3.4 Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h2>
@@ -2450,9 +2450,9 @@ S_p=3.67,\quad t_0=2.49\]</div>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Chauvenet criterion to test for outliers</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">89</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">95</span><span class="p">])</span>  <span class="c1"># data assumed positive</span>
+<span class="n">indx</span> <span class="o">=</span> <span class="mi">1</span>                   <span class="c1"># position of point to check in the list. Index starts at zero</span>
 
-<span class="n">indx</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1"># point to check in the list. index starts at zero</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">n</span>    <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="n">limit</span><span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
 <span class="n">xbar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
 <span class="n">x0</span>   <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span>
@@ -2463,16 +2463,16 @@ S_p=3.67,\quad t_0=2.49\]</div>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">xbar</span> <span class="o">-</span> <span class="n">delta</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">xbar</span> <span class="o">+</span> <span class="n">delta</span>  
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.3f}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;limits &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.3f}</span><span class="s1"> and </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;limits &#39;</span><span class="p">,</span> <span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">))</span>
 <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.3f}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;mean and std dev &#39;</span><span class="p">,</span><span class="n">xbar</span><span class="p">,</span><span class="n">sig</span><span class="p">))</span>   
 
-<span class="n">p</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">erf</span><span class="p">((</span><span class="n">b</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span> <span class="p">))</span> <span class="o">-</span> <span class="n">erf</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span> <span class="p">))</span> <span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">b</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span> <span class="p">))</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span> <span class="p">))</span> <span class="p">)</span> <span class="c1"># use sympy error function</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;1-p =&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="s1">&#39;, 1/(2n) =&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;1 - p =&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="s1">&#39;, 1/(2n) =&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span>
 <span class="k">if</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;retain point&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -2481,9 +2481,9 @@ S_p=3.67,\quad t_0=2.49\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>limits 78.000 120.000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>limits 78.000 and 120.000
 mean and std dev 99.000 11.907
-1-p = 0.0778 , 1/(2n) =  0.050
+1 - p = 0.0778 , 1/(2n) =  0.050
 retain point
 </pre></div>
 </div>
@@ -2547,28 +2547,28 @@ retain point
 <p>Completing the differentiations and substituting values gives <span class="math notranslate nohighlight">\(\sigma_T=3.15\)</span> K. The final answer produces a boiling temperature = <span class="math notranslate nohighlight">\(353 \pm 3\)</span> K. The Python/Sympy calculation, which also performs the differentiation, is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sm</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="n">sT</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;m, p, c, sm, sc, sT&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sm</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="n">sT</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;m, p, c, sm, sc, sT&#39;</span><span class="p">)</span>
 
-<span class="n">T</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="p">(</span><span class="n">ln</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">sigTsqrd</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">m</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sm</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sc</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">sigTsqrd</span> <span class="o">=</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">m</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sm</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sc</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">sigTsqrd</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_25_0.png" src="../_images/analysis-A_25_0.png" />
+<img alt="../_images/analysis-A_24_0.png" src="../_images/analysis-A_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sigTsqrd</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigTsqrd</span><span class="p">)</span>
 <span class="n">sigT</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="mi">760</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="o">-</span><span class="mi">5390</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mf">21.89</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sm</span><span class="p">,</span><span class="mi">33</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mf">0.099</span><span class="p">)</span>
 <span class="n">sigT</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_26_0.png" src="../_images/analysis-A_26_0.png" />
+<img alt="../_images/analysis-A_25_0.png" src="../_images/analysis-A_25_0.png" />
 </div>
 </div>
 </section>
@@ -2582,7 +2582,7 @@ retain point
 </section>
 <section id="table-of-some-error-propagation-formulae">
 <h2>4.1 Table of some error propagation formulae<a class="headerlink" href="#table-of-some-error-propagation-formulae" title="Permalink to this headline">#</a></h2>
-<p>The following table gives some examples of frequently met functions. The variances <span class="math notranslate nohighlight">\(\sigma_u^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_v^22\)</span> are assumed to be known. The total variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> is shown; remember to take the square root before using and note that σ 2 is always positive. The equation to use for many variables is</p>
+<p>The following table gives some examples of frequently met functions. The variances <span class="math notranslate nohighlight">\(\sigma_u^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_v^2\)</span> are assumed to be known. The total variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> is shown; remember to take the square root before using and note that <span class="math notranslate nohighlight">\(\sigma^ 2\)</span> is always positive. The equation to use for many variables is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_y^2=\sum_i\left(\frac{\partial y}{\partial u_i}\right)^2\sigma_i^2\qquad\tag{22}\]</div>
 <div class="math notranslate nohighlight">
@@ -2591,11 +2591,11 @@ retain point
 y=f(x) &amp; \sigma_y  &amp;&amp; y=f(u,v)  &amp; \sigma_y\\
 \hline
 mx+c   &amp; m\sigma_x &amp;&amp; u\pm v &amp; \sqrt{\sigma_x^2+\sigma_y^2}\\
-mx^n+c &amp; m nx^{n-1}\sigma_x &amp;&amp; uv &amp; \sqrt{s_{u}^{2} v^{2} + s_{v}^{2} u^{2}}\\
-e^{\pm ax} &amp; a\sigma_x e^{\pm ax} &amp;&amp; u/v &amp;\displaystyle\sqrt{\frac{s_{u}^{2} v^{2} + s_{v}^{2} u^{2}}{v^{4}}}\\
-e^{\pm a/x} &amp; \displaystyle \frac{a\sigma_x}{x^2}e^{\pm a/x} &amp;&amp; \displaystyle \frac{1}{u}\pm  \frac{1}{v} &amp; \displaystyle\sqrt{\frac{s_{u}^{2}}{u^{4}} + \frac{s_{v}^{2}}{v^{4}}}\\
-\sin(\pm ax) &amp; \displaystyle a\sigma_x\cos(ax) &amp;&amp; u\ln(av) &amp; \displaystyle\sqrt{s_{u}^{2} \log{\left(a v \right)}^{2} + \frac{s_{v}^{2} u^{2}}{v^{2}}}\\
-\ln(ax) &amp;\displaystyle \frac{\sigma_x}{a}&amp;&amp; ue^{av} &amp; e^{av}\sqrt{a^{2} s_{v}^{2} u^{2} + s_{u}^{2} }\\
+mx^n+c &amp; m nx^{n-1}\sigma_x &amp;&amp; uv &amp; \sqrt{\sigma_{u}^{2} v^{2} + \sigma_{v}^{2} u^{2}}\\
+e^{\pm ax} &amp; a\sigma_x e^{\pm ax} &amp;&amp; u/v &amp;\displaystyle\sqrt{\frac{\sigma_{u}^{2} v^{2} + \sigma_{v}^{2} u^{2}}{v^{4}}}\\
+e^{\pm a/x} &amp; \displaystyle \frac{a\sigma_x}{x^2}e^{\pm a/x} &amp;&amp; \displaystyle \frac{1}{u}\pm  \frac{1}{v} &amp; \displaystyle\sqrt{\frac{\sigma_{u}^{2}}{u^{4}} + \frac{\sigma_{v}^{2}}{v^{4}}}\\
+\sin(\pm ax) &amp; \displaystyle a\sigma_x\cos(ax) &amp;&amp; u\ln(av) &amp; \displaystyle\sqrt{\sigma_{u}^{2} \log{\left(a v \right)}^{2} + \frac{\sigma_{v}^{2} u^{2}}{v^{2}}}\\
+\ln(ax) &amp;\displaystyle \frac{\sigma_x}{a}&amp;&amp; ue^{av} &amp; e^{av}\sqrt{a^{2} \sigma_{v}^{2} u^{2} + \sigma_{u}^{2} }\\
 \hline
 \end{array}\end{split}\]</div>
 </section>
@@ -2603,11 +2603,11 @@ e^{\pm a/x} &amp; \displaystyle \frac{a\sigma_x}{x^2}e^{\pm a/x} &amp;&amp; \dis
 <h2>4.2  Matrix formulation of errors<a class="headerlink" href="#matrix-formulation-of-errors" title="Permalink to this headline">#</a></h2>
 <p>Barlow (1989) demonstrates that equation 20 can be written in a matrix form, which does not immediately seem to offer any advantage, but this becomes clearer for problems that are more complex. The matrix equation is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle V=GV_\sigma^2G^T \qquad\tag{23}\]</div>
-<p>where <span class="math notranslate nohighlight">\(V_\sigma^2\)</span> is a square matrix of variances and <span class="math notranslate nohighlight">\(G\)</span> a (Jacobian) matrix of partial derivatives. <span class="math notranslate nohighlight">\(V\)</span> is the matrix of the variances for each variable. The total variance is the sum of the terms in <span class="math notranslate nohighlight">\(V\)</span>, which may be calculated as</p>
+\[\displaystyle V=GV_{\sigma^2}G^T \qquad\tag{23}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{\sigma^2}\)</span> is a square matrix of variances and <span class="math notranslate nohighlight">\(G\)</span> a Jacobian matrix of partial derivatives, see Chapter 4-10. <span class="math notranslate nohighlight">\(V\)</span> is the matrix of the variances for each variable. The total variance is the sum of the terms in <span class="math notranslate nohighlight">\(V\)</span>, which may be calculated as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2=UV\qquad\tag{24}\]</div>
-<p>where <span class="math notranslate nohighlight">\(U\)</span> is a row matrix where each term is one. In example (vii) the matrix equation is written as</p>
+<p>where <span class="math notranslate nohighlight">\(U\)</span> is a row matrix where each term is one. In example (ii) the matrix equation is written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle 
 V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\frac{\partial T}{\partial c} \end{bmatrix} 
@@ -2620,7 +2620,10 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
 <section id="maximum-likelihood-method-parameter-estimation">
 <h2>5 Maximum Likelihood Method. Parameter estimation:<a class="headerlink" href="#maximum-likelihood-method-parameter-estimation" title="Permalink to this headline">#</a></h2>
 <p>The variance and mean have been used in our calculations on the assumption that they were the ‘best estimation’ of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
-<p>A series of measurements of the same thing will always have a probability distribution <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> with measured values <span class="math notranslate nohighlight">\(x_1,x_2\cdots\)</span> and the distribution will always depend on some unknown parameter <span class="math notranslate nohighlight">\(\theta\)</span>, for example it could be the the mean. The likelihood function of observing a series of events is therefore the product of individual events, viz, <span class="math notranslate nohighlight">\(L(\theta) = f(x_1,\theta) f(x_2,\theta) f(x_3,\theta)\cdots f(x_n,\theta)\)</span>. What we want to know is what quantity best describes the quantity <span class="math notranslate nohighlight">\(\theta\)</span>, i.e what is the most likely value of this quantity.  This can be found by differentiating <span class="math notranslate nohighlight">\(L\)</span> with respect to this quantity which is often the mean or variance, then setting the value to zero in the usual way of finding a maximum.</p>
+<p>A series of measurements of the same thing will always have a probability distribution <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> with measured values <span class="math notranslate nohighlight">\(x_1,x_2\cdots\)</span> and the distribution will always depend on some unknown parameter <span class="math notranslate nohighlight">\(\theta\)</span>, for example it could be the the mean. The likelihood function of observing a series of events is therefore the product of individual events, viz,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L(\theta) = f(x_1,\theta) f(x_2,\theta) f(x_3,\theta)\cdots f(x_n,\theta)\]</div>
+<p>What we want to know is what quantity best describes the quantity <span class="math notranslate nohighlight">\(\theta\)</span>, i.e. what is the most likely value of this quantity.  This can be found by differentiating <span class="math notranslate nohighlight">\(L\)</span> with respect to this quantity which is often the mean or variance, then setting the value to zero in the usual way of finding a maximum.</p>
 <p>Suppose that the process measured follows a normal distribution but with an unknown mean <span class="math notranslate nohighlight">\(\mu\)</span> but known variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. The likelihood function is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle L(\mu)=\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x_i-\mu)^2/2\sigma^2}\]</div>
@@ -2637,7 +2640,7 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
 <p>which is what we had assumed anyway, and this shows that it is the most likely, i.e. the best estimate of the true value when only <span class="math notranslate nohighlight">\(n\)</span> measurements are made. By assuming that the variance is also unknown by differentiating wrt. <span class="math notranslate nohighlight">\(\sigma\)</span> and setting the result to zero, this is found to be</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n (x_i-\langle x\rangle)^2\]</div>
-<p>The Poisson distribution, used for particle/photon  counting or other infrequent but numerous random events (see section 7) has the likelihood function</p>
+<p>The Poisson distribution, used for particle/photon counting or other infrequent but numerous random events (see section 7), has the likelihood function;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle L(\mu)=\prod_{i=0}^n \frac{\mu^{x_i} e^{-\mu}}{x_i!}\]</div>
 <p>taking the log gives <span class="math notranslate nohighlight">\(\ln(L)=-n\mu+\sum_i x_i\ln(\mu) -\sum_i x_i!\)</span> and differentiating</p>
@@ -2697,7 +2700,7 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

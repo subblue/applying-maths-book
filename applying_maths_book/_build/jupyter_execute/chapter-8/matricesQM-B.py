@@ -3,10 +3,17 @@
 
 # # 4 Basis sets and bra-ket algebra
 
-# In this section, bra-ket algebra is described more fully together with basis sets and how they are intimately related to the bra and ket. Some algebra for manipulating the bra and ket is also described.
+# In this section, bra-ket algebra is described more fully together with basis sets and how they are intimately related to the bra and ket. Some algebra for manipulating the bra and ket is also described. 
+# 
+# >The bra-ket notation is a short-hand for manipulating vectors and matrices, therefore even though it can often seem otherwise the rules for multiplying vectors, for example to make a dot product or multiplying a vector and matrix, still apply. 
+# 
+# > Objects with the pattern $\langle\cdots\;|\;\cdots\rangle$ are always numbers. This is a dot product
+# 
+# > Objects with the pattern $|\cdots\;\rangle\langle\;\cdots |$ are matrices and operators. This is an outer product.
 # 
 # ## 4.1 To each ket $|\;\rangle$ belongs a bra $\langle\;|$
-# In the Dirac notation, a ket is a column and a bra a row vector. The elements of the vector are those of the basis set used. Each ket always has a corresponding bra. The bra is formed as the _conjugate transpose_ of the ket, which means converting column into row and then taking the complex conjugate of each term. Formally the ket is the Hermitian adjoint of the bra, see Chapter 7.4.8. For example, if the ket is
+# 
+# In the Dirac notation, a ket is always a column and a bra always a row vector. The elements of the vector are those of the basis set used. Each ket always has a corresponding bra. The bra (the row vector) is always formed as the *conjugate transpose* of the ket, which means converting column into row and then taking the complex conjugate of each term. The transpose and conjugate operation is also called the *adjoint*. Naturally if the bra has only real numbers in it, taking the complex conjugate has no effect. Formally the ket is the Hermitian adjoint of the bra, see Chapter 7.4.8. For example, if the ket is
 # 
 # $$ \displaystyle \qquad\qquad |v\rangle =\begin{bmatrix} a\\ b \\ c \end{bmatrix}\qquad\qquad  \text{(27)} $$
 # 
@@ -14,37 +21,41 @@
 # 
 # $$ \displaystyle \qquad\qquad \langle v| = \begin{bmatrix}a^*& b^*& c^*\end{bmatrix} \qquad   \tag{28}$$
 # 
-# where * indicates a complex conjugate. The $a, b, c$ are the elements of the basis set being used. However, these are themselves only aliases or references to the actual properties. By manipulating these symbols, problems can be solved so that only at the end of the calculation do numbers have to be used. 
+# where * indicates a complex conjugate. Note that in the bra the vector is always the conjugate although the conventional * to indicate this is not normally added. The $a, b, c$ are the elements of the basis set being used. However, these are themselves only aliases or references to the actual properties. By manipulating these symbols, problems can be solved so that only at the end of the calculation do numbers have to be used. 
 # 
 # The fact that the bra is the conjugate transpose of the ket means that the correspondence between them is *antilinear*, for example the ket $ a_1|\varphi_1\rangle +a_2|\varphi_2\rangle$ and its bra are always related as 
 # 
 # $$\displaystyle a_1|\varphi_1\rangle +a_2|\varphi_2\rangle \rightleftharpoons a^*_1\langle\varphi_1| +a^*_2\langle\varphi_2|$$
 # 
-# where the superscript $^*$ indicated the complex conjugate. Of course coefficient $a$ will not always be complex, but that does not change the principle.  
+# where the superscript $^*$ indicated the complex conjugate. The reason the equality holds is that the elements on the vector are also made conjugate ($i\to -i$) although this is not normally shown in the bra. Of course coefficient $a$ will not always be complex, but that does not change the principle.  
 # 
 # We do have to be careful about how we write things, for example when $a$ is a complex number 
 # 
 # $$\displaystyle |a\;\varphi\rangle=a|\varphi\rangle\qquad \text{but}\qquad \langle a\;\varphi|=a^*\langle\varphi|$$
 # 
-# The dot or _inner product_ of two kets $|\varphi\rangle$ and $|\psi\rangle$ is the same as multiplying the bra of $\varphi$ and ket of $\psi$, or vice versa, and produces a number
+# ### **The dot product $\langle \cdots| \cdots\rangle$ produces a number**
+# 
+# The dot or inner product of two kets  or column vectors as $|\varphi\rangle$ and $|\psi\rangle$ is the same as making the dot product of row vector $\varphi^*$ (where * means make the complex conjugate) with column vector $\psi$ and the result produces a number
 # 
 # $$\displaystyle \qquad\qquad \langle \varphi|\psi\rangle =\begin{bmatrix} a^*_1 & a^*_2 & a^*_3 \cdots\end{bmatrix}\begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix} = \sum_i a^*_ib_i=\text{ a number}\qquad\qquad \qquad\qquad  \text{(29)}$$
 # 
-# and an _outer product_ which is an _operator_ and produces a matrix.
+# ### **The outer product $|\cdots\rangle\langle\cdots |$ produces a matrix and is an operator**
+# 
+# In normal vector notation this is a column vector left multiplying a row vector. The row vector is always the complex conjugate. 
 # 
 # $$\displaystyle \qquad\qquad |\psi\rangle\langle \varphi|= \begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix}\begin{bmatrix} a^*_1 & a^*_2 & a^*_3 \cdots\end{bmatrix}=\begin{bmatrix}b_1a_1^* & b_1a_2^* & b_1a_3^*\cdots \\ b_2a_1^* & b_2a_2^* &\cdots \\ \vdots & \vdots& \ddots\end{bmatrix} \qquad\qquad \qquad\qquad \text{(30)}$$
 # 
 # which are the same rules for any matrix as shown in Chapter 7. The only difference in their usage in quantum mechanics is that the elements of the basis set must form an orthogonal set. If they are also normalised they form an orthonormal set.
-
-# ### **(i) Summary of bra-ket properties**
 # 
-# The complex conjugate is indicated by superscript $^*$, the adjoint by $^\dagger, A, B$ are linear operators, $a$'s numbers
+# ### **Summary of bra-ket properties**
+# 
+# The complex conjugate is indicated by superscript $^*$, the adjoint by $^\dagger$. The adjoint $^\dagger$ is made by taking the transpose then the complex conjugate (or *vice-versa*).  $A, B$ are linear operators, $a$'s numbers. Often the symbol for the adjoint is omitted, then it can be inferred by its position with respect to the vertical line $|$.
 # 
 # $$\displaystyle \begin{array}{lll}\\
 # \hline
-# |\psi\rangle a=a|\psi\rangle\\
-# \langle\psi| a=a\langle\psi|\\
-# \langle \varphi|a|\psi\rangle=a\langle \varphi|\psi\rangle=\langle \varphi|\psi\rangle a\\
+# |\psi\rangle a=a|\psi\rangle&\text{ multiply a column vector by a number}\\
+# \langle\psi| a=a\langle\psi|&\text{ multiply a row vector by a number}\\
+# \langle \varphi|a|\psi\rangle=a\langle \varphi|\psi\rangle=\langle \varphi|\psi\rangle a&\text{ a is a number}\\
 # \langle\varphi|\psi\rangle=\langle\psi|\varphi\rangle^*\\
 # \langle\psi|\psi\rangle =\text{ a real positive number}\\
 # \langle\psi|\psi\rangle =1\text{ if }\psi \text{ is normalised}\\
@@ -57,20 +68,20 @@
 # 
 # $$\displaystyle \begin{array}{lll}\\
 # \hline
-# \pmb A|\psi\rangle =|x\rangle\\
-# \pmb A a|\psi\rangle=a \pmb A|\psi\rangle\\
-# \pmb A(a_1\psi_1+a_2\psi_2\;\rangle)=a_1\pmb A|\psi_1\rangle+a_2\pmb A|\psi_2\rangle \\
-# (\pmb A\pmb B)|\psi\rangle=\pmb A(\pmb B|\psi\rangle\\
-# (\pmb A^\dagger)^\dagger=\pmb A\\
-# (a\pmb A)^\dagger = a^*\pmb A\dagger\\
-# (\pmb A\pmb B)^\dagger =\pmb B^\dagger \pmb A^\dagger\text{ notice change in ordering}\\
-# |\pmb A\psi\rangle=\pmb A|\psi\rangle\\
-# \langle \pmb A\psi| =\langle\psi|\pmb A^\dagger\\
-# \langle\varphi|\pmb A|\psi\rangle=\text{a number}\\
-# \pmb A|\psi\rangle=E|\psi\rangle\;\text{, eigenvalue/eigenvector eqn}\\
+# \pmb A|\psi\rangle =|x\rangle& \text{Matrix vector product gives a vector}\\
+# \pmb A a|\psi\rangle=a \pmb A|\psi\rangle& \text{a is a number}\\
+# \pmb A(a_1\psi_1+a_2\psi_2\;\rangle)=a_1\pmb A|\psi_1\rangle+a_2\pmb A|\psi_2\rangle )\\
+# (\pmb A\pmb B)|\psi\rangle=\pmb A(\pmb B|\psi\rangle&\text{Keep matrix order the same, then multiplying order does not matter}\\
+# (\pmb A^\dagger)^\dagger=\pmb A&\text{Transpose twice and conjugate twice produces no change}\\
+# (a\pmb A)^\dagger = a^*\pmb A\dagger&\text{Transpose and congugate on both a and} \pmb A\\
+# (\pmb A\pmb B)^\dagger =\pmb B^\dagger \pmb A^\dagger&\text{Adjoint, just as with matrix transpose}\\
+# |\pmb A\psi\rangle=\pmb A|\psi\rangle &\text{Matrix & column vector product}\\
+# \langle \pmb A\psi| =\langle\psi|\pmb A^\dagger&\text{Matrix & row vector product, }\pmb A\text{ is made adjoint}\\
+# \langle\varphi|\pmb A|\psi\rangle=\text{a number}& \pmb A|\psi\rangle\text{ is a column vector, then dot prod with }\langle \varphi|  \\
+# \pmb A|\psi\rangle=E|\psi\rangle &\text{Eigenvalue/Eigenvector eqn. E is a number}\\
 # \langle\psi|\pmb A|\psi\rangle=E\langle\psi|\psi\rangle\\
-# \langle\psi|\pmb A^\dagger=E^*\langle\psi|\\
-# \langle\psi|\pmb A|\psi\rangle=\langle  A\rangle \text{, expectation value }\psi\text{ normalised}\\
+# \langle\psi|\pmb A^\dagger=E^*\langle\psi|&\text{Transpose & congugate to get eigenvalue eigenvector eqn.}\\
+# \langle\psi|\pmb A|\psi\rangle=\langle  A\rangle& \text{Expectation value when }\psi\text{ normalised}\\
 # \hline
 # \end{array}$$
 
@@ -199,9 +210,9 @@
 # 
 # To obtain the Hermitian conjugate of bras, kets and operators
 # 
-# >replace constants by their complex conjugates, bras by their kets, kets by their bras and operators with their adjoint.
+# >replace constants by their complex conjugates, bras by their kets and kets by their bras and operators with their adjoint (i.e. transpose congugate).
 # 
-# > reverse the order of these, except for constants whose position is not important.
+# > reverse the order of these objects, except for constants whose position is not important.
 
 # ## 4.6 Manipulating bra's and ket's  with operators
 # 
@@ -233,15 +244,23 @@
 # 
 # $$\displaystyle \langle\alpha |\pmb A|\beta\rangle=\begin{bmatrix}-i&0&3\end{bmatrix}\begin{bmatrix}3i\\0\\9 \end{bmatrix}=30$$
 # 
-# ### **(ii) $ \langle \pmb A\alpha|\beta\rangle= \langle \alpha|\pmb A^\dagger \beta\rangle$**
+# ### **(ii) $ \langle \pmb A\alpha|\beta\rangle = \langle \alpha|\pmb A^\dagger \beta\rangle$**
 # 
-# The quantity $\langle \pmb A\alpha|\beta\rangle$ is a number. This can be appreciated by noticing that $H\alpha$ is a matrix left multiplying a column vector and so produces a column vector, see fig 7 chapter 7. The vector $\alpha$ has to be a column as only a column vector can be left multiplied by a matrix. This resultant vector has to be changed into a row vector and made into its complex conjugate to become a bra and so to be able to form a dot product with column vector $\beta$. 
+# The matrix multiplication $\langle \pmb A\alpha|\beta\rangle$ produces a number because any object with shape $\langle\cdots | \cdots\rangle$ is a dot product. This can be appreciated by noticing that $A\alpha$ is a matrix left multiplying a column vector and so produces a column vector, see fig 7 chapter 7. The vector $\alpha$ has to be a column because only a column vector can be left multiplied by a matrix. This resultant vector must be changed into a row vector and its complex conjugate taken to become a bra and so to be able to form a dot product with column vector $\beta$. 
 # 
-# The equality can be confirmed by manipulating the symbols using the rules given above in 4.5., i.e. $\langle \pmb A\alpha|= \langle\alpha |\pmb A^\dagger$ and $|\pmb A^\dagger \beta\rangle|=\pmb A^\dagger |\beta\rangle$,
+# The equality can be confirmed by manipulating the symbols using the rules given above in 4.5. but this is quite difficult if you are not very familar with bra and ket algebra. The steps are i.e. $\langle \pmb A\alpha|= \langle\alpha |\pmb A^\dagger$ and $|\pmb A^\dagger \beta\rangle|=\pmb A^\dagger |\beta\rangle$,
 # 
 # $$\displaystyle \langle \pmb A\alpha|\beta\rangle= \langle\alpha |\pmb A^\dagger |\beta\rangle = \langle \alpha|\pmb A^\dagger \beta\rangle$$
 # 
-# which is a number. To check this argument $\alpha,\beta$ and $\pmb A$ as above are used again
+# which is a number. We can do this is a more symbolic way by drawing out the shapes of the matrix and vectors. Suppose that matrix $\pmb A $ has size $n\times m$ and $\alpha$ is a column vector of length $m$ and $\beta$ a column vector of length $n$.
+# 
+# ![Drawing](matricesQM-fig4a.png)
+# 
+# ![Drawing](matricesQM-fig4b.png)
+# _______________________
+# 
+# 
+# To check this argument $\alpha,\beta$ and $\pmb A$ as above are used again
 # 
 # $$\displaystyle  \pmb A\alpha=\begin{bmatrix} 0 & 2i & 1\\ 0 & 0 & 0\\ 0 & 6 & -3i \end{bmatrix}\begin{bmatrix}i\\0\\3\end{bmatrix}=\begin{bmatrix}3\\0\\-9i\end{bmatrix}$$
 # 
@@ -253,7 +272,7 @@
 # 
 # $$\displaystyle  \pmb A^\dagger\beta=\begin{bmatrix} 0 & 0 & 0\\ -2i & 0 & 6\\ 1 & 0 & 3i \end{bmatrix} \begin{bmatrix}0 \\ 2 \\ -i\end{bmatrix}= \begin{bmatrix}0 \\ -6i \\ -3i^2\end{bmatrix}$$
 # 
-# and now take the dot product with $\langle \alpha|$, 
+# and now take the dot product with the conjugate transpose of $\alpha$ which is the bra $\langle \alpha|$, 
 # 
 # $$\displaystyle \begin{bmatrix}i&0&3\end{bmatrix}\begin{bmatrix}0\\-6i\\3\end{bmatrix}= 9$$
 # 

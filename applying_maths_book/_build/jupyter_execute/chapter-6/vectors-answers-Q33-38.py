@@ -10,21 +10,21 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q33 answer
-# It turns out that the determinant is the product of the diagonal terms only because of the position of the zeros. Consequently, only two multiplications are needed. Python/Sympy gives:
+# It turns out that the determinant is the product of the diagonal terms only because of the position of the zeros. Consequently, only two multiplications are needed. Python/SymPy gives:
 
 # In[2]:
 
 
-alpha, beta, gamma, a, b, c = symbols('alpha, beta, gamma, a, b, c')
+alpha, beta, gamma, a, b, c = sp.symbols('alpha, beta, gamma, a, b, c')
 
-n2 = (cos(alpha) -  cos(gamma)*cos(beta))/sin(gamma)
-M  = Matrix( [ [a,0,0],[b*cos(gamma),b*sin(gamma),0],[c*cos(beta),c*n2,c*sqrt(sin(beta)**2-n2**2)] ] )
+n2 = (sp.cos(alpha) -  sp.cos(gamma)*sp.cos(beta))/sp.sin(gamma)
+M  = sp.Matrix( [ [a,0,0],[b*sp.cos(gamma),b*sp.sin(gamma),0],[c*sp.cos(beta),c*n2,c*sp.sqrt(sp.sin(beta)**2-n2**2)] ] )
 M
 
 
@@ -57,14 +57,14 @@ M.det()
 # 
 # $$\displaystyle \vec d=\begin{bmatrix}v_1a+v_3c\cos(\beta)& v_2b& v_3c\sin(\beta)\end{bmatrix}$$
 # 
-# The dot product is the square of the bond length and is $\vec d\cdot\vec d $. Using Sympy to do the algebra 
+# The dot product is the square of the bond length and is $\vec d\cdot\vec d $. Using SymPy to do the algebra 
 
 # In[4]:
 
 
-alpha, beta, gamma, a, b, c, v1, v2, v3 = symbols('alpha, beta, gamma, a, b, c, v1, v2, v3')
-v  = Matrix([[v1, v2, v3]])
-M  = Matrix( [ [a, 0, 0],[0, b, 0],[ c*cos(beta), 0, c*sin(beta)] ] )
+alpha, beta, gamma, a, b, c, v1, v2, v3 = sp.symbols('alpha, beta, gamma, a, b, c, v1, v2, v3')
+v  = sp.Matrix([[v1, v2, v3]])
+M  = sp.Matrix( [ [a, 0, 0],[0, b, 0],[ c*sp.cos(beta), 0, c*sp.sin(beta)] ] )
 
 
 # In[5]:
@@ -78,12 +78,13 @@ d
 
 
 lengthsqrd = d*d.T  # .T is transpose to get row column multiplication
+lengthsqrd
 
 
 # In[7]:
 
 
-simplify(expand(lengthsqrd))
+sp.simplify(sp.expand(lengthsqrd))
 
 
 # which is the same as equation 21 when $\alpha=\gamma=\pi/2$.

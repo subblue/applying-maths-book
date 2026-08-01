@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -53,23 +53,23 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-d = symbols('d', positive = True)        # Use sympy make d a real positive value
-C1 = Matrix( [-5*d/6,0            , d*sqrt(2/3)] )  # coordinates 1-6 for chair form.
-C2 = Matrix( [-d/2  , d*sqrt(2/3) , 0] )
-C3 = Matrix( [d/2   , d*sqrt(2/3) , 0] )
-C4 = Matrix( [5*d/6 , 0           , -d*sqrt(2/3)] )
-C5 = Matrix( [d/2   , -d*sqrt(2/3), 0] )
-C6 = Matrix( [-d/2  , -d*sqrt(2/3), 0] )
-C4b= Matrix( [5*d/6 , 0           , d*sqrt(2/3)] ) # C4 boat 
+d = sp.symbols('d', positive = True)        # Use sympy make d a real positive value
+C1 = sp.Matrix( [-5*d/6,0            , d*sp.sqrt(2/3)] )  # coordinates 1-6 for chair form.
+C2 = sp.Matrix( [-d/2  , d*sp.sqrt(2/3) , 0] )
+C3 = sp.Matrix( [d/2   , d*sp.sqrt(2/3) , 0] )
+C4 = sp.Matrix( [5*d/6 , 0           , -d*sp.sqrt(2/3)] )
+C5 = sp.Matrix( [d/2   , -d*sp.sqrt(2/3), 0] )
+C6 = sp.Matrix( [-d/2  , -d*sp.sqrt(2/3), 0] )
+C4b= sp.Matrix( [5*d/6 , 0           , d*sp.sqrt(2/3)] ) # C4 boat 
 
-C14chair = sqrt((C1-C4).dot(C1-C4))
+C14chair = sp.sqrt((C1-C4).dot(C1-C4))
 C14chair
 
 
 # In[3]:
 
 
-C14boat = sqrt( (C1 - C4b).dot(C1 - C4b) )
+C14boat = sp.sqrt( (C1 - C4b).dot(C1 - C4b) )
 C14boat
 
 
@@ -92,7 +92,7 @@ d2 = C2 - C6
 d5 = C5 - C6
 m  = d1.cross(d2)
 n  = d2.cross(d5)
-psi = acos(m.dot(n) /(sqrt(m.dot(m))*sqrt(n.dot(n)) ) )
+psi = sp.acos(m.dot(n) /(sp.sqrt(m.dot(m))*sp.sqrt(n.dot(n)) ) )
 print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
 
@@ -103,7 +103,7 @@ print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
 m = -d2.cross(d1)
 n =  d1.cross(d5)
-psi = acos(m.dot(n) /(sqrt(m.dot(m))*sqrt(n.dot(n)) ) )
+psi = sp.acos(m.dot(n) /(sp.sqrt(m.dot(m))*sp.sqrt(n.dot(n)) ) )
 print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
 
@@ -112,10 +112,10 @@ print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 # In[6]:
 
 
-d4  =C4b - C5
+d4= C4b - C5
 m = d1.cross(d2)
 n = d2.cross(d4)
-psi = acos(m.dot(n) /(sqrt(m.dot(m))*sqrt(n.dot(n)) ) )
+psi = sp.acos(m.dot(n) /(sp.sqrt(m.dot(m))*sp.sqrt(n.dot(n)) ) )
 print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
 
@@ -304,6 +304,12 @@ print('{:s}{:6.3f}'.format('chi    = ',torsion_angle(O4,C1,N9,C4B)) )
 # $$\displaystyle \frac{d}{dt}\vec r(t)=\vec v(t)=-\alpha r\sin(\alpha t)\boldsymbol i+\alpha r\cos(\alpha t)\boldsymbol j \tag{B}$$
 # 
 # As the cross product, equation A, is the same as the velocity, equation B, we conclude that linear velocity is the cross product of angular velocity and radius vector or $\vec v=\vec \omega \times \vec r$.
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

@@ -9,9 +9,7 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## 6.1 Introduction to the Metropolis algorithm
@@ -196,7 +194,7 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # \text{Quantity}& \text{units}&\text{ Theory }  & \text{Metropolis } \\
 # \hline
 # \langle E \rangle=k_BT/2 &\text{J}& 2.07\cdot 10^{-21}&  2.095 \cdot 10^{-21}\\
-# \langle E^2 \rangle =3\left(k_BT/2 \right)^2 &\text{J}& 1.28\cdot 10^{-41} & 1.27\cdot 10^{-41}\\
+# \langle E^2 \rangle =3\left(k_BT/2 \right)^2 &\text{J}^2& 1.28\cdot 10^{-41} & 1.27\cdot 10^{-41}\\
 # C_V =k_BT/2 &\text{J/K}&0.69\cdot 10^{-23}  & 0.67\cdot 10^{-23}\\
 # \langle x\rangle =0&\text{nm} & 0 & -3\cdot 10^{-5} \\
 # \langle x^2\rangle=k_BT/k &\text{nm}^2 &  0.000413 & 0.000414\\

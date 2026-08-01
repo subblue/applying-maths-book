@@ -10,14 +10,12 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Concept
 # 
-# Data is normally produced by an instrument as a series of numbers measured at equal intervals, and not as an equation; therefore, any Fourier transform has to be calculated numerically. The sampling intervals could be time, distance, or some other quantity depending on the experiment. Time will be used in the following examples. The numerical transform is usually called a discrete Fourier Transform (DFT) and the algorithm used is called the fast Fourier Transform FFT. A frequently used algorithm was devised by Cooley and Tukey (1965) ( Bracewell 1986, p. 370 ). It is not necessary to devise one of these transforms, because the method is very well established and fast operating code has been written and checked. Explanations of its working can be found in texts such as Numerical Recipes (Prest et al. 1986). Python/Sympy, Maple and Mathematica each have built in discrete Fourier transform routines as do numerical packages such as python/numpy, MathCad, Matlab, IDL, IGOR and Origin. These routines can be used as black boxes, nevertheless a clear understanding of the discrete transform is essential to avoid making mistakes. Some examples of Fourier transforms are shown schematically in Fig. 36.
+# Data is normally produced by an instrument as a series of numbers measured at equal intervals, and not as an equation; therefore, any Fourier transform has to be calculated numerically. The sampling intervals could be time, distance, or some other quantity depending on the experiment. Time will be used in the following examples. The numerical transform is usually called a discrete Fourier Transform (DFT) and the algorithm used is called the fast Fourier Transform FFT. A frequently used algorithm was devised by Cooley and Tukey (1965) ( Bracewell 1986, p. 370 ). It is not necessary to devise one of these transforms, because the method is very well established and fast operating code has been written and checked. Explanations of its working can be found in texts such as Numerical Recipes (Prest et al. 1986). Python/SymPy, Maple and Mathematica each have built in discrete Fourier transform routines as do numerical packages such as python/numpy, MathCad, Matlab, IDL, IGOR and Origin. These routines can be used as black boxes, nevertheless a clear understanding of the discrete transform is essential to avoid making mistakes. Some examples of Fourier transforms are shown schematically in Fig. 36.
 # 
 # ## 9.1 DFT equations
 # 
@@ -409,7 +407,7 @@ plt.show()
 
 # Due to random noise the figure produced may not be the same as in fig 46 or 47
 
-fig1= plt.figure(figsize=(10.0,5.0))   # calculate data in fig 46/47
+fig1= plt.figure(figsize=(8.0,4.0))   # calculate data in fig 46/47
 ax0 = fig1.add_subplot(1,2,1)
 ax1 = fig1.add_subplot(1,2,2)
 
@@ -451,14 +449,16 @@ plt.show()
 temp = [ fft0[i]  if (i/n >0.045 and i/n <0.055) or (i/n >0.025 and i/n <0.035)  else 0 for i in range(n//2)]
 recover = np.fft.irfft(temp)
 
+
+fig2= plt.figure(figsize=(4.0,4.0))
 plt.axhline(0,color='grey',linestyle='dotted')
 plt.plot(recover,color='red',label='recovered')
 plt.plot(f02,color='grey',label='original')
 plt.xlim([0,200])
 plt.ylim([-5,5])
-plt.title('Recovered signal')
+plt.title('Recovered signal',fontsize=14)
 plt.xlabel('time')
-plt.legend()
+plt.legend(fontsize=12)
 plt.show()
 
 
@@ -484,7 +484,7 @@ plt.show()
 # 
 # ![Drawing](fourier-fig48.png) 
 # 
-# Figure 48 . Left. Illustrating the moving averaging smoothing to remove spikes in noise. A filter with $n$ = 3 was used which is a window of 7 points.  The original data is grey, the smoothed data, red. Right.  Daily deaths  due to Covid19 in the USA for a few weeks after March 4, 2020. The original data is grey, the rolling average data, red. A 5 day average was used. 
+# Figure 48 . Left. Illustrating the moving averaging smoothing to remove spikes in noise. A filter with $n$ = 3 was used which is a window of 7 points.  The original data is grey, the smoothed data, red. Right.  Daily deaths  due to Covid 19 in the USA for a few weeks after March 4, 2020. The original data is grey, the rolling average data, red. A 5 day average was used. 
 # __________
 
 # ## 10.5 The Hilbert Transform and the Analytic Signal
@@ -551,7 +551,7 @@ plt.show()
 # In[5]:
 
 
-def aHilbert(x):  # Calculate Hilbert Transform
+def aHilbert(x):                         # Calculate Hilbert Transform
     
     n = len(x)
     fx = np.fft.fft(x,n)                 # forwards FFT

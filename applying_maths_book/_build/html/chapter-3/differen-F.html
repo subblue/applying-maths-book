@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations . &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1518,23 +1518,30 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-chemical-equilibria">
+    <a class="reference internal nav-link" href="#i-some-examples">
      <strong>
-      (i) Chemical equilibria
+      (i) Some examples
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-diffraction-intensity">
+    <a class="reference internal nav-link" href="#ii-chemical-equilibria">
      <strong>
-      (ii) Diffraction intensity
+      (ii) Chemical equilibria
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-transitions-between-stationary-states">
+    <a class="reference internal nav-link" href="#iii-diffraction-intensity">
      <strong>
-      (iii) Transitions between stationary states
+      (iii) Diffraction intensity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-transitions-between-stationary-states">
+     <strong>
+      (iv) Transitions between stationary states
      </strong>
     </a>
    </li>
@@ -1608,9 +1615,16 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-simple-harmonic-motion">
+    <a class="reference internal nav-link" href="#iia-simple-harmonic-motion">
      <strong>
-      (ii) Simple Harmonic motion
+      (iia) Simple Harmonic motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iib-two-linked-masses-sliding-on-a-plane-undergoing-shm">
+     <strong>
+      (iib) Two linked masses sliding on a plane undergoing SHM
      </strong>
     </a>
    </li>
@@ -1692,7 +1706,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6 Limits, l’Hopital’s rule, Maximum & Minimum. Calculus of Variations</h1>
+                <h1>6 Limits, l’Hopital’s rule, Maximum & Minimum. Calculus of Variations. Lagrangian & Euler-Lagrange equations .</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1708,23 +1722,30 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-chemical-equilibria">
+    <a class="reference internal nav-link" href="#i-some-examples">
      <strong>
-      (i) Chemical equilibria
+      (i) Some examples
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-diffraction-intensity">
+    <a class="reference internal nav-link" href="#ii-chemical-equilibria">
      <strong>
-      (ii) Diffraction intensity
+      (ii) Chemical equilibria
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-transitions-between-stationary-states">
+    <a class="reference internal nav-link" href="#iii-diffraction-intensity">
      <strong>
-      (iii) Transitions between stationary states
+      (iii) Diffraction intensity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-transitions-between-stationary-states">
+     <strong>
+      (iv) Transitions between stationary states
      </strong>
     </a>
    </li>
@@ -1798,9 +1819,16 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-simple-harmonic-motion">
+    <a class="reference internal nav-link" href="#iia-simple-harmonic-motion">
      <strong>
-      (ii) Simple Harmonic motion
+      (iia) Simple Harmonic motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iib-two-linked-masses-sliding-on-a-plane-undergoing-shm">
+     <strong>
+      (iib) Two linked masses sliding on a plane undergoing SHM
      </strong>
     </a>
    </li>
@@ -1883,23 +1911,25 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="limits-l-hopital-s-rule-maximum-minimum-calculus-of-variations">
-<h1>6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations<a class="headerlink" href="#limits-l-hopital-s-rule-maximum-minimum-calculus-of-variations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="limits-l-hopital-s-rule-maximum-minimum-calculus-of-variations-lagrangian-euler-lagrange-equations">
+<h1>6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .<a class="headerlink" href="#limits-l-hopital-s-rule-maximum-minimum-calculus-of-variations-lagrangian-euler-lagrange-equations" title="Permalink to this headline">#</a></h1>
 <section id="l-hopital-s-rule">
 <h2>6  l’ Hopital’s rule<a class="headerlink" href="#l-hopital-s-rule" title="Permalink to this headline">#</a></h2>
 <p>In many calculations limits are encountered. For example, in the theory of diffraction the function <span class="math notranslate nohighlight">\(\sin(x)/x\)</span> is met which, when <span class="math notranslate nohighlight">\(x \to 0\)</span>, has the form <span class="math notranslate nohighlight">\(0/0\)</span> and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as <span class="math notranslate nohighlight">\(\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty\)</span> and l’Hopital’s rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l’Hopital who was one of his pupils.</p>
 <p>The method is</p>
-<p>(a) Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.</p>
-<p>(b) Differentiate top and bottom separately with respect to the limit variable.</p>
-<p>(c) Substitute in the limit and check if the ratio is still indeterminate. If it is return to (b) if not the answer has been found.</p>
-<p>An example should make this clearer; the ratio <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(x)}{x}\)</span> appears to be <span class="math notranslate nohighlight">\(0/0\)</span> as <span class="math notranslate nohighlight">\(x \to  0\)</span> but it has a finite value which is determined using l’Hopital’s Rule:</p>
+<p><strong>(a)</strong> Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.</p>
+<p><strong>(b)</strong> Differentiate top and bottom separately with respect to the limit variable.</p>
+<p><strong>(c)</strong> Substitute in the limit and check if the ratio is still indeterminate. If it is return to (b) if not the answer has been found.</p>
+<section id="i-some-examples">
+<h3><strong>(i) Some examples</strong><a class="headerlink" href="#i-some-examples" title="Permalink to this headline">#</a></h3>
+<p><strong>(a)</strong> The ratio <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(x)}{x}\)</span> appears to be <span class="math notranslate nohighlight">\(0/0\)</span> as <span class="math notranslate nohighlight">\(x \to  0\)</span> but it has a finite value which is determined using l’Hopital’s Rule:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \lim_{x\to o} \frac{\sin(x)}{x} \to \frac{\frac{d}{dx}\sin(x)}{\frac{d}{dx}x}=\frac{\cos(x)}{1}=1\]</div>
 <p>and the limiting value of <span class="math notranslate nohighlight">\(x = 0\)</span> is only applied in the last step. As a check, one way to determine any limits close to zero is to plot the function. You will see that <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}\)</span> does indeed have a value of 1 at <span class="math notranslate nohighlight">\(x = 0\)</span>. See question 47 for other examples.</p>
-<p>Expressions such as <span class="math notranslate nohighlight">\(\displaystyle \frac{e^x-1}{x^2}\)</span> often need to be evaluated when <span class="math notranslate nohighlight">\(x \to 0\)</span> or <span class="math notranslate nohighlight">\(x \to \infty\)</span>. In statistical mechanics, for example, <span class="math notranslate nohighlight">\(x\)</span> may be <span class="math notranslate nohighlight">\(-E/k_BT\)</span>, a ratio of energies where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> temperature. When <span class="math notranslate nohighlight">\(x \to 0\)</span>, which corresponds to high temperatures, the function <span class="math notranslate nohighlight">\(\displaystyle(e^x - 1)/x^2\)</span> appears to have the indeterminate form <span class="math notranslate nohighlight">\(0/0\)</span>, but the limit by l’Hopital’s is</p>
+<p><strong>(b)</strong> Expressions such as <span class="math notranslate nohighlight">\(\displaystyle \frac{e^x-1}{x^2}\)</span> often need to be evaluated when <span class="math notranslate nohighlight">\(x \to 0\)</span> or <span class="math notranslate nohighlight">\(x \to \infty\)</span>. In statistical mechanics, for example, <span class="math notranslate nohighlight">\(x\)</span> may be <span class="math notranslate nohighlight">\(-E/k_BT\)</span>, a ratio of energies where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> temperature. When <span class="math notranslate nohighlight">\(x \to 0\)</span>, which corresponds to high temperatures, the function <span class="math notranslate nohighlight">\(\displaystyle(e^x - 1)/x^2\)</span> appears to have the indeterminate form <span class="math notranslate nohighlight">\(0/0\)</span>, but the limit by l’Hopital’s is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\frac{1}{2}\qquad \text{      !!!   this is wrong!}\]</div>
-<p>where differentiation was performed twice over.  However, this is <em>wrong</em>: no check for an indeterminate  ratio was made after the first differentiation and doing this gives,</p>
+<p>where differentiation was performed twice over.  However, this is <em>wrong</em>: no check for an indeterminate ratio was made after the first differentiation and doing this gives,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}= \frac{1}{0}=\infty\]</div>
 <p>The other limiting case <span class="math notranslate nohighlight">\(x \to \infty\)</span> is also infinity: note that after the first differentiation checking the ratio gives <span class="math notranslate nohighlight">\(\displaystyle \frac{e^x}{2x} = \frac{\infty}{\infty}\)</span> so indeterminate and so continue to differentiate again</p>
@@ -1909,15 +1939,28 @@ title="Print to PDF"
 <p>The limit <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to\infty} \frac{e^{-x}-1}{x^2-3}\)</span>  can perhaps be appreciated by looking at the ratio and noticing that when <span class="math notranslate nohighlight">\(x\)</span> is large <span class="math notranslate nohighlight">\(e^{-x}\)</span> becomes small but <span class="math notranslate nohighlight">\(x^2\)</span> large so the limit is expected to be zero. Checking this properly gives the same result as intuition:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \lim_{x\to \infty}\frac{e^{-x} -1}{x^2-3}\to \frac{-e^{-x}}{2x}\to \frac{e^{-x}}{2}=0\]</div>
-<p>When the limit is a product this must be rearranged first, for instance <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0} x \ln(x)\)</span> should be rearranged to</p>
+<p><strong>(c)</strong> When the limit is a product this must be rearranged first, for instance <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0} x \ln(x)\)</span> should be rearranged to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \lim_{x\to 0} \frac{ \ln(x) }{ 1/x } \to \frac{1}{ x(-x^{-2})}=-x \to 0\]</div>
-<p>Fractions are treated similarly; the following fraction is nominally undefined as <span class="math notranslate nohighlight">\(\infty -\infty\)</span>  but is rearranged into a ratio to become undefined as <span class="math notranslate nohighlight">\(0/0\)</span>;</p>
+<p><strong>(d)</strong> Fractions are treated similarly; the following fraction is nominally undefined as <span class="math notranslate nohighlight">\(\infty -\infty\)</span>  but is rearranged into a ratio to become undefined as <span class="math notranslate nohighlight">\(0/0\)</span>;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \lim_{x\to 0} \left(\frac{1}{x}-\frac{1}{\sin(x)}\right)= \lim_{x\to 0} \frac{\sin(x)-x}{x\sin(x)}\to \frac{\cos(x)-1}{x\cos(x)+\sin(x)}  \to \frac{-\sin(x)}{-x\sin(x)+2\cos(x)} \to 0\]</div>
 <p>In the last step substituting for <span class="math notranslate nohighlight">\(x=0\)</span> gives the ratio as <span class="math notranslate nohighlight">\(0/1\)</span> so  the limit is zero.</p>
-<section id="i-chemical-equilibria">
-<h3><strong>(i) Chemical equilibria</strong><a class="headerlink" href="#i-chemical-equilibria" title="Permalink to this headline">#</a></h3>
+<p><strong>(e)</strong> When <span class="math notranslate nohighlight">\(x\to 1\)</span> the fraction <span class="math notranslate nohighlight">\(\displaystyle \frac{(x^m -1)}{(x^n -1)}\)</span> appears to be <span class="math notranslate nohighlight">\(0/0\)</span> but the true limit is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lim_{x\to 1}\frac{x^m -1}{x^n -1}= \lim_{x\to 1}\frac{mx^{m-1}}{nx^{n-1}}=\frac{m}{n}\]</div>
+<p><strong>(f)</strong> In a numerical solution of a differential equation the gradient, say <span class="math notranslate nohighlight">\(df/dt\)</span> has to be evaluated. In such calculations the time step, call this <span class="math notranslate nohighlight">\(h\)</span>, has to be very small to obtain an accurate solution. The gradient can then be obtained as <span class="math notranslate nohighlight">\(\delta f/\delta t\)</span>. The question then is how to calculate this accurately so that in the limit <span class="math notranslate nohighlight">\(h\to 0\)</span> this is the derivative. Suppose we are solving at time point <span class="math notranslate nohighlight">\(a\)</span> then the function to form the gradient is <span class="math notranslate nohighlight">\(f(a)\)</span> and to calculate <span class="math notranslate nohighlight">\(df/dt\)</span> we take a point at time <span class="math notranslate nohighlight">\(h\)</span> ahead of point <span class="math notranslate nohighlight">\(a\)</span> and a point at <span class="math notranslate nohighlight">\(-h\)</span> before point <span class="math notranslate nohighlight">\(a\)</span>, so the time step is <span class="math notranslate nohighlight">\(2h\)</span> and the gradient is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{f(a+h)-f(a-h)}{2h}\]</div>
+<p>In the limit when <span class="math notranslate nohighlight">\(h\to 0\)</span> then, using the notation where <span class="math notranslate nohighlight">\(f'\)</span> is the derivative, gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lim_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}=\lim_{h\to 0}\frac{f'(a+h)+h'(a-h)}{2}=f'(h)\]</div>
+<p>which shows that this ratio is indeed the gradient. Using a similar approach the ratio</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lim_{h\to 0}\frac{f(a+h)+f(a-h)-2f(a)}{h^2}=\lim_{h\to 0}\frac{f'(a+h)-f'(a-h)}{2h}\to \to f''(a)\]</div>
+</section>
+<section id="ii-chemical-equilibria">
+<h3><strong>(ii) Chemical equilibria</strong><a class="headerlink" href="#ii-chemical-equilibria" title="Permalink to this headline">#</a></h3>
 <p>In a second order reaction of the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A+B \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } C+D\]</div>
@@ -1941,8 +1984,8 @@ title="Print to PDF"
 \[\displaystyle \frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\to \frac{A_0(1-\frac{1}{2}K_e^{-1/2})}{1}=\frac{A_0}{2}\]</div>
 <p>which makes sense as there are equal moles initially of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> so in total <span class="math notranslate nohighlight">\(2A_0\)</span> and equal concentrations for each species but only in this particular case.</p>
 </section>
-<section id="ii-diffraction-intensity">
-<h3><strong>(ii) Diffraction intensity</strong><a class="headerlink" href="#ii-diffraction-intensity" title="Permalink to this headline">#</a></h3>
+<section id="iii-diffraction-intensity">
+<h3><strong>(iii) Diffraction intensity</strong><a class="headerlink" href="#iii-diffraction-intensity" title="Permalink to this headline">#</a></h3>
 <p>The intensity of line of <span class="math notranslate nohighlight">\(N\)</span> emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}\]</div>
@@ -1955,8 +1998,8 @@ title="Print to PDF"
 \[\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N\]</div>
 <p>making the maximum intensity <span class="math notranslate nohighlight">\(I=N^2I_0\)</span> when <span class="math notranslate nohighlight">\(\delta=2\pi m\)</span> which makes the cosines <span class="math notranslate nohighlight">\(1\)</span>. See fig 15 in chapter 9, ‘Fourier Transforms’ for a figure of the sinc function where <span class="math notranslate nohighlight">\(\mathrm{sinc}(ax)=\sin(ax)/(ax)\)</span>.</p>
 </section>
-<section id="iii-transitions-between-stationary-states">
-<h3><strong>(iii) Transitions between stationary states</strong><a class="headerlink" href="#iii-transitions-between-stationary-states" title="Permalink to this headline">#</a></h3>
+<section id="iv-transitions-between-stationary-states">
+<h3><strong>(iv) Transitions between stationary states</strong><a class="headerlink" href="#iv-transitions-between-stationary-states" title="Permalink to this headline">#</a></h3>
 <p>When a molecule absorbs light it can undergo a transition from, for example the ground state to the first excited state. This might be a vibrational or rotational transition or an electronic one in which a new electronic state is produced. This type of transition is called an electric dipole transition. The probability for this depends on the radiation’s (light) frequency <span class="math notranslate nohighlight">\(\nu\)</span> in that the Bohr condition is obeyed <span class="math notranslate nohighlight">\(E_1-E_0=h\nu\)</span> where the energy levels are <span class="math notranslate nohighlight">\(E_0,E_1\)</span>. The probability of absorption is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(\nu) \sim \frac{\sin^2\big((E_1-E_0-h\nu)t/2\hbar\big)}{(E_1-E_0-h\nu)^2}\]</div>
@@ -1971,7 +2014,15 @@ title="Print to PDF"
 </section>
 <section id="beware-of-false-fractions">
 <h2>6.1 Beware of ‘False fractions’<a class="headerlink" href="#beware-of-false-fractions" title="Permalink to this headline">#</a></h2>
-<p>Sometimes a limit is required but the expression is not really a fraction, for example <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} \)</span> which looks like a fraction but is simplified to <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} \)</span> and because the value <span class="math notranslate nohighlight">\(x = 1\)</span> is never reached ( we are seeking the limit to not the value at <span class="math notranslate nohighlight">\(x = 1\)</span>) the <span class="math notranslate nohighlight">\(x-1\)</span> terms can be cancelled out leaving <span class="math notranslate nohighlight">\(\lim_{x\to 1} (x^3+x^2+x+1)=4 \)</span></p>
+<p>Sometimes a limit is required but the expression is not really a fraction, for example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} \]</div>
+<p>which looks like a fraction but is simplified to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} \]</div>
+<p>and because the value <span class="math notranslate nohighlight">\(x = 1\)</span> is never reached ( we are seeking the limit to <span class="math notranslate nohighlight">\(x=1\)</span> not the value at <span class="math notranslate nohighlight">\(x = 1\)</span>) the <span class="math notranslate nohighlight">\(x-1\)</span> terms can be cancelled out leaving</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to 1} (x^3+x^2+x+1)=4 \]</div>
 </section>
 <section id="extrema-maxima-minima-and-inflection-points">
 <h2>7 Extrema: maxima, minima and inflection points<a class="headerlink" href="#extrema-maxima-minima-and-inflection-points" title="Permalink to this headline">#</a></h2>
@@ -2122,10 +2173,10 @@ title="Print to PDF"
 </section>
 <section id="euler-lagrange-equation-in-mechanics-action-and-the-lagrangian">
 <h2>8.3 Euler-Lagrange Equation in Mechanics. Action and the Lagrangian.<a class="headerlink" href="#euler-lagrange-equation-in-mechanics-action-and-the-lagrangian" title="Permalink to this headline">#</a></h2>
-<p>A very important application of the Euler-Lagrange equation is to mechanics. Newton’s second law, force  equals mass time acceleration <span class="math notranslate nohighlight">\(F=ma\)</span> is a fundamental equation. An equivalent assumption is called <em>Hamilton’s principle</em> and is that the <em>Action</em> of a trajectory, this being the position a particle takes with time as it moves, is given by</p>
+<p>A very important application of the Euler-Lagrange equation is to mechanics. Newton’s second law, force  equals mass time acceleration <span class="math notranslate nohighlight">\(F=ma\)</span> is a fundamental equation. An equivalent assumption is called <em>Hamilton’s principle</em> and is that the <em>Action</em> of a trajectory, <span class="math notranslate nohighlight">\(I\)</span>, this being the position a particle takes with time as it moves, is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I=\int_{t_1}^{t_2}(T-V) dt \]</div>
-<p>where <span class="math notranslate nohighlight">\(T\)</span> is the kinetic energy and <span class="math notranslate nohighlight">\(V\)</span> the potential energy and <span class="math notranslate nohighlight">\(t\)</span> is time. This integral is ‘stationary’. By being stationary means that any small change in the path a particle takes (trajectory) does not change the value of the integral.  We define the Lagrangian as</p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the kinetic energy and <span class="math notranslate nohighlight">\(V\)</span> the potential energy and <span class="math notranslate nohighlight">\(t\)</span> is time. This integral is ‘stationary’. By being stationary means that any small change in the path a particle takes (trajectory) does not change the value of the integral.  The Lagrangian is defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle L = T - V\]</div>
 <p>where <span class="math notranslate nohighlight">\(T\)</span> is the kinetic and <span class="math notranslate nohighlight">\(V\)</span> the potential energy of a particle or system of them. Notice that to solve these dynamical problems only the kinetic and potential energies are used not the forces involved, and this usually simplifies the problem. As we now deal with time and position the Euler-Lagrange equation (eqn. 28) is written in terms of these variables as</p>
@@ -2133,6 +2184,7 @@ title="Print to PDF"
 \[\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x}-\frac{\partial L}{\partial x}=0\tag{32a}\]</div>
 <p>and using this equation enables us to minimise the Action integral and so work out the equation of motion via the Lagrangian.  The proof of this is given in many textbooks (Arkfen 1970, Boas 1983, Susskind &amp; Hrabovsky 2014). If the motion is in more than one dimension then there is an equation is each of <span class="math notranslate nohighlight">\(x,y,z\)</span>, or <span class="math notranslate nohighlight">\(r,\theta,\phi\)</span> in spherical polar coordinates and so forth.</p>
 <p>The method of solving mechanics problems is usually to work out the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates, and then differentiate both to get the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> velocities. If necessary convert into angular coordinates, polar, spherical, for example, and finally workout the kinetic energy.  The potential energy is usually already known from how the problem is presented but any coordinates may have to be changed into angular coordinates.</p>
+<p>Note that the Lagrangian is used with the Euler-Lagrange equation to derive the differential equations of motion. These then have to be solved by whatever method is possible. Chapter 10 describes some of these methods.</p>
 <section id="notation">
 <h3><strong>Notation</strong><a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h3>
 <p>The notation used with time derivatives is for the first derivative, the velocity, <span class="math notranslate nohighlight">\(\displaystyle \frac{dx}{dt}\equiv \dot x\)</span>, the second derivative <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2x}{dt^2}\equiv \ddot x\)</span>. When using polar coordinates the derivatives will be with <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> as <span class="math notranslate nohighlight">\(\dot r, \dot \varphi\)</span> etc. Differentiating with say <span class="math notranslate nohighlight">\(\dot x\)</span> is easier if you treat it as if it were just plain <span class="math notranslate nohighlight">\(x\)</span>, thus</p>
@@ -2156,8 +2208,8 @@ title="Print to PDF"
 \[\displaystyle \ddot z + g = 0,\qquad\text{or}\qquad \frac{d^2z}{dt^2} = -g\]</div>
 <p>This equation can be integrated to give velocity <span class="math notranslate nohighlight">\(\displaystyle v = v_0 + gt \)</span> where <span class="math notranslate nohighlight">\(v=\dot z = dz/dt\)</span> and again to give position  <span class="math notranslate nohighlight">\(z = z_0 + v_0t - gt^2/2 \)</span> where <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity, which could be zero, and <span class="math notranslate nohighlight">\(z_0\)</span> the initial height above ground level <span class="math notranslate nohighlight">\(z=0\)</span>. If the motion had not been vertical we would have needed to evaluate similar equations in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> as well and in that case components of the gravitational force in all directions would be needed.</p>
 </section>
-<section id="ii-simple-harmonic-motion">
-<h3><strong>(ii) Simple Harmonic motion</strong><a class="headerlink" href="#ii-simple-harmonic-motion" title="Permalink to this headline">#</a></h3>
+<section id="iia-simple-harmonic-motion">
+<h3><strong>(iia) Simple Harmonic motion</strong><a class="headerlink" href="#iia-simple-harmonic-motion" title="Permalink to this headline">#</a></h3>
 <p>In the simple harmonic motion of a particle the potential energy is <span class="math notranslate nohighlight">\(V= \frac{1}{2}kx^2\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the force constant which has units N/m. A mass on a string can exhibit simple harmonic motion where the force is minus the derivative of the potential <span class="math notranslate nohighlight">\(dV/dx = -kx\)</span>. The sign is negative because the force of the spring resists extension. The kinetic energy is <span class="math notranslate nohighlight">\(T = \frac{1}{2}m\dot x^2\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the mass. The Lagrangian is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle L=\frac{1}{2}m\dot x - \frac{1}{2}kx^2\]</div>
@@ -2166,8 +2218,31 @@ title="Print to PDF"
 \[\displaystyle \frac{\partial L}{\partial \dot x}=m\dot x,\qquad \frac{d}{dt}m\dot x=\frac{1}{2}m\ddot x,\qquad \frac{\partial L}{\partial x}=-kx\]</div>
 <p>and so the Euler-Lagrange equation (32a) gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle m\ddot x-kx=0,\qquad \text{ or}\qquad\ddot x-\frac{k}{m}x=0\]</div>
-<p>where <span class="math notranslate nohighlight">\(\displaystyle \ddot x\equiv \frac{d^2x}{dt^2}\)</span>. This is the equation of the harmonic oscillator. Often the substitution <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span> as this simplifies the solution when this differential equation is solved. The units of <span class="math notranslate nohighlight">\(k/m\)</span> are N/(m kg ) <span class="math notranslate nohighlight">\(\equiv\)</span> kg m s<span class="math notranslate nohighlight">\(^{-2}\)</span>/(m kg) = s<span class="math notranslate nohighlight">\(^{-2}\)</span>. The method to solve such a differential equation is shown in Chapter 10 section 12.</p>
+\[\displaystyle m\ddot x-kx=0,\quad \text{ or}\quad\ddot x-\frac{k}{m}x=0,\quad\text{ or}\quad\ddot x-\omega^2 x=0 \]</div>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle \ddot x\equiv \frac{d^2x}{dt^2}\)</span>. This is the equation of the harmonic oscillator. Often the substitution <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span> as this simplifies the solution when this differential equation is solved. The units of <span class="math notranslate nohighlight">\(k/m\)</span> are N/(m kg ) <span class="math notranslate nohighlight">\(\equiv\)</span> kg m s<span class="math notranslate nohighlight">\(^{-2}\)</span>/(m kg) = s<span class="math notranslate nohighlight">\(^{-2}\)</span> and therefore has units of frequency squared. The method to solve such a differential equation is shown in Chapter 10 section 12 and there it is shown that the solution is an exponential or sine or cosine depending on initial conditions. If we assume a solution such as <span class="math notranslate nohighlight">\(x=A\cos(\omega t+\varphi)\)</span> and differentiate in <span class="math notranslate nohighlight">\(t\)</span> twice to obtain <span class="math notranslate nohighlight">\(\ddot x\)</span> the result is <span class="math notranslate nohighlight">\(A\omega^2\cos(\omega t+\varphi)\)</span> and this is the same as <span class="math notranslate nohighlight">\(\omega^2 x\)</span> showing the cosine is a solution.</p>
+</section>
+<section id="iib-two-linked-masses-sliding-on-a-plane-undergoing-shm">
+<h3><strong>(iib) Two linked masses sliding on a plane undergoing SHM</strong><a class="headerlink" href="#iib-two-linked-masses-sliding-on-a-plane-undergoing-shm" title="Permalink to this headline">#</a></h3>
+<p>When there are two masses the equations are a little more involved. Let the two masses be <span class="math notranslate nohighlight">\(m_1,m_2\)</span> connected by a spring with force constant <span class="math notranslate nohighlight">\(k_2\)</span>. Mass 1 is also connected to a rigid wall by spring with force constant <span class="math notranslate nohighlight">\(k_1\)</span>. The situation is therefore: <span class="math notranslate nohighlight">\(wall-spring_1-mass_1-spring_2-mass_2\)</span>, see figure 17 chapter 10, and the masses move frictionlessly on a horizontal plane. We want to know the equations of motion when one or both masses are moved from their equilibrium positions and then released. Let the displacements from equilibrium be <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> and we shall assume Hook’s law, thus for a small displacement, <span class="math notranslate nohighlight">\(x\)</span>, the potential energy stored in a spring is <span class="math notranslate nohighlight">\(kx^2/2\)</span>.</p>
+<p>The kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T= \frac{1}{2}m_1 \dot x_1^2 + \frac{1}{2}m_2 \dot x_2^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot x\)</span> is the velocity, and the potential energy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2\]</div>
+<p>where the second term is the energy stored in spring 2 and this is proportional to the difference in position of the two masses. (The second spring is contracted by displacement <span class="math notranslate nohighlight">\(x_1\)</span> and extended by displacement <span class="math notranslate nohighlight">\(x_2\)</span>). The Lagrangian is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L= \frac{1}{2}\left(m_1 \dot x_1^2 + m_2 \dot x_2^2-k_1x_1^2 - k_2(x_2-x_1)^2\right)\]</div>
+<p>Using the Euler-Lagrange equation involves differentiating wrt. both <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> and gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial L}{\partial x_1}=-k_1x_1+k_2x_2-k_2x_1\qquad \frac{\partial L}{\partial x_2}=-k_2x_2+k_2x_1\]</div>
+<p>Next, the derivatives wrt. <span class="math notranslate nohighlight">\(\dot x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>  are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x_1}=\frac{d}{dt} m_1\dot x_1=m_1\ddot x_1\qquad\text{and}\qquad \frac{d}{dt}\frac{\partial L}{\partial \dot x_2}=\frac{d}{dt} m_2\dot x_2=m_2\ddot x_2\]</div>
+<p>and using eqn. 32a the equations of motion are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m_1\ddot x_1+(k_1+k_2)x_1-k_2x_2 = 0,\qquad\text{and}\qquad  m_2\ddot x_2-k_2x_1+k_2x_2 = 0\]</div>
+<p>The solution to these equations is given in the paragraphs describing how to solve simultaneous equations in Chapter 10, section 13.5.</p>
 </section>
 <section id="iii-simple-pendulum">
 <h3><strong>(iii) Simple Pendulum</strong><a class="headerlink" href="#iii-simple-pendulum" title="Permalink to this headline">#</a></h3>
@@ -2368,7 +2443,7 @@ title="Print to PDF"
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

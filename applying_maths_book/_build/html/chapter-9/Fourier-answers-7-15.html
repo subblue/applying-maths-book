@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1639,9 +1639,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1781,11 +1780,11 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 <p>which can be evaluated by hand or using SymPy. By hand this is made easier by converting the sin to exponential first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t0, t, k, phi&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t0, t, k, phi&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pi</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span> <span class="o">+</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">J</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">t0</span><span class="p">,</span><span class="n">t0</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">integrate</span><span class="p">(</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span> <span class="o">+</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">J</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">t0</span><span class="p">,</span><span class="n">t0</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-
-<span class="n">simplify</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1795,7 +1794,7 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">re</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1805,7 +1804,7 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">im</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1853,8 +1852,12 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
 </section>
 <section id="q13-answer">
 <h2>Q13 answer<a class="headerlink" href="#q13-answer" title="Permalink to this headline">#</a></h2>
-<p>Using the result from Q12, the transform is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}[\delta(x-a)+\delta(x+a)]e^{-ikx} dx = \frac{1}{\sqrt{2\pi}} (e^{-ika}+e^{+ika})\)</span></p>
-<p>and because <span class="math notranslate nohighlight">\(\displaystyle 2\cos(ka)=e^{-ika}+e^{+ika}\)</span> the transform is <span class="math notranslate nohighlight">\(\displaystyle P_k=\frac{2}{\sqrt{2\pi}}\cos(ka)\)</span>.</p>
+<p>Using the result from Q12, the transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}[\delta(x-a)+\delta(x+a)]e^{-ikx} dx = \frac{1}{\sqrt{2\pi}} (e^{-ika}+e^{+ika})\]</div>
+<p>and because <span class="math notranslate nohighlight">\(\displaystyle 2\cos(ka)=e^{-ika}+e^{+ika}\)</span> the transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P_k=\frac{2}{\sqrt{2\pi}}\cos(ka)\]</div>
 <p>The probability density is simply the square of this because <span class="math notranslate nohighlight">\(P\)</span> is real, and shows that the scattering depends on the separation of the centres being maximal when <span class="math notranslate nohighlight">\(ka=\pi n\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is an integer.</p>
 </section>
 <section id="q14-answer">
@@ -1905,9 +1908,11 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
 <p>(a) The pulse has an absolute value of <span class="math notranslate nohighlight">\(x\)</span>, so it is symmetrical about zero. The fwhm is <span class="math notranslate nohighlight">\(2\ln\)</span>(2) and as the pulse is <span class="math notranslate nohighlight">\(\tau= 10\)</span> fs long the scaling is <span class="math notranslate nohighlight">\(a = \ln(2)/\tau\)</span> in units of fs<span class="math notranslate nohighlight">\(^{-1}\)</span>. The Fourier transform can be taken from zero to infinity with <span class="math notranslate nohighlight">\(\displaystyle e^{-ax}\)</span>, and from <span class="math notranslate nohighlight">\(-\infty \cdots 0\)</span> with <span class="math notranslate nohighlight">\(\displaystyle e^{ax}\)</span>, and the results added and simplified.</p>
 <p>The transform is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{1}{\sqrt(2\pi}\int_o^\infty e^{-ax}e^{-ikt}dt = \frac{1}{\sqrt(2\pi}\frac{a}{a+ik}\]</div>
-<p>and the integration gives <span class="math notranslate nohighlight">\(\displaystyle -\frac{1}{\sqrt(2\pi}\frac{a}{a-ik}\)</span>.</p>
-<p>Adding these results produces <span class="math notranslate nohighlight">\(\displaystyle f_k=\frac{1}{\sqrt(2\pi}\frac{2a}{a^2+k^2}\)</span>.</p>
+\[\displaystyle \frac{1}{\sqrt{2\pi}}\int_o^\infty e^{-ax}e^{-ikt}dt = \frac{1}{\sqrt{2\pi}}\left(\frac{a}{a+ik}\right)\]</div>
+<p>and the integration gives <span class="math notranslate nohighlight">\(\displaystyle -\frac{1}{\sqrt{2\pi}}\left(\frac{a}{a-ik}\right)\)</span>.</p>
+<p>Adding these results produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f_k=\frac{1}{\sqrt{2\pi}}\left(\frac{2a}{a^2+k^2}\right)\]</div>
 <p>When plotted this looks something like a bell-shaped curve but is more pointed at the top; it has a Lorentzian shape. The full width at half maximum is <span class="math notranslate nohighlight">\(\displaystyle k_{fwhm}=2a(  4/\sqrt{2\pi}-a ) \)</span> which for a <span class="math notranslate nohighlight">\(10\)</span> fs pulse is <span class="math notranslate nohighlight">\(0.65 \cdot 10^{14}\, s^{-1}\)</span>. The central wavelength of the laser is <span class="math notranslate nohighlight">\(800\)</span> nm or <span class="math notranslate nohighlight">\(12500\,\mathrm{ cm^{-1}}\)</span>, the frequency spread then <span class="math notranslate nohighlight">\(12500 \pm 0.6505 \cdot 10^{14}/c/2\, \mathrm{cm^{-1}}\)</span> or <span class="math notranslate nohighlight">\(14670 \to 10329 \,\mathrm{cm^{-1}}\)</span> which is <span class="math notranslate nohighlight">\(681.7 \to 968.1\)</span> nm and covers most of the deep red part of the visible spectrum and spreads into a wavelength region where the eye is insensitive. As a consequence, lasers such as these, titanium sapphire is an example, appear very faint when in fact they could be very intense.</p>
 <p>(b) The laser cavity is <span class="math notranslate nohighlight">\(1.5\)</span> metres long, hence with these wavelengths, approximately <span class="math notranslate nohighlight">\(4.4 - 3.1 = 1.3\)</span> million modes (half wavelengths) exist in the cavity and all these have to be in phase to form a pulse.</p>
 </section>
@@ -1963,7 +1968,7 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

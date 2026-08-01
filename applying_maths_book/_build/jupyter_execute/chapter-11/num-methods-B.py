@@ -10,10 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy import linalg                # import library to invert matrices
-init_printing()                         # print SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+#from scipy import linalg                # import library to invert matrices
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Introduction
@@ -830,7 +828,7 @@ fig.colorbar(im, cax = cbar_ax)
 plt.show()
 
 
-# ## 4.13 Crank-Nicholson Method. The time-dependent Schroedinger equation
+# ## 4.13 Crank-Nicholson Method. The time-dependent Schroedinger equation 
 # 
 # The best method with which to perform 1D diffusion type calculations and the 1D time-dependent Schroedinger equation, is, according to Prest (Numerical Recipes), the Crank-Nicholson approach as it is second order in time and space. This method is still, however, subject to numerical instability as are all such methods. This method is computationally a little more complex than the approach in section 4.11. The method uses the stencil shown below and is based on using the trapezoidal rule to perform the integration.
 # 
@@ -1051,7 +1049,7 @@ V = barrier(nx,V0,w)                      # make barrier
 
 Amat    = make_tri_matrix(nx, sig)  + V_diag_matrix(nx)  # start Crank-Nicholson
 Bmat    = make_tri_matrix(nx,-sig)  - V_diag_matrix(nx)
-invAmat = linalg.inv(Amat)
+invAmat = np.linalg.inv(Amat)             # use linear algebra package to invert matrix
     
 for t in range(0,nt-1):                   # main calculation here, time loop. 
     p = updatePsi(psi0,p)

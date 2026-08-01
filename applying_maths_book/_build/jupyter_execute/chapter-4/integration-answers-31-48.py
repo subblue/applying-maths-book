@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -27,14 +27,16 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle A=\frac{a^2}{2}\int_0^{\pi/2} r^2d\theta = \frac{a^2}{2}\int_0^{\pi/2} \sin^2(\theta)\cos^2(\theta) d\theta= \frac{a^2\pi}{32}$$
 # 
-# and the total area is four times this.  The integration can be evaluated by converting to exponentials. Using Sympy to do the integration is also straightforward,
+# and the total area is four times this.  The integration can be evaluated by converting to exponentials. Using SymPy to do the integration is also straightforward,
 
 # In[2]:
 
 
-theta, a = symbols('theta, a',positive = True)
-eq = ((a*sin(theta)*cos(theta))**2)/2
-integrate(eq,(theta,0,pi/2))
+# use SymPy
+theta, a = sp.symbols('theta, a',positive = True)
+pi = sp.pi
+eq = ((a*sp.sin(theta)*sp.cos(theta))**2)/2
+sp.integrate(eq,(theta,0,pi/2))
 
 
 # (b) This is tackled in the same way as (a) and the only difficulty is in finding the angles to use as integration limits. The equation to do this is $0 = a \sin(3\theta + \pi/3)$ giving angles as $k\pi/9$ where $k$ can be one of the integers $\cdots -2,\, -1, \,1,\,2 \cdots$ but not zero. The limits can be seen by plotting the graph either in polar or Cartesian coordinates. The first loop with small angles to the horizontal axis, has a range $-\pi/9 \to 2\pi/9$. The area of just this loop is 
@@ -44,14 +46,15 @@ integrate(eq,(theta,0,pi/2))
 # and the total area is three times this value. The same result is obtained if the phase $\pi/3$ is ignored and the limits taken as $0 \to \pi/3$ instead.
 # 
 # (c) The integration angles with $n=5$ are $\pm \pi/2$ and the integration produces $13a^2\pi/2$ as the area. The similar calculation with different $n$ values shows that the limits are unchanged if $n$ is odd.
-# The general calculation using Sympy is
+# The general calculation using SymPy is
 
 # In[3]:
 
 
-theta, a, n  = symbols('theta, a, n', positive = True)
-eq = (a*(n*cos(theta) + cos(n*theta)))**2/2
-simplify(integrate(eq,(theta,-pi/2,pi/2)))
+theta, a, n  = sp.symbols('theta, a, n', positive = True)
+pi = sp.pi
+eq = (a*(n*sp.cos(theta) + sp.cos(n*theta)))**2/2
+sp.simplify(sp.integrate(eq,(theta,-pi/2,pi/2)))
 
 
 # however, as the sine and cosine terms are always zero if $n$ is a positive integer the equation simplifies to produce $a^2\pi(n^2 + 1)/4$ as the area with $n \gt 1$ and odd. When $n = 1$ the area is that of a circle $\pi a^2$ and can be obtained from the integration result by using l'Hopital's rule to obtain the limit since the denominator is zero when $n = 1$. The calculation is a straightforward but long one.
@@ -73,26 +76,28 @@ simplify(integrate(eq,(theta,-pi/2,pi/2)))
 # 
 # $$\displaystyle \frac{a^2}{2}\int_{-2\pi/3}^{2\pi/3} (2\cos(\theta)+1)^2 d\theta= \frac{a^2( -3\sqrt{3}+2\pi)}{2}$$
 # 
-# making the area excluding the loop $a^2(3\sqrt{3} + \pi)$. The inner loop calculation using Sympy is 
+# making the area excluding the loop $a^2(3\sqrt{3} + \pi)$. The inner loop calculation using SymPy is 
 
 # In[4]:
 
 
-theta, a, n  = symbols('theta, a, n', positive = True)
-eq = a**2*(2*cos(theta) + 1)**2/2
-simplify(integrate(eq,(theta,2*pi/3,4*pi/3)))
+theta, a, n  = sp.symbols('theta, a, n', positive = True)
+pi = sp.pi
+eq = a**2*(2*sp.cos(theta) + 1)**2/2
+sp.simplify(sp.integrate(eq,(theta,2*pi/3,4*pi/3)))
 
 
 # (b) If $n=1$,the equation is that of a circle of radius $a/2$ with its centre at $r = 1/2$ and $
-# \theta= 0$. The difference in area to that of a circle of radius $a$ is therefore $3\pi a^2/4$. The plot shows the curve produced when $n = 5$. The radius vector is zero at angles $\pm k \pi/10$ where $k$ is an integer. The limits $\pm \pi/10$ cover the loop on the horizontal axis. By symmetry, the area of all five loops is then just five times this value. Using Sympy
+# \theta= 0$. The difference in area to that of a circle of radius $a$ is therefore $3\pi a^2/4$. The plot shows the curve produced when $n = 5$. The radius vector is zero at angles $\pm k \pi/10$ where $k$ is an integer. The limits $\pm \pi/10$ cover the loop on the horizontal axis. By symmetry, the area of all five loops is then just five times this value. Using SymPy
 
 # In[5]:
 
 
-theta, a  = symbols('theta, a', positive = True)
+theta, a  = sp.symbols('theta, a', positive = True)
 n = 5
-eq = n*a**2*(cos(n*theta) )**2/2
-simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
+pi = sp.pi
+eq = n*a**2*(sp.cos(n*theta) )**2/2
+sp.simplify(sp.integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 
 
 # which is clearly going to produce $3\pi a^2/4$ as the area between the five-leaved figure and the circle. If the calculation is repeated with different integer n values the same result is obtained when the limits are changed as appropriate to $\pm \pi/2n$. It does not look as if only one quarter of the area is filled by the loops in the curve, particularly if curves with $n = 200$ or other large numbers are potted. Even stranger is that in the limit $n \to \infty$ it appears that the unfilled area is still the same; an infinite number of loops is present but each of infinitesimal thickness and they do not fill all the space.
@@ -171,14 +176,15 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # 
 # ## Q37 answer
 # The area is the integral $\displaystyle \int_{x_0}^\infty x^2e^{-\alpha x^2}dx$ and should be 
-# identified as one of the special integrals that are best looked up of solved using Sympy. It is not simple to do this by hand. 
+# identified as one of the special integrals that are best looked up of solved using SymPy. It is not simple to do this by hand. 
 
 # In[6]:
 
 
-x, x0, alpha  = symbols('x, x0, alpha', positive = True)
-eq = x**2*exp(-alpha*x**2)
-simplify(integrate(eq,(x,x0,oo))) 
+x, x0, alpha  = sp.symbols('x, x0, alpha', positive = True)
+inf = sp.oo                 # sp.oo is infinity
+eq = x**2*sp.exp(-alpha*x**2)
+sp.simplify(sp.integrate(eq,(x,x0,inf))) 
 
 
 # The error function is defined as the integral 
@@ -193,9 +199,10 @@ simplify(integrate(eq,(x,x0,oo)))
 # In[7]:
 
 
-x, alpha, n  = symbols('x, alpha, n', positive = True)
-eq = x**n*exp(-alpha*x**2)
-simplify(integrate(eq,(x,-oo,oo))  )
+x, alpha, n  = sp.symbols('x, alpha, n', positive = True)
+inf = sp.oo                 # sp.oo is infinity
+eq = x**n*sp.exp(-alpha*x**2)
+sp.simplify(sp.integrate(eq,(x,-inf,inf))  ) 
 
 
 # $$\displaystyle \int_{-\infty}^\infty x^ne^{-\alpha x^2}dx= \frac{1}{2}\alpha^{-(n+1)/2}\left( 1+(-1)^n \right)\Gamma((n+1)/2)$$  
@@ -239,14 +246,14 @@ simplify(integrate(eq,(x,-oo,oo))  )
 # 
 # $$\displaystyle \int e^{-\alpha x^2}dx =\frac{\sqrt{\pi}}{4\alpha} \mathrm{erf}(x\sqrt{\alpha}) +c $$
 # 
-# where $c$ is the integration constant. Using Sympy gives this answer.
+# where $c$ is the integration constant. Using SymPy gives this answer.
 
 # In[8]:
 
 
-x, alpha, n  = symbols('x, alpha, n', positive = True)
-eq = exp(-alpha*x**2)
-simplify(integrate(eq,x ))
+x, alpha, n  = sp.symbols('x, alpha, n', positive = True)
+eq = sp.exp(-alpha*x**2)
+sp.simplify(sp.integrate(eq,x ))
 
 
 # Using the properties of the error function, $\mathrm{erf} (0) = 0,\; \mathrm{erf} (\pm\infty) = \pm 1$ the integral with limits is $\sqrt{\pi /\alpha}$ and therefore  $\displaystyle Q_0= \sqrt{\frac{\alpha}{\pi}}\sqrt{\frac{\pi}{\alpha}}=1$ and the wavefunction is normalised.
@@ -423,9 +430,11 @@ simplify(integrate(eq,x ))
 # In[9]:
 
 
-u, u0, alpha = symbols('u, u0, alpha',positive =True)
-Pu= 4*pi*(alpha/pi)**(3/2)*u**2 *exp(-alpha*u**2)
-integrate(Pu,(u,0,oo)) 
+u, u0, alpha = sp.symbols('u, u0, alpha',positive =True)
+pi = sp.pi
+inf = sp.oo          # sp.00 is sympy infinity
+Pu = 4*pi*(alpha/sp.pi)**(3/2)*u**2 *sp.exp(-alpha*u**2)
+sp.integrate(Pu,(u,0,inf))   
 
 
 # (b) The initial speed is now $u_0$ not zero, therefore the calculation is essentially the same as in part (a) but with limits $u_0,\,\infty$, gives the probability as 
@@ -433,10 +442,10 @@ integrate(Pu,(u,0,oo))
 # In[10]:
 
 
-simplify(integrate(Pu,(u,u0,oo))  )
+sp.simplify(sp.integrate(Pu,(u,u0,inf))  )
 
 
-# which when $\alpha$ is substituted for gives 
+# which when $\alpha$ is substituted gives, 
 # 
 # $$\displaystyle  P(u_0,T,m)= \frac{2}{\sqrt{\pi}}\sqrt{\frac{m}{2 k_BT}}u_0e^{-mu_0^2/2k_BT}+1-\mathrm{erf}\left( \sqrt{\frac{m}{ 2k_BT}}u_0 \right) $$
 # 
@@ -467,14 +476,17 @@ simplify(integrate(Pu,(u,u0,oo))  )
 # 
 # which when simplified is independent of the mass as may be anticipated.
 # 
-# The fraction of molecules with energy above $k_BT$ is the fraction above this energy which is $\displaystyle \int_{k_BT}^\infty P(E)dE$. Using Sympy gives
+# The fraction of molecules with energy above $k_BT$ is the fraction above this energy which is $\displaystyle \int_{k_BT}^\infty P(E)dE$. Using SymPy gives
 
 # In[11]:
 
 
-E, kBT, m = symbols('E, kBT, m',positive = True)
-PE= 4*pi*sqrt((m/(2*pi*kBT))**3)*(2*E/m)*exp(-E/(kBT))/sqrt(2*m*E)
-simplify(integrate(PE,(E,kBT,oo) ) )
+E, kBT, m = sp.symbols('E, kBT, m',positive = True)
+pi = sp.pi
+inf = sp.oo              # sp.oo is sympy infinity
+PE = 4*pi*sp.sqrt((m/(2*pi*kBT))**3)*(2*E/m)*sp.exp(-E/(kBT))/sp.sqrt(2*m*E)
+ans= sp.simplify(sp.integrate(PE,(E,kBT,inf) ) ) 
+[ans, ans.evalf() ]
 
 
 # hence the integral is 

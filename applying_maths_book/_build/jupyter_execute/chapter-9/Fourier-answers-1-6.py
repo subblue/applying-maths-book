@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
+import sympy as sp
 from scipy.integrate import quad
-init_printing()                         # allows printing of SymPy results in typeset maths format
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -25,15 +25,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \int\limits_{-\pi}^\pi f(x) \sin(mx)dx = \frac{a_0}{2}\int\limits_{-\pi}^\pi \sin(mx)dx +\int\limits_{-\pi}^\pi \left [\sum\limits_{n=1} a_n\cos(nx)+ \sum\limits_{n=1} b_n\sin(nx ) \right] \sin(mx)dx $$
 # 
-# The first integral with $a_0$ is zero, because sine is an odd function, the second integral is zero for the same reason. The last integral has to be treated carefully,however. Using Sympy for example produces answers depending on the values of $n$ and $m$,
+# The first integral with $a_0$ is zero, because sine is an odd function, the second integral is zero for the same reason. The last integral has to be treated carefully,however. Using SymPy for example produces answers depending on the values of $n$ and $m$,
 
 # In[2]:
 
 
-n, m, x = symbols('n, m, x')
+n, m, x = sp.symbols('n, m, x')
 
-f = sin(n*x)*sin(m*x)
-I0=  integrate(f,x, conds ='none')  # conds='none' means no special conditions
+f  = sp.sin(n*x)*sp.sin(m*x)
+I0 = sp.integrate(f,x, conds ='none')  # conds='none' means no special conditions
 I0
 
 
@@ -54,14 +54,15 @@ I0
 # 
 # $$\displaystyle b_n=\frac{1}{L}\int_{-L}^L \sin(x)\sin(n\pi x/L)dx $$
 # 
-# This is a standard integral; it can be performed by hand by converting to an exponential form. You should confirm the result that Sympy gives.
+# This is a standard integral; it can be performed by hand by converting to an exponential form. You should confirm the result that SymPy gives.
 
 # In[3]:
 
 
-n, x, L=symbols('n, x, L')
-f = sin(x)*sin(n*pi*x/L)
-I0=integrate(f,(x,-L,L),conds='none')
+n, x, L = sp.symbols('n, x, L')
+pi = sp.pi
+f  = sp.sin(x)*sp.sin(n*pi*x/L)
+I0 = sp.integrate(f,(x,-L,L),conds='none')
 I0
 
 
@@ -250,11 +251,11 @@ plt.show()
 
 
 # generating function method for Laguerre polynomials
-u, x, n = symbols('u, x, n')
+u, x, n = sp.symbols('u, x, n')
 
-f01 = exp(  -x*u/(1 - u) )/(1 - u) 
+f01 = sp.exp(  -x*u/(1 - u) )/(1 - u) 
 
-s  = series(f01,u,n=10)
+s  = sp.series(f01,u,n=10)
 for n in range(1,6):
     print('L(',n,',x) ', s.coeff(u**n))  # extract coefficients with powers n.
 
@@ -264,24 +265,24 @@ for n in range(1,6):
 # In[9]:
 
 
-x, n = symbols('x, n')
-f02 = exp(-x)*x**n
-d = diff(f02,x)
+x, n = sp.symbols('x, n')
+f02 = sp.exp(-x)*x**n
+d = sp.diff(f02,x)
 for i in range(6):       # take result and differentiate again
-    temp = diff(d,x)
+    temp = sp.diff(d,x)
     d = temp
-    print('L(',i,',x) ', expand( exp(x)/factorial(n)*temp).subs({n:i} ))    # substitute i (a number ) for n   
+    print('L(',i,',x) ', sp.expand( sp.exp(x)/sp.factorial(n)*temp).subs({n:i} ))    # substitute i (a number ) for n   
 
 
 # In[10]:
 
 
-x, n = symbols('x, n')      # alternative method by using diff(f02,x,i) to differentiate i times
-f02 = exp(-x)*x**n
+x, n = sp.symbols('x, n')      # alternative method by using diff(f02,x,i) to differentiate i times
+f02 = sp.exp(-x)*x**n
 for i in range(6):
-    temp = diff(f02,x,i)         # get ith derivative
+    temp = sp.diff(f02,x,i)         # get ith derivative
     drvt = temp.subs({n:i})      # replace n with value i 
-    print('L(',i,',x) ', simplify(drvt*exp(x)/factorial(i)))     # multiply with exp(x)/factorial
+    print('L(',i,',x) ', sp.simplify(drvt*sp.exp(x)/sp.factorial(i)))     # multiply with exp(x)/factorial
 
 
 # (c) Using the recursion formula.
@@ -298,7 +299,7 @@ def Lag(n,x):       # recursion formula, adjusted to return L(n,x)
         return (  (2*n-1 -x)*Lag(n-1,x) -(n-1)*Lag(n-2,x)  )/n
     
 for i in range(6):
-    print('L(',i,',x)',simplify(Lag(i,x)))
+    print('L(',i,',x)',sp.simplify(Lag(i,x)))
 
 
 # ## Q6 answer
@@ -313,8 +314,9 @@ for i in range(6):
 
 # spherical harmonic calculation
 
-x, n, m, L, phi = symbols('x, n, m, L, phi')
+x, n, m, L, phi = sp.symbols('x, n, m, L, phi')
 
+pi = sp.pi
 #--------------
 def Dblfact(n):           # double factorial  by recursion n(n-2)(n-4)....
     if n == 0 or n == 1:
@@ -338,15 +340,15 @@ def P(x,m,L):               # associated Legendre polynomials
 print('   L   m      assoc legendre')
 for L in [0,1,2,3] :
     for m in range(L+1):
-        print('{:4d}{:4d}      {:s}'.format(L, m,str(simplify( expand(P(x,m,L))) ) ) )
+        print('{:4d}{:4d}      {:s}'.format(L, m,str(sp.simplify( sp.expand(P(x,m,L))) ) ) )
 print('\n              spherical harmonics\n   L   m') 
 for L in [0,1,2,3] :
     for m in range(L+1):
-        sph = sqrt( (2*L+1)*factorial(L-m)/(4*pi*factorial(L+m)) )*P(x,m,L)*exp(I*m*phi) 
+        sph = sp.sqrt( (2*L+1)*sp.factorial(L-m)/(4*pi*sp.factorial(L+m)) )*P(x,m,L)*sp.exp(sp.I*m*phi) 
         print('{:4d}{:4d}      {:s}'.format( L, m,  str(sph) ))
         if m != 0:
-            sphc= (-1)**m*sqrt( (2*L+1)*factorial(L-m)/(4*pi*factorial(L+m)) )*P(x,m,L)*exp(-I*m*phi) 
-            print('{:4d}{:4d}      {:s}'.format( L,-m,  str(simplify(expand(sphc) ))))
+            sphc= (-1)**m*sp.sqrt( (2*L+1)*sp.factorial(L-m)/(4*pi*sp.factorial(L+m)) )*P(x,m,L)*sp.exp(-sp.I*m*phi) 
+            print('{:4d}{:4d}      {:s}'.format( L,-m,  str(sp.simplify(sp.expand(sphc) ))))
         pass
     pass
 
@@ -354,7 +356,7 @@ for L in [0,1,2,3] :
 # In[13]:
 
 
-x, n = symbols(' x, n ')     # alternative and simpler method by differentiating directly
+x, n = sp.symbols(' x, n ')     # alternative and simpler method by differentiating directly
 
 #------------
 def P(n,x):                # Legendre polynomial by recursion, see section 4
@@ -368,8 +370,8 @@ def P(n,x):                # Legendre polynomial by recursion, see section 4
 print('   L   m       assoc legendre')      # Rodrigues formulae (-1)^m(sqrt(1-x^2)d^m/dx^m P(L,x))
 for L in [0,1,2,3]:
     for m in range(L+1):
-        f = diff(P(L,x), x, m)
-        print('{:4d}{:4d}      {:s}'.format( L, m, str(simplify( (-1)**m*f*(1-x**2)**(m/2) )) ))
+        f = sp.diff(P(L,x), x, m)
+        print('{:4d}{:4d}      {:s}'.format( L, m, str(sp.simplify( (-1)**m*f*(1-x**2)**(m/2) )) ))
 
 
 # In[ ]:

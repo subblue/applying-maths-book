@@ -10,9 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -69,8 +68,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # check on matrix inverse
-S = symbols('S')
-S = Matrix([[1, 1, 0], [1, 0, 1], [0, 1,1]])
+S = sp.symbols('S')
+S = sp.Matrix([[1, 1, 0], [1, 0, 1], [0, 1,1]])
 S**(-1)
 
 
@@ -85,8 +84,8 @@ S**(-1)
 # In[3]:
 
 
-z,m1,m2,m3,sigma = symbols('z m1 m2 m3 sigma')
-z = Matrix([m1 + m2 + sigma, m1 + m3 + sigma,m2 + m3 + sigma]) # define matrix
+z,m1,m2,m3,sigma = sp.symbols('z m1 m2 m3 sigma')
+z = sp.Matrix([m1 + m2 + sigma, m1 + m3 + sigma,m2 + m3 + sigma]) # define matrix
 psi = S**(-1)*z
 psi
 
@@ -116,9 +115,9 @@ psi
 # 
 # ## 11.5 Constructing the $\boldsymbol S$ matrix
 # 
-# Harwit & Sloane (1979) give several methods by which to construct the $\boldsymbol S$ matrix. The simplest is the Quadratic Residue method, which produces a sequence of ones and zeros of length $n$ but only if $n$ is a prime number satisfying the condition also that $4m + 3$ where $m$ is also an integer. Once $n$ is chosen, the numbers $i = 1, 4, 9, \cdots n^2 \cdots $ are divided by $n$ and the remainders are the indices in a sequence of numbers and these numbers have a value of one and the rest are zero. The $\boldsymbol S$ matrix is then made from this list by rotating each new column by one element compared to its neighbour in a cyclical manner. 
+# Harwit & Sloane (1979) give several methods by which to construct the $\boldsymbol S$ matrix. The simplest is the Quadratic Residue method, which produces a sequence of ones and zeros of length $n$ but only if $n$ is a prime number satisfying the condition also that $4n + 3$ where $m$ is also an integer. Once $n$ is chosen, the numbers $i = 1, 4, 9, \cdots n^2 \cdots $ are divided by $n$ and the remainders are the indices in a sequence of numbers and these numbers have a value of one and the rest are zero. The $\boldsymbol S$ matrix is then made from this list by rotating each new column by one element compared to its neighbour in a cyclical manner. 
 # 
-# The Quadratic residue $R$ is defined as $n^2 \equiv R \mod(b)$ meaning that integer division of $n^2$ by $b$ produces remainder R. As an example $7^2 = 9\mod(10)$, meaning that $10$ divides $49, 4$ times exactly with remainder $9$.
+# The Quadratic residue $R$ is defined as $n^2 \equiv R\,\mathrm{mod}(b)$ meaning that integer division of $n^2$ by $b$ produces remainder $R$. As an example $7^2 = 9\,\mathrm{mod}(10)$, meaning that $10$ divides $49, exactly 4$ times with remainder $9$.
 # 
 # A flow diagram to make a row of the $\boldsymbol S$ matrix is shown in the sketch and some Python code to do this below it.
 # 

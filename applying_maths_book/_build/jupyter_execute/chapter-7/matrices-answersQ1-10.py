@@ -10,9 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-import numpy.linalg as LA
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -33,22 +32,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \quad \begin{vmatrix} x & a & b \\ a & x & b \\a & b & x \end{vmatrix}=x(x^2-b^2)-a(ax-ab)+b(ab-ax)=0$$
 # 
-# Factoring produces $(x-b)\left[ x(x+b)-a(a+b) \right]=0$ with the solution $x=b$. The other solutions are found from the quadratic in square brackets. This produces $x=-b -a$ and $x=a$. Using Sympy is easy also, after factoring the solve step is really not necessary.
+# Factoring produces $(x-b)\left[ x(x+b)-a(a+b) \right]=0$ with the solution $x=b$. The other solutions are found from the quadratic in square brackets. This produces $x=-b -a$ and $x=a$. Using SymPy is easy also, after factoring the solve step is really not necessary.
 
 # In[2]:
 
 
-x, a, b = symbols('x, a, b')
-M = Matrix( [ [x,a,b], [a,x,b], [a,b,x] ] )
+x, a, b = sp.symbols('x, a, b')
+M = sp.Matrix( [ [x,a,b], [a,x,b], [a,b,x] ] )
 char_eqn = M.det()
 
-factor(char_eqn )
+sp.factor(char_eqn )
 
 
 # In[3]:
 
 
-solve(char_eqn,x)
+sp.solve(char_eqn,x)
 
 
 # ## Q4 answer
@@ -61,14 +60,14 @@ solve(char_eqn,x)
 
 
 M = np.array( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )  # numerical method  
-print(LA.det(M))            # LA calls linear algebra package defined at top of document
+print(np.linalg.det(M))            # LA calls linear algebra package defined at top of document
 
 
 # In[5]:
 
 
-M = symbols('M')                                                 # symbolic algebra
-M = Matrix( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )
+M = sp.symbols('M')                                                 # symbolic algebra
+M = sp.Matrix( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )
 M.det()
 
 
@@ -86,7 +85,7 @@ for i in range(n):
     for j in range(n):
         M[i,j] = s
         s = s + 1
-print(LA.det(M))        # LA calls linear algebra package defined at top of document
+print(np.linalg.det(M))        # Calls numpy linear algebra package 
 
 
 # This is a numerical answer, as opposed to an algebraic one, meaning that an numerical algorithm was used to evaluate it. The answer is sufficiently small to assume that it is zero. 
@@ -130,7 +129,7 @@ for i in range(n):
         M[i,j] = anum[k]
         k = k + 1
 
-print( '{:s} {:8.2f}'.format('value = ', LA.det(M) ) )
+print( '{:s} {:8.2f}'.format('value = ', np.linalg.det(M) ) )
 
 
 # ## Q7 answer
@@ -141,9 +140,9 @@ print( '{:s} {:8.2f}'.format('value = ', LA.det(M) ) )
 
 # Algorithm  Huckel Calculation Cyclic polyenes
 
-n, M, x = symbols('n, M, x')      # define symbols to use
-n = 6                             # define size of linear polyene
-M = zeros(n,n)                    # make an array of zeros 
+n, M, x = sp.symbols('n, M, x')      # define symbols to use
+n = 6                                # define size of linear polyene
+M = sp.zeros(n,n)                    # make a SymPy array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
@@ -160,7 +159,7 @@ M
 
 
 char_eqn = M.det()
-factor(char_eqn)
+sp.factor(char_eqn)
 
 
 # From the factors the solutions are $x= 2,1,1,-1,-1,-2 $. The energy is calculated using $E=\alpha-\beta x$ and hence the energies are $E=\alpha \pm 2\beta$ and $\alpha \pm \beta$ each of which is doubly degenerate giving six levels in all. The energies for cyclo-octatetraene $(n=8)$ are $x=0,0, -2,2,\pm\sqrt{2},\pm\sqrt{2}$ as shown in figure 74.
@@ -181,9 +180,9 @@ factor(char_eqn)
 
 
 # Algorithm  Huckel Calculation Fulvalene
-n, M, x = symbols('n, M, x')      # define symbols to use
-n = 6                             # define size of linear polyene
-M = zeros(n,n)                    # make an array of zeros 
+n, M, x = sp.symbols('n, M, x')      # define symbols to use
+n = 6                                # define size of linear polyene
+M = sp.zeros(n,n)                    # make a SymPy array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
@@ -199,14 +198,14 @@ M
 # In[11]:
 
 
-char_eqn = factor(M.det()) 
+char_eqn = sp.factor(M.det()) 
 print(char_eqn)
 
 
 # In[12]:
 
 
-solns = solve(char_eqn,x)
+solns = sp.solve(char_eqn,x)
 
 for i,j in enumerate(solns):      # print out  each solution in a table
     print('x = {:12.6g} '.format( (complex(solns[i].evalf() )) ) )
@@ -227,9 +226,9 @@ for i,j in enumerate(solns):      # print out  each solution in a table
 
 
 # Calculation for Naphthalene
-n, M, x = symbols('n, M, x')      # define symbols to use
-n = 10                            # define size of linear polyene
-M = zeros(n,n)                    # make an array of zeros 
+n, M, x = sp.symbols('n, M, x')      # define symbols to use
+n = 10                               # define size of linear polyene
+M = sp.zeros(n,n)                    # make a SymPy array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
@@ -248,22 +247,22 @@ M
 # In[14]:
 
 
-char_eqn = factor(M.det()) 
+char_eqn = sp.factor(M.det()) 
 print(char_eqn)
 
-solns = sorted( solve(char_eqn,x) )
+solns = sorted( sp.solve(char_eqn,x) )          # sorted is python function
 
 for i,j in enumerate(solns):      # print out the real part of each solution in a table. 
-    print('x = {:8.4g} '.format( re(complex(solns[i].evalf() ))  )  ) 
+    print('x = {:8.4g} '.format( sp.re(complex(solns[i].evalf() ))  )  ) 
 
 
 # In[15]:
 
 
 # Calculation for Azulene
-n, M, x = symbols('n, M, x')      # define symbols to use
-n = 10                         # define size of linear polyene
-M = zeros(n,n)                # make an array of zeros 
+n, M, x = sp.symbols('n, M, x')      # define symbols to use
+n = 10                               # define size of linear polyene
+M = sp.zeros(n,n)                    # make a Sympy array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
@@ -282,13 +281,13 @@ M
 # In[16]:
 
 
-char_eqn = factor(M.det()) 
+char_eqn = sp.factor(M.det()) 
 print(char_eqn)
 
-solns = sorted( solve(char_eqn,x) )
+solns = sorted( sp.solve(char_eqn,x) )         # sorted is a python function
 
 for i,j in enumerate(solns):      # print out each solution in a table, j is sqrt(-1)
-    print('x = {:8.4g} '.format( re(complex(solns[i].evalf() ))  )  ) 
+    print('x = {:8.4g} '.format( sp.re(complex(solns[i].evalf() ))  )  ) 
 
 
 # There are $10$ $\pi$ electrons in napthalene and azulene, therefore the lowest transition is from the filled to lowest unfilled orbital or $0.618-(-0.618)\approx 0.1.24$ for naphthalene, and $0.4004-(-0.4773)\approx 0.88$ for azulene which shows that this transition has far lower energy and is consistent with it absorbing in the visible part of the spectrum, whereas naphthalene absorbs in the UV and appears as a white solid.  If the Mulliken charges are calculated they show that the $7$ membered ring is positive and the smaller ring negative consistent with there being a dipole.
@@ -336,19 +335,19 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # 
 # The Huckel energies for any linear polyene can now be calculated, provided the polynomial equations can be solved! If they cannot, you can always draw graphs to find the roots of the equations, and use the Newton-Raphson method, not that elegant, but does give good numerical values.
 # 
-# (b) Calculating the recursion in Python/Sympy is very easy also.
+# (b) Calculating the recursion in Python/SymPy is very easy also.
 
 # In[17]:
 
 
-x, m = symbols('x, m')
+x, m = sp.symbols('x, m')
 m = 10
 f01 = [0 for i in range(m)]   # save values as we go along
 f01[1] = x
 f01[2] = x**2-1
 for i in range(3,m):
     f01[i]= x*f01[i-1] - f01[i-2]
-    print(i,expand(f01[i]) )
+    print(i,sp.expand(f01[i]) )
 
 
 # Numerically solving the equations rather than factoring as above, and plotting the results, shows how the energy levels change as the number of carbon atoms and hence $\pi$ electrons increases. As the number of levels increase more energy levels (states), appear to have large positive and negative values and fewer at zero energy. When the number of electrons becomes very large, as in a semiconductor, the levels merge into a band and then relatively more energy levels appear at the band edges than at the band centre. This is the trend that is seen to be starting here. All the levels below zero are filled and as the molecule gets longer the energy gap between HOMO and LUMO orbitals becomes very small, rather line this of a 1D metal. 
@@ -356,3 +355,9 @@ for i in range(3,m):
 # ![Drawing](matrices-fig77.png)
 # 
 # Figure 77. Plot of variable $x$, which is proportional to energy vs. the number of carbon atoms in a linear polyene, $E = \alpha-\beta x$
+
+# In[ ]:
+
+
+
+

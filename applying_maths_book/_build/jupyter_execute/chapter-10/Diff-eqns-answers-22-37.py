@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Solutions Q22 - 37
+# # Solutions Q22 - 38
 
 # In[1]:
 
@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -286,10 +286,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-beta, phi,phi_0, phi_1 = symbols('beta, phi, phi_0, phi_1',positive = True)
-f01= 1/(exp(beta*phi)- exp(-beta*phi))
-ans = integrate(f01,(phi,phi_0,phi_1))
-factor(ans)
+beta, phi,phi_0, phi_1 = sp.symbols('beta, phi, phi_0, phi_1',positive = True)
+f01= 1/(sp.exp(beta*phi)- sp.exp(-beta*phi))
+ans = sp.integrate(f01,(phi,phi_0,phi_1))
+sp.factor(ans)
 
 
 # Simplifying this result and combining with the other integral produces
@@ -326,10 +326,10 @@ factor(ans)
 # In[3]:
 
 
-a0, a1 = symbols('a0, a1')
+a0, a1 = sp.symbols('a0, a1')
 
 n0  = 12                       # max number of terms 
-a   = [''for i in range(n0)]
+a   = ['' for i in range(n0)]
 a[0]= a0
 a[1]= a1
 s=''
@@ -360,15 +360,16 @@ for n in range(n0-2):
 
 
 # the calculation is separated into several steps as some intervention is needed
-L1, L2, a, c, k, k0, AT = symbols('L1, L2, a, c, k, k0, AT ' , real = True  )
+L1, L2, a, c, k, k0, AT = sp.symbols('L1, L2, a, c, k, k0, AT ' , real = True  )
 
-L1 = -a*c*tan(a*c)    # calculated from definition in text, then x replaced by a.
-L2 =  a*c/tan(a*c)
-AT = -exp(-2*I*a*k)*((L1+I*a*k)/(L1-I*a*k) - (L2+I*a*k)/(L2-I*a*k))/2  # defined in text
+i  = sp.I    # sympy sqrt(-1)
+L1 = -a*c*sp.tan(a*c)    # calculated from definition in text, then x replaced by a.
+L2 =  a*c/sp.tan(a*c)
+AT = -sp.exp(-2*i*a*k)*((L1+i*a*k)/(L1-i*a*k) - (L2+i*a*k)/(L2-i*a*k))/2  # defined in text
 
 # make complex conjugate 
-T  = trigsimp(conjugate(AT)*AT)     # transmission
-ans= simplify(T.rewrite(sin))
+T  = sp.trigsimp(sp.conjugate(AT)*AT)     # transmission
+ans= sp.simplify(T.rewrite(sp.sin))
 ans
 
 
@@ -376,8 +377,8 @@ ans
 
 
 # simplify expression and convert to sine form
-ans1 = collect(ans,cos(4*a*c))
-ans3 = ans1.subs(cos(4*a*c),1-2*sin(2*a*c)**2)
+ans1 = sp.collect(ans,sp.cos(4*a*c))
+ans3 = ans1.subs(sp.cos(4*a*c),1-2*sp.sin(2*a*c)**2)
 ans3
 
 
@@ -385,8 +386,8 @@ ans3
 
 
 # try more fiddling about produces formula that looks somewhat like the expected answer.
-ans4 = collect( ans3,-2*sin(2*a*c)**2+1 )
-ans5 = collect(factor(ans4),sin(2*a*c) )
+ans4 = sp.collect( ans3,-2*sp.sin(2*a*c)**2+1 )
+ans5 = sp.collect(sp.factor(ans4),sp.sin(2*a*c) )
 ans5
 
 
@@ -455,7 +456,7 @@ ans5
 # 
 # ![Drawing](diffeqn-fig40a.png)
 # 
-# Fig 40a. The ratio $r$ plotted with several terms (blue) and with just the first term (red) showing the highly non-single exponential decay due to increasing size of $n^2$ in the exponential terms as the summation proceeds. Measurement of the slope at long times would be sufficient to determine the diffusion coefficient.
+# Fig 41. The ratio $r$ plotted with several terms (blue) and with just the first term (red) showing the highly non-single exponential decay due to increasing size of $n^2$ in the exponential terms as the summation proceeds. Measurement of the slope at long times would be sufficient to determine the diffusion coefficient.
 # ____
 # 
 # ## Q36 answer
@@ -472,10 +473,11 @@ ans5
 # In[7]:
 
 
-x, L = symbols('x, L')
-n   = symbols('n', integer=True)
-ans = integrate(x**2*sin(n*pi*x/L),(x,0,L),conds='none')
-simplify(ans)
+x, L = sp.symbols('x, L')
+n    = sp.symbols('n', integer=True)
+pi  = sp.pi
+ans = sp.integrate(x**2*sp.sin(n*pi*x/L),(x,0,L),conds='none')
+sp.simplify(ans)
 
 
 # Combining these equations,gives the coefficients $\displaystyle b_n=2(1-(-1)^n)\left( \frac{L}{n\pi} \right)^3$. The solution to the displacement is therefore the series
@@ -490,16 +492,106 @@ simplify(ans)
 # In[8]:
 
 
-x, a, t, c = symbols('x, a, t, c')
-#f00 = -c/2*sech(sqrt(c)/2*(x-c*t))**2  # solution to test 
-f00 = 3*c*sech(sqrt(c)/2*(x-c*t))**2
+x, a, t, c = sp.symbols('x, a, t, c')
+#f00 = -c/2*sp.sech(sp.sqrt(c)/2*(x-c*t))**2  # solution to test 
+f00 = 3*c*sp.sech(sp.sqrt(c)/2*(x-c*t))**2
 #f01 = f00.rewrite(exp)
-simplify(f01)
+sp.simplify(f01)
 
 
 # In[9]:
 
 
-ans= diff(f01,t) +f01*diff(f01,x) + diff(f01,x,x,x)   # differentiate, should be zero for solution.
-simplify(ans)
+ans= sp.diff(f01,t) +f01*sp.diff(f01,x) + sp.diff(f01,x,x,x)   # differentiate, should be zero for solution.
+sp.simplify(ans)
+
+
+# ## Q38 answer
+# 
+# ### **Determine the Laplacian, $T-V$**
+# 
+# The kinetic energy $T$ of the two masses is $\displaystyle \frac{1}{2}m_1\dot x_1^2$ and $\displaystyle \frac{1}{2}m_2\dot x_2^2$.
+# 
+# The potential energy $V$ is, using Hook's law, $\displaystyle V=\frac{1}{2}k_1x_1^2+\frac{1}{2}k_1x_2^2+\frac{1}{2}k_0(x_2-x_1)^2$
+# 
+# where $x_2-x_1$ is the extension of the middle spring.The Laplacian is
+# 
+# $$\displaystyle L=T-V=\frac{1}{2}m_1\dot x_1^2 + \frac{1}{2}m_2\dot x_2^2-\frac{1}{2}k_1x_1^2-\frac{1}{2}k_1x_2^2-\frac{1}{2}k_0(x_2-x_1)^2$$
+# 
+# Using the Euler-Lagrange equation (see chapter 3-8.3) the derivatives wrt. $\dot x$ and time $t$  are 
+# 
+# $$\displaystyle \frac{d}{dt}\frac{\partial L}{\partial \dot x_1}=\frac{d}{dt} m_1\dot x_1=m_1\ddot x_1\qquad\text{and}\qquad \frac{d}{dt}\frac{\partial L}{\partial \dot x_2}=\frac{d}{dt} m_2\dot x_2=m_2\ddot x_2$$
+# 
+# and 
+# 
+# $$\displaystyle \frac{\partial L}{\partial x_1} = -k_1x_1+k_0(x_2-x_1),\qquad \frac{\partial L}{\partial x_2} = -k_1x_2-k_0(x_2-x_1)$$
+# 
+# As both masses are the same we let $m=m_1=m_2$ thus the differential equations are
+# 
+# $$\displaystyle m\ddot x_1+k_1x_1-k_0(x_2-x_1)=0,\qquad m\ddot x_2+k_1x_2+k_0(x_2-x_1)=0$$
+# 
+# Simplifying and letting $\omega_1^2=k_1/m, \omega_0^2=k_0/m$ gives 
+# 
+# 
+# 
+# $$\displaystyle \ddot x_1+(\omega_0^2+\omega_1^2)x_1-\omega_0x^2_2=0,\qquad \ddot x_2-\omega_1^2x_1+(\omega_0^2+\omega_1^2)x_2=0$$
+# 
+# ### **Solve the equations** 
+# 
+# The Characteristic equation to find the eigenvalues $\lambda$ can be set up using the Secular Equation, (see Chapter 7 (Matrices) section 12.6), 
+# 
+# $$\displaystyle |\pmb A-\pmb\lambda \pmb 1|=\pmb 0$$ 
+# 
+# where $\pmb A$  is formed from the matrix of the constants, i.e.
+# 
+# $$\displaystyle \pmb A=\begin{bmatrix}\omega_0^2+\omega_1^2 & -\omega_2^2\\ -\omega_2^2& \omega_0^2+\omega_1^2\end{bmatrix} $$
+# 
+# then
+# 
+# $$\displaystyle  \begin{vmatrix}\omega_0^2+\omega_1^2-\lambda & -\omega_2^2\\ -\omega_2^2& \omega_0^2+\omega_1^2-\lambda \end{vmatrix}=0$$
+# 
+# and the eigenvalues $\lambda$ are the solution to $\displaystyle (\omega_0^2+\omega_1^2-\lambda)^2-\omega_0^4=0$ which are $\lambda=\omega_1^2$ and $\omega_1^2+2\omega_0^2$ and which because $\lambda=-\omega^2$ produce normal mode frequencies $\omega=\omega_1$ and $\omega=\sqrt{\omega_1^2+2\omega_0^2}$ and a cosine variation in displacements, see eqn. 37g, 37i and 37j in the text. 
+# 
+# The eigenvector ratio $a_1/a_2= 1$ or $-1$ which means that the normal modes for the lower frequency are,
+# 
+# $$\displaystyle Q_{m1}^{(1)}= \cos(\omega_1 t),\qquad Q_{m2}^{(1)}= \cos(\omega_1 t)$$
+# 
+# and the second one with the higher mode frequency 
+# 
+# $$\displaystyle Q_{m1}^{(2)}= \cos\left(t\sqrt{\omega_1^2+2\omega_0^2} \right),\qquad Q_{m2}^{(2)}=- \cos\left(t\sqrt{\omega_1^2+2\omega_0^2}  \right)$$
+# 
+# ### **Displacement $x_1,x_2$**
+# 
+# The displacement of mass 1 and mass 2 depend on both frequencies and the starting conditions and will be the sum of cosine terms. The method shown in the main text can be used but so can SymPy as shown next.
+
+# In[10]:
+
+
+# wall-spring-mass-spring-mass-spring-wall. Masses are equal and spring constant k and middle k0
+
+x1,x2,t,omega1,omega0 = sp.symbols('x1,x2,t,omega1,omega0', positive = True, real=True)
+
+x1   = sp.Function('x1')
+x2   = sp.Function('x2')
+
+eqx1 = sp.diff(x1(t),t,t) + (omega1**2 + omega0**2)*x1(t) - omega0**2*x2(t)  # make eqn equal to zero d^2/dt^2 - w_0^2y + 2w_0^2x=0
+eqx2 = sp.diff(x2(t),t,t) -  omega0**2*x1(t) +  (omega1**2+omega0**2)*x2(t) 
+
+init= { x2(0):0, x1(0):1, sp.diff(x1(t),t).subs(t,0):0, sp.diff(x2(t),t).subs(t,0):0 }
+
+sol = sp.dsolve((eqx1,eqx2), ics = init)
+sp.simplify(sol[0]),sp.simplify(sol[1])
+
+
+# The figure below shows the motion of mass 1 vs time and the envelope which has a frequency of half the difference in the normal mode frequencies. The motion shows beats at the difference frequency between $\omega_1$ and $\sqrt{2\omega_0^2+\omega_1^2}$. The period is $2\pi/\Delta \omega$.
+# 
+# 
+# ![Drawing](diffeqn-fig40b.png)
+# 
+# Fig. 42. The displacement vs time of mass 1 with initial condition at $t=0$ $x_1=1,x_2=0,\dot x_1=0,\dot  x_2=0$. The frequencies used are $\omega_1= 7, \omega_0=15$ which makes the higher frequency $ \approx 18$. The envelope's period is $\approx 4.2$.
+
+# In[ ]:
+
+
+
 

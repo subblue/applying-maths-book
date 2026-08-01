@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q27 answer 
@@ -21,8 +21,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x = symbols('x')
-series(exp(-x)*(3*x**2-x**3),x,n=10)
+x = sp.symbols('x')
+sp.series(sp.exp(-x)*(3*x**2-x**3),x,n=10)
 
 
 # The numerical result based on the series expansion produces a poor result up to $x = 20$, most probably due to numerical precision /rounding errors in adding and subtracting large powers of $x$. The answer to smaller $x$ values is more accurate but large numbers of terms are needed as shown in the list below the next figure. 
@@ -32,22 +32,21 @@ series(exp(-x)*(3*x**2-x**3),x,n=10)
 
 # **** The very last part of this calculation may be v slow ****
 # because the integration is first done algebraically.
+# mixture is sympy and numpy python used.
 
-fig = plt.figure(figsize=(6,6))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig1 = plt.figure(figsize=(5,5))
 
-z   = symbols('z')
-sfunc = exp(-z)*(3*z**2 - z**3)           # SymPy function
-func = lambdify(z,sfunc,'numpy')            # make SymPy result into numpy function
+z   = sp.symbols('z')
+sfunc = sp.exp(-z)*(3*z**2 - z**3)             # SymPy function
+func = sp.lambdify(z,sfunc,'numpy')            # make SymPy result into numpy function
 
-s0   = series(sfunc,z,0,n = 30)             # series(function name, variable, start, n= power )
+s0   = sp.series(sfunc,z,0,n = 30)             # series(function name, variable, start, n= power )
 print('{:s} {:s}'.format('First few terms of series', str(s0)[0:29] ) )
-
-smax = 30                                 # repeat for numberical calc, maximum power of z
-s   = series(s0,z,0,n = smax).removeO()  # remove 'big O' from result
-aseries = lambdify(z,s,'numpy')           # make SymPy result into numpy function
-numx = 200                                # maximum numbe rof x values
-maxx = 10.0                               # max x 
+smax = 30                                      # repeat for numberical calc, maximum power of z
+s   = sp.series(s0,z,0,n = smax).removeO()     # remove 'big O' from result
+aseries = sp.lambdify(z,s,'numpy')             # make SymPy result into numpy function
+numx = 200                                     # maximum number of x values
+maxx = 10.0                                    # max x 
 x = np.linspace(0, maxx, numx )
 
 
@@ -59,19 +58,17 @@ plt.xlabel(r'$x$')
 plt.legend()
 plt.show()
 
-a_int = integrate(sfunc,(z, 0.0, maxx) )   # SymPy symbolic integration
+a_int = sp.integrate(sfunc,(z, 0.0, maxx) )   # SymPy symbolic integration
 
 print('{:s} {:f} {:s}{:8.5g}'.format('exact integral 0 to ' ,maxx,' is ', a_int) )
 
 print('calculating series to limit 30 to 45 and integral values')
-ans = []
-for i in range(30,48,2):
-    s = series(sfunc,z,0,n = i).removeO()   # make series to max z**i, i.e. z**35, 36 etc
-    s_int = integrate(s,(z,0.0,maxx ) )   # numerically integrate series from 0 to maxxx
-    ans.append([i,s_int])                     # make list just to print in one go
 
-for i in range(len(ans)):
-    print('{:s}'.format( str(ans[i]) )  )           
+for i in range(30,48,2):
+    s = sp.series(sfunc,z,0,n = i).removeO()   # make series to max z**i, i.e. z**35, 36 etc
+    s_int = sp.integrate(s,(z,0.0,maxx ) )     # numerically integrate series from 0 to maxxx
+    print('{:d}, {:8.5g}'.format(i, s_int)  ) 
+    pass
 
 
 # Figure 26. The area under the curve from zero to 20 is close to zero.
@@ -115,6 +112,9 @@ def fact(n):              # will overflow if n is too large > 100
     else:
         return n * fact(n-1)
 #--------------------
+
+fig2 = plt.figure(figsize=(5,5))
+
 bfact = lambda n: (n - 0.5)*np.log(n) - n
 
 maxn = 100
@@ -181,6 +181,8 @@ print('{:s}{:10.5f}{:s}{:6.3f}{:s}'.format('Z = ',Z,' at ',T, ' K'))
 
 
 # calculation of rotational partition function by three different methods.
+# mixing SymPy and numpy python
+
 B   = 45.655                # value for HD cm^(-1)
 k_B = 1.38e-23 *5.034e22    # cm^(-1)
 maxT= 300.0                 # maximum temperature
@@ -188,39 +190,38 @@ maxT= 300.0                 # maximum temperature
 m = 1
 maxJ = 10                   # max J, see previous calculation
 
-k, x, T = symbols('k, x, T')# start to use sympy for Euler-Maclaurin, define symbols
+k, x, T = sp.symbols('k, x, T')# start to use SymPy for Euler-Maclaurin, define symbols
 
-f =  (2*x+1)*exp(-((B*x)/(k_B*T))*(x+1))   # terms in partition function
-s1 = integrate(f,(x,m,maxJ))              
+f =  (2*x+1)*sp.exp(-((B*x)/(k_B*T))*(x+1))   # terms in partition function
+s1 = sp.integrate(f,(x,m,maxJ))              
 s2 = (f.subs({x:maxJ}) + f.subs({x:m}))/2
 s3 = 0.0
-for i in range(5):                         # form series
+for i in range(5):                             # form series
     k = i + 1
-    s3 = s3 + (bernoulli(2*k)/factorial(2*k))*diff(f,x,2*k-1)  # Euler-Maclaurin terms
+    s3 = s3 + (sp.bernoulli(2*k)/sp.factorial(2*k))*sp.diff(f,x,2*k-1)  # Euler-Maclaurin terms
     pass
 s3n = s3.subs({x:maxJ})
 s3m = s3.subs({x:m})
 
-s = s1 + s2 + s3n - s3m                    # Euler Maclaurin result
+s = s1 + s2 + s3n - s3m                        # Euler Maclaurin result
 
-EM = lambdify(T,s,'numpy')                 # sympy 'trick' to make into a function in T
+EM = sp.lambdify(T,s,'numpy')                  # SymPy 'trick' to make into a function in T
 
 numT = 50
-x = np.linspace(1,maxT,numT)               # numT points is range 1 to maxT
-Zem  = [1.0 + EM(x[i]) for i in range(numT)]  # Euler MAclaurin add 1 for zero temp, see text
+x = np.linspace(1,maxT,numT)                   # numT points is range 1 to maxT
+Zem  = [1.0 + EM(x[i]) for i in range(numT)]   # Euler MAclaurin add 1 for zero temp, see text
 
 Zsum = lambda T: sum( [(2*J+1)*np.exp(-B*J*(J+1)/(k_B*T)) for J in range(maxJ)])  # direct sum
 
-Zint = lambda T: k_B*T/B                   # approx value by integration
+Zint = lambda T: k_B*T/B                       # approx value by integration
 
-fig=plt.figure(figsize=(6,6))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig3 = plt.figure(figsize=(5,5))
 plt.scatter(x,Zsum(x),s=3,label='Summation',color='black')
 plt.plot(x,Zem,label='Euler Maclaurin',color='blue')
 plt.plot(x,Zint(x),label='Integration',color='red')
 plt.ylabel('Z')
 plt.xlabel('T /K')
-plt.title('Rotational partition function \n B = '+str(B)+r' $cm^{-1}$')
+plt.title('Rotational partition function \n B = '+str(B)+r' $cm^{-1}$',fontsize=12)
 plt.ylim([0,5])
 plt.xlim([0,maxT])
 plt.legend()
@@ -230,7 +231,11 @@ plt.show()
 # Fig. 28 Comparison of the partition function for a rigid rotor calculated using the integral, the summation and Euler–Maclaurin equation. The latter two are virtually identical.
 # ____
 # ## Q31 answer
-# (a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is $ E_{m_z} = -\gamma \hbar B_zm_z $ so that this is negative with positive $m_z$. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field ($B_z$ along the $z$ direction), its energy will be lower than if it opposes the field, so $m_z$ must be positive. In some nuclei, for example, $^3H$ and $^{17}O,\, \gamma $ is negative and the order is then inverted.
+# (a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is 
+# 
+# $$\displaystyle  E_{m_z} = -\gamma \hbar B_zm_z $$
+# 
+# so that this is negative with positive $m_z$. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field ($B_z$ along the $z$ direction), its energy will be lower than if it opposes the field, so $m_z$ must be positive. In some nuclei, for example, $^3H$ and $^{17}O,\, \gamma $ is negative and the order is then inverted.
 # 
 # (b) The number of nuclei (particles) in an upper level $\alpha$ is related by the Boltzmann distribution to those in a lower level $\beta$ by
 # 
@@ -249,7 +254,7 @@ plt.show()
 # $$\displaystyle  n_\beta -n_\alpha = \frac{N\gamma \hbar B_z}{2k_BT}$$
 # 
 # ## Q32 answer
-# (a) Hooke’s law states that force is directly proportional to extension; $F = kx$ with force constant $k$. The force is also the derivative of _energy_ with extension.
+# (a) Hooke’s law states that force is directly proportional to extension; $F = kx$ with force constant $k$. The force is also the derivative of *energy* with extension.
 # 
 # (b) Differentiating the energy by $x$ produces the force, 
 # 
@@ -262,14 +267,14 @@ plt.show()
 # 
 # $$\displaystyle \frac{dS}{dx}=\frac{dS}{d\alpha}\frac{d\alpha}{dx}$$
 # 
-# but you can still differentiate directly by substituting first with $x$ if you prefer because $\alpha = x/NL$. As a check,  the differentiation of $dS/d\alpha$ is calculated using sympy
+# but you can still differentiate directly by substituting first with $x$ if you prefer because $\alpha = x/NL$. As a check,  the differentiation of $dS/d\alpha$ is calculated using SymPy
 
 # In[7]:
 
 
-alpha, k_B, N = symbols('alpha, k_B, N')
-f01 = (1 + alpha)*ln( 1 + alpha ) + ( 1 - alpha )*ln( 1 - alpha )
-ans = (k_B*N/2)*diff(f01,alpha)
+alpha, k_B, N = sp.symbols('alpha, k_B, N')
+f01 = (1 + alpha)*sp.ln( 1 + alpha ) + ( 1 - alpha )*sp.ln( 1 - alpha )
+ans = (k_B*N/2)*sp.diff(f01,alpha)
 ans
 
 
@@ -296,15 +301,14 @@ alpha  = np.linspace(0,0.999,100)                                # define set of
 fapprox= [alpha[i] for i in range(100)]                          # Hook's law
 f = [0.5*np.log((1 + alpha[i])/(1 - alpha[i])) for i in range(100)]  # reduced force into array
 
-fig1=plt.figure(figsize=(5,5))
-plt.rcParams.update({'font.size': 14})  # set font size for plots
+fig4=plt.figure(figsize=(5,5))
 plt.plot(alpha,fapprox,color='red',label="approximation, Hook's law")
 plt.plot(alpha,f,color='blue',label='freely jointed chain')
 plt.axis([0,1,0,4])
 plt.xlabel(r'$ \alpha $')
 plt.ylabel(r'$FL/k_BT$')
-plt.title("Freely jointed chain vs Hook's law")
-plt.legend()
+plt.title("Freely jointed chain vs Hook's law",fontsize=12)
+plt.legend(fontsize=12)
 plt.show()
 
 

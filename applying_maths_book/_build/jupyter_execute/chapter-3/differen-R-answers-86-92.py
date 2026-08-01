@@ -10,10 +10,15 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.optimize import fsolve
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+
+# In[2]:
+
+
+from scipy.optimize import fsolve       # for numerical evaluation
 
 
 # ## Q85 answer
@@ -21,11 +26,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega \tau)}{\omega\tau}\to \frac{\cos(\omega \tau)}{\tau} = 1$$
 # 
-# then the hwhm is the solution to $\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}$ which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width $H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)$ and the value of $\omega$  when $H$ is zero found. The derivative needed is $H'(\omega) = \pi/2 - \tau \cos(\omega\tau)$. Using the Newton - Raphson method some experimenting with initial guesses for $\omega$ is necessary to obtain a sensible answer. Using Sympy and defining the function $H$ and then its derivative as $dH$ gives
+# then the hwhm is the solution to $\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}$ which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width $H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)$ and the value of $\omega$  when $H$ is zero found. The derivative needed is $H'(\omega) = \pi/2 - \tau \cos(\omega\tau)$. Using the Newton - Raphson method some experimenting with initial guesses for $\omega$ is necessary to obtain a sensible answer. Using SymPy and defining the function $H$ and then its derivative as $dH$ gives
 
-# In[2]:
+# In[3]:
 
 
+# using  python and numpy to get numerical answer
 f  = lambda w: w*np.sqrt(np.pi/2)-np.sin(w*tau)      # function H;  w = omega
 df = lambda w: np.sqrt(np.pi/2)-tau*np.cos(w*tau)    # derivative
 
@@ -58,7 +64,7 @@ print(w)
 # 
 # and substituting $\lambda$ from the second into the first of these two equations and then simplifying gives,$-(x-2)+(e^{-x}-2)e^{-x}=0$. This equation cannot be solved algebraically; it is transcendental as it cannot be written either in the form $x = cdots$ or as a polynomial, but can be solved numerically using the Newton - Raphson method or using fsolve() in python. The code to get a solution is
 
-# In[3]:
+# In[4]:
 
 
 f  = lambda x: -(x - 2)+(np.exp(-x) -2)*np.exp(-x)   # must be a function to use fsolve
@@ -85,30 +91,30 @@ print(fsolve(f,1))     # 1 is initial guess
 # 
 # Using Newton-Raphson to solve the equation gives $x = 2.309,\, y = 1.446$ The calculation is shown next using SymPy to do the differentiations
 
-# In[4]:
-
-
-x,y,f,g,L = symbols('x, y, f, g, L')  # use L instead of lambda 
-f = sqrt(x**2 + y**2)             # function
-g = y - sqrt( (4-x)**3/x )        # constraint
-dfdg_dx = diff(f,x) + L*diff(g,x)   # eq 37 diff wrt x
-simplify(dfdg_dx) 
-
-
 # In[5]:
 
 
-dfdg_dy = diff(f,y) + L*diff(g,y)   # eq 37 , diff wrt y
-simplify(dfdg_dy)
+x,y,f,g,L = sp.symbols('x, y, f, g, L')  # use L instead of lambda 
+f = sp.sqrt(x**2 + y**2)             # function
+g = y - sp.sqrt( (4-x)**3/x )        # constraint
+dfdg_dx = sp.diff(f,x) + L*sp.diff(g,x)   # eq 37 diff wrt x
+sp.simplify(dfdg_dx) 
 
-
-# hence $\displaystyle \lambda =\frac{y}{\sqrt{x^2+y^2}}$. Next substitute $\lambda $ into the result dfdf_dx and at the same time substitute also for $y=\sqrt{(4-x)^3/x}$ so that an expression in $x$ only  results.
 
 # In[6]:
 
 
-ans = dfdg_dx.subs( L, -y/(sqrt(x**2+y**2)) ).subs( y, sqrt( (4-x)**3/x ) )
-simplify(ans)
+dfdg_dy = sp.diff(f,y) + L*sp.diff(g,y)   # eq 37 , diff wrt y
+sp.simplify(dfdg_dy)
+
+
+# hence $\displaystyle \lambda =\frac{y}{\sqrt{x^2+y^2}}$. Next substitute $\lambda $ into the result dfdf_dx and at the same time substitute also for $y=\sqrt{(4-x)^3/x}$ so that an expression in $x$ only  results.
+
+# In[7]:
+
+
+ans = dfdg_dx.subs( L, -y/(sp.sqrt(x**2+y**2)) ).subs( y, sp.sqrt( (4-x)**3/x ) )
+sp.simplify(ans)
 
 
 # The equation remaining is 
@@ -203,19 +209,19 @@ simplify(ans)
 # 
 # and their derivatives in $x$, $y$ and $z$ are set to zero.
 
-# In[7]:
+# In[8]:
 
 
-x, y, z, f, g, h, M, L =symbols('x, y, z, f, g, h, M, L')
+x, y, z, f, g, h, M, L = sp.symbols('x, y, z, f, g, h, M, L')
 
 f = 4*x + 3*y + 10*z
 g = x + y + z - 1
 h = x**2 + z**2 - 1
 Q = f + L*g + M*h
-diff_x = diff(Q,x)
-diff_y = diff(Q,y)
-diff_z = diff(Q,z)
-ans = solve((diff_x,diff_y,diff_z,g,h), (x,y,z,L,M))
+diff_x = sp.diff(Q,x)
+diff_y = sp.diff(Q,y)
+diff_z = sp.diff(Q,z)
+ans = sp.solve((diff_x, diff_y, diff_z,g,h), (x, y, z, L ,M))
 ans
 
 

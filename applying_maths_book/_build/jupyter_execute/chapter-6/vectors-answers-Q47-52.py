@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -45,21 +45,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # _______
 # 
 # ## Q49 answer
-# If you want to do the calculation by hand,the basis set to use is the orthogonal set $(i, j, k)$. The vectors can be defined as $\vec A = a_1\;\boldsymbol i + a_2\;\boldsymbol j + a_3\;\boldsymbol k$ and a similar equation for $\vec B$ and $\vec C$ with coefficients $b_{1-3},\; c_{1-3}$. Alternatively matrices can be used. In Python/Sympy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined. 
+# If you want to do the calculation by hand,the basis set to use is the orthogonal set $(i, j, k)$. The vectors can be defined as $\vec A = a_1\;\boldsymbol i + a_2\;\boldsymbol j + a_3\;\boldsymbol k$ and a similar equation for $\vec B$ and $\vec C$ with coefficients $b_{1-3},\; c_{1-3}$. Alternatively matrices can be used. In Python/SymPy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined. 
 
 # In[2]:
 
 
-a1, a2, a3, b1, b2, b3, c1, c2, c3 = symbols('a1, a2, a3, b1, b2, b3, c1, c2, c3', real=True)
+a1, a2, a3, b1, b2, b3, c1, c2, c3 = sp.symbols('a1, a2, a3, b1, b2, b3, c1, c2, c3', real=True)
 
-A = Matrix( [a1, a2, a3] )
-B = Matrix( [b1, b2, b3] )
-C = Matrix( [c1, c2, c3] )
+A = sp.Matrix( [a1, a2, a3] )
+B = sp.Matrix( [b1, b2, b3] )
+C = sp.Matrix( [c1, c2, c3] )
 
 f1 = A.cross( B.cross(C) )      # A x( B x C)
 f2 = B*(A.dot(C))               # B(A.C)
 f3 = C*(A.dot(B))               # C(A.B)
-simplify( f1 - f2 + f3 )
+sp.simplify( f1 - f2 + f3 )
 
 
 # ## Q50 answer
@@ -172,9 +172,9 @@ print('{:s}{:8.3f}'.format('distance Fe to plane', d ) )
 
 
 # get equation of plane with Sympy 
-x, y, z = symbols('x, y, z')  # use sympy as xyz are symbols 
-X = Matrix( [x, y, z] )
-X0= Matrix( [NA[0], NA[1], NA[2]] )  # any point in plane 
+x, y, z = sp.symbols('x, y, z')  # use sympy as xyz are symbols 
+X = sp.Matrix( [x, y, z] )
+X0= sp.Matrix( [NA[0], NA[1], NA[2]] )  # any point in plane 
 plane= np.dot(n,X - X0)              # n is defined above
 print(plane)
 
@@ -184,3 +184,9 @@ print(plane)
 # Fe-O distances in inorganic molecules are in the range $1.9 \to 2.1$ and Fe-N $1.95 \to 1.99$ Angstrom.
 # 
 # **Exercise:** Find an X-ray structure of deoxygenated haemoglobin in the PDB, and compare the Fe-O and FeN(His) distances with those calculated in this problem.
+
+# In[ ]:
+
+
+
+

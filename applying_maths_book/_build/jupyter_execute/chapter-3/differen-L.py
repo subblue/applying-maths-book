@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -102,22 +102,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-# (nsolve is part of the sympy library)
+# nsolve is part of the sympy library us as sp.nsolve. You can mix python, numpy and sympy
 a = 10.78    # bar . (dm^3/mol)^2
 b = 0.0998   # dm^3/mol
 R = 0.083145 # dm^3.bar.mol/k;   1 dm^3.bar == 100 joules
 
-p = lambda V,T : R*T/(V-b) - a/V**2      # bar, van der waals equation; V in dm^3/mol
+p = lambda V,T : R*T/(V-b) - a/V**2         # bar, van der waals equation; V in dm^3/mol
 
-integrl = lambda V,T: R*T*ln(V-b) + a/V  # dm^3.bar    integral pdV 
+integrl = lambda V,T: R*T*sp.ln(V-b) + a/V  # dm^3.bar    integral pdV 
 
 print('{:s}'.format( 'Temp  V1        V2  dm^3/mol'))
 
-v1,v2 = symbols('v1 v2')                 # use sympy and nsolve, not fast but ok. define v1 and v2
+v1,v2 = sp.symbols('v1 v2')                 # use sympy and nsolve, not fast but ok. define v1 and v2
 for  T0 in range(360,370,2):             # choose some temperatures          
     eqn1 = integrl(v2,T0)- integrl(v1,T0) - p(v2,T0)*(v2-v1)
     eqn2 = p(v2,T0) - p(v1,T0)
-    ans = nsolve(( eqn1,eqn2 ), (v1,v2), (0.15,0.8), verify=False )  # 0.15 and 0.8 are approx limits.
+    ans = sp.nsolve(( eqn1,eqn2 ), (v1,v2), (0.15,0.8), verify=False )  # 0.15 and 0.8 are approx limits.
     print('{:d}  {:f}  {:f} '.format(T0, float(ans[0]), float(ans[1]) )  )
     pass
 

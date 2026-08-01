@@ -10,10 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q1 answer
@@ -296,15 +295,15 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # 
 # $$\displaystyle \cos(\theta)=\frac{\vec B_1\cdot\vec B_2}{|\vec B_1||\vec B_2|}=\frac{-a^2}{3a^2}$$
 # 
-# as the magnitude of each vector is $a\sqrt{3}$. The angle is therefore $\theta=\cos^{-1}(-1/3)=1.9106$ radian which corresponds to $109.47^\text{o}$. The calculation done symbolically using Python/Sympy is
+# as the magnitude of each vector is $a\sqrt{3}$. The angle is therefore $\theta=\cos^{-1}(-1/3)=1.9106$ radian which corresponds to $109.47^\text{o}$. The calculation done symbolically using Python/SymPy is
 
 # In[4]:
 
 
-a = symbols('a')
+a = sp.symbols('a')
 
-B1 = Matrix([a,-a,-a])
-B2 = Matrix([a,a,a])
+B1 = sp.Matrix([a,-a,-a])
+B2 = sp.Matrix([a,a,a])
 dot_prod = B1.dot(B2)
 dot_prod
 
@@ -312,7 +311,7 @@ dot_prod
 # In[5]:
 
 
-angle = dot_prod/( sqrt(B1.dot(B1))*sqrt( B2.dot(B2) ) )
+angle = dot_prod/( sp.sqrt(B1.dot(B1))*sp.sqrt( B2.dot(B2) ) )
 angle
 
 
@@ -592,7 +591,7 @@ parl_planes(1,1,1,2,2,0)
 # (c) The wavelength to observe a lattice plane $(0\;1\;0)$ at the same crystal angle, is $1/a^*$ which is $1/(2\sqrt{3}) = 0.288$ nm. To observe the planes at $(1\;2\;0)$ the radius of the Ewald sphere has to be $\sqrt{(2a^*)^2 + (2b^*)^2} = 8\;\mathrm{nm^{-1}}$ and therefore an X-ray wavelength of $0.125$ nm is required.
 # 
 # (d) The crystal is rotated about the origin of the reciprocal space. The point $(1\;2\;0)$ has then to intersect the sphere, or circle, in our diagram. From the diagram, the point $(1\;2\;0)$ rotates about the origin with a circle of radius $\sqrt{(2b^*)^2 + a^{*2}}$ because this reciprocal lattice plane is at coordinates $(a^*, 2b^*)$. The calculation now becomes one of calculating the intersection of two circles, the second of radius $1/\lambda$ or $4\;\mathrm{ nm^{-1}}$ but centred at $(\bar 1\;1\;0)$, and then finding the angle moved from the initial position.
-# The equation of a circle of radius $r$ centred at points $p$ and $q$ is $(x - p)^2 + (y - q)^2 = r^2$ therefore the larger circle centred at the origin is $x^2 + y^2 = a^{*2} + 2b^{*2}$ and that centred at $(\bar 1\;1\;0)$ is $(x-a^*)^2 +(y+a^*)^2 =1/\lambda^2$. For simplicity $y$ is the vertical axis, $x$ the horizontal. At the intersection of the circles these two equations are equal. The simplest way to do this is to use Python/Sympy to solve the equations,
+# The equation of a circle of radius $r$ centred at points $p$ and $q$ is $(x - p)^2 + (y - q)^2 = r^2$ therefore the larger circle centred at the origin is $x^2 + y^2 = a^{*2} + 2b^{*2}$ and that centred at $(\bar 1\;1\;0)$ is $(x-a^*)^2 +(y+a^*)^2 =1/\lambda^2$. For simplicity $y$ is the vertical axis, $x$ the horizontal. At the intersection of the circles these two equations are equal. The simplest way to do this is to use Python/SymPy to solve the equations,
 # but to do this by hand substitute $x$ in to the second equation and solve for $y$ then substitute this answer
 # again to find $x$.
 # 
@@ -604,17 +603,17 @@ parl_planes(1,1,1,2,2,0)
 # In[10]:
 
 
-x, y = symbols('x, y')  # use Sympy, define unknowns x, y
+x, y = sp.symbols('x, y')  # use SymPy, define unknowns x, y
 
-a = 2*np.sqrt(3)
+a = 2*sp.sqrt(3)
 b = 2
 lamb = 0.25
 c1 = x**2 + y**2 - a**2 - (2*b)**2
 c2 = (x+a)**2 + (y-b)**2 - 1/lamb**2
 
-ans = solve([c1,c2],(x,y))
+ans = sp.solve([c1,c2],(x,y))
 
-print('{:s}{:6.3f} {:6.3f}{:s}{:6.3f} {:6.3f}'.format('x,y= ', ans[0][0], ans[0][1],' x,y= ', ans[1][0],ans[1][1] ))
+print('{:s}{:6.3f} {:6.3f}{:s}{:6.3f} {:6.3f}'.format('x, y= ', ans[0][0], ans[0][1],' x, y= ', ans[1][0],ans[1][1] ))
 
 
 # The initial point $(1\;2\;0)$  has coordinates $(a^*, 2b^*)$ and the angle between this and the points of intersection are found using a dot product. The vector to $(\bar 1\;1\;0)$ is $\bar v_1 =\begin{bmatrix}2\sqrt{3} &4\end{bmatrix}$ and to the upper intersection $\vec v_2 = \begin{bmatrix}-1.04678& 5.1869\end{bmatrix}$. The smaller angle to the diffraction position is $52.3^\text{o}$, as calculated
@@ -622,11 +621,17 @@ print('{:s}{:6.3f} {:6.3f}{:s}{:6.3f} {:6.3f}'.format('x,y= ', ans[0][0], ans[0]
 # In[11]:
 
 
-v1  = np.array([a,2*b])
-v2  = np.array([-1.047,5.186])
-dotp= np.dot(v1,v2)/(np.sqrt(np.dot(v1,v1))*np.sqrt(np.dot(v2,v2)) ) 
-theta=np.arccos(dotp)
+v1   = np.array([a,2.0*b])
+v2   = np.array([-1.047,5.186])
+dotp = v1.dot(v2)/(sp.sqrt(v1.dot(v1))*sp.sqrt(v2.dot(v2)) ) 
+theta= sp.acos(dotp)
 print('{:s}{:8.2f}{:s}'.format('angle = ', theta*180/np.pi,' degrees'))
 
 
 # The crystal has to be rotated anticlockwise by $52.3^\text{o}$ to cause diffraction from the $(1\;2\;0)$ plane; the crystal could also be turned by $108.6^\text{o}$. The $(0\;1\;0)$ plane has coordinates $(0, b^*)$ and has to be rotated clockwise by a small angle to reach the Ewald sphere. The equation of its circle is $x^2 + y^2 = b^{*2}$ and the intersection points, calculated in the same way as for point $(1\;2\;0)$, gives a clockwise rotation angle of $15.5^\text{o}$ or anticlockwise of $135.5^\text{o}$.
+
+# In[ ]:
+
+
+
+

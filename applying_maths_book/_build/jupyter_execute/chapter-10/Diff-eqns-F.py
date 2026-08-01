@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+from scipy.integrate import quad
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -57,17 +57,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x, a, t = symbols('x, a, t')
-f  = sin(exp(x + a*t)) + exp(sin(x - a*t))       # an arbitrary function in x+at, x-at
-ans= diff(f,t,t) - a**2*diff(f,x,x)
+x, a, t = sp.symbols('x, a, t')
+f  = sp.sin(sp.exp(x + a*t)) + sp.exp(sp.sin(x - a*t))       # an arbitrary function in x+at, x-at
+ans= sp.diff(f,t,t) - a**2*sp.diff(f,x,x)
 ans
 
 
 # In[3]:
 
 
-f = (x+a*t)**3 + 1/(x-a*t)**2  + (x-a*t)*sin(x-a*t) # another  arbitrary function in x+at, x-at
-ans = simplify(diff(f,t,t) - a**2*diff(f,x,x)) 
+f = (x+a*t)**3 + 1/(x-a*t)**2  + (x-a*t)*sp.sin(x-a*t) # another  arbitrary function in x+at, x-at
+ans = sp.simplify(sp.diff(f,t,t) - a**2*sp.diff(f,x,x)) 
 ans
 
 
@@ -129,15 +129,25 @@ ans
 # _____
 # 
 # ## 15.4 Particle in a  circular well
+
+# In a remarkable experiment using Scanning Tunnelling Microscopy (STM), Crommie, Lutz and Eigler (Science, 1993, v262, 218) measured the electron density inside a corral of $48$ Fe atoms on a copper(111) surface. Each Fe atom is separated by $\approx 0.9$ nm from its nearest neighbour. The corral was made by manipulating single Fe atoms into a ring, the signal observed comes from the surface Cu electrons inside the ring of the Fe atoms. Figure 21 shows a result. The rings inside the outer ring of Fe atoms show how the electron density of the surface Cu atoms changes with radial distance. Notice that there is a large intensity at the centre and three or four rings of lower but fairly similar intensity inside the ring. The simplest model to describe this experiment is that of a deep circular well. This is described next.
 # 
-# The pattern of nodes of the radial part of a wavefunction of a particle in a deep circular well is described by a Bessel function. The properties of these functions are well established and look like damped sine and cosine waves. The pattern of vibrations on a circular drum head is similar.
+# ![Drawing](diffeqn-fig21b.png)
 # 
-# There are two boundary conditions. One ensures that the angular solutions repeat themselves around the circumference and the gradients match at the same point, just as for a particle on a ring. The other ensures that the radial part of the wavefunction is zero at the edge of the disc, just as is the case for a particle in a box at its edges.
-# The wave equation starts out as (41) but for a disc has to be written in plane polar coordinates to be solvable and is
+# Fig 21. Quantum corral, showing the $48$ Fe atoms and the electron density (eigenstates) as rings inside the corral. The radius of the ring in $7.13$ nm.  (Image by Don Eigler, IBM Almaden Research Center via STEM Education Network (NISE Network,www.nisenet.org ))
+# __________________________
+# 
+# To model the corral the Schroedinger equation has to be solved in two dimensions and, mathematically, it is most convenient to use plane polar coordinates (radius $r$, and angle $\theta$) rather than Cartesian $x,y$. As always with a differential equation there are boundary conditions to consider and these are determined by the nature of the physical system. In this case there are two conditions. One ensures that the angular solutions to the wavefunctions repeat themselves around the circumference and the gradients match at the same point, just as for a particle on a ring. The other ensures that the radial part of the wavefunction is zero at the edge of the ring, hence the edge forms a hard wall, just as is the case for a particle in a box. As there are two boundary conditions there will be two quantum numbers, one for the radial and one for the angular parts of the wavefunction.
+# 
+# The wave equation starts out as eqn. 41 for a square box but to make a disc it has to be written in plane polar coordinates to be solvable and so,
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+V(r)\psi=E\psi  \qquad\tag{45} $$
 # 
-# and the potential energy $V$ is zero and $\psi $ is a function of $r$ and $\theta$. The disc has a radius of $a$. (See Section 5.9 for the conversion equations to polar coordinates.) With the abbreviation $k^2 = 2mE/\hbar^2$ (units of $k$ are m$^{-1}$) the equation can be rewritten as
+# and the potential energy $V$ is zero and $\psi $ is a function of $r$ and $\theta$. The disc has a radius of $a$. (See Section 5.9 for the conversion equations to polar coordinates.) With the abbreviation 
+# 
+# $$\displaystyle k^2 = \frac{2m}{\hbar^2}E$$
+# 
+# (units of $k$ are m$^{-1}$) the equation can be rewritten as,
 # 
 # $$\displaystyle \left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+k^2\psi = 0  \qquad\tag{46}$$
 # 
@@ -145,7 +155,7 @@ ans
 # 
 # $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2}+\frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2} +r^2\psi=0  \qquad\tag{46}$$
 # 
-# and each term must be equal to a constant and is therefore independent of $r$ and $\theta$. The right-hand side of this equation is zero hence if we choose the separation constant to be $n^2$ this is $-n^2$ for one equation and $+n^2$ for the other. 
+# and each term must be equal to a constant and is therefore independent of $r$ and $\theta$. The right-hand side of this equation is zero hence if we choose the separation constant to be $q^2$ we use $-q^2$ for one equation and $+q^2$ for the other. 
 # 
 # ### **Angular solution**
 # 
@@ -153,70 +163,76 @@ ans
 # 
 # $$\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const$$
 # 
-# and using the separation constant $-n^2$ this can be written as
+# and using the separation constant $-q^2$ this can be written as
 # 
-# $$\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \qquad\tag{47}$$
+# $$\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+q^2\varphi = 0  \qquad\tag{47}$$
 # 
 # and its solution is given by equation (27) and is 
 # 
-# $$\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}e^{\large{in\theta}}$$ 
+# $$\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}e^{\large{ iq\theta}},\qquad q=0,\pm 1,\pm 2,\cdots$$ 
+# 
+# where $i=\sqrt{-1}$. The angular boundary condition makes the wavefunction $\varphi$ repeat itself ($\varphi(\theta)= \varphi(\theta+2\pi q)$) after each $2\pi q$ radians where $q = 0,\pm 1,\pm 2,\pm 3\cdots$ which is the quantum number for the angular momentum thus all levels are doubly degenerate except for $q=0$. As the well is circular the probability of being at any angle $\theta$ is the same, $\varphi^*\varphi=1/2\pi$
 # 
 # ### **Radial solution**
 # 
-# The angular boundary conditions make the wavefunction $\varphi$ repeat itself after each $2\pi $n radians where $n$ has values $n = 0,  \pm 1, \pm 2, \cdots$.
+# The radial equation is
 # 
-# The radial equation 
+# $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial R}{\partial r} +r^2k^2=q^2  \qquad\tag{48}$$
 # 
-# $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2} +r^2k^2=n^2  \qquad\tag{48}$$
+# and is difficult to solve but with the substitution, $x = kr$, it has the form of Bessel's equation,
 # 
-# is more difficult to solve but, with the substitution $x = kr$, has the form of Bessel's equation,
+# $$\displaystyle  x^2\frac{d^2R}{dx^2}+x\frac{dR}{dx}+(x^2-q^2)R=0$$
 # 
-# $$\displaystyle  x^2\frac{d^2R}{dx^2}+x\frac{dR}{dx}+(x^2-n^2)R=0$$
-# 
-# which has the solution $J_n(x)$ where $J$ is Bessel's function of the first kind of order $n$. All Bessel's functions are described by an infinite series in $x$ just as sine and cosine are. See Margenau & Murphy (1943), Abramowicz & Stegun (1965), or Arkfen (1970), for the series. 
+# which has the known solution $J_q(x)$ where $J$ is Bessel's function of the first kind of order $q$. All Bessel's functions are described by an infinite series in $x$ just as sine and cosine are. See Margenau & Murphy (1943), Abramowicz & Stegun (1965), or Arkfen (1970), for the function as a series. 
 # 
 # The solution is 
 # 
-# $$\displaystyle R(r) = C_0\text{BesselJ}(n,r)+C_1\text{BesselY}(n,r) $$
+# $$\displaystyle R_q(r) = C_0\text{BesselJ}(q,r)+C_1\text{BesselY}(q,r) $$
 # 
-# and the constants will be determined by the boundary conditions. 
+# and the constants will be determined by the boundary condition. The radial boundary condition is that the wavefunction is zero at the edge of the disc, which means that the Bessel function has to be zero here. Additionally the wavefunction has to be normalized. This latter requirement means that the second constant $C_1$ has to be zero because the second Bessel function BesselY is $-\infty$ at $r = 0$ and a wavefunction based on this function could not be normalised. We can arbitrarily set $C_0$ to $N$, which we will assume normalizes the wavefunction, and the radial solution is therefore
 # 
-# The radial boundary condition is that the wavefunction is zero at the edge of the disc, which means that the Bessel function has to be zero here. Additionally the wavefunction has to be normalized. This latter requirement means that the second constant $C_1$ has to be zero because the second Bessel function BesselY is $-\infty$ at $r = 0$ and a wavefunction based on this function could not be normalised. We can arbitrarily set $C_0$ to $N$, which we will assume normalizes the wavefunction, and the radial solution is therefore
+# $$\displaystyle R_q(r) = NJ_q(kr)$$
 # 
-# $$\displaystyle R(r)=NJ_n(kr)$$
+# with the notation change $J_q(\cdot)\to BesselJ(q,\cdot)$. The radial boundary condition means that $J_q(ka) = 0$ for a disc of radius $a$. The Bessel function is repeatedly zero, as are sine and cosine, which it resembles, and we define $\rho_{q,n}$ as the value where the $q^{th}$ Bessel function $J_q(kr)$ crosses zero for the $n^{th}$ time, see fig 21a, and do this because to satisfy the boundary condition at every allowable energy the wavefunction has to be zero at the perimeter thus we scale the radial value. This means that when $r=a$ different values of $k$ are needed and thus the energy is different since $E\sim k$. The wavefunction is
 # 
-# with the change $J\to BesselJ$. The radial boundary condition means that $J_n(ka) = 0$ for a disc of radius $a$. The Bessel function is repeatedly zero, as are sine and cosine, which it resembles, and $\rho_{n,l} = k_{n,l}a$ is the number where the $n^{th}$ Bessel function $J_n(k_{nl}r)$ crosses zero for the $l^{th}$ time. The wavefunction is
+# $$\displaystyle  R_{q,n}(r) = NJ_q\left(\rho_{q,n}\frac{r}{a} \right) $$
 # 
-# $$\displaystyle  R(r)=NJ_n\left(\rho_{n,l}\frac{r}{a} \right) $$
+# The values of $\rho_{qn}$ can be calculated using a SciPy 'special' function via. '$\mathtt{import\; scipy.special \; as\;sp}$' and then '$\mathtt{sp.jn( q, x )}$' and the zeros as '$\text{sp.jn_zeros( q, num_0 )}$', where $num_0$ is the number of these zeros calculated at each $q$, see fig 21a. 
 # 
-# The values of $\rho_{nl}$ can be calculated using SciPy 'special' functions via. $\mathtt{import\; scipy.special \; as\;sp}$ and then $\mathtt{sp.jn( n, x )}$ and the zeros as $\text{sp.jn_zeros( n, num_0 )}$. 
-# 
-# The shape of the wavefunction at a fixed angle $\theta$ has the profile of the Bessel function with the radius set at each of the zero crossings, the lowest energy is found at the first crossing, $\rho_{0,1}$ the next at crossing $\rho_{1,1}$ and so on with increasing $r$, see Fig. 21. The wavefunction for the lowest state ($k = 0,\, l = 1$) does not have a node before reaching the perimeter, the second ($k = 1,\, l = 1$) has one node as so on, just as for the particle in a box. 
+# The shape of the radial wavefunction at a fixed angle $\theta$ has the profile of the Bessel function with the radius set at each of the zero crossings, the lowest energy is found at the first crossing, $\rho_{0,1}$ the next at crossing $\rho_{1,1}$ and so on with increasing $kr$, see Fig. 21a. The wavefunction for the lowest state ($q = 0,\, n = 1$) does not have a node before reaching the perimeter, the second ($q = 0,\, n = 2$) has one node and so on, just as for the particle in a box. 
 # 
 # Using the definition of $k^2$ the energy is 
 # 
-# $$\displaystyle E_{n,l}=\frac{\hbar^2}{2m}\left( \frac{\rho_{n,l}}{a} \right)^2$$
+# $$\displaystyle E_{q,n}=\frac{\hbar^2}{2m}\left( \frac{\rho_{q,n}}{a} \right)^2$$
 # 
-# and the energy of the first few energy levels follows that of the value of $\rho_{n,l}$. Notice how this pattern of levels is similar, but not identical, to that of a particle in a box. The energy levels are ordered with the quantum numbers, $n$ and $l$, but in this case act through the value $\rho$, and this is different to that of the square well or box where the quantum numbers are included directly in the energy.
+# and the energy of the levels follows that of the value of $\rho_{q,n}$. Notice how this pattern of levels is similar, for each $q$, to that of a particle on a ring. The energy levels are ordered with the quantum numbers, $q$ and $n$, but in this case act through the value $\rho$, and this is different to that of the square well or on a ring where the quantum numbers are included directly in the energy.
 # 
 # ![Drawing](diffeqn-fig21.png)
 # 
-# Fig 21. Left. Bessel's $J$ functions plotted with $x=kr$. Two of the zeros $\rho_{0,1}$ and $ \rho_{3,1}$ are marked with black dots. Right. The first few energy levels of a particle on a disc are shown for a disc of $1$ nm radius with mass that of the electron. The quantum numbers $n$, and $l$ are shown also.
-# ____
-# Some of the zero values of $\rho$ are given in the table. This list also shows the ordering of the energy levels.
+# Fig 21a. Left. Bessel's $J$ functions plotted with $x=kr$. The zeros $\rho_{0,1},\rho_{0,3}$ and $ \rho_{3,1}$ are marked with black dots. Right. The first few energy levels of a particle on a disc are shown for a disc of $5$ nm radius with the mass of the electron. The quantum numbers $q$, and $n$ are shown. $n=1$ is the lowest level for each $q$. All the energy levels are shown together on the far right.
+# ______________
+# 
+# Some of the zero values of $\rho$ are given in the table. This list also shows the ordering of the lowest few energy levels.
 # 
 # $$\displaystyle \begin{array}{c|cc}
 # \hline
-# n & 0 & 1 & 2 & 0 & 3& 1\\
-# l & 1 & 1 & 1 & 2 & 1 & 2\\
-# \rho_{n,l} & 2.40 & 3.83 & 5.13 & 5.52 & 6.38 & 7.01\\
+# q & 0 & 1 & 2 & 0 & 3 & 1 & 4\\
+# n & 1 & 1 & 1 & 2 & 1 & 2 & 1\\
+# \rho_{q,n} & 2.40 & 3.83 & 5.13 & 5.52 & 6.38 & 7.01 & 7.59\\
 # \hline\end{array}$$
 # 
 # The total wavefunction is
 # 
-# $$\displaystyle \psi_{n,l}=\frac{N}{\sqrt{2\pi}} J_n\left( \frac{\rho_{n,l} r}{a} \right) e^{ni\theta}$$
+# $$\displaystyle \psi_{q,n}=\frac{N}{\sqrt{2\pi}} J_q\left( \frac{\rho_{q,n} r}{a} \right) e^{iq\theta},\qquad q=0,\pm 1,\pm2,\cdots, n=1,2,\cdots$$
 # 
-# and as $n$ can take values $0, \pm 1, \pm$ 2, etc. and all levels except the first are doubly degenerate. We can think of this, if you wish, as the particle moving in a clockwise or anti-clockwise manner although such everyday notions are always problematic when quantum effects are concerned and so should not be taken too literally. The quantum number $l$ has positive integer values $\gt$ 0.
+# and as $q$ can take values $0, \pm 1, \pm$ 2, etc. all levels except the first are doubly degenerate. You can think of this, if you wish, as the particle moving in a clockwise or anti-clockwise manner although such everyday notions are always problematic when quantum effects are concerned and so should not be taken too literally. The quantum number $n$ has positive integer values $\gt$ 0.
+# 
+# Now that the nature of the wavefunctions is known we can look again at the experimental data and see if we can explain it. First notice that the only Bessel function with amplitude at the origin is $J_0$ so one of these must be present as there is a large central peak in the data. Additionally an examination of the features in fig 21 shows that the amplitudes do not decrease uniformly with increasing radius indicating that the data is from a combination of Bessel functions and hence quantum numbers. This means that to fit the data some form of least-squares fitting is needed using various $q$ and $n$ values to simulate the data so as to minimise the error between the calculated and the true data. However, there is another consideration. Normally in quantum mechanics we add the wavefunctions $\psi_i$ and $\psi_j$ as a superposition and then square to calculate the probability, $( \psi_i^* + \psi_j^*+\cdots)( \psi_i + \psi_j+\cdots )$, but in this case the fact that the STP tip is present as part of the measurement it is thought to destroy any superposition and so what is measured is proportional to $(\psi_i^*\psi_i+\psi_j^*\psi_j+ \cdots )$. Data calculated with the latter function is shown in figure 21b and levels $q,n =(0,5),(2,4),(7,2)$ are shown as determined by Crommie et al., (Science, 1993, v 262, 218). The experiments were done at the very low temperature of $4$ K (and in a high vacuum), so why is more than one energy level and hence wavefunction involved as there is not enough energy for thermal excitation of any higher level than the lowest. The reason that these levels are populated is that they are closest to the Fermi level in the Cu and so are populated in this way.
+# 
+# ![Drawing](diffeqn-fig21c.png)
+# 
+# Figure 21b. Crude simulation of electron  density in a quantum corral using a sum of Bessel wavefunctions. The red line shows the profile of the calculated electron density for the sum of levels $q,n =(0,5),(2,4),(7,2)$.
+# ______________________________
 # 
 # ### **Drums**
 # 
@@ -226,9 +242,9 @@ ans
 # 
 # where $c^2 = \sqrt{T/\sigma}$ and $\omega$ is the normal mode's vibrational frequency in rad $s^{-1}$. If the drum skin were cut, a tension of $T$ newton per metre would be needed to keep it closed. The density of the drum skin $\rho$ (units of kg m$^{-2}$) gives $c$ units of velocity. The normal mode frequencies are 
 # 
-# $$\displaystyle \omega_{n,l} = \frac{\rho_{n,l}c}{a}$$
+# $$\displaystyle \omega_{q,l} = \frac{\rho_{q,l}c}{a}$$
 # 
-# and because the overtones are never an integer multiple of the fundamental, because of the values $\rho$ takes (see table), a drum makes a noise rather than a pure sound.
+# and because the overtones are never an integer multiple of the fundamental, because of the values $\rho$ takes (see table of $\rho$ above), a drum makes a noise rather than a pure sound.
 
 # ## 15.5 Steady State temperature profile in two dimensions
 # 
@@ -240,7 +256,7 @@ ans
 # 
 # $$\displaystyle \nabla^2 V = 0$$
 # 
-# with the symbol $\nabla $, which is nabla, is often called 'del' squared. 
+# with the symbol $\nabla $, which is nabla, is often called 'del' and so $\nabla^2$ is del squared. 
 # 
 # In two dimensions,$\displaystyle \frac{\partial^2 V}{\partial x^2}+\frac{\partial^2 V}{\partial y^2}=0$ and the solution can be obtained in a similar manner to the last example. Separating variables produces
 # 
@@ -315,8 +331,9 @@ ans
 
 # this is the basic code to reproduce fig 23. Use quad() to numberically integrate
 
+fig1 = plt.figure(figsize=(6, 3))
 s = lambda y ,n : f(y)*np.sin(n*np.pi*y/L)
-b = lambda n,y : 2*quad(s, 0, L, args = n)[0]  # use [0] to answer return only
+b = lambda n,y : 2*quad(s, 0, L, args = n)[0]     # use [0] to return first element only
 V = lambda x, y,nmax : sum( [b(n,y)*np.exp(-n*np.pi*x/L)*np.sin(n*np.pi*y/L) for n in range(1,nmax)] )
 L = 3
 f = lambda y:  10.0
@@ -381,13 +398,13 @@ plt.show()
 
 # ## 15.7 Diffusion and chemical reactions. Example of the growth of Algal Blooms
 # 
-# Diffusion and reaction can sometimes compete because a reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term $\pm kt$ is thus added to the diffusion equation to allow for growth ($+kt$) or decay ($-kt$) of species.  Growth is examined first and decay in the next section 15.8.
+# Diffusion and reaction can sometimes compete because a reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term $\pm kc$ is thus added to the diffusion equation to allow for growth ($+kc$) or decay ($-kc$) of species.  Growth is examined first and decay in the next section 15.8.
 # 
-# When diffusion and reaction compete it is possible that explosive growth of a product occurs, and for this to happen it is assumed that enough material is always present. Starting with Fick's First Law the growth term $+kt$ is added to allow for first order reaction forming product and is
+# When diffusion and reaction compete it is possible that explosive growth of a product occurs, and for this to happen it is assumed that enough material is always present. Starting with Fick's First Law the growth term $+kc$ is added to allow for first order reaction forming product and is
 # 
 # $$\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \qquad\tag{56a}$$
 # 
-# where $k$ is the first order rate constant for production of species $c$ which itself is a function of position $x$ and time $t$, i.e. $c(x,t)$. We will assume that the calculation takes place along a length $ 0\le x \le L$ and that the length is so long that the concentration of product $c$ is zero at either end at all times, $c(0,t)=c{L,t}=0$.
+# where $k$ is the first order rate constant for production of species $c$ which itself is a function of position $x$ and time $t$, i.e. $c(x,t)$. We will assume that the calculation takes place along a length $ 0\le x \le L$ and that the length is so long that the concentration of product $c$ is zero at either end at all times, $c(0,t)=c(L,t)=0$.
 # 
 # This differential equation look awkward to solve but if a new variable is defined as 
 # 
@@ -446,7 +463,7 @@ plt.show()
 
 # ## 15.9 Flow and chemical reaction. Lateral flow tests
 # 
-# In a lateral flow test used to detect, for example, Covid 19 viruses, the analyte containing the virus is solubilsed in a buffer along with other reagents and a few drops added to a sample pad in the test device, see figure 24b. By capillary action, similar to that which occurs in thin layer chromatography, the fluid containing the analyte passes through to a second region containing antibodies (immunoglobulins) attached to silver or gold nanoparticles. The fluid then passes into a ribbon of nitrocellulose impregnated with reporter antibodies in two specific places, the first to trap any analyte containing species and the second as a test region to confirm that flow has occurred. Finally this ribbon is attached to a wick that ensures that flow continues until no more fluid is left.
+# In a lateral flow test used to detect, for example, Covid 19 viruses, the analyte containing the virus is solubilsed in a buffer along with other reagents and a few drops added to a sample pad in the test device, see figure 24c. By capillary action, similar to that which occurs in thin layer chromatography, the fluid containing the analyte passes through to a second region containing antibodies (immunoglobulins) attached to silver or gold nanoparticles. The fluid then passes into a ribbon of nitrocellulose impregnated with reporter antibodies in two specific places, the first to trap any analyte containing species and the second as a test region to confirm that flow has occurred. Finally this ribbon is attached to a wick that ensures that flow continues until no more fluid is left.
 # 
 # The purpose of the nanoparticles is only to allow visual identification of the result because they are highly coloured by virtue of *surface plasmon resonance*. These antibody - nanoparticle conjugates are coated in sucrose or other sugars to protect them during storage but which dissolves in the buffer fluid. This now enables the analyte (e.g. virus), A, to bind the antibody-nanoparticle Ab in the equilibrium, 
 # 
@@ -469,7 +486,9 @@ plt.show()
 # 
 # When in the test volume the nanoparticle complex must diffuse to the edge of a pore in the nitrocellulose. These   typically have a radius of $\sim 5$ microns and the reporter antibody X is bound to the surface of the pores. In three dimensions the mean distance diffused is $\sqrt{6Dt}$ where the diffusion constant$^1$ which for a nanoparticle is typically $10^{-11}$ m$^2$/s thus to diffuse $5\cdot 10^{-6}$ m will take $\approx 0.4$ seconds. This gives a time scale for reaction.
 # 
+# ________________
 # $^1$ The nanoparticles used typically have radii of $10$ to $100$ nm. The Stokes - Einstein equation gives the diffusion coefficient as $D=k_BT/6\pi\eta R$ for a radius $R$ and viscosity $\eta= 10^{-3}$ Pa s or $1$ cP (for an aqueous solution). The diffusion constant is therefore $D = 10^{-11}\to 10^{-12}$ m$^2$/s.
+# _______________
 # 
 # Binding of the analyte will be almost total if there is a large equilibrium constant, which there is in these reactions, and is typically many tens of thousands. However, even with an excess of X it takes time to establish equilibrium. The forward (binding) rate constant $k$ is important because the species are flowing through the reactive region. (The reverse rate constant can be ignored when the equilibrium constant is large). The (bimolecular) limit to the half-life forming the complex Ab$\cdot$A$\cdot$X is $\ln(2)/kX$, assuming that X is in excess and so pseudo-first order, where typically $k = 10^5\,\mathrm{dm^3\,mol^{-1}\, s^{-1}}$ and $X= 10^{-6}\;\mathrm{dm^3\,mol^{-1}}$. With these values $t_{1/2}\approx 10$ s. This is short enough that much of the analyte will be detected because it takes $4$ seconds or so to flow across the reactive region. Of course this assumes that the amount of X is in sufficient excess compared to Ab$\cdot$A. As the half-life is a product of terms an increase either in concentration of X or rate constant $k$ will greatly reduce the half-life and increase detection, and *vice versa*. In other words the success of such a device depends crucially on timing, rate constants and concentrations. The similar argument can be made for the first reaction forming Ab$\cdot$A, although in that case there is extra time because the conjugate mixing region although it has a larger volume the material used has faster flow rates than in the nitrocellulose, thus forming a bottleneck at the junction of the two, which gives more time for reaction.
 # 
@@ -520,7 +539,7 @@ plt.show()
 # 
 # If the ends of a long tube are filled with solvent, then closed and some solute injected, diffusion will ensure that equilibrium will eventually be reached no matter where the solute is injected. Similarly, if the end of an otherwise insulated bar is heated for a short while, as heat cannot escape, a uniform temperature will be reached. From these results, we know that, because the initial concentration or temperature profile levels out to a constant value, the solution must have both a time-dependent and a constant part. At long times the temperature or concentration will become uniform and, if $f(x)$ describes the amount initially added and $0 \lt x \lt L$, the long time value is $\displaystyle \frac{1}{L}\int_0^L f(x)dx$. The initial condition is given by the shape of the concentration profile $f(x)$.
 # 
-# If $c(x,t)$ is the concentration at position $x$ and time $t$, then, because no heat or material leaves, the concentration gradients at the ends of the tube are zero at all times, or
+# If $c(x,t)$ is the concentration at position $x$ and time $t$, then, because no heat or material leaves, the *concentration gradients* at the ends of the tube are zero at all times, or
 # 
 # $$\displaystyle \frac{dc(0,t)}{dx}=\frac{dc(L,t)}{dx} = 0, \qquad t \gt 0$$
 # 
@@ -532,13 +551,27 @@ plt.show()
 # 
 # $$\displaystyle \frac{\partial c_t}{\partial t} = -Dk^2c_t\quad\text{and}\quad\displaystyle \frac{\partial^2 c_x}{\partial x^2} = -k^2c_x$$
 # 
-# The solution is, as before, $c = c_tc_x$.
+# The solution is, as before, the product of the spatial and temporal parts, or  
 # 
-# The time-dependent equation integrates to $\displaystyle c = e^{−Dk^2t}$, but the spatial part needs special attention to incorporate the boundary conditions. The separation parameter $k$ can have values of zero, or it can be positive or positive and imaginary, i.e. $ik$. In this case if we use $−(ik)^2 \to k^2$ and integrating produces the exponential solution $\displaystyle c_x = ae^{kx} + be^{−kx}$, however the boundary conditions are then only met when $a = b = 0$ which is not a useful result.
+# $$\displaystyle c = c_tc_x$$
+# 
+# The time-dependent equation integrates to 
+# 
+# $$\displaystyle c_t = e^{−Dk^2t}$$
+# 
+# but the spatial part needs special attention to incorporate the boundary conditions. The separation parameter $k$ can have values of zero, or it can be positive or positive and imaginary, i.e. $ik$. In this case if we use $−(ik)^2 \to k^2$ and integrating produces the exponential solution 
+# 
+# $$\displaystyle c_x = ae^{kx} + be^{−kx}$$
+# 
+# however the boundary conditions are then only met when $a = b = 0$ which is not a useful result.
 # 
 # When $k$ = 0 the equation to integrate is $\displaystyle \frac{\partial ^2c_x}{\partial x^2}=0$ and the solution is $c_x=ax+b$ and the final solution $c_tc_x = ax + b$, because $k$ = 0 and the exponential term is unity. The boundary conditions are only met when $a$ = 0 but $b$ is undefined so this solution cannot be complete. 
 # 
-# Finally, when $k$ is positive the solutions are $c_x = a\sin(kx) + b\cos(kx)$. The gradient boundary condition ensures that the solution contains only the cosine term because the derivative, $kb\sin(kx)$, is zero at $x$ = 0 and at $L$ provided that $k = n\pi/L$ where $n$ is an integer. To make the next equations clearer $k$ is used as if it were an integer and its value only substituted in at the end. The solution is thus
+# Finally, when $k$ is positive the solutions are 
+# 
+# $$\displaystyle c_x = a\sin(kx) + b\cos(kx)$$
+# 
+# The gradient boundary condition ensures that the solution contains only the cosine term because the derivative, $kb\sin(kx)$, is zero at $x$ = 0 and at $L$ provided that $k = n\pi/L$ where $n$ is an integer. To make the next equations clearer $k$ is used as if it were an integer and its value only substituted in at the end. The solution is thus
 # 
 # $$\displaystyle c_k=e^{-k^2Dt}\cos(kx), \qquad k=0,\;1,\;2\; \cdots$$
 # 
@@ -550,7 +583,7 @@ plt.show()
 # 
 # $$\displaystyle c=\frac{b_0}{2}+\sum_{n=1}^\infty b_ne^{-(n\pi /L)^2Dt}\cos\left(\frac{n\pi x}{L}\right)$$
 # 
-# The first term $b_0/2$ is divided by 2 to make it equal to the average concentration at long times viz, $\displaystyle  \frac{1}{L}\int_0^L f(x) dx$, because by its defining equation $b_0$ is otherwise 2 times too large. The results show how the initial profile eventually reaches a constant, time-independent value, the total amount of material or heat being conserved.
+# In the first term $b_0$ is divided by 2 to make it equal to the average concentration at long times viz, $\displaystyle  \frac{1}{L}\int_0^L f(x) dx$, because by its defining equation $b_0$ is otherwise 2 times too large. The results show how the initial profile eventually reaches a constant, time-independent value, the total amount of material or heat being conserved.
 # 
 # ![Drawing](diffeqn-fig25a.png)
 # 
@@ -596,6 +629,12 @@ plt.show()
 # ![Drawing](diffeqn-fig26a.png)
 # 
 # Fig 26a. Diffusion on a ring. The initial concentration profile is $\displaystyle f(x)=e^{-20(x-\pi /4)^2}$ and the diffusion coefficient $D$ = 1. The left-hand figure shows how the concentration profile changes at the times given, on the right the figure shows the time profile at the given angles.
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -67,7 +66,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # therefore, the strength of the transition is determined by the size of the magnetogyric ratio. As with any type of 'optical' transition, the strength of the transition also depends upon the population difference between the two states involved and this is determined by the Boltzmann distribution. The greater the population difference is the greater the signal is, therefore, a lower temperature and/or a bigger energy gap, which is proportional to the magnetogyric ratio and the applied field, produces larger NMR signals.
 # 
-# **Exercise:** Write some Python/Sympy code to do this calculation.
+# **Exercise:** Write some Python/SymPy code to do this calculation.
 # 
 # ## Q2 answer
 # By analogy with equation 22,the Hamiltonian is 
@@ -81,7 +80,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # with the abbreviations $G = g\beta B,  G_N = g_N\beta_NB$. (Do not confuse $\beta$ in the equation for $G$ with $\beta$ used in the basis set). The matrix shows how the states $| \alpha\beta \rangle$ and $| \beta\alpha \rangle$ are mixed by the electron and nuclear spin interaction because these are the only states with off-diagonal terms. The matrix can be diagonalized by blocking it into two $1 \times 1$ matrices and a $2 \times 2$ matrix, therefore two of the energies can be read directly from the matrix. The states that mix have different energies at zero $B$ and move apart as they all do as $B$ is increased.
 # 
-# Calculating the eigenvalues can be done using Python/Sympy, although the $2 \times 2$ matrix can be diagonalized by hand. The result is
+# Calculating the eigenvalues can be done using Python/SymPy, although the $2 \times 2$ matrix can be diagonalized by hand. The result is
 # 
 # $$\displaystyle\begin{align} E_{\alpha\alpha}&=\frac{a}{4}+\frac{g\beta-g_N\beta_N}{2}B \\
 # E_{\alpha\beta+\beta\alpha}&=-\frac{a}{4}+\frac{\sqrt{a^2+(g\beta+g_N\beta_N)B^2}}{2}\\
@@ -133,13 +132,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 0 &0 &0 &0 & J & J & QJ & 0\\
 # 0 &0 &0 &0 &0 &0 &0 & QJ\end{bmatrix}$$
 # 
-# The Python/Sympy code is modified from that in the text is shown below. The result is large so is not included, remove # before $H$ in the last line to see it when doing the calculation.
+# The Python/SymPy code is modified from that in the text is shown below. The result is large so is not included, remove # before $H$ in the last line to see it when doing the calculation.
 
 # In[2]:
 
 
 i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac\
-           = symbols('i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac')
+           = sp.symbols('i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac')
 
 #------------------------------
 def Iz(sa, ma, sb, mb):
@@ -147,13 +146,13 @@ def Iz(sa, ma, sb, mb):
     else:        return 0
 #------------------------------
 def Iy(sa, ma, sb, mb):  # -i<sm|Iy|sm +1/-1 >
-    if mb == ma+1:    return ( 1j*hbar/2)*sqrt(sa*(sa+1)-ma*(ma+1) )
-    elif mb == ma-1:  return (-1j*hbar/2)*sqrt(sa*(sa+1)-ma*(ma-1) )
+    if mb == ma+1:    return ( 1j*hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma+1) )
+    elif mb == ma-1:  return (-1j*hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma-1) )
     else: return 0
 #------------------------------    
 def Ix(sa, ma, sb, mb):  # <sm|Ix|sm +1/-1 >
-    if mb == ma+1:    return ( hbar/2)*sqrt(sa*(sa+1)-ma*(ma+1) )
-    elif mb == ma-1:  return ( hbar/2)*sqrt(sa*(sa+1)-ma*(ma-1) )
+    if mb == ma+1:    return ( hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma+1) )
+    elif mb == ma-1:  return ( hbar/2)*sp.sqrt(sa*(sa+1)-ma*(ma-1) )
     else: return 0
 #-------------------------------
 def delta(p, q):
@@ -161,10 +160,10 @@ def delta(p, q):
     else: return 0
 #--------------------------------    
 n  = 8
-H  = zeros(n,n)                                        # matrix of zeros
-ma = Matrix([1/2,1/2,-1/2,1/2,-1/2,1/2,-1/2,-1/2])
-mb = Matrix([1/2,-1/2,1/2,1/2,-1/2,-1/2,1/2,-1/2])
-mc = Matrix([1/2,1/2,1/2,-1/2,1/2,-1/2,-1/2,-1/2])
+H  = sp.zeros(n,n)                                        # matrix of zeros
+ma = sp.Matrix([1/2,1/2,-1/2,1/2,-1/2,1/2,-1/2,-1/2])
+mb = sp.Matrix([1/2,-1/2,1/2,1/2,-1/2,-1/2,1/2,-1/2])
+mc = sp.Matrix([1/2,1/2,1/2,-1/2,1/2,-1/2,-1/2,-1/2])
 
 for i in range(n):
     for k in range(n):
@@ -174,9 +173,9 @@ for i in range(n):
         m22= mb[k]
         m3 = mc[i]
         m33= mc[k]
-        Iaz=-qa*hbar*Iz(1/2,m1,1/2,m11)*delta(m2,m22)*delta(m3,m33)
-        Ibz=-qb*hbar*Iz(1/2,m2,1/2,m22)*delta(m1,m11)*delta(m3,m33) 
-        Icz=-qc*hbar*Iz(1/2,m3,1/2,m33)*delta(m1,m11)*delta(m2,m22)
+        Iaz= -qa*hbar*Iz(1/2,m1,1/2,m11)*delta(m2,m22)*delta(m3,m33)
+        Ibz= -qb*hbar*Iz(1/2,m2,1/2,m22)*delta(m1,m11)*delta(m3,m33) 
+        Icz= -qc*hbar*Iz(1/2,m3,1/2,m33)*delta(m1,m11)*delta(m2,m22)
         
         Iabxyz=(Jab/hbar**2)*( Ix(1/2,m1,1/2,m11)*Ix(1/2,m2,1/2,m22)\
                               +Iy(1/2,m1,1/2,m11)*Iy(1/2,m2,1/2,m22)\
@@ -221,11 +220,11 @@ H
 # In[3]:
 
 
-# let m-m'=a
-a, theta = symbols('a, theta',real=True)
-
-ans = integrate( exp(1j*a*theta)*cos(3*theta),(theta,0,2*pi), conds='none')
-simplify(ans)
+# let m - m'= a
+a, theta = sp.symbols('a, theta',real=True)
+pi=sp.pi
+ans = sp.integrate( sp.exp(1j*a*theta)*sp.cos(3*theta),(theta,0,2*pi), conds='none')
+sp.simplify(ans)
 
 
 # Simplifying the result gives $\displaystyle \frac{ia(1-e^{2i\pi a})}{a^2-3^2}$ which is zero when $a=m-m'=0$ but real when $a=3$ or $m-m'=3$ this is not so obvious because the real part when $a = 3$ has a numerator and denominator that are both zero; however, the limit is $\pi$; The real part is $\displaystyle \frac{a\sin(2\pi a)}{a^2-3^2}$ Plotting the function clarifies this. 
@@ -256,7 +255,7 @@ simplify(ans)
 # -V/2 & 0 & 0 & 0 & 0 &9A+V & 0\\
 # -V/2 & 0 & 0 & 0 & 0& 0 & 9A+V\end{bmatrix} \end{align}$$
 # 
-# The same calculation can easily be put into Python/Sympy and its size increased to make the answer more accurate. The expectation values are defined first with $m$ and $m1$ as the two quantum numbers and the abbreviation $A = \hbar^2/2I$ is used for simplicity. The eigenvalues need to be sorted because the order in which the computation returns them will not necessarily be in order of increasing energy. As a check, when the applied potential is zero, the normal rigid rotor energies are returned.
+# The same calculation can easily be put into Python/SymPy and its size increased to make the answer more accurate. The expectation values are defined first with $m$ and $m1$ as the two quantum numbers and the abbreviation $A = \hbar^2/2I$ is used for simplicity. The eigenvalues need to be sorted because the order in which the computation returns them will not necessarily be in order of increasing energy. As a check, when the applied potential is zero, the normal rigid rotor energies are returned.
 
 # In[4]:
 
@@ -293,7 +292,7 @@ for i in range(2*n+1):                        # fill matrix
         pass
     pass
 
-vals,vecs = LA.eigh(H) 
+vals,vecs = np.linalg.eigh(H) 
 
 
 # In[5]:
@@ -389,24 +388,26 @@ for i in range(13):
 # 
 # One eigenvalue is $\lambda = -2\gamma (A + B)$ and the other two obtained from $(\gamma(A+B)-\lambda)^2 -\gamma^2(-A+B)2 =0$, which produces $\lambda = 2\gamma A, \lambda = 2\gamma B$.  The effect of the field is seen to raise the two $Y_{1\pm1}$ orbitals and to lower $Y_{10}$.
 # 
-# A calculation using Python/Sympy is shown below. It may be necessary to integrate the functions in $\theta$ first, without using the complex exponential part at all, then add this in in the second integration.
+# A calculation using Python/SymPy is shown below. It may be necessary to integrate the functions in $\theta$ first, without using the complex exponential part at all, then add this in in the second integration.
 
 # In[6]:
 
 
-n, theta, phi, A, B, V, X = symbols('n, theta, phi, A, B, V, X',real = True, positive = True )
-n = sqrt(3/(8*pi))                                # normalisation for sph harmonics
+n, theta, phi, A, B, V, X = sp.symbols('n, theta, phi, A, B, V, X',real = True, positive = True )
+
+pi=sp.pi
+n = sp.sqrt(3/(8*pi))                                # normalisation for sph harmonics
  
-Y1p1= lambda theta,phi: -n*sin(theta)*exp( 1j*phi)  # Y(1,+1)
-Y1m1= lambda theta,phi:  n*sin(theta)*exp(-1j*phi)  # Y(1,-1)
-Y10 = lambda theta,phi:  n*sqrt(2)*cos(theta)       # Y(1,0)
-V   = lambda theta,phi: (A*cos(phi)**2 + B*sin(phi)**2)*sin(theta)**2 - (A+B)*cos(theta)**2
+Y1p1= lambda theta,phi: -n*sp.sin(theta)*sp.exp( 1j*phi)  # Y(1,+1)
+Y1m1= lambda theta,phi:  n*sp.sin(theta)*sp.exp(-1j*phi)  # Y(1,-1)
+Y10 = lambda theta,phi:  n*sp.sqrt(2)*sp.cos(theta)       # Y(1,0)
+V   = lambda theta,phi: (A*sp.cos(phi)**2 + B*sp.sin(phi)**2)*sp.sin(theta)**2 - (A+B)*sp.cos(theta)**2
 
 # <Y10|V|Y10>
-X =  integrate(  Y10(theta,-phi) *V(theta,phi) * Y10(theta,phi)*sin(theta),(theta,0,pi) )
-ans10 = integrate( X ,(phi,0,2*pi)  )
+X =  sp.integrate(  Y10(theta,-phi) *V(theta,phi) * Y10(theta,phi)*sp.sin(theta),(theta,0,pi) )
+ans10 = sp.integrate( X ,(phi,0,2*pi)  )
 
-simplify(ans10)
+sp.simplify(ans10)
 
 
 # The other integrals may be calculated similarly. 

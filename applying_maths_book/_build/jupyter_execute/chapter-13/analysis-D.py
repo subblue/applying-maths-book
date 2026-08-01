@@ -9,12 +9,10 @@
 # import all python add-ons etc that will be needed later on 
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as lina
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D 
-from sympy import *
-from scipy.integrate import quad,odeint
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+from scipy.integrate import quad
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -120,7 +118,7 @@ def getdata(filename):
     xval = np.zeros(n,dtype=float)
     yval = np.zeros(n,dtype=float)
     for i in range(n):
-        w[i] = 1/float(wv[i])               # counting weighting
+        w[i]    = 1/float(wv[i])            # counting weighting
         xval[i] = float(xv[i])
         yval[i] = float(yv[i])
     return xval,yval,w
@@ -207,8 +205,10 @@ print('{:s}{:8.4g}'.format('total experimental counts =',np.sum(yval[:] ) ) )
 # In[3]:
 
 
-fchi = lambda x: x**(n/2-1) * exp(-x/2)/(2**(n/2)*gamma(n/2)) # chi sqrd function
-Q,err = quad(fchi , chiA*n, np.inf )    # integrate from chisqrd to infinity
+# gamma function is found in sympy so used as sp.gamma(etc)
+
+fchi = lambda x: x**(n/2-1) * sp.exp(-x/2)/(2**(n/2)*sp.gamma(n/2))    # chi sqrd function
+Q,err = quad(fchi , chiA*n, np.inf )                # integrate from chisqrd to infinity
 print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',chiA*n,' is', Q))
 
 
@@ -218,13 +218,13 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # 
 # The calculation produces a $\chi^2= 0.9$ and that corresponds to a probability of $63$% which is near perfect; a perfect value of $1$ produces a $50$% chance. The model curve clearly fits the data as shown in Figure 14. The total counts predicted by the model are almost the same as in the data itself, also indicating a close fit. The normalized residuals are calculated as $(y_i - Y_i)/y_i$.
 # 
-# ## 10.2 Least absolute deviation
+# ## 10.2 Least absolute deviation, LAD
 # 
 # Any least squares method is very sensitive to outliers in the data; see figure 15. You can 'eyeball' data and see roughly where a straight line should go through the majority of the data points; however, the least squares line will generally not follow this trend because it is pulled off by the outliers. In such cases, the function to minimize is the absolute value of the deviation rather than the $\chi^2$ and for an unweighted straight-line fit is the sum
 # 
 # $$\displaystyle \sum_i |y_i-a-bx_i|$$
 # 
-# Using this function now produces a far better fit to the data, but there is no $\chi^2$ with which to estimate how good this fit is. Taking the absolute value of the distance from the best fit line, rather than the square of the distance, means that the effect of large deviations is reduced. Prest et al. (1986) give an algorithm with which to calculate the minimum deviation line and this is shown in figure 15.
+# Using this function now produces a far better fit to the data, but there is no $\chi^2$ with which to estimate how good this fit is. Taking the absolute value of the distance from the best fit line, rather than the square of the distance, means that the effect of large deviations is reduced. Prest et al. (1986) give an algorithm (medfit) in chapter 14 (Robust Estimation) with which to calculate the minimum deviation line and this is shown in figure 15.
 # 
 # ![Drawing](analysis-fig15.png)
 # 
@@ -346,7 +346,7 @@ for k in range(m):                         # calculate mean value
     pass 
 X = data - means                           # subtract mean 
 C = (np.transpose(X) @ X)/(n-1)            # make covariance matrix ( @ is matrix multiply)
-(eigval,eigvec) = lina.eig(C)              # eigvals, eigvects of covariance. eigvects normalised
+(eigval,eigvec) = np.linalg.eig(C)              # eigvals, eigvects of covariance. eigvects normalised
 
 indx = np.argsort(eigval)               
 

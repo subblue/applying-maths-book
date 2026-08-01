@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -37,9 +37,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x = symbols('x')  # using sympy
-f01 = tan(x)*exp(x)
-s = expand(series( f01, x ))
+x = sp.symbols('x')  # using SymPy
+f01 = sp.tan(x)*sp.exp(x)
+s = sp.expand(sp.series( f01, x ))
 s
 
 
@@ -52,7 +52,7 @@ s
 # &= x+2x^2 +3x^3 +4x^4 +\cdots +x^2 +2x^3 +3x^4 +\cdots  
 # \end{align} $$
 # 
-# which produces the required result after some rearranging. As in the last question sympy can do this calculation directly.
+# which produces the required result after some rearranging. As in the last question SymPy can do this calculation directly.
 # 
 # ## Q16 answer
 # Rearranging the equation and expanding produces,
@@ -91,8 +91,8 @@ s
 # In[3]:
 
 
-w = symbols('w')
-series( 1/(1-w),w )
+w = sp.symbols('w')
+sp.series( 1/(1-w),w )
 
 
 # which then gives $\displaystyle \sum_{k=1}e^{ikx}=\frac{e^{ix}}{1-e^{ix}}$.
@@ -131,15 +131,20 @@ series( 1/(1-w),w )
 # In[4]:
 
 
-k, p = symbols('k, p')
-s =  (1 - p)*summation(k**2*p**(k - 1),(k,1,oo)) 
-simplify(s)
+k, p = sp.symbols('k, p')
+inf = sp.oo                 # sp.oo is SymPy infinity
+s =  (1 - p)*sp.summation(k**2*p**(k - 1),(k,1,inf)) 
+sp.simplify(s)
 
 
-# The standard deviation is $\displaystyle \sqrt{\langle k^2 \rangle - \langle k \rangle^2}  = \frac{\sqrt{p}}{p-1}$ which for large $p$ becomes smaller but only as as $1/\sqrt p$ as $p$ increases. This behaviour is similar to that of repeated measurements reducing standard deviation as $1/\sqrt N$.
+# The standard deviation is 
+# 
+# $$\displaystyle \sqrt{\langle k^2 \rangle - \langle k \rangle^2}  = \frac{\sqrt{p}}{p-1}$$
+# 
+# which for large $p$ becomes smaller but only as as $1/\sqrt p$ as $p$ increases. This behaviour is similar to that of repeated measurements reducing standard deviation as $1/\sqrt N$.
 #     
 # ## Q21 answer
-# The function is rewritten as $(\sin(x)/x)^2$ and expanding the $\sin(x)$ as a Taylor series about $x = 0$ and dividing by $x$ produces,
+# The function is rewritten as $\displaystyle \left(\frac{\sin(x)}{x}\right)^2$ and expanding the $\sin(x)$ as a Taylor series about $x = 0$ and dividing by $x$ produces,
 # 
 # $$\displaystyle \frac{\sin(x)}{x}=1-\frac{x^2}{3!}+\frac{x^4}{5!}+ \cdots $$
 # 
@@ -147,14 +152,13 @@ simplify(s)
 # 
 # $$\displaystyle \frac{\sin^2(x)}{x^2}=1-\frac{x^2}{3}+\frac{2x^4}{45}-\cdots $$
 # 
-# which produces $(\sin(x)/x)^2 \to 1$ when $x \to 0$ because all the squared and higher terms are small compared to unity. The graph is shown below. The maximum is $1$, as predicted, and there are repeated zeros at $\pm n\pi$ where $n$ is an integer because $\sin(\pm n\pi) = 0$. These are also shown on the next plot.
+# which produces $\displaystyle \left(\frac{\sin(x)}{x}\right)^2 \to 1$ when $x \to 0$ because all the squared and higher terms are small compared to unity. The graph is shown below. The maximum is $1$, as predicted, and there are repeated zeros at $\pm n\pi$ where $n$ is an integer because $\sin(\pm n\pi) = 0$. These are also shown on the next plot.
 
 # In[5]:
 
 
 # calculation of sinc function
 fig1 = plt.figure(figsize=(5,4))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 x = np.linspace(-3*np.pi,3*np.pi,100)
 sinc2 = lambda x: (np.sin(x)/x)**2
@@ -164,7 +168,7 @@ for i in range(1,4):
     plt.axvline( v,linestyle='--',color='gray',linewidth=1)
     plt.axvline(-v,linestyle='--',color='gray',linewidth=1)
 plt.xlabel(r'$x$')
-plt.ylabel(r'$\sinc^2(x)$')
+plt.ylabel(r'$sinc^2(x)$')
 plt.axhline(0,color='gray',linewidth=1)
 plt.show()
 
@@ -262,7 +266,7 @@ print('{:s}{:20.16f}'.format('accurate', np.pi))
 #  
 # where the last summation term is obtained after some guessing and by copying the similar terms for the cosine and cubing and adding 1 to the power, (because we integrated) and also dividing by 6$n$ + 1 for the same reason.
 # 
-# In calculating this series, several terms will be needed and using sympy makes it relatively easy. A variable $s$ holds the sum and it is added to each time round the loop. The result is plotted so that it can be seen how quickly or not the series converges to a result.
+# In calculating this series, several terms will be needed and using SymPy makes it relatively easy. A variable $s$ holds the sum and it is added to each time round the loop. The result is plotted so that it can be seen how quickly or not the series converges to a result.
 
 # In[9]:
 
@@ -275,6 +279,7 @@ def fact(n):
     else:
         return n*fact(n-1)
 #--------------------
+fig2 = plt.figure(figsize=(5,4))
 
 nmax = 20
 x    = 2.0
@@ -302,8 +307,8 @@ plt.show()
 # In[10]:
 
 
-x = symbols('x')
-ans = integrate(cos(x**3), (x,0,2),conds='none')
+x = sp.symbols('x')
+ans = sp.integrate(sp.cos(x**3), (x,0,2),conds='none')
 ans.evalf()
 
 
@@ -316,14 +321,15 @@ ans.evalf()
 
 # calculate series of a general function  in z and plot with original function. 
 # Try some functions such as cos(z^3)sin(z). 
-# this is a ***slow***  calculation as the symbolic result is found first.
+# this is a ***very, very slow***  calculation as the symbolic result is found first.
+fig3 = plt.figure(figsize=(5,4))
 
-z   = symbols('z')                          # define symbolic variable                         
-f01 = cos(z**3)*exp(-z)                     # function to expand into series
+z   = sp.symbols('z')                          # define symbolic variable                         
+f01 = sp.cos(z**3)*sp.exp(-z)                     # function to expand into series
 
-num_terms = 150
-s   =  series(f01,z,0,num_terms).removeO()  # get series and remove 'big O' as last term 150 terms in series
-f03 = lambdify(z,s,'numpy')                 # make into numpy function after series expansion
+num_terms = 100
+s   =  sp.series(f01,z,0,num_terms).removeO()  # get series and remove 'big O' as last term 150 terms in series
+f03 = sp.lambdify(z,s,'numpy')                 # make into numpy function after series expansion
 
 numx = 1000
 maxx = 4
@@ -331,13 +337,19 @@ x = np.linspace(0,maxx,numx)                # make set of numx points starting a
 y = [ f03(x[i]) for i in range(numx) ]      # calculate function at points x[i] and put into array for plotting
 
 plt.plot(x,y,color='red',label='series')
-afun = lambdify(z,f01,'numpy')              # make original function into numpy function
-plt.plot(x,afun(x),color='blue',label = f01)
+afun = sp.lambdify(z,f01,'numpy')              # make original function into numpy function
+plt.plot(x,afun(x),color='blue',label = f01,linewidth=1)
 plt.axis([0,maxx,-0.5,1.25])
 plt.legend()
-plt.title('series expansion & its function ')
+plt.title('series expansion & its function ',fontsize=12)
 plt.show()
 
 
-# Figure 25b. $\cos(x^3)e^{-x}$ and its series expansion up to $x^{150}$. Notice how the series solution (red line) suddenly fails at about $x = 2.7$. This will cause huge errors in the integration if the limit is taken this far.
+# Figure 25b. $\cos(x^3)e^{-x}$ and its series expansion up to $x^{100}$. Notice how the series solution (red line) suddenly fails at about $x = 2.3$. This will cause huge errors in the integration if the limit is taken this far.
 # 
+
+# In[ ]:
+
+
+
+

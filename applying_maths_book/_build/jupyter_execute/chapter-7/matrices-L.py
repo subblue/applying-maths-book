@@ -10,8 +10,7 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from numpy import linalg as LA
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## 16 Introduction
@@ -182,12 +181,12 @@ def mom_of_I(xyz,atm):
     
     M= [[Ixx,Ixy,Ixz],[Ixy,Iyy,Iyz],[Ixz,Iyz,Izz]]    # moment of inertia matrix 
     
-    eigvals = LA.eigh(M)
+    eigvals = np.linalg.eigh(M)                       # use linear algebra pckage
     
     print('\n Eigenvalues\n', eigvals[0])    # print results 
     print('\n Moments of Inertia kg.m^2', eigvals[0]*amu*angst**2)
     
-    adet = LA.det(M)
+    adet = np.linalg.det(M)
     
     print('{:s}  {:10.5g}\n {:s}  {:10.5g}{:s} '
           .format( ' determinant kg^3 m^6', adet*(amu*angst**2)**3, 

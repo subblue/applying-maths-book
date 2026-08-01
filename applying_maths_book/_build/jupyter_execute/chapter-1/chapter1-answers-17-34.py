@@ -10,8 +10,6 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -190,18 +188,69 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # (a) Start by evaluating both sides separately and the identity is proved.
 # 
 # $$\displaystyle q\binom{n}{q}=q\frac{n!}{q!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}\\
-# q\binom{n-1}{q-1}=q\frac{n(n-1)!}{(q-1)!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}$$
+# n\binom{n-1}{q-1}=\frac{n(n-1)!}{(q-1)!(n-1-q+1)!}=\frac{n!}{(q-1)!(n-q)!}$$
 # 
 # (b) The right-hand side is 
 # 
-# $$\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{(n-1)!}{(q-1)!(n-q)!}+\frac{(n-1)!}{q!(n-1-q)!}$$
+# $$\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{(n-1)!}{(q-1)!(n-1-q+1)!}+\frac{(n-1)!}{q!(n-1-q)!}$$
 # 
 # Next, as $n! = n(n - 1)!$, substituting $n \to n - q$ gives $(n - q)! = (n-q)(n-q-1)!$. Substituting $(n - 1 - q)! $ into the equation gives
 # 
 # $$\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{q(n-1)!}{q!(n-q)!}+\frac{(n-q)(n-1)!}{q!(n-q)!} = \frac{n!}{q!(n-q)!}$$
 # 
+# (c) The fraction  $\displaystyle \binom{n-1}{q-1}$ can be converted to a more useful form by realising that  for any factorial $x!=x(x-1)!$ thus
+# 
+# $$\displaystyle \binom{n-1}{q-1}=\frac{q}{n}\binom{n}{q}$$
+# 
+# then $\displaystyle \binom{n}{q}=\frac{q}{n}\binom{n}{q}+\binom{n-1}{q}$ or by rearranging $\displaystyle \left(1-\frac{q}{n}\right)y(n,q)=y(n-1,q)$. We want the result in terms of $n+1$ and $n$ thus by incrementing we find 
+# 
+# $$\displaystyle y(n+1,q)=\left(\frac{n+1}{n+1-q}\right)y(n,q)$$
+# 
+# and the first value of $y$ occurs when $n=q$ and then $y(q,q)=1$. This can be seen by looking at the binomial coefficients, the $q!$ removes the first $q!$ belonging to $ n!$.
+# 
+# Some code using NumPy is shown below 
+
+# In[3]:
+
+
+# Calculation of binomial coefficient by recursion.
+n = 10               # n >= q
+q = 3
+y = 1                # initial value
+for i in range(q,n,1):
+    temp = y*(i+1)/(i+1-q)
+    y = int(temp)
+print('binomial(',i+1,',',q,') is', y)    
+
+
 # ## Q34 answer
-# Using the method in the text, $100759-86$ has the sum $1 \times 6 + 2 \times 8 + 3 \times 9 + 4 \times 5 + 5 \times 7 + 8 \times 1 = 112$ and $112\,\mathrm{mod}\, 10 = 2$ which is the checksum. The CAS number $116-31$ has a sum $34$ and so a check digit of $4$ and $103-30$ has the sum $20$ and check digit $0$. The alternative registry number for pheophytin-A is $603-17-8$
+# (a) Using notation similar to that in the text, (Chapter 1, section 9.15), the formula is 
+# 
+# $$\displaystyle p(Na^+|+) = p(+|Na^+)\frac{p(Na^+)}{p(+)}$$
+# 
+# what we know is 
+# 
+# $$\displaystyle p(+|Na^+)= 0.92,\quad p(Na^+)=0.9,\quad p(+|not\;Na^+)=0.06$$ 
+# 
+# $$\displaystyle p(+)= p(Na^+)\cdot p(+|Na^+) + (1-p(Na^+))\cdot p(+|not\;Na^+))= 0.9\cdot 0.92+(0.1)\cdot 0.06=0.834$$
+# 
+# where using a Tree diagram really helps in working out $p(+)$. The probability of correctly identifying Na$^+$ is $99.2$%. 
+# 
+# The probability of the analysis result was caused by  K$^+$ is the complement of this $1-0.992=0.8$%
+# 
+# **(b)** What if the analysis result is negative? The equation is
+# 
+# $$\displaystyle p(not\; Na^+|-) = p(-|not\; Na^+)\frac{p(not\;Na^+)}{p(-)}$$
+# 
+# In this case $p(-)$ is calculated as the branches of the tree diagram leading to a negative result (see Chapter 1, 9.15) and is 
+# 
+# $$\displaystyle \begin{align}p(-)&= p(Na^+)\cdot p(-|Na^+ )+(1-p(Na^+))\cdot p(-|not\;Na^+)\\&=p(Na^+)\cdot (1-p(+|Na^+ ))+(1-p(Na^+))\cdot (1-p(+|not\;Na^+))\\&=0.9\cdot 0.08+0.1\cdot 0.94= 0.166\end{align}$$
+# 
+# making 
+# 
+# $$\displaystyle p(not\; Na^+|-) = \frac{0.1\cdot 0.94}{0.166}=0.566$$
+# 
+# It can be concluded that if there is no result from the analysis it is probable that Na$^+$ is present but by no means certain, whereas if the result is positive there is a $\approx 99$% certainty that Na$^+$ is present.
 
 # In[ ]:
 

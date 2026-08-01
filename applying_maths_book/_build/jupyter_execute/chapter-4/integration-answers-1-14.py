@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -331,14 +331,14 @@ p_sol_liq= lambda T: p3 + DH_fus/DV_fus*(np.log(T)-np.log(T3))
 # Figure 40 Left: Universal calculated shape of gas cross-section in a jet or rocket (Laval) nozzle, vs reduced pressure $p/p_0$. Right: Gas velocity relative to the speed of sound us. Note that the inlet side is on the right in both figures where the pressure is high. The dashed lines show the position of the minimum nozzle width which is where the gas is at Mach 1.
 # ______
 # 
-# (c) The minimum nozzle cross section vs pressure is the derivative of $\sigma$ vs $p$. This is not difficult to evaluate but messy and is easily performed by Sympy. The constants need not be included because the derivative is set to zero at the minimum and they will cancel out. (note g is used instead of $\gamma$ )
+# (c) The minimum nozzle cross section vs pressure is the derivative of $\sigma$ vs $p$. This is not difficult to evaluate but messy and is easily performed by SymPy. The constants need not be included because the derivative is set to zero at the minimum and they will cancel out. (note g is used instead of $\gamma$ )
 
 # In[3]:
 
 
-p0, p, g = symbols('p0, p, g')
-eq = (p0/p)**(1/g)/sqrt( 1 - (p/p0)**((g - 1)/g) )
-simplify(diff(eq,p) )
+p0, p, g = sp.symbols('p0, p, g')
+eq = (p0/p)**(1/g)/sp.sqrt( 1 - (p/p0)**((g - 1)/g) )
+sp.simplify(sp.diff(eq,p) )
 
 
 # This equation must be zero at the minimum nozzle diameter and can be solved by factoring the bracket in the numerator to give the pressure ratio in the throat of  

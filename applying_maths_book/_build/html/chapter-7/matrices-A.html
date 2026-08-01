@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1678,10 +1678,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">npalg</span>     <span class="c1"># linear algebra library for determinants and matrices</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1785,11 +1784,11 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 </section>
 <section id="evaluating-determinants-using-python-and-sympy">
 <h2>2.4 Evaluating determinants using Python and SymPy<a class="headerlink" href="#evaluating-determinants-using-python-and-sympy" title="Permalink to this headline">#</a></h2>
-<p>The numerical vale of a determinant is calculated by first defining the matrix size and filling in the values. If the matrix is very big the entries will have to be input via a algorithm, which means giving each row and column a value by setting up a double loop. To manipulate the matrix the linear algebra package is needed and this is imported at the top of this document where NumPy and SciPy are imported.  Notice that an ‘array’ is used (rather than a ‘matrix’) and that there are a pair of square brackets surrounding the middle three sets of numbers.</p>
+<p>The numerical vale of a determinant is calculated by first defining the matrix size and filling in the values. If the matrix is very big the entries will have to be input via a algorithm, which means giving each row and column a value by setting up a double loop. To manipulate the matrix the linear algebra package is needed and this is used by invoking the linear algebra package e.g. <span class="math notranslate nohighlight">\(\mathtt{np.linalg.det(M)}\)</span>.   Notice that an ‘array’ is used (rather than a ‘matrix’) and that there are a pair of square brackets surrounding the middle three sets of numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">36</span><span class="p">],</span> <span class="p">[</span><span class="mi">49</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">81</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">npalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span> <span class="p">],</span> <span class="p">[</span><span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1799,11 +1798,11 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 </div>
 </div>
 </div>
-<p>Using SymPy enables an algebraic determination of a determinant. In this case the matrix is defined slightly differently using the word Matrix(). The determinant is easily computed and produces a polynomial.</p>
+<p>Using SymPy enables an algebraic determination of a determinant. In this case the matrix is defined slightly differently using  <span class="math notranslate nohighlight">\(\mathtt{sp.Matrix( [  etc  ] )}\)</span>. The determinant is easily computed and produces a polynomial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">])</span>  <span class="c1"># notice how the square brackets [] are arranged</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">])</span>  <span class="c1"># notice how the square brackets [] are arranged</span>
 <span class="n">M</span>
 </pre></div>
 </div>
@@ -1845,9 +1844,9 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 <p>The solution of this characteristic polynomial may be seen by inspection, which often means by trial and error; there are two roots with <span class="math notranslate nohighlight">\(x = 1\)</span> and one with <span class="math notranslate nohighlight">\(x = -2\)</span>. If you are not sure, substitute these answers into the equation, or use SymPy as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">])</span>
-<span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">(),</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">])</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">(),</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1893,10 +1892,10 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Huckel determinant linear polyene  </span>
 <span class="c1"># The calculation is slow for large matrices n &gt; 20 due to determinant evaluation</span>
 
-<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span> <span class="c1"># use Sympy, define symbolic variables </span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>                        <span class="c1"># size of matrix</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>               <span class="c1"># define empty matrix</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>           <span class="c1"># fill matrix according to rules above</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, M, x&#39;</span><span class="p">)</span> <span class="c1"># use Sympy, define symbolic variables </span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>                           <span class="c1"># size of matrix</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>               <span class="c1"># define sympy empty matrix</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>              <span class="c1"># fill matrix according to rules above</span>
     <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1924,7 +1923,7 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>            <span class="c1"># algebraically solve for roots </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">char_eqn</span><span class="p">)</span>         <span class="c1"># algebraically solve for roots using SymPy</span>
 </pre></div>
 </div>
 </div>
@@ -1934,7 +1933,7 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span> <span class="n">char_eqn</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">)</span>   <span class="c1"># always use numberical solution for larger polynomials</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span> <span class="n">char_eqn</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">)</span>   <span class="c1"># Use .evalf() for numerical solution of larger polynomials</span>
 </pre></div>
 </div>
 </div>
@@ -2161,7 +2160,7 @@ x &amp; 1 &amp; 0 &amp; 1 \\
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -2165,8 +2165,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -2651,16 +2651,16 @@ E&amp;2&amp;-1&amp;0&amp; (x,y),(R_x,R_y)&amp;(x^2-y^2,xy)(xz,yz)&amp;(xz^2,yz^2
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rotation matrices for d-orbitals using SymPy</span>
 
-<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y,z,theta,n&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y,z,theta,n&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">rotated</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
-    <span class="n">xd</span> <span class="o">=</span>  <span class="n">x</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-    <span class="n">yd</span> <span class="o">=</span>  <span class="n">x</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">xd</span> <span class="o">=</span>  <span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">yd</span> <span class="o">=</span>  <span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
     <span class="n">zd</span> <span class="o">=</span> <span class="n">z</span>
     <span class="n">f01</span><span class="o">=</span><span class="p">[(</span><span class="n">xd</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">yd</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">xd</span><span class="o">*</span><span class="n">yd</span><span class="p">,</span> <span class="n">xd</span><span class="o">*</span><span class="n">zd</span><span class="p">,</span> <span class="n">yd</span><span class="o">*</span><span class="n">zd</span><span class="p">,</span> <span class="n">zd</span><span class="o">*</span><span class="n">zd</span><span class="p">]</span>
     <span class="n">f02</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="n">f02</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>  <span class="p">)</span>
+        <span class="n">f02</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">f01</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>  <span class="p">)</span>
     <span class="k">return</span> <span class="n">f02</span>
 
 <span class="n">rotated</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
@@ -2675,6 +2675,7 @@ E&amp;2&amp;-1&amp;0&amp; (x,y),(R_x,R_y)&amp;(x^2-y^2,xy)(xz,yz)&amp;(xz^2,yz^2
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example C2 rotation </span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">pi</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">n</span>    
 <span class="n">theta</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="p">,</span><span class="n">rotated</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 </pre></div>
@@ -2773,7 +2774,7 @@ d_{z^2}    &amp;f_5 &amp;  f_5 &amp;  f_5 &amp;  f_5 &amp;  f_5 &amp;  f_5 &amp;
 <p>The equation for the projection operator is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle L_M=\frac{d}{h}\sum_{j=1\cdots h}\chi_j^MO^S_j \tag{9.21}\]</div>
-<p>where <span class="math notranslate nohighlight">\(M\)</span> is the Mulliken symmetry species label, <span class="math notranslate nohighlight">\(A_g, B_{3g}\)</span>, and so forth, <span class="math notranslate nohighlight">\(h\)</span> is the order of the group, <span class="math notranslate nohighlight">\(d\)</span> the dimension of the irreducible representation, and the sum is over all the classes. Since we only want to know which orbital belongs to which symmetry species <span class="math notranslate nohighlight">\(d/h\)</span> can be ignored. The function <span class="math notranslate nohighlight">\(L_M\)</span> is the list of orbital names (<span class="math notranslate nohighlight">\(d_{xy}\)</span> etc.) which belong to symmetry species <span class="math notranslate nohighlight">\(M\)</span>. The simplest way to perform the calculation, and avoid arithmetic slips, is to use some code and use Sympy for symbolic calculation. The matrix F below contains the orbital changes for each operation in <span class="math notranslate nohighlight">\(C_{4V}\)</span> and PG is the character table. Matrices AB and Dorb are just for labelling the results.</p>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the Mulliken symmetry species label, <span class="math notranslate nohighlight">\(A_g, B_{3g}\)</span>, and so forth, <span class="math notranslate nohighlight">\(h\)</span> is the order of the group, <span class="math notranslate nohighlight">\(d\)</span> the dimension of the irreducible representation, and the sum is over all the classes. Since we only want to know which orbital belongs to which symmetry species <span class="math notranslate nohighlight">\(d/h\)</span> can be ignored. The function <span class="math notranslate nohighlight">\(L_M\)</span> is the list of orbital names (<span class="math notranslate nohighlight">\(d_{xy}\)</span> etc.) which belong to symmetry species <span class="math notranslate nohighlight">\(M\)</span>. The simplest way to perform the calculation, and avoid arithmetic slips, is to use some code and use SymPy for symbolic calculation. The matrix F below contains the orbital changes for each operation in <span class="math notranslate nohighlight">\(C_{4V}\)</span> and PG is the character table. Matrices AB and Dorb are just for labelling the results.</p>
 <p>The calculation shows that the orbitals belong to symmetry species as follows</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle d_z^2 \to A_1,\quad d_{x^2-y^2}\to B_1,\quad d_{xy}\to B_2,\quad (d_{xz},d_{yz})\to E\]</div>
@@ -2793,17 +2794,17 @@ E   &amp; 2 &amp;  0 &amp; -2 &amp;  0  &amp; 0&amp;(x,y) &amp; (xy,yz)\\
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># projection operator method for d-orbitals in C4V point group</span>
 
-<span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">,</span><span class="n">f3</span><span class="p">,</span><span class="n">f4</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">PG</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;f1,f2,f3,f4,f5,row,col,F,PG&#39;</span><span class="p">)</span>
+<span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">,</span><span class="n">f3</span><span class="p">,</span><span class="n">f4</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">PG</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;f1,f2,f3,f4,f5,row,col,F,PG&#39;</span><span class="p">)</span>
 
 <span class="c1"># matrix of d-orbital changes f1,..f5 as in text</span>
-<span class="n">F</span>  <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span><span class="n">f1</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">],[</span><span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span><span class="n">f2</span><span class="p">]</span>\
+<span class="n">F</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span><span class="n">f1</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">,</span><span class="o">-</span><span class="n">f1</span><span class="p">],[</span><span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span><span class="o">-</span><span class="n">f2</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span><span class="n">f2</span><span class="p">]</span>\
            <span class="p">,</span> <span class="p">[</span><span class="n">f3</span><span class="p">,</span><span class="o">-</span><span class="n">f4</span><span class="p">,</span> <span class="n">f4</span><span class="p">,</span><span class="o">-</span><span class="n">f3</span><span class="p">,</span><span class="n">f3</span><span class="p">,</span><span class="o">-</span><span class="n">f3</span><span class="p">,</span><span class="o">-</span><span class="n">f4</span><span class="p">,</span> <span class="n">f4</span><span class="p">],[</span><span class="n">f4</span><span class="p">,</span> <span class="n">f3</span><span class="p">,</span><span class="o">-</span><span class="n">f3</span><span class="p">,</span><span class="o">-</span><span class="n">f4</span><span class="p">,</span><span class="o">-</span><span class="n">f4</span><span class="p">,</span> <span class="n">f4</span><span class="p">,</span><span class="o">-</span><span class="n">f3</span><span class="p">,</span><span class="n">f3</span><span class="p">],[</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">,</span><span class="n">f5</span><span class="p">]])</span>
 
-<span class="n">PG</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>\
+<span class="n">PG</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>\
              <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># point group</span>
 
-<span class="n">AB</span>   <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span><span class="s1">&#39;A2&#39;</span><span class="p">,</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span><span class="s1">&#39;B2&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">])</span>              <span class="c1"># Mulliken labels</span>
-<span class="n">Dorb</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="s1">&#39;d(x2-y2)&#39;</span><span class="p">,</span><span class="s1">&#39;dxy&#39;</span><span class="p">,</span><span class="s1">&#39;dxz&#39;</span><span class="p">,</span><span class="s1">&#39;dyz&#39;</span><span class="p">,</span><span class="s1">&#39;dz2&#39;</span><span class="p">])</span>   <span class="c1"># symmetry operations.</span>
+<span class="n">AB</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span><span class="s1">&#39;A2&#39;</span><span class="p">,</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span><span class="s1">&#39;B2&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">])</span>              <span class="c1"># Mulliken labels</span>
+<span class="n">Dorb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="s1">&#39;d(x2-y2)&#39;</span><span class="p">,</span><span class="s1">&#39;dxy&#39;</span><span class="p">,</span><span class="s1">&#39;dxz&#39;</span><span class="p">,</span><span class="s1">&#39;dyz&#39;</span><span class="p">,</span><span class="s1">&#39;dz2&#39;</span><span class="p">])</span>   <span class="c1"># symmetry operations.</span>
 <span class="n">F</span><span class="p">,</span><span class="n">PG</span>
 </pre></div>
 </div>
@@ -2858,13 +2859,13 @@ E    dyz
 <p>and the transform is <span class="math notranslate nohighlight">\(\pmb{A} = \sigma_V^{-1}C_3^-\sigma_V\)</span>. By direct calculation, we find that <span class="math notranslate nohighlight">\(\sigma_V^{-1} = \sigma_V\)</span>, i.e. <span class="math notranslate nohighlight">\(\sigma_V\)</span> is its own inverse, making the matrix product,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{A} = \begin{bmatrix} 0&amp;1&amp;0\\ 1&amp;0&amp;0\\0&amp;0&amp;1\end{bmatrix}\begin{bmatrix} 0&amp;0&amp;1\\ 1&amp;0&amp;0\\0&amp;1&amp;0\end{bmatrix}\begin{bmatrix} 0&amp;1&amp;0\\ 1&amp;0&amp;0\\0&amp;0&amp;1\end{bmatrix}= \begin{bmatrix} 0&amp;1&amp;0\\ 0&amp;0&amp;1\\1&amp;0&amp;0\end{bmatrix}=C_3^+\end{split}\]</div>
-<p>The matrix multiplication can be checked using Sympy.</p>
+<p>The matrix multiplication can be checked using SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">C3</span><span class="p">,</span> <span class="n">SV</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, C3, SV&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">C3</span><span class="p">,</span> <span class="n">SV</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, C3, SV&#39;</span><span class="p">)</span>
 
-<span class="n">SV</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>  <span class="p">)</span>  <span class="c1"># sigma V matrix</span>
-<span class="n">C3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>  <span class="p">)</span>  <span class="c1"># C3 minus matrix</span>
+<span class="n">SV</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>  <span class="p">)</span>  <span class="c1"># sigma V matrix</span>
+<span class="n">C3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>  <span class="p">)</span>  <span class="c1"># C3 minus matrix</span>
 <span class="n">A</span>  <span class="o">=</span> <span class="n">SV</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">C3</span><span class="o">*</span><span class="n">SV</span>
 <span class="n">A</span>
 </pre></div>
@@ -3434,7 +3435,7 @@ E_2&amp; 2 &amp; -1 &amp; -1 &amp; 2 &amp; 0 &amp; 0\\
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1807,8 +1807,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1997,7 +1997,16 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 <p>Occasionally it is necessary, or simpler, to find <span class="math notranslate nohighlight">\(dx/dy\)</span> rather than invert the equation to put it in terms of <span class="math notranslate nohighlight">\(y = \cdots\)</span> and calculate <span class="math notranslate nohighlight">\(dy/dx\)</span>. The derivatives are related as double reciprocals;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dx}=1\big/ \frac{dx}{dy}  \qquad\tag{13}\]</div>
-<p>As an example, suppose that <span class="math notranslate nohighlight">\(\displaystyle \sin(y^2) = x\)</span>, differentiating by <span class="math notranslate nohighlight">\(y\)</span> gives the result <span class="math notranslate nohighlight">\(\displaystyle dx/dy = 2y \cos(y^2)\)</span>. Differentiating by <span class="math notranslate nohighlight">\(x\)</span> could mean that a rearrangement must first be done to form <span class="math notranslate nohighlight">\(\displaystyle y = \sqrt{\sin^{-1}(x)}\)</span> and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly <span class="math notranslate nohighlight">\(\displaystyle 2y \cos(y^2)dy/dx = 1\)</span> and these two results show that equation (13) is true.</p>
+<p>As an example, suppose that <span class="math notranslate nohighlight">\(\displaystyle \sin\left(y^2\right) = x\)</span>, differentiating by <span class="math notranslate nohighlight">\(y\)</span> gives the result</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dy} = 2y \cos\left(y^2\right)\]</div>
+<p>Differentiating by <span class="math notranslate nohighlight">\(x\)</span> could mean that a rearrangement must first be done to form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y = \sqrt{\sin^{-1}(x)}\]</div>
+<p>and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 2y \cos\left(y^2\right)\frac{dy}{dx} = 1\]</div>
+<p>and these two results show that equation (13) is true.</p>
 </section>
 <section id="differentiating-integrals">
 <h2>3.15 Differentiating integrals<a class="headerlink" href="#differentiating-integrals" title="Permalink to this headline">#</a></h2>
@@ -2025,8 +2034,17 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 </section>
 <section id="fractional-derivatives">
 <h2>3.16 Fractional derivatives<a class="headerlink" href="#fractional-derivatives" title="Permalink to this headline">#</a></h2>
-<p>While it is possible to repeatedly take derivatives of many functions, for instance <span class="math notranslate nohighlight">\(\displaystyle \frac{d^3}{dx^3}\sin(x)\)</span>, what about the <span class="math notranslate nohighlight">\(1/3\)</span> or <span class="math notranslate nohighlight">\(1/2\)</span> or <span class="math notranslate nohighlight">\(-1\)</span> derivative? What would such a thing mean? In the case of <span class="math notranslate nohighlight">\(1/2\)</span> derivatives we can say that if the function is <span class="math notranslate nohighlight">\(x^n\)</span> then the half derivative is such that <span class="math notranslate nohighlight">\(\displaystyle \frac{d^{1/2}}{dx^{1/2}}\frac{d^{1/2}}{dx^{1/2}}x^n\equiv nx^{n-1}\)</span>. In other words differentiating, or operating twice on <span class="math notranslate nohighlight">\(x^n\)</span> with <span class="math notranslate nohighlight">\(d^{1/2}/dx^{1/2}\)</span>, is the same as differentiating once with <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
-<p>The general result for the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative of <span class="math notranslate nohighlight">\(x^m\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}\)</span> which can be generalised if <span class="math notranslate nohighlight">\(n\)</span> is a fraction by changing the factorials to gamma functions as <span class="math notranslate nohighlight">\(n!=\Gamma (n+1)\)</span> thus <span class="math notranslate nohighlight">\(\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}\)</span>. As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse’s paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.</p>
+<p>While it is possible to repeatedly take derivatives of many functions, for instance <span class="math notranslate nohighlight">\(\displaystyle \frac{d^3}{dx^3}\sin(x)\)</span>, what about the <span class="math notranslate nohighlight">\(1/3\)</span> or <span class="math notranslate nohighlight">\(1/2\)</span> or <span class="math notranslate nohighlight">\(-1\)</span> derivative? What would such a thing mean? In the case of <span class="math notranslate nohighlight">\(1/2\)</span> derivatives we can say that if the function is <span class="math notranslate nohighlight">\(x^n\)</span> then the half derivative is such that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^{1/2}}{dx^{1/2}}\frac{d^{1/2}}{dx^{1/2}}x^n\equiv nx^{n-1}\]</div>
+<p>In other words differentiating, or operating twice on <span class="math notranslate nohighlight">\(x^n\)</span> with <span class="math notranslate nohighlight">\(d^{1/2}/dx^{1/2}\)</span>, is the same as differentiating once with <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
+<p>The general result for the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative of <span class="math notranslate nohighlight">\(x^m\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}\]</div>
+<p>which can be generalised if <span class="math notranslate nohighlight">\(n\)</span> is a fraction by changing the factorials to gamma functions as <span class="math notranslate nohighlight">\(n!=\Gamma (n+1)\)</span> thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}\]</div>
+<p>As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse’s paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.</p>
 </section>
 <section id="table-of-differentials">
 <h2>3.17 Table of Differentials<a class="headerlink" href="#table-of-differentials" title="Permalink to this headline">#</a></h2>
@@ -2045,18 +2063,30 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 \displaystyle\frac{d}{dx}\cos^{-1}(ax+b) &amp; = &amp;\displaystyle -\frac{a}{\sqrt{1-(ax + b)^2 }}\\
 \displaystyle\frac{d}{dx}\tan^{-1}(ax+b) &amp; = &amp;\displaystyle \frac{a}{1+(ax + b)^2 }\\
 \hline \end{array}\end{split}\]</div>
-<p>Using python/Sympy is very easy for more complex functions.</p>
+<p>Using python/SymPy is very easy for more complex functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,a,b&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,a,b&#39;</span><span class="p">)</span>
 
-<span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">b</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
-<span class="n">diff</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">b</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>               <span class="c1"># this result can be simplified</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/differen-B_8_0.png" src="../_images/differen-B_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>              <span class="c1"># make x real number not default to complex</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} 0 &amp; \text{for}\: \sin{\left(x \right)} = 0 \\\frac{\sin{\left(2 x \right)}}{2 \left|{\sin{\left(x \right)}}\right|} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
 </div>
 </div>
 </section>
@@ -2112,7 +2142,7 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

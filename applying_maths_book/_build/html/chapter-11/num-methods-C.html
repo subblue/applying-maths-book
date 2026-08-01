@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1627,8 +1627,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1780,7 +1780,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle k_i/(1+\exp(-(T_0-T)/\sigma_0))\]</div>
 <p>which rises from zero below <span class="math notranslate nohighlight">\(\approx T_0\)</span> to a <em>constant</em> value <span class="math notranslate nohighlight">\(k_i\)</span> above: <span class="math notranslate nohighlight">\(\sigma_0\)</span> controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of <span class="math notranslate nohighlight">\(60\)</span> seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a ‘lab-on-a-chip’.</p>
-<p>The reaction scheme is</p>
+<p>The reaction scheme is, with <span class="math notranslate nohighlight">\(D\)</span> as the concentration of double stranded DNA, <span class="math notranslate nohighlight">\(S\)</span> the single strand, <span class="math notranslate nohighlight">\(P\)</span> the primer and <span class="math notranslate nohighlight">\(E\)</span> the enzyme.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}\\ 
 D &amp; \overset{{\large k_D}}{\underset{{\large k_{-D}}} \rightleftharpoons} &amp;  2S\qquad\qquad \qquad\qquad 95\mathrm{^{o} C,denaturing}\\
@@ -1810,7 +1810,7 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot
 <hr class="docutils" />
 <p>The pattern of populations in fig 11b is complex. Looking at the scheme shows that initially <span class="math notranslate nohighlight">\(D\)</span> is denatured and therefore <span class="math notranslate nohighlight">\(S\)</span> rises and in the last step where new <span class="math notranslate nohighlight">\(D\)</span> is formed the opposite occurs which suggests that plotting <span class="math notranslate nohighlight">\(D\)</span> vs. <span class="math notranslate nohighlight">\(S+SP\)</span> may show this behaviour. Figure 11c clearly shows exactly this and that the final <span class="math notranslate nohighlight">\(D\)</span> is increasing in each cycle.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig20d.png" /></p>
-<p>Figure 11c. Plot showing variation of D with S+SR. the increase and decrease of <span class="math notranslate nohighlight">\(D\)</span> is clear and clearly shows the amplification. The slight kink in the extension is the horizontal part of fig 11b.</p>
+<p>Figure 11c. Plot showing variation of D with S+SP. The increase and decrease of <span class="math notranslate nohighlight">\(D\)</span> is clear but also shows its amplification. The slight kink in the extension is the horizontal part of fig 11b.</p>
 <hr class="docutils" />
 <p>Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling <span class="math notranslate nohighlight">\([D]\)</span> into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is <span class="math notranslate nohighlight">\(\approx 89\)</span> s. The doubling time is calculated assuming</p>
 <div class="math notranslate nohighlight">
@@ -1844,10 +1844,10 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot
 <p>and in the for loop the increments for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are similar to those used previously. The numerical result is shown in Fig. 12 with <span class="math notranslate nohighlight">\(200\)</span> points used in the numerical integration, together with the algebraic solution shown as the dashed line. A fairly good fit to the algebraic line is obtained, but to improve this, more points could be used in the integration or a better integration method used, such as illustrated in Algorithm 15. The algebraic solution can be found using SymPy, and has the form of an exponentially damped sine wave.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">C2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, C1, C2&#39;</span><span class="p">)</span>
-<span class="n">y</span>  <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">eq</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">ans</span><span class="o">=</span> <span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">C2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, C1, C2&#39;</span><span class="p">)</span>
+<span class="n">y</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ans</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
@@ -1859,8 +1859,8 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot
 <p>Including the initial condition <span class="math notranslate nohighlight">\(y(0)=0,\,x=0\)</span> produces <span class="math notranslate nohighlight">\(C_2=0\)</span>. The derivative is <span class="math notranslate nohighlight">\(1\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span>,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dydx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">C1</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">dydx</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dydx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">C1</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dydx</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2041,7 +2041,7 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9}\\ S_0=SP_0=E\cdot
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

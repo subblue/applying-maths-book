@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -42,7 +42,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \begin{bmatrix}1/2 & 1/2 \\1/2 & 1/2  \end{bmatrix}\begin{bmatrix}V \\H  \end{bmatrix}=\begin{bmatrix}(V+H)/2 \\(V+H)/2  \end{bmatrix}$$
 # 
-# and because the componets are equal equal amounts of light are transmitted and reflected.
+# and because the components are equal equal amounts of light are transmitted and reflected.
 # 
 # ## Q41 answer
 # With the wave-plate fast axis at some arbitrary angle $\varphi$ and using the matrix from the table, the matrix equation is
@@ -53,33 +53,33 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle V^2\begin{bmatrix} 2\cos^2(\theta)-1 & 2\sin(\theta)\cos(\theta)\end{bmatrix}\begin{bmatrix} 2\cos^2(\theta)-1 \\2\sin(\theta)\cos(\theta)\end{bmatrix}$$
 # 
-# expanding and simplifying produces an intensity of $V^2$ as shown in the following Sympy calculation
+# expanding and simplifying produces an intensity of $V^2$ as shown in the following SymPy calculation
 
 # In[2]:
 
 
-theta, V = symbols('theta, V')   # notice way of writing a row and a column matrix
-Int = V**2 * Matrix([ [ 2*cos(theta)**2 -1, 2*sin(theta)*cos(theta)]  ] )\
-           * Matrix([ [2*cos(theta)**2-1], [2*sin(theta)*cos(theta)]  ] )
+theta, V = sp.symbols('theta, V')   # notice way of writing a row and a column matrix
+Int = V**2 *sp. Matrix([ [ 2*sp.cos(theta)**2 -1, 2*sp.sin(theta)*sp.cos(theta)]  ] )\
+           * sp.Matrix([ [2*sp.cos(theta)**2-1], [2*sp.sin(theta)*sp.cos(theta)]  ] )
 Int
 
 
 # In[3]:
 
 
-simplify(Int)
+sp.simplify(Int)
 
 
 # The tangent of the rotation angle $\psi$ produced by the wave-plate is the horizontal divided by the vertical component of the vector;  
 # 
 # $$\displaystyle \tan(\psi)=\frac{2\sin(\theta)\cos(\theta)}{2\cos^2(\theta)-1}$$
 # 
-# Using Sympy to simplify gives 
+# Using SymPy to simplify gives 
 
 # In[4]:
 
 
-simplify(2*sin(theta)*cos(theta)/(2*cos(theta)**2-1) )
+sp.simplify(2*sp.sin(theta)*sp.cos(theta)/(2*sp.cos(theta)**2-1) )
 
 
 # or $\displaystyle \tan(\psi)=\tan(2\theta)$ or $ \psi=2\theta$ thus the rotation angle is then twice that rotated by the fast axis of the wave plate.
@@ -146,18 +146,19 @@ simplify(2*sin(theta)*cos(theta)/(2*cos(theta)**2-1) )
 # In[5]:
 
 
-theta = symbols('theta')
+theta = sp.symbols('theta')
 # define half wave plate HWP
-HWP = Matrix([[2*cos(theta)**2-1,2*cos(theta)*sin(theta)],[2*cos(theta)*sin(theta),1-2*cos(theta)**2]])
+HWP = sp.Matrix([[2*sp.cos(theta)**2-1,2*sp.cos(theta)*sp.sin(theta)],\
+                 [2*sp.cos(theta)*sp.sin(theta),1-2*sp.cos(theta)**2]])
 HWP
 
 
 # In[6]:
 
 
-pol0 = Matrix([[1,0],[0,0]])  # polariser zero deg
-pol90= Matrix([[0,0],[0,1]])  # polariser 90 deg
-M = Matrix([[1],[0]])  
+pol0 = sp.Matrix([[1,0],[0,0]])  # polariser zero deg
+pol90= sp.Matrix([[0,0],[0,1]])  # polariser 90 deg
+M = sp.Matrix([[1],[0]])  
 
 
 # In[7]:
@@ -177,7 +178,7 @@ Intensity
 # In[9]:
 
 
-solve(diff(Intensity,theta) ,theta )    # find maxima and minima.
+sp.solve(sp.diff(Intensity,theta) ,theta )    # find maxima and minima.
 
 
 # The plot shows the maximum and minimum values clearly
@@ -195,48 +196,56 @@ solve(diff(Intensity,theta) ,theta )    # find maxima and minima.
 # 
 # Because $\theta \lt \theta^2$ and also for higher powers, on multiplying out gives all squared and higher terms are unimportant thus, $I\approx 4\theta^2$ which may be confirmed by plotting this result. The transmitted intensity is proportional to the square of the angle when this is small.
 # 
-# (d) Now make the calculation general for any polarizer and wave-plate angles using Sympy. 
+# (d) Now make the calculation general for any polarizer and wave-plate angles using SymPy. 
 
 # In[10]:
 
 
-theta, alpha, beta, delta = symbols('theta, alpha, beta, delta', real=True)
+theta, alpha, beta, delta = sp.symbols('theta, alpha, beta, delta', real=True)
 
 # theta is wave plate angle, beta and alpha polariser angles, delta phase for waveplate 
 
-beta  = pi/2 
+beta  = sp.pi/2 
 alpha = 0
-delta = pi
+delta = sp.pi
 
-Wave_plate = Matrix([[cos(theta)**2+sin(theta)**2*exp(-1J*delta), cos(theta)*sin(theta)*(1-exp(-1J*delta))]\
-                   ,[cos(theta)*sin(theta)*(1-exp(-1J*delta)), sin(theta)**2+cos(theta)**2*exp(-1J*delta)]])
+Wave_plate = sp.Matrix([[sp.cos(theta)**2+sp.sin(theta)**2*sp.exp(-1J*delta),\
+                         sp.cos(theta)*sp.sin(theta)*(1-sp.exp(-1J*delta))],\
+                        [sp.cos(theta)*sp.sin(theta)*(1-sp.exp(-1J*delta)), \
+                         sp.sin(theta)**2+sp.cos(theta)**2*sp.exp(-1J*delta)]])
 Wave_plate
 
 
 # In[11]:
 
 
-pola = Matrix([[cos(alpha)**2,cos(alpha)*sin(alpha)],[cos(alpha)*sin(alpha),sin(alpha)**2]])
+pola = sp.Matrix([[sp.cos(alpha)**2,sp.cos(alpha)*sp.sin(alpha)],[sp.cos(alpha)*sp.sin(alpha),sp.sin(alpha)**2]])
 
-polb = Matrix([[cos(beta)**2,  cos(beta)*sin(beta) ],[cos(beta)*sin(beta),   sin(beta)**2]])
+polb = sp.Matrix([[sp.cos(beta)**2,  sp.cos(beta)*sp.sin(beta) ],[sp.cos(beta)*sp.sin(beta), sp.sin(beta)**2]])
 
 
 # In[12]:
 
 
-M = Matrix([[1],[0]])  # vert pol input beam
+M = sp.Matrix([[1],[0]])  # vert pol input beam
 
 
 # In[13]:
 
 
 out = polb*Wave_plate*pola*M   
-simplify(out)
+sp.simplify(out)
 
 
 # In[14]:
 
 
-Intensity=simplify((out.conjugate() ).transpose()*out )
+Intensity=sp.simplify((out.conjugate() ).transpose()*out )
 Intensity 
+
+
+# In[ ]:
+
+
+
 

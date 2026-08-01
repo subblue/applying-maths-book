@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1599,8 +1599,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1614,7 +1614,7 @@ title="Print to PDF"
 <p>The lens matrix containing <span class="math notranslate nohighlight">\(f_1\)</span>, first multiplies the matrix to its right, then the central matrix multiplies this result and so on. The calculation is shown below. A function of the lens matrix <span class="math notranslate nohighlight">\(L\)</span> and gap matrix <span class="math notranslate nohighlight">\(G\)</span> is made so that they can be used with different parameter values, <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(n\)</span>. Because an image is formed, element B, which is at position (<span class="math notranslate nohighlight">\(1, 2\)</span>) in the matrix, is made equal to zero. The resulting equation is then solved for <span class="math notranslate nohighlight">\(x\)</span>, the unknown distance. The magnification is the reciprocal of element <span class="math notranslate nohighlight">\(D\)</span> in position (<span class="math notranslate nohighlight">\(2, 2\)</span>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d, u, f, x, f1, f2, d&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d, u, f, x, f1, f2, d&#39;</span><span class="p">)</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># if the constants are not defined here an algebraic result is obtained</span>
 <span class="n">f1</span><span class="o">=</span> <span class="mf">0.10</span>
@@ -1622,12 +1622,12 @@ title="Print to PDF"
 <span class="n">d</span> <span class="o">=</span> <span class="mf">0.05</span><span class="o">/</span><span class="n">n</span>
 <span class="n">u</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">/</span><span class="n">n</span>
 
-<span class="n">Gd</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">/</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
-<span class="n">Gu</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span><span class="o">/</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
-<span class="n">Gx</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">],</span>   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
+<span class="n">Gd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">/</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
+<span class="n">Gu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span><span class="o">/</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
+<span class="n">Gx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">],</span>   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
 
-<span class="n">L1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
-<span class="n">L2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">L1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
 
 <span class="n">ABCD</span> <span class="o">=</span> <span class="n">Gu</span><span class="o">*</span><span class="n">L1</span><span class="o">*</span><span class="n">Gd</span><span class="o">*</span><span class="n">L2</span><span class="o">*</span><span class="n">Gx</span>
 </pre></div>
@@ -1636,7 +1636,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">ABCD</span><span class="o">.</span><span class="n">det</span><span class="p">()</span> <span class="p">)</span>  <span class="c1"># check determinant is 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">ABCD</span><span class="o">.</span><span class="n">det</span><span class="p">()</span> <span class="p">)</span>  <span class="c1"># check determinant is 1</span>
 </pre></div>
 </div>
 </div>
@@ -1646,7 +1646,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">ABCD</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">ABCD</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1687,11 +1687,11 @@ title="Print to PDF"
 <span class="n">n2</span> <span class="o">=</span> <span class="mf">1.48</span>
 <span class="n">dL</span> <span class="o">=</span> <span class="mf">6.0</span>
 
-<span class="n">f01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">MG</span><span class="p">(</span><span class="n">dL</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span> <span class="n">MR</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span>  <span class="p">)</span>  <span class="c1"># use dot product for matrix multiplication</span>
-<span class="n">f02</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">MR</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n1</span><span class="p">),</span> <span class="n">f01</span><span class="p">)</span>
+<span class="n">f01</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">MG</span><span class="p">(</span><span class="n">dL</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span> <span class="n">MR</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span>  <span class="p">)</span>           <span class="c1"># use dot product for matrix multiplication</span>
+<span class="n">f02</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">MR</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n1</span><span class="p">),</span> <span class="n">f01</span><span class="p">)</span>
 <span class="n">ABCD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>  <span class="n">MG</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n1</span><span class="p">),</span> <span class="n">f02</span><span class="p">)</span>
  
-<span class="n">focal_length</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">ABCD</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">)</span>
+<span class="n">focal_length</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ABCD</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">)</span>                 <span class="c1"># using SymPy to solve</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;focal length &#39;</span><span class="p">,</span> <span class="n">focal_length</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;magnification &#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">ABCD</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
 </pre></div>
@@ -1736,15 +1736,20 @@ magnification   1.007
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">J</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span>               <span class="c1"># 1J is sqrt(-1)</span>
 <span class="n">lambda2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">J</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;eigenvalues =&#39;</span><span class="p">,</span> <span class="n">lambda1</span><span class="p">,</span><span class="n">lambda2</span><span class="p">))</span>
 <span class="n">wavel</span> <span class="o">=</span> <span class="mf">600e-9</span>                           <span class="c1"># metres (red light wavelength)</span>
+
 <span class="n">R</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">D</span><span class="o">-</span><span class="n">A</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;radius of curvature at ref planes=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">))</span>
+
 <span class="n">omegaM</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">wavel</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="p">)</span>
 <span class="n">Z</span>  <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">D</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">C</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;min beam waste at z =&#39;</span><span class="p">,</span> <span class="n">Z</span><span class="p">))</span>
+
 <span class="n">omega0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">wavel</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">C</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;min beam radius=&#39;</span><span class="p">,</span> <span class="n">omega0</span><span class="p">))</span>
+
 <span class="n">Z0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">omega0</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">wavel</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;confocal length =&#39;</span><span class="p">,</span> <span class="n">Z0</span><span class="p">))</span>
 <span class="n">omega</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span> <span class="n">omega0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span> <span class="n">wavel</span><span class="o">*</span><span class="n">z</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">omega0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="p">)</span>  <span class="c1"># radius vs length</span>
@@ -1793,10 +1798,10 @@ confocal length = 0.0968246
 <p>which is what we wanted to prove as the diagonal is reversed. The inverse of a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix is given in Section 5.7, alternatively with python/Sympy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, B, C, D&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, B, C, D&#39;</span><span class="p">)</span>
 
-<span class="n">ABCD</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">],[</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">]])</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">ABCD</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">],[</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">]])</span>
+<span class="n">X</span>    <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">X</span> <span class="o">*</span> <span class="n">ABCD</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">G</span>
 </pre></div>
@@ -1809,7 +1814,7 @@ confocal length = 0.0968246
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">D</span> <span class="o">-</span> <span class="n">B</span><span class="o">*</span><span class="n">C</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># substitute with value from determinant</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">D</span> <span class="o">-</span> <span class="n">B</span><span class="o">*</span><span class="n">C</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>          <span class="c1"># substitute with value from determinant</span>
 </pre></div>
 </div>
 </div>
@@ -1821,37 +1826,46 @@ confocal length = 0.0968246
 </section>
 <section id="q39-answer">
 <h2>Q39 answer<a class="headerlink" href="#q39-answer" title="Permalink to this headline">#</a></h2>
-<p>The matrix for the cavity is <span class="math notranslate nohighlight">\(\displaystyle \pmb{M} = (G_1M_2G_2M_3G_3)\,M_4\,(G_3M_3G_2M_2G_1)\,M_1 \)</span>.</p>
-<p>and the brackets are added to define the elements between the end mirrors. Using python/numpy, the matrices are defined as functions of the gaps and focal length so that several similar matrices do not have to be typed in. We are only interested in numerical results so numpy is used instead of Sympy.  Instead of making <span class="math notranslate nohighlight">\(DBCA\)</span> directly as done below, it can also be calculated by exchanging the indices or using multiplication as in question 38;</p>
+<p>The matrix for the cavity is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M} = (G_1M_2G_2M_3G_3)\,M_4\,(G_3M_3G_2M_2G_1)\,M_1 \]</div>
+<p>and the brackets are added to define the elements between the end mirrors. Using Python/Numpy, the matrices are defined as functions of the gaps and focal length so that several similar matrices do not have to be typed in. We are only interested in numerical results so Numpy is used instead of Sympy.  Instead of making <span class="math notranslate nohighlight">\(DBCA\)</span> directly as done below, it can also be calculated by exchanging the indices or using multiplication as in question 38.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">])</span>
 <span class="n">M</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">])</span>
 
-<span class="n">L1</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">L2</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">L3</span> <span class="o">=</span> <span class="mi">35</span> 
-<span class="n">f1</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">f2</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">f3</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">f4</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># focal lengths </span>
+<span class="n">g1</span> <span class="o">=</span> <span class="mi">210</span>    <span class="c1"># gaps  mm</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="mi">1400</span> 
+<span class="n">g3</span> <span class="o">=</span> <span class="mi">185</span> 
 
-<span class="n">ABCD</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span> <span class="o">@</span> <span class="n">G</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span><span class="nd">@G</span><span class="p">(</span><span class="n">L3</span><span class="p">)</span>  
-<span class="n">DBCA</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">L3</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span> <span class="o">@</span> <span class="n">G</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span><span class="nd">@G</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>  
-<span class="n">Laser_matrix</span> <span class="o">=</span> <span class="n">ABCD</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f4</span><span class="p">)</span> <span class="o">@</span> <span class="n">DBCA</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span> 
+<span class="n">f1</span> <span class="o">=</span> <span class="mi">50</span>     <span class="c1"># focal length in mm  see stability diagram below</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="mi">100</span>    <span class="c1"># mm</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="mi">75</span>     <span class="c1"># mm</span>
+<span class="n">f4</span> <span class="o">=</span> <span class="mi">50</span>     <span class="c1"># focal lengths </span>
+
+<span class="n">ABCD</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span> <span class="o">@</span> <span class="n">G</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span><span class="nd">@G</span><span class="p">(</span><span class="n">g3</span><span class="p">)</span>  
+<span class="n">DBCA</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">g3</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span> <span class="o">@</span> <span class="n">G</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span><span class="nd">@G</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>  
+<span class="n">Laser_matrix</span> <span class="o">=</span> <span class="n">ABCD</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f4</span><span class="p">)</span> <span class="o">@</span> <span class="n">DBCA</span> <span class="o">@</span> <span class="n">M</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+
 <span class="n">stability</span> <span class="o">=</span> <span class="p">(</span><span class="n">Laser_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span> <span class="n">Laser_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span>
-<span class="n">stability</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:6.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stability</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-answersQ35-39_17_0.png" src="../_images/matrices-answersQ35-39_17_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -0.57
+</pre></div>
 </div>
 </div>
-<p>The trace of the determinant divided by <span class="math notranslate nohighlight">\(2\)</span> is <span class="math notranslate nohighlight">\(\lt 1\)</span>, making the cavity stable. If you change gap 3, the cavity soon becomes unstable.</p>
-<p>As an exercise, plot out the stability by changing the gaps between the two mirrors. The same can be done for the mirror radii at fixed gaps. Using the complex beam parameter, see Gerrand and Birch, the beam profile for stable cavities can be plotted. The results of the stability with changing gaps are shown in figure 85a.</p>
+</div>
+<p>The trace of the determinant divided by <span class="math notranslate nohighlight">\(2\)</span> is <span class="math notranslate nohighlight">\(\lt 1\)</span>, making the cavity stable. The stability is sensitive to changes in lengths and focal lengths except for <span class="math notranslate nohighlight">\(g_2\)</span>.</p>
+<p>As an exercise, plot out the stability by changing the gaps between the two mirrors. The same can be done for the mirror radii at fixed gaps. The results of the stability with changing gaps are shown in figure 85a.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig85A.png" /></p>
-<p>Figure 85A. Stability diagrams. The white areas are unstable, the contours show the size of the stability as calculated above for ranges of gap values, and the red dot shows the calculation with parameters in the question.</p>
+<p>Figure 85A. Stability diagrams. The white areas are unstable, the color shows the regions of stability as calculated above for ranges of gap values, and the white dot (top right) shows the stable region with parameters used in the question. In this stability plot the length <span class="math notranslate nohighlight">\(g_2\)</span> was held constant at <span class="math notranslate nohighlight">\(1400\)</span> mm and only <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_3\)</span> changed.</p>
+<p>The outline beam profile is shown in the next figure for the values given in the calculation above where beam waists are found to be in the middle of the gaps <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_3\)</span> which are suitable for placing the gain medium and the cavity dumper. Other stable regions have at least one waist at or very close to a mirror surface which is impracticable.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig85B.png" /></p>
+<p>Figure 85B. Beam profile along the cavity at the stability region shown in the diagram above.</p>
 </section>
 </section>
 
@@ -1905,7 +1919,7 @@ confocal length = 0.0968246
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Questions 24 - 37
+# # Questions 24 - 38
 
 # ## Q24 Operator
 # If $H_n(x)$ represents the Hermite polynomial, show that the _operator_ 
@@ -215,6 +215,13 @@
 # describes the motion of the classical soliton wave. The wave displacement at $x$ and $t$ is $u$ and the shape of the wave is not unlike that of a Gaussian. 
 # 
 # Show that $\displaystyle u(x,t)= 3c\,\mathrm{sech}^2( \sqrt{c}  (x-2at)/2 )$ is a solution of the KdV equation where 2$a$ is the wave speed.
+# 
+# ## Q38 Motion of connected masses
+# 
+# Two masses are connected to one another by a spring with force constant $k_0$ and each is also attached to a rigid wall with a spring with force constant $k$. The arrangement is thus $wall-spring_1-mass_1-spring_0-mass_2-spring_1-wall$. Work out the normal modes when the masses are moving in a straight line on a frictionless horizontal surface. Initially, if mass 1 only is extended by 1 unit, thus $x_1=1$ and $x_2=0$, and the initial velocities of each mass is zero calculate the extensions $x_1$ and $x_2$. Assume that the masses are the identical to one another with mass $m$.  
+# 
+# **Strategy:** To work out the equations of motion you might like to try using the Laplacian and the Euler-Lagrange equation, see Chapter 3-8. Solve the simultaneous equations as described in the text. If you plot the displacement $x_1$ try force constants of $k_0= 7$ and $k_1=14$ units. You should observe beats in the motion. Plot the envelope of these.
+# 
 
 # In[ ]:
 

@@ -10,8 +10,6 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()             # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -85,8 +83,7 @@ Ev = [ U(r[i]) for i in range(numr) ]
 re = 2**(1/6)*sigma
 EH = [36*2**(2.0/3.0)*epsilon/sigma**2*(r[i]-re)**2 - epsilon for i in range(numr)] # harmonic approx
 
-fig1=plt.figure(figsize=(5,5))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig1 = plt.figure(figsize=(5,5))
 plt.plot(r,Ev,color='red',label='L-J 6-12')
 plt.plot(r,EH,color='blue',linestyle='dotted',label='Harmonic approx')
 plt.axis([300,1200,-1.05*epsilon,1.05*epsilon])
@@ -94,8 +91,8 @@ plt.axhline(0,color='gray',linestyle='dashed',linewidth=1)
 plt.yticks([-0.02,-0.01,0.0,0.01,0.02])
 plt.xlabel('r/ pm')
 plt.ylabel('E/ eV')
-plt.title('Lennard-Jones 6-12 potential & its aproximation')
-plt.legend()
+plt.title('Lennard-Jones 6-12 potential & its aproximation',fontsize=12)
+plt.legend(fontsize=12)
 plt.show()
 
 
@@ -144,15 +141,14 @@ E     = lambda z :( -(1+z)**(-2) + (1-z)**(-2)  )
 Eapprx= lambda z : 4/z**3 
 z = np.linspace(1.0001,6.0,100)
 
-fig1=plt.figure(figsize=(5,5))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig2 = plt.figure(figsize=(5,5))
 plt.plot(z, E(z), color='red',label='exact')
 plt.plot(z, Eapprx(z), color='blue',label='approx')
 plt.axis([1,6,0,4])
 plt.ylabel('reduced field '+r'$ E/q\beta$')
 plt.xlabel('reduced distance x/d')
-plt.title('ion-dipole interaction')
-plt.legend()
+plt.title('ion-dipole interaction',fontsize=12)
+plt.legend(fontsize=12)
 plt.show()
 
 
@@ -193,8 +189,8 @@ v0  = 0.0                      # observer's speed
 x0  = 1.0                      # observer's distance  
 f0  = 440.0                    # siren's frequency Hz
 
-numx = 200                   # number of data points
-x = np.linspace(-10,10,numx) # numx points evenly spaced from -10 to 10
+numx= 200                      # number of data points
+x = np.linspace(-10,10,numx)   # numx points evenly spaced from -10 to 10
 print('{:6.2f} {:s}{:6.2f}{:s} '.format(mph, 'mph is equivalent to ',v,' m/s' )) 
 
 f = lambda v, x : f0*(vs+v0)/(vs-v) if x > 0 else f0*(vs+v0)/(vs+v)
@@ -203,14 +199,13 @@ rel_v = [ v*np.cos(np.arctan(x0/x[i])) for i in range(numx)]  # angle to observe
 
 f01 = [ f( rel_v[i], x[i] ) for i in range(numx)]
 
-fig1 = plt.figure( figsize=(5, 5) )
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig3 = plt.figure( figsize=(5, 5) )
 plt.plot( x, f01,color='blue')
 plt.axhline(f0,color='gray',linewidth=1)
 plt.axvline(0 ,color='gray',linewidth=1)
 plt.xlabel('distance /m')
 plt.ylabel('frequency /Hz')
-plt.title( 'Doppler shift')
+plt.title( 'Doppler shift',fontsize=12)
 plt.ylim([f01[0]*0.95,f01[numx-1]*1.05])
 plt.grid(color='gray',linestyle='dotted')
 plt.show()
@@ -271,7 +266,6 @@ plt.show()
 # In[5]:
 
 
-fig1= plt.figure( figsize=(5, 5) )
 E2 = 4
 E1 = 2
 deltaE= E2 - E1
@@ -291,6 +285,7 @@ Elimm = [ (E1+E2)/2.0-x[i] for i in range(numx)]
 Eaprxp= [E2 + x[i]**2/deltaE for i in range(numx)]  # approximation 
 Eaprxm= [E1 - x[i]**2/deltaE for i in range(numx)]
 
+fig4 = plt.figure( figsize=(5, 5) )
 plt.plot(x,Ep,color='black',linestyle='solid',label='exact E+')
 plt.plot(x,Em,color='black',linestyle ='solid')
 

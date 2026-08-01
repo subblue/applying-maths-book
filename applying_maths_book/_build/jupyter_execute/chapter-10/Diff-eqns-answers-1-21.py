@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
+import sympy as sp
 from scipy.optimize import fsolve
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -71,10 +71,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x, t, k, N, C1 = symbols('x, t, k, N, C1' )       # use SymPy , define symbolic variables
-x = Function('x')
-f01 = Derivative( x(t),t) -k*x(t)*( N - x(t) )    # eqn 7 
-ans = dsolve(f01 )
+x, t, k, N, C1 = sp.symbols('x, t, k, N, C1' )       # use SymPy , define symbolic variables
+x = sp.Function('x')
+f01 = sp.Derivative( x(t),t) -k*x(t)*( N - x(t) )    # eqn 7 
+ans = sp.dsolve(f01 )
 ans
 
 
@@ -88,14 +88,14 @@ ans1
 # In[4]:
 
 
-c1_s = solve(ans1,C1)               # solve for constant
+c1_s = sp.solve(ans1,C1)               # solve for constant
 c1_s
 
 
 # In[5]:
 
 
-simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
+sp.simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 
 
 # (b) The time for half the population to be infected occurs when $x = N/2$ giving $t_{1/2} = \ln(N − 1)/Nk$. This makes sense if $k$ is small then the spreading of the disease is slow and $t_{1/2}$ large, and if the population is large it also takes some time for half of them to become infected.
@@ -301,7 +301,11 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # $$\displaystyle \frac{d[IM]}{dt} = k_1[I][M] - k_{-1}[IM] - k_2[IM][I] = 0$$
 # 
-# giving $\displaystyle [IM]=\frac{k_1[I][M]}{k_{-1}+k_2[I]}$. The appearance of I$_2$ molecules is 
+# giving 
+# 
+# $$\displaystyle [IM]=\frac{k_1[I][M]}{k_{-1}+k_2[I]}$$
+# 
+# The appearance of I$_2$ molecules is 
 # 
 # $$\displaystyle \frac{d[I]}{dt}=-k_2[IM][M]=-\frac{k_2k_{-1}}{k_1}[M][I]^2$$
 # 
@@ -311,7 +315,11 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # which explains the linear dependence of $1/[I]$ with time.
 # 
-# (b) If each of the rate constants follows an Arrhenius type expression $\displaystyle k_a = k_0e^{-E_a/RT}$ with activation energy $E_a$, then, from the rate expression the term $k_2k_{-1}/k_1$ gives the overall reaction an activation energy $E_2 + E_{-1} - E_1$. If $E_1$ is greater than the other two, then the experimentally measured activation energy is negative even though each step has a positive or zero activation energy as must always be the case.
+# (b) If each of the rate constants follows an Arrhenius type expression 
+# 
+# $$\displaystyle k_a = k_0e^{-E_a/RT}$$
+# 
+# with activation energy $E_a$, then, from the rate expression the term $k_2k_{-1}/k_1$ gives the overall reaction an activation energy $E_2 + E_{-1} - E_1$. If $E_1$ is greater than the other two, then the experimentally measured activation energy is negative even though each step has a positive or zero activation energy as must always be the case.
 # 
 # ## Q16 answer
 # (a) The scheme is solvable if $x$ is the amount consumed at time $t$,
@@ -472,24 +480,18 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # In[7]:
 
 
-k3, N_ss, t, N0, C1= symbols('k3, N_ss, t, N0, C1')   # SymPy define symbols to use
-N  = Function('N')
-f01= Derivative(N(t),t) - k3*(N_ss - N(t))*N(t)        # define and symbolically solve equation
-ans = dsolve(f01)
+k3, N_ss, t, N0, C1= sp.symbols('k3, N_ss, t, N0, C1')   # SymPy define symbols to use
+N  = sp.Function('N')
+f01= sp.Derivative(N(t),t) - k3*(N_ss - N(t))*N(t)        # define and symbolically solve equation
+ans = sp.dsolve(f01)
 ans
 
 
 # In[8]:
 
 
-const = solve( ans.subs(t,0).subs(N(0),N0) , {C1} )   # substitute initial conditions into answer to find C1
-const[0]
-
-
-# In[9]:
-
-
-n_t = simplify(ans.rhs.subs(C1,const[0]))       # substitute into initial answer for C1 and simplify
+const = sp.solve( ans.subs(t,0).subs(N(0),N0) , {C1} )   # substitute initial conditions into answer to find C1
+n_t = sp.simplify(ans.rhs.subs(C1,const[0]))       # substitute into initial answer for C1 and simplify
 n_t
 
 

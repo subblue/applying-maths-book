@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 9 First order equations & Integrating Factors. Second order equations, Newton's laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+# # 9 First & second order equations. Integrating Factors. Newton's laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
 
 # In[1]:
 
@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -60,11 +60,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x, y = symbols('x, y')
-y = Function('y')
-f01 = diff(y(x),x)-(2*x**2 + 3*y(x)**2)/(x*y(x) )  # define equation , y is function of x 
-ans = dsolve(f01)                                  # solve then factor answer
-factor(ans)
+x, y = sp.symbols('x, y')
+y = sp.Function('y')
+f01 = sp.diff(y(x),x)-(2*x**2 + 3*y(x)**2)/(x*y(x) )  # define equation , y is function of x 
+ans = sp.dsolve(f01)                                  # solve then factor answer
+sp.factor(ans)
 
 
 # ## 9.2 Exact equations
@@ -557,14 +557,15 @@ factor(ans)
 # 
 # $$\displaystyle \langle x^2\rangle =\frac{\int_0^{1/v} x^2dt}{\int_0^{1/v} dt}=v\int_0^{1/v} A^2\sin^2(\omega t+B)dt=\frac{A^2v}{2}\int_0^{1/v} (1-\cos(4\pi v t+2B)dt=\frac{A^2}{2}$$
 # 
-# using $\cos(2\theta)=1-2\sin^2(\theta)$ to simplify the integration. The integral using python/Sympy is 
+# using $\cos(2\theta)=1-2\sin^2(\theta)$ to simplify the integration. The integral using python/SymPy is 
 
 # In[3]:
 
 
-t, v, B, A = symbols('t, v, B, A', positive = True )
-ans = integrate(A**2* v*( 1 - cos(4*pi*v*t+2*B  ) )/2,(t,0,1/v) )
-simplify(ans)
+t, v, B, A = sp.symbols('t, v, B, A', positive = True )
+pi  = sp.pi
+ans = sp.integrate(A**2* v*( 1 - sp.cos(4*pi*v*t+2*B  ) )/2,(t,0,1/v) )
+sp.simplify(ans)
 
 
 # The square displacement gives the (time averaged) average potential (or displacement) energy as $V=kA^2/4$ obtained by integrating the force from Hook's law $f(x)=-kx$. The (time averaged) average kinetic energy has the same value because the total energy is $E=kA^2/2$ where $A$ is the maximum displacement which is at the turning point. 

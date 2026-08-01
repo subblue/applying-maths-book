@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -36,13 +36,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle I=\int\cot(ax)dx = \frac{1}{a}\ln\left(\sin(ax)\right)+c$$ 
 # 
-# Using Sympy as a check 
+# Using SymPy as a check 
 
 # In[2]:
 
 
-x, a = symbols('x, a',positive =True)
-integrate(cot(a*x),x)
+x, a = sp.symbols('x, a',positive =True)
+sp.integrate(sp.cot(a*x),x)
 
 
 # (e) $\displaystyle I=\int \frac{x^2}{8+x^3}dx$. In this case the numerator is 1/3 of the derivative of the denominator, therefore, using equation 12, 
@@ -176,20 +176,20 @@ integrate(cot(a*x),x)
 # 
 # $$\displaystyle I_n=x^nI_0-\frac{n}{a}I_{n-1}  \tag{98}$$
 # 
-# which can also be written as a recursion formula, $aI_n+nI_{n-1}=x^ne^{ax}$. The code below shows the recursion using Sympy. This gives the same answer as direct integration.
+# which can also be written as a recursion formula, $aI_n+nI_{n-1}=x^ne^{ax}$. The code below shows the recursion using SymPy. This gives the same answer as direct integration.
 
 # In[3]:
 
 
-a, x = symbols('a, x',positive = True)
+a, x = sp.symbols('a, x',positive = True)
 
 def Intn(n):
-    if n == 0: return exp(a*x)/a
-    if n == 1: return (a*x - 1)*exp(a*x)/a**2  
-    return (x**n*exp(a*x) - n*Intn(n - 1))/a     # recursion formula
+    if n == 0: return sp.exp(a*x)/a
+    if n == 1: return (a*x - 1)*sp.exp(a*x)/a**2  
+    return (x**n*sp.exp(a*x) - n*Intn(n - 1))/a     # recursion formula
 #-----------------
 
-simplify(Intn(5) )      #  integral x^5 exp(a*x)
+sp.simplify(Intn(5) )      #  integral x^5 exp(a*x)
 
 
 # ## Q23 answer
@@ -220,19 +220,19 @@ simplify(Intn(5) )      #  integral x^5 exp(a*x)
 # In[4]:
 
 
-a, x = symbols('a, x',positive =True)
+a, x = sp.symbols('a, x',positive = True)
 
 def intxn(n):
-    if n == 0: return sqrt(pi/(4*a) )
+    pi = sp.pi
+    if n == 0: return sp.sqrt(pi/(4*a) )
     if n == 1: return 1/(2*a)
-    if n == 2: return sqrt(pi/a)/(4*a)
+    if n == 2: return sp.sqrt(pi/a)/(4*a)
     return (n - 1)*intxn(n - 2)/(2*a)       # recursion chnage n to n-2 
 #-----------------
 
 ans = []
-for n in range( 6):   # make list to see results
-    ans.append(n)
-    ans.append(intxn(n) )
+for n in range( 6):               # make list to see results
+    ans.append([n,intxn(n)] )
 ans
 
 

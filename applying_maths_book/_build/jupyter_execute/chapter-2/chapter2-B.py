@@ -1,17 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 3 De Moivre's theorem and integer powers of complex numbers
+# # 3 De Moivre's Theorem and Integer powers of complex numbers
 
-# ## 3 Complex number as $z = r\left(\cos(\theta) + i \sin(\theta)\right)$
+# ## 3 A Complex number $z$ can be written as $z = r\left(\cos(\theta) + i \sin(\theta)\right)$
 # 
 # A complex number $z=a+ib$ can be written equivalently as
 # 
 # $$\displaystyle z = r\left(\cos(\theta) + i \sin(\theta)\right)$$
 # 
-# and if $n$ is an integer, what is $z^n = r^n\left(\cos(\theta) + i \sin(\theta)\right)^n$ ? 
-# 
-# The trigonometric part can be shown to have the simple form,
+# and if $n$ is an integer, what is $z^n = r^n\left(\cos(\theta) + i \sin(\theta)\right)^n$? The trigonometric part can be shown to have the simple form,
 # 
 # $$\displaystyle \left(\;\cos(\theta) + i \sin(\theta)\;\right)^n = \cos(n\theta) + i \sin(n\theta) \qquad\tag{8}$$
 # 
@@ -19,14 +17,14 @@
 # 
 # $$\displaystyle z^n = r^n\left(\cos(n\theta) + i \sin(n\theta) \right)\qquad\tag{9}$$
 # 
-# which is called De Moivre's theorem and is essential to calculating powers of complex numbers. One of the unexpected things that can be done is to find the $n^\mathrm{th}$ root of $1,\, i, \,-3$ or any other number for that matter.
+# which is called De Moivre's Theorem and is essential to calculating powers of complex numbers. One of the unexpected things that can be done is to find the $n^\mathrm{th}$ root of $1,\, i, \,-3$ or any other number for that matter.
 # 
 # To demonstrate that De Moivre's theorem is correct, calculate the product of two complex numbers expressed in angular form, and then let $\theta_1 = \theta_2$. Suppose, for simplicity, that $r_1 = r_2 = 1$, then the product of two numbers is
 # 
 # $$\displaystyle \begin{align}
 # \big(\cos(\theta_1) + i\sin(\theta_1)\big)\big(\cos(\theta_2) + i\sin(\theta_2)\big) 
-# & = \cos(\theta_1)\cos(\theta_2) + i \cos(\theta_1)\sin(\theta_2) + i\sin(\theta_1)\cos(\theta_2) -\sin(\theta_1)\sin(\theta_2)\\
-# &=\cos(\theta_1 +\theta_2)+i\sin(\theta_1 +\theta_2)
+# & = \cos(\theta_1)\cos(\theta_2) + i \cos(\theta_1)\sin(\theta_2) \\&\quad+ i\sin(\theta_1)\cos(\theta_2) -\sin(\theta_1)\sin(\theta_2)\\
+# & = \cos(\theta_1 +\theta_2)+i\sin(\theta_1 +\theta_2)
 # \end{align}$$
 # 
 # The double angle formula (Chapter 1.5.1) was used in the last step, and letting $\theta_1 = \theta_2$ produces
@@ -34,6 +32,8 @@
 # $$\displaystyle \big(\cos(\theta) + i\sin(\theta)\big)^2 = \cos(2\theta) + i\sin(2\theta)$$
 # 
 # as predicted by De Moivre's theorem. This result can be generalized to any power of a real or complex value $n$.
+# 
+# ### **Product and quotent**
 # 
 # The product $z_1z_2$ and quotient $z_1/z_2$ of two complex numbers are written in this form as
 # 
@@ -50,7 +50,7 @@
 # ![Drawing](chapter2-fig5.png )
 # 
 # Figure 5. Geometrical interpretation of the multiplication of two complex numbers.
-# _____
+# ___________
 # 
 # ## 3.1 Hyperbolic functions and complex numbers
 # 
@@ -67,7 +67,7 @@
 # 
 # Suppose that $w$ is a real or complex number whose roots we need to find, then mathematicians have shown that, in general, the answer will be a complex number. If the $n$ roots of a number $z$ are expressed as $w = z^{1/n}$, then the equation to examine is $w^n = z$.
 # 
-# We will let both sides of this equation be different complex numbers. Expressing the left-hand side in angular form using De Moivre's theorem with a polar angle $\varphi$ gives
+# We will let both sides of this equation be a complex number. Expressing the left-hand side in angular form using De Moivre's theorem with a polar angle $\varphi$ gives
 # 
 # $$\displaystyle w^n = R^n(\cos(n\varphi) + i \sin(n\varphi)) \qquad\tag{11}$$ 
 # 
@@ -83,13 +83,13 @@
 # 
 # $$\displaystyle w=r^{1/n}\left( \cos\left( \frac{\theta+2\pi k}{n} \right) +i\sin\left( \frac{\theta+2\pi k}{n} \right)  \right) \qquad\tag{14}$$
 #  
+# ### **$n^\mathrm{th}$ root of unity**
+# 
 # In the special case of calculating the $n^\mathrm{th}$ root of unity, $w^n = 1$ and $z = 1$, then from equation 12, $r = 1,\; \theta = 0$ and therefore, 
 # 
 # $$\displaystyle w= \cos\left( \frac{2\pi k}{n} \right) +i\sin\left( \frac{2\pi k}{n} \right)   \qquad\tag{15}$$
 #  
-# There is always one real root and the other roots fall on the vertices of a polygon which is formed inside a circle of unit radius and touches the circle only at its vertices.
-# 
-# To illustrate the method, $w^5 = 1$ is solved to find the five, fifth roots of unity. The equation to use is $w^n = z$ with $n = 5$ and $z = 1$. The roots are the solution of equation 15 with $n = 5$,
+# There is always one real root and the other roots fall on the vertices of a polygon which is formed inside a circle of unit radius and touches the circle only at its vertices. To illustrate this, $w^5 = 1$ is solved to find the five, fifth roots of unity. The equation to use is $w^n = z$ with $n = 5$ and $z = 1$. The roots are the solution of equation 15 with $n = 5$,
 # 
 # $$\displaystyle z=1^{1/5}= \cos\left( \frac{2\pi k}{5} \right) \pm i\sin\left( \frac{2\pi k}{n} \right)   $$
 # 
@@ -104,12 +104,8 @@
 # $$\displaystyle \theta = \tan^{-1}\left(\frac{\sin(2\pi/5)}{\cos(2\pi/5)}\right) \equiv 72^\mathrm{o}$$
 #  
 # and the other roots are separated from each other by the same angle as expected for a pentagon, see figure 6.
-# 
-# ![Drawing](chapter2-fig6.png )
-# 
-# Figure 6. The five roots of the equation $z^5 = 1$ form a pentagon. The radial lines to each root are $72^\text{o}$ apart. 
 
-# ## 3.3 Euler's theorem, roots of unity, x-ray diffraction structure factor.
+# ## 3.3 Euler's theorem and $n^\mathrm{th}$ root of unity
 # 
 # The exponential series is $\displaystyle e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$, and similarly a series can be formed in the complex number $w$, 
 # 
@@ -151,8 +147,6 @@
 # 
 # which some consider the most beautiful equation in mathematics, as it connects the most important numbers of mathematics $(0, 1, i, e$, and $\pi)$ and uses the most important operations (multiplication, exponentiation, negation, and addition). Furthermore, an integer is produced by raising an irrational number $\pi$ times the imaginary unit $i$ to the power of another irrational number, $e$. It is not at all obvious why this connection exists from an arithmetical standpoint, but from a geometrical one it is clearer. Consider a circle of unit radius on an Argand diagram; as the angle $\theta$ increases from $0 \to 2\pi$, the modulus (radius) is $1$ when $\theta = 0$, and is $i$ when $\theta = \pi/2$, and $-1$ when the angle is $\pi$ and so on; see figure 4.
 # 
-# ## 4.1 Roots of unity - continued
-# 
 # The $n$ complex roots of unity are also easily calculated by defining
 # 
 # $$\displaystyle w_n=e^{2\pi i /n}\qquad\tag{20}$$
@@ -165,9 +159,27 @@
 # 
 # $$\begin{align}w_4^0=&\;1,\\ w_4^1 = & \;\cos(\pi/2)+i\sin(\pi/2)=i,\\w_4^2 = & \;\cos(\pi)+i\sin(\pi)=-1,\\ w_4^3 = & \;\cos(3\pi/2)+i\sin(3\pi/2) = -i  \end{align}$$
 # 
-# With the definition of eqn 20, $(w_n)^n\equiv w_n^n=e^{2\pi i}=1 =w_n^0$. if we add $n$ to any of the roots for example $w_n^{j+n}$ then  $w_n^{j+n}=w_n^nw_n^j=w_n^j$ which shows that the roots are cyclic $j$ being an integer and have a period of $n$. 
+# With the definition of eqn 20, $(w_n)^n\equiv w_n^n=e^{2\pi i}=1 =w_n^0$. if we add $n$ to any of the roots for example $w_n^{j+n}$ then  $w_n^{j+n}=w_n^nw_n^j=w_n^j$ which shows that the roots are cyclic $j$ being an integer and have a period of $n$.
 # 
-# ### **(i) Sum and product of the roots of unity**
+# ![Drawing](chapter2-fig6.png )
+# 
+# Figure 6. The five roots of the equation $z^5 = 1$ form a pentagon. The radial lines to each root are $72^\text{o}$ apart. $w_5^k= \exp(2\pi i\cdot k/n)$.
+# 
+# ### **(i) Useful relationships**
+# 
+# $$\displaystyle \begin{array}{l|llll}
+# \hline
+# e^{i\pi}&=e^{3i\pi}&=e^{5i\pi}\cdots &= -1\\
+# e^{2i\pi}&=e^{4i\pi}&=e^{6i\pi}\cdots &= +1\\
+# e^{ni\pi}&=e^{-ni\pi}&=(-1)^n& n\text{ is integer}\\
+# e^{i\theta}+e^{- i\theta}&=2\cos(\theta) \\
+# e^{i\theta}-e^{- i\theta}&=2i\sin(\theta)\\
+# n = & 1&2 &3 &4 &5\\
+# e^{-ni\pi/2 }=& -i&-1&i&1&-i&\cos(n\pi/2)-\sin(n\pi/2)\\
+# e^{+ni\pi/2 }=& i&-1&-i&1&i & \cos(n\pi/2)+\sin(n\pi/2)\\
+# \hline\end{array}$$
+# 
+# ### **(ii) Sum and product of the roots of unity**
 # Figure 5 shows the five roots of unity. The sum of these roots, provide there are two or more, is zero, which can be intuitively seen by looking at the image. A geometric argument is that each root can be considered as a vector based at $(0,0i)$ and their sum will be zero as each is equally spaced from its neighbour.
 # 
 # The sum is 
@@ -182,7 +194,7 @@
 # 
 # $$\displaystyle S=\frac{1-e^{2\pi i}}{1-e^{2\pi i/n}}=0$$
 # 
-# because we know from eqn. 20 that $(w_n)^n=e^{2\pi i}=1$ the sum is zero.
+# because we know from eqn. 20 that $(w_n)^n=e^{2\pi i}=1$ the sum is zero. This is clear also from figure 6. The symmetrically placed values must add to zero no matter what $n$ is. 
 # 
 # The product is 
 # 
@@ -194,16 +206,11 @@
 # 
 # As $e^{-i\pi} = -1$ and the other term is $\pm 1$ depending on whether $n$ is odd or even therefore the product is always $ 1$ if $n$ is even and $-1$ if odd, i.e $(-1)^n$.
 # 
-# ### **(ii) Useful relationships**
+# An example of summing the roots of unity is found when balancing a centrifuge. In fig 6, we can see that only by filling all five positions will balance be achieved. This means that $w^0+w^1+w^2+w^3+w^4=0$. It looks as if balance can be achieved if $k = 0,2$ and $3$ are added together, but on closer inspection it can be seen that this is not true because $w^2+w^3= e^{2i\pi 2/5}+e^{2i\pi 3/5} =2\cos(4\pi/5)=-1.62 \ne -1$. If there were six positions in a centrifuge besides filling all six, positions $2,3$ and $4$ can be filled and the centrifuge is balanced. The theory for this is explained in this article. Matthew H. Baker (2022) 'Balancing Centrifuges with Number Theory', Math Horizons, vol 30, p. 20-23 (DOI: 10.1080/10724117.2022.2092372)
 # 
-# $$\displaystyle \begin{array}\\
-# e^{i\pi}&=e^{3i\pi}&=e^{5i\pi}\cdots &= -1\\
-# e^{2i\pi}&=e^{4i\pi}&=e^{6i\pi}\cdots &= +1\\
-# e^{ni\pi}&=e^{-ni\pi}&=(-1)^n& n\text{ is any integer}\\
-# e^{i\theta}+e^{- i\theta}&=2\cos(\theta) \\
-# e^{i\theta}-e^{- i\theta}&=2i\sin(\theta) \end{array}$$
 # 
-# ## 4.2 Examples
+# 
+# ## 4.1 Examples
 # 
 # Euler's formula is important in science, because it permits the description of a sinusoidally varying real quantity by means of complex exponentials as in Fourier Transforms described in Chapter 9. This change simplifies equations, because it is far easier to manipulate exponentials than trig functions. For example, the general form of a sinusoidally varying quantity, such as a plane wave, is $f (t) = a_0\cos(\omega t - \theta)$, where $a_0$ is the amplitude, $\omega$ the frequency, and $\theta$ the phase. These are all constants, and $t$ is time and is a real variable. The equivalent complex function is
 # 
@@ -227,7 +234,7 @@
 # Figure 7. Visualizations of the complex number $e^{i\theta} = \cos(\theta) + i \sin(\theta)$ illustrate that it has a wavelike form.
 # __________
 # 
-# ## 4.3 x-ray diffraction intensity. The Structure Factor and Phase Problem 
+# ## 4.2 x-ray diffraction intensity. The Structure Factor and Phase Problem 
 # In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffraction by a single crystal is described. The structure factor $F$ described how the intensity of a given 'reflection' is related to the coordinates of the atoms in the unit cell _via_ the Miller indices $( h k l )$ of the planes of atoms. The Miller indices are integers that can be positive, zero or negative. The planes of atoms occur because the unit cell is repeated throughout the crystal to form a lattice of points. The unit cell is the smallest arrangement of atoms from which the whole crystal can be constructed. 
 # 
 # The fractional position of an atom is $u,v,w$ making the scattering factor, 
@@ -271,7 +278,7 @@
 # 
 # $$\displaystyle F^*F=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})$$
 # 
-# in this case it is not necessary because $h, k, l$ are integers and we know that $e^{n i\pi}=e^{-n i\pi}=(-1)^2$. Thus when $h+k$ is an even number $F=2f$ and when it is not $F=0$. The value of $l$ has no effect thus refections from indices, for example, $131, 132, 133$ etc. all have the same intensity, and similarly $122,123,124$ etc. are all missing with zero structure factor.
+# in this case it is not necessary because $h, k, l$ are integers and we know that $e^{n i\pi}=e^{-n i\pi}=(-1)^n$. Thus when $h+k$ is an even number $F=2f$ and when it is not $F=0$. The value of $l$ has no effect thus refections from indices, for example, $131, 132, 133$ etc. all have the same intensity, and similarly $122,123,124$ etc. are all missing with zero structure factor.
 # 
 # The direct calculation is
 # 

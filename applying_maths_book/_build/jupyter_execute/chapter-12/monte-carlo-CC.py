@@ -9,8 +9,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -215,7 +215,15 @@ def sim(n):                             # Ehrenfeld simulation algorithm
 # Figure 10c. The Ehrenfest simulation when $n=50$ and $500$. The normalised number of molecules is plotted, $w_1/n$. The smooth curves are the predicted behaviour $w_1/n=(1+e^{-2t/n})/2$ as described in the text.
 # __________________
 # 
-# Figure 10c shows clearly that the number of white particles in volume 1 (or equivalently black ones in 2) produces a decay that is far noisier when there are fewer particles involved as is expected intuitively; the standard deviation of the noise is typically reduced as $\sqrt{n}/2$ which is approximately what the noise on these plots show over long times. The lifetime by which equilibrium is reached, $w_1/n=0.5$ is bigger when the number of particles is larger, also as expected. The smooth decay curves are the function $w_1/n=(1+e^{-2t/n})/2$. Empirically, by fitting the simulation made with different initial numbers $n$ the lifetime $\tau$ is clearly very close to $n/2$ which is a good approximation to the exact value of $\tau=-1/\ln(1-2/n)$ when $2/n \lt 1$ as shown next.
+# Figure 10c shows clearly that the number of white particles in volume 1 (or equivalently black ones in 2) produces a decay that is far noisier when there are fewer particles involved as is expected intuitively; the standard deviation of the noise is typically reduced as $\sqrt{n}/2$ which is approximately what the noise on these plots show over long times. The lifetime by which equilibrium is reached, $w_1/n=0.5$ is bigger when the number of particles is larger, also as expected. The smooth decay curves are the function 
+# 
+# $$\displaystyle \frac{w_1}{n} = (1+e^{-2t/n})/2$$
+# 
+# Empirically, by fitting the simulation made with different initial numbers $n$ the lifetime $\tau$ is clearly very close to $n/2$ which is a good approximation to the exact value of 
+# 
+# $$\displaystyle \tau=-\frac{1}{\ln(1-2/n)}$$
+# 
+# when $2/n \lt 1$ as shown next.
 # 
 # The probabilities of reducing the number of molecules from $n\to n-1$ is $n_t/n$, and therefore of increasing is $1-n_t/n$. The number of transfers from time $t \to t+1$ is by definition the number already present plus the chance of increasing by one and of decreasing by one and has the recursive relation,
 # 
@@ -232,20 +240,20 @@ def sim(n):                             # Ehrenfeld simulation algorithm
 # 
 # If we start with $t=0$ with $n_0$ molecules then at $t$ events and after much simplifying we get
 # 
-# $$\displaystyle   n_{t}  = \frac{n}{2}+\left(1-\frac{2}{n}\right)^t\left(n_0-\frac{n}{2}\right)$$
+# $$\displaystyle   n_{t}  = \frac{n}{2}+\left(1-\frac{2}{n}\right)^{\large t}\left(n_0-\frac{n}{2}\right)$$
 # 
 # The first few substitutions are easily found using Sympy as shown below. 
 
 # In[5]:
 
 
-n,n0,n1,n2,n3,n4=symbols('n,n0,n1,n2,n3,n4')
+n,n0,n1,n2,n3,n4 = sp.symbols('n,n0,n1,n2,n3,n4')
 
 n1 = (1-2/n)*n0+1
 n2 = (1-2/n)*n1+1
 n3 = (1-2/n)*n2+1
 n4 = (1-2/n)*n3+1
-ans = collect(expand(n4),n0)
+ans = sp.collect(sp.expand(n4),n0)
 ans
 
 
@@ -280,7 +288,7 @@ ans
 # ### **Entropy**
 # As there is no heat of mixing, and the temperature and pressure are constant, entropy increase is the only process by which the free energy can decrease as the gases increase their volume and so mix, i.e. $\Delta G=-T\Delta S$. Figure 10c shows that eventually this 'system' comes to equilibrium and from thermodynamics the entropy should therefore be at a maximum. The entropy has the form $S=k\ln(W)$ after Boltzmann where $W$ is the number of configurations the atoms or molecules can have. In this example the configuration $W=1$ at the start of the simulation because there are no white balls (molecules) mixed in with the black ones and vice versa thus the entropy is zero. When fully mixed at equilibrium the number of configurations is given by the binomial coefficients $\displaystyle W=\frac{n!}{m!(n-m)!}$ because there are only two volumes, and there are $n$ white molecules in total and at any time $m$ black ones mixed in with them, where $m=0,1\cdots n$. This function $W$ has a maximum when $m=n/2$ as you can confirm by differentiating and using the Sterling approximation (Chapter 1-8). The maximum entropy is thus $S_{max} = k\ln(2^n)$. Perhaps this is to be expected because the volume doubles there are a maximum of $2^n$ ways of being in this new larger volume. 
 # 
-# ## 3.4 Reacting molecules.
+# ## 3.4 Reacting molecules. Chemical Kinetics simulations
 # 
 # ### **(i) Reaction $A\to B$**
 # 
@@ -369,148 +377,10 @@ for i in range(events):
 # 
 # Figure 11a. Simulation of reaction $A\to B\to C$. The lifetime of molecules A and B is $50$ and $30$ respectively. The solid lines show the populations using the analytical equations and needed no adjustable parameters to fit. The simulated curves were made with $50000$ events and the signal to noise ratio will clearly improve if more trials (events) are made, but only as $\sqrt{events}$. The rise and fall of B's population is clear.
 # _____
-# 
-# ## 3.5 Step-Growth polymerisation
-# 
-# In synthetic polymers the length of the chain is determined entirely by random events. In addition reactions it depends the lifetime of the carrier chain and in condensation reactions by the presence of a reactive group. These process are random in nature and they add monomer molecules in a step-wise manner to the chain, but the chains do not grow endlessly because there is a small but finite chance of being terminated that happens at random. Consequently, any polymer has a distribution of chain lengths and hence molar mass and this distinguishes polymers from simple molecules. The chain length can be calculated statistically and the number and weight average molar mass of polymer chains is given in Chapter (Summations & Series) 5-4.2. The process can also be simulated as outlined next. The features of step-growth polymerisation are (J. Cowie & V. Arrighi Polymers: Chemistry and Physics of Modern materials publ. CRC Press 2007 3rd ed.) 
-# 
-# (1) Any two molecular species can react,
-# (2) Most monomers are incorporated early on in the reaction.
-# (3) The chain length increases steadily during reaction.
-# (4) High conversion is needed to form long polymers which also takes time.
-# 
-# ### **(i) Algorithm 1**
-# 
-# The distribution of chain lengths is computed using a Monte-Carlo method. An array is made whose indices each represent one polymer chain. The value at each index gives the length of the chain, initially set to zero. At each step in the simulation the number $1$ is added to each element of the array, unless a random termination event has occurred and then a zero is added for this step and all future ones at this index, i.e. this particular chain's growth is halted. After repeating this many times a histogram is made of the chain lengths. The histogram records how many chains of a given length occur and groups these into 'bins' of a given width. A plot is made of the number of events (length of the chain) vs. the length itself. The random or Monte-Carlo part enters only in the termination step. A certain number of chains are chosen at random to be terminated on each round, this means that we must know the extent of reaction labelled $p$. The longer the rounds adding a molecule go on for, the longer the chain gets but also the greater the chance of termination. Thus, at the end of the process there are many chains of short length and fewer long ones. The maximum chain length is the number of rounds or repetitions.  
-# 
-# ### **(ii) Algorithm 2**
-# 
-# There is a second way of calculating the length distribution that is similar to the method developed in the previous section for an excited state. In this we determine the length of the chain at termination, rather than time of decay, from the probability of reacting and compute the length at which it is terminated, repeat this many times and then form a histogram. The lifetime $\tau$ used with a decaying molecule is replaced by the chain length, $tau$ being the length at which the distribution of lengths has fallen to $1/e\approx 0.37$ of its initial value. 
-# 
-# 
-# ### **(iii) Statistical approach**
-# 
-# We have to answer the question; how shall we know that the Monte-Carlo simulation represents anything approximating theory or even reality? To answer this we need to use statistical theory model the distribution of polymer chain lengths. The number and weight averages can be calculated from the Monte-Carlo data, but these are only point measures of the polymer's length and mass distribution, the distributions themselves are really needed. Using arguments based on probability these distributions can be calculated (Cowie & Arrichi 2007), and the starting point is Carothers' equation. Carothers pioneered step-growth reactions and invented nylon 66. 
-# 
-# Let $x_n$ be the number average chain length which is defined as 
-# 
-# $$\displaystyle x_n=\frac{n_0}{n}$$
-# 
-# where $n_0$ is the original number of molecules present as monomers, and $n$ the number of all molecules able to react at a later time $t$, which included all potentially reactive polymers. The total number of functional groups that have reacted is therefore $(n_0-n)$  and then the extent of reaction $p$ is the fraction
-# 
-# $$\displaystyle p=\frac{n_0-n}{n},\quad\text{or}\quad n=n_0(1-p)$$
-# 
-# Combining this with $x_n$ gives the Carothers equation
-# 
-# $$\displaystyle x_n=\frac{1}{1-p}=\frac{n_0}{n}$$
-# 
-# This equation is particularly useful. Suppose there is $50$% reaction then the average chain length is surprisingly only $2$. It follows that if we want a long average chain length of, say, $100$ then $p$ has to be large, e.g. when $x_n = 100, p = 0.99$ which means $99$% conversion therefore the reaction must be driven almost to completion. This also gives us an indication that in our simulation $p$ has to be very close to unity. 
-# 
-# A chain grows as monomers are added, and if there are $x$ chains at time $t$ then $x-1$ are left after the next step and the probability that $(x-1)$ groups have reacted is $p^{x-1}$, where $p$ is the extent of reaction. A group unreacted has a probability of $(1-p)$ and therefore the probability $p_x$ of finding a chain of $x$ units long is the product of reacting up to that time and not yet having reacted which is 
-# 
-# $$\displaystyle p_x=(1-p)p^{x-1}$$
-# 
-# and since $p_x=n_x/n$ is the fraction of finding $n_x$ in a total of $n$ polymers, 
-# 
-# $$\displaystyle n_x=n(1-p)p^{x-1}$$
-# 
-# Substituting for $n$ using the Carothers equation gives the distribution
-# 
-# $$\displaystyle n_x=n_0(1-p)^2p^{x-1}$$
-# 
-# Although not apparent, this equation has a shape very close to an exponential decay as in fig 11b below, The histogram formed from chain lengths, which is the plot of the number of chains of length $n_x$ (of mass $m_0n_x)$ vs. $x$ is ideally of the same shape as this distribution. This distribution should be what is obtained from the simulation. The number average molar mass in terms of extent of reaction $p$ is from the Carothers equation
-# 
-# $$\displaystyle \langle m_n\rangle = \frac{M_0}{1-p}$$
-# 
-# where $m_0$ is the mass of the monomer and is also given by $\displaystyle \langle m_n\rangle =\frac{\sum n_im_i}{N}$, see Chapter (Summations & Series) 5-4.2.
-# 
-# The distribution of mass/weight fraction is slightly different, weighted more to higher mass. If we use the mass fraction $w_x = xn_x/n_0$ then
-# 
-# $$\displaystyle w_x = x(1-p)^2p^{x-1}$$
-# 
-# where $x$ can be chosen to be either the number, $x$, of monomer units, or the mass of $x$ monomers. The weight average molar mass in terms of $p$ is 
-# 
-# $$\displaystyle \langle m_w\rangle = M_0\left(\frac{1+p}{1-p}\right)$$
-# 
-# and the ratio of the weight to number averages when $p=1$ is $2$ which is close to what is observed because $p$ will be close to unity. The weight average molar mass as a summation of chain lengths and masses is 
-# 
-# $$\displaystyle \langle m_w\rangle =\frac{\sum n_im_i^2}{\sum n_im_i}$$
-# 
-# The simulation shows (fig 11d) that this gives good agreement with the predicted data based on statistical arguments.
-# 
-# ### **(iv) Simulation**
-# 
-# The code to do the algorithm 1 simulation is shown below. The array 'chains' represents the polymers, the value at each index is the polymer length, e.g. chains[4] = 10 means that chain $4$ has length $10$. The array 'term' is either $1$ or $0$ and the whole array is added to the chains. Python allows whole arrays to be added without specifying indices but using $[:]$. The parameter $z$ is the number of chains to be terminated at each round. The plots are scaled to take into account the width of the bins used in the histogram.
-# 
-# Sometimes when making the histogram, the way the histogram's algorithm works to partitions the number of events into each bin can sometimes cause points to appear in a regular pattern being either too high or too low or both. This unphysical behaviour can be corrected by choosing a different number of bins, for example by doubling, plotting, re-choosing, re-plotting etc. until this effect disappears. 
 
-# In[7]:
-
-
-# Algorithm 1. Step-wise chain growth polymerisation 
-
-rng = np.random.default_rng()           # initialise random number generator
-
-reps = 1000                             # repeat addition
-n = 100000                              # number of chains
-p = 0.99                                # prob of growth over termination
-z = int(n*(1-p))                        # number of guesses to terminate 
-
-chains = np.zeros(n,dtype=int)          # array holds all chain lengths
-term   = np.ones(n, dtype=int)          # array holds 1 or 0 for growth or termination
-
-for i in range(reps):
-    chains[:] = chains[:] + term[:]     # add arrays index by index
-    rand_indx = rng.integers(n,size= z) # choose index of z numbers at random
-    term[rand_indx[:]]= 0               # make chosen ones zero                
-    pass
-
-# now plot data. Make histogram of number of chains of mass m, vs mass m then plot
-
-#nbins = 200                             # number of bins for histogram
-#num_at_m, m = np.histogram(chains,bins = nbins)      # returns number with mass m, vs mass
-#
-#m_i = np.array([m[-1]/nbins*(i+0.5) for i in range(nbins)] )  # m_i puts mass at centre of bin
-#sc = np.sum(chains)   # total weight
-#delta_mi = m_i[2]-m_i[1]                             
-#figx, (ax1, ax2) = plt.subplots(1, 2,figsize=(9,4))    
-#ax1.fill_between(m_i, num_at_m, color='lightgrey')   # fill histogram points
-#ax1.scatter(m_i, num_at_m,s=5,color='red')           # plot as points
-#ax2.scatter(m_i,num_at_m*m_i/sc/delta_mi,s=5,color='red')  # plot mass weighted distribution
-#plt.show()
-
-
-# ![Drawing](monte-carlo-fig11d.png)
+# ## 3.5 Simulation and equilibrium of the reaction $A \rightleftharpoons 2B$
 # 
-# Fig. 11b. Left Histogram of the number of chains of mass $m$ vs. the mass $m$, (grey) and red dots on a log scale.  The solid line (blue) is the number distribution  $ n_x = n_0(1-p)^2p^{x-1}$ which is close to an exponential decrease. The average $\langle m_n\rangle = 99$ is also shown. Right, the theoretical weight distribution $w_x = x(1-p)^2p^{x-1}$ (blue) with the Monte-Carlo calculated distribution 'num_at_m x m_i' vs 'm_i' which is $m\times n_x$ vs $m$. The average $\langle M_w\rangle =200$ is also shown.
-# ______________
-# 
-# ### ** Algorithm 2. Simulation** 
-# 
-# An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The 'lifetime' of the chain is $1/(1-p)$ in terms of the chain length and the 'time' is $-1/(1-p)\ln(rand)$ where 'rand' is a uniformly distributed random number in the range $0\to 1$. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.
-
-# In[8]:
-
-
-# Algorithm 2. Step-wise chain growth polymerisation 
-
-reps= 100000                       # number of calculations
-p   = 0.99                         # prob of growth over termination
-tau = 1/(1-p)                      # length of chain when distribution is 1/e of maximum
-chains= np.zeros(reps,dtype=int)   # array holds all chain lengths
-
-for i in range(reps):
-    rnum = rng.uniform()                      # random 0..1
-    chains[i] = -tau*np.log(rnum)
-    pass
-# in condensed form the loop is condensed into one line
-
-#chains[:] = -1/(1-p)*np.log( rng.uniform(size=reps) )
-
-
-# ## 3.6 Simulation of an equilibrium  reaction $A \rightleftharpoons 2B$
-# 
-# In reactions where we are not particularly interested in the time course but in their equilibrium a straightforward approach is to allow the reaction to occur at each step of the simulation and count the number of each type of molecule present. The reaction $\mathrm{N_2O_4} \rightleftharpoons \mathrm{2NO_2}$ or in general $A \rightleftharpoons 2B$ is used as an illustration. If we start with only A molecules then we expect A to decrease and B increase until the rate forwards is equal to the rate back when equilibrium is reached. The equilibrium mole fraction of A and B will change with the initial amount of A. If at equilibrium more A is added then we expect the reaction to produce more B, and vice-versa. We can test this with the Monte-Carlo calculation, the key point being that at each step we add to or subtract from the total A and B molecules depending on whether a forwards or reverse reaction has been chosen. First we will workout what the maximum fraction of sites A can initially fill because there are only a finite number of them. The algorithm and details set out below is based on that by Kraska (J. Chem. Educ. 2022, v99, 2026). Instead of using concentration as we normally would in kinetics, because we deal with a small number of molecules we imagine instead a number of 'sites' that are filled or empty.
+# In simulating a chemical reaction a straightforward approach is to allow the reaction to occur at each step and count the number of each type of molecule present. The reaction $\mathrm{N_2O_4} \rightleftharpoons \mathrm{2NO_2}$ or in general $A \rightleftharpoons 2B$ is used as an illustration. If we start with only A molecules then we expect A to decrease and B increase until the rate forwards is equal to the rate back when equilibrium is reached. The equilibrium mole fraction of A and B will change with the initial amount of A. If at equilibrium more A is added then we expect the reaction to produce more B, and vice-versa. We can test this with the Monte-Carlo calculation, the key point being that at each step we add to or subtract from the total A and B molecules depending on whether a forwards or reverse reaction has been chosen. First we will workout what the maximum fraction of sites A can initially fill because there are only a finite number of them. The algorithm and details set out below is based on that by Kraska (J. Chem. Educ. 2022, v99, 2026). Instead of using concentration as we normally would do in chemical kinetics, because we deal with a small number of molecules we imagine instead a number of 'sites' that are filled or empty.
 # 
 # Let there be $n_0$ molecules of type $A$ out of a total of $N$ sites and let $n_a$ be the number of type A present at equilibrium, thus $n_a = n_0-n_e$ and $n_b = 2n_e$ where $n_e$ have reacted. The equilibrium constant in terms of the number of molecules is,
 # 
@@ -575,7 +445,7 @@ for i in range(reps):
 #     
 # At each step with index $k$, we count the number of type A and type B molecules present and the mole fraction as $\mathrm{mfA[k]=n_a/(n_a+n_b)}$ for A molecules and $\mathrm{1-mfA[k]}$ for B molecules. These are plotted vs. number of tries. 
 
-# In[9]:
+# In[7]:
 
 
 #-------------------------------
@@ -695,10 +565,148 @@ while k < reps:                       # main loop of calculation
 # 
 # Fig 11d. Monte-Carlo calculation of the $A\rightleftharpoons 2B$ reaction. Left mole fractions of A and B vs. number of steps, which are proportional to time. The initial number of A was $2000$ and total number of sites was $10000$. Right: The rates of reaction become equal at equilibrium. At $\approx 40000$ steps $1000$ A were added. The change in numbers show how the equilibrium is reestablished, its final value is as if $n_0=3000$ A had been present initially. Naturally the data is noisy as only a limited number of samples are taken.
 
-# In[ ]:
+# ## 3.6 Step-Growth polymerisation
+# 
+# In synthetic polymers the length of the chain is determined entirely by random events. In addition reactions it depends the lifetime of the carrier chain and in condensation reactions by the presence of a reactive group. These process are random in nature and they add monomer molecules in a step-wise manner to the chain, but the chains do not grow endlessly because there is a small but finite chance of being terminated that happens at random. Consequently, any polymer has a distribution of chain lengths and hence molar mass and this distinguishes polymers from simple molecules. The chain length can be calculated statistically and the number and weight average molar mass of polymer chains is given in Chapter (Summations & Series) 5-4.2. The process can also be simulated as outlined next. The features of step-growth polymerisation are (J. Cowie & V. Arrighi Polymers: Chemistry and Physics of Modern materials publ. CRC Press 2007 3rd ed.) 
+# 
+# (1) Any two molecular species can react,
+# (2) Most monomers are incorporated early on in the reaction.
+# (3) The chain length increases steadily during reaction.
+# (4) High conversion is needed to form long polymers which also takes time.
+# 
+# ### **(i) Algorithm 1**
+# 
+# The distribution of chain lengths is computed using a Monte-Carlo method. An array is made whose indices each represent one polymer chain. The value at each index gives the length of the chain, initially set to zero. At each step in the simulation the number $1$ is added to each element of the array, unless a random termination event has occurred and then a zero is added for this step and all future ones at this index, i.e. this particular chain's growth is halted. After repeating this many times a histogram is made of the chain lengths. The histogram records how many chains of a given length occur and groups these into 'bins' of a given width. A plot is made of the number of events (length of the chain) vs. the length itself. The random or Monte-Carlo part enters only in the termination step. A certain number of chains are chosen at random to be terminated on each round, this means that we must know the extent of reaction labelled $p$. The longer the rounds adding a molecule go on for, the longer the chain gets but also the greater the chance of termination. Thus, at the end of the process there are many chains of short length and fewer long ones. The maximum chain length is the number of rounds or repetitions.  
+# 
+# ### **(ii) Algorithm 2**
+# 
+# There is a second way of calculating the length distribution that is similar to the method developed in the previous section for an excited state. In this we determine the length of the chain at termination, rather than time of decay, from the probability of reacting and compute the length at which it is terminated, repeat this many times and then form a histogram. The lifetime $\tau$ used with a decaying molecule is replaced by the chain length, $tau$ being the length at which the distribution of lengths has fallen to $1/e\approx 0.37$ of its initial value. 
+# 
+# 
+# ### **(iii) Statistical approach**
+# 
+# We have to answer the question; how shall we know that the Monte-Carlo simulation represents anything approximating theory or even reality? To answer this we need to use statistical theory model the distribution of polymer chain lengths. The number and weight averages can be calculated from the Monte-Carlo data, but these are only point measures of the polymer's length and mass distribution, the distributions themselves are really needed. Using arguments based on probability these distributions can be calculated (Cowie & Arrichi 2007), and the starting point is Carothers' equation. Carothers pioneered step-growth reactions and invented nylon 66. 
+# 
+# Let $x_n$ be the number average chain length which is defined as 
+# 
+# $$\displaystyle x_n=\frac{n_0}{n}$$
+# 
+# where $n_0$ is the original number of molecules present as monomers, and $n$ the number of all molecules able to react at a later time $t$, which included all potentially reactive polymers. The total number of functional groups that have reacted is therefore $(n_0-n)$  and then the extent of reaction $p$ is the fraction
+# 
+# $$\displaystyle p=\frac{n_0-n}{n},\quad\text{or}\quad n=n_0(1-p)$$
+# 
+# Combining this with $x_n$ gives the Carothers equation
+# 
+# $$\displaystyle x_n=\frac{1}{1-p}=\frac{n_0}{n}$$
+# 
+# This equation is particularly useful. Suppose there is $50$% reaction then the average chain length is surprisingly only $2$. It follows that if we want a long average chain length of, say, $100$ then $p$ has to be large, e.g. when $x_n = 100, p = 0.99$ which means $99$% conversion therefore the reaction must be driven almost to completion. This also gives us an indication that in our simulation $p$ has to be very close to unity. 
+# 
+# A chain grows as monomers are added, and if there are $x$ chains at time $t$ then $x-1$ are left after the next step and the probability that $(x-1)$ groups have reacted is $p^{x-1}$, where $p$ is the extent of reaction. A group unreacted has a probability of $(1-p)$ and therefore the probability $p_x$ of finding a chain of $x$ units long is the product of reacting up to that time and not yet having reacted which is 
+# 
+# $$\displaystyle p_x=(1-p)p^{x-1}$$
+# 
+# and since $p_x=n_x/n$ is the fraction of finding $n_x$ in a total of $n$ polymers, 
+# 
+# $$\displaystyle n_x=n(1-p)p^{x-1}$$
+# 
+# Substituting for $n$ using the Carothers equation gives the distribution
+# 
+# $$\displaystyle n_x=n_0(1-p)^2p^{x-1}$$
+# 
+# Although not apparent, this equation has a shape very close to an exponential decay as in fig 11b below, The histogram formed from chain lengths, which is the plot of the number of chains of length $n_x$ (of mass $m_0n_x)$ vs. $x$ is ideally of the same shape as this distribution. This distribution should be what is obtained from the simulation. The number average molar mass in terms of extent of reaction $p$ is from the Carothers equation
+# 
+# $$\displaystyle \langle m_n\rangle = \frac{M_0}{1-p}$$
+# 
+# where $m_0$ is the mass of the monomer and is also given by $\displaystyle \langle m_n\rangle =\frac{\sum n_im_i}{N}$, see Chapter (Summations & Series) 5-4.2.
+# 
+# The distribution of mass/weight fraction is slightly different, weighted more to higher mass. If we use the mass fraction $w_x = xn_x/n_0$ then
+# 
+# $$\displaystyle w_x = x(1-p)^2p^{x-1}$$
+# 
+# where $x$ can be chosen to be either the number, $x$, of monomer units, or the mass of $x$ monomers. The weight average molar mass in terms of $p$ is 
+# 
+# $$\displaystyle \langle m_w\rangle = M_0\left(\frac{1+p}{1-p}\right)$$
+# 
+# and the ratio of the weight to number averages when $p=1$ is $2$ which is close to what is observed because $p$ will be close to unity. The weight average molar mass as a summation of chain lengths and masses is 
+# 
+# $$\displaystyle \langle m_w\rangle =\frac{\sum n_im_i^2}{\sum n_im_i}$$
+# 
+# The simulation shows (fig 11d) that this gives good agreement with the predicted data based on statistical arguments.
+# 
+# ### **(iv) Simulation**
+# 
+# The code to do the algorithm 1 simulation is shown below. The array 'chains' represents the polymers, the value at each index is the polymer length, e.g. chains[4] = 10 means that chain $4$ has length $10$. The array 'term' is either $1$ or $0$ and the whole array is added to the chains. Python allows whole arrays to be added without specifying indices but using $[:]$. The parameter $z$ is the number of chains to be terminated at each round. The plots are scaled to take into account the width of the bins used in the histogram.
+# 
+# Sometimes when making the histogram, the way the histogram's algorithm works to partitions the number of events into each bin can sometimes cause points to appear in a regular pattern being either too high or too low or both. This unphysical behaviour can be corrected by choosing a different number of bins, for example by doubling, plotting, re-choosing, re-plotting etc. until this effect disappears. 
+
+# In[8]:
 
 
+# Algorithm 1. Step-wise chain growth polymerisation 
 
+rng = np.random.default_rng()           # initialise random number generator
+
+reps = 1000                             # repeat addition
+n = 100000                              # number of chains
+p = 0.99                                # prob of growth over termination
+z = int(n*(1-p))                        # number of guesses to terminate 
+
+chains = np.zeros(n,dtype=int)          # array holds all chain lengths
+term   = np.ones(n, dtype=int)          # array holds 1 or 0 for growth or termination
+
+for i in range(reps):
+    chains[:] = chains[:] + term[:]     # add arrays index by index
+    rand_indx = rng.integers(n,size= z) # choose index of z numbers at random
+    term[rand_indx[:]]= 0               # make chosen ones zero                
+    pass
+
+# now plot data. Make histogram of number of chains of mass m, vs mass m then plot
+
+#nbins = 200                             # number of bins for histogram
+#num_at_m, m = np.histogram(chains,bins = nbins)      # returns number with mass m, vs mass
+#
+#m_i = np.array([m[-1]/nbins*(i+0.5) for i in range(nbins)] )  # m_i puts mass at centre of bin
+#sc = np.sum(chains)   # total weight
+#delta_mi = m_i[2]-m_i[1]                             
+#figx, (ax1, ax2) = plt.subplots(1, 2,figsize=(9,4))    
+#ax1.fill_between(m_i, num_at_m, color='lightgrey')   # fill histogram points
+#ax1.scatter(m_i, num_at_m,s=5,color='red')           # plot as points
+#ax2.scatter(m_i,num_at_m*m_i/sc/delta_mi,s=5,color='red')  # plot mass weighted distribution
+#plt.show()
+
+
+# ![Drawing](monte-carlo-fig11d.png)
+# 
+# Fig. 11b. Left Histogram of the number of chains of mass $m$ vs. the mass $m$, (grey) and red dots on a log scale.  The solid line (blue) is the number distribution  $ n_x = n_0(1-p)^2p^{x-1}$ which is close to an exponential decrease. The average $\langle m_n\rangle = 99$ is also shown. Right, the theoretical weight distribution $w_x = x(1-p)^2p^{x-1}$ (blue) with the Monte-Carlo calculated distribution 'num_at_m x m_i' vs 'm_i' which is $m\times n_x$ vs $m$. The average $\langle M_w\rangle =200$ is also shown.
+# ______________
+# 
+# ### **Algorithm 2. Simulation** 
+# 
+# An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The 'lifetime' of the chain is $1/(1-p)$ in terms of the chain length and the 'time' is $-1/(1-p)\ln(rand)$ where 'rand' is a uniformly distributed random number in the range $0\to 1$. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.
+
+# In[9]:
+
+
+# Algorithm 2. Step-wise chain growth polymerisation 
+
+reps= 100000                       # number of calculations
+p   = 0.99                         # prob of growth over termination
+tau = 1/(1-p)                      # length of chain when distribution is 1/e of maximum
+chains= np.zeros(reps,dtype=int)   # array holds all chain lengths
+
+for i in range(reps):
+    rnum = rng.uniform()                      # random 0..1
+    chains[i] = -tau*np.log(rnum)
+    pass
+# in condensed form the loop is condensed into one line
+
+chains[:] = -1/(1-p)*np.log( rng.uniform(size=reps) )
+
+
+# In[10]:
+
+
+chains[0:20]
 
 
 # In[ ]:

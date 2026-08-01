@@ -3,6 +3,18 @@
 
 # # 13 Simultaneous equations 
 
+# In[1]:
+
+
+# import all python add-ons etc that will be needed later on
+get_ipython().run_line_magic('matplotlib', 'inline')
+import numpy as np
+import matplotlib.pyplot as plt
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
+plt.rcParams.update({'font.size': 16})  # set font size for plots    
+
+
 # ## 13.1 Sequential chemical reactions $\displaystyle A \stackrel{k_1} \longrightarrow B \stackrel{k_2}\longrightarrow C$
 # 
 # Complex chemical reactions can often be represented as a set of simultaneous reactions. The sequential scheme $\displaystyle A \stackrel{k_1} \longrightarrow B \stackrel{k_2}\longrightarrow C$ has already been solved with the integrating factor method in Section 2, and as an eigenvalue - eigenvector equation in Chapter 7.12.3. Here it is converted into a second-order equation and solved using the $D$ operator method. The rate equations are,
@@ -256,56 +268,204 @@
 # 
 # To produce a large total fluorescence yield the general conditions are  $k_f \lt k_i, k_r\lt k_f$ and $ k_p$ and $k_r$ are small than compared to other rate constants. If $k_r$ can be made comparable to $k_i$ or larger then the total yield can be increased but this is not generally possible unless unrealistically high temperatures are used.
 
-# ## 13.5 Second-order equations. Coupled springs
+# ## 13.5 Second-order equation linear system of equations. Coupled springs solved using the matrix of eigenvalues and eigenvectors.
 # 
-# Pairs of second-order equations can be solved using the operator method. In this example, the motion of a pair of masses and springs is calculated. This calculation is an alternative to the matrix method of Chapter 7.12.
+# Pairs of second-order equations can be solved using the matrix eigenvalue-eigenvector method. In this example, the motion of a pair of masses and springs is calculated. The matrix method is described in Chapter 7.12 and is reviewed here.
 # 
-# Consider two identical springs each _supporting_ a mass as shown in Fig. 17. This could be a simple model for part of a vehicle's suspension. The displacement from equilibrium of the upper mass $m_1$ is $y$, and that of the lower one $x$. The force constants are $k_1$ and $k_2$. If the springs were isolated, they would exert a force equal to $-k_2x$ or $-k_1y$ on their respective masses. When connected together, the upper spring now exerts a force equal to $-k_1(y - x)$ on $m_1$ as the displacement is changed by the lower spring. The total force on the lower spring is also changed and is $-k_2x + k_1(y - x)$. Together, these produce the force equations,
+# The most general method of solution has three parts. 
 # 
-# $$\displaystyle \begin{align} m_1\frac{d^2y}{dt^2}&=-k_1(y-x)\\ m_2\frac{d^2x}{dt^2}&=-k_2x+k_1(y-x)\end{align}$$
+# **(a)** The first is to find the kinetic ($T$) and potential energy ($V$) and then use the Lagrangian ($L=T-V$) with the Euler equations (see chapter 3-8.3) to obtain the differential equations. (With a simple system the differential equations may be able to be written down directly).
+# 
+# **(b)** Next, a matrix of the coefficients from the differential equations is set up and the eigenvalues and eigenvectors calculated. As the differential equations have terms in both variables, for example displacements $x_1$ and $x_2$, finding the eigenvalues transforms the equation into new variables in which only one is used in each equation, and so these can now be solved. The solution for second order equations is known in general as the sums of cosines or exponentials.
+# 
+# **(c)**  The third part is to use the initial conditions to find the exact form of the equations. Often this last stage is the most time consuming part as the algebra can be tricky.
+# 
+# ### **Coupled masses on a horizontal surface**
+# 
+# Consider two identical masses each attached to springs, one of which is also attached to a fixed wall, as shown in Fig. 17. This could be a simple model for part of a vehicle's suspension or simply two weights moving on a frictionless horizontal surface. A possible chemical example could be the motion of a CO or O$_2$ molecule when attached to the Fe atom in Heam. The Fe has four bonds to the haem nitrogens which effectively make it have a large mass, not exactly a wall but approximately so, but in this case the Fe-O-O bond is bent. A better example is a Ruthenium porphyrin with an NO attached to the metal because the Ru-N-O bind is close to being linear. 
+# 
+# The equations of motion can be derived directly in this case and the Lagrangian need not be used, but you can see this worked out for this example in section 8.3 of chapter 3.  
+# 
+# The displacement from equilibrium of mass $m_1$ is $x_1$, and that of $m_2$ is $x_2$. The force constants are $k_1$ and $k_2$ respectively. Assuming small extensions of the springs, so that Hook's law is obeyed, when the masses were isolated from one another the springs would exert a force equal to $-k_1x_1$ or $-k_2x_2$ on their respective masses. When connected together the force on $m_1$ is now equal to $-k_2(x_1 - x_2)$ because this spring is extended by an amount $x_1$ and compressed by an amount $x_2$. Together, these produce the force equations by using 'force equals mass times acceleration'.
+# 
+# $$\displaystyle \begin{align} m_1\frac{d^2x_1}{dt^2}&=-(k_1+k_2)x_1+k_2x_2\\ m_2\frac{d^2x_2}{dt^2}&=k_2x_1-k_1x_2\end{align}$$
+# 
+# You can see that the equations are coupled, i.e. each depends on both displacements $x_1$ and $x_2$. First, however, for simplicity the force constants for the springs and are made equal and so are the masses, $k_1=k_2=k, m_1=m_2=m$. Using the definition of frequency, via Hook's law for small extensions of the springs, we let $\omega_0^2= k/m$ and the equations become, 
+# 
+# $$\displaystyle \begin{align} \frac{d^2x_1}{dt^2}&=-2\omega_0^2x_1+\omega_0^2x_2\\ \frac{d^2x_2}{dt^2}&=+\omega_0^2x_1 - \omega_0^2x_2\end{align}$$
+# 
 # 
 # ![Drawing](diffeqn-fig17.png)
 # 
-# Fig. 17 Two coupled springs.
+# Fig. 17 Two coupled springs.This is the view from above when two weights linked by springs move back and forth in line on a frictionless horizontal surface.
 # ____
 # 
-# To make the algebra simpler, suppose that the masses are each $m$ and the spring force constants, $k$. Differentiating twice gives 
+# ### **Conversion to matrix equations**
+# The matrix equation for the two masses and springs has the form 
 # 
-# $$\displaystyle m\frac{d^4x}{dt^4}=-2k\frac{d^2x}{dt^2}+k\frac{d^2y}{dt^2}$$
+# $$\displaystyle  \begin{bmatrix}\ddot x_1 \\ \ddot x_2\end{bmatrix} = \begin{bmatrix}-2\omega_0^2& +\omega_0^2\\ \omega_0^2 & -\omega_0^2\end{bmatrix}\begin{bmatrix} x_1 \\  x_2\end{bmatrix}\qquad\qquad\qquad\text{(37b)}$$
 # 
-# which reduces to 
+# where we use the shorthand notation $d^2x/dt^2=\ddot x$. We define a matrix of coefficients $\pmb A$ as 
 # 
-# $$\displaystyle \frac{d^4x}{dt^4}=-3\frac{k}{m}\frac{d^2y}{dt^2}-\left(\frac{k}{m} \right)^2x$$
+# $$\displaystyle \pmb A=\begin{bmatrix}-2\omega_0^2& +\omega_0^2\\ \omega_0^2 & -\omega_0^2\end{bmatrix}$$
 # 
-# This can be changed into the $D$ operator form 
 # 
-# $$\displaystyle (D^4 +3\omega^2D^2 +\omega^4)x=0$$
+# and $\pmb x$ is the vector $\displaystyle \pmb x= \begin{bmatrix}  x_1\\  x_2\end{bmatrix}$ and the vector of derivatives is $\displaystyle \ddot {\pmb x}= \begin{bmatrix} \ddot y\\  \ddot x\end{bmatrix}$ the matrix equation becomes
 # 
-# where $\displaystyle \omega^2 = k/m$, and has the characteristic equation 
+# $$\displaystyle  \ddot{\pmb x} = \pmb A \pmb x \tag{37c}$$
 # 
-# $$\displaystyle z^4 + 3\omega^2z^2 + \omega^4 = 0$$
+# The general solution to this equation is an exponential, a sine or cosine (see chapter 10 section 10 and Jeffrey 1990), 
 # 
-# This has four solutions 
+# $$\displaystyle \pmb x= \pmb a e^{u t}$$
 # 
-# $$\displaystyle z_{\pm,\pm}= \pm \frac{i\omega}{\sqrt{2}}\sqrt{3\pm \sqrt{5}} $$
+# where $u$ is a parameter and $\pmb a$ a constant vector, both of which need to be determined. If $u$ is a complex number, such as $i\omega$ then Euler's identity ($\cos(\omega t)=(e^{i\omega t}+e^{-i\omega t})/2$) can be used to obtain the solution and in this case is,
 # 
-# These solutions are equivalent to 
+# $$\displaystyle \pmb x = \pmb a \cos(\omega t+\varphi)\tag{37d}$$
 # 
-# $$\displaystyle z_{\pm,\pm}=\pm i\omega\frac{1\pm \sqrt{5}}{2}$$
+# with frequency $\omega$, phase $\varphi$ and amplitude vector $\pmb a$. The frequency $\omega$ is what we seek and is that of both masses coupled together, whereas $\omega_0$ is the frequency of each isolated spring and mass. 
+#  To solve eqn. 37c we differentiate 37d twice to form 
+#  
+# $$\displaystyle \pmb {\ddot x}=-\omega^2\pmb a\cos(\omega t +\varphi)$$
 # 
-# and produces the homogeneous equation
+# substitute for $\pmb x$ and $ \pmb{\ddot x}$ and cancel the (non-zero) cosine terms. This gives
 # 
-# $$\displaystyle x=Ae^{tz_{++}}+Be^{tz_{+-}}+Ce^{tz_{-+}t}+De^{tz_{--}}$$
+# $$\displaystyle \begin{bmatrix}-\omega^2& 0\\ 0 & -\omega^2 \end{bmatrix}\begin{bmatrix}a_1\\a_2\end{bmatrix}=\begin{bmatrix} -2\omega_0^2& \omega_0^2\\ \omega_0^2 & -\omega_0^2\end{bmatrix}\begin{bmatrix}a_1\\a_2\end{bmatrix}$$
 # 
-# The constants are determined by the initial conditions, which are the initial position, initial velocity, acceleration, and its derivative. The result is that the motion of the spring is the sum of two simple harmonic motions of different frequencies, one greater and one smaller than $\omega$, which is the frequency of each isolated single spring. Using the second set of solutions, the frequencies are in the golden ratio and its reciprocal, with respect to $\omega$,
+# which can be rearranged into 
 # 
-# $$\displaystyle \frac{x}{x_0}=\frac{5+3\sqrt{5}}{10}\cos\left(\frac{ \sqrt{5}-1}{2}\omega t\right)+\frac{5-3\sqrt{5}}{10}\cos\left(\frac{ \sqrt{5}+1}{2}\omega t\right)$$
+# $$\displaystyle \begin{bmatrix} -2\omega_0^2+\omega^2& \omega_0^2\\ \omega_0^2 & -\omega_0^2+\omega^2\end{bmatrix}\begin{bmatrix}a_1\\a_2\end{bmatrix}= \pmb 0\qquad\qquad\qquad\text{(37e)}$$
 # 
-# The motion is shown in the next figure (17a) with initial condition $x_0 = 1$. The motion is clearly complex but appears to repeat itself after about $16$ secs  but more exactly at about $26$ secs. The figure on the right shows the phase plane with dots at $0$ and $16.6$ s (red dot). The red line shows how the trajectory is similar after approx $16$ secs but not exactly the same as before. Poincare has postulated that any system will periodically return arbitrarily close to its starting conditions; this is seen to be the case in this simple system. The greater the number of oscillators the longer the time for recurrence to occur.
+# 
+# In this equation the determinant of the matrix must be zero, as $a_1,a_2$ cannot be zero, hence
+# 
+# $$\displaystyle \begin{vmatrix} -2\omega_0^2+\omega^2& \omega_0^2\\ \omega_0^2 & -\omega_0^2+\omega^2\end{vmatrix}= 0$$
+# 
+# This determinant is equivalent to the secular determinant usually written as 
+# 
+# $$\displaystyle |\pmb A-\lambda I|=0$$
+# 
+# where $\pmb I$ is the unit diagonal matrix and $\lambda$ are the eigenvalues. In our case $\lambda =-\omega^2$ and hence $-\omega^2$ are the eigenvalues . 
+# 
+# Expanding the determinant forms the Characteristic equation which is 
+# 
+# $$\displaystyle (-2\omega_0^2+\omega^2)(-\omega_0^2+\omega^2)-\omega_0^4=0,\qquad \text{or}\qquad\omega^4-3 w_0^2\omega^2+w_0^4=0$$
+# 
+# The two solutions (roots of the equation) solved for $\omega^2$ are the frequencies  
+# 
+# $$\displaystyle  \left(\frac{3+\sqrt{5}}{2}\right)\omega_0^2, \qquad \text{and} \qquad \left( \frac{3-\sqrt{5}}{2} \right)\omega_0^2$$
+# 
+# and these differ from $\omega_0$ because of the coupling by the springs. Assigning the lower frequency to $\omega_1$ then
+# 
+# $$\displaystyle \begin{align}\omega_1&= \omega_0\sqrt{\frac{3-\sqrt{5}}{2}}=\omega_0\frac{1-\sqrt{5}}{2}=(1-\gamma)\omega_0\\\omega_2&= \omega_0\sqrt{\frac{3+\sqrt{5}}{2}}=\omega_0\frac{1+\sqrt{5}}{2}=\gamma\omega_0\end{align} \qquad\qquad\qquad\text{37f}$$
+# 
+# where $\gamma \approx 1.618$ is the Golden Ratio. (As $\cos(-x)=\cos(x)$ we can make  $\omega_1$ positive). The general solution (Jeffrey 1990) is written as 
+# 
+# $$\displaystyle \pmb x(t)=\sum_i c_i\pmb a_i\cos(\omega_i t + \beta_i)\tag{37g}$$
+# 
+# where $\pmb a$ are the eigenvectors, one for each eigenvalue of matrix $\pmb A$ as in eqn. 37e, and $c$ and $\beta$ are constants determined by the initial conditions. The eigenvectors are 
+# 
+# $$\displaystyle \pmb a_1= \begin{bmatrix}\frac{-1-\sqrt{5}}{2} \\1 \end{bmatrix},\qquad \pmb a_2=\begin{bmatrix}\frac{-1+\sqrt{5}}{2} \\1 \end{bmatrix}$$
+# 
+# We can always choose the initial conditions and, for example, suppose that at $t=0$ extension $x_1=1$ and extension $x_2=0$, which is at its equilibrium value, and the initial velocities are zero, $\dot x_1=\dot x_2 = 0$. These conditions meant that mass $1$ is extended by one unit and both masses are held still then released and the resulting equations are
+# 
+# $$\displaystyle \begin{align} x_1&= c_1(\sqrt{5}-1)/2\cos(\omega_1t+\beta_1) + c_2( -1 - \sqrt{5} )/2\cos(\omega_2t+\beta_2) \\ x_2 &= c_1\cos(\omega_1t+\beta_1) + c_2\cos(\omega_2t+\beta_2) \end{align}$$
+# 
+# As the initial velocity is zero the phases are also zero, $\varphi_1=\varphi_2 =0$ and the motion is described by
+# 
+# $$\displaystyle \begin{align}x_1 &=\frac{(\sqrt{5}-1)}{2\sqrt{5}}\cos\big((1-\gamma)\omega_0t\big) + \frac{(\sqrt{5}+1)}{2\sqrt{5}}\cos(\gamma\omega_0t)\\\ x_2 &= \frac{1}{\sqrt{5}}\big(\cos\big((1-\gamma\big)\omega_0t) -\cos(\gamma\omega_0t) \big)\end{align}\qquad\qquad\qquad\qquad\text{(37h)}$$
+# 
+# where $\gamma = (\sqrt{5}+1)/2$. 
+# 
+# The direct calculation using computer algebra is easy to implement as shown below with SimPy.
+
+# In[2]:
+
+
+# The calculation with SymPy. 
+# It is necessary to put the equation in the form  d^2x/dt^2 +..etc.  =  0 as shown for eqx1,eqx2
+# The init =...   are initial conditions. x2=0, x1=1, and derivates dx/dt =0 
+# You can change the initial conditions but then any plots produced will be different to those below.
+
+x1,x2,t,w0 = sp.symbols('x1,x2,t,w0', positive = True, real=True)
+
+x1   = sp.Function('x1')
+x2   = sp.Function('x2')
+
+eqx1 = sp.diff(x1(t),t,t) + 2*w0**2*x1(t) - w0**2*x2(t)  
+eqx2 = sp.diff(x2(t),t,t) -   w0**2*x1(t) + w0**2*x2(t)
+
+init = { x2(0):0, x1(0):1, sp.diff(x1(t),t).subs(t,0):0, sp.diff(x2(t),t).subs(t,0):0 }
+
+soln  = sp.dsolve((eqx1,eqx2), ics = init)
+
+
+# In[3]:
+
+
+soln[0]
+
+
+# In[4]:
+
+
+soln[1]
+
+
+# 
+# ### **Normal Modes**
+# The displacement of the masses are described by $x_1$ and $x_2$ and shown for $x_1$ in fig 17a (A) this motion is complicated even though only two frequencies are involved. By a change of coordinates the motion can be re-organised into Normal Modes which unravel the complicated overall motion into one of only frequency, $\omega_1$, and the other only of $\omega_2$. These normal modes describe the amplitudes of the extension of *each* mass moving at frequency $\omega_1$ and and of each mass at $\omega_2$. These symmetry of these modes is determined by the symmetry of the problem. In the case of molecules this means the point group. 
+# 
+# In this  calculation there are two frequencies and so there are two normal modes. As we are now only interested in the shape, i.e. symmetry, of the motion we need only find the ratio of amplitudes rather than their absolute extensions as in eqn. 37h. This is done by expanding out eqn. 37e.
+# 
+# The ratio of amplitudes, $a_1/a_2$ for modes with frequency $\omega_1$, the low frequency mode is given by simplifying 
+# 
+# $$ \displaystyle  (-2\omega_0^2+\omega_1^2)a_1+\omega_0^2a_2 =0$$
+# 
+# and the ratio is $\displaystyle \frac{a_1}{a_2} =\frac{\sqrt{5}-1}{2} = 0.618$. As the ratio is positive in this normal mode both masses always move in the same direction with displacements in the ratio $0.618:1$. This normal mode follows the equation
+# 
+# $$\displaystyle Q_{m_1}^{(1)}= 0.618\cos(\omega_1 t), \qquad Q_{m_2}^{(1)} = \cos(\omega_1 t)\tag{37i}$$
+# 
+# The higher frequency mode ($\omega_2$) has the ratio 
+# 
+# $$ \displaystyle  \omega_0^2a_1 +(-\omega_0^2+\omega_2^2)a_2=0,\qquad \frac{a_1}{a_2}= -\frac{1+\sqrt{5}}{2}=-1.618$$
+# 
+# and the negative sign means that the displacements are always in opposite directions. The ratio is $-1.618:1$ and for the second normal mode
+# 
+# $$\displaystyle Q_{m_1}^{(2)}= -1.618\cos(\omega_2 t), \qquad Q_{m_2}^{(2)} = \cos(\omega_2 t)\tag{37j}$$
+# 
+# as shown in fig 17a (B & C). Notice that the ratio is the same as that of the eigenvectors of matrix $\pmb A$ and also that the motion of one normal mode is independent of the other hence they are *orthogonal* to one another. This means that the motions are not coupled when described in the normal mode coordinates. This is always the case. 
+# 
+# ### **Energy**
+# The way the energy flows between the two masses can be calculated by determining the kinetic and potential parts for each mass. The kinetic energy $T$ is the usual 'half-m-v-squared' written as
+# 
+# $$\displaystyle T_1=\frac{1}{2}m \dot x_1^2,\qquad T_2=\frac{1}{2}m \dot x_2^2$$
+# 
+# and the potential energy is  held in the compression or extension of the springs. For mass 1 there is the contribution of the spring attached to the wall plus that of the second spring. The total is
+# 
+# $$\displaystyle V_1= \frac{1}{2}kx_1^2 +\frac{1}{4}k(x_2-x_1)^2$$
+# 
+# and for the second spring
+# 
+# $$\displaystyle V_2= \frac{1}{4}k(x_2-x_1)^2$$
+# 
+# where $1/4$ is used rather than $1/2$ as the energy is shared between the two masses. 
+# 
+# The total energy is constant because in our initial assumptions there is no friction or other way to lose energy, the total is therefore also the initial energy. The way the energy changes as time proceeds is shown in figure 17a, panel (E). Adding the two terms together produces the initial energy which is $k/2$ as the initial displacement is $1$ unit. To calculate the energy we need values for both $m$ and $k$ but we have only used their ratio as $\omega_0^2=k/m$. To calculate the energy therefore we divide this by the mass thus the kinetic energy becomes, for example, $\dot x^2/2$ and force constant $k$ is replaced by $\omega_0^2$. With the initial conditions described above the initial energy is $\omega_0^2/2+\omega_0^2/4+\omega_0^2/4=\omega_0^2$ which is 4 using the choice of $\omega_0=2$.  
+# 
+# The energy /mass is
+# 
+# $$\displaystyle \begin{align}E^m_1 &= \frac{1}{2} \dot x_1^2 +\frac{1}{4}\omega_0^2(x_2-x_1)^2+\frac{1}{2}\omega_0^2x_1^2 \\ E^m_2 &= \frac{1}{2} \dot x_2^2 +\frac{1}{4}\omega_0^2(x_2-x_1)^2\end{align}$$
+# 
+# Figure 17a (E) shows a plot of these two energies. Mass $1$'s spring has the greater energy due to being compressed against the solid wall as well as by mass $2$.  
 # 
 # ![Drawing](diffeqn-fig17a.png)
 # 
-# Fig 17a Left. Motion of displacement $x$ of two coupled weights (see fig. 17) vs. time. Right. Phase plot for the motion showing that the trajectory almost but not exactly arrives back at the initial displacement after $\approx 16.6$ s. The red line shows that the subsequent motion differs slightly from that which occurred initially.
+# Fig 17a (A) Displacement vs time of mass $1$ by an amount $x_1$ for two coupled weights on springs (see fig. 17). The fundamental frequency $\omega_0 =\sqrt{k/m}= 2$. The initial conditions are $x_1=1,x_2=0, \dot x_1=\dot x_2=0$. (B) The low frequency normal mode. The blue line shows the motion of mass $1$ and the red mass $2$. (C) The high frequency normal mode. Colours as in B. (D) The phase plot for the displacement $x_1$ showing that the trajectory almost exactly arrives back at the initial displacement after $t\approx 16$. The red line shows that the subsequent motion from the recurrence differs only very slightly from that observed initially which is the blue line. (E) The energy/mass of the two masses. Blue, mass $1$, and red, mass $2$. The green line  is the total energy.
+# __________________________
+# 
+# ### **Recurrence**
+# The displacement of $x_1$ is shown in figure (17a)(A) calculated using eqns. 37h with initial conditions $x_0 = 1, y=0, \dot y=0,\dot x = 0$ and $\omega_0 = 2$. The motion is clearly sinusoidal, as expected, but nevertheless complex as the two weights influence one another. One expects any sinusoid to repeat itself and it seems to do so here when $t \approx 9$ and again when $t \approx 16$. Plot D of fig. 17a shows the phase-plane with a blue dot at $t = 0$ and a red one at $t=15.52$. This is close to the point when $x_1=1, x_2=0$. The red line shows how the trajectory leaving the recurrence is very close to the initial trajectory, which is the blue line. (Actually, the recurrence is far more exact than this figure suggests because of the limited number of points used in the calculation, the plot only shows the nearest calculated point in the range up to $t=20$.) There are far better recurrences to be seen if the time range is extended, for example at $t=172.79$. However, exact recurrence should not be possible in this example as the cosines contain irrational numbers. Poincare (Acheson, D. (1997)) has shown that any system will periodically return *arbitrarily close* to its starting conditions and this is seen to be the case in this simple system.  Finally we note that the greater the number of oscillators, the longer the time for a recurrence to occur.
+# 
 
 # In[ ]:
 

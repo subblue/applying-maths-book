@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -156,7 +155,7 @@ M[0,:]       # check values
 # In[4]:
 
 
-evals,evecs = LA.eig(M)              # eigenvalues;  eigenvectors
+evals,evecs = np.linalg.eig(M)    # use linear algebra package for eigenvalues &  eigenvectors
 
 for i in range(n) : print('{:10.4f}'.format(evals[i]),end='' )  # eigenvalues
 
@@ -167,7 +166,7 @@ for i in range(n) : print('{:10.4f}'.format(evals[i]),end='' )  # eigenvalues
 exp_mat = np.zeros((n,n),dtype = float)      # make diagonal exp(eigvals *t)
 
 f01 = lambda m,k: np.exp( evals[m]*t[k] )    # define diagonal in matrix 
-iv_vecs = LA.inv(evecs)                      # invert once and save 
+iv_vecs = np.linalg.inv(evecs)                      # invert once and save 
 
 for i in range(maxn):
     for j in range(n):
@@ -192,13 +191,13 @@ print('{:s} {:8.5f}'.format('sum of population should be 1 only if kf = 0', sum(
 # ## Q53 answer
 # The equation relating diagonal eigenvalue matrix $\Lambda$, and the eigenvectors $\pmb{X}$, is $\pmb{MX} = \pmb{X}\Lambda$. If we left-multiply by eigenvector matrix $\pmb{X}^{-1}$ then $\pmb{X}^{-1}\pmb{MX} = \Lambda$, and then this can be raised to the $50^{th}$ power. As the matrix is diagonal, this is simply achieved by raising each term to the power.
 # 
-# The calculation using Sympy is
+# The calculation using SymPy is
 
 # In[6]:
 
 
-a, b = symbols('a, b')
-M = Matrix( [ [-2*a,a], [a,-2*a] ] )
+a, b = sp.symbols('a, b')
+M = sp.Matrix( [ [-2*a,a], [a,-2*a] ] )
 X, Lambda = M.diagonalize()
 X, Lambda
 
@@ -208,8 +207,8 @@ X, Lambda
 # In[7]:
 
 
-Mtob = X*Lambda**b * X.inv()  # with sympy * is matrix multiply (unlike python/numpy)
-simplify(Mtob) 
+Mtob = X*Lambda**b * X.inv()  # with SymPy * is matrix multiply (unlike python/numpy)
+sp.simplify(Mtob) 
 
 
 # In[8]:
@@ -265,15 +264,15 @@ Mtob.det()
 # In[9]:
 
 
-n, BB0, BA0, AA0 = symbols('n, BB0, BA0, AA0', integer = True)
-M = Matrix([[1,1/2,0],[0,1/2,1],[0,0,0]])
+n, BB0, BA0, AA0 = sp.symbols('n, BB0, BA0, AA0', integer = True)
+M = sp.Matrix([[1,1/2,0],[0,1/2,1],[0,0,0]])
 M
 
 
 # In[10]:
 
 
-B0 = Matrix([[BB0],[BA0],[AA0]])
+B0 = sp.Matrix([[BB0],[BA0],[AA0]])
 X, evals = M.diagonalize()
 X, evals
 
@@ -281,14 +280,14 @@ X, evals
 # In[11]:
 
 
-Lambda= X.inv()*M*X
+Lambda = X.inv()*M*X
 Lambda
 
 
 # In[12]:
 
 
-Lambda = Matrix( [ [0,0,0], [0,(1/2)**n,0], [0,0,1] ]  )  # Lambda^n
+Lambda = sp.Matrix( [ [0,0,0], [0,(1/2)**n,0], [0,0,1] ]  )  # Lambda^n
 Mn = X*Lambda*X.inv()*B0
 Mn
 

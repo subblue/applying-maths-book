@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1553,8 +1553,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerics-are-much-faster-with-numpy">
-     7 Numerics are much faster with NumPy.
+    <a class="reference internal nav-link" href="#numerics-are-much-much-faster-with-numpy">
+     7 Numerics are much, much faster with NumPy.
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1759,8 +1759,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerics-are-much-faster-with-numpy">
-     7 Numerics are much faster with NumPy.
+    <a class="reference internal nav-link" href="#numerics-are-much-much-faster-with-numpy">
+     7 Numerics are much, much faster with NumPy.
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1922,14 +1922,11 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First import all python add-ons etc that will be needed later on</span>
 <span class="c1"># the next line is specific &#39;magic&#39; instruction to jupyter notebook ; do not add anything ele to that line</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline                       
-
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>               <span class="c1"># general python    fast numerical calculation</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># general python    plotting  always used</span>
-
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span> <span class="c1"># specific use: e.g. import general numerical integration routine;</span>
-
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>              <span class="c1"># algebraic solution of equations, only add if doing algebraic things </span>
-<span class="n">init_printing</span><span class="p">()</span>                  <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>               <span class="c1"># algebraic solution of equations, only add if doing algebraic things </span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>               <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots, alter at will.</span>
 </pre></div>
 </div>
@@ -1941,10 +1938,10 @@ title="Print to PDF"
 <p><strong>(2)</strong> Python is case sensitive, i.e. a name <span class="math notranslate nohighlight">\(\mathtt{Func}\)</span> is different to <span class="math notranslate nohighlight">\(\mathtt{func}\)</span>. Names should not start with a number.</p>
 <p><strong>(3)</strong> <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span> is given the symbol <span class="math notranslate nohighlight">\(\mathtt{1j}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{1J}\)</span></p>
 <p><strong>(4)</strong> Division takes two forms, a/b for normal floating point, i.e. 3/2 = 1.5 and a//b for integer division, i.e. 3//2 = 1</p>
-<p><strong>(5)</strong> Functions sin, cos or your own function use round brackets i.e. <span class="math notranslate nohighlight">\(\mathtt{np.tan(x)}\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be floating point or integer and the function is evaluated at hat value.</p>
-<p><strong>(6)</strong> Arrays/lists use square brackets, e.g. <span class="math notranslate nohighlight">\(\mathtt{myary[i]}\)</span> and integer index, <span class="math notranslate nohighlight">\(i\)</span>, and returns the value at that index.</p>
+<p><strong>(5)</strong> Functions sin, cos or your own function use round brackets i.e. <span class="math notranslate nohighlight">\(\mathtt{np.tan(x)}\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be floating point or integer. Built in functions , cos, exp, simplify etc. are prefixed by <span class="math notranslate nohighlight">\(\mathtt{np.}\)</span> for numpy and <span class="math notranslate nohighlight">\(\mathtt{sp.}\)</span> for sympy functions, i.e. <span class="math notranslate nohighlight">\(\mathtt{np.exp(x)}\)</span>  or <span class="math notranslate nohighlight">\(\mathtt{sp.exp(x) }\)</span>. This is because we defined <span class="math notranslate nohighlight">\(\mathtt{import\; sympy \;as \;sp}\)</span> and similarly for numpy  at the start of the coding. The same applies to plotting routines, <span class="math notranslate nohighlight">\(\mathtt{plt.plot(x,y)} \)</span> etc.</p>
+<p><strong>(6)</strong> Arrays / lists use square brackets, e.g. <span class="math notranslate nohighlight">\(\mathtt{myary[i]}\)</span> and integer index, <span class="math notranslate nohighlight">\(i\)</span>, and returns the value at that index. All indices start at zero.</p>
 <p><strong>(7)</strong> Normal functions sin, cos etc. are unknown and have to be accessed <em>via</em> NumPy as <span class="math notranslate nohighlight">\(\mathtt{np.sin(x), \;np.exp(x),\; np.pi }\)</span> etc. Use NumPy for any numerical calculation other than trivial ones as it is fast.</p>
-<p><strong>(8)</strong> Powers are made as <span class="math notranslate nohighlight">\(\mathtt{x**(1J+3)}\)</span> etc.</p>
+<p><strong>(8)</strong> Powers are made as <span class="math notranslate nohighlight">\(\mathtt{x**(1J+3)}\)</span> etc. In sympy i is represented as <span class="math notranslate nohighlight">\(\mathtt{sp.I}\)</span> buy you can always define <span class="math notranslate nohighlight">\(\mathtt{i=sp.I}\)</span></p>
 <p><strong>(9)</strong> Indexing lists, sets, and arrays all start at zero, i.e. the first element of mylist is, <span class="math notranslate nohighlight">\(\mathtt{mylist[ 0 ]}\)</span>. If the list is of length <span class="math notranslate nohighlight">\(n\)</span> the last element is <span class="math notranslate nohighlight">\(\mathtt{mylist[n-1]}\)</span></p>
 <p><strong>(10)</strong> When using <em>for loops,  while loops, subroutines, if</em> statements, etc. the first line ends in a colon: for example</p>
 <div class="cell docutils container">
@@ -2007,7 +2004,7 @@ To print the whole list use,</p>
 </div>
 </div>
 </div>
-<p><strong>(14)</strong> Printing using  f’’  notation</p>
+<p><strong>(14)</strong> Printing using  <span class="math notranslate nohighlight">\(f\)</span>  notation</p>
 <p>A new and quick method to print is using <em>f</em> notation, thus to print ‘ one fifth = 1/6 ‘ we could use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2209,8 +2206,8 @@ printing b[4][1] will lead to an error e.g.
 </div>
 </div>
 </section>
-<section id="numerics-are-much-faster-with-numpy">
-<h2>7 Numerics are much faster with NumPy.<a class="headerlink" href="#numerics-are-much-faster-with-numpy" title="Permalink to this headline">#</a></h2>
+<section id="numerics-are-much-much-faster-with-numpy">
+<h2>7 Numerics are much, much faster with NumPy.<a class="headerlink" href="#numerics-are-much-much-faster-with-numpy" title="Permalink to this headline">#</a></h2>
 <p>Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2573,11 +2570,12 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <p>In SymPy infinity is oo (two lower case letter o). The <em>conds=’none’</em> removes any periodic conditions and so simplified the result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># average distance algebraically using SymPy</span>
-<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; n, r&#39;</span><span class="p">)</span>                       <span class="c1"># define symbols to use SymPy . Note also that pi and exp are known by SymPy.</span>
-
-<span class="n">f01</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>       <span class="c1"># note that we do not use np.exp or np.pi as SymPy knows functions</span>
-<span class="n">av</span><span class="o">=</span>  <span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span> <span class="n">conds</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>  <span class="c1"># use conds =&#39;none&#39; if you are happy that no funny results are expected.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># average distance algebraically using SymPy. sp.oo is infinity in SymPy</span>
+<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; n, r&#39;</span><span class="p">)</span>                      <span class="c1"># define symbols to use SymPy . Note also that sp.pi and sp.exp are known by SymPy.</span>
+<span class="n">pi</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>                                     <span class="c1"># re-define fo rconvenience</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>       <span class="c1"># note that we do not use np.exp or np.pi as SymPy knows functions</span>
+<span class="n">av</span>  <span class="o">=</span>  <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">),</span> <span class="n">conds</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>  <span class="c1"># use conds =&#39;none&#39; if you are happy that no funny results are expected.</span>
 <span class="n">av</span>
 </pre></div>
 </div>
@@ -2635,12 +2633,12 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assume SymPy already loaded.</span>
 
-<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, r&#39;</span><span class="p">)</span>                       <span class="c1"># define symbols to use .</span>
+<span class="n">n</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, r&#39;</span><span class="p">)</span>                    <span class="c1"># define symbols to use .</span>
                                             <span class="c1"># Note also that pi and exp are known by SymPy.</span>
+<span class="n">pi</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>                                  <span class="c1"># re-define fo rconvenience</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="n">f01</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="n">Q</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span> <span class="n">diff</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="p">)</span>                 <span class="c1"># differentiate wrt r and simplify</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="p">)</span>           <span class="c1"># differentiate wrt r and simplify</span>
 <span class="n">Q</span>                                           <span class="c1"># do calculation</span>
 <span class="c1">#print(Q)</span>
 </pre></div>
@@ -2652,7 +2650,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>                        <span class="c1"># expand Q (above) about zero and to powers of r**15 if possible </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>                        <span class="c1"># expand Q (above) about zero and to powers of r**15 if possible </span>
 <span class="n">S</span>
 </pre></div>
 </div>
@@ -2664,8 +2662,8 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <p>If you want to use the result in subsequent code the ‘big O’ notation can be removed as shown below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>   <span class="c1"># expand Q (above) remove big O and then simplify</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>   <span class="c1"># expand Q (above) remove big O and then simplify</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2815,11 +2813,11 @@ dCdt =+k2*B
 <p>Using SymPy the method is shown below. First define the symbols then a function <em>B</em> and the equation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">km1</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; k1, k2, km1, t&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">km1</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; k1, k2, km1, t&#39;</span><span class="p">)</span>
 
-<span class="n">B</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>               <span class="c1"># unknown function B has t as variable</span>
-<span class="n">de</span><span class="o">=</span> <span class="n">Derivative</span><span class="p">(</span><span class="n">B</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="n">k2</span><span class="o">+</span><span class="n">km1</span><span class="p">)</span><span class="o">*</span><span class="n">Derivative</span><span class="p">(</span><span class="n">B</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">B</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">dsolve</span><span class="p">(</span><span class="n">de</span> <span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>               <span class="c1"># unknown function B has t as variable</span>
+<span class="n">de</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="n">B</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="n">k2</span><span class="o">+</span><span class="n">km1</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="n">B</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">B</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">de</span> <span class="p">)</span>
 <span class="n">s</span>
 <span class="c1">#print(s)</span>
 </pre></div>
@@ -3029,7 +3027,7 @@ atom       index  separation (Angstrom)      Atom type
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">gridspec</span>                                     <span class="c1"># get this to force size of graphs</span>
 
-<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">6.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 <span class="n">fig1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Curve Fitting&#39;</span><span class="p">)</span>
 <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">height_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>   <span class="c1"># make plots different sizes</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -3097,7 +3095,9 @@ atom       index  separation (Angstrom)      Atom type
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading data, filename used is  data-to-fit.txt
  200  lines read
-parameters are
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parameters are
    a       b       c    d
  55.017  1.278  2.485 -0.701
 Covarience Matrix 
@@ -3110,15 +3110,14 @@ Covarience Matrix
 Normalised total residual squared   0.0228
 </pre></div>
 </div>
-<img alt="../_images/Python crib_67_1.png" src="../_images/Python crib_67_1.png" />
+<img alt="../_images/Python crib_67_2.png" src="../_images/Python crib_67_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of contour plotting for 2D particle in a box spatial wavefunctions</span>
 
-<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots, alter at will.</span>
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
 <span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># 1 row 2 cols in plot then ax0 is plot 1.</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   
@@ -3142,7 +3141,7 @@ Normalised total residual squared   0.0228
         <span class="n">psiT</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Xa</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">Xb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span><span class="n">Xb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">Xa</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>
         <span class="n">psiS</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Xa</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">Xb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span><span class="n">Xb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">Xa</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>
         
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdYlBu</span>                      <span class="c1"># color map </span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdYlBu</span>                      <span class="c1"># RdYlBu is color map name</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">Xa</span><span class="p">,</span><span class="n">Xb</span><span class="p">,</span><span class="n">psiT</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Triplet&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">Xa</span><span class="p">,</span><span class="n">Xb</span><span class="p">,</span><span class="n">psiS</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -4277,7 +4276,7 @@ Normalised total residual squared   0.0228
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

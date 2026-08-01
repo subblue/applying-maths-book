@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1859,10 +1859,16 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
-<span class="n">init_printing</span><span class="p">()</span>               <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>  <span class="c1"># inbuilt function for numerical evaluation</span>
 </pre></div>
 </div>
 </div>
@@ -1958,8 +1964,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_3_0.png" src="../_images/differen-O-answers-12-42_3_0.png" />
-<img alt="../_images/differen-O-answers-12-42_3_1.png" src="../_images/differen-O-answers-12-42_3_1.png" />
+<img alt="../_images/differen-O-answers-12-42_4_0.png" src="../_images/differen-O-answers-12-42_4_0.png" />
+<img alt="../_images/differen-O-answers-12-42_4_1.png" src="../_images/differen-O-answers-12-42_4_1.png" />
 </div>
 </div>
 <p>Figure 39. Left: Parametric curve <span class="math notranslate nohighlight">\(x = \sin(t) - \sin^3(2t),\; y = \cos(t) - \cos^3(2t)\)</span>. Right: <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>. The  zeros in this function are where the vertical tangent is found.</p>
@@ -1968,18 +1974,18 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do differentiation symbolically</span>
 
-<span class="n">t</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; t, xx, yy&#39;</span><span class="p">)</span>  <span class="c1"># used SymPy </span>
+<span class="n">t</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; t, xx, yy&#39;</span><span class="p">)</span>  <span class="c1"># used SymPy </span>
 
-<span class="n">xx</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
-<span class="n">yy</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
 
-<span class="n">dxdt</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
-<span class="n">dydt</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">dxdt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">dydt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dx/dt = &#39;</span><span class="p">,</span><span class="n">dxdt</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dy/dt = &#39;</span><span class="p">,</span><span class="n">dydt</span><span class="p">)</span>
 
 <span class="c1">#calculate dy/dx as the ratio</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">dydt</span><span class="o">/</span><span class="n">dxdt</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dydt</span><span class="o">/</span><span class="n">dxdt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1988,7 +1994,7 @@ title="Print to PDF"
 dy/dt =  -sin(t) + 6*sin(2*t)*cos(2*t)**2
 </pre></div>
 </div>
-<img alt="../_images/differen-O-answers-12-42_5_1.png" src="../_images/differen-O-answers-12-42_5_1.png" />
+<img alt="../_images/differen-O-answers-12-42_6_1.png" src="../_images/differen-O-answers-12-42_6_1.png" />
 </div>
 </div>
 <p>The vertical tangents are found when</p>
@@ -2040,34 +2046,15 @@ coordinates [0.14095905] [0.23309729]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the calculations are shown below</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; t&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>      <span class="c1"># use SymPy</span>
-<span class="n">dydx</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">dydx</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">check</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>     <span class="c1"># use check = False so as not to miss root</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; t&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>      <span class="c1"># use SymPy</span>
+<span class="n">dydx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">dydx</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">check</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>     <span class="c1"># use check = False so as not to miss root</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_9_0.png" src="../_images/differen-O-answers-12-42_9_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ans</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">((</span><span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">()))</span>   <span class="c1"># imag part is so small that numbers are real.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zoo
--5.23598775598299
--3.14159265358979
--1.04719755119660
-1.04719755119660
-3.14159265358979
-5.23598775598299
-</pre></div>
-</div>
+<img alt="../_images/differen-O-answers-12-42_10_0.png" src="../_images/differen-O-answers-12-42_10_0.png" />
 </div>
 </div>
 </section>
@@ -2109,17 +2096,17 @@ coordinates [0.14095905] [0.23309729]
 <p>The same result is obtained by SymPy as shown next.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, s, x, y, f&#39;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, s, x, y, f&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_12_0.png" src="../_images/differen-O-answers-12-42_12_0.png" />
+<img alt="../_images/differen-O-answers-12-42_13_0.png" src="../_images/differen-O-answers-12-42_13_0.png" />
 </div>
 </div>
 </section>
@@ -2148,24 +2135,24 @@ coordinates [0.14095905] [0.23309729]
 <p>If you do this calculation with SymPy the derivatives can easily be simplified as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, n&#39;</span><span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>  <span class="p">)</span>   <span class="c1"># 1st derivative</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, n&#39;</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>  <span class="p">)</span>   <span class="c1"># 1st derivative</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_14_0.png" src="../_images/differen-O-answers-12-42_14_0.png" />
+<img alt="../_images/differen-O-answers-12-42_15_0.png" src="../_images/differen-O-answers-12-42_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>               <span class="c1"># second derivative</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>               <span class="c1"># second derivative</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_15_0.png" src="../_images/differen-O-answers-12-42_15_0.png" />
+<img alt="../_images/differen-O-answers-12-42_16_0.png" src="../_images/differen-O-answers-12-42_16_0.png" />
 </div>
 </div>
 </section>
@@ -2342,17 +2329,17 @@ gives,</p>
 <p>The calculation is also easy using SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CB</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span><span class="n">Ka</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">pH</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;CB, Kw, Ka, H, pH&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CB</span><span class="p">,</span> <span class="n">Kw</span><span class="p">,</span><span class="n">Ka</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">pH</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;CB, Kw, Ka, H, pH&#39;</span><span class="p">)</span>
 
 <span class="n">B</span> <span class="o">=</span>  <span class="n">Kw</span><span class="o">/</span><span class="n">H</span><span class="o">-</span><span class="n">H</span><span class="o">+</span><span class="n">CB</span><span class="o">*</span><span class="n">Ka</span><span class="o">/</span><span class="p">(</span><span class="n">Ka</span><span class="o">+</span><span class="n">H</span><span class="p">)</span>
-<span class="n">pH</span><span class="o">=</span> <span class="o">-</span><span class="n">log</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
-<span class="n">ans</span><span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">H</span><span class="p">)</span><span class="o">/</span><span class="n">diff</span><span class="p">(</span><span class="n">pH</span><span class="p">,</span><span class="n">H</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="n">pH</span><span class="o">=</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="n">ans</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">H</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pH</span><span class="p">,</span><span class="n">H</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_18_0.png" src="../_images/differen-O-answers-12-42_18_0.png" />
+<img alt="../_images/differen-O-answers-12-42_19_0.png" src="../_images/differen-O-answers-12-42_19_0.png" />
 </div>
 </div>
 <p>(b) Plotting <span class="math notranslate nohighlight">\(\beta\)</span> produces the graph below where the buffer capacity is a maximum just above pH = 4 which is close to the value of the p<span class="math notranslate nohighlight">\(K_a\)</span>. The width of the peak demonstrates the ability of the buffer to resist changes in pH. The total base concentration is <span class="math notranslate nohighlight">\(0.02\)</span> M.</p>
@@ -2372,7 +2359,8 @@ gives,</p>
 <p>which is still hard to solve, but it can be done by the Newton-Raphson method, Section 10. Only the term in <span class="math notranslate nohighlight">\(C_B\)</span> can contribute to the buffering (as the cubic term is small and can be ignored) and give rise to the maximum. . The result shows that, to a good approximation, <span class="math notranslate nohighlight">\(K_a = [\text{H}^+]\)</span>. The calculation using a built-in function is as follows, with buffer concentration as <span class="math notranslate nohighlight">\(0.01\)</span> molar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ka</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">4.2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using numpy</span>
+<span class="n">Ka</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">4.2</span><span class="p">)</span>
 <span class="n">CB</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">Kw</span> <span class="o">=</span> <span class="mf">1e-14</span>
 <span class="n">f01</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">H</span><span class="p">:</span> <span class="p">(</span><span class="n">H</span><span class="o">+</span><span class="n">Ka</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">Kw</span><span class="o">/</span><span class="n">H</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">CB</span><span class="o">*</span><span class="n">Ka</span><span class="o">*</span><span class="p">(</span><span class="n">Ka</span><span class="o">-</span><span class="n">H</span><span class="p">)</span>
@@ -2448,25 +2436,25 @@ gives,</p>
 <p>is the harmonic oscillator wavefunction  for <span class="math notranslate nohighlight">\(\nu\)</span>=1 and its energy is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E= \frac{3}{2}\hbar\sqrt{\frac{k}{\mu}}\]</div>
-<p>Using Sympy a result of zero is produced after some more simplification that the programme fails to do unless the instruction <span class="math notranslate nohighlight">\(\mathtt{,positive =True}\)</span> is added to the first line as an argument to <span class="math notranslate nohighlight">\(\mathtt{symbols}\)</span>.</p>
+<p>Using SymPy a result of zero is produced after some more simplification that the programme fails to do unless the instruction <span class="math notranslate nohighlight">\(\mathtt{,positive =True}\)</span> is added to the first line as an argument to <span class="math notranslate nohighlight">\(\mathtt{sp.symbols}\)</span>. You can see that the result is zero by looking at the two square root terms in the bracket.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">hbar</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">mu</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;psi, x, hbar, E, k, alpha, mu &#39;</span><span class="p">)</span> <span class="c1"># to get zero add ..&#39; ,positive=True)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">hbar</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">mu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;psi, x, hbar, E, k, alpha, mu &#39;</span><span class="p">)</span> <span class="c1"># to get zero add ..&#39; ,positive=True)</span>
 
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">hbar</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">mu</span><span class="p">)</span>
 
-<span class="n">psi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">alpha</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">alpha</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">eqn</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mu</span><span class="p">))</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> 
+<span class="n">eqn</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mu</span><span class="p">))</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> 
  
-<span class="n">simplify</span><span class="p">((</span><span class="n">eqn</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">eqn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_22_0.png" src="../_images/differen-O-answers-12-42_22_0.png" />
+<img alt="../_images/differen-O-answers-12-42_23_0.png" src="../_images/differen-O-answers-12-42_23_0.png" />
 </div>
 </div>
 </section>
@@ -2500,23 +2488,26 @@ gives,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \rho=\frac{\left( 1+4k^2(r-r_e )\right)^{3/2}}{2k}\]</div>
 <p>and when <span class="math notranslate nohighlight">\(r=r_e\)</span> the curvature is <span class="math notranslate nohighlight">\(\rho_{r_e}=1/2k\)</span>.</p>
-<p>(b) The Morse potential calculation is effectively the same but more involved and is done using Sympy as follows,</p>
+<p>(b) The Morse potential calculation is effectively the same but more involved and is done using SymPy as follows,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vm</span><span class="p">,</span><span class="n">De</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">re</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Vm, De, r, re, beta, V, k&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vm</span><span class="p">,</span><span class="n">De</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">re</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Vm, De, r, re, beta, V, k&#39;</span><span class="p">)</span>
 
-<span class="n">Vm</span> <span class="o">=</span> <span class="n">De</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">re</span><span class="p">)</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>             <span class="c1"># Morse potential</span>
+<span class="n">Vm</span> <span class="o">=</span> <span class="n">De</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">re</span><span class="p">)</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>             <span class="c1"># Morse potential</span>
 
-<span class="n">ans</span><span class="o">=</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">Vm</span><span class="p">,</span><span class="n">r</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="n">diff</span><span class="p">(</span><span class="n">Vm</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="n">ans</span><span class="o">=</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Vm</span><span class="p">,</span><span class="n">r</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Vm</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_24_0.png" src="../_images/differen-O-answers-12-42_24_0.png" />
+<img alt="../_images/differen-O-answers-12-42_25_0.png" src="../_images/differen-O-answers-12-42_25_0.png" />
 </div>
 </div>
-<p>Substituting <span class="math notranslate nohighlight">\(r = r_e\)</span>  (and using <span class="math notranslate nohighlight">\(e^0=1\)</span>) into this complex result produces considerable simplification making radius of curvature <span class="math notranslate nohighlight">\(\displaystyle \rho=\frac{1}{2D_e\beta^2}\)</span>. Sympy also finds this result.</p>
+<p>Substituting <span class="math notranslate nohighlight">\(r = r_e\)</span>  (and using <span class="math notranslate nohighlight">\(e^0=1\)</span>) into this complex result produces considerable simplification making radius of curvature</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \rho=\frac{1}{2D_e\beta^2}\]</div>
+<p>SymPy also finds this result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">re</span><span class="p">)</span>
@@ -2524,7 +2515,7 @@ gives,</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/differen-O-answers-12-42_26_0.png" src="../_images/differen-O-answers-12-42_26_0.png" />
+<img alt="../_images/differen-O-answers-12-42_27_0.png" src="../_images/differen-O-answers-12-42_27_0.png" />
 </div>
 </div>
 <p>(c) Comparing this last result with that from the harmonic oscillator the force constant <span class="math notranslate nohighlight">\(k = D_e \beta^2\)</span>.</p>
@@ -2659,7 +2650,7 @@ already derived,</p>
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

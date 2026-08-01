@@ -11,8 +11,8 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -157,12 +157,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-m_c, m_h, kh, kc = symbols('m_c, m_h, kh, kc')
+m_c, m_h, kh, kc = sp.symbols('m_c, m_h, kh, kc')
 m_c = 12
 m_h = 1
 kh  = 11*kc/10             #11/10 instead of 1.1 to keep ratio. 1.1 will give decimal
-G = Matrix([[1/sqrt(m_h),0,0,0],[0,1/sqrt(m_c),0,0],[0,0,1/sqrt(m_c),0],[0,0,0, 1/sqrt(m_h)]])
-F = Matrix([[-kh,kh,0,0],[kh,-kh-kc,kc,0],[0,kc,-kh-kc,kh],[0,0,kh,-kh]])
+G = sp.Matrix([[1/sp.sqrt(m_h),0,0,0],[0,1/sp.sqrt(m_c),0,0],[0,0,1/sp.sqrt(m_c),0],[0,0,0, 1/sp.sqrt(m_h)]])
+F = sp.Matrix([[-kh,kh,0,0],[kh,-kh-kc,kc,0],[0,kc,-kh-kc,kh],[0,0,kh,-kh]])
 M = G*F*G
 M
 

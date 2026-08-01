@@ -9,10 +9,9 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -71,14 +70,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \begin{vmatrix} -\lambda & -u & v\\u & -\lambda & 0 \\-v & 0 &-\lambda \end{vmatrix}=-\lambda^3-u^2\lambda+v^2\lambda=0 $$
 # 
-# and solving this will produce the eigenvalues, but as it is a cubic we use Sympy. The $\mathtt{M.eigenvects()}$  instruction produces both the paired up eigenvalues and the eigenvectors.
+# and solving this will produce the eigenvalues, but as it is a cubic we use SymPy. The $\mathtt{M.eigenvects()}$  instruction produces both the paired up eigenvalues and the eigenvectors.
 
 # In[2]:
 
 
-u, v = symbols('u, v') 
+u, v = sp.symbols('u, v') 
 
-M = Matrix([[0,-u,v],[u,0,0],[-v,0,0]  ] )
+M = sp.Matrix([[0,-u,v],[u,0,0],[-v,0,0]  ] )
 M.eigenvals()
 
 
@@ -92,13 +91,13 @@ ans
 # In[4]:
 
 
-simplify(ans[1][2][0] )  # 2nd set of values, 3rd entry. [0] gets indside vector
+sp.simplify(ans[1][2][0] )  # 2nd set of values, 3rd entry. [0] gets indside vector
 
 
 # In[5]:
 
 
-simplify(ans[2][2][0] )
+sp.simplify(ans[2][2][0] )
 
 
 # The eigenvalues are simplified by substituting for $z$ to be $\lambda =(iz, -iz,0)$ and the eigenvector matrix 
@@ -106,7 +105,7 @@ simplify(ans[2][2][0] )
 # $$ \displaystyle x=\begin{bmatrix} -iz/v & iz/v & 0 \\ -u/v & -u/v & u/v\\ 1&1&1 \end{bmatrix}$$
 # 
 # ## Q48 answers
-# The Hückel matrix $M$ is formed as in Section 2.5(iii) and using python/Sympy, the eigenvalues and eigenvectors are calculated as in the previous few examples. The eigenvectors are normalized by extracting a column vector from the matrix of eigenvectors and dividing by the square root of the dot product. If the vector is $x$, then the dot product $x^*\cdot x = |x|^2$, because $\cos(0) = 1$, therefore, the normalized vector is $x/\sqrt{x^*\cdot x}$. The coefficients are the individual values of the eigenvector matrix.  The algebraic solutions for the eigenvectors are complex, and for numerical answer at least one value in the matrix should be  made into a floating point (1.0).
+# The Hückel matrix $M$ is formed as in Section 2.5(iii) and using python/SymPy, the eigenvalues and eigenvectors are calculated as in the previous few examples. The eigenvectors are normalized by extracting a column vector from the matrix of eigenvectors and dividing by the square root of the dot product. If the vector is $x$, then the dot product $x^*\cdot x = |x|^2$, because $\cos(0) = 1$, therefore, the normalized vector is $x/\sqrt{x^*\cdot x}$. The coefficients are the individual values of the eigenvector matrix.  The algebraic solutions for the eigenvectors are complex, and for numerical answer at least one value in the matrix should be  made into a floating point (1.0).
 
 # In[6]:
 
@@ -114,8 +113,8 @@ simplify(ans[2][2][0] )
 # Algorithm  Eigenvalues and Eigenvector of Butadiene
 # using Sympy for algebraic solutions
 n = 4      # n = number of atoms 
-x = symbols('x')
-M = Matrix([ [x,1,0,0],[1,x,1,0] , [0,1,x,1], [0,0,1,x ] ])  # Huckel matrix 
+x = sp.symbols('x')
+M = sp.Matrix([ [x,1,0,0],[1,x,1,0] , [0,1,x,1], [0,0,1,x ] ])  # Huckel matrix 
 M.eigenvals()
 
 
@@ -125,7 +124,7 @@ M.eigenvals()
 
 
 M = np.array([ [0,1.0,0,0], [1,0,1,0], [0,1,0,1], [0,0,1,0 ]])  # Huckel matrix 
-evals,evects = LA.eigh(M)
+evals,evects = np.linalg.eigh(M)
 evals  # 
 
 
@@ -190,7 +189,7 @@ for a in range(n):
     for i in range(n):
         s = s + ne[i]*np.abs(evects[a,i])**2
     
-    print('{:d}{:8.4f}'.format( a+1,s) )  # charge densities atoms 1 to 4 
+    print('{:d}             {:8.4f}'.format( a+1,s) )  # charge densities atoms 1 to 4 
 
 
 # Because the electron charge densities are all the same, the molecule cannot have a dipole.
@@ -214,8 +213,8 @@ for a in range(n):
 n = 6
 M0 = np.array([ [0,1,0,0,0,0 ], [1,0,1,0,0,1], [0,1,0,1,0,0],\
                 [0,0,1,0,1,0 ], [0,0,0,1,0,1], [0,1,0,0,1,0]])  # Huckel matrix x=0
-
-ans = LA.eigh(M0)        # using numpy linear algebra for numerical values
+print(' Eigenvalues')
+ans = np.linalg.eigh(M0)        # using numpy linear algebra for numerical values
 for i in range(n):
     print('{:d} {:8.4f}'.format( i, ans[0][i])  )                 # list of eigenvalues 
 
@@ -223,7 +222,7 @@ for i in range(n):
 # In[12]:
 
 
-print('normalised eigenvectors columnwise')
+print('Normalised eigenvectors, columnwise')
 evects = ans[1]
 for i in range(n):
     print(' '.join( '{:8.4f}'.format( evects[i,j] ) for j in range(n) ) )
@@ -279,9 +278,9 @@ print('{:s} {:6.3f}'.format(' dipole = ',d_pi) )
 
 
 # Huckel determinant for benzene  using Sympy/python
-n, M, x = symbols('n, M, x')  # benzene 
+n, M, x = sp.symbols('n, M, x')  # benzene 
 n = 6
-M = zeros(n,n)    # define nxn array as zeros
+M = sp.zeros(n,n)    # define nxn SymPy array as zeros
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1 ):  # +1,-1 off diagonals
@@ -304,7 +303,7 @@ M.eigenvects()  # order is:  eigenval, degeneracy, eigevector. labelled 1 to 6 i
 
 # alternnative calculkation
 
-M.diagonalize()     # gives eigenvectors then eigenvalue matrix
+M.diagonalize()     # gives eigenvectors as columns (on left) then diagonal eigenvalue matrix
 
 
 # The order of the energies is that $2 + x$ is the lowest; then a degenerate pair at energy $x + 1$, and at $x - 1$, and the highest at $x - 2$; recall that $\displaystyle x=\frac{\alpha-E}{\beta }$ and that $\beta$ is negative. The of nodes in the eigenvectors determines the energy, with the lowest being the eigenvector where each element has the same sign; in this example this is number 6. The highest energy orbital has the most changes in sign and is number 1.

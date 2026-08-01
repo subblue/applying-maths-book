@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -25,7 +25,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-d, u, f, x, f1, f2, d = symbols('d, u, f, x, f1, f2, d')
+d, u, f, x, f1, f2, d = sp.symbols('d, u, f, x, f1, f2, d')
 
 n = 1   # if the constants are not defined here an algebraic result is obtained
 f1= 0.10
@@ -33,12 +33,12 @@ f2= -0.2
 d = 0.05/n
 u = 0.25/n
 
-Gd = Matrix( [ [1,d/n], [0,1] ] ) 
-Gu = Matrix( [ [1,u/n], [0,1] ] ) 
-Gx = Matrix( [ [1,x],   [0,1] ] ) 
+Gd = sp.Matrix( [ [1,d/n], [0,1] ] ) 
+Gu = sp.Matrix( [ [1,u/n], [0,1] ] ) 
+Gx = sp.Matrix( [ [1,x],   [0,1] ] ) 
 
-L1 = Matrix( [ [1,0], [-1/f1,1] ] )
-L2 = Matrix( [ [1,0], [-1/f2,1] ] )
+L1 = sp.Matrix( [ [1,0], [-1/f1,1] ] )
+L2 = sp.Matrix( [ [1,0], [-1/f2,1] ] )
 
 ABCD = Gu*L1*Gd*L2*Gx
 
@@ -46,13 +46,13 @@ ABCD = Gu*L1*Gd*L2*Gx
 # In[3]:
 
 
-simplify(ABCD.det() )  # check determinant is 1
+sp.simplify(ABCD.det() )  # check determinant is 1
 
 
 # In[4]:
 
 
-simplify(ABCD)
+sp.simplify(ABCD)
 
 
 # In[5]:
@@ -85,11 +85,11 @@ n1 = 1.0
 n2 = 1.48
 dL = 6.0
 
-f01 = np.dot( MG(dL,n2), MR(r1,n1,n2)  )  # use dot product for matrix multiplication
-f02 = np.dot( MR(r2,n2,n1), f01)
+f01  = np.dot( MG(dL,n2), MR(r1,n1,n2)  )           # use dot product for matrix multiplication
+f02  = np.dot( MR(r2,n2,n1), f01)
 ABCD = np.dot(  MG(x,n1), f02)
  
-focal_length = solve(ABCD[0,0],x)
+focal_length = sp.solve(ABCD[0,0],x)                 # using SymPy to solve
 print('{:s} {:8.2f}'.format('focal length ', focal_length[0]  ) )
 print('{:s} {:6.3f}'.format('magnification ',1/ABCD[1,1]) )
 
@@ -121,15 +121,20 @@ print('{:s},{:f},{:f},{:f},{:f},{:f},{:f}'.format('A,B,C,D, theta, determinant',
 
 lambda1 = np.exp(1J*theta)               # 1J is sqrt(-1)
 lambda2 = np.exp(-1J*theta)
+
 print('{:s} {:g} {:g}'.format('eigenvalues =', lambda1,lambda2))
 wavel = 600e-9                           # metres (red light wavelength)
+
 R = 2*B/(D-A)
 print('{:s} {:g} '.format('radius of curvature at ref planes=', R))
+
 omegaM  = np.sqrt(-wavel*B/(np.pi*np.sin(theta)) )
 Z  = (A-D)/(2*C)
 print('{:s} {:g} '.format('min beam waste at z =', Z))
+
 omega0 = np.sqrt(wavel*np.sin(theta)/(np.pi*C))
 print('{:s} {:g} '.format('min beam radius=', omega0))
+
 Z0 = np.pi*omega0**2/wavel
 print('{:s} {:g} '.format('confocal length =', Z0))
 omega = lambda z: ( omega0*np.sqrt(1 + ( wavel*z/(np.pi*omega0**2) )**2)  )  # radius vs length
@@ -178,10 +183,10 @@ omega = lambda z: ( omega0*np.sqrt(1 + ( wavel*z/(np.pi*omega0**2) )**2)  )  # r
 # In[9]:
 
 
-A, B, C, D = symbols('A, B, C, D')
+A, B, C, D = sp.symbols('A, B, C, D')
 
-ABCD = Matrix([[A,B],[C,D]])
-X = Matrix([[-1,0],[0,1]])
+ABCD = sp.Matrix([[A,B],[C,D]])
+X    = sp.Matrix([[-1,0],[0,1]])
 G = X * ABCD**(-1) * X**(-1)
 G
 
@@ -189,13 +194,15 @@ G
 # In[10]:
 
 
-G.subs(A*D - B*C,1)  # substitute with value from determinant
+G.subs(A*D - B*C,1)          # substitute with value from determinant
 
 
 # ## Q39 answer
-# The matrix for the cavity is $\displaystyle \pmb{M} = (G_1M_2G_2M_3G_3)\,M_4\,(G_3M_3G_2M_2G_1)\,M_1 $.
+# The matrix for the cavity is 
 # 
-# and the brackets are added to define the elements between the end mirrors. Using python/numpy, the matrices are defined as functions of the gaps and focal length so that several similar matrices do not have to be typed in. We are only interested in numerical results so numpy is used instead of Sympy.  Instead of making $DBCA$ directly as done below, it can also be calculated by exchanging the indices or using multiplication as in question 38;
+# $$\displaystyle \pmb{M} = (G_1M_2G_2M_3G_3)\,M_4\,(G_3M_3G_2M_2G_1)\,M_1 $$
+# 
+# and the brackets are added to define the elements between the end mirrors. Using Python/Numpy, the matrices are defined as functions of the gaps and focal length so that several similar matrices do not have to be typed in. We are only interested in numerical results so Numpy is used instead of Sympy.  Instead of making $DBCA$ directly as done below, it can also be calculated by exchanging the indices or using multiplication as in question 38. 
 
 # In[11]:
 
@@ -203,25 +210,45 @@ G.subs(A*D - B*C,1)  # substitute with value from determinant
 G = lambda d:  np.array( [ [1,d], [0,1] ])
 M = lambda f:  np.array( [[ 1,0], [-1/f,1] ])
 
-L1 = 50
-L2 = 200
-L3 = 35 
-f1 = 60
-f2 = 100
-f3 = 30
-f4 = 100 # focal lengths 
+g1 = 210    # gaps  mm
+g2 = 1400 
+g3 = 185 
 
-ABCD = G(L1) @ M(f2) @ G(L2) @ M(f3)@G(L3)  
-DBCA = G(L3) @ M(f3) @ G(L2) @ M(f2)@G(L1)  
-Laser_matrix = ABCD @ M(f4) @ DBCA @ M(f1) 
+f1 = 50     # focal length in mm  see stability diagram below
+f2 = 100    # mm
+f3 = 75     # mm
+f4 = 50     # focal lengths 
+
+ABCD = G(g1) @ M(f2) @ G(g2) @ M(f3)@G(g3)  
+DBCA = G(g3) @ M(f3) @ G(g2) @ M(f2)@G(g1)  
+Laser_matrix = ABCD @ M(f4) @ DBCA @ M(f1)
+
 stability = (Laser_matrix[0,0]+ Laser_matrix[1,1])/2.0
-stability
+print('{:6.2f}'.format(stability) )
 
 
-# The trace of the determinant divided by $2$ is $\lt 1$, making the cavity stable. If you change gap 3, the cavity soon becomes unstable. 
+# The trace of the determinant divided by $2$ is $\lt 1$, making the cavity stable. The stability is sensitive to changes in lengths and focal lengths except for $g_2$. 
 # 
-# As an exercise, plot out the stability by changing the gaps between the two mirrors. The same can be done for the mirror radii at fixed gaps. Using the complex beam parameter, see Gerrand and Birch, the beam profile for stable cavities can be plotted. The results of the stability with changing gaps are shown in figure 85a.
+# As an exercise, plot out the stability by changing the gaps between the two mirrors. The same can be done for the mirror radii at fixed gaps. The results of the stability with changing gaps are shown in figure 85a.
 # 
 # ![Drawing](matrices-fig85A.png)
 # 
-# Figure 85A. Stability diagrams. The white areas are unstable, the contours show the size of the stability as calculated above for ranges of gap values, and the red dot shows the calculation with parameters in the question.
+# Figure 85A. Stability diagrams. The white areas are unstable, the color shows the regions of stability as calculated above for ranges of gap values, and the white dot (top right) shows the stable region with parameters used in the question. In this stability plot the length $g_2$ was held constant at $1400$ mm and only $g_1$ and $g_3$ changed. 
+# 
+# The outline beam profile is shown in the next figure for the values given in the calculation above where beam waists are found to be in the middle of the gaps $g_1$ and $g_3$ which are suitable for placing the gain medium and the cavity dumper. Other stable regions have at least one waist at or very close to a mirror surface which is impracticable. 
+# 
+# ![Drawing](matrices-fig85B.png)
+# 
+# Figure 85B. Beam profile along the cavity at the stability region shown in the diagram above.
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

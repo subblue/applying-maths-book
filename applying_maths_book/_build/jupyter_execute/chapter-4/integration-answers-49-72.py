@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -60,13 +60,14 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The surface area is given by $\displaystyle S=2\pi\int_a^b y\sqrt{1+y'^2}dx$, where $y'$ is the derivative. 
 # 
-# This gives $\displaystyle S=2\pi\int_1^\infty \frac{1}{x}\sqrt{1-\frac{1}{x^2}}dx=2\pi\int_1^\infty \sqrt{\frac{x^2-1}{x^4}}dx$. The integration is quite tricky and produces infinity, using Sympy is easy.
+# This gives $\displaystyle S=2\pi\int_1^\infty \frac{1}{x}\sqrt{1-\frac{1}{x^2}}dx=2\pi\int_1^\infty \sqrt{\frac{x^2-1}{x^4}}dx$. The integration is quite tricky and produces infinity, using SymPy is easy.
 
 # In[2]:
 
 
-x = symbols('x', positive=True)
-integrate( sqrt((x**2 - 1)/x**4), (x,1,oo) )
+x = sp.symbols('x', positive=True)
+inf = sp.oo                         # sp.oo is sympy infinity
+sp.integrate( sp.sqrt((x**2 - 1)/x**4), (x,1,inf) )  
 
 
 # The surface area returned is infinite. This is really a very strange result; in fact, it seems to be nonsensical. The volume is finite therefore the horn can be filled with something, a volume equal to $\pi\;\mathrm{ dm^3}$ (litres) of paint for example. Its inner surface would be covered but its outer surface area needs an infinite amount of paint to cover it. Repeating the calculation to some finite length, say $100$, produces a similar result; the surface area is far greater than the volume, but is this not a misleading comparison?  The units involved are different. The volume is measured in m$^3$, area in m$^2$. Therefore if $\pi$ litres is used to fill the volume of an infinitely long horn, the surface can be still be covered with this amount of paint but only with an infinitely thin layer. As you will have realized this is not possible. Consider the case when the length is for instance $9$ dm, and the integral extends from $1 \to 10$. The area is now $4.83 \pi\;\mathrm{ dm^2}$ and the volume $0.9\pi\;\mathrm{ dm^3}$, which means that the coat of paint can now be $\approx 0.18 $ dm thick.
@@ -112,15 +113,16 @@ integrate( sqrt((x**2 - 1)/x**4), (x,1,oo) )
 # 
 # $$\displaystyle \langle E^2\rangle = \frac{\int_0^\infty E^2e^{-E/k_BT}dE}{\int_0^\infty e^{-E/k_BT}dE}$$
 # 
-# The numerator has the form $\int x^2e^{-ax}dx$ which can be integrated by parts. The denominator is $k_BT$ and so $\langle E^2\rangle= 2(k_BT)^2$. Using Sympy gives this directly;
+# The numerator has the form $\int x^2e^{-ax}dx$ which can be integrated by parts. The denominator is $k_BT$ and so $\langle E^2\rangle= 2(k_BT)^2$. Using SymPy gives this directly;
 
 # In[3]:
 
 
-E, kB, T = symbols('E, kB, T',positive =True)
-eq2 = E**2*exp(-E/(kB*T) )
-eq1 = exp(-E/(kB*T) )
-integrate(eq2,(E,0,oo)) /integrate(eq1,(E,0,oo))
+E, kB, T = sp.symbols('E, kB, T',positive =True)
+inf = sp.oo                  # sp.oo is sympy infinity
+eq2 = E**2*sp.exp(-E/(kB*T) )
+eq1 = sp.exp(-E/(kB*T) )
+sp.integrate(eq2,(E,0,inf)) /sp.integrate(eq1,(E,0,inf))  
 
 
 # (b) Using the results just calculated the variance of the energy is 
@@ -160,15 +162,16 @@ integrate(eq2,(E,0,oo)) /integrate(eq1,(E,0,oo))
 # 
 # This ratio of integrals turns out to be simply $E_0+2k_BT$ making the activation energy $\displaystyle E_a=  E_0+\frac{k_BT}{2}$.
 # 
-# The reaction $\mathrm{Ne^+ +CO \to Ne^+ + C^+ +O}$ follows the line of centres model for the reaction cross-section; many other reactions do not although most do exhibit a threshold for reaction. See McQuarrie & Simon (1997, Chapter 28). The calculation with Sympy is 
+# The reaction $\mathrm{Ne^+ +CO \to Ne^+ + C^+ +O}$ follows the line of centres model for the reaction cross-section; many other reactions do not although most do exhibit a threshold for reaction. See McQuarrie & Simon (1997, Chapter 28). The calculation with SymPy is 
 
 # In[4]:
 
 
-E, E0, kb, T = symbols('E, E0, kb, T',positive = True)
-eq2= (E**2 - E*E0)*exp(-E/(kb*T))
-eq1= (E - E0)*exp(-E/(kb*T))
-simplify( (integrate(eq2,(E,E0,oo)) )/ (integrate(eq1,(E,E0,oo)) ) )
+E, E0, kb, T = sp.symbols('E, E0, kb, T',positive = True)
+inf = sp.oo                        # sp.oo is sympy infinity
+eq2= (E**2 - E*E0)*sp.exp(-E/(kb*T))
+eq1= (E - E0)*sp.exp(-E/(kb*T))
+sp.simplify( (sp.integrate(eq2,(E,E0,inf)) )/ (sp.integrate(eq1,(E,E0,inf)) ) ) 
 
 
 # ## Q56 answer
@@ -180,14 +183,15 @@ simplify( (integrate(eq2,(E,E0,oo)) )/ (integrate(eq1,(E,E0,oo)) ) )
 # 
 # $$\displaystyle \langle u\rangle =4\pi\left( \frac{m}{2\pi k_BT} \right)^{3/2}\int_0^\infty u^3e^{-mu^2/2k_BT} du$$
 # 
-# which has a form met before but which can easily be recalculated (assuming that a > 0) or looked up in the integration table (Section 2.13). Using Sympy gives
+# which has a form met before but which can easily be recalculated (assuming that a > 0) or looked up in the integration table (Section 2.13). Using SymPy gives
 
 # In[5]:
 
 
-a, u = symbols('a, u',positive =True)
-eq = u**3*exp(-a*u**2)
-integrate(eq,(u,0,oo)) 
+a, u = sp.symbols('a, u',positive =True)
+inf = sp.oo                # sp.oo is sympy infinity
+eq = u**3*sp.exp(-a*u**2)
+sp.integrate(eq,(u,0,inf))   
 
 
 # where $a=m/2k_BT$ which makes $\displaystyle \langle u\rangle =\left( \frac{8 k_BT}{\pi m} \right)^{1/2}$.
@@ -228,10 +232,13 @@ integrate(eq,(u,0,oo))
 # In[6]:
 
 
-E, kb, T = symbols('E, kb, T',positive =True)  
-eq32 = sqrt(E**3)*exp(-E/(kb*T))
-eq12 = sqrt(E)*exp(-E/(kb*T) )
-integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
+E, kb, T = sp.symbols('E, kb, T',positive =True) 
+inf = sp.oo            # sp.oo is sympy infinity
+
+eq32 = sp.sqrt(E**3)*sp.exp(-E/(kb*T))
+eq12 = sp.sqrt(E)*sp.exp(-E/(kb*T) )
+
+sp.integrate(eq32,(E,0,inf))/sp.integrate(eq12,(E,0,inf)) 
 
 
 # With a similar calculation as for the average energy, the mean square energy is 
@@ -255,7 +262,7 @@ integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
 # 
 # $$\displaystyle \langle x^2 \rangle =\frac{\int x^2e^{-kx^2/(2k_BT)}dx}{\int e^{-kx^2/(2k_BT)}dx}$$
 # 
-# Both integrals are standard forms and can also be calculated with Sympy in a manner shown in the previous answer, $\displaystyle \langle x^2 \rangle= \frac{k_BT}{k}$ and hence 
+# Both integrals are standard forms and can also be calculated with SymPy in a manner shown in the previous answer, $\displaystyle \langle x^2 \rangle= \frac{k_BT}{k}$ and hence 
 # 
 # $$\displaystyle  \langle x^2 \rangle-\langle x \rangle^2= \frac{k_BT}{k}$$
 # 
@@ -297,9 +304,10 @@ integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
 # In[7]:
 
 
-x0, x = symbols('x0, x', positive =True)
-eq = x**2/(pi*sqrt(x0**2 - x**2) )
-integrate(eq,(x,-x0,x0 ))
+x0, x = sp.symbols('x0, x', positive =True)
+pi = sp.pi
+eq = x**2/(pi*sp.sqrt(x0**2 - x**2) )
+sp.integrate(eq,(x,-x0,x0 ))
 
 
 # ## Q59 answer
@@ -313,14 +321,17 @@ integrate(eq,(x,-x0,x0 ))
 # 
 # $$\displaystyle \langle x^2 \rangle=\int_{-\infty}^\infty x^2\psi^2(x)dx$$
 # 
-# produces even functions which are not identically zero and have to be evaluated. Using Sympy the first thing to check is that the wavefunctions (Q39) are normalised then $\int\psi^2 dx=1$.
+# produces even functions which are not identically zero and have to be evaluated. Using SymPy the first thing to check is that the wavefunctions (Q39) are normalised then $\int\psi^2 dx=1$.
 
 # In[8]:
 
 
-alpha, x = symbols('alpha, x',positive = True)
-psi1 = sqrt(2*alpha)*sqrt(sqrt(alpha/pi))*x*exp(-alpha*x**2/2)
-integrate( psi1**2,(x,-oo,oo) )
+alpha, x = sp.symbols('alpha, x',positive = True)
+inf = sp.oo                      # sp.oo is sympy infinity
+pi = sp.pi
+psi1 = sp.sqrt(2*alpha)*sp.sqrt(sp.sqrt(alpha/pi))*x*sp.exp(-alpha*x**2/2)
+
+sp.integrate( psi1**2,(x,-inf,inf) )  
 
 
 # Next calculate 
@@ -336,8 +347,9 @@ integrate( psi1**2,(x,-oo,oo) )
 # In[9]:
 
 
-alpha, x, n = symbols('alpha, x, n', positive = True)
-
+alpha, x, n = sp.symbols('alpha, x, n', positive = True)
+inf = sp.oo       # sp.oo is sympy infinity
+pi = sp.pi
 def afact(n):     # factorial recursion formula
     
     if n == 0 or n == 1 :
@@ -356,8 +368,8 @@ def aherm(n,x):   #  Hermite polynomial recursion formula
 #------------
 ans = []
 for n in range(5):
-    psi = 1/sqrt( 2**n*afact(n))*sqrt(sqrt(alpha/pi) )* aherm(n,sqrt(alpha)*x) *exp(-alpha*x**2/2)
-    r = integrate(x**2*psi**2,(x,-oo,oo ),conds='none')
+    psi = 1/sp.sqrt( 2**n*afact(n))*sp.sqrt(sp.sqrt(alpha/pi) )* aherm(n,sp.sqrt(alpha)*x) *sp.exp(-alpha*x**2/2)
+    r = sp.integrate(x**2*psi**2,(x,-inf,inf ),conds='none')   
     ans.append([n,r] )
 ans
 
@@ -388,7 +400,7 @@ ans
 # 
 # and notice the exponential has also changed. As  the function to be integrated is even the integral is not zero. 
 # 
-# Using Sympy the result is 
+# Using SymPy the result is 
 # 
 # $$\displaystyle \langle p^2 \rangle = \alpha\hbar^2 N_0^2\frac{1}{2}\sqrt{\frac{\pi}{\alpha} }=\alpha\frac{\hbar^2}{2}$$
 # 
@@ -397,9 +409,10 @@ ans
 # In[10]:
 
 
-x, alpha = symbols('x, alpha', positive = True)
-eq =  exp(-alpha*x**2/2)*(alpha*x**2 - 1)*exp(-alpha*x**2/2)
-integrate(eq,(x,-oo,oo) ) 
+x, alpha = sp.symbols('x, alpha', positive = True)
+inf= sp.oo                   # sp.oo is sympy infinity
+eq =  sp.exp(-alpha*x**2/2)*(alpha*x**2 - 1)*sp.exp(-alpha*x**2/2)
+sp.integrate(eq,(x,-inf,inf) )   
 
 
 # The previous calculation found that $\displaystyle \langle x^2 \rangle=\left(n+\frac{1}{2}\right)\frac{1}{\alpha} $ which is $\displaystyle \langle x^2 \rangle=\frac{1}{2\alpha} $ when $n=0$. 
@@ -426,9 +439,11 @@ integrate(eq,(x,-oo,oo) )
 # In[11]:
 
 
-beta, s, E = symbols('beta, s, E',positive = True)
-eqn = beta**s*E**(s - 1)*exp(-beta*E)/factorial(s - 1)
-integrate( eqn, (E,0,oo) ) 
+beta, s, E = sp.symbols('beta, s, E',positive = True)
+inf = sp.oo                       # sp.oo is sympy infinity 
+eqn = beta**s*E**(s - 1)*sp.exp(-beta*E)/sp.factorial(s - 1)
+ans = sp.integrate( eqn, (E,0,inf) )  
+ans
 
 
 # which when simplified has the value unity, because the gamma function $\Gamma(s)=(s-1)!$. The average is therefore 
@@ -438,9 +453,11 @@ integrate( eqn, (E,0,oo) )
 # In[12]:
 
 
-beta, s, E = symbols('beta, s, E',positive = True)
-avE = beta**s * E**s * exp(-beta*E)/factorial(s - 1)
-simplify( integrate( avE, (E,0,oo) ) )
+beta, s, E = sp.symbols('beta, s, E',positive = True)
+inf = sp.oo                  # sp.oo is sympy infinity
+avE = beta**s * E**s * sp.exp(-beta*E)/sp.factorial(s - 1)
+
+sp.simplify( sp.integrate( avE, (E,0,inf) ) )  
 
 
 # where again $\Gamma(s)=(s-1)!$ is used to simplify. The average energy squared is
@@ -477,10 +494,11 @@ simplify( integrate( avE, (E,0,oo) ) )
 # In[13]:
 
 
-L, x = symbols('L, x', positive = True)
-n   = symbols('n',integer=True)
-eq1  = 2/L*x*sin(n*pi*x/L)**2
-simplify(integrate(eq1, (x,0,L)) )
+L, x = sp.symbols('L, x', positive = True)
+n    = sp.symbols('n',integer=True)
+pi = sp.pi
+eq1  = 2/L*x*sp.sin(n*pi*x/L)**2
+sp.simplify(sp.integrate(eq1, (x,0,L)) )
 
 
 # The average of $x^2$ depends on the quantum number and is $\displaystyle L^2\frac{(2n^2\pi^2-3)}{(n\pi)^2}$
@@ -508,17 +526,17 @@ simplify(integrate(eq1, (x,0,L)) )
 # 
 # $$\displaystyle \langle E_k\rangle =\frac{\hbar^2}{2m}\left( \frac{k\pi}{L}\right)^2$$
 # 
-# Notice that the bigger the box the smaller the energy because the electron is more spread out. Also the larger the mass, the smaller the energy. The calculation in Sympy can be done easily by forcing $k$ to be an integer.
+# Notice that the bigger the box the smaller the energy because the electron is more spread out. Also the larger the mass, the smaller the energy. The calculation in SymPy can be done easily by forcing $k$ to be an integer.
 
 # In[14]:
 
 
-L, x, hbar, m = symbols('L, x, hbar, m',positive = True)
-k = symbols('k',integer = True)
+L, x, hbar, m = sp.symbols('L, x, hbar, m',positive = True)
+k = sp.symbols('k',integer = True)
+pi = sp.pi
+psi = sp.sqrt(2/L)*sp.sin(k*pi*x/L)
 
-psi = sqrt(2/L)*sin(k*pi*x/L)
-
-simplify(-hbar**2/(2*m)*integrate(psi*diff(psi,x,x),(x,0,L)) )
+sp.simplify(-hbar**2/(2*m)*sp.integrate(psi*sp.diff(psi,x,x),(x,0,L)) )
 
 
 # ## Q63 answer
@@ -542,11 +560,11 @@ simplify(-hbar**2/(2*m)*integrate(psi*diff(psi,x,x),(x,0,L)) )
 # In[15]:
 
 
-L, x = symbols('L, x',positive = True)
-n, k = symbols('n, k',integer = True, positive = True)
-
-eq = (2/L)* sin(n*pi*x/L)*x*sin(k*pi*x/L)
-simplify(integrate(eq,(x,0,L)) )
+L, x = sp.symbols('L, x',positive = True)
+n, k = sp.symbols('n, k',integer = True, positive = True)
+pi = sp.pi
+eq = (2/L)* sp.sin(n*pi*x/L)*x*sp.sin(k*pi*x/L)
+sp.simplify(sp.integrate(eq,(x,0,L)) )
 
 
 # This equation is zero when $n + k + 1$ is an odd number. For the HOMO orbital $n = 4$ and the transitions to other even numbered levels, $k = 6$ or $8$ do not occur because $4 + \mathrm{even} + 1$ is an odd number. Similarly if $n$ were odd, transitions to other odd numbered levels would be zero. When $n = 4$ and $k = 5$ then the average dipole is $\displaystyle \langle x_{n,k}\rangle = -\frac{160}{81\pi^2}(Lq)^2 $ and the absorption probability, the square of this is $0.004Lq$. When k = 7 a similar result is obtained which when squared is $0.00043(Lq)^2 $. 
@@ -594,8 +612,9 @@ simplify(integrate(eq,(x,0,L)) )
 # In[16]:
 
 
-alpha, x, x0, x_a, x_b, n, m = symbols('alpha, x, x0, x_a, x_b, n, m',positive = True) #from Q59
-
+alpha, x, x0, x_a, x_b, n, m = sp.symbols('alpha, x, x0, x_a, x_b, n, m',positive = True) #from Q59
+inf = sp.oo                      # sp.oo is sympy infinity
+pi  = sp.pi
 def afact(n):                    # factorial recursion formula
     if n == 0 or n == 1 :
         return 1
@@ -612,19 +631,14 @@ def aherm(n,x):                  #  Hermite polynomial recursion formula
         return 2*x*aherm(n-1,x) - 2*(n-1)*aherm(n-2,x)
 #-------------    
 def psi(n,x0):    
-    return 1/sqrt(2**n*afact(n))*sqrt(sqrt(alpha/pi))*\
-    aherm(n,(x-x0)*sqrt(alpha) )*exp(-alpha*(x-x0)**2/2)
+    return 1/sp.sqrt(2**n*afact(n))*sp.sqrt(sp.sqrt(alpha/pi))*\
+    aherm(n,(x-x0)*sp.sqrt(alpha) )*sp.exp(-alpha*(x-x0)**2/2)
 #--------------    
 
-nmax = 3    
-psin = [''for i in range(nmax)]  # save only to print nicely
-for n in range(nmax):    
-    psin[n] = psi(n,x_a)
-    pass
-
+nmax = 3   
 pp = []
 for i in range(nmax):            # do this way to simpligy list
-    pp.append(simplify(psin[i]))
+    pp.append([i,sp.simplify(psi(i,x_a) ) ])
 
 pp
 
@@ -640,8 +654,8 @@ pp
 
 FC = []
 for i in [0, 1, 5, 6]:
-    ans = integrate(psi(0,x_a)*psi(0,x_b),(x,-oo,oo))
-    FC.append([i,simplify( abs( ans)**2) ] )  #  add result to list
+    ans = sp.integrate(psi(0,x_a)*psi(0,x_b),(x,-inf,inf))  
+    FC.append([i,sp.simplify( abs( ans)**2) ] )  #  add result to list
 FC
 
 
@@ -696,9 +710,11 @@ FC
 # In[18]:
 
 
-kf, a, t = symbols('kf, a, t', positive = True)
-eq = exp(-kf*t - a*sqrt(pi*kf*t))
-simplify(integrate(eq,(t,0,oo)) ) 
+kf, a, t = sp.symbols('kf, a, t', positive = True)
+inf= sp.oo                # sp.oo is sympy infinity
+pi = sp.pi
+eq = sp.exp(-kf*t - a*sp.sqrt(pi*kf*t))
+sp.simplify(sp.integrate(eq,(t,0,inf)) ) 
 
 
 # which produces the ratio $\displaystyle \frac{\phi}{\phi_0}=1 -\frac{\pi c}{2c_0}\text{erfc}\left( \frac{\sqrt{\pi}c}{2c_0} \right)e^{\pi (c^2/2c_0)^2}$  
@@ -742,15 +758,15 @@ simplify(integrate(eq,(t,0,oo)) )
 # 
 # $$\displaystyle \langle \cos^2(\theta)\rangle=\frac{\int_0^\pi \cos^2(\theta)\sin(\theta)d\theta\int_0^{2\phi} d\phi}{\int_0^\pi \sin(\theta)d\theta\int_0^{2\phi} d\phi}  $$
 # 
-# The second integral cancels and the remaining integrals can be done using Sympy or converted to their exponential form: 
+# The second integral cancels and the remaining integrals can be done using SymPy or converted to their exponential form: 
 
 # In[19]:
 
 
-theta = symbols('theta', positive =True)
-
-numer = integrate(cos(theta)**2*sin(theta), (theta,0,pi))
-denom = integrate(sin(theta), (theta,0,pi))
+theta = sp.symbols('theta', positive =True)
+pi = sp.pi
+numer = sp.integrate(sp.cos(theta)**2*sp.sin(theta), (theta,0,pi))
+denom = sp.integrate(sp.sin(theta), (theta,0,pi))
 numer/denom
 
 
@@ -811,10 +827,10 @@ numer/denom
 # In[20]:
 
 
-n, Z, r, a_0 = symbols('n, Z, r, a_0', positive = True)
-
-eq = 4*(Z/a_0)**3 * r**(2+n)*exp(-2*Z*r/a_0)
-simplify(integrate(eq,(r,0,oo) ))
+n, Z, r, a_0 = sp.symbols('n, Z, r, a_0', positive = True)
+inf = sp.oo                  # sp.oo is sympy infinity
+eq = 4*(Z/a_0)**3 * r**(2+n)*sp.exp(-2*Z*r/a_0)
+sp.simplify(sp.integrate(eq,(r,0,inf) ))          
 
 
 # This can be tested and gives finite results only for $n=-2,\,-1,\,0,\,1,\cdots$
@@ -822,10 +838,10 @@ simplify(integrate(eq,(r,0,oo) ))
 # In[21]:
 
 
-n, Z, a_0 = symbols('n, Z, a_0', positive = True)
-ans = ['' for i in range(7)]
+n, Z, a_0 = sp. symbols('n, Z, a_0', positive = True)
+ans = []
 for i,n in enumerate([-2,-1,0,1,2,3,4]):
-    ans[i] = (1/2)**(1+n)*(a_0/Z)**n*factorial(n+2)
+    ans.append( [n,(1/2)**(1+n)*(a_0/Z)**n*sp.factorial(n+2)] )
 ans[:]    
 
 
@@ -835,17 +851,17 @@ ans[:]
 # 
 # $$\displaystyle p_{0\to x}=4\pi\int_0^x r^2\psi^*(r,\theta,\varphi) \,\psi(r,\theta,\varphi)dr=4\left(\frac{Z}{a_0}  \right)^3\int_0^x r^2e^{-2Zr/a_0}dr$$
 # 
-# The integration is done by parts and is simple but involved, instead using Sympy with an upper limit of $a_0$, gives 
+# The integration is done by parts and is simple but involved, instead using SymPy with an upper limit of $a_0$, gives 
 # 
 # $$p_{0\to a_0}= (e^{2Z}-2Z-2Z^2-1)e^{-2Z}$$
 
 # In[22]:
 
 
-Z, a_0, r=symbols('Z, a_0, r',positive=True)
+Z, a_0, r = sp.symbols('Z, a_0, r',positive=True)
 
-eq = 4*(Z/a_0)**3 * r**2 * exp(-2*Z*r/a_0)
-simplify(integrate(eq,(r,0,a_0)) )
+eq = 4*(Z/a_0)**3 * r**2 * sp.exp(-2*Z*r/a_0)
+sp.simplify(sp.integrate(eq,(r,0,a_0)) )
 
 
 # This expression evaluates to $0.323$, thus for the 1s orbital of hydrogen, $32.3$% of the electron's probability lies within the Bohr radius $a_0$. In a hydrogenic atom with $Z = 2$ this probability becomes $76$% because the electron is more tightly bound. This is shown in the figure for increasing values of $Z$.
@@ -892,9 +908,9 @@ simplify(integrate(eq,(r,0,a_0)) )
 # In[23]:
 
 
-a = symbols('a',positive =True)
-ans = series( (exp(a) + exp(-a) )/(exp(a) - exp(-a)),a)
-simplify( ans - 1/a)
+a = sp.symbols('a',positive =True)
+ans = sp.series( (sp.exp(a) + sp.exp(-a) )/(sp.exp(a) - sp.exp(-a)),a)
+sp.simplify( ans - 1/a)
 
 
 # As $a \ll 1$ then $a^3$ and higher powers are insignificant therefore the result is for the average energy is 
@@ -944,10 +960,10 @@ simplify( ans - 1/a)
 # In[24]:
 
 
-B,k_B,T,J=symbols('B,k_B,T,J',positive =True)
-
-eq = J*(2*J+1)*exp(-B*J*(J+1)/(k_B*T))
-simplify(integrate(eq,(J,0,oo)) )
+B,k_B,T,J = sp.symbols('B,k_B,T,J',positive =True)
+inf = sp.oo               # sp.oo is sympy infinity
+eq = J*(2*J+1)*sp.exp(-B*J*(J+1)/(k_B*T))
+sp.simplify(sp.integrate(eq,(J,0,inf)) )  
 
 
 # making $\displaystyle \langle J\rangle =\sqrt{\frac{\pi k_BT}{4B}}e^{B/(4k_BT)}\mathrm{erfc}\left( \sqrt{\frac{B}{4k_BT} }\right)$.
@@ -981,14 +997,16 @@ simplify(integrate(eq,(J,0,oo)) )
 # 
 # The translational partition function is $\displaystyle Z=V\left(\frac{2\pi mk_BT}{\hbar^2}\right)^{3/2}$. 
 # 
-# The integration via Sympy is shown below.
+# The integration via SymPy is shown below.
 
 # In[25]:
 
 
-epsilon,k,T=symbols('epsilon,k,T',positive=True)
-eq = sqrt(epsilon)*exp(-epsilon/(k*T))
-simplify(integrate(eq,epsilon) )
+epsilon,k,T = sp.symbols('epsilon,k,T',positive=True)
+inf = sp.oo               # sp.oo is sympy infinity
+eq = sp.sqrt(epsilon)*sp.exp(-epsilon/(k*T))
+
+sp.simplify(sp.integrate(eq,(epsilon,0,inf) ) )
 
 
 # ## Q72 answer

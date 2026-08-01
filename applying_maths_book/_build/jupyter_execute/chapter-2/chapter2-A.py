@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle z=a+ ib \qquad\tag{1}$$
 # 
-# where $a$ is called the _real_ (Re) part and $b$ the _imaginary_ (Im) part of the number. The complex number $z = i$, if written in the form of equation 1, has a real part $a = 0$ and an imaginary part $b = 1$. The latter is rather a misnomer as $b$ is just as 'real' as is $a$; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts $a$ and $b$ in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an *Argand* diagram, if drawn with the real part $a$ along the conventional x-axis and $b$ along the y-axis; the area defined by $a$ and $b$ is also called the Argand or Gauss plane. The imaginary number $i$ has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.
+# where $a$ and $b$ are ordinary numbers and $a$ is called the *real* (Re) part and $b$ the *imaginary* (Im) part of the number. The complex number $z = i$, if written in the form of equation 1, has a real part $a = 0$ and an imaginary part $b = 1$. The latter is rather a misnomer as $b$ is just as 'real' as is $a$; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts $a$ and $b$ in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an *Argand* diagram, if drawn with the real part $a$ along the conventional x-axis and $b$ along the y-axis; the area defined by $a$ and $b$ is also called the Argand or Gauss plane. The imaginary number $i$ has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.
 # 
 # ![Drawing](chapter2-fig1.png )
 # 
@@ -38,7 +38,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Performing algebra with complex numbers is no more difficult than with 'normal' numbers, because the prime rule of algebra still applies:
 # 
-# $\qquad\qquad$'*Whatever I do to one side of an equation I do to the other side*'
+# $\qquad\qquad$'*Whatsoever I do to one side of an equation I do to the other side*'
 # 
 # The normal rules for addition and multiplication apply but with the additional rule that additions and subtractions are kept separate for the real and imaginary parts, as is done for components of vectors. A complex number can be divided in the usual way by a real number. Dividing by a complex number has the additional step that the top and bottom of the expression are first multiplied by the complex conjugate of the denominator. This is explained below. Although $i$ is a complex number, $i^2 = -1$ and is a real number:
 # 
@@ -149,7 +149,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # If $a$ and $b$ are real numbers, then the complex number is 
 # 
-# $\qquad$ $z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right)$ 
+# $\qquad$ $z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right)$
+# 
+# $\qquad$ $z^* = a - ib = r\left(\cos(\theta) - i \sin(\theta)\right)$ is the complex conjugate of $z$.
 # 
 # $\qquad$ $a = Re(z)$ is the real part of $z$
 # 
@@ -158,8 +160,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $\qquad$ $r =|z|= \sqrt{z^*z}=\sqrt{a^2+b^2}$ is the _modulus_ of $z$, or *absolute value, magnitude* or *norm*.
 # 
 # $\qquad$ $\displaystyle \theta = \tan^{-1}\left(\frac{b}{a}\right)= \tan^{-1}\left( \frac{Im(z)}{Re(z)} \right)$ is the argument of $z$, also called the _polar angle_ or *phase*. 
-# 
-# $\qquad$ $z^* = a - ib = r\left(\cos(\theta) - i \sin(\theta)\right)$ is the complex conjugate of $z$.
 # 
 # $\qquad$ $zz^* = | z |^2 = | z^* |^2$ is the _absolute value squared_ is always a positive real number.
 # 
@@ -170,13 +170,12 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ## 2 Using Python and Sympy
 # 
-# When using a computer language the complex number $a+ib$ is not usually written in the mathematical way. In Python $\mathtt{1J}$ or $\mathtt{1j}$ is used instead of $i$, thus $\mathtt{3*1j}$ is permissible, however, so is $\mathtt{3j}$ or $\mathtt{5J}$. The parts of a complex number can be extracted by using the $\mathtt{re()}$ and $\mathtt{im()}$ functions. An alternative is to use $\mathtt{z.real,\; z.imag}$ or $\mathtt{z.conjugate()}$ (notice brackets) as shown below. In Sympy $\mathtt{I}$ is used to represent $i$, so care has to be taken not to use this as a variable or constant.
+# When using a computer language the complex number $a+ib$ is not usually written in the mathematical way. In Python $\mathtt{1J}$ or $\mathtt{1j}$ is used instead of $i$, thus $\mathtt{3*1j}$ is permissible, however, so is $\mathtt{3j}$ or $\mathtt{5J}$. The parts of a complex number can be extracted by using $\mathtt{z.real,\; z.imag}$ or $\mathtt{z.conjugate()}$ (notice brackets) as shown below. In Sympy $sp.I$ is used to represent $i$.
 
 # In[2]:
 
 
 z0 = 3 + 5j
-print(re(z0), im(z0) )
 print( z0.real, z0.imag, z0.conjugate() )
 
 
@@ -184,16 +183,16 @@ print( z0.real, z0.imag, z0.conjugate() )
 
 
 z1 = 6 - 4*1J
-print(z0*z1,z0/z1)
+print(z0*z1, z0/z1)
 
 
-# In Sympy, however, $\mathtt{I}$ is used to represent $i$ but care has also to be taken in defining terms, for example
+# In SymPy, however, $sp.I$ is used to represent $i$, for example,
 
 # In[4]:
 
 
-x = symbols('x',real=True)     #  Tell Sympy that x is not complex
-exp(I*x).expand()              # try to expand e^ix as sine and cosine 
+x = sp.symbols('x',real=True)        #  Tell Sympy that x is not complex
+sp.exp(sp.I*x).expand()              # try to expand e^ix as sine and cosine 
 
 
 # which is not very helpful, instead $x$ has to be defined as well as the $\mathtt{expand( \cdots )}$ instruction being told that the expression is complex.
@@ -201,12 +200,24 @@ exp(I*x).expand()              # try to expand e^ix as sine and cosine
 # In[5]:
 
 
-exp(I*x).expand(complex=True)
+sp.exp(sp.I*x).expand(complex=True)
 
 
 # In[6]:
 
 
-f = (3+5*I)/(1-2*I)
-f.expand( complex = True )
+sp.expand(sp.exp(sp.I*x),complex=True)  # an alternative way
+
+
+# In[7]:
+
+
+f = (3+5*sp.I)/(1-2*sp.I)
+sp.expand(f, complex = True )
+
+
+# In[ ]:
+
+
+
 

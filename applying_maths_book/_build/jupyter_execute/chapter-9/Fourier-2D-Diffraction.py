@@ -417,7 +417,7 @@
 # 
 # ![Drawing](fourier-fig85c.png)
 # 
-# Figure 85c. Simulation of experimental diffraction data from DNA based on just the phosphate groups shown as circles on the helices shown in figure 85a. This 2D model is fourier transformed to produce the image. The model shows the general features observed in the experiment including the missing $4^{th}$ layer line. The contours show the absolute value of the fourier transform.
+# Figure 85c. Simulation of experimental diffraction data from DNA based on just the phosphate groups shown as circles on the helices shown in figure 85a. This 2D model is fourier transformed to produce the image. The model shows the general features observed in the experiment including the missing $4^{th}$ layer line. The contours show the absolute value of the fourier transform. The layer lines are shown on the right-hand side of the image.
 # 
 
 # In[ ]:

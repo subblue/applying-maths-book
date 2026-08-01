@@ -10,10 +10,15 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.optimize import fsolve     # use this for numerical solution
-init_printing()                       # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                       # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+
+# In[2]:
+
+
+from scipy.optimize import fsolve     # use this for numerical solution
 
 
 # Many equations have the form where a power of $x$ is multiplied by another, or by an exponential, a sine or cosine and so forth, and you must be able to handle these more complicated equations because they occur so frequently. A couple of simple rules allow us to do this quite easily.
@@ -223,14 +228,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # SymPy produces the same result after a little simplification and remembering that the function equals zero and that x^x=y^y$.
 
-# In[2]:
+# In[3]:
 
 
-x,y = symbols('x,y')
-y   = Function('y')           # define y to be a function 
+x,y = sp.symbols('x,y')
+y   = sp.Function('y')           # define y to be a function 
 f   = y(x)**y(x) - x**x       # define this as a function not an equation
-ans = diff(f,x)               # define y as a function of x so that it will be differentiated.
-simplify(ans)
+ans = sp.diff(f,x)               # define y as a function of x so that it will be differentiated.
+sp.simplify(ans)
 
 
 # ## 4.8 Differentiating parametric functions
@@ -265,16 +270,16 @@ simplify(ans)
 # 
 # As a check we can use SymPy.
 
-# In[3]:
+# In[4]:
 
 
-x,y,t = symbols('x y t')
+x,y,t = sp.symbols('x y t')
 
-y = Function('y')
-x = Function('x')
+y = sp.Function('y')
+x = sp.Function('x')
 
-ans = diff( diff(y(t),t)/diff(x(t),t) , t) / diff(x(t),t)
-simplify(ans)
+ans = sp.diff( sp.diff(y(t),t)/sp.diff(x(t),t) , t) / sp.diff(x(t),t)
+sp.simplify(ans)
 
 
 # Consider finding the gradient of the elegant looking curve shown in Fig. 6 at a point such as $x$ = 2, and then find the equation of the tangent line at this point and where the tangent is horizontal and where vertical. The curve is described by the parametric equations
@@ -287,14 +292,15 @@ simplify(ans)
 # 
 # To reform this into an equation in $y$ is possible, but to make an equation in $x$ will be messy and there is no reason to do so. At our 'victim' point, $x  = 2$, the value of $t$ is the solution of $t^3 - t = 2$ which, we can use a built in fsolve function in numpy/scipy or use the Newton - Raphson method which is described in part 10 of this chapter. 
 
-# In[4]:
+# In[5]:
 
 
+# using numpy
 f = lambda t:  t**3-t-2   #  define function so fsolve knows what to solve for
 ans = fsolve(f,1)[0]      # use [0] to get first answer only, answer is t
-print('real root of equation = ',ans)
-print('gradient = ', 4*ans*np.cos(ans**2)/(3*ans**2-1))
-print('y0 = ', 2*np.sin(ans**2))
+print('{:s} {:f}'.format('real root of equation = ',ans) )
+print('{:s} {:f}'.format('gradient = ', 4*ans*np.cos(ans**2)/(3*ans**2-1)) )
+print('{:s} {:f}'.format('y0 = ', 2*np.sin(ans**2)) )
 
 
 # ![Drawing](differen-fig6.png)

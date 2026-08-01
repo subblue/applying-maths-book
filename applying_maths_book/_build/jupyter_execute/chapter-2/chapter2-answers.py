@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -82,13 +82,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-# example using SymPy. Notice that i becomes 1j
+# example using SymPy. Notice that i becomes 1j, we can mix numpy and sympy
 
-z = symbols('z')
-z =(2-5*1j)*(3+1j)/(3-1j)
-print('z = ',expand(z) )
-print('modulus =', expand( sqrt(conjugate(z)*z ))  )
-print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
+z = sp.symbols('z')
+z = (2-5*1j)*(3+1j)/(3-1j)
+print('z = ',sp.expand(z) )
+print('modulus =', sp.expand( sp.sqrt(sp.conjugate(z)*z ))  )
+print('argument (degrees) = ',sp.atan( sp.im(z)/sp.re(z) )*180/np.pi   )
 
 
 # ## Q8 answer

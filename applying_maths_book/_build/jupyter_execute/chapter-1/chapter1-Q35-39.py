@@ -3,6 +3,10 @@
 
 # # Questions 35 - 39
 
+# ## Q34 CAS registry numbers. 
+# 
+# The CAS registry numbers for pheophytin-a (chlorophyll-a with the Mg atom replaced by two H atoms), retinal and trans-stilbene are $100759 - 86 - x,\; 116 - 31 - x$, and $103 - 30 - x$ respectively. Work out their check-sum numbers $x$ then look them up to confirm their values. Pheophytin-A also has the index $603-17-x$ so work this one out as well.
+# 
 # ## Q35 Rounding and errors
 # Rewrite and/or correct the following in the most appropriate form.
 # 

@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -456,9 +456,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-alpha,x,hbar =symbols('alpha,x,hbar',positive=True)
-psi0 = (alpha/pi)**(1/4)*exp(-alpha*x**2/2)
-integrate( psi0*x*x*psi0,(x,-oo,oo), conds='none')
+alpha,x,hbar = sp.symbols('alpha, x, hbar',positive=True)
+pi   = sp.pi
+inf  = sp.oo  # sp.oo is infinity 
+psi0 = (alpha/pi)**(1/4)*sp.exp(-alpha*x**2/2)
+sp.integrate( psi0*x*x*psi0,(x, -inf, inf), conds='none')  
 
 
 # 
@@ -485,11 +487,25 @@ integrate( psi0*x*x*psi0,(x,-oo,oo), conds='none')
 # In[3]:
 
 
--hbar**2*integrate( psi0*diff(psi0,x,x) ,(x,-oo,oo) )
+-hbar**2*sp.integrate( psi0*sp.diff(psi0,x,x) ,(x,-sp.oo,sp.oo) )  # sp.oo is infinity as limit
 
 
 # ### **(ii) particle in a box**
-# Following the method outlined above the calculation for a particle in a box always produces $\Delta x\Delta p\gt\hbar/2$. If the box is of length $0\to a$ ( and the integration is taken over this range ) and for the lowest energy level with quantum number $n=1$, $ \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar $ which is greater than $\hbar/2$ and consistent with the uncertainty principle. The similar result is found for all $n$ where the values increase with $n$, for example when $n=2$, $ \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar $, thus we find that there is no requirement for $\Delta x\Delta p$ to be equal to $\hbar/2$ for any quantum number. The general trend is $\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar$ and the normalised wavefunction is $\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)$. 
+# Following the method outlined above the calculation for a particle in a box always produces $\Delta x\Delta p\gt\hbar/2$. If the box is of length $0\to a$ ( and the integration is taken over this range ) and for the lowest energy level with quantum number $n=1$, 
+# 
+# $$ \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar $$
+# 
+# which is greater than $\hbar/2$ and consistent with the uncertainty principle. The similar result is found for all $n$ where the values increase with $n$, for example when $n=2$, 
+# 
+# $$ \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar $$
+# 
+# thus we find that there is no requirement for $\Delta x\Delta p$ to be equal to $\hbar/2$ for any quantum number. The general trend is 
+# 
+# $$\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar$$
+# 
+# and the normalised wavefunction is 
+# 
+# $$\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)$$ 
 # 
 # ## 8.6 Higher averages: moments and variance
 # 

@@ -8,17 +8,15 @@
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
 import matplotlib.pyplot as plt
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## 2.1 Concept and motivation
 # 
 # A Monte Carlo method of solving differential equations has been developed by Gillespie (1977, 2007) and is just as applicable to chemical reactions as it is to describing S-I-R diseases or predator - prey populations. This method is equivalent to any other numerical method in the sense that it is purely mathematical, no science enters into the method of solution, that is all done when the rate equations are written down. In comparison, in Section 3, a heuristic way of solving problems will be described, and in this case, the science behind the processes involved is an essential part of the method.
 # 
-# When considered at the level of individual molecules, any chemical reaction has relatively long time periods during which no reaction is possible followed by small time periods when reaction occurs. The Gillespie method calculates these two times and uses them as the basis of the method to solve the rate equations. Bimolecular chemical reactions rarely occur on first contact of the two reactants because there is usually an energy barrier, the activation energy, between reactants and products. Many millions and perhaps thousands of millions of collisions are needed before reaction occurs if the activation energy is much larger than thermal energy and this time is far longer than the time it takes to cross the reaction barrier. Even if a reaction occurs on first contact, there are periods during which no reaction is possible because the molecules are separated from one another. In a first-order, solution - phase reaction, such as a cis - trans isomerization, many collisions with solvent are needed to give the reactant molecule enough energy to surmount the energy barrier between reactant and product. Similar unreactive periods occur even in a molecule isolated from others in the gas phase. The molecule may have enough total energy to react but this is may be spread among all of its $3N - 6$ vibrational modes. The energy must flow out of these modes and find its way into the reactive bond and this takes time.
+# When considered at the level of individual molecules, any chemical reaction has relatively long time periods during which no reaction is possible followed by small time periods when reaction occurs. The Gillespie method calculates these two times and uses them as the basis of the method to solve the rate equations. Bimolecular chemical reactions rarely occur on first contact of the two reactants because there is usually an energy barrier, the activation energy, between reactants and products. Many millions and perhaps thousands of millions of collisions are needed before reaction occurs if the activation energy is much larger than thermal energy and this time is far longer than the time it takes to cross the reaction barrier. Even if a reaction occurs on first contact, there are periods during which no reaction is possible because the molecules are separated from one another. In a first-order, solution - phase reaction, such as a cis - trans isomerization, many collisions with solvent are needed to give the reactant molecule enough energy to surmount the energy barrier between reactant and product. Similar un-reactive periods occur even in a molecule isolated from others in the gas phase. The molecule may have enough total energy to react but this is may be spread among all of its $3N - 6$ vibrational modes. The energy must flow out of these modes and find its way into the reactive bond and this takes time.
 # 
 # If the reacting molecules are considered individually, the various times that would be observed between reactions have a Poisson distribution, which is a distribution of many events with each having a low probability, see chapters 1 & 13, the probability of a reaction is therefore also described by a Poisson distribution. Monte Carlo methods mimic the Poisson behaviour of molecules by considering the chance (probability) that no reaction will occur during a certain period of time, which is followed by another smaller time interval during which a reaction does occur. The method, therefore, involves working out these two probabilities and multiplying them together.
 # 
@@ -236,7 +234,7 @@ while indx < bins and nA > 0  :
 # 
 # The sum of these yields is one. Which state the molecule ends up in is determined by casting a die in the form of a uniform random number in the range $0 \to 1$. If it is in the range zero to $\varphi_T$ the triplet is produced; if not, the ground state results and the molecule has fluoresced.
 # 
-# The calculation is shown below and is only slightly modified from that of the last example. The fluorescence rate constant is 1/(20 ns), and the intersystem crossing rate constant $1/(10$ ns) makes the fluorescence yield $1/3$, so that $2/3$ goes to the triplet. The prefix T is used for the triplet, such as Tcount or nT for number of triplets, G for ground state, and A the excited state. As before, a check is made in the 'while..do' statement to prevent the population of any state becoming negative. The triplet and ground state cannot become zero, because +1 is always added to their populations. The data is placed into $200$ bins and is calculated for a total time of $100$ ns with $20000$ molecules, initially in the excited state. The units of nanoseconds (ns), need not be explicitly included if we work in these units.
+# The calculation is shown below and is only slightly modified from that of the last example. The fluorescence rate constant is 1/(20 ns), and the intersystem crossing rate constant $1/(10$ ns) makes the fluorescence yield $1/3$, so that $2/3$ goes to the triplet. The prefix T is used for the triplet, such as Tcount or nT for number of triplets, G for ground state, and A the excited state. As before, a check is made in the 'while..do' statement to prevent the population of any state becoming negative. The triplet and ground state cannot become zero, because +1 is always added to their populations. The data is placed into $200$ bins and is calculated for a total time of $100$ ns with $20000$ molecules, initially in the excited state. The units of nanoseconds (ns), need not be explicitly included if we work in these units. In the calculation we choose the initial number of ground state molecule to be zero, but this is really the *change* in the number of ground states, taken to be zero at $=0$ just for simplicity. we could make this any positive number but its easier to make it zero so that all species can be plotted easily together.
 # 
 # ![Drawing](monte-carlo-fig6.png)
 # 
@@ -266,7 +264,7 @@ dtime  = np.zeros(bins,dtype=float)
 for i in range(bins):               # work out time bins
     dtime[i]= maxt*(i+1/2)/bins
 
-G0 = 0                              # initial values ground state G
+G0 = 0                              # initial change in ground state
 T0 = 0                              # initial triplet
 nA = A0                             # initial excited state
 nG = G0
@@ -295,10 +293,10 @@ while indx < bins and nA > 0  :
         pass
     pass
 
-## plot data etc.
-#plt.plot(dtime,Acount)
-#plt.plot(dtime,Gcount)
-#plt.plot(dtime,Tcount)
+# plot data etc.
+#plt.scatter(dtime,Acount,s=2)
+#plt.scatter(dtime,Gcount,s=2)
+#plt.scatter(dtime,Tcount,s=2)
 #plt.show()
 
 
@@ -311,3 +309,15 @@ while indx < bins and nA > 0  :
 # ![Drawing](monte-carlo-fig7.png)
 # 
 # Figure 7. Monte Carlo simulation of the decay of an excited state and the appearance of triplet and ground state (circles) together with theoretical curves (dashed lines). The gaps (drop-outs) in the Monte Carlo data occur because of the limited number of trials; 20000 in this example.
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -39,13 +39,16 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-a, x, U, hbar, m, L = symbols('a, x, U, hbar, m, L', positive = True)
-psi = exp(-a*x**2)
-N = integrate(psi**2,(x,-oo,oo))  # normalisation
-eqa= psi*( -hbar**2/(2*m)*diff(psi,x,x) + U*psi)  # potential value U
-eqb= psi*( -hbar**2/(2*m)*diff(psi,x,x) )         # potential zero 
-EV = integrate(eqa,(x,-oo,-L) ) + integrate(eqb,(x,-L,L) ) + integrate(eqa,(x,L,oo) ) 
-simplify(EV/N)
+a, x, U, hbar, m, L = sp.symbols('a, x, U, hbar, m, L', positive = True)
+inf = sp.oo                                          #  sp.oo is sympy infinity
+psi = sp.exp(-a*x**2)
+N = sp.integrate(psi**2,(x,-inf,inf))                # normalise
+
+eqa= psi*( -hbar**2/(2*m)*sp.diff(psi,x,x) + U*psi)  # potential value U
+eqb= psi*( -hbar**2/(2*m)*sp.diff(psi,x,x) )         # potential zero
+
+EV = sp.integrate(eqa,(x,-inf,-L) ) + sp.integrate(eqb,(x,-L,L) ) + sp.integrate(eqa,(x,L,inf) ) 
+sp.simplify(EV/N)
 
 
 # Taking the derivative of $E_V$ gives 
@@ -62,26 +65,29 @@ simplify(EV/N)
 # _____
 
 # ## Q74 answer
-# Using the formula equation 47,  the denominator is $\displaystyle \int\psi^*\psi dx=\int_{-\infty}^\infty \frac{\alpha}{\sqrt{\pi}} e^{-\alpha x^2}dx$ 
+# Using the formula equation 47,  the denominator is 
 # 
-# and because of the $e^{-\alpha x^2}$ term an error function is likely to be involved with the integral. To check this we can look up the integral or use Sympy;
+# $$\displaystyle \int\psi^*\psi dx=\int_{-\infty}^\infty \frac{\alpha}{\sqrt{\pi}} e^{-\alpha x^2}dx$$ 
+# 
+# and because of the $e^{-\alpha x^2}$ term an error function is likely to be involved with the integral. To check this we can look up the integral or use SymPy;
 
 # In[3]:
 
 
-alpha, x, hbar, m, k = symbols('alpha, x, hbar, m, k', positive = True)
-
-psi = sqrt(alpha/sqrt(pi))*exp(-alpha*x**2/2)
-N   = simplify(integrate(psi**2,(x,-oo,oo) ) )      # normalisation integral psi x psi
+alpha, x, hbar, m, k = sp.symbols('alpha, x, hbar, m, k', positive = True)
+inf = sp.oo                                                 # sp.oo is sympy infinity
+pi  = sp.pi
+psi = sp.sqrt(alpha/sp.sqrt(pi))*sp.exp(-alpha*x**2/2)
+N   = sp.simplify(sp.integrate(psi**2,(x,-inf,inf) ) )      # normalisation integral psi x psi, 
 N
 
 
 # In[4]:
 
 
-Hpsi = -hbar**2/(2*m)*diff(psi,x,x)- k*x**4*psi  # H x psi 
-Enrg = integrate(psi*Hpsi,(x,-oo,oo) )/N           # E = integral psi x H x psi /normalisation
-simplify(Enrg)
+Hpsi = -hbar**2/(2*m)*sp.diff(psi,x,x)- k*x**4*psi  # H x psi 
+Enrg = sp.integrate(psi*Hpsi,(x,-inf,inf) )/N   # E = integral psi x H x psi /normalisation.
+sp.simplify(Enrg)
 
 
 # from which  energy is $\displaystyle E= \frac{\alpha \hbar^2}{4m}-\frac{3k}{4\alpha ^2} $.
@@ -120,18 +126,18 @@ simplify(Enrg)
 # 
 # $$\displaystyle E_V=-\frac{\displaystyle \int_{-\infty}^\infty \frac{1}{2}e^{-\alpha x^2/2}\frac{d^2}{dx^2}e^{-\alpha x^2/2} + (1-e^{- x^2})e^{-\alpha x^2/2} dx}{\displaystyle  \int_{-\infty}^\infty e^{-\alpha x^2}}dx$$ 
 # 
-# Using sympy to calculate the integrals
+# Using SymPy to calculate the integrals
 
 # In[5]:
 
 
-alpha, beta, x = symbols('alpha, beta, x',positive=True)
+alpha, beta, x = sp.symbols('alpha, beta, x',positive=True)
+inf = sp.oo                            # sp.oo is sympy infinity
+psi = sp.exp(-alpha*x**2/2)            # wavefunction
+N   = sp.integrate(psi**2,(x,-inf,inf))    #  normalisation. sp.oo is sympy infinity
 
-psi = exp(-alpha*x**2/2)            # wavefunction
-N   = integrate(psi**2,(x,-oo,oo))    #  normalisation
-
-Hpsi = (-diff(psi,x,x)/2 + (1-exp(-beta*x**2))*psi )
-EV   = simplify( integrate(psi*Hpsi,(x,-oo,oo) )/N )    # variational energy
+Hpsi = (-sp.diff(psi,x,x)/2 + (1-sp.exp(-beta*x**2))*psi )
+EV   = sp.simplify( sp.integrate(psi*Hpsi,(x,-inf,inf) )/N )    # variational energy. 
 EV
 
 
@@ -144,7 +150,7 @@ EV
 # In[6]:
 
 
-solve( (alpha**(3/2) + alpha**(1/2) )*( alpha +1 )**(1/2)-2,alpha )
+sp.solve( (alpha**(3/2) + alpha**(1/2) )*( alpha +1 )**(1/2)-2,alpha )
 
 
 # This result gives an energy of $E_V=0.53284$. This is close to but a little higher than the numerical solution, which is $0.5226$.  
@@ -164,16 +170,18 @@ solve( (alpha**(3/2) + alpha**(1/2) )*( alpha +1 )**(1/2)-2,alpha )
 # 
 # $$\displaystyle 4\pi\int_0^\infty R(r)\left( -\frac{1}{2r}\frac{d^2}{dr^2}rR(r)-\frac{R(r)}{r} \right) r^2dr$$
 # 
-# Evaluating using $R(r)=e^{-\alpha r^2/2}$ using Sympy gives $\displaystyle E_V = \frac{3\alpha}{4}-2\sqrt{\frac{\alpha}{\pi}}$.
+# Evaluating using $R(r)=e^{-\alpha r^2/2}$ using SymPy gives $\displaystyle E_V = \frac{3\alpha}{4}-2\sqrt{\frac{\alpha}{\pi}}$.
 
 # In[7]:
 
 
-r, alpha = symbols('r, alpha', positive = True)
-R  = exp(-alpha*r**2/2)                            # radial wavefunction
-eq = 4*pi* R*( -diff(r*R,r,r)/(2*r) - R/r )*r**2   # numerator integral psi H psi     
-EV = integrate(eq, (r,0,oo)) /sqrt((pi/alpha)**3) # divide by normalisation N
-simplify(EV)
+r, alpha = sp.symbols('r, alpha', positive = True)
+inf= sp.oo                          # sp.oo is sympy infinity
+pi = sp.pi
+R  = sp.exp(-alpha*r**2/2)                               # radial wavefunction
+eq = 4*pi* R*( -sp.diff(r*R,r,r)/(2*r) - R/r )*r**2   # numerator integral psi H psi     
+EV = sp.integrate(eq, (r,0,inf)) /sp.sqrt((pi/alpha)**3) # divide by normalisation N. 
+sp.simplify(EV)
 
 
 # Differentiating wrt $\alpha$ gives $\displaystyle \frac{dE_V}{d\alpha}= \frac{3}{4}-\frac{1}{\sqrt{\alpha\pi}}=0$ from which the minimum $\displaystyle \alpha = \frac{16}{9\pi}$ and the variational energy $\displaystyle -\frac{4}{3\pi}$.
@@ -195,18 +203,18 @@ simplify(EV)
 # 
 # $$\displaystyle I_x=\frac{1}{A}\int_0^1\int_x^{2x} y^2\sin(x+y)dydx  \qquad  I_y=\frac{1}{A}\int_0^1\int_x^{2x} x^2\sin(x+y)dydx$$
 # 
-# and using Sympy gives $I_x= 0.4496; I_y= 0.2027$ and these should be multiplied by $\sigma$.
+# and using SymPy gives $I_x= 0.4496; I_y= 0.2027$ and these should be multiplied by $\sigma$.
 
 # In[8]:
 
 
-x, y = symbols('x, y',positive =True)
+x, y = sp.symbols('x, y',positive =True)
 
-eq = x**2*sin(x+y)
-Iy = integrate(integrate( eq, (y,x,2*x) ), (x,0,1.0) )
+eq = x**2*sp.sin(x+y)
+Iy = sp.integrate(sp.integrate( eq, (y,x,2*x) ), (x,0,1.0) )
 
-eq = y**2*sin(x+y)
-Ix = integrate(integrate( eq, (y,x,2*x) ), (x,0,1.0) )
+eq = y**2*sp.sin(x+y)
+Ix = sp.integrate(sp.integrate( eq, (y,x,2*x) ), (x,0,1.0) )
 print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 
 
@@ -318,24 +326,24 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # In[9]:
 
 
-a, theta, u, v = symbols('a, theta, u, v',positive = True)
+a, theta, u, v = sp.symbols('a, theta, u, v',positive = True)
 
-fx = a*sqrt((u**2 - 1)*(1 - v**2))*cos(theta)
-fy = a*sqrt((u**2 - 1)*(1 - v**2))*sin(theta)
+fx = a*sp.sqrt((u**2 - 1)*(1 - v**2))*sp.cos(theta)
+fy = a*sp.sqrt((u**2 - 1)*(1 - v**2))*sp.sin(theta)
 fz = a*u*v
 
-dxu = diff(fx,u)
-dxv = diff(fx,v)
-dxt = diff(fx,theta)
-dyu = diff(fy,u)
-dyv = diff(fy,v)
-dyt = diff(fy,theta)
-dzu = diff(fz,u)
-dzv = diff(fz,v)
-dzt = diff(fz,theta)
+dxu = sp.diff(fx,u)
+dxv = sp.diff(fx,v)
+dxt = sp.diff(fx,theta)
+dyu = sp.diff(fy,u)
+dyv = sp.diff(fy,v)
+dyt = sp.diff(fy,theta)
+dzu = sp.diff(fz,u)
+dzv = sp.diff(fz,v)
+dzt = sp.diff(fz,theta)
 
-Jac = Matrix([ [dxu, dxv,dxt ],  [dyu, dyv,dyt ], [dzu, dzv,dzt ]  ] )
-simplify(Jac.det())
+Jac = sp.Matrix([ [dxu, dxv,dxt ],  [dyu, dyv,dyt ], [dzu, dzv,dzt ]  ] )
+sp.simplify(Jac.det())
 
 
 # The volume element is therefore $dxdydz = a^3(v^2 - u^22)du dv d\theta$.
@@ -404,10 +412,10 @@ simplify(Jac.det())
 # In[10]:
 
 
-rho, u, v, q, a0 = symbols('rho, u, v, q, a0', positive = True)
-
-eq = exp(-u*rho)*(u - v)
-simplify( integrate(  integrate ( q**2*rho**3/(2*a0)*eq, (u,1,oo) ) , (v,-1,1)  ) )
+rho, u, v, q, a0 = sp.symbols('rho, u, v, q, a0', positive = True)
+inf = sp.oo                       ## sp.oo is sympy infinity
+eq = sp.exp(-u*rho)*(u - v)
+sp.simplify( sp.integrate(  sp.integrate ( q**2*rho**3/(2*a0)*eq, (u,1,inf) ) , (v,-1,1)  ) )
 
 
 # (b) To plot the energies Matplotlib will be used using the results just obtained and those in the text.
@@ -415,7 +423,7 @@ simplify( integrate(  integrate ( q**2*rho**3/(2*a0)*eq, (u,1,oo) ) , (v,-1,1)  
 # In[11]:
 
 
-fig = plt.figure(figsize=(6,6))
+fig = plt.figure(figsize=(6,6))         # now using python with numpy
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 a0 = 1
@@ -491,9 +499,9 @@ plt.show()
 # In[12]:
 
 
-a, b, x, y = symbols('a, b, x, y',positive =True)
-eq = sqrt(1 - x**2/a**2)
-expand( integrate( eq ,x ) )
+a, b, x, y = sp.symbols('a, b, x, y',positive =True)
+eq = sp.sqrt(1 - x**2/a**2)
+sp.simplify( sp.integrate( eq ,x ) )
 
 
 # As a check on the integration, if the ellipse is made into a circle with $a = b$ then $\pi a^2$ would be the area.
@@ -513,10 +521,10 @@ expand( integrate( eq ,x ) )
 # In[13]:
 
 
-a, b, x, y, u = symbols('a, b, x, y, u',positive=True)
+a, b, x, y, u = sp.symbols('a, b, x, y, u',positive=True)
 
-eq  = x**2*sqrt(1 - x**2/a**2)
-ans = simplify(2*b*integrate(eq,x ) )
+eq  = x**2*sp.sqrt(1 - x**2/a**2)
+ans = sp.simplify(2*b*sp.integrate(eq,x ) )
 ans.subs(x,a)-ans.subs(x,-a)            # do limits manually 
 
 
@@ -528,11 +536,12 @@ ans.subs(x,a)-ans.subs(x,-a)            # do limits manually
 # In[14]:
 
 
-a, b, x, y, u = symbols('a, b, x, y, u', positive = True)
+a, b, x, y, u = sp.symbols('a, b, x, y, u', positive = True)
+pi = sp.pi
 eq = (x**2 + y**2)/(pi*a*b)
-ans = integrate( integrate( eq, (y,-b*sqrt(1-x**2/a**2),b*sqrt(1-x**2/a**2)  ) )  ,x   ) 
-ans0 = simplify(ans)
-simplify( ans0.subs(x,a)-ans0.subs(x,-a) )  # do limits manually 
+ans = sp.integrate( sp.integrate( eq, (y,-b*sp.sqrt(1-x**2/a**2),b*sp.sqrt(1-x**2/a**2)  ) )  ,x   ) 
+ans0 = sp.simplify(ans)
+sp.simplify( ans0.subs(x,a)-ans0.subs(x,-a) )  # do limits manually 
 
 
 # The mean value could represent some physical property such as density or electric field that varies quadratically, as $x^2 + y^2$, over the surface of the ellipse. In principle, any normal surface with any normal functional dependence, could be used; even if the integrals cannot be performed algebraically they can be done so numerically.
@@ -542,15 +551,15 @@ simplify( ans0.subs(x,a)-ans0.subs(x,-a) )  # do limits manually
 # 
 # $$\displaystyle \begin{align} \int_C e^x\sin(y)dx+e^x\cos(y)dy &=\int_C e^x\sin(y)dx+e^x\cos(y)\frac{dy}{dx}dx\\&=\int_0^a a^x\sin(bx/a)+\frac{b}{a}e^x\cos(bx/a)dx= e^a\sin(b)\end{align}$$
 # 
-# Using Sympy gives 
+# Using SymPy gives 
 
 # In[15]:
 
 
-a, b, x = symbols('a b, x', positive = True)
+a, b, x = sp.symbols('a b, x', positive = True)
 
-eq=  exp(x)*(sin(b*x/a) + b*cos(b*x/a)/a )
-integrate(eq,(x,0,a)   )
+eq =  sp.exp(x)*(sp.sin(b*x/a) + b*sp.cos(b*x/a)/a )
+sp.integrate(eq, (x,0,a) )
 
 
 # ## Q92 answer
@@ -572,7 +581,7 @@ integrate(eq,(x,0,a)   )
 # 
 # $$\displaystyle a\int_0^{2\pi} \sqrt{(1-\cos(t))^2+\sin^2(t)}dt=a\int_0^{2\pi} \sqrt{2-2\cos(t)}dt$$
 # 
-# which is clearly a complicated integral which, unfortunately, Sympy completely fails to solve but the result is $8a$. The surprising result is that the point on the circumference travels a distance $8a$ while the wheel travels only the distance $2\pi a$ along the road.
+# which is clearly a complicated integral which, unfortunately, SymPy completely fails to solve but the result is $8a$. The surprising result is that the point on the circumference travels a distance $8a$ while the wheel travels only the distance $2\pi a$ along the road.
 # 
 # ## Q93 answer
 # (a) Using the equation $\displaystyle S =\int_{x_1}^{x_2}\sqrt{r^2+\left( \frac{dr}{d\theta}\right)^2}d\theta$ the length is $S=\int_0^{2\pi}d\theta=2\pi$, the circumference of a circle of unit radius. The equation $r=1$ defines a unit circle in polar coordinates.
@@ -650,10 +659,9 @@ integrate(eq,(x,0,a)   )
 # In[16]:
 
 
-a, b, p, V, T, R, p0, p1 = symbols('a, b, p, V, T, R, p0, p1',positive=True)
-
-eq= R*V**3/(p*V**3 - a*V-2*a*b)
-factor(integrate(eq, p ) )
+a, b, p, V, T, R, p0, p1 = sp.symbols('a, b, p, V, T, R, p0, p1',positive=True)
+eq = R*V**3/(p*V**3 - a*V - 2*a*b)
+sp.factor(sp.integrate(eq, p ) )
 
 
 # In[ ]:

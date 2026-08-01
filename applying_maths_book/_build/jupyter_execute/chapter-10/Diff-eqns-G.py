@@ -10,9 +10,9 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+from scipy.integrate import quad
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -690,9 +690,10 @@ plt.show()
 # In[3]:
 
 
-r,D,t = symbols('r,D,t', positive = True)
-f01 = r*exp(-r**2/( 4*D*t ) )/( 2*D*t )
-ans = integrate(f01,(r,0,oo))
+r,D,t = sp.symbols('r,D,t', positive = True)
+inf = sp.oo                                         # sp.oo is SymPy infinity
+f01 = r*sp.exp(-r**2/( 4*D*t ) )/( 2*D*t )
+ans = sp.integrate(f01,(r,0,inf))         #sp.oo is sympy infinity
 print('normalisation =',ans)
 
 
@@ -709,8 +710,8 @@ print('normalisation =',ans)
 # In[4]:
 
 
-f02 = r**3*exp(-r**2/( 4*D*t ) )/( 2*D*t )
-ans = integrate(f02,(r,0,oo))
+f02 = r**3*sp.exp(-r**2/( 4*D*t ) )/( 2*D*t )
+ans = sp.integrate(f02,(r,0,inf))                   
 print('<r^2> =', ans)
 
 

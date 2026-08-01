@@ -4,7 +4,7 @@
 # # 21 Torque and angular momentum
 
 # ## 21 Torque and angular momentum
-# If two objects are joined with a bolt and this is tightened with a spanner, the clockwise motion of tightening causes a force to be applied to the bolt that generates a _torque or moment_ of that force about the rotation axis. The torque has a magnitude that is the force $F$ multiplied by the length $r$ of the lever. It is well known that a longer spanner is needed to more easily undo or tighten a stiff bolt. Similarly, if you push on a seesaw, torque is generated about the pivot, and it is easier to move the seesaw if it is pushed at its end rather than close to its centre. If $F$ is the size of the force that is applied at an angle $\theta$ at a distance $r$ from a pivot, then the torque has magnitude $Fr\sin(\theta)$, thus, only a component of the force is effective. 
+# If two objects are joined with a bolt and this is tightened with a spanner, the clockwise motion of tightening causes a force to be applied to the bolt that generates a *torque or moment* of that force about the rotation axis. The torque has a magnitude that is the force $F$ multiplied by the length $r$ of the lever. It is well known that a longer spanner is needed to more easily undo or tighten a stiff bolt. Similarly, if you push on a seesaw, torque is generated about the pivot, and it is easier to move the seesaw if it is pushed at its end rather than close to its centre. If $F$ is the size of the force that is applied at an angle $\theta$ at a distance $r$ from a pivot, then the torque has magnitude $Fr\sin(\theta)$, thus, only a component of the force is effective. 
 # 
 # Next we consider the force and distance to be vectors $\vec F$ and $\vec r$ respectively, then by the definition of a cross product $|\vec F \times \vec r| = |\vec F||\vec r|\sin(\theta) = Fr\sin(\theta)\vec n$. Torque can consequently be identified as a vector in the direction $\vec n$ and defined as the cross product,
 # 
@@ -37,7 +37,7 @@
 # 
 # $$\displaystyle \vec L = I\vec \omega$$
 # 
-# where $I$ is the moment of inertia of the wheel. Linear momentum is the quantity $\vec p = m\vec v$ and therefore, in angular motion, the moment of inertia takes the place of mass and angular velocity that of velocity used in linear motion. Velocity has units of m s$^{-1}$ and angular velocity $\omega$ of radian s$^{-1}$. The moment of inertia has units of mass $\times$ distance$^2$ usually kg m$^2$. Angular momentum has units kg m$^2$ rad s${-1}$ or rad J s.
+# where $I$ is the moment of inertia of the wheel. Linear momentum is the quantity $\vec p = m\vec v$ and therefore, in angular motion, the moment of inertia takes the place of mass and angular velocity that of velocity used in linear motion. Velocity has units of m s$^{-1}$ and angular velocity $\omega$ of radian s$^{-1}$. The moment of inertia has units of mass $\times$ distance$^2$ usually kg m$^2$. Angular momentum has units kg m$^2$ rad s$^{-1}$ or rad J s.
 # 
 # Suppose that a rigid body such as a wheel, rotates about a fixed (say $z$) axis, then any point $p$, not on this axis, has the linear velocity $ v$ in the $x-y$ plane and so is perpendicular to $z$ figure 53. If the vector $\vec r$ joins $p$ to the axis, then $p$ moves through a circle of radius $r\sin(\theta)$ and therefore has linear velocity $ v =  \omega r\sin(\theta)$. This is equal to the magnitude of $|\vec \omega \times \vec r|$ and so
 # 
@@ -59,8 +59,10 @@
 # 
 # ![Drawing](vectors-fig53.png)
 # 
-# Figure 53. A wheel of radius r set spinning with a linear velocity $\vec v$ produces angular velocity $\vec \omega$ and has angular momentum $\vec L =  I\vec\omega$ in the direction shown. Middle: a rigid body rotating about its axis. Right: Precession of the axis of a wheel in a force such as gravity. Precession causes the axis to rotate about the applied field at the same time as the wheel is rotating about its own axis.
+# Figure 53. A wheel of radius $r$ set spinning with a linear velocity $\vec v$ produces angular velocity $\vec \omega$ and has angular momentum $\vec L =  I\vec\omega$ in the direction shown. Middle: a rigid body rotating about its axis. Right: Precession of the axis of a wheel in a force such as gravity. Precession causes the axis to rotate about the applied field at the same time as the wheel is rotating about its own axis.
 # ________
+# 
+# ### **Brief description of NMR**
 # 
 # To illustrate the application of cross products, a basic NMR experiment is briefly described. You will recall that in these experiments the sample is placed in a large static and homogeneous magnetic field $\vec B$, and then irradiated with radio-frequency (RF) radiation at right angles to $\vec B$. The energy of a nucleus with non-zero nuclear spin in a static magnetic field is $E = -\vec \mu\cdot \vec B$, where $\vec \mu$ is the magnetic dipole moment vector and $\vec B$ the static magnetic field vector. 
 # 

@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1625,9 +1625,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1678,8 +1677,8 @@ matrix <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> and t
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check on matrix inverse</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1698,8 +1697,8 @@ matrix <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> and t
 <p>which is used to estimate the overall error. If <span class="math notranslate nohighlight">\(\boldsymbol z\)</span> is the vector of the estimated values, the calculation for weighing in groups is <span class="math notranslate nohighlight">\(\psi =\boldsymbol S^{-1}\boldsymbol z\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z m1 m2 m3 sigma&#39;</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m3</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">,</span><span class="n">m2</span> <span class="o">+</span> <span class="n">m3</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">])</span> <span class="c1"># define matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z m1 m2 m3 sigma&#39;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m3</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">,</span><span class="n">m2</span> <span class="o">+</span> <span class="n">m3</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">])</span> <span class="c1"># define matrix</span>
 <span class="n">psi</span> <span class="o">=</span> <span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">z</span>
 <span class="n">psi</span>
 </pre></div>
@@ -1727,8 +1726,8 @@ matrix <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> and t
 <hr class="docutils" />
 <section id="constructing-the-boldsymbol-s-matrix">
 <h2>11.5 Constructing the <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> matrix<a class="headerlink" href="#constructing-the-boldsymbol-s-matrix" title="Permalink to this headline">#</a></h2>
-<p>Harwit &amp; Sloane (1979) give several methods by which to construct the <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> matrix. The simplest is the Quadratic Residue method, which produces a sequence of ones and zeros of length <span class="math notranslate nohighlight">\(n\)</span> but only if <span class="math notranslate nohighlight">\(n\)</span> is a prime number satisfying the condition also that <span class="math notranslate nohighlight">\(4m + 3\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is also an integer. Once <span class="math notranslate nohighlight">\(n\)</span> is chosen, the numbers <span class="math notranslate nohighlight">\(i = 1, 4, 9, \cdots n^2 \cdots \)</span> are divided by <span class="math notranslate nohighlight">\(n\)</span> and the remainders are the indices in a sequence of numbers and these numbers have a value of one and the rest are zero. The <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> matrix is then made from this list by rotating each new column by one element compared to its neighbour in a cyclical manner.</p>
-<p>The Quadratic residue <span class="math notranslate nohighlight">\(R\)</span> is defined as <span class="math notranslate nohighlight">\(n^2 \equiv R \mod(b)\)</span> meaning that integer division of <span class="math notranslate nohighlight">\(n^2\)</span> by <span class="math notranslate nohighlight">\(b\)</span> produces remainder R. As an example <span class="math notranslate nohighlight">\(7^2 = 9\mod(10)\)</span>, meaning that <span class="math notranslate nohighlight">\(10\)</span> divides <span class="math notranslate nohighlight">\(49, 4\)</span> times exactly with remainder <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<p>Harwit &amp; Sloane (1979) give several methods by which to construct the <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> matrix. The simplest is the Quadratic Residue method, which produces a sequence of ones and zeros of length <span class="math notranslate nohighlight">\(n\)</span> but only if <span class="math notranslate nohighlight">\(n\)</span> is a prime number satisfying the condition also that <span class="math notranslate nohighlight">\(4n + 3\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is also an integer. Once <span class="math notranslate nohighlight">\(n\)</span> is chosen, the numbers <span class="math notranslate nohighlight">\(i = 1, 4, 9, \cdots n^2 \cdots \)</span> are divided by <span class="math notranslate nohighlight">\(n\)</span> and the remainders are the indices in a sequence of numbers and these numbers have a value of one and the rest are zero. The <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> matrix is then made from this list by rotating each new column by one element compared to its neighbour in a cyclical manner.</p>
+<p>The Quadratic residue <span class="math notranslate nohighlight">\(R\)</span> is defined as <span class="math notranslate nohighlight">\(n^2 \equiv R\,\mathrm{mod}(b)\)</span> meaning that integer division of <span class="math notranslate nohighlight">\(n^2\)</span> by <span class="math notranslate nohighlight">\(b\)</span> produces remainder <span class="math notranslate nohighlight">\(R\)</span>. As an example <span class="math notranslate nohighlight">\(7^2 = 9\,\mathrm{mod}(10)\)</span>, meaning that <span class="math notranslate nohighlight">\(10\)</span> divides <span class="math notranslate nohighlight">\(49, exactly 4\)</span> times with remainder <span class="math notranslate nohighlight">\(9\)</span>.</p>
 <p>A flow diagram to make a row of the <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> matrix is shown in the sketch and some Python code to do this below it.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig50a.png" /></p>
 <hr class="docutils" />
@@ -1884,7 +1883,7 @@ matrix <span class="math notranslate nohighlight">\(\boldsymbol S\)</span> and t
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

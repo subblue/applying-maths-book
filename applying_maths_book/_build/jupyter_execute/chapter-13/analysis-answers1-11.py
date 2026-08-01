@@ -11,7 +11,11 @@
 # Substituting for $d$ gives $\displaystyle \sigma_d^2=d^2\left(\frac{1}{\tan^2(\theta)}\sigma_\theta^2+\frac{1}{4V}\sigma_V^2\right)$.
 # 
 # ## Q2 answer
-# (a) Rearranging and defining $Q$ as the ratio, produces $\displaystyle Q\equiv \frac{a_{red}}{a_{ox}}e^{-(E-E^\ominus)nF/RT}$ and differentiating with respect to $E$ and $T$ produces with W=
+# (a) Rearranging and defining $Q$ as the ratio, produces 
+# 
+# $$\displaystyle Q\equiv \frac{a_{red}}{a_{ox}}e^{-(E-E^\ominus)nF/RT}$$
+# 
+# and differentiating with respect to $E$ and $T$ produces with W=
 # 
 # $$\displaystyle \begin{align}\sigma_Q^2=&\left(-\frac{nF}{RT}e^{-(E-E^\ominus)nF/RT}\right)^2\sigma_E^2+\left(\frac{nF(E-E^\ominus}{RT^2}e^{-(E-E^\ominus)nF/RT}\right)^2\sigma_T^2\\
 # =&\left(\frac{nF}{RT}\right)^2\left(\sigma_E^2+\frac{(E-E^\ominus)^2\sigma_T^2}{T^2}\right)Q^2\\

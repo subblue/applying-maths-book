@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1531,6 +1531,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#separable-variables-chemical-kinetics-1">
    1.4 Separable variables. Chemical kinetics 1.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-radioactive-clocks-the-potassium-argon-clock">
+     <strong>
+      Example. Radioactive Clocks. The Potassium-Argon clock
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbon-14-dating">
+     <strong>
+      Carbon-14 dating
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#steady-state-vs-equilibrium">
@@ -1605,8 +1621,31 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#population-dynamics-malthus-verhulst-logistic-and-allee-equations">
-   3.3 Population dynamics. Malthus, Verhulst / logistic and Allee equations.
+   3.3 Population dynamics. Malthus, Verhulst / Logistic and Allee equations.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#malthus-equation">
+     <strong>
+      Malthus equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verhulst-or-logistic-equation">
+     <strong>
+      Verhulst or Logistic equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#allee-equation">
+     <strong>
+      Allee equation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#harmonic-oscillator">
@@ -1642,12 +1681,35 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
-   4.3 Temperature Jump; a perturbation from the equilibrium
-   <span class="math notranslate nohighlight">
-    \(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)
-   </span>
+  <a class="reference internal nav-link" href="#chemical-relaxation-a-temperature-jump-perturbs-an-equilibrium-reaction">
+   4.3 Chemical Relaxation. A temperature jump perturbs an equilibrium reaction.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-the-autoionisation-of-water-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
+     <strong>
+      Example. The autoionisation of water.
+      <span class="math notranslate nohighlight">
+       \(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-kinetics-of-calcium-ion-binding-to-the-fura-2-dye">
+     <strong>
+      Example. Kinetics of calcium ion binding to the Fura-2 dye
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-transition-from-double-helix-to-single-strand-oligonucleotide">
+     <strong>
+      Example. Transition from double helix to single strand oligonucleotide
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d">
@@ -1740,6 +1802,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#the-centrifuge-forced-separation">
    6 The Centrifuge: Forced separation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sedimentation-equilibrium">
+     <strong>
+      Sedimentation Equilibrium
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#absorption-of-photons-and-scattering-of-x-rays-and-electrons">
@@ -1752,8 +1823,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#skydiving">
-   8.1 Skydiving
+  <a class="reference internal nav-link" href="#skydiving-air-resistance-limiting-velocity-newton-raphson-iterations">
+   8.1 Skydiving. Air resistance, limiting velocity,  Newton-Raphson iterations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1799,6 +1870,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#separable-variables-chemical-kinetics-1">
    1.4 Separable variables. Chemical kinetics 1.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-radioactive-clocks-the-potassium-argon-clock">
+     <strong>
+      Example. Radioactive Clocks. The Potassium-Argon clock
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbon-14-dating">
+     <strong>
+      Carbon-14 dating
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#steady-state-vs-equilibrium">
@@ -1873,8 +1960,31 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#population-dynamics-malthus-verhulst-logistic-and-allee-equations">
-   3.3 Population dynamics. Malthus, Verhulst / logistic and Allee equations.
+   3.3 Population dynamics. Malthus, Verhulst / Logistic and Allee equations.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#malthus-equation">
+     <strong>
+      Malthus equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verhulst-or-logistic-equation">
+     <strong>
+      Verhulst or Logistic equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#allee-equation">
+     <strong>
+      Allee equation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#harmonic-oscillator">
@@ -1910,12 +2020,35 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
-   4.3 Temperature Jump; a perturbation from the equilibrium
-   <span class="math notranslate nohighlight">
-    \(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)
-   </span>
+  <a class="reference internal nav-link" href="#chemical-relaxation-a-temperature-jump-perturbs-an-equilibrium-reaction">
+   4.3 Chemical Relaxation. A temperature jump perturbs an equilibrium reaction.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-the-autoionisation-of-water-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
+     <strong>
+      Example. The autoionisation of water.
+      <span class="math notranslate nohighlight">
+       \(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-kinetics-of-calcium-ion-binding-to-the-fura-2-dye">
+     <strong>
+      Example. Kinetics of calcium ion binding to the Fura-2 dye
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-transition-from-double-helix-to-single-strand-oligonucleotide">
+     <strong>
+      Example. Transition from double helix to single strand oligonucleotide
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d">
@@ -2008,6 +2141,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#the-centrifuge-forced-separation">
    6 The Centrifuge: Forced separation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sedimentation-equilibrium">
+     <strong>
+      Sedimentation Equilibrium
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#absorption-of-photons-and-scattering-of-x-rays-and-electrons">
@@ -2020,8 +2162,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#skydiving">
-   8.1 Skydiving
+  <a class="reference internal nav-link" href="#skydiving-air-resistance-limiting-velocity-newton-raphson-iterations">
+   8.1 Skydiving. Air resistance, limiting velocity,  Newton-Raphson iterations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2047,8 +2189,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -2151,6 +2293,50 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dB}{dt}=k_1A_0e^{-k_1t}-k_2B \]</div>
 <p>but now the terms are not separable, and another method is needed, which is described in Section 4. Sets of equations for sequential and parallel reactions such as <span class="math notranslate nohighlight">\(dA/dt = \cdots\)</span>, and <span class="math notranslate nohighlight">\(dB/dt = \cdots\)</span> can alternatively be solved by eigenvalue methods described in Chapter 7 provided no terms with a product or ratio of concentrations is present, i.e. no A <span class="math notranslate nohighlight">\(\times\)</span> B terms, unless pseudo first-order conditions apply.</p>
+<section id="example-radioactive-clocks-the-potassium-argon-clock">
+<h3><strong>Example. Radioactive Clocks. The Potassium-Argon clock</strong><a class="headerlink" href="#example-radioactive-clocks-the-potassium-argon-clock" title="Permalink to this headline">#</a></h3>
+<p>When running a race your time is measured with a stop-watch as elapsed time, and the principle is no different when we want to measure the age of a fossil. The start-time is ideally when the animal died and was, perhaps, encased in silt, and the stop-time when we dig up the fossil and with it its surrounding rocks. Some property that changes slowly over time but persists in doing so in the same way over many millions of years is therefore needed and this is provided by the radioactive decay of isotopes. These isotopes can be used to measure the age of certain types of rocks adjacent to sedimentary layers containing the fossils themselves. Geologists have long known the order and hence the time ordering of the periods in which sedimentary layers were laid down; Cambrian, being the lowest and so oldest then Ordovician, Devonian, Carboniferous, Triassic, Jurassic, Cretaceous, etc. up to the present day, the Quaternary period. This time ordering was thus known when the exact times in the past when at which of these layers was deposited was unknown.</p>
+<p>The decay of potassium-40, <span class="math notranslate nohighlight">\(^{40}_{19}\)</span>K, has a half-life of <span class="math notranslate nohighlight">\(1.25\cdot 10^9\)</span> years, and is therefore suitable  for measuring the distant past. However, its decay is first-order so by measuring the amount present today gives us no clue as to what the initial amount was. To be able to use this as a clock extra information is needed and this is found by measuring the amount of argon produced from decaying <span class="math notranslate nohighlight">\(^{40}\)</span>K. Argon is one of potassium’s decay products, the other is calcium. The two species are <span class="math notranslate nohighlight">\(^{40}_{18}\)</span>Ar and <span class="math notranslate nohighlight">\(^{40}_{20}\)</span>Ca depending on the type of radioactive decay involved. The largest fraction <span class="math notranslate nohighlight">\(89.1\)</span>% goes to calcium with a rate constant <span class="math notranslate nohighlight">\(k_c = 4.962\cdot 10^{-10}\mathrm{yr^{-1}}\)</span> and the rest to argon with <span class="math notranslate nohighlight">\(k_a = 0.581\cdot 10^{-10}\mathrm{yr^{-1}}\)</span>, making the yield of argon <span class="math notranslate nohighlight">\(\approx 0.1\)</span> or <span class="math notranslate nohighlight">\(10\)</span>%. (Although these rate constants are very small indeed, the unexpectedly large amount of argon in the atmosphere, <span class="math notranslate nohighlight">\(\sim 1\)</span>%, is now understood to come from the decay of <span class="math notranslate nohighlight">\(^{40}\)</span>K atoms).</p>
+<p>Igneous rocks are solidified from molten rocks, underground in the case of granite and lava from volcanoes in the case of basalt. Clearly these rocks cannot contain fossils as the high melting temperature would also melt them. The crystals forming in the rocks as they solidify are minute, possibly because cooling is rapid and large crystals do not have time to grow. The radioactive <span class="math notranslate nohighlight">\(^{40}\)</span>K already present in the molten rock decays either to calcium or to argon. Unfortunately calcium is a common element in many types of rocks and adding a few more atoms by radioactive decay would make observing these extra atoms impossible. Argon in contrast is not generally found in rocks and is also chemically inert so once the rock has solidified and formed crystals, it is found that the argon remains locked in the crystal lattice, presumably in the site previously occupied by potassium. In the molten rock any argon produced will clearly escape into the atmosphere, but as igneous rocks solidify very quickly compared to potassium’s radioactive lifetime, the ratio of K to Ar in the rock gives a measure of how long it has been since the rock solidified, or if you wish, since it was last melted. The amount of argon present is the accumulated amount since the rock solidified so in effect is the integral of the decay process. It has to be assumed that no argon escapes prematurely from the crystal. The potassium atom decays with a first order rate constant thus, with <span class="math notranslate nohighlight">\(K\)</span> being the amount of radioactive potassium at time <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(K_0\)</span> that initially present and <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(A_0\)</span> that of argon the rate equations are simply,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dK}{dt}=-(k_a+k_c)K, \qquad K=K_0e^{-(k_a+k_c)t}\]</div>
+<p>and for the argon</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}\displaystyle \frac{dA}{dt}&amp;=+k_a K, \qquad \frac{dA}{dt}=k_aK_0e^{-(k_a+k_c)t}\\
+A-A_0&amp;=-\frac{K_0}{k_a+k_c}\left(e^{-(k_a+k_c)t}-1\right)\end{align}\end{split}\]</div>
+<p>The initial amount of argon is assumed to be effectively zero, since it is only captured once the rock is solid, and the ratio of argon to potassium, which would be measured by mass spectrometry, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}\displaystyle \frac{A}{K}&amp;= \frac{k_a}{k_a+k_c}\frac{\left(1-e^{-(k_a+k_c)t}\right)}{e^{-(k_a+k_c)t}}\\
+&amp;=\frac{k_a}{k_a+k_c}\left(e^{(k_a+k_c)t}-1\right)\end{align}\end{split}\]</div>
+<p>where in the integration the initial time is made zero so the time <span class="math notranslate nohighlight">\(t\)</span> is the elapsed time since the rock solidified. The initial amount of potassium cancels out and, provided the rate constants <span class="math notranslate nohighlight">\(k_a,k_c\)</span> are known, this equation can be solved for elapsed time, the initial time zero being when the rock solidified.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t= \frac{1}{k_a+k_c}\ln\left(1+\frac{k_a+k_c}{k_a}\frac{A}{K}\right)=1.804\cdot 10^9\ln\left( 1+9.540\frac{A}{K}\right)\quad\text{years}\]</div>
+<p>This method for dating rocks is considered to be accurate for times longer than <span class="math notranslate nohighlight">\(10000\)</span> years. The ratio A/K at this time is  <span class="math notranslate nohighlight">\(5.8\cdot 10^{-6}\)</span> meaning any absolute error in this value will have a significant effect on the final result. When there is not much argon present and is near to the detection limit, suppose the standard deviation in this measurement is <span class="math notranslate nohighlight">\(\sigma_x=10^{-6}\)</span>. Using the error propagation formula leads to an uncertainty of approximately <span class="math notranslate nohighlight">\(\sigma_t=17000\)</span> years in <span class="math notranslate nohighlight">\(10^5\)</span> years, whereas the error if the elapsed time is a hundred million years is effectively the same as can be appreciated by using the error propagation formula. How to do this is explained in Chapter 13.4) and produces a standard deviation for the elapsed time of</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_t =\frac{\sigma_x}{k_a+(k_a + k_c)(A/K)}\]</div>
+<p>where we can make an approximation when <span class="math notranslate nohighlight">\(k_a\gt (k_a+k_c)(A/K)\)</span> because <span class="math notranslate nohighlight">\(A/K\)</span> is small for elapsed times of millions of years, thus  <span class="math notranslate nohighlight">\(\displaystyle \sigma_t =\frac{\sigma_x}{k_a}\approx 17\cdot 10^3\)</span> years which is constant and so <span class="math notranslate nohighlight">\(\sigma_t\)</span> at longer elapsed times are more precise than for sorter ones. The exact values are shown in the table.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}
+t\times 10^{-6} \text{years} &amp; A/K&amp;\sigma_t\times 10^{-6}  \text{years}\\
+\hline
+0.10    &amp; 5.81\cdot 10^{-6}  &amp; 17.2\cdot 10^{-3}\\
+1.00    &amp; 5.81\cdot 10^{-5}  &amp; 17.2\cdot 10^{-3}\\
+10.00   &amp; 5.84\cdot 10^{-4}  &amp; 17.1.\cdot 10^{-3}\\
+100.00  &amp; 5.97\cdot 10^{-3}  &amp; 16.2\cdot 10^{-3}\\
+1000.00 &amp; 7.76\cdot 10^{-2}  &amp; 9.9\cdot 10^{-3}\\
+\hline
+\end{array}\end{split}\]</div>
+</section>
+<section id="carbon-14-dating">
+<h3><strong>Carbon-14 dating</strong><a class="headerlink" href="#carbon-14-dating" title="Permalink to this headline">#</a></h3>
+<p>On the shorter, archaeological timescale, carbon-14 dating is used. This carbon isotope has a half-life of <span class="math notranslate nohighlight">\(\approx 5730\)</span> years which is a lifetime of 8267 years. The first order decay rate constant is thus 1.2096 yr<span class="math notranslate nohighlight">\(^{-1}\)</span>. The isotope is formed from nitrogen in a nuclear reaction with a neutron <span class="math notranslate nohighlight">\(n\)</span> that is produced by a cosmic ray as it enters the atmosphere and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  n + \mathrm{^{14}_7 N} \to \mathrm{^{14}_6C} +p\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is a proton. The decay process is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \mathrm{^{14}_6 C} \to \mathrm{^{14}_7N} + e^- +\bar\nu \]</div>
+<p>where <span class="math notranslate nohighlight">\(e^-\)</span> is an electron and <span class="math notranslate nohighlight">\(\bar\nu\)</span> an electron antineutrino. In a determination of an artefact’s age the ratio of <span class="math notranslate nohighlight">\(^{14}\)</span>C to <span class="math notranslate nohighlight">\(^{12}\)</span>C is made. As with K/Ar dating the number of decay events from the radioactive <span class="math notranslate nohighlight">\(^{14}\)</span>C itself is of no use, the ratio to <span class="math notranslate nohighlight">\(^{12}\)</span>C is needed. This is because the radioactive isotope is continually formed by cosmic rays constantly bombarding the earth and converting atmospheric N atoms into <span class="math notranslate nohighlight">\(^{14}\)</span>C atoms and these are then incorporated into living matter in a known ratio. When the animal or plant dies, and provided it is buried, this ratio is fixed at that time. Subsequently the <span class="math notranslate nohighlight">\(^{14}\)</span>C decays but is not replenished so the ratio to <span class="math notranslate nohighlight">\(^{12}\)</span>C is a measure of the elapsed time since burial. The technique has to be calibrated because the amount of nitrogen in the atmosphere has changed over the last several tens of thousands of years and one way this has been done is by comparison with tree-ring data.</p>
+</section>
 </section>
 <section id="steady-state-vs-equilibrium">
 <h2>2 Steady State vs. Equilibrium<a class="headerlink" href="#steady-state-vs-equilibrium" title="Permalink to this headline">#</a></h2>
@@ -2335,9 +2521,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># laser gain </span>
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span>  <span class="n">t</span><span class="p">,</span>  <span class="n">n0</span> <span class="p">,</span><span class="n">C1</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b, t, n0, C1&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">f01</span> <span class="o">=</span>  <span class="n">diff</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span>  <span class="n">t</span><span class="p">,</span>  <span class="n">n0</span> <span class="p">,</span><span class="n">C1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b, t, n0, C1&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span>  <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;equation is &#39;</span><span class="p">)</span>
 <span class="n">f01</span>
 </pre></div>
@@ -2347,18 +2533,18 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>equation is 
 </pre></div>
 </div>
-<img alt="../_images/Diff-eqns-A_4_1.png" src="../_images/Diff-eqns-A_4_1.png" />
+<img alt="../_images/Diff-eqns-A_6_1.png" src="../_images/Diff-eqns-A_6_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="n">dsolve</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-A_5_0.png" src="../_images/Diff-eqns-A_5_0.png" />
+<img alt="../_images/Diff-eqns-A_7_0.png" src="../_images/Diff-eqns-A_7_0.png" />
 </div>
 </div>
 <p>Solving for <span class="math notranslate nohighlight">\(e^{aC_1}\)</span> with the initial conditions <span class="math notranslate nohighlight">\(n(0)= n_0 ; t=0\)</span> produces</p>
@@ -2395,7 +2581,9 @@ title="Print to PDF"
 </section>
 <hr class="docutils" />
 <section id="population-dynamics-malthus-verhulst-logistic-and-allee-equations">
-<h2>3.3 Population dynamics. Malthus, Verhulst / logistic and Allee equations.<a class="headerlink" href="#population-dynamics-malthus-verhulst-logistic-and-allee-equations" title="Permalink to this headline">#</a></h2>
+<h2>3.3 Population dynamics. Malthus, Verhulst / Logistic and Allee equations.<a class="headerlink" href="#population-dynamics-malthus-verhulst-logistic-and-allee-equations" title="Permalink to this headline">#</a></h2>
+<section id="malthus-equation">
+<h3><strong>Malthus equation</strong><a class="headerlink" href="#malthus-equation" title="Permalink to this headline">#</a></h3>
 <p>How a population of animals or humans changes with time was first examined mathematically in 1798 by Thomas Malthus. He argues that if in a small time interval <span class="math notranslate nohighlight">\(\delta t\)</span> the chance of an offspring being born is <span class="math notranslate nohighlight">\(b\delta t\)</span>, and in the same interval the chance of death is <span class="math notranslate nohighlight">\(d\delta t\)</span> and assuming that the population is large so that the number of individuals can be represented as a continuous variable then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle N(t+\delta t)= N(t)+ bN(t)\delta t-dN(t)\delta t\]</div>
@@ -2403,16 +2591,22 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dN}{dt}= (b-d)N,\qquad N=N_0e^{(b-d)t}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N_0\)</span> are the number at time zero. Clearly when births exceed deaths the population grows without limit, a ‘Malthusian Catastrophe’.  The quantities <span class="math notranslate nohighlight">\(b,d\)</span> in chemical parlance are first order rate constants so have units of 1/time. The ratio <span class="math notranslate nohighlight">\(R_0=b/d\)</span> is called the <em>reproductive ratio</em>, as clearly when <span class="math notranslate nohighlight">\(R_0&gt;1\)</span> the population will increase. Here also we are clearly assuming that the number of individuals is a continuous variable number, and not discrete, so that the calculus can be used. This is acceptable as long as the numbers remain large.</p>
+</section>
+<section id="verhulst-or-logistic-equation">
+<h3><strong>Verhulst or Logistic equation</strong><a class="headerlink" href="#verhulst-or-logistic-equation" title="Permalink to this headline">#</a></h3>
 <p>This model is clearly a good start but not that good as it allows an semi-infinite number of individuals to exist without regard for vital things such as availability of food and water. Verhulst made a modification to the rate equation to account for limited resources that all species have to confront. The change was to add an extra term to the rate equation with a parameter that constrains the population because of environmental effect, limited food, excess heat or cold etc., the equation which is quite empirical, becomes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dN}{dt}=rN\left(1-\frac{N}{K} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(r=b-d\)</span> is called the <em>nett per capita growth</em>, which has units of number/time, and <span class="math notranslate nohighlight">\(K\)</span> is the <em>environment carrying capacity</em> which is simply a number. This equation is usually called the Logistic Equation. An important point to notice is that the per-capita growth-rate decreases as the population increases an effect that is called  <em>compensatory</em> and means that the population reaches a finite limiting value, unlike Malthusian growth.  This equation has the same mathematical form as that discovered for an autocatalytic reaction and for laser gain described in section 3.2. It turns out that this is a poor model for estimating human populations but really quite good for predicting bacterial ones. The population at time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle N=\frac{KN_0e^{rt}}{K-N_0+N_0e^{rt}}\]</div>
-<p>with an initial number of animals <span class="math notranslate nohighlight">\(N_0\)</span>. The <em>per capita</em> growth rate is</p>
+<p>with an initial number of animals <span class="math notranslate nohighlight">\(N_0\)</span>. The <em>per capita</em> growth rate (which is different to the nett per capita growth rate) ) is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{1}{N}\frac{dN}{dt}=r-\frac{rN}{K} \]</div>
-<p>which has a maximum when the per-capita, growth-rate is zero, i.e. <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{N}\frac{dN}{dt}=0\)</span> which happens when <span class="math notranslate nohighlight">\(N=0\)</span> and this just does not really make any sense when considering the growth rate of animals; maximum growth rate when there are no animals when two are needed to breed.</p>
+\[\displaystyle \frac{1}{N}\frac{dN}{dt}=r\left(1-\frac{N}{K}\right) \]</div>
+<p>which has a maximum when the per capita, growth-rate is zero, i.e. <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{N}\frac{dN}{dt}=0\)</span> which happens when <span class="math notranslate nohighlight">\(N=0\)</span> and this just does not really make any sense when considering the growth rate of animals; maximum growth rate when there are no animals when two are needed to breed.</p>
+</section>
+<section id="allee-equation">
+<h3><strong>Allee equation</strong><a class="headerlink" href="#allee-equation" title="Permalink to this headline">#</a></h3>
 <p>The assumption made in using this logistic model is that as the population decreases, for example due to over fishing, individuals can now do better as competition is less making resources relatively more abundant therefore the population will rebound. However, observation indicates that the situation is more complicated and this behaviour is not always observed. W. C. Allee discovered, after numerous animal studies, that their populations can continue to decrease when their numbers are initially small, and also below a critical threshold, meaning that their growth rate is negative and so their numbers effectively decrease to zero (Courchamp 2008). One way of describing this behaviour is with a cubic equation such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dN}{dt}=rN\left(1-\frac{N}{K} \right)\left(\frac{N}{A}-1 \right)\]</div>
@@ -2429,6 +2623,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{a}{a-b}\ln\left(\frac{aN-1}{aN_0-1}\right)-\frac{b}{a-b}\ln\left(\frac{bN-1}{bN_0-1}\right) -\ln\left(\frac{N}{N_0}\right)=rt\]</div>
 <p>from which it is very hard if not impossible to rearrange to get <span class="math notranslate nohighlight">\(N\)</span> isolated on the left hand side, however, the equation has the form <span class="math notranslate nohighlight">\(f(N)=rt\)</span> so to plot the equation as in fig 4b, choose values of <span class="math notranslate nohighlight">\(N\)</span> which via <span class="math notranslate nohighlight">\(f(N)\)</span> produce positive values of <span class="math notranslate nohighlight">\(t\)</span> and plot <span class="math notranslate nohighlight">\(f(N)\)</span> as the abscissa vs. <span class="math notranslate nohighlight">\(N\)</span> as ordinate. An alternative is to use the SciPy library loaded into a jupyter notebook as <em>scipy.integrate import odeint</em> to numerically integrate the differential equation.</p>
+</section>
 </section>
 <section id="harmonic-oscillator">
 <h2>3.4 Harmonic  oscillator<a class="headerlink" href="#harmonic-oscillator" title="Permalink to this headline">#</a></h2>
@@ -2646,52 +2841,129 @@ title="Print to PDF"
 \[\displaystyle \ln\left(\frac{a_0x_e+x(a_0-x_e)}{a_0(x_e-x)} \right)= \frac{k_1(2a_0-x_e)}{x_e}t \qquad\tag{5b}\]</div>
 <p>and as <span class="math notranslate nohighlight">\(x,x_e,a_0\)</span> are all concentrations this is dimensionally correct.</p>
 </section>
-<section id="temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
-<h2>4.3 Temperature Jump; a perturbation from the equilibrium <span class="math notranslate nohighlight">\(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)</span><a class="headerlink" href="#temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh" title="Permalink to this headline">#</a></h2>
+<section id="chemical-relaxation-a-temperature-jump-perturbs-an-equilibrium-reaction">
+<h2>4.3 Chemical Relaxation. A temperature jump perturbs an equilibrium reaction.<a class="headerlink" href="#chemical-relaxation-a-temperature-jump-perturbs-an-equilibrium-reaction" title="Permalink to this headline">#</a></h2>
 <p>Once a reversible reaction such as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle A\overset{k_1}{\underset{k_2} \rightleftharpoons }B+C \]</div>
-<p>or specifically</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \]</div>
-<p>comes to equilibrium a small perturbation, such as a temperature jump, can be used to measure the return to equilibrium. This may take only a few microseconds, and from this the rate constants <span class="math notranslate nohighlight">\(k_1,k_2\)</span> can be obtained. After a perturbation the change in absorption in the visible or IR, or fluoresce is commonly measured, but sometimes optical rotation or light scattering can used to instead. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so, called T-jump and by using this method numerous enzyme equilibria have been studied. In the past heating was achieved by passing an electric current but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water’s <span class="math notranslate nohighlight">\(1.9\)</span> micron absorption in the infra red. This can be achieved via the Raman effect by passing a nanosecond duration <span class="math notranslate nohighlight">\(1064\)</span> nm YAG laser through a gas, such as hydrogen, at very high pressure, <span class="math notranslate nohighlight">\(20 - 60\)</span> bar. Alternatively a dye with a low fluorescence yield, such as crystal violet, is added to the solution. This dye will absorb visible laser light which will indirectly heat the solution as its excited state decays.</p>
-<p>Consider the general equilibrium</p>
-<div class="math notranslate nohighlight">
 \[\displaystyle A \rightleftharpoons B + C\]</div>
-<p>and let <span class="math notranslate nohighlight">\(a_e, b_e, c_e\)</span> be the equilibrium amounts of A, B and C respectively. An amount <span class="math notranslate nohighlight">\(x\)</span> is transferred to products as a result of heating the solution and the concentration of <span class="math notranslate nohighlight">\(a\)</span> is <span class="math notranslate nohighlight">\(a = a_0-x\)</span>. The rate equation is</p>
+<p>comes to equilibrium a small perturbation in an intensive quantity, for example a jump in temperature, pressure or electric field, can be used to measure the return to equilibrium. This is called Chemical Relaxation which can take only a few microseconds, and from this the forward and reverse rate constants can be obtained. The temperature jump method requires that the rate constants have different activation energies, which usually the case, so that the equilibrium is perturbed by the change in temperature. Clearly some property of the reaction has be used to monitor what happens. This is usually a change in absorption or fluorescence of one of the species, but sometimes optical rotation or light scattering can used instead. Whatever property is measure it must be able to be recorded at least on a microsecond time scale.</p>
+<p>In the past heating was achieved by discharging a capacitor and so passing an electric current through the solution. The exponential rise-time of the heating has a rate constant of <span class="math notranslate nohighlight">\(RC/2\)</span> seconds where <span class="math notranslate nohighlight">\(R\)</span> is resistance and <span class="math notranslate nohighlight">\(C\)</span> the capacitance of the circuit, thus <span class="math notranslate nohighlight">\(90\)</span>% heating is achieved in <span class="math notranslate nohighlight">\(\approx 1.15RC\)</span> seconds.  Today however heating can be achieved much more quickly by using a nanosecond duration laser tuned, for example, to water’s <span class="math notranslate nohighlight">\(1.9\)</span> micron absorption in the infra red. This wavelength can be obtained <em>via</em> the Raman effect by passing a Q-switched <span class="math notranslate nohighlight">\(1064\)</span> nm YAG laser through hydrogen gas at very high pressure, <span class="math notranslate nohighlight">\(20 - 60\)</span> bar. Alternatively a dye with a low fluorescence yield, such as crystal violet, is added to the solution. This dye will absorb visible laser light which will indirectly heat the solution as its excited state decays less than a nanosecond. This dye must obviously not interfere with the reaction being studied. Typically an increase in temperature of approximately <span class="math notranslate nohighlight">\(5^{\text{o}}\)</span>C is sufficient. In this case the solution should be cooled before hand so that rate constants are measured at the required temperature. Very many reactions involving binding to enzymes and to DNA have been studied because, by starting at equilibrium, no mixing is required and this is what limits the stopped-flow.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig5e2.png" /></p>
+<p>Figure 5e. The initial and final equilibrium concentrations in the temperature jump experiment. The initial concentrations ( <span class="math notranslate nohighlight">\(A_0\)</span>, etc. ) are the equilibrium values before the temperature jump and <span class="math notranslate nohighlight">\(A_e\)</span> etc. the equilibrium values at the new temperature. (Figure after fig 16.1, A. Marshall, Biophysical Chemistry, publ. Wiley 1978).</p>
+<hr class="docutils" />
+<p>Once the sample has been heated, instantaneously on the time scale of the reaction, the new increased temperature must persist for longer than the relaxation time, i.e. we assume that the new temperature is constant and so the new equilibrium is at the new temperature and the initial concentrations of a species are those of the equilibrium concentrations at the lower temperature, see figure 5e. The reaction is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{da}{dt}=-\frac{dx}{dt}=-k_1(a_0-x)+k_2x^2 \]</div>
-<p>and at equilibrium</p>
+\[\displaystyle A\overset{k_1}{\underset{k_2} \rightleftharpoons }B+C \]</div>
+<p>and let <span class="math notranslate nohighlight">\(A_0, B_0, C_0\)</span> be the initial concentrations and <span class="math notranslate nohighlight">\(A_e, B_e, C_e\)</span> be the equilibrium concentrations of A, B and C respectively at the new temperature.</p>
+<p>The rate equation is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle k_1(a_0-x_e)=k_2x_e^2 \]</div>
-<p>where <span class="math notranslate nohighlight">\(x_e\)</span> is the equilibrium amount of A. A change in amount <span class="math notranslate nohighlight">\(x\)</span> due to the temperature jump is <span class="math notranslate nohighlight">\(\Delta x=x-x_e\)</span> and substituting for this gives</p>
+\[\displaystyle \frac{dA}{dt}= -k_1A+k_2B\,C\]</div>
+<p>and therefore at equilibrium (at the new temperature)</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}\frac{d\Delta x}{dt}&amp;= k_1a_0-k_1(\Delta x+x_e)-k_2(\Delta x+x_e)^2\\&amp;=k_1a_0-k_1(\Delta x+x_e)-k_2\Delta x^2-2k_2x_e\Delta x-k_2x_e^2 \end{align} \end{split}\]</div>
-<p>This equation has the form <span class="math notranslate nohighlight">\(\displaystyle \frac{d\Delta x}{dt}=a+b\Delta x+ c\Delta x^2\)</span> where <span class="math notranslate nohighlight">\(a,\;b,\;c\)</span> are constants which can be integrated using a standard form, see the previous section (4.2) or chapter 4-2.14, however, as <span class="math notranslate nohighlight">\(\Delta x\)</span> is small the term in <span class="math notranslate nohighlight">\(\Delta x^2\)</span> is very small compared to the others and may be ignored giving a far simpler equation which fig 5d shows is only valid at longer times,</p>
+\[\displaystyle K_e=\frac{B_eC_e}{A_e}=\frac{k_1}{k_2},\quad \text{or}\quad k_2B_eC_e=k_1A_e\]</div>
+<p>If <span class="math notranslate nohighlight">\(x\)</span> is the difference of species A from its equilibrium value <span class="math notranslate nohighlight">\(A_e\)</span> then,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d\Delta x}{dt} = k_1a_0-k_1(\Delta x+x_e) -2k_2x_e\Delta x-k_2x_e^2\]</div>
-<p>which can be simplified using the equilibrium condition</p>
+\[\displaystyle x = A - A_e,\quad\text{or}\quad A=x+A_e\]</div>
+<p>and thus by stoichiometry for species B and C,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle k_1(a_0-x_e)=k_2x_e^2 \]</div>
-<p>to</p>
+\[\displaystyle x = -(B-B_e) = -(C-C_e)\]</div>
+<p>Substituting into <span class="math notranslate nohighlight">\(dA/dt\)</span> gives the rate of change in terms of <span class="math notranslate nohighlight">\(x\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d\Delta x}{dt} = -(k_1+2k_2x_e)\Delta x\]</div>
-<p>which on integrating gives</p>
+\[\displaystyle \frac{dx}{dt}= -k_1(x+A_e)+k_2(B_e-x)(C_e-x)\]</div>
+<p>expanding and using the equilibrium condition <span class="math notranslate nohighlight">\(k_2B_eC_e=k_1A_e\)</span> to simplify produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \Delta x=e^{-(k_1+2k_2x_e)t} + const\]</div>
-<p>when <span class="math notranslate nohighlight">\(t=0, \Delta x=\Delta x_0\)</span> so that</p>
+\[\displaystyle \frac{dx}{dt}=-x(k_1+k_2(B_e+C_e))+k_2x^2\]</div>
+<p>Because the change in temperature is small, the change in concentration is also small, then <span class="math notranslate nohighlight">\(x^2 \ll x\)</span> and terms in <span class="math notranslate nohighlight">\(x^2\)</span> may be ignored producing</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \Delta x=\Delta x_0e^{-(k_1+2k_2x_e)t}\qquad\tag{5c}\]</div>
-<p>which has a relaxation lifetime of <span class="math notranslate nohighlight">\(1/(k_1+2k_2x_e)\)</span>. If the equilibrium constant is also known then both rate constants can be evaluated because <span class="math notranslate nohighlight">\(K_e=k_1/k_2\)</span>.</p>
-<p>In water at <em>p</em>H = <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(298\)</span> K the relaxation time is measured to be 37 microseconds. The equilibrium constant is</p>
+\[\displaystyle \frac{dx}{dt}=-x(k_1+k_2(B_e+C_e))\]</div>
+<p>which on integrating with the initial condition at <span class="math notranslate nohighlight">\(t=0,\;x=x_0\)</span> is,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle K_e=\frac{k_1}{k_2}=\frac{x_e^2}{(a_0-x_e)}= \frac{K_w}{55.55}\]</div>
-<p>where pure water is <span class="math notranslate nohighlight">\(55.55\)</span> molar. In using the equilibrium constant it is understood that each concentration is divided by 1 molar so that it is dimensionless. At this temperature <span class="math notranslate nohighlight">\(K_w = 10^{-14}\)</span>, thus <span class="math notranslate nohighlight">\(x_e=10^{-7}\)</span> and in the denominator can be ignored giving <span class="math notranslate nohighlight">\(K_e=1.80\cdot 10^{-16}\)</span>.</p>
-<p>The equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{37\cdot 10^{-6}}= k_2(K_e+2x_e)= k_2(1.80\cdot10^{-16}+2\cdot 10^{-7})\)</span> giving <span class="math notranslate nohighlight">\(k_2=1.35\cdot 10^{11} \mathrm{dm^3\;mol^{-1}\;s^{-1}}\)</span>, and therefore, <span class="math notranslate nohighlight">\(k_1=2.43\cdot 10^{-5}\mathrm{s^{-1}}\)</span>.</p>
+\[\displaystyle x=x_0\exp(-(k_1+k_2(B_e+C_e))t)\]</div>
+<p>where  <span class="math notranslate nohighlight">\(B_e\)</span> and <span class="math notranslate nohighlight">\(C_e\)</span> are the equilibrium concentrations. The relaxation lifetime is <span class="math notranslate nohighlight">\(\displaystyle \tau=\frac{1}{k_1+k_2(B_e+C_e)}\)</span>. The lifetime is thus a measure of how slow a reaction is whilst the relaxation rate constant measures how fast the reaction is.</p>
+<section id="example-the-autoionisation-of-water-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
+<h3><strong>Example. The autoionisation of water.  <span class="math notranslate nohighlight">\(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)</span></strong><a class="headerlink" href="#example-the-autoionisation-of-water-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh" title="Permalink to this headline">#</a></h3>
+<p>In water at <em>p</em>H = <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(298\)</span> K the relaxation lifetime, <span class="math notranslate nohighlight">\(\displaystyle \tau=\big(k_1+k_2(A_e+C_e)\big)^{-1}\)</span> is measured to be <span class="math notranslate nohighlight">\(37\)</span> microseconds. At this <span class="math notranslate nohighlight">\(p\)</span>H,  <span class="math notranslate nohighlight">\([\mathrm{H^+}]=[\mathrm{OH^-}]\)</span> and for clarity we define these concentrations as <span class="math notranslate nohighlight">\( x_e\)</span>.  The equilibrium constant is therefore (at <span class="math notranslate nohighlight">\(298\)</span> K which is the temperature after temperature jump having started at a lower temperature),</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K_e=\frac{k_1}{k_2}=\frac{x_e^2}{(A_0-x_e)}= \frac{K_w}{55.55}\]</div>
+<p>where pure water is <span class="math notranslate nohighlight">\(55.55\)</span> molar and <span class="math notranslate nohighlight">\(A_e=A_0-x_e\)</span>. In using the equilibrium constant it is understood that each concentration is divided by 1 molar so that it is dimensionless. At this temperature <span class="math notranslate nohighlight">\(K_w = 10^{-14}\)</span>, thus <span class="math notranslate nohighlight">\(x_e=10^{-7}\)</span> and in the denominator can be ignored giving <span class="math notranslate nohighlight">\(K_e=1.80\cdot 10^{-16}\)</span>.</p>
+<p>The equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{37\cdot 10^{-6}}= k_2(K_e+2x_e)= k_2(1.80\cdot10^{-16}+2\cdot 10^{-7})\]</div>
+<p>giving <span class="math notranslate nohighlight">\(k_2=1.35\cdot 10^{11} \mathrm{dm^3\;mol^{-1}\;s^{-1}}\)</span>, and therefore, <span class="math notranslate nohighlight">\(k_1=2.43\cdot 10^{-5}\mathrm{s^{-1}}\)</span>.</p>
 <p>The large value for <span class="math notranslate nohighlight">\(k_2\)</span> suggests that it is diffusion controlled. This may be estimated using the Stokes-Einstein equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle k_D=\frac{8RT}{3\eta}\;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\]</div>
-<p>which gives a value of <span class="math notranslate nohighlight">\(6.6\cdot 10^9 \;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span> in water with a viscosity <span class="math notranslate nohighlight">\(\eta=0.001\)</span> Pa S. This is clearly way-off the measured value, but the formula was derived for neutral species and therefore ignores the fact that ions are involved which in this case are attracted to one another. Adding a correction (Wilkinson, 1980) increases <span class="math notranslate nohighlight">\(k_2\)</span> by a factor of around twenty (depending on ion separation) bringing the value towards <span class="math notranslate nohighlight">\(10^{11}\;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span> much closer to the experimental measurement.</p>
+<p>which gives a value of <span class="math notranslate nohighlight">\(6.6\cdot 10^9 \;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span> in water with a viscosity <span class="math notranslate nohighlight">\(\eta=0.001\)</span> Pa S. This is clearly significantly lower the measured value, but the formula was derived for neutral species and therefore ignores the fact that ions are involved which in this case are attracted to one another. Adding a correction (Wilkinson, 1980) increases <span class="math notranslate nohighlight">\(k_2\)</span> by a factor of around twenty (depending on ion separation) bringing the value towards <span class="math notranslate nohighlight">\(10^{11}\;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span> much closer to the experimental measurement.</p>
+</section>
+<section id="example-kinetics-of-calcium-ion-binding-to-the-fura-2-dye">
+<h3><strong>Example. Kinetics of calcium ion binding to the Fura-2 dye</strong><a class="headerlink" href="#example-kinetics-of-calcium-ion-binding-to-the-fura-2-dye" title="Permalink to this headline">#</a></h3>
+<p>The rapid changes in intracellular Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> concentration in cells, such as in muscle and nerve can be measured by binding Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> to the fluorescent dye Fura-2, <span class="math notranslate nohighlight">\(\text{Fu}^{n-}\)</span>. The reaction which complexes the calcium is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \text{Ca}^{2+} + \text{Fu}^{n-} \overset{k_2}{\underset{k_1} \rightleftharpoons } \text{CaFu}^{(n-2)-}\]</div>
+<p>where CaFu<span class="math notranslate nohighlight">\(^{(n-2)-}\)</span> is the complexed dye. This dye is an EDTA molecule derivatised with a fluorophore whose emission changes on binding to a calcium ion, i.e, both Fu and CaFu fluoresce but with different yields and wavelengths. The fluorescence is thus used as a probe of the process. From a thermodynamic view point, the process has a negative Gibbs free energy <span class="math notranslate nohighlight">\((\Delta G\)</span>) but this relies of the equilibrium constant which is a ratio of rate constants giving no idea of individual values. However, it is very useful to know the equilibrium constant as shown at the end of this example.</p>
+<p>The Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> concentration changes can be rapid in muscle and nerve cells and so it is important to discover whether the proper changes are measured or are limited by either the association reaction, rate constant <span class="math notranslate nohighlight">\(k_2\)</span>, or dissociation reaction with rate constant <span class="math notranslate nohighlight">\(k_1\)</span>. These rate constants were measured using the temperature jump method with fluorescence detection (J. Kao &amp; R. Tsien, Biophys. J. p 635, v 53, 1988, for a review of T Jump see M. Eigen, and L. De Mayer. 1963. Techniques of Organic Chemistry. S. Fries, E. Lewis, and A. Weissberger, editors. Vol.VIII, part 2. John Wiley &amp; Sons Inc., New York.).</p>
+<p>We use <span class="math notranslate nohighlight">\(C\)</span> to represent [Ca<span class="math notranslate nohighlight">\(^{2+}\)</span>], <span class="math notranslate nohighlight">\(F\)</span> for the dye concentration and <span class="math notranslate nohighlight">\(Z\)</span> for the complex, making the rate equation,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dC}{dt} = -k_2C\cdot F + k_1Z\]</div>
+<p>Starting at equilibrium, if the Ca cation is changed an amount <span class="math notranslate nohighlight">\(x\)</span> by the temperature jump, the amount now present is <span class="math notranslate nohighlight">\(C=C_e+x\)</span> and similarly <span class="math notranslate nohighlight">\(F=F_e+x\)</span> for the dye and <span class="math notranslate nohighlight">\(Z=Z_e-x\)</span> for the complex, where the subscript <span class="math notranslate nohighlight">\(e\)</span> denotes the equilibrium values. The rate equation now becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt}= -k_2(C_e+x)(F_e+x)+k_1(Z-x)\]</div>
+<p>expanding this out and assuming that <span class="math notranslate nohighlight">\(x^2 \ll x\)</span>, as the temperature jump is only a small perturbation, and so we safely may ignore any <span class="math notranslate nohighlight">\(x^2\)</span> terms, gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt}=-x(\;k_2(C_e+F_e)+k_1)-k_2(C_eF_e)+k_1Z\]</div>
+<p>the last two terms cancel out, however, because at equilibrium <span class="math notranslate nohighlight">\(k_2(C_eF_e)=k_1Z\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt}=-x(\;k_2(C_e+F_e)+k_1)\]</div>
+<p>which is integrated to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x=x_0\exp\big( -( \;k_2(C_e+F_e)+k_1)t\big)\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_0\)</span> is the initial amount of <span class="math notranslate nohighlight">\(x\)</span>. The relaxation lifetime is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{\tau} = k_2C_e +k_2F_e + k_1\]</div>
+<p>Either a plot of <span class="math notranslate nohighlight">\(1/\tau\)</span> vs. <span class="math notranslate nohighlight">\(C_e\)</span> producing a straight line of gradient <span class="math notranslate nohighlight">\(k_2\)</span> and intercept
+<span class="math notranslate nohighlight">\(k_2F_e + k_ 1\)</span> or a plot vs. <span class="math notranslate nohighlight">\((C_e+F_e)\)</span> with gradient <span class="math notranslate nohighlight">\(k_2\)</span> and intercept <span class="math notranslate nohighlight">\(k_1\)</span>, enables both rate constants to be determined. For the Ca and Furan-2 dye reaction rate constants were determined at <span class="math notranslate nohighlight">\(20^\text{o}\)</span>C by Kao and Tsien to be <span class="math notranslate nohighlight">\(k_1=97\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(k_2= 6\cdot 10^8\mathrm{dm^3mol^{-1}s^{-1}}\)</span>. The equilibrium concentrations of the calcium ions is small and in the hundreds of nanomoles.</p>
+<p>These results depend on knowing the equilibrium concentrations, <span class="math notranslate nohighlight">\(C_e\)</span> and <span class="math notranslate nohighlight">\(F_e\)</span>, but in general these amounts may not be known and to determine them could require significant experimentation.  However, the initial amounts <span class="math notranslate nohighlight">\(C_0\)</span> and <span class="math notranslate nohighlight">\(F_0\)</span> that make up any solution are obviously known and together with the equilibrium constant the relationship between the equilibrium and initial amounts can be found. If <span class="math notranslate nohighlight">\(C_0\)</span> and <span class="math notranslate nohighlight">\(F_0\)</span> are the initial amounts of the Calcium and Furan-2 dye in the solution then the equilibrium amount of the complex <span class="math notranslate nohighlight">\(Z\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z_e = C_0 - C_e = F_0 - F_e\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_e + F_e = C_0 + F_0 - 2Z_e\]</div>
+<p>The equilibrium constant is now defined as reactants over product, because this simplifies the algebra, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K=\frac{C_eF_e}{Z_e}\]</div>
+<p>and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z_e = \frac{C_eF_e}{K}=\frac{(C_0-Z_e)(F_0-Z_e)}{K}\]</div>
+<p>solving and substituting for <span class="math notranslate nohighlight">\(Z_e\)</span> into <span class="math notranslate nohighlight">\(C_e+F_e\)</span> and simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_e+F_e=\sqrt{(C_0+F_0+K)^2-4C_0F_0}-K\]</div>
+<p>which can be substituted into the equation for the relaxation lifetime <span class="math notranslate nohighlight">\(\tau\)</span>. If the equilibrium constant is unknown, or even if it is, because <span class="math notranslate nohighlight">\(K=k_1/k_2\)</span> these rate constants can be obtained by non-linear least squares fitting (see Chapter 13) to data in the plot of lifetime vs initial concentrations.</p>
+</section>
+<section id="example-transition-from-double-helix-to-single-strand-oligonucleotide">
+<h3><strong>Example. Transition from double helix to single strand oligonucleotide</strong><a class="headerlink" href="#example-transition-from-double-helix-to-single-strand-oligonucleotide" title="Permalink to this headline">#</a></h3>
+<p>The transition from a double stranded oligonucleotide to two single strands and vice versa can be followed by measuring the absorbance at <span class="math notranslate nohighlight">\(260\)</span>nm after a temperature jump. The reaction scheme is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 2\text{M} \overset{k_2}{\underset{k_1} \rightleftharpoons } \text{D}\]</div>
+<p>where M is the single strand or monomer and D the double strand.  The rate equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dD}{dt}= k_2M^2-k_1D\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\equiv [\text{M}], D\equiv[\text{D}]\)</span>  and <span class="math notranslate nohighlight">\(M_e, D_e\)</span> are equilibrium amounts at the temperature pertaining after the temperature jump, see figure 5e.  If the dimer is changed by an amount <span class="math notranslate nohighlight">\(x\)</span> then <span class="math notranslate nohighlight">\(D = D_e-x\)</span> and <span class="math notranslate nohighlight">\(M=M_e+2x\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{dx}{dt}=+k_2(M_e+2x)^2-k_1(D_e-x)\]</div>
+<p>The equilibrium condition is  <span class="math notranslate nohighlight">\(k_2M_e^2=k_1D_e\)</span> using this and neglecting terms in <span class="math notranslate nohighlight">\(x^2\)</span>, because the perturbation due to the temperature jump is small, gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt}= -(4k_2M_e+k_1)x\]</div>
+<p>which describes a first order decay with lifetime</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tau = \frac{1}{4k_2M_e+k_1}\]</div>
+<p>In an experiment the absorption measured at <span class="math notranslate nohighlight">\(260\)</span> nm produces the total amount of nucleotide present thus we need to recalculate the lifetime in terms this quantity which is defined as <span class="math notranslate nohighlight">\(U=2[\text{D}]+[\text{M}]\)</span>. Using the equilibrium condition <span class="math notranslate nohighlight">\(k_2M_e^2 = k_1D_e\)</span>  produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U=\frac{2k_2M_e^2}{k_1}+M_e,\quad \text{or}\quad 2k_2M_e^2+k_1M_e-k_1U=0\]</div>
+<p>Replacing <span class="math notranslate nohighlight">\(M_e\)</span> with <span class="math notranslate nohighlight">\(U\)</span> produces the measured lifetime as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{\tau^2}=8k_1k_2U+k_1^2\]</div>
+<p>and therefore a plot of <span class="math notranslate nohighlight">\(1/\tau^2\)</span> vs <span class="math notranslate nohighlight">\(U\)</span> should be linear with a gradient <span class="math notranslate nohighlight">\(8k_1k_2\)</span> and intercept <span class="math notranslate nohighlight">\(k_1^2\)</span>. For small oligos’ typical values are <span class="math notranslate nohighlight">\(k_2\approx 10^6\mathrm{dm^3 mol^{-1}s^{-1}}\)</span> and <span class="math notranslate nohighlight">\(k_1 \approx 10^4\mathrm{s^{-1}}\)</span>.</p>
+</section>
 </section>
 <section id="reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d">
 <h2>4.4 Reversible reactions <span class="math notranslate nohighlight">\(A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D\)</span><a class="headerlink" href="#reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d" title="Permalink to this headline">#</a></h2>
@@ -2703,7 +2975,7 @@ title="Print to PDF"
 \[\displaystyle \int\frac{1}{k_1(a_0-x)^2-k_2x^2}dx=\int dt\]</div>
 <p>has the standard form of eqn 5a with <span class="math notranslate nohighlight">\(\alpha = k_1-k_2,\; b= -2a_0k_1x,\; c=k_1a_0^2\)</span></p>
 <div class="math notranslate nohighlight">
-\[\ln\left(\frac{-a_0\sqrt{k_1k_2} - A_0k_1 + x(k_1 - k_2)}{a_0\sqrt{k_1k_2} - A_0k_1 + x(k_1 - k_2)}\right)-\ln\left(\frac{-a_0\sqrt{k_1k_2} - A_0k_1 }{a_0\sqrt{k_1k_2} - A_0k_1 }\right) =2a_0t\sqrt{k_1k_2}\]</div>
+\[\ln\left(\frac{-a_0\sqrt{k_1k_2} - a_0k_1 + x(k_1 - k_2)}{a_0\sqrt{k_1k_2} - a_0k_1 + x(k_1 - k_2)}\right)-\ln\left(\frac{-a_0\sqrt{k_1k_2} - a_0k_1 }{a_0\sqrt{k_1k_2} - a_0k_1 }\right) =2a_0t\sqrt{k_1k_2}\]</div>
 <p>which shows that equilibrium is reached with a rate first order constant <span class="math notranslate nohighlight">\(2a_0\sqrt{k_1k_2}\)</span> because <span class="math notranslate nohighlight">\(k_1,k_2\)</span> are both second order rate constants.</p>
 <p>Again, using the equilibrium condition, which in this case is</p>
 <div class="math notranslate nohighlight">
@@ -2711,6 +2983,7 @@ title="Print to PDF"
 <p>the equation can be simplified to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln\left(\frac{a_0x_e+x(a_0-2x_e)}{a_0(x_e-x)} \right) = k_1\frac{2a_0(a_0-x_e)}{x_e}t\qquad\tag{5d}\]</div>
+<p>which can be further simplified to express <span class="math notranslate nohighlight">\(x\)</span> in terms of exponentials. The long time value of <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(x_e\)</span>, the initial value zero.</p>
 <p>A reaction such as <span class="math notranslate nohighlight">\(\mathrm{2HCl \rightleftharpoons H_2 + Cl_2}\)</span> can be converted into <span class="math notranslate nohighlight">\(A+A\rightleftharpoons C+D\)</span> quite simply by using the form of the rate equation for <span class="math notranslate nohighlight">\(A+B\rightleftharpoons C+D\)</span> given above but letting <span class="math notranslate nohighlight">\(k_2'\)</span> be  the new back-reaction rate constant, i.e.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{dx}{dt}=-k_1(a_0-x)^2+k_2'\left(\frac{x}{2}\right)^2 \]</div>
@@ -2718,7 +2991,7 @@ title="Print to PDF"
 </section>
 <section id="hydrogen-iodide-equilibrium">
 <h2>4.5  Hydrogen iodide equilibrium<a class="headerlink" href="#hydrogen-iodide-equilibrium" title="Permalink to this headline">#</a></h2>
-<p>One of the first reaction to be studied in the late 1800’s was the dissociation of hygrogen iodide vapour at high temperatures <span class="math notranslate nohighlight">\(\approx 450\)</span> K. It is interesting to derive the kinetic equations for</p>
+<p>One of the first reaction to be studied in the late 1800’s was the dissociation of hydrogen iodide vapour at high temperatures <span class="math notranslate nohighlight">\(\approx 450\)</span> K. It is interesting to derive the kinetic equations for</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathrm{2HI \rightleftharpoons H_2 + I_2}\]</div>
 <p>from scratch. The rate equations are</p>
@@ -2740,7 +3013,7 @@ title="Print to PDF"
 <p>and solving for the equilibrium constant <span class="math notranslate nohighlight">\(\displaystyle K_e=\frac{k_1}{k_2}\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{[HI]_e}{[HI]_0}=\frac{1}{1+2\sqrt{K_e}}\]</div>
-<p>To solve eqn 5f a change in notation clarifies the equation, let</p>
+<p>To solve eqn. 5f a change in notation clarifies the equation, let</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a=[HI]_0,\qquad x=[HI]/[HI]_0\]</div>
 <p>making the solution the integral,</p>
@@ -2751,32 +3024,32 @@ title="Print to PDF"
 \[\displaystyle 2\tanh^{-1}x =\ln(1+x)-\ln(1-x)\]</div>
 <p>The solution is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \tanh^{-1}\left(\frac{(4K_e-1)x+1}{2\sqrt{K_e}}\right)=ak_2\sqrt{K_e}t+const\]</div>
+\[\displaystyle \tanh^{-1}\left(\frac{(4K_e-1)x+1}{2\sqrt{K_e}}\right)=ak_2\sqrt{K_e}\,t+\text{const}\]</div>
 <p>Using the identity</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle\tanh^{-1}(u)\pm \tanh^{-1}(v) =  \tanh^{-1} \left( \frac{u\pm v}{1\pm uv}\right) \]</div>
 <p>and isolating <span class="math notranslate nohighlight">\(x\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle x=\frac{f}{f+2\sqrt{K_e}},\qquad f=\tanh(ak_2\sqrt{K_e}t)\qquad\tag{5g}\]</div>
+\[\displaystyle x=\frac{f}{f+2\sqrt{K_e}},\qquad f=\tanh(ak_2\sqrt{K_e}\,t)\qquad\tag{5g}\]</div>
 <p>and starting with iodine and hydrogen only and integrating from <span class="math notranslate nohighlight">\(1\to x\)</span>, gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle x=\frac{1}{1+2f\sqrt{K_e}}\qquad\tag{5h}\]</div>
 <p>The approach to equilibrium both starting with HI and with Hydrogen and iodine is shown in figure 5e. The data was recorded in 1899 by Bodenstein and are replotted below. The temperature was <span class="math notranslate nohighlight">\(448^\text{o}\)</span> C. The lines are fitted from the integrated equations. The quantity labelled as <span class="math notranslate nohighlight">\(x=[HI]/[HI]_0\)</span></p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig5d.png" /></p>
-<p>Figure 5e. <span class="math notranslate nohighlight">\(\mathrm{2HI \rightleftharpoons H_2 + I_2}\)</span> reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value <span class="math notranslate nohighlight">\(x_e=0.786\)</span> at <span class="math notranslate nohighlight">\(448^\text{o}\)</span> C. The curves show that the same equilibrium is reached starting either with products or reactants.</p>
+<p>Figure 5f. <span class="math notranslate nohighlight">\(\mathrm{2HI \rightleftharpoons H_2 + I_2}\)</span> reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value <span class="math notranslate nohighlight">\(x_e=0.786\)</span> at <span class="math notranslate nohighlight">\(448^\text{o}\)</span> C. The curves show that the same equilibrium is reached starting either with products or reactants.</p>
 </section>
 <hr class="docutils" />
 <section id="reversible-reaction-when-only-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
 <h2>4.6 Reversible reaction when only the equilibrium constant is known <span class="math notranslate nohighlight">\(A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B\)</span><a class="headerlink" href="#reversible-reaction-when-only-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b" title="Permalink to this headline">#</a></h2>
 <p>Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. Examples are the cis - trans isomerisation of some hydrocarbons and of <span class="math notranslate nohighlight">\(\alpha -,\beta-\)</span> glucoses and the ortho to para conversion of H<span class="math notranslate nohighlight">\(_2\)</span> with a catalyst such as Nickel on <span class="math notranslate nohighlight">\(\mathrm{Al_2O_3}\)</span>. This reaction has the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2\]</div>
-<p>Letting <span class="math notranslate nohighlight">\(a\equiv o-H_2\)</span> and <span class="math notranslate nohighlight">\(b\equiv p-H_2\)</span> concentrations produces the rate equation</p>
+\[\displaystyle H^\text{Ortho}_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } H^\text{Para}_2\]</div>
+<p>Letting <span class="math notranslate nohighlight">\(a\equiv H^\text{Ortho}_2\)</span> and <span class="math notranslate nohighlight">\(b\equiv H^\text{Para}_2\)</span> concentrations produces the rate equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{da}{dt} = -k_1a +k_{-1}b\]</div>
-<p>The initial amounts are <span class="math notranslate nohighlight">\(a_0,b_0\)</span> and as the total amount of ortho- and para-hydrogen is constant at all times</p>
+<p>The initial amounts are <span class="math notranslate nohighlight">\(a_0,b_0\)</span> and as the total amount of ortho- plus para-hydrogen is constant at all times</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a+b=a_0+b_0=a_e+b_e\]</div>
+\[\displaystyle a+b = a_0+b_0 = a_e+b_e\]</div>
 <p>where subscript <span class="math notranslate nohighlight">\(e\)</span> denotes the equilibrium.  The equilibrium constant is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle K=\frac{k_1}{k_{-1}}=\frac{b_e}{a_e}=\frac{a_0+b_0-a_e}{a_e}\]</div>
@@ -3045,32 +3318,66 @@ title="Print to PDF"
 </section>
 <section id="the-centrifuge-forced-separation">
 <h2>6 The Centrifuge: Forced separation<a class="headerlink" href="#the-centrifuge-forced-separation" title="Permalink to this headline">#</a></h2>
-<p>If a cylinder of radius <span class="math notranslate nohighlight">\(r\)</span> and width <span class="math notranslate nohighlight">\(h\)</span> is filled with a fluid, whose several components are to be separated, is spun about its axis at a speed of <span class="math notranslate nohighlight">\(\omega\, \mathrm{rad\, s^{-1}}\)</span>, the heavier components are forced to come to equilibrium further towards the outside of the cylinder than the lighter ones do. The balance is between <em>centripetal</em> forces acting towards the axis of rotation and the <em>centrifugal</em> forces acting in the opposite direction.</p>
-<p>A small cylindrical shell of fluid in the region <span class="math notranslate nohighlight">\(r\)</span> to <span class="math notranslate nohighlight">\(r + dr\)</span> from the rotation axis, experiences a net force inwards of <span class="math notranslate nohighlight">\(2\pi hr \cdot dP\)</span> where <span class="math notranslate nohighlight">\(P\)</span> is pressure (Margenau &amp; Murphy 1943). This is equal to the inwards centripetal force due to the rotational motion which is <span class="math notranslate nohighlight">\(2m\omega r\)</span>. As the mass of the cylindrical shell is <span class="math notranslate nohighlight">\(2\pi rh\rho \,dr \)</span>, with <span class="math notranslate nohighlight">\(\rho\)</span> being the density, equating  the forces produces</p>
+<p>If a cylinder of radius <span class="math notranslate nohighlight">\(r\)</span> and width <span class="math notranslate nohighlight">\(h\)</span> is filled with a solution or a gaseous mixture and spun about its long axis at a speed of <span class="math notranslate nohighlight">\(\omega\, \mathrm{rad\, s^{-1}}\)</span>, the heavier components are forced to come to equilibrium further towards the outside of the cylinder than the lighter ones do. The balance is between <em>centripetal</em> forces acting inwards towards the axis of rotation and the <em>centrifugal</em> force acting outwards.</p>
+<p>A small shell of gas at a radius <span class="math notranslate nohighlight">\(r\)</span> to <span class="math notranslate nohighlight">\(r + dr\)</span> from the rotation axis experiences a net force inwards of <span class="math notranslate nohighlight">\(2\pi hr \cdot dp\)</span>, where <span class="math notranslate nohighlight">\(p\)</span> is pressure. At equilibrium this is equal to the inwards centripetal force due to the rotational motion which is <span class="math notranslate nohighlight">\(2m\omega r\)</span>. As the mass of the cylindrical shell is <span class="math notranslate nohighlight">\(2\pi rh\rho \,dr \)</span>, with <span class="math notranslate nohighlight">\(\rho\)</span> being the density, equating the forces produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle 2\pi rh\cdot dP = 2\pi rh\cdot\rho \omega \cdot 2rdr\]</div>
+\[\displaystyle 2\pi rh\cdot dp = 2\pi rh\cdot\rho \omega \cdot 2rdr\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{dP}{dr}=\rho\omega^2 r \]</div>
-<p>In a liquid, the density <span class="math notranslate nohighlight">\(\rho\)</span> is a constant, and integrating produces the pressure</p>
+\[\displaystyle  \frac{dp}{dr}=\rho\omega^2 r \]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega^2 r\)</span> is the centrifugal acceleration at radius <span class="math notranslate nohighlight">\(r\)</span>. In a liquid, the density <span class="math notranslate nohighlight">\(\rho\)</span> is a constant, and integrating produces the pressure</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P = \rho\omega ^2r^2/2 + P_0\]</div>
+\[\displaystyle p = \rho\omega ^2r^2/2 + p_0\]</div>
 <p>This also explains why, if a liquid is spun in a beaker about its vertical axis, the surface obtains a parabolic profile. This can be seen clearly if two immiscible liquids are spun and one of them is coloured with some dye.</p>
-<p>In a centrifuge, imagine strips taken out of the rotating cylinder and each replaced with a tube. Several of these are spun about the axis to balance the rotor. The distance <span class="math notranslate nohighlight">\(r\)</span> is therefore the radial distance from the axis, and <span class="math notranslate nohighlight">\(h\)</span> the height of the tube when it is spinning in a horizontal plane, which is normally its width.</p>
-<p>In an ideal gas, the pressure is proportional to the density since</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle P = nRT/V = RT\rho\]</div>
-<p>Solving the equation</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \int\frac{dP}{P}=\frac{\omega^2}{RT}\int rdr\]</div>
-<p>produces</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle P=P_0e^{\omega^2r^2/2RT}\]</div>
-<p>if the pressure is <span class="math notranslate nohighlight">\(P_0\)</span> at <span class="math notranslate nohighlight">\(r = 0\)</span>.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig7.png" /></p>
-<p>Fig. 7 Horizontally spinning disc; the fluid level is shown by the dashed line.</p>
-</section>
+<p>Fig. 7a Horizontally spinning disc of a fluid; the fluid level is shown by the dashed line.</p>
 <hr class="docutils" />
+<p>In a centrifuge, imagine strips taken out of the rotating cylinder and each replaced with a tube. Several of these are positioned so as to be balanced and spun about the axis of a lab centrifuge. The distance <span class="math notranslate nohighlight">\(r\)</span> is defined as the radial distance from the axis, see fig 7b.</p>
+<p>In an ideal gas, the pressure is proportional to the density since <span class="math notranslate nohighlight">\(\displaystyle \rho =  \frac{Mp}{RT}\)</span> where <span class="math notranslate nohighlight">\(M\)</span> is the molar mass. Substituting for <span class="math notranslate nohighlight">\(\rho\)</span> in the equation for <span class="math notranslate nohighlight">\(dp/dr\)</span> (above ) gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp}{dr}=\frac{pM\omega^2 r}{RT}\]</div>
+<p>and integrating</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \qquad \int\frac{dp}{p}=\frac{M\omega^2}{RT}\int rdr\]</div>
+<p>produces the pressure at radius <span class="math notranslate nohighlight">\(r\)</span> of</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p = p_0e^{M\omega^2r^2/2RT}\]</div>
+<p>if the pressure is <span class="math notranslate nohighlight">\(p_0\)</span> at <span class="math notranslate nohighlight">\(r = 0\)</span>. THis equation is sometimes named after Bredig who reported the first experiments with the centrifuge in 1895 (Z. Phys. Chem. 17, 459,1895). This equation suggest a method of separating isotopes of two gases by centrifugation as described shortly. This equation is very similar to that obtained in an ideal atmosphere where the molecules are under the force of gravity and there is no convection and the temperature is constant. At a height <span class="math notranslate nohighlight">\(h\)</span> the pressure is <span class="math notranslate nohighlight">\(p=p_0\exp(-Mgh/RT)\)</span> and the minus sign is because the atmospheric pressure decreases with height, whereas in the centrifuge it increases away from the centre of the rotor as <span class="math notranslate nohighlight">\(r\)</span> increases.</p>
+<p>As the pressure is directly proportional to density we can write the last equation in gas density as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \rho = \rho_0e^{Mv_p^2/2RT}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho_0\)</span> is the density of the gas when there is no rotation, or, equivalently at <span class="math notranslate nohighlight">\(r=0\)</span> and <span class="math notranslate nohighlight">\(v_p=\omega r\)</span> is the peripheral velocity. In the case when the inner radius is not zero because the cell itself is not adjacent to the axis (as in fig 7b) the acceleration <span class="math notranslate nohighlight">\(\omega^2r^2\)</span> is replaced by <span class="math notranslate nohighlight">\(\omega^2(r_p^2-r_{in})^2\)</span>. If <span class="math notranslate nohighlight">\(M_1,\,M_2\)</span> are the molecular masses of two isotopes or isotope containing molecules, (<span class="math notranslate nohighlight">\(M_2\gt M_1\)</span>), then the ratio of densities <span class="math notranslate nohighlight">\(\alpha\)</span> (or pressures) is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \alpha = \exp\left(\frac{\omega^2(M_2-M_1)(r_p^2-r^2_{in})}{2RT}\right)\]</div>
+<p>and <span class="math notranslate nohighlight">\(\alpha\)</span> is called the selectivity. We have assumed Dalton’s law of partial pressures applies, that the temperature remains constant and that there is no convection. The selectivity is very sensitive to the rotation speed and length of cell, both as the square of these values, and also linearly to a decrease in temperature and this places design limitations on any centrifuge.  Notice that this method depends only on the difference in mass not the total value, but a more detailed analysis shows that the mass itself is important at higher speeds. This is because of the pressure ratio set up across the rotor (Whitley, Rev. Mod. Phys. v 56, p41, 1984).</p>
+<p>If the ultracentrifuge works at <span class="math notranslate nohighlight">\(60000\)</span> rpm. or <span class="math notranslate nohighlight">\(1000\)</span> Hz, and we want to separate <span class="math notranslate nohighlight">\(^{35}\)</span>Cl from <span class="math notranslate nohighlight">\(^{37}\)</span>Cl, then <span class="math notranslate nohighlight">\(M_2-M_1 =  2x10^{-3}\)</span> kg/mol and the rotor length is <span class="math notranslate nohighlight">\(r_p-r_{in}= 0.1\)</span> m starting at <span class="math notranslate nohighlight">\(0.1\)</span> m then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \exp( 10^6\cdot 2\times 10^{-3}(0.2^2-0.1^2)/(8.314\cdot 300) )= 1.012 \]</div>
+<p>which is a rather small improvement in the gas density ratio and hence separation of the isotopes. In such cases multiple steps are needed.</p>
+<section id="sedimentation-equilibrium">
+<h3><strong>Sedimentation Equilibrium</strong><a class="headerlink" href="#sedimentation-equilibrium" title="Permalink to this headline">#</a></h3>
+<p>In biochemistry and molecular biology the centrifuge is used to determine the molecular mass of proteins and nucleic acids. The method used is called Sedimentation Equilibrium. A related method, Density Gradient Sedimentation, also called Buoyant Density centrifugation, allows separation and extraction of macromolecules.</p>
+<p>In this method a fixed concentration gradient is established in the centrifuge’s cell when the outwards centrifugal force balances the inwards force is that due to diffusion trying to equalise the solute’s concentration. The centrifuge speed is moderated to achieve equilibrium in the body of the cell rather than forcing all material to its end. The position of equilibrium depends on the mass of the solute and the angular frequency <span class="math notranslate nohighlight">\(\omega\)</span>. The diffusion rate is given by Fick’s first law,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dn}{dt}=-\frac{RT}{f}\frac{dc}{dr}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is the coefficient of friction and is given by Stokes as <span class="math notranslate nohighlight">\(f=6\pi \eta a\)</span> for a sphere of radius <span class="math notranslate nohighlight">\(a\)</span>. We shall find that this cancels out. The sedimentation rate is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dn}{dt}=c\frac{dr}{dt}= cM'\omega^2r\left(\frac{1}{f}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(M'\)</span> is the effective mass allowing for buoyancy in the solvent and <span class="math notranslate nohighlight">\(c\)</span> concentration. At equilibrium these rates are equal thus,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dc}{c}= \frac{M\omega^2 r}{RT}dr\]</div>
+<p>Integrating from <span class="math notranslate nohighlight">\(c=c_0\to c_r\)</span> and <span class="math notranslate nohighlight">\(r=0\to r\)</span> gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_r  = c_0e^{M'\omega^2r^2/2RT}\]</div>
+<p>The molecular weight <span class="math notranslate nohighlight">\(M\)</span> is obtained using <span class="math notranslate nohighlight">\(M' = M(1-v\rho)\)</span> where <span class="math notranslate nohighlight">\(v\)</span> is the partial specific volume of the solute, or <span class="math notranslate nohighlight">\(V/L\)</span> where <span class="math notranslate nohighlight">\(V\)</span> is the partial molar volume and <span class="math notranslate nohighlight">\(L\)</span> the Avogadro number. The solution density is <span class="math notranslate nohighlight">\(\rho\)</span>. The mass of fluid displaced by the macromolecule is <span class="math notranslate nohighlight">\(Mv\)</span>. From this equation you can appreciate that the concentration near the meniscus must be reduced from the initial value and that near the end of the tube where <span class="math notranslate nohighlight">\(r\)</span> is large is increased simply because the amount of solute is constant.</p>
+<p>When equilibrium is established it is common to measure at different positions say <span class="math notranslate nohighlight">\(r_1,r_2\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_2  = c_1e^{M(1-v\rho)\omega^2(r_2^2-r_1^2)/2RT}\]</div>
+<p>from which the molar mass <span class="math notranslate nohighlight">\(M\)</span> can be calculated, for example by plotting the log of the concentration vs. <span class="math notranslate nohighlight">\(r^2\)</span>. The macromolecule’s concentration can be obtained by measuring the absorption of the solution while the centrifuge is operating.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig7b.png" /></p>
+<p>Figure 7b. (A) Schematic of an ultracentrifuge. The sample cell has optical windows that allows the concentration of a macromolecule to be measure. The macromolecules are driven outwards by the centrifugal force and balanced by diffusion via the concentration gradient so produced. (B) The initial and final concentration profiles vs position in the cell.</p>
+</section>
+</section>
 <section id="absorption-of-photons-and-scattering-of-x-rays-and-electrons">
 <h2>7 Absorption of photons and scattering of X-rays and electrons<a class="headerlink" href="#absorption-of-photons-and-scattering-of-x-rays-and-electrons" title="Permalink to this headline">#</a></h2>
 <p>Photons in the ultraviolet and visible part of the spectrum excite electrons from the HOMO to LUMO orbitals of molecules giving rise to the colours we see around us. Vibrational and rotational transitions are excited by infrared light. When photons are absorbed, if the cross section for absorption at a certain wavelength is <span class="math notranslate nohighlight">\(\sigma\)</span>, then <span class="math notranslate nohighlight">\(\sigma ndL\)</span> photons per second are absorbed by <span class="math notranslate nohighlight">\(n\)</span> molecules in a layer of thickness <span class="math notranslate nohighlight">\(dL\)</span>. The fractional decrease in intensity of the photons is then</p>
@@ -3095,9 +3402,10 @@ title="Print to PDF"
 \[\displaystyle  f=m\frac{d^2x}{dt^2}\]</div>
 <p><span class="math notranslate nohighlight">\(x\)</span> being the position at time <span class="math notranslate nohighlight">\(t\)</span>. Both of these equations are of fundamental importance in solving problems in dynamics.</p>
 </section>
-<section id="skydiving">
-<h2>8.1 Skydiving<a class="headerlink" href="#skydiving" title="Permalink to this headline">#</a></h2>
-<p>Consider now a skydiver who jumps from an aeroplane and falls under gravity, but with air resistance that is linearly proportional to velocity. Naturally, we shall want to work out how velocity increases with time, and if it will reach a constant, limiting value. After a certain time, the parachute must open, and the resistance to falling will increase so that it is now proportional to the square of velocity. At any time the forces due to gravity and air resistance are balanced, and therefore act in opposite directions and this is used to solve the problem. The force of gravity is <span class="math notranslate nohighlight">\(mg, \,g\)</span> being the acceleration due to gravity and <span class="math notranslate nohighlight">\(m\)</span> the mass in kg. The air resistance (drag) is <span class="math notranslate nohighlight">\(av\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a constant with units of kg s<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> is the initial downwards velocity which could be zero. The equation of motion in terms of force is</p>
+<section id="skydiving-air-resistance-limiting-velocity-newton-raphson-iterations">
+<h2>8.1 Skydiving. Air resistance, limiting velocity,  Newton-Raphson iterations<a class="headerlink" href="#skydiving-air-resistance-limiting-velocity-newton-raphson-iterations" title="Permalink to this headline">#</a></h2>
+<p>Consider a skydiver who jumps from an aeroplane and falls under gravity, but with air resistance that is linearly proportional to velocity. Naturally, we shall want to work out how velocity increases with time, and if it will reach a constant, limiting value. After a certain time, the parachute must open, and the resistance to falling will increase so that it is now proportional to the square of velocity.</p>
+<p>At any time the forces due to gravity and air resistance are balanced, and therefore act in opposite directions and this is used to solve the problem. The force of gravity is <span class="math notranslate nohighlight">\(mg, \,g\)</span> being the acceleration due to gravity and <span class="math notranslate nohighlight">\(m\)</span> the mass in kg. The air resistance (drag) is <span class="math notranslate nohighlight">\(av\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a constant with units of kg s<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> is the initial downwards velocity which could be zero. The equation of motion in terms of force is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  m\frac{dv}{dt}= mg - av, \qquad v(t_0) = v_0, \qquad t_0=0\]</div>
 <p>where the initial condition of velocity being <span class="math notranslate nohighlight">\(v_0\)</span> at zero time is included. Note that <span class="math notranslate nohighlight">\(v\)</span> is a function of time, although this is not shown explicitly in the equation. To calculate the result it is easier to change the force equation to</p>
@@ -3131,16 +3439,16 @@ title="Print to PDF"
 <span class="n">v</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span><span class="o">-</span><span class="n">v0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">m</span><span class="p">)</span>                        <span class="c1"># velocity</span>
 <span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">g</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">v0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">x0</span> <span class="c1"># distance</span>
 
-<span class="n">m</span>  <span class="o">=</span>  <span class="mf">75.0</span>     <span class="c1"># kg</span>
-<span class="n">g</span>  <span class="o">=</span>  <span class="mf">9.8</span>      <span class="c1"># acceleration due to gravity m/s/s</span>
-<span class="n">a</span>  <span class="o">=</span>  <span class="mf">13.0</span>     <span class="c1"># air resistance kg/s</span>
-<span class="n">v0</span> <span class="o">=</span>  <span class="mf">0.0</span>      <span class="c1"># initial vertical velocity</span>
-<span class="n">x0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3000.0</span>   <span class="c1"># initial height</span>
-<span class="n">vmax</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span>   <span class="c1"># terminal velpocity m/s</span>
+<span class="n">m</span>  <span class="o">=</span>  <span class="mf">75.0</span>     <span class="c1"># mass in kg</span>
+<span class="n">g</span>  <span class="o">=</span>  <span class="mf">9.8</span>      <span class="c1"># acceleration due to gravity, m/s/s</span>
+<span class="n">a</span>  <span class="o">=</span>  <span class="mf">13.0</span>     <span class="c1"># air resistance, kg/s</span>
+<span class="n">v0</span> <span class="o">=</span>  <span class="mf">0.0</span>      <span class="c1"># initial vertical velocity,  m/s</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3000.0</span>   <span class="c1"># initial height in metres</span>
+<span class="n">vmax</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">a</span>   <span class="c1"># terminal velocity, m/s</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.2f}{:s}{:6.2f}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;terminal velocity &#39;</span><span class="p">,</span><span class="n">vmax</span><span class="p">,</span><span class="s1">&#39; m/s or &#39;</span><span class="p">,</span> <span class="n">vmax</span><span class="o">*</span><span class="mf">2.237</span><span class="p">,</span> <span class="s1">&#39; mph&#39;</span><span class="p">))</span>
 
-<span class="n">tm</span> <span class="o">=</span> <span class="mf">10.0</span>      <span class="c1"># initial guess</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>         <span class="c1"># Newton-Raphson. V rapid convergence.</span>
+<span class="n">tm</span> <span class="o">=</span> <span class="mf">10.0</span>                  <span class="c1"># initial guess for time in seconds</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>         <span class="c1"># Newton-Raphson. V rapid convergence. (4 iterations is just a guess)</span>
     <span class="n">tm</span> <span class="o">=</span> <span class="n">tm</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span><span class="o">/</span><span class="n">v</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;iteration &#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">tm</span><span class="p">)</span>
     <span class="k">pass</span>
@@ -3153,6 +3461,7 @@ title="Print to PDF"
 iteration  0 68.07207783233369
 iteration  1 58.83034251371377
 iteration  2 58.83024022254945
+iteration  3 58.83024022254941
 time to reach ground  58.83 seconds
 </pre></div>
 </div>
@@ -3229,7 +3538,7 @@ time to reach ground  58.83 seconds
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

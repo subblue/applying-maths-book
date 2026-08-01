@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1836,10 +1836,10 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
+<span class="c1">#from numpy import linalg as LA</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1900,7 +1900,7 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">LA</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1913,9 +1913,9 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <p>This example uses SymPy which gives an exact answer as a fraction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M, C&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="p">])</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M, C&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="p">])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">C</span>
 </pre></div>
 </div>
@@ -1928,12 +1928,12 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <p>Care has to be taken to note the order of the results which may not be the same as that of used to form the matrix <span class="math notranslate nohighlight">\(\pmb M\)</span> defining <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>, and therefore we cannot necessarily tell which answer is which. An alternative method, uses the SymPy solve routine, which does tells us which is which. Notice that the constant must be moved to the left hand side so that all the equations equal zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, z&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, z&#39;</span><span class="p">)</span>
 <span class="n">eq1</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span>   <span class="o">+</span><span class="n">z</span> <span class="o">-</span><span class="mi">6</span>
 <span class="n">eq2</span> <span class="o">=</span>   <span class="n">x</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span><span class="mi">3</span>
 <span class="n">eq3</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>   <span class="o">-</span><span class="n">y</span> <span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">z</span>
 
-<span class="n">ans</span> <span class="o">=</span> <span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span><span class="n">eq2</span><span class="p">,</span><span class="n">eq3</span><span class="p">))</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span><span class="n">eq2</span><span class="p">,</span><span class="n">eq3</span><span class="p">))</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
@@ -1959,7 +1959,7 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.47</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="p">)</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>                     <span class="c1"># use linear algebra package</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -1993,8 +1993,9 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <p>Solving for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(s\)</span> using SymPy can give an algebraic answer, which is not of much interest, but a numerical one is also possible as shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">B_H</span><span class="p">,</span> <span class="n">B_D</span><span class="p">,</span> <span class="n">m_H</span><span class="p">,</span> <span class="n">m_D</span><span class="p">,</span> <span class="n">m_C</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r, s, c, hbar, B_H, B_D, m_H, m_D, m_C&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">B_H</span><span class="p">,</span> <span class="n">B_D</span><span class="p">,</span> <span class="n">m_H</span><span class="p">,</span> <span class="n">m_D</span><span class="p">,</span> <span class="n">m_C</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r, s, c, hbar, B_H, B_D, m_H, m_D, m_C&#39;</span><span class="p">)</span>
 
+<span class="n">pi</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">m_C</span> <span class="o">=</span> <span class="mf">1.992648e-26</span>   <span class="c1"># mass C</span>
 <span class="n">m_H</span> <span class="o">=</span> <span class="mf">1.673534e-27</span>
 <span class="n">m_D</span> <span class="o">=</span> <span class="mf">3.344497e-27</span>
@@ -2006,17 +2007,17 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <span class="n">eq1</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_C</span> <span class="o">+</span> <span class="n">m_H</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">m_H</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">m_H</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">s</span> <span class="o">-</span> <span class="n">hbar</span><span class="o">/</span><span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">B_H</span><span class="p">)</span>
 <span class="n">eq2</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_C</span> <span class="o">+</span> <span class="n">m_D</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">m_D</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">m_D</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">s</span> <span class="o">-</span> <span class="n">hbar</span><span class="o">/</span><span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">B_D</span><span class="p">)</span>
 
-<span class="n">ans</span> <span class="o">=</span> <span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span><span class="n">eq2</span><span class="p">),(</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># order returned r , s</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span><span class="n">eq2</span><span class="p">),(</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># order returned r , s</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)):</span>             <span class="c1"># do this only to print clearly</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}</span><span class="s1"> </span><span class="si">{:8.4e}</span><span class="s1">  </span><span class="si">{:8.4e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:&lt;4d}</span><span class="s1">  </span><span class="si">{:&gt;10.4g}</span><span class="s1">  </span><span class="si">{:&gt;10.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   0 -1.3973e-10  -1.0843e-10
-   1 -1.3973e-10  3.8790e-10
-   2 1.3973e-10  -3.8790e-10
-   3 1.3973e-10  1.0843e-10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     -1.397e-10  -1.084e-10
+1     -1.397e-10   3.879e-10
+2      1.397e-10  -3.879e-10
+3      1.397e-10   1.084e-10
 </pre></div>
 </div>
 </div>
@@ -2045,8 +2046,9 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <p>In the echelon form the last column contains the coefficient or a ratio of them from which the coefficients are obtained by clearing any fractions by multiplying by the same constant. This constant produces the missing coefficient. Although it is not necessary the results are clearer if reactant values are negative integers and products positive, this ensures that all proper values are either all positive or all negative and in the latter case the sign is ignored. Finally, zero value in any of the the calculated coefficients indicate an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matrix of x_0, x_1 values with reactants negative and products positive</span>
-<span class="n">mFeS2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>   <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># still using SymPy</span>
+<span class="c1"># matrix of x_0, x_1 values with reactants negative and products positive</span>
+<span class="n">mFeS2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>   <span class="p">]</span> <span class="p">)</span>
 <span class="n">mFeS2</span>
 </pre></div>
 </div>
@@ -2079,7 +2081,7 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <p>presents a different problem. There are three (C,H,O) species and five molecules (and equations) meaning that there is an unlimited number of solutions.  The resulting echelon form will have two columns and to find solutions a linear combination of these has to be made (by trial and error) with results accepted provided no fractions or zero values result. The matrix is in row order C, O, H. If there are sign changes in the result this this should be rejected, otherwise the values are used by ignoring the sign, i.e. correct values should be all positive or all negative.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mCO</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>  <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mCO</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>  <span class="p">]</span> <span class="p">)</span>
 <span class="n">mCO</span>
 </pre></div>
 </div>
@@ -2188,7 +2190,7 @@ a_{n1}&amp; a_{n2} &amp; a_{n3} &amp;\cdots &amp; a_{nn}-\lambda \\ \end{bmatrix
 
 <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>     <span class="c1"># is a matrix in numpy</span>
 
-<span class="n">evals</span><span class="p">,</span><span class="n">evecs</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>           <span class="c1"># eigenvals and eigenvectors are returned</span>
+<span class="n">evals</span><span class="p">,</span><span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>           <span class="c1"># eigenvals and eigenvectors are returned</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:f}</span><span class="s1"> </span><span class="si">{:f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;eigenvalues = &#39;</span><span class="p">,</span><span class="n">evals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">evals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;normalised columns of eigenvectors&#39;</span><span class="p">)</span>
@@ -2208,9 +2210,9 @@ normalised columns of eigenvectors
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># with Sympy, algebraic solution</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>         <span class="c1"># note different syntax to numpy</span>
-<span class="c1"># M.eigenvals()                        # use if eigenvals only are wanted </span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>         <span class="c1"># note different syntax to numpy</span>
+<span class="c1"># M.eigenvals()                           # use if eigenvals only are wanted </span>
 <span class="n">ans</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>     <span class="c1"># returns in order : eigenvalue, multiplicity, eigenvectors not normalised</span>
 <span class="n">ans</span>
 </pre></div>
@@ -2236,10 +2238,10 @@ normalised columns of eigenvectors
 <p>Another alternative is to use the SymPy function matrix <span class="math notranslate nohighlight">\(\mathtt{.diagonalize() }\)</span> that returns eigenvectors and eigenvalues in matrix form, i.e.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>         <span class="c1"># note different syntax to numpy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>         <span class="c1"># note different syntax to numpy</span>
 
-<span class="n">evecs</span><span class="p">,</span> <span class="n">evals</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>         <span class="c1"># note order of returned matrices</span>
+<span class="n">evecs</span><span class="p">,</span> <span class="n">evals</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>             <span class="c1"># note order of returned matrices</span>
 <span class="n">evals</span><span class="p">,</span><span class="n">evecs</span>
 </pre></div>
 </div>
@@ -2306,7 +2308,7 @@ k=1,i=3 &amp; M_{12}=(-1)^{k+i}2&amp;x_{31}=2 &amp; x_{32}=2 &amp; x_{33}=2\\
 <p>thus the eigenvector matrix and eigenvectors are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix}2&amp;-2&amp;-2\\0&amp;2\sqrt{2}i&amp;-2\sqrt{2}i\\2&amp;2&amp;2\end{bmatrix}\qquad \overset{normalize} \longrightarrow x_1=\begin{bmatrix}1\\0\\1\end{bmatrix}\quad x_2=\begin{bmatrix}-1\\i\sqrt{2}\\1\end{bmatrix}\quad x_3=\begin{bmatrix}-1\\-i\sqrt{2}\\1\end{bmatrix}\end{split}\]</div>
-<p>The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.</p>
+<p>The same calculation using Python or SymPy is far easier and, in practice, you will always do the calculation in this way.</p>
 </section>
 </section>
 <section id="properties-of-eigenvalues-and-eigenvectors">
@@ -2440,8 +2442,8 @@ called the <em>eigenvalue spectrum</em>.</p>
 <p>To find the eigenvectors we can use Python/SymPy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
@@ -2468,7 +2470,7 @@ called the <em>eigenvalue spectrum</em>.</p>
 </div>
 </div>
 <p>The eigenvalues confirm the previous calculation. The eigenvalue equal to <span class="math notranslate nohighlight">\(-3\)</span> is singly degenerate, that of <span class="math notranslate nohighlight">\(1\)</span> is triply degenerate.  The second eigenvector <span class="math notranslate nohighlight">\([1,0,0,0]^T\)</span> belongs to state <span class="math notranslate nohighlight">\(\alpha\alpha\)</span>, and the fourth <span class="math notranslate nohighlight">\([0,0,0,1]^T\)</span> to state <span class="math notranslate nohighlight">\(\beta\beta\)</span> or vice versa; it makes no difference. The wavefunctions are <span class="math notranslate nohighlight">\(\psi = |\alpha\alpha\rangle\)</span> and <span class="math notranslate nohighlight">\(\psi = | \beta\beta\rangle\)</span>, and both have energy <span class="math notranslate nohighlight">\(E = 1\)</span> but are accidentally degenerate. The other two wavefunctions are constructed as <span class="math notranslate nohighlight">\(\alpha\beta+\beta\alpha\)</span> and <span class="math notranslate nohighlight">\(\alpha\beta-\beta\alpha\)</span> because their eigenvectors are <span class="math notranslate nohighlight">\([0, \pm 1, 1, 0]^T\)</span>, which is in the same order as the basis set. The normalization constant for this pair of eigenvectors is <span class="math notranslate nohighlight">\(1\sqrt{2}\)</span>, making the normalized wavefunctions for the mixed states <span class="math notranslate nohighlight">\(\displaystyle\psi = \frac{1}{\sqrt{2}}|\alpha\beta \rangle\pm |\beta\alpha\rangle\)</span> with energies <span class="math notranslate nohighlight">\(E=1\)</span> and <span class="math notranslate nohighlight">\(-3\)</span>.</p>
-<p>A simpler notation can be found is using (sympy) diagonalisation where the eigenvector’s matrix is returned first.</p>
+<p>A simpler notation can be found is using (SymPy) diagonalisation where the eigenvector’s matrix is returned first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
@@ -2533,7 +2535,7 @@ called the <em>eigenvalue spectrum</em>.</p>
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

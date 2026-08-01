@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -227,9 +227,9 @@ print('{:s} {:s}\n {:s} {:6.3f}{:s}'.format(' normal vector n =',str(n),
 # In[4]:
 
 
-# now get eqn of plane using sympy
+# now get eqn of plane using SymPy
 
-x,y,z = symbols('x,y,z') # use sympy as x,y,z are symbolic
+x,y,z = sp.symbols('x,y,z') # use SymPy as x,y,z are symbolic
 X = np.array([x,y,z])
 np.dot(n,(X-T))          # equation of plane 
 
@@ -286,7 +286,11 @@ np.dot(n,(X-T))          # equation of plane
 # 
 # $$\displaystyle \vec a\cdot \vec b\times\vec c =\begin{vmatrix}5/2& 0& 0\\0&3/2&0\\0&0&2\end{vmatrix} =\frac{15}{2}$$
 # 
-# To calculate $\vec b^*$ the cross product needed is $\vec c\times \vec a=\begin{vmatrix}1&1&1\\0 &0&2 \\5/2&0&0 \end{vmatrix} =5$ making $\vec b^*=2/3$ which is the reciprocal of $b$. A similar result is found for $\vec a^*$ and $\vec c^*$.
+# To calculate $\vec b^*$ the cross product needed is 
+# 
+# $$\displaystyle \vec c\times \vec a=\begin{vmatrix}1&1&1\\0 &0&2 \\5/2&0&0 \end{vmatrix} =5$$
+# 
+# making $\vec b^*=2/3$ which is the reciprocal of $b$. A similar result is found for $\vec a^*$ and $\vec c^*$.
 # 
 # ## 17 Vector triple product
 # 

@@ -10,11 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad,odeint
-from scipy.optimize import fsolve
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+from scipy.integrate import odeint
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q8 answer

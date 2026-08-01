@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solutions Q35 - 39" href="chapter1-answers-35-39.html" />
+    <link rel="next" title="Solutions Q35 - 40" href="chapter1-answers-35-40.html" />
     <link rel="prev" title="Solutions Q8 - 16" href="chapter1-answers-8-16.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1729,8 +1729,6 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1900,17 +1898,63 @@ b &amp; Bb &amp; bb \\
 <p>(a) Start by evaluating both sides separately and the identity is proved.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle q\binom{n}{q}=q\frac{n!}{q!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}\\
-q\binom{n-1}{q-1}=q\frac{n(n-1)!}{(q-1)!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}\end{split}\]</div>
+n\binom{n-1}{q-1}=\frac{n(n-1)!}{(q-1)!(n-1-q+1)!}=\frac{n!}{(q-1)!(n-q)!}\end{split}\]</div>
 <p>(b) The right-hand side is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{(n-1)!}{(q-1)!(n-q)!}+\frac{(n-1)!}{q!(n-1-q)!}\]</div>
+\[\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{(n-1)!}{(q-1)!(n-1-q+1)!}+\frac{(n-1)!}{q!(n-1-q)!}\]</div>
 <p>Next, as <span class="math notranslate nohighlight">\(n! = n(n - 1)!\)</span>, substituting <span class="math notranslate nohighlight">\(n \to n - q\)</span> gives <span class="math notranslate nohighlight">\((n - q)! = (n-q)(n-q-1)!\)</span>. Substituting <span class="math notranslate nohighlight">\((n - 1 - q)! \)</span> into the equation gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{q(n-1)!}{q!(n-q)!}+\frac{(n-q)(n-1)!}{q!(n-q)!} = \frac{n!}{q!(n-q)!}\]</div>
+<p>(c) The fraction  <span class="math notranslate nohighlight">\(\displaystyle \binom{n-1}{q-1}\)</span> can be converted to a more useful form by realising that  for any factorial <span class="math notranslate nohighlight">\(x!=x(x-1)!\)</span> thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \binom{n-1}{q-1}=\frac{q}{n}\binom{n}{q}\]</div>
+<p>then <span class="math notranslate nohighlight">\(\displaystyle \binom{n}{q}=\frac{q}{n}\binom{n}{q}+\binom{n-1}{q}\)</span> or by rearranging <span class="math notranslate nohighlight">\(\displaystyle \left(1-\frac{q}{n}\right)y(n,q)=y(n-1,q)\)</span>. We want the result in terms of <span class="math notranslate nohighlight">\(n+1\)</span> and <span class="math notranslate nohighlight">\(n\)</span> thus by incrementing we find</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(n+1,q)=\left(\frac{n+1}{n+1-q}\right)y(n,q)\]</div>
+<p>and the first value of <span class="math notranslate nohighlight">\(y\)</span> occurs when <span class="math notranslate nohighlight">\(n=q\)</span> and then <span class="math notranslate nohighlight">\(y(q,q)=1\)</span>. This can be seen by looking at the binomial coefficients, the <span class="math notranslate nohighlight">\(q!\)</span> removes the first <span class="math notranslate nohighlight">\(q!\)</span> belonging to <span class="math notranslate nohighlight">\( n!\)</span>.</p>
+<p>Some code using NumPy is shown below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation of binomial coefficient by recursion.</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>               <span class="c1"># n &gt;= q</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>                <span class="c1"># initial value</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">q</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;binomial(&#39;</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="s1">&#39;) is&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>binomial( 10 , 3 ) is 120
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="q34-answer">
 <h2>Q34 answer<a class="headerlink" href="#q34-answer" title="Permalink to this headline">#</a></h2>
-<p>Using the method in the text, <span class="math notranslate nohighlight">\(100759-86\)</span> has the sum <span class="math notranslate nohighlight">\(1 \times 6 + 2 \times 8 + 3 \times 9 + 4 \times 5 + 5 \times 7 + 8 \times 1 = 112\)</span> and <span class="math notranslate nohighlight">\(112\,\mathrm{mod}\, 10 = 2\)</span> which is the checksum. The CAS number <span class="math notranslate nohighlight">\(116-31\)</span> has a sum <span class="math notranslate nohighlight">\(34\)</span> and so a check digit of <span class="math notranslate nohighlight">\(4\)</span> and <span class="math notranslate nohighlight">\(103-30\)</span> has the sum <span class="math notranslate nohighlight">\(20\)</span> and check digit <span class="math notranslate nohighlight">\(0\)</span>. The alternative registry number for pheophytin-A is <span class="math notranslate nohighlight">\(603-17-8\)</span></p>
+<p>(a) Using notation similar to that in the text, (Chapter 1, section 9.15), the formula is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(Na^+|+) = p(+|Na^+)\frac{p(Na^+)}{p(+)}\]</div>
+<p>what we know is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(+|Na^+)= 0.92,\quad p(Na^+)=0.9,\quad p(+|not\;Na^+)=0.06\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(+)= p(Na^+)\cdot p(+|Na^+) + (1-p(Na^+))\cdot p(+|not\;Na^+))= 0.9\cdot 0.92+(0.1)\cdot 0.06=0.834\]</div>
+<p>where using a Tree diagram really helps in working out <span class="math notranslate nohighlight">\(p(+)\)</span>. The probability of correctly identifying Na<span class="math notranslate nohighlight">\(^+\)</span> is <span class="math notranslate nohighlight">\(99.2\)</span>%.</p>
+<p>The probability of the analysis result was caused by  K<span class="math notranslate nohighlight">\(^+\)</span> is the complement of this <span class="math notranslate nohighlight">\(1-0.992=0.8\)</span>%</p>
+<p><strong>(b)</strong> What if the analysis result is negative? The equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(not\; Na^+|-) = p(-|not\; Na^+)\frac{p(not\;Na^+)}{p(-)}\]</div>
+<p>In this case <span class="math notranslate nohighlight">\(p(-)\)</span> is calculated as the branches of the tree diagram leading to a negative result (see Chapter 1, 9.15) and is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}p(-)&amp;= p(Na^+)\cdot p(-|Na^+ )+(1-p(Na^+))\cdot p(-|not\;Na^+)\\&amp;=p(Na^+)\cdot (1-p(+|Na^+ ))+(1-p(Na^+))\cdot (1-p(+|not\;Na^+))\\&amp;=0.9\cdot 0.08+0.1\cdot 0.94= 0.166\end{align}\end{split}\]</div>
+<p>making</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(not\; Na^+|-) = \frac{0.1\cdot 0.94}{0.166}=0.566\]</div>
+<p>It can be concluded that if there is no result from the analysis it is probable that Na<span class="math notranslate nohighlight">\(^+\)</span> is present but by no means certain, whereas if the result is positive there is a <span class="math notranslate nohighlight">\(\approx 99\)</span>% certainty that Na<span class="math notranslate nohighlight">\(^+\)</span> is present.</p>
 </section>
 </section>
 
@@ -1948,10 +1992,10 @@ q\binom{n-1}{q-1}=q\frac{n(n-1)!}{(q-1)!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}\end{spli
             <p class="prev-next-title">Solutions Q8 - 16</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="chapter1-answers-35-39.html" title="next page">
+    <a class='right-next' id="next-link" href="chapter1-answers-35-40.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions Q35 - 39</p>
+        <p class="prev-next-title">Solutions Q35 - 40</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1964,7 +2008,7 @@ q\binom{n-1}{q-1}=q\frac{n(n-1)!}{(q-1)!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}\end{spli
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

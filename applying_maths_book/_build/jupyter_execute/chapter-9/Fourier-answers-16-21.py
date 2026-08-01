@@ -10,9 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -26,22 +25,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-omega, a, t, u = symbols('omega, a, t, u',positive=True)
-
-f01 = cos(omega*t/a)*exp(-(t/a)**2/2)         # define electric fields
-f02 = cos(omega*(t+u)/a)*exp(-((t+u)/a)**2/2)
-ef01   = expand(f01.rewrite(exp))
-intf01 = integrate(ef01,(t,-oo,oo),conds='none')
-simplify(intf01)
+omega, a, t, u = sp.symbols('omega, a, t, u',positive=True)
+inf = sp.oo                                         # sp.oo is SymPy infinity
+f01 = sp.cos(omega*t/a)*sp.exp(-(t/a)**2/2)         # define electric fields
+f02 = sp.cos(omega*(t+u)/a)*sp.exp(-((t+u)/a)**2/2)
+ef01   = sp.expand(f01.rewrite(sp.exp))
+intf01 = sp.integrate(ef01,(t,-inf,inf),conds='none')  
+sp.simplify(intf01)
 
 
 # In[3]:
 
 
 # and for the t+u function
-ef02   = expand(f02.rewrite(exp))
-intf02 = integrate(ef02,(t,-oo,oo),conds='none')
-simplify(intf02)
+ef02   = sp.expand(f02.rewrite(sp.exp))
+intf02 = sp.integrate(ef02,(t,-inf,inf),conds='none')
+sp.simplify(intf02)
 
 
 # which shows that $\int E(t)dt=\int E(u+t)dt$. The same is true for the powers of the integrals. The cross term is $2\int E(t)E(u+t)dt$ and is calculated as
@@ -50,9 +49,10 @@ simplify(intf02)
 
 
 # calculate the cross term E(t)E(t+u)
-fcross = simplify(2*expand(ef01*ef02))
-intfcross= integrate(fcross, (t,-oo,oo),conds='none')
-simplify(intfcross)
+
+fcross = sp.simplify(2*sp.expand(ef01*ef02))
+intfcross= sp.integrate(fcross, (t,-inf,inf),conds='none')
+sp.simplify(intfcross)
 
 
 # This can be simplified by converting the $e^{-i\omega u/a }$ terms to  a cosine and the result is
@@ -99,36 +99,36 @@ plt.show()
 
 
 # to calculate G^2(u)
-omega, a, t, u = symbols('omega, a, t, u',positive=True)
-
-f01= cos(omega*t/a)*exp(-(t/a)**2/2)          # define electric fields
-f02= cos(omega*(t+u)/a)*exp(-((t+u)/a)**2/2)
-ef01   = expand(f01.rewrite(exp))             # change into exponential form to ease integration
-ef02   = expand(f02.rewrite(exp))
+omega, a, t, u = sp.symbols('omega, a, t, u',positive=True)
+inf = sp.oo                                           # sp.oo is SymPy infinity
+f01  = sp.cos(omega*t/a)*sp.exp(-(t/a)**2/2)          # define electric fields
+f02  = sp.cos(omega*(t+u)/a)*sp.exp(-((t+u)/a)**2/2)
+ef01 = sp.expand(f01.rewrite(sp.exp))             # change into exponential form to ease integration
+ef02 = sp.expand(f02.rewrite(sp.exp))
 
 # normalisation # int E(t)^4
-ef01_4 = expand(ef01**4)
-norml4 = integrate(ef01_4,(t,-oo,oo),conds='none')
-factor(norml4)
+ef01_4 = sp.expand(ef01**4)
+norml4 = sp.integrate(ef01_4,(t,-inf,inf),conds='none')
+sp.factor(norml4)
 
 
 # In[7]:
 
 
 # integration E(t) x E(t+u)^3 and vice versa
-ef13 = expand(ef01*ef02**3)
-term13 = integrate(ef13,(t,-oo,oo),conds='none')
-factor(term13)
+ef13   = sp.expand(ef01*ef02**3)
+term13 = sp.integrate(ef13,(t,-inf,inf),conds='none')  
+sp.factor(term13)
 
 
 # In[8]:
 
 
 # integration E(t)^2 x E(t+u)^2
-ef02 = expand(f02.rewrite(exp))
-ef22 = expand(ef01**2*ef02**2)
-term22 = integrate(ef22,(t,-oo,oo),conds='none')
-factor(term22)
+ef02 = sp.expand(f02.rewrite(sp.exp))
+ef22 = sp.expand(ef01**2*ef02**2)
+term22 = sp.integrate(ef22,(t,-inf,inf),conds='none')
+sp.factor(term22)
 
 
 # The integrals can be used as they are or converted back into cosine form using $\displaystyle 2\cos(x)=e^{ix}+e^{-ix}$; thus
@@ -183,10 +183,11 @@ plt.show()
 
 
 # outline pulse , ****   ignore cosine ****
-t, a, u = symbols('t, a, u',positive=True)
-f011= ( exp(-(t/a)**2/2)  + exp(-((t+u)/a)**2/2) )**4     # define electric fields
-s = integrate(f011,(t,-oo,oo),conds='none')
-expand(s)
+t, a, u = sp.symbols('t, a, u',positive=True)
+inf = sp.oo                                         # sp.oo is SymPy infinity
+f011= ( sp.exp(-(t/a)**2/2)  + sp.exp(-((t+u)/a)**2/2) )**4     # define electric fields
+s = sp.integrate(f011,(t,-inf,inf),conds='none')
+sp.expand(s)
 
 
 # This equation can be normalised to one at long times and then simplified to give $\displaystyle \sqrt{2\pi}a(1+3e^{-u^2/(2a^2)}\pm 4e^{-3u^2/(8a^2)})$ where the positive sign corresponds to the upper curve. The fwhm of the curve $2\tau$, taking 1 as the baseline, is found by solving $\displaystyle (3e^{-\tau^2/(2a^2)}+ 4e^{-3\tau^2/(8a^2)})=7/2$. This equation is simplified by substituting $\displaystyle x=e^{-\tau^2/2a^2}$ giving $(3x+ 4x^3/4)=7/2$ which has one real solution which is 0.4428, and therefore $\displaystyle \tau = a\sqrt{-2\ln(0.4428)}=1.276a$. The original pulse has a fwhm of $\displaystyle a\sqrt{2\ln(2)}$, therefore the outline of the autocorrelation is $\approx$ 1.08 times wider than the pulse.
@@ -227,18 +228,19 @@ plt.show()
 # In[12]:
 
 
-x = symbols('x')
-u = symbols('u', positive=True)  # this is necessary to get solution
-eqn= (2/(exp(x)+exp(-x) ) )**2*(2/(exp(x+u)+exp(-x-u) ) )**2
-Au = simplify(integrate(eqn,(x,-oo,oo )  )  )
+# use SymPy
+u,x = sp.symbols('u,x', positive = True)  # this is necessary to get solution
+inf = sp.oo                                         # sp.oo is SymPy infinity
+eqn = (2/(sp.exp(x)+sp.exp(-x) ) )**2*(2/(sp.exp(x+u) + sp.exp(-x-u) ) )**2
+Au  = sp.simplify(sp.integrate(eqn,(x,-inf,inf )  )  )    # sp.oo is sympy infinity
 Au
 
 
 # In[13]:
 
 
-df = simplify(diff(Au,u) )
-factor(df)
+df = sp.simplify(sp.diff(Au,u) )
+sp.factor(df)
 
 
 # In[14]:
@@ -383,6 +385,7 @@ plt.show()
 
 
 # from FFT plot choose frequencies to include in reverse transform
+
 filter = [ fft0[i]  if (i/n >0.0 and i/n <0.02)   else 0 for i in range(n//2)]
 
 fft1 = np.fft.irfft(filter)

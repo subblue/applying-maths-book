@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1544,13 +1544,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#changing-limits-integrating-odd-and-even-functions">
    1.3 Changing limits, integrating odd and even functions
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#i-summary">
-   <strong>
-    (i) Summary
-   </strong>
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#only-with-symmetrical-limits">
+     **Only with symmetrical limits
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differential-equations">
@@ -1708,13 +1708,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#changing-limits-integrating-odd-and-even-functions">
    1.3 Changing limits, integrating odd and even functions
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#i-summary">
-   <strong>
-    (i) Summary
-   </strong>
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#only-with-symmetrical-limits">
+     **Only with symmetrical limits
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differential-equations">
@@ -1839,8 +1839,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>    <span class="c1"># with this definition as in these pages we must use sp.etc before any sympy function</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1862,7 +1862,7 @@ title="Print to PDF"
 <p>Figure 1. Pictorial representation of the integral as area under a curve shown as a very approximate evaluation of an integral as the sum of a set of narrow rectangles. The width of each rectangle is made to approach zero, and their number increased to infinity, when the integration is performed.</p>
 <section id="i-a-note-on-notation">
 <h3><strong>(i) A note on notation</strong><a class="headerlink" href="#i-a-note-on-notation" title="Permalink to this headline">#</a></h3>
-<p>The integration operation be written either as <span class="math notranslate nohighlight">\(\int f(x)dx\)</span> or <span class="math notranslate nohighlight">\(\int dx f(x)\)</span>. The latter is often used in physics texts particularly when <span class="math notranslate nohighlight">\(f(x)\)</span> is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following <span class="math notranslate nohighlight">\(dx\)</span>. As an aside, the symbol <span class="math notranslate nohighlight">\(\int\)</span> was first introduced by Leibniz (1646 - 1716) is the stylized <span class="math notranslate nohighlight">\(S\)</span> from the Latin word <em>summa</em>, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus <em>summatorius</em>. An integral is also sometimes called an anti-derivative.</p>
+<p>The integration operation be written either as <span class="math notranslate nohighlight">\(\int f(x)dx\)</span> or <span class="math notranslate nohighlight">\(\int dx f(x)\)</span>. The latter is often used in physics texts particularly when <span class="math notranslate nohighlight">\(f(x)\)</span> is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following <span class="math notranslate nohighlight">\(dx\)</span>. As an aside, the symbol <span class="math notranslate nohighlight">\(\int\)</span> was first introduced by Leibniz (1646 - 1716) is the stylized <span class="math notranslate nohighlight">\(S\)</span> from the Latin word <em>Summa</em>, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus <em>Summatorius</em>. An indefinite integral is also sometimes called an anti-derivative.</p>
 </section>
 </section>
 <section id="indefinite-and-definite-integrals">
@@ -1876,29 +1876,29 @@ title="Print to PDF"
 <p>The integration symbol <span class="math notranslate nohighlight">\(\int\)</span> of equation 1 has no upper and lower limits on it, and this indicates that it is an <em>indefinite integral</em>. When the limits are added to an integration a definite integral results, and this is a number independent of the variable <span class="math notranslate nohighlight">\(x\)</span>, provided that the chosen limits <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are not functions that themselves contain <span class="math notranslate nohighlight">\(x\)</span>;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b f(x)dx = g(x) \bigg|_a^b = g(b)-g(a)  \qquad\tag{2}\]</div>
-<p>The symbol <span class="math notranslate nohighlight">\( \bigg|_a^b\)</span> is the substitution symbol. Because neither <span class="math notranslate nohighlight">\(g(b)\)</span> nor <span class="math notranslate nohighlight">\(g(a)\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(g(b) - g(a)\)</span> is a <em>number</em> and differentiating the result with respect to <span class="math notranslate nohighlight">\(x\)</span> would produce zero. The definite integral, equation 2, is sometimes called the <em>fundamental theorem of calculus</em>.</p>
+<p>The symbol <span class="math notranslate nohighlight">\( \bigg|_a^b\)</span> is the substitution symbol. Because neither <span class="math notranslate nohighlight">\(g(b)\)</span> nor <span class="math notranslate nohighlight">\(g(a)\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(g(b) - g(a)\)</span> is a <em>number</em> and differentiating the result with respect to <span class="math notranslate nohighlight">\(x\)</span> would produce zero. The definite integral, equation 2, is sometimes called the <em>Fundamental Theorem of Calculus</em>.</p>
 <p><img alt="Drawing" src="../_images/integration-fig2-3.png" /></p>
-<p>Figure 2 left, and 3 right. Left. The integral of <span class="math notranslate nohighlight">\(x^2\)</span> from <span class="math notranslate nohighlight">\(1 \to 4\)</span>, changing the limits changes the value of the integral. Right, integration limits <span class="math notranslate nohighlight">\(a, \, b \)</span> and <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>Figure 2 left, and 3 right. Left. The integral of <span class="math notranslate nohighlight">\(x^2\)</span> from <span class="math notranslate nohighlight">\(1 \to 4\)</span>, changing the limits changes the value of the integral. Right, integration limits could be <span class="math notranslate nohighlight">\(a,\to b \)</span>, <span class="math notranslate nohighlight">\(a\to s\)</span> or <span class="math notranslate nohighlight">\(b\to s\)</span>.</p>
 <hr class="docutils" />
 <section id="work-done-by-gas">
 <h3><strong>Work done by gas</strong><a class="headerlink" href="#work-done-by-gas" title="Permalink to this headline">#</a></h3>
 <p>An example met early on in studying thermodynamics is to calculate the work <span class="math notranslate nohighlight">\(w\)</span> done on an ideal gas, as its volume changes. Work is force <span class="math notranslate nohighlight">\(\times\)</span> distance moved, pressure is force divided by area, so work is also the pressure <span class="math notranslate nohighlight">\(\times\)</span> change in volume. To account for a series of infinitesimal volume changes, <span class="math notranslate nohighlight">\(dV\)</span>, made under reversible conditions, the quantity <span class="math notranslate nohighlight">\(pdV\)</span> must be integrated. The integral is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle W_{rev}=-\int pdV \]</div>
+\[\displaystyle w_{rev}=-\int pdV \]</div>
 <p>and, by convention, the negative sign indicates that work is done on the gas. As it stands, this integral cannot yet be solved because we need to know how <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are related. The next step is to use the ideal gas law, <span class="math notranslate nohighlight">\(pV = nRT\)</span>, to make an integral in <span class="math notranslate nohighlight">\(V\)</span> alone, giving</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle W_{rev}=-nRT\int \frac{1}{V}dV \]</div>
+\[\displaystyle w_{rev}=-nRT\int \frac{1}{V}dV \]</div>
 <p>This equation tells us that the work done on the gas is linearly proportional to the number of moles <span class="math notranslate nohighlight">\(n\)</span> present and to the gas constant <span class="math notranslate nohighlight">\(R\)</span> times the temperature <span class="math notranslate nohighlight">\(T\)</span>. It also tells us that the work is the area under the curve of <span class="math notranslate nohighlight">\(1/V\)</span> as <span class="math notranslate nohighlight">\(V\)</span> is changed. Assuming that we already know how to do the integration, which is explained below, the result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w_{rev} = -nRT \ln(V ) + const\]</div>
-<p>The constant appears because no upper or lower limit on the volume was defined and so the value of the constant is unknown. Mathematically this equation is fine as it stands, but to add real numbers the log has to be dimensionless, however, volume has dimensions of m<span class="math notranslate nohighlight">\(^3\)</span> therefore <span class="math notranslate nohighlight">\(V\)</span> in the equation is made dimensionless by  simply taking its numerical value. Doing this is not strictly correct but as the constant is arbitrary until some values are added, the equation is better rewritten as</p>
+<p>The constant appears because no upper or lower limit on the volume was defined and so the value of the constant is unknown. Mathematically this equation is fine as it stands, but to add real numbers the log has to be dimensionless, however, volume has dimensions of m<span class="math notranslate nohighlight">\(^3\)</span> therefore <span class="math notranslate nohighlight">\(V\)</span> in the equation is made dimensionless by  simply taking its numerical value. This gives the same as dividing each volume by <span class="math notranslate nohighlight">\(1\,m^3\)</span> which is the proper way to do this. The equation can also be rewritten as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w_{rev} = -nRT \ln(V/V_c)\]</div>
 <p>where the constant is now changed to <span class="math notranslate nohighlight">\(\ln(V_c)\)</span>. <span class="math notranslate nohighlight">\(V_c\)</span> still does not have a value, that will depend on the actual case being studied, but now has units of volume, which reminds us that the log is dimensionless.</p>
 <p>In the case where the gas is not ideal the pressure will be given by some other function. One such was devised by van der Waals and has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p=\frac{nRT}{\left(V-b\right)}- \frac{an^2}{V^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants depending on the particular gas.</p>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants depending on the particular gas. Integrating this equation is proposed in Q10.</p>
 </section>
 </section>
 <section id="changing-limits-integrating-odd-and-even-functions">
@@ -1910,8 +1910,7 @@ equation 2, and changing their the order clearly produces -1 times the result,</
 <p>Furthermore, if there is a point <span class="math notranslate nohighlight">\(s\)</span> between limits <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> then the integral can be split into two continuous parts. Using common sense, it is not surprising that the total is the sum of the parts by thinking of the result of integration as an area. Suppose the limits range from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(s\)</span> and then <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b f(x)dx= \int_a^s f(x)dx +\int_s^b f(x)dx \qquad\tag{3}\]</div>
-<p>which is shown in figure 3 above.</p>
-<p>When the limits are <span class="math notranslate nohighlight">\(\pm a\)</span> and 0 the relationship</p>
+<p>which is shown in figure 3 above. When the limits are <span class="math notranslate nohighlight">\(\pm a\)</span> and 0 the relationship</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{-a}^0 f(x)dx= \int_0^a f(-x)dx  \qquad\tag{4}\]</div>
 <p>is sometimes useful. Does this make sense? Try it on equation 2 to convince yourself.</p>
@@ -1926,14 +1925,13 @@ equation 2, and changing their the order clearly produces -1 times the result,</
 <p>and this is because because <span class="math notranslate nohighlight">\(a^4 = (-a)^4\)</span> and <span class="math notranslate nohighlight">\(a^2 = (-a)^2\)</span>. The right-hand graph shows an even function where the area is not zero but negative.</p>
 <p><img alt="Drawing" src="../_images/integration-fig4.png" /></p>
 <p>Figure 4. left. An odd function <span class="math notranslate nohighlight">\(x^3-x\)</span>. The symmetrical range of the integration is shaded, <span class="math notranslate nohighlight">\(a=3/4\)</span> and the integral is zero. Right. The even function <span class="math notranslate nohighlight">\(x^4-x^2\)</span> where the integral is not zero but is negative.</p>
-</section>
 <hr class="docutils" />
-<section id="i-summary">
-<h2><strong>(i) Summary</strong><a class="headerlink" href="#i-summary" title="Permalink to this headline">#</a></h2>
-<p>Only with symmetrical limits</p>
+<section id="only-with-symmetrical-limits">
+<h3>**Only with symmetrical limits<a class="headerlink" href="#only-with-symmetrical-limits" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle I=\int_{-a}^a f(x)dx \begin{cases}\text{if} f(x) \text{ is odd }, f(-x) = -f(x) \text{ and } I = 0\\[2ex]
 \text{if }f(x) \text{ is even, } f(-x) = f(x) \text{ and }I \ne 0\end{cases}\end{split}\]</div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="differential-equations">
@@ -1945,14 +1943,20 @@ equation 2, and changing their the order clearly produces -1 times the result,</
 <p>If <span class="math notranslate nohighlight">\(c\)</span> is a concentration, the equation tells us that the rate of change of the concentration of species <span class="math notranslate nohighlight">\(c\)</span> is proportional to the amount of <span class="math notranslate nohighlight">\(c\)</span> present (and so unreacted) at any time <span class="math notranslate nohighlight">\(t\)</span>. The constant of proportionality being is the rate constant <span class="math notranslate nohighlight">\(k\)</span>. If the sign is negative, this indicates that <span class="math notranslate nohighlight">\(c\)</span> is being lost and is forming another species that is not specified in the rate equation such as A <span class="math notranslate nohighlight">\(\to B\)</span> This differential equation is solved by separating out the two variables <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(t\)</span> and integrating each side separately:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{1}{c}dc=-k\int dt\]</div>
-<p>This example shows that the integration takes us from describing the rate of a process to the actual quantity, in this case, from the rate of change of <span class="math notranslate nohighlight">\(c\)</span> with time, to the amount of <span class="math notranslate nohighlight">\(c\)</span> at any time: <span class="math notranslate nohighlight">\(\ln(c) = -kt + const\)</span>. To make sure that the log is dimensionless, the equation can again be rewritten in an equivalent form as <span class="math notranslate nohighlight">\(\ln(c/c_0) = -kt\)</span>, where <span class="math notranslate nohighlight">\(c_0\)</span> is a constant equal to the amount of <span class="math notranslate nohighlight">\(c\)</span> present at <span class="math notranslate nohighlight">\(t = 0\)</span>. Solving differential equations is described in detail in Chapter 10.</p>
-<p>To show how integration can solve many chemical and physical problems is one aim of this chapter, but first, the mechanics of performing integration must be understood.</p>
+<p>This example shows that the integration takes us from describing the rate of a process to the actual quantity, in this case, from the rate of change of <span class="math notranslate nohighlight">\(c\)</span> with time, to the amount of <span class="math notranslate nohighlight">\(c\)</span> at any time:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(c) = -kt + const\]</div>
+<p>To make sure that the log is dimensionless, the equation can again be rewritten in an equivalent form as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(\frac{c}{c_0}\right) = -kt\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_0\)</span> is a constant equal to the amount of <span class="math notranslate nohighlight">\(c\)</span> present at <span class="math notranslate nohighlight">\(t = 0\)</span>. Solving differential equations is described in detail in Chapter 10.</p>
 </section>
 <section id="mechanics-of-integration">
 <h2>2 Mechanics of integration<a class="headerlink" href="#mechanics-of-integration" title="Permalink to this headline">#</a></h2>
+<p>To show how integration can solve many chemical and physical problems is one aim of this chapter, but first, the mechanics of performing integration must be understood.</p>
 <p>Integration is often a trial and error process, and some experimenting with different options is necessary even when using the computer. Start by simplifying expressions, perhaps by using partial fractions, then look for standard formulas and standard methods such as integration by parts. If none are found suitable, substitutions can be tried, then standard forms and methods looked for again because only with these can an integration be found. If all else fails, numerical methods have to be used; see Chapter 11.</p>
 <p>The integration formulae for various functions can be derived in a similar way to that for differentiation by taking small values of <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> and then calculating <span class="math notranslate nohighlight">\(x + dx\)</span> and <span class="math notranslate nohighlight">\(y + dy\)</span>. The method is now well established and most results are given below without derivation. Understanding the physical world is hard enough work without having to prove all of mathematics before we can use it!</p>
-<p>Several integrations are listed in Section 13, and Sympy can be used to do even more complex integrations. Why then, you might ask, should you bother to learn how to do integration? Calculations are done ‘by hand’ not only because it is often easier and quicker to do so, but also because it encourages a greater understanding of how the result was obtained. Additionally computer methods do not always work, and if you have an answer how will you know that it is correct if you have no understanding of the processes involved.</p>
+<p>Several integrations are listed in Section 13, and SymPy can be used to do even more complex integrations. Why then, you might ask, should you bother to learn how to do integration? Calculations are done ‘by hand’ not only because it is often easier and quicker to do so, but also because it encourages a greater understanding of how the result was obtained. Additionally computer methods do not always work, and if you have an answer how will you know that it is correct if you have no understanding of the processes involved.</p>
 </section>
 <section id="integrating-powers-of-x-but-not-1-x">
 <h2>2.1 integrating powers of x, but not 1/x<a class="headerlink" href="#integrating-powers-of-x-but-not-1-x" title="Permalink to this headline">#</a></h2>
@@ -2004,8 +2008,8 @@ initial or starting value and the upper limit the final value no matter which is
 <p>and this has to be simplified; the hardest part is factoring the denominator. Some experimenting is often required, however, the SymPy <span class="math notranslate nohighlight">\(\mathtt{factor(\cdots)}\)</span> instruction can make this easier,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">factor</span><span class="p">(</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">15</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>               <span class="c1"># now using SymPy</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">15</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2025,13 +2029,13 @@ initial or starting value and the upper limit the final value no matter which is
 <p>which is true for all values of <span class="math notranslate nohighlight">\(x\)</span>. Therefore, if <span class="math notranslate nohighlight">\(x = -3\)</span> then <span class="math notranslate nohighlight">\(A = 6/8 = 3/4\)</span> and if <span class="math notranslate nohighlight">\(x = 5\)</span> then <span class="math notranslate nohighlight">\(B = 1/4\)</span>. The integration becomes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{x-3}{x^2-2x-15}dx =\int \frac{3}{4(x+3)}+\frac{1}{4(x-5)}=\frac{3}{4}\ln(x+3)+\frac{1}{4}\ln(x-5)+const\]</div>
-<p>Of course we could use Sympy to do the whole integration</p>
+<p>Of course we could use SymPy to do the whole integration</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 
 <span class="n">eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2090,14 +2094,14 @@ a surprise that the same happens upon integration. For example,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle   \int \sin^2(x)dx =\int \left(\frac{e^{ix}-e^{-ix}}{2i}\right)^2dx=-\frac{1}{4}\int \left(e^{2ix}-2+e^{-2ix}\right) dx\\
 =-\frac{1}{4}\left(\frac{e^{2ix}}{2i}-2x-\frac{e^{-2ix}}{2i}  \right)=\frac{1}{4}\left(2x-\sin(2x)\right)\end{split}\]</div>
-<p>where the exponentials are converted back to a sine in the last step. Similarly integrations of the form <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx,\; \int e^x \cosh(x)dx\)</span>, and so forth can be evaluated by converting to their exponential form first.</p>
+<p>where the exponentials are converted back to a sine in the last step. Similarly integrations of the form <span class="math notranslate nohighlight">\(\displaystyle \int e^x\sin(x)dx,\; \int e^x \cosh(x)dx\)</span>, and so forth can be evaluated by converting to their exponential form first.</p>
 </section>
 <section id="mean-value-theorem-for-integrals">
 <h2>2.8 Mean Value Theorem for integrals<a class="headerlink" href="#mean-value-theorem-for-integrals" title="Permalink to this headline">#</a></h2>
 <p>The first <em>Mean Value Theorem</em> states that for a point <span class="math notranslate nohighlight">\(s\)</span> in the range of an integration, <span class="math notranslate nohighlight">\(a \le s \le b\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b f(x)dx = (b-a) \overline{f(s)}\]</div>
-<p>where <span class="math notranslate nohighlight">\(s\)</span> is the value of <span class="math notranslate nohighlight">\(x\)</span> when <span class="math notranslate nohighlight">\(\overline{f(s)}\)</span> is the <em>average value</em> of <span class="math notranslate nohighlight">\(f\)</span>. This is a very convenient way of calculating averages and is described further in Section 8.</p>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the value of <span class="math notranslate nohighlight">\(x\)</span> when <span class="math notranslate nohighlight">\(\overline{f(s)}\)</span> is the <em>average value</em> of <span class="math notranslate nohighlight">\(f\)</span>. This is a very convenient way of calculating averages and is described further in Section 8. An average value can also be written as <span class="math notranslate nohighlight">\(\langle f(s)\rangle\)</span>.</p>
 <p>This theorem also proves to be useful when performing numerical integrations with the Monte Carlo method, Chapter 12, where the equation is worked backwards, <span class="math notranslate nohighlight">\(f(s)\)</span> is calculated directly to produce the integral.</p>
 </section>
 <section id="non-integrability">
@@ -2117,11 +2121,17 @@ a surprise that the same happens upon integration. For example,</p>
 </section>
 <section id="improper-and-undefined-integrals">
 <h2>2.10 Improper and undefined integrals<a class="headerlink" href="#improper-and-undefined-integrals" title="Permalink to this headline">#</a></h2>
-<p>A number of functions when integrated produce infinity. These are conventionally called improper integrals, although there is nothing ‘improper’ about them, e.g. <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{e^x}{x}dx=\infty\)</span>.  The integrand <span class="math notranslate nohighlight">\(f(x)\)</span> usually has a point in the range of integration at which it becomes infinite. This can often be spotted, and surprisingly, only sometimes does this produce an infinite result. As an example, in the integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx\)</span>  the reciprocal of the square root becomes infinite at <span class="math notranslate nohighlight">\(x = 0\)</span>. Ignoring this for the moment, integrating using equation 6 then working out the limits produces a finite answer,</p>
+<p>A number of functions when integrated produce infinity. These are conventionally called improper integrals, although there is nothing ‘improper’ about them, e.g. <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{e^x}{x}dx=\infty\)</span>.  The integrand <span class="math notranslate nohighlight">\(f(x)\)</span> usually has a point in the range of integration at which it becomes infinite. This can often be spotted, and surprisingly, only sometimes does this produce an infinite result. As an example, in the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx\]</div>
+<p>the reciprocal of the square root becomes infinite at <span class="math notranslate nohighlight">\(x = 0\)</span>. Ignoring this for the moment, integrating using equation 6 then working out the limits produces a finite answer,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx=2\sqrt{x}\bigg|_0^1=2\]</div>
 <p>This is unexpected because the function is infinite at exactly <span class="math notranslate nohighlight">\(x=0\)</span> so one would expect an infinite area from 0 to 1 but the area  is actually finite.</p>
-<p>Conversely the integrals of the form  <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{1}{x^2}dx\)</span> or <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{1}{x-1}dx\)</span> and many similar reciprocal functions produce infinity and so are undefined or improper. Infinity is a strange beast.  Not surprisingly, if the range of the integration is changed so that the integrand is not infinite in the range, the integrals behave normally and give a finite result.</p>
+<p>Conversely the integrals of the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{1}{x^2}dx,\quad\text{or} \quad  \int_0^\infty \frac{1}{x-1}dx\]</div>
+<p>and many similar reciprocal functions produce infinity and so are undefined or improper. Infinity is a strange beast.  Unsurprisingly, if the range of the integration is changed so that the integrand is not infinite in the range, the integrals behave normally and give a finite result.</p>
 </section>
 <section id="integrals-with-infinite-limits">
 <h2>2.11 Integrals with infinite limits<a class="headerlink" href="#integrals-with-infinite-limits" title="Permalink to this headline">#</a></h2>
@@ -2140,13 +2150,13 @@ a surprise that the same happens upon integration. For example,</p>
 <section id="integration-with-sympy">
 <h2>2.13 Integration with SymPy<a class="headerlink" href="#integration-with-sympy" title="Permalink to this headline">#</a></h2>
 <p>Many integrals can be obtained using SymPy or other algebraic engines.</p>
-<p>Using Sympy the following method will work in most cases.</p>
+<p>Using SymPy the following method will work in most cases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,b&#39;</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a,n&#39;</span><span class="p">,</span> <span class="n">nonzero</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">eqn</span> <span class="o">=</span> <span class="n">tan</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,b&#39;</span><span class="p">)</span>                 <span class="c1"># using sympy</span>
+<span class="n">a</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a,n&#39;</span><span class="p">,</span> <span class="n">nonzero</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">eqn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2188,13 +2198,16 @@ a surprise that the same happens upon integration. For example,</p>
 <p>To make your own table make a list then loop over values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n,a,b,c&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>                <span class="c1"># use SymPy</span>
-<span class="n">eqns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)]</span>                <span class="c1"># list of integrals here </span>
-<span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n,a,b,c&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>                   <span class="c1"># use SymPy</span>
+
+<span class="n">eqns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>      <span class="c1"># list of integrals here </span>
+
+<span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>                                                               <span class="c1"># define empty array</span>
 <span class="k">for</span>  <span class="n">i</span><span class="p">,</span> <span class="n">eqn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eqns</span><span class="p">):</span> 
-    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span> <span class="n">eqns</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>   <span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>     <span class="c1"># append make list of answers</span>
+    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span> <span class="n">eqns</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>  <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>     <span class="c1"># .append(etc) makes list of answers</span>
     <span class="k">pass</span>
-<span class="n">ans</span>
+
+<span class="n">ans</span><span class="p">[:]</span>
 </pre></div>
 </div>
 </div>
@@ -2255,7 +2268,7 @@ a surprise that the same happens upon integration. For example,</p>
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

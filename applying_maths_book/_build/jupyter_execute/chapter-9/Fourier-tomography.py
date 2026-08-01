@@ -225,8 +225,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy import ndimage, misc
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+from scipy import ndimage
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 # make the sonogram from the image call it p[ ..., ...], image is n by n.
 # e.g n = 2**m to make FFT fast, say say 256
 # This code is slow and not the most efficient but illustrates the method. 
@@ -284,11 +284,7 @@ def filterproj(p):
     return imtest
 #----------------------------
 
-
-# In[2]:
-
-
-fig,(ax1,ax2,ax3) = plt.subplots( nrows=1, ncols=3, figsize=(15,10) )  # define plots
+fig,(ax1,ax2,ax3) = plt.subplots( nrows=1, ncols=3, figsize=(13,10) )  # define plots
 
 n = 2**8                                          # size of image to use
 nc = n//2                                         # integer division

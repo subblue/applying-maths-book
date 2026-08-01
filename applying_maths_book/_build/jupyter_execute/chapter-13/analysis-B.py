@@ -10,11 +10,15 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
+import sympy as sp
+plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+
+# In[2]:
+
+
 from scipy.integrate import quad,odeint
 from scipy.stats import t, norm, chi2, f
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## 6.1 Concept
@@ -134,13 +138,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Equations 31-33 are used to calculate the slope and intercept but the equations for the confidence limits are taken from Hines & Montgomery (1990, chapter 14). These equations are in the algorithm as C_slope and C_intercept and are given as equations 37 and 37. They are only valid in the range of the data but are extended to show the large error on the intercept. The mean square error, (mse in the calculation), is the reduced $\chi^2$ thus $\text{mse} =\chi^2/(n-2)$ and the $\chi^2$ is calculated with equation 25. 
 
-# In[2]:
+# In[3]:
 
 
 # Algorithm: Weighted Least Squares
 
 #--------------------------------      
-def lsq(xval,yval,w):  # y = a + bx
+def lsq(xval,yval,w):              # y = a + bx
     Sw   = np.sum(w)
     Sxw  = np.sum(xval*w)
     Syw  = np.sum(yval*w)
@@ -197,7 +201,8 @@ slope,intercept,mse,cov,std_dev_slope,std_dev_intercept,Z = lsq(xval,yval,w)  # 
 
 line = lambda x: x*slope + intercept      # define striaght line fit
 
-print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', intercept)  )
+print('{:s} {:8.4f} {:s} {:8.4f}'.format('slope = ',slope,' intercept = ', intercept)  )
+print('{:s} {:8.4f} {:s} {:8.4f}'.format('\u03c3'+ ' slope',std_dev_slope,', \u03c3'+' intercept = ', std_dev_intercept)  )
 
 
 # ![Drawing](analysis-fig8.png) 
@@ -255,15 +260,16 @@ print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', inter
 # ### **(i) Testing fit to data**
 # To find the probability of the $\chi^2$ being greater than a certain value, say $6.74$, which is the $\chi^2$ for the data in figure 8, ($0.843\times 8$ for $8$ degrees of freedom) the distribution is integrated from this value  to infinity just as was done for the normal and $t$ distributions discussed earlier. Using Python with the 'quad' integrating routine the calculation is. 
 
-# In[3]:
+# In[4]:
 
 
 # k is  degrees of freedom.  data from fit fig 8 and 9.
 # quad integrates from x = chi^2 to infinity
+# gamma function is found in sympy hence sp.gamma(etc.)
 n   = 10                                       # number data points
 k   = n - 2                                    # 2 parameters
 chi = 0.843*k                                  # multiply by k to make chi^2 not reduced value 
-fchi= lambda x,k: x**(k/2-1) * exp(-x/2)/(2**(k/2)*gamma(k/2))  # chi^2 distribution
+fchi= lambda x,k: x**(k/2-1) * sp.exp(-x/2)/(2**(k/2)*sp.gamma(k/2))  # chi^2 distribution
 Q, err = quad(fchi ,chi,np.inf, args=(k) )     # returns both integral value and its numerical error
 print('{:s}{:8.3g}'.format('Q = ',Q))
 
@@ -291,7 +297,7 @@ print('{:s}{:8.3g}'.format('Q = ',Q))
 # 
 # The  $\chi^2 = 0.83$ from the Hardy - Weinberg model is a good fit as this value is less that the value for $10$% probability with $k=1$ and so has a chance of $90$% of being correct, if it were bigger than $2.71$ it would have a $<10$% chance of being correct. The $\chi^2=6.74$ for the least squares fit in figs 8 & 9 for $k=8$ has a chance of being better than $90$% correct.
 
-# In[4]:
+# In[5]:
 
 
 p = np.array([0.10, 0.05, 0.025, 0.01])     # sigma values i.e. probability values to check against
@@ -300,7 +306,7 @@ print('     ------------------------')
 for k in range(1,13):
     print('{:4d}|'.format(k), end='')
     for sig in p:
-        print('{:6.2f}'.format (chi2.ppf(1-sig,k) ), end='' ) 
+        print('{:6.2f}'.format (chi2.ppf(1 - sig,k) ), end='' ) 
     print('')
 
 
@@ -414,20 +420,19 @@ for k in range(1,13):
 # 
 # The critical value of $F_0$ is calculated using Python with the $f$ distribution loaded via scipy.stats defined  the top of the page. (You must avoid using symbol $f$ in any other python as this overwrites the stats value). The ppf function below gives the quantile value needed at the $1$% level, hence the $0.99$ used below,
 
-# In[5]:
+# In[6]:
 
 
 f.ppf(0.99,1,8)    # f is name of distribution, see top of page, from scipy.stats ....
 
 
-# ## 6.7 Correlation coefficients
+# ## 6.7 Correlation coefficient, $R^2$
 # 
-# The correlation coefficient $R$ is often listed among the parameters when a spreadsheet or graphing package is used to analyse a straight line fit. It represents the proportion of the variation (information) in $y$ that can be accounted for by its relationship with $x$. However, in the physical and many of the biological sciences, this is a not a useful quantity and _should be avoided_ as a measure of how well a straight line describes the data. 
+# The correlation coefficient $R$ or more usually $R^2$ is often listed among the parameters when a spreadsheet or graphing package is used to analyse a straight line fit. It represents the proportion of the variation (information) in $y$ that can be accounted for by its relationship with $x$. However, in the physical and many of the biological sciences, this is a not a useful quantity and _should be avoided_ as a measure of how well a straight line describes the data. 
 # 
 # The reason is that what would be considered as a good fit has a correlation coefficient of, for example, $R = 0.99$ and a poor fit perhaps a value of $0.98$, which is so similar that it provides very poor discrimination between good and bad fits. This poor discrimination is illustrated if larger and larger random numbers are added to the data and the least squares fitting repeated until $R$ decreases slightly to $0.98$. However, the reduced $\chi^2$ has now increased to $\approx 8$ i.e. by about ten times, instead of being $\approx 1$, indicating that now, with the added random values, the model is a very poor fit to the data.
 # 
-# If $R$ is the sample correlation coefficient then $0 \lt R \lt 1$ and is defined as $R = b\sqrt{S_{xx} /S_{yy}}$ and
-# as the $S_{xx}$ and $S_{yy}$ depend only on the data points, the ratio is a constant multiplied by the gradient $b$ and this is why it is a poor statistic. The constant part is the 'spread' of the $x$ values divided by that of the $y$.
+# If $R$ is the sample correlation coefficient then $0 \lt R \lt 1$ and is defined as $R^2 = b^2S_{xx} /S_{yy}$ and as the $S_{xx}$ and $S_{yy}$ depend only on the data points, the ratio is a constant multiplied by a scale factor which is the gradient squared, $b^2$, and this is why it is a poor statistic. The constant part is the 'spread' of the $x$ values divided by that of the $y$.
 
 # ## 6.8 What function should I use for a linear fit, $y=bx$ or $y=a+bx$ ?
 # 

@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -36,14 +36,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \begin{bmatrix} 1 & 2\\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & 0\\ 2 & 1 \end{bmatrix}\begin{bmatrix} 1 & 1\\ 1 & 2 \end{bmatrix}-
 # \begin{bmatrix} 1 & 0\\ 2 & 1 \end{bmatrix}\begin{bmatrix} 1 & 2\\ 0 & 1 \end{bmatrix}\begin{bmatrix} 2 & 1\\ 1 & 1 \end{bmatrix}$$
 # 
-# This calculation can be done by hand as three matrix multiplications, starting with the right-hand pair of matrices in each part and subtracting the two matrices element by element. However, using python/Sympy to do this calculation is simpler. The matrix products $\pmb{A}^2\pmb{B}$ and $\pmb{B}^2\pmb{A}$ do not commute.
+# This calculation can be done by hand as three matrix multiplications, starting with the right-hand pair of matrices in each part and subtracting the two matrices element by element. However, using python/SymPy to do this calculation is simpler. The matrix products $\pmb{A}^2\pmb{B}$ and $\pmb{B}^2\pmb{A}$ do not commute.
 
 # In[2]:
 
 
-a, b = symbols('a, b')
-a = Matrix([[1,1],[0,1]])
-b = Matrix([[1,0],[1,1]])
+a, b = sp.symbols('a, b')
+a = sp.Matrix([[1,1],[0,1]])
+b = sp.Matrix([[1,0],[1,1]])
 a*a*b-b*b*a
 
 
@@ -64,13 +64,13 @@ a*a*b-b*b*a
 # 
 # (b) The inverse $\displaystyle \pmb{A}^{-1}=\frac{1}{ad-bc}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ and has a determinant $\displaystyle |\pmb{A}^{-1}|$. THis can be worked out in two ways; either divide each term by $ad-bc$ and evaluate or use $\displaystyle |j\pmb{M}|=j^n|\pmb{M}$, where $j$ is a number and $\pmb{M}$ a square matrix of size $n$. Either way the result is $\displaystyle |\pmb{A}^{-1}|=\frac{1}{ad-bc}$.
 # 
-# (c) Using Sympy for the calculation
+# (c) Using SymPy for the calculation
 
 # In[3]:
 
 
-b, c, d = symbols('b, c, d')
-M = Matrix([[0,b,c],[b,0,d],[c,d,0]])
+b, c, d = sp.symbols('b, c, d')
+M = sp.Matrix([[0,b,c],[b,0,d],[c,d,0]])
 M.det()
 
 
@@ -99,15 +99,15 @@ M.det()
 # 
 # and in each case $d/dx$ and $x$ do not commute. In quantum mechanics, the momentum operator is $-i\hbar d/dx $ and we know that momentum and position do not commute because it is not possible simultaneously to measure the position and momentum of a particle. This leads to the uncertainty relationship $\langle x\rangle\langle p\rangle \ge \hbar/2$ where the brackets indicate average values and $p$ is momentum.
 # 
-# (d) As a check using Sympy
+# (d) As a check using SymPy
 
 # In[5]:
 
 
-f, x, a = symbols('f, x, a')
-f = log(x)*sin(x)                    # any function 
-com = diff(f*x,x) - x*diff(f,x)      # commutator 
-simplify(com)
+f, x, a = sp.symbols('f, x, a')
+f = sp.log(x)*sp.sin(x)                    # make any function 
+com = sp.diff(f*x, x) - x*sp.diff(f, x)      # commutator 
+sp.simplify(com)
 
 
 # (e) the commutator is 
@@ -123,14 +123,12 @@ simplify(com)
 # In[6]:
 
 
-f = sin(x)
-com1 =  diff( f*integrate(f,(x,0,a)), x ) -  integrate( f*diff(f,x),(x,0,a)   )
+# still using SymPy
 
+f = sp.sin(x)
+com1 =  sp.diff( f*sp.integrate(f,(x,0,a)), x ) -  sp.integrate( f*sp.diff(f,x),(x,0,a)   )
 
-# In[7]:
-
-
-simplify(com1)
+sp.simplify(com1)
 
 
 # (f) If the displacement is represented as $\Delta$ the commutator is 

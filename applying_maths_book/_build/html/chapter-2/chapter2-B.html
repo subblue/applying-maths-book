@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3 De Moivre’s theorem and integer powers of complex numbers &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>3 De Moivre’s Theorem and Integer powers of complex numbers &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1513,12 +1513,25 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#complex-number-as-z-r-left-cos-theta-i-sin-theta-right">
-   3 Complex number as
+  <a class="reference internal nav-link" href="#a-complex-number-z-can-be-written-as-z-r-left-cos-theta-i-sin-theta-right">
+   3 A Complex number
+   <span class="math notranslate nohighlight">
+    \(z\)
+   </span>
+   can be written as
    <span class="math notranslate nohighlight">
     \(z = r\left(\cos(\theta) + i \sin(\theta)\right)\)
    </span>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#product-and-quotent">
+     <strong>
+      Product and quotent
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hyperbolic-functions-and-complex-numbers">
@@ -1529,28 +1542,39 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#roots-of-a-complex-number">
    3.2 Roots of a complex number
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-mathrm-th-root-of-unity">
+     <strong>
+      <span class="math notranslate nohighlight">
+       \(n^\mathrm{th}\)
+      </span>
+      root of unity
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor">
-   3.3 Euler’s theorem, roots of unity, x-ray diffraction structure factor.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#roots-of-unity-continued">
-   4.1 Roots of unity - continued
+  <a class="reference internal nav-link" href="#euler-s-theorem-and-n-mathrm-th-root-of-unity">
+   3.3 Euler’s theorem and
+   <span class="math notranslate nohighlight">
+    \(n^\mathrm{th}\)
+   </span>
+   root of unity
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-sum-and-product-of-the-roots-of-unity">
+    <a class="reference internal nav-link" href="#i-useful-relationships">
      <strong>
-      (i) Sum and product of the roots of unity
+      (i) Useful relationships
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-useful-relationships">
+    <a class="reference internal nav-link" href="#ii-sum-and-product-of-the-roots-of-unity">
      <strong>
-      (ii) Useful relationships
+      (ii) Sum and product of the roots of unity
      </strong>
     </a>
    </li>
@@ -1558,12 +1582,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples">
-   4.2 Examples
+   4.1 Examples
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#x-ray-diffraction-intensity-the-structure-factor-and-phase-problem">
-   4.3 x-ray diffraction intensity. The Structure Factor and Phase Problem
+   4.2 x-ray diffraction intensity. The Structure Factor and Phase Problem
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1599,7 +1623,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3 De Moivre’s theorem and integer powers of complex numbers</h1>
+                <h1>3 De Moivre’s Theorem and Integer powers of complex numbers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1610,12 +1634,25 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#complex-number-as-z-r-left-cos-theta-i-sin-theta-right">
-   3 Complex number as
+  <a class="reference internal nav-link" href="#a-complex-number-z-can-be-written-as-z-r-left-cos-theta-i-sin-theta-right">
+   3 A Complex number
+   <span class="math notranslate nohighlight">
+    \(z\)
+   </span>
+   can be written as
    <span class="math notranslate nohighlight">
     \(z = r\left(\cos(\theta) + i \sin(\theta)\right)\)
    </span>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#product-and-quotent">
+     <strong>
+      Product and quotent
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hyperbolic-functions-and-complex-numbers">
@@ -1626,28 +1663,39 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#roots-of-a-complex-number">
    3.2 Roots of a complex number
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-mathrm-th-root-of-unity">
+     <strong>
+      <span class="math notranslate nohighlight">
+       \(n^\mathrm{th}\)
+      </span>
+      root of unity
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor">
-   3.3 Euler’s theorem, roots of unity, x-ray diffraction structure factor.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#roots-of-unity-continued">
-   4.1 Roots of unity - continued
+  <a class="reference internal nav-link" href="#euler-s-theorem-and-n-mathrm-th-root-of-unity">
+   3.3 Euler’s theorem and
+   <span class="math notranslate nohighlight">
+    \(n^\mathrm{th}\)
+   </span>
+   root of unity
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-sum-and-product-of-the-roots-of-unity">
+    <a class="reference internal nav-link" href="#i-useful-relationships">
      <strong>
-      (i) Sum and product of the roots of unity
+      (i) Useful relationships
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-useful-relationships">
+    <a class="reference internal nav-link" href="#ii-sum-and-product-of-the-roots-of-unity">
      <strong>
-      (ii) Useful relationships
+      (ii) Sum and product of the roots of unity
      </strong>
     </a>
    </li>
@@ -1655,12 +1703,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples">
-   4.2 Examples
+   4.1 Examples
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#x-ray-diffraction-intensity-the-structure-factor-and-phase-problem">
-   4.3 x-ray diffraction intensity. The Structure Factor and Phase Problem
+   4.2 x-ray diffraction intensity. The Structure Factor and Phase Problem
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1698,31 +1746,32 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="de-moivre-s-theorem-and-integer-powers-of-complex-numbers">
-<h1>3 De Moivre’s theorem and integer powers of complex numbers<a class="headerlink" href="#de-moivre-s-theorem-and-integer-powers-of-complex-numbers" title="Permalink to this headline">#</a></h1>
-<section id="complex-number-as-z-r-left-cos-theta-i-sin-theta-right">
-<h2>3 Complex number as <span class="math notranslate nohighlight">\(z = r\left(\cos(\theta) + i \sin(\theta)\right)\)</span><a class="headerlink" href="#complex-number-as-z-r-left-cos-theta-i-sin-theta-right" title="Permalink to this headline">#</a></h2>
+<h1>3 De Moivre’s Theorem and Integer powers of complex numbers<a class="headerlink" href="#de-moivre-s-theorem-and-integer-powers-of-complex-numbers" title="Permalink to this headline">#</a></h1>
+<section id="a-complex-number-z-can-be-written-as-z-r-left-cos-theta-i-sin-theta-right">
+<h2>3 A Complex number <span class="math notranslate nohighlight">\(z\)</span> can be written as <span class="math notranslate nohighlight">\(z = r\left(\cos(\theta) + i \sin(\theta)\right)\)</span><a class="headerlink" href="#a-complex-number-z-can-be-written-as-z-r-left-cos-theta-i-sin-theta-right" title="Permalink to this headline">#</a></h2>
 <p>A complex number <span class="math notranslate nohighlight">\(z=a+ib\)</span> can be written equivalently as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z = r\left(\cos(\theta) + i \sin(\theta)\right)\]</div>
-<p>and if <span class="math notranslate nohighlight">\(n\)</span> is an integer, what is <span class="math notranslate nohighlight">\(z^n = r^n\left(\cos(\theta) + i \sin(\theta)\right)^n\)</span> ?</p>
-<p>The trigonometric part can be shown to have the simple form,</p>
+<p>and if <span class="math notranslate nohighlight">\(n\)</span> is an integer, what is <span class="math notranslate nohighlight">\(z^n = r^n\left(\cos(\theta) + i \sin(\theta)\right)^n\)</span>? The trigonometric part can be shown to have the simple form,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\;\cos(\theta) + i \sin(\theta)\;\right)^n = \cos(n\theta) + i \sin(n\theta) \qquad\tag{8}\]</div>
 <p>therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z^n = r^n\left(\cos(n\theta) + i \sin(n\theta) \right)\qquad\tag{9}\]</div>
-<p>which is called De Moivre’s theorem and is essential to calculating powers of complex numbers. One of the unexpected things that can be done is to find the <span class="math notranslate nohighlight">\(n^\mathrm{th}\)</span> root of <span class="math notranslate nohighlight">\(1,\, i, \,-3\)</span> or any other number for that matter.</p>
+<p>which is called De Moivre’s Theorem and is essential to calculating powers of complex numbers. One of the unexpected things that can be done is to find the <span class="math notranslate nohighlight">\(n^\mathrm{th}\)</span> root of <span class="math notranslate nohighlight">\(1,\, i, \,-3\)</span> or any other number for that matter.</p>
 <p>To demonstrate that De Moivre’s theorem is correct, calculate the product of two complex numbers expressed in angular form, and then let <span class="math notranslate nohighlight">\(\theta_1 = \theta_2\)</span>. Suppose, for simplicity, that <span class="math notranslate nohighlight">\(r_1 = r_2 = 1\)</span>, then the product of two numbers is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}
 \big(\cos(\theta_1) + i\sin(\theta_1)\big)\big(\cos(\theta_2) + i\sin(\theta_2)\big) 
-&amp; = \cos(\theta_1)\cos(\theta_2) + i \cos(\theta_1)\sin(\theta_2) + i\sin(\theta_1)\cos(\theta_2) -\sin(\theta_1)\sin(\theta_2)\\
-&amp;=\cos(\theta_1 +\theta_2)+i\sin(\theta_1 +\theta_2)
+&amp; = \cos(\theta_1)\cos(\theta_2) + i \cos(\theta_1)\sin(\theta_2) \\&amp;\quad+ i\sin(\theta_1)\cos(\theta_2) -\sin(\theta_1)\sin(\theta_2)\\
+&amp; = \cos(\theta_1 +\theta_2)+i\sin(\theta_1 +\theta_2)
 \end{align}\end{split}\]</div>
 <p>The double angle formula (Chapter 1.5.1) was used in the last step, and letting <span class="math notranslate nohighlight">\(\theta_1 = \theta_2\)</span> produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \big(\cos(\theta) + i\sin(\theta)\big)^2 = \cos(2\theta) + i\sin(2\theta)\]</div>
 <p>as predicted by De Moivre’s theorem. This result can be generalized to any power of a real or complex value <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<section id="product-and-quotent">
+<h3><strong>Product and quotent</strong><a class="headerlink" href="#product-and-quotent" title="Permalink to this headline">#</a></h3>
 <p>The product <span class="math notranslate nohighlight">\(z_1z_2\)</span> and quotient <span class="math notranslate nohighlight">\(z_1/z_2\)</span> of two complex numbers are written in this form as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z_1z_2 = r_1r_2\big(\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)\big) \qquad\tag{10}\]</div>
@@ -1733,6 +1782,7 @@ title="Print to PDF"
 <p>There is a geometrical interpretation to multiplying two complex numbers. If their moduli are unity, <span class="math notranslate nohighlight">\(z_1 = \cos(\theta_1) + i \sin(\theta_1)\)</span> and <span class="math notranslate nohighlight">\(z_2 = \cos(\theta_2) + i \sin(\theta_2)\)</span>, then multiplication results in rotation about the origin, equation (10). Geometrically this is shown in figure 5.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig5.png" /></p>
 <p>Figure 5. Geometrical interpretation of the multiplication of two complex numbers.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="hyperbolic-functions-and-complex-numbers">
@@ -1747,7 +1797,7 @@ title="Print to PDF"
 <section id="roots-of-a-complex-number">
 <h2>3.2 Roots of a complex number<a class="headerlink" href="#roots-of-a-complex-number" title="Permalink to this headline">#</a></h2>
 <p>Suppose that <span class="math notranslate nohighlight">\(w\)</span> is a real or complex number whose roots we need to find, then mathematicians have shown that, in general, the answer will be a complex number. If the <span class="math notranslate nohighlight">\(n\)</span> roots of a number <span class="math notranslate nohighlight">\(z\)</span> are expressed as <span class="math notranslate nohighlight">\(w = z^{1/n}\)</span>, then the equation to examine is <span class="math notranslate nohighlight">\(w^n = z\)</span>.</p>
-<p>We will let both sides of this equation be different complex numbers. Expressing the left-hand side in angular form using De Moivre’s theorem with a polar angle <span class="math notranslate nohighlight">\(\varphi\)</span> gives</p>
+<p>We will let both sides of this equation be a complex number. Expressing the left-hand side in angular form using De Moivre’s theorem with a polar angle <span class="math notranslate nohighlight">\(\varphi\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w^n = R^n(\cos(n\varphi) + i \sin(n\varphi)) \qquad\tag{11}\]</div>
 <p>The right-hand side of the equation is</p>
@@ -1759,11 +1809,12 @@ title="Print to PDF"
 <p>where <span class="math notranslate nohighlight">\(k = 0,\, 1,\, 2, \cdots n - 1\)</span> because sine and cosine are cyclic functions; <span class="math notranslate nohighlight">\(\sin(\theta) = \sin(\theta + 2\pi) = \sin(\theta + 4\pi)\)</span> and so forth, therefore there will be more than one root to the equation. Using <span class="math notranslate nohighlight">\(n\varphi = \theta\)</span> only allows one root to be found. Using equations 11 and 13, gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w=r^{1/n}\left( \cos\left( \frac{\theta+2\pi k}{n} \right) +i\sin\left( \frac{\theta+2\pi k}{n} \right)  \right) \qquad\tag{14}\]</div>
+<section id="n-mathrm-th-root-of-unity">
+<h3><strong><span class="math notranslate nohighlight">\(n^\mathrm{th}\)</span> root of unity</strong><a class="headerlink" href="#n-mathrm-th-root-of-unity" title="Permalink to this headline">#</a></h3>
 <p>In the special case of calculating the <span class="math notranslate nohighlight">\(n^\mathrm{th}\)</span> root of unity, <span class="math notranslate nohighlight">\(w^n = 1\)</span> and <span class="math notranslate nohighlight">\(z = 1\)</span>, then from equation 12, <span class="math notranslate nohighlight">\(r = 1,\; \theta = 0\)</span> and therefore,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w= \cos\left( \frac{2\pi k}{n} \right) +i\sin\left( \frac{2\pi k}{n} \right)   \qquad\tag{15}\]</div>
-<p>There is always one real root and the other roots fall on the vertices of a polygon which is formed inside a circle of unit radius and touches the circle only at its vertices.</p>
-<p>To illustrate the method, <span class="math notranslate nohighlight">\(w^5 = 1\)</span> is solved to find the five, fifth roots of unity. The equation to use is <span class="math notranslate nohighlight">\(w^n = z\)</span> with <span class="math notranslate nohighlight">\(n = 5\)</span> and <span class="math notranslate nohighlight">\(z = 1\)</span>. The roots are the solution of equation 15 with <span class="math notranslate nohighlight">\(n = 5\)</span>,</p>
+<p>There is always one real root and the other roots fall on the vertices of a polygon which is formed inside a circle of unit radius and touches the circle only at its vertices. To illustrate this, <span class="math notranslate nohighlight">\(w^5 = 1\)</span> is solved to find the five, fifth roots of unity. The equation to use is <span class="math notranslate nohighlight">\(w^n = z\)</span> with <span class="math notranslate nohighlight">\(n = 5\)</span> and <span class="math notranslate nohighlight">\(z = 1\)</span>. The roots are the solution of equation 15 with <span class="math notranslate nohighlight">\(n = 5\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z=1^{1/5}= \cos\left( \frac{2\pi k}{5} \right) \pm i\sin\left( \frac{2\pi k}{n} \right)   \]</div>
 <p>where <span class="math notranslate nohighlight">\(k = 0, \,1, \,2, \,3, \,4\)</span>. The principal value of the equation is the one solved with <span class="math notranslate nohighlight">\(k = 0\)</span>. The
@@ -1775,11 +1826,10 @@ five roots are then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \theta = \tan^{-1}\left(\frac{\sin(2\pi/5)}{\cos(2\pi/5)}\right) \equiv 72^\mathrm{o}\]</div>
 <p>and the other roots are separated from each other by the same angle as expected for a pentagon, see figure 6.</p>
-<p><img alt="Drawing" src="../_images/chapter2-fig6.png" /></p>
-<p>Figure 6. The five roots of the equation <span class="math notranslate nohighlight">\(z^5 = 1\)</span> form a pentagon. The radial lines to each root are <span class="math notranslate nohighlight">\(72^\text{o}\)</span> apart.</p>
 </section>
-<section id="euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor">
-<h2>3.3 Euler’s theorem, roots of unity, x-ray diffraction structure factor.<a class="headerlink" href="#euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="euler-s-theorem-and-n-mathrm-th-root-of-unity">
+<h2>3.3 Euler’s theorem and <span class="math notranslate nohighlight">\(n^\mathrm{th}\)</span> root of unity<a class="headerlink" href="#euler-s-theorem-and-n-mathrm-th-root-of-unity" title="Permalink to this headline">#</a></h2>
 <p>The exponential series is <span class="math notranslate nohighlight">\(\displaystyle e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\)</span>, and similarly a series can be formed in the complex number <span class="math notranslate nohighlight">\(w\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle e^w = 1 + w + \frac{w^2}{2!} + \frac{w^3}{3!} + \cdots\]</div>
@@ -1810,9 +1860,6 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <div class="math notranslate nohighlight">
 \[\displaystyle  e^{i\pi} =-1 \qquad  \text{ or } \qquad  e^{i\pi} +1=0 \qquad\tag{19}\]</div>
 <p>which some consider the most beautiful equation in mathematics, as it connects the most important numbers of mathematics <span class="math notranslate nohighlight">\((0, 1, i, e\)</span>, and <span class="math notranslate nohighlight">\(\pi)\)</span> and uses the most important operations (multiplication, exponentiation, negation, and addition). Furthermore, an integer is produced by raising an irrational number <span class="math notranslate nohighlight">\(\pi\)</span> times the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> to the power of another irrational number, <span class="math notranslate nohighlight">\(e\)</span>. It is not at all obvious why this connection exists from an arithmetical standpoint, but from a geometrical one it is clearer. Consider a circle of unit radius on an Argand diagram; as the angle <span class="math notranslate nohighlight">\(\theta\)</span> increases from <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span>, the modulus (radius) is <span class="math notranslate nohighlight">\(1\)</span> when <span class="math notranslate nohighlight">\(\theta = 0\)</span>, and is <span class="math notranslate nohighlight">\(i\)</span> when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>, and <span class="math notranslate nohighlight">\(-1\)</span> when the angle is <span class="math notranslate nohighlight">\(\pi\)</span> and so on; see figure 4.</p>
-</section>
-<section id="roots-of-unity-continued">
-<h2>4.1 Roots of unity - continued<a class="headerlink" href="#roots-of-unity-continued" title="Permalink to this headline">#</a></h2>
 <p>The <span class="math notranslate nohighlight">\(n\)</span> complex roots of unity are also easily calculated by defining</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w_n=e^{2\pi i /n}\qquad\tag{20}\]</div>
@@ -1823,8 +1870,25 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}w_4^0=&amp;\;1,\\ w_4^1 = &amp; \;\cos(\pi/2)+i\sin(\pi/2)=i,\\w_4^2 = &amp; \;\cos(\pi)+i\sin(\pi)=-1,\\ w_4^3 = &amp; \;\cos(3\pi/2)+i\sin(3\pi/2) = -i  \end{align}\end{split}\]</div>
 <p>With the definition of eqn 20, <span class="math notranslate nohighlight">\((w_n)^n\equiv w_n^n=e^{2\pi i}=1 =w_n^0\)</span>. if we add <span class="math notranslate nohighlight">\(n\)</span> to any of the roots for example <span class="math notranslate nohighlight">\(w_n^{j+n}\)</span> then  <span class="math notranslate nohighlight">\(w_n^{j+n}=w_n^nw_n^j=w_n^j\)</span> which shows that the roots are cyclic <span class="math notranslate nohighlight">\(j\)</span> being an integer and have a period of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<section id="i-sum-and-product-of-the-roots-of-unity">
-<h3><strong>(i) Sum and product of the roots of unity</strong><a class="headerlink" href="#i-sum-and-product-of-the-roots-of-unity" title="Permalink to this headline">#</a></h3>
+<p><img alt="Drawing" src="../_images/chapter2-fig6.png" /></p>
+<p>Figure 6. The five roots of the equation <span class="math notranslate nohighlight">\(z^5 = 1\)</span> form a pentagon. The radial lines to each root are <span class="math notranslate nohighlight">\(72^\text{o}\)</span> apart. <span class="math notranslate nohighlight">\(w_5^k= \exp(2\pi i\cdot k/n)\)</span>.</p>
+<section id="i-useful-relationships">
+<h3><strong>(i) Useful relationships</strong><a class="headerlink" href="#i-useful-relationships" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{l|llll}
+\hline
+e^{i\pi}&amp;=e^{3i\pi}&amp;=e^{5i\pi}\cdots &amp;= -1\\
+e^{2i\pi}&amp;=e^{4i\pi}&amp;=e^{6i\pi}\cdots &amp;= +1\\
+e^{ni\pi}&amp;=e^{-ni\pi}&amp;=(-1)^n&amp; n\text{ is integer}\\
+e^{i\theta}+e^{- i\theta}&amp;=2\cos(\theta) \\
+e^{i\theta}-e^{- i\theta}&amp;=2i\sin(\theta)\\
+n = &amp; 1&amp;2 &amp;3 &amp;4 &amp;5\\
+e^{-ni\pi/2 }=&amp; -i&amp;-1&amp;i&amp;1&amp;-i&amp;\cos(n\pi/2)-\sin(n\pi/2)\\
+e^{+ni\pi/2 }=&amp; i&amp;-1&amp;-i&amp;1&amp;i &amp; \cos(n\pi/2)+\sin(n\pi/2)\\
+\hline\end{array}\end{split}\]</div>
+</section>
+<section id="ii-sum-and-product-of-the-roots-of-unity">
+<h3><strong>(ii) Sum and product of the roots of unity</strong><a class="headerlink" href="#ii-sum-and-product-of-the-roots-of-unity" title="Permalink to this headline">#</a></h3>
 <p>Figure 5 shows the five roots of unity. The sum of these roots, provide there are two or more, is zero, which can be intuitively seen by looking at the image. A geometric argument is that each root can be considered as a vector based at <span class="math notranslate nohighlight">\((0,0i)\)</span> and their sum will be zero as each is equally spaced from its neighbour.</p>
 <p>The sum is</p>
 <div class="math notranslate nohighlight">
@@ -1835,7 +1899,7 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <p>making the substitution <span class="math notranslate nohighlight">\(x=e^{2\pi i/n}\)</span> produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle S=\frac{1-e^{2\pi i}}{1-e^{2\pi i/n}}=0\]</div>
-<p>because we know from eqn. 20 that <span class="math notranslate nohighlight">\((w_n)^n=e^{2\pi i}=1\)</span> the sum is zero.</p>
+<p>because we know from eqn. 20 that <span class="math notranslate nohighlight">\((w_n)^n=e^{2\pi i}=1\)</span> the sum is zero. This is clear also from figure 6. The symmetrically placed values must add to zero no matter what <span class="math notranslate nohighlight">\(n\)</span> is.</p>
 <p>The product is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \prod_{k=0}^{n-1} x^k= x^{n(n-1)/2}\]</div>
@@ -1843,20 +1907,11 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <div class="math notranslate nohighlight">
 \[\displaystyle e^{2\pi i (n-1)/2}=e^{i\pi n}e^{-i\pi}\]</div>
 <p>As <span class="math notranslate nohighlight">\(e^{-i\pi} = -1\)</span> and the other term is <span class="math notranslate nohighlight">\(\pm 1\)</span> depending on whether <span class="math notranslate nohighlight">\(n\)</span> is odd or even therefore the product is always <span class="math notranslate nohighlight">\( 1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is even and <span class="math notranslate nohighlight">\(-1\)</span> if odd, i.e <span class="math notranslate nohighlight">\((-1)^n\)</span>.</p>
-</section>
-<section id="ii-useful-relationships">
-<h3><strong>(ii) Useful relationships</strong><a class="headerlink" href="#ii-useful-relationships" title="Permalink to this headline">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{array}\\
-e^{i\pi}&amp;=e^{3i\pi}&amp;=e^{5i\pi}\cdots &amp;= -1\\
-e^{2i\pi}&amp;=e^{4i\pi}&amp;=e^{6i\pi}\cdots &amp;= +1\\
-e^{ni\pi}&amp;=e^{-ni\pi}&amp;=(-1)^n&amp; n\text{ is any integer}\\
-e^{i\theta}+e^{- i\theta}&amp;=2\cos(\theta) \\
-e^{i\theta}-e^{- i\theta}&amp;=2i\sin(\theta) \end{array}\end{split}\]</div>
+<p>An example of summing the roots of unity is found when balancing a centrifuge. In fig 6, we can see that only by filling all five positions will balance be achieved. This means that <span class="math notranslate nohighlight">\(w^0+w^1+w^2+w^3+w^4=0\)</span>. It looks as if balance can be achieved if <span class="math notranslate nohighlight">\(k = 0,2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> are added together, but on closer inspection it can be seen that this is not true because <span class="math notranslate nohighlight">\(w^2+w^3= e^{2i\pi 2/5}+e^{2i\pi 3/5} =2\cos(4\pi/5)=-1.62 \ne -1\)</span>. If there were six positions in a centrifuge besides filling all six, positions <span class="math notranslate nohighlight">\(2,3\)</span> and <span class="math notranslate nohighlight">\(4\)</span> can be filled and the centrifuge is balanced. The theory for this is explained in this article. Matthew H. Baker (2022) ‘Balancing Centrifuges with Number Theory’, Math Horizons, vol 30, p. 20-23 (DOI: 10.1080/10724117.2022.2092372)</p>
 </section>
 </section>
 <section id="examples">
-<h2>4.2 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<h2>4.1 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <p>Euler’s formula is important in science, because it permits the description of a sinusoidally varying real quantity by means of complex exponentials as in Fourier Transforms described in Chapter 9. This change simplifies equations, because it is far easier to manipulate exponentials than trig functions. For example, the general form of a sinusoidally varying quantity, such as a plane wave, is <span class="math notranslate nohighlight">\(f (t) = a_0\cos(\omega t - \theta)\)</span>, where <span class="math notranslate nohighlight">\(a_0\)</span> is the amplitude, <span class="math notranslate nohighlight">\(\omega\)</span> the frequency, and <span class="math notranslate nohighlight">\(\theta\)</span> the phase. These are all constants, and <span class="math notranslate nohighlight">\(t\)</span> is time and is a real variable. The equivalent complex function is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(t) = a_0e^{i(\theta-\omega t)} = a_0\left(\cos(\omega t - \theta) - i \sin(\omega t - \theta)\right)\]</div>
@@ -1872,7 +1927,7 @@ and, since <span class="math notranslate nohighlight">\(r = 1\)</span> and <span
 </section>
 <hr class="docutils" />
 <section id="x-ray-diffraction-intensity-the-structure-factor-and-phase-problem">
-<h2>4.3 x-ray diffraction intensity. The Structure Factor and Phase Problem<a class="headerlink" href="#x-ray-diffraction-intensity-the-structure-factor-and-phase-problem" title="Permalink to this headline">#</a></h2>
+<h2>4.2 x-ray diffraction intensity. The Structure Factor and Phase Problem<a class="headerlink" href="#x-ray-diffraction-intensity-the-structure-factor-and-phase-problem" title="Permalink to this headline">#</a></h2>
 <p>In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffraction by a single crystal is described. The structure factor <span class="math notranslate nohighlight">\(F\)</span> described how the intensity of a given ‘reflection’ is related to the coordinates of the atoms in the unit cell <em>via</em> the Miller indices <span class="math notranslate nohighlight">\(( h k l )\)</span> of the planes of atoms. The Miller indices are integers that can be positive, zero or negative. The planes of atoms occur because the unit cell is repeated throughout the crystal to form a lattice of points. The unit cell is the smallest arrangement of atoms from which the whole crystal can be constructed.</p>
 <p>The fractional position of an atom is <span class="math notranslate nohighlight">\(u,v,w\)</span> making the scattering factor,</p>
 <div class="math notranslate nohighlight">
@@ -1905,7 +1960,7 @@ and, since <span class="math notranslate nohighlight">\(r = 1\)</span> and <span
 <p>Although we can form the complex conjugate and calculate</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F^*F=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})\]</div>
-<p>in this case it is not necessary because <span class="math notranslate nohighlight">\(h, k, l\)</span> are integers and we know that <span class="math notranslate nohighlight">\(e^{n i\pi}=e^{-n i\pi}=(-1)^2\)</span>. Thus when <span class="math notranslate nohighlight">\(h+k\)</span> is an even number <span class="math notranslate nohighlight">\(F=2f\)</span> and when it is not <span class="math notranslate nohighlight">\(F=0\)</span>. The value of <span class="math notranslate nohighlight">\(l\)</span> has no effect thus refections from indices, for example, <span class="math notranslate nohighlight">\(131, 132, 133\)</span> etc. all have the same intensity, and similarly <span class="math notranslate nohighlight">\(122,123,124\)</span> etc. are all missing with zero structure factor.</p>
+<p>in this case it is not necessary because <span class="math notranslate nohighlight">\(h, k, l\)</span> are integers and we know that <span class="math notranslate nohighlight">\(e^{n i\pi}=e^{-n i\pi}=(-1)^n\)</span>. Thus when <span class="math notranslate nohighlight">\(h+k\)</span> is an even number <span class="math notranslate nohighlight">\(F=2f\)</span> and when it is not <span class="math notranslate nohighlight">\(F=0\)</span>. The value of <span class="math notranslate nohighlight">\(l\)</span> has no effect thus refections from indices, for example, <span class="math notranslate nohighlight">\(131, 132, 133\)</span> etc. all have the same intensity, and similarly <span class="math notranslate nohighlight">\(122,123,124\)</span> etc. are all missing with zero structure factor.</p>
 <p>The direct calculation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}F^*F&amp;=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})\\&amp;=f^2(2+e^{-i\pi(h+k)}+e^{+i\pi(h+k)})\\&amp;=2f^2\big(1+\cos(\,(h+k)\pi \,)\big)\end{align}\end{split}\]</div>
@@ -1984,7 +2039,7 @@ and, since <span class="math notranslate nohighlight">\(r = 1\)</span> and <span
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

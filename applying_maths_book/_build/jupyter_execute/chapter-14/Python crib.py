@@ -9,14 +9,11 @@
 # First import all python add-ons etc that will be needed later on
 # the next line is specific 'magic' instruction to jupyter notebook ; do not add anything ele to that line
 get_ipython().run_line_magic('matplotlib', 'inline')
-
 import numpy as np               # general python    fast numerical calculation
 import matplotlib.pyplot as plt  # general python    plotting  always used
-
 from scipy.integrate import quad # specific use: e.g. import general numerical integration routine;
-
-from sympy import *              # algebraic solution of equations, only add if doing algebraic things 
-init_printing()                  # allows printing of SymPy results in typeset maths format
+import sympy as sp               # algebraic solution of equations, only add if doing algebraic things 
+sp.init_printing()               # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots, alter at will.
 
 
@@ -30,13 +27,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots, alter at will
 # 
 # **(4)** Division takes two forms, a/b for normal floating point, i.e. 3/2 = 1.5 and a//b for integer division, i.e. 3//2 = 1
 # 
-# **(5)** Functions sin, cos or your own function use round brackets i.e. $\mathtt{np.tan(x)}$, where $x$ can be floating point or integer and the function is evaluated at hat value. 
+# **(5)** Functions sin, cos or your own function use round brackets i.e. $\mathtt{np.tan(x)}$, where $x$ can be floating point or integer. Built in functions , cos, exp, simplify etc. are prefixed by $\mathtt{np.}$ for numpy and $\mathtt{sp.}$ for sympy functions, i.e. $\mathtt{np.exp(x)}$  or $\mathtt{sp.exp(x) }$. This is because we defined $\mathtt{import\; sympy \;as \;sp}$ and similarly for numpy  at the start of the coding. The same applies to plotting routines, $\mathtt{plt.plot(x,y)} $ etc.
 # 
-# **(6)** Arrays/lists use square brackets, e.g. $\mathtt{myary[i]}$ and integer index, $i$, and returns the value at that index.
+# **(6)** Arrays / lists use square brackets, e.g. $\mathtt{myary[i]}$ and integer index, $i$, and returns the value at that index. All indices start at zero.
 # 
 # **(7)** Normal functions sin, cos etc. are unknown and have to be accessed _via_ NumPy as $\mathtt{np.sin(x), \;np.exp(x),\; np.pi }$ etc. Use NumPy for any numerical calculation other than trivial ones as it is fast.
 # 
-# **(8)** Powers are made as $\mathtt{x**(1J+3)}$ etc.
+# **(8)** Powers are made as $\mathtt{x**(1J+3)}$ etc. In sympy i is represented as $\mathtt{sp.I}$ buy you can always define $\mathtt{i=sp.I}$
 # 
 # **(9)** Indexing lists, sets, and arrays all start at zero, i.e. the first element of mylist is, $\mathtt{mylist[ 0 ]}$. If the list is of length $n$ the last element is $\mathtt{mylist[n-1]}$
 # 
@@ -85,7 +82,7 @@ print(mylist)             # or
 print(mylist[ : ])
 
 
-# **(14)** Printing using  f''  notation
+# **(14)** Printing using  $f$  notation
 # 
 # A new and quick method to print is using *f* notation, thus to print ' one fifth = 1/6 ' we could use
 
@@ -214,7 +211,7 @@ print('printing b[4][1] will lead to an error e.g.')
 #print(b[4][1])       the error produced here will stop the notebook code cell from continuing until it is fixed.
 
 
-# ## 7 Numerics are much faster with NumPy.
+# ## 7 Numerics are much, much faster with NumPy.
 # 
 # Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic Python.
 
@@ -508,11 +505,12 @@ plt.show()
 # In[24]:
 
 
-# average distance algebraically using SymPy
-n,r = symbols(' n, r')                       # define symbols to use SymPy . Note also that pi and exp are known by SymPy.
-
-f01 = 4*pi*r**3*n*exp(-4*pi*r**3*n/3)       # note that we do not use np.exp or np.pi as SymPy knows functions
-av=  integrate(f01,(r,0,oo), conds = 'none')  # use conds ='none' if you are happy that no funny results are expected.
+# average distance algebraically using SymPy. sp.oo is infinity in SymPy
+n,r = sp.symbols(' n, r')                      # define symbols to use SymPy . Note also that sp.pi and sp.exp are known by SymPy.
+pi  = sp.pi                                     # re-define fo rconvenience
+inf = sp.oo
+f01 = 4*pi*r**3*n*sp.exp(-4*pi*r**3*n/3)       # note that we do not use np.exp or np.pi as SymPy knows functions
+av  =  sp.integrate(f01,(r,0,inf), conds = 'none')  # use conds ='none' if you are happy that no funny results are expected.
 av
 
 
@@ -562,12 +560,12 @@ else:
 
 # assume SymPy already loaded.
 
-n,r = symbols('n, r')                       # define symbols to use .
+n,r = sp.symbols('n, r')                    # define symbols to use .
                                             # Note also that pi and exp are known by SymPy.
+pi  = sp.pi                                  # re-define fo rconvenience
+f01 = 4*pi*r**3*n*sp.exp(-4*pi*r**3*n/3)
 
-f01 = 4*pi*r**3*n*exp(-4*pi*r**3*n/3)
-
-Q = simplify( diff(f01,r) )                 # differentiate wrt r and simplify
+Q = sp.simplify( sp.diff(f01,r) )           # differentiate wrt r and simplify
 Q                                           # do calculation
 #print(Q)
 
@@ -575,7 +573,7 @@ Q                                           # do calculation
 # In[27]:
 
 
-S = series(Q,r,0,15)                        # expand Q (above) about zero and to powers of r**15 if possible 
+S = sp.series(Q,r,0,15)                        # expand Q (above) about zero and to powers of r**15 if possible 
 S
 
 
@@ -584,8 +582,8 @@ S
 # In[28]:
 
 
-S = series(Q,r,0,15).removeO()   # expand Q (above) remove big O and then simplify
-simplify(S)
+S = sp.series(Q,r,0,15).removeO()   # expand Q (above) remove big O and then simplify
+sp.simplify(S)
 
 
 # ## 14 Drawing two or more plots
@@ -721,11 +719,11 @@ plt.show()
 # In[31]:
 
 
-k1, k2, km1,t = symbols(' k1, k2, km1, t')
+k1, k2, km1,t = sp.symbols(' k1, k2, km1, t')
 
-B = Function('B')               # unknown function B has t as variable
-de= Derivative(B(t),t,t) + (k1+k2+km1)*Derivative(B(t),t) + k1*k2*B(t)
-s = dsolve(de )
+B = sp.Function('B')               # unknown function B has t as variable
+de= sp.Derivative(B(t),t,t) + (k1+k2+km1)*sp.Derivative(B(t),t) + k1*k2*B(t)
+s = sp.dsolve(de )
 s
 #print(s)
 
@@ -909,7 +907,7 @@ with open(dataname) as f:
 from scipy.optimize import curve_fit
 from matplotlib import gridspec                                     # get this to force size of graphs
 
-fig1= plt.figure(figsize=(8.5, 9))
+fig1= plt.figure(figsize=(6.5, 7))
 fig1.suptitle('Curve Fitting')
 gs = gridspec.GridSpec(2, 1,width_ratios=[1],height_ratios=[1,4])   # make plots different sizes
 ax1 = fig1.add_subplot(gs[0])
@@ -978,8 +976,7 @@ plt.show()
 
 # example of contour plotting for 2D particle in a box spatial wavefunctions
 
-fig1= plt.figure(figsize=(12, 6))
-plt.rcParams.update({'font.size': 16})  # set font size for plots, alter at will.
+fig1= plt.figure(figsize=(8, 4))
 
 ax0 = fig1.add_subplot(1,2,1)           # 1 row 2 cols in plot then ax0 is plot 1.
 ax1 = fig1.add_subplot(1,2,2)   
@@ -1003,7 +1000,7 @@ for i in range(num):
         psiT[i,j]= 1-( f(n, Xa[i,j] )*f(m,Xb[i,j]) - f( n,Xb[i,j] )*f(m,Xa[i,j]) )**2
         psiS[i,j]= 1-( f(n, Xa[i,j] )*f(m,Xb[i,j]) + f( n,Xb[i,j] )*f(m,Xa[i,j]) )**2
         
-cmap = plt.cm.RdYlBu                      # color map 
+cmap = plt.cm.RdYlBu                      # RdYlBu is color map name
 ax0.contour(Xa,Xb,psiT,cmap=cmap,levels=20)
 ax0.set_title('Triplet')
 ax1.contour(Xa,Xb,psiS,cmap=cmap,levels=20)

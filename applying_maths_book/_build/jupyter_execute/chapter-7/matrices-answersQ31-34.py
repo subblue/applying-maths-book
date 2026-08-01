@@ -3,19 +3,6 @@
 
 # # Solutions Q31 - 34
 
-# In[1]:
-
-
-# import all python add-ons etc that will be needed later on
-get_ipython().run_line_magic('matplotlib', 'inline')
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 14})  # set font size for plots
-
-
 # ## Q31 answer
 # The coordinates of vector $V_1$ are $x_1 = r\cos(\alpha)$ and $y_1 = r\sin(\alpha)$ and the second vector is rotated by $\theta$ from the first, so that $V_2$ has x-coordinate 
 # 

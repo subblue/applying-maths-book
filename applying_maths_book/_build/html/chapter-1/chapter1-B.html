@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1586,8 +1586,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#factorials-stirling-s-formula-gamma-function">
-   8 Factorials, Stirling’s formula, gamma function
+  <a class="reference internal nav-link" href="#factorials-stirling-s-formula-and-gamma-function">
+   8 Factorials, Stirling’s formula and Gamma function
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1697,8 +1697,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#factorials-stirling-s-formula-gamma-function">
-   8 Factorials, Stirling’s formula, gamma function
+  <a class="reference internal nav-link" href="#factorials-stirling-s-formula-and-gamma-function">
+   8 Factorials, Stirling’s formula and Gamma function
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1733,8 +1733,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1899,8 +1899,8 @@ title="Print to PDF"
 <p>These identities can be checked using SymPy, for example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">(</span> <span class="n">cosh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sinh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1923,22 +1923,35 @@ title="Print to PDF"
 <p><img alt="Drawing" src="../_images/chapter1-fig14.png" /></p>
 <p>Figure 14. Circle and hyperbola. The point is at <span class="math notranslate nohighlight">\(\theta\)</span> or <span class="math notranslate nohighlight">\(t= \pi/4\)</span>.</p>
 <p><img alt="Drawing" src="../_images/chapter1-fig15.png" /></p>
-<p>Figure 15. Some of the hyperbolic and normal trigonometric functions. Notice how  <span class="math notranslate nohighlight">\(\tan(x)\)</span> goes to <span class="math notranslate nohighlight">\(\pm\infty\)</span> in multiples of <span class="math notranslate nohighlight">\(x = \pm\pi/2\)</span>.</p>
+<p>Figure 15. Some of the hyperbolic and normal trigonometric functions. Notice how  <span class="math notranslate nohighlight">\(\tan(x)\)</span> goes to <span class="math notranslate nohighlight">\(\pm\infty\)</span> in multiples of <span class="math notranslate nohighlight">\(x = \pm\pi/2\)</span>. The vertical dashed lines are at <span class="math notranslate nohighlight">\(\pm \pi/2\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="inverse-functions">
 <h2>6 Inverse functions<a class="headerlink" href="#inverse-functions" title="Permalink to this headline">#</a></h2>
-<p>The log and exponential functions are inverses of one another, and similarly <span class="math notranslate nohighlight">\(x^n\)</span> and <span class="math notranslate nohighlight">\(x^{1/n}\)</span> because when one is made a function of the other, the result is <span class="math notranslate nohighlight">\(x;\; \ln(e^x) = x\)</span> and <span class="math notranslate nohighlight">\((x^{1/n})^n = x\)</span>. If the function is written as <span class="math notranslate nohighlight">\(f(x)\)</span> then the inverse is <span class="math notranslate nohighlight">\(f^{-1}(x)\)</span>, therefore</p>
+<p>The log and exponential functions are the inverse of one another, because when one is made a function of the other, the result is <span class="math notranslate nohighlight">\(x\)</span>, i.e.<span class="math notranslate nohighlight">\(\ln(e^x) = x\)</span>. If the function is written as <span class="math notranslate nohighlight">\(f(x)\)</span> then the inverse is <span class="math notranslate nohighlight">\(f^{-1}(x)\)</span>, therefore</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f^{-1}[f(x)] = x\]</div>
-<p>However, not all functions have an inverse. When plotted the observation is that one function is the reflection of the other through a straight line of gradient <span class="math notranslate nohighlight">\(\pm 1 \)</span>, such as shown in  figure 8 for the positive exponential and log. More formally, the function and its inverse must have a one-to-one relationship. If an inverse exists when the function <span class="math notranslate nohighlight">\(f (x)\)</span> is solved for <span class="math notranslate nohighlight">\(x\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> exchanged and the result substituted into the original equation, <span class="math notranslate nohighlight">\(x\)</span> results. For example, if <span class="math notranslate nohighlight">\(f(x) \equiv y = (x + 2)/3\)</span> then <span class="math notranslate nohighlight">\(x = 3y - 2\)</span>, the inverse function is found by swapping <span class="math notranslate nohighlight">\(y\)</span> for <span class="math notranslate nohighlight">\(x\)</span>, giving <span class="math notranslate nohighlight">\(f^{-1}(x) = 3x - 2\)</span>, and then substituting back <span class="math notranslate nohighlight">\(f^{-1}[f(x)] = 3(x + 2)/3 - 2 = x\)</span>.</p>
-<p>The function <span class="math notranslate nohighlight">\(y = \sin(x)\)</span> has <span class="math notranslate nohighlight">\(y = \sin^{-1}(x)\)</span> as its inverse function, which can be written as <span class="math notranslate nohighlight">\(\sin(y) = x\)</span>, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span>. Notice that the computer notation is different to the mathematical one; for example, <span class="math notranslate nohighlight">\(\sin^{-1}(x) \equiv \arcsin(x)\)</span>, the prefix ‘arc’ being added to these inverse functions, but this notation is not universal and in some computer languages asin may be used instead of arcsin etc.</p>
-<p>The inverse trig functions are multi-valued; the principal range for <span class="math notranslate nohighlight">\(\sin^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> is <span class="math notranslate nohighlight">\(x = \pm 1\)</span> and the function’s principal values lie between <span class="math notranslate nohighlight">\(y = \pm \pi/2\)</span>. The inverse function <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span> is also multi-valued and ranges from <span class="math notranslate nohighlight">\(x = \pm \infty\)</span> and has principal values between <span class="math notranslate nohighlight">\(y = \pm\pi/4\)</span>.</p>
-<p>The equations defining inverse trig and hyperbolic functions are shown below, and some of which were obtained using Sympy for example,</p>
+\[\displaystyle f^{-1}\big(f(x)\big) = x\]</div>
+<p>However, not all functions have an inverse over the whole range of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(x^2\)</span> for example, so the range of <span class="math notranslate nohighlight">\(x\)</span> over which the inverse exists should always be defined. When plotted one function is seen to be the reflection of the other through a straight line of gradient <span class="math notranslate nohighlight">\(\pm 1 \)</span>, such as shown in figure 8 for the positive exponential and log. The function and its inverse must have a one-to-one relationship.</p>
+<p>If an inverse exists when the function <span class="math notranslate nohighlight">\(f(x)\)</span> is solved for <span class="math notranslate nohighlight">\(x\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> exchanged and the result substituted into the original equation, <span class="math notranslate nohighlight">\(x\)</span> results. For example, if</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y\equiv f(x)  = \frac{(x + 2)}{3}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x = 3y - 2\]</div>
+<p>the inverse function is found by swapping <span class="math notranslate nohighlight">\(y\)</span> for <span class="math notranslate nohighlight">\(x\)</span>, giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f^{-1}(x) = 3x - 2\]</div>
+<p>and then as a check substituting back gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f^{-1}\big(f(x)\big) = 3\left(\frac{x + 2}{3}\right) - 2 = x\]</div>
+<p>If the function is <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> then <span class="math notranslate nohighlight">\(x=\pm\sqrt{y}\)</span> but as the square-root can be positive or negative there is not a unique result so it is necessary to state that, for example, <span class="math notranslate nohighlight">\(f^{-1}(x)=+\sqrt{x}\)</span>, when <span class="math notranslate nohighlight">\(x&gt;0\)</span>.</p>
+<p>The function <span class="math notranslate nohighlight">\(y = \sin(x)\)</span> has many values along the x-axis as may be seen by plotting the sine and drawing a horizontal line. The range of the inverse must contain only a single value of <span class="math notranslate nohighlight">\(\sin(x)\)</span> and is <span class="math notranslate nohighlight">\(-\pi/2\to \pi/2\)</span>. We write the inverse as <span class="math notranslate nohighlight">\(y = \sin^{-1}(x)\)</span>, rather than as a series in <span class="math notranslate nohighlight">\(x\)</span>, as its inverse function. This can also can be written as <span class="math notranslate nohighlight">\(\sin(y) = x\)</span>, which is a sine wave moving up the y-axis, as shown in figure 16. Similarly there are inverse functions <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span>. Notice that the computer notation is different to the mathematical one; for example, <span class="math notranslate nohighlight">\(\sin^{-1}(x) \equiv \arcsin(x)\)</span>, the prefix ‘arc’ being added to these inverse functions, but this notation is not universal and in some computer languages asin may be used instead of arcsin etc.</p>
+<p>The inverse trig functions are multi-valued; the principal range for <span class="math notranslate nohighlight">\(\sin^{-1}(x)\)</span> and <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span> is <span class="math notranslate nohighlight">\(x = \pm 1\)</span> and the function’s principal values lie between <span class="math notranslate nohighlight">\(y = \pm \pi/2\)</span>. The inverse function <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span> is also multi-valued and ranges from <span class="math notranslate nohighlight">\(x = \pm \infty\)</span> and has principal values between <span class="math notranslate nohighlight">\(y = \pm\pi/4\)</span>. The range over which the inverse is true should, therefore, always be stated.</p>
+<p>The equations defining inverse trig and hyperbolic functions are shown below, and some of which were obtained using SymPy, for example as,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">asinh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">asinh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1988,8 +2001,8 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
 </section>
 </section>
 <hr class="docutils" />
-<section id="factorials-stirling-s-formula-gamma-function">
-<h2>8 Factorials, Stirling’s formula, gamma function<a class="headerlink" href="#factorials-stirling-s-formula-gamma-function" title="Permalink to this headline">#</a></h2>
+<section id="factorials-stirling-s-formula-and-gamma-function">
+<h2>8 Factorials, Stirling’s formula and Gamma function<a class="headerlink" href="#factorials-stirling-s-formula-and-gamma-function" title="Permalink to this headline">#</a></h2>
 <p>The factorial function is the product of a set of <em>positive integers</em> from 1 up to n;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n! = n \times (n - 1) \times (n - 2) \times \cdots \times 2 \times 1 \]</div>
@@ -2018,6 +2031,7 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
 <div class="math notranslate nohighlight">
 \[ x(x+1)(x+2)\cdots (x+n-1)=\frac{(x+n-1)!}{(x-1)!} \qquad\tag{17}\]</div>
 <p>is sometimes given the symbol <span class="math notranslate nohighlight">\((x)_n\)</span> which is called the Pochhammer symbol, although this notation is not universal. Ratios of factorials similar to these occur in quantum mechanics, particularly when angular momentum quantum numbers are involved.</p>
+<p>Factorials are met again in the Binomial Theorem (section 9 of this chapter) and in many problems involving probabilities.</p>
 <section id="i-large-factorials-stirling-s-formula">
 <h3><strong>(i) Large factorials. Stirling’s formula</strong><a class="headerlink" href="#i-large-factorials-stirling-s-formula" title="Permalink to this headline">#</a></h3>
 <p>The log of the factorial is often used as a way of calculating factorials for large <span class="math notranslate nohighlight">\(n\)</span> particularly those too large for normal multiplication. To this end Stirling’s formula,</p>
@@ -2095,12 +2109,12 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
 <p>The next value with <span class="math notranslate nohighlight">\(n = 1\)</span>, is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H_2(x) = 2xH_1(x) - 2H_0(x) = 4x^2 - 2\]</div>
-<p>All other values can be obtained in a similar way using the recursion formula given above. Using Sympy this can be automated</p>
+<p>All other values can be obtained in a similar way using the recursion formula given above. Using SymPy this can be automated</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Algorithm. Hermite Polynomial Recursion.  (This is slow for large n )</span>
 
-<span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">)</span>       <span class="c1"># define n and x in SymPy</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">)</span>       <span class="c1"># define n and x in SymPy</span>
 
 <span class="c1">#----------------------</span>
 <span class="k">def</span> <span class="nf">herm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>             <span class="c1"># define recursion equations returns the nth hermite with argument x </span>
@@ -2111,7 +2125,7 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
     <span class="k">else</span><span class="p">:</span> 
         <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">herm</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>  <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">herm</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
 <span class="c1">#----------------------    </span>
-<span class="n">expand</span><span class="p">(</span><span class="n">herm</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>          <span class="c1"># return 10th Hermite as polynomial</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">herm</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>          <span class="c1"># return 10th Hermite as polynomial</span>
 </pre></div>
 </div>
 </div>
@@ -2172,7 +2186,7 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

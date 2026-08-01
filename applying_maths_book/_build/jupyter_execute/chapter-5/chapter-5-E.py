@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -154,9 +154,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x, a = symbols('x, a')
-f01 = sin(a + x)
-s = series(f01,x,n = 5)
+x, a = sp.symbols('x, a')
+f01 = sp.sin(a + x)
+s = sp.series(f01,x,n = 5)
 s
 
 
@@ -167,18 +167,17 @@ s
 
 # Forming a Taylor Series using SymPy then plotting results
 
-x ,n = symbols('x, n')
-f = sin(x)                              # victim function
+x ,n = sp.symbols('x, n')
+f = sp.sin(x)                              # victim function
 numx = 100                              # number of x points
 xx   = np.linspace(-3*np.pi,3*np.pi,numx)
 ff   = [0.0 for i in range(numx)]
 
 fig1 = plt.figure(figsize=(6, 5))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
 cols = ['blue','grey','green','black','orange','red']
 
 for i in range(3,25,4):                 # number of terms in series, 3, 7, 11...
-    s = expand( series(f, x, n=i) )     # Algebraic series. series(function, point, order)
+    s = sp.expand( sp.series(f, x, n=i) )     # Algebraic series. series(function, point, order)
     for j in range(numx):
         ff[j]  = s.removeO().evalf( subs={ x:xx[j] })  # evaluate (remove 'big O' notation first)
         pass
@@ -371,7 +370,7 @@ plt.show()
 # Figure 4b. The calculated magnetization for different spins. The dashed line on the $J=3/2$ curve is the Curie limiting value.
 # ______
 # 
-# At low field or high temperature  $B/T\to 0$ the limit also can be found but only with great difficulty with the equations so far discovered. Using L'Hopital's rule fails because the exponential terms simply repeat themselves, using computer algebra (python/Sympy) does find the solution, but the method by which this is done is completely opaque.  However, the limit exists and is called _Curie's_ equation and is
+# At low field or high temperature  $B/T\to 0$ the limit also can be found but only with great difficulty with the equations so far discovered. Using L'Hopital's rule fails because the exponential terms simply repeat themselves, using computer algebra (python/SymPy) does find the solution, but the method by which this is done is completely opaque.  However, the limit exists and is called _Curie's_ equation and is
 # 
 # $$\displaystyle M_{B/T\to 0} = \frac{4\mu^2J(J+1)}{3}\frac{B}{k_BT}$$
 # 
@@ -481,20 +480,20 @@ plt.show()
 # Euler Maclaurin eqn. 27
 
 for k in range(1,8):   
-    print('{:s}{:d}{:s}{:s}'.format('2k = ',2*k,' thus B(2k)/(2k!) = ', str(bernoulli(2*k)/factorial(2*k))))
+    print('{:s}{:d}{:s}{:s}'.format('2k = ',2*k,' thus B(2k)/(2k!) = ', str(sp.bernoulli(2*k)/sp.factorial(2*k))))
 
-k, x = symbols('k, x')                   # use sympy
+k, x = sp.symbols('k, x')                   # use sympy
 m = 1
 n = 50                                   # let constant h =1
 
-f = ln(x)                                # victim function
+f = sp.ln(x)                                # victim function
 
-s1 = integrate(f,(x,m,n))                # symbolically integrate then subs for series
+s1 = sp.integrate(f,(x,m,n))                # symbolically integrate then subs for series
 s2 = (f.subs({x:m}) + f.subs({x:n}))/2.0 
 s3 = 0.0
 for i in range(5):
     k = i+1
-    s3 = s3 + (bernoulli(2*k)/factorial(2*k))*diff(f,x,2*k-1)   # SymPy 'knows' Bernoilli
+    s3 = s3 + (sp.bernoulli(2*k)/sp.factorial(2*k))*sp.diff(f,x,2*k-1)   # SymPy 'knows' Bernoilli
     pass
 s3n = s3.subs({x:n})
 s3m = s3.subs({x:m})

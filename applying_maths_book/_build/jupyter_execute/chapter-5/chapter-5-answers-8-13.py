@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                 # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                 # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -29,11 +29,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-h, nu, kB, T = symbols('h, nu, kB, T')
-Z = exp(-h*nu/(2*kB*T))/( 1 - exp(-h*nu/(kB*T)) )
-f = simplify(kB*T**2*diff(ln(Z),T))
-cv= diff(f,T) 
-simplify(cv)
+h, nu, kB, T = sp.symbols('h, nu, kB, T')
+Z = sp.exp(-h*nu/(2*kB*T))/( 1 - sp.exp(-h*nu/(kB*T)) )
+f = sp.simplify(kB*T**2*sp.diff(sp.ln(Z),T))
+cv= sp.diff(f,T) 
+sp.simplify(cv)
 
 
 # Using the definition of vibrational temperature the result simplifies to
@@ -61,6 +61,7 @@ simplify(cv)
 
 
 from scipy.optimize import fsolve                            # import fsolve
+
 nu = [ 3019,1623,1342,3075,1236,949,943,3105, 810,2989,1443] # frequencies in wavenumbers
 h  = 6.6256e-34      # J s
 kB = 1.3805e-23      # J/K
@@ -120,8 +121,9 @@ plt.show()
 # In[4]:
 
 
-x, n = symbols('x, n')
-s0 = Sum(n*n*x**n,(n,0,oo))
+x, n = sp.symbols('x, n')
+inf = sp.oo                 # sp.oo is sympy infinity
+s0 = sp.Sum(n*n*x**n,(n,0,inf))  
 s0.doit()
 
 
@@ -130,8 +132,9 @@ s0.doit()
 # In[5]:
 
 
-x, n = symbols('x, n')
-s = Sum(x**n,(n,0,oo))
+x, n = sp.symbols('x, n')
+inf = sp.oo                 # sp.oo is sympy infinity
+s = sp.Sum(x**n,(n,0,inf))
 s.doit()
 
 
@@ -144,7 +147,7 @@ s.doit()
 
 # calculate average energies and CV
 fig1= plt.figure(figsize=(14.5, 10.5))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+
 ax0 = fig1.add_subplot(2,2,1)
 ax1 = fig1.add_subplot(2,2,2)
 
@@ -195,9 +198,9 @@ plt.show()
 
 
 # use symbpy to differentiate C_V= dE/dT
-k_B, T = symbols('k_B, T')
-f = diff( exp(-1/(k_B*T))/(1 - exp(-1/(k_B*T))),T)
-CV= simplify(f)
+k_B, T = sp.symbols('k_B, T')
+f = sp.diff( sp.exp(-1/(k_B*T))/(1 - sp.exp(-1/(k_B*T))),T)
+CV= sp.simplify(f)
 CV
 
 
@@ -255,8 +258,8 @@ CV
 
 
 # Caluation of average energy vs temperature.
-fig1= plt.figure(figsize=(5,4) ) 
-plt.rcParams.update({'font.size': 14})  # set font size for plots
+fig2= plt.figure(figsize=(5,4) ) 
+
 B    = 10                       # Tesla
 g    = 26.4e7                   # magnetogyric ratio  radian Tesla Hz
 hbar = 6.62607e-34/(2*np.pi)    # J s  h/(2 pi)
@@ -292,8 +295,7 @@ plt.show()
 # In[9]:
 
 
-fig1= plt.figure(figsize=(6,5))
-plt.rcParams.update({'font.size': 14})  # set font size for plots
+fig3= plt.figure(figsize=(6,5))
 
 B    = 60.8                 # rotational constant cm^(-1)
 k_B  = 1.3805e-23*5.034e22  # Boltzmann constant in cm^(-1)
@@ -322,7 +324,7 @@ plt.yticks([0,20,40,60,75,80,100])
 plt.axis([0,maxT,0,100])
 plt.ylabel('ratio ortho/total as %')
 plt.xlabel(' T /K')
-plt.title('percent ortho hydrogen vs temperature')
+plt.title('percent ortho hydrogen vs temperature',fontsize=12)
 plt.show()
 
 
@@ -361,7 +363,7 @@ plt.show()
 # In[10]:
 
 
-fig1= plt.figure(figsize=(11, 8))
+fig4= plt.figure(figsize=(11, 8))
 ax0 = fig1.add_subplot(2,2,1)
 ax1 = fig1.add_subplot(2,2,2)
 
@@ -397,7 +399,7 @@ ax0.set_xlim([0,maxT])
 ax0.set_ylim([0,300])
 ax0.set_ylabel(r'$U\,/\,\mathrm{cm^{-1}}$')
 ax0.set_xlabel(' T /K')
-ax0.set_title('Internal energy ortho &\n para hydrogen vs temperature')
+ax0.set_title('Internal energy ortho &\n para hydrogen vs temperature',fontsize=12)
 ax0.legend()
 
 ax1.plot(T,Cvp(T),color='red' , label='para' )
@@ -409,7 +411,7 @@ ax1.set_ylim([0,1.2])
 ax1.set_xlim([0,maxT])
 ax1.set_ylabel(r'$C_V\,/\,\mathrm{cm^{-1}}$')
 ax1.set_xlabel(' T /K')
-ax1.set_title('Heat Capacity ortho & \n para hydrogen vs temperature')
+ax1.set_title('Heat Capacity ortho & \n para hydrogen vs temperature',fontsize=12)
 
 ax1.legend(fontsize=12)
 plt.tight_layout()
@@ -435,9 +437,10 @@ plt.show()
 # In[11]:
 
 
-x, L = symbols('x, L')
-f01= x*Sum((1-x)**(L-1),(L,0,oo))
-simplify(f01.doit() )
+x, L = sp.symbols('x, L')
+inf = sp.oo                 # sp.oo is sympy infinity
+f01= x*sp.Sum((1-x)**(L-1),(L,0,inf))  
+sp.simplify(f01.doit() )
 
 
 # The sum is $x\sum_{L=0}^\infty (1-x)^{L-1}= 1/(1-x)$ and as this distribution is not normalised when calculating the average length $\langle L \rangle$ the denominator must be included.
@@ -454,8 +457,9 @@ simplify(f01.doit() )
 # In[12]:
 
 
-x, L = symbols( 'x, L')
-f01 = Sum(L*(1-x)**(L-1), (L,0,oo))  # note capital S
+x, L = sp.symbols( 'x, L')
+inf = sp.oo                 # sp.oo is sympy infinity
+f01 = sp.Sum(L*(1-x)**(L-1), (L,0,inf))  # note capital S, 
 f01.doit()
 
 

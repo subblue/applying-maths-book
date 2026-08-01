@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -119,7 +119,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle  S=\frac{\rho^3}{4}\int_{-1}^{+1}\int_1^\infty  e^{-\rho} (u^2-v^2)dudv $$
 # 
-# This is a standard integral and using Sympy produces 
+# This is a standard integral and using SymPy produces 
 # 
 # $$\displaystyle  S=\left(1+\rho+ \frac{\rho^2}{3} \right)e^{-\rho} \qquad\tag{68a}$$
 # 
@@ -128,9 +128,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-u, v, rho = symbols('u, v, rho',positive=True)     
-eq = (rho**3)* exp(-u*rho)*(u**2 - v**2) /4                # S overlap integral
-simplify(integrate( integrate(eq,(u,1,oo)), (v,-1,1)   ) ) # double integral
+u, v, rho = sp.symbols('u, v, rho',positive=True)
+inf = sp.oo                     # sp.oo is sympy infinity
+eq = (rho**3)* sp.exp(-u*rho)*(u**2 - v**2) /4                # S overlap integral
+
+sp.simplify(sp.integrate( sp.integrate(eq,(u,1,inf)), (v,-1,1)   ) ) # double integral, 
 
 
 # ## 12.3 Calculation of the self-energy integrals $H_{11}$ and $H_{22}$
@@ -165,16 +167,18 @@ simplify(integrate( integrate(eq,(u,1,oo)), (v,-1,1)   ) ) # double integral
 # 
 # $$\displaystyle C= \frac{q^2\rho^3}{8\pi a_0}\int_0^{2\pi}\int_{-1}^1\int_1^\infty e^{u+v)\rho} \frac{u^2-v^2}{(u-v)\rho/2}dudvd\theta = \frac{q^2\rho^2}{2 a_0}\int_{-1}^1\int_1^\infty e^{(u+v)\rho} \frac{u^2-v^2}{(u-v)}dudv $$
 # 
-# where the integral over $\theta$ was evaluated in the last step. Again using Sympy gives
+# where the integral over $\theta$ was evaluated in the last step. Again using SymPy gives
 # 
 # $$\displaystyle C= \frac{q^2}{a_0}\frac{e^{-2\rho}(e^{2\rho}-\rho-1)}{\rho}  \qquad\tag{71a}$$
 
 # In[3]:
 
 
-u, v, rho, q, a0 = symbols('u, v, rho, q, a0',positive=True)     
-eq = (q**2*rho**2/(2*a0))* exp(-(u+v)*rho)*(u**2 - v**2)/(u - v)      # C Coulomb integral
-simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double integral
+u, v, rho, q, a0 = sp.symbols('u, v, rho, q, a0',positive=True)
+inf = sp.oo                       # sp.oo is infinity
+eq = (q**2*rho**2/(2*a0))* sp.exp(-(u+v)*rho)*(u**2 - v**2)/(u - v)      # C Coulomb integral
+
+sp.simplify(sp.integrate( sp.integrate(eq,(u,1,inf))   ,(v,-1,1)   ) ) # Double integral, 
 
 
 # The Coulomb Integral $C$ is large at small internuclear separation, where $1/\rho$ is large, and decreases to zero at large $\rho$, when $1/\rho \to  0$ and the exponential term is small. Plotting the energy $H_{11}$ as a function of $\rho$ shows that $H_{11}$ is large at small separation because $C$ is large, but constantly decreases and then reaches a constant value of $-E_I$ at large proton separation.

@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -84,7 +84,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x, n = symbols('x,n')     #  Legendre  change  n-> n-1
+x, n = sp.symbols('x,n')     #  Legendre  change  n-> n-1
 
 def Legen(n, x): 
     if n == 0:
@@ -95,13 +95,13 @@ def Legen(n, x):
         return ( (2*(n-1)+1)*x*Legen(n - 1, x) - (n-1)*Legen(n - 2, x))/(n)
 #---------------
 for i in range(6):
-    print(i,expand( Legen(i,x) ))
+    print(i,sp.expand( Legen(i,x) ))
 
 
 # In[3]:
 
 
-x, n = symbols('x,n')  #  Chebychev
+x, n = sp.symbols('x,n')  #  Chebychev
 
 def Cheb(n, x): 
     if n == 0:
@@ -112,7 +112,7 @@ def Cheb(n, x):
         return  2*x*Cheb(n - 1, x) - Cheb(n - 2, x)
 #------------------
 for i in range(6):
-    print(i,expand( Cheb(i,x) ))
+    print(i,sp.expand( Cheb(i,x) ))
 
 
 # The Chebychev series can also be obtained from the function $P_n(x) = \cos\left(n \cos^{-1}(x)\right)$ if $| x | \le 1$ and as $P_n(x) = \cosh\left(n \cosh^{-1}(x)\right)$ if $| x | > 1$.
@@ -228,3 +228,9 @@ binom(12)
 
 #  The coefficients are $1, 12, 66, 220, 495, 792, 924, 792, 495, 220, 66, 12, 1$.
 #  
+
+# In[ ]:
+
+
+
+

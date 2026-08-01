@@ -10,10 +10,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
-from scipy.optimize import fsolve
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## 9.1 Shooting method

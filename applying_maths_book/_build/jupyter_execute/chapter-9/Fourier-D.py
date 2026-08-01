@@ -10,9 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-from scipy.integrate import quad
-init_printing()                         # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -140,7 +139,7 @@ def do_convolution(f,w):   # f and w are arrays
         c[k] = s
     return c
 #---------------------------
-
+figconv= plt.figure(figsize=(5.0,5.0))
 n = 2**10
 w = [ np.exp(-i/100.0)  for i in range(n)]         # molecular decay
 f = [ np.exp(-(i-120)**2/1000) for i in range(n)]   # instrument
@@ -180,24 +179,24 @@ plt.show()
 # In[3]:
 
 
-from scipy.linalg import toeplitz                         # import matrix function
+from scipy.linalg import toeplitz                 # import matrix function
 
 #------------------------------------
 def toep_conv(f,w):
     top_row   = np.zeros(n,dtype=float)
-    top_row[0]= w[0]                                      # put first element into top row of zeros
-    toep      = toeplitz(w,top_row)                       # column is w, top row is top_row
-    return toep @ f                                       # @ is matrix multiplication operator     
+    top_row[0]= w[0]                              # put first element into top row of zeros
+    toep      = toeplitz(w,top_row)               # column is w, top row is top_row
+    return toep @ f                               # @ is matrix multiplication operator     
 #-------------------------------------
 
 n = 2**10
-f = [ np.exp(-i/200.0) for i in range(n)]                 # molecular function 
-w = [ np.exp(-(i-100)**2/1e3) for i in range(n)]          # instrument reponse 
-t = [i for i in range(n)]                                 # time
+f = [ np.exp(-i/200.0) for i in range(n)]         # molecular function 
+w = [ np.exp(-(i-100)**2/1e3) for i in range(n)]  # instrument reponse 
+t = [i for i in range(n)]                         # time
 
 C = toep_conv(f,w)
 
-#plt.plot(t,C/max(C))                                      # plot normalised convolution
+#plt.plot(t,C/max(C))                              # plot normalised convolution
 #plt.plot(t,f)
 #plt.plot(t,w)
 #plt.show()
@@ -288,26 +287,33 @@ C = toep_conv(f,w)
 # 
 # $$\displaystyle C = T^{-1}[\,T( f )T(w)\,]    \qquad\tag{35} $$
 # 
-# which is the same as equation 34. If the equations describing $f$ and $w$ are known, an exponential and a Gaussian for example, then 
+# which is the same as equation 34. If the equations describing $f$ and $w$ are known, an exponential and a Gaussian for example, then this calculation is done in the order;
 # 
-# $\quad$(a) the Fourier transform integral of each function is calculated as described in Section 6, 
+# >(a) the Fourier transform integral of each function is calculated as described in Section 6, 
 # 
-# $\quad$(b) these are multiplied together and 
+# >(b) then these are multiplied together and 
 # 
-# $\quad$(c) the inverse transform integral calculated. 
+# >(c) finally the inverse transform integral calculated. 
 # 
 # The result of these three operations is the convolution of the two functions in other words 
 # 
-# $\quad$(1) the convolution of two functions is the transform of the product of their individual transforms: $\displaystyle T[\,T( f )\cdot T(w)\,]   $.
+# $\quad$**(1)** the convolution of two functions is the transform of the product of their individual transforms: 
+# 
+# $$\displaystyle T[\,T( f )\cdot T(w)\,]   $$
 # 
 # Other statements are also true
 # 
-# $\quad$(2) The transform of a convolution is the product of the transforms: $T^{-1}[f(t)\otimes w(t)]=T(f)\cdot T(w)$.
+# $\quad$**(2)** The reverse transform of a convolution is the product of the transforms: 
 # 
-# $\quad$(3) The transform of a product is the convolution of the transforms: $T(f\cdot w)=T(f)\otimes T(w)$.
+# $$\displaystyle T^{-1}[f(t)\otimes w(t)]=T(f)\cdot T(w)$$
 # 
-# $\quad$(4) The product of two functions is the reverse transform of the convolution of their transforms: $f\cdot w=T^{-1}[ T(f)\otimes T(w) ]$.
+# $\quad$**(3)** The transform of a product is the convolution of the transforms: 
 # 
+# $$\displaystyle T(f\cdot w)=T(f)\otimes T(w)$$
+# 
+# $\quad$**(4)** The product of two functions is the reverse transform of the convolution of their transforms: 
+# 
+# $$\displaystyle f\cdot w=T^{-1}[ T(f)\otimes T(w) ]$$
 # 
 # ### **Proof of convolution as transforms**
 # 
@@ -345,7 +351,7 @@ C = toep_conv(f,w)
 # 
 # $$\displaystyle f(t)= e^{ikx}e^{-x^2/2\sigma^2}$$
 # 
-# where $\sigma$ is the variance of the envelope. You can see that this function is the product of an exponential and a Gaussian. Its fourier transform is therefore the convolution of the transform of these two functions. The complex exponential has the transform (see table 6.9) $\delta(k-k_0)$ and the Gaussian  $\sigma e^{-\sigma^2k^2/2}$.
+# where $\sigma^2$ is the variance of the envelope. You can see that this function is the product of an exponential and a Gaussian. Its fourier transform is therefore the convolution of the transform of these two functions. The complex exponential has the transform (see table 6.9) $\delta(k-k_0)$ and the Gaussian  $\sigma e^{-\sigma^2k^2/2}$.
 # 
 # The convolution and hence transform is
 # 
@@ -364,9 +370,9 @@ C = toep_conv(f,w)
 
 
 # convolution by fourier transform.
-
+figfconv= plt.figure(figsize=(5.0,5.0))
 n = 2**10
-f = [ np.exp(-i/100.0) for i in range(n)]           # molecular decay    
+f = [ np.exp(-i/100.0) for i in range(n)]           # e.g. molecular decay    
 w = [ np.exp(-(i-120)**2/1e3) for i in range(n)]    # instrument response
 t = [i for i in range(n)]
 z = np.zeros(n)
@@ -378,7 +384,7 @@ F = np.fft.rfft(f)        # use rfft as input in only real
 W = np.fft.rfft(w)
 C = np.fft.irfft(F*W)
 
-mxc  = max(C)         # use to normalse
+mxc  = max(C)             # use to normalse
 
 plt.plot(t,C[0:n]/mxc,color='red',label='C , convolution '+r'$f\otimes w$')
 plt.plot(t,f[0:n],color='black',label='f, decay')
@@ -489,13 +495,12 @@ plt.show()
 # In[5]:
 
 
-def toep_corrl(f,w):
+def toep_corrl(f,w):                  # correlation using Toeplitz matrix
     r = np.zeros(n,dtype=float)
-    r[0]= w[0]
-    toep=toeplitz(w,r)              # size is n x n
-    temp = toep @ f[::-1]           # reverse f
-    return temp[::-1]               # reverse result
-#---------------------------------
+    r[0] = w[0]
+    toep = toeplitz(w,r)              # size is n x n
+    temp = toep @ f[::-1]             # reverse f
+    return temp[::-1]                 # reverse result
 
 
 # ### **(iii) Integral forms**
@@ -565,7 +570,7 @@ def toep_corrl(f,w):
 
 
 # Autocorrelation of function w
-fig1= plt.figure(figsize=(5.0,3.0))
+figac= plt.figure(figsize=(5.0,5.0))
 n = 2**10                                      # number of points
 w = [ np.exp(-i/80) for i in range(n)]         # exponential decay as example
 x = [i for i in range(n)]                      # x value
@@ -596,12 +601,12 @@ plt.show()
 # In[7]:
 
 
-t, phi, T, u = symbols('t, phi, T, u',positive =True)
+t, phi, T, u = sp.symbols('t, phi, T, u',positive =True)
+pi = sp.pi
+f01 = sp.cos(2*pi*t/T+phi)*sp.cos(2*pi*t/T+phi+2*pi*u/T )
 
-f01 = cos(2*pi*t/T+phi)*cos(2*pi*t/T+phi+2*pi*u/T )
-
-G = integrate(f01,(t,0,T),conds='none')    # slow calculation
-simplify(G)
+G = sp.integrate(f01,(t,0,T),conds='none')    # slow calculation
+sp.simplify(G)
 
 
 # from which it is seen that the normalised autocorrelation is also a cosine $\displaystyle G(u) = \cos\left(2\pi \frac{u}{T}\right)$. If the initial cosine is written as $\cos(\omega t + \varphi)$ then the period is $T = 2\pi/\omega$.
@@ -644,10 +649,11 @@ simplify(G)
 # In[8]:
 
 
-t, u, a = symbols('t u a',positive=True)
-f01 = exp(-(t/a)**2)*exp(-((u+t)**2)/a**2)
-G= simplify(integrate(f01, (t,-oo,oo), conds='none'))    # oo is infinity
-G.doit()
+t, u, a = sp.symbols('t u a',positive=True)
+inf = sp.oo                             # sp.oo is sympy infinity
+f01 = sp.exp(-(t/a)**2)*sp.exp(-((u+t)**2)/a**2)
+G   = sp.simplify(sp.integrate(f01, (t,-inf,inf), conds='none'))    
+G
 
 
 # The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when $u$ = 0. The normalization equation is therefore $\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}$. The normalized autocorrelation $G(u)$ is also a Gaussian, with a value $\displaystyle G(u)=e^{-u^2/(2a^2)}$. The _fwhm_ of this function is calculated when $G(u)=1/2$ and is $a\sqrt{2\ln(2)}$ and that of the original pulse is $a\sqrt{\ln(2)}$ therefore, the autocorrelation is $\sqrt{2} \approx$ 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.
@@ -664,7 +670,7 @@ G.doit()
 # In[9]:
 
 
-# Algorithm: Autocorrelation
+# Algorithm: Autocorrelation.  The Toeplitz algorithm (8.2(iii) above) could also be used
 #-----------------------
 def do_autoc(f,w):       # Autocorrelation ac(k)= sum_i=0^{n-k} f(i)w(k+i) /norm
     n = len(w)
@@ -681,9 +687,17 @@ def do_autoc(f,w):       # Autocorrelation ac(k)= sum_i=0^{n-k} f(i)w(k+i) /norm
     return ac/normfw
 #----------------------
 
-fig1= plt.figure(figsize=(8.0,4.0))
-ax0 = fig1.add_subplot(1,2,1)
-ax1 = fig1.add_subplot(1,2,2)
+#def toep_corrl(f,w):
+#    r = np.zeros(n,dtype=float)
+#    r[0] = w[0]
+#    toep = toeplitz(w,r)              # size is n x n
+#    temp = toep @ f[::-1]             # reverse f
+#    return temp[::-1]/temp[::-1][0]   # reverse result & normalise
+##---------------------------------
+
+figac= plt.figure(figsize=(8.0,4.0))
+ax0 = figac.add_subplot(1,2,1)
+ax1 = figac.add_subplot(1,2,2)
 
 n = 250
 s = [ np.random.rand() for i in range(n)]
@@ -692,12 +706,14 @@ t0= [i for i in range(n)]
 ss = sum(s)/n                       # get average 
 s0 = [s[i] - ss for i in range(n)]  # subtract average
 
+#ax0.plot(t0, toep_corrl(s0,s0),color='blue') #  (S0, S0) is autocorrelation 
 ax0.plot(t0, do_autoc(s0,s0),color='blue') #  (S0, S0) is autocorrelation  
 ax0.axhline(0,color='black',linewidth=1)
 ax0.set_xlabel('x')
 ax0.set_title('autocorrelation, av = 0')
 ax0.set_yticks([-0.5,0.0,0.5,1])
 
+#ax1.plot(t0, toep_corrl(s,s),color='blue') #  (S0, S0) is autocorrelation 
 ax1.plot(t0, do_autoc(s,s),color='blue')
 ax1.axhline(0,color='black',linewidth=1)
 ax1.set_xlabel('x')
@@ -800,84 +816,88 @@ plt.show()
 
 # ## 8.7 FTIR supplement 
 # 
-# An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and are combined on a single detector. This is quite unlike the situation in a uv-vis spectrophotometer where the light is split into two parts which then pass separately through a sample and a reference cell and the signals from two detectors compared. 
+# An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12 of this chapter. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and are combined on a single detector. This is quite unlike the situation in a scanning uv-vis spectrophotometer where the light is first passed through a monochrometer then is split into two parts. One passes through the sample cell and the other through a reference cell. These are detected separately and only then are the separate signals compared. This is repeated at each wavelength measured. 
 # 
-# Recall that the FTIR instrument is a Michelson interferometer. The input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter (see fig 12), and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. These fringes are the oscillating autocorrelation signal produced by several sinusoidal waves, such as an i.r. electromagnetic waves, is shown in fig 30. If $d$ is the difference in distance travelled by the beams they arrive at the detector at times separated by a time delay of $\tau=d/c$ seconds. The detector measures the *intensity* $I$ which is the complex square of the amplitude $f$ of a wave, where $f$ is the electric field $E$,
+# ###  **The fourier transform of the autocorrelation is the spectrum**
+# 
+# Recall that the FTIR instrument is a Michelson interferometer. The infra-red input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains *all wavelengths*, its amplitude is divided at the beam splitter (see fig. 12), and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. The fringes are the oscillating autocorrelation signal produced by several sinusoidal waves interfering with one another as shown in fig. 30. If $d$ is the difference in distance travelled by the beams after moving up and down each arm of the interferometer, they will arrive at the detector at times separated by a time delay of $\tau=d/c$ seconds. The detector measures the *intensity* $I$ which is the complex square of the amplitude $f$ of a wave, where $f$ is the electric field,
 # 
 # $$\displaystyle I= f^*f = |f|^2$$
 # 
-# If the i.r. radiation is monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally varying signal as the path-length $\tau$ varies because the i.r. waves become in and out of phase with one another, see fig 30.
+# If the i.r. radiation is monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally decaying signal as the path-length $\tau$ increases because the i.r. waves become out of phase with one another, see fig 30.
 # 
-# The overall equation relating the autocorrelation of the radiation's electric field $f$ and at time delays $\tau$ is, via the Weiner-Kinchin equation, where $F(\cdots)$ is the fourier transform
+# The overall equation relating the autocorrelation of the radiation's electric field $f$ and at time delays $\tau$ is obtained using the Weiner-Kninchin equation and is
 # 
 # $$\displaystyle F\bigg(\int_{-\infty}^\infty f^*(t)f(t+\tau)\bigg)= |F(f(t))|^2=|f(\omega)|^2=spectrum $$
 # 
-# in other words the fourier transform of the autocorrelation is the spectrum. The i.r. detector is a 'Square-Law' detector which means that the *intensity* $f^*(\omega)f(\omega)$ is detected rather than the field $f(\omega)$. A typical i.r. detector material would consist of HgCdTe. 
+# where $F(\cdots)$ is the fourier transform. This shows that the fourier transform of the autocorrelation is the spectrum. The i.r. detector is a 'Square-Law' detector which means that the *intensity* $f^*(\omega)f(\omega)$ is detected rather than the field $f(\omega)$. 
 # 
-# To analyse what the detector measures we consider what happens at each delay. Each position of the movable mirror causes a time delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$. The *amplitude* or field of the i.r. radiation is, with constant $a$, 
+# To analyse what the detector measures we consider what happens at each delay but do so just at one frequency $\omega_0$. Each position of the movable mirror causes a time-delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$. The *amplitude* or field of the i.r. radiation is, with constant $\alpha$, given by, 
 # 
-# $$\displaystyle f=ae^{i\omega_0 t}$$
+# $$\displaystyle f=\alpha e^{i\omega_0 t}$$
 # 
-# at frequency $\omega_0$ ($\omega= 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
+# at frequency $\omega_0$ ($\omega_0= 2\pi \nu_0$). At the detector the fields at time $t$ and $t+\tau$ are recombined as
 # 
 # $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \tag{46a}$$
 # 
-# to form the autocorrelation. The constant $\beta$ is the product of reflectivity and transmission of the beam splitter and constant $a$. The signal is averaged at each time delay $\tau$ for a small time $t_m$, say a second. Expanding out (and ignoring limits for clarity) gives
+# and so forms the autocorrelation. The new constant $\beta$ is the product of reflectivity and transmission of the beam splitter and constant $\alpha$. Expanding out (and removing the limits for clarity) gives
 # 
-# $$\displaystyle \begin{align} \frac{I(\tau)}{\beta} &= \int\; \Big(f^*(t)+f^*(t+\tau)\Big) \Big( f(t)+f(t+\tau) \Big)\;dt\\&=\int f^*(t)f(t)dt+\int f^*(t)f(t+\tau)dt +\int f(t)f^*(t+\tau)dt +\int f^*(t+\tau)f(t+\tau)dt\end{align}$$
+# $$\displaystyle \begin{align} I(\tau) &= \beta\int_0^{t_m}\; \Big(f^*(t)+f^*(t+\tau)\Big) \Big( f(t)+f(t+\tau) \Big)\;dt\\&=\beta\int f^*(t)f(t)dt+\beta\int f^*(t)f(t+\tau)dt +\beta\int f(t)f^*(t+\tau)dt +\beta\int f^*(t+\tau)f(t+\tau)dt\end{align}$$
 # 
-# The first and last integrals are just the average intensity which is constant, for example 
+# The first and last integrals are the total intensity which is constant, for example 
 # 
-# $$\displaystyle \int_0^{t_m} f^*(t+\tau)f(t+\tau)dt=a^2\int_0^{t_m} e^{-i\omega_0((t+\tau)}e^{+i\omega_0((t+\tau)} dt=a^2t_m$$
+# $$\displaystyle \int_0^{t_m} f^*(t+\tau)f(t+\tau)dt=\gamma^2\int_0^{t_m} e^{-i\omega_0((t+\tau)}e^{+i\omega_0((t+\tau)} dt=\gamma^2t_m$$
 # 
-# where again $a$ is a constant. The other integrals are autocorrelations
+# where again $\gamma$ is a constant. The other integrals are autocorrelations and when combined are
 # 
-# $$\displaystyle \begin{align}\int_0^{t_m} f^*(t)f(t+\tau)+ f(t)f^*(t+\tau) dt &= a^2\int_0^{t_m}e^{-i\omega_0 t}e^{i\omega_0 (t+\tau)}+e^{+i\omega_0 t}e^{-i\omega_0 (t+\tau)}dt\\ &=a^2t_m (e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})\end{align}$$
+# $$\displaystyle \begin{align}\int_0^{t_m} f^*(t)f(t+\tau)+ f(t)f^*(t+\tau) dt &= \gamma^2\int_0^{t_m}e^{-i\omega_0 t}e^{i\omega_0 (t+\tau)}+e^{+i\omega_0 t}e^{-i\omega_0 (t+\tau)}dt\\ &=\gamma^2t_m (e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})\end{align}$$
 #  
-# Combining the two lots of integrals and collecting the constants as $C=a^2\beta t_m$ gives
+# Collecting the constants as $C=\gamma^2\beta t_m$ gives
 # 
 # $$\displaystyle I(\tau)= C(2+e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})$$
 # 
 # As $\displaystyle 2\cos(\omega_0\tau)=e^{i\omega_0 \tau}+e^{-i\omega_0 \tau}$, then
 # 
-# $$\displaystyle I(\tau)=C (1+\cos(\omega_0\tau) )$$
+# $$\displaystyle I(\tau)= 2C (1+\cos(\omega_0\tau) )\tag{46b}$$
 # 
-# which shows a sinusoidal variation on top of a constant signal. Recall that as $\tau =d/c$ the time delay is equivalent to a distance moved by the mirror in the interferometer. As the delay $\tau$ is changed this signal will follow a sinusoidal pattern, but this equation is only at one frequency $\omega_0$. As all frequencies are combined on the detector the same variation will occur at each individual frequency but the peaks and troughs will occur at different $\tau$ and so combined signal will be recorded at each time delay. At short $\tau$ waves will only be out of step by a small amount, and so a large signal is expected but as the waves differ more in wavelength they will cancel one another and so the signal will become smaller and oscillate about the average value. 
+# which shows a cosine variation plus a constant signal. Recall that as $\tau =d/c$ the time delay is equivalent to a distance moved by the mirror in the interferometer. As the delay $\tau$ is changed this signal will follow a sinusoidal pattern, but in this equation only at one frequency $\omega_0$ was used. As all frequencies are combined on the detector at any given delay time a similar variation will occur at each individual frequency but the peaks and troughs will occur at different $\tau$. The combined signal is recorded at each time delay and is very complicated as it consists of all the single frequencies in the i.r. source as well as all their differences in frequency. At very short delays $\tau$ all waves will only be out of step with one another by a very small amount, and so a large signal is expected on the detector. However, as $\tau$ increases, the longer wavelength waves only gradually become out of step with one another but the short wavelength ones do so more easily and so cancel out more effectively with one another. This reduces to total amplitude at the detector. Eventually, at large delays even the long wavelength waves average out to zero and only the constant part of the autocorrelation remains, as shown in eqn.46b.  
 # 
-# Molecules naturally have many vibrational and rotational transitions, think of the HCl rotational/vibration spectrum for example, and therefore the field at the detector will be the sum of many different frequencies, we call this distribution $B(\omega)$, which is the spectrum we hope to measure, and therefore integrating $I(\tau)$ over all frequencies produces,
+# The infra-red source is a heated ceramic disc which produces a continuous spectrum of frequencies. If heated to about 500 K mainly infra-red radiation is produced. We label the distribution of the infra-red $B(\omega)$. Hetero-nuclear diatomic and polyatomic molecules have many vibrational and rotational transitions, think of the HCl rotational / vibration spectrum for example, and therefore the i.r. light absorbed by these transitions changes the spectrum from the source $B(\omega)$. Therefore to obtain the molecular spectrum a reference $B(\omega)$ has to be measured first then the spectrum with the sample present and the difference obtained. 
+# 
+# Rather than work out all the complicated frequencies involved by expanding an equation such as 36a we take the distribution $B(\omega)$ and multiply this with eqn. 46b, which gives at time delay $\tau$,
 # 
 # $$\displaystyle I(\tau) =\int_0^\infty B(\omega)(1+\cos(\omega\tau) )d\omega$$
 # 
-# where all the constants are absorbed into $B$ and the integral is added because the detector measures all frequencies $\omega$ at the same time. At zero delay $\tau=0,\, I(0)=2\int B(\omega)d\omega$ which is a constant and shows that at time zero twice the total signal is measured. After rearranging 
+# where all the constants are absorbed into $B$ and the integral over frequency is added because the detector measures all frequencies $\omega$ at the same time. At zero delay $\tau=0,\, I(0)=2\int B(\omega)d\omega$ which is a constant and shows that here twice the total signal is measured. Rearranging produces
 # 
 # $$ I(\tau)- I(0)/2=\int_0^\infty B(\omega)\cos(\omega\tau) d \omega$$
 # 
-# This is a fourier cosine transform and can be reverse transformed to give
+# This has the form of a fourier cosine transform and when reverse transformed gives,
 # 
-# $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\qquad\tag{46b}$$
+# $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\qquad\tag{46c}$$
 # 
-# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both path-length change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that 
+# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both the path-length change and absorption by the sample. How the transform extracts a signal was explained earlier in this chapter, see 6.4. To see that this equation (46c) is a fourier transform recall that 
 # 
 # $$\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$$
 # 
-# The integration ranges from $0\to \infty$ which in practice is the distance that becomes $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. Note that for each frequency $\omega$ the integration on the right of eqn. 46b has to be performed. Normally this will be done numerically using a fast four transform FFT.
+# Note that for each frequency $\omega$ the integration on the right of eqn. 46c has to be performed. Normally this will be done numerically using a fast fourier transform FFT. At very long times there can no longer be any correlation between the two arms and the signal remaining is due to that of the two separate arms, the constant terms from eqn 46a, making the long time value $I(0)/2$.  The integration in 46c formally ranges from $0\to \infty$ but in practice in a typical commercial FTIR instrument the range is from  $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. 
 # 
-# At very long times there can no longer be any correlation between the two arms and the signal remaining is due to that of the two separate arms, the constant terms from eqn 46a, making the long time value $I(0)/2$.  
+# ### **Relative intensity of spectral lines**
 # 
-# So far we have tried to explain how the fourier transfer picks out transition *frequencies* but their *magnitudes* are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the *phase of the combined wave* (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude $a_i$ of a wave of frequency $\omega_i$ contributes to the sum 
+# So far we have tried to explain how the fourier transfer picks out transition *frequencies* but their *magnitudes* are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam's intensity, but both beams pass through the sample and are equally affected.  The reason that an absorption's magnitude can be measured is that the *phase of the combined wave* (one from each arm) is determined by the relative magnitude of each transition. This happens because a wave of amplitude $a_i$ and frequency $\omega_i$ can be expressed in an equivalent way by adding a phase $\varphi_i$, and thus each amplitude adds to the sum as a phase term, viz,
 # 
-# $$\displaystyle \sum_i a_ie^{i\omega_i \tau}\equiv a_0\sum_i e^{i\omega_i \tau+i\varphi_i}$$
+# $$\displaystyle \sum_i a_ie^{i\omega_i \tau}\equiv a_0\sum_i e^{i(\omega_i \tau+\varphi_i)}$$
 # 
-# and so the phase of the autocorrelation $\varphi$ vs. $\tau$ is changed. This is shown in figure 34a for two transitions, in the first row of panels, the lower frequency is of greater intensity, and in the lower panel they are swapped in intensity but retain their frequencies. The left most column (A, and D) shows the two waves vs. mirror displacement $\tau$ in the two cases. The yellow shading (around $\tau=90$) shows where the difference between them is most obvious, of course this repeats at each period. The centre panels (B & E; autocorrelations) shows the combined waves vs. displacement $\tau$ and on the right the spectrum obtained by fourier transform of the autocorrelations.
+# The phase of the autocorrelation $\varphi$ vs. $\tau$ is therefore changed by the amplitude at each frequency. This is shown in figure 34a for two transitions, in the first row of panels, the smaller frequency wave (grey) is of greater intensity, and in the lower panel they are swapped in intensity but retain their frequencies, so the smaller frequency is still coloured grey. The left most column (A, and D) shows the two waves vs. mirror displacement $\tau$ in the two cases. The yellow shading (around $\tau=90$) shows where the difference between them is most obvious. This repeats at each period and is at the same delay $\tau$ in panels A and D. The centre panels (B & E; autocorrelations) shows the combined waves vs. displacement $\tau$ and on the right the spectrum obtained by fourier transform of the autocorrelations.
 # 
 # ![Drawing](fourier-fig34a.png)
 # 
 # Figure 34a. Left column shows individual amplitudes of the waves of frequency $\omega_0, \omega_1$. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After Lipson & Lipson 2011.
 # ______
 # 
-# ## 8.8 Spectral resolution
+# ### **Spectral resolution**
 # 
-# In calculating the fourier transform. eqn 46b, the limits were taken to $0\to \infty$ and of course in an instrument this is clearly impossible, where the delay to one arm may extend only to a centimetre or so a time delay of $\approx 0.033$ ns. The limited range has the effect of convoluting a top-hat or rectangular shape with the delta function response of the ideal case when limits are $\pm \infty$. The result is a sinc function as shown in figures 15, i.e. a peak surrounded by many decreasing oscillations. In this respect the FTIR does distort the shape of the transition from its true Lorentzian shape, not that this matters in practice where only the frequency is important and the intensity only characterised as 'weak', to 'strong'. More important is the resolution because the longer the maximum delay the narrower the peaks become and so finer features become distinguishable. The fwhm of the sinc function is $0.6035/d_m$ where $d_m$ is the maximum displacement of one arm of the interferometer vs. the other. If this distance is $1$ cm then the resolution will be $0.6\;\mathrm{cm^{-1}}$. Typically this would involve a transform of $2^{13}=8192$ points or a step of $1.2\;\mathrm{\mu m}$.  
+# In calculating the fourier transform. eqn 46b, the limits were taken to $0\to \infty$ and of course in an instrument this is clearly impossible, where the delay to one arm may extend only to a centimetre or so a time delay of $\approx 0.033$ ns. The limited range has the effect of convoluting a top-hat or rectangular shape with the delta function response of the ideal case when limits are $\pm \infty$. The result is a sinc function as shown in figures 15, i.e. a peak surrounded by many decreasing oscillations. In this respect the FTIR does distort the shape of the transition from its true Lorentzian shape, not that this matters in practice where only the frequency is important and the intensity only characterised as 'weak', to 'strong'. More important is the resolution because the longer the maximum delay the narrower the peaks become and so finer features become distinguishable. The fwhm. of the sinc function is $0.6035/d_m$ where $d_m$ is the maximum displacement of one arm of the interferometer vs. the other. If this distance is $1$ cm then the resolution will be $0.6 \; \mathrm{ cm^{-1 }} $. Typically this would involve a transform of $2^{13}=8192$ points or a step of $1.2\;\mathrm{\mu m}$.  
 # 
 # The calculation is 
 # 
@@ -890,7 +910,7 @@ plt.show()
 # Figure 34b. The function $\text{sinc}(x)=\sin(\pi x)/(\pi x)$. Using $\pi x$ makes the zeros of the function appear at integer $x$ values and the fwhm is $1.207/2d_m$ where $d_m$ is the maximum path length difference.
 # _________
 # 
-# Because of the distorting effect of the oscillations in the sinc function the fourier transform is apodised, that is, it is multiplied by a function that decreases with $x$, there are several forms of these, they all damp-out the oscillations but at a cost of broadening the transition, there is therefore a play-off between removing oscillations and hence removing distortion and loss of resolution. Bracewell (1986) gives examples of these and other aspects of fourier transforms.
+# Because of the distorting effect of the oscillations in the sinc function the fourier transform is apodised, that is, it is multiplied by a function that decreases with $x$, there are several forms of these, they all damp-out the oscillations but at a cost of broadening the transition. There is therefore a play-off between removing oscillations and hence removing distortion and loss of resolution. Bracewell (1986) gives examples of these and other aspects of fourier transforms.
 # 
 
 # In[ ]:

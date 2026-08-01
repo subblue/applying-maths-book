@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                         # allows printing of SymPy results
+import sympy as sp
+sp.init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -53,8 +53,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x,y = symbols('x,y', positive = True)
-ansy = integrate(log(y),(y,x**2,2-x**2))  
+x,y  = sp.symbols('x,y', positive = True)
+
+ansy = sp.integrate(sp.log(y),(y,x**2,2-x**2))  
 
 
 # Integrating this result with $x$ from $-1 \to 1$ gives
@@ -62,7 +63,7 @@ ansy = integrate(log(y),(y,x**2,2-x**2))
 # In[3]:
 
 
-simplify( integrate(ansy,(x,-1,1) ) )
+sp.simplify( sp.integrate(ansy,(x,-1,1) ) )
 
 
 # and this result can also be expressed using $\displaystyle 2\tanh^{-1}(x)=\frac{\ln(1+x)}{\ln(1-x)}$ as $\displaystyle \int_{-1}^1\int_{x^2}^{2-x^2}\ln(y)dydx=-\frac{64}{9}+\frac{16}{3}\tanh^{-1}\left(\frac{1}{\sqrt{2}} \right)$.
@@ -122,9 +123,11 @@ simplify( integrate(ansy,(x,-1,1) ) )
 # In[4]:
 
 
-x,y = symbols('x,y',positive=True)
-Ix=integrate( integrate( y**2, (y,x**2,2-x**2)  ),(x,-1,1)   )
-Iy=integrate( integrate( x**2, (y,x**2,2-x**2)  ),(x,-1,1)   )
+x,y = sp. symbols('x,y',positive=True)
+
+Ix = sp.integrate( sp.integrate( y**2, (y,x**2,2-x**2)  ),(x,-1,1)   )
+
+Iy = sp.integrate( sp.integrate( x**2, (y,x**2,2-x**2)  ),(x,-1,1)   )
 print(Ix,';',Iy)
 
 
@@ -148,14 +151,16 @@ print(Ix,';',Iy)
 # 
 # $$\displaystyle  \frac{N^2}{a_0^2}\int_0^\infty r^2\left( 6-\frac{r}{a_0} \right)^2e^{-2r/3a_0}r^2= \frac{19683}{8}a_0N^4  \tag{58}$$
 # 
-# where the second $r^2$ comes from the volume element, eqn 56. This integral has a standard form, (two terms of the type $x^ne^{-ax}$) which can be integrated by parts; see (2.13). Using Sympy, because the calculation while straightforward is involved, gives for the radial part equation 58
+# where the second $r^2$ comes from the volume element, eqn. 56. This integral has a standard form, (two terms of the type $x^ne^{-ax}$) which can be integrated by parts; see (2.13). Using SymPy, because the calculation while straightforward is involved, gives for the radial part equation 58
 
 # In[5]:
 
 
-a0,r,N=symbols('a0,r,N',positive=True)
-eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
-(N/a0)**2**2*integrate(eq,(r,0,oo))
+a0,r,N = sp.symbols('a0,r,N',positive=True)
+inf = sp.oo                 # sp.oo is infinity in SymPy
+eq= r**4*(6 - r/a0)**2*sp.exp(-2*r/(3*a0))
+
+(N/a0)**2**2*sp.integrate(eq,(r,0,inf))  
 
 
 # The angular part of the integral 
@@ -287,11 +292,11 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 # In[6]:
 
 
-x,y,r,theta=symbols('x,y,r,theta',positive =True)
+x,y,r,theta = sp.symbols('x,y,r,theta',positive =True)
 
-eq= r**2*cos(theta)-r**6*cos(theta)**2*sin(theta)**3
+eq = r**2*sp.cos(theta) - r**6*sp.cos(theta)**2*sp.sin(theta)**3
 
-integrate( eq,theta)
+sp.integrate( eq,theta)
 
 
 # ### **(iii) Change to polar coordinates**
@@ -314,12 +319,12 @@ integrate( eq,theta)
 # In[7]:
 
 
-r,theta=symbols('r,theta',positive=True)
-eqr = r**3*exp(-r**2)
-ans_r = integrate(eqr,r )
-eqt = cos(theta)**2
-ans_theta = integrate(eqt,theta )
-trigsimp( expand(ans_r*ans_theta) )
+r,theta = sp.symbols('r,theta',positive=True)
+eqr = r**3*sp.exp(-r**2)
+ans_r = sp.integrate(eqr,r )
+eqt = sp.cos(theta)**2
+ans_theta = sp.integrate(eqt,theta )
+sp.trigsimp( sp.expand(ans_r*ans_theta) )
 
 
 # ![Drawing](integration-fig27.png)
@@ -337,16 +342,17 @@ trigsimp( expand(ans_r*ans_theta) )
 # 
 # The integration has to be split into two parts because CD is sloping: the areas ABCE and CDE. The coordinates of the points are the intersections of their respective curves, except E, which is at point $\left(\tan^{-1}(3), 1/\sin(\,\tan^{-1}(3)\,)\right )$. The integration limits for $r$ are $1/\sin(\theta) \to 3/\sin(\theta)$ and for area ABCE, $\theta = \tan^{-1}(3) \to \pi/2$ and for CDE, $\theta = \pi/4 \to \tan^{-1}(3)$. 
 # 
-# The calculation in Sympy is shown below and is in two parts The result for the first part is 
+# The calculation in SymPy is shown below and is in two parts The result for the first part is 
 # 
 # $$\displaystyle \int_{\pi/4}^{\tan^{-1}(3)} \int_{1/\sin(\theta)}^{1/\cos(\theta)} \frac{\cos^2(\theta)}{r^2} dr d\theta =\frac{1}{\sqrt{2}}-\frac{16\sqrt{10}}{75}$$
 
 # In[8]:
 
 
-r, theta = symbols('r, theta', positive = True)
-eq = cos(theta)**2/r**2
-integrate(integrate( eq, (r, 1/sin(theta), 1/cos(theta) )), (theta, pi/4, atan(3)) )  # Double integral
+r, theta = sp.symbols('r, theta', positive = True)
+pi = sp.pi
+eq = sp.cos(theta)**2/r**2
+sp.integrate(sp.integrate( eq, (r, 1/sp.sin(theta), 1/sp.cos(theta) )), (theta, pi/4, sp.atan(3)) )  # Double integral
 
 
 # and for the second part $\displaystyle \int_{\tan^{-1}(3)}^{\pi/2} \int_{1/\sin(\theta)}^{3/\sin(\theta)} \frac{\cos^2(\theta)}{r^2} dr d\theta =\frac{\sqrt{10}}{450}$ making the result $\displaystyle\frac{1}{\sqrt{2}}-\frac{19\sqrt{10}}{90}$.
@@ -354,5 +360,11 @@ integrate(integrate( eq, (r, 1/sin(theta), 1/cos(theta) )), (theta, pi/4, atan(3
 # In[9]:
 
 
-integrate(integrate( eq, (r,1/sin(theta),3/sin(theta)) ), (theta,atan(3),pi/2) )  
+sp.integrate(sp.integrate( eq, (r,1/sp.sin(theta),3/sp.sin(theta)) ), (theta,sp.atan(3),pi/2) )  
+
+
+# In[ ]:
+
+
+
 

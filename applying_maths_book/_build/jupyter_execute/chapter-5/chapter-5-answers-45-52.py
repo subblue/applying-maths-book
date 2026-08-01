@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -45,19 +45,20 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-from sympy.functions.special.polynomials import hermite            
+# using sympy and numpy python
 
-n, m, x,alpha,hbar,omega = symbols('n,m,x,alpha,hbar,omega',positive=True) #using sympy
+n, m, x,alpha,hbar,omega = sp.symbols('n,m,x,alpha,hbar,omega',positive=True) # using sympy
 
 E = lambda n:hbar*omega*(n+1/2)
 #-------------------------------------
 def psi(n):     # wavefunction, factorial is an inbuilt  SymPy function
-    return 1/sqrt(2**n*factorial(n))*sqrt(sqrt(alpha/pi))*\
-           hermite(n,x*sqrt(alpha))*exp(-(alpha*x**2)/2) 
+    return 1/sp.sqrt(2**n*sp.factorial(n))*sp.sqrt(sp.sqrt(alpha/pi))*\
+           sp.hermite(n,x*sp.sqrt(alpha))*sp.exp(-(alpha*x**2)/2) 
 #-------------------------------------
 print('{:s}'.format('non-zero values;2nd order correction'))
 print('{:s}'.format('n,  sum(int(psi(n) * psi(m))**2)/(E(n)-E(m))' ) )
-
+pi = sp.pi
+inf = sp.oo                                   # sp.oo is sympy infinity
 alist = []                                    # list to hold results for printing
 s = 0
 for n in range(5):
@@ -66,7 +67,7 @@ for n in range(5):
         if n != m:
             f01 = psi(n)*x*psi(m)
             #f01 = psi(n)*x**3*psi(m)                      # use this for Q47
-            ans = integrate(f01,(x,-oo,oo),conds='none')   # integrate algeraically
+            ans = sp.integrate(f01,(x,-inf,inf),conds='none')   # integrate algeraically, 
             #print(n,m,ans/(E(n)-E(m)))
             if ans != 0:                                   # check if integral is zero
                 s = s + ans**2/( E(n) - E(m) )             # add each 2nd order term
@@ -134,7 +135,6 @@ for i in range(5):
 
 # wavepacket of particle in a box wavefunctions 
 fig1 = plt.figure(figsize=(13,6))
-plt.rcParams.update({'font.size': 14})  # set font size for plots
 ax = [plt.subplot(2,5,i) for i in range(1,11,1)] # ax0 to ax10
 
 m = 9.109e-31      # mass electron kg
@@ -197,22 +197,21 @@ plt.show()
 # wavepacket calculation  This code follows some of the calculation desribed in the text.
 #--------------
 def Hermite(n,x):       # use recursion formulae, x is real, n is order.
-    if n==0:
+    if n == 0:
         return 1
-    elif n==1:
+    elif n == 1:
         return 2*x
     else:
         return 2*x*Hermite(n-1,x) - 2*(n-1)*Hermite(n-2,x)
 #--------------
 def fact(n):           # factorial accurate for n<100 only
-    if n ==0 or n==1:
+    if n == 0 or n == 1:
         return 1
     else:
         return n*fact(n-1)
 #--------------  
 
-fig1= plt.figure(figsize=(10, 10))   # use figure to define plot size
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig2= plt.figure(figsize=(10, 10))   # use figure to define plot size
 
 pm = 1e-12                    # picometres
 ps = 1e-12                    # picoseconds
@@ -280,8 +279,7 @@ plt.show()
 
 from scipy.special import eval_genlaguerre  as GL
 
-fig1= plt.figure(figsize=(15, 9))       # use figure to define plot size and subplots
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+fig3= plt.figure(figsize=(15, 9))       # use figure to define plot size and subplots
 ax0 = plt.subplot(1,2,1)
 ax1 = plt.subplot(3,2,2)
 ax2 = plt.subplot(3,2,4)
@@ -402,7 +400,7 @@ plt.show()
 
 
 # Quantum Beat calculation
-fig1= plt.figure(figsize=(10, 5.0))   # use figure to define plot size and subplots
+fig4= plt.figure(figsize=(10, 5.0))   # use figure to define plot size and subplots
 ax0 = plt.subplot(1,2,1)
 ax1 = plt.subplot(1,2,2)
 
@@ -421,7 +419,7 @@ f= lambda t: ((a1*B31)**2+ (a2*B32)**2 + 2*a1*a2*B31*B32*np.cos(deltaE*t/hbar))*
 numt = 500
 T = 2.0                             # T is gap between points
 t = np.linspace(0, numt*T, numt)    # t in ps
-ax0.plot(t,f(t)/f(0),color='blue')
+ax0.plot(t,f(t)/f(0),color='blue',linewidth=1)
 ax0.set_ylim([0,1])
 ax0.set_xlim([0,1000])
 ax0.set_xlabel('time /ps')
@@ -430,7 +428,7 @@ ax0.set_title('Quantum beats')
 invt  = np.linspace(0,1.0/(2.0*T), numt//2)   # set frequency for fft
 isfft = np.fft.rfft(f(t))
 freq  = max(invt)
-ax1.plot(invt,np.abs(isfft[:-1]),color='red')
+ax1.plot(invt,np.abs(isfft[:-1]),color='red',linewidth=1)
 ax1.set_xlim([0,freq])
 minor_ticks=np.linspace(0,0.1,11)
 ax1.set_xticks(minor_ticks, minor=True)

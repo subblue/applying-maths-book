@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1665,10 +1665,8 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
 </div>
@@ -1676,7 +1674,7 @@ title="Print to PDF"
 <section id="concept-and-motivation">
 <h2>2.1 Concept and motivation<a class="headerlink" href="#concept-and-motivation" title="Permalink to this headline">#</a></h2>
 <p>A Monte Carlo method of solving differential equations has been developed by Gillespie (1977, 2007) and is just as applicable to chemical reactions as it is to describing S-I-R diseases or predator - prey populations. This method is equivalent to any other numerical method in the sense that it is purely mathematical, no science enters into the method of solution, that is all done when the rate equations are written down. In comparison, in Section 3, a heuristic way of solving problems will be described, and in this case, the science behind the processes involved is an essential part of the method.</p>
-<p>When considered at the level of individual molecules, any chemical reaction has relatively long time periods during which no reaction is possible followed by small time periods when reaction occurs. The Gillespie method calculates these two times and uses them as the basis of the method to solve the rate equations. Bimolecular chemical reactions rarely occur on first contact of the two reactants because there is usually an energy barrier, the activation energy, between reactants and products. Many millions and perhaps thousands of millions of collisions are needed before reaction occurs if the activation energy is much larger than thermal energy and this time is far longer than the time it takes to cross the reaction barrier. Even if a reaction occurs on first contact, there are periods during which no reaction is possible because the molecules are separated from one another. In a first-order, solution - phase reaction, such as a cis - trans isomerization, many collisions with solvent are needed to give the reactant molecule enough energy to surmount the energy barrier between reactant and product. Similar unreactive periods occur even in a molecule isolated from others in the gas phase. The molecule may have enough total energy to react but this is may be spread among all of its <span class="math notranslate nohighlight">\(3N - 6\)</span> vibrational modes. The energy must flow out of these modes and find its way into the reactive bond and this takes time.</p>
+<p>When considered at the level of individual molecules, any chemical reaction has relatively long time periods during which no reaction is possible followed by small time periods when reaction occurs. The Gillespie method calculates these two times and uses them as the basis of the method to solve the rate equations. Bimolecular chemical reactions rarely occur on first contact of the two reactants because there is usually an energy barrier, the activation energy, between reactants and products. Many millions and perhaps thousands of millions of collisions are needed before reaction occurs if the activation energy is much larger than thermal energy and this time is far longer than the time it takes to cross the reaction barrier. Even if a reaction occurs on first contact, there are periods during which no reaction is possible because the molecules are separated from one another. In a first-order, solution - phase reaction, such as a cis - trans isomerization, many collisions with solvent are needed to give the reactant molecule enough energy to surmount the energy barrier between reactant and product. Similar un-reactive periods occur even in a molecule isolated from others in the gas phase. The molecule may have enough total energy to react but this is may be spread among all of its <span class="math notranslate nohighlight">\(3N - 6\)</span> vibrational modes. The energy must flow out of these modes and find its way into the reactive bond and this takes time.</p>
 <p>If the reacting molecules are considered individually, the various times that would be observed between reactions have a Poisson distribution, which is a distribution of many events with each having a low probability, see chapters 1 &amp; 13, the probability of a reaction is therefore also described by a Poisson distribution. Monte Carlo methods mimic the Poisson behaviour of molecules by considering the chance (probability) that no reaction will occur during a certain period of time, which is followed by another smaller time interval during which a reaction does occur. The method, therefore, involves working out these two probabilities and multiplying them together.</p>
 </section>
 <section id="the-gillespie-method">
@@ -1847,7 +1845,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi_f = \frac{k_f }{k_f + k_{isc}}\]</div>
 <p>The sum of these yields is one. Which state the molecule ends up in is determined by casting a die in the form of a uniform random number in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span>. If it is in the range zero to <span class="math notranslate nohighlight">\(\varphi_T\)</span> the triplet is produced; if not, the ground state results and the molecule has fluoresced.</p>
-<p>The calculation is shown below and is only slightly modified from that of the last example. The fluorescence rate constant is 1/(20 ns), and the intersystem crossing rate constant <span class="math notranslate nohighlight">\(1/(10\)</span> ns) makes the fluorescence yield <span class="math notranslate nohighlight">\(1/3\)</span>, so that <span class="math notranslate nohighlight">\(2/3\)</span> goes to the triplet. The prefix T is used for the triplet, such as Tcount or nT for number of triplets, G for ground state, and A the excited state. As before, a check is made in the ‘while..do’ statement to prevent the population of any state becoming negative. The triplet and ground state cannot become zero, because +1 is always added to their populations. The data is placed into <span class="math notranslate nohighlight">\(200\)</span> bins and is calculated for a total time of <span class="math notranslate nohighlight">\(100\)</span> ns with <span class="math notranslate nohighlight">\(20000\)</span> molecules, initially in the excited state. The units of nanoseconds (ns), need not be explicitly included if we work in these units.</p>
+<p>The calculation is shown below and is only slightly modified from that of the last example. The fluorescence rate constant is 1/(20 ns), and the intersystem crossing rate constant <span class="math notranslate nohighlight">\(1/(10\)</span> ns) makes the fluorescence yield <span class="math notranslate nohighlight">\(1/3\)</span>, so that <span class="math notranslate nohighlight">\(2/3\)</span> goes to the triplet. The prefix T is used for the triplet, such as Tcount or nT for number of triplets, G for ground state, and A the excited state. As before, a check is made in the ‘while..do’ statement to prevent the population of any state becoming negative. The triplet and ground state cannot become zero, because +1 is always added to their populations. The data is placed into <span class="math notranslate nohighlight">\(200\)</span> bins and is calculated for a total time of <span class="math notranslate nohighlight">\(100\)</span> ns with <span class="math notranslate nohighlight">\(20000\)</span> molecules, initially in the excited state. The units of nanoseconds (ns), need not be explicitly included if we work in these units. In the calculation we choose the initial number of ground state molecule to be zero, but this is really the <em>change</em> in the number of ground states, taken to be zero at <span class="math notranslate nohighlight">\(=0\)</span> just for simplicity. we could make this any positive number but its easier to make it zero so that all species can be plotted easily together.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig6.png" /></p>
 <p>Figure 6. Excited state pathways.</p>
 <hr class="docutils" />
@@ -1873,7 +1871,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>               <span class="c1"># work out time bins</span>
     <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">maxt</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">bins</span>
 
-<span class="n">G0</span> <span class="o">=</span> <span class="mi">0</span>                              <span class="c1"># initial values ground state G</span>
+<span class="n">G0</span> <span class="o">=</span> <span class="mi">0</span>                              <span class="c1"># initial change in ground state</span>
 <span class="n">T0</span> <span class="o">=</span> <span class="mi">0</span>                              <span class="c1"># initial triplet</span>
 <span class="n">nA</span> <span class="o">=</span> <span class="n">A0</span>                             <span class="c1"># initial excited state</span>
 <span class="n">nG</span> <span class="o">=</span> <span class="n">G0</span>
@@ -1902,10 +1900,10 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
         <span class="k">pass</span>
     <span class="k">pass</span>
 
-<span class="c1">## plot data etc.</span>
-<span class="c1">#plt.plot(dtime,Acount)</span>
-<span class="c1">#plt.plot(dtime,Gcount)</span>
-<span class="c1">#plt.plot(dtime,Tcount)</span>
+<span class="c1"># plot data etc.</span>
+<span class="c1">#plt.scatter(dtime,Acount,s=2)</span>
+<span class="c1">#plt.scatter(dtime,Gcount,s=2)</span>
+<span class="c1">#plt.scatter(dtime,Tcount,s=2)</span>
 <span class="c1">#plt.show()</span>
 </pre></div>
 </div>
@@ -1970,7 +1968,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

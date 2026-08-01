@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1709,8 +1709,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1732,11 +1732,11 @@ title="Print to PDF"
 <p>(d) <span class="math notranslate nohighlight">\(I=\int\cot(ax)dx\)</span>. Recognising that <span class="math notranslate nohighlight">\(\cot=1/\tan=\cos/\sin\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle I=\int\frac{\cos(x)}{\sin(x)}dx\)</span> and the numerator (on top) is <span class="math notranslate nohighlight">\(1/a\)</span> times the derivative of <span class="math notranslate nohighlight">\(\sin(ax)\)</span>. Therefore, using equation 12,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I=\int\cot(ax)dx = \frac{1}{a}\ln\left(\sin(ax)\right)+c\]</div>
-<p>Using Sympy as a check</p>
+<p>Using SymPy as a check</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">cot</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cot</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1850,18 +1850,18 @@ title="Print to PDF"
 <p>using <span class="math notranslate nohighlight">\(I\)</span> from the question and where, logically, <span class="math notranslate nohighlight">\(I_0\)</span> is defined as <span class="math notranslate nohighlight">\(\displaystyle I_0=\int e^{ax}dx = a^{ax}/a\)</span>. Next, define <span class="math notranslate nohighlight">\(\displaystyle I_3=\int x^3e^{ax}dx\)</span> which is <span class="math notranslate nohighlight">\(I_3=x^2I_0-3i_2/a\)</span> and then by induction</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_n=x^nI_0-\frac{n}{a}I_{n-1}  \tag{98}\]</div>
-<p>which can also be written as a recursion formula, <span class="math notranslate nohighlight">\(aI_n+nI_{n-1}=x^ne^{ax}\)</span>. The code below shows the recursion using Sympy. This gives the same answer as direct integration.</p>
+<p>which can also be written as a recursion formula, <span class="math notranslate nohighlight">\(aI_n+nI_{n-1}=x^ne^{ax}\)</span>. The code below shows the recursion using SymPy. This gives the same answer as direct integration.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, x&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, x&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">Intn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">a</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span>  
-    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">Intn</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">a</span>     <span class="c1"># recursion formula</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">a</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span>  
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">Intn</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">a</span>     <span class="c1"># recursion formula</span>
 <span class="c1">#-----------------</span>
 
-<span class="n">simplify</span><span class="p">(</span><span class="n">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>      <span class="c1">#  integral x^5 exp(a*x)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>      <span class="c1">#  integral x^5 exp(a*x)</span>
 </pre></div>
 </div>
 </div>
@@ -1891,19 +1891,19 @@ title="Print to PDF"
 <p>The values of all other integrals of this type can now be calculated provided that <span class="math notranslate nohighlight">\(I_0\)</span> is known and this has the value <span class="math notranslate nohighlight">\(I_0 = \pi/4a\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, x&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, x&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">intxn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">intxn</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>       <span class="c1"># recursion chnage n to n-2 </span>
 <span class="c1">#-----------------</span>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">6</span><span class="p">):</span>   <span class="c1"># make list to see results</span>
-    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">intxn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">6</span><span class="p">):</span>               <span class="c1"># make list to see results</span>
+    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">n</span><span class="p">,</span><span class="n">intxn</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="p">)</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
@@ -2041,7 +2041,7 @@ title="Print to PDF"
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

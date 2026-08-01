@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1639,8 +1639,8 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1673,16 +1673,16 @@ title="Print to PDF"
 <p>(b) The distance between the <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_4\)</span> atoms is easily calculated since their coordinates are known. The coordinate of <span class="math notranslate nohighlight">\(C_4\)</span> in the boat form, has the same <span class="math notranslate nohighlight">\(z\)</span> value as <span class="math notranslate nohighlight">\(C_1\)</span> in the chair form; <span class="math notranslate nohighlight">\(C_{1,boat} = ( -5d/6, 0, \sqrt{2/3}d )\)</span> but in the chair form <span class="math notranslate nohighlight">\(C_4 = -C_1\)</span>, therefore <span class="math notranslate nohighlight">\(C_{4,chair}=(5d/6,0,-\sqrt{2/3}d)\)</span>, and the <span class="math notranslate nohighlight">\(C_1 - C_4\)</span> distance  is <span class="math notranslate nohighlight">\(7d/3=2.3^\cdot\)</span>. In the boat form, only the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values are changed, <span class="math notranslate nohighlight">\(C_{4,boat} = (5d/6, 0, 2/3d)\)</span> and the distance <span class="math notranslate nohighlight">\(5d/3\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>        <span class="c1"># Use sympy make d a real positive value</span>
-<span class="n">C1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span>            <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span> <span class="p">)</span>  <span class="c1"># coordinates 1-6 for chair form.</span>
-<span class="n">C2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>  <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
-<span class="n">C3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>   <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
-<span class="n">C4</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">6</span> <span class="p">,</span> <span class="mi">0</span>           <span class="p">,</span> <span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span> <span class="p">)</span>
-<span class="n">C5</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>   <span class="p">,</span> <span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
-<span class="n">C6</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>  <span class="p">,</span> <span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
-<span class="n">C4b</span><span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">6</span> <span class="p">,</span> <span class="mi">0</span>           <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span> <span class="p">)</span> <span class="c1"># C4 boat </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>        <span class="c1"># Use sympy make d a real positive value</span>
+<span class="n">C1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span>            <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span> <span class="p">)</span>  <span class="c1"># coordinates 1-6 for chair form.</span>
+<span class="n">C2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>  <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">C3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>   <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">C4</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">6</span> <span class="p">,</span> <span class="mi">0</span>           <span class="p">,</span> <span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span> <span class="p">)</span>
+<span class="n">C5</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>   <span class="p">,</span> <span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">C6</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>  <span class="p">,</span> <span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">C4b</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">6</span> <span class="p">,</span> <span class="mi">0</span>           <span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span> <span class="p">)</span> <span class="c1"># C4 boat </span>
 
-<span class="n">C14chair</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">C1</span><span class="o">-</span><span class="n">C4</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">C1</span><span class="o">-</span><span class="n">C4</span><span class="p">))</span>
+<span class="n">C14chair</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">C1</span><span class="o">-</span><span class="n">C4</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">C1</span><span class="o">-</span><span class="n">C4</span><span class="p">))</span>
 <span class="n">C14chair</span>
 </pre></div>
 </div>
@@ -1693,7 +1693,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C14boat</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="n">C1</span> <span class="o">-</span> <span class="n">C4b</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">C1</span> <span class="o">-</span> <span class="n">C4b</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C14boat</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="n">C1</span> <span class="o">-</span> <span class="n">C4b</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">C1</span> <span class="o">-</span> <span class="n">C4b</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">C14boat</span>
 </pre></div>
 </div>
@@ -1717,7 +1717,7 @@ title="Print to PDF"
 <span class="n">d5</span> <span class="o">=</span> <span class="n">C5</span> <span class="o">-</span> <span class="n">C6</span>
 <span class="n">m</span>  <span class="o">=</span> <span class="n">d1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
 <span class="n">n</span>  <span class="o">=</span> <span class="n">d2</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">d5</span><span class="p">)</span>
-<span class="n">psi</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dihedral angle = &#39;</span><span class="p">,</span>  <span class="n">psi</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">))</span>
 </pre></div>
 </div>
@@ -1733,7 +1733,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="o">-</span><span class="n">d2</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span>  <span class="n">d1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">d5</span><span class="p">)</span>
-<span class="n">psi</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dihedral angle = &#39;</span><span class="p">,</span>  <span class="n">psi</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">))</span>
 </pre></div>
 </div>
@@ -1747,10 +1747,10 @@ title="Print to PDF"
 <p>(e) The angle between <span class="math notranslate nohighlight">\(C_1-C_6-C_2\)</span> and C<span class="math notranslate nohighlight">\(_5-C_4-C_3\)</span> in the boat form, requires us to use <span class="math notranslate nohighlight">\(C_{4b}\)</span> as defined above. The vector <span class="math notranslate nohighlight">\(\vec d_4\)</span> can be translated to start at <span class="math notranslate nohighlight">\(d_2\)</span> without changing the torsion angle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d4</span>  <span class="o">=</span><span class="n">C4b</span> <span class="o">-</span> <span class="n">C5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d4</span><span class="o">=</span> <span class="n">C4b</span> <span class="o">-</span> <span class="n">C5</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">d1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">d2</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">d4</span><span class="p">)</span>
-<span class="n">psi</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dihedral angle = &#39;</span><span class="p">,</span>  <span class="n">psi</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">))</span>
 </pre></div>
 </div>
@@ -2031,7 +2031,7 @@ chi    = -124.566
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

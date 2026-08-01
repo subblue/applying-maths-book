@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -238,7 +238,19 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{dy}{dx}=1\big/ \frac{dx}{dy}  \qquad\tag{13}$$
 # 
-# As an example, suppose that $\displaystyle \sin(y^2) = x$, differentiating by $y$ gives the result $\displaystyle dx/dy = 2y \cos(y^2)$. Differentiating by $x$ could mean that a rearrangement must first be done to form $\displaystyle y = \sqrt{\sin^{-1}(x)}$ and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly $\displaystyle 2y \cos(y^2)dy/dx = 1$ and these two results show that equation (13) is true.
+# As an example, suppose that $\displaystyle \sin\left(y^2\right) = x$, differentiating by $y$ gives the result 
+# 
+# $$\displaystyle \frac{dx}{dy} = 2y \cos\left(y^2\right)$$
+# 
+# Differentiating by $x$ could mean that a rearrangement must first be done to form 
+# 
+# $$\displaystyle y = \sqrt{\sin^{-1}(x)}$$
+# 
+# and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly 
+# 
+# $$\displaystyle 2y \cos\left(y^2\right)\frac{dy}{dx} = 1$$
+# 
+# and these two results show that equation (13) is true.
 # 
 # ## 3.15 Differentiating integrals
 # 
@@ -274,9 +286,21 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 3.16 Fractional derivatives
 # 
-# While it is possible to repeatedly take derivatives of many functions, for instance $\displaystyle \frac{d^3}{dx^3}\sin(x)$, what about the $1/3$ or $1/2$ or $-1$ derivative? What would such a thing mean? In the case of $1/2$ derivatives we can say that if the function is $x^n$ then the half derivative is such that $\displaystyle \frac{d^{1/2}}{dx^{1/2}}\frac{d^{1/2}}{dx^{1/2}}x^n\equiv nx^{n-1}$. In other words differentiating, or operating twice on $x^n$ with $d^{1/2}/dx^{1/2}$, is the same as differentiating once with $dy/dx$. 
+# While it is possible to repeatedly take derivatives of many functions, for instance $\displaystyle \frac{d^3}{dx^3}\sin(x)$, what about the $1/3$ or $1/2$ or $-1$ derivative? What would such a thing mean? In the case of $1/2$ derivatives we can say that if the function is $x^n$ then the half derivative is such that 
 # 
-# The general result for the $n^{th}$ derivative of $x^m$ is $\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}$ which can be generalised if $n$ is a fraction by changing the factorials to gamma functions as $n!=\Gamma (n+1)$ thus $\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}$. As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse's paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.
+# $$\displaystyle \frac{d^{1/2}}{dx^{1/2}}\frac{d^{1/2}}{dx^{1/2}}x^n\equiv nx^{n-1}$$
+# 
+# In other words differentiating, or operating twice on $x^n$ with $d^{1/2}/dx^{1/2}$, is the same as differentiating once with $dy/dx$. 
+# 
+# The general result for the $n^{th}$ derivative of $x^m$ is 
+# 
+# $$\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}$$
+# 
+# which can be generalised if $n$ is a fraction by changing the factorials to gamma functions as $n!=\Gamma (n+1)$ thus 
+# 
+# $$\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}$$
+# 
+# As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse's paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.
 
 # ## 3.17 Table of Differentials
 # 
@@ -296,15 +320,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # \displaystyle\frac{d}{dx}\tan^{-1}(ax+b) & = &\displaystyle \frac{a}{1+(ax + b)^2 }\\
 # \hline \end{array}$$
 # 
-# Using python/Sympy is very easy for more complex functions.
+# Using python/SymPy is very easy for more complex functions.
 
 # In[2]:
 
 
-x,a,b = symbols('x,a,b')
+x,a,b = sp.symbols('x,a,b')
 
-f01 = x**b*sin(a*x)**3
-diff(f01,x)
+f01 = x**b*sp.sin(a*x)**3
+sp.diff(f01,x)               # this result can be simplified
+
+
+# In[3]:
+
+
+x = sp.symbols('x',real=True)              # make x real number not default to complex
+sp.simplify( sp.diff(abs(sp.sin(x)),x) )
 
 
 # In[ ]:

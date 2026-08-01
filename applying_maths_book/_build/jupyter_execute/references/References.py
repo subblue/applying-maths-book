@@ -114,7 +114,11 @@
 # 
 # Davidson, N. (1962), Statistical Mechanics, McGraw Hill.
 # 
+# Demtr&ouml;der, W. (1996) Laser Spectroscopy, Springer-Verlag. 2nd edition.
+# 
 # Dence, J. (1975), Mathematical Techniques in Chemistry, Wiley.
+# 
+# Dorfman, R. (1943), Annals of Mathematical Statistics, 14: 436–440.
 # 
 # Dunham W. (2018), The Calculus Gallery, Princeton University Press.
 # 
@@ -389,6 +393,8 @@
 # 
 # Waller, A. & Liddington, R. C. (1990), Refinement of a Partially Oxygenated T State Human
 # Haemoglobin at 1.5 Å Resolution, Acta Cryst. B 46: 409.
+# 
+# Wayne, M.L. & Bolker B.M. (2015) Infectious Diseases. A Very Short Introduction. Oxford University Press.
 # 
 # Weast, R. C. (ed.) CRC Handbook of Chemistry and Physics, Chemical Rubber Co. (Any edition will do.
 # This book is colloquially known as the ' Rubber Book ’.)

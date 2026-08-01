@@ -9,10 +9,10 @@
 # import all python add-ons etc that will be needed later on
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-import numpy.linalg as La
+#import numpy.linalg as La
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # and similarly for the other calculations.
 # 
 # ### **(ii) Division**
-# One matrix _cannot_ be divided by another; the inverse matrix of the divisor is formed instead and then these matrices are multiplied together. The inverse of a matrix $\pmb M$ is always written as $\pmb{M}^{-1}$. Generating the inverse of a matrix is difficult unless the matrix is small, and one would normally use Python/Sympy to do this.
+# One matrix _cannot_ be divided by another; the inverse matrix of the divisor is formed instead and then these matrices are multiplied together. The inverse of a matrix $\pmb M$ is always written as $\pmb{M}^{-1}$. Generating the inverse of a matrix is difficult unless the matrix is small, and one would normally use Python/SymPy to do this.
 # 
 # ### **(iii) Multiplication**
 # Matrices can be multiplied together. The multiplication order is always important; $\pmb{AB}$ is not necessarily the same as $\pmb{BA}$. With three or more matrices $\pmb{ABC}$, the multiplication sequence does not matter as long as the ordering is the same. This is the associatite property
@@ -107,7 +107,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle\begin{bmatrix} a & b & c \\ d & e & f \\g & h & i  \end{bmatrix}^{\,T}= \begin{bmatrix} a & d & g\\b & e & h\\ c & f & i\end{bmatrix}$$ 
 # 
-# You can appreciate that two transposes reproduce the initial matrix $(\pmb{M}^T)^T = \pmb{M}$.
+# and so the trace of a matrix is the same as the trace of its transpose,$ Tr(\pmb M)=Tr(\pmb M^T)$. You can appreciate that two transposes reproduce the initial matrix $(\pmb{M}^T)^T = \pmb{M}$.
 # 
 # A _symmetric_ matrix is equal to its transpose and therefore must also be square and have off-diagonal elements $a_{ij} = a_{ji}$. An _antisymmetric_ matrix satisfies the identity $\pmb{A} = -\pmb{A}^T$ and must therefore have zeros on its diagonal and have components $a_{ij} = -a_{ji}$; for example, such a matrix and its transpose is
 # 
@@ -117,15 +117,33 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle (\pmb{AB})^T=\pmb{B}^T\pmb{A}^T$$
 # 
-# Matrix multiplication is described in section 5 and if for example if $\displaystyle \pmb{A}=\begin{bmatrix} a & b  \\ c & d \end{bmatrix},\; \pmb{B}=\begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix}$, then 
+# Matrix multiplication is described in section 5 and if you are not familiar with this it may be worth reading  about it now. If for example if $\displaystyle \pmb{A}=\begin{bmatrix} a & b  \\ c & d \end{bmatrix},\; \pmb{B}=\begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix}$, then 
 # 
-# $$\displaystyle \pmb{AB}^T = \begin{bmatrix} a +3b & 2a+4b  \\ c+3d & 2c+4d \end{bmatrix}^T=\begin{bmatrix} a +3b & c+3d  \\ 2a+4b & 2c+4d \end{bmatrix}$$
+# $$\displaystyle (\pmb{AB})^T = \begin{bmatrix} a +3b & 2a+4b  \\ c+3d & 2c+4d \end{bmatrix}^T=\begin{bmatrix} a +3b & c+3d  \\ 2a+4b & 2c+4d \end{bmatrix}$$
 # 
 # Performing the transpose then multiplying in reverse order gives the same result.
 # 
-# $$\displaystyle \pmb{b}^T\pmb{A}^T = \begin{bmatrix} 1 & 3  \\ 2& 4 \end{bmatrix}\begin{bmatrix} a & c  \\ b& d \end{bmatrix}=\begin{bmatrix} a +3b & c+3d  \\ 2a+4b & 2c+4d \end{bmatrix}$$
+# $$\displaystyle \pmb{B}^T\pmb{A}^T = \begin{bmatrix} 1 & 3  \\ 2& 4 \end{bmatrix}\begin{bmatrix} a & c  \\ b& d \end{bmatrix}=\begin{bmatrix} a +3b & c+3d  \\ 2a+4b & 2c+4d \end{bmatrix}$$
+# 
+# When a matrix is multiplied by its transpose a symmetric diagonal matrix is produced. Take the matrix $\pmb A$ its transpose is $\displaystyle \pmb{A}^T=\begin{bmatrix} a & c  \\ b & d \end{bmatrix} $ and the products are
+# 
+# $$\displaystyle \pmb A\pmb A^T=\begin{bmatrix} a^2+b^2 & ac+bd  \\ ac+bd & c^2+d^2 \end{bmatrix},\qquad \pmb A^T\pmb A=\begin{bmatrix} a^2+c^2 & ab+cd  \\ ab+cd & b^2+d^2 \end{bmatrix}$$
+# 
+# so that $\pmb A\pmb A^T \ne \pmb A^T\pmb A$ and so a matrix and its transpose do not commute. It is easy to show that the sum of a matrix and its transpose is equal to its transpose because the addition or subtraction symmetrises the matrix;
+# 
+# $$\displaystyle A_0=A+A^T,\qquad A_0=A_0^T,\quad\text{and if }\quad A_0=A-A^T,\qquad A_0=-A_0^T$$
+# 
+# for example let 
+# 
+# $$\displaystyle \pmb{A}=\begin{bmatrix} a & b  \\ c & d \end{bmatrix}\quad\text{and}\quad\pmb{A}^T=\begin{bmatrix} a & c  \\ b & d \end{bmatrix} $$
+# 
+# then
+# 
+# $$\displaystyle \pmb{A}=\begin{bmatrix} a & b  \\ c & d \end{bmatrix}+\begin{bmatrix} a & c  \\ b & d \end{bmatrix}= \begin{bmatrix} 2a & b+c  \\ b+c & 2d \end{bmatrix}=\pmb {A}^T$$
+# 
+# and as the sum is symmetrical the transpose equals the matrix.
 
-# ## 4.6 Complex conjugate of a matrix M*
+# ## 4.6 Complex conjugate of a matrix $\pmb M$*
 # This changes each matrix element with its complex conjugate, assuming there are complex numbers in the matrix; if not, it has no effect. 
 # 
 # The conjugate of a matrix $\pmb{M}$ is labelled $\pmb{M}^*$. In making a complex conjugate each $i$ is replaced by $-i$ where $i =\sqrt{-1}$, for example $[3\; i\;4]^* =[3\;-i \;4]$.
@@ -139,7 +157,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This grand sounding name simply means
 # 
-# $\qquad\qquad$_'Form the complex conjugate, then transpose the matrix or vice versa'_
+# >*Form the complex conjugate, then transpose the matrix or vice versa*
 # 
 # The special symbol $\dagger$ is conventionally used as a superscript, e.g.  
 # 
@@ -189,13 +207,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $| \pmb{M} | \ne 0$ is the determinant and $| \pmb{C}_{j,i} |$ is the cofactor matrix of row $j$ and column $i$. Note the change in ordering of the indices. Cofactors were described in Section 2.2. Generally, it is best to use Python/NymPy to calculate the inverse, because, besides being tedious, the chance of making an error is very high. The matrix inverse is met again when solving equations.
 # 
-# Using Python/ NumPy to invert a matrix is shown next. The NumPy linear algebra module has to be imported first as done at the top of this page.
+# Using Python/ NumPy to invert a matrix is shown next. The NumPy linear algebra module is used with syntax $\mathtt{np.linalg. \;etc}$
 
 # In[2]:
 
 
 M    = np.array([ [2,2,3],[-1,0,4],[6,5,4] ])   # make matrix
-invM = La.inv(M)
+invM = np.linalg.inv(M)                         #
 invM             # inverse
 
 
@@ -322,18 +340,18 @@ M @ invM
 # $$\displaystyle \begin{bmatrix}b_1 & b_2 & b_3 \end{bmatrix}\begin{bmatrix} a_{11} & a_{12} \\a_{21} & a_{22} \\ a_{31} &a_{32} \end{bmatrix} = \begin{bmatrix} a_{11} & a_{21} &a_{31} \\ a_{12} & a_{22} &a_{32} \end{bmatrix}  \begin{bmatrix} b_{1} \\ b_{2}\\b_3  \end{bmatrix} $$
 # 
 # 
-# ### **Schematic of matrix multiplication by dot products**
-# If you are familiar with taking the dot product of two vectors then the simplest way to do a matrix multiplication by hand can follow the scheme shown below. Each row and column chosen becomes, in effect, a vector making it easy, knowing the row and column indices, where the resultant dot product, which is a number, has to go. You can also immediately appreciate *via* the dot product why the number of columns in the left-hand matrix has to be equal to the number of rows in the right-hand one. This method can not be used when right multiplying a column by a row as in the outer product. 
+# ### **Schematic of matrix multiplication *via* the dot product**
+# If you are familiar with taking the dot product of two vectors then the simplest way to do a matrix multiplication by hand can follow the scheme shown below. Imagine that each row and column chosen becomes a vector making it easy, knowing the row and column indices, where the resultant dot product has to go. You can also immediately appreciate *via* the dot product why the number of columns in the left-hand matrix has to be equal to the number of rows in the right-hand one. Note that this method cannot be used when right multiplying a column by a row as in the outer product. 
 # 
 # ![Drawing](matrix-pics3.png)
 # ______________________
 # 
 # ### **Outer product vector multiplication**
-# In the case of the outer product the calculation is
+# In the case of the outer product, which is a matrix, the calculation is,
 # 
 # $$\displaystyle \begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix}\begin{bmatrix} a_1 & a_2 & a_3 \cdots\end{bmatrix}=\begin{bmatrix}b_1a_1 & b_1a_2 & b_1a_3\cdots \\ b_2a_1 & b_2a_2 &\cdots \\ \vdots & \vdots& \ddots\end{bmatrix} $$
 # 
-# ### **Schematics of matrix multiplication**
+# ## Schematics of matrix multiplication
 # The diagrams in Fig. 7 (below) show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The 'bra-ket' notation is shown also. 
 # 
 # ![Drawing](matrices-fig7a.png) 
@@ -341,10 +359,19 @@ M @ invM
 # ![Drawing](matrices-fig7b.png)
 # _____
 # ![Drawing](matrices-fig7c.png) 
-# 
+# ____________
 # ![Drawing](matrices-fig7d.png)
+# 
 # Figure 7. Pictorial representation of allowed matrix multiplication. Only these types of multiplications are possible. The lowest diagram shows the general case. The bra-ket notation used in quantum mechanics is shown also.  The dot product is also called the *inner product*.
 # _______
+# ![Drawing](matrices-fig7e.png)
+# 
+# Figure 7a. These matrix products do not exist
+# ___________
+# ![Drawing](matrices-fig7f.png)
+# 
+# Figure 7b. The triple product is often encountered in quantum mechanics. It is the expectation value and is also the integral $\langle H\rangle=\int \psi^* H\psi d\tau$.
+# ___________________
 # 
 # ## 5.1 Matrix sum
 # 
@@ -355,7 +382,7 @@ M @ invM
 # 
 # ## 5.2 bra-ket notation
 # 
-# Often the bra-ket notation is used in quantum mechanics. The _ket_ $|k\rangle$  is a single column matrix (a column vector) $\displaystyle | k\rangle =\begin{bmatrix} a \\ b \\ \vdots \end{bmatrix}$ and the _bra_  is the single row matrix (or vector) and is always the complex conjugate of the ket. $\displaystyle \langle j|=\begin{bmatrix} a^* & b^* & \cdots \end{bmatrix}$. The $\langle j |k\rangle$ is a scalar number, and $|k\rangle \langle j|$ a square matrix.
+# Often the bra-ket notation is used in quantum mechanics. The *ket* $|k\rangle$  is *always* a single column matrix (a column vector) $\displaystyle | k\rangle =\begin{bmatrix} a \\ b \\ \vdots \end{bmatrix}$ and the *bra*  is always a single row matrix (or vector) and is always the complex conjugate of the ket. $\displaystyle \langle j|=\begin{bmatrix} a^* & b^* & \cdots \end{bmatrix}$. The $\langle j |k\rangle$ is a scalar number, and $|k\rangle \langle j|$ a square matrix.
 # 
 # These objects are discussed in more detail in chapters 6 and are mentioned here as they provide a shorthand way of visualizing matrix multiplication; see Figure 7. There is no specific symbol for a scalar or a square matrix; they have to be represented by the bra-ket pair.
 # 
@@ -410,7 +437,7 @@ M @ invM
 # 
 # ## 5.6 Block diagonal matrices
 # 
-# In many instances, a matrix can be blocked into smaller ones symmetrically disposed along the diagonal. The result of this is that the problem reduces to the lesser one of solving several matrices where each is much smaller than the whole and is therefore more easily solved. Why should we bother with this if the computer can diagonalize any matrix we give it to do? The reason is that eigenvalues can more easily be identified within the basis set by doing the calculation this way. Recall that the basis set you choose to use, for example in a quantum problem, determines the ordering of elements in a matrix. Why does this matter? It matters because when the spectrum from a molecule is observed, which measures only the difference in energy levels, we would like to know what quantum numbers give rise to what spectral lines. If the matrix is a block diagonal one, then this is made somewhat easier because we know what parts of the basis set elements are involved because each block when diagonalized contains only that part of the basis set that was in it in the first place. If the whole matrix is diagonalized blind, as it were, and without thinking about the problem beforehand, this information can be lost because all the elements and hence eigenvalues can be mixed up. The elements in the basis set can be ordered in any way you want, and different basis sets can be chosen for the same problem. By trying different ordering, it is sometimes possible to discover a block diagonal form for a matrix and so aid its solution. In the study of group theory, blocking matrices proves to be a powerful way of determining the irreducible representation; see Section 6. 
+# In many instances a matrix can be blocked into smaller ones symmetrically disposed along the diagonal. The advantage of doing this is that the problem reduces to the lesser one of solving several matrices where each is much smaller than the whole and is therefore more easily solved. Why should we bother with this if the computer can diagonalize any matrix we give it to do? The reason is that eigenvalues can more easily be identified within the basis set by doing the calculation this way. Recall that the basis set you choose to use, for example in a quantum problem, determines the ordering of elements in a matrix. Why does this matter? It matters because when the spectrum from a molecule is observed, which measures only the difference in energy levels, we would like to know what quantum numbers give rise to what spectral lines. If the matrix is a block diagonal one, then this is made somewhat easier because we know what parts of the basis set elements are involved because each block when diagonalized contains only that part of the basis set that was in it in the first place. If the whole matrix is diagonalized blind as it were, and without thinking about the problem beforehand, this information can be lost because all the elements and hence eigenvalues can be mixed up. The elements in the basis set can be ordered in any way you want, and different basis sets can be chosen for the same problem. By trying different ordering it is sometimes possible to discover a block diagonal form for a matrix, and so aid its solution. In the study of group theory, blocking matrices proves to be a powerful way of determining the irreducible representation; see Section 6. 
 # 
 # The following matrix has a $2 \times 2$, a $3 \times 3$, and a $1 \times 1$ block.
 # 
@@ -460,8 +487,8 @@ M @ invM
 # In[4]:
 
 
-M, N, a, b, c, d = symbols('M, N, a, b, c, d')    # define symbols to use        
-M = Matrix( [[a, b], [c, d]]   )              # note double sets of brackets and capital M
+M, N, a, b, c, d = sp.symbols('M, N, a, b, c, d')    # define symbols to use        
+M = sp.Matrix( [[a, b], [c, d]]   )              # note double sets of brackets and capital M
 M
 
 
@@ -474,7 +501,7 @@ M.det()                         # determinant
 # In[6]:
 
 
-N = Matrix([[d,a],[c,b] ])
+N = sp.Matrix([[d,a],[c,b] ])
 
 N*M                             # matrix multiply
 
@@ -494,27 +521,27 @@ N*M - M*N                        # M and N do not commute
 # In[9]:
 
 
-V = Matrix([2,3])                # define vector column
+V = sp.Matrix([2,3])                # define vector column
 V
 
 
 # In[10]:
 
 
-W = Matrix ([5,4])
+W = sp.Matrix ([5,4])
 V.dot(W)                         # dot product is a scalar number
 
 
 # In[11]:
 
 
-Transpose(V)*W                   # same as dot product 
+sp.Transpose(V)*W                   # same as dot product 
 
 
 # In[12]:
 
 
-V*transpose(W)                   # outer product is a matrix see figure 7
+V*sp.transpose(W)                   # outer product is a matrix see figure 7
 
 
 # ### **(ii) Using NumPy for numerical calculation.  Note that the notation is different to that of SymPy** 

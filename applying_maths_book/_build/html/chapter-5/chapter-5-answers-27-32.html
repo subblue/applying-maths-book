@@ -165,12 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
      <span class="math notranslate nohighlight">
       \(\delta\)
      </span>
-     functions, types of  series &amp;  estimating quantities
+     functions, arithmetic and geometric series &amp;  estimating quantities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
-     Questions 35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-40.html">
+     Questions 35 - 40
     </a>
    </li>
    <li class="toctree-l2">
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
-     Solutions Q35 - 39
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-40.html">
+     Solutions Q35 - 40
     </a>
    </li>
   </ul>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-B.html">
-     3 De Moivre’s theorem and integer powers of complex numbers
+     3 De Moivre’s Theorem and Integer powers of complex numbers
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations
+     6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations .
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
-     Questions 53 - 48
+     Questions 53 - 58
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order equations &amp; Integrating Factors. Second order equations, Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
-     Questions 24 - 37
+     Questions 24 - 38
     </a>
    </li>
    <li class="toctree-l2">
@@ -1018,7 +1018,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
-     Solutions Q22 - 37
+     Solutions Q22 - 38
     </a>
    </li>
   </ul>
@@ -1609,9 +1609,9 @@ title="Print to PDF"
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
 </div>
@@ -1621,8 +1621,8 @@ title="Print to PDF"
 <p>The function is shown in the next figure. Its integral is expected to be small because there is almost as much positive as negative area. Start by calculating the series to see if a summation formula is obvious, which it appears not to be,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">series</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1635,22 +1635,21 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># **** The very last part of this calculation may be v slow ****</span>
 <span class="c1"># because the integration is first done algebraically.</span>
+<span class="c1"># mixture is sympy and numpy python used.</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
-<span class="n">z</span>   <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
-<span class="n">sfunc</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>           <span class="c1"># SymPy function</span>
-<span class="n">func</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">sfunc</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>            <span class="c1"># make SymPy result into numpy function</span>
+<span class="n">z</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">sfunc</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>             <span class="c1"># SymPy function</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">sfunc</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>            <span class="c1"># make SymPy result into numpy function</span>
 
-<span class="n">s0</span>   <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">sfunc</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>             <span class="c1"># series(function name, variable, start, n= power )</span>
+<span class="n">s0</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">sfunc</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>             <span class="c1"># series(function name, variable, start, n= power )</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;First few terms of series&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">s0</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">29</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="n">smax</span> <span class="o">=</span> <span class="mi">30</span>                                 <span class="c1"># repeat for numberical calc, maximum power of z</span>
-<span class="n">s</span>   <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">s0</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">smax</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>  <span class="c1"># remove &#39;big O&#39; from result</span>
-<span class="n">aseries</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>           <span class="c1"># make SymPy result into numpy function</span>
-<span class="n">numx</span> <span class="o">=</span> <span class="mi">200</span>                                <span class="c1"># maximum numbe rof x values</span>
-<span class="n">maxx</span> <span class="o">=</span> <span class="mf">10.0</span>                               <span class="c1"># max x </span>
+<span class="n">smax</span> <span class="o">=</span> <span class="mi">30</span>                                      <span class="c1"># repeat for numberical calc, maximum power of z</span>
+<span class="n">s</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">s0</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">smax</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>     <span class="c1"># remove &#39;big O&#39; from result</span>
+<span class="n">aseries</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>             <span class="c1"># make SymPy result into numpy function</span>
+<span class="n">numx</span> <span class="o">=</span> <span class="mi">200</span>                                     <span class="c1"># maximum number of x values</span>
+<span class="n">maxx</span> <span class="o">=</span> <span class="mf">10.0</span>                                    <span class="c1"># max x </span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxx</span><span class="p">,</span> <span class="n">numx</span> <span class="p">)</span>
 
 
@@ -1662,19 +1661,17 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">a_int</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">sfunc</span><span class="p">,(</span><span class="n">z</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">maxx</span><span class="p">)</span> <span class="p">)</span>   <span class="c1"># SymPy symbolic integration</span>
+<span class="n">a_int</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sfunc</span><span class="p">,(</span><span class="n">z</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">maxx</span><span class="p">)</span> <span class="p">)</span>   <span class="c1"># SymPy symbolic integration</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:f}</span><span class="s1"> </span><span class="si">{:s}{:8.5g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;exact integral 0 to &#39;</span> <span class="p">,</span><span class="n">maxx</span><span class="p">,</span><span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="n">a_int</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;calculating series to limit 30 to 45 and integral values&#39;</span><span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">sfunc</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>   <span class="c1"># make series to max z**i, i.e. z**35, 36 etc</span>
-    <span class="n">s_int</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">s</span><span class="p">,(</span><span class="n">z</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="n">maxx</span> <span class="p">)</span> <span class="p">)</span>   <span class="c1"># numerically integrate series from 0 to maxxx</span>
-    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">s_int</span><span class="p">])</span>                     <span class="c1"># make list just to print in one go</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>  <span class="p">)</span>           
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">sfunc</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>   <span class="c1"># make series to max z**i, i.e. z**35, 36 etc</span>
+    <span class="n">s_int</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">s</span><span class="p">,(</span><span class="n">z</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="n">maxx</span> <span class="p">)</span> <span class="p">)</span>     <span class="c1"># numerically integrate series from 0 to maxxx</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1">, </span><span class="si">{:8.5g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">s_int</span><span class="p">)</span>  <span class="p">)</span> 
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1687,15 +1684,31 @@ title="Print to PDF"
 calculating series to limit 30 to 45 and integral values
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[30, -24.2885755359146]
-[32, -2.79964605253321]
-[34, -0.245783464963722]
-[36, 0.0190922544560026]
-[38, 0.0432862371462572]
-[40, 0.0452479140456348]
-[42, 0.0453900855458111]
-[44, 0.0453993503120927]
-[46, 0.0453998981399927]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30,  -24.289
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32,  -2.7996
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34, -0.24578
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36, 0.019092
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38, 0.043286
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40, 0.045248
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42, 0.045390
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44, 0.045399
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46, 0.045400
 </pre></div>
 </div>
 </div>
@@ -1735,6 +1748,9 @@ calculating series to limit 30 to 45 and integral values
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1">#--------------------</span>
+
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
 <span class="n">bfact</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span>
 
 <span class="n">maxn</span> <span class="o">=</span> <span class="mi">100</span>
@@ -1757,7 +1773,10 @@ calculating series to limit 30 to 45 and integral values
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-answers-27-32_7_0.png" src="../_images/chapter-5-answers-27-32_7_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 500x500 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../_images/chapter-5-answers-27-32_7_1.png" src="../_images/chapter-5-answers-27-32_7_1.png" />
 </div>
 </div>
 <p>Figure 27. Log of the factorial function (upper line) and log of Stirling’s approximation, which is accurate only at large <span class="math notranslate nohighlight">\(n\)</span>.</p>
@@ -1804,6 +1823,8 @@ Z =    1.03754 at 30.000 K
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculation of rotational partition function by three different methods.</span>
+<span class="c1"># mixing SymPy and numpy python</span>
+
 <span class="n">B</span>   <span class="o">=</span> <span class="mf">45.655</span>                <span class="c1"># value for HD cm^(-1)</span>
 <span class="n">k_B</span> <span class="o">=</span> <span class="mf">1.38e-23</span> <span class="o">*</span><span class="mf">5.034e22</span>    <span class="c1"># cm^(-1)</span>
 <span class="n">maxT</span><span class="o">=</span> <span class="mf">300.0</span>                 <span class="c1"># maximum temperature</span>
@@ -1811,39 +1832,38 @@ Z =    1.03754 at 30.000 K
 <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">maxJ</span> <span class="o">=</span> <span class="mi">10</span>                   <span class="c1"># max J, see previous calculation</span>
 
-<span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k, x, T&#39;</span><span class="p">)</span><span class="c1"># start to use sympy for Euler-Maclaurin, define symbols</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k, x, T&#39;</span><span class="p">)</span><span class="c1"># start to use SymPy for Euler-Maclaurin, define symbols</span>
 
-<span class="n">f</span> <span class="o">=</span>  <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">B</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>   <span class="c1"># terms in partition function</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">maxJ</span><span class="p">))</span>              
+<span class="n">f</span> <span class="o">=</span>  <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">B</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>   <span class="c1"># terms in partition function</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">maxJ</span><span class="p">))</span>              
 <span class="n">s2</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">maxJ</span><span class="p">})</span> <span class="o">+</span> <span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">m</span><span class="p">}))</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">s3</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>                         <span class="c1"># form series</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>                             <span class="c1"># form series</span>
     <span class="n">k</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">s3</span> <span class="o">=</span> <span class="n">s3</span> <span class="o">+</span> <span class="p">(</span><span class="n">bernoulli</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Euler-Maclaurin terms</span>
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">s3</span> <span class="o">+</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Euler-Maclaurin terms</span>
     <span class="k">pass</span>
 <span class="n">s3n</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">maxJ</span><span class="p">})</span>
 <span class="n">s3m</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">m</span><span class="p">})</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s3n</span> <span class="o">-</span> <span class="n">s3m</span>                    <span class="c1"># Euler Maclaurin result</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s3n</span> <span class="o">-</span> <span class="n">s3m</span>                        <span class="c1"># Euler Maclaurin result</span>
 
-<span class="n">EM</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>                 <span class="c1"># sympy &#39;trick&#39; to make into a function in T</span>
+<span class="n">EM</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>                  <span class="c1"># SymPy &#39;trick&#39; to make into a function in T</span>
 
 <span class="n">numT</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">maxT</span><span class="p">,</span><span class="n">numT</span><span class="p">)</span>               <span class="c1"># numT points is range 1 to maxT</span>
-<span class="n">Zem</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">EM</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numT</span><span class="p">)]</span>  <span class="c1"># Euler MAclaurin add 1 for zero temp, see text</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">maxT</span><span class="p">,</span><span class="n">numT</span><span class="p">)</span>                   <span class="c1"># numT points is range 1 to maxT</span>
+<span class="n">Zem</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">EM</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numT</span><span class="p">)]</span>   <span class="c1"># Euler MAclaurin add 1 for zero temp, see text</span>
 
 <span class="n">Zsum</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[(</span><span class="mi">2</span><span class="o">*</span><span class="n">J</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="p">(</span><span class="n">J</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="k">for</span> <span class="n">J</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxJ</span><span class="p">)])</span>  <span class="c1"># direct sum</span>
 
-<span class="n">Zint</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">B</span>                   <span class="c1"># approx value by integration</span>
+<span class="n">Zint</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">k_B</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">B</span>                       <span class="c1"># approx value by integration</span>
 
-<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Zsum</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Summation&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Zem</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Euler Maclaurin&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Zint</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Integration&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T /K&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rotational partition function </span><span class="se">\n</span><span class="s1"> B = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39; $cm^{-1}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rotational partition function </span><span class="se">\n</span><span class="s1"> B = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39; $cm^{-1}$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">maxT</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -1860,7 +1880,10 @@ Z =    1.03754 at 30.000 K
 <hr class="docutils" />
 <section id="q31-answer">
 <h2>Q31 answer<a class="headerlink" href="#q31-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is <span class="math notranslate nohighlight">\( E_{m_z} = -\gamma \hbar B_zm_z \)</span> so that this is negative with positive <span class="math notranslate nohighlight">\(m_z\)</span>. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field (<span class="math notranslate nohighlight">\(B_z\)</span> along the <span class="math notranslate nohighlight">\(z\)</span> direction), its energy will be lower than if it opposes the field, so <span class="math notranslate nohighlight">\(m_z\)</span> must be positive. In some nuclei, for example, <span class="math notranslate nohighlight">\(^3H\)</span> and <span class="math notranslate nohighlight">\(^{17}O,\, \gamma \)</span> is negative and the order is then inverted.</p>
+<p>(a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  E_{m_z} = -\gamma \hbar B_zm_z \]</div>
+<p>so that this is negative with positive <span class="math notranslate nohighlight">\(m_z\)</span>. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field (<span class="math notranslate nohighlight">\(B_z\)</span> along the <span class="math notranslate nohighlight">\(z\)</span> direction), its energy will be lower than if it opposes the field, so <span class="math notranslate nohighlight">\(m_z\)</span> must be positive. In some nuclei, for example, <span class="math notranslate nohighlight">\(^3H\)</span> and <span class="math notranslate nohighlight">\(^{17}O,\, \gamma \)</span> is negative and the order is then inverted.</p>
 <p>(b) The number of nuclei (particles) in an upper level <span class="math notranslate nohighlight">\(\alpha\)</span> is related by the Boltzmann distribution to those in a lower level <span class="math notranslate nohighlight">\(\beta\)</span> by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{n_\alpha}{n_\beta}=e^{-\Delta E/k_BT}\]</div>
@@ -1885,12 +1908,12 @@ Z =    1.03754 at 30.000 K
 The derivative of <span class="math notranslate nohighlight">\(S\)</span> is most clearly calculated in terms of <span class="math notranslate nohighlight">\(\alpha\)</span> rather than <span class="math notranslate nohighlight">\(x\)</span> by using the chain rule,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dS}{dx}=\frac{dS}{d\alpha}\frac{d\alpha}{dx}\]</div>
-<p>but you can still differentiate directly by substituting first with <span class="math notranslate nohighlight">\(x\)</span> if you prefer because <span class="math notranslate nohighlight">\(\alpha = x/NL\)</span>. As a check,  the differentiation of <span class="math notranslate nohighlight">\(dS/d\alpha\)</span> is calculated using sympy</p>
+<p>but you can still differentiate directly by substituting first with <span class="math notranslate nohighlight">\(x\)</span> if you prefer because <span class="math notranslate nohighlight">\(\alpha = x/NL\)</span>. As a check,  the differentiation of <span class="math notranslate nohighlight">\(dS/d\alpha\)</span> is calculated using SymPy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="p">,</span> <span class="n">k_B</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha, k_B, N&#39;</span><span class="p">)</span>
-<span class="n">f01</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">ln</span><span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">alpha</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="p">)</span><span class="o">*</span><span class="n">ln</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="p">,</span> <span class="n">k_B</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha, k_B, N&#39;</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">alpha</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">k_B</span><span class="o">*</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
 <span class="n">ans</span>
 </pre></div>
 </div>
@@ -1916,15 +1939,14 @@ The derivative of <span class="math notranslate nohighlight">\(S\)</span> is mos
 <span class="n">fapprox</span><span class="o">=</span> <span class="p">[</span><span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>                          <span class="c1"># Hook&#39;s law</span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>  <span class="c1"># reduced force into array</span>
 
-<span class="n">fig1</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">fig4</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">fapprox</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;approximation, Hook&#39;s law&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;freely jointed chain&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$ \alpha $&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$FL/k_BT$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Freely jointed chain vs Hook&#39;s law&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Freely jointed chain vs Hook&#39;s law&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1989,7 +2011,7 @@ The derivative of <span class="math notranslate nohighlight">\(S\)</span> is mos
   
     By Godfrey Beddard<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2026.<br/>
 </p>
         </footer>
     </div>

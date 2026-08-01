@@ -10,8 +10,8 @@
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
-from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+import sympy as sp
+sp.init_printing()                      # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -180,7 +180,7 @@ for i in range(1,n):
 # 
 # which rises from zero below $\approx T_0$ to a _constant_ value $k_i$ above: $\sigma_0$ controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of $60$ seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a 'lab-on-a-chip'.
 # 
-# The reaction scheme is 
+# The reaction scheme is, with $D$ as the concentration of double stranded DNA, $S$ the single strand, $P$ the primer and $E$ the enzyme. 
 # 
 # $$\displaystyle \begin{array}\\ 
 # D & \overset{{\large k_D}}{\underset{{\large k_{-D}}} \rightleftharpoons} &  2S\qquad\qquad \qquad\qquad 95\mathrm{^{o} C,denaturing}\\
@@ -220,7 +220,7 @@ for i in range(1,n):
 # 
 # ![Drawing](num-methods-fig20d.png)
 # 
-# Figure 11c. Plot showing variation of D with S+SR. the increase and decrease of $D$ is clear and clearly shows the amplification. The slight kink in the extension is the horizontal part of fig 11b.
+# Figure 11c. Plot showing variation of D with S+SP. The increase and decrease of $D$ is clear but also shows its amplification. The slight kink in the extension is the horizontal part of fig 11b.
 # _____
 # 
 # Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling $[D]$ into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is $\approx 89$ s. The doubling time is calculated assuming 
@@ -264,10 +264,10 @@ x0 = 0
 # In[6]:
 
 
-x, y, C1, C2 = symbols('x, y, C1, C2')
-y  = Function('y')
-eq = diff(y(x),x,x) + 3*diff(y(x),x)+5*y(x)
-ans= dsolve(eq,y(x))
+x, y, C1, C2 = sp.symbols('x, y, C1, C2')
+y  = sp.Function('y')
+eq = sp.diff(y(x),x,x) + 3*sp.diff(y(x),x)+5*y(x)
+ans= sp.dsolve(eq,y(x))
 ans
 
 
@@ -276,8 +276,8 @@ ans
 # In[7]:
 
 
-dydx = diff( exp(-3*x/2)*C1*sin(sqrt(11)*x/2),x)
-simplify(dydx)
+dydx = sp.diff( sp.exp(-3*x/2)*C1*sp.sin(sp.sqrt(11)*x/2),x)
+sp.simplify(dydx)
 
 
 # and when $x=0,\;dy/dx=1=C_1\sqrt{11}/2$ thus $\displaystyle y=\frac{2}{\sqrt{11}}e^{-3x/2}\sin\left(\frac{\sqrt{11}x}{2}\right)$.
