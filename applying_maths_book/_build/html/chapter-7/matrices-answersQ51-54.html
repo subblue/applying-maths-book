@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1518,8 +1518,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q52-answer">
-   Q52 answer
+  <a class="reference internal nav-link" href="#q52a-answer">
+   Q52a answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q52b-answer">
+   Q52b answer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1557,8 +1562,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q52-answer">
-   Q52 answer
+  <a class="reference internal nav-link" href="#q52a-answer">
+   Q52a answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q52b-answer">
+   Q52b answer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1658,8 +1668,8 @@ The matrix representation is</p>
 </div>
 </div>
 </section>
-<section id="q52-answer">
-<h2>Q52 answer<a class="headerlink" href="#q52-answer" title="Permalink to this headline">#</a></h2>
+<section id="q52a-answer">
+<h2>Q52a answer<a class="headerlink" href="#q52a-answer" title="Permalink to this headline">#</a></h2>
 <p>The rate equation for the fourth molecule is, with <span class="math notranslate nohighlight">\(C_1 \cdots C_7\)</span> being the populations of the BChl molecules, and <span class="math notranslate nohighlight">\(k_f\)</span> the fluorescence rate constant,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\frac{dC_4}{dt}=-k_fC_4&amp;-(k_{41}+k_{42}+k_{43}+k_{45}+k_{46}+k_{47})C_4 \\&amp;+k_{14}C_1+ k_{24}C_2 +k_{34}C_3 + k_{54}C_5  + k_{64}C_6 + k_{74}C_7 \end{align}\end{split}\]</div>
@@ -1677,8 +1687,8 @@ The matrix representation is</p>
 \[\displaystyle R_{ij}=\sqrt{ (x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2 }\]</div>
 <p>and the rate constant is <span class="math notranslate nohighlight">\(\displaystyle R_{ij}=k_f\left(\frac{R_0}{R} \right)^6\)</span>.</p>
 <p>The calculation is shown below. The following points are important.</p>
-<p>(1) The transfer rate with index <span class="math notranslate nohighlight">\(ii\)</span> is set to zero because this has no physical meaning because it is the transfer rate from any molecule to itself, and</p>
-<p>(ii) an ‘<span class="math notranslate nohighlight">\(\mathtt{if\, else}\)</span>’  statement is used to remove this term by making it zero. Because the calculation is numerical the matrix equation has to be solved at each time point and the result is stored in the 2D array pop.</p>
+<p><strong>(i)</strong> The transfer rate with index <span class="math notranslate nohighlight">\(ii\)</span> is set to zero because this has no physical meaning because it is the transfer rate from any molecule to itself, and</p>
+<p><strong>(ii)</strong> an ‘<span class="math notranslate nohighlight">\(\mathtt{if\, else}\)</span>’  statement is used to remove this term by making it zero. Because the calculation is numerical the matrix equation has to be solved at each time point and the result is stored in the 2D array pop.</p>
 <p>Note that when the off-diagonal terms are calculated (shown below) <span class="math notranslate nohighlight">\(M[i,j] = kC[j,i]\)</span> to obtain the correct rate constant. As it happens in this calculation <span class="math notranslate nohighlight">\(k_{i,j} = k_{j,i}\)</span> because the energy transfer from molecule <span class="math notranslate nohighlight">\(a\to b\)</span> is the same as <span class="math notranslate nohighlight">\(b\to a\)</span> therefore this ordering of indices has no effect, but if this were not true it would produce erroneous results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1773,16 +1783,29 @@ The matrix representation is</p>
 <p><img alt="Drawing" src="../_images/matrices-fig92a-92b.png" /></p>
 <p>Figure 92. log of time profile of populations on molecules 1 and 7 in the FMO antenna when molecule 7 is initially excited. Left: Notice how little time is needed for the energy to equilibrate. Right: When a quenching rate of <span class="math notranslate nohighlight">\(10^{12}\,\mathrm{ s^{-1}}\)</span> is added to molecule 1 the population decays to zero even from molecule 7, but notice the change of time scale. The population is 1 at <span class="math notranslate nohighlight">\(t = 0\)</span> although this may not be clear on the figure.</p>
 <hr class="docutils" />
-<p>(a) The wide range of rate constants <span class="math notranslate nohighlight">\(\approx 10^{12} \to 10^{10}\;\mathrm{ s^{-1}}\)</span> is due to the <span class="math notranslate nohighlight">\(R^{-6}\)</span> dependence of the transfer rate with inter molecular separation. The closeness of the molecules ensures very fast transfer, and equilibration occurs within about one picosecond, irrespective of which molecule is excited initially. The population does not decay to zero, because the fluorescence rate at <span class="math notranslate nohighlight">\(0.2\cdot 10^9\;\mathrm{ s^{-1}}\)</span> is about <span class="math notranslate nohighlight">\(1000\)</span> times slower than the energy transfer rate, and on the short times range plotted the population appears to be constant. When we add quenching, which could be caused by energy-transfer to a second nearby FMO protein or to a reaction centre, the population now falls to zero in about <span class="math notranslate nohighlight">\(20\)</span> ps as energy is drained out of the antenna. As the energy - equilibration is so fast, it does not matter which molecule
+<p><strong>(a)</strong> The wide range of rate constants <span class="math notranslate nohighlight">\(\approx 10^{12} \to 10^{10}\;\mathrm{ s^{-1}}\)</span> is due to the <span class="math notranslate nohighlight">\(R^{-6}\)</span> dependence of the transfer rate with inter molecular separation. The closeness of the molecules ensures very fast transfer, and equilibration occurs within about one picosecond, irrespective of which molecule is excited initially. The population does not decay to zero, because the fluorescence rate at <span class="math notranslate nohighlight">\(0.2\cdot 10^9\;\mathrm{ s^{-1}}\)</span> is about <span class="math notranslate nohighlight">\(1000\)</span> times slower than the energy transfer rate, and on the short times range plotted the population appears to be constant. When we add quenching, which could be caused by energy-transfer to a second nearby FMO protein or to a reaction centre, the population now falls to zero in about <span class="math notranslate nohighlight">\(20\)</span> ps as energy is drained out of the antenna. As the energy - equilibration is so fast, it does not matter which molecule
 is excited even when the quenching rate is <span class="math notranslate nohighlight">\(10^{12}\;\mathrm{ s^{-1}}\)</span>.</p>
+</section>
+<section id="q52b-answer">
+<h2>Q52b answer<a class="headerlink" href="#q52b-answer" title="Permalink to this headline">#</a></h2>
+<p>The transition matrix for the <span class="math notranslate nohighlight">\(i^\text{th}\)</span> time point is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{matrix}M\to\\A\to\\X\to\\D\to\end{matrix}\begin{bmatrix}1-(k_1\tau+k_5\tau)&amp;k_1\tau&amp; 0 &amp;k_5\tau\\ 0&amp;1+k_2\tau-(k_3\tau X[i]+k_4\tau)&amp;k_2\tau&amp;k_3\tau X[i]/2+k_4\tau\\0&amp;0&amp;1-k_3\tau A[i]&amp;k_3\tau A[i]/2\\0&amp;0&amp;0&amp;1\end{bmatrix} \end{split}\]</div>
+<p>and the order of the columns is the same as the rows, i.e. M, A, X, D. The small time increment <span class="math notranslate nohighlight">\(\tau\)</span> is such that <span class="math notranslate nohighlight">\(k_i \tau \ll 1\)</span> and <span class="math notranslate nohighlight">\(k_i \tau [A]\)</span> and/or <span class="math notranslate nohighlight">\(k_i\tau [X]\ll 1\)</span>. Note that in the code given in the text this matrix is transposed so that it can be right multiplied by the vector of populations <span class="math notranslate nohighlight">\(p\)</span>. In the calculation the concentrations <span class="math notranslate nohighlight">\([\cdots]_i\)</span> are incremented at each step, <span class="math notranslate nohighlight">\(i=0,1\cdots\)</span>.</p>
 </section>
 <section id="q53-answer">
 <h2>Q53 answer<a class="headerlink" href="#q53-answer" title="Permalink to this headline">#</a></h2>
-<p>The equation relating diagonal eigenvalue matrix <span class="math notranslate nohighlight">\(\Lambda\)</span>, and the eigenvectors <span class="math notranslate nohighlight">\(\pmb{X}\)</span>, is <span class="math notranslate nohighlight">\(\pmb{MX} = \pmb{X}\Lambda\)</span>. If we left-multiply by eigenvector matrix <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span> then <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\pmb{MX} = \Lambda\)</span>, and then this can be raised to the <span class="math notranslate nohighlight">\(50^{th}\)</span> power. As the matrix is diagonal, this is simply achieved by raising each term to the power.</p>
+<p>The equation relating diagonal eigenvalue matrix <span class="math notranslate nohighlight">\(\Lambda\)</span>, and the eigenvectors <span class="math notranslate nohighlight">\(\pmb{X}\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{MX} = \pmb{X}\Lambda\]</div>
+<p>If we left-multiply by eigenvector matrix <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{X}^{-1}\pmb{MX} = \Lambda\]</div>
+<p>and then this can be raised to the <span class="math notranslate nohighlight">\(50^{th}\)</span> power. As the matrix is diagonal, this is simply achieved by raising each term to the power.</p>
 <p>The calculation using SymPy is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b&#39;</span><span class="p">)</span>              <span class="c1"># Using SymPy</span>
 <span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">Lambda</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">Lambda</span>
@@ -1794,10 +1817,16 @@ is excited even when the quenching rate is <span class="math notranslate nohighl
 \[\begin{split}\displaystyle \left( \left[\begin{matrix}-1 &amp; 1\\1 &amp; 1\end{matrix}\right], \  \left[\begin{matrix}- 3 a &amp; 0\\0 &amp; - a\end{matrix}\right]\right)\end{split}\]</div>
 </div>
 </div>
-<p>The eigenvalue matrix can be raised to the <span class="math notranslate nohighlight">\(50^{th}\)</span> power directly to give <span class="math notranslate nohighlight">\(\displaystyle \Lambda=a^{50}\begin{bmatrix} 3^{50} &amp; 0\\0 &amp; 1 \end{bmatrix}\)</span>, but we want <span class="math notranslate nohighlight">\(\pmb{M}^{50}\)</span> therefore the next step is to use the similarity transform as <span class="math notranslate nohighlight">\(\pmb{M}^{50}=\pmb{X}\Lambda^{50}\pmb{X}^{-1}\)</span>. To make the calculation general, and to keep the result algebraic, rather than numerical, <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is raised to power <span class="math notranslate nohighlight">\(b\)</span></p>
+<p>The eigenvalue matrix can be raised to the <span class="math notranslate nohighlight">\(50^{th}\)</span> power directly to give</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \Lambda=a^{50}\begin{bmatrix} 3^{50} &amp; 0\\0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<p>but we want <span class="math notranslate nohighlight">\(\pmb{M}^{50}\)</span> therefore the next step is to use the similarity transform as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M}^{50}=\pmb{X}\Lambda^{50}\pmb{X}^{-1}\]</div>
+<p>To make the calculation general, and to keep the result algebraic, rather than numerical, <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is raised to power <span class="math notranslate nohighlight">\(b\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mtob</span> <span class="o">=</span> <span class="n">X</span><span class="o">*</span><span class="n">Lambda</span><span class="o">**</span><span class="n">b</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>  <span class="c1"># with SymPy * is matrix multiply (unlike python/numpy)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mtob</span> <span class="o">=</span> <span class="n">X</span><span class="o">*</span><span class="n">Lambda</span><span class="o">**</span><span class="n">b</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>  <span class="c1"># with SymPy * is matrix multiply (unlike Python/NumPy)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Mtob</span><span class="p">)</span> 
 </pre></div>
 </div>
@@ -1817,11 +1846,11 @@ is excited even when the quenching rate is <span class="math notranslate nohighl
 <img alt="../_images/matrices-answersQ51-54_12_0.png" src="../_images/matrices-answersQ51-54_12_0.png" />
 </div>
 </div>
-<p>Simplifying this result and letting <span class="math notranslate nohighlight">\(b=50\)</span> gives <span class="math notranslate nohighlight">\(\pmb{M}^{50}= 3^{50}a^{100}\)</span>. Notice that in the determinant, if it is assumed that 1 is small compared to <span class="math notranslate nohighlight">\(b^{50}\)</span>, which of course it is when <span class="math notranslate nohighlight">\(b=50\)</span>, and so removed from the calculation, then a serious error would be introduced, the answer would be zero: an error by a factor of <span class="math notranslate nohighlight">\(3^{50}\)</span> or <span class="math notranslate nohighlight">\(\approx 10^{23}\)</span> if a was <span class="math notranslate nohighlight">\(1\)</span>. This shows the importance of not approximating until the calculation is finished.</p>
+<p>Simplifying this result and letting <span class="math notranslate nohighlight">\(b=50\)</span> gives <span class="math notranslate nohighlight">\(\pmb{M}^{50}= 3^{50}a^{100}\)</span>. Notice that in the determinant, if it is assumed that 1 is small compared to <span class="math notranslate nohighlight">\(b^{50}\)</span>, which of course it is when <span class="math notranslate nohighlight">\(b=50\)</span>, and so removed from the calculation at that point, then a serious error would be introduced, the answer would be zero. An error by a factor of <span class="math notranslate nohighlight">\(3^{50}\)</span> or <span class="math notranslate nohighlight">\(\approx 10^{23}\)</span> if <span class="math notranslate nohighlight">\(a\)</span> was <span class="math notranslate nohighlight">\(1\)</span>. This shows the importance of not approximating until the calculation is finished.</p>
 </section>
 <section id="q54-answer">
 <h2>Q54 answer<a class="headerlink" href="#q54-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) If any of the plants are cross-fertilized without restriction, the following table of all possible types is produced in the first generation where the offspring’s genetic make-up starts the rows and the parents head the columns. The total chance in each column is one, as this is the chance of parents having offspring.</p>
+<p><strong>(a)</strong> If any of the plants are cross-fertilized without restriction, the following table of all possible types is produced in the first generation where the offspring’s genetic make-up starts the rows and the parents head the columns. The total chance in each column is one, as this is the chance of parents having offspring.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{c|ccc|cc}
 \hline 
@@ -1832,7 +1861,7 @@ BA &amp; 0 &amp; 1/2 &amp; 1 &amp; 1/2 &amp;1/2 &amp;0\\
 AA &amp; 0 &amp;   0 &amp; 0 &amp; 1/4 &amp; 1/2 &amp;1 \\
 \hline
 \end{array}\end{split}\]</div>
-<p>(b) In the first entry, two adults <span class="math notranslate nohighlight">\(BB\)</span> and <span class="math notranslate nohighlight">\(BB\)</span> can obviously only generate a <span class="math notranslate nohighlight">\(BB\)</span> offspring because no <span class="math notranslate nohighlight">\(A\)</span> gene is present. If two adults each have <span class="math notranslate nohighlight">\(BA\)</span> genes (column 4) when mixed by fertilization only one in four times will offspring <span class="math notranslate nohighlight">\(BB\)</span> or <span class="math notranslate nohighlight">\(AA\)</span> result (see Figure 58), and otherwise a <span class="math notranslate nohighlight">\(BA\)</span> offspring is produced.</p>
+<p><strong>(b)</strong> In the first entry, two adults <span class="math notranslate nohighlight">\(BB\)</span> and <span class="math notranslate nohighlight">\(BB\)</span> can obviously only generate a <span class="math notranslate nohighlight">\(BB\)</span> offspring because no <span class="math notranslate nohighlight">\(A\)</span> gene is present. If two adults each have <span class="math notranslate nohighlight">\(BA\)</span> genes (column 4) when mixed by fertilization only one in four times will offspring <span class="math notranslate nohighlight">\(BB\)</span> or <span class="math notranslate nohighlight">\(AA\)</span> result (see Figure 58), and otherwise a <span class="math notranslate nohighlight">\(BA\)</span> offspring is produced.</p>
 <p>Because fertilization is always with a <span class="math notranslate nohighlight">\(BB\)</span> plant, only the first three columns are important. The chance of growing a <span class="math notranslate nohighlight">\(BB\)</span> plant is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle BB=\left(1+\frac{1}{2}+0\right)\frac{1}{3}=\frac{1}{2}\]</div>

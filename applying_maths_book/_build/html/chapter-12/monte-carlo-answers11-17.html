@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1599,19 +1599,21 @@ title="Print to PDF"
 <p>The following code could be used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm </span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span> 
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">m</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> 
+    <span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> 
     <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="p">:</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span> 
     <span class="k">else</span><span class="p">:</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span> 
     <span class="k">pass</span>                  <span class="c1"># end for j </span>
-
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1630,16 +1632,18 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 <span class="n">events</span> <span class="o">=</span> <span class="mi">500</span>
 <span class="n">k1</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">10</span>                            <span class="c1"># reaction rate const 1/tau </span>
 <span class="n">times</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">events</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>    <span class="c1"># make array to store results  </span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">events</span><span class="p">):</span>                <span class="c1"># repeat events times       </span>
-    <span class="n">t</span><span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">())</span> <span class="o">/</span> <span class="n">k1</span>
+    <span class="n">t</span><span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">())</span> <span class="o">/</span> <span class="n">k1</span>
     <span class="n">times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>                       <span class="c1"># store times        </span>
     <span class="k">pass</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1648,12 +1652,12 @@ title="Print to PDF"
 <img alt="../_images/monte-carlo-answers11-17_5_0.png" src="../_images/monte-carlo-answers11-17_5_0.png" />
 </div>
 </div>
-<p>The plot of event number i vs times should look similar to Fig. 11 (left), but will be different in detail because of the random nature of the events. Notice how much the time that the molecule remains in the excited state varies; these times are Poisson distributed and when a histogram is made an exponential decay with a <span class="math notranslate nohighlight">\(10\)</span> ns decay lifetime results.</p>
+<p>The plot of event number <span class="math notranslate nohighlight">\(i\)</span> vs times should look similar to Fig. 11 (left), but will be different in detail because of the random nature of the events. Notice how much the time that the molecule remains in the excited state varies; these times are Poisson distributed and when a histogram is made an exponential decay with a <span class="math notranslate nohighlight">\(10\)</span> ns decay lifetime results.</p>
 <p>As an exercise, make these into a histogram to convince you of this and a plot similar to Figure 11 (right) should result.</p>
 </section>
 <section id="q15-answer">
 <h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The first step is to work out a numbering scheme for the position of the bases and then to select from a uniformly distributed random number, four possibilities to represent them. One such scheme is
+<p><strong>(a)</strong> The first step is to work out a numbering scheme for the position of the bases and then to select from a uniformly distributed random number, four possibilities to represent them. One such scheme is
 shown in the question. Because only G bases are important, only one check needs to be made. For example, if a
 random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)</span>, if it is greater than <span class="math notranslate nohighlight">\(3\)</span>, then this can be the G base. Eleven bases are then chosen at random, and placed in a list; the list is given the value <span class="math notranslate nohighlight">\(1\)</span> if the base is G, otherwise it contains zero. The sixth base, which is in the middle, is made into the dye. The position of a G in the list is converted into the distance from the dye, (in position 6), and the rate constant calculated using the equation for <span class="math notranslate nohighlight">\(k\)</span>. The absolute value of the distance from position 6 is calculated because the transfer distance must always be positive. The whole process is repeated, until you are satisfied that the average value of <span class="math notranslate nohighlight">\(k\)</span> is sufficiently accurate, say to 1 decimal place. The time is calculated using equation 13.</p>
 <div class="cell docutils container">
@@ -1661,6 +1665,7 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: DNA bases</span>
 
 <span class="k">def</span> <span class="nf">DNAbases</span><span class="p">():</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
     <span class="n">beta</span><span class="o">=</span> <span class="mf">7.0</span>
     <span class="n">d</span>   <span class="o">=</span> <span class="mf">0.34</span>                                  <span class="c1"># base separation</span>
     <span class="n">kf</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mf">380.0</span>
@@ -1679,7 +1684,7 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
         <span class="k">pass</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>                     <span class="c1"># G into DNA if rand &gt; 3 </span>
-            <span class="k">if</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">if</span> <span class="mi">4</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
                 <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> 
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                      <span class="c1"># base G has value 1</span>
@@ -1691,18 +1696,19 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
                 <span class="n">a0</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">+</span> <span class="n">k0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">dye</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># total rate</span>
                 <span class="k">pass</span> 
             <span class="k">pass</span>
-        <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span> <span class="n">a0</span>     <span class="c1"># equation 13</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span> <span class="n">a0</span>         <span class="c1"># equation 13</span>
         <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">)</span> <span class="p">)</span>      <span class="c1"># make into index</span>
                    
         <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
             <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># make histogram</span>
             <span class="k">pass</span> 
         <span class="k">pass</span>                                    <span class="c1"># end reps </span>
-    <span class="k">return</span> <span class="n">dtime</span><span class="p">,</span><span class="n">Acount</span>
+    <span class="k">return</span> <span class="n">dtime</span><span class="p">,</span> <span class="n">Acount</span>
     
-<span class="c1">#times,counts = DNAbases()                         # remove # to calculate </span>
+<span class="c1">#times,counts = DNAbases()                      # remove # to calculate </span>
 <span class="c1">#print(&#39;finished&#39;)                         </span>
-<span class="c1">#Acount[0] = Acount[1]</span>
+<span class="c1">#counts[0] = counts[1]</span>
+<span class="c1">#fig1= plt.figure( figsize=(5, 5) )</span>
 <span class="c1">#plt.plot(times,counts,color=&#39;red&#39;,linewidth=1)</span>
 <span class="c1">#plt.yscale(&#39;log&#39;)</span>
 <span class="c1">#plt.show()</span>
@@ -1724,10 +1730,11 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
 <span class="c1"># P[]= 0 = Immune, 1 = susceptible,  2= Infected.</span>
 
 <span class="k">def</span> <span class="nf">SIR_mc</span><span class="p">():</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>   <span class="c1"># initialise random number generator</span>
     <span class="n">nums</span>  <span class="o">=</span> <span class="mi">1000</span>                    <span class="c1"># number of people</span>
     <span class="n">fract</span> <span class="o">=</span> <span class="mf">0.01</span>                    <span class="c1"># initially immune</span>
     <span class="n">recovr</span><span class="o">=</span> <span class="mf">0.2</span>                     <span class="c1"># chance recovery / day</span>
-    <span class="n">num_infect</span><span class="o">=</span><span class="mi">1</span>                    <span class="c1"># number infected / day</span>
+    <span class="n">num_infect</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># number infected / day</span>
     <span class="n">numd</span> <span class="o">=</span> <span class="mi">50</span>                       <span class="c1"># number of  days</span>
     <span class="n">reps</span> <span class="o">=</span> <span class="mi">40</span>
     
@@ -1744,7 +1751,7 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
         <span class="n">fn</span><span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">fract</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span> <span class="p">)</span>      <span class="c1"># make into integer</span>
         <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">fn</span><span class="p">:</span>                       <span class="c1"># exact fract*nums immune</span>
-            <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>  <span class="c1"># choose rand num= 0 to nums-1</span>
+            <span class="n">ra</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>       <span class="c1"># choose rand num= 0 to nums-1</span>
             <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1764,7 +1771,7 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>                     <span class="c1"># loop students </span>
                 <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>                         <span class="c1"># spread infection</span>
                     <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_infect</span><span class="p">):</span>
-                        <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span><span class="c1"># infect new stdnt</span>
+                        <span class="n">ra</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>     <span class="c1"># infect new student, range 0 to nums</span>
                         <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                             <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
                             <span class="n">remov</span> <span class="o">=</span> <span class="n">remov</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1772,7 +1779,7 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
                         <span class="k">pass</span>                          <span class="c1"># end for ii</span>
                     <span class="k">pass</span>                              <span class="c1"># end if</span>
                 <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">recovr</span><span class="p">:</span>         <span class="c1"># chance of recovery</span>
-                    <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+                    <span class="n">ra</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="o">=</span> <span class="mi">0</span>
                     <span class="k">pass</span>
                 <span class="k">pass</span>                                  <span class="c1"># end for i</span>
@@ -1792,16 +1799,11 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
     
     <span class="k">return</span> <span class="n">data</span><span class="p">,</span><span class="n">sdata</span>
 
-<span class="n">data</span><span class="p">,</span> <span class="n">sdata</span> <span class="o">=</span> <span class="n">SIR_mc</span><span class="p">()</span>
-
+<span class="c1">#data, sdata = SIR_mc()</span>
+<span class="c1">#fig1 = plt.figure(figsize=(5,4))</span>
 <span class="c1">#plt.plot(sdata,color=&#39;red&#39;)</span>
 <span class="c1">#plt.plot(data,color=&#39;blue&#39;)</span>
 <span class="c1">#plt.show()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>finished, num infected 859
 </pre></div>
 </div>
 </div>

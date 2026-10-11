@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1608,7 +1608,7 @@ title="Print to PDF"
 <p>Write down the characteristic equations and find the eigenvectors and normalized eigenvalues of the following two matrices. Check whether the eigenvectors are orthogonal.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}(a) \displaystyle \begin{bmatrix}4 &amp; -i\\i &amp; 2 \end{bmatrix} , \qquad (b) \begin{bmatrix} 1&amp; -i\\ -i &amp; 1 \end{bmatrix}\end{split}\]</div>
-<p><strong>Strategy:</strong> Expand the determinants of the matrices to find the characteristic equations, then use Python/Sympy, as shown in the text, or, if you wish, do the calculation by hand. The normalization term is <span class="math notranslate nohighlight">\(\sqrt{v\cdot v}\)</span>. The numpy/Sympy instruction for a dot product is a.dot(b)</p>
+<p><strong>Strategy:</strong> Expand the determinants of the matrices to find the characteristic equations, then use Python/SymPy, as shown in the text, or, if you wish, do the calculation by hand. The normalization term is <span class="math notranslate nohighlight">\(\sqrt{v\cdot v}\)</span>.</p>
 </section>
 <section id="q46-eigenvalues">
 <h2>Q46 Eigenvalues<a class="headerlink" href="#q46-eigenvalues" title="Permalink to this headline">#</a></h2>
@@ -1627,9 +1627,11 @@ title="Print to PDF"
 </section>
 <section id="q47-solve-equations">
 <h2>Q47 Solve equations<a class="headerlink" href="#q47-solve-equations" title="Permalink to this headline">#</a></h2>
-<p>Find the characteristic equation, eigenvalues, and eigenvectors of <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix}0 &amp; -u &amp; v\\u &amp; 0 &amp; 0 \\ -v &amp; 0 &amp; 0 \end{bmatrix}\)</span> Simplify your
-answers using <span class="math notranslate nohighlight">\(z^2 = u^2 + v^2\)</span>.</p>
-<p><strong>Strategy:</strong> Use python/Sympy to solve the characteristic equation. The pattern of cofactors are shown in eqn2.</p>
+<p>Find the characteristic equation, eigenvalues, and eigenvectors of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}0 &amp; -u &amp; v\\u &amp; 0 &amp; 0 \\ -v &amp; 0 &amp; 0 \end{bmatrix}\end{split}\]</div>
+<p>Simplify your answers using <span class="math notranslate nohighlight">\(z^2 = u^2 + v^2\)</span>.</p>
+<p><strong>Strategy:</strong> Use Python/SymPy to solve the characteristic equation. The pattern of cofactors are shown in eqn2.</p>
 </section>
 <section id="q48-butadiene-mo-energies">
 <h2>Q48 Butadiene MO energies<a class="headerlink" href="#q48-butadiene-mo-energies" title="Permalink to this headline">#</a></h2>
@@ -1641,9 +1643,9 @@ x &amp; 1 &amp; 0 &amp; 0  \\
 0 &amp; 1 &amp; x &amp; 1  \\
 0 &amp; 0 &amp; 1 &amp; x  \\
 \end{bmatrix} =0, \qquad \text{where} \qquad x\frac{\alpha-E}{\beta}\end{split}\]</div>
-<p>(a) Using the eigenvalue - eigenvector method, calculate not only the energies, but also the orbital coefficients, which are the eigenvectors.</p>
-<p>(b) Calculate the delocalization energy, which is the Huckel energy less <span class="math notranslate nohighlight">\(n(\alpha + \beta)\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is the Coulomb self-energy of a <span class="math notranslate nohighlight">\(\pi\)</span> electron and <span class="math notranslate nohighlight">\(\beta\)</span> the overlap energy.</p>
-<p>(c) Calculate the bond order, charge density, and dipole moment. The bond order is</p>
+<p><strong>(a)</strong> Using the eigenvalue - eigenvector method, calculate not only the energies, but also the orbital coefficients, which are the eigenvectors.</p>
+<p><strong>(b)</strong> Calculate the delocalization energy, which is the Huckel energy less <span class="math notranslate nohighlight">\(n(\alpha + \beta)\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is the Coulomb self-energy of a <span class="math notranslate nohighlight">\(\pi\)</span> electron and <span class="math notranslate nohighlight">\(\beta\)</span> the overlap energy.</p>
+<p><strong>(c)</strong> Calculate the bond order, charge density, and dipole moment. The bond order is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \rho_{ab}=\sum_i^n m_ic_{ai}c_{bi}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c_{ai}\)</span> is the coefficient on carbon atom <span class="math notranslate nohighlight">\(a\)</span> and of orbital <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(m_i = 0, 1,  2 \)</span> and is the number of electrons in orbital <span class="math notranslate nohighlight">\(i\)</span>. The total bond order is larger by <span class="math notranslate nohighlight">\(1\)</span> when the <span class="math notranslate nohighlight">\(\sigma\)</span> bond order is added.</p>
@@ -1654,12 +1656,15 @@ x &amp; 1 &amp; 0 &amp; 0  \\
 <div class="math notranslate nohighlight">
 \[\displaystyle d_\pi=\sum_a(1-q_a)r_a\]</div>
 <p>where <span class="math notranslate nohighlight">\(r_a\)</span> is the coordinate of atom <span class="math notranslate nohighlight">\(a\)</span>. The dipole moment of a CH bond is 0.3 D.</p>
-<p><strong>Strategy:</strong> As this is a largish matrix and not block diagonal, use python/Sympy to perform the calculation. Each MO with index <span class="math notranslate nohighlight">\(i\)</span> is the wavefunction <span class="math notranslate nohighlight">\(\Psi_i = c_{1i}\psi_1 + c_{2i}\psi_2 + c_{3i}\psi_1 + c_{4i}\psi_1\)</span> where the <span class="math notranslate nohighlight">\(c\)</span>’s are the elements of the <span class="math notranslate nohighlight">\(i^{th}\)</span> eigenvector; the second (column) index identifies the eigenvalue i, the first the atom.</p>
+<p><strong>Strategy:</strong> As this is a largish matrix and not block diagonal, use Python/SymPy to perform the calculation. Each MO with index <span class="math notranslate nohighlight">\(i\)</span> is the wavefunction</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Psi_i = c_{1i}\psi_1 + c_{2i}\psi_2 + c_{3i}\psi_1 + c_{4i}\psi_1\]</div>
+<p>where the <span class="math notranslate nohighlight">\(c\)</span>’s are the elements of the <span class="math notranslate nohighlight">\(i^{th}\)</span> eigenvector; the second (column) index identifies the eigenvalue i, the first the atom.</p>
 <p>The full spatial dependence of the orbitals would involve calculating the <span class="math notranslate nohighlight">\(\psi\)</span> in three dimensions; instead, and just as effectively, the coefficients <span class="math notranslate nohighlight">\(c\)</span> are used to represent the <span class="math notranslate nohighlight">\(\pi\)</span> electron density on each atom which allows us to find the MO’s pattern and hence the number of nodes. The node pattern can be used to determine the energy ordering; as a rule of thumb, the larger the number of nodes the higher the energy.</p>
 </section>
 <section id="q49-fulvalene-mo-energies">
 <h2>Q49 Fulvalene MO energies<a class="headerlink" href="#q49-fulvalene-mo-energies" title="Permalink to this headline">#</a></h2>
-<p>Repeat the calculation of the previous question, (Q48), for fulvalene; see Q8 for the numbering of the atoms. Confirm that the dipole is <span class="math notranslate nohighlight">\(-0.711eL\)</span> or <span class="math notranslate nohighlight">\(0.48\)</span> D where <span class="math notranslate nohighlight">\(e\)</span> is the charge on the electron (in Coulombs) and <span class="math notranslate nohighlight">\(L\)</span> is the bond length, which is <span class="math notranslate nohighlight">\(\approx 140\)</span> pm. The experimentally measured dipole is <span class="math notranslate nohighlight">\(0.4\)</span> D. Take atom 2 to be at the origin (<span class="math notranslate nohighlight">\(x=y=0\)</span>) Confirm also that the <span class="math notranslate nohighlight">\(\pi\)</span> bond order between atoms is as shown below:</p>
+<p>Repeat the calculation of the previous question, (Q48), for fulvalene; see Q8 for the numbering of the atoms. Confirm that the dipole is <span class="math notranslate nohighlight">\(-0.711eL\)</span> or <span class="math notranslate nohighlight">\(0.48\)</span> D where <span class="math notranslate nohighlight">\(e\)</span> is the charge on the electron (in Coulomb ) and <span class="math notranslate nohighlight">\(L\)</span> is the bond length, which is <span class="math notranslate nohighlight">\(\approx 140\)</span> pm. The experimentally measured dipole is <span class="math notranslate nohighlight">\(0.4\)</span> D. Take atom 2 to be at the origin (<span class="math notranslate nohighlight">\(x=y=0\)</span>) Confirm also that the <span class="math notranslate nohighlight">\(\pi\)</span> bond order between atoms is as shown below:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{c|cc} 
 \text{bond number} &amp; \text{Bond order}\\
@@ -1674,9 +1679,9 @@ x &amp; 1 &amp; 0 &amp; 0  \\
 <section id="q50-benzene-mo-energies">
 <h2>Q50 Benzene MO energies<a class="headerlink" href="#q50-benzene-mo-energies" title="Permalink to this headline">#</a></h2>
 <p>Repeat the Huckel MO calculation for benzene; the matrix is worked out in Q7. Calculate the eigenvectors and plot out the MO coefficients.</p>
-<p>(a) Is the pattern what you expect? You should find that some MOs are simply rotations of others. What distinguishes these?</p>
-<p>(b) Make linear combinations of these MOs to form new MOs with the usual orbital shapes. Draw out the results you obtain.</p>
-<p><strong>Strategy:</strong> for the first part, use python/Sympy to obtain the eigenvectors.</p>
+<p><strong>(a)</strong> Is the pattern what you expect? You should find that some MOs are simply rotations of others. What distinguishes these?</p>
+<p><strong>(b)</strong> Make linear combinations of these MOs to form new MOs with the usual orbital shapes. Draw out the results you obtain.</p>
+<p><strong>Strategy:</strong> for the first part, use Python/SymPy to obtain the eigenvectors.</p>
 </section>
 </section>
 

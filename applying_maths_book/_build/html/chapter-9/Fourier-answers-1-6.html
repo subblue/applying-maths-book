@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1645,7 +1645,7 @@ title="Print to PDF"
 \[\displaystyle \left. \frac{x}{2} - \frac{1}{2n}\sin(nx)\cos(nx) \right|_{-\pi}^\pi = \pi \]</div>
 <p>When <span class="math notranslate nohighlight">\(m \ne n\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \left. \frac{1}{(m^2 - n^2)}(-m\sin(nx)\cos(mx) + n\sin(mx)\cos(nx)) \right|_{-\pi}^\pi = 0\]</div>
+\[\displaystyle  \left. \frac{1}{(m^2 - n^2)}\big(-m\sin(nx)\cos(mx) + n\sin(mx)\cos(nx)\big) \right|_{-\pi}^\pi = 0\]</div>
 <p>and the summation is reduced to just this one term. The equation for the coefficients <span class="math notranslate nohighlight">\(b_n\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0)  \]</div>
@@ -1686,6 +1686,7 @@ title="Print to PDF"
 <span class="n">L</span> <span class="o">=</span> <span class="mf">10.0</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
 
+<span class="n">fig2</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fsin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; terms&#39;</span> <span class="p">)</span>
@@ -1727,7 +1728,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot fourier pi/2-x series  = a0/2 + sum( bn. sin(nx) n = 1...)</span>
-
+<span class="n">fig3</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span>  <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
@@ -1740,7 +1741,7 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\pi/2-x$ and its fourier series to &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$\pm \pi$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\pi/2-x$ and its fourier series to &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$\pm \pi$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1791,6 +1792,7 @@ title="Print to PDF"
 
 <span class="n">FS</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">I0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">Hermite</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>    <span class="c1">#  Fourier series eqn 20</span>
 
+<span class="n">fig4</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>  <span class="c1"># originla function</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">FS</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
@@ -1836,7 +1838,7 @@ title="Print to PDF"
 <span class="n">I0</span><span class="o">=</span> <span class="p">[</span><span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">n</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>               <span class="c1"># separate out integral into list</span>
 
 <span class="n">FS</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">I0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">chev</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>    <span class="c1">#  Fourier series eqn 20</span>
-
+<span class="n">fig5</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>           <span class="c1"># original function</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">FS</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
@@ -1972,7 +1974,10 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
 <p>The value of <span class="math notranslate nohighlight">\(m\)</span> has to be decided first,as this is not iterated, then values of <span class="math notranslate nohighlight">\(l\)</span> calculated. Choosing <span class="math notranslate nohighlight">\(m\)</span> = 0 with <span class="math notranslate nohighlight">\(l = 0\)</span> gives <span class="math notranslate nohighlight">\(P_m^m = P_0^0 = 1\)</span> and when <span class="math notranslate nohighlight">\(l = 1\)</span> then <span class="math notranslate nohighlight">\(P_{m+1}^m = P_1^0 = xP_0^0 = x\)</span>. The recursion equation (22) can now be used to find <span class="math notranslate nohighlight">\(P_2^0\)</span> with <span class="math notranslate nohighlight">\(l=2\)</span>, which is</p>
 <div class="math notranslate nohighlight">
 \[2P_2^0=3xP_1^0 - P_0^0= 3x^1-1\]</div>
-<p>giving <span class="math notranslate nohighlight">\(\displaystyle P_2^0=(3x^2-1)/2\)</span>. Substituting <span class="math notranslate nohighlight">\(P_2^0\)</span>, with <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span> into eqn. (21) produces the spherical harmonic. The calculation using SymPy is shown next</p>
+<p>giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P_2^0=(3x^2-1)/2\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(P_2^0\)</span>, with <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span> into eqn. (21) produces the spherical harmonic. The calculation using SymPy is shown next</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># spherical harmonic calculation</span>
@@ -1997,7 +2002,6 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
         <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
      
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span>  <span class="o">-</span> <span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">m</span><span class="p">)</span>
-
 <span class="c1">#--------------   </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   L   m      assoc legendre&#39;</span><span class="p">)</span>
@@ -2030,16 +2034,16 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      (1 - x**2)**0.5*(1.5 - 7.5*x**2)
    3   2      15.0*x*(1 - x**2)**1.0
-   3   3      -15.0*(1 - x**2)**1.5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   3      -15.0*(1 - x**2)**1.5
 
               spherical harmonics
    L   m
    0   0      1/(2*sqrt(pi))
    1   0      sqrt(3)*x/(2*sqrt(pi))
    1   1      -0.25*sqrt(6)*(1 - x**2)**0.5*exp(I*phi)/sqrt(pi)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1  -1      0.25*sqrt(6)*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
+   1  -1      0.25*sqrt(6)*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
    2   0      sqrt(5)*(3*x**2/2 - 1/2)/(2*sqrt(pi))
    2   1      -0.25*sqrt(30)*x*(1 - x**2)**0.5*exp(I*phi)/sqrt(pi)
 </pre></div>
@@ -2052,9 +2056,7 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -1      sqrt(21)*(1 - x**2)**0.5*(0.625*x**2 - 0.125)*exp(-I*phi)/sqrt(pi)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
+   3   2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
    3  -2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
    3   3      -0.125*sqrt(35)*(1 - x**2)**1.5*exp(3*I*phi)/sqrt(pi)
 </pre></div>
@@ -2067,9 +2069,8 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; x, n &#39;</span><span class="p">)</span>     <span class="c1"># alternative and simpler method by differentiating directly</span>
-
 <span class="c1">#------------</span>
-<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>                <span class="c1"># Legendre polynomial by recursion, see section 4</span>
+<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>                     <span class="c1"># Legendre polynomial by recursion, see section 4</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> 
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -2082,6 +2083,7 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
     <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">P</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}{:4d}</span><span class="s1">      </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">L</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">m</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">))</span> <span class="p">))</span>
+    
 </pre></div>
 </div>
 </div>
@@ -2093,10 +2095,10 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
    2   0      3*x**2/2 - 1/2
    2   1      -3*x*(1 - x**2)**0.5
    2   2      3*(1 - x**2)**1.0
+   3   0      x*(5*x**2 - 3)/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   0      x*(5*x**2 - 3)/2
-   3   1      3*(1 - 5*x**2)*(1 - x**2)**0.5/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      3*(1 - 5*x**2)*(1 - x**2)**0.5/2
    3   2      15*x*(1 - x**2)**1.0
 </pre></div>
 </div>

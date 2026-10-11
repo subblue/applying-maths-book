@@ -16,7 +16,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q1 answer
-# Let vector OP be the vector 2 km due north, with length $a = 2$, and PQ the vector north-east, which is at $45^\text{o}$ to north, and of length $b = 3$. The vector $OQ = OP + PQ$. The angle sought is $P-O-Q$ and the length of vector $O$Q is the distance the crow flies, $c$, see figure 56.
+# Let vector OP be the vector 2 km due north, with length $a = 2$, and PQ the vector north-east, which is at $45^\text{o}$ to north, and of length $b = 3$. The vector $OQ = OP + PQ$. The angle sought is $P-O-Q$ and the length of vector $OQ$ is the distance the crow flies, $c$, see figure 56.
 # 
 # One way of solving the problem is to draw a diagram, measuring the angle $POQ$ and the length of the line $OQ$. Analytically we can use the cosine formula to obtain the length $OP$ knowing that the angle $OPQ$, which is
 # $\chi = 90 + 45^\text{o}$. To use this formula to calculate the third side, the other two sides and the enclosed angle must be known, therefore,
@@ -55,7 +55,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # and the angle $\beta$ can be evaluated this time without knowing the sine rule.
 # 
 # ## Q2 answer
-# Suppose the forces are $f_1 \cdot f_6$ then the resultant force is $ R= f_1 +f_2 +f_3 +f_4 +f_5 +f_6$. If the body does not move,then the total of all forces must be zero and therefore the applied force is $-R$. Let us choose six randomly arranged forces and add them up in any order; the result is the same, because vector addition is commutative; $\vec A + \vec B = \vec B + \vec A$ and also associative: $\vec A + (\vec B + \vec C) = (\vec A + \vec B) + \vec C$. The vectors are shown in figure 57. Vector $OA$ is $f_1$, and the addition carried out in a clockwise fashion starting with $O$A. The resultant vector is $\vec R$ and to maintain the position of the body at O a vector, of the same direction and magnitude as $\vec -R$, has to be applied to it.
+# Suppose the forces are $f_1 \cdot f_6$ then the resultant force is 
+# 
+# $$\displaystyle  R= f_1 +f_2 +f_3 +f_4 +f_5 +f_6$$
+# 
+# If the body does not move,then the total of all forces must be zero and therefore the applied force is $-R$. Let us choose six randomly arranged forces and add them up in any order; the result is the same, because vector addition is commutative; $\vec A + \vec B = \vec B + \vec A$ and also associative: $\vec A + (\vec B + \vec C) = (\vec A + \vec B) + \vec C$. The vectors are shown in figure 57. Vector $OA$ is $f_1$, and the addition carried out in a clockwise fashion starting with $O$A. The resultant vector is $\vec R$ and to maintain the position of the body at O a vector, of the same direction and magnitude as $\vec -R$, has to be applied to it.
 # 
 # ![Drawing](vectors-fig57.png)
 # 
@@ -81,27 +85,55 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # _______
 # 
 # ## Q4 answer
-# The vector triangle indicates that $\vec A+\vec C=\vec B$,therefore, $\vec C = \vec B - \vec A$. To prove the cosine law find $\vec{C}\,^2$ and therefore calculate the dot product of $\vec C$ with itself which is
-# $\vec C\cdot\vec C = |\vec C |^2 = c^2$. Also
+# The vector triangle indicates that 
+# 
+# $$\displaystyle \vec A+\vec C=\vec B$$
+# 
+# therefore, 
+# 
+# $$\displaystyle \vec C = \vec B - \vec A$$
+# 
+# To prove the cosine law find $\vec{C}\,^2$ and therefore calculate the dot product of $\vec C$ with itself which is
+# 
+# 
+# $$\displaystyle \vec C\cdot\vec C = |\vec C |^2 = c^2$$
+# 
+# Also
 # 
 # $$\displaystyle \vec C\cdot\vec C = (\vec B - \vec A)\cdot(\vec B - \vec A) = \vec B\cdot\vec B + \vec A\cdot\vec A - 2\vec B\cdot\vec A$$
 # 
-# because, by definition, $\vec B\cdot\vec B = b^2,\; \vec C\cdot\vec C = c^2$ and $\vec B\cdot\vec A = ab\cos(\chi)$. 
+# because, by definition, 
 # 
-# Combining these terms gives $c^2 = a^2 + b^2 - 2ab\cos(\chi)$, which is the cosine formula.
+# $$\displaystyle \vec B\cdot\vec B = b^2,\quad \vec C\cdot\vec C = c^2\quad\text{and}\quad\vec B\cdot\vec A = ab\cos(\chi)$$ 
+# 
+# Combining these terms gives 
+# 
+# $$\displaystyle c^2 = a^2 + b^2 - 2ab\cos(\chi)$$
+# 
+# which is the cosine formula.
 # 
 # ## Q5 answer
 # That $2\theta =\varphi$ can be shown quite easily using geometry, it is a little more difficult but not hard using vectors.  
 # 
-# The geometric solution can be seen by noting that the internal angles of a triangle add to $180^\text{o}$. The triangle $AOC$ is equilateral thus $2\theta+ \angle AOC=180$ and also $\varphi+\angle AOC =180$ hence $\varphi=2\theta$. The angle $ABC$ is $90^\text{o}$ as shown in a particular case by making $\varphi = 90^\text{o}$ then $\theta = 45^\text{o}$ and by symmetry so is $\angle ABC$. In the general case $\angle OCB = (180-\varphi)/2=90-\theta$, and  $\angle ACB = \theta+90-\theta=90^\text{o}$.
+# The geometric solution can be seen by noting that the internal angles of a triangle add to $180^\text{o}$.  The triangle $AOC$ is equilateral thus 
+# 
+# $$\displaystyle 2\theta+ \angle AOC=180\quad\text{and}\quad \varphi+\angle AOC =180$$
+# 
+# hence $\varphi=2\theta$. 
+# 
+# The angle $ABC$ is $90^\text{o}$ as shown in a particular case by making $\varphi = 90^\text{o}$ then $\theta = 45^\text{o}$ and by symmetry so is $\angle ABC$. 
+# 
+# In the general case 
+# 
+# $$\displaystyle \angle OCB = (180-\varphi)/2=90-\theta,\quad\text{and}\quad\angle ACB = \theta+90-\theta=90^\text{o}$$
 # 
 # In the vector solution we find the coordinates of points $A$ and $B$ which are $A=(-r,0),\; B=(r,0)$. Point $C$ is restricted to lie on the circle where $x^2 +y^2 =r^2$, therefore point $C$ has coordinates $(x, r^2 -x^2)$ and the vector from $C \to A, \;\overrightarrow{CA}$ is, in the $i,j$ basis 
 # 
-# $$\displaystyle \overrightarrow{CA} = -(r+x)\;\boldsymbol i -\sqrt{r^2 -x^2}\;\boldsymbol j$$
+# $$\displaystyle \overrightarrow{CA} = -(r+x)\;\pmb i -\sqrt{r^2 -x^2}\;\pmb j$$
 # 
 # and vector 
 # 
-# $$\displaystyle \overrightarrow{CB}=(r-x)\;\boldsymbol i-\sqrt{r^2-x^2}\;\boldsymbol j$$
+# $$\displaystyle \overrightarrow{CB}=(r-x)\;\pmb i-\sqrt{r^2-x^2}\;\pmb j$$
 # 
 # The dot product is 
 # 
@@ -114,9 +146,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \overrightarrow{CA}\cdot\overrightarrow{CB}=-\begin{bmatrix}r+x& \sqrt{r^2-x^2} \end{bmatrix}\begin{bmatrix} r-x\\- \sqrt{r^2-x^2}\end{bmatrix}=0$$
 # 
 # ## Q6 answer
-# The vector $\overrightarrow{AB}$ is made from the coordinates of $B$ minus those of $A$; $\displaystyle \overrightarrow{AB} = 2r\boldsymbol i + 0\boldsymbol j$,
+# The vector $\overrightarrow{AB}$ is made from the coordinates of $B$ minus those of $A$ which is  
 # 
-# in the $(i, j)$ basis and in matrix-vector form is $\displaystyle \overrightarrow{AB} = \begin{bmatrix}2r & 0\end{bmatrix}$.
+# $$\displaystyle \overrightarrow{AB} = 2r\pmb i + 0\pmb j$$
+# 
+# in the $(i, j)$ basis, and in matrix-vector form is 
+# 
+# $$\displaystyle \overrightarrow{AB} = \begin{bmatrix}2r & 0\end{bmatrix}$$
 # 
 # The dot product to find $\theta$ is
 # 
@@ -126,40 +162,60 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle |\overrightarrow{AB}||\overrightarrow{AC}|\cos(\theta) = 2r(\sqrt{(x+r)^2+r^2-x^2}) = 2r\sqrt{2r(r+x)}\cos(\theta)$$
 # 
-# and so $\cos(\theta)=\sqrt{(r+x)/2r}$. 
+# and so $\displaystyle \cos(\theta)=\sqrt{\frac{(r+x)}{2r} }$. 
 # 
-# Repeating the calculation for triangle $COB$ we find that $\cos(\varphi)=xx/r$, which could also have been determined directly from the definition of the cosine in this particular case. If $\varphi = 2\theta$ then $\cos(2\theta) = 2 \cos^2(\theta) - 1 \equiv \cos(\varphi)$ should be true. Substituting for the cosines gives $2\cos^2(\theta) - 1 =(r+x)/r-1=x/r$ which shows that $\varphi=2\theta$. 
+# Repeating the calculation for triangle $COB$ we find that $\cos(\varphi)=xx/r$, which could also have been determined directly from the definition of the cosine in this particular case. If $\varphi = 2\theta$ then
+# 
+# $$\displaystyle \cos(2\theta) = 2 \cos^2(\theta) - 1 \equiv \cos(\varphi)$$
+# 
+# should be true. Substituting for the cosines gives 
+# 
+# $$\displaystyle 2\cos^2(\theta) - 1 =(r+x)/r-1=x/r$$
+# 
+# which shows that $\varphi=2\theta$. 
 # 
 # ## Q7 answer
-# (a) The dot product is zero when the vectors are perpendicular because $\cos(90^\text{o}) = 0$. The dot product is 
+# **(a)** The dot product is zero when the vectors are perpendicular because $\cos(90^\text{o}) = 0$. The dot product is 
 # 
-# $$\displaystyle (a\boldsymbol i+2\boldsymbol j-\boldsymbol k)\cdot(3a\boldsymbol i+a\boldsymbol j+11\boldsymbol k)=3a^2 +2a-11=0$$
+# $$\displaystyle (a\pmb i+2\pmb j-\pmb k)\cdot(3a\pmb i+a\pmb j+11\pmb k)=3a^2 +2a-11=0$$
 # 
 # therefore $a=(-1\pm\sqrt{34})/3$. In vector-matrix notation 
 # 
 # $$\displaystyle \vec A\cdot \vec B= \begin{bmatrix}a&2&-1 \end{bmatrix}\begin{bmatrix}3a\\a\\11 \end{bmatrix} = 3a^2 + 2a - 11 = 0$$
 # 
-# (b) When the vectors are parallel $\cos(0)=1$ and then $\vec A\cdot\vec B = |\vec A ||\vec B |$. Solving for $a$ produces an imaginary number, therefore the two vectors cannot be made parallel.
+# **(b)** When the vectors are parallel $\cos(0)=1$ and then $\vec A\cdot\vec B = |\vec A ||\vec B |$. Solving for $a$ produces an imaginary number, therefore the two vectors cannot be made parallel.
 # 
 # This result can also be appreciated without resorting to calculation. If two vectors are parallel then the ratio of their components must be in a constant ratio because one is displaced from other. The two vectors have components in the ratios, $a/b$ of $1/3 : 2/a : -1/11$, so no real value of $a$ will make the vectors parallel because the ratio will change with the value of $a$.
 # 
 # ## Q8 answer
-# The dot product between $\vec A$ and $\vec B$ is $\vec A\cdot\vec B=9-10-6 =-7$ and as 
+# The dot product between $\vec A$ and $\vec B$ is 
+# 
+# $$\displaystyle \vec A\cdot\vec B=9-10-6 =-7$$ 
+# 
+# and is also 
 # 
 # $$\displaystyle \vec A\cdot\vec B=|\vec A||\vec B\cos(\theta)=-\sqrt{14}\sqrt{ 70}\cos(\theta)$$
 # 
 # therefore $\theta = \cos^{-1}(-7/\sqrt{980})$, which is $102.9^\text{o}$.
 # 
-# The vector triangle as drawn, is $\vec A + \vec C = \vec B$, because the vectors point out from the origin; let us choose the third side to be the vector $\vec C=\vec B - \vec A=\begin{bmatrix}0 &-7& 7\end{bmatrix}$. Notice that if this vector is drawn on the graph it has to start at the end of $\vec A$; drawing it as $\begin{bmatrix}0 &-7& 7\end{bmatrix}$ will be a line from the origin to coordinate $\begin{bmatrix}0 &-7& 7\end{bmatrix}$ which will be parallel to $\vec C$.
+# The vector triangle as drawn, is $\vec A + \vec C = \vec B$, because the vectors point out from the origin; let us choose the third side to be the vector 
 # 
-# Let the other angle between $\vec B$ and $\vec C$ be $\varphi$, then, $\displaystyle \varphi =\cos^{-1}\left(\frac{\vec B\cdot\vec C}{\sqrt{\vec B\cdot\vec B}\sqrt{\vec C\cdot\vec C}} \right)=21.6^\text{o}$
+# $$\displaystyle \vec C=\vec B - \vec A=\begin{bmatrix}0 &-7& 7\end{bmatrix}$$
+# 
+# Notice that if this vector is drawn on the graph it has to start at the end of $\vec A$; drawing it as $\begin{bmatrix}0 &-7& 7\end{bmatrix}$ will be a line from the origin to coordinate $\begin{bmatrix}0 &-7& 7\end{bmatrix}$ which will be parallel to $\vec C$.
+# 
+# Let the other angle between $\vec B$ and $\vec C$ be $\varphi$, then, 
+# 
+# $$\displaystyle \varphi =\cos^{-1}\left(\frac{\vec B\cdot\vec C}{\sqrt{\vec B\cdot\vec B}\sqrt{\vec C\cdot\vec C}} \right)=21.6^\text{o}$$
 # 
 # and the third angle is therefore $55.46^\text{o}$.
 # 
 # ## Q9 answer
-# As $\vec A \cdot \vec B = |\vec A||\vec B|\cos(\theta )$, the dot product $\displaystyle \vec A \cdot \vec B=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}4&3&2\end{bmatrix}=25$
+# As $\vec A \cdot \vec B = |\vec A||\vec B|\cos(\theta )$, the dot product is
 # 
-# therefore $|\vec A|=\sqrt{4+9+16}=\sqrt{29}$ and this is also the length of $\vec B$. The angle is therefore $\theta=\cos^{-1}25/29)$ radians. In python the calculation is
+# $$\displaystyle \vec A \cdot \vec B=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}4&3&2\end{bmatrix}=25$$
+# 
+# The length of A is $\sqrt{A\cdot A}$ which is $|\vec A|=\sqrt{4+9+16}=\sqrt{29}$ and this is also the length of $\vec B$. The angle $\theta$ is therefore $\theta=\cos^{-1}(25/29)$ radians. In Python the calculation is
 
 # In[2]:
 
@@ -173,19 +229,19 @@ print('{:s}{:8.5}'.format('angle in degrees =', theta_rads*180/np.pi) )
 # ## Q10 answer
 # The O-C-CA angle is found from the dot product of $\overrightarrow {CO}$  and $\overrightarrow {CC_A}$. Vector $\overrightarrow {CO}$ is calculated as the coordinates of atom O minus those of atom C, and $\overrightarrow {CC_A}$ similarly.
 # 
-# $$\displaystyle \begin{align} \overrightarrow=&\begin{bmatrix}41.688 - 41.412 & 42.322 - 41.542 & 6.632 - 7.455\end{bmatrix}=\begin{bmatrix}0.276& 0.870&-0.823\end{bmatrix}\\
-# \overrightarrow =&\begin{bmatrix}-0.270& 0.395& 1.463\end{bmatrix}\end{align}$$
+# $$\displaystyle \begin{align} \overrightarrow {CO}=&\begin{bmatrix}41.688 - 41.412 & 42.322 - 41.542 & 6.632 - 7.455\end{bmatrix}=\begin{bmatrix}0.276& 0.870&-0.823\end{bmatrix}\\
+# \overrightarrow {CC_A}=&\begin{bmatrix}-0.270& 0.395& 1.463\end{bmatrix}\end{align}$$
 # 
 # The cosine of the angle, using equation 2 or 6, is $-0.4944$ giving an angle of $119.61^\text{o}$ which is a typical value for an sp$^2$ type C-CO bond angle. The CO bond length is $\sqrt{\vec{CO}\cdot\vec{CO}} =1.229$ angstrom.
 # 
-# Calculating the C-CA-N bond angle using Python ,defining the coordinates first as vectors, gives
+# Calculating the C-CA-N bond angle using Python, defining the coordinates first as vectors, gives,
 
 # In[3]:
 
 
-C  = np.array([41.412,41.452,7.455])   # coordinate vectors in Angstrom
-CA = np.array([ 41.142, 41.847, 8.918 ])
-N  = np.array([42.193,41.289,9.774]) 
+C  = np.array([41.412, 41.452, 7.455])   # coordinate vectors in Angstrom
+CA = np.array([41.142, 41.847, 8.918 ])
+N  = np.array([42.193, 41.289, 9.774]) 
 CAC = C - CA                          # bond vectors 
 CAN = N - CA  
 CN_bond = np.sqrt(np.dot(CAN,CAN) );           # bondlength  angstrom
@@ -224,7 +280,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # ## Q12 answer
 # The dot product is that between vectors $\overrightarrow{OB}$ and $\overrightarrow{AC}$. The coordinates of $A$ are $(d, 0 0)$ so that the vectors can be written as 
 # 
-# $$\displaystyle \overrightarrow{OA} = d\boldsymbol i + 0\boldsymbol j + 0\boldsymbol k = d\boldsymbol i$$
+# $$\displaystyle \overrightarrow{OA} = d\pmb i + 0\pmb j + 0\pmb k = d\pmb i$$
 # 
 # or in matrix vector form as 
 # 
@@ -232,13 +288,15 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # 
 # either will do. The other vectors are 
 # 
-# $$\displaystyle \overrightarrow{OC}= 0\boldsymbol i + d\boldsymbol j + d\boldsymbol k; \quad \overrightarrow{OB} = d\boldsymbol i + d\boldsymbol j + d\boldsymbol k$$
+# $$\displaystyle \overrightarrow{OC}= 0\pmb i + d\pmb j + d\pmb k; \quad \overrightarrow{OB} = d\pmb i + d\pmb j + d\pmb k$$
 # 
-# The vector $\vec{AC}$ is therefore $\overrightarrow{AC} = \overrightarrow{OC} - \overrightarrow{OA} = -d\boldsymbol i + d\boldsymbol j + d\boldsymbol k$. 
+# The vector $ \vec{AC}$ is therefore 
+# 
+# $$\overrightarrow{AC} = \overrightarrow{OC} - \overrightarrow{OA} = -d\pmb i + d\pmb j + d\pmb k$$ 
 # 
 # The length of the diagonal, the square root of the sum of the square of each term in the vector, is $3d$. The angle is found using the dot product
 # 
-# $$\displaystyle \overrightarrow{OB}\cdot\overrightarrow{AC}=(d\boldsymbol i + d\boldsymbol j + d\boldsymbol k)\cdot(-d\boldsymbol i + d\boldsymbol j + d\boldsymbol k) = d^2$$
+# $$\displaystyle \overrightarrow{OB}\cdot\overrightarrow{AC}=(d\pmb i + d\pmb j + d\pmb k)\cdot(-d\pmb i + d\pmb j + d\pmb k) = d^2$$
 # 
 # and 
 # 
@@ -266,14 +324,18 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # 
 # then $\chi=54.7^\text{o}$.
 # 
-# The angle $\alpha$ is most easily found by making point $g$ the origin and recalculating vectors $\overrightarrow{gO}$ and $\overrightarrow{gf}$. The recalculated vectors are $\overrightarrow{gO} = \begin{bmatrix}-1 &-1& -1\end{bmatrix},\;\overrightarrow{gf} = \begin{bmatrix}-1& 1& 1 \end{bmatrix}$, therefore,
+# The angle $\alpha$ is most easily found by making point $g$ the origin and recalculating vectors $\overrightarrow{gO}$ and $\overrightarrow{gf}$. The recalculated vectors are 
+# 
+# $$\displaystyle \overrightarrow{gO} = \begin{bmatrix}-1 &-1& -1\end{bmatrix},\quad\overrightarrow{gf} = \begin{bmatrix}-1& 1& 1 \end{bmatrix}$$
+# 
+# therefore,
 # 
 # $$\displaystyle \cos(\alpha)=\frac{1}{\sqrt{3}}\begin{bmatrix}-1& -1 &-1\end{bmatrix}\frac{1}{\sqrt{3}}\begin{bmatrix}-1\\ 1 \\1\end{bmatrix}=-\frac{1}{\sqrt{3}}$$
 # 
 # and the angle $109.47^\text{o}$, the normal sp$^3$ bond angle.
 # 
 # ## Q14 answer
-# (a) If the coordinates of the carbon are selected to be at $(0, 0, 0)$ the H atom, top right, is at position $(a, a, a)$, bottom middle at $(a,-a,-a)$,and the other two atoms at $(-a, -a, a)$ and $(-a, a, -a)$.
+# **(a)** If the coordinates of the carbon are selected to be at $(0, 0, 0)$ the H atom, top right, is at position $(a, a, a)$, bottom middle at $(a,-a,-a)$,and the other two atoms at $(-a, -a, a)$ and $(-a, a, -a)$.
 # Now calculate the bond length in terms of $a$. By Pythagoras' theorem the length of the CH bond is calculated with distances as shown in figure 62, where $m$ is the middle of the base of the cube and the distance from the C atom to $m$ is $a$. The distance $mH$ is half the length of the diagonal of the cube and is $\sqrt{2a^2} = a\sqrt{2}$, therefore the length CH, the bond length, is $\sqrt{a^2 + 2a^2} = a\sqrt{3}$. As the bond length is
 # $0.157$ nm, then the side of the cube, of length $2a$, is $0.181$ nm. The distance between H atoms is $2 mH$,
 # which is $2a\sqrt{2}$ or $0.256$ nm.
@@ -283,11 +345,13 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # Left Figure 61, Right fig 62. Left. Methane is shown drawn inside a tetrahedron and in the conventional perspective way. The axes are shown as dashed lines. Right.  Bond length calculation.
 # ______
 # 
-# (b) To use the dot product to work out the bond angles, allow any two CH bonds to be vectors and call them $\vec B_1$ and $\vec B_2$, then $\vec B_1\cdot\vec B_2 = |\vec B_1 ||\vec B_2 |\cos(\theta)$, which immediately presents us with a problem because we need to work out $\vec B_1\cdot\vec B_2$. Let $\vec B_1$ be the vector from the carbon to the H atom at $(a, -a, -a)$ and let $\vec B_2$ be that to the H atom at $(a,a,a)$. Any pair can be chosen because the result will be the same by symmetry. The next step is to write each vector in its basis-set as a list of numbers to represent the vector as a one-dimensional row or column matrix. If a row vector is written $\vec B_1 = \begin{bmatrix}a &-a& -a\end{bmatrix}$ in the basis of $(x, y, z)$, the corresponding column vector is clearly
+# **(b)** To use the dot product to work out the bond angles, allow any two CH bonds to be vectors and call them $\vec B_1$ and $\vec B_2$, then 
 # 
-# $$\displaystyle \begin{bmatrix}a\\a\\a\end{bmatrix}$$
+# $$\displaystyle \vec B_1\cdot\vec B_2 = |\vec B_1 ||\vec B_2 |\cos(\theta)$$
 # 
-# Then using matrix multiplication rules, 
+# which immediately presents us with a problem because we need to work out $\vec B_1\cdot\vec B_2$. Let $\vec B_1$ be the vector from the carbon to the H atom at $(a, -a, -a)$ and let $\vec B_2$ be that to the H atom at $(a,a,a)$. Any pair can be chosen because the result will be the same by symmetry. The next step is to write each vector in its basis-set as a list of numbers to represent the vector as a one-dimensional row or column matrix. If a row vector is written $\vec B_1 = \begin{bmatrix}a &-a& -a\end{bmatrix}$ in the basis of $(x, y, z)$
+# 
+# Using matrix multiplication, 
 # 
 # $$\displaystyle \vec B_1\cdot\vec B_2 = \begin{bmatrix}a&-a&-a\end{bmatrix}\begin{bmatrix}a\\a\\a\end{bmatrix}=-a^2$$
 # 
@@ -337,7 +401,7 @@ print('{:s}{:6.4f}{:s}{:6.4f}{:s}{:8.2f}{:s}'.
 
 
 # ## Q16 answer
-# Define vectors for each atom in NH$_3$; use the dot product of the difference of two atom vectors to calculate the bond length; equation 9.
+# **(a)** Define vectors for each atom in NH$_3$; use the dot product of the difference of two atom vectors to calculate the bond length; equation 9.
 
 # In[7]:
 
@@ -361,9 +425,11 @@ print('{:s}{:8.4f}{:8.4f}{:8.4f}'.format( 'bond length/angstrom', bond1,bond2,bo
 print('{:s} {:8.2f} {:8.2f} {:8.2f}'.format( 'bond angles/degree',angle1,angle2,angle3) )
 
 
-# which produces an average bond length of $1.003 \pm 0.004$ angstrom. The mean angle is $107.8 \pm 0.2$ degrees using   $\bar x=(\sum_i x_i)/n$, and $ \sigma^2=(\sum_i(x_i-\bar x)^2)/(n-1)$.
+# which produces an average bond length of $1.003 \pm 0.004$ angstrom. The mean angle is $107.8 \pm 0.2$ degrees calculated using   
 # 
-# (b) Ammonia has a three fold symmetry (C$_{3V}$ point group). Bond angles and distances confirm this within the experimental error. The distance from the plane of the hydrogen atoms to the nitrogen can therefore be calculated by finding the mid-point of the three H atoms and calculating the distance of this point from the N atom.
+# $$\displaystyle \bar x=\frac{\sum_i x_i)}{n},\quad\text{and}\quad\sigma^2=\frac{\sum_i(x_i-\bar x)^2)}{n-1}$$
+# 
+# **(b)** Ammonia has a three fold symmetry (C$_{3V}$ point group). Bond angles and distances confirm this within the experimental error. The distance from the plane of the hydrogen atoms to the nitrogen can therefore be calculated by finding the mid-point of the three H atoms and calculating the distance of this point from the N atom.
 
 # In[8]:
 
@@ -387,7 +453,15 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 #  ![Drawing](vectors-fig61b.png)
 #  _____
 # 
-# As the magnitude of each vector is $\sqrt{u^2 + v^2}$, the enclosed angle is $\displaystyle \theta =\cos^{-1}\left( \frac{u^2 - v^2}{u^2 + v^2} \right)$. substituting for the values given in the question produces $\displaystyle \theta =\cos^{-1}\left( \frac{\gamma^2 - 1}{\gamma^2 + 1} \right)$ and as $\gamma= (1+\sqrt{5})/2$,  $\theta= 1.107$ radians or $63.43^\text{o}$. 
+# As the magnitude of each vector is $\sqrt{u^2 + v^2}$, the enclosed angle is 
+# 
+# $$\displaystyle \theta =\cos^{-1}\left( \frac{u^2 - v^2}{u^2 + v^2} \right)$$
+# 
+# substituting for the values given in the question produces 
+# 
+# $$\displaystyle \theta =\cos^{-1}\left( \frac{\gamma^2 - 1}{\gamma^2 + 1} \right)$$
+# 
+# and as $\displaystyle \gamma= \frac{1+\sqrt{5}}{2}$,  $\theta= 1.107$ radians or $63.43^\text{o}$. 
 # 
 # **Exercise:** Take other pairs of vertices and find angles of $180^\text{o}$ and $116.56^\text{o}$; identify these angles from the centre of the icosahedron to the vertices.
 # 
@@ -399,7 +473,7 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # and $p_3$ must be zero because the vectors $\vec p$ and $\vec v$ are at right angles and therefore $\vec v\cdot\vec p = 0$, which means that $p_1$ and $p_2$ can take any values. The vector is therefore $\vec p = \begin{bmatrix}p_1& p_2& 0\end{bmatrix}$ . However, this is not with respect to the axis drawn on the figure because the vector carries its own axes with it, which are parallel to $x, y, z$ on the diagram. All that can be concluded is that $\vec p$ lies in the $x-y$ plane. The diagram appears therefore somewhat confusing, because the axes as labelled do not refer to the vectors as drawn; $\vec p$ does lie parallel to the $x-y$ plane in the figure but in its own coordinates with $z = 0$.
 # 
 # ## Q19 answer
-# The vectors to points $A, B$ and $C$ from the centre are $\begin{bmatrix}u &v& w\end{bmatrix},\begin{bmatrix}u &w &v\end{bmatrix}$, and $\begin{bmatrix} w&v&u\end{bmatrix}$ since the centre of the hexahedron is at $(0, 0, 0)$. The angle $\theta$ between $A$ and $B$ is defined in the triangle below, left.
+# **(a)** The vectors to points $A, B$ and $C$ from the centre are $\begin{bmatrix}u &v& w\end{bmatrix},\begin{bmatrix}u &w &v\end{bmatrix}$, and $\begin{bmatrix} w&v&u\end{bmatrix}$ since the centre of the hexahedron is at $(0, 0, 0)$. The angle $\theta$ between $A$ and $B$ is defined in the triangle below, left.
 # 
 # ![Drawing](vectors-fig63.png)
 # 
@@ -410,13 +484,21 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # 
 # $$\displaystyle \theta=\cos^{-1}\left(\frac{\overrightarrow{OA}\cdot \overrightarrow{OB} }{|\overrightarrow{OA}| |\overrightarrow{OB}|} \right)$$
 # 
-# The length of $\overrightarrow{OA}$ is the same as that of $\displaystyle \overrightarrow{OB}$ or $|\overrightarrow{OA}|^2= \begin{bmatrix}u&v&w\end{bmatrix} \begin{bmatrix}u\\v\\w\end{bmatrix}$ hence $|\overrightarrow{OA}|= u^2+v^2+w^2$ and $\overrightarrow{OA}\cdot \overrightarrow{OB}= \begin{bmatrix} u&v&w\end{bmatrix} \begin{bmatrix}u\\w\\v\end{bmatrix} = u^2+2vw$ making the angle 
+# The length of $\overrightarrow{OA}$ is the same as that of $\displaystyle \overrightarrow{OB}$ or 
+# 
+# $$\displaystyle |\overrightarrow{OA}|^2= \begin{bmatrix}u&v&w\end{bmatrix} \begin{bmatrix}u\\v\\w\end{bmatrix}$$
+# 
+# hence 
+# 
+# $$\displaystyle |\overrightarrow{OA}|= u^2+v^2+w^2,\quad\text{and}\quad \overrightarrow{OA}\cdot \overrightarrow{OB}= \begin{bmatrix} u&v&w\end{bmatrix} \begin{bmatrix}u\\w\\v\end{bmatrix} = u^2+2vw$$
+# 
+# making the angle 
 # 
 # $$\displaystyle \theta= \cos^{-1}\left( \frac{u^2+2vw}{u^2+v^2+w^2}\right)$$
 # 
 # Using values $u=0.6786,\;v=u,\; w=0.2811$ produces an angle $\theta = 32.65^\text{o}$.
 # 
-# (b) By symmetry the three points $A, B, C$ form an equilateral triangle because they are at an equal distance from the centre of the cube, each distance being $\sqrt{u^2 + v^2 + w^2}$ and the lengths of the sides of the
+# **(b)** By symmetry the three points $A, B, C$ form an equilateral triangle because they are at an equal distance from the centre of the cube, each distance being $\sqrt{u^2 + v^2 + w^2}$ and the lengths of the sides of the
 # triangle are the same. One side is the vector $OA - OB$ or $\begin{bmatrix}0& v - w& w-v\end{bmatrix}$ which has length $(v-w)^2 +(w-v)^2= (v - w)^2$ and because $u = v$, the internal angles must all be $60^\text{o}$. The triangle is therefore also isosceles (equilateral being a special case of an isosceles triangle). The point $p$ is at the centre of the triangle therefore this has coordinates that must be the average of those of $A, B, C$ and which are
 # 
 # $$\displaystyle \left(\frac{2u+w}{3},\frac{2v+w}{3},\frac{u+v+w}{3}\right)$$
@@ -440,16 +522,28 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # Because this product is zero $\overrightarrow{Op}$ and $\overrightarrow{Ap}$ are perpendicular.
 # 
 # ## Q20 answer
-# (a) The vectors of the rays $AB$ and $CD$ are subtracted, as shown below. The dotted line is the resultant vector of length $n\lambda$; the vector equation is $|\overrightarrow{AB}|-|\overrightarrow{CD}|=n\lambda$.
+# **(a)** The vectors of the rays $AB$ and $CD$ are subtracted, as shown below. The dotted line is the resultant vector of length $n\lambda$; the vector equation is 
+# 
+# $$\displaystyle |\overrightarrow{AB}|-|\overrightarrow{CD}|=n\lambda$$
 # 
 # ![Drawing](vectors-fig64.png)
 # 
 # Figure 64. The resultant vector (dotted) has length $n\lambda$.
 # _______
 # 
-# The distance $AB$ is $d\cos(\theta)$ and distance $CD$ is $d\cos(\phi)$ and their difference must be $n\lambda$, therefore $d(\cos(\theta) - \cos(\phi) = n\lambda$, which is the Laue equation. The zero order angle is the condition, $\theta = \phi$. The first order angles occur at $\theta_{\pm 1} = \cos^{-1}(\pm \lambda /d + \cos(\phi))$ and the second order at $\theta_{\pm 2} = \cos^{-1}(\pm 2\lambda/d + cos(\phi))$.
+# The distance $AB$ is $d\cos(\theta)$ and distance $CD$ is $d\cos(\phi)$ and their difference must be $n\lambda$, therefore 
 # 
-# (b) Using the last two equations, plotting a graph for the zeroth, first, and second orders, n, produced figure 65. 
+# $$\displaystyle d(\cos(\theta) - \cos(\phi) = n\lambda$$
+# 
+# which is the Laue equation. The zero order angle is the condition, $\theta = \phi$. The first order angles occur at 
+# 
+# $$\displaystyle\theta_{\pm 1} = \cos^{-1}(\pm \lambda /d + \cos(\phi))$$
+# 
+# and the second order at 
+# 
+# $$\displaystyle\theta_{\pm 2} = \cos^{-1}(\pm 2\lambda/d + \cos(\phi))$$
+# 
+# **(b)** Using the last two equations, plotting a graph for the zeroth, first, and second orders, n, produced figure 65. 
 # 
 # ![Drawing](vectors-fig65.png)
 # 
@@ -459,19 +553,34 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # The zeroth order scattering occurs when the incident X-ray is at any angle to the line of atoms and the scattering occurs at the same angle, i.e. in the direction of the X-rays. This is clearly not very useful.
 # 
 # The first or second, and higher positive order scattering only happens when the diffracted angle $\theta$, satisfies
-# $\cos(\theta) - \cos(\phi) = n\lambda/d$. From the graph, the minimum diffracted angle occurs when $\theta = 0$, i.e. diffraction along the line of atoms; the incident angle is then $\cos(\phi) = 1 - n\lambda/d$ which is $\approx 52.0^\text{o}$ for the $+1$ order and $76.7^\text{o}$ for the $+2$ order. In practice, a larger incident angle would have to be used. The $-1$ and $-2$ orders occur only when $\phi$ is between its maximum value, which is about $103^\text{o}$ for the $-2$ order, and zero.
+# 
+# $$\displaystyle \cos(\theta) - \cos(\phi) = n\lambda/d$$
+# 
+# From the graph, the minimum diffracted angle occurs when $\theta = 0$, i.e. diffraction along the line of atoms; the incident angle is then $\cos(\phi) = 1 - n\lambda/d$ which is $\approx 52.0^\text{o}$ for the $+1$ order and $76.7^\text{o}$ for the $+2$ order. In practice, a larger incident angle would have to be used. The $-1$ and $-2$ orders occur only when $\phi$ is between its maximum value, which is about $103^\text{o}$ for the $-2$ order, and zero.
 # 
 # **Exercise:** Calculate the exact limits $\theta,\; \phi$ as appropriate for the $\pm 1,\; \pm 2$ order diffraction.
 
 # ## Q21 answer
-# (a) One of each of the planes $(1\;1\;2)$ and $(2\;2\;4)$ are shown on the figure. The $(1\;1\;2)$ shown has lattice points $a = 4, b = 4, c = 2$ making the fractions $1/4, 1/4, 1/2$. Clearing fractions produces the Miller indices. The other two mentioned in the question can easily be added.
+# **(a)** One of each of the planes $(1\;1\;2)$ and $(2\;2\;4)$ are shown on the figure. The $(1\;1\;2)$ shown has lattice points $a = 4, b = 4, c = 2$ making the fractions $1/4, 1/4, 1/2$. Clearing fractions produces the Miller indices. The other two mentioned in the question can easily be added.
 # 
 # ![Drawing](vectors-fig66.png)
 # 
 # Figure 66. lattice planes
 # ________
 # 
-# To prove that the planes are parallel, the $(1\;1\;2)$ and $(2\;2\;4)$ are chosen. One plane is parallel to another if the angle between their normal vectors is zero, the normal being the cross product of two vectors in the same plane. The plane $(1\;1\;2)$ is described in reciprocal space by the vectors $\vec p=\begin{bmatrix}1& 0 &0\end{bmatrix}, \vec q=\begin{bmatrix}0 &1& 0\end{bmatrix}$ and $\vec r=\begin{bmatrix}0 &0& 2\end{bmatrix}$. Two vectors in this plane are therefore $\vec p - \vec q = \begin{bmatrix}1 &-1& 0\end{bmatrix}$ and $\vec p - \vec r = \begin{bmatrix}1 &0& -2\end{bmatrix}$ and by definition their cross product must be normal to the plane. This normal vector $\vec n_1 =(\vec p-\vec q)\times (\vec p-\vec r)$ can be formed in the basis set of the reciprocal axes $\vec {a^*},\vec {b^*},\vec{c^*}$ and calculated as the determinant,
+# To prove that the planes are parallel, the $(1\;1\;2)$ and $(2\;2\;4)$ are chosen. One plane is parallel to another if the angle between their normal vectors is zero, the normal being the cross product of two vectors in the same plane. The plane $(1\;1\;2)$ is described in reciprocal space by the vectors 
+# 
+# $$\displaystyle \vec p=\begin{bmatrix}1& 0 &0\end{bmatrix},\quad \vec q=\begin{bmatrix}0 &1& 0\end{bmatrix},\quad \vec r=\begin{bmatrix}0 &0& 2\end{bmatrix}$$
+# 
+# Two vectors in this plane are therefore 
+# 
+# $$\displaystyle \vec p - \vec q = \begin{bmatrix}1 &-1& 0\end{bmatrix}, \qquad \vec p - \vec r = \begin{bmatrix}1 &0& -2\end{bmatrix}$$
+# 
+# and by definition their cross product must be normal to the plane. This normal vector 
+# 
+# $$\displaystyle \vec n_1 =(\vec p-\vec q)\times (\vec p-\vec r)$$
+# 
+# can be formed in the basis set of the reciprocal axes $\displaystyle \vec {a^*},\vec {b^*},\vec{c^*}$ and calculated as the determinant,
 # 
 # $$\displaystyle \vec n_1=\begin{vmatrix}\vec{a^*} & \vec{b^*} & \vec{c^*} \\ 1& - 1&0 \\1 & 0 & -2 \end{vmatrix} = 2\vec{a^*} + 2\vec{b^*} + \vec{c^*}$$
 # 
@@ -487,7 +596,7 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # 
 # The angle between the two normal vectors is zero because $\cos(0) = 1$, and therefore these planes are parallel.
 # 
-# (b) Following part(a) but now using the Miller indices, the vectors of the first plane are $\begin{bmatrix}h&0&0\end{bmatrix}, \begin{bmatrix}0&k&0\end{bmatrix}, \begin{bmatrix}0&0&l\end{bmatrix}$; the two vectors in the plane are then the differences $\begin{bmatrix}h&-k&0\end{bmatrix}, \begin{bmatrix}h&0&-l\end{bmatrix}$ and their cross product the vector $\vec v=\begin{bmatrix}kl&hl&hk\end{bmatrix}$, and similarly for another plane the vector must be $\vec{v'}=\begin{bmatrix}k'l'&h'l'&h'k'\end{bmatrix}$.
+# **(b)** Following part(a) but now using the Miller indices, the vectors of the first plane are $\begin{bmatrix}h&0&0\end{bmatrix}, \begin{bmatrix}0&k&0\end{bmatrix}, \begin{bmatrix}0&0&l\end{bmatrix}$; the two vectors in the plane are then the differences $\begin{bmatrix}h&-k&0\end{bmatrix}, \begin{bmatrix}h&0&-l\end{bmatrix}$ and their cross product the vector $\vec v=\begin{bmatrix}kl&hl&hk\end{bmatrix}$, and similarly for another plane the vector must be $\vec{v'}=\begin{bmatrix}k'l'&h'l'&h'k'\end{bmatrix}$.
 # 
 # To obtain the dot product, the vectors must be normalised; the constants are 
 # 
@@ -529,22 +638,28 @@ parl_planes(1,1,1,2,2,0)
 
 # You will have noticed that parallel planes in reciprocal space have indices that are each integer multiples of one another. 
 # 
-# (c) The larger of the two planes in the diagram, has intercepts $a/2, b/4$ and $3c/4$. The Miller indices are therefore $(2\; 4 \;4/3)$ which has to be simplified further to $(6\; 12\; 4)$ and this is parallel to $(3\; 6\; 2)$.
+# **(c)** The larger of the two planes in the diagram, has intercepts $a/2, b/4$ and $3c/4$. The Miller indices are therefore $(2\; 4 \;4/3)$ which has to be simplified further to $(6\; 12\; 4)$ and this is parallel to $(3\; 6\; 2)$.
 # 
-# (d) If a plane is perpendicular to $(h\;k\;l)$,then the dot product of the normal to each plane must be zero. In this case, from the equation giving the angle between the planes $\cos(\theta) = \cdots$ , it must follow that $klk'l' + hlh'l' + khk'h' = 0$. As only $h, k, l$ are known a _unique_ plane perpendicular to our victim plane cannot be found. Only when two indices are known is the third uniquely defined.
+# **(d)** If a plane is perpendicular to $(h\;k\;l)$,then the dot product of the normal to each plane must be zero. In this case, from the equation giving the angle between the planes $\cos(\theta) = \cdots$ , it must follow that $klk'l' + hlh'l' + khk'h' = 0$. As only $h, k, l$ are known a *unique* plane perpendicular to our victim plane cannot be found. Only when two indices are known is the third uniquely defined.
 # 
 # ## Q22 answer
-# (a) The equation for the perpendicular (shortest) distance from the origin to the plane is
+# **(a)** The equation for the perpendicular (shortest) distance from the origin to the plane is
 # 
 # $$\displaystyle d_0=\frac{1}{\sqrt{(1/p)^2+(1/q)^2+(1/r)^2}}$$
 # 
 # when the plane has intercepts, $p,q,r$. 
 # 
-# (b) The intercepts of the plane $(1\;1\;0)$ are $p=a,q=b,r=\infty$ thus the perpendicular distance from the origin is $d_0=ab/\sqrt{a^2+b^2}$. The plane $(2\;2\;0)$ has intercepts $p=a/2,q=b/2,r=\infty$ and thus $d_0=ab/2\sqrt{a^2+b^2}$ and the separation between then is the difference.
+# **(b)** The intercepts of the plane $(1\;1\;0)$ are $p=a,q=b,r=\infty$ thus the perpendicular distance from the origin is 
 # 
-# The values for other planes are calculated in a similar way; for example, plane $(\bar 3\; 2 \;0)$ has intercepts $h = -a/3, k=b/2, l=\infty$.
+# $$\displaystyle d_{0(110)}=\frac{ab}{\sqrt{a^2+b^2} }$$
 # 
-# (c) The distance between consecutive planes is calculated by taking a lattice point $(h \;k\;l)$ and doubling the values, for example $(1\;1\;1)$ is parallel to $(2\;2\;2)$ and so forth. The distance to a general plane $(h \;k\;l)$ from the origin is
+# The plane $(2\;2\;0)$ has intercepts $p=a/2,q=b/2,r=\infty$ and thus 
+# 
+# $$\displaystyle d_{0(220)}=\frac{ab}{2\sqrt{a^2+b^2} }$$
+# 
+# and the separation between them is their difference. The values for other planes are calculated in a similar way; for example, plane $(\bar 3\; 2 \;0)$ has intercepts $h = -a/3, k=b/2, l=\infty$.
+# 
+# **(c)** The distance between consecutive planes is calculated by taking a lattice point $(h \;k\;l)$ and doubling the values, for example $(1\;1\;1)$ is parallel to $(2\;2\;2)$ and so forth. The distance to a general plane $(h \;k\;l)$ from the origin is
 # 
 # $$\displaystyle d_0=\frac{1}{\sqrt{(h/a)^2+(k/b)^2+(l/c)^2}}$$
 # 
@@ -563,7 +678,7 @@ parl_planes(1,1,1,2,2,0)
 # **Exercise:**  Calculate the distance $d$ (part c) for a hexagonal lattice.
 # 
 # ## Q23 answer
-# If the origin $(0, 0, 0)$ is at O, the vector $\vec S_0$ has coordinates $(x, y) = (1/\lambda, 0)$ and therefore $\vec S_0 = \begin{bmatrix}1/\lambda & 0\end{bmatrix}$. Using the projection of $\vec S$ onto the line OB, see Fig. 3 for an example, the coordinates of point $P$ define the vector
+# If the origin $(0, 0, 0)$ is at O, the vector $\vec S_0$ has coordinates $(x, y) = (1/\lambda, 0)$ and therefore $\vec S_0 = \begin{bmatrix}1/\lambda & 0\end{bmatrix}$. Using the projection of $\vec S$ onto the line OB, see Fig. 3 for an example. The coordinates of point $P$ define the vector
 # 
 # $$\displaystyle \vec S=\begin{bmatrix}\cos(2\theta)/\lambda &\sin(2\theta)/\lambda\end{bmatrix}$$
 # 
@@ -575,23 +690,56 @@ parl_planes(1,1,1,2,2,0)
 # 
 # $$\displaystyle \frac{1}{d^2}=\frac{2}{\lambda^2}(1-\cos(2\theta))=\frac{4\sin^2(\theta)}{\lambda^2}$$
 # 
-# which, by simplifying and rearranging, gives Bragg's Law; $\lambda = 2d\sin(\theta)$.
+# which, by simplifying and rearranging, gives Bragg's Law, 
+# 
+# $$\displaystyle \lambda = 2d\sin(\theta)$$
 # 
 # ## Q24 answer
-# (a) Follow the pattern to complete all the labels!
+# **(a)** Follow the pattern to complete all the labels!
 # 
-# (b) This separation is the reciprocal of the distance from the origin of the lattice to $(Q\;3\;0)$ on the Ewald diagram. This distance is $\sqrt{(3b^*)^2 + a^*} = 48\;\mathrm{nm^{-1}}$, which makes the separation $0.144$ nm. The angle is calculated as the dot product of the vector, call this $\vec B_1$ from $(Q;1\;0) \to (Q\;3;0)$ and that of $\vec B_2$, from $(Q\;1;0) \to (0;0;0)$. To make the calculation easier, move the vectors' origin to the point $(Q \;1\;0)$, at the centre of the sphere, then the vector $\vec B_1$ is $\vec B_1=\begin{bmatrix}0&2b^*& 0\end{bmatrix}$ and when normalised is $\vec B_1=\begin{bmatrix}0&2b^*& 0\end{bmatrix}/2b^* =\begin{bmatrix}0&1& 0\end{bmatrix} $.
+# **(b)** This separation is the reciprocal of the distance from the origin of the lattice to $(Q\;3\;0)$ on the Ewald diagram. This distance is 
 # 
-# Vector $\vec B_2=\begin{bmatrix}a^*&-b^*& 0\end{bmatrix}$. and when normalised is $\vec B_2=\begin{bmatrix}a^*&-b^*& 0\end{bmatrix}/\sqrt{a^{*2}+b^{*2}}$. The angle between the vectors is calculated using the dot product
+# $$\displaystyle \sqrt{(3b^*)^2 + a^*} = 48\;\mathrm{nm^{-1}}$$
+# 
+# which makes the separation $0.144$ nm. The angle is calculated as the dot product of the vector, call this $\vec B_1$ from $(Q;1\;0) \to (Q\;3;0)$ and that of $\vec B_2$, from $(Q\;1;0) \to (0;0;0)$. To make the calculation easier, move the vectors' origin to the point $(Q \;1\;0)$, at the centre of the sphere, then the vector $\vec B_1$ is $\vec B_1=\begin{bmatrix}0&2b^*& 0\end{bmatrix}$ and when normalised is 
+# 
+# $$\displaystyle \vec B_1=\begin{bmatrix}0&2b^*& 0\end{bmatrix}\frac{1}{2b^*} =\begin{bmatrix}0&1& 0\end{bmatrix} $$
+# 
+# Vector $\vec B_2=\begin{bmatrix}a^*&-b^*& 0\end{bmatrix}$ and when normalised is 
+# 
+# $$\displaystyle \vec B_2=\begin{bmatrix}a^*&-b^*& 0\end{bmatrix}\frac{1}{\sqrt{a^{*2}+b^{*2}} }$$
+# 
+# The angle between the vectors is calculated using the dot product
 # 
 # $$\displaystyle \cos(\theta)=\frac{\vec b_1\cdot\vec B_2}{|\vec B_1||\vec B_2|}=\begin{bmatrix}0&1& 0\end{bmatrix}\begin{bmatrix}a^*\\-b^*\\ 0\end{bmatrix}\frac{1}{\sqrt{a^{*2}+b^{*2}}}=-\frac{b^*}{\sqrt{a^{*2}+b^{*2}}} $$
 # 
 # Substituting in values gives $\cos(\theta) = -1/2$ and the angle is $120^\text{o}$.
 # 
-# (c) The wavelength to observe a lattice plane $(0\;1\;0)$ at the same crystal angle, is $1/a^*$ which is $1/(2\sqrt{3}) = 0.288$ nm. To observe the planes at $(1\;2\;0)$ the radius of the Ewald sphere has to be $\sqrt{(2a^*)^2 + (2b^*)^2} = 8\;\mathrm{nm^{-1}}$ and therefore an X-ray wavelength of $0.125$ nm is required.
+# **(c)** The wavelength to observe a lattice plane $(0\;1\;0)$ at the same crystal angle, is $1/a^*$ which is $1/(2\sqrt{3}) = 0.288$ nm. To observe the planes at $(1\;2\;0)$ the radius of the Ewald sphere has to be 
 # 
-# (d) The crystal is rotated about the origin of the reciprocal space. The point $(1\;2\;0)$ has then to intersect the sphere, or circle, in our diagram. From the diagram, the point $(1\;2\;0)$ rotates about the origin with a circle of radius $\sqrt{(2b^*)^2 + a^{*2}}$ because this reciprocal lattice plane is at coordinates $(a^*, 2b^*)$. The calculation now becomes one of calculating the intersection of two circles, the second of radius $1/\lambda$ or $4\;\mathrm{ nm^{-1}}$ but centred at $(\bar 1\;1\;0)$, and then finding the angle moved from the initial position.
-# The equation of a circle of radius $r$ centred at points $p$ and $q$ is $(x - p)^2 + (y - q)^2 = r^2$ therefore the larger circle centred at the origin is $x^2 + y^2 = a^{*2} + 2b^{*2}$ and that centred at $(\bar 1\;1\;0)$ is $(x-a^*)^2 +(y+a^*)^2 =1/\lambda^2$. For simplicity $y$ is the vertical axis, $x$ the horizontal. At the intersection of the circles these two equations are equal. The simplest way to do this is to use Python/SymPy to solve the equations,
+# $$\displaystyle \sqrt{(2a^*)^2 + (2b^*)^2} = 8\;\mathrm{nm^{-1}}$$
+# 
+# and therefore an X-ray wavelength of $0.125$ nm is required.
+# 
+# **(d)** The crystal is rotated about the origin of the reciprocal space. The point $(1\;2\;0)$ has then to intersect the sphere, or circle, in our diagram. From the diagram, the point $(1\;2\;0)$ rotates about the origin with a circle of radius 
+# 
+# $$\displaystyle r=\sqrt{(2b^*)^2 + a^{*2}}$$
+# 
+# because this reciprocal lattice plane is at coordinates $(a^*, 2b^*)$. The calculation now becomes one of calculating the intersection of two circles, the second of radius $1/\lambda$ or $4\;\mathrm{ nm^{-1}}$ but centred at $(\bar 1\;1\;0)$, and then finding the angle moved from the initial position.
+# 
+# The equation of a circle of radius $r$ centred at points $p$ and $q$ is 
+# 
+# $$\displaystyle (x - p)^2 + (y - q)^2 = r^2$$
+# 
+# therefore the larger circle centred at the origin is 
+# 
+# $$\displaystyle x^2 + y^2 = a^{*2} + 2b^{*2}$$
+# 
+# and that centred at $(\bar 1\;1\;0)$ is 
+# 
+# $$\displaystyle (x-a^*)^2 +(y+a^*)^2 =1/\lambda^2$$
+# 
+# For simplicity $y$ is the vertical axis, $x$ the horizontal. At the intersection of the circles these two equations are equal. The simplest way to do this is to use Python/SymPy to solve the equations,
 # but to do this by hand substitute $x$ in to the second equation and solve for $y$ then substitute this answer
 # again to find $x$.
 # 

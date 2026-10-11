@@ -4,15 +4,27 @@
 # # Questions 1 - 7
 
 # ## Q1 Logistic example
-# The equation $x_{n+1} = cx_n(1 - x_n)$ maps $cx_n(1 - x_n)$ onto $x$, 
+# The equation 
 # 
-# see Fig. 2, but many other expressions can do this. Try $x_{n+1} = c \sin(-x_n)$ and $x_{n+1} = ce^{-x_n}$ and see what happens. You may need to change the range of $c$.
+# $$\displaystyle x_{n+1} = cx_n(1 - x_n),\quad\text{maps}\quad cx_n(1 - x_n)\quad\text{onto}\quad x$$ 
+# 
+# see Fig. 2, but many other expressions can do this. Try 
+# 
+# $$\displaystyle x_{n+1} = c \sin(-x_n)\quad\text{and}\quad x_{n+1} = ce^{-x_n}$$
+# 
+# and see what happens. You may need to change the range of $c$.
 # 
 # ## Q2 Numerical integration
-# Calculate the integral of $\cos(x^2)$ over the range $0 \to 10$, by the trapezoidal rule and by Simpson's rule. Choose the number of points sufficient to guarantee accuracy to three decimal places in each case. This is a highly oscillating function, varying between $\pm 1$, so many terms will be needed for an accurate calculation.
+# Calculate
+# 
+# $$\displaystyle \int_0^{10} \cos(x^2)dx$$
+# 
+# by the trapezoidal rule and by Simpson's rule. Choose the number of points sufficient to guarantee accuracy to three decimal places in each case. This is a highly oscillating function, varying between $\pm 1$, so many terms will be needed for an accurate calculation.
 # 
 # ## Q3 Numerical integration
-# Numerically calculate the integral $\displaystyle \int_0^3\frac{x^6}{1-x}dx$.
+# Numerically calculate the integral 
+# 
+# $$\displaystyle \int_0^3\frac{x^6}{1-x}dx$$
 # 
 # **Strategy:** As this function will become infinite at $x = 1$, the mid-point rule should be used. Choose $100$ points to begin with and then alter this to see how the accuracy varies. The reason for the large number of points is that towards the asymptote $y \to \infty$ at $x = 1$ the function has to be accurately evaluated and values either side of this point have opposite sign and similar value and so almost cancel each other out, but do not always do so exactly.
 # 
@@ -55,3 +67,9 @@
 # 
 # ## Q7 Scattering angle
 # Calculate the scattering angle $\chi$ vs impact parameter $b$ for a hard sphere potential of radius $d$ with initial energy $E_0$. The hard sphere has a potential of zero at distances $r \gt d$ and is otherwise infinite. The result is shown in Fig. 5.
+
+# In[ ]:
+
+
+
+

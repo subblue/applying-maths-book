@@ -4,7 +4,7 @@
 # # Questions 35 - 39
 
 # ## Q35 Thin Lens
-# Two thin lenses, $f = 10$ cm and $f = -20$ cm are positioned in air as shown in the diagram. If an object is placed at $0.25$ m from the first (positive) lens and the lenses are separated by $0.05$ m, where is the image to be found, and what is its magnification? 
+# Two thin lenses, $f_1 = 10$ cm and $f_2 = -20$ cm are positioned in air as shown in the diagram. If an object is placed at $0.25$ m from the first (positive) lens and the lenses are separated by $0.05$ m, where is the image to be found, and what is its magnification? 
 # 
 # ![Drawing](matrices-fig42.png)
 # 
@@ -17,7 +17,7 @@
 # A thick lens is to be used to focus a laser beam. For the best focusing with minimal distortion the most curved surface is presented to the laser. The lens thickness is $d_L = 6$ mm and it is made of quartz with a refractive index of $1.48$ at the laser's wavelength and has surfaces with radii of curvature of
 # $100$ mm and $300$ mm. Where is the focal point of the lens if the input beam is effectively parallel?
 # 
-# The lens is shown below with surfaces exaggerated very greatly. Use the matrix in equation 21 for the lens surfaces between the reference planes shown. Use Python/Sympy to perform the matrix multiplications.
+# The lens is shown below with surfaces exaggerated very greatly. Use the matrix in equation 21 for the lens surfaces between the reference planes shown. Use Python/SymPy to perform the matrix multiplications.
 # 
 # ![Drawing](matrices-fig43.png)
 # 
@@ -33,18 +33,38 @@
 # 
 # $$\displaystyle \pmb{M} = G_1G_2G_3 \cdots G_nM_2G_n \cdots G_3G_2G_1M_1$$
 # 
-# The whole sequence can also be written as $\displaystyle \pmb{M}=\begin{vmatrix} A & B \\C & D\end{vmatrix}\pmb{M_2}\begin{vmatrix} D & B \\C & A\end{vmatrix}\pmb{M_1}$ where $\pmb{M_1,2}$ are the matrices foro the end mirrors and $ABCD$ matrices for the cavity elements between the end mirrors.
+# The whole sequence can also be written as $\displaystyle \pmb{M}=\begin{vmatrix} A & B \\C & D\end{vmatrix}\pmb{M}_2\begin{vmatrix} D & B \\C & A\end{vmatrix}\pmb{M}_1$ where $\pmb{M}_{1,2}$ are the matrices for the end mirrors and $ABCD$ matrices for the cavity elements between the end mirrors. Mirror 1 is the output coupler and is where the reference planes are situated. 
 # 
-# Mirror 1 is the output coupler and is where the reference planes are situated. The aim of this question is to show that if $G_1G_2G_3 \cdots G_n= \begin{vmatrix} A & B \\C & D\end{vmatrix}$ then $G_n\cdots G_3G_2G_1= \begin{vmatrix} D & B \\C & A\end{vmatrix}$.
+# The aim of this question is to show that if 
 # 
-# (a) Work out the matrix for only the gaps between mirrors, then a gap plus mirror and a mirror plus gap to show that the proposition is true.
+# $$\displaystyle G_1G_2G_3 \cdots G_n= \begin{vmatrix} A & B \\C & D\end{vmatrix}$$
 # 
-# (b) In the general case, the result can be found by induction, by first calculating $\displaystyle G_n\begin{vmatrix} -1 & 0 \\1 & 0\end{vmatrix}G_n$ and then making $G$ and $ABCD$ matrix.(This question is based on one in Gerrard & Burch 1975.)
+# then 
+# 
+# $$\displaystyle G_n\cdots G_3G_2G_1= \begin{vmatrix} D & B \\C & A\end{vmatrix}$$
+# 
+# **(a)** Work out the matrix for only the gaps between mirrors, then a gap plus mirror and a mirror plus gap to show that the proposition is true.
+# 
+# **(b)** In the general case, the result can be found by induction, by first calculating 
+# 
+# $$\displaystyle G_n\begin{vmatrix} -1 & 0 \\1 & 0\end{vmatrix}G_n$$
+# 
+# and then making $G$ an $ABCD$ matrix.(This question is based on one in Gerrard & Burch 1975.)
 # 
 # **Strategy:** In the general calculation you will need to use the fact that from the definition of the matrices for any individual gap or mirror matrix $A = D = 1$, and also for any individual or product of matrices $AD-BC=1$
 # 
 # ## Q39 Cavity dumped laser
-# Show that the equation developed in the previous question applies to the cavity shown in the sketch; Figure 44. The jet of a fluorescent dye in ethylene glycol or a Ti sapphire crystal, is the gain medium, and could be placed at the focus between mirrors 1 and 2 and then the cavity dumper, a crystal with an attached piezoelectric element, is at the focus of mirrors 3 and 4. The cavity dumper crystal has an acoustic field produced in it via an RF source applied to the piezo element and this diffracts, or 'dumps', the light out of the cavity. Mirrors $M_1$ and $M_2$ have focal lengths $50$ and $100$ mm and $M_3$ and $M_4$ lengths of $75$ and $50$ mm. Gap 1 is $g_1= 210$, gap 2 is $1400$ and gap 3 is $185$ mm. Is this cavity stable? Use Python/Sympy to do the calculation. You could also to do repeated calculations based around the values given to look at the stability diagram of this type of cavity. In this case let gap 2 become $1400-g_1-g_2$ mm and vary $g_1$ and $g_2$ to find the stable regions. Doing this means that the laser always has the same optical length. 
+# Show that the equation developed in the previous question applies to the cavity shown in the sketch; Figure 44. 
+# 
+# The jet of a fluorescent dye in ethylene glycol or a Ti sapphire crystal, is the gain medium, and could be placed at the focus between mirrors 1 and 2 and then the cavity dumper, a crystal with an attached piezoelectric element, is at the focus of mirrors 3 and 4. 
+# 
+# The cavity dumper crystal has an acoustic field produced in it via an RF source applied to the piezo element and this diffracts, or 'dumps', the light out of the cavity. 
+# 
+# Mirrors $M_1$ and $M_2$ have focal lengths $50$ and $100$ mm and $M_3$ and $M_4$ lengths of $75$ and $50$ mm. Gap 1 is $g_1= 210$, gap 2 is $1400$ and gap 3 is $185$ mm. 
+# 
+# Is this cavity stable? Use Python/Sympy to do the calculation. 
+# 
+# You could also to do repeated calculations based around the values given to look at the stability diagram of this type of cavity. In this case let gap 2 become $1400-g_1-g_2$ mm and vary $g_1$ and $g_2$ to find the stable regions. Doing this means that the laser always has the same optical length. 
 # 
 # ![Drawing](matrices-fig44.png)
 # 

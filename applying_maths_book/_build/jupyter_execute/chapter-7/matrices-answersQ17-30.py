@@ -27,7 +27,23 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 78 $C_{3V}$ geometry. The $C_3$ axis is also the principal axis.
 # ______
 # 
-# The effect of $C_3^+ \otimes C_3^-$ is first to move atom H$_1$ by one place ($120^\text{o}$) to H$_2$ then to move it back, therefore making the molecule identical $E$; as an equation $C_3^+ \otimes C_3^- = E$. The reversed multiplication order produces the same result. In two consecutive $C_3$ operations, the first moves H$_1$ by one place and the second does the same producing a total rotation of $240^\text{o}$ or $C_3^+ \otimes C_3^+ =C_3^-$. Now consider a rotation and reflection; $C_3^+ \otimes \sigma_V$. The rotation moves H$_1$ to H$_2$ and H$_3$ to to H$_1$; reflection now exchanges the H$_3$ and H$_1$ atoms and the effect is the same as a $\sigma_V'$ reflection: $C_3^+ \otimes \sigma_V = \sigma_V'$. The reverse product is $\sigma_V \otimes C_3^+ = \sigma_V''$ showing that these two operations do not commute; Figure 79.
+# The effect of $C_3^+ \otimes C_3^-$ is first to move atom H$_1$ by one place ($120^\text{o}$) to H$_2$ then to move it back, therefore making the molecule identical $E$; as an equation 
+# 
+# $$\displaystyle C_3^+ \otimes C_3^- = E$$
+# 
+# The reversed multiplication order produces the same result. In two consecutive $C_3$ operations, the first moves H$_1$ by one place and the second does the same producing a total rotation of $240^\text{o}$ or 
+# 
+# $$\displaystyle C_3^+ \otimes C_3^+ =C_3^-$$
+# 
+# Now consider a rotation and reflection; $C_3^+ \otimes \sigma_V$. The rotation moves H$_1$ to H$_2$ and H$_3$ to to H$_1$; reflection now exchanges the H$_3$ and H$_1$ atoms and the effect is the same as a $\sigma_V'$ reflection: 
+# 
+# $$\displaystyle C_3^+ \otimes \sigma_V = \sigma_V'$$
+# 
+# The reverse product is 
+# 
+# $$\displaystyle \sigma_V \otimes C_3^+ = \sigma_V''$$
+# 
+# showing that these two operations do not commute; Figure 79.
 # 
 # ![Drawing](matrices-fig79.png)
 # 
@@ -36,11 +52,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The complete table is shown below.
 # 
-# $$\displaystyle \begin{array}{l|llllll}
+# $$\displaystyle \begin{array}{c|llllll}
 # \hline
 #    &  E & C_3^+ & C_3^- & \sigma_V & \sigma_V' & \sigma_V'' \\[2ex]
 # \hline 
-#  \text{(first) } E & E     & C_3^+ & C_3^- & \sigma_V & \sigma_V' & \sigma_V''   \\
+#  \text{(first) }\\ E & E     & C_3^+ & C_3^- & \sigma_V & \sigma_V' & \sigma_V''   \\
 #  C_3^+          & C_3^+ & C_3^- & E     & \sigma_V' & \sigma_V'' &\sigma_V \\
 #  C_3^-          & C_3^- & E & C_3^+ & \sigma_V'' & \sigma_V & \sigma_V' \\
 #  \sigma_V & \sigma_V & \sigma_V'' & \sigma_V' & E & C_3^- & C_3^+\\
@@ -143,7 +159,7 @@ A2
 # Looking at the matrices it follows that $A_1 = \sigma_V'$ and $A_2 = \sigma_V''$ or $\sigma_V' = \sigma_V^{-1}C_3^-\sigma_V$ and $\sigma_V'' = \sigma_V^{-1}C_3^+\sigma_V$.
 # 
 # ## Q21 answer
-# The highest symmetry axis, the principal axis,is a $90^\text{o}$ rotation axis about the Xe atom, labelled $C_4$, and is perpendicular to the plane of the molecule. There is also a $C_2$ axis, a $180^\text{o}$ rotation about the same axis. The molecule has a centre of inversion.
+# The highest symmetry axis, the principal axis, is a $90^\text{o}$ rotation axis about the Xe atom, labelled $C_4$, and is perpendicular to the plane of the molecule. There is also a $C_2$ axis, a $180^\text{o}$ rotation about the same axis. The molecule has a centre of inversion.
 # 
 # There is a $C_2$ axis through each diagonal along the F-Xe-F bonds of the square and similarly bisecting adjacent F atoms. There is a horizontal mirror plane in the plane of the molecule; horizontal because it is perpendicular to the principal axis. This immediately suggests a $D$ point group. There are dihedral mirror planes bisecting adjacent F atoms as well as vertical mirror planes along the F-Xe-F atoms.
 # 
@@ -226,7 +242,7 @@ M = sp.Matrix([Ha, Hb, C, C, Fa, Fb] )
 C2*M
 
 
-# If the ordering in the basis set is changed, say to $[Fb,C,Ha,C,Fa,Hb]$ and _provided the matrix is similarly changed_ then the same result is obtained.
+# If the ordering in the basis set is changed, say to $[Fb,C,Ha,C,Fa,Hb]$ and *provided the matrix is similarly changed* then the same result is obtained.
 # 
 # ## Q25 answer
 # The structure is shown below; the principal axis passes through the N atoms and equally distant from each of the H atoms.
@@ -244,7 +260,7 @@ C2*M
 # The matrix for the reflection shown above is simpler as only the H atoms change place $\displaystyle \sigma_V=\begin{bmatrix}  1 & 0 & 0  &0  \\  0 & 0 & 1  & 0 \\ 0 & 1 & 0 & 0   \\ 0& 0 & 0 & 1\\   \end{bmatrix}$.
 # 
 # ## Q26 answer
-# (a) Rotation about the principal axis is by $2\pi/n$ for a $C_n$ axis then the matrix is (see text)
+# **(a)** Rotation about the principal axis is by $2\pi/n$ for a $C_n$ axis then the matrix is (see text)
 # 
 # $$\displaystyle \sigma_V=\begin{bmatrix}  \cos(2\pi/n) & \sin(2\pi/n) & 0 \\  -\sin(2\pi/n) & \cos(2\pi/n) &  0 \\ 0 & 0 & 1     \end{bmatrix}$$
 # 
@@ -262,7 +278,7 @@ C2*M
 # Figure 82. Symmetry elements in a planar molecule belonging to the $D_{3h}$ point group.
 # _______
 # 
-# (b) Considering just the three p orbitals produces $C_3$ symmetry. The horizontal mirror plane and the $C_2$ axes perpendicular to the principal axis are lost from $D_{3h}$ because of the phase of the orbitals.
+# **(b)** Considering just the three p orbitals produces $C_3$ symmetry. The horizontal mirror plane and the $C_2$ axes perpendicular to the principal axis are lost from $D_{3h}$ because of the phase of the orbitals.
 # 
 # Operating on the orbitals with the C operators moves the location of each orbital so according to the rules these count zero. The $C_3^2$ operation moves the orbital twice by $120^\text{o}$ or once by $-120^\text{o}$ from its initial position. The identity counts three therefore the reducible representation is
 # 
@@ -292,19 +308,27 @@ C2*M
 # \varphi_{E_1}= \frac{1}{\sqrt{3}}(\psi_{p_1} +e^{-2\pi i/3}\psi_{p_2}+e^{2\pi i/3}\psi_{p_3} ) \\
 # \varphi_{E_2}= \frac{1}{\sqrt{3}}(\psi_{p_1} +e^{2\pi i/3}\psi_{p_2}+e^{-2\pi i/3}\psi_{p_3} ) $$
 # 
-# which contain complex numbers this is, however, not a problem. Note that any measurement involves an expectation value of the form $\langle A \rangle = \int \varphi^* A \varphi d\tau$ if the operator is $A$ and because of the complex conjugate the result is always a real number. However, to avoid having a complex number in the wavefunction a linear combination can be made such as $\varphi_{E_1} +\varphi_{E_2}$ and $i(\varphi_{E_1} -\varphi_{E_2})$ both of which will be real. The identity $e^{i\theta}+e^{-i\theta}=2$ and $e^{i\theta}-e^{-i\theta}=2i\sin(\theta)$ can be used. As the angle is $\theta = 120$  the orbitals become
+# which contain complex numbers this is, however, not a problem. Note that any measurement involves an expectation value of the form 
+# 
+# $$\displaystyle \langle A \rangle = \int \varphi^* A \varphi d\tau$$
+# 
+# if the operator is $A$ and because of the complex conjugate the result is always a real number. However, to avoid having a complex number in the wavefunction a linear combination can be made such as $\varphi_{E_1} +\varphi_{E_2}$ and $i(\varphi_{E_1} -\varphi_{E_2})$ both of which will be real. The identities 
+# 
+# $$\displaystyle e^{i\theta}+e^{-i\theta}=2,\quad\text{and}\quad e^{i\theta}-e^{-i\theta}=2i\sin(\theta)$$
+# 
+# can be used. As the angle is $\theta = 120$  the orbitals become
 # 
 # $$\displaystyle \varphi_+ =\frac{1}{\sqrt{2}}\left(\varphi_{E_1}+\varphi_{E_2}\right)=\frac{1}{\sqrt{6}}\left(2\psi_{p_1}-\psi_{p_2}-\psi_{p_3}\right) \\ \varphi_- =i\frac{1}{\sqrt{2}}\left(\varphi_{E_1}-\varphi_{E_2}\right) =\frac{1}{\sqrt{2}}\left(\psi_{p_2}-\psi_{p_3}\right)$$
 # 
 # which can easily be visualised.
 # 
 # ## Q28 answer
-# (a) The point group is $C_{2V}$. The mirror plane of the carbon atoms is lost because the orbital are $\pm$ or black/white above and below this plane. The principal and z-axis is perpendicular to the plane of the carbons.
+# **(a)** The point group is $C_{2V}$. The mirror plane of the carbon atoms is lost because the orbital are $\pm$ or black/white above and below this plane. The principal and z-axis is perpendicular to the plane of the carbons.
 # 
-# (b) There are ten orbitals in the basis set;therefore,the character of $E = 10$. On rotation about the principal axis all the atoms are moved so the character of $C_2 = 0$. On reflection about the $x$ axis (carbons 9/10) eight orbitals are changed each of which counts zero and two are unchanged making the character of $\sigma(xz) = 2$. The other reflection plane swaps all atoms so counts zero. The reducible representation is therefore
+# **(b)** There are ten orbitals in the basis set; therefore the character of $E = 10$. On rotation about the principal axis all the atoms are moved so the character of $C_2 = 0$. On reflection about the $x$ axis (carbons 9/10) eight orbitals are changed each of which counts zero and two are unchanged making the character of $\sigma(xz) = 2$. The other reflection plane swaps all atoms so counts zero. The reducible representation is therefore
 # 
 # $$\displaystyle \begin{array}{c|rrrr} 
-#   & E & C_2 & \sigma(x,z) & \sigma(y,z) &(\sum )/4 \\
+#   & E & C_2 & \sigma(x,z) & \sigma(y,z) &\big(\sum \big)/4 \\
 # \hline
 # \Gamma_R & 10 & 0 & 2 & 2  \\
 # \hline
@@ -330,21 +354,25 @@ C2*M
 # 
 # The number of operations is $h = 8$ and the reduction table is shown below with columns that are zero deleted.
 # 
-# $$\displaystyle \begin{array}{c|cccccccc}
-# D_{2h} & E &  C_2(y) & \sigma(xy) & \sigma(yz) & (\sum)/8\\
+# $$\displaystyle \begin{array}{c|rrrrrrrr}
+# D_{2h} & E &  C_2(y) & \sigma(xy) & \sigma(yz) & \big(\sum\big)/8\\
 # \hline 
-# A_g & 10 & -2 & 2 & -10 & 0\\ 
-# B_{1g} & 10 & 2 & 2 & 10 & 24/8=3 \\
-# B_{2g} & 10 & -2 & -2 & 10 & 2 \\
-# B_{3g} & 10 & 2 & -2 & -10 & 0 \\
-# A_{u}  & 10 & -2 & -2 & 10 & 2 \\
-# B_{1u} & 10 & 2 & -2 & -10 & 0 \\
-# B_{2u} & 10 & -2 & 2 & -10 & 0 \\
-# B_{3u} & 10 & 2 & 2 & 10 & 3 \\
+# A_g    & 10 & -2 &  2 & -10  & 0\\ 
+# B_{1g} & 10 &  2 &  2 &  10  & 24/8=3 \\
+# B_{2g} & 10 & -2 & -2 &  10  & 2 \\
+# B_{3g} & 10 &  2 & -2 & -10  & 0 \\
+# A_{u}  & 10 & -2 & -2 &  10  & 2 \\
+# B_{1u} & 10 &  2 & -2 & -10  & 0 \\
+# B_{2u} & 10 & -2 &  2 & -10  & 0 \\
+# B_{3u} & 10 &  2 &  2 &  10  & 3 \\
 # \hline
 # \end{array}$$
 # 
-# The reduced representation therefore contains $3B_{1g} + 2B_{2g} + 2A_u + 3B_{3u}$ which are $10$ in total, the same as the number of orbitals.
+# The reduced representation therefore contains 
+# 
+# $$\displaystyle 3B_{1g} + 2B_{2g} + 2A_u + 3B_{3u}$$
+# 
+# which are $10$ in total, the same as the number of orbitals.
 # 
 # Choosing atom 1 as victim, the $L_M$ formula Section 6.16 produces the following table. The row for the totally symmetric species $A_g$ shows that the sum is zero, no $A_g$ species is present in the reduced representation. Three rows are included for $B_{1g}$, starting with orbitals on atoms 1, 2, and 9. The remaining rows for $B_{2g}$ and $B_{3u}$ are missing and are left for you to work out. Note that if the $C_{2V}$ point group was used instead then the same results would have been obtained, and with less effort, showing that the $\pi$ orbital symmetry really is important.
 # 
@@ -364,8 +392,15 @@ C2*M
 # \hline
 # \end{array}$$
 # 
-# The degenerate symmetry species can form linear combinations with one another if they are normalized and orthogonal. If not orthogonal, they can be made so using the Gram - Schmidt method. The energy can be found by calculating the expectation values $\langle \psi_a|H|\psi_a\rangle,\; \langle \psi_a|H|\psi_b\rangle;\;\langle \psi_a|H|\psi_c\rangle;$ , etc. where $\psi_{a,b,c}$  are different symmetry adapted orbitals, for example the three normalized and orthogonal $B_{1g}$ orbitals are $\psi_a =(v_2 -v_3 -v_6 +v_7 )/2,\;
-# \psi_b =(v_1 -v_4 -v_5 +v_8)/2 $ and $\psi_c =(v_9 -v_{10} )/\sqrt{2}$.
+# The degenerate symmetry species can form linear combinations with one another if they are normalized and orthogonal. If not orthogonal, they can be made so using the Gram - Schmidt method. The energy can be found by calculating the expectation values 
+# 
+# $$\displaystyle \langle \psi_a|H|\psi_a\rangle,\; \langle \psi_a|H|\psi_b\rangle,\;\langle \psi_a|H|\psi_c\rangle $$
+# 
+# etc. where $\psi_{a,b,c}$  are different symmetry adapted orbitals, for example the three normalized and orthogonal $B_{1g}$ orbitals are 
+# 
+# $$\displaystyle \psi_a =(v_2 -v_3 -v_6 +v_7 )/2,\; \psi_b =(v_1 -v_4 -v_5 +v_8)/2 $$
+# 
+# and $\psi_c =(v_9 -v_{10} )/\sqrt{2}$.
 # 
 # The calculation is shown below. Note that a vector such as $v_2-v_3+v_6-v_7$ when used in a programme has to be written with each term with a separate index in a 1D matrix or list, i.e. as $[v_2,-v_3,+v_6,-v_7]$.  As each $v$ vector is real and has unit length then ${v^*\cdot v}=v^2=1$ and this simplifies the normalisation terms.
 

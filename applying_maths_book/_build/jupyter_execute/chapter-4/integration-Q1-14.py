@@ -6,24 +6,26 @@
 # ## Q1 HCl vibration
 # The vibrational motion of HCl is characterized by its force constant, $k = 518\; \mathrm{N m}^{-1}$, and equilibrium internuclear separation, $r_e$ = 0.127 nm.
 # 
-# (a) What is the energy involved in extending the bond to 0.146 nm? This is an extension to $\approx$ 1.146 $r_e$ nm and is the maximum (classical) extension of the bond in the $n = 1$ vibrational level from its equilibrium position.
+# **(a)** What is the energy involved in extending the bond to 0.146 nm? This is an extension to $\approx$ 1.146 $r_e$ nm and is the maximum (classical) extension of the bond in the $n = 1$ vibrational level from its equilibrium position.
 # 
-# (b) What fraction is this of the dissociation energy, which is $440.2$ kJ mol$^{-1}$? Assume the bond extends as a harmonic oscillator and use Hooke's law; force $\sim$ extension or $f = k(r - r_e)$, where $k$ is the bond force constant. The bond extension is $r - r_e$.
+# **(b)** What fraction is this of the dissociation energy, which is $440.2$ kJ mol$^{-1}$? Assume the bond extends as a harmonic oscillator and use Hooke's law; force $\sim$ extension or $f = k(r - r_e)$, where $k$ is the bond force constant. The bond extension is $r - r_e$.
 # 
-# (c) Show that the energy is the same as that given by $E_n = h\nu (n + 1/2)$.
+# **(c)** Show that the energy is the same as that given by $E_n = h\nu (n + 1/2)$.
 # 
 # **Strategy:** Energy is the integral of a force $f$ over distance. At the classical turning point the molecule is instantaneously stationary, therefore the kinetic energy is zero and the total energy $E$ is the same as the potential energy. The vibrational frequency is $\displaystyle \nu = \frac{1}{2\pi} \sqrt{\frac{k}{\mu}} \mathrm{s}^{-1}$ if $\mu$ is the reduced mass.
 # 
 # ## Q2 Arrhenius eqn.
-# (a) Starting with the Arrhenius equation, show that $\displaystyle \frac{d\ln(k)}{dT}=\frac{E_a}{RT^2}$.
 # 
-# (b) If $k_1$ and $k_2$  are rate coefficients at temperatures $T_1$ and $T_2$ respectively show that,
+# **(a)** Starting with the Arrhenius equation, show that $\displaystyle \frac{d\ln(k)}{dT}=\frac{E_a}{RT^2}$.
+# 
+# **(b)** If $k_1$ and $k_2$  are rate coefficients at temperatures $T_1$ and $T_2$ respectively show that,
 # 
 # $$\displaystyle \ln\left(\frac{k_2}{k_1}\right)=\frac{E_a}{R}\left( \frac{T_2-T_1}{T_1T_2} \right)$$
 # 
 # **Strategy:** You need to know that the Arrhenius equation is usually written as $\displaystyle k = k_0e^{-E_a/RT}$. It is in this form in all the textbooks. Note that $k$, the rate constant, more properly the rate coefficient, is a function of temperature and can therefore form the derivative $dk/dT$ and that $k_0$ is a constant and differentiates to zero.
 # 
-# ## Q3 First-order rate
+# ## Q3 First-order reaction
+# 
 # Integrate the first-order rate expression, $\displaystyle \frac{dc}{dt} = -kc$,
 # 
 # where $c$ is concentration, $k$ the rate constant, and $t$ time. Suppose that at $t = 0$ the concentration is $c_0$.
@@ -39,20 +41,20 @@
 # 
 # The friction is negative because it opposes motion. The molecule's diameter is $\delta$, the solvent viscosity $\eta$, which has units of $\mathrm{kg\, m^{-1}\, s^{-1}}$. More commonly viscosity is measured in centipoise, cP, where $1 \mathrm{cP = 10^{-3} \;kg \,m^{-1} \,s^{-1}}$.
 # 
-# (a) Find the velocity at time $t$ if $v = v_0$ at $t = 0$ and show that the constants are equivalent to a time $\displaystyle \tau = \frac{m}{3\pi\delta\eta}$. This time is the time for the molecule to 'lose its memory' of its previous velocity and position and is therefore a measure of how rapidly its kinetic energy is dissipated into the solvent. (See Finkelstein & Ptitsyn (2002) page 100 for an interesting discussion relating to proteins).
+# **(a)** Find the velocity at time $t$ if $v = v_0$ at $t = 0$ and show that the constants are equivalent to a time $\displaystyle \tau = \frac{m}{3\pi\delta\eta}$. This time is the time for the molecule to 'lose its memory' of its previous velocity and position and is therefore a measure of how rapidly its kinetic energy is dissipated into the solvent. (See Finkelstein & Ptitsyn (2002) page 100 for an interesting discussion relating to proteins).
 # 
-# (b) Estimate this time for a molecule such as benzene and a protein with $\delta = 3$ nm both in water. The density of a typical protein is $\mathrm{1 g \,cm^{-3}}$.
+# **(b)** Estimate this time for a molecule such as benzene and a protein with $\delta = 3$ nm both in water. The density of a typical protein is $\mathrm{1 g \,cm^{-3}}$.
 # 
 # ## Q5
 # Find
 # 
 # $$\displaystyle \begin{array}{lll} 
 # (a) & I =\displaystyle \int\frac{dx}{3x-2} &
-# (b) & I=\int \cosh^2(x)dx, \\
-# (c) & \int \cosh(x)\sinh(x)dx, &
+# (b) & I=\displaystyle\int \cosh^2(x)dx, \\
+# (c) & I=\displaystyle\int \cosh(x)\sinh(x)dx, &
 # (d) & I=\displaystyle \int\ln\left( \frac{2x^2}{1+x}\right) \\
-# (e) & I=\int_{-\infty}^\infty x^9e^{-ax^2}dx, &
-# (f) & I=\int_{-1}^1 \sqrt{x-3}dx \end{array} $$
+# (e) & I=\displaystyle\int_{-\infty}^\infty x^9e^{-ax^2}dx, &
+# (f) & I=\displaystyle\int_{-1}^1 \sqrt{x-3}dx \end{array} $$
 # 
 # ## Q6
 # Show that the integral $\displaystyle \int_0^L \sin^2(xL)dx$ approaches $L/2$ at large $L$.
@@ -73,7 +75,7 @@
 # 
 # $$\displaystyle \int_{V_1}^{kV_1} pdV=nRT\ln(k)$$
 # 
-# **Strategy:** As the change is isothermal, $T$ is constant. Substitute for $p$ and integrate.
+# **Strategy:** As the change is isothermal temperature is constant. Substitute for $p$ and integrate.
 # 
 # ## Q9 Adiabatic compression
 # $5.0\;\mathrm{m^{3}}$ of air at atmospheric pressure ($101325$ Pa) is compressed adiabatically in the cylinder of an old steam engine until its volume is $10\text{%}$ of that originally present. 
@@ -91,35 +93,35 @@
 # **Strategy:** You are given the equation with which to calculate the work done. Note that the engine compresses the gas, so the final volume is less than that of the initial, hence the upper limit of the integration must be smaller than the lower. The lower limit is always taken to be the initial value, $V$. Because the compression is adiabatic, you must use the equation given, $pV^\gamma = k$, rather than the ideal gas law. It is easier to do the calculation algebraically first and evaluate $k$ afterwards using the values in the question. In the second part, calculate the work as the increase in internal energy from an initial to final temperature and knowing the work from part (a), find the final temperature.
 # 
 # ## Q10 Van der Waals gas
-# (a) Calculate the work done in increasing the volume of a van der Waals gas where 
+# **(a)** Calculate the work done in increasing the volume of a van der Waals gas where 
 # 
 # $$\displaystyle (p + an^2/V^2)(V - nb) = nRT$$
 # 
 # in which $a$ and $b$ are constants characteristic of the gas but independent of temperature.
 # 
-# (b) If the gas is chlorine where $a = 6.343 \,\mathrm{dm^6\, bar\, mol^{-2}}$ and $b = 0.05422 \mathrm{dm^3 \,mol^{-1}}$ and if the initial volume is 20 litres, calculate the work done in isothermally and reversibly compressing 3 moles to 1 litre.
+# **(b)** If the gas is chlorine where $a = 6.343 \,\mathrm{dm^6\, bar\, mol^{-2}}$ and $b = 0.05422 \mathrm{dm^3 \,mol^{-1}}$ and if the initial volume is 20 litres, calculate the work done in isothermally and reversibly compressing 3 moles to 1 litre.
 # 
-# (c) Look up and calculate the work needed to compress $\mathrm{O_2}$ and $\mathrm{H_2 }$ under the same conditions and then comment on the work needed to compress the van der Waals gas compared to an ideal one. The data can be found in Weast 'Handbook of Chemistry and Physics', section 6.48, 75th edition publ CRC.
+# **(c)** Look up and calculate the work needed to compress $\mathrm{O_2}$ and $\mathrm{H_2 }$ under the same conditions and then comment on the work needed to compress the van der Waals gas compared to an ideal one. The data can be found in Weast 'Handbook of Chemistry and Physics', section 6.48, 75th edition publ CRC.
 # 
 # ## Q11 Heat Capacity
 # The heat capacity of $\alpha$-quartz ($\mathrm{SiO_2}$) is measured to be $\displaystyle C_p = a + bT + c/T^2$
 # 
 # where $a,\, b$, and $c$ are experimentally determined constants with $a = 46.0 \,\mathrm{J\, mol^{-1}\, K^{-1}},\; b = 0.00334 \,\mathrm{J\, mol^{-1}\, K^{-2}}$, and $c=-8.9\cdot10^{-5}\,\mathrm{ J \,mol^{-1}\, K}$.
 # 
-# (a) Find the equations describing the enthalpy $H$ and entropy $S$ changes if
+# **(a)** Find the equations describing the enthalpy $H$ and entropy $S$ changes if
 # 
 # $$\displaystyle H_T^\mathrm{o}-H_{289}^\mathrm{o} =\int_{298}^T C_pdT \qquad \text{and}\qquad S_T^\mathrm{o}-S_{289}^\mathrm{o} =\int_{298}^T \frac{C_p}{T}dT$$
 # 
-# (b) Calculate the change in enthalpy and entropy between 298 and 350 K.
+# **(b)** Calculate the change in enthalpy and entropy between 298 and 350 K.
 # 
 # ## Q12 Clapeyron eqn.
 # The Clapeyron equation describes the relationship between temperature and pressure of a vapour.
 # 
-# (a) Look up the equation in your textbook and write it in terms of $\Delta_{vap}H$ and $\Delta V$, then integrate the equation from pressure $p_1 \to p_2$ and temperature $T_1 \to T_2$ assuming $\Delta V$ is constant.
+# **(a)** Look up the equation in your textbook and write it in terms of $\Delta_{vap}H$ and $\Delta V$, then integrate the equation from pressure $p_1 \to p_2$ and temperature $T_1 \to T_2$ assuming $\Delta V$ is constant.
 # 
-# (b) Show how the Clapeyron equation is modified to become the Clausius-Clapeyron equation.
+# **(b)** Show how the Clapeyron equation is modified to become the Clausius-Clapeyron equation.
 # 
-# (c) Integrate the Clausius-Clapeyron equation and show that the ratio of vapour pressures is described by
+# **(c)** Integrate the Clausius-Clapeyron equation and show that the ratio of vapour pressures is described by
 # 
 # $$\displaystyle \ln\left( \frac{p_2}{p_1} \right)= -\frac{\Delta_{vap} H}{R}\left( \frac{1}{T_2}-\frac{1}{T_1} \right) $$
 # 
@@ -151,7 +153,7 @@
 # 
 # $$\frac{mu^2}{2} = q_0 -q$$
 # 
-# (a) By integrating the relationship 
+# **(a)** By integrating the relationship 
 # 
 # $$\displaystyle \left( \frac{\partial q}{\partial p} \right)_S=V$$
 # 
@@ -161,14 +163,14 @@
 # 
 # then calculate the gas velocity.
 # 
-# (b) The cross-sectional area of the jet nozzle is $\sigma$ and therefore mass of gas/second passing through is $\sigma \mu m = V\mu$ where $\mu$ is the mass flow rate in kg sec$^{-1}$. 
+# **(b)** The cross-sectional area of the jet nozzle is $\sigma$ and therefore mass of gas/second passing through is $\sigma \mu m = V\mu$ where $\mu$ is the mass flow rate in kg sec$^{-1}$. 
 # 
 # Using the relationship $pV^\gamma = p_0V_0^\gamma$ rearrange this to an expression for $V$, then obtain the jet cross section and find its minimum area that is
 # at the throttle point. 
 # 
 # Plot the nozzle cross section as a function of the ratio of pressure to input pressure, $p/p_0$, and hence determine the shape of the gas profile in the jet and therefore by inference the internal profile of the engine. This should look something like that in the sketch fig 7.
 # 
-# (c) Show that the speed of the gas at the throttle point is that of sound; 
+# **(c)** Show that the speed of the gas at the throttle point is that of sound; 
 # 
 # $$\displaystyle u_s= \sqrt{\frac{2\gamma}{\gamma + 1}\frac{RT}{m} }$$
 # 

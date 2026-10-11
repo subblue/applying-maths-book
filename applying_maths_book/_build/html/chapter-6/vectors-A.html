@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1608,10 +1608,10 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-orthonormal-boldsymbol-i-j-k-base-vectors">
+  <a class="reference internal nav-link" href="#the-orthonormal-pmb-i-j-k-base-vectors">
    4 The orthonormal
    <span class="math notranslate nohighlight">
-    \(\boldsymbol {i\;j\;k}\)
+    \(\pmb {i\;j\;k}\)
    </span>
    base vectors
   </a>
@@ -1752,10 +1752,10 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-orthonormal-boldsymbol-i-j-k-base-vectors">
+  <a class="reference internal nav-link" href="#the-orthonormal-pmb-i-j-k-base-vectors">
    4 The orthonormal
    <span class="math notranslate nohighlight">
-    \(\boldsymbol {i\;j\;k}\)
+    \(\pmb {i\;j\;k}\)
    </span>
    base vectors
   </a>
@@ -1795,7 +1795,7 @@ title="Print to PDF"
 <h1>1 Vector basics<a class="headerlink" href="#vector-basics" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Although vectors, such as force or velocity, have two ‘dimensions’ - magnitude and direction - mathematically, they can have any number of dimensions. A vector’s components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as (Ford, yellow, 2005, 1900 cc, estate). However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, <span class="math notranslate nohighlight">\(\boldsymbol{ A} + \boldsymbol{B}\)</span>, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word ‘vector’. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis.</p>
+<p>Although vectors, such as force or velocity, have two ‘dimensions’ - magnitude and direction - mathematically, they can have any number of dimensions. A vector’s components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as (Ford, yellow, 2005, 1900 cc, estate). However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, <span class="math notranslate nohighlight">\(\pmb{ A} + \pmb{B}\)</span>, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word ‘vector’. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis.</p>
 </section>
 <section id="notation">
 <h2>1.1 Notation<a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h2>
@@ -1967,18 +1967,18 @@ a vector rather than the scalar is produced. The cross product is</p>
 <p><strong>(a)</strong> Every vector is always made from a linear combination of the components of its basis set.</p>
 <p><strong>(b)</strong> Because a basis set is the minimal possible set, it cannot be decomposed any further or made any simpler.</p>
 <p><strong>(c)</strong> Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases.</p>
-<p>For example, the vector <span class="math notranslate nohighlight">\(A\)</span> in figure 3 has components of <span class="math notranslate nohighlight">\(a\)</span> units on the <span class="math notranslate nohighlight">\(x\)</span>-axis and <span class="math notranslate nohighlight">\(b\)</span> on the <span class="math notranslate nohighlight">\(y\)</span>- and is therefore described as <span class="math notranslate nohighlight">\(\vec A = a\boldsymbol i + b\boldsymbol j\)</span>. In Cartesian coordinates, the basis set most often used is made of orthogonal, unit vectors along each of the <span class="math notranslate nohighlight">\(x-, y-\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-axes; conventionally we represent this as the basis set <span class="math notranslate nohighlight">\((\boldsymbol i, \boldsymbol j,\boldsymbol k)\)</span> where <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are <em>orthogonal unit vectors</em> . Figure 4 shows the basis set vectors and a three-dimensional vector separated into it basis set components. A unit vector has length of <span class="math notranslate nohighlight">\(1\)</span>, so a vector can be made from multiples of this. The <span class="math notranslate nohighlight">\((\boldsymbol i, \boldsymbol j, \boldsymbol k)\)</span> basis set is described more detail in Section 3.</p>
-<p>Any vector can always be represented in several different but equivalent ways depending on which is easiest. We can choose to manipulate a three-dimensional vector in multiples of unit basis vectors <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> or transform it into column or row matrices. The three-dimensional <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> basis set written as three single column matrices and in standard form is</p>
+<p>For example, the vector <span class="math notranslate nohighlight">\(A\)</span> in figure 3 has components of <span class="math notranslate nohighlight">\(a\)</span> units on the <span class="math notranslate nohighlight">\(x\)</span>-axis and <span class="math notranslate nohighlight">\(b\)</span> on the <span class="math notranslate nohighlight">\(y\)</span>- and is therefore described as <span class="math notranslate nohighlight">\(\vec A = a\pmb i + b\pmb j\)</span>. In Cartesian coordinates, the basis set most often used is made of orthogonal, unit vectors along each of the <span class="math notranslate nohighlight">\(x-, y-\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-axes; conventionally we represent this as the basis set <span class="math notranslate nohighlight">\((\pmb i, \pmb j,\pmb k)\)</span> where <span class="math notranslate nohighlight">\(\pmb i, \pmb j\)</span> and <span class="math notranslate nohighlight">\(\pmb k\)</span> are <em>orthogonal unit vectors</em> . Figure 4 shows the basis set vectors and a three-dimensional vector separated into it basis set components. A unit vector has length of <span class="math notranslate nohighlight">\(1\)</span>, so a vector can be made from multiples of this. The <span class="math notranslate nohighlight">\((\pmb i, \pmb j, \pmb k)\)</span> basis set is described more detail in Section 3.</p>
+<p>Any vector can always be represented in several different but equivalent ways depending on which is easiest. We can choose to manipulate a three-dimensional vector in multiples of unit basis vectors <span class="math notranslate nohighlight">\(\pmb i, \pmb j, \pmb k\)</span> or transform it into column or row matrices. The three-dimensional <span class="math notranslate nohighlight">\(\pmb i, \pmb j, \pmb k\)</span> basis set written as three single column matrices and in standard form is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle (\boldsymbol i,\boldsymbol j,\boldsymbol k)\equiv \begin{bmatrix}1\\0\\0\end{bmatrix} \begin{bmatrix}0\\1\\0\end{bmatrix} \begin{bmatrix}0\\0\\1\end{bmatrix} \end{split}\]</div>
-<p>where the individual vectors are <span class="math notranslate nohighlight">\(\displaystyle i=\begin{bmatrix}1\\0\\0\end{bmatrix}\)</span> and similarly for <span class="math notranslate nohighlight">\(j,k\)</span>. A vector <span class="math notranslate nohighlight">\(2\boldsymbol i + 3\boldsymbol j - \boldsymbol k\)</span> put into the column matrix form of the basis set is represented as</p>
+\[\begin{split}\displaystyle (\pmb i,\pmb j,\pmb k)\equiv \begin{bmatrix}1\\0\\0\end{bmatrix} \begin{bmatrix}0\\1\\0\end{bmatrix} \begin{bmatrix}0\\0\\1\end{bmatrix} \end{split}\]</div>
+<p>where the individual vectors are <span class="math notranslate nohighlight">\(\displaystyle i=\begin{bmatrix}1\\0\\0\end{bmatrix}\)</span> and similarly for <span class="math notranslate nohighlight">\(j,k\)</span>. A vector <span class="math notranslate nohighlight">\(2\pmb i + 3\pmb j - \pmb k\)</span> put into the column matrix form of the basis set is represented as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle (2\boldsymbol i + 3\boldsymbol j - \boldsymbol k)= \begin{bmatrix}2\\0\\0\end{bmatrix} \begin{bmatrix}0\\3\\0\end{bmatrix} \begin{bmatrix}0\\0\\-1\end{bmatrix} \end{split}\]</div>
+\[\begin{split}\displaystyle (2\pmb i + 3\pmb j - \pmb k)= \begin{bmatrix}2\\0\\0\end{bmatrix} \begin{bmatrix}0\\3\\0\end{bmatrix} \begin{bmatrix}0\\0\\-1\end{bmatrix} \end{split}\]</div>
 <p>or more commonly as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle (2\boldsymbol i + 3\boldsymbol j - \boldsymbol k)= \begin{bmatrix}2\\3\\-1\end{bmatrix}\end{split}\]</div>
-<p>If the basis set is chosen as row matrices then <span class="math notranslate nohighlight">\(\displaystyle (2\boldsymbol i + 3\boldsymbol j - \boldsymbol k)\equiv [2,3,-1]\)</span></p>
-<p>The matrix formulation of vectors is very adaptable and not restricted to three dimensions; in fact, any number of dimensions can be used. However, the <span class="math notranslate nohighlight">\((\boldsymbol i  \boldsymbol j  \boldsymbol k)\)</span> basis set can only be used up to three dimensions.</p>
+\[\begin{split}\displaystyle (2\pmb i + 3\pmb j - \pmb k)= \begin{bmatrix}2\\3\\-1\end{bmatrix}\end{split}\]</div>
+<p>If the basis set is chosen as row matrices then <span class="math notranslate nohighlight">\(\displaystyle (2\pmb i + 3\pmb j - \pmb k)\equiv [2,3,-1]\)</span></p>
+<p>The matrix formulation of vectors is very adaptable and not restricted to three dimensions; in fact, any number of dimensions can be used. However, the <span class="math notranslate nohighlight">\((\pmb i  \pmb j  \pmb k)\)</span> basis set can only be used up to three dimensions.</p>
 <p>The elements of basis set can be numbers, or they could be a vector, a matrix, or a function or a set of functions. Some examples are considered more fully after some basic properties have been described. Using functions as a basis set is described in Chapter 9. For the present, we shall assume that a suitable basis set always exists and perform some calculations.</p>
 </section>
 <section id="vector-origin">
@@ -2114,39 +2114,39 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 <div class="math notranslate nohighlight">
 \[\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \qquad\tag{10}\]</div>
 </section>
-<section id="the-orthonormal-boldsymbol-i-j-k-base-vectors">
-<h2>4 The orthonormal <span class="math notranslate nohighlight">\(\boldsymbol {i\;j\;k}\)</span> base vectors<a class="headerlink" href="#the-orthonormal-boldsymbol-i-j-k-base-vectors" title="Permalink to this headline">#</a></h2>
-<p>A general method for describing a three-vector is to express it in terms of vectors along a set of axes. If the mutually perpendicular set of <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axes is chosen, the basis set is orthogonal set. If the base vectors are also normalized to <span class="math notranslate nohighlight">\(1\)</span>, each base vector is a unit vector and the set is orthonormal. Conventionally, orthonormal base vectors are labelled <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j,\boldsymbol k\)</span> and any vector in this basis is written as,</p>
+<section id="the-orthonormal-pmb-i-j-k-base-vectors">
+<h2>4 The orthonormal <span class="math notranslate nohighlight">\(\pmb {i\;j\;k}\)</span> base vectors<a class="headerlink" href="#the-orthonormal-pmb-i-j-k-base-vectors" title="Permalink to this headline">#</a></h2>
+<p>A general method for describing a three-vector is to express it in terms of vectors along a set of axes. If the mutually perpendicular set of <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axes is chosen, the basis set is orthogonal set. If the base vectors are also normalized to <span class="math notranslate nohighlight">\(1\)</span>, each base vector is a unit vector and the set is orthonormal. Conventionally, orthonormal base vectors are labelled <span class="math notranslate nohighlight">\(\pmb i,\pmb j,\pmb k\)</span> and any vector in this basis is written as,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec v = a\boldsymbol{i} +b\boldsymbol j+c\boldsymbol k \]</div>
-<p>where just for  this special basis set the vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j,\boldsymbol k\)</span> are in bold italic. The vector <span class="math notranslate nohighlight">\(\vec v\)</span> is interpreted as having length <span class="math notranslate nohighlight">\(a\)</span> along the <span class="math notranslate nohighlight">\(x\)</span> axis direction and <span class="math notranslate nohighlight">\(b,c\)</span> along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> respectively, hence the length of the vector is <span class="math notranslate nohighlight">\(\sqrt{a^2+b^2+c^2}\)</span>.</p>
-<p>To be clear: any vector such as <span class="math notranslate nohighlight">\(\vec v\)</span> is the linear combination of base vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> taken in proportions <span class="math notranslate nohighlight">\(a, b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. This is why the vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\;\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are called the base vectors or the basis set for describing other vectors.</p>
+\[\displaystyle \vec v = a\pmb{i} +b\pmb j+c\pmb k \]</div>
+<p>where just for  this special basis set the vectors <span class="math notranslate nohighlight">\(\pmb i,\pmb j,\pmb k\)</span> are in bold italic. The vector <span class="math notranslate nohighlight">\(\vec v\)</span> is interpreted as having length <span class="math notranslate nohighlight">\(a\)</span> along the <span class="math notranslate nohighlight">\(x\)</span> axis direction and <span class="math notranslate nohighlight">\(b,c\)</span> along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> respectively, hence the length of the vector is <span class="math notranslate nohighlight">\(\sqrt{a^2+b^2+c^2}\)</span>.</p>
+<p>To be clear: any vector such as <span class="math notranslate nohighlight">\(\vec v\)</span> is the linear combination of base vectors <span class="math notranslate nohighlight">\(\pmb i,\pmb j\)</span>, and <span class="math notranslate nohighlight">\(\pmb k\)</span> taken in proportions <span class="math notranslate nohighlight">\(a, b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. This is why the vectors <span class="math notranslate nohighlight">\(\pmb i,\;\pmb j\)</span>, and <span class="math notranslate nohighlight">\(\pmb k\)</span> are called the base vectors or the basis set for describing other vectors.</p>
 <p>If two vectors are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle v = 3\boldsymbol i - 4\boldsymbol j + \boldsymbol k \text{  and  } w = 5\boldsymbol i + 8\boldsymbol j - 10\boldsymbol k\]</div>
+\[\displaystyle v = 3\pmb i - 4\pmb j + \pmb k \text{  and  } w = 5\pmb i + 8\pmb j - 10\pmb k\]</div>
 <p>their dot product is <span class="math notranslate nohighlight">\(\vec v \cdot \vec w = -27\)</span>. By multiplication, the following sum results:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec v \cdot \vec w  = 15 \boldsymbol{i\cdot i} - 32\boldsymbol{j\cdot j} - 10\boldsymbol{k\cdot k} + 24\boldsymbol{i\cdot j} - 30\boldsymbol{k\cdot j} - 20\boldsymbol{j\cdot i} + 40\boldsymbol{j\cdot k} + 5\boldsymbol{k\cdot i} + 8\boldsymbol{k\cdot j}\]</div>
-<p>At first sight, this seems a very complicated way of finding the dot product. However, the full multiplication is not necessary for two reasons; first, because <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are themselves <em>orthogonal</em> vectors of length <span class="math notranslate nohighlight">\(1\)</span>, i.e. normalized so the dot product is <span class="math notranslate nohighlight">\(1\)</span>,</p>
+\[\displaystyle \vec v \cdot \vec w  = 15 \pmb{i\cdot i} - 32\pmb{j\cdot j} - 10\pmb{k\cdot k} + 24\pmb{i\cdot j} - 30\pmb{k\cdot j} - 20\pmb{j\cdot i} + 40\pmb{j\cdot k} + 5\pmb{k\cdot i} + 8\pmb{k\cdot j}\]</div>
+<p>At first sight, this seems a very complicated way of finding the dot product. However, the full multiplication is not necessary for two reasons; first, because <span class="math notranslate nohighlight">\(\pmb i,\pmb j\)</span>, and <span class="math notranslate nohighlight">\(\pmb k\)</span> are themselves <em>orthogonal</em> vectors of length <span class="math notranslate nohighlight">\(1\)</span>, i.e. normalized so the dot product is <span class="math notranslate nohighlight">\(1\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1\]</div>
-<p>because any vector is clearly parallel to itself and <span class="math notranslate nohighlight">\(\cos(0) = 1\)</span>. Secondly, the base vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are orthogonal, because they lie along axes mutually set at <span class="math notranslate nohighlight">\(90^\text{o}\)</span>; therefore <span class="math notranslate nohighlight">\(\boldsymbol{i\cdot j} =\boldsymbol{ j\cdot k} = \boldsymbol{i\cdot k} = 0\)</span>. We can calculate a dot product fairly simply with the following rules:</p>
+\[\displaystyle \pmb{i\cdot i} = \pmb{j\cdot j} = \pmb{k\cdot k} = 1\]</div>
+<p>because any vector is clearly parallel to itself and <span class="math notranslate nohighlight">\(\cos(0) = 1\)</span>. Secondly, the base vectors <span class="math notranslate nohighlight">\(\pmb i,\pmb j\)</span>, and <span class="math notranslate nohighlight">\(\pmb k\)</span> are orthogonal, because they lie along axes mutually set at <span class="math notranslate nohighlight">\(90^\text{o}\)</span>; therefore <span class="math notranslate nohighlight">\(\pmb{i\cdot j} =\pmb{ j\cdot k} = \pmb{i\cdot k} = 0\)</span>. We can calculate a dot product fairly simply with the following rules:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1, \qquad\tag{11}\]</div>
+\[\displaystyle \pmb{i\cdot i} = \pmb{j\cdot j} = \pmb{k\cdot k} = 1, \qquad\tag{11}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol{i\cdot j} = \boldsymbol{j\cdot k} = \boldsymbol{i\cdot k} = 0 \qquad\tag{12}\]</div>
+\[\displaystyle \pmb{i\cdot j} = \pmb{j\cdot k} = \pmb{i\cdot k} = 0 \qquad\tag{12}\]</div>
 <p>Stated in words:</p>
-<p>Calculate the dot product by multiplying both of the <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> vector terms together, making <span class="math notranslate nohighlight">\(\boldsymbol {i\cdot i} = 1\)</span>, do the same for <span class="math notranslate nohighlight">\(\boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span>. Ignore, or make zero, all other cross terms, such as, <span class="math notranslate nohighlight">\(\boldsymbol {i\cdot j}\)</span>.</p>
+<p>Calculate the dot product by multiplying both of the <span class="math notranslate nohighlight">\(\pmb i\)</span> vector terms together, making <span class="math notranslate nohighlight">\(\pmb {i\cdot i} = 1\)</span>, do the same for <span class="math notranslate nohighlight">\(\pmb j\)</span> and <span class="math notranslate nohighlight">\(\pmb k\)</span>. Ignore, or make zero, all other cross terms, such as, <span class="math notranslate nohighlight">\(\pmb {i\cdot j}\)</span>.</p>
 <p>Therefore, for our example   <span class="math notranslate nohighlight">\(\vec v \cdot \vec w = 15-32-10 =-27 \)</span> and this is the same result as would be obtained from the vector dot product equation 5,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} 3&amp;-4 &amp;1 \end{bmatrix}\begin{bmatrix} 5\\8\\-10 \end{bmatrix} =-27 \end{split}\]</div>
 <p>This is an important point as it means we have two ways of calculating vectors. When vectors have more than three dimensions, the matrix methods become far simpler, particularly when using the computer to do calculations.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig5.png" /></p>
-<p>Figure 5. Unit vectors <span class="math notranslate nohighlight">\(\boldsymbol i\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol j\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol k\)</span>, and the vector, <span class="math notranslate nohighlight">\(\vec v = a\boldsymbol i+ b\boldsymbol j+ c\boldsymbol k\)</span>, which has length <span class="math notranslate nohighlight">\(a, b,  c\)</span> along each of the axes shown and which are the projections of <span class="math notranslate nohighlight">\(\vec v\)</span> on the axes. Right: the vector <span class="math notranslate nohighlight">\(0.75\boldsymbol i - 1.5\boldsymbol j+ 2\boldsymbol k\)</span>.</p>
+<p>Figure 5. Unit vectors <span class="math notranslate nohighlight">\(\pmb i\)</span>, <span class="math notranslate nohighlight">\(\pmb j\)</span>, <span class="math notranslate nohighlight">\(\pmb k\)</span>, and the vector, <span class="math notranslate nohighlight">\(\vec v = a\pmb i+ b\pmb j+ c\pmb k\)</span>, which has length <span class="math notranslate nohighlight">\(a, b,  c\)</span> along each of the axes shown and which are the projections of <span class="math notranslate nohighlight">\(\vec v\)</span> on the axes. Right: the vector <span class="math notranslate nohighlight">\(0.75\pmb i - 1.5\pmb j+ 2\pmb k\)</span>.</p>
 <hr class="docutils" />
-<p>The dot product of the vectors <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> in figure 2 is in the <span class="math notranslate nohighlight">\((\boldsymbol i,\;\boldsymbol j)\)</span> basis is</p>
+<p>The dot product of the vectors <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> in figure 2 is in the <span class="math notranslate nohighlight">\((\pmb i,\;\pmb j)\)</span> basis is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (3i+2j)\cdot(5\boldsymbol i-3\boldsymbol j)=15\boldsymbol i\cdot \boldsymbol i -9 \boldsymbol i\cdot \boldsymbol j + 10\boldsymbol  i\cdot\boldsymbol  i - 6\boldsymbol i\cdot \boldsymbol j =9\]</div>
+\[\displaystyle (3i+2j)\cdot(5\pmb i-3\pmb j)=15\pmb i\cdot \pmb i -9 \pmb i\cdot \pmb j + 10\pmb  i\cdot\pmb  i - 6\pmb i\cdot \pmb j =9\]</div>
 <p>and in the matrix/vector basis where we multiply elements in the same position and add, i.e. (0,0)+(1,1) etc</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix}3 &amp; 2\end{bmatrix}\begin{bmatrix}5 \\ -3\end{bmatrix}=9\end{split}\]</div>
@@ -2163,9 +2163,9 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 <p>The magnitude of <span class="math notranslate nohighlight">\(\vec A\)</span> is <span class="math notranslate nohighlight">\(\displaystyle |\vec A|=\sqrt{\vec A \cdot \vec A}\)</span></p>
 <p>A vector defined as <span class="math notranslate nohighlight">\(\vec A=[a\;b\;c\;d]\)</span> has 4 base vectors <span class="math notranslate nohighlight">\(\displaystyle \qquad \begin{bmatrix} 1\\0\\0\\0\end{bmatrix}\begin{bmatrix} 0\\1\\0\\0\end{bmatrix}\begin{bmatrix} 0\\0\\1\\0\end{bmatrix}\begin{bmatrix} 0\\0\\0\\1\end{bmatrix}\)</span></p>
 <p>and has dot product <span class="math notranslate nohighlight">\(\displaystyle \vec A \cdot \vec B=\begin{bmatrix}a\; b\; c\; d\end{bmatrix}\begin{bmatrix}e\\f\\g\\h\end{bmatrix} =ae+df+cg+dh\)</span></p>
-<p>In three dimensions only, in addition to the matrix method, orthonormal base vectors <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> can be used ,e.g.  <span class="math notranslate nohighlight">\(\vec A=a\boldsymbol i+b\boldsymbol j+c\boldsymbol k\)</span></p>
+<p>In three dimensions only, in addition to the matrix method, orthonormal base vectors <span class="math notranslate nohighlight">\(\pmb i, \pmb j, \pmb k\)</span> can be used ,e.g.  <span class="math notranslate nohighlight">\(\vec A=a\pmb i+b\pmb j+c\pmb k\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec A\cdot \vec B = (a\boldsymbol i + b\boldsymbol j + c\boldsymbol k)\cdot(c\boldsymbol i + d\boldsymbol j + e\boldsymbol k) = ac + bd + ce\]</div>
+\[\displaystyle \vec A\cdot \vec B = (a\pmb i + b\pmb j + c\pmb k)\cdot(c\pmb i + d\pmb j + e\pmb k) = ac + bd + ce\]</div>
 </section>
 <section id="ii-the-cross-product-exists-only-in-three-dimensions">
 <h3><strong>(ii) The Cross Product exists only in three dimensions</strong><a class="headerlink" href="#ii-the-cross-product-exists-only-in-three-dimensions" title="Permalink to this headline">#</a></h3>

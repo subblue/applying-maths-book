@@ -38,7 +38,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A straight line with equation $y = mx + c$ has a constant slope $m$, which is the change in $y$ divided by change in $x$, or $\delta y/\delta x$ for any interval $\delta x$. However, most functions are more interesting than the straight line; a parabola for example, $y = mx^2 + c$, has a gradient that changes with $x$ and the value $\delta y/\delta x$ is now clearly going to depend upon how small $\delta x$ and $\delta y$ are and where $x$ is on the curve. If $\delta x$ is made infinitesimally small, the gradient exactly at position $x$ is obtained and this is what is achieved with differentiation.
 # 
-# In Fig. 2, the curve is a parabola with the equation $y = x^2 + 1$. The slope in the region P to Q is $\delta y/\delta x$. The point P has coordinates $(2, 5)$ and if $\delta x = 0.3$ then the point Q is $(x, y) = (2.3, 2.32 + 1)$, making $\delta y = 1.29$ and $\delta y/\delta x = 4.3$. Similarly, the slope can be calculated starting at any other point on the curve. As $\delta x$ is small but finite, the gradient is the average over the range $\delta x$, and if $f(x)$ is any (normal) function such as $x^2 + 1$, then its slope is given by
+# In Fig. 2, the curve is a parabola with the equation $y = x^2 + 1$. The slope in the region P to Q is $\displaystyle \frac{\delta y}{\delta x}$. The point P has coordinates $(2, 5)$ and if $\delta x = 0.3$ then the point Q is $(x, y) = (2.3, 2.32 + 1)$, making $\delta y = 1.29$ and $\delta y/\delta x = 4.3$. Similarly, the slope can be calculated starting at any other point on the curve. As $\delta x$ is small but finite, the gradient is the average over the range $\delta x$, and if $f(x)$ is any (normal) function such as $x^2 + 1$, then its slope is given by
 # 
 # $$\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \qquad\tag{2}$$
 # 
@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](differen-fig2.png)
 # 
-# Figure 2. Construction of a gradient on a curve.
+# Figure 2. Construction of a gradient on a curve such as $y=x^2+1$.
 # _____
 # 
 # The slope can also be interpreted in trigonometric terms (see fig 2) because in any right-angled triangle, such as $PQR$, $\tan(\theta) = QR/RP$ , where $\theta$ is $\angle QPR$ and therefore the gradient is also
@@ -59,7 +59,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is the basic equation to determine a derivative. The next steps, described below, illustrate how a variety of different functions are differentiated and sets out the rules for doing this for a whole variety of different functions.
 # 
-# We can also write $\displaystyle f(x+\delta x)\approx f(x) +\frac{dy}{dx}\delta(x)$,
+# We can also write 
+# 
+# $$\displaystyle f(x+\delta x)\approx f(x) +\frac{dy}{dx}\delta(x)$$
 # 
 # which can sometimes be useful, see chapter 10 (differential equations) section 3.1(viii).
 # 
@@ -73,7 +75,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the previous section, the effect a small change $\delta x$ on a quantity $x$ was calculated, now $\delta x$ is made infinitesimally small and the limit found when $\delta x \to  0$. The consequence of making the change $\delta x \to  0$ is profound and leads to differentiation, which is of universal application. If [C] is concentration, differentiation with time gives the _rate_ of a chemical reaction, or if $x$ is position, differentiation gives the speed of the body: rate of change of distance with time. A derivative in general describes the rate of change of one quantity with respect to another and 'rate of change' is commonly used not only to mean change with time, its original meaning, but also of any quantity with respect to another; $dy/dx$ for instance.
 # 
-# If a function has a value $y = f(x)$ at $x$ and at a nearby point $x + \delta x$ its value is $y + \delta y = f(x + \delta x)$, then the slope is approximately $\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x}$ provided that $\delta x \ne 0$. To find the gradient exactly at the point $x$, $\delta x$ must tend to zero; $\delta x \to  0$, which means finding the limit of the equation, and at the limit $\delta$ is changed to $d$ and the derivative of the function is written in mathematical notation as $dy/dx$ . 
+# If a function has a value $y = f(x)$ at $x$ and at a nearby point $x + \delta x$ its value is $y + \delta y = f(x + \delta x)$, then the slope is approximately 
+# 
+# $$\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x}$$
+# 
+# provided that $\delta x \ne 0$. To find the gradient exactly at the point $x$, $\delta x$ must tend to zero; $\delta x \to  0$, which means finding the limit of the equation, and at the limit $\delta$ is changed to $d$ and the derivative of the function is written in mathematical notation as $dy/dx$ . 
 # 
 # The derivative can be written in a number of different ways besides $\displaystyle \frac{dy}{dx}$, although this is by far the most common. The following forms are equivalent:
 # 
@@ -177,8 +183,23 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # &= nx^{n-1}+n(n-1)x^{n-2}\frac{\delta x}{2}+\cdots 
 # \end{align}$$
 # 
-# Letting $\delta x \to 0$ produces the familiar formula $\displaystyle \frac{dy}{dx}=nx^{n-1}$.
+# Letting $\delta x \to 0$ produces the familiar formula 
 # 
+# $$\displaystyle \frac{dy}{dx}=nx^{n-1}$$
+# 
+# We can use the formula just given when $n$ is a fraction to obtain the gradient, for example $n=1/2$ i.e. differentiating a square root such as $y=\sqrt{x}$ but this can also be done directly by adding a small increment $\delta x$. To do this we start by forming the gradient by adding that increment to $x$ to get
+# 
+# $$\displaystyle gradient =\lim_{\delta x\to 0}\frac{\sqrt{x+\delta x}-\sqrt{ x}}{\delta x}$$
+# 
+# which does not look useful, but by multiplying numerator and denominator by the same term, i.e.multiplying by unity, the square can be completed as follows
+# 
+# $$\displaystyle \begin{align}\frac{d}{dx}\sqrt{x}
+# &=\lim_{\delta x\to 0}\frac{\left(\sqrt{x+\delta x}-\sqrt{ x}\right)}{\delta x}\frac{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}
+# \\&=\lim_{\delta x\to 0}\frac{\delta x}{\delta x}\frac{1}{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}
+# \\&= \lim_{\delta x\to 0} \frac{1}{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}
+# \\& = \frac{1}{2\sqrt{x}}\end{align}$$
+# 
+# where in the last step we use the fact that $\delta x\ll x$.
 # 
 # ## 3.4 Differentiating powers of $y$
 # 

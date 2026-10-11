@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1792,13 +1792,16 @@ title="Print to PDF"
 <p>The first equation can be separated to give</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{S_0}^S \frac{dS}{R-S/\tau}= \int_0^t dt  \]</div>
-<p>with initial conditions at time zero, <span class="math notranslate nohighlight">\(S(0) = S_0\)</span> and where normally <span class="math notranslate nohighlight">\(S_0\gt R\tau\)</span>. <span class="math notranslate nohighlight">\(R\)</span> has units of moles of photons/volume/time.  The abbreviation <span class="math notranslate nohighlight">\(\tau =1/(k_f+k_S)\)</span> is now made, and <span class="math notranslate nohighlight">\(\tau\)</span> is called the excited state lifetime. Integrating gives</p>
+<p>with initial conditions at time zero, <span class="math notranslate nohighlight">\(S(0) = S_0\)</span> and where normally <span class="math notranslate nohighlight">\(S_0\gt R\tau\)</span>. <span class="math notranslate nohighlight">\(R\)</span> has units of moles of photons/volume/time.  The excited state lifetime is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tau =1/(k_f+k_S)\]</div>
+<p>and is substituted in. Integrating gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\tau \ln(-R\tau + S)+ \tau \ln(-R\tau + S_0)= t \]</div>
 <p>and after rearranging,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  S = R\tau+(S_0-R\tau)e^{-t/\tau}\]</div>
-<p>The singlet state population therefore increases or decreases with a lifetime <span class="math notranslate nohighlight">\(\tau\)</span> to reach a steady state value of <span class="math notranslate nohighlight">\(R\tau\)</span> at long times, its initial value being <span class="math notranslate nohighlight">\(S_0\)</span>. This happens because in this example the molecules are continuously excited and so the population changes until steady state is reached. In the case that illumination begins at <span class="math notranslate nohighlight">\(t = 0\)</span>, the initial singlet state population is zero. If the steady state has already been achieved thus <span class="math notranslate nohighlight">\(S_0 \gt 0\)</span> and then the illumination intensity is changed the the equation also describes this behaviour.</p>
+<p>The singlet state population therefore increases or decreases with a lifetime <span class="math notranslate nohighlight">\(\tau\)</span> to reach a steady-state value of <span class="math notranslate nohighlight">\(R\tau\)</span> at long times, its initial value being <span class="math notranslate nohighlight">\(S_0\)</span>. This happens because in this example the molecules are continuously excited and so the population changes until steady-state is reached. In the case that illumination begins at <span class="math notranslate nohighlight">\(t = 0\)</span>, the initial singlet state population is zero. If the steady-state has already been achieved thus <span class="math notranslate nohighlight">\(S_0 \gt 0\)</span> and then the illumination intensity is changed the the equation also describes this behaviour.</p>
 <p>Substituting for <span class="math notranslate nohighlight">\(S\)</span>, the second equation becomes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dT}{dt}+k_TT=k_SR\tau-k_S(R\tau-S_0)e^{-t/\tau}\]</div>
@@ -1810,7 +1813,7 @@ title="Print to PDF"
 \[\displaystyle  T= k_S \frac{R\tau}{k_T}-k_S\frac{(R\tau-S_0)}{(k_T-k_f-k_S)}e^{-t/\tau} -k_S\left( \frac{R\tau}{k_T}-\frac{(R\tau-S_0)}{(k_T-k_f-k_S)} \right)e^{-k_Tt}\]</div>
 <p>This equation shows that the triplet population is initially zero, and depending on the relative values of the rate constants it rises to a maximum then falls to the steady state value or simply rises to the steady state. The steady state or infinite time value of the triplet population is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I_{abs}\sigma[G]\frac{k_S}{(k_f+k_S)k_T}\]</div>
+\[\displaystyle k_S \frac{R\tau}{k_T} \equiv I_{abs}\sigma[G]\frac{k_S}{(k_f+k_S)k_T}\]</div>
 <p>which is proportional to the number of singlet states initially formed multiplied by the fraction of those forming the triplet state <span class="math notranslate nohighlight">\(k_S /(k_f + k_S)\)</span> and multiplied by the decay time of the triplet <span class="math notranslate nohighlight">\(1/k_T\)</span>.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig38a.png" /></p>
 <p>Figure 38a. The singlet and triplet populations under different illumination conditions showing approach to steady state as shown by dashed lines.</p>
@@ -1818,7 +1821,9 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="q23-answer">
 <h2>Q23 answer<a class="headerlink" href="#q23-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The rate equation becomes <span class="math notranslate nohighlight">\(\displaystyle \frac{dA}{dt} + k_sA = k_aI_0\delta(t - t_0)\)</span></p>
+<p><strong>(a)</strong> The rate equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt} + k_sA = k_aI_0\delta(t - t_0)\]</div>
 <p>which, using the integrating factor, has the solution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Ae^{k_St} = k_aI_0\int e^{k_St}\delta(t - t_0)dt + c\]</div>
@@ -1828,12 +1833,20 @@ title="Print to PDF"
 <p>because the delta function is zero everywhere except <span class="math notranslate nohighlight">\(t = t_0\)</span>. The result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Ae^{k_St} = k_aI_0e^{k_St_0} + c\]</div>
-<p>The constant is found when <span class="math notranslate nohighlight">\(t = t_0\)</span> and <span class="math notranslate nohighlight">\(A(0) = A_0\)</span>, then <span class="math notranslate nohighlight">\(c = (A_0 - k_aI_0)e^{k_St_0}\)</span> and the amount of A is</p>
+<p>The constant is found when <span class="math notranslate nohighlight">\(t = t_0\)</span> and <span class="math notranslate nohighlight">\(A(0) = A_0\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c = (A_0 - k_aI_0)e^{k_St_0}\]</div>
+<p>and the amount of A is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  A=A_0e^{k_S(t_0-t)}\]</div>
 <p>which reduces to the commonly quoted form when <span class="math notranslate nohighlight">\(t_0 = 0\)</span>.</p>
-<p>(b) The exponentially decaying pulse produces the equation <span class="math notranslate nohighlight">\(\displaystyle \frac{dA}{dt}+k_SA=k_aI_0e^{-k_at}\)</span>.</p>
-<p>The equation is solved as <span class="math notranslate nohighlight">\(\displaystyle Ae^{k_St}=k_aI_0\int e^{k_St}e^{-k_at}dt+c\)</span> to give</p>
+<p><strong>(b)</strong> The exponentially decaying pulse produces the equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}+k_SA=k_aI_0e^{-k_at}\]</div>
+<p>The equation is solved as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Ae^{k_St}=k_aI_0\int e^{k_St}e^{-k_at}dt+c\]</div>
+<p>to give</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A=\frac{k_aI_0}{k_S-k_a}\left(e^{-k_at}-e^{-k_St}  \right) +A_0e^{-k_St}\]</div>
 <p>When <span class="math notranslate nohighlight">\(k_a \to \infty\)</span> the pulse is very short and the population of A decays as <span class="math notranslate nohighlight">\( \displaystyle A = A_0e^{-k_St}\)</span>. At the other extreme, when the laser pulse is very long, <span class="math notranslate nohighlight">\(k_a \to 0\)</span> and <span class="math notranslate nohighlight">\(e^{-k_at} \to 1\)</span>, then</p>
@@ -1843,54 +1856,71 @@ title="Print to PDF"
 <p><img alt="Drawing" src="../_images/diffeqn-fig38b.png" /></p>
 <p>Figure 38b. Population with exciting pulses of different durations with constants , <span class="math notranslate nohighlight">\([A_0]=0\)</span>, initial amount is zero and <span class="math notranslate nohighlight">\(k_s=0.1\)</span>.  Blue line <span class="math notranslate nohighlight">\(k_a=2\)</span>, red line <span class="math notranslate nohighlight">\(k_s=0.02\)</span> which shows the slow increase with a long excitation pulse. At long times the fluorescence decay makes the population zero.</p>
 <hr class="docutils" />
-<p><strong>Exercise:</strong>  A more commonly used pulse shape is a Gaussian, <span class="math notranslate nohighlight">\(\displaystyle \exp(-(t - t_0)^2/b) \)</span>. The resulting equation can only be solved numerically in terms of an error function, and shows that the population rises to a maximum as the pulse is absorbed. The population would remain constant if the molecule did not react, but as it does, it goes through a maximum. Solve the rate equation and choose some values to illustrate this behaviour. Make sure that the Gaussian is displaced so that its value is essentially zero at zero time.</p>
+<p><strong>Exercise:</strong>  A more commonly used pulse shape is a Gaussian, <span class="math notranslate nohighlight">\(\displaystyle \exp(-(t - t_0)^2/b) \)</span>. The resulting equation can only be solved numerically in terms of an error function, and shows that the population rises to a maximum as the pulse is absorbed. The population would remain constant if the molecule did not react, but as it does, its population goes through a maximum. Solve the rate equation and choose some values to illustrate this behaviour. Make sure that the Gaussian is displaced so that its value is essentially zero at zero time.</p>
 </section>
 <section id="q24-answer">
 <h2>Q24 answer<a class="headerlink" href="#q24-answer" title="Permalink to this headline">#</a></h2>
-<p>The first two terms are straightforward; when <span class="math notranslate nohighlight">\(n = 0\)</span> then <span class="math notranslate nohighlight">\((2x-D)^0 f = f\)</span>,</p>
-<p>and when <span class="math notranslate nohighlight">\(n = 1\)</span> then <span class="math notranslate nohighlight">\((2x-D)^1 f =2xf - Df\)</span> which produce 2<span class="math notranslate nohighlight">\(x\)</span> and zero respectively when <span class="math notranslate nohighlight">\(f = 1\)</span>.</p>
-<p>The next term is <span class="math notranslate nohighlight">\((2x - D)^2 f = 4x^2f - 2xDf - fD(2x) - D(Df )\)</span></p>
+<p>The first two terms are straightforward; when <span class="math notranslate nohighlight">\(n = 0\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (2x-D)^0 f = f\]</div>
+<p>and when <span class="math notranslate nohighlight">\(n = 1\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (2x-D)^1 f =2xf - Df\]</div>
+<p>which produce 2<span class="math notranslate nohighlight">\(x\)</span> and zero respectively when <span class="math notranslate nohighlight">\(f = 1\)</span>.</p>
+<p>The next term is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (2x - D)^2 f = 4x^2f - 2xDf - fD(2x) - D(Df )\]</div>
 <p>and the <span class="math notranslate nohighlight">\(f\)</span> is put in front of the third term <span class="math notranslate nohighlight">\(-f D(2x)\)</span> because here <span class="math notranslate nohighlight">\(D\)</span> only operates on the 2<span class="math notranslate nohighlight">\(x\)</span> not <span class="math notranslate nohighlight">\(f\)</span>. To put <span class="math notranslate nohighlight">\(f\)</span> after the <span class="math notranslate nohighlight">\(D(2x)\)</span> would be ambiguous. In normal notation this becomes clear as the expansion is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (2x-\frac{d}{dx})^2f=4x^2f-2x\frac{d}{dx}f-f\frac{d}{dx}2x-\frac{d^2}{dx^2}f\]</div>
-<p>The function has a value of <span class="math notranslate nohighlight">\(1\)</span> thus <span class="math notranslate nohighlight">\(\displaystyle (2x-\frac{d}{dx})^2 = 4x^2-2\)</span> which is <span class="math notranslate nohighlight">\(H_2(x)\)</span>. The cube of the operator is expanded in the same way</p>
+\[\displaystyle \left(2x-\frac{d}{dx}\right)^2f=4x^2f-2x\frac{d}{dx}f-f\frac{d}{dx}2x-\frac{d^2}{dx^2}f\]</div>
+<p>The function has a value of <span class="math notranslate nohighlight">\(1\)</span> thus <span class="math notranslate nohighlight">\(\displaystyle \left(2x-\frac{d}{dx}\right)^2 = 4x^2-2\)</span> which is <span class="math notranslate nohighlight">\(H_2(x)\)</span>. The cube of the operator is expanded in the same way</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (2x-D)^3f=(4x^2f-2xDf-fD(2x)-d^2f)(2xf-Df) = 8x^3-4x-8x\]</div>
+\[\displaystyle \left(2x-D\right)^3f=(4x^2f-2xDf-fD(2x)-d^2f)(2xf-Df) = 8x^3-4x-8x\]</div>
 <p>where the final expression is obtained using <span class="math notranslate nohighlight">\(f = 1\)</span> and this is <span class="math notranslate nohighlight">\(H_3(x)\)</span>. The remaining terms can be obtained by the same procedure.</p>
 </section>
 <section id="q25-answer">
 <h2>Q25 answer<a class="headerlink" href="#q25-answer" title="Permalink to this headline">#</a></h2>
-<p>The constants are found from <span class="math notranslate nohighlight">\(x_0 = A\sin(B)\)</span>, and as</p>
+<p>The constants are found from <span class="math notranslate nohighlight">\(\displaystyle x_0 = A\sin(B)\)</span></p>
+<p>and as</p>
 <div class="math notranslate nohighlight">
-\[dx/dt = v = A\omega \cos(\omega t + B)\]</div>
-<p>then <span class="math notranslate nohighlight">\(v_0 = A\omega \cos(B)\)</span>. Solving these two equations gives <span class="math notranslate nohighlight">\(B = \tan^{-1}(x_0\omega/v_0)\)</span> and <em>A</em> is found using <span class="math notranslate nohighlight">\(\cos^2(B)+\sin^2(B)=1\)</span> and is</p>
+\[\frac{dx}{dt} = v = A\omega \cos(\omega t + B)\]</div>
+<p>then <span class="math notranslate nohighlight">\(v_0 = A\omega \cos(B)\)</span>.</p>
+<p>Solving these two equations gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B = \tan^{-1}\left(\frac{x_0\omega}{v_0}\right)\]</div>
+<p>and <span class="math notranslate nohighlight">\(A\)</span> is found using <span class="math notranslate nohighlight">\(\cos^2(B)+\sin^2(B)=1\)</span> and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A=\sqrt{\frac{v_0^2}{\omega^2}+x_0^2}\]</div>
 </section>
 <section id="q26-answer">
 <h2>Q26 answer<a class="headerlink" href="#q26-answer" title="Permalink to this headline">#</a></h2>
-<p>The simple harmonic equation of motion is <span class="math notranslate nohighlight">\(\displaystyle x = \frac{v_0}{\omega} \sin(\omega t) + x_0\cos(\omega t)\)</span>, (see equation (20))</p>
-<p>and if the weight is not to leave his hands when his arms are fully extended, then the acceleration upwards must be no greater than <span class="math notranslate nohighlight">\(g\)</span>. The acceleration is</p>
+<p>The simple harmonic equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x = \frac{v_0}{\omega} \sin(\omega t) + x_0\cos(\omega t)\]</div>
+<p>see equation (20), and if the weight is not to leave his hands when his arms are fully extended, then the acceleration upwards must be no greater than <span class="math notranslate nohighlight">\(g\)</span>. The acceleration is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2x}{dt^2}=-v_0\omega\sin(\omega t)-x_0\omega^2\cos(\omega t)=g\]</div>
 <p>and the period of oscillation is <span class="math notranslate nohighlight">\(T=2\pi/\omega\)</span>.</p>
-<p>As maximum acceleration is at the end of the stroke, the sine and cosine must have values of <span class="math notranslate nohighlight">\(\pm 1\)</span> and the velocity must be zero, thus,<span class="math notranslate nohighlight">\(x_0\omega^2=g\)</span>. Substituting for the period produces <span class="math notranslate nohighlight">\(\displaystyle x_0=\frac{g}{4\pi^2}T^2\)</span> and the maximum displacement must be <span class="math notranslate nohighlight">\(0.248\)</span> m if the period is 1 second.</p>
+<p>As maximum acceleration is at the end of the stroke, the sine and cosine must have values of <span class="math notranslate nohighlight">\(\pm 1\)</span> and the velocity must be zero, thus,<span class="math notranslate nohighlight">\(x_0\omega^2=g\)</span>. Substituting for the period produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_0=\frac{g}{4\pi^2}T^2\]</div>
+<p>and the maximum displacement must be <span class="math notranslate nohighlight">\(0.248\)</span> m if the period is 1 second.</p>
 <p>The weight does not enter this calculation but is important nevertheless, not least to the body builder; for the greater the mass that is moved, the greater is the work that he has to do, as this is force multiplied by distance.</p>
 </section>
 <section id="q27-answer">
 <h2>Q27 answer<a class="headerlink" href="#q27-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The force equation for skidding is calculated by equating the linear force with the negative value of friction since this acts as a drag on the motion while the ball skids. The friction will aid the angular motion and is present as a couple because it can only act through the centre of mass or rotation axis. This is the hardest part of the question; the equations are</p>
+<p><strong>(a)</strong> The force equation for skidding is calculated by equating the linear force with the negative value of friction since this acts as a drag on the motion while the ball skids. The friction will aid the angular motion and is present as a couple because it can only act through the centre of mass or rotation axis. This is the hardest part of the question; the equations are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  m\frac{dv}{dt}=-\alpha mg, \qquad I\frac{d\omega}{dt}=\alpha mgr\]</div>
 <p>Notice that <span class="math notranslate nohighlight">\(\alpha\)</span> is a dimensionless constant. Integrating each equation with initial values <span class="math notranslate nohighlight">\(v_0\)</span> and <span class="math notranslate nohighlight">\(\omega_0\)</span> at <span class="math notranslate nohighlight">\(t\)</span> = 0 and using <span class="math notranslate nohighlight">\(I = k^2m\)</span> (units kg m<span class="math notranslate nohighlight">\(^2\)</span>) gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle v=v_0 -\alpha gt, \qquad  \omega =\omega_0 + \frac{\alpha}{k^2}rgt\]</div>
-<p>(b) When <span class="math notranslate nohighlight">\(v=r\omega \)</span> the ball stops skidding at time</p>
+<p><strong>(b)</strong> When <span class="math notranslate nohighlight">\(v=r\omega \)</span> the ball stops skidding at time</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle t=\frac{v_0-r\omega_0}{(1+r^2/k^2)\alpha g}\]</div>
 <p>when the linear velocity is <span class="math notranslate nohighlight">\(\displaystyle v=v_0-\frac{v_0-r\omega_0}{(1+r^2/k^2)}\)</span>.</p>
 <p>Surprisingly the velocity at which skidding starts does not depend on the friction coefficient <span class="math notranslate nohighlight">\(\alpha\)</span>, but instead, the <em>time</em> when this occurs. The larger <span class="math notranslate nohighlight">\(\alpha\)</span> is, the shorter the time at which skidding stops, but the ball always starts rolling at the same velocity. This occurs when the turning forces exceed the frictional ones, hence depends on the radius and mass of the ball, at a fixed <span class="math notranslate nohighlight">\(\omega_0\)</span>, hence the linear velocity is independent of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
-<p>(c) The initial and final energies are</p>
+<p><strong>(c)</strong> The initial and final energies are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E_0=\frac{mv_0^2+mk^2\omega_0^2}{2}, \qquad E_f=\frac{mv^2+mk^2\omega^2}{2} \]</div>
 <p>and using <span class="math notranslate nohighlight">\(v = r\omega\)</span> the energy lost to friction is</p>
@@ -1900,10 +1930,16 @@ title="Print to PDF"
 </section>
 <section id="q28-answer">
 <h2>Q28 answer<a class="headerlink" href="#q28-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) If <span class="math notranslate nohighlight">\(v\)</span> is velocity, the equation of motion is <span class="math notranslate nohighlight">\(\displaystyle mv\frac{dv}{dx} = -\frac{m\alpha}{x^2}\)</span>,</p>
-<p>which is integrated to <span class="math notranslate nohighlight">\(\displaystyle \frac{v^2}{2}=\frac{\alpha}{x}+c\)</span></p>
-<p>As the particle is initially at rest at <span class="math notranslate nohighlight">\(x =  R\)</span>, then <span class="math notranslate nohighlight">\(c = -\alpha/R\)</span> and <span class="math notranslate nohighlight">\(\displaystyle v^2=2\alpha\left( \frac{1}{x}-\frac{1}{R} \right)\)</span>.</p>
-<p>(b) The time is found using equation (15), which in this case is <span class="math notranslate nohighlight">\(\displaystyle t=\pm \sqrt{2}\int\frac{dx}{\sqrt{F(x)}}+c_1\)</span> and where <span class="math notranslate nohighlight">\(\displaystyle F(x)=-\alpha \int\frac{dx}{x^2}+c\)</span> was calculated in (a) making</p>
+<p><strong>(a)</strong> If <span class="math notranslate nohighlight">\(v\)</span> is velocity, the equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle mv\frac{dv}{dx} = -\frac{m\alpha}{x^2}\]</div>
+<p>which is integrated to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{v^2}{2}=\frac{\alpha}{x}+c\]</div>
+<p>As the particle is initially at rest at <span class="math notranslate nohighlight">\(x =  R\)</span>, then <span class="math notranslate nohighlight">\(c = -\alpha/R\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v^2=2\alpha\left( \frac{1}{x}-\frac{1}{R} \right)\]</div>
+<p><strong>(b)</strong> The time is found using equation (15), which in this case is <span class="math notranslate nohighlight">\(\displaystyle t=\pm \sqrt{2}\int\frac{dx}{\sqrt{F(x)}}+c_1\)</span> and where <span class="math notranslate nohighlight">\(\displaystyle F(x)=-\alpha \int\frac{dx}{x^2}+c\)</span> was calculated in (a) making</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F(x)=\alpha\left( \frac{1}{x}-\frac{1}{R} \right)\]</div>
 <p>and so</p>
@@ -1912,13 +1948,21 @@ title="Print to PDF"
 <p>Making the substitution <span class="math notranslate nohighlight">\(\displaystyle x=R\cos^2(\theta)\)</span> and using <span class="math notranslate nohighlight">\(dx=-2R\cos(\theta)\sin(\theta)\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle t=\sqrt{\frac{2R^3}{\alpha}}\int\cos^2(\theta)d\theta +c_2=\sqrt{\frac{2R^3}{\alpha}}(\theta+\sin(\theta)\cos(\theta))+c_2\]</div>
-<p>At <span class="math notranslate nohighlight">\(t = 0,\, x =R\)</span> and so <span class="math notranslate nohighlight">\(\theta=0\)</span> making the constant <span class="math notranslate nohighlight">\(c_2 =0\)</span>. At the origin <span class="math notranslate nohighlight">\(x = 0\)</span>  therefore it follows that <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>. The total time from <span class="math notranslate nohighlight">\(x = R\)</span> to the origin is found when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span> because <span class="math notranslate nohighlight">\(\theta = 0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span> and is <span class="math notranslate nohighlight">\(\displaystyle t=\pi\sqrt{\frac{r^3}{8\alpha}} \)</span>.</p>
-<p>The time to complete a circular orbit is <span class="math notranslate nohighlight">\(\displaystyle t_c=2\pi\sqrt{r^3/\alpha}\)</span> which is, of course, a year, so the ratio of times is <span class="math notranslate nohighlight">\(t/t_c=1/(2\sqrt{8})\approx 0.177\)</span> which is about <span class="math notranslate nohighlight">\(65\)</span> days. This is the time it would take the earth to fall into the sun.</p>
-<p>(b) Arriving at the earth’s surface from a great distance, means that <span class="math notranslate nohighlight">\(R\)</span> is very great compared to the radius of the earth, and, without any great error from part (a) <span class="math notranslate nohighlight">\(\displaystyle v^2=\frac{2\alpha}{x}\)</span> and substituting for <span class="math notranslate nohighlight">\(\alpha\)</span> gives the velocity arriving at the earth’s surface as<span class="math notranslate nohighlight">\(v=\sqrt{2gr}\)</span> when <span class="math notranslate nohighlight">\(x = r\)</span>. This has the value of <span class="math notranslate nohighlight">\(11.18\)</span> km/s, which therefore is also the escape velocity.</p>
+<p>At <span class="math notranslate nohighlight">\(t = 0,\, x =R\)</span> and so <span class="math notranslate nohighlight">\(\theta=0\)</span> making the constant <span class="math notranslate nohighlight">\(c_2 =0\)</span>. At the origin <span class="math notranslate nohighlight">\(x = 0\)</span>  therefore it follows that <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>. The total time from <span class="math notranslate nohighlight">\(x = R\)</span> to the origin is found when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span> because <span class="math notranslate nohighlight">\(\theta = 0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span> and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t=\pi\sqrt{\frac{r^3}{8\alpha}} \]</div>
+<p>The time to complete a circular orbit is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t_c=2\pi\sqrt{\frac{r^3}{\alpha}}\]</div>
+<p>which is, of course, a year, so the ratio of times is <span class="math notranslate nohighlight">\(t/t_c=1/(2\sqrt{8})\approx 0.177\)</span> which is about <span class="math notranslate nohighlight">\(65\)</span> days. This is the time it would take the earth to fall into the sun.</p>
+<p><strong>(c)</strong> Arriving at the earth’s surface from a great distance, means that <span class="math notranslate nohighlight">\(R\)</span> is very great compared to the radius of the earth, and, without any great error from part <strong>(a)</strong></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v^2=\frac{2\alpha}{x}\]</div>
+<p>and substituting for <span class="math notranslate nohighlight">\(\alpha\)</span> gives the velocity arriving at the earth’s surface as <span class="math notranslate nohighlight">\(v=\sqrt{2gr}\)</span> when <span class="math notranslate nohighlight">\(x = r\)</span>. This has the value of <span class="math notranslate nohighlight">\(11.18\)</span> km/s, which therefore is also the escape velocity.</p>
 </section>
 <section id="q29-answer">
 <h2>Q29 answer<a class="headerlink" href="#q29-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The force equation is <span class="math notranslate nohighlight">\(\displaystyle m\frac{d^2y}{dt^2}=-\frac{k}{y}\)</span></p>
+<p><strong>(a)</strong> The force equation is <span class="math notranslate nohighlight">\(\displaystyle \quad m\frac{d^2y}{dt^2}=-\frac{k}{y}\)</span></p>
 <p>and the proportionality constant <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(\mathrm{kg\, m^2\,s^{-2}}\)</span>. Multiplying by <span class="math notranslate nohighlight">\(2dy/dt\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 2\frac{dy}{dt}\frac{d^2y}{dt^2}=-\frac{2k}{m}\frac{1}{y}\frac{dy}{dt}\]</div>
@@ -1929,10 +1973,13 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle v=-\sqrt{ 2\frac{k}{m}\ln\left(\frac{y_0}{y} \right) }\]</div>
 <p>The negative root is taken because the distance is decreasing.</p>
-<p>(b) The time is calculated by integrating <span class="math notranslate nohighlight">\(dt/dy\)</span> from <span class="math notranslate nohighlight">\(y_0\)</span> to zero at the origin,</p>
+<p><strong>(b)</strong> The time is calculated by integrating <span class="math notranslate nohighlight">\(dt/dy\)</span> from <span class="math notranslate nohighlight">\(y_0\)</span> to zero at the origin,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle t=\sqrt{\frac{m}{2k}}\int_{y_0} ^0 \frac{dy}{ \sqrt{\ln(y_0/y)} }\]</div>
-<p>which does not look to be that simple, however, after some guessing and trial and error, we find that substituting <span class="math notranslate nohighlight">\(\displaystyle y/y_0=e^{-x}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle dy=-y_0e^{-x}dx \)</span> and the limits <span class="math notranslate nohighlight">\(x=0,\infty\)</span> produces</p>
+<p>which does not look to be that simple, however, after some guessing and trial and error, we find that substituting</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{y}{y_0}=e^{-x},\qquad dy=-y_0e^{-x}dx \]</div>
+<p>and the limits <span class="math notranslate nohighlight">\(x=0,\infty\)</span> produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle t=\sqrt{\frac{m}{2k}}\int_0 ^\infty \frac{e^{-x}}{ \sqrt{x} }dx\]</div>
 <p>This integral describes the gamma function, <span class="math notranslate nohighlight">\(\Gamma(1/2)\)</span>, and has a value <span class="math notranslate nohighlight">\(\approx 1.77\)</span>. The transit time is thus lengthened for a large mass and reduced for a large attractive force constant. Checking the dimensions gives <span class="math notranslate nohighlight">\(\sqrt{m/k} = \mathrm{kg^{1/2}\, m^{-1}\, kg^{-1/2}\, s} = \mathrm{m^{-1}\,s}\)</span> and therefore the integral has units of distance. This may also be inferred from the original integral in <span class="math notranslate nohighlight">\(dy\)</span> because the log is dimensionless.</p>
@@ -1949,11 +1996,22 @@ title="Print to PDF"
 <p>To eliminate <span class="math notranslate nohighlight">\(E^*\)</span> use the first equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2M^*}{dt^2}=-(k_f +k_e+k_1+ k_2)\frac{dM^*}{dt} - (k_ek_f+k_ek_2+k_1k_f)M^* \]</div>
-<p>With the abbreviations <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\((c/2)^2\)</span> for collections of rate the equation becomes <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2M^*}{dt^2}+b\frac{dM^*}{dt}+\frac{c}{2}M^* = 0\)</span>  which has a standard solution.</p>
-<p>The characteristic equation is <span class="math notranslate nohighlight">\(\displaystyle k^2+bk+\frac{c^2}{4}=0\)</span> with roots <span class="math notranslate nohighlight">\(\displaystyle k=\frac{-b\pm\sqrt{b^2-c^2}}{2}\)</span>. The form particular form chosen for the constants (<span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\((c/2)^2\)</span>), is only to make the resulting equations simpler and has no other purpose. The concentration of the monomer’s excited state is</p>
+<p>With the abbreviations <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\((c/2)^2\)</span> for collections of rate the equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2M^*}{dt^2}+b\frac{dM^*}{dt}+\frac{c}{2}M^* = 0\]</div>
+<p>which has a standard solution. The characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k^2+bk+\frac{c^2}{4}=0\]</div>
+<p>with roots</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k=\frac{-b\pm\sqrt{b^2-c^2}}{2}\]</div>
+<p>The form particular form chosen for the constants (<span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\((c/2)^2\)</span>), is only to make the resulting equations simpler and has no other purpose. The concentration of the monomer’s excited state is</p>
 <div class="math notranslate nohighlight">
 \[M^*=Ae^{\large{k_+t}}+Be^{\large{k_-t}}\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants. The initial conditions are, <span class="math notranslate nohighlight">\(M^* = M_0\)</span> and hence <span class="math notranslate nohighlight">\(dM^*/dt = -(k_f + k_2)M_0\)</span> and this is the rate of change of <span class="math notranslate nohighlight">\(M^*\)</span> at zero time because <span class="math notranslate nohighlight">\(E^*\)</span> is zero. Evaluating the constants produces</p>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants. The initial conditions are, <span class="math notranslate nohighlight">\(M^* = M_0\)</span> and hence</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dM^*}{dt} = -(k_f + k_2)M_0\]</div>
+<p>and this is the rate of change of <span class="math notranslate nohighlight">\(M^*\)</span> at zero time because <span class="math notranslate nohighlight">\(E^*\)</span> is zero. Evaluating the constants produces</p>
 <div class="math notranslate nohighlight">
 \[\frac{M^*}{M_0}=\frac{1}{2}\left( 1+\frac{b-2(k_f+k_2)}{\beta} \right) e^{\large{-(b-\beta)t/2}}+\frac{1}{2}\left( 1-\frac{b-2(k_f+k_2)}{\beta} \right) e^{\large{-(b+\beta)t/2}}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\beta=\sqrt{b^2-c^2}\)</span>.</p>
@@ -1966,7 +2024,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>The two populations show that the monomer decays as the <em>sum</em> of two exponential terms; the longer one is due to re-population of the monomer from the excimer, whereas the excimer decays as the <em>difference</em> of the same two exponentials, but taken in equal proportions. The excimer intensity, which is initially zero, rises and passes through a maximum. At long times, the decay rate constant of the two species is the same as the equilibrium is set up between the two types of excited states.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig39.png" /></p>
-<p>Fig. 39. Populations of excited <span class="math notranslate nohighlight">\(M^*\)</span> (blue) and excimer <span class="math notranslate nohighlight">\(E^*\)</span> on a log scale vs. time in ns. The non-single exponential decay is obvious.</p>
+<p>Fig. 39. Populations of excited <span class="math notranslate nohighlight">\(M^*\)</span> (blue) and excimer <span class="math notranslate nohighlight">\(E^*\)</span> on a log scale vs. time in ns. The non-single exponential decay is obvious as is the rise-time in the excimer emission.</p>
 </section>
 <hr class="docutils" />
 <section id="q31-answer">
@@ -1983,7 +2041,10 @@ title="Print to PDF"
 <p>Completing the integration on the right, from <span class="math notranslate nohighlight">\(x\)</span> to infinity, which is from <span class="math notranslate nohighlight">\(\varphi\)</span> to <span class="math notranslate nohighlight">\(\varphi = 0\)</span>, and rearranging gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\varphi}{dx}=-\sqrt{\frac{8\pi e_0zN}{\epsilon}}\left[ \exp\left(\frac{ze_0\varphi}{k_BT} \right) -\exp\left(-\frac{ze_0\varphi}{k_BT} \right) \right]\]</div>
-<p>Separating variables and integrating again, using the abbreviations <span class="math notranslate nohighlight">\(\displaystyle \alpha =\sqrt{8\pi Nk_BT\epsilon}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \beta = ze_0/2k_BT\)</span> gives after rearranging</p>
+<p>Separating variables and integrating again, using the abbreviations</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \alpha =\sqrt{8\pi Nk_BT\epsilon},\qquad\displaystyle \beta = ze_0/2k_BT\]</div>
+<p>gives after rearranging</p>
 <div class="math notranslate nohighlight">
 \[\int_{\varphi_0}^\varphi\frac{d\varphi}{e^{\beta\varphi}-e^{-\beta\varphi}}=-\alpha\int_0^xdx\]</div>
 <p>Using SymPy to do the left-hand integration gives</p>
@@ -2009,15 +2070,20 @@ title="Print to PDF"
 <p>and this can be further simplified to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi=\varphi_0e^{-2\alpha\beta x}\]</div>
-<p>because both <span class="math notranslate nohighlight">\(\beta\varphi\)</span> and <span class="math notranslate nohighlight">\(\beta\varphi_0 \ll 1\)</span>. The constants are <span class="math notranslate nohighlight">\(\displaystyle 2\alpha\beta\equiv \kappa = \sqrt{\frac{8\pi N z^2e_0^2}{\epsilon k_BT}}\)</span>. The value <span class="math notranslate nohighlight">\(1/\kappa\)</span> is referred to as the double layer thickness.</p>
+<p>because both <span class="math notranslate nohighlight">\(\beta\varphi\)</span> and <span class="math notranslate nohighlight">\(\beta\varphi_0 \ll 1\)</span>. The constants are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 2\alpha\beta\equiv \kappa = \sqrt{\frac{8\pi N z^2e_0^2}{\epsilon k_BT}}\]</div>
+<p>The value <span class="math notranslate nohighlight">\(1/\kappa\)</span> is referred to as the double layer thickness.</p>
 </section>
 <section id="q32-answer">
 <h2>Q32 answer<a class="headerlink" href="#q32-answer" title="Permalink to this headline">#</a></h2>
 <p>The terms in <span class="math notranslate nohighlight">\(x^n\)</span> for the <span class="math notranslate nohighlight">\(d^2y/dx^2\)</span> term are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (n + 1)(n + 2)a_{n+2}x^n + n(n - 1)a_nx^{n-2}x^2\]</div>
-<p>and <span class="math notranslate nohighlight">\(\displaystyle -2a_nx^n\)</span> for the <span class="math notranslate nohighlight">\(y\)</span> term,</p>
-<p>thus the recursion equation is <span class="math notranslate nohighlight">\(\displaystyle (n + 1)(n + 2)a_{n+2} + n(n - 1)a_n-2a_n=0\)</span> or</p>
+<p>and <span class="math notranslate nohighlight">\(\displaystyle -2a_nx^n\)</span> for the <span class="math notranslate nohighlight">\(y\)</span> term, thus the recursion equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (n + 1)(n + 2)a_{n+2} + n(n - 1)a_n-2a_n=0\]</div>
+<p>or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a_{n+2}=\frac{2-n(n-1)}{(n+1)(n+2)}a_n\]</div>
 <p>Evaluating by hand gives <span class="math notranslate nohighlight">\(a_2 = a0,\, a_3 = a_1/3,\, a_5=a_1/15,\, a_7= a_1/35,\, a_9=a_1/63\)</span> and the even index <span class="math notranslate nohighlight">\(a\)</span>’s, except for <span class="math notranslate nohighlight">\(n = 2\)</span> are all zero. The solution is thus</p>
@@ -2049,29 +2115,49 @@ title="Print to PDF"
 </section>
 <section id="q33-answer">
 <h2>Q33 answer<a class="headerlink" href="#q33-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The Schroedinger equation inside the barrier is <span class="math notranslate nohighlight">\(\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\varphi}{dx^2}+V_0\varphi=E\varphi\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(x\)</span> ranges from <span class="math notranslate nohighlight">\(0 \to a\)</span>.</p>
-<p>(b) If the energy <span class="math notranslate nohighlight">\(E\)</span> of the particle is greater than the barrier height, then <span class="math notranslate nohighlight">\(E \ge V_0\)</span>. Rearranging the equation gives</p>
+<p>From the questions the wavefunctions are given as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d^2\varphi}{dx^2}+(k^2-k_0^2)\varphi=0\]</div>
-<p>with <span class="math notranslate nohighlight">\(\displaystyle k^2=\frac{2m}{\hbar^2}E\)</span> and <span class="math notranslate nohighlight">\(\displaystyle k_0^2=\frac{2m}{\hbar^2}V_0\)</span> and where <span class="math notranslate nohighlight">\(\displaystyle k^2-k_0^2 &gt;0\)</span>.</p>
-<p>This is a standard differential equation and has the general solution, with <span class="math notranslate nohighlight">\(\displaystyle c^2 = k^2 - k_0^2\)</span>, as <span class="math notranslate nohighlight">\(\varphi = A\cos(cx) + B \sin(cx)\)</span> where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are determined by the four boundary conditions. Using the values given the two wavefunctions are  <span class="math notranslate nohighlight">\(\displaystyle  \varphi_1  = \cos(cx)\)</span> when <span class="math notranslate nohighlight">\(\displaystyle \varphi(0) = 1,\; d\varphi/dx|_0 = 0\)</span>, and <span class="math notranslate nohighlight">\(\displaystyle \varphi_2=\frac{\sin(cx)}{c}\)</span> when <span class="math notranslate nohighlight">\(\displaystyle \varphi(0)=0,\;d\varphi/dx|_0=1\)</span></p>
-<p>(c) For either solution, the amplitude of the barrier transmittance <span class="math notranslate nohighlight">\(T\)</span> is found using <span class="math notranslate nohighlight">\(L_{1,2}\)</span> as defined in the question.</p>
-<p>When the energy is above the barrier <span class="math notranslate nohighlight">\(\displaystyle L_1=-ac\tan(ac),\; L_2=ac/\tan(ac)\)</span>. To calculate the transmittance, <span class="math notranslate nohighlight">\(A^*_T A_T\)</span> is needed where the * indicates the complex conjugate. This is a somewhat tedious calculation and most easily done using SymPy</p>
+\[\begin{split}\displaystyle 
+\begin{array}{l} 
+\text{for} &amp; x \lt 0,    &amp; \varphi_1 = Ae^{ikx}  + Be^{-ikx}\\
+\text{for} &amp; 0\lt x\lt a,&amp; \varphi_2 = Ce^{k_0x}  + De^{-k_0x}\\
+\text{for} &amp; x\gt a,     &amp; \varphi_3 = Fe^{ikx}\\
+\end{array}\end{split}\]</div>
+<p>The question asks for the transmission defined as <span class="math notranslate nohighlight">\(T=|F|^2/|A|^2\)</span>.</p>
+<p><strong>(a, b)</strong> <span class="math notranslate nohighlight">\(\pmb{E\lt V_0}\)</span>. The Schroedinger equation inside the barrier, region 2,  is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\varphi}{dx^2}+V_0\varphi=E\varphi,\quad\text{or}\quad \frac{d^2\varphi}{dx^2}-\frac{2m}{\hbar^2}(V_0-E)\varphi=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> ranges from <span class="math notranslate nohighlight">\(0 \to a\)</span> and <span class="math notranslate nohighlight">\(E \lt V_0\)</span>. Knowing how the differential equation is related to the solution (See section 10-12.3) via <span class="math notranslate nohighlight">\(k_0\)</span> the constant in region 2 is therefore defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  k^2_0=\frac{2m}{\hbar^2}(V_0-E)\]</div>
+<p>In regions 1 and 3,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\varphi}{dx^2} = E\varphi,\quad\text{or}\quad \frac{d^2\varphi}{dx^2}+k^2\varphi=0 \]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  k^2=\frac{2m}{\hbar^2 }E\]</div>
+<p><strong>(c)</strong> We are given that the constant <span class="math notranslate nohighlight">\(A=1\)</span>. The boundary conditions at <span class="math notranslate nohighlight">\(x=0\)</span> are that the wavefunction and its derivative must match in regions 1 and 2, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi_1 = \varphi_2,\qquad \frac{d\varphi_1}{dx}=\frac{d\varphi_2}{dx}\]</div>
+<p>then from the wavefunctions given above</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1+B=C+D\quad \text{and}\quad ik(1-B)=k_0(C-D)\tag{a}\]</div>
+<p>and similarly at <span class="math notranslate nohighlight">\(x=a\)</span> for regions 2 and 3,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Fe^{ika}=Ce^{k_0a}+De^{-k_0a}\quad \text{and}\quad ikFe^{ika}=Ck_0e^{k_0a}-Dk_0e^{-k_0a}\tag{b}\]</div>
+<p>Constant <span class="math notranslate nohighlight">\(F\)</span> has to be found. The calculation can be started using SymPy as follows, but then it is easier to do by hand.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the calculation is separated into several steps as some intervention is needed</span>
-<span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">AT</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;L1, L2, a, c, k, k0, AT &#39;</span> <span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span>  <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;B,C,D,F,&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">k_0</span><span class="p">,</span> <span class="n">a</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k,k_0,a&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># define as not complex</span>
+<span class="n">eq1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">B</span> <span class="o">-</span> <span class="n">C</span>  <span class="o">-</span> <span class="n">D</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="n">k_0</span><span class="o">*</span><span class="p">(</span><span class="n">C</span> <span class="o">-</span> <span class="n">D</span><span class="p">)</span>              <span class="c1"># 1j is sqrt(-1) in python</span>
+<span class="n">eq3</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">C</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k_0</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">D</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k_0</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="n">eq4</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">k_0</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k_0</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">k_0</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k_0</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
 
-<span class="n">i</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">I</span>    <span class="c1"># sympy sqrt(-1)</span>
-<span class="n">L1</span> <span class="o">=</span> <span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>    <span class="c1"># calculated from definition in text, then x replaced by a.</span>
-<span class="n">L2</span> <span class="o">=</span>  <span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
-<span class="n">AT</span> <span class="o">=</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">L1</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">L2</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">L2</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">k</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>  <span class="c1"># defined in text</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span><span class="n">eq2</span><span class="p">,</span><span class="n">eq3</span><span class="p">,</span><span class="n">eq4</span><span class="p">),(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">F</span><span class="p">))</span>            <span class="c1"># solve and return value for F </span>
 
-<span class="c1"># make complex conjugate </span>
-<span class="n">T</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">trigsimp</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">AT</span><span class="p">)</span><span class="o">*</span><span class="n">AT</span><span class="p">)</span>     <span class="c1"># transmission</span>
-<span class="n">ans</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">))</span>
-<span class="n">ans</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">F</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2079,51 +2165,47 @@ title="Print to PDF"
 <img alt="../_images/Diff-eqns-answers-22-37_8_0.png" src="../_images/Diff-eqns-answers-22-37_8_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simplify expression and convert to sine form</span>
-<span class="n">ans1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">))</span>
-<span class="n">ans3</span> <span class="o">=</span> <span class="n">ans1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">),</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ans3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-22-37_9_0.png" src="../_images/Diff-eqns-answers-22-37_9_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># try more fiddling about produces formula that looks somewhat like the expected answer.</span>
-<span class="n">ans4</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span> <span class="n">ans3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span>
-<span class="n">ans5</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">ans4</span><span class="p">),</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">ans5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-22-37_10_0.png" src="../_images/Diff-eqns-answers-22-37_10_0.png" />
-</div>
-</div>
-<p>Substituting for <span class="math notranslate nohighlight">\(c^2\)</span> and rearranging the expression can be rewritten as</p>
+<p>Taking the last result, multiply top and bottom by <span class="math notranslate nohighlight">\(e^{-ak}\)</span> and find that</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle T =\displaystyle \frac{4(k^2-k_0^2)k^2}{4(k^2-k_0^2)k^2+ k_0^4\sin^2\left(2a\sqrt{k^2-k_0^2}\right)  }\]</div>
-<p>and using <span class="math notranslate nohighlight">\(\displaystyle k^2-k_0^2= 2m(E-V_0)/\hbar\)</span> the transmission simplifies to</p>
+\[\displaystyle F= \frac{4ikk_0e^{-iak} }{k^2e^{ak_0}-k^2e^{-ak_0}+2ikk_0e^{ak_0}+2ikk_0e^{-ak_0}-k_0^2e^{ak_0} +k_0e^{-ak_0} }\]</div>
+<p>where <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>. After some rearranging and using the identities</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle T =\displaystyle \frac{4E(E-V_0)}{ 4E(E-V_0)+V_0^2  \sin^2\left(2a\sqrt{2m(E-V_0) }/\hbar\right) }\]</div>
-<p>which is the required expression. Notice that the expression is dimensionless and both <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(V_0\)</span> are energies. Figure 40 (left) shows how the transmittance varies with energy relative to that of the potential <span class="math notranslate nohighlight">\(V_0\)</span> and (right) how the transmittance varies with the length of the potential measured in units of <span class="math notranslate nohighlight">\(k_0\)</span>.</p>
-<p>The left-hand figure shows <em>resonances</em> even though the particle’s energy is above the barrier. A classical particle (dashed line) would not be affected by the barrier, but in the quantum case, the particle can still ‘feel’ the potential and which leads to oscillation in the transmission past the barrier. The maxima occur when the sine is zero, which happens when its argument is a multiple of <span class="math notranslate nohighlight">\(n\pi\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is a positive integer. The oscillations in transmission are due to interference between incoming particles and those reflected off the barrier.</p>
-<p>When the energy is below the barrier, <span class="math notranslate nohighlight">\(\displaystyle c^2= - \frac{2m}{\hbar^2}(E-V_0)\)</span> and is negative this the Schroedinger equation becomes <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2\varphi}{dx^2}-c^2\varphi =0\)</span> which has solutions related to the first case and are <span class="math notranslate nohighlight">\(\varphi_1=\cos(icx)=\cosh(cx), \; \varphi_2=\sinh(cx)c \)</span>. The transmission may now simply be written down by changing <span class="math notranslate nohighlight">\(\displaystyle (E-V_0) \to (V_0-E)\)</span> and <span class="math notranslate nohighlight">\( \sin \to \sinh\)</span>.</p>
-<p><img alt="Drawing" src="../_images/diffeqn-fig40.png" /></p>
-<p>Fig. 40 Left: Transmission of particles past a barrier vs reduced energy with <span class="math notranslate nohighlight">\(a\sqrt{2mV_0/\hbar }= 5\)</span>. <span class="math notranslate nohighlight">\(V_0\)</span> is the barrier height. When <span class="math notranslate nohighlight">\(E/V_0 \lt 1\)</span> the curve gives the amount of transmission due to tunnelling. When <span class="math notranslate nohighlight">\(E/V_0 \gt 1\)</span> the variation is due to interference between incoming particles and those reflected off the barrier. The dotted lines show the transmission profile of a classical particle. Right. The transmission vs reduced length of barrier as <span class="math notranslate nohighlight">\(a/k_0\)</span>. The peaks occur when the argument to the sine are multiples of <span class="math notranslate nohighlight">\(\pi\)</span> and thus the sine is zero and <span class="math notranslate nohighlight">\(T = 1\)</span>. The minima occur when the sin is <span class="math notranslate nohighlight">\(\pm 1\)</span>, i.e <span class="math notranslate nohighlight">\(T_{min}=\displaystyle \frac{4E(E-V_0)}{ 4E(E-V_0)+V_0^2  }\)</span> and is shown as the horizontal dashed line.</p>
-<hr class="docutils" />
-<p>The transmission becomes</p>
+\[\displaystyle 2\sinh(x)=e^x -e^{-x},\qquad 2\cosh(x)=e^x+e^{-x}\]</div>
+<p>we obtain</p>
 <div class="math notranslate nohighlight">
-\[T =\displaystyle \frac{4(EV_0-E)}{ 4E(V_0-E)+V_0^2  \sinh^2\left(2a\sqrt{2m(V_0-E) }/\hbar\right) }\]</div>
-<p>which, since <span class="math notranslate nohighlight">\(T\)</span> is not zero,  shows that tunnelling occurs into the barrier. When the argument to the sinh is large, the transmission becomes</p>
+\[\displaystyle F=\frac{4ikk_0e^{-iak}} {2(k_0^2-k^2)\sinh(ak_0) + 4ikk_0\cosh(ak_0) }\]</div>
+<p>The transmission is defined as <span class="math notranslate nohighlight">\(|F|^2\)</span> so multiply by the complex conjugate, which means replacing <span class="math notranslate nohighlight">\(i\)</span> with <span class="math notranslate nohighlight">\(-i\)</span> and recalling that <span class="math notranslate nohighlight">\(i^2=-1\)</span> the result is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle T \approx e^{-\sqrt{2m(V_0-E)a/\hbar} }\]</div>
+\[\displaystyle T=\frac{4k^2k_0^2}{(k^2+k_0^2)^2\sinh^2(ak_0)+4k^2k_0^2},\quad\text{where}\quad k^2=\frac{2m}{\hbar^2} E,\quad \text{and}\quad k^2_0=\frac{2m}{\hbar^2} (V_0-E)\tag{c}\]</div>
+<p>The identity <span class="math notranslate nohighlight">\(\cosh^2(..)=1+\sinh^2(..)\)</span> was used.</p>
+<p>Substituting for <span class="math notranslate nohighlight">\(k,k_0\)</span> the transmission becomes</p>
+<div class="math notranslate nohighlight">
+\[T =\displaystyle \frac{4E(V_0-E)}{ 4E(V_0-E)+V_0^2  \sinh^2\left(a\sqrt{2m(V_0-E) }/\hbar\right) },\qquad\qquad E\lt V_0\tag{d}\]</div>
+<p>which, since <span class="math notranslate nohighlight">\(T\)</span> is not zero, shows that tunnelling occurs into the barrier. When the argument to the sinh() is large, the transmission becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T \approx e^{-\sqrt{8ma^2(V_0-E)/\hbar} }\]</div>
 <p>hence the probability of transmission decays exponentially when the barrier is wide, the particle is heavy, or the available energy is small relative to the barrier’s height; this effect is called tunnelling. The ‘wave’ entering the barrier is called ‘evanescent’.</p>
+<p><strong>(d)</strong> <span class="math notranslate nohighlight">\(\pmb{E\gt V_0}\)</span> When the energy is above the barrier, <span class="math notranslate nohighlight">\(V_0-E\)</span> is a negative number and so we must change <span class="math notranslate nohighlight">\(k_0\to ik_0\)</span>.   This means that eqn (c) becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T=\frac{-4k^2k_0^2}{(k^2-k_0^2)^2\sinh^2(iak_0)-4k^2k_0^2}\]</div>
+<p>and using <span class="math notranslate nohighlight">\(\sinh(ix)=i\sin(x)\)</span> the equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T=\frac{4k^2k_0^2}{(k^2-k_0^2)^2\sin^2(ak_0)+4k^2k_0^2},\qquad\qquad E\gt V_0\tag{e}\]</div>
+<p><strong>(e)</strong> Let <span class="math notranslate nohighlight">\(r=E/V_0\)</span>. In equation (d) or (e) divide top and bottom by <span class="math notranslate nohighlight">\(4E(V_0-E)\)</span> to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T=\frac{1}{1+ V_0^2(4E(V_0-E))^{-1}\sin\left(a\sqrt{ 2mV_0(1-E/V_0)/\hbar^2}\right) }\]</div>
+<p>and then replace <span class="math notranslate nohighlight">\(E/V_0=r\)</span> to give the equation given in the question. A sin or sinh function is used depending on whether <span class="math notranslate nohighlight">\(r\)</span> is greater or less than unity.</p>
+<p>Figure 40 (left) shows how the transmittance varies with relative energy <span class="math notranslate nohighlight">\(E/V_0\)</span> and (right) how the transmittance varies with the length of the potential <span class="math notranslate nohighlight">\(a\)</span> measured in units of <span class="math notranslate nohighlight">\(k_0\)</span>.</p>
+<p><strong>(f)</strong> The left-hand figure shows <em>resonances</em> even though the particle’s energy is above the barrier. A classical particle (dashed line) would not be affected by the barrier, but in the quantum case, the particle can still ‘feel’ the potential and which leads to oscillation in the transmission past the barrier. Complete transmission occurs when the sine term is zero, which is when</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r_{max\; T}=1+\left(\frac{n\pi}{\sqrt{2ma^2V_0/\hbar^2 }}\right)^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle \sqrt{2ma^2V_0/\hbar^2 }= 5\)</span> in this example and <span class="math notranslate nohighlight">\(n\)</span> a positive integer. The oscillations in transmission are due to interference the incoming wave/particle and its reflection off the barrier. How the particle represented as a wavepacket is transmitted and reflected by a barrier is shwon in chapter 11 section 4-13 and in fig. 40d of that chapter.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig40.png" /></p>
+<p>Fig. 40 Left: Transmission of particles past a barrier vs reduced energy with <span class="math notranslate nohighlight">\(a\sqrt{2mV_0/\hbar^2 }= 5\)</span>. <span class="math notranslate nohighlight">\(V_0\)</span> is the barrier height. When <span class="math notranslate nohighlight">\(E/V_0 \lt 1\)</span> the curve gives the amount of transmission due to tunnelling. When <span class="math notranslate nohighlight">\(E/V_0 \gt 1\)</span> the variation is due to interference between incoming particles and those reflected off the barrier. The dotted lines show the transmission profile of a classical particle. Right. The transmission vs reduced length of barrier as <span class="math notranslate nohighlight">\(a/k_0\)</span>. The peaks occur when the argument to the sine are multiples of <span class="math notranslate nohighlight">\(\pi\)</span> and thus the sine is zero and <span class="math notranslate nohighlight">\(T = 1\)</span>. The minima occur when the sin is <span class="math notranslate nohighlight">\(\pm 1\)</span>, i.e</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T_{min}= \frac{4E(E-V_0)}{ 4E(E-V_0)+V_0^2  }\]</div>
+<p>and is shown as the horizontal dashed line.</p>
+<hr class="docutils" />
 <p>Tunnelling is important for electrons and protons and less so for heavier atoms or molecules. This is because for a large mass the exponential is reduced by so much that it approaches zero. Tunnelling also describes the umbrella or vibrational inversion motion by which the H atoms in ammonia move. The electrical current in a scanning tunnelling microscope, as its names suggest, is limited by tunnelling when the probe’s tip is very close to a surface. The superconducting quantum interference device, SQUID, is based on tunnelling of electrons through a thin layer of semiconductor sandwiched between two superconducting surfaces. The amount of tunnelling is very sensitive to any external magnetic field, with important applications in medicine.</p>
 <p><strong>Exercise</strong>: Calculate the effect of a negative energy barrier, <span class="math notranslate nohighlight">\(V_0 \lt 0\)</span> on the transmission.</p>
 </section>
@@ -2141,7 +2223,7 @@ title="Print to PDF"
 </section>
 <section id="q35-answer">
 <h2>Q35 answer<a class="headerlink" href="#q35-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The ratio to calculate is simplified to <span class="math notranslate nohighlight">\(c_{av} /c_0\)</span> because, in this example, <span class="math notranslate nohighlight">\(c_f = 0\)</span> and <span class="math notranslate nohighlight">\(c_i = c_0\)</span>. Using the result of the calculation equation (56),</p>
+<p><strong>(a)</strong> The ratio to calculate is simplified to <span class="math notranslate nohighlight">\(c_{av} /c_0\)</span> because, in this example, <span class="math notranslate nohighlight">\(c_f = 0\)</span> and <span class="math notranslate nohighlight">\(c_i = c_0\)</span>. Using the result of the calculation equation (56),</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  r=\frac{2}{\pi L}\int_0^L \sum_{n=1}^\infty (1-(-1)^n)\frac{e^{-Dt(n\pi/L)^2}}{n}\sin\left( \frac{n\pi x}{L} \right)dx\]</div>
 <p>Although this is a complicated expression, <span class="math notranslate nohighlight">\(x\)</span> is only found in the sine making the integral straightforward and produces</p>
@@ -2150,14 +2232,14 @@ title="Print to PDF"
 <p>On expanding the summation, each even <span class="math notranslate nohighlight">\(n\)</span> term is zero and the odd terms produce <span class="math notranslate nohighlight">\(8/\pi^2\)</span> and only the exponentials remain and give a highly non-single exponential decay,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle r=\frac{8}{\pi^2}\left(e^{-Dt(\pi/L)^2} +e^{-9Dt(\pi/L)^2}+e^{-25Dt(\pi/L)^2}+\cdots \right)\]</div>
-<p>(b) Whatever the value of the second and subsequent terms in the series are, they are clearly far smaller than the first and can reasonably be ignored at long times. Here the ratio, which is the average concentration diffused out of the slab, decays exponentially with a rate constant <span class="math notranslate nohighlight">\(\displaystyle \pi^2D/L^2\)</span>,or lifetime <span class="math notranslate nohighlight">\(\displaystyle L^2/\pi^2D\)</span>, from which <span class="math notranslate nohighlight">\(D\)</span> can be measured for example in a log linear plot by a least squares calculation. At short times, the second and subsequent terms must be included, but these will soon die away. Typically if <span class="math notranslate nohighlight">\(D\)</span> = 10<sup>−9</sup> m<sup>2</sup> s<sup>−1</sup> and <span class="math notranslate nohighlight">\(L\)</span> = 0.01 m then the lifetime is <span class="math notranslate nohighlight">\(\approx\)</span> 10<sup>4</sup> s which is quite easily measured, and is well separated from the second term which has a lifetime 9 times smaller.</p>
+<p><strong>(b)</strong> Whatever the value of the second and subsequent terms in the series are, they are clearly far smaller than the first and can reasonably be ignored at long times. Here the ratio, which is the average concentration diffused out of the slab, decays exponentially with a rate constant <span class="math notranslate nohighlight">\(\displaystyle \pi^2D/L^2\)</span>,or lifetime <span class="math notranslate nohighlight">\(\displaystyle L^2/\pi^2D\)</span>, from which <span class="math notranslate nohighlight">\(D\)</span> can be measured for example in a log linear plot by a least squares calculation. At short times, the second and subsequent terms must be included, but these will soon die away. Typically if <span class="math notranslate nohighlight">\(D\)</span> = 10<sup>−9</sup> m<sup>2</sup> s<sup>−1</sup> and <span class="math notranslate nohighlight">\(L\)</span> = 0.01 m then the lifetime is <span class="math notranslate nohighlight">\(\approx\)</span> 10<sup>4</sup> s which is quite easily measured, and is well separated from the second term which has a lifetime 9 times smaller.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig40a.png" /></p>
 <p>Fig 41. The ratio <span class="math notranslate nohighlight">\(r\)</span> plotted with several terms (blue) and with just the first term (red) showing the highly non-single exponential decay due to increasing size of <span class="math notranslate nohighlight">\(n^2\)</span> in the exponential terms as the summation proceeds. Measurement of the slope at long times would be sufficient to determine the diffusion coefficient.</p>
 </section>
 <hr class="docutils" />
 <section id="q36-answer">
 <h2>Q36 answer<a class="headerlink" href="#q36-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The solution is given directly by equation (64); <span class="math notranslate nohighlight">\(\displaystyle u =\sum_{n=1}^\infty b_n\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right)\)</span>.</p>
+<p><strong>(a)</strong> The solution is given directly by equation (64); <span class="math notranslate nohighlight">\(\displaystyle u =\sum_{n=1}^\infty b_n\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right)\)</span>.</p>
 <p>The <span class="math notranslate nohighlight">\(b_n\)</span> coefficients are calculated with the integral <span class="math notranslate nohighlight">\(\displaystyle b_n=\frac{2}{\pi c n}\int_0^L (xL-x^2)\sin\left(\frac{n\pi x}{L}\right)\)</span>.</p>
 <p>The first term is</p>
 <div class="math notranslate nohighlight">
@@ -2174,13 +2256,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-22-37_12_0.png" src="../_images/Diff-eqns-answers-22-37_12_0.png" />
+<img alt="../_images/Diff-eqns-answers-22-37_11_0.png" src="../_images/Diff-eqns-answers-22-37_11_0.png" />
 </div>
 </div>
 <p>Combining these equations,gives the coefficients <span class="math notranslate nohighlight">\(\displaystyle b_n=2(1-(-1)^n)\left( \frac{L}{n\pi} \right)^3\)</span>. The solution to the displacement is therefore the series</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle u = 4\left( \frac{L}{\pi} \right)^3\left( \sin\left( \frac{\pi ct}{L}\right)\sin\left(\frac{\pi x}{L} \right)  +\frac{1}{3^3} \sin\left( \frac{3\pi ct}{L}\right)\sin\left(3\frac{\pi x}{L} \right)\\ +\frac{1}{5^3} \sin\left( \frac{5\pi ct}{L}\right)\sin\left(5\frac{\pi x}{L} \right) +\cdots \right) \end{split}\]</div>
-<p>(b) The displacement can be very well approximated by the first term, the second being nine times smaller and the third even smaller.</p>
+<p><strong>(b)</strong> The displacement can be very well approximated by the first term, the second being nine times smaller and the third even smaller.</p>
 </section>
 <section id="q37-answer">
 <h2>Q37 answer<a class="headerlink" href="#q37-answer" title="Permalink to this headline">#</a></h2>
@@ -2196,7 +2278,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-22-37_15_0.png" src="../_images/Diff-eqns-answers-22-37_15_0.png" />
+<img alt="../_images/Diff-eqns-answers-22-37_14_0.png" src="../_images/Diff-eqns-answers-22-37_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2207,7 +2289,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-22-37_16_0.png" src="../_images/Diff-eqns-answers-22-37_16_0.png" />
+<img alt="../_images/Diff-eqns-answers-22-37_15_0.png" src="../_images/Diff-eqns-answers-22-37_15_0.png" />
 </div>
 </div>
 </section>
@@ -2275,7 +2357,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-22-37_18_0.png" src="../_images/Diff-eqns-answers-22-37_18_0.png" />
+<img alt="../_images/Diff-eqns-answers-22-37_17_0.png" src="../_images/Diff-eqns-answers-22-37_17_0.png" />
 </div>
 </div>
 <p>The figure below shows the motion of mass 1 vs time and the envelope which has a frequency of half the difference in the normal mode frequencies. The motion shows beats at the difference frequency between <span class="math notranslate nohighlight">\(\omega_1\)</span> and <span class="math notranslate nohighlight">\(\sqrt{2\omega_0^2+\omega_1^2}\)</span>. The period is <span class="math notranslate nohighlight">\(2\pi/\Delta \omega\)</span>.</p>

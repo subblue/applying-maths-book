@@ -175,12 +175,11 @@ for i in range(1,steps,1):
 # Based on algorithm by P. Nahin,'Duelling Idiots and other Probability Puzzles' publ. Princeton University Press.
 # n = same number on each side
 # white in volume 1, black in volume 2
-
+rng = np.random.default_rng()           # initialise random number generator
 n = 500                                 # number of molecules in each volume
 steps = 500*n                           # number of steps taken
 fract = np.zeros(steps,dtype=float)     # array to save results
-rng   = np.random.default_rng()         # initialise random number generator  
-
+ 
 def sim(n):                             # Ehrenfeld simulation algorithm
     pw1 = 1                             # prob of white in volume 1
     pb2 = 1                             # prob of black in volume 2
@@ -682,25 +681,25 @@ for i in range(reps):
 # 
 # ### **Algorithm 2. Simulation** 
 # 
-# An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The 'lifetime' of the chain is $1/(1-p)$ in terms of the chain length and the 'time' is $-1/(1-p)\ln(rand)$ where 'rand' is a uniformly distributed random number in the range $0\to 1$. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.
+# An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The 'lifetime' of the chain is $1/(1-p)$ in terms of the chain length and the 'time' is $-1/(1-p)\ln(rng.random())$ where 'rng.randon()' is a uniformly distributed random number in the range $0\to 1$. The list of chain lengths is made into a histogram as before. The code is simple and gives similar results to the other method.
 
 # In[9]:
 
 
 # Algorithm 2. Step-wise chain growth polymerisation 
-
+rng = np.random.default_rng()                    # initialise random number generator
 reps= 100000                       # number of calculations
 p   = 0.99                         # prob of growth over termination
 tau = 1/(1-p)                      # length of chain when distribution is 1/e of maximum
 chains= np.zeros(reps,dtype=int)   # array holds all chain lengths
 
 for i in range(reps):
-    rnum = rng.uniform()                      # random 0..1
+    rnum = rng.random()            # random 0..1 uniform distribution
     chains[i] = -tau*np.log(rnum)
     pass
 # in condensed form the loop is condensed into one line
 
-chains[:] = -1/(1-p)*np.log( rng.uniform(size=reps) )
+chains[:] = -1/(1-p)*np.log( rng.random(size=reps) )
 
 
 # In[10]:

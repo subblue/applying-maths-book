@@ -168,7 +168,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 #fig1= plt.figure(figsize=(6, 6))     # remove # symbol in each line to see plot
 #plt.rcParams.update({'font.size' : 16})
-
+rng = np.random.default_rng()               # initialise random number generator
 bins = 500                # number of bins
 maxt = 150.0              # time in ns
 kf   = 1/20.0             # rate constnat 1/ns
@@ -186,7 +186,7 @@ Acount[0] = nA                                    # first data point
 indx = 0
 while indx < bins and nA > 0  :
     a0 = kf*nA                                    # only 1 species so no sum 
-    t0 = -np.log(np.random.random_sample())/a0    # calc time eqn 11     
+    t0 = -np.log(rng.random())/a0    # calc time eqn 11     
     t  = t + t0                                   # increment
     indx = int(np.round(t*bins/maxt))             # work out bin number
      
@@ -197,13 +197,13 @@ while indx < bins and nA > 0  :
     pass
 
 #print( Acount[0] )
-#plt.scatter(dtime,Acount,color='blue',s=3)  # remove first symbols # to see plots
+#plt.scatter(dtime,Acount,color='black',s=1)  # remove first symbols # to see plots
 #plt.yscale('log')
 #plt.ylim([1,2*A0])
 #plt.ylabel('count')
 #plt.xlabel('time /ns')
 #plt.tight_layout()
-
+#
 #plt.show()
 
 
@@ -246,7 +246,7 @@ while indx < bins and nA > 0  :
 
 #  Algorithm: Gillespie method. 
 #   Excited state decay to triplet and ground state. A* ->G  kf , A* -> T kisc
-
+rng = np.random.default_rng()               # initialise random number generator
 A0   = 20000                        # initial number A*
 bins = 200
 maxt = 100.0                        # time in ns
@@ -274,21 +274,21 @@ Acount[0] = nA
 Tcount[0] = 0
 Gcount[0] = 0
 
-indx = 0                            # index refers to histogram bin number
+indx = 0                                  # index refers to histogram bin number
 while indx < bins and nA > 0  :
     a0 = k1*nA
-    t0 = -np.log(np.random.random_sample())/a0         # guess new time eqn 11
+    t0 = -np.log(rng.random())/a0         # guess new time eqn 11
     t  = t + t0
-    indx = int(np.round(t*bins/maxt))                  # integer time bin 
+    indx = int(np.round(t*bins/maxt))     # integer time bin 
     if indx < bins: 
-        if np.random.random_sample() < phi :           # check what happens
-            nG = nG + 1                                # ground state produced add 1
+        if rng.random() < phi :           # check what happens
+            nG = nG + 1                   # ground state produced add 1
             Gcount[indx] = nG
         else :
-            nT = nT + 1                                # triplet produced add 1
+            nT = nT + 1                   # triplet produced add 1
             Tcount[indx] = nT
             pass
-        nA = nA - 1                                    # remove 1 from excited state            
+        nA = nA - 1                       # remove 1 from excited state            
         Acount[indx] = nA
         pass
     pass

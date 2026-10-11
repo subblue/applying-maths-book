@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1980,12 +1980,11 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <span class="c1"># Based on algorithm by P. Nahin,&#39;Duelling Idiots and other Probability Puzzles&#39; publ. Princeton University Press.</span>
 <span class="c1"># n = same number on each side</span>
 <span class="c1"># white in volume 1, black in volume 2</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>           <span class="c1"># initialise random number generator</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">500</span>                                 <span class="c1"># number of molecules in each volume</span>
 <span class="n">steps</span> <span class="o">=</span> <span class="mi">500</span><span class="o">*</span><span class="n">n</span>                           <span class="c1"># number of steps taken</span>
 <span class="n">fract</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>     <span class="c1"># array to save results</span>
-<span class="n">rng</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>         <span class="c1"># initialise random number generator  </span>
-
+ 
 <span class="k">def</span> <span class="nf">sim</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                             <span class="c1"># Ehrenfeld simulation algorithm</span>
     <span class="n">pw1</span> <span class="o">=</span> <span class="mi">1</span>                             <span class="c1"># prob of white in volume 1</span>
     <span class="n">pb2</span> <span class="o">=</span> <span class="mi">1</span>                             <span class="c1"># prob of black in volume 2</span>
@@ -2418,23 +2417,23 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <hr class="docutils" />
 <section id="algorithm-2-simulation">
 <h3><strong>Algorithm 2. Simulation</strong><a class="headerlink" href="#algorithm-2-simulation" title="Permalink to this headline">#</a></h3>
-<p>An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The ‘lifetime’ of the chain is <span class="math notranslate nohighlight">\(1/(1-p)\)</span> in terms of the chain length and the ‘time’ is <span class="math notranslate nohighlight">\(-1/(1-p)\ln(rand)\)</span> where ‘rand’ is a uniformly distributed random number in the range <span class="math notranslate nohighlight">\(0\to 1\)</span>. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.</p>
+<p>An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The ‘lifetime’ of the chain is <span class="math notranslate nohighlight">\(1/(1-p)\)</span> in terms of the chain length and the ‘time’ is <span class="math notranslate nohighlight">\(-1/(1-p)\ln(rng.random())\)</span> where ‘rng.randon()’ is a uniformly distributed random number in the range <span class="math notranslate nohighlight">\(0\to 1\)</span>. The list of chain lengths is made into a histogram as before. The code is simple and gives similar results to the other method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 2. Step-wise chain growth polymerisation </span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                    <span class="c1"># initialise random number generator</span>
 <span class="n">reps</span><span class="o">=</span> <span class="mi">100000</span>                       <span class="c1"># number of calculations</span>
 <span class="n">p</span>   <span class="o">=</span> <span class="mf">0.99</span>                         <span class="c1"># prob of growth over termination</span>
 <span class="n">tau</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>                      <span class="c1"># length of chain when distribution is 1/e of maximum</span>
 <span class="n">chains</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">reps</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>   <span class="c1"># array holds all chain lengths</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
-    <span class="n">rnum</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span>                      <span class="c1"># random 0..1</span>
+    <span class="n">rnum</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>            <span class="c1"># random 0..1 uniform distribution</span>
     <span class="n">chains</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">tau</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rnum</span><span class="p">)</span>
     <span class="k">pass</span>
 <span class="c1"># in condensed form the loop is condensed into one line</span>
 
-<span class="n">chains</span><span class="p">[:]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">reps</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">chains</span><span class="p">[:]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">reps</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2446,8 +2445,8 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 20,   2,   7, 122,  93,  44,  69, 137,  39,  85,  18, 106,  14,
-       345,  27, 156,  87, 290,  20,   1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([118,   7,  99,  98,  13,  18, 246, 167,  11,   1,   3, 157, 360,
+        91,  20, 260, 141,  38, 133,  64])
 </pre></div>
 </div>
 </div>

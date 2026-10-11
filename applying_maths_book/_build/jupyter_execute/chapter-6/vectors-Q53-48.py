@@ -27,7 +27,11 @@
 # 
 # Figure 46. Cyclohexane geometry, labels and vectors. The dihedral angle $\psi$ for part (a) is shown.
 # ________________
-# **Strategy:** (a-b) The C-C bonds are all the same length and the angles are also the same. The chair shaped molecule has a centre of symmetry and the boat has a mirror plane. Use vector notation in the x, y, z frame so that any vector representing a bond, is $a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$ with coefficients $a, b, c$ which must be determined for each vector. Choose a right-angled axes set with the origin at the centre of inversion. The most difficult part of this problem is determining the coordinates of the atoms. The tetrahedral bond angles are given by $\cos(\theta) = -1/3$ with $\theta$ in radians, equivalent to $109.47^\text{o}$. All the bond lengths are $d$. (c-e) Dihedral or torsion angles are the angles between planes. The dihedral angle is given by equation (6.54). If the vectors $\vec n$ and $\vec m$ are normal to the two planes, the cross and dot product should have the order $\vec m\cdot\vec n = (d_1 \times d_2)\cdot(d_2 \times d_5)$. The vectors are all defined to be in the same direction as shown on the figure.
+# **Strategy:** (a-b) The C-C bonds are all the same length and the angles are also the same. The chair shaped molecule has a centre of symmetry and the boat has a mirror plane. Use vector notation in the x, y, z frame so that any vector representing a bond, is $a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$ with coefficients $a, b, c$ which must be determined for each vector. Choose a right-angled axes set with the origin at the centre of inversion. The most difficult part of this problem is determining the coordinates of the atoms. The tetrahedral bond angles are given by $\cos(\theta) = -1/3$ with $\theta$ in radians, equivalent to $109.47^\text{o}$. All the bond lengths are $d$. (c-e) Dihedral or torsion angles are the angles between planes. The dihedral angle is given by equation (6.54). If the vectors $\vec n$ and $\vec m$ are normal to the two planes, the cross and dot product should have the order 
+# 
+# $$\displaystyle \vec m\cdot\vec n = (d_1 \times d_2)\cdot(d_2 \times d_5)$$
+# 
+# The vectors are all defined to be in the same direction as shown on the figure.
 # 
 # ## Q55 Torsion angles in a protein
 # 

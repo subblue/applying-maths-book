@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1633,11 +1633,11 @@ title="Print to PDF"
 <p>The numerical result based on the series expansion produces a poor result up to <span class="math notranslate nohighlight">\(x = 20\)</span>, most probably due to numerical precision /rounding errors in adding and subtracting large powers of <span class="math notranslate nohighlight">\(x\)</span>. The answer to smaller <span class="math notranslate nohighlight">\(x\)</span> values is more accurate but large numbers of terms are needed as shown in the list below the next figure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># **** The very last part of this calculation may be v slow ****</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The very last part of this calculation is slow</span>
 <span class="c1"># because the integration is first done algebraically.</span>
-<span class="c1"># mixture is sympy and numpy python used.</span>
+<span class="c1"># A mixture of SymPy, NumPy and Python is used.</span>
 
-<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="n">z</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
 <span class="n">sfunc</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>             <span class="c1"># SymPy function</span>
@@ -1653,7 +1653,7 @@ title="Print to PDF"
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxx</span><span class="p">,</span> <span class="n">numx</span> <span class="p">)</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact function&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">6</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact function&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">aseries</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series to &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$x^</span><span class="si">{30}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxx</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -1742,14 +1742,12 @@ calculating series to limit 30 to 45 and integral values
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------</span>
-<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>              <span class="c1"># will overflow if n is too large &gt; 100</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>              <span class="c1"># assume n is positive integer. will overflow if n is too large &gt; 100</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1">#--------------------</span>
-
-<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
 <span class="n">bfact</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span>
 
@@ -1757,26 +1755,23 @@ calculating series to limit 30 to 45 and integral values
 <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">maxn</span><span class="p">,</span><span class="n">maxn</span><span class="p">)</span>
 <span class="n">afact</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxn</span><span class="p">)]</span>    
 
-<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">bfact</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$(n-1/2)\ln(n)-n$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">],</span><span class="n">afact</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\ln(n!)$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">bfact</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$(n-1/2)\ln(n)-n$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">],</span><span class="n">afact</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\ln(n!)$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln(n!)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 500x500 with 0 Axes&gt;
-</pre></div>
-</div>
-<img alt="../_images/chapter-5-answers-27-32_7_1.png" src="../_images/chapter-5-answers-27-32_7_1.png" />
+<img alt="../_images/chapter-5-answers-27-32_7_0.png" src="../_images/chapter-5-answers-27-32_7_0.png" />
 </div>
 </div>
 <p>Figure 27. Log of the factorial function (upper line) and log of Stirling’s approximation, which is accurate only at large <span class="math notranslate nohighlight">\(n\)</span>.</p>
@@ -1784,18 +1779,26 @@ calculating series to limit 30 to 45 and integral values
 <hr class="docutils" />
 <section id="q30-answer">
 <h2>Q30 answer<a class="headerlink" href="#q30-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The rotational energy is <span class="math notranslate nohighlight">\(E_J = BJ(J + 1)\)</span> and the partition function accounting for the 2<span class="math notranslate nohighlight">\(J\)</span> + 1 multiplicity
-of the levels is</p>
+<p><strong>(a)</strong> The rotational energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_J = BJ(J + 1)\]</div>
+<p>and the partition function accounting for the 2<span class="math notranslate nohighlight">\(J\)</span> + 1 multiplicity of the levels is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Z = \sum\limits_{J=0}^\infty (2J + 1)e^{−BJ(J+1)/k_BT}\]</div>
-<p>where the summation goes as far as is necessary to make the function converge; infinity is rarely needed! When the rotational constant <span class="math notranslate nohighlight">\(B\)</span> is small, the energy levels are closely spaced and the integral of <span class="math notranslate nohighlight">\(Z\)</span> approximates better to the summation than when <span class="math notranslate nohighlight">\(B\)</span> is large. As <span class="math notranslate nohighlight">\(B\)</span> is inversely proportional to the reduced mass of the molecule, <span class="math notranslate nohighlight">\(B = \hbar^2/2\mu r_e^2\)</span> , and to the equilibrium bond length squared, both of which are large in <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> compared to HD, hence the approximation is poor for HD.</p>
-<p>(b) The Euler–Maclaurin formula is going to require then evaluation of the integral</p>
+<p>where the summation goes as far as is necessary to make the function converge; infinity is rarely needed! When the rotational constant <span class="math notranslate nohighlight">\(B\)</span> is small, the energy levels are closely spaced and the integral of <span class="math notranslate nohighlight">\(Z\)</span> approximates better to the summation than when <span class="math notranslate nohighlight">\(B\)</span> is large. As <span class="math notranslate nohighlight">\(B\)</span> is inversely proportional to the reduced mass of the molecule,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B = \frac{\hbar^2}{2\mu r_e^2}\]</div>
+<p>and to the equilibrium bond length squared, both of which are large in <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> compared to HD, hence the approximation is poor for HD.</p>
+<p><strong>(b)</strong> The Euler–Maclaurin formula is going to require then evaluation of the integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\limits_{J=0}^\infty (2J+1)e^{-BJ(J+1)/k_BT}dJ\]</div>
 <p>and the first, third, and possibly the fifth derivatives with respect to <span class="math notranslate nohighlight">\(J\)</span>. The integral can clearly be performed by splitting it into two terms; the result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\limits_{J=0}^\infty (2J+1)e^{-BJ(J+1)/k_BT}dJ =- \left. \frac{k_BT}{B} e^{-BJ(J+1)/k_BT}  \right|_{J=0}^\infty =\frac{k_BT}{B}\]</div>
-<p>because the exponential is zero when <span class="math notranslate nohighlight">\(J\)</span> is infinity and unity when <span class="math notranslate nohighlight">\(J\)</span> is zero. The partition function is proportional to the reduced mass <span class="math notranslate nohighlight">\(\mu\)</span> (in kg) and bond length squared because the rotational constant, more properly labelled <span class="math notranslate nohighlight">\(B_e\)</span> since it reflects the value at the equilibrium bond length, is <span class="math notranslate nohighlight">\(B_e=\hbar/(4\pi c\mu r_e^2)\, \mathrm{cm^{-1}}\)</span> where <span class="math notranslate nohighlight">\(c\)</span> is the speed of light in cm/s.</p>
+<p>because the exponential is zero when <span class="math notranslate nohighlight">\(J\)</span> is infinity and unity when <span class="math notranslate nohighlight">\(J\)</span> is zero. The partition function is proportional to the reduced mass <span class="math notranslate nohighlight">\(\mu\)</span> (in kg) and bond length squared because the rotational constant, more properly labelled <span class="math notranslate nohighlight">\(B_e\)</span> since it reflects the value at the equilibrium bond length, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B_e=\frac{\hbar}{4\pi c\mu r_e^2}\, \mathrm{cm^{-1}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the speed of light in cm/s.</p>
 <p>The value for HD is <span class="math notranslate nohighlight">\(B_e = 45.655\,\mathrm{ cm^{-1}}\)</span> and for <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> is  <span class="math notranslate nohighlight">\(0.03735 \,\mathrm{ cm^{-1}}\)</span>. At <span class="math notranslate nohighlight">\(30\)</span> K the partition function for HD calculated as an integral is <span class="math notranslate nohighlight">\(0.695 \times 30/45.655 = 0.457\)</span> and is <span class="math notranslate nohighlight">\(4.57\)</span> at <span class="math notranslate nohighlight">\(300\)</span> K. The values for <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> are <span class="math notranslate nohighlight">\(556.6\)</span> and <span class="math notranslate nohighlight">\(5566\)</span> at the same two temperatures. The partition function for HD at <span class="math notranslate nohighlight">\(30\)</span> K calculated properly as a summation is <span class="math notranslate nohighlight">\(1.037\)</span>. The calculation is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1880,11 +1883,11 @@ Z =    1.03754 at 30.000 K
 <hr class="docutils" />
 <section id="q31-answer">
 <h2>Q31 answer<a class="headerlink" href="#q31-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is</p>
+<p><strong>(a)</strong> By convention for any type of energy levels the lowest energy is always the more negative. The energy is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  E_{m_z} = -\gamma \hbar B_zm_z \]</div>
 <p>so that this is negative with positive <span class="math notranslate nohighlight">\(m_z\)</span>. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field (<span class="math notranslate nohighlight">\(B_z\)</span> along the <span class="math notranslate nohighlight">\(z\)</span> direction), its energy will be lower than if it opposes the field, so <span class="math notranslate nohighlight">\(m_z\)</span> must be positive. In some nuclei, for example, <span class="math notranslate nohighlight">\(^3H\)</span> and <span class="math notranslate nohighlight">\(^{17}O,\, \gamma \)</span> is negative and the order is then inverted.</p>
-<p>(b) The number of nuclei (particles) in an upper level <span class="math notranslate nohighlight">\(\alpha\)</span> is related by the Boltzmann distribution to those in a lower level <span class="math notranslate nohighlight">\(\beta\)</span> by</p>
+<p><strong>(b)</strong> The number of nuclei (particles) in an upper level <span class="math notranslate nohighlight">\(\alpha\)</span> is related by the Boltzmann distribution to those in a lower level <span class="math notranslate nohighlight">\(\beta\)</span> by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{n_\alpha}{n_\beta}=e^{-\Delta E/k_BT}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta E\)</span> is the difference in energy between levels which is <span class="math notranslate nohighlight">\(\Delta E =E_\alpha-E_\beta=-\gamma \hbar B_z[-1/2-1/2]=\gamma \hbar B_z\)</span> and <span class="math notranslate nohighlight">\(m_{z_\alpha}=-1/2,\; m_{z_\beta}=+1/2\)</span>. The fractional population is <span class="math notranslate nohighlight">\(f=(n_\beta - n_\alpha)/(n_\beta + n_\alpha)\)</span> and substituting for <span class="math notranslate nohighlight">\(n_\alpha\)</span> produces</p>
@@ -1899,8 +1902,8 @@ Z =    1.03754 at 30.000 K
 </section>
 <section id="q32-answer">
 <h2>Q32 answer<a class="headerlink" href="#q32-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Hooke’s law states that force is directly proportional to extension; <span class="math notranslate nohighlight">\(F = kx\)</span> with force constant <span class="math notranslate nohighlight">\(k\)</span>. The force is also the derivative of <em>energy</em> with extension.</p>
-<p>(b) Differentiating the energy by <span class="math notranslate nohighlight">\(x\)</span> produces the force,</p>
+<p><strong>(a)</strong> Hooke’s law states that force is directly proportional to extension; <span class="math notranslate nohighlight">\(F = kx\)</span> with force constant <span class="math notranslate nohighlight">\(k\)</span>. The force is also the derivative of <em>energy</em> with extension.</p>
+<p><strong>(b)</strong> Differentiating the energy by <span class="math notranslate nohighlight">\(x\)</span> produces the force,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F=\frac{dU}{dx}=-T\frac{dS}{dx}-P\frac{dV}{dx}\]</div>
 <p>but as the volume is constant, <span class="math notranslate nohighlight">\(\displaystyle F=\frac{dU}{dx}=-T\frac{dS}{dx}\)</span>.</p>
@@ -1931,7 +1934,12 @@ The derivative of <span class="math notranslate nohighlight">\(S\)</span> is mos
 <p>At small extension, the log terms in the force can be expanded in <span class="math notranslate nohighlight">\(\alpha\)</span> to give</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F=\frac{k_BT}{2L}\left[\alpha - \alpha^2/2+\cdots  \right] - \frac{k_BT}{2L}\left[-\alpha - \alpha^2/2-\cdots  \right]\]</div>
-<p>so that <span class="math notranslate nohighlight">\(F = x k_BT/(NL^2)\)</span> which shows that at small extension, <span class="math notranslate nohighlight">\(x\)</span>, this is linearly proportional to the applied force which is Hooke’s Law. The force constant is <span class="math notranslate nohighlight">\(k_BT/(NL^2)\)</span>.</p>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F = x \frac{k_BT}{NL^2}\]</div>
+<p>which shows that at small extension, <span class="math notranslate nohighlight">\(x\)</span>, this is linearly proportional to the applied force which is Hooke’s Law. The force constant is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k=\frac{k_BT}{NL^2}\]</div>
 <p>The plot below shows the approximate force equation just derived but plotted as <span class="math notranslate nohighlight">\(FL/k_BT\)</span>  vs. fractional extension <span class="math notranslate nohighlight">\(\alpha\)</span>. Plotting this way makes the force dimensionless. The full equation is also plotted and the comparison clearly shows the region where the approximation is valid.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1939,14 +1947,14 @@ The derivative of <span class="math notranslate nohighlight">\(S\)</span> is mos
 <span class="n">fapprox</span><span class="o">=</span> <span class="p">[</span><span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>                          <span class="c1"># Hook&#39;s law</span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>  <span class="c1"># reduced force into array</span>
 
-<span class="n">fig4</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">fapprox</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;approximation, Hook&#39;s law&quot;</span><span class="p">)</span>
+<span class="n">fig4</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">fapprox</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hook&#39;s law approximation&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;freely jointed chain&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$ \alpha $&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$FL/k_BT$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Freely jointed chain vs Hook&#39;s law&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1955,7 +1963,7 @@ The derivative of <span class="math notranslate nohighlight">\(S\)</span> is mos
 <img alt="../_images/chapter-5-answers-27-32_15_0.png" src="../_images/chapter-5-answers-27-32_15_0.png" />
 </div>
 </div>
-<p>Fig.5.29 ‘Dimensionless force’, <span class="math notranslate nohighlight">\(FL/k_BT\)</span> vs fractional extension <span class="math notranslate nohighlight">\(\alpha\)</span> (where <span class="math notranslate nohighlight">\(\alpha = x/L\)</span>) for an ‘elastic’ protein. The Hooke’s law region occurs at small extension where force is linearly proportional to <span class="math notranslate nohighlight">\(\alpha\)</span> and is shown as the straight line.</p>
+<p>Fig.5.29 ‘Dimensionless force’, <span class="math notranslate nohighlight">\(FL/k_BT\)</span> vs fractional extension <span class="math notranslate nohighlight">\(\alpha\)</span> (where <span class="math notranslate nohighlight">\(\alpha = x/NL\)</span>) for an ‘elastic’ protein. The Hooke’s law region occurs at small extension where force is linearly proportional to <span class="math notranslate nohighlight">\(\alpha\)</span> and is shown as the straight line.</p>
 <hr class="docutils" />
 <p>As seen in the figure, at low extension Hooke’s law is obeyed, but there is huge deviation as the extension increases. At large extension, the force tends to infinity because here the model protein, made up of many segments, has a finite length when all bonds are taut, and we assume that bonds cannot be broken just by pulling on the protein.</p>
 </section>

@@ -82,7 +82,7 @@ s
 # and when $x \rightarrow 0$ this produces $1$ as the limit. Separately differentiating top and bottom of the original function according to l’Hopital’s rule (Chapter 3.8) produces $\displaystyle e^{-x}$ and in the limit $x \rightarrow 0$ this is $1$.
 # 
 # ## Q19 answer
-# (a) The expansion is $\displaystyle \sum_{k=1} e^{ikx} = e^{ix} + e^{2ix} + e^{3ix} + e^{4ix} +\cdots $
+# **(a)** The expansion is $\displaystyle \sum_{k=1} e^{ikx} = e^{ix} + e^{2ix} + e^{3ix} + e^{4ix} +\cdots $
 # 
 # Removing the first term and substituting $\displaystyle e^{inx} = w^n$ gives $\displaystyle \sum_{k=1}e^{ikx} =e^{ix}(1+w^2 +w^3 +w^4 +\cdots+)$
 # 
@@ -97,7 +97,7 @@ sp.series( 1/(1-w),w )
 
 # which then gives $\displaystyle \sum_{k=1}e^{ikx}=\frac{e^{ix}}{1-e^{ix}}$.
 # 
-# (b) The summation $\sum_{k=1}^\infty e^{ikx}/k$ is very close to the integral of $\sum_{k=1}^\infty e^{ikx}$ calculated in (a). Integrating this sum multiplied by $i$ gives
+# **(b)** The summation $\sum_{k=1}^\infty e^{ikx}/k$ is very close to the integral of $\sum_{k=1}^\infty e^{ikx}$ calculated in (a). Integrating this sum multiplied by $i$ gives
 # 
 # $$\displaystyle i\int\sum\limits_{k=1} e^{ikx} = \sum\limits_{k=1}\frac{e^{ikx}}{k} + c$$
 # 
@@ -158,7 +158,7 @@ sp.simplify(s)
 
 
 # calculation of sinc function
-fig1 = plt.figure(figsize=(5,4))
+fig1 = plt.figure(figsize=(5,3))
 
 x = np.linspace(-3*np.pi,3*np.pi,100)
 sinc2 = lambda x: (np.sin(x)/x)**2
@@ -177,7 +177,7 @@ plt.show()
 # ____
 # 
 # ## Q22 answer
-# (a) The power series expansion has the form $\displaystyle f(s)=e^{-s^2}=1-sf^{'}(0)+\frac{s^2}{s!}f^{''}(0)+\cdots $ and the derivatives are 
+# **(a)** The power series expansion has the form $\displaystyle f(s)=e^{-s^2}=1-sf^{'}(0)+\frac{s^2}{s!}f^{''}(0)+\cdots $ and the derivatives are 
 # 
 # $$\displaystyle  \begin{align}f'(s) &= -2sf(s),\quad f''(s) = -2f(s) - 2sf'(s) \\ f'''(s) &= -2f'(s) - 2f'(s) - 2sf''(s),\quad f^4(s) = -4f''(s) - 2f'''(s) - 2sf'''(s) \end{align}$$
 # 
@@ -189,7 +189,7 @@ plt.show()
 # 
 # $$\displaystyle  \text{erf}(x) \approx \frac{2}{\sqrt{\pi}}\int\limits_0^x  1-s^2 + \frac{s^4}{2} -\cdots ds = \frac{2}{\sqrt{\pi}}\left[   x- \frac{x^3}{3} +\frac{x^5}{10}-\frac{x^7}{42} +\frac{x^9}{216}-\cdots \right] $$
 # 
-# (b) The next calculation compares approximation with exact values 
+# **(b)** The next calculation compares approximation with exact values 
 
 # In[6]:
 
@@ -204,22 +204,28 @@ for x in [0.1,0.5,0.8,1.0]:
     print('{:6.3f}{:12.8f}{:12.8f}'.format( x,erf(x),apprx_erf(x)))
 
 
-# which shows that the series approximation is quite good even up to $x = 1$ if not too much precision is required. Naturally increasing the number of terms in the series will improve the precision. 
+# which shows that the series approximation is quite good even up to $x = 1$ if not too much precision is required. Increasing the number of terms in the series will improve the precision. 
 # 
 # ## Q23 answer
-# The series expansion can be worked out from first principles or looked up and based on $\displaystyle \frac{1}{1-ax} =1+ax+(ax)^2 +(ax)^3 +\cdots$ with $a=1,\,x=t^2$ and provided that $t^2 \lt 1$ the expansion will be valid;
+# The series expansion can be worked out from first principles or looked up and based on 
+# 
+# $$\displaystyle \frac{1}{1-ax} =1+ax+(ax)^2 +(ax)^3 +\cdots$$
+# 
+# with $a=1,\,x=t^2$ and provided that $t^2 \lt 1$ the expansion will be valid;
 # 
 # $$\displaystyle \frac{1}{1-t^2} \approx 1+t^2 +t^4 +t^6 +\cdots$$
 # 
-# Integrating term by term gives $\displaystyle \tanh^{-1}(x) \approx \left[t + t^3/3 + t^5/5 + \cdots \right]_0^{x} = x + x^3/3 + x^5/5 + \cdots$.
+# Integrating term by term gives 
 # 
-# This series can be summed and compared to an accurate calculation;
+# $$\displaystyle \tanh^{-1}(x) \approx \left[t + t^3/3 + t^5/5 + \cdots \right]_0^{x} = x + x^3/3 + x^5/5 + \cdots$$
+# 
+# This series can be summed and compared to an accurate calculation. The result gets more accurate as the number of terms in the summation increases.
 
 # In[7]:
 
 
 x = 0.5
-atanh = sum( [x**n/n for n in range(1,15,2)] )    # make list then sum, increment by 2 from 1 to 15
+atanh = sum( (x**n/n for n in range(1,10,2)) )    # make list then sum, increment by 2 from 1 to 10
 print('{:s}{:f}{:s}{:f}'.format('tanh(',x,') summation ',atanh))
 print('{:s}{:f}{:s}{:f}'.format('tanh(',x,') direct    ',np.arctanh(x)))   
 
@@ -273,8 +279,8 @@ print('{:s}{:20.16f}'.format('accurate', np.pi))
 
 # Use our own factorial function using recursion; good for small values of n 
 #-------------------
-def fact(n):
-    if n == 0 or n == 1:
+def fact(n):      # assume n is positive integer
+    if n < 2:
         return 1
     else:
         return n*fact(n-1)
@@ -283,7 +289,7 @@ fig2 = plt.figure(figsize=(5,4))
 
 nmax = 20
 x    = 2.0
-val  = [0.0 for i in range(nmax)]
+val  = np.zeros(nmax, dtype=float) # make array of zeros
 s    = 0.0
 for n in range(nmax):
     s = s + (-1)**n*x**(6*n + 1)/( (6*n + 1)*(fact(2*n)) )
@@ -337,7 +343,7 @@ x = np.linspace(0,maxx,numx)                # make set of numx points starting a
 y = [ f03(x[i]) for i in range(numx) ]      # calculate function at points x[i] and put into array for plotting
 
 plt.plot(x,y,color='red',label='series')
-afun = sp.lambdify(z,f01,'numpy')              # make original function into numpy function
+afun = sp.lambdify(z,f01,'numpy')           # make original function into numpy function
 plt.plot(x,afun(x),color='blue',label = f01,linewidth=1)
 plt.axis([0,maxx,-0.5,1.25])
 plt.legend()

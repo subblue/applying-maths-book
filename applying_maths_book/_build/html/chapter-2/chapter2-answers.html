@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1849,15 +1849,15 @@ title="Print to PDF"
 <section id="q1-answer">
 <h2>Q1 answer<a class="headerlink" href="#q1-answer" title="Permalink to this headline">#</a></h2>
 <p>An example of two complex numbers are shown in Figure 1.</p>
-<p>(a) their sum is <span class="math notranslate nohighlight">\(z=1-0.5i \)</span> and<br>
-(b) their difference is <span class="math notranslate nohighlight">\(z=3+2.5i\)</span>.</p>
+<p><strong>(a)</strong> their sum is <span class="math notranslate nohighlight">\(z=1-0.5i \)</span> and</p>
+<p><strong>(b)</strong> their difference is <span class="math notranslate nohighlight">\(z=3+2.5i\)</span>.</p>
 <p>Notice how similar the addition or subtraction of complex numbers is to adding together two vectors because the real and imaginary parts are added separately.</p>
-<p>(c) <span class="math notranslate nohighlight">\(-iz_1z_2 =i(2+i)(1+3i/2)=2i+3i^2 +i^2 +3i^3/2=-4+i/2\)</span>.</p>
+<p><strong>(c)</strong> <span class="math notranslate nohighlight">\(-iz_1z_2 =i(2+i)(1+3i/2)=2i+3i^2 +i^2 +3i^3/2=-4+i/2\)</span>.</p>
 </section>
 <section id="q2-answer">
 <h2>Q2 answer<a class="headerlink" href="#q2-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Multiplying <span class="math notranslate nohighlight">\(i^2\)</span> by <span class="math notranslate nohighlight">\(i\)</span> produces <span class="math notranslate nohighlight">\(i^3 = -i\)</span> and <span class="math notranslate nohighlight">\(i^4 = 1\)</span> because <span class="math notranslate nohighlight">\((-1)^2 =1\)</span>. Similarly <span class="math notranslate nohighlight">\(i^5 = i\)</span> and <span class="math notranslate nohighlight">\(i^6 = i^2 =-1\)</span>.</p>
-<p>(b) From these results, starting at <span class="math notranslate nohighlight">\(n=0\)</span> the integer powers of <span class="math notranslate nohighlight">\(i\)</span> are repeated in a series of four terms:</p>
+<p><strong>(a)</strong> Multiplying <span class="math notranslate nohighlight">\(i^2\)</span> by <span class="math notranslate nohighlight">\(i\)</span> produces <span class="math notranslate nohighlight">\(i^3 = -i\)</span> and <span class="math notranslate nohighlight">\(i^4 = 1\)</span> because <span class="math notranslate nohighlight">\((-1)^2 =1\)</span>. Similarly <span class="math notranslate nohighlight">\(i^5 = i\)</span> and <span class="math notranslate nohighlight">\(i^6 = i^2 =-1\)</span>.</p>
+<p><strong>(b)</strong> From these results, starting at <span class="math notranslate nohighlight">\(n=0\)</span> the integer powers of <span class="math notranslate nohighlight">\(i\)</span> are repeated in a series of four terms:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|ccc}
 \hline
@@ -1909,15 +1909,15 @@ i^n &amp; 1 &amp; i &amp; -1 &amp; -i &amp; 1 &amp; i &amp; -1&amp; -i\\
 <span class="n">z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z = &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;modulus =&#39;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">z</span> <span class="p">))</span>  <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;argument (degrees) = &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>   <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;modulus = </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">z</span> <span class="p">))</span>  <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;argument (degrees) = </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>   <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>z =  4.6 - 2.8*I
-modulus = 5.38516480713450
-argument (degrees) =  -31.3286928678042
+modulus =  5.385
+argument (degrees) = -31.329
 </pre></div>
 </div>
 </div>
@@ -1926,8 +1926,8 @@ argument (degrees) =  -31.3286928678042
 <section id="q8-answer">
 <h2>Q8 answer<a class="headerlink" href="#q8-answer" title="Permalink to this headline">#</a></h2>
 <p>The modulus squared is <span class="math notranslate nohighlight">\(|a+ib|^2 =z^*z=a^2 +b^2\)</span>. Therefore in</p>
-<p>(a) <span class="math notranslate nohighlight">\(\displaystyle |a+b|^2=\cos^2(\theta)+\sin^2(\theta) =1\)</span> and if the argument is called <span class="math notranslate nohighlight">\(\alpha\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \alpha = \tan^{-1}(-b/a)= \tan^{-1}(-\tan(\theta))=-\theta\)</span></p>
-<p>(b)The modulus is</p>
+<p><strong>(a)</strong> <span class="math notranslate nohighlight">\(\displaystyle |a+b|^2=\cos^2(\theta)+\sin^2(\theta) =1\)</span> and if the argument is called <span class="math notranslate nohighlight">\(\alpha\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \alpha = \tan^{-1}(-b/a)= \tan^{-1}(-\tan(\theta))=-\theta\)</span></p>
+<p>**(b)**The modulus is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle |a+ib|= \sqrt{1+\tan^2(\theta)}= \sqrt{\frac{\cos^2(\theta)+\sin^2(\theta)}{\cos^2(\theta)}}=\frac{1}{\cos(\theta)}\]</div>
 <p>and the argument <span class="math notranslate nohighlight">\(\displaystyle \alpha = \tan^{-1}(-\tan(\theta)) = -\theta\)</span>.</p>
@@ -1997,21 +1997,21 @@ w= 2(\cos(\pi)+i\sin(\pi)) =-2,&amp;  w= 2(3\cos(\pi/2)+i\sin(3\pi/2)) =-2i \end
 </section>
 <section id="q15-answer">
 <h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Using Euler’s equation, <span class="math notranslate nohighlight">\(ie^{ix} = i\cos(x) - \sin(x)\)</span> and the real part is <span class="math notranslate nohighlight">\(-\sin(x)\)</span> and the imaginary <span class="math notranslate nohighlight">\(\cos(x)\)</span>.</p>
-<p>(b) <span class="math notranslate nohighlight">\(n\)</span> can take any integer value, positive, negative, and zero. If <span class="math notranslate nohighlight">\(n\)</span> is positive, then</p>
+<p><strong>(a)</strong> Using Euler’s equation, <span class="math notranslate nohighlight">\(ie^{ix} = i\cos(x) - \sin(x)\)</span> and the real part is <span class="math notranslate nohighlight">\(-\sin(x)\)</span> and the imaginary <span class="math notranslate nohighlight">\(\cos(x)\)</span>.</p>
+<p><strong>(b)</strong> <span class="math notranslate nohighlight">\(q\)</span> can take any integer value, positive, negative, and zero. If <span class="math notranslate nohighlight">\(q\)</span> is positive, then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle e^{ni\pi} = \cos(n\pi) + i \sin(n\pi) = \cos(n\pi)\]</div>
-<p>because the sine is zero at integer multiples of <span class="math notranslate nohighlight">\(\pi\)</span>. It is now necessary to distinguish between odd and even <span class="math notranslate nohighlight">\(n\)</span>. For odd <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(e^{ni\pi} =-1\)</span>, and for even <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n=0\)</span>, <span class="math notranslate nohighlight">\(e^{ni\pi} =1\)</span>. For negative <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(e^{-ni\pi} = \cos(n\pi) - i \sin(n\pi)\)</span> because <span class="math notranslate nohighlight">\(\sin(-x) = -\sin(x)\)</span> but the cosine is an even function so that the cosine is the same for both positive and negative <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>(c) <span class="math notranslate nohighlight">\(e^{\pm ni\pi/2} = \cos(n\pi/2) + i \sin(n\pi/2)\)</span>. The result now depends on the value of <span class="math notranslate nohighlight">\(n\)</span> with a period of <span class="math notranslate nohighlight">\(4\)</span>, because the sine and cosine are variously <span class="math notranslate nohighlight">\(0,\, 1\)</span>, or <span class="math notranslate nohighlight">\(-1\)</span> for integer multiples of <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(\pi/2\)</span>.</p>
+\[\displaystyle e^{qi\pi} = \cos(q\pi) + i \sin(q\pi) = \cos(q\pi)\]</div>
+<p>because the sine is zero at integer multiples of <span class="math notranslate nohighlight">\(\pi\)</span>. It is now necessary to distinguish between odd and even <span class="math notranslate nohighlight">\(q\)</span>. For odd <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(e^{qi\pi} =-1\)</span>, and for even <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(q=0\)</span>, <span class="math notranslate nohighlight">\(e^{qi\pi} =1\)</span>. For negative <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(e^{-qi\pi} = \cos(q\pi) - i \sin(q\pi)\)</span> because <span class="math notranslate nohighlight">\(\sin(-x) = -\sin(x)\)</span> but the cosine is an even function so that the cosine is the same for both positive and negative <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><strong>(c)</strong> <span class="math notranslate nohighlight">\(e^{\pm qi\pi/2} = \cos(q\pi/2) + i \sin(q\pi/2)\)</span>. The result now depends on the value of <span class="math notranslate nohighlight">\(q\)</span> with a period of <span class="math notranslate nohighlight">\(4\)</span>, because the sine and cosine are variously <span class="math notranslate nohighlight">\(0,\, 1\)</span>, or <span class="math notranslate nohighlight">\(-1\)</span> for integer multiples of <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(\pi/2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{lcc}
-n=0,4,8,12 \cdots &amp; e^2i\pi =1; &amp; n=\pm1,5,9\cdots &amp; e^{\pm i\pi/2} =\pm i \\
-n=\pm 2,6,10\cdots &amp; e^{\pm i\pi} =-1; &amp; n=\pm3,7,11\cdots &amp; e^{\pm 3i\pi/2} =\mp 1\\ \end{array}\end{split}\]</div>
+q=0,4,8,12 \cdots &amp; e^2i\pi =1; &amp; q=\pm1,5,9\cdots &amp; e^{\pm i\pi/2} =\pm i \\
+q=\pm 2,6,10\cdots &amp; e^{\pm i\pi} =-1; &amp; q=\pm3,7,11\cdots &amp; e^{\pm 3i\pi/2} =\mp 1\\ \end{array}\end{split}\]</div>
 </section>
 <section id="q16-answer">
 <h2>Q16 answer<a class="headerlink" href="#q16-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Raising to powers of <span class="math notranslate nohighlight">\(e\)</span> gives <span class="math notranslate nohighlight">\(i^i = e^{i\ln(i)}\)</span> and using the result <span class="math notranslate nohighlight">\(\ln(i)=i\pi/2\)</span> (see example 3 in section 8) then <span class="math notranslate nohighlight">\(i^i=e^{-\pi/2} \approx 0.2079\)</span>. It is somewhat surprising that this is a real number.</p>
-<p>(b) Similarly, <span class="math notranslate nohighlight">\(i^{1/i} = e^{\ln(i)/i}\)</span> and therefore, from part (a), <span class="math notranslate nohighlight">\(i^{1/i} = e^{\pi/2}\)</span>. Alternatively <span class="math notranslate nohighlight">\(i^{1/i}\)</span> can be written as <span class="math notranslate nohighlight">\(i^{1/i} = i^{-i}\)</span> because <span class="math notranslate nohighlight">\(i = -1/i\)</span> and so it is the reciprocal of the answer in part (a).</p>
+<p><strong>(a)</strong> Raising to powers of <span class="math notranslate nohighlight">\(e\)</span> gives <span class="math notranslate nohighlight">\(i^i = e^{i\ln(i)}\)</span> and using the result <span class="math notranslate nohighlight">\(\ln(i)=i\pi/2\)</span> (see example 3 in section 8) then <span class="math notranslate nohighlight">\(i^i=e^{-\pi/2} \approx 0.2079\)</span>. It is somewhat surprising that this is a real number.</p>
+<p><strong>(b)</strong> Similarly, <span class="math notranslate nohighlight">\(i^{1/i} = e^{\ln(i)/i}\)</span> and therefore, from part <strong>(a)</strong>, <span class="math notranslate nohighlight">\(i^{1/i} = e^{\pi/2}\)</span>. Alternatively <span class="math notranslate nohighlight">\(i^{1/i}\)</span> can be written as <span class="math notranslate nohighlight">\(i^{1/i} = i^{-i}\)</span> because <span class="math notranslate nohighlight">\(i = -1/i\)</span> and so it is the reciprocal of the answer in part (a).</p>
 </section>
 <section id="q17-answer">
 <h2>Q17 answer<a class="headerlink" href="#q17-answer" title="Permalink to this headline">#</a></h2>
@@ -2066,8 +2066,8 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 </section>
 <section id="q22-answer">
 <h2>Q22 answer<a class="headerlink" href="#q22-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) You may need to consult the chapters on differentiation or integration if you are not familiar with these. Differentiating produces <span class="math notranslate nohighlight">\(\displaystyle \frac{dz}{dx}=-\sin(x)+i\cos(x)\)</span> and substituting for <span class="math notranslate nohighlight">\(z\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle \frac{dz}{dx}=iz\)</span>.</p>
-<p>(b) Integrating <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dz}{z}=i\int dx\)</span> gives <span class="math notranslate nohighlight">\(\ln(z)=ix+c\)</span>. To evaluate the constant <span class="math notranslate nohighlight">\(c\)</span>, suppose that <span class="math notranslate nohighlight">\(x = 0\)</span>, therefore, <span class="math notranslate nohighlight">\(\ln(z)=c\)</span>. However, when <span class="math notranslate nohighlight">\(x=0,\,z=1\)</span> and because <span class="math notranslate nohighlight">\(\ln(1)=0\)</span>, therefore <span class="math notranslate nohighlight">\(c = 0\)</span>. Rearranging <span class="math notranslate nohighlight">\(\ln(z) = ix\)</span> gives <span class="math notranslate nohighlight">\(z = e^{ix}\)</span> or <span class="math notranslate nohighlight">\(e^{ix} = \cos(x) + i \sin(x)\)</span> which is Euler’s Theorem.</p>
+<p><strong>(a)</strong> You may need to consult the chapters on differentiation or integration if you are not familiar with these. Differentiating produces <span class="math notranslate nohighlight">\(\displaystyle \frac{dz}{dx}=-\sin(x)+i\cos(x)\)</span> and substituting for <span class="math notranslate nohighlight">\(z\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle \frac{dz}{dx}=iz\)</span>.</p>
+<p><strong>(b)</strong> Integrating <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dz}{z}=i\int dx\)</span> gives <span class="math notranslate nohighlight">\(\ln(z)=ix+c\)</span>. To evaluate the constant <span class="math notranslate nohighlight">\(c\)</span>, suppose that <span class="math notranslate nohighlight">\(x = 0\)</span>, therefore, <span class="math notranslate nohighlight">\(\ln(z)=c\)</span>. However, when <span class="math notranslate nohighlight">\(x=0,\,z=1\)</span> and because <span class="math notranslate nohighlight">\(\ln(1)=0\)</span>, therefore <span class="math notranslate nohighlight">\(c = 0\)</span>. Rearranging <span class="math notranslate nohighlight">\(\ln(z) = ix\)</span> gives <span class="math notranslate nohighlight">\(z = e^{ix}\)</span> or <span class="math notranslate nohighlight">\(e^{ix} = \cos(x) + i \sin(x)\)</span> which is Euler’s Theorem.</p>
 </section>
 <section id="q23-answer">
 <h2>Q23 answer<a class="headerlink" href="#q23-answer" title="Permalink to this headline">#</a></h2>
@@ -2077,7 +2077,7 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 </section>
 <section id="q24-answer">
 <h2>Q24 answer<a class="headerlink" href="#q24-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) If there were only one term in the sum then</p>
+<p><strong>(a)</strong> If there were only one term in the sum then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s(t) = ae^{i\omega t-t/\tau} = ae^{i\omega t}e^{-t/\tau} = ae^{-t/\tau}(\cos(\omega t) + i \sin(\omega t))\]</div>
 <p>therefore for two spins</p>
@@ -2089,7 +2089,7 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 =&amp;\;e^{-2t/\tau}(a_1^2 +a_2^2 +a_1a_2(e^{-it(\omega_1-\omega_2)} +e^{+it(\omega_1-\omega_2)} ))\\
 =&amp; \;e^{-2t/\tau}\left(a_1^2 + a_2^2 + 2a_1a_2 \cos(\omega_1t - \omega_2t) \right) \end{align}\end{split}\]</div>
 <p>This signal has an exponential decay with a superimposed cosine term at the difference of the two frequencies.</p>
-<p>(b) Plotting the signal gives</p>
+<p><strong>(b)</strong> Plotting the signal gives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>     <span class="c1"># define time range </span>
@@ -2111,20 +2111,20 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 </div>
 </div>
 <p><img alt="Drawing" src="../_images/chapter2-fig11.png" /></p>
-<p>Figure 11. Signals with <span class="math notranslate nohighlight">\(\tau=50\)</span> (boldline) and <span class="math notranslate nohighlight">\(\tau =500\)</span>.Notice the double modulation when the decay time is longer that the longest period. In the shorter decay, this is so rapid that the longer period wave is damped out. The two grey curves are the two frequencies making up the signal.</p>
+<p>Figure 11. Signals with <span class="math notranslate nohighlight">\(\tau=50\)</span> (boldline) and <span class="math notranslate nohighlight">\(\tau =500\)</span>. Notice the double modulation when the decay time is longer that the longest period. In the shorter decay, this is so rapid that the longer period wave is damped out. The two grey curves are the two frequencies making up the signal.</p>
 <hr class="docutils" />
-<p>(c) If the initial amplitude <span class="math notranslate nohighlight">\(a_1 = i\)</span> and the other <span class="math notranslate nohighlight">\(a_2 = 1\)</span>, then the real part of the signal is minus the sine of the first term, because <span class="math notranslate nohighlight">\(i^2 = -1\)</span> giving</p>
+<p><strong>(c)</strong> If the initial amplitude <span class="math notranslate nohighlight">\(a_1 = i\)</span> and the other <span class="math notranslate nohighlight">\(a_2 = 1\)</span>, then the real part of the signal is minus the sine of the first term, because <span class="math notranslate nohighlight">\(i^2 = -1\)</span> giving</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s(t) = e^{-t/\tau}(i \cos(\omega_1t) - \sin(\omega_1t)) + e^{-t/\tau}(\cos(\omega_2t) + i sin(\omega_2t))\]</div>
 <p>and the real part is <span class="math notranslate nohighlight">\(e^{-t/\tau}(\cos(\omega_2t) - \sin(\omega_1t))\)</span>. The imaginary part is the sine minus the\cosine terms.</p>
 </section>
 <section id="q25-answer">
 <h2>Q25 answer<a class="headerlink" href="#q25-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) By examining the initial equation, because <span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span> is present the result has no imaginary number in it (<span class="math notranslate nohighlight">\(i^2 = -1\)</span>), therefore the result cannot contain a sine. Substituting, expanding and collecting terms gives</p>
+<p><strong>(a)</strong> By examining the initial equation, because <span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span> is present the result has no imaginary number in it (<span class="math notranslate nohighlight">\(i^2 = -1\)</span>), therefore the result cannot contain a sine. Substituting, expanding and collecting terms gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}4\cos(\theta)\sin^2(\theta) =&amp; -(e^{i\theta} + e^{-i\theta} )(e^{i\theta} - e^{-i\theta} )(e^{i\theta} - e^{-i\theta} )/2 \\ =&amp;-(e^{2i\theta} -e^{-2i\theta})(e^{i\theta} -e^{-i\theta})/2\\
 =&amp; -(e^{3i\theta} - e^{-i\theta} - e^{i\theta} + e^{-3i\theta} )/2 \\=&amp;\;\cos(\theta) -\cos(3\theta) \end{align}\end{split}\]</div>
-<p>(b) A similar substitution generates the result for the other identity.</p>
+<p><strong>(b)</strong> A similar substitution generates the result for the other identity.</p>
 </section>
 <section id="q26-answer">
 <h2>Q26 answer<a class="headerlink" href="#q26-answer" title="Permalink to this headline">#</a></h2>
@@ -2145,7 +2145,7 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 <h2>Q27 answer<a class="headerlink" href="#q27-answer" title="Permalink to this headline">#</a></h2>
 <p>Multiplying by the complex conjugate gives</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle Z=\frac{1}{R^{-1}+i\omega C}=\frac{1}{R^{-1}+i\omega C}\cdot\frac{R^{-1}-i\omega C}{R^{-1}-i\omega C}\\=\frac{R}{1+(\omega CR)^2}-i\frac{(\omega CR)^2}{1+(\omega CR)^2}\end{split}\]</div>
+\[\begin{split}\displaystyle \begin{align} Z&amp;=\frac{1}{R^{-1}+i\omega C}\\&amp;=\frac{1}{R^{-1}+i\omega C}\cdot\frac{R^{-1}-i\omega C}{R^{-1}-i\omega C}\\&amp;=\frac{R}{1+(\omega CR)^2}-i\frac{(\omega CR)^2}{1+(\omega CR)^2}\end{align}\end{split}\]</div>
 <p>Using Python to plot the graph, first  define functions <span class="math notranslate nohighlight">\(\mathtt{z1}\)</span> and <span class="math notranslate nohighlight">\(\mathtt{z2}\)</span> (see code below) and vary the frequency. You will need to guess this but <span class="math notranslate nohighlight">\(0 \to 10^4\)</span> Hz works well.</p>
 <p>The high frequency can be determined by making <span class="math notranslate nohighlight">\(\omega = 0\)</span>, then infinity, or by plotting the graph only to, say, a frequency of 500 Hz and seeing where this ends on the plot. When <span class="math notranslate nohighlight">\(\omega = 0\)</span> only the real part of the plot exists, so this has to be on the abscissa. When <span class="math notranslate nohighlight">\(\omega = \infty\)</span>, both z1 and z11 are zero so the high frequency should be at the origin.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig12.png" /></p>
@@ -2173,8 +2173,8 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 <p>and the intensity is <span class="math notranslate nohighlight">\(F^*F\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} I =&amp;(f_A+f_Be^{-i\pi(h+k+l)})(f_A+f_Be^{i\pi(h+k+l)})\\=&amp; f_A^2+f_B^2+f_Af_B(e^{-i\pi(h+k+l)}+e^{+i\pi(h+k+l)})\\=&amp; f_A^2+f_B^2+2f_Af_B\cos(\pi(h+k+l))\end{align}\end{split}\]</div>
-<p>(a) When the atoms are different, <span class="math notranslate nohighlight">\(F\)</span> is positive for all <span class="math notranslate nohighlight">\(h,k,l\)</span>. Physically the intensity can never be negative and is shown mathematically because <span class="math notranslate nohighlight">\(f_A^2+f_B^2 \gt 2f_Af_B\)</span> but the intensity will be smallest when the cosine is equal to <span class="math notranslate nohighlight">\(-1\)</span>, i.e. when <span class="math notranslate nohighlight">\(h+k+l\)</span> is an odd integer.</p>
-<p>(b) When <span class="math notranslate nohighlight">\(f_A=f_B=f\)</span>,</p>
+<p><strong>(a)</strong> When the atoms are different, <span class="math notranslate nohighlight">\(F\)</span> is positive for all <span class="math notranslate nohighlight">\(h,k,l\)</span>. Physically the intensity can never be negative and is shown mathematically because <span class="math notranslate nohighlight">\(f_A^2+f_B^2 \gt 2f_Af_B\)</span> but the intensity will be smallest when the cosine is equal to <span class="math notranslate nohighlight">\(-1\)</span>, i.e. when <span class="math notranslate nohighlight">\(h+k+l\)</span> is an odd integer.</p>
+<p><strong>(b)</strong> When <span class="math notranslate nohighlight">\(f_A=f_B=f\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I=f^2(1+2\cos(\pi(h+k+l))\]</div>
 <p>which means that the intensity is zero when <span class="math notranslate nohighlight">\(h+k+l \)</span> is an odd integer and is typical for a body centred lattice.</p>

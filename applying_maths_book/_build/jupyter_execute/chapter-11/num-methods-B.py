@@ -849,7 +849,7 @@ plt.show()
 # 
 # The potential energy $V$ depends only on a spatial coordinate. Expanding in a manner similar to that of eqn. 31b except that a better approximation is made to the second derivative, which is the average of the past and future time points. The spatial grid has index $k$, time time grid $j$ and after dividing by $i=\sqrt{-1}$,
 # 
-# $$\displaystyle \frac{\psi_k^{j+1}-\psi_k^j}{\Delta t}=i\frac{1}{2(\Delta x)^2}\bigg(\left(\psi_{k+1}^{j+1}-2\psi_k^{j+1}+\psi_{k-1}^{j+1}\right) + \left(\psi_{k+1}^j-2\psi_k^j+\psi_{k-1}^j  \right )\bigg)-i V_k(\psi_k^{j+1}+\psi_k^j)$$
+# $$\displaystyle \begin{align}&\frac{\psi_k^{j+1}-\psi_k^j}{\Delta t}\\&=i\frac{1}{2(\Delta x)^2}\bigg(\left(\psi_{k+1}^{j+1}-2\psi_k^{j+1}+\psi_{k-1}^{j+1}\right) + \left(\psi_{k+1}^j-2\psi_k^j+\psi_{k-1}^j  \right )\bigg)-i V_k(\psi_k^{j+1}+\psi_k^j)\end{align}$$
 # 
 # Expanding on a grid means that the end points effectively form an infinitely high barrier, i.e. the calculation takes place within a square well or 'particle in a box' potential so normally the calculation is stopped before the ends are reached. If not you do this you should observe the wavepacket being reflected off the wall and then its continued motion. 
 # 
@@ -919,12 +919,13 @@ plt.show()
 # 
 # and this equation is iterated as
 # 
-# $P^{old}=\text{initial wavepacket}\\
+# $\begin{array}{lll}
+# P^{old}=\text{initial wavepacket}\\
 # \text{loop over time}\\
-# \quad{P}^{new} = {A^{-1}}{B P}^{old}\\
-# \quad  P^{old} = {P^{new}}\\
-# \quad\text{save }P^{new}\\
-# \text{repeat}$
+# {P}^{new} = {A^{-1}}{B P}^{old}\\
+#  P^{old} = {P^{new}}\\
+# \text{save }P^{new}\\
+# \text{repeat}\end{array}$
 # 
 # ### **(i) Wavepacket motion**
 # 
@@ -1021,7 +1022,7 @@ def inits():                                         # initial values
     Lb = 200         # grid end  (integer)
     La = -200        # grid start (integer)
     V0 = 0.25        # barrier height
-    w  = 3           # half barrier width (integer)
+    w  = 5           # half barrier width (integer)
     k0 = 1           # wavepacket momentum
     sig= 5           # wavepacket width sigma
     x0 = -100        # initial wave packet centre
@@ -1122,6 +1123,12 @@ f02 = wgt.HTML( value="*** Push triangle to start, must push square to reset bef
 display(f02)
 f01 = wgt.interact(wpacket,k = wgt.Play(min=0,max=nt-1,step=20))  # step changes speed
 display(f01)
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

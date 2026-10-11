@@ -4,11 +4,15 @@
 # # Questions 55 - 58 
 
 # ## Q55 Double pendulum
-# (a) Assuming that all angles are small during the motion, find the secular determinant for two rigid linked pendulums as shown in the diagram. The pendulums have lengths $L_1$ and $L_2$ and masses $m_1$ and $m_2$ at their ends. The rods are stiff but weightless and the bearing connecting the upper rod to its mount and that between the rods is frictionless. Because the equations produced are complex, in the last step of the calculation, assume that the pendulums have the same length $L$.
+# **(a)** Assuming that all angles are small during the motion, find the secular determinant for two rigid linked pendulums as shown in the diagram. The pendulums have lengths $L_1$ and $L_2$ and masses $m_1$ and $m_2$ at their ends. The rods are stiff but weightless and the bearing connecting the upper rod to its mount and that between the rods is frictionless. Because the equations produced are complex, in the last step of the calculation, assume that the pendulums have the same length $L$.
 # 
-# (b) Use python/Sympy to solve the determinant and show that the normal mode frequencies are given by $\omega^2 =(1\pm \sqrt{M})g/L$ where $M=m_2/(m_1 +m_2)$.
+# **(b)** Use python/Sympy to solve the determinant and show that the normal mode frequencies are given by 
 # 
-# (c) Suppose the linkage is a spring with force constant $k$ whose potential energy varies as $k(\theta_2)^2/2$; recalculate the oscillation frequencies.
+# $$\displaystyle \omega^2 =\frac{1\pm g\sqrt{M}}{L}$$
+# 
+# where $M=m_2/(m_1 +m_2)$.
+# 
+# **(c)** Suppose the linkage is a spring with force constant $k$ whose potential energy varies as $k(\theta_2)^2/2$; recalculate the oscillation frequencies.
 # 
 # ![Drawing](matrices-fig63.png)
 # 
@@ -31,12 +35,12 @@
 # ## Q57 Bending normal mode
 # Calculate the bending normal mode for a linear molecule, in a related manner to that used in the example of the stretching modes. Use the displacement vectors shown in the figure, which are in the plane of the figure. Assume that the bending motion obeys Hooke's law. The force constant is that to bend the molecule rather than to extend its bonds.
 # 
-# (a) Sketch the bending normal modes.
+# **(a)** Sketch the bending normal modes.
 # 
-# (b)  Calculate the normal mode frequencies of the molecule, such as CO$_2$, by considering the
+# **(b)**  Calculate the normal mode frequencies of the molecule, such as CO$_2$, by considering the
 # displacement of each atom.
 # 
-# (c) Calculate the correct relative displacements of the atoms.
+# **(c)** Calculate the correct relative displacements of the atoms.
 # 
 # **Strategy:** To determine the potential energy, use only force constants for bending between atoms 1 and 2, and between 2 and 3. Once the energy is calculated, the force matrix can be set up and solved. There will be two degenerate bending modes in the molecule, giving $3N - 5 = 4$ in total. Two have been identified in the example in the text, which leaves two remaining; one of them is bending in the plane of the figure and the other one is perpendicular to this.
 # 
@@ -48,11 +52,17 @@
 # ## Q58 Vibrations of HC=CH
 # Calculate the frequencies and normal mode vibrations of the linear molecule HC=CH, assuming a valence bond potential.
 # 
-# Assume that the force constant for the CH bond is $1.1$ times that for the CC bond, but that the bending force constants are the same as one another. The experimental vibrational frequencies (degeneracy) are, $612(2), 619(2), 1974, 3282, 3373 \;\mathrm{cm^{-1}}$.
+# Assume that the force constant for the CH bond is $1.1$ times that for the CC bond, but that the bending force constants are the same as one another. The experimental vibrational frequencies (degeneracy) are, $612(2),\, 619(2),\, 1974,\, 3282, \,3373 \;\mathrm{cm^{-1}}$.
 # 
-# Decide from your calculation, which are the symmetric and which the asymmetric modes and which the bending modes. Because the algebraic result is very complicated, calculate the eigenvalues and eigenvectors numerically. Use python by modifying Algorithm 7 to this problem.
+# Decide from your calculation, which are the symmetric and which the asymmetric modes and which the bending modes. Because the algebraic result is very complicated, calculate the eigenvalues and eigenvectors numerically. Use Python by modifying Algorithm 7 to this problem.
 # 
 # **Strategy:** The valence bond potential means that coupling is only to adjacent atoms. As you are asked for all the normal modes, this includes bends as well as stretches. It is advantageous in this case to do the calculation in two parts, because the molecule is linear, and the $x-, y-,$ and $z$-displacements do not depend on one another. The total number of modes is $3N - 5 = 7$.
 # 
 # Since a numerical answer is required, give the masses their values, (in amu) and use $k_H = 1.1k_C$. In the eigenvalue (secular) determinant, divide by $k_H$, as this is a constant to obtain a numerical value, but do not forget then to multiply the resulting eigenvalues by $k_H$. The eigenvectors are independent of $k_H$. Use the pattern of these to determine the nature of the normal modes.
 # 
+
+# In[ ]:
+
+
+
+

@@ -16,7 +16,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q35 answer
-# Using the notation that G is the matrix for a gap, and L for a lens, then the matrices are multiplied in the order: $G(x)L(f_2)G(d)L(f_1)G(u)$
+# Using the notation that $G$ is the matrix for a gap, and $L$ for a lens, then the matrices are multiplied in the order: 
+# 
+# $$\displaystyle G(x)L(f_2)G(d)L(f_1)G(u)$$
+# 
+# then,
 # 
 # $$\displaystyle ABCD = \begin{bmatrix}1 & x \\ 0 & 1 \end{bmatrix}\begin{bmatrix}1 & 0 \\ -1/f_2 & 1 \end{bmatrix}\begin{bmatrix}1 & d \\ 0 & 1 \end{bmatrix}\begin{bmatrix}1 & 0 \\ -1/f_1 & 1 \end{bmatrix}\begin{bmatrix}1 & u \\ 0 & 1 \end{bmatrix}$$
 # 
@@ -25,9 +29,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-d, u, f, x, f1, f2, d = sp.symbols('d, u, f, x, f1, f2, d')
+d, u, f, x, f1, f2, d = sp.symbols('d, u, f, x, f1, f2, d')  # Using SymPy
 
-n = 1   # if the constants are not defined here an algebraic result is obtained
+n = 1            # if the constants are not defined here an algebraic result is obtained
 f1= 0.10
 f2= -0.2
 d = 0.05/n
@@ -62,7 +66,9 @@ mag = 1/ABCD[1,1]
 mag
 
 
-# The image is formed at $x= 0.175/0.625=0.28$ m from the second lens, is inverted, because the magnification is negative, and magnified by 1.6 times. This algorithm can be used to calculate the properties of any two lenses separated by any amount and the input and output at any distances. Any imaginary (complex) numbers for the distances means that what you are trying to determine is not possible with the values of focal lengths chosen.
+# The image is formed at $x= 0.175/0.625=0.28$ m from the second lens, is inverted, because the magnification is negative, and magnified by 1.6 times. 
+# 
+# This algorithm can be used to calculate the properties of any two lenses separated by any amount and the input and output at any distances. Any imaginary (complex) numbers for the distances means that what you are trying to determine is not possible with the values of focal lengths chosen.
 # 
 # ## Q36 answer
 # Write down the sequence of matrices, remembering to divide the gap matrices by the refractive index of the material, taking air to be 1. The multiplication order is:
@@ -70,13 +76,14 @@ mag
 # $$\displaystyle \text{[gap( x ) from lens to focus]} \times \text{[lens surface  2]}
 # \times \text{[lens thickness]} \times \text{[lens surface 1] }$$
 # 
-# The thickness of the lens is a gap of length $d_L$. Use python to get a numerical answer
+# The thickness of the lens is a gap of length $d_L$. Use Python to get a numerical answer
 
 # In[6]:
 
 
 # thick lens calculation
-MG = lambda x,n: np.array( [ [1,x/n], [0,1] ] )  
+
+MG = lambda x,n: np.array( [ [1,x/n], [0,1] ] )            # define matrix as function of x and n 
 MR = lambda r,n2,n1 :np.array( [ [1,0], [-(n2-n1)/r,1] ] ) 
 
 r1 = -100.0
@@ -85,11 +92,12 @@ n1 = 1.0
 n2 = 1.48
 dL = 6.0
 
-f01  = np.dot( MG(dL,n2), MR(r1,n1,n2)  )           # use dot product for matrix multiplication
-f02  = np.dot( MR(r2,n2,n1), f01)
-ABCD = np.dot(  MG(x,n1), f02)
- 
-focal_length = sp.solve(ABCD[0,0],x)                 # using SymPy to solve
+f01  =  MG(dL,n2)@ MR(r1,n1,n2)      # matrix multiplication
+f02  =  MR(r2,n2,n1) @ f01
+ABCD =  MG(x,n1 )@ f02
+#print(ABCD[0,0])                    # need to solve this for x, it could be done by hand!
+focal_length = sp.solve(ABCD[0,0],x) # use SymPy to solve
+
 print('{:s} {:8.2f}'.format('focal length ', focal_length[0]  ) )
 print('{:s} {:6.3f}'.format('magnification ',1/ABCD[1,1]) )
 
@@ -148,7 +156,7 @@ omega = lambda z: ( omega0*np.sqrt(1 + ( wavel*z/(np.pi*omega0**2) )**2)  )  # r
 # __________
 
 # ## Q38 answer
-# (a) The matrix for a gap is $\displaystyle \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}$ then two gaps $d_1$ and $d_2$ form the matrix 
+# **(a)** The matrix for a gap is $\displaystyle \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}$ then two gaps $d_1$ and $d_2$ form the matrix 
 # 
 # $$\displaystyle \pmb{G_{12}}=\begin{bmatrix} 1 & d_1 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & d_2 \\ 0 & 1 \end{bmatrix}=\begin{bmatrix} 1 & d_1+d_2 \\ 0 & 1 \end{bmatrix}$$
 # 
@@ -162,7 +170,7 @@ omega = lambda z: ( omega0*np.sqrt(1 + ( wavel*z/(np.pi*omega0**2) )**2)  )  # r
 # 
 # which shows that the diagonal elements are exchanged as proposed. In the cavity, any pair of gap-mirror or mirror-gap matrices is related by exchanging the diagonals, so by induction this is true for any gap-mirror combination since two mirrors cannot occur without a gap between them.
 # 
-# (b) Is this order reversal true for any $ABCD$ matrix combination? The proof is not so obvious, but starts with the clue given in the question. The matrix product given is for the $n^{th}$ matrix and as it represents an individual matrix then $A=D=1$. In the last step $AD-BC=1$ is used. The product gives
+# **(b)** Is this order reversal true for any $ABCD$ matrix combination? The proof is not so obvious, but starts with the clue given in the question. The matrix product given is for the $n^{th}$ matrix and as it represents an individual matrix then $A=D=1$. In the last step $AD-BC=1$ is used. The product gives
 # 
 # $$\displaystyle \pmb{G}_n\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}\pmb{G}_n=\begin{bmatrix} 1 & B_n \\ C_n & 1 \end{bmatrix}\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & B_n \\ C_n & 1 \end{bmatrix}= \to \to \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$$
 # 
@@ -183,7 +191,7 @@ omega = lambda z: ( omega0*np.sqrt(1 + ( wavel*z/(np.pi*omega0**2) )**2)  )  # r
 # In[9]:
 
 
-A, B, C, D = sp.symbols('A, B, C, D')
+A, B, C, D = sp.symbols('A, B, C, D')   # use SymPy
 
 ABCD = sp.Matrix([[A,B],[C,D]])
 X    = sp.Matrix([[-1,0],[0,1]])

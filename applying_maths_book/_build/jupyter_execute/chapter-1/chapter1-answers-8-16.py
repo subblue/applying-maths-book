@@ -16,18 +16,18 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q8 answer
-# (a) $A = 0.25$. 
+# **(a)** $A = 0.25$. 
 # 
-# (b) the angular frequency $\omega$ is $125 \,\mathrm{radians\,s^{-1}}$. Using $\omega = 2\pi\nu$ gives the frequency $\nu$ in $\mathrm{s^{-1}}$ (or Hz) and is $19.89 \mathrm{s^{-1}}$.
+# **(b)** The angular frequency $\omega$ is $125 \,\mathrm{radians\,s^{-1}}$. Using $\omega = 2\pi\nu$ gives the frequency $\nu$ in $\mathrm{s^{-1}}$ (or Hz) and is $19.89 \mathrm{s^{-1}}$. 
 # 
-# (c) The wavevector is $+3$ and the wavelength is given using $k = 2\pi/\lambda$ therefore $\lambda = 2.094$ m. Note that the wavelength is always positive.
+# **(c)** The wavevector is $+3$ and the wavelength is given using $k = 2\pi/\lambda$ therefore $\lambda = 2.094$ m. Note that the wavelength is always positive.
 # 
-# (d) The phase is $\phi=0.6$ radian.
+# **(d)** The phase is $\phi=0.6$ radian. 
 # 
-# (e) The velocity is $dy/dt$, which is $v = 125 \cos(125t - 3k + 0.6)/4 \mathrm{\;m\,s^{-1}}$ because the other terms are constant in time.
+# **(e**) The velocity is $dy/dt$, which is $v = 125 \cos(125t - 3k + 0.6)/4 \mathrm{\;m\,s^{-1}}$ because the other terms are constant in time.
 # 
 # ## Q9 answer
-# (a) The sum of the two waves is $\sin(\omega_1 t - kx)+ \sin(\omega_2t - kx)$ and we observe the frequency change in time. This means that the $-kx$ term represents a phase, and is fixed as we observe at a fixed point and it can be set to zero without changing the result as phase does not affect the frequency of a wave just where its amplitude is zero. As the waves' amplitudes are the same, we can choose them to be 1. The identity to start with from Section 5.1 is 
+# **(a)** The sum of the two waves is $\sin(\omega_1 t - kx)+ \sin(\omega_2t - kx)$ and we observe the frequency change in time. This means that the $-kx$ term represents a phase, and is fixed as we observe at a fixed point and it can be set to zero without changing the result as phase does not affect the frequency of a wave just where its amplitude is zero. As the waves' amplitudes are the same, we can choose them to be 1. The identity to start with from Section 5.1 is 
 # 
 # $$\displaystyle \sin(a - b) + \sin(a + b) = 2 \sin(a)\cos(b)$$
 # 
@@ -41,7 +41,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The beat frequency is $|\omega_1 - \omega_2|$ not half this value, because we observe two beats per period.
 # 
-# (b) A wave period of $T$ has a frequency of $1/\nu$. In the figure, the longest wavelength has a period of $4$ s making the observed frequency $0.25 \,\mathrm{s^{-1} }$. The beat frequency is, by definition, twice the wave frequency hence this is $0.5 \,\mathrm{^{-1} }$.
+# **(b)** A wave period of $T$ has a frequency of $1/\nu$. In the figure, the longest wavelength has a period of $4$ s making the observed frequency $0.25 \,\mathrm{s^{-1} }$. The beat frequency is, by definition, twice the wave frequency hence this is $0.5 \,\mathrm{^{-1} }$.
 # 
 # ## Q10 answer
 # $5 \times 51, 210, 1547/864$.
@@ -143,7 +143,7 @@ for i in range(2,20):          # recursion
 
 
 # ## Q15 answer
-# (a & b) From the definition in the question, the recursion equation is $f_n = f_{n-1} + f_{n-2}$ and is applied where $n \ge 3$ and the first two terms are both 1. The algorithm can be written as shown below. The ratio is also printed as in part (b). The golden ratio is $1.618034$.
+# **(a & b)** From the definition in the question, the recursion equation is $f_n = f_{n-1} + f_{n-2}$ and is applied where $n \ge 3$ and the first two terms are both 1. The algorithm can be written as shown below. The ratio is also printed as in part (b). The Golden Ratio is $1.618034$.
 
 # In[5]:
 
@@ -164,7 +164,7 @@ for i in range(10):
 
 
 # ratio of series
-print('{:s}{:10.7f}\n'.format('goldern ratio', ( 1+np.sqrt(5) )/2) )
+print('{:s}{:10.7f}\n'.format('Golden Ratio', ( 1+np.sqrt(5) )/2) )
 f = np.zeros(20,dtype=int)
 f[0] = 1
 f[1] = 1
@@ -176,10 +176,10 @@ for i in range(2,20):
     pass
 
 
-# (d) The reverse series is $\cdots, -8,5,-3,2,-1,1,0,1,1,2,\cdots$
+# **(d)** The reverse series is $\cdots, -8,5,-3,2,-1,1,0,1,1,2,\cdots$
 # 
 # ## Q16 answer 
-# (a) The first few terms are
+# **(a)** The first few terms are
 # 
 # $$\displaystyle \begin{array}{cccccccccc}
 # & & & & & 1 & & & & \\
@@ -188,7 +188,7 @@ for i in range(2,20):
 # &1 & &4& & 6 & &4& & 1\\
 # 1 &&5 &&10 &&10 &&5&& 1\end{array}$$
 # 
-# (b) expanding the left-hand side gives eqn 21; 
+# **(b)** expanding the left-hand side gives eqn 21; 
 # 
 # $$\displaystyle \binom{n}{q+1} = \frac{n!}{(q+1)!(n-q-1)!}$$
 # 

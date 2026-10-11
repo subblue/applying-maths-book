@@ -25,9 +25,9 @@ h = 6.626e-34  # J s
 c = 2.9970e10  # cm/s 
 kB= 1.3806e-23 # J/mol/K
 
-n1_n0 = lambda deltaE, T: np.exp(-deltaE*h*c/(kB*T) )    # make a function
-deltaE= 1.0
-T     = 30.0
+n1_n0 = lambda deltaE, T: np.exp(-deltaE*h*c/(kB*T) )    # make the Boltzmann function
+deltaE= 1.0                                              # energy gap, cm^{-1}
+T     = 30.0                                             # temperature, K
 print('{:8.3f}    {:8.3f} {:8.5g}'.format( deltaE, T, n1_n0(deltaE,T)) )
 
 
@@ -44,23 +44,23 @@ print('{:8.3f}    {:8.3f} {:8.5g}'.format( deltaE, T, n1_n0(deltaE,T)) )
 # 
 # ## Q2 answer
 # $$\displaystyle \begin{array}{l|llll}
-# (a) \log_{10}(100) = 2, \text{ as } 10^2 = 100 & (b) \log_{10}(10) = 1, \text{ as } 10^1 = 10. \\
-# (c) \log_e(e) = 1. & (d) \log_b(b) = 1 \\
-# (e) \log_b(bx) = x & (f) \log_2(1/8) = -\log_2(8) = -3 \text{ as } 2^3 = 8\\
-# (g) \log_{10}(n)=-4,; n=10^{-4} & (h)  \log_n(1/16) = -2 \text{ as } \log_n(1/16) = -\log_n(16),
+# \mathbf{(a)} \log_{10}(100) = 2, \text{ as } 10^2 = 100 & \mathbf{(b)} \log_{10}(10) = 1, \text{ as } 10^1 = 10. \\
+# \mathbf{(c)} \log_e(e) = 1. & \mathbf{(d)} \log_b(b) = 1 \\
+# \mathbf{(e)} \log_b(bx) = x & \mathbf{(f)} \log_2(1/8) = -\log_2(8) = -3 \text{ as } 2^3 = 8\\
+# \mathbf{(g)} \log_{10}(n)=-4,; n=10^{-4} & \mathbf{(h)}  \log_n(1/16) = -2 \text{ as } \log_n(1/16) = -\log_n(16),
 # \; n^2 =16\\
-# (i) \log_5(125)=n,; 5^n =125
+# \mathbf{(i)} \log_5(125)=n,; 5^n =125
 # \end{array}$$
 # 
 # ## Q3 answer
 # $$\displaystyle \begin{array}{l|lll}
-# (a) \ln(3^x) = x \ln(3) &    (b) \ln(a^2/b)=2\ln(a)-\ln(b)\\
-# (c) \ln(a^{1/2}/b^3) = (1/2)\ln(a) - 3\ln(b) & (d) \ln(3^{1/(x+6)}) = (x + 6)^{-1}\ln(3)\\
-# (e)  \displaystyle \ln\left( \frac{x^{1/2} \sin(x) }{\ln(x^n)}  \right) = \frac{1}{2} \ln(x) + \ln(\sin(x)) - \ln\left(n \ln(x)\right)
+# \mathbf{(a)} \ln(3^x) = x \ln(3) &    \mathbf{(b)} \ln(a^2/b)=2\ln(a)-\ln(b)\\
+# \mathbf{(c)} \ln(a^{1/2}/b^3) = (1/2)\ln(a) - 3\ln(b) & \mathbf{(d)} \ln(3^{1/(x+6)}) = (x + 6)^{-1}\ln(3)\\
+# \mathbf{(e)}  \displaystyle \ln\left( \frac{x^{1/2} \sin(x) }{\ln(x^n)}  \right) = \frac{1}{2} \ln(x) + \ln(\sin(x)) - \ln\left(n \ln(x)\right)
 # \end{array}$$
 # 
 # ## Q4 answer
-# $\displaystyle \ln\left(1 + s/a)^r\right) = r \ln(1 + s/a)$ which follows because $\displaystyle \ln(x^n) = n\ln(x)$. Converting to exponential form gives $\displaystyle x^n = e^{n\ln(x)}$ and therefore $\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} $. 
+# $\displaystyle \ln\left( (1 + s/a)^r\right) = r \ln(1 + s/a)$ which follows because $\displaystyle \ln(x^n) = n\ln(x)$. Converting to exponential form gives $\displaystyle x^n = e^{n\ln(x)}$ and therefore $\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} $. 
 # 
 # More formally let $\displaystyle y=n^x$, taking logs produces $\displaystyle \ln(y) = x \ln(n)$ then 'exponentiating', $\displaystyle y = e^{x\ln(n)}$  produces the general form: $\displaystyle n^x = e^{x\ln(n)}$. Now  substitute $n \to 1 + s/a$  and $x \to r$, the result is $\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} $.
 # 

@@ -23,7 +23,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle  \frac{c}{\sqrt{c^2-v^2}}\left( 1-\frac{v^2}{c^2} \right) =\frac{1}{c\sqrt{c^2-v^2}}\left( c^2-v^2 \right)=\frac{\sqrt{c^2-v^2}}{c}=\sqrt{1-\frac{v^2}{c^2}} $$
 # 
 # ## Q2 answer
-# The first term in the expansion element in the top left corner is zero hence only two terms appear in the result. The cofactor of $y$ in the top row is $\displaystyle -\begin{vmatrix} x & -z\\ x& 0 \end{vmatrix}=-xz$ and of $z$ is $\displaystyle \begin{vmatrix} x & 0\\ x& y \end{vmatrix}=xy$ hence 
+# The first term in the expansion element in the top left corner is zero hence only two terms appear in the result. The cofactor of $y$ in the top row is 
+# 
+# $$\displaystyle -\begin{vmatrix} x & -z\\ x& 0 \end{vmatrix}=-xz$$
+# 
+# and of $z$ is 
+# 
+# $$\displaystyle \begin{vmatrix} x & 0\\ x& y \end{vmatrix}=xy$$
+# 
+# hence 
 # 
 # $$\displaystyle  \qquad \begin{vmatrix} 0 & y & z \\ x & 0 &-z \\x & y & 0 \end{vmatrix}=-yxz+zxy=0$$
 # 
@@ -32,7 +40,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \quad \begin{vmatrix} x & a & b \\ a & x & b \\a & b & x \end{vmatrix}=x(x^2-b^2)-a(ax-ab)+b(ab-ax)=0$$
 # 
-# Factoring produces $(x-b)\left[ x(x+b)-a(a+b) \right]=0$ with the solution $x=b$. The other solutions are found from the quadratic in square brackets. This produces $x=-b -a$ and $x=a$. Using SymPy is easy also, after factoring the solve step is really not necessary.
+# Factoring produces 
+# 
+# $$\displaystyle (x-b)\big( x(x+b)-a(a+b) \big)=0$$
+# 
+# with one solution as $x=b$. The other solutions are found from the quadratic and are $x=-b -a$ and $x=a$. Using SymPy is easy also.
 
 # In[2]:
 
@@ -44,26 +56,24 @@ char_eqn = M.det()
 sp.factor(char_eqn )
 
 
+# ## Q4 answer
+# The $(2,3)$ element is the element in row $2$, column $3$ and is $1$. The cofactor is the $2 \times 2$ determinant not including the second row or third column, 
+# 
+# $$\displaystyle -\begin{vmatrix} a&b\\e&f\end{vmatrix}$$
+# 
+# The minus sign is present because the first cofactor in a row or column is multiplied by $+1$ and the second by $-1$, the third by $+1$ in an alternating pattern. 
+# 
+# ## Q5 answer
+# **(a)** As it is small, construct the matrix directly and calculate the determinant as in the examples, section 2.5. The first calculation is a numerical evaluation using the NumPy linear algebra package. The second used algebraic solution using SymPy. The numerical value is effectively zero being so small. 
+
 # In[3]:
 
 
-sp.solve(char_eqn,x)
+M = np.array( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )  # numerical method  
+print('{:e}'.format(np.linalg.det(M)) )           # LA calls linear algebra package defined at top of document
 
-
-# ## Q4 answer
-# The $(2,3)$ element is the element in row $2$, column $3$ and is $1$. The cofactor is the $2 \times 2$ determinant not including the second row or third column, $\displaystyle -\begin{vmatrix} a&b\\e&f\end{vmatrix}$. The minus sign is present because the first cofactor in a row or column if multiplied by $+1$ and the second by $-1$, the third by $+1$ in an alternating pattern. 
-# 
-# ## Q5 answer
-# (a) As it is small construct the matrix directly and calculate the determinant as in the examples, section 2.5. The first calculation is a numerical evaluation using the numpy linear algebra package. The second used algebraic solution using SymPy. The numerical value is effectively zero being so small. 
 
 # In[4]:
-
-
-M = np.array( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )  # numerical method  
-print(np.linalg.det(M))            # LA calls linear algebra package defined at top of document
-
-
-# In[5]:
 
 
 M = sp.symbols('M')                                                 # symbolic algebra
@@ -74,26 +84,30 @@ M.det()
 # The reason for this determinant being zero is seen in a determinant's properties (Chapter 7.2.4). Subtracting the first row from the second, this row  becomes $4,4,4,4$. Similarly, subtracting the first row from the third, this becomes $8, 8, 8, 8$ and the $4$ and $8$ can be removed and the whole determinant multiplied by $32$. This leaves two rows the same, therefore the determinant is zero. 
 # 
 # $$\displaystyle \begin{vmatrix} 1 & 2& 3 &4\\5 & 6& 7 &8\\9 & 10& 11 &12\\13 & 14& 15 &16\end{vmatrix} =32\begin{vmatrix} 1 & 2& 3 &4\\1 & 1& 1 &1\\1 & 1& 1 &1\\13 & 14& 15 &16\end{vmatrix}=0$$
+# 
+# **(b)** The calculation to find the determinant of the cube of each of the first $49$ number is given below. 
 
-# In[6]:
+# In[5]:
 
 
-n = 4
+n = 7                          # n x n is size of matrix in part  (a) use n=4, p=1
+p = 3                          # power to raise number to
 M = np.zeros((n,n), dtype = int)
 s = 1
 for i in range(n):
     for j in range(n):
-        M[i,j] = s
-        s = s + 1
-print(np.linalg.det(M))        # Calls numpy linear algebra package 
+        M[i,j] = s**p
+        s = s + 1              # this is total position in matrix as if a continuous row.
+print(M)
+print('Determinant is {:e}'.format( np.linalg.det(M)) )       # Calls numpy linear algebra package 
 
 
 # This is a numerical answer, as opposed to an algebraic one, meaning that an numerical algorithm was used to evaluate it. The answer is sufficiently small to assume that it is zero. 
 # 
 # ## Q6 answer
-# The prime numbers have to be found first. The first prime is $2$.  The $\mathtt{def\; isprime(n)}$ checks only as far as the square root since, if it has a larger factor, it also has a smaller one.
+# The prime numbers have to be found first. The first prime is $2$.  The $\mathtt{def\; isprime(n)}:$ checks only as far as the square root since, if it has a larger factor, it also has a smaller one.
 
-# In[7]:
+# In[6]:
 
 
 #-------------
@@ -116,26 +130,26 @@ anum = np.zeros(n*n,dtype=int)   # make array of integers
 max = 0
 i = 2
 while max < n*n :          # make only n x n values 
-    if isprime(i):
+    if isprime(i):         # only if true do we calculate max
         max = max + 1
         anum[max-1] = i
-    i=i+1                  # increment number to check
+    i = i + 1              # increment number to check
 print('{:s} {:s}'.format('primes ',str(anum))  )   # list of primes
 
-M = np.zeros((n,n),dtype=int)
+M = np.zeros((n,n),dtype=int)      # make n x n matrix to get determinant
 k = 0
 for i in range(n):
     for j in range(n):
         M[i,j] = anum[k]
         k = k + 1
-
+print('Determinant is\n', M)
 print( '{:s} {:8.2f}'.format('value = ', np.linalg.det(M) ) )
 
 
 # ## Q7 answer
 # The only change that has to be made in the case of benzene compared to the linear 1, 3, 5-hexatriene, is to add 1 to the matrix in the $(1, 6)$ and $(6, 1)$ positions, or $(1, n)$ and $(n, 1)$ generally. The calculation is the same as in Algorithm 1, but with $n=6$ because there are six carbon atoms each with one $\pi$ electron, and changes to the two extreme elements, top right, bottom left, to unity from zero, to make the benzene structure cyclic. This can be done with a line added outside and after the last end do; to link the first to last atoms.
 
-# In[8]:
+# In[7]:
 
 
 # Algorithm  Huckel Calculation Cyclic polyenes
@@ -155,14 +169,28 @@ M[n-1, 0] = 1
 M
 
 
-# In[9]:
+# In[8]:
 
 
 char_eqn = M.det()
 sp.factor(char_eqn)
 
 
-# From the factors the solutions are $x= 2,1,1,-1,-1,-2 $. The energy is calculated using $E=\alpha-\beta x$ and hence the energies are $E=\alpha \pm 2\beta$ and $\alpha \pm \beta$ each of which is doubly degenerate giving six levels in all. The energies for cyclo-octatetraene $(n=8)$ are $x=0,0, -2,2,\pm\sqrt{2},\pm\sqrt{2}$ as shown in figure 74.
+# From the factors the solutions are $x= 2,1,1,-1,-1,-2 $. The energy is calculated using 
+# 
+# $$\displaystyle E=\alpha-\beta x$$
+# 
+# and hence the energies are 
+# 
+# $$\displaystyle E=\alpha \pm 2\beta,\qquad \alpha \pm \beta,\qquad \alpha \pm \beta$$
+# 
+# giving six levels in all. 
+# 
+# The solution for $x$ in cyclo-octatetraene $(n=8)$ are 
+# 
+# $$\displaystyle x=0,0, -2,2,\pm\sqrt{2},\pm\sqrt{2}$$
+# 
+# as shown in figure 74.
 # 
 # The stabilization energy of benzene is the difference between $6\pi$ electrons and that of the MO, which is $2(1 + 1 + 2)\beta$ or $8\beta$. The delocalization energy is that achieved over six electrons in three individual double bonds each with $\pi$ energy $\alpha+\beta$. The delocalization energy is therefore $2\beta$.
 # 
@@ -176,7 +204,7 @@ sp.factor(char_eqn)
 # **(a)** Starting with the matrix, using the method of Algorithm 1 with $n = 6$, modify the matrix to connect atom $2$ atom $6$ as in the structure; the atoms $2$ and $3$ are connected already because adjacent atoms always connect in the numbering scheme, see question. Adding the following line, as was done in the previous problem, links atoms $2$ and $6$.
 # 
 
-# In[10]:
+# In[9]:
 
 
 # Algorithm  Huckel Calculation Fulvalene
@@ -195,14 +223,14 @@ M[5,1] = 1
 M
 
 
-# In[11]:
+# In[10]:
 
 
 char_eqn = sp.factor(M.det()) 
 print(char_eqn)
 
 
-# In[12]:
+# In[11]:
 
 
 solns = sp.solve(char_eqn,x)
@@ -222,7 +250,7 @@ for i,j in enumerate(solns):      # print out  each solution in a table
 # 
 # **(b)** The calculation for Naphthalene and Azulene is given below. Notice how the atoms are connected in each case. The same algorithms are used as above and the roots of the characteristic equations printed.
 
-# In[13]:
+# In[12]:
 
 
 # Calculation for Naphthalene
@@ -244,7 +272,7 @@ M[0,9] = 1
 M
 
 
-# In[14]:
+# In[13]:
 
 
 char_eqn = sp.factor(M.det()) 
@@ -256,7 +284,7 @@ for i,j in enumerate(solns):      # print out the real part of each solution in 
     print('x = {:8.4g} '.format( sp.re(complex(solns[i].evalf() ))  )  ) 
 
 
-# In[15]:
+# In[14]:
 
 
 # Calculation for Azulene
@@ -278,7 +306,7 @@ M[0,9] = 1
 M
 
 
-# In[16]:
+# In[15]:
 
 
 char_eqn = sp.factor(M.det()) 
@@ -293,25 +321,41 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # There are $10$ $\pi$ electrons in napthalene and azulene, therefore the lowest transition is from the filled to lowest unfilled orbital or $0.618-(-0.618)\approx 0.1.24$ for naphthalene, and $0.4004-(-0.4773)\approx 0.88$ for azulene which shows that this transition has far lower energy and is consistent with it absorbing in the visible part of the spectrum, whereas naphthalene absorbs in the UV and appears as a white solid.  If the Mulliken charges are calculated they show that the $7$ membered ring is positive and the smaller ring negative consistent with there being a dipole.
 
 # ## Q9 answer
-# (a) Using the notation $x = (\alpha - E)/\beta$ the Huckel determinant for the linear molecule is
+# **(a)** Using the notation 
+# 
+# $$\displaystyle x = (\alpha - E)/\beta$$
+# 
+# the Huckel determinant for the linear molecule is
 # 
 # $$\displaystyle \begin{vmatrix} x & 1 & 0 \\1 & x & 1 \\0 & 1 & x \end{vmatrix}=x(x^2-1)-x$$
 # 
-# Solving the characteristic equation $x^3 - 2x = 0$ produces the three roots, $x = 0,\pm 2$, which means that the energies of the orbitals are, $E=\alpha$ and $E=\alpha \pm 2\beta$. The integral $\beta$ is a negative quantity, therefore the total energy for three electrons is $3\alpha + 2\sqrt{2}\beta$ and the stabilization energy is therefore $2\sqrt{2}\beta$ compared to that of three non-bonded electrons with a total energy $3\alpha$.
+# Solving the characteristic equation 
+# 
+# $$\displaystyle x^3 - 2x = 0$$
+# 
+# produces the three roots, $x = 0,\pm 2$, which means that the energies of the orbitals are, $E=\alpha$ and $E=\alpha \pm 2\beta$. 
+# 
+# The integral $\beta$ is a negative quantity, therefore the total energy for three electrons is $3\alpha + 2\sqrt{2}\beta$ and the stabilization energy is therefore $2\sqrt{2}\beta$ compared to that of three non-bonded electrons with a total energy $3\alpha$.
 # 
 # In its triangular form the Huckel determinant and characteristic equation is
 # 
 # $$\displaystyle \begin{vmatrix} x & 1 & 1 \\1 & x & 1 \\1 & 1 & x \end{vmatrix}=x^3-3x+2$$
 # 
-# Solving this equation produces $x = 1, 1, -2$, with energies $E = \alpha + \beta$, twice and $E = \alpha - 2\beta$. The total energy of the three electrons is therefore $3\alpha + 3\beta$ making the stabilization energy $3\beta$. As this is slightly larger than $2\sqrt{2}\beta$ the triangular form is expected to be the most stable. In the real molecule, the energy between the linear and triangular form is quite small and the triangular form is distorted by Jahn-Teller interaction and is not an isosceles triangle but an obtuse one. The linear structure was calculated by an _ab initio_ method to be approximately $13$ kJ mol$^{-1}$ higher in energy than the triangular one (Martin & Davidson 1988).
+# Solving this equation produces $x = 1, 1, -2$, with energies $E = \alpha + \beta$, twice and $E = \alpha - 2\beta$. The total energy of the three electrons is therefore $3\alpha + 3\beta$ making the stabilization energy $3\beta$. As this is slightly larger than $2\sqrt{2}\beta$ the triangular form is expected to be the most stable. 
 # 
-# (b) In Na$^+_3$ the linear ion has the same stabilization energy as Na$_3$, which is $2\sqrt{2}\beta$, because one electron is in a non-boding orbital. The triangular ion has stabilization $2\beta$, which is smaller than the linear form and so it is less stable.
+# In the real molecule, the energy between the linear and triangular form is quite small and the triangular form is distorted by Jahn-Teller interaction and is not an isosceles triangle but an obtuse one. The linear structure was calculated by an *ab initio* method to be approximately $13$ kJ mol$^{-1}$ higher in energy than the triangular one (Martin & Davidson 1988).
 # 
-# (c) If atoms two and three are to be moved apart around a circle so that the $1\to 2$ and $1\to 3$ bond lengths are constant, then the Huckel determinant is
+# **(b)** In Na$^+_3$ the linear ion has the same stabilization energy as Na$_3$, which is $2\sqrt{2}\beta$, because one electron is in a non-boding orbital. The triangular ion has stabilization $2\beta$, which is smaller than the linear form and so it is less stable.
+# 
+# **(c)** If atoms two and three are to be moved apart around a circle so that the $1\to 2$ and $1\to 3$ bond lengths are constant, then the Huckel determinant is
 # 
 # $$\displaystyle \begin{vmatrix} x & 1 & 1 \\1 & x & b_\theta \\1 & b_\theta & x \end{vmatrix}=(x-b_\theta)(x^2-b_\theta x -2)=0$$
 # 
-# where $ b_\theta$ is the overlap term as the angle changes. Solving the characteristic equation produces roots $x_1 = b_\theta$ and $\displaystyle x_{\pm}=-\frac{b_\theta}{2}\pm\frac{\sqrt{b^2_\theta +8}}{2}$  wiith energies $E=\alpha-x\beta$. 
+# where $ b_\theta$ is the overlap term as the angle changes. Solving the characteristic equation produces roots $x_1 = b_\theta$ and 
+# 
+# $$\displaystyle x_{\pm}=-\frac{b_\theta}{2}\pm\frac{\sqrt{b^2_\theta +8}}{2}$$
+# 
+# with energies $E=\alpha-x\beta$. 
 # 
 # The separation of the two atoms is $(r/d)^2 = 2 - 2\cos(\theta)$ by the cosine rule. Substituting $b_\theta = e^{-\sqrt{-2-2\cos(\theta)}}$ with values $\alpha = 0 ; \beta = -1$, gives the energies shown in Figure 76. The exact value of $\beta$ does not matter as long as it is negative; the energy is then in units of $\beta$. The lowest energy is $2E_m + E_1$ and this is shown as $E_T$ at the bottom of the figure, and illustrates that the bent form of the molecule has the lowest energy. However the model is unrealistic at a smaller angle that $60^\text{o}$ as here repulsion must increase the energy as the bond will become shorter than the equilibrium value. The change in energy with angle above $60^\text{o}$ is small but this may not be realistic in view of the crudeness of the model. All that can be concluded is that the bent form is lower in energy that the straight one. As an exercise, recalculate the energy where the angular dependence is put in the form $b_\theta = 2 - 2 \sin(\theta/2)$, which has a value of $1$ at $60^\text{o}$.
 # 
@@ -321,7 +365,7 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # _______
 # 
 # ## Q10 answer
-# (a) The first function with $n = 1$ is that of a single carbon atom and one p$\pi$ electron, therefore, $f_1(x) = x$. Ethylene with one double bond and two carbon atoms has the $2 \times 2$ determinant,
+# **(a)** The first function with $n = 1$ is that of a single carbon atom and one p$\pi$ electron, therefore, $f_1(x) = x$. Ethylene with one double bond and two carbon atoms has the $2 \times 2$ determinant,
 # 
 # $$\displaystyle \begin{vmatrix} x & 1\\ 1& x\end{vmatrix}=x^2-1$$
 # 
@@ -335,9 +379,9 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # 
 # The Huckel energies for any linear polyene can now be calculated, provided the polynomial equations can be solved! If they cannot, you can always draw graphs to find the roots of the equations, and use the Newton-Raphson method, not that elegant, but does give good numerical values.
 # 
-# (b) Calculating the recursion in Python/SymPy is very easy also.
+# **(b)** Calculating the recursion in Python/SymPy is very easy also.
 
-# In[17]:
+# In[16]:
 
 
 x, m = sp.symbols('x, m')

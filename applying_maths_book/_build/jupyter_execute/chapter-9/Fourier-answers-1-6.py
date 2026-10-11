@@ -43,7 +43,7 @@ I0
 # 
 # When $m \ne n$
 # 
-# $$\displaystyle  \left. \frac{1}{(m^2 - n^2)}(-m\sin(nx)\cos(mx) + n\sin(mx)\cos(nx)) \right|_{-\pi}^\pi = 0$$
+# $$\displaystyle  \left. \frac{1}{(m^2 - n^2)}\big(-m\sin(nx)\cos(mx) + n\sin(mx)\cos(nx)\big) \right|_{-\pi}^\pi = 0$$
 # 
 # and the summation is reduced to just this one term. The equation for the coefficients $b_n$ is
 # 
@@ -87,6 +87,7 @@ fsin = lambda x, L ,k : 2*np.pi*np.sin(L)\
 L = 10.0
 x = np.linspace(-L,L,500)
 
+fig2= plt.figure(figsize=(5, 4))
 plt.plot(x,np.sin(x),color='gold',linewidth=8,label='sin(x)')
 k = 5
 plt.plot(x, fsin(x, 8,k),color='red',label=str(k)+' terms' )
@@ -131,7 +132,7 @@ plt.show()
 
 
 # plot fourier pi/2-x series  = a0/2 + sum( bn. sin(nx) n = 1...)
-
+fig3= plt.figure(figsize=(4, 4))
 fx = lambda x, k : np.pi/2 + sum(  (2/n)*(-1)**n*np.sin(n*x) for n in range(1,k) )
 
 x = np.linspace(-2*np.pi,2*np.pi,500)
@@ -144,7 +145,7 @@ plt.plot(x, np.pi/2-x ,color='gray',linestyle='dashed')
 plt.axhline(0,linestyle='dashed')
 plt.axvline(0,linestyle='dashed')
 plt.xlabel('x')
-plt.title(r'$\pi/2-x$ and its fourier series to '+r'$\pm \pi$')
+plt.title(r'$\pi/2-x$ and its fourier series to '+r'$\pm \pi$',fontsize=10)
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
@@ -192,6 +193,7 @@ I0= [quad(func,-L,L,args = n )[0] for n in range(m)]     # separate out integral
 
 FS = lambda x: sum( I0[n] * (Hermite(n,x)/c(n)) for n in range(0,m))    #  Fourier series eqn 20
 
+fig4= plt.figure(figsize=(5, 4))
 plt.plot(x,f(x),color='gray',linewidth=8,label='function')  # originla function
 plt.plot(x,FS(x),color='red',label='series')
 plt.axhline(0,linestyle='dashed')
@@ -233,7 +235,7 @@ func = lambda x,n: f(x) * chev(n,x) *w(x)
 I0= [quad(func,-L, L, args = n )[0] for n in range(m)]               # separate out integral into list
 
 FS = lambda x: sum( I0[n] * (chev(n,x)/c(n)) for n in range(0,m))    #  Fourier series eqn 20
-
+fig5= plt.figure(figsize=(5, 4))
 plt.plot(x,f(x),color='gray',linewidth=8,label='function')           # original function
 plt.plot(x,FS(x),color='red',label='series')
 plt.axhline(0,linestyle='dashed')
@@ -307,7 +309,11 @@ for i in range(6):
 # 
 # $$2P_2^0=3xP_1^0 - P_0^0= 3x^1-1$$
 # 
-# giving $\displaystyle P_2^0=(3x^2-1)/2$. Substituting $P_2^0$, with $x = \cos(\theta)$ into eqn. (21) produces the spherical harmonic. The calculation using SymPy is shown next
+# giving 
+# 
+# $$\displaystyle P_2^0=(3x^2-1)/2$$
+# 
+# Substituting $P_2^0$, with $x = \cos(\theta)$ into eqn. (21) produces the spherical harmonic. The calculation using SymPy is shown next
 
 # In[12]:
 
@@ -334,7 +340,6 @@ def P(x,m,L):               # associated Legendre polynomials
         return x*(2*m+1)*P(x,m,m)
      
     return (x*(2*L-1)*P(x,m,L-1 )  - (L+m-1)*P(x,m,L-2) )/(L-m)
-
 #--------------   
 
 print('   L   m      assoc legendre')
@@ -357,9 +362,8 @@ for L in [0,1,2,3] :
 
 
 x, n = sp.symbols(' x, n ')     # alternative and simpler method by differentiating directly
-
 #------------
-def P(n,x):                # Legendre polynomial by recursion, see section 4
+def P(n,x):                     # Legendre polynomial by recursion, see section 4
     if n == 0 : 
         return 1
     elif n == 1:
@@ -372,6 +376,7 @@ for L in [0,1,2,3]:
     for m in range(L+1):
         f = sp.diff(P(L,x), x, m)
         print('{:4d}{:4d}      {:s}'.format( L, m, str(sp.simplify( (-1)**m*f*(1-x**2)**(m/2) )) ))
+    
 
 
 # In[ ]:

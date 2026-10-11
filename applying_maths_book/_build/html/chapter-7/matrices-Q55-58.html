@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1585,9 +1585,12 @@ title="Print to PDF"
 <h1>Questions 55 - 58<a class="headerlink" href="#questions-55-58" title="Permalink to this headline">#</a></h1>
 <section id="q55-double-pendulum">
 <h2>Q55 Double pendulum<a class="headerlink" href="#q55-double-pendulum" title="Permalink to this headline">#</a></h2>
-<p>(a) Assuming that all angles are small during the motion, find the secular determinant for two rigid linked pendulums as shown in the diagram. The pendulums have lengths <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> and masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> at their ends. The rods are stiff but weightless and the bearing connecting the upper rod to its mount and that between the rods is frictionless. Because the equations produced are complex, in the last step of the calculation, assume that the pendulums have the same length <span class="math notranslate nohighlight">\(L\)</span>.</p>
-<p>(b) Use python/Sympy to solve the determinant and show that the normal mode frequencies are given by <span class="math notranslate nohighlight">\(\omega^2 =(1\pm \sqrt{M})g/L\)</span> where <span class="math notranslate nohighlight">\(M=m_2/(m_1 +m_2)\)</span>.</p>
-<p>(c) Suppose the linkage is a spring with force constant <span class="math notranslate nohighlight">\(k\)</span> whose potential energy varies as <span class="math notranslate nohighlight">\(k(\theta_2)^2/2\)</span>; recalculate the oscillation frequencies.</p>
+<p><strong>(a)</strong> Assuming that all angles are small during the motion, find the secular determinant for two rigid linked pendulums as shown in the diagram. The pendulums have lengths <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> and masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> at their ends. The rods are stiff but weightless and the bearing connecting the upper rod to its mount and that between the rods is frictionless. Because the equations produced are complex, in the last step of the calculation, assume that the pendulums have the same length <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<p><strong>(b)</strong> Use python/Sympy to solve the determinant and show that the normal mode frequencies are given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega^2 =\frac{1\pm g\sqrt{M}}{L}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M=m_2/(m_1 +m_2)\)</span>.</p>
+<p><strong>(c)</strong> Suppose the linkage is a spring with force constant <span class="math notranslate nohighlight">\(k\)</span> whose potential energy varies as <span class="math notranslate nohighlight">\(k(\theta_2)^2/2\)</span>; recalculate the oscillation frequencies.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig63.png" /></p>
 <p>Figure 63. Double linked pendulum. The angles are greatly exaggerated, for in this calculation, only small angle motion is accurately described.</p>
 <hr class="docutils" />
@@ -1605,10 +1608,10 @@ force equation as in equation 53.</p>
 <section id="q57-bending-normal-mode">
 <h2>Q57 Bending normal mode<a class="headerlink" href="#q57-bending-normal-mode" title="Permalink to this headline">#</a></h2>
 <p>Calculate the bending normal mode for a linear molecule, in a related manner to that used in the example of the stretching modes. Use the displacement vectors shown in the figure, which are in the plane of the figure. Assume that the bending motion obeys Hooke’s law. The force constant is that to bend the molecule rather than to extend its bonds.</p>
-<p>(a) Sketch the bending normal modes.</p>
-<p>(b)  Calculate the normal mode frequencies of the molecule, such as CO<span class="math notranslate nohighlight">\(_2\)</span>, by considering the
+<p><strong>(a)</strong> Sketch the bending normal modes.</p>
+<p><strong>(b)</strong>  Calculate the normal mode frequencies of the molecule, such as CO<span class="math notranslate nohighlight">\(_2\)</span>, by considering the
 displacement of each atom.</p>
-<p>(c) Calculate the correct relative displacements of the atoms.</p>
+<p><strong>(c)</strong> Calculate the correct relative displacements of the atoms.</p>
 <p><strong>Strategy:</strong> To determine the potential energy, use only force constants for bending between atoms 1 and 2, and between 2 and 3. Once the energy is calculated, the force matrix can be set up and solved. There will be two degenerate bending modes in the molecule, giving <span class="math notranslate nohighlight">\(3N - 5 = 4\)</span> in total. Two have been identified in the example in the text, which leaves two remaining; one of them is bending in the plane of the figure and the other one is perpendicular to this.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig65.png" /></p>
 <p>Figure 65. Basis set vectors for a bending mode.</p>
@@ -1617,8 +1620,8 @@ displacement of each atom.</p>
 <section id="q58-vibrations-of-hc-ch">
 <h2>Q58 Vibrations of HC=CH<a class="headerlink" href="#q58-vibrations-of-hc-ch" title="Permalink to this headline">#</a></h2>
 <p>Calculate the frequencies and normal mode vibrations of the linear molecule HC=CH, assuming a valence bond potential.</p>
-<p>Assume that the force constant for the CH bond is <span class="math notranslate nohighlight">\(1.1\)</span> times that for the CC bond, but that the bending force constants are the same as one another. The experimental vibrational frequencies (degeneracy) are, <span class="math notranslate nohighlight">\(612(2), 619(2), 1974, 3282, 3373 \;\mathrm{cm^{-1}}\)</span>.</p>
-<p>Decide from your calculation, which are the symmetric and which the asymmetric modes and which the bending modes. Because the algebraic result is very complicated, calculate the eigenvalues and eigenvectors numerically. Use python by modifying Algorithm 7 to this problem.</p>
+<p>Assume that the force constant for the CH bond is <span class="math notranslate nohighlight">\(1.1\)</span> times that for the CC bond, but that the bending force constants are the same as one another. The experimental vibrational frequencies (degeneracy) are, <span class="math notranslate nohighlight">\(612(2),\, 619(2),\, 1974,\, 3282, \,3373 \;\mathrm{cm^{-1}}\)</span>.</p>
+<p>Decide from your calculation, which are the symmetric and which the asymmetric modes and which the bending modes. Because the algebraic result is very complicated, calculate the eigenvalues and eigenvectors numerically. Use Python by modifying Algorithm 7 to this problem.</p>
 <p><strong>Strategy:</strong> The valence bond potential means that coupling is only to adjacent atoms. As you are asked for all the normal modes, this includes bends as well as stretches. It is advantageous in this case to do the calculation in two parts, because the molecule is linear, and the <span class="math notranslate nohighlight">\(x-, y-,\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-displacements do not depend on one another. The total number of modes is <span class="math notranslate nohighlight">\(3N - 5 = 7\)</span>.</p>
 <p>Since a numerical answer is required, give the masses their values, (in amu) and use <span class="math notranslate nohighlight">\(k_H = 1.1k_C\)</span>. In the eigenvalue (secular) determinant, divide by <span class="math notranslate nohighlight">\(k_H\)</span>, as this is a constant to obtain a numerical value, but do not forget then to multiply the resulting eigenvalues by <span class="math notranslate nohighlight">\(k_H\)</span>. The eigenvectors are independent of <span class="math notranslate nohighlight">\(k_H\)</span>. Use the pattern of these to determine the nature of the normal modes.</p>
 </section>

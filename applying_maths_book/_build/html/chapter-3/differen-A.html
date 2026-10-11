@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1758,12 +1758,12 @@ title="Print to PDF"
 <section id="gradient-calculated-from-small-changes-in-x-and-y">
 <h2>2.1 Gradient calculated from small changes in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#gradient-calculated-from-small-changes-in-x-and-y" title="Permalink to this headline">#</a></h2>
 <p>A straight line with equation <span class="math notranslate nohighlight">\(y = mx + c\)</span> has a constant slope <span class="math notranslate nohighlight">\(m\)</span>, which is the change in <span class="math notranslate nohighlight">\(y\)</span> divided by change in <span class="math notranslate nohighlight">\(x\)</span>, or <span class="math notranslate nohighlight">\(\delta y/\delta x\)</span> for any interval <span class="math notranslate nohighlight">\(\delta x\)</span>. However, most functions are more interesting than the straight line; a parabola for example, <span class="math notranslate nohighlight">\(y = mx^2 + c\)</span>, has a gradient that changes with <span class="math notranslate nohighlight">\(x\)</span> and the value <span class="math notranslate nohighlight">\(\delta y/\delta x\)</span> is now clearly going to depend upon how small <span class="math notranslate nohighlight">\(\delta x\)</span> and <span class="math notranslate nohighlight">\(\delta y\)</span> are and where <span class="math notranslate nohighlight">\(x\)</span> is on the curve. If <span class="math notranslate nohighlight">\(\delta x\)</span> is made infinitesimally small, the gradient exactly at position <span class="math notranslate nohighlight">\(x\)</span> is obtained and this is what is achieved with differentiation.</p>
-<p>In Fig. 2, the curve is a parabola with the equation <span class="math notranslate nohighlight">\(y = x^2 + 1\)</span>. The slope in the region P to Q is <span class="math notranslate nohighlight">\(\delta y/\delta x\)</span>. The point P has coordinates <span class="math notranslate nohighlight">\((2, 5)\)</span> and if <span class="math notranslate nohighlight">\(\delta x = 0.3\)</span> then the point Q is <span class="math notranslate nohighlight">\((x, y) = (2.3, 2.32 + 1)\)</span>, making <span class="math notranslate nohighlight">\(\delta y = 1.29\)</span> and <span class="math notranslate nohighlight">\(\delta y/\delta x = 4.3\)</span>. Similarly, the slope can be calculated starting at any other point on the curve. As <span class="math notranslate nohighlight">\(\delta x\)</span> is small but finite, the gradient is the average over the range <span class="math notranslate nohighlight">\(\delta x\)</span>, and if <span class="math notranslate nohighlight">\(f(x)\)</span> is any (normal) function such as <span class="math notranslate nohighlight">\(x^2 + 1\)</span>, then its slope is given by</p>
+<p>In Fig. 2, the curve is a parabola with the equation <span class="math notranslate nohighlight">\(y = x^2 + 1\)</span>. The slope in the region P to Q is <span class="math notranslate nohighlight">\(\displaystyle \frac{\delta y}{\delta x}\)</span>. The point P has coordinates <span class="math notranslate nohighlight">\((2, 5)\)</span> and if <span class="math notranslate nohighlight">\(\delta x = 0.3\)</span> then the point Q is <span class="math notranslate nohighlight">\((x, y) = (2.3, 2.32 + 1)\)</span>, making <span class="math notranslate nohighlight">\(\delta y = 1.29\)</span> and <span class="math notranslate nohighlight">\(\delta y/\delta x = 4.3\)</span>. Similarly, the slope can be calculated starting at any other point on the curve. As <span class="math notranslate nohighlight">\(\delta x\)</span> is small but finite, the gradient is the average over the range <span class="math notranslate nohighlight">\(\delta x\)</span>, and if <span class="math notranslate nohighlight">\(f(x)\)</span> is any (normal) function such as <span class="math notranslate nohighlight">\(x^2 + 1\)</span>, then its slope is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \qquad\tag{2}\]</div>
 <p>but this only approximately measures the true slope, which is obtained when <span class="math notranslate nohighlight">\(\delta x \to 0\)</span>.</p>
 <p><img alt="Drawing" src="../_images/differen-fig2.png" /></p>
-<p>Figure 2. Construction of a gradient on a curve.</p>
+<p>Figure 2. Construction of a gradient on a curve such as <span class="math notranslate nohighlight">\(y=x^2+1\)</span>.</p>
 <hr class="docutils" />
 <p>The slope can also be interpreted in trigonometric terms (see fig 2) because in any right-angled triangle, such as <span class="math notranslate nohighlight">\(PQR\)</span>, <span class="math notranslate nohighlight">\(\tan(\theta) = QR/RP\)</span> , where <span class="math notranslate nohighlight">\(\theta\)</span> is <span class="math notranslate nohighlight">\(\angle QPR\)</span> and therefore the gradient is also</p>
 <div class="math notranslate nohighlight">
@@ -1772,7 +1772,9 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dx}={\underset{\delta x\to 0}\lim}\frac{ f(x + \delta x) - f(x)}{\delta x}\]</div>
 <p>which is the basic equation to determine a derivative. The next steps, described below, illustrate how a variety of different functions are differentiated and sets out the rules for doing this for a whole variety of different functions.</p>
-<p>We can also write <span class="math notranslate nohighlight">\(\displaystyle f(x+\delta x)\approx f(x) +\frac{dy}{dx}\delta(x)\)</span>,</p>
+<p>We can also write</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x+\delta x)\approx f(x) +\frac{dy}{dx}\delta(x)\]</div>
 <p>which can sometimes be useful, see chapter 10 (differential equations) section 3.1(viii).</p>
 <p>Note that eqn 2 could is also written as</p>
 <div class="math notranslate nohighlight">
@@ -1782,7 +1784,10 @@ title="Print to PDF"
 <section id="the-machinery-of-differentiation">
 <h2>3 The machinery of differentiation<a class="headerlink" href="#the-machinery-of-differentiation" title="Permalink to this headline">#</a></h2>
 <p>In the previous section, the effect a small change <span class="math notranslate nohighlight">\(\delta x\)</span> on a quantity <span class="math notranslate nohighlight">\(x\)</span> was calculated, now <span class="math notranslate nohighlight">\(\delta x\)</span> is made infinitesimally small and the limit found when <span class="math notranslate nohighlight">\(\delta x \to  0\)</span>. The consequence of making the change <span class="math notranslate nohighlight">\(\delta x \to  0\)</span> is profound and leads to differentiation, which is of universal application. If [C] is concentration, differentiation with time gives the <em>rate</em> of a chemical reaction, or if <span class="math notranslate nohighlight">\(x\)</span> is position, differentiation gives the speed of the body: rate of change of distance with time. A derivative in general describes the rate of change of one quantity with respect to another and ‘rate of change’ is commonly used not only to mean change with time, its original meaning, but also of any quantity with respect to another; <span class="math notranslate nohighlight">\(dy/dx\)</span> for instance.</p>
-<p>If a function has a value <span class="math notranslate nohighlight">\(y = f(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> and at a nearby point <span class="math notranslate nohighlight">\(x + \delta x\)</span> its value is <span class="math notranslate nohighlight">\(y + \delta y = f(x + \delta x)\)</span>, then the slope is approximately <span class="math notranslate nohighlight">\(\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x}\)</span> provided that <span class="math notranslate nohighlight">\(\delta x \ne 0\)</span>. To find the gradient exactly at the point <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\delta x\)</span> must tend to zero; <span class="math notranslate nohighlight">\(\delta x \to  0\)</span>, which means finding the limit of the equation, and at the limit <span class="math notranslate nohighlight">\(\delta\)</span> is changed to <span class="math notranslate nohighlight">\(d\)</span> and the derivative of the function is written in mathematical notation as <span class="math notranslate nohighlight">\(dy/dx\)</span> .</p>
+<p>If a function has a value <span class="math notranslate nohighlight">\(y = f(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> and at a nearby point <span class="math notranslate nohighlight">\(x + \delta x\)</span> its value is <span class="math notranslate nohighlight">\(y + \delta y = f(x + \delta x)\)</span>, then the slope is approximately</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x}\]</div>
+<p>provided that <span class="math notranslate nohighlight">\(\delta x \ne 0\)</span>. To find the gradient exactly at the point <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\delta x\)</span> must tend to zero; <span class="math notranslate nohighlight">\(\delta x \to  0\)</span>, which means finding the limit of the equation, and at the limit <span class="math notranslate nohighlight">\(\delta\)</span> is changed to <span class="math notranslate nohighlight">\(d\)</span> and the derivative of the function is written in mathematical notation as <span class="math notranslate nohighlight">\(dy/dx\)</span> .</p>
 <p>The derivative can be written in a number of different ways besides <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}\)</span>, although this is by far the most common. The following forms are equivalent:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{aligned}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&amp;\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
@@ -1859,7 +1864,20 @@ argument of the exponential. Far simpler when put as an equation</p>
 \frac{f(x+\delta x)-f(x)}{\Delta x}&amp;= \frac{nx^{n-1}\delta x+\frac{n(n-1)x^{n-2}\delta x^2}{2}+\cdots}{\delta x}\\
 &amp;= nx^{n-1}+n(n-1)x^{n-2}\frac{\delta x}{2}+\cdots 
 \end{align}\end{split}\]</div>
-<p>Letting <span class="math notranslate nohighlight">\(\delta x \to 0\)</span> produces the familiar formula <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=nx^{n-1}\)</span>.</p>
+<p>Letting <span class="math notranslate nohighlight">\(\delta x \to 0\)</span> produces the familiar formula</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx}=nx^{n-1}\]</div>
+<p>We can use the formula just given when <span class="math notranslate nohighlight">\(n\)</span> is a fraction to obtain the gradient, for example <span class="math notranslate nohighlight">\(n=1/2\)</span> i.e. differentiating a square root such as <span class="math notranslate nohighlight">\(y=\sqrt{x}\)</span> but this can also be done directly by adding a small increment <span class="math notranslate nohighlight">\(\delta x\)</span>. To do this we start by forming the gradient by adding that increment to <span class="math notranslate nohighlight">\(x\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle gradient =\lim_{\delta x\to 0}\frac{\sqrt{x+\delta x}-\sqrt{ x}}{\delta x}\]</div>
+<p>which does not look useful, but by multiplying numerator and denominator by the same term, i.e.multiplying by unity, the square can be completed as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{d}{dx}\sqrt{x}
+&amp;=\lim_{\delta x\to 0}\frac{\left(\sqrt{x+\delta x}-\sqrt{ x}\right)}{\delta x}\frac{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}
+\\&amp;=\lim_{\delta x\to 0}\frac{\delta x}{\delta x}\frac{1}{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}
+\\&amp;= \lim_{\delta x\to 0} \frac{1}{\left(\sqrt{x+\delta x}+\sqrt{ x}\right)}
+\\&amp; = \frac{1}{2\sqrt{x}}\end{align}\end{split}\]</div>
+<p>where in the last step we use the fact that <span class="math notranslate nohighlight">\(\delta x\ll x\)</span>.</p>
 </section>
 <section id="differentiating-powers-of-y">
 <h2>3.4 Differentiating powers of <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#differentiating-powers-of-y" title="Permalink to this headline">#</a></h2>

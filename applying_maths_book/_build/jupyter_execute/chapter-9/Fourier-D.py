@@ -21,17 +21,18 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If the instrument has a profile $w$ and the experiment has an expected response $f$ the convolution $C$ at point $u$ is the integral
 # 
-# $$\displaystyle C(u)=\int f(t)w(u-t)dt$$
+# $$\displaystyle C(u)=\int f(s)w(u-s)ds\tag{32}$$
 # 
-# where $t$ is the dummy variable of the integration. When the data is from an instrument it will be digitised and then at data index $k$ the convolution is the summation
+# where $s$ is the dummy variable of the integration. The integration is, naturally, done by whatever method is possible. The limits on the integration will depend on the particular situation, for example if a measurement is made at time $t$ then one would expect the limits to be $0\to t$.  As experimental data comes from an instrument it will be digitised and also the mathematical function describing its form is usually unknown and then the convolution has to be done numerically. At data index $k$ the convolution is the summation
 # 
-# $$\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )}   $$
+# $$\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )}  \tag{32a} $$
 # 
-# Examples of convolution and how these equations are evaluated is examined in the following sections.
+# Examples of convolution and the various ways these equations are evaluated is examined in the following sections.
 # 
 # ## 7.1 Examples
 # 
 # ### **(i) Decay of an excited state**
+# 
 # Suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope although in most experiments time-correlated, single-photon counting (TCSPC) will be used.  
 # 
 # Once the data is convoluted it is natural to want to un-convolute it to obtain the true molecular response. Mathematically one can un-convolute by using matrix inversion but in practice this is never a good idea because of numerical problems, mainly diving by small numbers leading to a very noisy result. In practice an iterative non-linear least-squares method is used to fit a model that is thought to describe the data, see Chapter 13.  However, before doing an experiment, two questions have to be answered;
@@ -42,10 +43,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](fourier-fig24.png)
 # 
-# Figure 24. Top: A signal representing the ideal response of an experiment to a sudden impulse. Middle: The actual stimulation used in the experiment represented as the instrument response. Bottom: The measured signal, the convolution of the two upper curves.
+# Figure 24. Top: A signal representing the ideal response of an experiment to a sudden, i.e. effectively instantaneous impulse. Middle: The actual stimulation used in the experiment represented as the 'instrument response'. Bottom: The measured signal, the convolution of the two upper curves.
 # ____
 # 
-# If either one or both of these conditions cannot be met, then the data will be distorted by the relatively slow response of the instrument. The convolution curve in fig. 24 shows how this distortion affects some data. In this figure, the top curve is the ideal decay of the excited state, but it could represent any ideal response. This behaviour would be observed if the molecules could be excited with an infinitesimally narrow laser pulse and measured with a photo-detector with an unlimited time response. The second curve is the actual shape of the laser pulse, and/or detector response, and is the 'instrument response' drawn on the same timescale. Clearly, this has a width and a rise and decay time that is not so very different to that of the ideal response. The lower curve is the convolution of the ideal response with the instrument response, and is what would be measured experimentally and clearly has characteristics of both curves. A log plot of the data would show that only at long times does the convoluted response have the same slope as the ideal one. It makes no difference if the instrument response consists of a slow 'driving force' for the experiment, in this case a long-lived light-pulse, or a slowly responding detector or both, because the effect producing the convolution is the same. Fortunately, convolution can be calculated easily and rapidly using Fourier transforms.
+# If either one or both of these conditions cannot be met, then the data will be distorted by the relatively slow response of the instrument. The convolution curve in fig. 24 shows how this distortion affects some data. In this figure, the top curve is the ideal decay of the excited state, but it could represent any ideal response. This behaviour would be observed if the molecules could be excited with an infinitesimally narrow laser pulse and measured with a photo-detector with an unlimited time response. The second curve is the actual shape of the laser pulse and detector combined response, and is the 'instrument response' drawn on the same timescale. Clearly, this has a width and a rise and decay time that is not so very different to that of the ideal decaying signal. The lower curve is the convolution of the ideal response with the instrument response, and is what would be measured experimentally and clearly has characteristics of both curves. A log plot of the data would show that only at long times does the convoluted response have the same slope as the ideal one. It makes no difference if the instrument response consists of a slow 'driving force' for the experiment, in this case a long-lived light-pulse, or a slowly responding detector or both, because the effect producing the convolution is the same. Fortunately, convolution can be calculated easily and rapidly using Fourier transforms but can also be done by direct summation.
 # 
 # ### **(ii) Width of a spectral line**
 # As a second example, consider measuring the width or position of one particular spectral line, such as from a star or a sample of molecules in the lab. The spectrometer has slits on its entrance and exit and these, with the number of grooves in the grating, control the resolution of the spectrometer. Typically, this is $0.1$ nm/mm of slit width for a moderately good spectrometer and 1 nm/mm for a general purpose one. If the slits cannot be closed to more than $0.1$ mm, then the resolution of the general purpose instrument will be approximately 0.1 nm and a narrow spectral line will appear to have this value even it is many times narrower. This is because the grating is rotated while measuring the spectrum and the spectral line is swept across the slits. The effect is to sequentially place a spectral line at all possible points, and hence wavelengths, across the slit. A signal is recorded at all these wavelengths rather than being measured only at its proper one, and the response measured is the convolution of the ideal width of the spectral line with the instrument response, which is the finite width of the slit. In many instruments, a CCD camera measures all wavelengths simultaneously, and a slit is not needed nor is the grating scanned. However, the same reasoning applies because the individual elements of the camera have a finite width, which therefore act as individual slits.
@@ -112,7 +113,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Written as a summation, the convolution at point $k$ is
 # 
-# $$\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )} \equiv  \sum_{i=1} f_{(k-i)} w_i   \qquad\tag{32}$$
+# $$\displaystyle C_k = \sum_{i=1} f_i w_{(k - i )} \equiv  \sum_{i=1} f_{(k-i)} w_i   \tag{32b}$$
 # 
 # This sum evaluates just one point; to calculate the whole convolution, the index $k$ must now be varied from 1 to $n$, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.
 # 
@@ -397,11 +398,11 @@ plt.show()
 
 # ## 7.9 A warning and a Solution
 # 
-# Finally a warning about using Fourier transforms to perform convolution. The transform assumes that the function being transformed is periodic, this means that if the signal is not of the same size, such as zero,  at its start and end there is a frequency associated with changing from end to start so that this will appear as an artifact in the convolution. This occurs because the transform assumes that the signal is periodic. This does not arise in the case of the summation method and even though this may be slower to calculate, it is more robust.  The difference is shown in the next figure 29b. On the left is shown the summation based convolution calculation using an exponential, with lifetime of 10000, and a Gaussian and on the right using the Fourier transform method. All is not lost, however, because by padding the data with zeros to double its length the correct result can be obtained and of course only the first half is now plotted.
+# Finally a warning about using Fourier transforms to perform convolution. The transform assumes that the function being transformed is periodic, this means that if the signal is not of the same size, such as zero,  at its start and end there is a frequency associated with changing from end to start so that this will appear as an artifact in the convolution. This occurs because the transform assumes that the signal is periodic. This does not arise in the case of the summation method and even though this may be slower to calculate, it is more robust.  The difference is shown in the next figure 29b. On the left is shown the summation based convolution calculation using an exponential, with lifetime of $10000$, and a Gaussian and on the right using the unpadded Fourier transform method. All is not lost, however, because by padding the data with zeros to double its length the correct result can be obtained and of course only the first half is now plotted.
 # 
 # ![Drawing](fourier-fig29b.png)
 # 
-# Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artefact introduced by using the Fourier method ( red curve right ) without zero padding. This artefact is produced when the functions are not the same size at the start and end of the data.
+# Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artifact introduced by using the Fourier method without zero padding ( red curve, right ). This artifact is produced when the function being convoluted are not the same size at the start and end of the data and is cured by zero padding to double the length of the data.
 # ________
 # 
 # ## 8 Autocorrelation and Cross-Correlation
@@ -656,7 +657,7 @@ G   = sp.simplify(sp.integrate(f01, (t,-inf,inf), conds='none'))
 G
 
 
-# The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when $u$ = 0. The normalization equation is therefore $\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}$. The normalized autocorrelation $G(u)$ is also a Gaussian, with a value $\displaystyle G(u)=e^{-u^2/(2a^2)}$. The _fwhm_ of this function is calculated when $G(u)=1/2$ and is $a\sqrt{2\ln(2)}$ and that of the original pulse is $a\sqrt{\ln(2)}$ therefore, the autocorrelation is $\sqrt{2} \approx$ 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.
+# The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when $u$ = 0. The normalization equation is therefore $\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}$. The normalized autocorrelation $G(u)$ is also a Gaussian, with a value $\displaystyle G(u)=e^{-u^2/(2a^2)}$. The *fwhm* of this function is calculated when $G(u)=1/2$ and is $a\sqrt{2\ln(2)}$ and that of the original pulse is $a\sqrt{\ln(2)}$ therefore, the autocorrelation is $\sqrt{2} \approx$ 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.
 # 
 # ### **(iv) Goodness of data fitting**
 # The randomness or otherwise of the autocorrelation of the residuals obtained from fitting real data to a model (theory) is important when determining the 'goodness of fit'. The function is now a set of data points not an equation. The data in Fig. 33 shows the autocorrelation of a random sequence of values where the mean is 0 (left) and $1/2$ (right). When the mean is zero, only the first point has a value not essentially zero. When the mean is $1/2$, there is a correlation between each point, and this decreases as the separation between points increases. Since the mean is $1/2$ (or any value not zero), this means that each point is related to all the others, because, besides random fluctuations, they all have the same underlying value. Their correlation becomes less the further they are separated. 

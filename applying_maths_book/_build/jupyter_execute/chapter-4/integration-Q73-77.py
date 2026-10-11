@@ -4,11 +4,11 @@
 # # Questions 73 - 77
 
 # ## Q73 1D box  variational energy
-# (a) For the particle in a one-dimensional box, calculate the variational energy if the trial wavefunction is $\psi= x(L - x)$ where $L$ is the length of the box for which the potential energy $V = 0$. Compare your result with the true energy for the lowest level which is $\displaystyle \frac{h^2}{8mL^2}$. The Schroedinger equation is 
+# **(a)** For the particle in a one-dimensional box, calculate the variational energy if the trial wavefunction is $\psi= x(L - x)$ where $L$ is the length of the box for which the potential energy $V = 0$. Compare your result with the true energy for the lowest level which is $\displaystyle \frac{h^2}{8mL^2}$. The Schroedinger equation is 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi=E\psi$$
 # 
-# (b) Calculate the variational energy for a finite square well using the trial wavefunction $\psi=e^{-a x^2}$. The potential extends to $\pm \infty$ with a height $U$ except in the range $\pm L$ where it is zero. To obtain a numerical answer for the variational energy assume $\hbar=m=1, U=0.5, L=1$. With this potential the exact value for the only bound level is 0.27312. 
+# **(b)** Calculate the variational energy for a finite square well using the trial wavefunction $\psi=e^{-a x^2}$. The potential extends to $\pm \infty$ with a height $U$ except in the range $\pm L$ where it is zero. To obtain a numerical answer for the variational energy assume $\hbar=m=1, U=0.5, L=1$. With this potential the exact value for the only bound level is 0.27312. 
 # 
 # **Strategy:** (a) Calculate the two integrals in equation 47 separately; remember that $H$ acts on the wavefunction to its right and the result is then multiplied by $\psi$ before the integration is evaluated. (b) Calculate the integrals using Sympy, doing so in three parts, $-\infty \to -1; -1\to 1; 1\to \infty$. When trying to find the optimal value of $\alpha$ the LamberW function is encountered. At this point go back a step substitute the numerical value and recalculate. 
 # 
@@ -30,11 +30,11 @@
 # 
 # $H$ is the Hamiltonian operator and $du$ represents integration over all coordinates.
 # 
-# (a) Look up the formula for the energy of an H atom. Calculate the (zeroth order) ground state energy of the He atom as twice the energy of an H atom with $Z = 2$. What interaction terms are missing in this crude model?
+# **(a)** Look up the formula for the energy of an H atom. Calculate the (zeroth order) ground state energy of the He atom as twice the energy of an H atom with $Z = 2$. What interaction terms are missing in this crude model?
 # 
-# (b) Calculate the ionization energy of He+ and add this to the experimentally measured first ionization energy of $24.5$ eV then call this the 'experimental' energy of the He atom. Compare this with the energy from (a).
+# **(b)** Calculate the ionization energy of He+ and add this to the experimentally measured first ionization energy of $24.5$ eV then call this the 'experimental' energy of the He atom. Compare this with the energy from (a).
 # 
-# (c) Find the variational energy of the ground state of the He atom. Compare it with the energy calculated assuming that $\zeta = Z$, and with your 'experimental' value.
+# **(c)** Find the variational energy of the ground state of the He atom. Compare it with the energy calculated assuming that $\zeta = Z$, and with your 'experimental' value.
 # 
 # ## Q76 Variational energy in Gaussian well 
 # Using the trial wavefunction $\displaystyle \psi = e^{-ax^2/2}$ calculate the variational energy of the lowest bound state of an electron if the potential has the form of a Gaussian well 

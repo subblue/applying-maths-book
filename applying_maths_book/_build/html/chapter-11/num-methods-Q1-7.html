@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1615,16 +1615,26 @@ title="Print to PDF"
 <h1>Questions 1 - 7<a class="headerlink" href="#questions-1-7" title="Permalink to this headline">#</a></h1>
 <section id="q1-logistic-example">
 <h2>Q1 Logistic example<a class="headerlink" href="#q1-logistic-example" title="Permalink to this headline">#</a></h2>
-<p>The equation <span class="math notranslate nohighlight">\(x_{n+1} = cx_n(1 - x_n)\)</span> maps <span class="math notranslate nohighlight">\(cx_n(1 - x_n)\)</span> onto <span class="math notranslate nohighlight">\(x\)</span>,</p>
-<p>see Fig. 2, but many other expressions can do this. Try <span class="math notranslate nohighlight">\(x_{n+1} = c \sin(-x_n)\)</span> and <span class="math notranslate nohighlight">\(x_{n+1} = ce^{-x_n}\)</span> and see what happens. You may need to change the range of <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_{n+1} = cx_n(1 - x_n),\quad\text{maps}\quad cx_n(1 - x_n)\quad\text{onto}\quad x\]</div>
+<p>see Fig. 2, but many other expressions can do this. Try</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_{n+1} = c \sin(-x_n)\quad\text{and}\quad x_{n+1} = ce^{-x_n}\]</div>
+<p>and see what happens. You may need to change the range of <span class="math notranslate nohighlight">\(c\)</span>.</p>
 </section>
 <section id="q2-numerical-integration">
 <h2>Q2 Numerical integration<a class="headerlink" href="#q2-numerical-integration" title="Permalink to this headline">#</a></h2>
-<p>Calculate the integral of <span class="math notranslate nohighlight">\(\cos(x^2)\)</span> over the range <span class="math notranslate nohighlight">\(0 \to 10\)</span>, by the trapezoidal rule and by Simpson’s rule. Choose the number of points sufficient to guarantee accuracy to three decimal places in each case. This is a highly oscillating function, varying between <span class="math notranslate nohighlight">\(\pm 1\)</span>, so many terms will be needed for an accurate calculation.</p>
+<p>Calculate</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^{10} \cos(x^2)dx\]</div>
+<p>by the trapezoidal rule and by Simpson’s rule. Choose the number of points sufficient to guarantee accuracy to three decimal places in each case. This is a highly oscillating function, varying between <span class="math notranslate nohighlight">\(\pm 1\)</span>, so many terms will be needed for an accurate calculation.</p>
 </section>
 <section id="q3-numerical-integration">
 <h2>Q3 Numerical integration<a class="headerlink" href="#q3-numerical-integration" title="Permalink to this headline">#</a></h2>
-<p>Numerically calculate the integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^3\frac{x^6}{1-x}dx\)</span>.</p>
+<p>Numerically calculate the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^3\frac{x^6}{1-x}dx\]</div>
 <p><strong>Strategy:</strong> As this function will become infinite at <span class="math notranslate nohighlight">\(x = 1\)</span>, the mid-point rule should be used. Choose <span class="math notranslate nohighlight">\(100\)</span> points to begin with and then alter this to see how the accuracy varies. The reason for the large number of points is that towards the asymptote <span class="math notranslate nohighlight">\(y \to \infty\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> the function has to be accurately evaluated and values either side of this point have opposite sign and similar value and so almost cancel each other out, but do not always do so exactly.</p>
 </section>
 <section id="q4-energy-of-crystalline-solid">

@@ -16,23 +16,23 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q15 answer
-# (a) $I=\int\cos^3(x)dx$. Trying $u=\sin(x)$, then $du=\cos(x) dx$ producing 
+# **(a)** $I=\int\cos^3(x)dx$. Trying $u=\sin(x)$, then $du=\cos(x) dx$ producing 
 # 
 # $$\displaystyle I=\int\cos^2(x)du=\int(1-u^2)du=u-u^3/3=\sin(x)-\sin^3(x)/2+c$$
 # 
 # where $c$ is a constant and $\cos^2+\sin^2=1$ was used. 
 # 
-# (b) $\displaystyle I=\int\frac{3x}{(5+3x)^4}dx$. Guessing $u=5+3x$ then $du=dx/3$ and substituting gives
+# **(b)** $\displaystyle I=\int\frac{3x}{(5+3x)^4}dx$. Guessing $u=5+3x$ then $du=dx/3$ and substituting gives
 # 
 # $$\displaystyle I=\int\frac{u-5}{3u^4}du =-\frac{1}{6u^2}+\frac{5}{9u^3}=-\frac{9x+5}{18(5+3x)}+c$$
 # 
 # and eqn 6 was used.
 # 
-# (c) $\displaystyle I=\int\frac{e^\sqrt{x}}{\sqrt{x}}dx$. It seems obvious to try $u=\sqrt{x}$ and $du=dx/(2\sqrt{x})$. Substituting gives 
+# **(c)** $\displaystyle I=\int\frac{e^\sqrt{x}}{\sqrt{x}}dx$. It seems obvious to try $u=\sqrt{x}$ and $du=dx/(2\sqrt{x})$. Substituting gives 
 # 
 # $$\displaystyle I=\int \frac{e^u}{2} du= 2e^\sqrt{x}+c$$
 # 
-# (d) $I=\int\cot(ax)dx$. Recognising that $\cot=1/\tan=\cos/\sin$ gives $\displaystyle I=\int\frac{\cos(x)}{\sin(x)}dx$ and the numerator (on top) is $1/a$ times the derivative of $\sin(ax)$. Therefore, using equation 12, 
+# **(d)** $I=\int\cot(ax)dx$. Recognising that $\cot=1/\tan=\cos/\sin$ gives $\displaystyle I=\int\frac{\cos(x)}{\sin(x)}dx$ and the numerator (on top) is $1/a$ times the derivative of $\sin(ax)$. Therefore, using equation 12, 
 # 
 # $$\displaystyle I=\int\cot(ax)dx = \frac{1}{a}\ln\left(\sin(ax)\right)+c$$ 
 # 
@@ -45,11 +45,11 @@ x, a = sp.symbols('x, a',positive =True)
 sp.integrate(sp.cot(a*x),x)
 
 
-# (e) $\displaystyle I=\int \frac{x^2}{8+x^3}dx$. In this case the numerator is 1/3 of the derivative of the denominator, therefore, using equation 12, 
+# **(e)** $\displaystyle I=\int \frac{x^2}{8+x^3}dx$. In this case the numerator is 1/3 of the derivative of the denominator, therefore, using equation 12, 
 # 
 # $$\displaystyle I=\int \frac{x^2}{8+x^3}dx=\frac{1}{3}\ln(8+x^3)$$
 # 
-# (f) $I=\int e^{ax}(1-e^{ax})^{-1}dx$. This also has the form of equation 12 with the derivative as numerator therefore, $I=-\ln(1-e^{ax})/a$.
+# **(f)** $I=\int e^{ax}(1-e^{ax})^{-1}dx$. This also has the form of equation 12 with the derivative as numerator therefore, $I=-\ln(1-e^{ax})/a$.
 # 
 # ## Q16 answer
 # Using the substitution $x=a\sin(u)$ and $dx=a\cos(u)du$ gives 
@@ -64,11 +64,11 @@ sp.integrate(sp.cot(a*x),x)
 # ____
 # 
 # ## Q17 answer
-# (a) Let $u = x^2$ and thus $du = 2xdx$ the integral can pleasingly be simplified to 
+# **(a)** Let $u = x^2$ and thus $du = 2xdx$ the integral can pleasingly be simplified to 
 # 
 # $$\displaystyle I=\frac{1}{2}\int e^{-u}du =-\frac{1}{2}e^{-u}=-\frac{1}{2}e^{-x^2} +c$$
 # 
-# (b) Performing the definite integral 
+# **(b)** Performing the definite integral 
 # 
 # $$\displaystyle I=\int_0^x xe^{-x^2}dx=-\frac{e^{-x^2}}{2}\bigg|_0^x= \frac{1-e^{-x^2}}{2} \tag{96}$$
 # 
@@ -87,10 +87,31 @@ sp.integrate(sp.cot(a*x),x)
 # 
 # ![Drawing](integration-fig43.png)
 # 
+# Figure 43.
+# ___________________________
+# 
+# **(c)** Trying by parts with $\displaystyle v=(1-e^{-x})^{-1}, u=x$ or vice versa lead to very difficult integrals. Instead expanding the denominator then evaluating the series term by term gives
+# 
+# $$\displaystyle \begin{align}\int \frac{xe^{-x}}{1-e^{-x}}dx&=\int xe^{-x}(1+e^{-x}+e^{-2x}+e^{-3x}\cdots)dx\\ &=\int x(e^{-x}+e^{-2x}+e^{-3x}\cdots)dx\\
+# &=\sum_{n=1}^\infty\int xe^{-nx}dx\end{align}$$
+# 
+# and we leave out the integration limits for clarity but will add then in at the end of the calculation. We can evaluate the integral directly with $\displaystyle u=x, v=e^{-x}$ producing 
+# 
+# $$\displaystyle  \int xe^{-nx}dx= -\frac{1}{n}xe^{-nx} -\frac{1}{n^2} e^{-nx}=-e^{-nx}\frac{(nx+1)}{n^2}$$
+# 
+# Adding limits makes the integral $\displaystyle \frac{1}{n^2}$ and so
+# 
+# $$\displaystyle \sum_{n=1}^\infty \int_0^\infty xe^{-nx}dx = \sum_{n=1}^\infty \frac{1}{n^2}$$
+# 
+# The Basel Problem was to evaluate $\displaystyle \sum_{n=1}^\infty\frac{1}{n^2}$ and Euler in $1734$ was the first to do this, our final result is therefore 
+# 
+# $$\displaystyle \int_0^\infty \frac{xe^{-x}}{1-e^{-x}}dx=\sum_{n=1}^\infty\frac{1}{n^2} =\frac{\pi}{6}$$
+# 
+
 # ## Q18 answer
 # Expanding the fraction gives two simpler integrals 
 # 
-# $$\displaystyle I=\int\frac{x-2}{x\sqrt{x+3}}dx=\int\frac{1}{\sqrt{x+3}}dx=-\int\frac{2}{x\sqrt{x+3}}dx$$
+# $$\displaystyle I=\int\frac{x-2}{x\sqrt{x+3}}dx =\int\frac{1}{\sqrt{x+3}}dx =-\int\frac{2}{x\sqrt{x+3}}dx$$
 # 
 # In expressions of this form always try substituting for the square root, $u=\sqrt{x+3}$, then $dy=dx/(2\sqrt{x+3})$ and the first integral is  $I_1=\int2du=2u=2\sqrt{x+3}$. The second is $I_2=\displaystyle -\int\frac{2}{u^2-3}du$, which is a standard integral, see section 2.13. The result is 
 # 
@@ -108,14 +129,14 @@ sp.integrate(sp.cot(a*x),x)
 # 
 # $$\displaystyle I=\int\sin^{-1}(ax) dx=x\sin^{-1}(ax)-\int x\frac{d}{dx}\sin^{-1}(ax) dx$$
 # 
-# Looking up or working out the deritative of $\sin-1(ax)$ produces $\displaystyle I=\sin^{-1}(ax)-\int\frac{ax}{\sqrt{1-a^2x^2}}dx$
+# Looking up or working out the derivative of $\sin-1(ax)$ produces $\displaystyle I=\sin^{-1}(ax)-\int\frac{ax}{\sqrt{1-a^2x^2}}dx$
 # 
 # The integral now has the form of the numerator (top) being related to the derivative of the denominator, equation 12, and the final result is 
 # 
 # $$\displaystyle I=\sin^{-1}(ax) +\frac{\sqrt{1-a^2x^2}}{a}$$
 
 # ## Q21 answer
-# (a) Changing the limits is described by equation 5, the general integral becomes 
+# **(a)** Changing the limits is described by equation 5, the general integral becomes 
 # 
 # $$\displaystyle \int_a^b f(x)dx=g(b)-g(a)=-\int_b^a f(x)dx$$
 # 
@@ -131,7 +152,7 @@ sp.integrate(sp.cot(a*x),x)
 # 
 # and the last step follows from the properties of limits, see Section 1.3.
 # 
-# (b) Integration by parts gives 
+# **(b)** Integration by parts gives 
 # 
 # $$\displaystyle -Ei(x)= \int_{-x}^\infty \frac{e^{-t}}{t}dt=-\frac{e^{-t}}{t}\bigg|_{-x}^\infty  -  \int_{-x}^\infty \frac{e^{-t}}{t^2}dt = \frac{e^{x}}{x} -  \int_{-x}^\infty \frac{e^{-t}}{t^2}dt $$ 
 # 
@@ -151,16 +172,16 @@ sp.integrate(sp.cot(a*x),x)
 # 
 # $$\displaystyle Ei(x)\approx e^x\sum_{n=0} (-1)^n\frac{n!}{x^{n+1}}$$
 # 
-# Calculating this summation is a frustrating affair, the number produced are typically very large for example $\approx 10^{20}$ when $x=50$. The results are comparable to the answer Python/Scipy gives for large $x$, say, $\pm 500$ and for $30$ terms in the summation. However, with $x \gt \approx 50$, the results are unpredictable and vary with the number of terms in the summation. Clearly this summation is unstable and not a good way of evaluating this integral. 
+# Calculating this summation is a frustrating affair, the number produced are typically very large for example $\approx 10^{20}$ when $x=50$. The results are comparable to the answer Python/SciPy gives for large $x$, say, $\pm 500$ and for $30$ terms in the summation. However, with $x \gt \approx 50$, the results are unpredictable and vary with the number of terms in the summation. Clearly this summation is unstable and not a good way of evaluating this integral. 
 # 
-# The instability for small $x$ arises because $\pm n!/x^{n+1}$ becomes larger and larger as $n$ increases and the sign alternates. This result shows how an algebraic formula, while correct, can give poor answers in a numerical calculation because of rounding errors; see Chapter 11. This is particularly true of summations with alternating positive and negative terms as in this case. Python/scipy  uses the built-in function $\mathtt{expi(x)}$ to numerically evaluate  this integral. (You need to add 'from scipy.special import expi' to import this function into a python worksheet).
+# The instability for small $x$ arises because $\pm n!/x^{n+1}$ becomes larger and larger as $n$ increases and the sign alternates. This result shows how an algebraic formula, while correct, can give poor answers in a numerical calculation because of rounding errors; see Chapter 11. This is particularly true of summations with alternating positive and negative terms as in this case. Python/SciPy  uses the built-in function $\mathtt{expi(x)}$ to numerically evaluate  this integral. (You need to add 'from scipy.special import expi' to import this function into a Python worksheet).
 # 
 # ## Q22 answer
-# (a) Recognize this as an integration by parts and use equation 16. If $u = x$ then $dv = e^{ax}dx$ and the formula gives  
+# **(a)** Recognize this as an integration by parts and use equation 16. If $u = x$ then $dv = e^{ax}dx$ and the formula gives  
 # 
 # $$\displaystyle \int xe^{ax}dx =x\frac{e^{ax}}{a}-\frac{1}{a}\int e^{ax} dx=\frac{(ax-1)}{a^2}e^{ax}$$
 # 
-# (b) The result of the previous calculation produces 
+# **(b)** The result of the previous calculation produces 
 # 
 # $$I_1= xI_0 - I_0/2\quad\text{ where }\quad I_0=\int e^{ax}dx=e^{ax}/a$$
 # 
@@ -193,7 +214,11 @@ sp.simplify(Intn(5) )      #  integral x^5 exp(a*x)
 
 
 # ## Q23 answer
-# (a) The integral for $n=1$ can be calculated between $0$ and infinity but the way to do this is a little cunning. The normal 'by parts' integral is $\displaystyle \int u dv = uv - \int vdu$. Now, suppose that $\displaystyle v=e^{-ax^2}$ therefore $dv=-2axe^{-ax^2}$ and also if $u=1$ then 
+# **(a)** The integral for $n=1$ can be calculated between $0$ and infinity but the way to do this is a little cunning. The normal 'by parts' integral is 
+# 
+# $$\displaystyle \int u dv = uv - \int vdu$$
+# 
+# Now, suppose that $\displaystyle v=e^{-ax^2}$ therefore $dv=-2axe^{-ax^2}$ and also if $u=1$ then 
 # 
 # $$\displaystyle I_1=\frac{1}{2a}\int_0^\infty 1(-2axe^{-ax^2})dx$$
 # 
@@ -201,7 +226,7 @@ sp.simplify(Intn(5) )      #  integral x^5 exp(a*x)
 # 
 # $$\displaystyle I_1=-\frac{e^{-ax^2}}{2a}\bigg|_0^\infty -\int0dx=\frac{1}{2a}$$
 # 
-# (b) Letting $v = x^n$ because $e-x^2$ cannot be integrated easily, gives 
+# **(b)** Letting $v = x^n$ because $e-x^2$ cannot be integrated easily, gives 
 # 
 # $$\displaystyle I_n=e^{-ax^2}\frac{x^{n+1}}{n+1}\bigg|_0^\infty + 2a\int_0^\infty xe^{-ax^2}\frac{x^{n+1}}{n+1}dx$$
 # 
@@ -236,6 +261,14 @@ for n in range( 6):               # make list to see results
 ans
 
 
+# **(c)** The integral is $\displaystyle \int \text{erf}(x)dx$ so using the 'by parts' formula we can choose $u=\text{erf}(x), dv=dx, v=x$ and thus $\displaystyle du= \frac{2}{\sqrt{\pi}}e^{-x^2}dx$. Substituting gives 
+# 
+# $$\displaystyle \int \text{erf}(x)dx= x\;\text{erf}(x)-\frac{2}{\sqrt{\pi}}\int xe^{-x^2}dx+ c$$
+# 
+# where $c$ is a constant. The remaining integral is the same as in Q17 giving the final result
+# 
+# $$\displaystyle \int \text{erf}(x)dx= x\;\text{erf}(x)+\frac{1}{\sqrt{\pi}}e^{-x^2}dx+ c$$
+# 
 # ## Q24 answer
 # The strategy here is to recognize that $d\ln(x)=1/x$ or, equivalently, letting $w=\ln(x)$ (and $dw=dx/x$) the integral becomes
 # 
@@ -253,13 +286,13 @@ ans
 # where $c$ is a constant of integration. Substitute back for $z$ to get the result.
 # 
 # ## Q26 answer
-# (a) This integral can be evaluated by converting to the exponential form but can also be done rather easily by parts; 
+# **(a)** This integral can be evaluated by converting to the exponential form but can also be done rather easily by parts; 
 # 
 # $$\displaystyle \int \cosh(x)\sinh(x)dx=\sinh^2(x)-\int \cosh(x)\sinh(x)dx$$
 # 
 # and rearranging gives $\displaystyle \int\cosh(x)\sinh(x)=\frac{1}{2}\sinh^2(x)+c$
 # 
-# (b) Using the example in section 5 to evaluate the integrals gives $\displaystyle \int x\cos(x)dx=\frac{e^x}{2}\left( \sin(x)+\cos(x) \right)$
+# **(b)** Using the example in section 5 to evaluate the integrals gives $\displaystyle \int x\cos(x)dx=\frac{e^x}{2}\left( \sin(x)+\cos(x) \right)$
 # 
 # ## Q27 answer
 # Converting to an exponential form gives 
@@ -277,9 +310,9 @@ ans
 # Some texts may convert the answer into hyperbolic form using $\displaystyle \tanh^{-1}(z)=\frac{1}{2}\ln\left( \frac{1+z}{1-z} \right)$ where $z$ is defined above. In this case the result has to be real even though $z$ is complex, and even though the result may appear to be complex, the area under the curve, which is the integral, cannot be complex since $1/\sin(ax)$ is real.
 # 
 # ## Q28 answer
-# (a) $\displaystyle \int_{-\pi}^\pi dx=x\bigg|_{-\pi}^\pi =2\pi$.
+# **(a)** $\displaystyle \int_{-\pi}^\pi dx=x\bigg|_{-\pi}^\pi =2\pi$.
 # 
-# (b) Integrating and then changing the exponential to a sine using $2i\sin(x)=e^{ix}-e^{-ix}$ gives 
+# **(b)** Integrating and then changing the exponential to a sine using $2i\sin(x)=e^{ix}-e^{-ix}$ gives 
 # 
 # $$\displaystyle \int_{-\pi}^\pi e^{imx}e^{-inx}dx =-\frac{e^{-ix(m+n)}}{i(m+n)}\bigg|_{-\pi}^\pi=-\frac{ e^{-i\pi(m+n) } }{i(m+n) }+\frac{e^{i\pi(m+n)}}{i(m+n)}=2\frac{\sin\left( n\pi+m\pi \right)}{m+n}$$
 # 

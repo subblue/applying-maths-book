@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1526,19 +1526,57 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#taylor-series">
    6.2 Taylor Series
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trig-functions-expansion">
+   6.3 Trig functions expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-expansion">
+   6.4 Exponential expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-expansion">
+   6.5 Log expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binomial-expansion-1-x-m">
+   6.6 Binomial expansion
+   <span class="math notranslate nohighlight">
+    \( (1+x)^m\)
+   </span>
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-series-of-an-unknown-function">
+    <a class="reference internal nav-link" href="#i-calculating-a-square-root">
      <strong>
-      (i) Series of an Unknown function
+      (i) Calculating a square root
      </strong>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivatives-of-series">
+   6.7 Derivatives of series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-expansion-of-an-arbitrary-function">
+   6.8 Series expansion of an arbitrary function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-and-second-order-numerical-derivatives">
+   6.9 First and second order numerical derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mathcal-o-x-and-sim-notations">
-   6.3
+   6.10
    <span class="math notranslate nohighlight">
     \(\mathcal{O}(x)\)
    </span>
@@ -1551,49 +1589,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#useful-series-expansion-formulae">
-   6.4 Useful series expansion formulae
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#trig-functions-expansion">
-   6.5 Trig functions expansion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exponential-expansion">
-   6.6 Exponential expansion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-expansion">
-   6.7 Log expansion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binomial-expansion-1-x-m">
-   6.8 Binomial expansion
-   <span class="math notranslate nohighlight">
-    \( (1+x)^m\)
-   </span>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-calculate-square-root">
-     <strong>
-      (i) Calculate square root
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-of-series">
-   6.9 Derivatives of series
+   6.11 Useful series expansion formulae
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits">
-   6.10 Paramagnetic spins. Example using partition functions, expansions and limits
+   6.12 Paramagnetic spins. Example using partition functions, expansions and limits
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1656,19 +1657,57 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#taylor-series">
    6.2 Taylor Series
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trig-functions-expansion">
+   6.3 Trig functions expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-expansion">
+   6.4 Exponential expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-expansion">
+   6.5 Log expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binomial-expansion-1-x-m">
+   6.6 Binomial expansion
+   <span class="math notranslate nohighlight">
+    \( (1+x)^m\)
+   </span>
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-series-of-an-unknown-function">
+    <a class="reference internal nav-link" href="#i-calculating-a-square-root">
      <strong>
-      (i) Series of an Unknown function
+      (i) Calculating a square root
      </strong>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivatives-of-series">
+   6.7 Derivatives of series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-expansion-of-an-arbitrary-function">
+   6.8 Series expansion of an arbitrary function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-and-second-order-numerical-derivatives">
+   6.9 First and second order numerical derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mathcal-o-x-and-sim-notations">
-   6.3
+   6.10
    <span class="math notranslate nohighlight">
     \(\mathcal{O}(x)\)
    </span>
@@ -1681,49 +1720,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#useful-series-expansion-formulae">
-   6.4 Useful series expansion formulae
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#trig-functions-expansion">
-   6.5 Trig functions expansion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exponential-expansion">
-   6.6 Exponential expansion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-expansion">
-   6.7 Log expansion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binomial-expansion-1-x-m">
-   6.8 Binomial expansion
-   <span class="math notranslate nohighlight">
-    \( (1+x)^m\)
-   </span>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-calculate-square-root">
-     <strong>
-      (i) Calculate square root
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-of-series">
-   6.9 Derivatives of series
+   6.11 Useful series expansion formulae
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits">
-   6.10 Paramagnetic spins. Example using partition functions, expansions and limits
+   6.12 Paramagnetic spins. Example using partition functions, expansions and limits
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1780,11 +1782,11 @@ title="Print to PDF"
 </div>
 <section id="maclaurin-and-taylor-series">
 <h2>6 Maclaurin and Taylor series<a class="headerlink" href="#maclaurin-and-taylor-series" title="Permalink to this headline">#</a></h2>
-<p>Many normal functions can be expanded into a series by the method devised by Maclaurin and by Taylor. Series are often used to simplify a function at some value of its argument, for example at small <span class="math notranslate nohighlight">\(x, \sin(x) \approx x\)</span>, and this may enable an equation to be solved, as in the case of a pendulum’s motion. The equation of motion is greatly simplified by assuming that the pendulum is restricted to move only to small angles from the vertical.</p>
-<p>The other use of a series expansion is to extrapolate from some simple law where dependence may be linear in <span class="math notranslate nohighlight">\(x\)</span>, into more realistic conditions by adding terms in <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(x^3\)</span> and so on. This approach extends our knowledge into unknown regions by using what is presently known about the behaviour of the equations, and assumes that they change only in a predictable and gradual way. This is the approach made when the virial coefficients of a real gas are calculated. The equation has the form</p>
+<p>Many normal functions can be expanded into a series by the method devised by Maclaurin and by Taylor. Series are often used to simplify a function at some value of its argument, for example at small <span class="math notranslate nohighlight">\(x, \sin(x) \approx x\)</span>, and this may enable an equation to be solved, as in the case of a pendulum’s motion. In this case the equation of motion is greatly simplified by assuming that the pendulum is restricted to move only to small angles from the vertical which means that it is necessary to know how the sine can be approximated at small angles.</p>
+<p>The other use of a series expansion is to extrapolate from some simple law where dependence may be linear in <span class="math notranslate nohighlight">\(x\)</span>, into more realistic conditions by adding terms in <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(x^3\)</span> and so on. This approach extends our knowledge into unknown regions by using what is presently known about the behaviour of the equations, and assumes that they change only in a predictable and gradual way. This is the approach made when the Virial coefficients of a real gas are calculated. The equation has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{pV}{nRT } = c_0 + c_1\frac{n}{V} + c_2\left(\frac{n}{V}\right)^2 + \cdots\]</div>
-<p>with virial coefficients <span class="math notranslate nohighlight">\(c_0, c_1\)</span> etc. and is clearly seen to be based on the ideal gas law.</p>
+<p>with Virial coefficients <span class="math notranslate nohighlight">\(c_0, c_1\)</span> etc. and is clearly seen to be based on the ideal gas law.</p>
 </section>
 <section id="maclaurin-series">
 <h2>6.1 Maclaurin series<a class="headerlink" href="#maclaurin-series" title="Permalink to this headline">#</a></h2>
@@ -1821,48 +1823,11 @@ f''''(x)&amp; = \cdots\, \mathrm {etc.}\end{align} \end{split}\]</div>
 <p>or equivalently</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(x) =f(x_0)+(x-x_0)\left( \frac{df}{dx} \right)_{x_0} + \frac{(x-x_0)^2}{2!}\left( \frac{d^2f}{dx^2} \right)_{x_0}+\cdots   \tag{17} \]</div>
-<p>where the subscript <span class="math notranslate nohighlight">\(x_0\)</span> means evaluate the derivative at <span class="math notranslate nohighlight">\(x = x_0\)</span>: The Taylor series evaluated at zero is the Maclaurin series.</p>
+<p>where the subscript <span class="math notranslate nohighlight">\(x_0\)</span> means evaluate the derivative at <span class="math notranslate nohighlight">\(x = x_0\)</span>: The Taylor series evaluated at zero is the Maclaurin series. Notice that the derivative is always taken at the <span class="math notranslate nohighlight">\(x\)</span> value of the first term in the expansion.</p>
 <p>These series are extremely useful, for example, to calculate <span class="math notranslate nohighlight">\(\sin(1.3), \;\cos(\pi/4),\; \ln(1 + x)\)</span>, and so forth if the function can be expanded as a Taylor series and the terms added until the required numerical accuracy is needed. This is tedious to do by hand, rather than being difficult, but is ideally suited for computer calculation where repetitive calculations are easily performed.</p>
-<section id="i-series-of-an-unknown-function">
-<h3><strong>(i) Series of an Unknown function</strong><a class="headerlink" href="#i-series-of-an-unknown-function" title="Permalink to this headline">#</a></h3>
-<p>If there is a multiply differentiable but unknown function <span class="math notranslate nohighlight">\(f\)</span> then expansion of <span class="math notranslate nohighlight">\(f(x+x_0)\)</span> is possible. Starting with eqn 16 we substitute <span class="math notranslate nohighlight">\(x+x_0\)</span> for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x\)</span> for <span class="math notranslate nohighlight">\(x_0\)</span> then</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle f(x+x_0)=f(x)+x_0\frac{df}{dx}+\frac{x_0^2}{2!}\frac{d^2f}{dx^2}+\cdots\]</div>
-<p>and similarly</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle f(x-x_0)=f(x)-x_0\frac{df}{dx}+\frac{x_0^2}{2!}\frac{d^2f}{dx^2}-\cdots\]</div>
-<p>To form a good approximation to the second derivative which is often needed in numerical methods, e.g. as when using the diffusion equation in cases where an algebraic solution cannot be found, we add the series for <span class="math notranslate nohighlight">\(f(x+x_0)\)</span> and <span class="math notranslate nohighlight">\(f(x-x_0)\)</span> together. In these cases in the derivation leading to this point <span class="math notranslate nohighlight">\(x_0\)</span> will be a very small quantity and small compared to <span class="math notranslate nohighlight">\(x\)</span>. To emphasise this we change <span class="math notranslate nohighlight">\(x_0 \to \delta x\)</span> in the next equations</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle f(x+\delta x)+f(x-\delta x)= 2f(x) + \delta x^2\frac{d^2f}{dx^2}+2\frac{\delta x^4}{4!}\frac{d^2f}{dx^2} +\cdots \]</div>
-<p>and therefore a good approximation, if we assume <span class="math notranslate nohighlight">\(\delta x\)</span> is a small quantity and so <span class="math notranslate nohighlight">\(\delta x^2 \gg \delta x^4\)</span> and so this approximation is a good one as the quartic terms are effectively zero,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{d^2f}{dx^2}\approx\frac{f(x+\delta x)+f(x-\delta x)-2f(x)}{\delta x^2}\]</div>
-</section>
-</section>
-<section id="mathcal-o-x-and-sim-notations">
-<h2>6.3 <span class="math notranslate nohighlight">\(\mathcal{O}(x)\)</span> and <span class="math notranslate nohighlight">\(\sim\)</span> notations<a class="headerlink" href="#mathcal-o-x-and-sim-notations" title="Permalink to this headline">#</a></h2>
-<p>In a series expansion of a function <span class="math notranslate nohighlight">\(f(x)\)</span> it is often possible to state something general perhaps that that <span class="math notranslate nohighlight">\(f(x) \to \infty\)</span> as <span class="math notranslate nohighlight">\(x\to \infty\)</span>. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as <span class="math notranslate nohighlight">\(x\)</span> changes; does it change as <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> for example?</p>
-<p>The ‘big O’ notation, for example, <span class="math notranslate nohighlight">\(\mathcal{O}(x^2),\; \mathcal{O}(e^x)\)</span>, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> at the point that the function is being evaluated. An example is the series <span class="math notranslate nohighlight">\(x^{-2} - x^{-4} + \mathcal{O}(x^{-6})\)</span> when <span class="math notranslate nohighlight">\(x \gt 1\)</span> which means that the next term in the series is vastly smaller than the <span class="math notranslate nohighlight">\(x^{-4}\)</span> term and can be safely ignored. The symbol <span class="math notranslate nohighlight">\(\sim \)</span> is generally interpreted as meaning ‘is proportional to’ and as used in <span class="math notranslate nohighlight">\(\sin(x) \sim x\)</span> when <span class="math notranslate nohighlight">\(x \to\)</span> 0 means that the function grows at the same rate as <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</section>
-<section id="useful-series-expansion-formulae">
-<h2>6.4 Useful series expansion formulae<a class="headerlink" href="#useful-series-expansion-formulae" title="Permalink to this headline">#</a></h2>
-<p>Several expansions are listed below. If you want to calculate, for example <span class="math notranslate nohighlight">\(1/(1 - ax)\)</span>, replace each <span class="math notranslate nohighlight">\(x\)</span> in the first series below with <span class="math notranslate nohighlight">\(-ax\)</span> and evaluate the result; <span class="math notranslate nohighlight">\((1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots\)</span>. This substitution can be performed with any series and means that fewer need to be remembered. The <span class="math notranslate nohighlight">\(\mathcal{O}(x^6)\)</span> means that the next term in the series has power of order of <span class="math notranslate nohighlight">\(x^6\)</span>. You must check on the value of <span class="math notranslate nohighlight">\(x\)</span> used determine if this is an acceptable approximation.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}
-\frac{1}{1+x} &amp;= 1 - x + x^{2} - x^{3} + x^{4} - x^{5}+\mathcal{O}\left(x^{6}\right)  \\[0.25cm]
-\frac{1}{\left(1+x\right)^{2}}&amp; = 1 - 2 x + 3 x^{2} - 4 x^{3} + 5 x^{4} - 6 x^{5}+\mathcal{O}\left(x^{6}\right) \\[0.25cm]
-\sqrt{1+x} &amp;= 1 + \frac{x }{ 2} - \frac{x^{2} }{ 8} + \frac{x^{3} }{16} - \frac{5}{128} x^{4}  + \frac{7}{256} x^{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-\frac{1}{\sqrt{1+x}}&amp; = 1 - \frac{x }{2} + \frac{3}{8} x^{2} - \frac{5}{16} x^{3}  + \frac{35}{128} x^{4} - \frac{63}{256} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-\sin{\left (x \right )}&amp; = x - \frac{x^{3}}{ 3!} + \frac{x^{5}}{ 5!}  - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-\cos{\left (x \right )}&amp; = 1 - \frac{x^{2} }{2!} + \frac{x^{4}}{4!}   - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-\tan{\left (x \right )}&amp; = x + \frac{x^{3}}{3} + \frac{2}{15} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-\ln{\left (1+x \right )}&amp; = x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4} }{ 4} + \frac{x^{5}}{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-\exp{\left( x\right)} &amp;= 1 + x + \frac{x^{2} }{ 2!} + \frac{x^{3}}{ 3!} + \frac{x^{4}}{ 4!} + \frac{x^{5} }{ 5!} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-(a+x)^n &amp;= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
-\end{align}\end{split}\]</div>
 </section>
 <section id="trig-functions-expansion">
-<h2>6.5 Trig functions expansion<a class="headerlink" href="#trig-functions-expansion" title="Permalink to this headline">#</a></h2>
+<h2>6.3 Trig functions expansion<a class="headerlink" href="#trig-functions-expansion" title="Permalink to this headline">#</a></h2>
 <p>The Maclaurin series of <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> is equivalent to a Taylor series expanded about zero.
 By definition the expansion is given by replacing <span class="math notranslate nohighlight">\(f(x)\)</span> in equation <span class="math notranslate nohighlight">\(15\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1892,7 +1857,7 @@ By definition the expansion is given by replacing <span class="math notranslate 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a&#39;</span><span class="p">)</span>
 <span class="n">f01</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">s</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">s</span>
 </pre></div>
 </div>
@@ -1901,7 +1866,7 @@ By definition the expansion is given by replacing <span class="math notranslate 
 <img alt="../_images/chapter-5-E_4_0.png" src="../_images/chapter-5-E_4_0.png" />
 </div>
 </div>
-<p>The graph below shows the Taylor series approximation to <span class="math notranslate nohighlight">\(\sin(x)\)</span> taken up to <span class="math notranslate nohighlight">\(x^{23}\)</span>. The dashed curve is the approximation which is almost exact up to about <span class="math notranslate nohighlight">\(x = \pm\)</span>6.</p>
+<p>Figure 3, below, shows the Taylor series approximation to <span class="math notranslate nohighlight">\(\sin(x)\)</span> taken up to <span class="math notranslate nohighlight">\(x^{23}\)</span>. The dashed curve is the approximation which is almost exact up to about <span class="math notranslate nohighlight">\(x = \pm 6\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forming a Taylor Series using SymPy then plotting results</span>
@@ -1940,7 +1905,7 @@ By definition the expansion is given by replacing <span class="math notranslate 
 </section>
 <hr class="docutils" />
 <section id="exponential-expansion">
-<h2>6.6 Exponential expansion<a class="headerlink" href="#exponential-expansion" title="Permalink to this headline">#</a></h2>
+<h2>6.4 Exponential expansion<a class="headerlink" href="#exponential-expansion" title="Permalink to this headline">#</a></h2>
 <p>The expansion of the exponential is easy to achieve with <span class="math notranslate nohighlight">\(\displaystyle f(x) = e^{ax}\)</span> and <span class="math notranslate nohighlight">\(a\)</span> as a constant. The
 derivatives are</p>
 <div class="math notranslate nohighlight">
@@ -1954,7 +1919,7 @@ derivatives are</p>
 <p>These approximations are perfectly acceptable provided that <span class="math notranslate nohighlight">\(|ax| \lt 1\)</span>, and therefore <span class="math notranslate nohighlight">\((ax)^2 \ll ax\)</span> and so forth. The indication of ‘less than’ means ten times less rather than just slightly less for this approximation to be a good one. You could investigate this for yourself.</p>
 </section>
 <section id="log-expansion">
-<h2>6.7 Log expansion<a class="headerlink" href="#log-expansion" title="Permalink to this headline">#</a></h2>
+<h2>6.5 Log expansion<a class="headerlink" href="#log-expansion" title="Permalink to this headline">#</a></h2>
 <p>Finding the expansion of log functions is also easy, but in this case it is restricted to the
 limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when <span class="math notranslate nohighlight">\(f(x) = \ln(1 + x)\)</span>. Differentiating produces</p>
 <div class="math notranslate nohighlight">
@@ -1982,7 +1947,7 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <p>This series expansion method does give us a way of evaluating integrals numerically. The method is to keep on adding terms to the series until the answer does not vary to within a sufficiently large number of decimal places or the answer is considered accurate enough. An example is given below. There are several well known methods for numerical integration such as the Euler–Maclaurin method or Simpson’s rule and generally, these should be used. Numerical integration is described in Chapter 10 and Euler-Maclaurin in Section 7.</p>
 </section>
 <section id="binomial-expansion-1-x-m">
-<h2>6.8 Binomial expansion <span class="math notranslate nohighlight">\( (1+x)^m\)</span><a class="headerlink" href="#binomial-expansion-1-x-m" title="Permalink to this headline">#</a></h2>
+<h2>6.6 Binomial expansion <span class="math notranslate nohighlight">\( (1+x)^m\)</span><a class="headerlink" href="#binomial-expansion-1-x-m" title="Permalink to this headline">#</a></h2>
 <p>One of the most general formulas is obtained by expanding <span class="math notranslate nohighlight">\(f (x) = (1 + x)^m\)</span> where <span class="math notranslate nohighlight">\(m\)</span> can be positive, negative, an integer, or a fraction.</p>
 <p>Starting with the expansion formula</p>
 <div class="math notranslate nohighlight">
@@ -2009,13 +1974,13 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <p>and similarly</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \qquad\tag{25}\]</div>
-<section id="i-calculate-square-root">
-<h3><strong>(i) Calculate square root</strong><a class="headerlink" href="#i-calculate-square-root" title="Permalink to this headline">#</a></h3>
+<section id="i-calculating-a-square-root">
+<h3><strong>(i) Calculating a square root</strong><a class="headerlink" href="#i-calculating-a-square-root" title="Permalink to this headline">#</a></h3>
 <p>Consider calculating <span class="math notranslate nohighlight">\(\sqrt{3/2}\)</span>, using equation (25). Letting <span class="math notranslate nohighlight">\(x\)</span> = 1/2 the series is <span class="math notranslate nohighlight">\((1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265\)</span>. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being <span class="math notranslate nohighlight">\(x^8\)</span> to reach this level of accuracy. Trying to calculate <span class="math notranslate nohighlight">\(\sqrt 3\)</span> using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.</p>
 </section>
 </section>
 <section id="derivatives-of-series">
-<h2>6.9 Derivatives of series<a class="headerlink" href="#derivatives-of-series" title="Permalink to this headline">#</a></h2>
+<h2>6.7 Derivatives of series<a class="headerlink" href="#derivatives-of-series" title="Permalink to this headline">#</a></h2>
 <p>Sometimes it is convenient to obtain a series by taking the derivative of each term in another known series rather than work out the series from scratch; for example, by differentiating term by term</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dx}(1+x)^{1/2} = \frac{1}{2\sqrt{1+x}} = \frac{1}{2} -\frac{1}{4}x  +\frac{1}{16}x^2-\frac{1}{32}x^3 \cdots \]</div>
@@ -2026,11 +1991,80 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <div class="math notranslate nohighlight">
 \[\sum_n nx^{n-1}= 1+2x+3x^2+4x^3+\cdots = \frac{1}{(1-x)^2} \]</div>
 </section>
+<section id="series-expansion-of-an-arbitrary-function">
+<h2>6.8 Series expansion of an arbitrary function<a class="headerlink" href="#series-expansion-of-an-arbitrary-function" title="Permalink to this headline">#</a></h2>
+<p>Often we wish to know how some quantity changes with a certain parameter, for example entropy with energy.  Suppose that there is a thermodynamic system in which A and B are in equilibrium and that both A and B are connected to a heat bath with which energy and entropy can be exchanged. The process could be a reaction <span class="math notranslate nohighlight">\(A\rightleftharpoons B\)</span>.</p>
+<p>Suppose that an amount of energy is transferred from the heat bath into the system then an endothermic process has occurred in taking A to B. This energy transfer is the heat <span class="math notranslate nohighlight">\(q\)</span> taken from the bath. As a result of this there is a change in entropy <span class="math notranslate nohighlight">\(S\)</span> of the heat bath and we would like to calculate what this change is. The difference in energy between A and B is <span class="math notranslate nohighlight">\(\Delta E = E_B-E_A\)</span>. If the function we want to expand is the entropy, we need to expand <span class="math notranslate nohighlight">\(S(E_0-\Delta E)\)</span> in terms of the energy <span class="math notranslate nohighlight">\(E\)</span> where <span class="math notranslate nohighlight">\(E_0\)</span> is the initial energy in the heat bath.</p>
+<p>This calculation can be done once we have the expansion equation of an arbitrary function <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x+a\)</span>, i.e <span class="math notranslate nohighlight">\(f(x+a)\)</span>. Starting with eqn. 17 and expand about a general point <span class="math notranslate nohighlight">\(x_0\)</span> the result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x+a) = f(x_0)+(x+a-x_0)\frac{df(x_0)}{dx}+\frac{(x+a-x_0)^2}{2!}\frac{d^2f(x_0)}{dx^2}+\cdots\]</div>
+<p>but <span class="math notranslate nohighlight">\(x_0\)</span> is general and we can replace this with <span class="math notranslate nohighlight">\(x\)</span> thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x+a) = f(x) + a\frac{df(x)}{dx} + \frac{a^2}{2!}\frac{d^2f(x)}{dx^2} + \cdots \tag{17a}\]</div>
+<p>and similarly for <span class="math notranslate nohighlight">\(f(x-a)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x-a) = f(x) - a\frac{df(x)}{dx} + \frac{a^2}{2!}\frac{d^2f(x)}{dx^2} - \cdots\tag{17b}\]</div>
+<p>Returning now to our thermodynamics problem. The entropy of the bath is <span class="math notranslate nohighlight">\(S(E_0)\)</span> before any energy transfer, and <span class="math notranslate nohighlight">\(S(E_0-\Delta E)\)</span> afterwards. The heat bath is always assumed to be vast compared to our system and so <span class="math notranslate nohighlight">\(\Delta E\ll E_0\)</span> and the squared and higher terms in the expansion can be ignored because they will be far smaller than both of the first two terms. Thus by substitution into 17b,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S(E_0-\Delta E)= S(E_0) -\Delta E\cdot \frac{d S}{d E}\approx S(E_0) -\Delta S\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta S\)</span> is the amount of entropy transferred to the system from the bath. We have supposed here that <span class="math notranslate nohighlight">\(dS/dE \approx \Delta S/\Delta E\)</span> meaning that the amount of energy and entropy transferred is very small, i.e. infinitesimal. The heat <span class="math notranslate nohighlight">\(q\)</span> is related to the entropy as <span class="math notranslate nohighlight">\(dS=dq/T\)</span> and if no work is done <span class="math notranslate nohighlight">\(dq=dE=\Delta E\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S(E_0-\Delta E) \approx S(E_0) -\frac{\Delta E}{T}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta E\)</span> is the energy gap between A and B.</p>
+</section>
+<section id="first-and-second-order-numerical-derivatives">
+<h2>6.9 First and second order numerical derivatives<a class="headerlink" href="#first-and-second-order-numerical-derivatives" title="Permalink to this headline">#</a></h2>
+<p>In many numerical calculations the first and second derivatives are needed, for example, to solve a differential equation, such as the diffusion equation, where an algebraic solution is not forthcoming. Equations for both the first and second derivatives can be found using the expansions 17(a,b) derived in 6.8 above. The amount <span class="math notranslate nohighlight">\(a\)</span> is assumed to be small compared to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>(a)</strong> To calculate the first derivative equations 17(a) and (b) are truncated at the first power because <span class="math notranslate nohighlight">\(a\ll x\)</span> and so higher powers of <span class="math notranslate nohighlight">\(a\)</span> lead to very small values. The two series are now subtracted giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x+a)-f(x-a) = 2a\frac{df(x)}{dx}\]</div>
+<p>therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{df(x)}{dx}\approx\frac{f(x+a)-f(x-a)}{2a}\]</div>
+<p>You can see how this equation is in effect the gradient <span class="math notranslate nohighlight">\(\Delta y/\Delta x\)</span> because <span class="math notranslate nohighlight">\(f(x+a)-f(x-a)\)</span> is the change in <span class="math notranslate nohighlight">\(y\)</span> and the change in <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(2a\)</span>.</p>
+<p><strong>(b)</strong> To form a good approximation to the second derivative we add the series for <span class="math notranslate nohighlight">\(f(x+a)\)</span> and <span class="math notranslate nohighlight">\(f(x-a)\)</span> together giving,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x+a)+f(x-a)= 2f(x) + a^2\frac{d^2f}{dx^2}+2\frac{a^4}{4!}\frac{d^2f}{dx^2} +\cdots \]</div>
+<p>This is a good approximation if we again assume <span class="math notranslate nohighlight">\(a\)</span> is a small quantity relative to <span class="math notranslate nohighlight">\(x\)</span> and so <span class="math notranslate nohighlight">\(a^2 \gg a^4\)</span> making the quartic and higher terms effectively zero,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2f}{dx^2}\approx\frac{f(x+a)+f(x-a)-2f(x)}{a^2}\]</div>
+</section>
+<section id="mathcal-o-x-and-sim-notations">
+<h2>6.10 <span class="math notranslate nohighlight">\(\mathcal{O}(x)\)</span> and <span class="math notranslate nohighlight">\(\sim\)</span> notations<a class="headerlink" href="#mathcal-o-x-and-sim-notations" title="Permalink to this headline">#</a></h2>
+<p>In a series expansion of a function <span class="math notranslate nohighlight">\(f(x)\)</span> it is often possible to state something general perhaps that that <span class="math notranslate nohighlight">\(f(x) \to \infty\)</span> as <span class="math notranslate nohighlight">\(x\to \infty\)</span>. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as <span class="math notranslate nohighlight">\(x\)</span> changes; does it change as <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> for example?</p>
+<p>The ‘big O’ notation, for example, <span class="math notranslate nohighlight">\(\mathcal{O}(x^2),\; \mathcal{O}(e^x)\)</span>, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> at the point that the function is being evaluated. An example is the series <span class="math notranslate nohighlight">\(x^{-2} - x^{-4} + \mathcal{O}(x^{-6})\)</span> when <span class="math notranslate nohighlight">\(x \gt 1\)</span> which means that the next term in the series is vastly smaller than the <span class="math notranslate nohighlight">\(x^{-4}\)</span> term and can be safely ignored. The symbol <span class="math notranslate nohighlight">\(\sim \)</span> is generally interpreted as meaning ‘is proportional to’ and as used in <span class="math notranslate nohighlight">\(\sin(x) \sim x\)</span> when <span class="math notranslate nohighlight">\(x \to\)</span> 0 means that the function grows at the same rate as <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</section>
+<section id="useful-series-expansion-formulae">
+<h2>6.11 Useful series expansion formulae<a class="headerlink" href="#useful-series-expansion-formulae" title="Permalink to this headline">#</a></h2>
+<p>Several expansions are listed below. If you want to calculate, for example <span class="math notranslate nohighlight">\(1/(1 - ax)\)</span>, replace each <span class="math notranslate nohighlight">\(x\)</span> in the first series below with <span class="math notranslate nohighlight">\(-ax\)</span> and evaluate the result; <span class="math notranslate nohighlight">\((1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots\)</span>. This substitution can be performed with any series and means that fewer need to be remembered. The <span class="math notranslate nohighlight">\(\mathcal{O}(x^6)\)</span> means that the next term in the series has power of order of <span class="math notranslate nohighlight">\(x^6\)</span>. You must check on the value of <span class="math notranslate nohighlight">\(x\)</span> used determine if this is an acceptable approximation.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+\frac{1}{1+x} &amp;= 1 - x + x^{2} - x^{3} + x^{4} - x^{5}+\mathcal{O}\left(x^{6}\right)  \\[0.25cm]
+\frac{1}{\left(1+x\right)^{2}}&amp; = 1 - 2 x + 3 x^{2} - 4 x^{3} + 5 x^{4} - 6 x^{5}+\mathcal{O}\left(x^{6}\right) \\[0.25cm]
+\sqrt{1+x} &amp;= 1 + \frac{x }{ 2} - \frac{x^{2} }{ 8} + \frac{x^{3} }{16} - \frac{5}{128} x^{4}  + \frac{7}{256} x^{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+\frac{1}{\sqrt{1+x}}&amp; = 1 - \frac{x }{2} + \frac{3}{8} x^{2} - \frac{5}{16} x^{3}  + \frac{35}{128} x^{4} - \frac{63}{256} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+\sin{\left (x \right )}&amp; = x - \frac{x^{3}}{ 3!} + \frac{x^{5}}{ 5!}  - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+\cos{\left (x \right )}&amp; = 1 - \frac{x^{2} }{2!} + \frac{x^{4}}{4!}   - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+\tan{\left (x \right )}&amp; = x + \frac{x^{3}}{3} + \frac{2}{15} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+\ln{\left (1+x \right )}&amp; = x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4} }{ 4} + \frac{x^{5}}{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+\exp{\left( x\right)} &amp;= 1 + x + \frac{x^{2} }{ 2!} + \frac{x^{3}}{ 3!} + \frac{x^{4}}{ 4!} + \frac{x^{5} }{ 5!} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+(a+x)^n &amp;= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
+\end{align}\end{split}\]</div>
+</section>
 <section id="paramagnetic-spins-example-using-partition-functions-expansions-and-limits">
-<h2>6.10 Paramagnetic spins. Example using partition functions, expansions and limits<a class="headerlink" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits" title="Permalink to this headline">#</a></h2>
+<h2>6.12 Paramagnetic spins. Example using partition functions, expansions and limits<a class="headerlink" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits" title="Permalink to this headline">#</a></h2>
 <p>As an illustration of using several of the methods described in this chapter the properties of magnetic ions in a crystal are examined. In a paramagnetic crystal such as chromium potassium alum, <span class="math notranslate nohighlight">\(\mathrm{Cr_2(SO_4)_3}\)</span> in <span class="math notranslate nohighlight">\(\mathrm{K_2(SO_4)24H_2O}\)</span> the paramagnetic Cr<span class="math notranslate nohighlight">\(^{3+}\)</span> ion is surrounded by 1 potassium, 2 sulfur, 20 oxygen and 24 hydrogen atoms, thus the paramagnetic ion is relatively dilute and are positioned so far apart that their unpaired electrons only suffer very weak interactions between one ion and another, rather like the atoms in a dilute gas have. This means (a) that the rest of the crystal can be thought of as an inert container for the magnetic ions and (b) that the standard method of statistical mechanics can be used to determine the magnetic properties since the paramagnetic electrons do not interact with one another. In effect this means that we can determine the partition function and therefore the <em>magnetization</em> , which is the total magnetic moment, and the entropy, internal energy and heat capacity.</p>
-<p>If an atom, molecule or ion possesses a resultant magnetic moment and it is sufficiently removed from its neighbours then this is only weakly influenced by them. The number of unpaired electrons <span class="math notranslate nohighlight">\(S\)</span> and orbital angular momentum <span class="math notranslate nohighlight">\(L\)</span> determines the multiplicity of the energy levels which are degenerate in the absence of other interactions. The total angular momentum is <span class="math notranslate nohighlight">\(J=L+S\)</span>. If the total spin is <span class="math notranslate nohighlight">\(S\)</span> the spin multiplicity is <span class="math notranslate nohighlight">\(2J+1\)</span>. Sometimes the ions such as Cr<span class="math notranslate nohighlight">\(^{3+}\)</span> and Fe<span class="math notranslate nohighlight">\(^{3+}\)</span> can have effectively zero orbital angular momentum this being ‘quenched’ by the fields from neighbouring ions, in this case <span class="math notranslate nohighlight">\(J=S\)</span>. If an external (or internal) magnetic field is present the degeneracy is lifted and the levels have quantum numbers <span class="math notranslate nohighlight">\(m_J\)</span> ranging in unit integral values from <span class="math notranslate nohighlight">\(-J,-J+1\cdots J-1,+J\)</span> or <span class="math notranslate nohighlight">\(2J+1\)</span> in total. For example for Cr<span class="math notranslate nohighlight">\(^{3+}, J=3/2\)</span>, thus <span class="math notranslate nohighlight">\(m_J\)</span> has <span class="math notranslate nohighlight">\(2(3/2)+1=4\)</span> values in the series <span class="math notranslate nohighlight">\(-3/2,-1/2,1/2,3/2\)</span>.</p>
-<p>A magnetic field gives rise to states whose energy is <span class="math notranslate nohighlight">\(E= \pm m_Jg\mu_BB\)</span> and <span class="math notranslate nohighlight">\(m_J\)</span> pairs of levels are separated by <span class="math notranslate nohighlight">\(\Delta E=2|m_J|g\mu_BB\)</span> where <span class="math notranslate nohighlight">\(B\)</span> is the magnetic field strength (in Tesla <span class="math notranslate nohighlight">\(T\)</span>) and <span class="math notranslate nohighlight">\(\mu_B=9.27401\cdot 10^{-24} \)</span> J/T is the Bohr magneton. The energy gaps in a <span class="math notranslate nohighlight">\(2\)</span> Tesla field, assuming <span class="math notranslate nohighlight">\(J=1/2\)</span> and Lande splitting factor <span class="math notranslate nohighlight">\(g=2\)</span> (described below) are <span class="math notranslate nohighlight">\(\displaystyle \cdot 9.27401\cdot 10^{-24}\cdot 2/hc \approx 1.9\; \mathrm{{cm}^{-1}} \)</span> whereas thermal energy at 300 K is <span class="math notranslate nohighlight">\(\approx 210\;\mathrm{{cm}^{-1}}\)</span> which means that at all but at very low temperature all levels are approximately evenly populated. To observe any effect, therefore, the temperature has to be extremely low and/or the field very large.</p>
+<p>If an atom, molecule or ion possesses a resultant magnetic moment and it is sufficiently removed from its neighbours then this is only weakly influenced by them. The number of unpaired electrons <span class="math notranslate nohighlight">\(S\)</span> and orbital angular momentum <span class="math notranslate nohighlight">\(L\)</span> determines the multiplicity of the energy levels which are degenerate in the absence of other interactions. The total angular momentum is <span class="math notranslate nohighlight">\(J=L+S\)</span>. If the total spin is <span class="math notranslate nohighlight">\(S\)</span> the spin multiplicity is <span class="math notranslate nohighlight">\(2J+1\)</span>. Sometimes the ions such as Cr<span class="math notranslate nohighlight">\(^{3+}\)</span> and Fe<span class="math notranslate nohighlight">\(^{3+}\)</span> can have effectively zero orbital angular momentum this being ‘quenched’ by the fields from neighbouring ions, in this case <span class="math notranslate nohighlight">\(J=S\)</span>. If an external (or internal) magnetic field is present the degeneracy is lifted and the levels have quantum numbers <span class="math notranslate nohighlight">\(m_J\)</span> ranging in unit integral values from</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -J,-J+1\cdots J-1,+J\]</div>
+<p>or <span class="math notranslate nohighlight">\(2J+1\)</span> in total. For example for Cr<span class="math notranslate nohighlight">\(^{3+}, J=3/2\)</span>, thus <span class="math notranslate nohighlight">\(m_J\)</span> has <span class="math notranslate nohighlight">\(2(3/2)+1=4\)</span> values in the series <span class="math notranslate nohighlight">\(-3/2,-1/2,1/2,3/2\)</span>.</p>
+<p>A magnetic field gives rise to states whose energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E= \pm m_Jg\mu_BB\]</div>
+<p>and <span class="math notranslate nohighlight">\(m_J\)</span> pairs of levels are separated by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta E=2|m_J|g\mu_BB\]</div>
+<p>where <span class="math notranslate nohighlight">\(B\)</span> is the magnetic field strength (in Tesla <span class="math notranslate nohighlight">\(T\)</span>) and <span class="math notranslate nohighlight">\(\mu_B=9.27401\cdot 10^{-24} \)</span> J/T is the Bohr magneton. The energy gaps in a <span class="math notranslate nohighlight">\(2\)</span> Tesla field, assuming <span class="math notranslate nohighlight">\(J=1/2\)</span> and Lande splitting factor <span class="math notranslate nohighlight">\(g=2\)</span> (described below) are <span class="math notranslate nohighlight">\(\displaystyle \cdot 9.27401\cdot 10^{-24}\cdot 2/hc \approx 1.9\; \mathrm{{cm}^{-1}} \)</span> whereas thermal energy at 300 K is <span class="math notranslate nohighlight">\(\approx 210\;\mathrm{{cm}^{-1}}\)</span> which means that at all but at very low temperature all levels are approximately evenly populated. To observe any effect, therefore, the temperature has to be extremely low and/or the field very large.</p>
 <p>In the crystal there are (obviously) other electric charges from nearby ions and these can also split the energy levels (zero field splitting, Stark effect) but the magnitude is very small, fractions of wavenumbers. This means that the splitting of levels and hence the magnetization is determined virtually completely by any applied magnetic field.</p>
 <p><img alt="Drawing" src="../_images/series-fig5c.png" /></p>
 <p>Figure 4a. Energy levels in a magnetic field.</p>
@@ -2093,7 +2127,7 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <div class="math notranslate nohighlight">
 \[\displaystyle M_{B/T\to 0}=\frac{g^2\mu_B^2B}{3k_BT}J(J+1)\]</div>
 <p>The form of this equation is as anticipated on physical grounds because when a sample is placed into a magnetic field the magnetic dipoles tend to align, and do so more as the field <span class="math notranslate nohighlight">\(B\)</span> is increased, but thermal motion tends to disrupt this alignment, and so the magnetization is in inverse proportion to temperature and in direct proportion to field.</p>
-<p>This equation only applies when the magnitude of <span class="math notranslate nohighlight">\(\displaystyle a=2\mu_B B/(k_BT)\)</span> is much less that unity. The ratio <span class="math notranslate nohighlight">\(2\mu_B/k_B \approx 1\)</span> so that this result is only valid if <span class="math notranslate nohighlight">\(B/T \ll 1\)</span>. The Curie function is plotted in figure 5b as the dashed line where <span class="math notranslate nohighlight">\(J=3/2\)</span>. These results, both the Brilluoin and Curie equations very closely match the experimentally measured magnetization for many paramagnetic salts.</p>
+<p>This equation only applies when the magnitude of <span class="math notranslate nohighlight">\(\displaystyle a=2\mu_B B/(k_BT)\)</span> is much less that unity. The ratio <span class="math notranslate nohighlight">\(2\mu_B/k_B \approx 1\)</span> so that this result is only valid if <span class="math notranslate nohighlight">\(B/T \ll 1\)</span>. The Curie function is plotted in figure 5b as the dashed line where <span class="math notranslate nohighlight">\(J=3/2\)</span>. These results, both the Brillouin and Curie equations very closely match the experimentally measured magnetization for many paramagnetic salts.</p>
 <p>The <em>susceptibility</em> <span class="math notranslate nohighlight">\(\chi\)</span> or degree of magnetization can be measured, for example by using a Gouy balance, and for low fields</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \chi = \frac{\mu_0M}{B}=\frac{\mu_0\mu^2_{eff} }{3k_BT}\]</div>

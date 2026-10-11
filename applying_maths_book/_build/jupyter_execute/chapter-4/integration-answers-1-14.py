@@ -18,7 +18,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ## Q1 answer
 # The kinetic energy is zero and the total energy $E$ is the same as the potential energy at the turning point, figure 38.
 # 
-# (a) By definition the energy is $E=\int k(r-r_e)dr$ and because $k$ and $r_e$ are constants, these can be taken outside the integral
+# **(a)** By definition the energy is $E=\int k(r-r_e)dr$ and because $k$ and $r_e$ are constants, these can be taken outside the integral
 # 
 # $$\displaystyle E=k\int rdr -kr_e\int dr=\frac{kr^2}{2}-kr_er+c$$
 # 
@@ -33,16 +33,16 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 38. Potential energy (blue) and kinetic energy (red) of a diatomic molecule as a vibrating harmonic oscillator. The turning points,where the kinetic energy is zero are marked with black dots.n The total energy is $E$.
 # ____
 # 
-# (b) Using values for $k$ and $r_e$ this energy is $0.89 \cdot 10^{-19}$ J / molecule or $53.6\,\mathrm{ kJ \, mole^{-1}}$, which is $\approx 12$% of the dissociation energy - a surprisingly large amount.
+# **(b)** Using values for $k$ and $r_e$ this energy is $0.89 \cdot 10^{-19}$ J / molecule or $53.6\,\mathrm{ kJ \, mole^{-1}}$, which is $\approx 12$% of the dissociation energy - a surprisingly large amount.
 # 
-# (c) The frequency in $\mathrm{s^{-1}}$ is calculated using $\displaystyle \nu = \frac{1}{2\pi}\sqrt{ \frac{k}{\mu} } =0.904\cdot 10^{14}\,\mathrm{s^{-1}}$ where $\mu$ is the reduced mass $35/36 \times 1.667 \cdot 10^{-27}$ kg and as $n = 1$, the total energy of this level is $0.89 \cdot 10^{-19}$ J which is the same as calculated above.
+# **(c)** The frequency in $\mathrm{s^{-1}}$ is calculated using $\displaystyle \nu = \frac{1}{2\pi}\sqrt{ \frac{k}{\mu} } =0.904\cdot 10^{14}\,\mathrm{s^{-1}}$ where $\mu$ is the reduced mass $35/36 \times 1.667 \cdot 10^{-27}$ kg and as $n = 1$, the total energy of this level is $0.89 \cdot 10^{-19}$ J which is the same as calculated above.
 # 
 # ## Q2 answer
-# (a) Taking logs of both sides of the Arrhenius equation produces $\displaystyle \ln(k) = \ln(k_0) - \frac{E_a}{RT}$. 
+# **(a)** Taking logs of both sides of the Arrhenius equation produces $\displaystyle \ln(k) = \ln(k_0) - \frac{E_a}{RT}$. 
 # 
 # Differentiating with respect to $T$ gives $\displaystyle \frac{d\ln(k)}{dT}=\frac{E_a}{RT^2}$ as in the question.
 # 
-# (b) To integrate this differential equation, separate the equation into parts in $k$ and in $T$ as 
+# **(b)** To integrate this differential equation, separate the equation into parts in $k$ and in $T$ as 
 # 
 # $$\displaystyle \int_{k_1}^{k_2}d\ln(k) = \int_{T_1}^{T_2} \frac{E_a}{RT^2}dT$$
 # 
@@ -70,23 +70,23 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # which produces the same result.
 # 
 # ## Q4 answer
-# (a) Rearranging the equation and adding limits gives $\displaystyle \int_{v_0}^v\frac{dv}{v}=-\frac{3\pi\delta\eta}{m}\int_0^t dt$ 
+# **(a)** Rearranging the equation and adding limits gives $\displaystyle \int_{v_0}^v\frac{dv}{v}=-\frac{3\pi\delta\eta}{m}\int_0^t dt$ 
 # 
 # and integrating gives 
 # 
 # $$\displaystyle \ln(v)\bigg|_{v_0}^v=-\frac{3\pi\delta\eta}{m}t\bigg|_0^t$$
 # 
-# which can be rearranged to give $v=v_0\exp\left(-\frac{3\pi\delta\eta }{m}t\right)$.
+# which can be rearranged to give $\displaystyle v=v_0\exp\left(-\frac{3\pi\delta\eta }{m}t\right)$.
 # 
-# The exponential must be dimensionless therefore the ratio, $\displaystyle \tau = \frac{m}{3\pi\delta\eta}$ represents a time. To prove that this is a time, add dimensions to the constants. Viscosity is usually measured in centipoise which is not an SI unit. The SI units of viscosity are $\mathrm{ kg\, m^{-1} \,s^{-1}}$ and $1 cP = 0.001\,\mathrm{ kg\, m^{-1}\, s^{-1} }$. The dimensions are then 
+# The exponential must be dimensionless therefore the ratio, $\displaystyle \tau = \frac{m}{3\pi\delta\eta}$ represents a time. To prove that this is a time, add dimensions to the constants. Viscosity is usually measured in centipoise which is not an SI unit. The SI units of viscosity are $\mathrm{ kg\, m^{-1} \,s^{-1}}$ and $1$ cP = $0.001\,\mathrm{ kg\, m^{-1}\, s^{-1} }$. The dimensions are then 
 # 
 # $$\displaystyle \frac{m(\mathrm{kg}) }{\delta(\mathrm{m}) \eta(\mathrm{ kg\, m^{-1}\, s^{-1} })  }\equiv s$$
 # 
-# (b) Estimating the time means knowing the mass and size of the particles. Benzene and similar molecules may be estimated to be $\approx 0.3$ nm in diameter, and of mass $\approx 100$ amu where $1\, \mathrm{amu} = 1.66 \cdot 10^{-27}$ kg. The viscosity of water is 1 cP. The relaxation time for benzene is therefore approximately
+# **(b)** Estimating the time means knowing the mass and size of the particles. Benzene and similar molecules may be estimated to be $\approx 0.3$ nm in diameter, and of mass $\approx 100$ amu where $1\, \mathrm{amu} = 1.66 \cdot 10^{-27}$ kg. The viscosity of water is $1$ cP. The relaxation time for benzene is therefore approximately
 # 
 # $$\displaystyle \frac{100\times 1.66\cdot 10^{-27}}{3\pi \times 0.3\cdot 10^{-9} \times 0.001}\approx 6\cdot 10^{-14} \text{s}$$
 # 
-# or 60 fs, and this must be about the time between intermolecular collisions.
+# or $60$ fs, and this must be about the time between intermolecular collisions.
 # 
 # The calculation for the protein is just as straightforward, except that the mass of the protein is not known. One way round this is to use a typical density $\rho$ and $100 \,\mathrm{kg\, m^{-3}}$ is typical, the mass is $
 # \rho\delta^3$. The time is therefore 
@@ -96,21 +96,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # which means that the direction of the initial movement is lost within about a picosecond, which is a very short time considering the relatively large size of a protein.
 # 
 # ## Q5 answer
-# (a) In this case,the answer can be guessed to be something like $\ln(3x - 2)$ because of the reciprocal in $x$ in the function. Differentiating this guess gives $3/(3x-2) $ and therefore $\displaystyle \int\frac{dx}{3x-2}=\frac{1}{3}\ln(3x-2)$.
+# **(a)** In this case,the answer can be guessed to be something like $\ln(3x - 2)$ because of the reciprocal in $x$ in the function. Differentiating this guess gives $3/(3x-2) $ and therefore $\displaystyle \int\frac{dx}{3x-2}=\frac{1}{3}\ln(3x-2)$.
 # 
-# (b) Converting to exponentials gives 
+# **(b)** Converting to exponentials gives 
 # 
 # $$\displaystyle I=\int\cosh^2(x)dx=\frac{1}{4}\int\left(e^{2x}+2+e^{-2x}\right)dx =\frac{1}{8}\left(e^{2x}+4x-e^{-2x} \right)+c$$
 # 
 # With some manipulation this can be returned to a trig form which is $x/2 + \sinh(2x)/4$.
 # 
-# (c) This can be converted to exponentials first giving $I=\cosh^2(x)/2$
+# **(c)** This can be converted to exponentials first giving $I=\cosh^2(x)/2$
 # 
-# (d) Expanding the integral gives $\displaystyle I=\int 2\ln(2x)-\ln(1-x)dx$ which has a standard form, see 2.13.
+# **(d)** Expanding the integral gives $\displaystyle I=\int 2\ln(2x)-\ln(1-x)dx$ which has a standard form, see 2.13.
 # 
-# (e) The function in the integral is odd so the integral is zero because the limits are symmetrical about zero.
+# **(e)** The function in the integral is odd so the integral is zero because the limits are symmetrical about zero.
 # 
-# (f) The integral becomes a standard one the type $x^{n+1}/(n+1)$ by letting $u-x-3$. Thus this is an example of using substitution to simplify and then solve the integral. 
+# **(f)** The integral becomes a standard one the type $x^{n+1}/(n+1)$ by letting $u-x-3$. Thus this is an example of using substitution to simplify and then solve the integral. 
 # 
 # $$\displaystyle I=\int u^{1/2}du =\frac{2}{3}u^{3/2} \to \frac{2}{3}(x-3)^{3/2}$$
 # 
@@ -146,14 +146,14 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # and in the last step $\ln(kV_1)-\ln(V_1)=\ln(kV_1/V_1)$ was used.
 # 
 # ## Q9 answer
-# (a) If $V$ is the initial volume which is reduced to 10%, then the work done is calculated using equation 6 ($\displaystyle \int x^n dx$) with power $n=-\gamma$.
+# **(a)** If $V$ is the initial volume which is reduced to 10%, then the work done is calculated using equation 6 i.e $\displaystyle \int x^n dx$, with power $n=-\gamma$.
 # 
 # $$\displaystyle w=\int_V^{V/10}pdV=-\int_V^{V/10}\frac{k}{V^\gamma}dV=-\frac{kV^{1-\gamma}}{1-\gamma}\bigg|_V^{V/10}=\frac{kV^{1-\gamma}}{1-\gamma}(1-10^{\gamma-1})$$
 # 
 # Substituting values in $pV^\gamma = k$ makes $k = 101325 \times 5.0^{1.404}
 # = 9.707 \cdot 10^5$ J and therefore $w = +1.96 \cdot 10^6$ J.
 # 
-# (b) The first law states that the work done on the gas plus the heat transferred to the gas must be equal to the change in internal energy of the gas, $dU$ where $dU = \bar dq + \bar dw$. As no heat enters or leaves, the change in heat $\bar dq = 0$, and the work done is the same as the change in internal energy. This depends only on the temperature and at constant volume $dU = C_V dT$ therefore, for $n$ moles of gas, the work done is
+# **(b)** The First Law states that the work done on the gas plus the heat transferred to the gas must be equal to the change in internal energy of the gas, $dU$ where $dU = \bar dq + \bar dw$. As no heat enters or leaves, the change in heat $\bar dq = 0$, and the work done is the same as the change in internal energy. This depends only on the temperature and at constant volume $dU = C_V dT$ therefore, for $n$ moles of gas, the work done is
 # 
 # $$w=n\int_{T_1}^{T_2}C_V dT =\frac{5nR}{2}\int_{T_1}^{T_2}dT=\frac{5nR}{2}(T_2-300)$$
 # 
@@ -162,7 +162,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # The bar notation $\bar dq$ and $\bar dw$ means that in the language of thermodynamics when integrated, they form _path integrals_, i.e. normal integrals to you or me, and their value depends on the way the heat changes or the work is done. Some authors instead use $\delta q$ and $\delta w$ to indicate a path integral. The internal energy $U$ is a state function and when integrated, its value depends only on the starting and ending values not on how the internal energy was obtained by the molecules for example $\displaystyle \int_{U_1}^{U_2} dU=U_2-U_1$
 # 
 # ## Q10 answer
-# (a) If $V_0$ is the initial, $V_1$ the final volume then the work done is 
+# **(a)** If $V_0$ is the initial, $V_1$ the final volume then the work done is 
 # 
 # $$\displaystyle w=-\int_{V_0}^{V_1}pdV\quad\text{ where }\quad \displaystyle p=\frac{nRT}{V-nb}-\frac{an^2}{V^2}$$ 
 # 
@@ -170,18 +170,18 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle w=-\int_{V_0}^{V_1} \frac{nRT}{V-nb}-\frac{an^2}{V} dV=-nRT\ln\left(\frac{V_1-nb}{V_0-nb}  \right) +an^2\left( \frac{1}{V_0}-\frac{1}{V_1} \right)$$
 # 
-# (b) The units of the second term need some care; they are 
+# **(b)** The units of the second term need some care; they are 
 # 
 # $$\displaystyle a \,(\mathrm{ bar \,dm^6 \,mol^{-2})\,n\,(\,mol^2)/V(\,dm^3)  = bar\, dm^3} = 100 \text{ J}$$
 # 
 # Since pressure is force/area and $1 \mathrm{ bar = 10^5}$ Pa, multiplying by $1 \times \mathrm{ m^3}$ would convert this into $10^5$ joules; (energy = force $\times$ distance) but the volume is in dm$^3$ or $10^{-3} \mathrm{m^3}$ so the conversion is 100. Substituting the constants gives the work as 18.3 kJ. The ideal gas by comparison needs more work at 22.4 kJ to compress it.
 # 
-# (c) If the gas were O$_2$ then the van der Waals equation suggests that $21.9$ kJ are needed and if H$_2$ then $23.6$ kJ.
+# **(c)** If the gas were O$_2$ then the van der Waals equation suggests that $21.9$ kJ are needed and if H$_2$ then $23.6$ kJ.
 # 
 # The energy need to compress the Cl$_2$ is less than that for ideal gas, that for O$_2$ about the same, and H$_2$ slightly greater. The difference is due to the interplay of the attractive potential term $a$ and the repulsive one $b$. If the attractive forces dominate as the gas is compressed the molecules will remain closer to one another for longer than if they were hard spheres. This reduces the effective pressure and so less work is needed. This is the case for the polarizable chlorine molecules. If repulsion dominates,then the molecules avoid one another effectively increasing the pressure and this is the case for H$_2$, which is weakly polarizable, compared to Cl$_2$. The energy to compress is larger. Oxygen molecules seem to have a balance of repulsion and attraction that makes them appear to behave as it they were ideal, but this is an accidental cancelling of two effects.
 # 
 # ## Q11 answer
-# (a) The enthalpy change is 
+# **(a)** The enthalpy change is 
 # 
 # $$\displaystyle H_T^\mathrm{o}-H_{298}^\mathrm{o}=\int_{298}^T a+bT+\frac{c}{T^2}dT=a(T-298)+\frac{b}{2}\left(T^2-298^2\right)-c\left(\frac{1}{T}-\frac{1}{298}  \right)$$
 # 
@@ -189,10 +189,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$S_T^\mathrm{o}-S_{298}^\mathrm{o}=\int_{298}^T \frac{a}{T}+b+\frac{c}{T^3}dT=a\ln\left(\frac{T}{298}\right)+b(T-298)-\frac{c}{2}\left(\frac{1}{T^2}-\frac{1}{298^2}  \right)$$
 # 
-# (b) Using the values for the constants produce $H_T^\mathrm{o} - H_{298}^\mathrm{o} = 2.95$ kJ/mol and $S_T^\mathrm{o} - S_{298}^\mathrm{o} = 9.14$ J/mol/K.
+# **(b)** Using the values for the constants produce $H_T^\mathrm{o} - H_{298}^\mathrm{o} = 2.95$ kJ/mol and $S_T^\mathrm{o} - S_{298}^\mathrm{o} = 9.14$ J/mol/K.
 # 
 # ## Q12 answer
-# (a) The Clapeyron equation for a change of phase such as melting or evaporation is 
+# **(a)** The Clapeyron equation for a change of phase such as melting or evaporation is 
 # 
 # $$\displaystyle \frac{dp}{dT}=\frac{\Delta S}{\Delta V}$$ 
 # 
@@ -208,7 +208,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # provided $\Delta V$ remains constant with a change in pressure and temperature. This is the Clapeyron equation.
 # 
-# (b) The Clausius-Clapeyron equation is obtained by allowing the change in volume (per mole) on forming the vapour, to be far larger than that of the original liquid making $\Delta_{vap}V \approx V_{vap}$ and therefore 
+# **(b)** The Clausius-Clapeyron equation is obtained by allowing the change in volume (per mole) on forming the vapour, to be far larger than that of the original liquid making $\Delta_{vap}V \approx V_{vap}$ and therefore 
 # 
 # $$\Delta_{vap}V=RT/p\quad\text{ and }\quad\displaystyle \frac{dp}{dT}=p\frac{\Delta_{vap}H}{RT^2}$$
 # 
@@ -302,7 +302,7 @@ p_sol_liq= lambda T: p3 + DH_fus/DV_fus*(np.log(T)-np.log(T3))
 # \hline \end{array}$$
 # 
 # ## Q14 answer
-# (a) $\displaystyle \left( \frac{\partial q}{\partial p} \right)_S =V$ integrates, at constant entropy, to become 
+# **(a)** $\displaystyle \left( \frac{\partial q}{\partial p} \right)_S =V$ integrates, at constant entropy, to become 
 # 
 # $$\displaystyle \int_{q_0}^{q}dq=\int_{p_0}^pVdp=\int_{p_0}^p\left( \frac{C}{p} \right)^{1/\gamma}dp$$
 # 
@@ -320,7 +320,7 @@ p_sol_liq= lambda T: p3 + DH_fus/DV_fus*(np.log(T)-np.log(T3))
 # 
 # which is the equation describing the speed of a gas in a rocket or jet engine at pressure $p$. This equation can also be related to $T_0$, the inlet temperature, via $p_0V_0 = RT_0$.
 # 
-# (b) The volume of gas $V$ is given by $\displaystyle V=\left(\frac{p_0}{p}\right)^{1/\gamma}$  and because $\sigma m .u=V\mu$ the gas and hence nozzle cross section $\sigma$ varies as 
+# **(b)** The volume of gas $V$ is given by $\displaystyle V=\left(\frac{p_0}{p}\right)^{1/\gamma}$  and because $\sigma m .u=V\mu$ the gas and hence nozzle cross section $\sigma$ varies as 
 # 
 # $$\displaystyle \sigma= \frac{\mu}{m}\left(\frac{p_0}{p}\right)^{1/\gamma}V_0 \left( \frac{2\gamma}{\gamma-1}\frac{p_0V_0}{m} \left( 1-\left(\frac{p}{p_0} \right)^{(\gamma-1)/\gamma} \right) \right)^{-1/2}$$
 # 
@@ -331,7 +331,7 @@ p_sol_liq= lambda T: p3 + DH_fus/DV_fus*(np.log(T)-np.log(T3))
 # Figure 40 Left: Universal calculated shape of gas cross-section in a jet or rocket (Laval) nozzle, vs reduced pressure $p/p_0$. Right: Gas velocity relative to the speed of sound us. Note that the inlet side is on the right in both figures where the pressure is high. The dashed lines show the position of the minimum nozzle width which is where the gas is at Mach 1.
 # ______
 # 
-# (c) The minimum nozzle cross section vs pressure is the derivative of $\sigma$ vs $p$. This is not difficult to evaluate but messy and is easily performed by SymPy. The constants need not be included because the derivative is set to zero at the minimum and they will cancel out. (note g is used instead of $\gamma$ )
+# **(c)** The minimum nozzle cross section vs pressure is the derivative of $\sigma$ vs $p$. This is not difficult to evaluate but messy and is easily performed by SymPy. The constants need not be included because the derivative is set to zero at the minimum and they will cancel out. (note g is used instead of $\gamma$ )
 
 # In[3]:
 

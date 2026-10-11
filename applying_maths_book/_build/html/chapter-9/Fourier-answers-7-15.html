@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1658,7 +1658,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle |g(k)|^2= \frac{1}{2\pi (k^2\tau^2+1)}\]</div>
 <p>which is the shape of the spectral line.</p>
-<p>The exponential decay with <span class="math notranslate nohighlight">\(\tau = 2\)</span> and the corresponding square of the transform, are shown in Fig. 54. In this case <span class="math notranslate nohighlight">\(k\)</span> corresponds to a frequency in s<span class="math notranslate nohighlight">\(^{-1}\)</span>% because <span class="math notranslate nohighlight">\(t\)</span> is in seconds.</p>
+<p>The exponential decay with <span class="math notranslate nohighlight">\(\tau = 2\)</span> and the corresponding square of the transform, are shown in Fig. 54. In this case <span class="math notranslate nohighlight">\(k\)</span> corresponds to a frequency in s<span class="math notranslate nohighlight">\(^{-1}\)</span> because <span class="math notranslate nohighlight">\(t\)</span> is in seconds.</p>
 <p><img alt="Diagram" src="../_images/Fourier-fig54.png" /></p>
 <p>Figure 54. An exponential decay and (right) the complex conjugate square of its Fourier transform which is a Lorentzian curve.</p>
 <hr class="docutils" />
@@ -1670,7 +1670,7 @@ of the ‘time-energy’ uncertainty principle, but this is not the same as the 
 </section>
 <section id="q8-answer">
 <h2>Q8 answer<a class="headerlink" href="#q8-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) With the forward transform <span class="math notranslate nohighlight">\(\displaystyle g(\omega) =\frac{1}{\sqrt{2\pi}}\int_0^{t_0} e^{i\omega_0 t}e^{-i\omega t}dt\)</span></p>
+<p><strong>(a)</strong> With the forward transform <span class="math notranslate nohighlight">\(\displaystyle g(\omega) =\frac{1}{\sqrt{2\pi}}\int_0^{t_0} e^{i\omega_0 t}e^{-i\omega t}dt\)</span></p>
 <p>which, being exponential, is easily integrated to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  g(\omega)=\frac{1}{\sqrt{2\pi}} \left. \frac{e^{i(\omega_0-\omega)t}}{ i(\omega_0-\omega) }  \right|_0^{t_0} = \frac{i}{\sqrt{2\pi}}\frac{1-e^{i(\omega_0 - \omega)t_0}}{\omega_0 - \omega}\]</div>
@@ -1684,31 +1684,40 @@ of the ‘time-energy’ uncertainty principle, but this is not the same as the 
 <p><img alt="Diagram" src="../_images/Fourier-fig55.png" /></p>
 <p>Figure 55. Left top: The electric field of a square pulse of 0.1 ps duration. Bottom right: the square of absolute value of the Fourier transform of the pulse; this is its spectrum. The small vertical line shows the position of the first minima, see part (b). Bottom left: The imaginary component of the Fourier transform, the sinc function, and right, the real part.</p>
 <hr class="docutils" />
-<p>(b) Differentiating the transform finds the maxima and minima, either side of these are the missing frequencies as the period of the transform’s oscillations is constant. Differentiating gives</p>
+<p><strong>(b)</strong> Differentiating the transform finds the maxima and minima, either side of these are the missing frequencies as the period of the transform’s oscillations is constant. Differentiating gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{d\omega}\frac{\cos((\omega_0-\omega)t_0)-1}{\pi(\omega_0-\omega)^2} = -\frac{t_0\sin((\omega_0-\omega)t_0)}{\pi(\omega_0-\omega)^2}-2\frac{\cos((\omega_0-\omega)t_0)-1}{\pi(\omega_0-\omega)^3} \]</div>
-<p>which must be zero at each of its minima. Multiplying out factors gives <span class="math notranslate nohighlight">\(\displaystyle (\omega_0-\omega)\sin((\omega_0-\omega)t_0)=2(1-\cos((\omega_0-\omega)t_0))\)</span> which is solved when <span class="math notranslate nohighlight">\(t_0(\omega_0-\omega)=2\pi n\)</span> because here the sine is zero, and when <span class="math notranslate nohighlight">\(\cos((\omega_0-\omega)t_0)=1\)</span> which is when <span class="math notranslate nohighlight">\(n\)</span> is an integer and <span class="math notranslate nohighlight">\(n=\pm 1\)</span>,  <span class="math notranslate nohighlight">\(\pm 2,\cdots\)</span> or <span class="math notranslate nohighlight">\(\omega = \omega_0-2\pi n/t_0\)</span> thus a series of zeros is expected. The pulse has a width of <span class="math notranslate nohighlight">\(0.1\)</span> ps and zero’s occur at <span class="math notranslate nohighlight">\(\omega=600\cdot 10^{12}\pm 2\pi n\cdot 10^{13}\)</span> Hz and so the first zeros are at <span class="math notranslate nohighlight">\(\approx 662.8 \cdot 10^{12}\)</span> Hz.</p>
+<p>which must be zero at each of its minima. Multiplying out factors gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (\omega_0-\omega)t_0\sin\big((\omega_0-\omega)t_0\big)=2-2\cos\big((\omega_0-\omega)t_0\big)\]</div>
+<p>which is solved when</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t_0(\omega_0-\omega)=2\pi n\]</div>
+<p>because here the sine is zero, and when</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos((\omega_0-\omega)t_0)=1\]</div>
+<p>which is when <span class="math notranslate nohighlight">\(n\)</span> is an integer and <span class="math notranslate nohighlight">\(n=\pm 1\)</span>,  <span class="math notranslate nohighlight">\(\pm 2,\cdots\)</span> or <span class="math notranslate nohighlight">\(\omega = \omega_0-2\pi n/t_0\)</span> thus a series of zeros is expected.</p>
+<p>The pulse has a width of <span class="math notranslate nohighlight">\(0.1\)</span> ps and zero’s occur at <span class="math notranslate nohighlight">\(\omega=600\cdot 10^{12}\pm 2\pi n\cdot 10^{13}\)</span> Hz and so the first zeros are at <span class="math notranslate nohighlight">\(\approx 662.8 \cdot 10^{12}\)</span> Hz.</p>
 </section>
 <section id="q9-answer">
 <h2>Q9 answer<a class="headerlink" href="#q9-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) As the pulse is square and of finite duration, it lasts only from time 0 to <span class="math notranslate nohighlight">\(\tau\)</span>, therefore its Fourier transform is</p>
+<p><strong>(a)</strong> As the pulse is square and of finite duration, it lasts only from time 0 to <span class="math notranslate nohighlight">\(\tau\)</span>, therefore its Fourier transform is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(\omega)=\frac{1}{\sqrt{2\pi}}\int_0^\tau ae^{-i\omega t}dt =\frac{-a}{\sqrt{2\pi}} \left. \frac{e^{i\omega t}}{i\omega}  \right|_0^\tau = \frac{a}{\sqrt{2\pi}} \left( \frac{1-e^{i\omega \tau}}{i\omega}  \right)\]</div>
 <p>which is similar to that in Q8 but with  the change <span class="math notranslate nohighlight">\(\omega\rightarrow \omega_0-\omega\)</span>.</p>
-<p>(b) The real and imaginary parts are calculated using Euler’s formula for the complex exponential giving</p>
+<p><strong>(b)</strong> The real and imaginary parts are calculated using Euler’s formula for the complex exponential giving</p>
 <div class="math notranslate nohighlight">
 \[\left( \frac{1-e^{i\omega \tau}}{i\omega}  \right) =\frac{-i}{\omega}(1-\cos(\omega \tau)) +\frac{\sin(\omega \tau)}{\omega}\]</div>
 <p>The real part <span class="math notranslate nohighlight">\(\displaystyle Re[g(\omega)]= \frac{a\tau}{\sqrt{2\pi}}\frac{\sin(\omega \tau)}{\omega}\)</span> which can be converted to the sinc function by multiplying by <span class="math notranslate nohighlight">\(\tau/\tau\)</span>, see figs 15 and 55.</p>
-<p>(c, d) The pulse is zero, <span class="math notranslate nohighlight">\(Re[g(\omega)]\)</span> = 0, when <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(\omega \tau)}{\omega\tau}\)</span> = 0 which does not occur when <span class="math notranslate nohighlight">\(\omega\)</span> = 0 but for the first time when <span class="math notranslate nohighlight">\(\omega\tau = \pm \pi\)</span> , because although the sine is zero, the denominator is <span class="math notranslate nohighlight">\(\pi\)</span>. L’Hopital’s rule can also be used to determine the value when <span class="math notranslate nohighlight">\(\omega \to 0\)</span>:</p>
+<p><strong>(c, d)</strong> The pulse is zero, <span class="math notranslate nohighlight">\(Re[g(\omega)]\)</span> = 0, when <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(\omega \tau)}{\omega\tau}\)</span> = 0 which does not occur when <span class="math notranslate nohighlight">\(\omega\)</span> = 0 but for the first time when <span class="math notranslate nohighlight">\(\omega\tau = \pm \pi\)</span> , because although the sine is zero, the denominator is <span class="math notranslate nohighlight">\(\pi\)</span>. L’Hopital’s rule can also be used to determine the value when <span class="math notranslate nohighlight">\(\omega \to 0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega\tau)}{\omega\tau}\to \frac{\tau\cos(\omega\tau)}{\tau} \to 1\]</div>
 <p>The pulse has a frequency spread to the first minima of <span class="math notranslate nohighlight">\(2\pi/\tau\)</span> which corresponds to <span class="math notranslate nohighlight">\(2\pi\)</span> MHz for a <span class="math notranslate nohighlight">\(1\,\mu\)</span>s duration pulse. Suppose that only half this frequency range has useful intensity then this extends from <span class="math notranslate nohighlight">\(399.5 \to 400.5\)</span> MHz in a <span class="math notranslate nohighlight">\(400\)</span> MHz instrument. This gives a potential chemical shift of <span class="math notranslate nohighlight">\(\pm 50000/400 = 125\)</span> ppm, which is large compared to most proton shifts which are typically <span class="math notranslate nohighlight">\(\lt 20\)</span> ppm.</p>
 </section>
 <section id="q10-answer">
 <h2>Q10 answer<a class="headerlink" href="#q10-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The FID is caused,in a semi-classical interpretation of NMR, by the rotating magnetization cutting the wire
-coil of the detector, and inducing the current that is subsequently detected. The two different classes of spins move with different frequencies due to their different chemical environments, and hence, experience slightly different magnetic fields. These are the two cosines mentioned in the question. The decay of magnetization is due to the interaction of the spins with one another, with other atoms in the molecule and with dipoles in the solvent. These interactions have the effect of transferring more spins from the upper spin level to the lower one, than in the opposite direction, and hence back towards equilibrium. These effects cause the population to decay with a lifetime T1, and the loss of the spin coherence determines the T2 lifetime. The <span class="math notranslate nohighlight">\(\tau = 100\)</span> in the question represents both these decay processes. In a real experiment the decay time would be of the order of a few seconds and the frequencies in MHz.</p>
-<p>(b) Using the FID equation given in the question the Python code below can be used. You should modify this as you wish.</p>
+<p><strong>(a)</strong> The FID is caused,in a semi-classical interpretation of NMR, by the rotating magnetization cutting the wire coil of the detector, and inducing the current that is subsequently detected. The two different classes of spins move with different frequencies due to their different chemical environments, and hence, experience slightly different magnetic fields. These are the two cosines mentioned in the question. The decay of magnetization is due to the interaction of the spins with one another, with other atoms in the molecule and with dipoles in the solvent. These interactions have the effect of transferring more spins from the upper spin level to the lower one, than in the opposite direction, and hence back towards equilibrium. These effects cause the population to decay with a lifetime T1, and the loss of the spin coherence determines the T2 lifetime. The <span class="math notranslate nohighlight">\(\tau = 100\)</span> in the question represents both these decay processes. In a real experiment the decay time would be of the order of a few seconds and the frequencies in MHz.</p>
+<p><strong>(b)</strong> Using the FID equation given in the question the Python code below can be used. You should modify this as you wish.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -1776,7 +1785,7 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 </section>
 <section id="q11-answer">
 <h2>Q11 answer<a class="headerlink" href="#q11-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The transform is <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt\)</span></p>
+<p><strong>(a)</strong> The transform is <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt\)</span></p>
 <p>which can be evaluated by hand or using SymPy. By hand this is made easier by converting the sin to exponential first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1812,7 +1821,7 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 <img alt="../_images/Fourier-answers-7-15_8_0.png" src="../_images/Fourier-answers-7-15_8_0.png" />
 </div>
 </div>
-<p>(b) when <span class="math notranslate nohighlight">\(\varphi = n\pi\)</span> and <span class="math notranslate nohighlight">\(n = 0, 1, 2, \cdots\)</span> then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}\)</span> and the form of the transform is a damped sine wave because the sine is divided by <span class="math notranslate nohighlight">\(k^2\)</span>.</p>
+<p><strong>(b)</strong> when <span class="math notranslate nohighlight">\(\varphi = n\pi\)</span> and <span class="math notranslate nohighlight">\(n = 0, 1, 2, \cdots\)</span> then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}\)</span> and the form of the transform is a damped sine wave because the sine is divided by <span class="math notranslate nohighlight">\(k^2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># real part of transform</span>
@@ -1836,14 +1845,14 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 </section>
 <section id="q12-answer">
 <h2>Q12 answer<a class="headerlink" href="#q12-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The Fourier transform of the <span class="math notranslate nohighlight">\(\delta\)</span>-function is obtained directly by using its selecting property. For instance acting on a function <span class="math notranslate nohighlight">\(f\)</span> gives,</p>
+<p><strong>(a)</strong> The Fourier transform of the <span class="math notranslate nohighlight">\(\delta\)</span>-function is obtained directly by using its selecting property. For instance acting on a function <span class="math notranslate nohighlight">\(f\)</span> gives,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int f(x)\delta(x-a)dx = f(a)\]</div>
 <p>and no integration is necessary, therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P_k=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\delta(x-a)e^{ikx}dx = \frac{1}{\sqrt{2\pi}}e^{ika}\]</div>
 <p>The probability density is <span class="math notranslate nohighlight">\(P_k^*P_k=1/2\pi\)</span> because the complex conjugate is <span class="math notranslate nohighlight">\(\displaystyle  p^* = e^{+ikx}/\sqrt(2\pi)\)</span>. Because <span class="math notranslate nohighlight">\(P^*P\)</span> is a constant the scattering off an atom is the same in all directions.</p>
-<p>(b) The Gaussian function has the transform</p>
+<p><strong>(b)</strong> The Gaussian function has the transform</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P_k=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-(x-a)^2/d^2}e^{ikx}dx\]</div>
 <p>calculating the integral is helped with substitution <span class="math notranslate nohighlight">\(s=(x-a)/d\)</span> and using <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^{\infty}e^{-s^2}ds\)</span>=1. The result is <span class="math notranslate nohighlight">\(\displaystyle P_k=e^{-k^2d^2/4}e^{-ika}/2\)</span>.</p>
@@ -1905,7 +1914,7 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
 </section>
 <section id="q15-answer">
 <h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The pulse has an absolute value of <span class="math notranslate nohighlight">\(x\)</span>, so it is symmetrical about zero. The fwhm is <span class="math notranslate nohighlight">\(2\ln\)</span>(2) and as the pulse is <span class="math notranslate nohighlight">\(\tau= 10\)</span> fs long the scaling is <span class="math notranslate nohighlight">\(a = \ln(2)/\tau\)</span> in units of fs<span class="math notranslate nohighlight">\(^{-1}\)</span>. The Fourier transform can be taken from zero to infinity with <span class="math notranslate nohighlight">\(\displaystyle e^{-ax}\)</span>, and from <span class="math notranslate nohighlight">\(-\infty \cdots 0\)</span> with <span class="math notranslate nohighlight">\(\displaystyle e^{ax}\)</span>, and the results added and simplified.</p>
+<p><strong>(a)</strong> The pulse has an absolute value of <span class="math notranslate nohighlight">\(x\)</span>, so it is symmetrical about zero. The fwhm is <span class="math notranslate nohighlight">\(2\ln\)</span>(2) and as the pulse is <span class="math notranslate nohighlight">\(\tau= 10\)</span> fs long the scaling is <span class="math notranslate nohighlight">\(a = \ln(2)/\tau\)</span> in units of fs<span class="math notranslate nohighlight">\(^{-1}\)</span>. The Fourier transform can be taken from zero to infinity with <span class="math notranslate nohighlight">\(\displaystyle e^{-ax}\)</span>, and from <span class="math notranslate nohighlight">\(-\infty \cdots 0\)</span> with <span class="math notranslate nohighlight">\(\displaystyle e^{ax}\)</span>, and the results added and simplified.</p>
 <p>The transform is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{\sqrt{2\pi}}\int_o^\infty e^{-ax}e^{-ikt}dt = \frac{1}{\sqrt{2\pi}}\left(\frac{a}{a+ik}\right)\]</div>
@@ -1914,7 +1923,7 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
 <div class="math notranslate nohighlight">
 \[\displaystyle f_k=\frac{1}{\sqrt{2\pi}}\left(\frac{2a}{a^2+k^2}\right)\]</div>
 <p>When plotted this looks something like a bell-shaped curve but is more pointed at the top; it has a Lorentzian shape. The full width at half maximum is <span class="math notranslate nohighlight">\(\displaystyle k_{fwhm}=2a(  4/\sqrt{2\pi}-a ) \)</span> which for a <span class="math notranslate nohighlight">\(10\)</span> fs pulse is <span class="math notranslate nohighlight">\(0.65 \cdot 10^{14}\, s^{-1}\)</span>. The central wavelength of the laser is <span class="math notranslate nohighlight">\(800\)</span> nm or <span class="math notranslate nohighlight">\(12500\,\mathrm{ cm^{-1}}\)</span>, the frequency spread then <span class="math notranslate nohighlight">\(12500 \pm 0.6505 \cdot 10^{14}/c/2\, \mathrm{cm^{-1}}\)</span> or <span class="math notranslate nohighlight">\(14670 \to 10329 \,\mathrm{cm^{-1}}\)</span> which is <span class="math notranslate nohighlight">\(681.7 \to 968.1\)</span> nm and covers most of the deep red part of the visible spectrum and spreads into a wavelength region where the eye is insensitive. As a consequence, lasers such as these, titanium sapphire is an example, appear very faint when in fact they could be very intense.</p>
-<p>(b) The laser cavity is <span class="math notranslate nohighlight">\(1.5\)</span> metres long, hence with these wavelengths, approximately <span class="math notranslate nohighlight">\(4.4 - 3.1 = 1.3\)</span> million modes (half wavelengths) exist in the cavity and all these have to be in phase to form a pulse.</p>
+<p><strong>(b)</strong> The laser cavity is <span class="math notranslate nohighlight">\(1.5\)</span> metres long, hence with these wavelengths, approximately <span class="math notranslate nohighlight">\(4.4 - 3.1 = 1.3\)</span> million modes (half wavelengths) exist in the cavity and all these have to be in phase to form a pulse.</p>
 </section>
 </section>
 

@@ -428,7 +428,7 @@ plt.show()
 
 # ## 18.2 The Schroedinger equation for a particle in a gravitational potential: $V(x)\sim x$ 
 # 
-# THe Schroedinger equation with potential $V(x)$ is 
+# The Schroedinger equation with potential $V(x)$ is 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi = E\psi$$
 # 
@@ -436,43 +436,49 @@ plt.show()
 # 
 # $$\displaystyle -\frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}(mgx-E)\psi=0 \tag{66}$$
 # 
-# where  $m$ is mass and $g$ the force due to gravity. With a linear potential this equation can be changed into a form equivalent to eqn. 65. The boundary conditions or limits on the wavefunction are defined as $\psi(0)=0$ and $\psi(\infty)\to 0$ . This means that only positive values of $x$ are possible, the potential is shown in figure 30a and is infinitely high at $x=0$ so the wavefunction cannot penetrate this side of the barrier. The equation does not yet have the form of eqn. 65 and the most difficult part of the calculation is changing it into this form.
+# where  $m$ is mass and $g$ the force due to gravity. With a linear potential this equation can be changed into a form equivalent to eqn. 65. The boundary conditions or limits on the wavefunction are defined as $\psi(0)=0$ and $\psi(\infty)\to 0$ . This means that only positive values of $x$ are possible, the potential is shown in figure 30a and is vertical and infinitely high at $x=0$ so the wavefunction cannot penetrate this side of the barrier. The most difficult part of the calculation is changing the equation it into the form of the Airy/Stokes equation.
 # 
-# We start by looking at the units of the constants 
+# We start by looking at the constants, and when combined have units 
 # 
 # $$\displaystyle \frac{2m^2g}{\hbar^2}\equiv \mathrm{\frac{kg^2ms^{-2}}{kg^2m^4s^{-4}s^2}  }=\frac{1}{m^3}$$
 # 
-# and so define a characteristic length $l$ as 
+# which allows us to define a characteristic length $l$ as 
 # 
-# $$\displaystyle l=\left(\frac{\hbar^2}{2m^2g}\right)^{1/3}$$
+# $$\displaystyle l=\left(\frac{\hbar^2}{2m^2g}\right)^{1/3}\tag{66a}$$
 # 
-# The distance becomes dimensionless by defining a new variable  $\chi=x/l$.
+# Any distance $x$ becomes dimensionless by defining a new dimensionless variable $\chi=x/l$  and similarly the energy can be made dimensionless by defining 
 # 
-# The energy can be made dimensionless also by the calculation 
+# $$\displaystyle E_0=\left(\frac{\hbar mg^2}{2}\right)^{1/3}\tag{66b}$$
 # 
-# $$\displaystyle E_0=\left(\frac{\hbar mg^2}{2}\right)^{1/3}$$
-# 
-# $\hbar mg^2$ has dimensions of energy cubed and we define $\epsilon=E/E_0$ where $\epsilon$ is dimensionless or reduced energy. With these new values and defining 
+# $\hbar mg^2$ has dimensions of energy cubed and we define $\epsilon=E/E_0$ where $\epsilon$ as a dimensionless or reduced energy. With these new values and defining 
 # 
 # $$\displaystyle \xi = \chi-\epsilon$$
 # 
-# we can change the equation into a dimensionless form and one similar to eqn. 65 
+# we can now change the equation into a dimensionless form and one similar to eqn. 65 
 # 
-# $$\displaystyle \frac{d^2\psi}{d\xi^2}-\xi\psi =0 $$
+# $$\displaystyle \frac{d^2\psi}{d\xi^2}-\xi\psi =0 \tag{66c}$$
 # 
-# with solutions that are the Airy function $\psi(\xi)=Ai(\xi)$. The limits are $\psi(-\epsilon)=0, \psi(\infty)\to 0$ so classical motion is permitted only between turning points $\xi=-\epsilon$ and $\xi=0$ or $x=0$ and $\epsilon$. 
+# The solutions are the Airy function $\psi(\xi)=Ai(\xi)$. The limits are $\psi(-\epsilon)=0, \psi(\infty)\to 0$ so classical motion is permitted only between turning points $\xi=-\epsilon$ and $\xi=0$ or $x=0$ and $\epsilon$. 
 # 
-# When the wavefunction $Ai(x)=0$ at $x=0$ there must be a solution giving a discrete energy, and so a valid solution to the Schroedinger equation, because the wavefunction has to be zero at the boundary $x=0$. The Airy function is oscillatory and the zero crossings lead to energy levels with quantum numbers $n=1,2, \cdots$. When $\displaystyle Ai\left(-\epsilon_n\right)=0$ (i.e. at $x=0$) the energy for the $n^{th}$ level is $E_n=E_0\epsilon_n$ where $\epsilon_n$ is the value that makes $Ai=0$.
+# When the wavefunction $Ai(x)=0$ at $x=0$ there must be a solution giving a discrete energy, and therefore is a valid solution to the Schroedinger equation, simply because the wavefunction has to be zero at the boundary $x=0$. The Airy function is oscillatory and the zero crossings lead to energy levels with quantum numbers $n = 1,2, \cdots$. When $\displaystyle Ai\left(-\epsilon_n\right)=0$ (i.e. at $x=0$) the energy for the $n^{th}$ level is $E_n = E_0\epsilon_n$ where $\epsilon_n$ is the value that makes $Ai=0$.
 # 
-# The values where the Airy function is zero are tabulated, the first few are for $Ai(-\epsilon_n)=0$ when $\epsilon_n=2.3381,  4.08795,  5.5206,  6.7867,  7.9441$. The characteristic length for an electron is $l=8.801\cdot 10^{-4}$ m in Earth's gravitational field and its characteristic energy $E_0=1.6654\cdot 10^{-21}$ J which, for comparison, is a little smaller that thermal energy at room temperature $4.14 \cdot 10^{-21}$ J.
+# The values where the Airy function is zero are tabulated, the first few are for $Ai(-\epsilon_n)=0$ when $\epsilon_n=2.3381,  4.08795,  5.5206,  6.7867,  7.9441$. (These values can also be found using Python/SciPy special functions). The characteristic length for an electron in our units (eqn. 66a) is $l=8.801\cdot 10^{-4}$ m in Earth's gravitational field and its characteristic energy (eqn.66b) $E_0=1.6654\cdot 10^{-21}$ J which, by comparison, is a little smaller that thermal energy at room temperature $4.14 \cdot 10^{-21}$ J.
 # 
 # ![Drawing](diffeqn-fig30a.png)
 # 
-# Figure 30a. The wavefunctions, the Airy function $Ei(\xi)$, and energy levels for a particle in a linear potential. The plots show the data which is not scaled by $l$ or $E_0$ in the way described in the text and both have a value of $1$. The diagonal line shows the potential and the tunnelling to the right of this is clear. The quantum numbers are also shown. (The amplitudes of the wavefunctions are arbitrary and adjusted to fit the figure.)
+# Figure 30a. The wavefunctions, the Airy function $Ei(\xi)$, and energy levels for a particle in a linear potential. The plots show the data which is not scaled by $l$ or $E_0$ in the way described in the text and both have been given a value of $1$. The diagonal line shows the potential, $V(x)=x$, and the tunnelling to the right of this is clear. The quantum numbers are also shown. (The amplitudes of the wavefunctions are arbitrary and adjusted to fit the figure.)
 # __________
-# The shape of the wavefunctions is reminiscent of those for the harmonic oscillator but more like the anharmonic Morse potential being skewed at larger $x$ because of the shape of the potential allowing tunnelling. The lowest level wavefunction has zero nodes, then $1,2\cdots$ nodes as the energy increases. Tunnelling is apparent into the non-classical region at large $x$ but not at $x=0$ because here the potential is infinitely high. The gap between the energy levels decreases with increase in energy just as in the Morse potential and unlike the harmonic oscilator. (The symmetry in the HO prevents this from happening).
+# The shape of the wavefunctions is reminiscent of those for the harmonic oscillator but much more like the anharmonic Morse potential being skewed at larger $x$ because of the shape of the potential allowing tunnelling when $x\gt 0$. The lowest level wavefunction has zero nodes, then $1,2\cdots$ nodes as the energy increases. Tunnelling is apparent into the non-classical region at large $x$ but tunnelling is not possible at $x=0$ because here the potential is vertical and infinitely high. The gap between the energy levels decreases with increase in energy just as in the Morse potential and unlike the harmonic oscillator. (The symmetry in the harmonic oscillator prevents this from happening).
 # 
-# The wavefunction shown in figure 30a, are the stationary state ones, they give only the probability of finding the particle at height $x$ above ground level when in a given energy level. There is no motion in this. To see that the particle can 'bounce' two or more of these eigenstates must be excited at the same time. The time dependence of a wavefunction is obtained by multiplying by $e^{-iE_nt}$ for energy $E_n$ to make the wavefunction $\psi_{x,n,t}=\psi_{x,n}e^{-iE_nt}$. The probability of being at  position $x$ is the product $\psi^*_{x,n}\psi_{x,n}$ where * indicates the complex conjugate and so all time disappears. If, however, a superposition is made, i.e. a wavepacket with wavefunctions having different quantum numbers, then this will have a time dependence. The simplest case is to add two wavefunctions together, e.g.
+# The wavefunction shown in figure 30a, are the stationary ones, they give only the probability of finding the particle at height $x$ above ground level when in a given energy level. There is no motion implied in this. To see that the particle can 'bounce' two or more of these eigenstates must be excited at the same time such as by a short laser pulse. The time dependence of a wavefunction is obtained by multiplying by $e^{-iE_nt}$ for energy $E_n$ to make the wavefunction 
+# 
+# $$\displaystyle \psi_{x,n,t}=\psi_{x,n}e^{-iE_nt}$$
+# 
+# The probability of being at  position $x$ is the product 
+# 
+# $$\displaystyle \psi^*_{x,n,t}\psi_{x,n,t}=\psi^*_{x,n}\psi_{x,n}$$
+# 
+# where * indicates the complex conjugate and the time dependence disappears from this product. If, however, a superposition is made, i.e. a wavepacket with wavefunctions having different quantum numbers, then this will have a time dependence. The simplest case is to add two wavefunctions together, e.g.
 # 
 # $$\displaystyle S = \frac{1}{\sqrt{2}}(\psi_{x,n}e^{-iE_nt}+\psi_{x,m}e^{-iE_mt}),\quad n,m =1,2\cdots; n \ne m$$
 # 
@@ -480,24 +486,23 @@ plt.show()
 # 
 # $$\begin{align}W&= ((\psi_{x,n}e^{+iE_nt}+\psi_{x,m}e^{+iE_mt}))(\psi_{x,n}e^{-iE_nt}+\psi_{x,m}e^{-iE_mt})/2\\&= (\psi_{x,n}^2+\psi_{x,m}^2+\psi_{x,n}\psi_{x,m}(e^{i(E_m-E_n)t}+e^{-i(E_m-E_n)t} ))/2\end{align}$$
 # 
-# which has a constant term plus a variable one that looks very similar to a cosine in $(E_m-E_n)t$. The time dependence causes the wavepacket to move in the potential, and do so repeatedly with a period $2\pi/(|E_n-E_m|)$. This is shown in figure 30b for the sum of wavefunctions $n=5,m=6$ and for fractions of the period, $0,0.2,\dots$ as shown in each panel. The reinforcing and destructive interference are clear. With lower quantum numbers the extension is smaller and the period longer because the energy gaps are greater. Adding several levels together leads to lots of different periods with recursions at different times due to different combinations of $E_n,E_m,E_p,E_q$ etc. produced.
+# which has two constant terms plus a variable one $\psi_{x,n}\psi_{x,m}\cos\big((E_m-E_n)t\big)$. The time dependence causes the wavepacket to move in the potential, and do so repeatedly with a period $2\pi/(|E_n-E_m|)$. The initial wavepacket is repeatedly reformed after each whole period. This is shown in figure 30b for the sum of wavefunctions $n = 5,m = 6$ and for fractions of the period, $0,0.2,\dots 1$ as shown in the panels. The reinforcing and destructive interference are clear. With lower quantum numbers the motion is less extended and the period shorter because the energy gaps are greater. Adding several levels together leads to lots of different periods with recursions at different times due to various combinations of levels with energies $E_i, E_{(i+1)}, E_{(i+2)}, \cdots$ etc.
 # 
 # ![Drawing](diffeqn-fig30b.png)
 # 
-# Figure 30b. Wavepackets for the quantum numbers ($5,6$) at fractions of a period.
+# Figure 30b. Wavepackets for the quantum numbers $5$ and $6$ at fractions of a period $t_p$. These times are $t=\cdots$. The diagonal dashed line is the potential energy and the wavepacket is plotted at the average energy of the two levels.
 # ______
 # 
-# To imagine the particle 'bouncing' the average distance can be computed. Again the wavepacket is needed, if just one wavefunction is used then a constant value is obtained for the average position as all time is removed via the complex conjugate.
+# To imagine the particle 'bouncing' in the gravitational well (i.e. moving left to right in the diagram but up and down in reality) then the average distance can also be computed again using the wavepacket. If just one wavefunction is used then a constant value is obtained for the average position as all time is removed *via*. the complex conjugate.
 # 
-# The average position is by definition
+# The average position is by definition,
 # 
-# $$\displaystyle \langle x\rangle =\int_0^\infty x\psi_{x,n}e^{iE_n t}\psi_{x,m}e^{-iE_mt}dx$$
+# $$\displaystyle \langle x\rangle =\int_0^\infty x\left(\psi_{x,n}e^{-iE_n t}\right)^*\psi_{x,m}e^{-iE_mt}dx$$
 # 
-# and the result at several times is shown in figure 30c. The sinusoidal motion is clear. The period of the wavepacket is maintained and the particle oscillates only between finite values and does not reach zero.
-# 
+# and the resulting position over time is shown in figure 30c where the co-sinusoidal motion is clear. The period of the average position of the wavepacket is clear and although the particle oscillates its average position does not reach zero for any combination of quantum numbers.  
 # ![Drawing](diffeqn-fig30c.png)
 # 
-# Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown ($5,6$) vs time. The period is shown between vertical lines is the same as the wavepacket period.
+# Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown ($n=5,m=6$) vs time. The period between vertical lines is the same as the wavepacket period. This is $2\pi/\Delta E$ where $\Delta E = |E_n - E_m|$ .
 # _______
 
 # ## 18.3 Time dependent Schroedinger equation for a 2D square well
@@ -575,15 +580,15 @@ plt.show()
 # 
 # Transforming back into 'real' space gives
 # 
-# $$\displaystyle c(x,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk^2t}e^{ikx}dk=\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}$$
+# $$\displaystyle c(x,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk^2t}e^{ikx}dk=\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}\tag{70a}$$
 # 
-# where the integral is evaluated by completing the square, otherwise Sympy can be used. As can be seen this solution is only correct for $t>0$. This equation produces a gaussian concentration profile because the fourier transform of a Gaussian is also a Gaussian. This equation essentially forms a kernel from which the effect of diffusion on other initial distributions can be based.
+# where the integral is evaluated by completing the square, otherwise SymPy can be used. As can be seen this solution is only correct for $t>0$. This equation produces a gaussian concentration profile because the fourier transform of a Gaussian is also a Gaussian. This equation essentially forms a *kernel* from which the effect of diffusion on other initial distributions can be based by using convolution.
 # 
-# Calculating the profiles shows that the concentration spreads out across space and in time as shown in the figure. From the values you can see that diffusion is a relatively slow process, but with a rapid initial phase. In 1D the root mean squared distance diffused in time $t$ is $\sqrt{2Dt}$.
+# Calculating the profiles (fig. 30d) shows that the concentration spreads out across space and in time. From the time and distance you can see that diffusion is a relatively slow process, but with a rapid initial phase. In 1D the root mean squared distance diffused in time $t$ is $\sqrt{2Dt}$.
 # 
 # ![Drawing](diffeqn-fig30d.png)
 # 
-# Figure 30d. Diffusion from the delta function initial distribution is represented by the vertical line at zero. The diffusion constant used was $10\cdot 10^{-6}\,\mathrm{cm^2\,s^{-1}}$. The left panel shows the concentration profile vs. position at the times shown and the right panel the concentration at various positions vs. time.
+# Figure 30d. Diffusion from the delta function. The initial distribution is represented by the vertical line at zero. The diffusion constant used was $10\cdot 10^{-6}\,\mathrm{cm^2\,s^{-1}}$ typical of a small molecule such as sucrose or urea in water. The left panel shows the concentration profile vs. position at the times shown and the right panel the concentration at various positions vs. time.
 # ______
 # 
 # ### **(ii) Initial concentration not at $x=0$**
@@ -596,40 +601,33 @@ plt.show()
 # 
 # $$g(k,0)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x,0)e^{-ikx}e^{-ikx_0}dx $$
 # 
-# which in the case of delta function initial condition results in a Gaussian where $x\to x-x_0$ or
+# which in the case of delta function initial condition results in a Gaussian in $ x-x_0$ or
 # 
 # $$\displaystyle c(x,t)=\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}$$
 # 
-# As might be expected in some cases the transform cannot be easily reversed by integration and a numerical transform (FFT) is the only recourse.
+# and so the effect of shifting the origin is, as one might anticipate, simply to change $x$ to $x-x_0$. When some function $f(x)$ other than the delta function is needed as the source then $c(x,t)$ can be convoluted with $f(x)$ as shown in the next section. 
 # 
-# In a case that a function other than the delta function is needed then the result assuming a delta function, the kernel, can be convoluted with the new function. 
+# ### **(iii) A single and a comb of top-hat functions**
 # 
+# In the case of a 'top-hat' function, i.e. one that is constant between $x=a \to x=b$ and zero elsewhere the integrations can be performed analytically but for many other functions a numerical integration method will have to used. The integration needed is a convolution with the result of a delta-function, eqn. 70a, with a function $f(x)$ that describes the initial concentration profile in $x$. Using $v$ as a dummy variable in the integration the convolution equation is (see chapter 9-7),
 # 
-# When the initial condition is not a delta function we have to reverse transform eqn. 70 to bring us back to 'real space', i.e. $x$ and the equation to do this is 
+# $$\displaystyle C(x,t) = \int f(v)c(x-v,t)dv$$
 # 
-# $$\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty f(y,0)e^{-iky}dy\right]e^{-Dk^2t} e^{ikx} dk$$
+# where the limits of the integration will depend on the nature of the function $f$. Suppose that this is a top-hat function of intensity $A$ and non-zero only in the range from $x=a\to x=b$. The equation to integrate is now 
 # 
-# where $y$ a dummy variable for the integration and $f(y,0)$ the initial condition. Rearranging gives
+# $$\displaystyle C(x,t) = \frac{A}{\sqrt{4\pi Dt} }\int_a^b e^{-(x-v)^2/(4Dt)}dv$$
 # 
-# $$\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] f(y,0)dy$$
+# and evaluating produces error two functions
 # 
-# ### **(iii) Comb of top-hat functions**
+# $$\displaystyle C(x,t)=  \frac{1}{2}\mathrm{erf}{\left(\frac{b - x}{ \sqrt{4Dt}} \right)} - \frac{1}{2}\mathrm{erf}{\left(\frac{a - x}{ \sqrt{4Dt}} \right)} \tag{40b}$$
 # 
-# In the case of a 'top-hat' function, i.e one that is constant between $x=a \to b$ and zero elsewhere or many polynomials between two values, the integrations can be performed analytically but for other cases a numerical method will have to used. The outer integral limits are $y=\pm\infty$ but usually the integral is split into parts, e.g $\displaystyle \int_{-\infty}^\infty [\cdots] -\int_{-\infty}^a [\cdots]- \int_b^\infty [\cdots]$  which can be simplified to $\displaystyle \int_a^b[\cdots]$. As an example the result of heating a series of strips is shown in figure 30e. The equation for a single strip is of amplitude $1$ is 
-# 
-# $$\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] dy=\int_a^b\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}dy$$
-# 
-# which has the solution ($a < b$) 
-# 
-# $$\displaystyle c(x,t)=  \frac{1}{2}\mathrm{erf}{\left(\frac{b - x}{2 \sqrt{Dt}} \right)} - \frac{1}{2}\mathrm{erf}{\left(\frac{a - x}{2 \sqrt{Dt}} \right)} $$
-# 
-# and other strips are positioned by changing $a,b$. The initial top-hat population is coloured grey. An rapid initial fall in population is clear which then slows is accord with the square root of time for the root mean square distance diffused, $\langle x\rangle =\sqrt{2Dt}$ in one dimension. 
+# If the change $x\to x-x_0$ is made the the strips will be positioned around $x_0$ alternatively $a$ and $b$ could be changed. The result of initially placing a concentrated solution in a series of strips and allowed to diffuse freely is shown in figure 30e and mimics the effect of a transient grating experiment which is described next. The initial top-hat population is coloured grey in fig. 30e. A rapid initial fall in population is clear which then slows accord with the square root of time as given by the root mean square distance diffused. This is $\langle x\rangle =\sqrt{2Dt}$ in one dimension.
 # 
 # ![Drawing](diffeqn-fig30e.png)
 # 
-# Figure 30e. Population as an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of $D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}$. The horizontal axis is in $\mu m$.
+# Figure 30e. The population of an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of $D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}$. The horizontal axis is in $\mu m$.
 # _______
-# 
+
 # ## 18.5 Transient Grating Experiments
 # 
 # A comb of excited states can be made by crossing two laser beams from the same source. If a pump laser is split into two equal parts and recombined in a solution containing chromophores a set of fringes of the excited state molecules, sometimes called a population density grating (figure 30f), will be produced. If the solvent only is used a refractive index grating can be produced and probed in a similar way. The transient grating can diffract a probe laser. 
@@ -662,7 +660,7 @@ plt.show()
 # 
 # $$\displaystyle \frac{\partial c}{\partial t}=D\left(\frac{\partial^2 c}{\partial x^2}+\frac{\partial^2 c}{\partial y^2}\right) $$
 # 
-# which has the same form as that for 1D diffusion but with the extra term in $y$. There is no term in the product $xy$ so this is in effect rather like two separate equations. If the fourier transforms are taken as above in terms of $x$ and $y$ and necessarily using $k_x$ and $k_y$ instead of just $k$ the result is just the product of two 1D terms. Following the method above the transform equation is 
+# which has the same form as that for 1D diffusion but with the extra term in $y$. There is no term in the product $xy$ so this is in effect rather like two separate equations. If the fourier transforms are taken as above in terms of $x$ and $y$ and necessarily using $k_x$ and $k_y$ instead of just $k$ the result is just the product of two 1D terms. Following the method given for the 1D case with a delta function initial condition in $x$ and $y$ the transform equation is, 
 # 
 # $$\displaystyle \frac{\partial }{\partial t}g(k_x,k_y,t)=-D(k_x^2+k_y^2) g(k_x,k_y,t)$$
 # 
@@ -670,11 +668,15 @@ plt.show()
 # 
 # $$\displaystyle c(x,y,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk_x^2t}e^{ik_xx}dk_x\int_{-\infty}^\infty e^{-Dk_y^2t}e^{ik_yx}dk_y=\frac{1}{4\pi Dt}e^{-(x^2+y^2)/(4Dt)}$$
 # 
-# where the integral $\int\int e^{-D(k_x^2+k_y^2)t}e^{i(k_xx+k_yy)} dk_xdk_y $ is split into two because, as mentioned, there is no term in $xy$. The $x^2+y^2$ in the exponential means that $x$ and $y$ are interchangeable, or put another way that diffusion is the same in the $x$ and $y$ directions, i.e. is spherically symmetrical and we can consider that $x^2+y^2=r^2$ where $r$ is the radius of the diffusing material, this with a delta function placed at $x=y=0$ shows that the concentration spreads out spherically while its peak height reduces. This, naturally, has the be the case because the amount of material is constant.  The effect is shown in figure 30g. Finally note that the solution to Fick's law, in any dimension, cannot apply at $t=0$, as the concentration would have to become infinite.  The short time behaviour is completely missing and more sophisticated models, are needed here. 
+# where the integral 
+# 
+# $$\displaystyle\int\int e^{-D(k_x^2+k_y^2)t}e^{i(k_xx+k_yy)} dk_xdk_y $$
+# 
+# was split into two because, as mentioned, there is no term in $xy$. The $x^2+y^2$ in the exponential means that $x$ and $y$ are interchangeable, or put another way that diffusion is the same in the $x$ and $y$ directions, i.e. is spherically symmetrical and we can consider that $x^2+y^2=r^2$ where $r$ is the radius of the diffusing material, this with a delta function placed at $x=y=0$ shows that the concentration spreads out spherically while its peak height reduces. This, naturally, has the be the case because the amount of material is constant.  The effect is shown in figure 30g. Finally note that the solution to Fick's law, in any dimension, cannot apply at $t=0$, as the concentration would have to become infinite.  The short time behaviour is completely missing and more sophisticated models, are needed here. 
 # 
 # ![Drawing](diffeqn-fig30g.png)
 # 
-# Fig. 30g. Diffusion in $2$ dimensions, with an initial amount at $x=y=0$ showing how the concentration spreads out spatially and in time. The line shows the time evolution of the peak concentration, where $x=y=0$ and which has the form $\displaystyle \frac{1}{4\pi Dt}$. The radial distance $r$ is measured in the plane from the centre of the circle outwards at any angle $\theta = 0\to 2\pi$ around the circular base.
+# Fig. 30g. Diffusion in $2$ dimensions, with an initial amount at $x=y=0$ showing how the concentration spreads out spatially and in time. The line shows the time evolution of the peak concentration, where $x=y=0$ and which has the form $\displaystyle (4\pi Dt)^{-1}$. The radial distance $r$ is measured in the plane from the centre of the circle outwards at any angle $\theta = 0\to 2\pi$ around the circular base.
 # _____________________________
 # 
 # We can see that the mean or average or mean value of the concentration distribution will be zero, since this is radially symmetrical. First we should check that the concentration profile over all coordinates is normalised to unity, since we used a delta function as the boundary condition when solving the equations. The integral is taken over all coordinates and is,
@@ -685,7 +687,7 @@ plt.show()
 # 
 # $$\displaystyle \frac{1}{4\pi Dt}\int_0^{2\pi}\int_0^{\infty} e^{-r^2/4Dt}rdrd\theta=\frac{2\pi}{4\pi Dt}\int_0^\infty e^{-r^2/4Dt}rdr=1$$
 # 
-# which can be confirmed using Sympy.
+# which can be confirmed using SymPy.
 
 # In[3]:
 
@@ -693,7 +695,7 @@ plt.show()
 r,D,t = sp.symbols('r,D,t', positive = True)
 inf = sp.oo                                         # sp.oo is SymPy infinity
 f01 = r*sp.exp(-r**2/( 4*D*t ) )/( 2*D*t )
-ans = sp.integrate(f01,(r,0,inf))         #sp.oo is sympy infinity
+ans = sp.integrate(f01,(r,0,inf))                   #sp.oo is sympy infinity
 print('normalisation =',ans)
 
 
@@ -706,14 +708,19 @@ print('normalisation =',ans)
 # $$\displaystyle \langle x^2\rangle =\frac{1}{4\pi Dt}\int_{0}^{2\pi}\int_{0}^\infty r^2re^{-r^2/4Dt}drd\theta=4Dt$$
 # 
 # thus the mean distance diffused by the whole group of particles in two dimensions in time $t$ is $\sqrt{4Dt}$. Any individual particle moves under Brownian motion and this individual motion is not bound by Fick's law, only the average behaviour.
-
-# In[4]:
-
-
-f02 = r**3*sp.exp(-r**2/( 4*D*t ) )/( 2*D*t )
-ans = sp.integrate(f02,(r,0,inf))                   
-print('<r^2> =', ans)
-
+# 
+# ### **FRAP. Fluorescence recovery after photo-bleaching** 
+# 
+# The technique of fluorescence recovery after photo-bleaching or FRAP (Axelrod et al. Biophysical J. v16, p1055, 1976) is an important method with which to determine the diffusion coefficients of molecules in biological membranes and in cells. Under a microscope a short pulse of laser light of nanosecond or shorter duration irreversibly bleaches a small circular area of a sample to which a fluorescent dye had been added. The fluorescence from any remaining unbleached dye in this area is monitored immediately after bleaching by exciting with weak continuous light so as to stimulate fluorescence but not cause any significant photo-bleaching. As some dye diffuses from elsewhere into the bleached area the fluorescence signal recovers. 
+# 
+# The 2D equation used to describe spatial and temporal recovery is similar to, but more complicated than that just described as it has to take into account the physical shape and intensity profile of the bleaching laser pulse. Of course this pulse has to be shorter than the time taken for diffusion to replace the bleached dye but technically this is not a problem as diffusion is relatively a slow process. If we imagine that fig. 30g shows how the amount of *bleached* dye with time changes as it diffuses out of the region, the fluorescence produced is rather like the inverse this with the the red line showing how the total fluorescence from the bleached area would recover. The fluorescence signal is initially small but grows as dye diffuses into the bleached area and by analysing the shape of the recovery curve a diffusion coefficient can be determined.
+# 
+# 
+# Although it is easier to assume that the laser has a circular profile, which leads to a complicated result, it is not necessary to assume this. Multi-mode Q-switched nanosecond lasers are quite common meaning that the intensity profile across the beam is effectively uniform and a mask could be placed in the laser beam to make it square. In this case the result is the product of equations in the x- and in the y-directions. Equation 70b gives the basic equation therefore if the rectangle has sides $-a\to a$ and $-b\to b$ the equation needed is
+# 
+# $$\displaystyle C(x,t)=  \frac{A}{4}\left(\mathrm{erf}{\left(\frac{a + x}{ \sqrt{4Dt}} \right)} + \mathrm{erf}{\left(\frac{a - x}{ \sqrt{4Dt}} \right)}\right)\left(\mathrm{erf}{\left(\frac{b + y}{ \sqrt{4Dt}} \right)} + \mathrm{erf}{\left(\frac{b - y}{ \sqrt{4Dt}} \right)}\right)$$
+# 
+# The total fluorescence is this function when integrated over $x$ and $y$ at each time $t$ and this can be integrated over a square area to produce an analytic equation in terms of an exponential and an error function.
 
 # In[ ]:
 

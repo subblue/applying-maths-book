@@ -11,7 +11,7 @@
 # and thus at small times the function should decay exponentially then become sinusoidal.
 # 
 # ## Q14 Reversible reactions. Euler algorithm
-# (a) Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations
+# **(a)** Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations
 # 
 # $$\displaystyle \frac{dy}{dt} = -(k_f + k_2)y + k_1x,\qquad \frac{dx}{dt} = -(k_1 + k_e)x + k_2y$$
 # 
@@ -22,19 +22,19 @@
 # \quad\downarrow k_f & & \quad \downarrow k_e
 # \end{array}$$
 # 
-# (b) The overall reaction between $\mathrm{N_2O_4}$ and $\mathrm{NO_2}$ can be written as  
+# **(b)** The overall reaction between $\mathrm{N_2O_4}$ and $\mathrm{NO_2}$ can be written as  
 # 
 # $$\displaystyle A \;\overset{k_1}{ \underset{k_2}{ \overset{\longrightarrow} \longleftarrow } } \;2B $$
 # 
 # where $A\equiv \mathrm{N_2O_4}$ and $B\equiv \mathrm{NO_2}$. Experimentally measured rate constants at $25\;^\text{o}C$ are $k_1=1.7\cdot 10^5\,\mathrm{s^{-1}}$ and $k_2=1 \cdot 10^6\,\mathrm{atm\,s^{-1}}$ and $A_0= 2$ atm. (It should be noted that the actual mechanism follows a Lindemann 'Unimolecular reaction' scheme). 
 # 
-# (i) Write down and numerically solve the rate equations using the Euler method. Put the Euler algorithm into a subroutine or procedure called a 'def' in Python which is then called to start the calculation. Pass the functions representing the rate equations into this as variables.
+# **(i)** Write down and numerically solve the rate equations using the Euler method. Put the Euler algorithm into a subroutine or procedure called a 'def' in Python which is then called to start the calculation. Pass the functions representing the rate equations into this as variables.
 # 
-# (ii) Work out the equilibrium concentrations of A and B. 
+# **(ii)** Work out the equilibrium concentrations of A and B. 
 # 
-# (iii) When equilibrium is established describe the effect of adding a fraction of B to the reaction.
+# **(iii)** When equilibrium is established describe the effect of adding a fraction of B to the reaction.
 # 
-# (iv) Now calculate the effect you describe assuming that the amount of B only is increased by $1/5$. Modify the Euler algorithm as necessary.
+# **(iv)** Now calculate the effect you describe assuming that the amount of B only is increased by $1/5$. Modify the Euler algorithm as necessary.
 # 
 # **Strategy** It is easier to work in units of microseconds.  In (iii) use le Chatelier's principle if necessary to predict what happens.
 # 
@@ -46,16 +46,16 @@
 # 
 # However, these equations cannot be solved analytically but either have to be solved at steady state, by setting the rate of change of the intermediate ES to zero (see Chapter 10), or have to be solved numerically.
 # 
-# (a) Using the Euler method, write down and solve the rate equations and plot each species vs
+# **(a)** Using the Euler method, write down and solve the rate equations and plot each species vs
 # time up to $10$ seconds using a time step of milliseconds. The initial concentrations are
 # 
-# $S(0) = 5 \cdot 10^{-3}\,\mathrm{  mol\, dm^{-3}}, E(0) = 1.5 \cdot 10^{-3} \,\mathrm{  mol\, dm^{-3}}, ES(0) = 0 \,\mathrm{  mol\, dm^{-3}}$ 
+# >$S(0) = 5 \cdot 10^{-3}\,\mathrm{  mol\, dm^{-3}}, E(0) = 1.5 \cdot 10^{-3} \,\mathrm{  mol\, dm^{-3}}, ES(0) = 0 \,\mathrm{  mol\, dm^{-3}}$ 
 # 
 # and the rate constants are 
 # 
-# $k_1 = 1000\,\mathrm{dm^3\, mol^{-1}\, s^{-1}}, k_{-1} = 0.05\,\mathrm{ s^{-1}}, k_2 = 1.0\,\mathrm{ s^{-1}}$.
+# >$k_1 = 1000\,\mathrm{dm^3\, mol^{-1}\, s^{-1}}, k_{-1} = 0.05\,\mathrm{ s^{-1}}, k_2 = 1.0\,\mathrm{ s^{-1}}$.
 # 
-# (b) Explain the shape of the curves produced and identify where the steady state is likely to be valid.
+# **(b)** Explain the shape of the curves produced and identify where the steady state is likely to be valid.
 # 
 # **Strategy:** The Euler method algorithm has to be changed slightly to add new species instead of the two used in most examples so far; for example, the product is calculated inside the 'for' loop with a term such as
 # 
@@ -72,7 +72,11 @@
 # 
 # $$\displaystyle \frac{d^3y}{dx^3}+x\frac{dy}{dx}+y-x+1=0  \tag{36}$$ 
 # 
-# from $x  = 0 \to 10$ with the initial conditions $y_0 = 5,\; dy/dx\big|_0 = 1$, and $d^2y/dx^2\big|_0 = 2$. Note that there are three initial conditions, each evaluated at $x = 0$.
+# from $x  = 0 \to 10$ with the initial conditions 
+# 
+# $$\displaystyle y_0 = 5,\qquad \frac{dy}{dx}\big|_0 = 1,\qquad \frac{d^2y}{dx^2}\big|_0 = 2$$
+# 
+# Note that there are three initial conditions, each evaluated at $x = 0$.
 # 
 # **Strategy:** Define two new variables to represent the derivatives and so split the equation into three and solve numerically. This equation can be solved directly by SymPy, but only by producing integrals that have to be solved numerically.
 

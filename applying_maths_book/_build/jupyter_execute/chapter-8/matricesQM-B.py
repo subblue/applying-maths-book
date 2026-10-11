@@ -64,7 +64,7 @@
 # \hline
 # \end{array}$$
 # 
-# Linear operators are labelled as $A,B$ and a Hermitian operator as $H$. An arbitrary ket is labelled $|x\rangle$ and $a$ is a (complex) number. Superscript $\dagger$ is the adjoint (conjugate-transpose), superscript $*$ complex conjugate.
+# Linear operators are labelled as $\pmb{A,B}$ and a Hermitian operator as $\pmb H$. An arbitrary ket is labelled $|x\rangle$ and $a$ is a (complex) number. Superscript $\dagger$ is the adjoint (conjugate-transpose), superscript $*$ complex conjugate.
 # 
 # $$\displaystyle \begin{array}{lll}\\
 # \hline
@@ -127,7 +127,7 @@
 
 # ## 4.3 Inner products $\langle\alpha |\beta\rangle$
 # 
-# The _dot_ or _inner product_ of the two vectors is always a number, i.e. a scalar. Using the
+# The *dot* or *inner product* of the two vectors is always a number, i.e. a scalar. Using the
 # normalized and orthogonal (spin) states $\alpha,\beta$
 # 
 # $$\displaystyle \langle\alpha |\alpha\rangle =\begin{bmatrix}1& 0\end{bmatrix}\begin{bmatrix}1\\ 0\end{bmatrix}=1 \quad \langle\beta |\beta\rangle =\begin{bmatrix}0& 1\end{bmatrix}\begin{bmatrix}0\\ 1\end{bmatrix}=1\quad \langle\alpha |\beta\rangle =\langle\beta |\alpha\rangle =0$$
@@ -167,7 +167,7 @@
 # 
 # $$\displaystyle |\varphi\rangle= \begin{bmatrix}1 & 0 \end{bmatrix}\begin{bmatrix}a\\b \end{bmatrix}\begin{bmatrix}1\\0 \end{bmatrix}+\begin{bmatrix}0 & 1 \end{bmatrix}\begin{bmatrix}a\\b \end{bmatrix}\begin{bmatrix}0\\1 \end{bmatrix} =a|\alpha\rangle +b|\beta\rangle$$
 # 
-# Two kets in the basis $(x, y, z, \cdots)$,
+# but the product of two column matrices is not defined so we should really have left the kets as $\alpha$ and $\beta$ and just multiplied the first two vectors. The kets in the basis $(x, y, z, \cdots)$,
 # 
 # $$\displaystyle |A\rangle=a_1|x\rangle + a_2|y\rangle +  a_3|z\rangle+\cdots + \\
 # |B\rangle=b_1|x\rangle + b_2|y\rangle +  b_3|z\rangle+\cdots +$$
@@ -182,7 +182,11 @@
 # 
 # 
 # ## 4.4 Outer products:$|\alpha\rangle\langle \beta|$ and projection operators $|\alpha\rangle\langle\alpha|$ are matrices
-# Objects of the form $|\alpha\rangle\langle \alpha|$, $|\alpha\rangle\langle \beta|$ or $|\psi_{z^2}\rangle\langle \psi_{xy}|$ and so forth are always square matrices and correspond to *operators*. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above
+# Objects of the form 
+# 
+# $$\displaystyle |\alpha\rangle\langle \alpha|,\qquad|\alpha\rangle\langle \beta|,\quad\text{or}\quad|\psi_{z^2}\rangle\langle \psi_{xy}|$$
+# 
+# and so forth are always square matrices and correspond to *operators*. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above
 # 
 # $$\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}$$
 # 
@@ -220,11 +224,15 @@
 # 
 # $$\displaystyle |\alpha\rangle\langle\beta|\varphi\rangle,\qquad\langle\alpha |\pmb A|\beta\rangle,\qquad \langle \pmb A\alpha|\beta\rangle= \langle \alpha|\pmb A^\dagger \beta\rangle$$
 # 
-# are often met. The important point to note is that the bra $\langle \alpha|$ is always a row vector and the complex conjugate of column vector or ket $|\alpha\rangle$ 
+# are often met. The important point to note is that the bra $\langle \alpha|$ is always a row vector and is the complex conjugate of column vector or ket $|\alpha\rangle$ 
 # 
 # ### **(i) $\langle\alpha |\pmb A|\beta\rangle$ is an expectation or average value**
 # 
-# The expectation or average value is $\langle E\rangle=\langle\alpha |\pmb A|\beta\rangle$ if $\pmb A$ is the Hamiltonian (hermitian) operator and produces an energy, assuming that the wavefunctions represented by $\langle\alpha|$ and $|\beta\rangle$ are normalised.
+# The expectation or average value is 
+# 
+# $$\displaystyle \langle E\rangle=\langle\alpha |\pmb A|\beta\rangle$$
+# 
+# if $\pmb A$ is the Hamiltonian (hermitian) operator and produces an energy, assuming that the wavefunctions represented by $\langle\alpha|$ and $|\beta\rangle$ are normalised.
 # 
 # We suppose that the vectors $\alpha$ and $\beta$ are initially written as column vectors. The general form is
 # 
@@ -232,7 +240,7 @@
 # 
 # where the $^*$ indicates the complex conjugate of ket $a$, the column vector $\alpha$, or $|a\rangle$, which is also transposed.
 # 
-# Suppose for the purposes of illustrating the maths only the operator is $$\pmb A=\begin{bmatrix} 0 & 2i & 1\\ 0 & 0 & 0\\ 0 & 6 & -3i \end{bmatrix}$$
+# Suppose, for the purposes of illustrating the maths only, the operator is $$\pmb A=\begin{bmatrix} 0 & 2i & 1\\ 0 & 0 & 0\\ 0 & 6 & -3i \end{bmatrix}$$
 # 
 # which is clearly not Hermitian and let $|\alpha\rangle=\begin{bmatrix}i\\0\\3\end{bmatrix},\quad |\beta\rangle = \begin{bmatrix}0\\2\\-i \end{bmatrix}$
 # 
@@ -275,7 +283,7 @@
 # and now take the dot product with the conjugate transpose of $\alpha$ which is the bra $\langle \alpha|$, 
 # 
 # $$\displaystyle \begin{bmatrix}i&0&3\end{bmatrix}\begin{bmatrix}0\\-6i\\3\end{bmatrix}= 9$$
-# 
+
 # ### **(iii) Eigenvalues of a Hermitian operator $\pmb H$ are orthogonal**
 # 
 # We can show that two eigenvectors are orthogonal by manipulating the bras and kets. Two eigenvectors  of the hermitian operator  are $|\psi\rangle,|\varphi\rangle$ hence
@@ -300,7 +308,15 @@
 
 # ### **(iv) Projection Operators  are matrices that operate on a ket**
 # 
-# The kets $|\alpha\rangle=\begin{bmatrix}1\\0\end{bmatrix},\;|\beta\rangle=\begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0 $  as may be seem by forming their dot product. They form the operator
+# The kets 
+# 
+# $$\displaystyle|\alpha\rangle =\begin{bmatrix}1\\0\end{bmatrix},\; |\beta\rangle = \begin{bmatrix}0 \\ 1 \end{bmatrix} $$
+# 
+# are orthogonal 
+# 
+# $$\displaystyle \langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0 $$
+# 
+# as may be seem by forming their dot product. They form the operator
 # 
 # $$\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}$$
 # If this operates on a ket such as 

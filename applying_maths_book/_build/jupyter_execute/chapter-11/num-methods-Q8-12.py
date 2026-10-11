@@ -6,11 +6,15 @@
 # ## Q8 Numerically evaluate a differential equation
 # In this problem, a differential equation is solved in two different ways but by three different numerical methods.
 # 
-# (a) Solve $dy/dt = y \sin(t^2)$ by separating variables and show that an integral is formed that can only be solved numerically.
+# **(a)** Solve 
 # 
-# (b) Solve the differential equation by a numerical method with $t_0 = 0,\, y(t_0) = 3$ over the interval $-7 \to 7$.
+# $$\displaystyle dy/dt = y \sin(t^2)$$
 # 
-# (c) Confirm that Python/Scipy's $\mathtt{odeint( \cdots)}$ procedure agrees with your calculation. You will need to add $\mathtt{from\;scipy.integrate\; import\;quad,\; odeint }$ if it is not already included
+# by separating variables and show that an integral is formed that can only be solved numerically.
+# 
+# **(b)** Solve the differential equation by a numerical method with $t_0 = 0,\, y(t_0) = 3$ over the interval $-7 \to 7$.
+# 
+# **(c)** Confirm that Python/SciPy's $\mathtt{odeint( \cdots)}$ procedure agrees with your calculation. You will need to add $\mathtt{from\;scipy.integrate\; import\;quad,\; odeint }$ if it is not already included
 # 
 # **Strategy:** (a) Separating variables means rearranging to put terms only in $t$ and only with $y$ on different sides of the equation. (b) Because the starting time is less than $t_0$, equation 20 should be used up to the value $t_0$. Alternatively, a negative $h$ should be used. The time values start at $t_0$ and decrease or increase depending on the sign of $h$. A simple method is to use a subroutine to work out the values and call this with $h$ positive, and then negative. In this example, $t_0 = 0$ so that the range is symmetrical about zero; if $t_0$ was not zero then more care would have to be taken to produce the range required. Algorithm 9 can be modified to do this calculation.
 # 
@@ -37,7 +41,9 @@
 #     
 # Although this problem concerns a ball, the form of the equation is general and a molecule, such as a protein or DNA experiences acceleration and friction when in an electric field, in a centrifuge or in a flowing fluid. However, the friction imposed by the solvent is usually proportionally far greater compared to that of air on the ball.
 # 
-# **Strategy:** Use equations 26 and 27 for the velocity and follow the method in Algorithm 13. To make the ball bounce, reverse the coordinates when the value of $y$ becomes less than zero. Plot $y$ vs time and $v$ vs time. When the damping is zero, the ball should always return to the same height and this can be used to check that a sufficiently small time step has been chosen. From the equation of motion, the acceleration is no longer constant and is $d^2y/dt^2 = -cv - g$ where $v = dy/dt$.
+# **Strategy:** Use equations 26 and 27 for the velocity and follow the method in Algorithm 13. To make the ball bounce, reverse the coordinates when the value of $y$ becomes less than zero. Plot $y$ vs time and $v$ vs time. When the damping is zero, the ball should always return to the same height and this can be used to check that a sufficiently small time step has been chosen. From the equation of motion, the acceleration is no longer constant and is 
+# 
+# $$\displaystyle \frac{d^2y}{dt^2} = -cv - g,\qquad v = \frac{dy}{dt}$$
 # 
 # ## Q12 Verlet algorithm
 # Re-calculate the last problem using the velocity Verlet algorithm.

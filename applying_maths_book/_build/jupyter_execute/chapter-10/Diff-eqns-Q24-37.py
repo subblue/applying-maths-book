@@ -14,12 +14,22 @@
 # 
 # is true when the function $f = 1$ by working out the first few terms then inferring the rest. Chapter 9.4 and Chapter 1.8.1 describe the Hermite polynomials.
 # 
-# **Strategy:** As $D \equiv d/dx$ is an operator the order of multiplication is vitally important; for example, if $a$ and $b$ are operators then $\displaystyle (a+b)^2 =aa+ab+ba+bb$ and $ab$ may  or may not be  the same as $ba$. The operator acts on the term to its right. An expression $\displaystyle D^2f$ is the same as $\displaystyle D(Df ) \equiv DDf \equiv d^2f/dx^2$.
+# **Strategy:** As $D \equiv d/dx$ is an operator the order of multiplication is vitally important; for example, if $a$ and $b$ are operators then 
+# 
+# $$\displaystyle (a+b)^2 =aa+ab+ba+bb$$
+# 
+# and $ab$ may  or may not be  the same as $ba$. The operator acts on the term to its right hence, 
+# 
+# $$\displaystyle D^2f\equiv D(Df ) \equiv DDf \equiv d^2f/dx^2$$
 # 
 # ## Q25 SHM
-# If a simple harmonic motion is described by $x = A\sin(\omega t + B)$, and if the initial velocity is $v_0$ and position $x_0$ at $t = 0$, find the amplitude $A$ and phase $B$.
+# If a simple harmonic motion is described by 
 # 
-# **Strategy:** $B$ is easier to find. Use the definitions of $\tan$ and $\cos^2(\cdots)+\sin^2(\cdots)=1$ to find $A$.
+# $$\displaystyle x = A\sin(\omega t + B)$$
+# 
+# and if the initial velocity is $v_0$ and position $x_0$ at $t = 0$, find the amplitude $A$ and phase $B$.
+# 
+# **Strategy:** $B$ is easier to find. Use the definitions of $\tan(\cdots)$ and $\cos^2(\cdots)+\sin^2(\cdots)=1$ to find $A$.
 # 
 # ## Q26 Bodybuilder
 # At the gym, a bodybuilder is lying on his back repeatedly pushing weights on a bar and doing so with a period of $1$ s. If the bar is _resting_ on his palms, what is the maximum amplitude displacement of the bar if it does not to leave his hands and assuming that the motion is simple harmonic?
@@ -29,11 +39,11 @@
 # ## Q27 Skidding bowling ball
 # In a bowling alley, the ball and the surface of the alley are both smooth. This means that the ball can be made to skid until its speed slows enough that friction prevents this and the ball starts to roll and then does so at constant velocity (Lamb 1947). The ball has a mass $m$, radius $r$, and friction coefficient $\alpha$ between the point of contact of the ball and the surface. The initial linear velocity is $v_0$ and angular velocity $\omega_0$. When $v_0 \gt r\omega_0$ then skidding occurs and the frictional force $\alpha mg$ opposes the linear motion, but when $v_0 = r\omega_0$ the ball rolls.
 # 
-# (a) Write down two equations of motion for the linear and angular velocity assuming that the ball is skidding, and integrate them to find the linear and angular velocity. (It is convenient to use the moment of inertia as $I = k^2m$ where $k$ is the radius of gyration and write equations of motion as $mdv/dt = \cdots$ and $Id\omega /dt = \cdots$).
+# **(a)** Write down two equations of motion for the linear and angular velocity assuming that the ball is skidding, and integrate them to find the linear and angular velocity. (It is convenient to use the moment of inertia as $I = k^2m$ where $k$ is the radius of gyration and write equations of motion as $mdv/dt = \cdots$ and $Id\omega /dt = \cdots$).
 # 
-# (b) Next, assume that $v = r\omega$ and find the time that the ball starts to roll and its linear speed. Show that $v$ is independent of the friction coefficient but that the time is not. Explain these observations.
+# **(b)** Next, assume that $v = r\omega$ and find the time that the ball starts to roll and its linear speed. Show that $v$ is independent of the friction coefficient but that the time is not. Explain these observations.
 # 
-# (c) Calculate the loss in kinetic energy.
+# **(c)** Calculate the loss in kinetic energy.
 # 
 # ![Drawing](diffeqn-fig18.png)
 # 
@@ -46,17 +56,19 @@
 # ## Q28 Inverse square force
 # A particle is attracted with a force that varies inversely as the square of its distance from the origin.
 # 
-# (a) If $\alpha$ is its acceleration at unit distance, write down and solve the equation describing the velocity at distance $x$ from the origin of the force. Assume that the particle is initially stationary and starts at distance $R$.
+# **(a)** If $\alpha$ is its acceleration at unit distance, write down and solve the equation describing the velocity at distance $x$ from the origin of the force. Assume that the particle is initially stationary and starts at distance $R$.
 # 
-# (b) Calculate the time taken to reach distance $x$ from a very distant starting point $R$ after starting from rest. Use the substitution $x = R\cos^2(θ)$ to solve the integral. If at $t = 0$, $\theta$ = 0 and finally $\theta = \pi/2$, calculate the time to reach the origin.
+# **(b)** Calculate the time taken to reach distance $x$ from a very distant starting point $R$ after starting from rest. Use the substitution $x = R\cos^2(θ)$ to solve the integral. If at $t = 0$, $\theta$ = 0 and finally $\theta = \pi/2$, calculate the time to reach the origin.
 # 
-# (c) Consider now that the 'particle' is the earth and that the earth's orbital motion has been arrested. Using the last result, how long would it take the earth to fall into the sun given that the time of revolution in a circular orbit is $t_c=2\pi\sqrt{R^3/\alpha}$ ?
+# **(c)** Consider now that the 'particle' is the earth and that the earth's assumed circular orbital motion has been arrested. Using the last result, calculate how long would it take the earth to fall into the sun given that the time of revolution in a circular orbit is 
 # 
-# (d) A meteorite is initially stationary and at a great distance from the earth, show that its velocity at the earth's surface is $\approx 11.2\,\mathrm{ km\, s^{-1}}$. This is numerically equal to the escape velocity.
+# $$\displaystyle t_c=2\pi\sqrt{R^3/\alpha}$$
+# 
+# **(d)** A meteorite is initially stationary and at a great distance from the earth, show that its velocity at the earth's surface is $\approx 11.2\,\mathrm{ km\, s^{-1}}$. This is numerically equal to the escape velocity.
 # 
 # (Notes: Assume no attenuation by the atmosphere. The constant in the force equation is now $\alpha = gr^2$ where $r$ is the radius of the earth and $g$ the acceleration due to gravity. The acceleration due to gravity varies as the inverse square of the distance from the earth's centre, where $x = 0$. Assume that the initial distance of the meteorite $R$ is very large making $1/R$ negligible. The average radius of the earth is $6371$ km and the earth - sun average distance is $1.49 \cdot 10^8\,\mathrm{ km},\, g = 9.81\, \mathrm{m\, s^{-2}}$.)
 # 
-# **Strategy:** (a) As the velocity is required, use equation (16); the force is $-m\alpha/x^2$ if $x$ is the distance from the origin (centre of earth) and $m$ the mass. (b, c) Use equation (15) to calculate the time. The substitution $x = R\cos^2(\theta)$ greatly simplifies the integration. (d) The velocity is found when $x = r$ at the surface of the earth. The starting point is so distant that the constant of integration can be set to zero.
+# **Strategy:** **(a)** As the velocity is required, use equation (16); the force is $-m\alpha/x^2$ if $x$ is the distance from the origin (centre of earth) and $m$ the mass. **(b, c)** Use equation (15) to calculate the time. The substitution $x = R\cos^2(\theta)$ greatly simplifies the integration. **(d)** The velocity is found when $x = r$ at the surface of the earth. The starting point is so distant that the constant of integration can be set to zero.
 # 
 # ![Drawing](diffeqn-fig19.png)
 # 
@@ -66,24 +78,26 @@
 # ## Q29 Force inversely as distance
 # A particle of mass $m$ is moving in a straight line because it is attracted to a point with a force that is inversely proportion to its distance $y$ from the point.
 # 
-# (a) Write down the differential equation for the force and integrate once to find the velocity $dy/dt$ using the method of multiplying both sides by $2dy/dt$. The constant of proportionality (force constant) is $k$. The particle is stationary at $y_0$ when $t = 0$.
+# **(a)** Write down the differential equation for the force and integrate once to find the velocity $dy/dt$ using the method of multiplying both sides by $2dy/dt$. The constant of proportionality (force constant) is $k$. The particle is stationary at $y_0$ when $t = 0$.
 # 
-# (b) Next, calculate the transit time taken to reach a distance $y$ if the particle is initially at $y_0$. Use the transformation $y = y_0e^{-x}$ to simplify the integral. Show that this integral is the gamma function.
+# **(b)** Next, calculate the transit time taken to reach a distance $y$ if the particle is initially at $y_0$. Use the transformation $y = y_0e^{-x}$ to simplify the integral. Show that this integral is the gamma function.
 # 
-# **Strategy:** Use 'force equals mass times acceleration'. Find the time by inverting the velocity and integrating. The gamma function is defined as $\displaystyle \Gamma (\alpha)= \int_0^\infty x^{\alpha -1}e^{-x}dx$.
+# **Strategy:** Use 'force equals mass times acceleration'. Find the time by inverting the velocity and integrating. The gamma function is defined as 
+# 
+# $$\displaystyle \Gamma (\alpha)= \int_0^\infty x^{\alpha -1}e^{-x}dx$$
 # 
 # ## Q30 Excited dimers
-# When ground state molecules M are excited to an excited electronic singlet state M$^*$, fluorescence may occur. If the solution is moderately concentrated, e.g. $\ge 10^{-3}\,\mathrm{ mol\, dm^{-3}}$, then a ground state molecule may diffuse sufficiently to collide with an excited state before the latter has had a chance to fluoresce. In this case, an _excimer_ or excited dimer can be formed and this species has an attractive potential well in its excited state (MM)$^*$ but is repulsive in its ground state (MM). The reaction is
+# When ground state molecules M are excited to an excited electronic singlet state M$^*$, fluorescence may occur. If the solution is moderately concentrated, e.g. $\ge 10^{-3}\,\mathrm{ mol\, dm^{-3}}$, then a ground state molecule may diffuse sufficiently to collide with an excited state before the latter has had a chance to fluoresce. In this case, an *excimer* or excited dimer can be formed and this species has an attractive potential well in its excited state (MM)$^*$ but is repulsive in its ground state (MM). The reaction is
 # 
 # $$\displaystyle  M + M^* \to (MM)^* $$
 # 
-# and the excimer (MM)$^*$ can fluoresce but does so at longer wavelength than M<sup>*</sup> and its emission spectrum is broad and structureless, because the ground state is repulsive. 
+# and the excimer (MM)$^*$ can fluoresce but does so at longer wavelength than M$^*$ and its emission spectrum is broad and structureless, because the ground state is repulsive. 
 # 
 # The interaction between M and M$^*$ is caused by the combination of Coulomb and exchange interactions between the excited and ground state of the molecules. Excimers are formed with several types of planar aromatic molecules, pyrene being the most studied example (Birks 1970).
 # 
-# Excimer emission has found considerable use in determining the lateral diffusion coefficients of molecules in biological membranes. The rate of excimer formation is sensitive to the diffusion coefficient _via_ rate constant $k_d$ (see below). When the emission yield or, preferably, the time profile of the monomer and excimer fluorescence are analysed, $k_d$ can be determined. Phase transitions, where viscosity may change suddenly can also be observed in this way. 
+# Excimer emission has found considerable use in determining the lateral diffusion coefficients of molecules in biological membranes. The rate of excimer formation is sensitive to the diffusion coefficient *via* rate constant $k_d$ (see below). When the emission yield or, preferably, the time profile of the monomer and excimer fluorescence are analysed, $k_d$ can be determined. Phase transitions, where viscosity may change suddenly can also be observed in this way. 
 # 
-# Excimer and exciplex fluorescence can also be used to measure the proximity of one molecule to another, such as bases on complementary strands of DNA if they are suitably modified. If the two molecules are of different types, then the excited species is called an _exciplex_, short for excited complex. Partial charge transfer occurs between the two molecules in an exciplex therefore the emission is sensitive to the polarity of its environment and can be used as a probe of this. The two species in an excimer or exciplex need not be separate entities but can be linked to one another and, if this is long and flexible enough, intramolecular excimers and exciplexes can be formed.
+# Excimer and exciplex fluorescence can also be used to measure the proximity of one molecule to another, such as bases on complementary strands of DNA if they are suitably modified. If the two molecules are of different types, then the excited species is called an *exciplex*, short for excited complex. Partial charge transfer occurs between the two molecules in an exciplex therefore the emission is sensitive to the polarity of its environment and can be used as a probe of this. The two species in an excimer or exciplex need not be separate entities but can be linked to one another and, if this is long and flexible enough, intramolecular excimers and exciplexes can be formed (Beddard et al. J. Chem. Soc., Faraday Trans. 2 (1975) 71: 1894–1902).
 # 
 # The intermolecular excimer reaction scheme is
 # 
@@ -97,23 +111,11 @@
 # &\downarrow \qquad\quad \downarrow \\
 # & k_f \qquad \quad k_e \end{align}$$
 # 
-# (a) Describe what you would expect to see in an experiment to measure the time profiles of excimer $E^*$ and $M^*$ fluorescence.
+# **(a)** Describe what you would expect to see in an experiment to measure the time profiles of excimer $E^*$ and $M^*$ fluorescence.
 # 
-# (b) Solve the differential equations. Using the constants, $k_f = 0.02, \,k_e = 0.01, \,k_2 = 10^{10} \cdot M_0, \,k_1 = 0.05$, each in units of 1/ns, and $M_0 = 3\cdot 10^{-3}\,\mathrm{ dm^3\,mol^{-1}}$,  plot the time profiles of $E^*$ and $M^*$ populations to see if your intuition in (a) was correct. Vary the rate constants and concentration to observe how the species respond. Initially $E^* = 0$.
+# **(b)** Solve the differential equations. Using the constants, $k_f = 0.02, \,k_e = 0.01, \,k_2 = 10^{10} \cdot M_0, \,k_1 = 0.05$, each in units of 1/ns, and $M_0 = 3\cdot 10^{-3}\,\mathrm{ dm^3\,mol^{-1}}$,  plot the time profiles of $E^*$ and $M^*$ populations to see if your intuition in (a) was correct. Vary the rate constants and concentration to observe how the species respond. Initially $E^* = 0$.
 # 
 # **Strategy:** Form a second-order rate equation from $M^*$ and $E^*$.
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
 
 # ## Q31 Electrical double layer
 # The simplest model of a diffuse electrical double layer formed at an interface between an electrolyte in solution and a metal, a bilayer membrane, a protein or a colloid, consists of an excess of ions and electrons at the surface and an equivalent amount of oppositely charged ions randomly distributed in solution. This means that the electric field decreases more rapidly when moving away from the surface than would be the case in a vacuum. 
@@ -128,9 +130,15 @@
 # 
 # for $i$ different species with charge $z_i$. The boundary and initial conditions are that at $x = \infty,\; \varphi \to 0$, and $d\varphi/dx \to 0$. At $x = 0,\; \varphi = \varphi_0$. The charge on the electron is $e_0$ and $\epsilon$ the permittivity or dielectric constant of the solvent.
 # 
-# Solve the equation and show that the electrical potential is $\displaystyle \varphi = \varphi_0e^{-\kappa x}$ if the solution contains only a binary $A^{z+}B^{z-}$ electrolyte with charges $\pm z$ and $N_i = N$ and simplify the final result of the integration assuming that $k_BT \gg ze_0\varphi$. The constant is $\displaystyle \kappa=\sqrt{\frac{8\pi Nz^2e_0^2}{\epsilon k_BT}}$.
+# Solve the equation and show that the electrical potential is 
 # 
-# (The double layer and Poisson - Boltzmann equation is described by Koryta et al. (1993), Kuhn & Fursterling (1999) and Jackson (2006)).
+# $$\displaystyle \varphi = \varphi_0e^{-\kappa x}$$
+# 
+# if the solution contains only a binary $A^{z+}B^{z-}$ electrolyte with charges $\pm z$ and $N_i = N$. Simplify the final result of the integration assuming that $k_BT \gg ze_0\varphi$. The constant is 
+# 
+# $$\displaystyle \kappa=\sqrt{\frac{8\pi Nz^2e_0^2}{\epsilon k_BT}}$$
+# 
+# (The double layer and the Poisson - Boltzmann equation are described by Koryta et al. (1993), Kuhn & Fursterling (1999) and Jackson (2006)).
 # 
 # **Strategy:** Simplify the charge density first. Multiply both sides of the equation by $d\varphi/dx$ and use the relationship 
 # 
@@ -139,39 +147,62 @@
 # on the left hand side. See equation 14.
 # 
 # ## Q32 Series method
-# Solve $\displaystyle (1-x^2)\frac{d^2y}{dt^2}-2y=0$ by the series method.
+# Solve 
+# 
+# $$\displaystyle (1-x^2)\frac{d^2y}{dt^2}-2y=0$$
+# 
+# by the series method.
 # 
 # **Strategy:** Use the $n^{th}$ terms of the derivatives given in the text to work out the recursion equation.
 # 
 # ## Q33 Schroedinger equation with a rectangular energy barrier
-# Particles with energy $E$, such as electrons, interact with a rectangular one-dimensional energy potential barrier which extends from 0 to +$a$, and has an energy height $V_0$ and is zero elsewhere. The particles have a certain chance of being transmitted through or reflected off the barrier, the sum of these being unity.
+# Particles with energy $E$, such as electrons, interact with a rectangular one-dimensional potential energy barrier. This extends from $0 \to +a$, where the energy is $V_0$ and is zero elsewhere fig. 19b. The particles initially moving from left to right have a certain chance of being transmitted through the barrier or reflected off it, the sum of these probabilities being unity, i.e. $T+R=1$. The regions are 
 # 
-# (a) Write down the Schroedinger equation for the region inside the potential barrier.
+# $$\displaystyle V(x)=V_0\left\{\begin{array}{r} 0\;x\lt 0\qquad 1\\ 0\lt x \lt a,\qquad 2 \\ x\gt a,\qquad 3 \end{array}\right.$$ 
 # 
-# (b) When $E \gt V_0$ calculate the two wavefunctions $\varphi_{1,2}$ which have an odd and even nature and are found with the initial values $\varphi(0) = 0, \; d\varphi/dx |_0 = 1$ and vice versa.
+# The particles are incident on the barrier from the left with amplitude $1$, and either are reflected or transmitted into region 2 and then 3. No particles return from region 3 into the barrier. Initially let the energy $E\lt V_0$. When the transmission in that case has been calculated, the case when $V_0 \gt E$ can be found relatively easily.
 # 
-# (c) Show that the transmission is
+# ![Drawing](diffeqn-fig19b.png)
+# Figure 19b. Barrier of width $a$ and height $V_0$. The potential in areas 1 and 3 is zero. 
+# _______________
 # 
-# $$\displaystyle T=\frac{4(E-V_0)E}{4(E-V_0)E+V_0^2\sin^2(\sqrt{2m(E-V_0)}a/\hbar)}$$
+# **(a)** Write down the Schroedinger equations for the regions inside and outside the potential barrier, see fig. 19b, where the potential is $V_0$ and the energy $E$.
 # 
-# and plot this vs. relative energy $E/V_0$, with $\sqrt{2mV_0} a/\hbar = 5$. To do this calculation use 
+# **(b)** The solution of the differential equation has the standard form (See section 10-12.3) which depends on the potential in each region 1,2 and 3 and when $E\lt V_0$.  
 # 
-# $$\displaystyle A_T= -\frac{e^{-iak}}{2}\left( \frac{L_1+iak}{L_1-iak}-\frac{L_2+iak}{L_2-iak} \right) $$
+# $$\displaystyle 
+# \begin{array}{l} 
+# \text{for} & x \lt 0,    & \varphi_1 = Ae^{ikx} + Be^{-ikx}\\
+# \text{for} & 0\lt x\lt a,& \varphi_2 = Ce^{k_0x} + De^{-k_0x}\\
+# \text{for} & x\gt a,     & \varphi_3 = Fe^{ikx}\\
+# \end{array}$$
 # 
-# with $\displaystyle L_{1,2}=\frac{a}{\varphi_{1,2}}\frac{d\varphi_{1,2}}{dx}$. The $L_{1,2}$ are then evaluated with $x = a$.
+# where $i=\sqrt{-1}$. Define the constant as $A=1$ as the incoming particle that moves from left to right can have unit amplitude. The  equation when $x\gt a$ only has one term because there is no wave/particle returning back to the barrier. 
 # 
-# The transmission is $T=A^*_T A_T $; (* indicates the complex conjugate) use SymPy to do the algebra, and then use $\displaystyle \sin^2(2x) = 4 \cos^2(x) - 4 \cos^4(x)$ or $\cos(4x)=1-2\sin^2(2x)$ to simplify the result.
+# **(i)** Work out what the constants $k$ and $k_0$ are when $E\lt V_0$.
 # 
-# (d) Comment on the nature of the transmission vs. energy. What causes the oscillations?
+# **(ii)** Work out the boundary conditions. These are that the wavefunction must match at the boundary to the  potential at $x=0$ and $x=a$, and that the wavefunction's gradient, $d\varphi/dx$ must also match here.
 # 
-# (e) plot the transmission vs. barrier length and comment on the plot produced.
 # 
-# **Strategy:** Write down the standard Schroedinger equation with potential $V_0$. It is easier to solve if you simplify using  
+# **(c)**  Work out the constant F to find the transmission which is $T=|F|^2/|A|^2$. Show that this is given by, 
 # 
-# $$\displaystyle k_0=\frac{\sqrt{2mV_0}}{\hbar} \quad\text{and}\quad\displaystyle k=\frac{\sqrt{2mE}}{\hbar}$$
+# $$\displaystyle T=\frac{4(V_0-E)E}{4(V_0-E)E+V_0^2\sinh^2(\sqrt{2m(V_0-E)}a/\hbar)}$$
 # 
-# Use the two conditions given to remove the arbitrary constants in the solution. To plot $T$ vs reduced energy rearrange the transmission equation into terms in $E/V_0$ then plot using this ratio as abscissa. You are given that $\sqrt{2mV_0} a/\hbar = 5$.
+# **(d)** Modify your last result so that the equation is for the case $E\gt V_0$. This means replacing $k_0 $ with $ik_0$ because $k^2_0$ is now negative because $V_0-E$ is now negative. 
 # 
+# 
+# **(e)** Rearrange the transmission equation so that $T$ can be plotted vs the ratio $r=E/V_0$ over the range $r=0\to 5$. Show that result is 
+# 
+# $$\displaystyle T=\frac{1}{1+(4r(1-r))^{-1}\sinh^2(\sqrt{ (2ma^2V_0/\hbar^2)(1-r)}) }$$
+# 
+# When $r\gt 1$ the transmission equation has to be changed. When $r\lt 1$ the equation just derived is used, when $r\gt 1$ change each $(1-r)$ to $(r-1)$ and $\sinh( ...)$ to $\sin(...)$.  The constants to use are $\sqrt{2mV_0 a^2/\hbar^2} = 5$.
+# 
+# **(f)** Plot the transmission vs. barrier length and comment on the plot produced. This will mean using your equations derived when $E \lt V_0$ and when $E\gt V_0$. 
+# 
+# **(g)** Comment on the nature of the transmission vs. energy. What causes the oscillations?
+# 
+# **Strategy:** Write down the standard Schroedinger equation with potential $V_0$ and energy $E$. If you are unsure, look at section 12.3 to see how to rearrange and then to solve the equations. Use SymPy to find the integration constants, B to F, but then it is easier to finish the calculation by hand. To plot $T$ vs. reduced energy  use $r=E/V_0$ and rearrange the transmission equation into terms in $r$ then plot using this ratio as abscissa. To get to the  equation given above look up how the sinh and cosh functions are defined in terms of exponentials. You will need the relationship between sinh and sin functions such as $\sinh(ix)=i\sin(x),\; \cosh(ix)=\cos(x)$.
+
 # ## Q34 Reaction and diffusion
 # In example (iv) of Section 6.2 the diffusion out of a slab was calculated. Repeat this calculation, but now suppose that a reaction takes place so that the term $-k_1c$ is added to the diffusion equation making it 
 # 
@@ -186,22 +217,27 @@
 # 
 # $$\displaystyle C_{ac}(t)=\frac{1}{L}\int_0^L c(x,t)dx$$
 # 
-# (a) Starting with the result of example (iv) shown in Fig. 24, which describes one-dimensional diffusion out of a slab, calculate $c_{av}$ and then the ratio 
+# **(a)** Starting with the result of example (iv) shown in Fig. 24, which describes one-dimensional diffusion out of a slab, calculate $c_{av}$ and then the ratio 
 # 
 # $$\displaystyle r=\frac{c_{av}-c_f}{c_i-c_f}$$
 # 
 # where $c_f$ is the final concentration determined by the boundary conditions, and $c_i$ the initial concentration. Show that this ratio taken to long times is an exponentially decaying function.
 # 
-# (b) Suggest how the diffusion coefficient might then be measured.
+# **(b)** Suggest how the diffusion coefficient might then be measured.
 # 
 # ## Q36 Waveforms in a wire
-# (a) Work out the waveforms produced if a taut piano wire of length $L$ is struck such that its initial displacement is zero but its initial velocity everywhere has the shape $f (x) = xL - x^2$.
+# **(a)** Work out the waveforms produced if a taut piano wire of length $L$ is struck such that its initial displacement is zero but its initial velocity everywhere has the shape 
 # 
-# (b) Show that the displacement is well approximated by $\displaystyle u = 4\left(\frac{L}{\pi} \right)^3\sin\left(\frac{\pi ct}{L}\right)\sin\left(\frac{\pi x}{L}\right)$.
+# $$\displaystyle f (x) = xL - x^2$$
+# 
+# **(b)** Show that the displacement is well approximated by 
+# 
+# $$\displaystyle u = 4\left(\frac{L}{\pi} \right)^3\sin\left(\frac{\pi ct}{L}\right)\sin\left(\frac{\pi x}{L}\right)$$
 # 
 # **Strategy:** Use the method outlined in the text. The integral for coefficients $b$ can be solved; therefore, an algebraic series solution is possible. The integrals are
 # 
-# $$\displaystyle \int x\sin(ax)dx = \frac{ \sin(ax) - ax\cos(ax)}{a^2} , \quad \int x^2 \sin(ax)dx = \frac{2ax\sin(ax) + (2 - a^2x^2)\cos(ax)}{a^3} $$
+# $$\displaystyle \begin{align}\int x\sin(ax)dx &= \frac{ \sin(ax) - ax\cos(ax)}{a^2}\\
+# \int x^2 \sin(ax)dx &= \frac{2ax\sin(ax) + (2 - a^2x^2)\cos(ax)}{a^3} \end{align}$$
 # 
 # as can also be worked out by converting to exponentials.
 # 
@@ -220,8 +256,7 @@
 # 
 # Two masses are connected to one another by a spring with force constant $k_0$ and each is also attached to a rigid wall with a spring with force constant $k$. The arrangement is thus $wall-spring_1-mass_1-spring_0-mass_2-spring_1-wall$. Work out the normal modes when the masses are moving in a straight line on a frictionless horizontal surface. Initially, if mass 1 only is extended by 1 unit, thus $x_1=1$ and $x_2=0$, and the initial velocities of each mass is zero calculate the extensions $x_1$ and $x_2$. Assume that the masses are the identical to one another with mass $m$.  
 # 
-# **Strategy:** To work out the equations of motion you might like to try using the Laplacian and the Euler-Lagrange equation, see Chapter 3-8. Solve the simultaneous equations as described in the text. If you plot the displacement $x_1$ try force constants of $k_0= 7$ and $k_1=14$ units. You should observe beats in the motion. Plot the envelope of these.
-# 
+# **Strategy:** To work out the equations of motion you might like to try using the Laplacian and the Euler-Lagrange equation, see Chapter 3-8. Solve the simultaneous equations as described in the text in this chapter. If you plot the displacement $x_1$ try force constants of $k_0= 7$ and $k_1=14$ units. You should observe beats in the motion. Plot the envelope of these.
 
 # In[ ]:
 

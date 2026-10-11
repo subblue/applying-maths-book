@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1785,7 +1785,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 
 <span class="c1">#fig1= plt.figure(figsize=(6, 6))     # remove # symbol in each line to see plot</span>
 <span class="c1">#plt.rcParams.update({&#39;font.size&#39; : 16})</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="mi">500</span>                <span class="c1"># number of bins</span>
 <span class="n">maxt</span> <span class="o">=</span> <span class="mf">150.0</span>              <span class="c1"># time in ns</span>
 <span class="n">kf</span>   <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">20.0</span>             <span class="c1"># rate constnat 1/ns</span>
@@ -1803,7 +1803,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 <span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">nA</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="p">:</span>
     <span class="n">a0</span> <span class="o">=</span> <span class="n">kf</span><span class="o">*</span><span class="n">nA</span>                                    <span class="c1"># only 1 species so no sum </span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>    <span class="c1"># calc time eqn 11     </span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>    <span class="c1"># calc time eqn 11     </span>
     <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>                                   <span class="c1"># increment</span>
     <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">))</span>             <span class="c1"># work out bin number</span>
      
@@ -1814,13 +1814,13 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
     <span class="k">pass</span>
 
 <span class="c1">#print( Acount[0] )</span>
-<span class="c1">#plt.scatter(dtime,Acount,color=&#39;blue&#39;,s=3)  # remove first symbols # to see plots</span>
+<span class="c1">#plt.scatter(dtime,Acount,color=&#39;black&#39;,s=1)  # remove first symbols # to see plots</span>
 <span class="c1">#plt.yscale(&#39;log&#39;)</span>
 <span class="c1">#plt.ylim([1,2*A0])</span>
 <span class="c1">#plt.ylabel(&#39;count&#39;)</span>
 <span class="c1">#plt.xlabel(&#39;time /ns&#39;)</span>
 <span class="c1">#plt.tight_layout()</span>
-
+<span class="c1">#</span>
 <span class="c1">#plt.show()</span>
 </pre></div>
 </div>
@@ -1853,7 +1853,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Algorithm: Gillespie method. </span>
 <span class="c1">#   Excited state decay to triplet and ground state. A* -&gt;G  kf , A* -&gt; T kisc</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 <span class="n">A0</span>   <span class="o">=</span> <span class="mi">20000</span>                        <span class="c1"># initial number A*</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">maxt</span> <span class="o">=</span> <span class="mf">100.0</span>                        <span class="c1"># time in ns</span>
@@ -1881,21 +1881,21 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 <span class="n">Tcount</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">Gcount</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>                            <span class="c1"># index refers to histogram bin number</span>
+<span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>                                  <span class="c1"># index refers to histogram bin number</span>
 <span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">nA</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="p">:</span>
     <span class="n">a0</span> <span class="o">=</span> <span class="n">k1</span><span class="o">*</span><span class="n">nA</span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>         <span class="c1"># guess new time eqn 11</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>         <span class="c1"># guess new time eqn 11</span>
     <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>
-    <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">))</span>                  <span class="c1"># integer time bin </span>
+    <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">))</span>     <span class="c1"># integer time bin </span>
     <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="p">:</span> 
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">phi</span> <span class="p">:</span>           <span class="c1"># check what happens</span>
-            <span class="n">nG</span> <span class="o">=</span> <span class="n">nG</span> <span class="o">+</span> <span class="mi">1</span>                                <span class="c1"># ground state produced add 1</span>
+        <span class="k">if</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">phi</span> <span class="p">:</span>           <span class="c1"># check what happens</span>
+            <span class="n">nG</span> <span class="o">=</span> <span class="n">nG</span> <span class="o">+</span> <span class="mi">1</span>                   <span class="c1"># ground state produced add 1</span>
             <span class="n">Gcount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nG</span>
         <span class="k">else</span> <span class="p">:</span>
-            <span class="n">nT</span> <span class="o">=</span> <span class="n">nT</span> <span class="o">+</span> <span class="mi">1</span>                                <span class="c1"># triplet produced add 1</span>
+            <span class="n">nT</span> <span class="o">=</span> <span class="n">nT</span> <span class="o">+</span> <span class="mi">1</span>                   <span class="c1"># triplet produced add 1</span>
             <span class="n">Tcount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nT</span>
             <span class="k">pass</span>
-        <span class="n">nA</span> <span class="o">=</span> <span class="n">nA</span> <span class="o">-</span> <span class="mi">1</span>                                    <span class="c1"># remove 1 from excited state            </span>
+        <span class="n">nA</span> <span class="o">=</span> <span class="n">nA</span> <span class="o">-</span> <span class="mi">1</span>                       <span class="c1"># remove 1 from excited state            </span>
         <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nA</span>
         <span class="k">pass</span>
     <span class="k">pass</span>

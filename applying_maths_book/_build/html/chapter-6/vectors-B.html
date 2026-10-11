@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1597,12 +1597,12 @@ title="Print to PDF"
 <h1>6 Projections and components<a class="headerlink" href="#projections-and-components" title="Permalink to this headline">#</a></h1>
 <section id="projections">
 <h2>6 Projections<a class="headerlink" href="#projections" title="Permalink to this headline">#</a></h2>
-<p>To find the projection or component of a vector <span class="math notranslate nohighlight">\(\vec A\)</span> that lies along an axis, the dot product with one of the vector’s orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> is used;</p>
+<p>To find the projection or component of a vector <span class="math notranslate nohighlight">\(\vec A\)</span> that lies along an axis, the dot product with one of the vector’s orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector <span class="math notranslate nohighlight">\(\pmb i\)</span> is used;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \qquad\tag{13}\]</div>
-<p>This shows that only the <span class="math notranslate nohighlight">\(x\)</span> component is extracted and you can see how to obtain the <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> components using <span class="math notranslate nohighlight">\(\boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> instead of <span class="math notranslate nohighlight">\(\boldsymbol i\)</span>. More usefully, since the dot product can be written as</p>
+\[\displaystyle \pmb i\cdot \vec A = \pmb i\cdot(a\pmb i + b\pmb j + c\pmb k) = a\pmb i\cdot\pmb i = a. \qquad\tag{13}\]</div>
+<p>This shows that only the <span class="math notranslate nohighlight">\(x\)</span> component is extracted and you can see how to obtain the <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> components using <span class="math notranslate nohighlight">\(\pmb j\)</span> and <span class="math notranslate nohighlight">\(\pmb k\)</span> instead of <span class="math notranslate nohighlight">\(\pmb i\)</span>. More usefully, since the dot product can be written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol i \cdot\vec A=|\boldsymbol i||\vec A|\cos(\theta)=|\vec A|\cos(\theta)\]</div>
+\[\displaystyle \pmb i \cdot\vec A=|\pmb i||\vec A|\cos(\theta)=|\vec A|\cos(\theta)\]</div>
 <p>then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a=|\vec A|\cos(\theta)\]</div>
@@ -1630,16 +1630,16 @@ the direction of <span class="math notranslate nohighlight">\(\vec v\)</span>.</
 <h3><strong>(i) Work done</strong><a class="headerlink" href="#i-work-done" title="Permalink to this headline">#</a></h3>
 <p>Consider the work done, <span class="math notranslate nohighlight">\(W\)</span>, on moving an object. This is force <span class="math notranslate nohighlight">\(\times\)</span> distance, but if the force is not applied in the direction that the object is moved, but at an angle <span class="math notranslate nohighlight">\(\theta\)</span>, then only a component of the force is effective. The total work done is <span class="math notranslate nohighlight">\(W = |F||d|\cos(\theta) = \vec F\cdot\vec d\)</span>, which is a scalar number. If force is given by the vector <span class="math notranslate nohighlight">\(\vec F=\begin{bmatrix}5 &amp; -3&amp; 1\end{bmatrix}\)</span> and the direction of motion by <span class="math notranslate nohighlight">\(\vec d=\begin{bmatrix}2&amp;3 &amp;4\end{bmatrix}\)</span>, then the work done is,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  W=\vec F\cdot \vec d = (5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)=10-9+5 =5\]</div>
+\[\displaystyle  W=\vec F\cdot \vec d = (5\pmb i-3\pmb j+\pmb k)\cdot (2\pmb i+3\pmb j+4\pmb k)=10-9+5 =5\]</div>
 <p>In vector-matrix form this is <span class="math notranslate nohighlight">\(\displaystyle W=\begin{bmatrix}5 &amp; -3 &amp; 1\end{bmatrix}\begin{bmatrix}2\\3\\4\end{bmatrix}=5\)</span></p>
 <p>The same calculation, as a projection of the force onto the direction of motion, is the vector <span class="math notranslate nohighlight">\(P\)</span>, equation 14,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)  \frac{(2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)}{4+9+16}=\frac{5}{29}(2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)\]</div>
+\[\displaystyle (5\pmb i-3\pmb j+\pmb k)\cdot (2\pmb i+3\pmb j+4\pmb k)  \frac{(2\pmb i+3\pmb j+4\pmb k)}{4+9+16}=\frac{5}{29}(2\pmb i+3\pmb j+4\pmb k)\]</div>
 <p>where the dot product is a scalar. The magnitude of the projection is by eqn 15,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle L= \big|(5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)\big|\frac{1}{\sqrt{29}}=\frac{5}{\sqrt{29}}\]</div>
-<p>To calculate the total work, this projected length has to be multiplied by the distance moved which is the length of vector <span class="math notranslate nohighlight">\(\vec d = (2\boldsymbol i + 3\boldsymbol j + 4\boldsymbol k)\)</span> which is <span class="math notranslate nohighlight">\(\sqrt{29}\)</span>, therefore the work is <span class="math notranslate nohighlight">\(5\)</span> as calculated above.</p>
-<p>If the vectors are greater than three dimensional then the <span class="math notranslate nohighlight">\((\boldsymbol i, \boldsymbol j, \boldsymbol k)\)</span> basis cannot be used and matrices are used instead. For example if <span class="math notranslate nohighlight">\(\vec w=\begin{bmatrix}1&amp; 3&amp; 5&amp; 7\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec v = \begin{bmatrix}2&amp; 4&amp; 6&amp; 8\end{bmatrix} \)</span> the projection of <span class="math notranslate nohighlight">\(\vec w\)</span> onto <span class="math notranslate nohighlight">\(\vec v\)</span> is still given by eqn 14.</p>
+\[\displaystyle L= \big|(5\pmb i-3\pmb j+\pmb k)\cdot (2\pmb i+3\pmb j+4\pmb k)\big|\frac{1}{\sqrt{29}}=\frac{5}{\sqrt{29}}\]</div>
+<p>To calculate the total work, this projected length has to be multiplied by the distance moved which is the length of vector <span class="math notranslate nohighlight">\(\vec d = (2\pmb i + 3\pmb j + 4\pmb k)\)</span> which is <span class="math notranslate nohighlight">\(\sqrt{29}\)</span>, therefore the work is <span class="math notranslate nohighlight">\(5\)</span> as calculated above.</p>
+<p>If the vectors are greater than three dimensional then the <span class="math notranslate nohighlight">\((\pmb i, \pmb j, \pmb k)\)</span> basis cannot be used and matrices are used instead. For example if <span class="math notranslate nohighlight">\(\vec w=\begin{bmatrix}1&amp; 3&amp; 5&amp; 7\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec v = \begin{bmatrix}2&amp; 4&amp; 6&amp; 8\end{bmatrix} \)</span> the projection of <span class="math notranslate nohighlight">\(\vec w\)</span> onto <span class="math notranslate nohighlight">\(\vec v\)</span> is still given by eqn 14.</p>
 <p>The square of the magnitude</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |\vec v|^2=|\vec v\cdot \vec v|= \begin{bmatrix}2&amp;4&amp;6&amp;8\end{bmatrix}\begin{bmatrix}2\\4\\6\\8\end{bmatrix}=4+16+36+64=120\end{split}\]</div>
@@ -1680,14 +1680,14 @@ the direction of <span class="math notranslate nohighlight">\(\vec v\)</span>.</
 <hr class="docutils" />
 <section id="direction-cosines">
 <h2>7 Direction cosines<a class="headerlink" href="#direction-cosines" title="Permalink to this headline">#</a></h2>
-<p>A three-dimensional vector is often defined as <span class="math notranslate nohighlight">\(\vec V = a\boldsymbol i + b\boldsymbol j + c\boldsymbol k\)</span>. However, the vector can equally well be described by the angles it makes to the <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-axes, when these angles are <span class="math notranslate nohighlight">\(\alpha, \beta,  \gamma\)</span>, as shown in figure 18, where the angles are measured away from the axes to the vector.
+<p>A three-dimensional vector is often defined as <span class="math notranslate nohighlight">\(\vec V = a\pmb i + b\pmb j + c\pmb k\)</span>. However, the vector can equally well be described by the angles it makes to the <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-axes, when these angles are <span class="math notranslate nohighlight">\(\alpha, \beta,  \gamma\)</span>, as shown in figure 18, where the angles are measured away from the axes to the vector.
 The vector <span class="math notranslate nohighlight">\(v\)</span> is now described by</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\boldsymbol i + \cos(\beta)\boldsymbol j + \cos(\gamma )\boldsymbol k\right) \qquad\tag{16}\]</div>
-<p>and the components <span class="math notranslate nohighlight">\(\cos(\alpha), \cos(\beta), \cos(\gamma )\)</span> are each <em>direction cosines</em> . The direction cosines are, therefore, the projections the normalized vector <span class="math notranslate nohighlight">\(v\)</span> makes onto each of the <span class="math notranslate nohighlight">\(x-, y-\)</span> and <span class="math notranslate nohighlight">\(z-\)</span> axes. They are also the dot product of vector <span class="math notranslate nohighlight">\(v\)</span> with each base vector <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j , \boldsymbol k\)</span> in turn. Taking the dot product with base vector <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> gives</p>
+\[\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\pmb i + \cos(\beta)\pmb j + \cos(\gamma )\pmb k\right) \qquad\tag{16}\]</div>
+<p>and the components <span class="math notranslate nohighlight">\(\cos(\alpha), \cos(\beta), \cos(\gamma )\)</span> are each <em>direction cosines</em> . The direction cosines are, therefore, the projections the normalized vector <span class="math notranslate nohighlight">\(v\)</span> makes onto each of the <span class="math notranslate nohighlight">\(x-, y-\)</span> and <span class="math notranslate nohighlight">\(z-\)</span> axes. They are also the dot product of vector <span class="math notranslate nohighlight">\(v\)</span> with each base vector <span class="math notranslate nohighlight">\(\pmb i, \pmb j , \pmb k\)</span> in turn. Taking the dot product with base vector <span class="math notranslate nohighlight">\(\pmb i\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec v\cdot \boldsymbol i=|\vec v|\cos(\alpha), \quad \cos(\alpha)=\frac{\vec v\cdot \boldsymbol i}{|\vec v|}\]</div>
-<p>Because <span class="math notranslate nohighlight">\(\vec v = a\boldsymbol i  + b\boldsymbol j + c\boldsymbol k\)</span>, the direction cosine can also be written as</p>
+\[\displaystyle \vec v\cdot \pmb i=|\vec v|\cos(\alpha), \quad \cos(\alpha)=\frac{\vec v\cdot \pmb i}{|\vec v|}\]</div>
+<p>Because <span class="math notranslate nohighlight">\(\vec v = a\pmb i  + b\pmb j + c\pmb k\)</span>, the direction cosine can also be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \cos(\alpha)=\frac{a}{|\vec v|}=\frac{a}{\sqrt{a^2+b^2+c^2}}\]</div>
 <p>In matrix-vector notation, this calculation is</p>
@@ -1698,12 +1698,12 @@ The vector <span class="math notranslate nohighlight">\(v\)</span> is now descri
 <div class="math notranslate nohighlight">
 \[\displaystyle \cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1 \qquad\tag{17}\]</div>
 <p>This equation shows that the angles are not independent because knowing two of them determines the third. Note that direction cosines describe the vector by angles rather than components of <span class="math notranslate nohighlight">\((x, y, z)\)</span> and hence can be used to find these angles; alternatively, if the angles are given, they can be used to find the <span class="math notranslate nohighlight">\(x, y, z\)</span> components.</p>
-<p>As an example, let us find the angles that the vector <span class="math notranslate nohighlight">\(\vec R = 3\boldsymbol i + 6\boldsymbol j - 2\boldsymbol k\)</span> makes with the x-axis and calculate the direction cosines for this vector. First, assume that the angles are <span class="math notranslate nohighlight">\(\alpha, \beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span> with respect to the positive <span class="math notranslate nohighlight">\(x-, y-\)</span>, and <span class="math notranslate nohighlight">\(z-\)</span>axes, as in figure 18, as this is the convention. The dot product with unit vector <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> produces</p>
+<p>As an example, let us find the angles that the vector <span class="math notranslate nohighlight">\(\vec R = 3\pmb i + 6\pmb j - 2\pmb k\)</span> makes with the x-axis and calculate the direction cosines for this vector. First, assume that the angles are <span class="math notranslate nohighlight">\(\alpha, \beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span> with respect to the positive <span class="math notranslate nohighlight">\(x-, y-\)</span>, and <span class="math notranslate nohighlight">\(z-\)</span>axes, as in figure 18, as this is the convention. The dot product with unit vector <span class="math notranslate nohighlight">\(\pmb i\)</span> produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol i\cdot \vec R=|\boldsymbol i||\vec R|\cos(\alpha)=7\cos(\alpha)\]</div>
-<p>because <span class="math notranslate nohighlight">\(|\boldsymbol i| = 1\)</span> and the length of the vector is <span class="math notranslate nohighlight">\(\sqrt{3^2 + 6^2 + 2^2} = 7\)</span>. Next, using vector components</p>
+\[\displaystyle \pmb i\cdot \vec R=|\pmb i||\vec R|\cos(\alpha)=7\cos(\alpha)\]</div>
+<p>because <span class="math notranslate nohighlight">\(|\pmb i| = 1\)</span> and the length of the vector is <span class="math notranslate nohighlight">\(\sqrt{3^2 + 6^2 + 2^2} = 7\)</span>. Next, using vector components</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol i\cdot \vec R=\boldsymbol i(3\boldsymbol i+6\boldsymbol j-2\boldsymbol k)=3 \]</div>
+\[\displaystyle \pmb i\cdot \vec R=\pmb i(3\pmb i+6\pmb j-2\pmb k)=3 \]</div>
 <p>and combining these two equations gives the direction cosine as <span class="math notranslate nohighlight">\(\cos(\alpha) = 3/7\)</span>, and the
 angle <span class="math notranslate nohighlight">\(\alpha = \cos^{-1}(3/7)\)</span> or <span class="math notranslate nohighlight">\(\alpha = 64.62^\text{o}\)</span>. A similar calculation gives the other direction cosines as <span class="math notranslate nohighlight">\(\cos(\beta)=6/7\)</span> and <span class="math notranslate nohighlight">\(\cos(\gamma)=-2/7\)</span>. As a check use eqn. 17, <span class="math notranslate nohighlight">\((3/7)^2+(6/7)^2+(-2/7)^2= 1\)</span></p>
 <p><img alt="Drawing" src="../_images/vectors-fig18.png" /></p>

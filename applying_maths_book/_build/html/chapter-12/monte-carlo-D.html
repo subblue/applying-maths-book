@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1764,8 +1764,8 @@ the new state and add <span class="math notranslate nohighlight">\(Q_2\)</span> 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Metropolis  Harmonic oscillator  </span>
 
-<span class="c1"># np.random.ranf() calculates one random number in the range 0 - 1</span>
-
+<span class="c1"># rng.random() calculates one random number in the range 0 - 1</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>     <span class="c1"># initialise random number generator</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">20000</span>                         <span class="c1"># number of samples</span>
 <span class="n">deltax</span><span class="o">=</span> <span class="mf">0.4</span>                       <span class="c1"># max displacement</span>
 <span class="n">kB</span>    <span class="o">=</span> <span class="mf">1.38e-5</span>                   <span class="c1"># in kg/nm^2/s^2/K == 1.38e^(-23) J/k</span>
@@ -1780,7 +1780,7 @@ the new state and add <span class="math notranslate nohighlight">\(Q_2\)</span> 
 <span class="n">E1</span><span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>                         <span class="c1"># first guess of PE </span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                <span class="c1"># start loop step(2)   </span>
-    <span class="n">x2</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">deltax</span>       <span class="c1">#new x position </span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">deltax</span>       <span class="c1">#new x position </span>
     <span class="n">E2</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>                                    <span class="c1"># new PE</span>
     <span class="n">DeltaE</span> <span class="o">=</span> <span class="n">E2</span> <span class="o">-</span> <span class="n">E1</span>                              <span class="c1"># energy difference</span>
     <span class="c1"># next line is Metropolis parts(2) in algorithm</span>
@@ -1799,7 +1799,7 @@ the new state and add <span class="math notranslate nohighlight">\(Q_2\)</span> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av E= 2.072e-21 av e^2= 1.321e-41 Cv= 7.178e-24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av E= 2.034e-21 av e^2= 1.295e-41 Cv= 7.097e-24
 </pre></div>
 </div>
 </div>
@@ -1840,7 +1840,7 @@ C_V =k_BT/2 &amp;\text{J/K}&amp;0.69\cdot 10^{-23}  &amp; 0.67\cdot 10^{-23}\\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Metropolis. Calculate Maxwell speed distribution.</span>
 
 <span class="c1"># mass in amu, kB in J/K, x = speed in m/s</span>
- 
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                 <span class="c1"># initialise random number generator </span>
 <span class="n">N</span>   <span class="o">=</span>   <span class="mi">1000</span>                                  <span class="c1"># number of samples</span>
 <span class="n">deltax</span><span class="o">=</span> <span class="mf">5000.0</span>                                <span class="c1"># max speed m /s</span>
 <span class="n">kB</span>  <span class="o">=</span>   <span class="mf">1.381e-23</span>                             <span class="c1"># Boltzmann?s const J/K</span>
@@ -1865,7 +1865,7 @@ C_V =k_BT/2 &amp;\text{J/K}&amp;0.69\cdot 10^{-23}  &amp; 0.67\cdot 10^{-23}\\
 <span class="n">fx</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>                 <span class="c1"># x value</span>
  
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>                            <span class="c1"># start loop step (2)</span>
-    <span class="n">x2</span> <span class="o">=</span>  <span class="n">x1</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">deltax</span>     <span class="c1"># new x position</span>
+    <span class="n">x2</span> <span class="o">=</span>  <span class="n">x1</span> <span class="o">+</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">deltax</span>    <span class="c1"># new x position</span>
     <span class="n">E2</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>                                <span class="c1"># new PE</span>
     <span class="n">DeltaE</span> <span class="o">=</span> <span class="n">E2</span> <span class="o">-</span> <span class="n">E1</span>                          <span class="c1"># energy difference</span>
                                               <span class="c1"># next line is Metropolis sampling</span>
@@ -1888,7 +1888,7 @@ C_V =k_BT/2 &amp;\text{J/K}&amp;0.69\cdot 10^{-23}  &amp; 0.67\cdot 10^{-23}\\
 <span class="n">CV</span>     <span class="o">=</span> <span class="p">(</span><span class="n">E2av</span> <span class="o">-</span> <span class="n">Eav</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># plot data </span>
-<span class="c1">#plt.scatter(fx[0:jj],fs[0:jj],color=&#39;red&#39;,s=3)</span>
+<span class="c1">#plt.scatter(fx[0:jj],fs[0:jj],color=&#39;red&#39;,s=1)</span>
 <span class="c1">#plt.show()</span>
 </pre></div>
 </div>
@@ -1941,7 +1941,7 @@ The spin heat capacity at low temperatures is also close to zero, because there 
     <span class="c1">#kB              # Boltzmann const, in a.u.</span>
     <span class="c1">#T               # temperature</span>
     <span class="c1"># beta = J/kBT</span>
-    <span class="n">rndi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>      <span class="c1"># make list of random numbers 0 to n used as indices</span>
+    <span class="n">rndi</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>      <span class="c1"># make list of random numbers 0 to L-1 used as indices</span>
     <span class="n">spin</span><span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
                               <span class="c1"># deltaE can take values ( -4, 0, 4), however, only the</span>
                               <span class="c1"># positive value is used in the metropolis test, hence we define </span>
@@ -1962,7 +1962,7 @@ The spin heat capacity at low temperatures is also close to zero, because there 
     
         <span class="n">DeltaE</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">spin</span><span class="p">[</span><span class="n">indx1</span><span class="p">]</span> <span class="o">+</span> <span class="n">spin</span><span class="p">[</span><span class="n">indx2</span><span class="p">])</span>     <span class="c1"># energy of  spin i + energy of adjacent spins</span>
                                        
-        <span class="k">if</span> <span class="n">DeltaE</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">P</span> <span class="p">:</span>             <span class="c1"># Metropolis test </span>
+        <span class="k">if</span> <span class="n">DeltaE</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">P</span> <span class="p">:</span>                 <span class="c1"># Metropolis test </span>
             <span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>                                 <span class="c1"># flip spin</span>
             <span class="n">Enrg</span> <span class="o">=</span> <span class="n">Enrg</span> <span class="o">+</span> <span class="n">DeltaE</span>                               <span class="c1"># add  energy </span>
             <span class="k">pass</span>
@@ -1972,7 +1972,7 @@ The spin heat capacity at low temperatures is also close to zero, because there 
     
     <span class="k">return</span> <span class="n">tot_Enrg</span><span class="p">,</span> <span class="n">tot_Enrg2</span>
 <span class="c1">#---------------------------------------------</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                     <span class="c1"># initialise random number generator</span>
 <span class="n">L</span>    <span class="o">=</span> <span class="mi">500</span>                                        <span class="c1"># L sites</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">400</span>                                        <span class="c1"># repeats</span>
 <span class="n">N</span>    <span class="o">=</span> <span class="n">L</span><span class="o">*</span><span class="n">reps</span>                                     <span class="c1"># reps calcs / site</span>
@@ -1992,7 +1992,7 @@ The spin heat capacity at low temperatures is also close to zero, because there 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av energy/site = -0.461935 Cv = 0.226419
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av energy/site = -0.466561 Cv = 0.251467
 </pre></div>
 </div>
 </div>
@@ -2144,8 +2144,8 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
 <span class="c1">#---------------------------</span>
 <span class="k">def</span> <span class="nf">ising2d</span><span class="p">(</span><span class="n">beta</span><span class="p">):</span>
     
-    <span class="n">rndi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>      <span class="c1"># make list of random numbers 0 to L-1 used as indices</span>
-    <span class="n">rndk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">rndi</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>      <span class="c1"># make list of random numbers 0 to L-1 used as indices</span>
+    <span class="n">rndk</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
     <span class="n">spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>          <span class="c1"># spinlattice</span>
     <span class="n">prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>            <span class="c1"># array for exp(-deltaE/kBT)</span>
     <span class="c1"># 2*( -4,-2, 0, 2, 4) only positive used, 0 is checked for</span>
@@ -2181,7 +2181,7 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
         <span class="n">sum_nn</span> <span class="o">=</span> <span class="n">spin</span><span class="p">[</span><span class="n">indx1</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">spin</span><span class="p">[</span><span class="n">indx2</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">indx3</span><span class="p">]</span> <span class="o">+</span> <span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">indx4</span><span class="p">]</span> 
         <span class="n">DeltaE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">sum_nn</span>          <span class="c1"># # -2*old value*( -J )*neigbours </span>
         
-        <span class="k">if</span> <span class="n">DeltaE</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">prob</span><span class="p">[</span><span class="n">DeltaE</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>  <span class="c1"># Metropolis test</span>
+        <span class="k">if</span> <span class="n">DeltaE</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">prob</span><span class="p">[</span><span class="n">DeltaE</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>  <span class="c1"># Metropolis test</span>
             <span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">=</span> <span class="o">-</span><span class="n">spin</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span>            <span class="c1"># flip spin</span>
             <span class="n">Enrg</span> <span class="o">=</span> <span class="n">Enrg</span> <span class="o">+</span> <span class="n">DeltaE</span>             <span class="c1"># increment</span>
             <span class="c1">#mag = mag +2*spin[i,k]</span>
@@ -2193,6 +2193,7 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
         <span class="k">pass</span>
     <span class="k">return</span>  <span class="n">tot_Enrg</span><span class="p">,</span> <span class="n">tot_Enrg2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span><span class="n">spin</span>                              <span class="c1"># end of for num loop</span>
 <span class="c1">#------------------------------</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                    <span class="c1"># initialise random number generator</span>
 <span class="n">L</span>  <span class="o">=</span> <span class="mi">16</span>           <span class="c1"># side </span>
 <span class="n">n</span>  <span class="o">=</span> <span class="n">L</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">N</span>  <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">25</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span>   <span class="c1"># integer  use 10**3 for pics</span>
@@ -2201,9 +2202,30 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
 <span class="n">T</span>  <span class="o">=</span> <span class="mf">2.0</span>    
 <span class="n">beta</span> <span class="o">=</span> <span class="n">J</span><span class="o">/</span><span class="p">(</span> <span class="n">kB</span><span class="o">*</span><span class="n">T</span> <span class="p">)</span>
 
-<span class="c1">#tot_E,tot_E2,tot_M,spin = ising2d(beta)  # remove # to do calculation which is v slow.</span>
+<span class="n">tot_E</span><span class="p">,</span><span class="n">tot_E2</span><span class="p">,</span><span class="n">tot_M</span><span class="p">,</span><span class="n">spin</span> <span class="o">=</span> <span class="n">ising2d</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>  <span class="c1"># remove # to do calculation which is v slow.</span>
 
-<span class="c1">#print(tot_E,tot_E2,tot_M,&#39;\n&#39;,spin)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tot_E</span><span class="p">,</span><span class="n">tot_E2</span><span class="p">,</span><span class="n">tot_M</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">spin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2858402272.0 1281616961792.0 -2301878 
+ [[-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1  1 -1 -1 -1 -1 -1 -1 -1  1 -1]
+ [-1 -1 -1 -1 -1 -1  1 -1 -1 -1 -1 -1  1  1  1 -1]
+ [-1 -1 -1 -1 -1 -1  1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1  1  1  1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1  1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [ 1 -1 -1 -1 -1  1  1  1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1  1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]]
 </pre></div>
 </div>
 </div>

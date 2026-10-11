@@ -16,15 +16,19 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q8 answer
-# (a) There are six atoms in ethylene and therefore $3N - 6 = 12$ normal modes as the molecule is not linear. 
+# **(a)** There are six atoms in ethylene and therefore $3N - 6 = 12$ normal modes as the molecule is not linear. 
 # 
-# (b) You will need to consult a point group table, see www.molecule-viewer.com for tables and an explanation of the symmetry labels and elements. 
+# **(b)** You will need to consult a point group table, see www.molecule-viewer.com for tables and an explanation of the symmetry labels and elements. 
 # 
 # Looking at a D$_{2h}$ point group (below), IR active vibrations belong to symmetry species that transform as translations because the transition dipole in turn transforms in this way; these are B$_{1u}$, B$_{2u}$ and B$_{3u}$. The translations are found as $x,\; y$, or $z$ in the first column after the characters. Raman spectroscopy depends on a change in the shape of the molecule (_via_ the polarisability) and so transforms as squared terms in the point group, found in the right-hand column as $x^2,\, xy$ and so forth. Only A$_u$ has neither of these transformations.
 # 
 # ![Drawing](series-d2h.png)
 # 
-# (c) The vibrational partition function is $ \displaystyle Z = e^{-h\nu/2k_BT}/(1 - e^{-h\nu/k_BT})$ and differentiating $\ln(Z)$ with respect to temperature to obtain the energy and multiplying by $k_BT^2$ and differentiating again gives the heat capacity $C_V$. This is the calculation for one vibrational mode. At the end the values for all $n$ modes will have to be added.
+# **(c)** The vibrational partition function is 
+# 
+# $$ \displaystyle Z = e^{-h\nu/2k_BT}/(1 - e^{-h\nu/k_BT})$$
+# 
+# and differentiating $\ln(Z)$ with respect to temperature to obtain the energy and multiplying by $k_BT^2$ and differentiating again gives the heat capacity $C_V$. This is the calculation for one vibrational mode. At the end the values for all $n$ modes will have to be added.
 
 # In[2]:
 
@@ -53,14 +57,20 @@ sp.simplify(cv)
 # 
 # $$\displaystyle C_V= 3k_B+k_B\sum_{i=1}^n\left(\frac{\theta_i/2T}{\sinh(\theta_i/2T)}\right)^2$$
 # 
-# (d)  Convert from $C_V$ to $C_p$ because experiments are done at constant pressure and an additional $k_B$ is added since $C_p = C_V + k_B$ per molecule. Because the frequencies are given in cm$^{-1}$, they must be converted to s$^{-1}$ by multiplying by the speed of light in cm s$^{-1}$. The vibrational frequencies, rather than vibrational temperatures, are put directly into the equations. The constants are collected into variable $a$ only to simplify the equations.
+# **(d)**  Convert from $C_V$ to $C_p$ because experiments are done at constant pressure and an additional $k_B$ is added since $C_p = C_V + k_B$ per molecule. Because the frequencies are given in cm$^{-1}$, they must be converted to s$^{-1}$ by multiplying by the speed of light in cm s$^{-1}$. The vibrational frequencies, rather than vibrational temperatures, are put directly into the equations. The constants are collected into variable $a$ only to simplify the equations.
 # 
 # The calculation below uses a built in function (fsolve) and also the Newton-Raphson method which is accurate enough in this instance. Plotting the function can help in choosing a starting value when finding the root of the equation.
 
 # In[3]:
 
 
-from scipy.optimize import fsolve                            # import fsolve
+from scipy.optimize import fsolve               # import fsolve
+
+#_____________________________
+def f(x):                                       # done this way to use fsolve
+    y=  ( x*a/np.sinh(x*a) )**2 - (0.37 - s)
+    return y
+#–––––––––––––––––––––––––––––
 
 nu = [ 3019,1623,1342,3075,1236,949,943,3105, 810,2989,1443] # frequencies in wavenumbers
 h  = 6.6256e-34      # J s
@@ -71,17 +81,15 @@ a  = h*c/(2*kB*T)    # collect constants for simplicity
 
 s = sum( [(a*nu[i]/np.sinh(a*nu[i]))**2 for i  in range(len(nu))])
 
-def f(x):            # done this way to use fsolve
-    y=  ( x*a/np.sinh(x*a) )**2 - (0.37 - s)
-    return y
-
 nu4 = fsolve(f,100) # 100 is initial guess
 print('{:s}{:8.3f}{:s}'.format('Unmeasurable frequency nu4  = ', float(nu4),' cm^{-1}'  )) 
 
 # by Newton -Raphson method  iteratively calculate x = x - f(x)/f'(x) .
 f  = lambda x: ( x*a/np.sinh(x*a) )**2 - (0.37 - s)
-df = lambda x: 2*a**2*x/np.sinh(a*x)**2-2*a**3*x**2*np.cosh(a*x)/np.sinh(a*x)**3 # derivative
+df = lambda x: 2*a**2*x/np.sinh(a*x)**2-2*a**3*x**2*np.cosh(a*x)/np.sinh(a*x)**3   # derivative
+
 print('{:s}'.format('Result by Newton-Raphson') )
+
 x  = 700.0                # initial guess in cm^(-1)
 x0 = 0
      
@@ -94,23 +102,28 @@ for i in range(20):       # guess max number of iteration; jump out when converg
     pass
 
 fig = plt.figure(figsize=(4,4))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 xx = np.linspace(200,1600,200)    
 plt.plot(xx,f(xx),color='red') 
 plt.axhline(0,color='black',linewidth=1)
-plt.scatter([x],[0])
+plt.scatter(x0,0,s=50,color='blue')
 plt.title('f(x) vs x')
+plt.xlim([x0/2,x0*3/2])
 plt.show()
 
 
 # ## Q9 answer
-# (a) The average energy at temperature $T$ is $\displaystyle \langle E \rangle =\frac{e^{-1/k_BT}}{1-e^{-1/k_BT}} = \frac{1}{e^{+1/k_BT}-1}$
+# **(a)** The average energy at temperature $T$ is $\displaystyle \langle E \rangle =\frac{e^{-1/k_BT}}{1-e^{-1/k_BT}} = \frac{1}{e^{+1/k_BT}-1}$
 # 
 # At high temperatures the exponential terms can be expanded as a series; 
 # 
 # $$\displaystyle  e^{1/k_BT} = 1 + \frac{1}{k_BT} +  \frac{1}{2!(k_BT)^2} + \cdots $$
 # 
-# and as $k_BT$ is large the second and other terms can be ignored i.e.  $\displaystyle e^{+1/k_BT} \approx 1 + 1/k_BT$ and so the result is $\langle E \rangle = k_BT$.  At low temperature, the exponential terms become zero because $1/k_BT \gg 1$ and the average is zero. See the figure with the answer to question $7$.
+# and as $k_BT$ is large the second and other terms can be ignored i.e.  
+# 
+# $$\displaystyle e^{+1/k_BT} \approx 1 + 1/k_BT$$
+# 
+# and so the result is $\langle E \rangle = k_BT$.  At low temperature, the exponential terms become zero because $1/k_BT \gg 1$ and the average is zero. See the figure with the answer to question $7$.
 # 
 # (b) The average energy squared is
 # 
@@ -138,15 +151,17 @@ s = sp.Sum(x**n,(n,0,inf))
 s.doit()
 
 
-# thus the results is, in terms of x, $\displaystyle \langle E^2 \rangle = \frac{-x(x+1)}{(x-1)^2} =   -\frac{e^{-1/k_BT}(1+e^{-1/k_BT})}{(e^{-1/k_BT}-1)^2} =  \frac{1+e^{1/k_BT} }{ (e^{1/k_BT} -1)^2 }$
+# thus the results is, in terms of x, 
 # 
-# As can be seen from the plot below, $\langle E^2\rangle /k_BT  vs.  k_BT$ is almost linear except for small $k_BT$.  The limit is zero when $T\to 0$ and at large $T,\, \langle E^2\rangle /k_BT \to 2k_BT+1$
+# $$\displaystyle \langle E^2 \rangle = \frac{-x(x+1)}{(x-1)^2} =   -\frac{e^{-1/k_BT}(1+e^{-1/k_BT})}{(e^{-1/k_BT}-1)^2} =  \frac{1+e^{1/k_BT} }{ (e^{1/k_BT} -1)^2 }$$
+# 
+# As can be seen from the plot below, $\langle E^2\rangle /k_BT$  vs.  $k_BT$ is almost linear except for small $k_BT$.  The limit is zero when $T\to 0$ and at large $T,\, \langle E^2\rangle /k_BT \to 2k_BT+1$
 
 # In[6]:
 
 
 # calculate average energies and CV
-fig1= plt.figure(figsize=(14.5, 10.5))
+fig1= plt.figure(figsize=(8, 6))
 
 ax0 = fig1.add_subplot(2,2,1)
 ax1 = fig1.add_subplot(2,2,2)
@@ -163,26 +178,31 @@ av_E  = [ fE(k_BT[i])/k_BT[i] for i in range(numT)]
 sigEE = [ fE(k_BT[i])*np.exp(1.0/k_BT[i])   for i in range(numT)]
 CV     =[ fCV(k_BT[i])  for i in range(numT)]
 
-ax0.plot(k_BT,av_E2,color='red',label=r'$\langle E^2 \rangle/k_BT$')
-ax0.plot(k_BT,av_E,color='blue',label=r'$\langle E \rangle/k_BT$')
-ax0.plot(k_BT, sigEE,color='green',linestyle='dashed',label= r'$\sigma/ \langle E\rangle$' )
+ax0.plot(k_BT,av_E2,color='red')
+ax0.plot(k_BT,av_E,color='blue')
+ax0.plot(k_BT, sigEE,color='green',linestyle='dashed' )
+ax0.text(1.5,4,r'$\langle E^2 \rangle/k_BT$',fontsize=10 ) 
+ax0.text(4,1,  r'$\langle E \rangle/k_BT$',fontsize=10 ) 
+ax0.text(4,4,  r'$\sigma/ \langle E\rangle$' ,fontsize=10 ) 
+
 ax0.set_xlabel(r'$k_BT$')
-ax0.legend(loc='upper left')
 ax0.set_ylim([0,5])
 ax0.set_xlim([0,5])
+
 ax1.plot(k_BT,CV,color='blue')
 ax1.set_xlabel(r'$k_BT$')
 ax1.set_ylabel(r'$k_B \cdot C_V$')
-ax1.set_title(r'$k_B C_V \;vs.\; k_BT$')
+ax1.set_title(r'$k_B C_V \;vs.\; k_BT$',fontsize=12)
 ax1.set_xlim([0,5])
 ax1.set_ylim([0,1.05])
+fig1.tight_layout()
 plt.show()                                
 
 
 # Figure 19. Left: The mean energy $\langle E\rangle$, the mean of the energy squared $\langle E^2\rangle$ and standard deviation $\sigma/ \langle E\rangle$ vs $k_BT$. Right: Heat capacity vs $k_BT$ showing typical behaviour when there are a large number of levels being populated.
 # ____
 # 
-# (c) The variance can now be written down using the average values just calculated;
+# **(c)** The variance can now be written down using the average values just calculated;
 # 
 # $$\displaystyle  \sigma_E^2 =\langle E^2\rangle - \langle E\rangle^2 = \frac{e^{-1/kBT}}{(1-e^{-1/kBT})^2} $$
 # 
@@ -190,9 +210,9 @@ plt.show()
 # 
 # $$\displaystyle  \frac{\sigma_E^2}{\langle E\rangle} = \frac{e^{1/kBT}}{e^{1/kBT}-1}$$
 # 
-# (d) At very low temperatures, as $T \to 0$, the ratio $\sigma_E/\langle E\rangle \to 1$ and the spread of energy levels is the same as the energy itself although this is small. Conversely, when $T \rightarrow \infty$ the ratio becomes infinity but this again means that the spread of energy is as large as the energy itself, and all energy levels are equally populated.
+# **(d)** At very low temperatures, as $T \to 0$, the ratio $\sigma_E/\langle E\rangle \to 1$ and the spread of energy levels is the same as the energy itself although this is small. Conversely, when $T \rightarrow \infty$ the ratio becomes infinity but this again means that the spread of energy is as large as the energy itself, and all energy levels are equally populated.
 # 
-# (e) Much of the hard work is now done and to find the heat capacity at constant volume $C_V$ requires differentiating the average energy with respect to temperature.
+# **(e)** Much of the hard work is now done and to find the heat capacity at constant volume $C_V$ requires differentiating the average energy with respect to temperature.
 
 # In[7]:
 
@@ -207,14 +227,18 @@ CV
 # By inspection of the previous result, the variance is $\sigma_E^2 = k_BT^2C_V$. The heat capacity, see figure above, is the rate of change of the energy with temperature. At low temperature only the lowest level is populated, so the rate of change is zero. As the temperature is increased, more energy is added to the molecules, more levels become populated and $C_V$ rapidly increases because the rate of change of energy is large. At high temperature, most levels are now populated and the rate of increase is small, and $C_V$ levels off becoming almost constant.
 # 
 # ## Q10 answer
-# (a) Because $m=\pm 1/2$ the energy levels are equally spaced around zero energy; the energy gap is $\Delta E = E_{-1/2} - E_{+1/2} = \gamma \hbar B$. Using the quantities given in part (d) of the question  $\Delta E = 2.8 \cdot 10^{_-25}$ J and is far smaller than the average thermal energy at room temperature, $k_BT = 4.14 \cdot 10^{-21}$ J.
+# **(a)** Because $m=\pm 1/2$ the energy levels are equally spaced around zero energy; the energy gap is 
+# 
+# $$\displaystyle \Delta E = E_{-1/2} - E_{+1/2} = \gamma \hbar B$$
+# 
+# Using the quantities given in part (d) of the question  $\Delta E = 2.8 \cdot 10^{_-25}$ J and is far smaller than the average thermal energy at room temperature, $k_BT = 4.14 \cdot 10^{-21}$ J.
 # 
 # ![Drawing](series-fig20.png)
 # 
 # Figure 20. This figure shows the values of the energy levels (left) when  based around zero, and (right) with the lowest level made to be zero.
 # ____
 # 
-# (b) There are only two states to consider in the partition function, equation (11), and therefore it is tempting to write the average energy, where $E_m=-\gamma m\hbar B$, as
+# **(b)** There are only two states to consider in the partition function, equation (11), and therefore it is tempting to write the average energy, where $E_m=-\gamma m\hbar B$, as
 # 
 # $$\displaystyle \langle E \rangle = \frac{\sum\limits_{m=-1/2}^{m=+1/2} E_me^{-E_m/k_BT}}{\sum\limits_{m=-1/2}^{m=+1/2} e^{-E_m/k_BT}} $$
 # 
@@ -250,15 +274,19 @@ CV
 # 
 # When $T \approx 0$ then $\beta \approx \infty$ and the exponential also goes to infinity and $\langle E \rangle \to 0$  because $1/\infty = 0$. Similarly when $T \approx 0$, $\langle E^2 \rangle \to 0$. 
 # 
-# At high temperatures $\displaystyle \beta \to  0,\; \langle E \rangle _{\beta \to 0} \to \frac{\gamma \hbar B}{1+1+\gamma \hbar B\beta} \to \frac{\gamma \hbar B}{2} $ which is now midway between the two energy levels and $\displaystyle \langle E^2 \rangle \to \frac{(\gamma \hbar B)^2}{2} $. 
+# At high temperatures 
 # 
-# (c) The average energy at $10$ K is $\langle E \rangle = 1.400889 \cdot 10^{-25}$ J and $\langle E^2 \rangle = 3.92879 \cdot 10^{-50}$, and at $300$ K $\langle E \rangle = 1.4002267 \cdot 10^{-25}$ J and $\langle E^2 \rangle = 3.93284 \cdot 10^{-50}$. The very small difference at these two temperatures is because even at $10$ K both levels are significantly populated because the energy gap between nuclear spin levels is so small; recall that NMR frequencies are in the $100 \to 1000$ MHz range and that is only slightly higher than the FM radio frequency part of the spectrum. The normalised average energy, $\langle E \rangle /\gamma \hbar B$, is plotted below vs. temperature. The dotted curve shows the situation for a impossibly high magnetic field of $10B$, in this case $100$ T.
+# $$\displaystyle \beta \to  0,\; \langle E \rangle _{\beta \to 0} \to \frac{\gamma \hbar B}{1+1+\gamma \hbar B\beta} \to \frac{\gamma \hbar B}{2} $$
+# 
+# which is now midway between the two energy levels and $\displaystyle \langle E^2 \rangle \to \frac{(\gamma \hbar B)^2}{2} $. L'Hopital's rule should alway sbe used, if possible, as it is a rigourous way of obtaining a limit.
+# 
+# **(c)** The average energy at $10$ K is $\langle E \rangle = 1.400889 \cdot 10^{-25}$ J and $\langle E^2 \rangle = 3.92879 \cdot 10^{-50}$, and at $300$ K $\langle E \rangle = 1.4002267 \cdot 10^{-25}$ J and $\langle E^2 \rangle = 3.93284 \cdot 10^{-50}$. The very small difference at these two temperatures is because even at $10$ K both levels are significantly populated because the energy gap between nuclear spin levels is so small; recall that NMR frequencies are in the $100 \to 1000$ MHz range and that is only slightly higher than the FM radio frequency part of the spectrum. The normalised average energy, $\langle E \rangle /\gamma \hbar B$, is plotted below vs. temperature. The dotted curve shows the situation for a impossibly high magnetic field of $10B$, in this case $100$ T.
 
 # In[8]:
 
 
 # Caluation of average energy vs temperature.
-fig2= plt.figure(figsize=(5,4) ) 
+fig2 = plt.figure(figsize=(5,4) ) 
 
 B    = 10                       # Tesla
 g    = 26.4e7                   # magnetogyric ratio  radian Tesla Hz
@@ -276,7 +304,7 @@ plt.axhline(0.5,linestyle = 'dashed',color='gray',linewidth=1)
 plt.xlabel('T /K')
 plt.ylabel(r'$\langle\, E\, \rangle /\,\gamma k_BB$')
 plt.axis([-0.02,maxT,0,0.55])
-plt.title(r'Two levels, $\langle\, E\, \rangle /\,\gamma k_BB$ vs. temperature')
+plt.title(r'Two levels, $\langle\, E\, \rangle /\,\gamma k_BB$ vs. temperature',fontsize=12)
 plt.legend()
 plt.show()
 
@@ -286,16 +314,18 @@ plt.show()
 # From the figure it is noticed that even at $2$ K an almost equal population of spins are present because the average energy is $\approx 0.5$ and only two levels are present. The small difference between the populations of the two levels means that NMR spectroscopy is a relatively insensitive technique. However, this insensitivity is ameliorated by the fact that the macroscopic polarization can be measured because the nuclear spins are excited coherently. The NMR signal is proportional to the _sum squared_ of the individual magnetic moments rather than the _squared sum_, i.e. the measured signal is the sum $(\mu_1 + \mu_2 + \mu_3 + \cdots )^2$ rather than the sum $(\mu_1^2 + \mu_2^2 + \mu_3^2 + \cdots)$  the former being far larger than the latter. Try it with some numbers! 
 # 
 # ## Q11 answer
-# (a) The total degeneracy for the $J^\mathrm{th}$ ortho level is $g(g+1)(2J+1)/2$ or $3(2J+1)$ as the spin is $1/2$ and $g=(2S+1)$ but is only $(2J + 1)$ for the para levels. The figure illustrates this.
+# **(a)** The total degeneracy for the $J^\mathrm{th}$ ortho level is $g(g+1)(2J+1)/2$ or $3(2J+1)$ as the spin is $1/2$ and $g=(2S+1)$ but is only $(2J + 1)$ for the para levels. The figure illustrates this.
 # 
 # ![Drawing](series-fig22a.png)
+# 
+# Figure 22a. The rotational energy levels with their quantum numbers and in brackets their total degeneracy.
 # ____
 # To calculate each partition function, add either the odd (ortho) or the even (para) numbered rotational levels together as shown in the next calculation. The fraction of ortho is plotted vs temperature. 
 
 # In[9]:
 
 
-fig3= plt.figure(figsize=(6,5))
+fig3 = plt.figure(figsize=(5,4))
 
 B    = 60.8                 # rotational constant cm^(-1)
 k_B  = 1.3805e-23*5.034e22  # Boltzmann constant in cm^(-1)
@@ -325,12 +355,17 @@ plt.axis([0,maxT,0,100])
 plt.ylabel('ratio ortho/total as %')
 plt.xlabel(' T /K')
 plt.title('percent ortho hydrogen vs temperature',fontsize=12)
+fig3.tight_layout()
 plt.show()
 
 
 # Figure 22b. The fraction of ortho- H$_2$ vs temperature assuming that no inter-conversion between the spin states occurs. The grey dashed line shows the 3:1 ratio. 
 # ____
-# (b) In calculating the heat capacity of naturally occurring hydrogen add $3/4$ of the ortho- to $1/4$ of the para- molecules. Three significant figures is all that rotational constant $B$ or the temperature is given to, so this should be sufficient for the answer. The constant volume heat capacity is calculated using $\displaystyle U=k_BT^2 d\frac{\ln(Z)}{dT}$ , and $\displaystyle C_V =\frac{dU}{dT}$ for each spin state, with subscripts p for para and o for ortho.
+# **(b)** In calculating the heat capacity of naturally occurring hydrogen add $3/4$ of the ortho- to $1/4$ of the para- molecules. Three significant figures is all that rotational constant $B$ or the temperature is given to, so this should be sufficient for the answer. The constant volume heat capacity is calculated using 
+# 
+# $$\displaystyle U=k_BT^2 d\frac{\ln(Z)}{dT},\qquad  C_V =\frac{dU}{dT}$$
+# 
+# for each spin state, with subscripts p for para and o for ortho.
 # 
 # The first step is to find the derivative which is awkward as $Z$ is a summation but easier using $\displaystyle \frac{d\ln(Z)}{dT}=\frac{1}{Z}\frac{dZ}{dT}$
 # 
@@ -338,7 +373,7 @@ plt.show()
 # 
 # $$\displaystyle Z=\frac{g(g\pm 1)}{2}\sum(2J+1)e^{-BJ(J+1)/k_BT} =\frac{g(g\pm 1)}{2}\sum g_Je^{-E_J/k_BT} $$
 # 
-# where $E_J=BJ(J+1)$ and $g_J=2J+1$. The derivative in $T$ is easily seen as 
+# and $E_J=BJ(J+1)$ and $g_J=2J+1$. The derivative in $T$ is easily seen as 
 # 
 # $$\displaystyle \frac{dZ}{dT}=\frac{g(g\pm 1)}{2}\frac{1}{k_BT^2}\sum E_Jg_Je^{-E_J/k_BT }=Z'$$
 # 
@@ -363,9 +398,10 @@ plt.show()
 # In[10]:
 
 
-fig4= plt.figure(figsize=(11, 8))
-ax0 = fig1.add_subplot(2,2,1)
-ax1 = fig1.add_subplot(2,2,2)
+fig4 = plt.figure( figsize =(9, 4) )
+
+ax0 = fig4.add_subplot(1,2,1)
+ax1 = fig4.add_subplot(1,2,2)
 
 B    = 60.8                 # rotational constant cm^(-1)
 k_B  = 1.3805e-23*5.034e22  # Boltzmann constant in cm^(-1)
@@ -392,29 +428,34 @@ Uo = lambda T: Zdash_o(T)/Z_o(T)
 Cvp= lambda T: (1.0/( k_B*T**2 ))*( Zddash_p(T)/Z_p(T) - (Zdash_p(T)/Z_p(T))**2 ) # CV para
 Cvo= lambda T: (1.0/( k_B*T**2 ))*( Zddash_o(T)/Z_o(T) - (Zdash_o(T)/Z_o(T))**2 )
 
-ax0.plot(T,Up(T),color='red',label='para')
-ax0.plot(T,Uo(T),color='blue',label='ortho')
+ax0.plot(T,Up(T),color='red')
+ax0.plot(T,Uo(T),color='blue')
 
 ax0.set_xlim([0,maxT])
 ax0.set_ylim([0,300])
 ax0.set_ylabel(r'$U\,/\,\mathrm{cm^{-1}}$')
 ax0.set_xlabel(' T /K')
 ax0.set_title('Internal energy ortho &\n para hydrogen vs temperature',fontsize=12)
-ax0.legend()
+ax0.text(200,50,'para')
+ax0.text(100,150,'ortho')
 
-ax1.plot(T,Cvp(T),color='red' , label='para' )
-ax1.plot(T,Cvo(T),color='blue', label='ortho')
-ax1.plot(T,Cvp(T)*0.25+Cvo(T)*0.75,  color='gray',linestyle='dashed',label='normal')
 
-ax1.axhline(k_B,color='gray',linestyle='dotted',label=' High T limit',linewidth=1)
+ax1.plot(T,Cvp(T),color='red'  )
+ax1.plot(T,Cvo(T),color='blue')
+ax1.plot(T,Cvp(T)*0.25+Cvo(T)*0.75,  color='gray',linestyle='dashed')
+
+ax1.axhline(k_B,color='gray',linestyle='dotted',linewidth=1)
 ax1.set_ylim([0,1.2])
 ax1.set_xlim([0,maxT])
 ax1.set_ylabel(r'$C_V\,/\,\mathrm{cm^{-1}}$')
 ax1.set_xlabel(' T /K')
 ax1.set_title('Heat Capacity ortho & \n para hydrogen vs temperature',fontsize=12)
+ax1.text(90,1,'para')
+ax1.text(200,0.2,'ortho')
+ax1.text(120,0.5,'natural',fontsize=10)
+ax1.text(20,0.72,'high T',fontsize=10)
 
-ax1.legend(fontsize=12)
-plt.tight_layout()
+fig4.tight_layout()
 plt.show()
 
 
@@ -425,45 +466,62 @@ plt.show()
 # 
 # This may also be seen in the plot of internal energy, which is horizontal for both spin states at low temperature as the slope of $U$ vs $T$ is zero. Similarly, at high temperatures, the slopes are the same and constant, which produces a constant heat capacity. As the temperature increases, the rate of change of internal energy increases and so does the heat capacity. The internal energy of para-species increases slowly at first, then the slope becomes less at about $230$ K and this is past the maximum in the heat capacity. The ortho - curve has internal energy whose slope increases uniformly with temperature.
 # 
-# (c) The ortho - hydrogen has energy in the $J=1$ level at zero K and mostly in this level at $20.4$ K, the normal boiling point, because the $J = 1$ level has an energy of $121.6\,\mathrm{ cm ^{-1}}$ . If this energy was released suddenly and all the molecules became para-hydrogen, $2B = 121.6\,\mathrm{ cm^{-1}}$ would be released per molecule which is $\approx 1450\,\mathrm{ J\, mol^{-1}}$. As the heat of vaporization is only $904\,\mathrm{ J\, mol^{-1}}$ the whole of the hydrogen would boil away. Clearly, this is to be avoided, and manufacturers always promote the ortho- to para- conversion with a catalyst before supplying liquid hydrogen. It is not possible chemically to catalyse para into ortho - hydrogen so the pure ortho - curve in the figure cannot be measured.
+# **(c)** The ortho - hydrogen has energy in the $J=1$ level at zero K and mostly in this level at $20.4$ K, the normal boiling point, because the $J = 1$ level has an energy of $121.6\,\mathrm{ cm ^{-1}}$ . If this energy was released suddenly and all the molecules became para-hydrogen, $2B = 121.6\,\mathrm{ cm^{-1}}$ would be released per molecule which is $\approx 1450\,\mathrm{ J\, mol^{-1}}$. As the heat of vaporization is only $904\,\mathrm{ J\, mol^{-1}}$ the whole of the hydrogen would boil away. Clearly, this is to be avoided, and manufacturers always promote the ortho- to para- conversion with a catalyst before supplying liquid hydrogen. It is not possible chemically to catalyse para into ortho - hydrogen so the pure ortho - curve in the figure cannot be measured.
 # 
 # **Exercise:** Repeat the calculation with $\mathrm{D_2}$ which has $S = 1$ nuclei. In this case, $g = 3$ and the nuclear spin states are symmetrical. This leads to an interchange of the $J = 0, 2, \cdots$ with $J = 1, 3, \cdots$ states in the summation of the partition functions compared to $\mathrm{H_2}$.
 # 
 # ## Q12 answer
-# (a) $1/4^n$ is the chance (probability) that the word is read, and hence $1 - 1/4^n$ that it is not read and this happens $ L - 1$ times so the probability of not being read is raised to this power.
+# **(a)** $1/4^n$ is the chance (probability) that the word is read, and hence $1 - 1/4^n$ that it is not read and this happens $ L - 1$ times so the probability of not being read is raised to this power.
 # 
-# (b) If the distribution is normalized then $ \sum_{L=0}^\infty (1-1/4^n)^{L-1}(1/4^n)=1$ and if $x=1/4^n$ then the sum is $x\sum_{L=0}^\infty (1-x)^{L-1}$. As $x \lt 1$ the summation is valid as shown by SymPy
+# **(b)** If the distribution is normalized then 
+# 
+# $$\displaystyle  \sum_{L=0}^\infty (1-1/4^n)^{L-1}(1/4^n)=1$$
+# 
+# and if $x=1/4^n$ then the sum is 
+# 
+# $$\displaystyle \sum_{L=0}^\infty x(1-x)^{L-1}, \qquad  x \lt 1$$
+# 
+# the summation is valid as shown by SymPy.
 
 # In[11]:
 
 
-x, L = sp.symbols('x, L')
+x, L = sp.symbols('x, L',positive=True)
 inf = sp.oo                 # sp.oo is sympy infinity
-f01= x*sp.Sum((1-x)**(L-1),(L,0,inf))  
-sp.simplify(f01.doit() )
+f01= sp.Sum(x*(1-x)**(L-1),(L,0,inf))  
+sp.simplify(f01.doit() )    # need simplify here otherwise result is confusing.
 
 
-# The sum is $x\sum_{L=0}^\infty (1-x)^{L-1}= 1/(1-x)$ and as this distribution is not normalised when calculating the average length $\langle L \rangle$ the denominator must be included.
+# The sum is therefore 
 # 
-# (c) The average length is found by using the standard formula;
+# $$\displaystyle \sum_{L=0}^\infty x(1-x)^{L-1}= \frac{1}{1-x}$$
+# 
+# and as this distribution is not normalised when calculating the average length $\langle L \rangle$ so the denominator must be included.
+# 
+# **(c)** The average length is found by using the standard formula;
 # 
 # $$\displaystyle  \langle L \rangle = \frac{ \sum\limits_{L=0}^\infty L(1-4^{-n} )^{L-1} 4^{-n} }{ \sum\limits_{L=0}^\infty (1-4^{-n} )^{L-1} 4^{-n} }$$
-# and making the substitution $x=1/4^n$ and simplifying gives a clearer sum 
+# and making the substitution $x=(1/4)^n$ and simplifying gives a clearer answer
 # 
-# $$\displaystyle  \langle L \rangle = \frac{ \sum\limits_{L=0}^\infty L(1-x )^{L-1} }{ \sum\limits_{L=0}^\infty (1-x )^{L-1} }$$
+# $$\displaystyle  \langle L \rangle = \frac{ \sum\limits_{L=0}^\infty xL(1-x )^{L-1} }{ \sum\limits_{L=0}^\infty x(1-x )^{L-1} }$$
 # 
 # evaluating the numerator 
 
 # In[12]:
 
 
-x, L = sp.symbols( 'x, L')
-inf = sp.oo                 # sp.oo is sympy infinity
-f01 = sp.Sum(L*(1-x)**(L-1), (L,0,inf))  # note capital S, 
-f01.doit()
+x, L = sp.symbols( 'x, L',positive=True)
+inf = sp.oo                                # sp.oo is sympy infinity
+f_num = sp.Sum(x*L*(1-x)**(L-1), (L,0,inf))    # note capital S,
+f_den = sp.Sum(x*(1-x)**(L-1)  , (L,0,inf))
+sp.simplify(f_num.doit()/f_den.doit())
 
 
-# therefore the average is $\displaystyle \langle L \rangle = \frac{1-x}{x}$. Because $x$ is small compared to unity then  $\langle L \rangle \approx 1/x = 4^n $ and the average length of cut DNA strands is therefore approximately $256, 4096$, or $65536$ base pairs long depending on whether the enzyme cuts out $n = 4, 6$, or $8$ base pairs.
+# therefore the average is 
+# 
+# $$\displaystyle \langle L \rangle = \frac{1-x}{x}$$
+# 
+# Because $x$ is small compared to unity then  $\langle L \rangle \approx 1/x^2 = 4^n $ and the average length of cut DNA strands is therefore approximately $256, 4096$, or $65536$ base pairs long depending on whether the enzyme cuts out $n = 4, 6$, or $8$ base pairs.
 # 
 # ## Q13 answer
 # Letting $c = 0$ makes the second solution infinity because $c$ is in the denominator. It is also in the numerator of the first term. The correct solution is to expand the exponential and look at the case when $c$ is small, i.e. in the limit when $ c \to  0$. This results in

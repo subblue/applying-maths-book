@@ -6,11 +6,16 @@
 # In[1]:
 
 
-# First import all python add-ons etc that will be needed later on
+# First import all python add-ons etc that will be needed later on.
 # the next line is specific 'magic' instruction to jupyter notebook ; do not add anything ele to that line
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np               # general python    fast numerical calculation
 import matplotlib.pyplot as plt  # general python    plotting  always used
+
+
+# In[2]:
+
+
 from scipy.integrate import quad # specific use: e.g. import general numerical integration routine;
 import sympy as sp               # algebraic solution of equations, only add if doing algebraic things 
 sp.init_printing()               # allows printing of SymPy results in typeset maths format
@@ -39,7 +44,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots, alter at will
 # 
 # **(10)** When using *for loops,  while loops, subroutines, if* statements, etc. the first line ends in a colon: for example 
 
-# In[2]:
+# In[3]:
 
 
 f01 = [ i**2 for i in range(10) ]   # define list
@@ -54,7 +59,7 @@ print(f01[:])                       # the colon means use whole list
 # 
 # **(12)** There are objects called _list comprehensions_ that are an alternative to loops in many cases. They are more concise but for speed or complex cases use loops.
 
-# In[3]:
+# In[4]:
 
 
 mylist = [ i+2 for i in range(6) ]    # makes list of 6 values, i = 0 to 5 see below for details
@@ -64,7 +69,7 @@ mylist[:]
 # Arrays are usually called _lists_ and enclosed by square brackets $[\; ]$  and indexed by square brackets, 
 # e.g. $\mathtt{mylist=[ 2, 3, 4 ]}$ and so to print use 
 
-# In[4]:
+# In[5]:
 
 
 print( mylist[ 0 ] ) 
@@ -75,7 +80,7 @@ print( mylist[ 0 ] )
 # **(13)**  In Python 3 notice that print statements are always enclosed in round brackets. 
 # To print the whole list use,
 
-# In[5]:
+# In[6]:
 
 
 print(mylist)             # or
@@ -86,7 +91,7 @@ print(mylist[ : ])
 # 
 # A new and quick method to print is using *f* notation, thus to print ' one fifth = 1/6 ' we could use
 
-# In[6]:
+# In[7]:
 
 
 print('one sixth =', 1/6)  # or formatted as 
@@ -95,7 +100,7 @@ print('{:s}{:6.3f}'.format('one sixth =', 1/6))
 
 # we can use the *f* format but note that only the last occurrence of this is printed in any cell
 
-# In[7]:
+# In[8]:
 
 
 f'one sixth = {1/6:6.3f}'  # the .3 gives 3 decimal places, the 6 is ignored but can be included
@@ -111,7 +116,7 @@ f'one sixth = {1/6:6.3f}'  # the .3 gives 3 decimal places, the 6 is ignored but
 # 
 # There are two types of user defined functions, as in a multi-line subroutine or procedure e.g. 
 
-# In[8]:
+# In[9]:
 
 
 def myfunc(x):           # use this for complicated function with if else etc
@@ -121,7 +126,7 @@ print(myfunc(np.pi/3))
 
 # and in a _lambda_ or single line statement, e.g. 
 
-# In[9]:
+# In[10]:
 
 
 myfunc = lambda x : x*np.sin(x)     # use for one line functions
@@ -140,7 +145,7 @@ print(myfunc(np.pi/3) )
 # 
 # ## 5.5 Simple statements,  printing formats 
 
-# In[10]:
+# In[11]:
 
 
 a = 2.1**3.1               # raise to power
@@ -159,7 +164,7 @@ print('{:s}{:6.3f}{:s}{:6.5g}{:s}{:4d}'.format('The value of a is ', a , '\nThe 
 # 
 # Usually a name is chosen and then values added in a loop of some kind. In many cases in python this can be done in one go. This is called **list comprehension**, see how *a* is generated below. Also shown is how different values can be extracted. The statement $\mathtt{range(5)}$ in the code below has values 0 to 4 because the first value in the list has zero index so is given by a[0].
 
-# In[11]:
+# In[12]:
 
 
 # printing and intro to list comprehension
@@ -174,7 +179,7 @@ print('last value a[-1] =',a[-1])
 print('reverse order a[::-1] =', a[::-1])            # note double ::
 
 
-# In[12]:
+# In[13]:
 
 
 print('The values in my list are as follows')
@@ -199,7 +204,7 @@ for i in [0,3,4]:
 # 
 # Rather than use a double loop to put values into a double list this can be done in one go as follows.
 
-# In[13]:
+# In[14]:
 
 
 b = [ [ np.exp(-i*j) for i in range(5)] for j in range(3) ]  # 2d list, b[j][i] ,i.e. 2nd index in first place
@@ -215,7 +220,7 @@ print('printing b[4][1] will lead to an error e.g.')
 # 
 # Import NumPy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic Python.
 
-# In[14]:
+# In[15]:
 
 
 x = np.linspace(0,10*np.pi,5)  # make x range from 0 to 10pi in 5 steps. 
@@ -233,7 +238,7 @@ myary[:,:]
 # 
 # Appending one value at a time to a list is a very useful way of lengthening a list when the final length is unknown. Can be useful when reading datafile whose length is unknown. Start with an empty list then use a loop.
 
-# In[15]:
+# In[16]:
 
 
 mylist = []                    # empty list
@@ -249,7 +254,7 @@ print(mylist)
 
 # ## 8.1 Using _loops_ and _if else_  to calculate stuff.  How to make sum of terms
 
-# In[16]:
+# In[17]:
 
 
 f01 = [ 0.0 for i in range(20)]         # make list full of zeros
@@ -269,7 +274,7 @@ print('\nsum of whole list is ', sum(f01) )  # use just for 1D list, use numpy s
 
 # Now do same calulation but instead of using _i_ to determine values in the sine function we define _x_ and give it values then we will plot the result. (If you want to alter the size of the plot then _figure_ has to be used, see drawing two plots, somewhere below this cell).
 
-# In[17]:
+# In[18]:
 
 
 numx = 300                              # number of points
@@ -316,7 +321,7 @@ plt.show()                            # this must be last plotting instruction
 # 
 # It is also possible to use if statements inside a lambda and an example is given but it is usually better to use a *def* type function.
 
-# In[18]:
+# In[19]:
 
 
 func1 = lambda x, z : np.cos(x) + np.exp(-x/z)        # define function in x and z
@@ -346,7 +351,7 @@ plt.show()
 # 
 # The syntax for _def_ functions is shown below. Note also that we can now plot negative values of our function, not possible with the way the lambda function was defined.
 
-# In[19]:
+# In[20]:
 
 
 def afunc(x,z):                              # define afunc to be function of x and z
@@ -381,7 +386,7 @@ plt.show()
 # 
 # It is possible to make functions recursive, calculating a factorial as $n! = n.(n-1).(n-2)\cdots 1$   is the commonly used example and is given below as is one to calculate Hermite polynomials used in determining harmonic oscillator wavefunctions.  
 
-# In[20]:
+# In[21]:
 
 
 def fact(n):                    # factorial cannot be used for huge values
@@ -396,7 +401,7 @@ for i in range(10):
     print ('  ', i, '     ',fact(i))
 
 
-# In[21]:
+# In[22]:
 
 
 def Hermite(n,x):   # use recursion formula, x is real, n is order. H(n,x) = 2.x.H(n-1,x)-2.(n-1).H(n-2,x)
@@ -419,12 +424,57 @@ plt.grid()
 plt.show()
 
 
-# ## 10 Using map( f(x),  alist )   or    [ f(x) for x in list ] 
+# ## 9.4 Random numbers
+# 
+# There is a new version of the random number generators in NumPy. There are also lots of examples of the older way of generating these. The new method is to be preferred and these are initialised by using the instruction
+
+# In[23]:
+
+
+rng = np.random.default_rng()   # use ...default_rng(seed=123 etc) for same set of numbers
+
+
+# A random number can be an integer or a floating point or arrays of these. The distribution to which the numbers belong can also be defined, for example uniform or normal etc. 
+# 
+# Random integers have to have limits set and the instruction, for example, to make 25 random integers in the range 0, to 9 is
+
+# In[24]:
+
+
+rng.integers(0,10,25)  # note range is 0 to 10-1
+
+
+# Random floating point numbers from a uniform distribution in the interval $0\to 1$ but not $1$ itself 
+
+# In[25]:
+
+
+rng.random(25)
+
+
+# and if you want them in the range 3 to 8 use
+
+# In[26]:
+
+
+a = 3
+b = 8
+(b-a)*rng.random(25)+a
+
+
+# and 10 values from a unit standard gaussian (normal) distribution.
+
+# In[27]:
+
+
+rng.standard_normal(10)
+
+
+# ## 10 Using  map( f(x),  alist )   or    [  f(x)  for  x  in  list ] 
 # 
 # This is a way to perform an operation of a list of things without having to use a loop. The _map_ function has  two or more arguments _map( function, sequence )_. One simple use is to multiply all of a list by some number, you cannot do **[1,2,4,5]*2** for example, but have to use map or list comprehension as shown below.
-# 
 
-# In[22]:
+# In[28]:
 
 
 # using map
@@ -472,7 +522,7 @@ print("\nremove ' and , from output", str(alpha).replace("'",'').replace(',','')
 # 
 # $$ w(r)=4\pi r^2n\exp(-4\pi r^3n/3)$$
 
-# In[23]:
+# In[29]:
 
 
 # plotting the distribution for some concentrations. Use n in molecs/nm^3, r in nm
@@ -502,7 +552,7 @@ plt.show()
 # 
 # In SymPy infinity is oo (two lower case letter o). The *conds='none'* removes any periodic conditions and so simplified the result. 
 
-# In[24]:
+# In[30]:
 
 
 # average distance algebraically using SymPy. sp.oo is infinity in SymPy
@@ -520,7 +570,7 @@ av
 # 
 # The same calculation can be done numerically of course, but in that case _n_ has to be defined in each instance.
 
-# In[25]:
+# In[31]:
 
 
 # using SciPy numerical integration  quad(func, x_start, x_end, arg( arguments in user function other than x))
@@ -555,7 +605,7 @@ else:
 # 
 # First differentiating then generating series expansion of the function produced.  The first step is to define the symbols to be used. We will use the nearest neighbour distribution to begin with.  The best output results are found without using print() as shown below. If you do use print as in print(Q.doit() ) a code type output is produced and the nice output suppressed.
 
-# In[26]:
+# In[32]:
 
 
 # assume SymPy already loaded.
@@ -570,16 +620,16 @@ Q                                           # do calculation
 #print(Q)
 
 
-# In[27]:
+# In[33]:
 
 
-S = sp.series(Q,r,0,15)                        # expand Q (above) about zero and to powers of r**15 if possible 
+S = sp.series(Q,r,0,15)                        # expand Q (above) about zero and to powers of r**15
 S
 
 
 # If you want to use the result in subsequent code the 'big O' notation can be removed as shown below
 
-# In[28]:
+# In[34]:
 
 
 S = sp.series(Q,r,0,15).removeO()   # expand Q (above) remove big O and then simplify
@@ -590,7 +640,7 @@ sp.simplify(S)
 # 
 # In this case it is necessary to define a figure and axes rather than using *plt* as for just a single graph. Using a figure also allows the plot size to be defined rather than having to use the default.
 
-# In[29]:
+# In[35]:
 
 
 # define an inline (lambda) function
@@ -648,7 +698,7 @@ plt.show()                       # last plot statement note that this is plt. no
 # 
 # The method by which to do this is shown in the code. (For clarity the reverse rate constant is now called km1 instead of $k_{-1}$) 
 
-# In[30]:
+# In[36]:
 
 
 from scipy.integrate import odeint    # import odeint used for numerical integration of differential equations
@@ -716,7 +766,7 @@ plt.show()
 # 
 # Using SymPy the method is shown below. First define the symbols then a function _B_ and the equation. 
 
-# In[31]:
+# In[37]:
 
 
 k1, k2, km1,t = sp.symbols(' k1, k2, km1, t')
@@ -730,7 +780,7 @@ s
 
 # Because constants are produced it is necessary to evaluate these before any further calcuation. At $t =0$ as $B =0$ then  $C_1+C_2=0$ and as the total magnitude of the signal does not matter we can set $C_1=1$ and $C_2=-1$. The plot below shows the algebraic solution for $B$. 
 
-# In[32]:
+# In[38]:
 
 
 k1 = 2.0                                #  rate const A
@@ -758,7 +808,7 @@ plt.show()
 # 
 # The example reads an .sdf file. The first 4 lines are header, line 4 contains the number of atoms and number of connections and this is followed by x y z & atom symbol and then the  connections list. If there are many lines of data the number of atoms and connections can merge so it is necessary to specifically look for this and correct for it.
 
-# In[33]:
+# In[39]:
 
 
 # code to read .sdf data and plot 3D graph, xyz contains the coordinates and conect the atom connection list.
@@ -844,7 +894,7 @@ plt.show()
 # 
 # The code below finds the number of atoms and produces a list of coordinates. Put the .pdb into the same folder as this notebook
 
-# In[34]:
+# In[40]:
 
 
 dataname='4c3c.pdb'                         # Download data from Brookhaen site https://www.rcsb.org/
@@ -901,7 +951,7 @@ with open(dataname) as f:
 # 
 # In the example below some noisy data is read then, with a function that is supposed to fit the function, the data is analysed. Graphs are plotted. 
 
-# In[35]:
+# In[41]:
 
 
 from scipy.optimize import curve_fit
@@ -971,7 +1021,7 @@ fig1.tight_layout()
 plt.show()
 
 
-# In[36]:
+# In[42]:
 
 
 # example of contour plotting for 2D particle in a box spatial wavefunctions
@@ -1015,7 +1065,7 @@ plt.show()
 # 
 # remove # after copying
 
-# In[37]:
+# In[43]:
 
 
 #-5.0             59.854289812   
@@ -1226,7 +1276,7 @@ plt.show()
 # copy and paste the parts needed but remove any # 
 # 
 
-# In[38]:
+# In[44]:
 
 
 #test CX
@@ -2004,7 +2054,7 @@ plt.show()
 # 
 # remove # after copying
 
-# In[39]:
+# In[45]:
 
 
 #200, 36.2, 1.5 
@@ -2022,7 +2072,7 @@ plt.show()
 # ## 'PCA data.txt'
 # remove # after copying
 
-# In[40]:
+# In[46]:
 
 
 #2.75, 6.00, -0.52 
@@ -2040,7 +2090,7 @@ plt.show()
 # ## 'exponential-data.txt'
 # remove # after copying
 
-# In[41]:
+# In[47]:
 
 
 # 1 , 1927, 1927  

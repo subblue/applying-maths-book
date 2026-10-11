@@ -80,22 +80,22 @@ ans[0].evalf()  # get number as floating point
 # Starting at $x = 4$ and using Newton-Raphson the result is $x = 4.96511$ making $\displaystyle \lambda_{max}T=\frac{hc}{4.96511k_B}$ which is the same result as given in Q65 but now calculated accurately.
 # 
 # ## Q78 answer
-# (a) By differentiating $f$ and substituting into the compliance, gives 
+# **(a)** By differentiating $f$ and substituting into the compliance, gives 
 # 
 # $$\displaystyle h=\frac{1}{k_s}+\frac{2p}{3k_BT}$$
 # 
 # which is constant and has a value of $0.089$ at $300$ K. Note that $k_B=0.0138$ pN nm /K. The usual units are J/K but as J = N m these units are equivalent ($10^{12}\,\mathrm{ pN \cdot10^9\, nm}$ = J): thermal energy $k_BT = 4.14$ pN nm at $300$ K.
 # 
-# (b) Because the compliance $h$ is a constant,its derivative is zero and the equation to solve, called $g$ so as not confuse this with the force, simplifies to 
+# **(b)** Because the compliance $h$ is a constant, its derivative is zero and the equation to solve, called $g$ so as not confuse this with the force, simplifies to 
 # 
 # $$\displaystyle g(x_u)=-\frac{x_u}{k_BT}+\frac{kh}{\nu} e^{fx_u/k_BT}=0$$
 # 
-# Adding values produce $g(x_u) = -0.2415x_u + 2.67 \cdot 10^{-5}e^{36.23x_u}=0$. The derivative is $\displaystyle g^{'}(x_u) - 0.2415x_u + 9.67\cdot10^{-4}e^{36.23x_u}=0 $. 
+# Adding values produce $g(x_u) = -0.2415x_u + 2.67 \cdot 10^{-5}e^{36.23x_u}=0$. The derivative is $\displaystyle g'(x_u) - 0.2415x_u + 9.67\cdot10^{-4}e^{36.23x_u}=0 $. 
 # 
 # The initial value of $x_u$ has to be guessed; something larger than a bond length seems sensible, so try $0.5$ nm to begin with. Using the code given in the text to locate the root of the equation, at least $25$ iterations are necessary to converge to $x_u = 0.208$ nm. Plotting the equation first, it is seen that the true value is about $0.2$ nm and starting there far fewer iterations would be necessary.
 # 
 # ## Q79 answer
-# The equation for material balance on species $A$ is
+# **(a)** The equation for material balance on species $A$ is
 # 
 # $$\displaystyle \mathrm{c_A +c_B = HA + A^- } \tag{i}$$
 # 
@@ -109,7 +109,7 @@ ans[0].evalf()  # get number as floating point
 # 
 # which can be rearranged to give the equation in the question.
 # 
-# (b) Using the values in the question, the equation to solve for $x$ using the Newton - Raphson method is the cubic
+# **(b)** Using the values in the question, the equation to solve for $x$ using the Newton - Raphson method is the cubic
 # 
 #  $$\displaystyle x - \frac{K_A( c_A - x + K_w/x )}{(c_B +  x - K_w/x)} =0$$
 #  
@@ -141,7 +141,7 @@ ans[0].evalf()  # get number as floating point
 # ## Q81 answer
 # The potential well has a depth of $V_0hc$, which is $2.44 \cdot 10^{-20}$ J. The constants conveniently make $\alpha = 1.00$ in part (a) and $12.0$ in part (b). 
 # 
-# (a) The solution is found by the Newton - Raphson method with the function defined as $\tan(\beta)-\sqrt{\alpha^2-\beta^2}/\beta$ for even parity levels and $1/\tan(\beta)+\sqrt{\alpha^2-\beta^2}/\beta$ for odd parity.  The derivatives  can be worked out using the product rule or using tables. A code snippet of the Newton - Raphson algorithm is shown next
+# **(a)** The solution is found by the Newton - Raphson method with the function defined as $\tan(\beta)-\sqrt{\alpha^2-\beta^2}/\beta$ for even parity levels and $1/\tan(\beta)+\sqrt{\alpha^2-\beta^2}/\beta$ for odd parity.  The derivatives  can be worked out using the product rule or using tables. A code snippet of the Newton - Raphson algorithm is shown next
 
 # In[5]:
 
@@ -189,10 +189,10 @@ print('{:s} {:f}'.format('beta = ',x) )
 # 
 # Photon absorption by such a quantum well can only occur into the continuum energy region above the well top. The onset of absorption is in the infrared spectral region at approximately $560\,\mathrm{ cm^{-1}}$.
 # 
-# (b) The deeper well ($-12 V_0$) has three levels at $1801, 6963$ and $13976\,\mathrm{ cm^{-1}}$. The corresponding infinite well energies are at $3032, 12130$, and $27293\,\mathrm{ cm^{-1}}$. The spectrum of the finite quantum well has two lines, corresponding to transitions from $n = 1 \to 2$ at $5161$ and from $n = 2 \to 3$ at $7013\,\mathrm{ cm^{-1}}$, then a continuous absorption starting at approximately $784\,\mathrm{ cm^{-1}}$. The product of the symmetry of the wavefunctions and the transition moment limit transitions to those between odd-even levels only. The large energy gap between the first two levels means that at room temperature ($k_BT \approx 210\,\mathrm{ cm^{-1}}$ ) hardly any population will be in the second level.
+# **(b)** The deeper well ($-12 V_0$) has three levels at $1801, 6963$ and $13976\,\mathrm{ cm^{-1}}$. The corresponding infinite well energies are at $3032, 12130$, and $27293\,\mathrm{ cm^{-1}}$. The spectrum of the finite quantum well has two lines, corresponding to transitions from $n = 1 \to 2$ at $5161$ and from $n = 2 \to 3$ at $7013\,\mathrm{ cm^{-1}}$, then a continuous absorption starting at approximately $784\,\mathrm{ cm^{-1}}$. The product of the symmetry of the wavefunctions and the transition moment limit transitions to those between odd-even levels only. The large energy gap between the first two levels means that at room temperature ($k_BT \approx 210\,\mathrm{ cm^{-1}}$ ) hardly any population will be in the second level.
 # 
-# ## 82 answer
-# (a) The radius  of the rings is fixed at unity as $y = 1$. The constant $r$ can found from the equation, $1 = r \cosh(x/r)$ which is transcendental and cannot be solved for $r$, other than numerically, but can be solved for $x$ with $r$ as the variable; the equation is $x = r \cosh^{-1}(1/r)$. The plot of this function is shown in Fig. 59. The maximum $x$ occurs when $dx/dr = 0$. Using SymPy, the derivative is
+# ## Q82 answer
+# **(a)** The radius  of the rings is fixed at unity as $y = 1$. The constant $r$ can found from the equation, $1 = r \cosh(x/r)$ which is transcendental and cannot be solved for $r$, other than numerically, but can be solved for $x$ with $r$ as the variable; the equation is $x = r \cosh^{-1}(1/r)$. The plot of this function is shown in Fig. 59. The maximum $x$ occurs when $dx/dr = 0$. Using SymPy, the derivative is
 
 # In[6]:
 
@@ -215,7 +215,7 @@ sp.diff(r*sp.acosh(1/r),r)
 # 
 # Figure 59. Left: Plot of $r$ vs $x$. The region of stable film formation $r \gt \approx  0.55$ is shown as a solid line; the unstable region as dashed. The vertical line is at $x = 0.4$. Right: The surface areas corresponding to the two values of $r$ vs separation $x$ and the area $2\pi$ of a surface present on each of the rings separately and not in between them. The vertical line at $0.663$ is the maximum value.
 # ____
-# (b) The area of the soap film is the integral over all $x$ values up to $x_0$ and the curve rotated about the $x$ axis to find the area: 
+# **(b)** The area of the soap film is the integral over all $x$ values up to $x_0$ and the curve rotated about the $x$ axis to find the area: 
 # 
 # $$\displaystyle S=4\pi \int_0^{x} y \sqrt{1+y'^{2}} dx $$
 # 
@@ -264,7 +264,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}'.format('r =  ',r,' area = ', area(r,x0) ) )
 # The calculation shows that if the separation of the two rings is $\pm 0.4$, with ring radius of $1$, then the thick waist $r = 0.910$ is the stable form of the soap bubble because its area is smallest and the surface tension is proportional to the area so the energy needed to form this film is less than that of the other one. The film with the narrower waist has the larger surface area; this will spontaneously form one of the other two surfaces because it is in a metastable state. To get directly to the film with the smallest surface area is going to be difficult in practice. The transition has to be made faster than the film on each ring can be formed. This will depend on the physical properties of the liquid film forming the bubble. If the separation of the rings is greater than approximately $0.52$, the line previously of minimum area is now greater than 2$\pi$ and the wide waist of the film will be unstable as it no longer has the minimum area and it will spontaneously burst.
 # 
 # ## Q83 answer
-# (a) The derivatives are 
+# **(a)** The derivatives are 
 # 
 # $$ \displaystyle df /dx = mx^{m-1}\quad \text{ and }\quad d^2f/dx^2 = m(m - 1)x^{m-2}$$
 # 
@@ -278,7 +278,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}'.format('r =  ',r,' area = ', area(r,x0) ) )
 # 
 # and this can be made into an algorithm. 
 # 
-# (b) The equation is $x^9- 79=0$ and has a solution $1.62498$ and the solution, for $\displaystyle x-\left( \frac{11}{9971} \right)^{30/91}=0$ as below, $0.1059378$.
+# **(b)** The equation is $x^9- 79=0$ and has a solution $1.62498$ and the solution, for $\displaystyle x-\left( \frac{11}{9971} \right)^{30/91}=0$ as below, $0.1059378$.
 
 # In[9]:
 
@@ -298,7 +298,7 @@ print('{:s} {:10.7f}'.format('x = ', x))
 
 
 # ## Q84 answer
-# The number of days lapsed after perihelion (3 Jan) and to the vernal equinox March 20, 2019 is $t - t_0 = 31 + 29 + 20 - 3 = 77$. The method of using Halley's recursion formula is similar to that for Newton - Raphson except that the second derivative has to be calculated.
+# The number of days lapsed after perihelion (3 Jan) and to the vernal equinox March 20, 2019 is $t - t_0 = 31 -3 + 28 + 20 = 76$. The method of using Halley's recursion formula is similar to that for Newton - Raphson except that the second derivative has to be calculated.
 
 # In[10]:
 
@@ -307,10 +307,10 @@ print('{:s} {:10.7f}'.format('x = ', x))
 
 def Halley(x,f,df,ddf):                     # Halley's method
 
-    for i in range(100):                    # assume 100 iterations is plenty
+    for i in range(100):                    # assume 100 iterations are enough
         xn = x - 2.0 *df(x)*f(x)/(2.0*df(x)**2 - ddf(x)*f(x))
         if abs(xn - x) < 1e-10:             # set precision
-            break
+            break                           # break out of look and return value
         x = xn 
     return x
 #--------------------
@@ -320,7 +320,7 @@ df = lambda x: 1 - eps*np.cos(x)      # first deriv
 ddf= lambda x:     eps*np.sin(x)      # second deriv
 
 # constants  calculate at day 80-3
-n = 31+28+20                          # 20 march 2019 Vernal equinox
+n = 31+28+20                          # 20 march 2026 Vernal equinox
 M = (2.0*np.pi/365)*(n-3 )            # 365 days   mean anomaly
 eps = 0.01671                         # earth eccentricity
 a   = 149.60e6                        # semi major axis km
@@ -335,16 +335,18 @@ print('{:s} {:10.4g} {:10.4g}'.format('Vernal equinox (km)', xpos,ypos))
 print('{:s} {:10.5g} '.format('Distance from sun (km)', np.sqrt((xpos-foc)**2+ypos**2))  )
 
 
-# The table shows the position of the Earth in 2019 at the equinoxes and solstices.
+# The table shows the position of the Earth at the equinoxes and solstices.
 # 
-# $$\displaystyle \begin{array}{ l l c c}
+# $$\displaystyle \begin{array}{ l l| c c}
 # & & x\;\mathrm{ \,/10^6\;km} & y\;\mathrm{\, /10^6\;km} & r\;\mathrm{\, /10^6\;km} \\
+# \hline
 # &\text{Aphelion} &-149.59& -1.27 &152.10\\
 # &\text{Perihelion}& 149.6 &0 &147.10\\
 # &\text{Vernal equinox} &36.48 &145.06 &148.99\\
 # &\text{Autumnal equinox} &-27.41& -147.05 &150.06\\
 # &\text{Summer solstice}& -146.26& 31.43 &152.04\\
 # &\text{Winter solstice} &146.31& -31.19 &147.16\\
+# \hline
 # \end{array}$$
 # 
 # The next figure shows the orbit and solstices and equinoxes, together with the foci of the elliptical orbit, black dots close to the centre and the sun as a slightly larger (orange) circle which is not to scale.

@@ -11,34 +11,34 @@
 # ## Q18 Isotopes
 # Carbon consists of two common isotopes $^{12}$C and $^{13}$C. $^{12}$C is defined to have a relative atomic mass of exactly 12, whereas tables give the value of C as 12.011.
 # 
-# (a) What is the fraction of $^{13}$C present in a normal sample of carbon?
+# **(a)** What is the fraction of $^{13}$C present in a normal sample of carbon?
 # 
-# (b) What is the chance that two $^{13}$C nuclei are present in an ethane molecule, $\mathrm{C_2H_6}$?
+# **(b)** What is the chance that two $^{13}$C nuclei are present in an ethane molecule, $\mathrm{C_2H_6}$?
 # 
-# (c) An ethane molecule has to have at least one $^{13}$C if a $^{13}$C NMR spectrum is to be recorded. What is the chance of this occurring? If the magnetogyric ratio of $^{13}$C is $\gamma = 6.728 \cdot 10^7$ and for protons
+# **(c)** An ethane molecule has to have at least one $^{13}$C if a $^{13}$C NMR spectrum is to be recorded. What is the chance of this occurring? If the magnetogyric ratio of $^{13}$C is $\gamma = 6.728 \cdot 10^7$ and for protons
 # $\gamma = 26.75 \cdot 10^7 \mathrm{rad\; T^{-1}\; s^{-1}}$ how much smaller is the $^{13}$C NMR spectrum than the H spectrum, if the NMR spectrometer's sensitivity is proportional to $\gamma^3$?
 # 
 # ## Q19 Genetics
 # In the study of genetics, probability can be used to predict the fraction of offspring with various traits. Animals or plants can have dominant $A$ or recessive $a$ genes which can mix to give offspring with genetic make up AA, Aa and aa.
 # 
-# (a) If $p$ is the fraction of a population with gene $A$ and $q = 1 - p$ with $a$, what is the incidence of individuals with $AA, Aa$ and $aa$ genes?
+# **(a)** If $p$ is the fraction of a population with gene $A$ and $q = 1 - p$ with $a$, what is the incidence of individuals with $AA, Aa$ and $aa$ genes?
 # 
-# (b) The trait associated with a recessive gene a only manifests itself in an individual with a genetic makeup $aa$. What is the chance that an individual without this trait has one a gene?
+# **(b)** The trait associated with a recessive gene a only manifests itself in an individual with a genetic makeup $aa$. What is the chance that an individual without this trait has one a gene?
 # 
 # ## Q20 Chance of finding no air in a room
 # It is possible, but extremely unlikely, that due to random thermal motions all the air molecules in a room will occupy just its top part. Assuming that the molecules do not interact, calculate:
 # 
-# (a) What is the chance a molecule will only occupy $V_A$ if a room is split into two volumes $V_A$ and $V_B$?
+# **(a)** What is the chance a molecule will only occupy $V_A$ if a room is split into two volumes $V_A$ and $V_B$?
 # 
-# (b) What is the chance that all molecules occupy $V_A$, if the volumes are equal, and there are $100$, and
+# **(b)** What is the chance that all molecules occupy $V_A$, if the volumes are equal, and there are $100$, and
 # then $1000$ gas molecules in the total volume?
 # 
-# (c) If the entropy is defined as $S = k_B\ln(\Omega)$, where $k_B$ is Boltzmann's constant and $\Omega$ the probability, what is the entropy change upon isothermally expanding $N$ gas molecules from $V_A \to V_A + V_B$?
+# **(c)** If the entropy is defined as $S = k_B\ln(\Omega)$, where $k_B$ is Boltzmann's constant and $\Omega$ the probability, what is the entropy change upon isothermally expanding $N$ gas molecules from $V_A \to V_A + V_B$?
 # 
 # ## Q21 DNA bases
-# (a)  In DNA there are four bases labelled G, C, A, T. If three bases encode an amino acid, how many amino acids could there be ?
+# **(a)**  In DNA there are four bases labelled G, C, A, T. If three bases encode an amino acid, how many amino acids could there be ?
 # 
-# (b) If only twenty amino acids exist, how many $100$ amino acid proteins are possible?
+# **(b)** If only twenty amino acids exist, how many $100$ amino acid proteins are possible?
 # 
 # ## Q22 Distinguishable particles
 # List all the distinguishable arrangements of two distinguishable particles in three degenerate energy levels.
@@ -69,11 +69,11 @@
 # 
 # Calculate the equilibrium constant $K$ for each reaction, assuming $\Delta_rH = 0$;
 # 
-# (a) HCOOH + DCOOD = HCOOD + DCOOH
+# **(a)** HCOOH + DCOOD = HCOOD + DCOOH
 # 
-# (b) $\mathrm{P^{35}Cl_3 + P^{37}Cl_3 = P^{37}Cl_2^{35}Cl + P^{35}CL_2^{37}Cl}$
+# **(b)** $\mathrm{P^{35}Cl_3 + P^{37}Cl_3 = P^{37}Cl_2^{35}Cl + P^{35}CL_2^{37}Cl}$
 # 
-# (c) $\mathrm{C^{35}Cl_4 + C^{37}Cl_4 = 2C^{37}Cl_2^{35}Cl_2}$
+# **(c)** $\mathrm{C^{35}Cl_4 + C^{37}Cl_4 = 2C^{37}Cl_2^{35}Cl_2}$
 # 
 # **Strategy:** Calculate the fraction of each isotopic atom in a molecule, and multiply by the number of ways this can be achieved.
 # 
@@ -83,51 +83,53 @@
 # ## Q29 Cards
 # Two cards are drawn simultaneously from two groups of cards which are {AD, 2H, 1C, 2C, 3C} and {AD, 2H, 3H, 1C} (where AD is the ace of diamonds, 1C the 1 of clubs etc.). Using equation 23
 # 
-# (a) what is the chance of getting at least one club,
+# **(a)** what is the chance of getting at least one club,
 # 
-# (b) at least an ace,
+# **(b)** at least an ace,
 # 
-# (c) at least one cards less than 4?
+# **(c)** at least one cards less than 4?
 # 
 # ## Q30 How many can taste PTC?
-# The compound phenylthiocarbamide (PTC) has no taste to some individuals but is bitter to others. This trait is controlled by a single gene with the allele for bitter taste being dominant. If the dominant allele is B and the recessive b,
+# The compound phenylthiocarbamide (PTC) has no taste to some individuals but is bitter to others. This trait is controlled by a single gene with the allele for bitter taste being dominant. If the dominant allele is B and the recessive b calculate,
 # 
-# (a) Over a whole population by selecting just those heterozygous tasters who have children, what fraction will be able to taste the PTC?
+# **(a)** Over a whole population by selecting just those heterozygous tasters who have children, what fraction will be able to taste the PTC?
 # 
-# (b) What is the chance that each of the first four children, and what fraction of all children, will be non-tasters?
+# **(b)** What is the chance that each of the first four children, and what fraction of all children, will be non-tasters?
 # 
-# (c) Of these children what is the chance that any of their children will be a tasters?
+# **(c)** Of these children what is the chance that any of their children will be a tasters?
 # 
 # ## Q31 Run of zeros in a number
-# If (a) $10$, (b) $100$, (c) $1000$ random digits, $0 \to 9$ are chosen, what is the chance of finding a run of half of the total numbers which are each zero?
+# If **(a)** $10$, **(b)** $100$, and **(c)** $1000$ random digits, $0 \to 9$ are chosen, what is the chance of finding a run of half of the total numbers which are each zero?
 # 
-# **Strategy:**  In (b) and (c) first calculate the log of the probability by using Stirling's approximation for the factorial in the binomial distribution.
+# **Strategy:**  In **(b)** and **(c)** first calculate the log of the probability by using Stirling's approximation for the factorial in the binomial distribution.
 # 
 # ## Q32 Fraction of boy *vs*. girl babies
 # When a whole population is considered, boys and girls are born with equal frequency. 
 # 
-# (a) What fraction of families with six children is expected to have four girls?
+# **(a)** What fraction of families with six children is expected to have four girls?
 # 
-# (b) How is this fraction changed if the birth ratio is $3:2$ in favour of girls?
+# **(b)** How is this fraction changed if the birth ratio is $3:2$ in favour of girls?
 # 
 # ## Q33 Binomial coefficients
 # Prove the following relationships between binomial coefficients
 # 
-# (a)$\displaystyle\qquad  q\binom{n}{q}=n\binom{n-1}{q-1}$
+# **(a)** $\displaystyle\qquad  q\binom{n}{q}=n\binom{n-1}{q-1}$
 # 
-# (b)$\displaystyle\qquad  \binom{n}{q}=\binom{n-1}{q}+\binom{n-1}{q-1}$
+# **(b)** $\displaystyle\qquad  \binom{n}{q}=\binom{n-1}{q}+\binom{n-1}{q-1}$
 # 
-# (c) If the equation in (b) is written as $\displaystyle\qquad y(n,q)=y(n-1,q)+\binom{n-1}{q-1}$
+# **(c)** If the equation in (b) is written as $\displaystyle\qquad y(n,q)=y(n-1,q)+\binom{n-1}{q-1}$
 # 
 # show that $\displaystyle\qquad y(n+1,q)=\left(\frac{n+1}{n+1-q}\right)y(n,q)$
 # 
-# which is a recurrence method to calculate a binomial coefficient without needing to calculate a factorial. Show that this works by finding what the first value $y(n=q,q)$is.
+# which is a recurrence method to calculate a binomial coefficient without needing to calculate a factorial. Show that this works by finding what the first value $y(n=q,q)$ is.
 # 
 # ## Q34 Bayes formula
 # 
 # A sample of ions composed of $90$% Na$^+$ plus $10$% k$^+$ ions is analysed by a technique supposed to be sensitive only to Na$^+$. In practice the analysis is only $92$% efficient for Na$^+$ and has a probability of $6$% of accidentally detecting $K^+$. 
 # 
-# (a) What is the probability of detecting Na$^+$, and (b) what is the probability of no result from the analysis?
+# **(a)** What is the probability of detecting Na$^+$, and
+# 
+# **(b)** what is the probability of no result from the analysis?
 # 
 # **Strategy** Use Bayes formula. We want the probability $p(Na^+|+)$, where the '+' means positive detection in the analysis, but are given $p(+|Na^+)$. To get to the answer we shall need to work out $p(+)$, the total positive analysis result. 
 

@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1596,8 +1596,8 @@ title="Print to PDF"
 <section id="q40-linear-polarisation">
 <h2>Q40 Linear polarisation<a class="headerlink" href="#q40-linear-polarisation" title="Permalink to this headline">#</a></h2>
 <p>A beam of linearly polarized light with amplitude components V and H is passed through a polarizing cube set to pass vertical polarized light, <span class="math notranslate nohighlight">\(\theta=0\)</span>. The light is either reflected or transmitted by the cube.</p>
-<p>(a) How much light is transmitted and how much reflected when the polarizer is at <span class="math notranslate nohighlight">\(0^\text{o}\)</span>?</p>
-<p>(b) How much when at <span class="math notranslate nohighlight">\(45^\text{o}\)</span>?</p>
+<p><strong>(a)</strong> How much light is transmitted and how much reflected when the polarizer is at <span class="math notranslate nohighlight">\(0^\text{o}\)</span>?</p>
+<p><strong>(b)</strong> How much when at <span class="math notranslate nohighlight">\(45^\text{o}\)</span>?</p>
 <p><strong>Strategy:</strong> By the nature of the cube, we are told that no photons are absorbed thus the total number remains constant and the number reflected must be the total less those transmitted. Remember that intensity is always amplitude squared.</p>
 </section>
 <section id="q41-half-wave-plate">
@@ -1607,29 +1607,35 @@ title="Print to PDF"
 <section id="q42-polarised-light">
 <h2>Q42 Polarised light<a class="headerlink" href="#q42-polarised-light" title="Permalink to this headline">#</a></h2>
 <p>Vertically polarized light of amplitude V is passed through a quarter-wave plate</p>
-<p>(a) with its fast axis at <span class="math notranslate nohighlight">\(\theta = 0\)</span>;</p>
-<p>(b) at <span class="math notranslate nohighlight">\(\theta = 45^\text{o}\)</span>, and</p>
-<p>(c) at some arbitrary angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p><strong>(a)</strong> with its fast axis at <span class="math notranslate nohighlight">\(\theta = 0\)</span>;</p>
+<p><strong>(b)</strong> at <span class="math notranslate nohighlight">\(\theta = 45^\text{o}\)</span>, and</p>
+<p><strong>(c)</strong> at some arbitrary angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>What is the nature of the resultant beam in each case?</p>
 </section>
 <section id="q43-polariser">
 <h2>Q43 Polariser<a class="headerlink" href="#q43-polariser" title="Permalink to this headline">#</a></h2>
 <p>A beam of vertical, linearly polarized laser light of unit amplitude is passed into a linear polarizer whose angle <span class="math notranslate nohighlight">\(\theta\)</span> is rotated from <span class="math notranslate nohighlight">\(0 \to 180^\text{o}\)</span> and the transmitted light measured on a photodiode. Draw a diagram of the experiment then calculate:</p>
-<p>(a) how the intensity of the light transmitted by the polarizer varies with <span class="math notranslate nohighlight">\(\theta\)</span></p>
-<p>(b) its polarization at any given angle.</p>
+<p><strong>(a)</strong> how the intensity of the light transmitted by the polarizer varies with <span class="math notranslate nohighlight">\(\theta\)</span></p>
+<p><strong>(b)</strong> its polarization at any given angle.</p>
 <p><strong>Strategy:</strong> Use the diagram of the experiment to work out what matrices are used and in what order. Next, calculate the answer using the matrices for linear polarized light and the matrix for a linear
-polarizer. Make the input polarization in the vertical direction and this has the matrix <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 1 \\0 \end{bmatrix}\)</span>. The intensity is the dot product of the resulting column vector with itself, and to make the row vector we must make the Hermitian transpose by replacing any <span class="math notranslate nohighlight">\(i =\sqrt{(-1)}\)</span> with <span class="math notranslate nohighlight">\(-i\)</span> in the transpose, if a complex quantity is present.</p>
+polarizer. Make the input polarization in the vertical direction and this has the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} 1 \\0 \end{bmatrix}\end{split}\]</div>
+<p>The intensity is the dot product of the resulting column vector with itself, and to make the row vector we must make the Hermitian transpose by replacing any <span class="math notranslate nohighlight">\(i =\sqrt{-1}\)</span> with <span class="math notranslate nohighlight">\(-i\)</span> in the transpose, if a complex quantity is present.</p>
 </section>
 <section id="q44-half-wave-plate">
 <h2>Q44 half-wave plate<a class="headerlink" href="#q44-half-wave-plate" title="Permalink to this headline">#</a></h2>
 <p>A half-wave plate is placed between a pair of crossed linear polarizers. A beam of light of unit amplitude is transmitted by the first polarizer set at <span class="math notranslate nohighlight">\(0^\text{o}\)</span> and is rotated by a half wave plate set at <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<p>(a) What is the intensity transmitted by the second polarizer for any angle <span class="math notranslate nohighlight">\(\theta\)</span> of the half wave plate?</p>
-<p>(b) Show that the maximum transmitted intensity occurs when the half-wave plate is set at <span class="math notranslate nohighlight">\(\pm 45^\text{o}\)</span>.</p>
-<p>(c) What is the intensity variation if the wave-plate is restricted to small angles from the vertical?</p>
-<p>(d) Generalize part (a) to any linear polarizer angles <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, and wave-plate <span class="math notranslate nohighlight">\(\theta\)</span> angles and arbitrary input intensities <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(H\)</span>. Calculate the result of part (a) again.</p>
-<p>Use python/Sympy to do the matrix multiplications if you wish.</p>
+<p><strong>(a)</strong> What is the intensity transmitted by the second polarizer for any angle <span class="math notranslate nohighlight">\(\theta\)</span> of the half wave plate?</p>
+<p><strong>(b)</strong> Show that the maximum transmitted intensity occurs when the half-wave plate is set at <span class="math notranslate nohighlight">\(\pm 45^\text{o}\)</span>.</p>
+<p><strong>(c)</strong> What is the intensity variation if the wave-plate is restricted to small angles from the vertical?</p>
+<p><strong>(d)</strong> Generalize part <strong>(a)</strong> to any linear polarizer angles <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, and wave-plate <span class="math notranslate nohighlight">\(\theta\)</span> angles and arbitrary input intensities <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(H\)</span>. Calculate the result of part <strong>(a)</strong> again.</p>
+<p>Use Python/SymPy to do the matrix multiplications if you wish.</p>
 <p><strong>Strategy:</strong> Draw out the arrangement first to know the order of the optical elements and the polarization directions. As the beam is passed through the linear polarizer set at <span class="math notranslate nohighlight">\(0^\text{o}\)</span>, the output from
-this must be vertically polarized light with matrix <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 1 \\0 \end{bmatrix}\)</span> so we can use this to start the calculation. As the polarizers are crossed, the second is at <span class="math notranslate nohighlight">\(90^\text{o}\)</span> to the first.</p>
+this must be vertically polarized light with matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} 1 \\0 \end{bmatrix}\end{split}\]</div>
+<p>so we can use this to start the calculation. As the polarizers are crossed, the second is at <span class="math notranslate nohighlight">\(90^\text{o}\)</span> to the first.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig52.png" /></p>
 <p>Figure 52. Scheme for Q44.</p>
 </section>

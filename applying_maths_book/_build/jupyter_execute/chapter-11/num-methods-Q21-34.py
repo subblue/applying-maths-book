@@ -9,11 +9,13 @@
 # ## Q22 Predator - prey
 # Using the Lotka - Volterra equations 49,
 # 
-# (a)  Sketch what happens if the predators do not die by natural causes $k_3 = 0$ and confirm this by calculation.
+# **(a)**  Sketch what happens if the predators do not die by natural causes $k_3 = 0$ and confirm this by calculation.
 # 
-# (b)  What happens if an extra term is introduced into each equation; $-k_{11}Y$ into $dY/dt$ and $-k_{22}X$ into the other equation, which removes by poisoning both prey (pest) and predator in proportion to their populations? This has been used as a way of controlling pests; does it work? Assume that the predators do die off naturally so that $k_3 \ne  0$. Use values given in the text and $k_{11} = 0.9$ and $k_{22} = 0.2$.
+# **(b)**  What happens if an extra term is introduced into each equation; $-k_{11}Y$ into $dY/dt$ and $-k_{22}X$ into the other equation, which removes by poisoning both prey (pest) and predator in proportion to their populations? This has been used as a way of controlling pests; does it work? Assume that the predators do die off naturally so that $k_3 \ne  0$. Use values given in the text and $k_{11} = 0.9$ and $k_{22} = 0.2$.
 # 
-# **Strategy:** Consider the steady state or equilibrium populations. Plot the phase plane and nullclines, and compare these with the case when $k_{11}$ and $k_{22}$ are zero. Solve the equations using the Euler method with at least 500 points in the calculation. The text gives values $X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5$.
+# **Strategy:** Consider the steady state or equilibrium populations. Plot the phase plane and nullclines, and compare these with the case when $k_{11}$ and $k_{22}$ are zero. Solve the equations using the Euler method with at least 500 points in the calculation. The text gives values 
+# 
+# $$\displaystyle X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5$$
 # 
 # 
 # ## Q23 Predator - prey
@@ -25,7 +27,11 @@
 # 
 # $$\displaystyle \frac{dY}{dt}=k_1Y-k_2YX-k_dY^2, \qquad \frac{dX}{dt}=k_2YX - k_3X$$
 # 
-# Calculate the populations' time dependence and phase plane with $k_d = 0.002$ and use the values for other parameters given in the text and which are $X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5$. Explain the results you obtain.
+# Calculate the populations' time dependence and phase plane with $k_d = 0.002$ and use the values for other parameters given in the text and which are 
+# 
+# $$\displaystyle X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5$$
+# 
+# Explain the results you obtain.
 # 
 # 
 # ## Q25 Nerve impulses
@@ -43,22 +49,26 @@
 # 
 # Because $C$ is held constant, the first reaction can be rewritten with a pseudo, first-order rate constant, $k_1 = k'_1C$, equivalent to $\displaystyle A \overset{k_1}\to A + A$. The rate of change of $B$ is zero in the third step because it catalyses this reaction. This scheme also has a biological interpretation;  $A$, is a micro-organism that produces a chemical toxin $B$ that will ultimately poison it.
 # 
-# (a) Write down the rate equations.
+# **(a)** Write down the rate equations.
 # 
-# (b)  Describe the equilibrium (steady state) points and nullclines.
+# **(b)**  Describe the equilibrium (steady state) points and nullclines.
 # 
-# (c) Calculate the concentration of species $A$ and $B$ up to time $t = 600$, and also plot the phase plane with $k_1 = 0.2,\; k_2 = 0.01,\; k_3 = 0.01,\; k_4 = 0.02$ and initial concentrations of $A_0 = 50,\; B_0 = 0$.
+# **(c)** Calculate the concentration of species $A$ and $B$ up to time $t = 600$, and also plot the phase plane with 
 # 
-# (d) Comment on the results obtained.
+# $$\displaystyle k_1 = 0.2,\; k_2 = 0.01,\; k_3 = 0.01,\; k_4 = 0.02$$
+# 
+# and initial concentrations of $A_0 = 50,\; B_0 = 0$.
+# 
+# **(d)** Comment on the results obtained.
 # 
 # **Strategy:** The rate equations are calculated by working out the change in the number of species in the usual way. $A$ is gained in the first step and lost in the other two, while $B$ is produced in the second step, unchanged in the third and lost in the last. The equilibrium points are calculated at steady state,$ dA/dt = dB/dt = 0$ and the numerical solution is calculated using Euler's method.
 # 
 # ## Q27 Rigid pendulum
 # In this question, the motion of a rigid pendulum is examined, see Section 6.3 for the equations to use and use $\omega  = 1$.
 # 
-# (a) Set the pendulum initially to $\varphi_0 = \pi$ but with zero velocity and observe what happens with the Euler, modified Euler, and Euler - Cromer methods. This is a test of how good the numerical algorithm is, because the pendulum should remain vertical forever. Repeat the calculation with the initial angle of $3.0$ radians.
+# **(a)** Set the pendulum initially to $\varphi_0 = \pi$ but with zero velocity and observe what happens with the Euler, modified Euler, and Euler - Cromer methods. This is a test of how good the numerical algorithm is, because the pendulum should remain vertical forever. Repeat the calculation with the initial angle of $3.0$ radians.
 # 
-# (b) Calculate the angle, velocity, and phase plane at several initial starting angles. Plot a graph of velocity vs time to illustrate how the non-linear motion increases with increase in the initial angle.
+# **(b)** Calculate the angle, velocity, and phase plane at several initial starting angles. Plot a graph of velocity vs time to illustrate how the non-linear motion increases with increase in the initial angle.
 # 
 # 
 # **Strategy:** (a) Use $5000$ points in the calculation (b) $500$ points will suffice here and initial angles between $\pi$ and zero radians; the values $3, 1.5, 0.5$ and $0.25$ radians should work.
@@ -77,9 +87,9 @@
 # 
 # $$\displaystyle \frac{d^2\varphi}{dt^2}+\left[\frac{\alpha}{L}-\omega^2\cos(\varphi)\right] \sin(\varphi)=0$$
 # 
-# (a) Calculate the equilibrium points, nullclines, phase plane, and the angle and the change of the velocity of the pendulum with time.
+# **(a)** Calculate the equilibrium points, nullclines, phase plane, and the angle and the change of the velocity of the pendulum with time.
 # 
-# (b) Consider the cases when $L$ is very long so that $a/L \ll \omega^2$ and when very short.
+# **(b)** Consider the cases when $L$ is very long so that $a/L \ll \omega^2$ and when very short.
 # 
 # ![Drawing](num-methods-fig24.png)
 # 
@@ -93,11 +103,17 @@
 # 
 # calculate the period of the pendulum when
 # 
-# (a)  $\varphi \to 0$ and
+# **(a)**  $\varphi \to 0$ and
 # 
-# (b)  $\varphi = \varphi_0$ where $\varphi_0$ is the initial angle given by $\varphi_0= \cos^{-1}\left(a/(L\omega^2)\right)$
+# **(b)**  $\varphi = \varphi_0$ where $\varphi_0$ is the initial angle given by 
 # 
-# (c)  Assume $\varphi - \varphi_0$ is not small and show that $\displaystyle \frac{d^2\varphi}{dt^2}=\omega^2\varphi\sin^2(\varphi)$ by ignoring a $\varphi^2$ term. What does this equation represent?
+# $$\displaystyle \varphi_0= \cos^{-1}\left(a/(L\omega^2)\right)$$
+# 
+# **(c)**  Assume $\varphi - \varphi_0$ is not small and show that 
+# 
+# $$\displaystyle \frac{d^2\varphi}{dt^2}=\omega^2\varphi\sin^2(\varphi)$$
+# 
+# by ignoring a $\varphi^2$ term. What does this equation represent?
 # 
 # **Strategy:** In (a) approximate the series expansion to small angles. In (b) Use a Taylor series expansion about $\varphi_0$, and take only the first two or three terms to approximate to small values. In (c) It will be useful to change the angle to $\varphi \to \varphi - \varphi_0$ in the equation of motion.
 # 
@@ -124,9 +140,9 @@
 # 
 # Show that with an initial angle of $0.01$ degrees and zero initial velocity that
 # 
-# (a) the motion is unstable if $h = 0.4$  and $(\omega/\omega_0)^2 = 0.4$ because the pendulum's amplitude continuously grows.
+# **(a)** the motion is unstable if $h = 0.4$  and $(\omega/\omega_0)^2 = 0.4$ because the pendulum's amplitude continuously grows.
 # 
-# (b) when $h = 1.75$ and $(\omega/\omega_0)^2 = 0.75$ the motion is stable.   
+# **(b)** when $h = 1.75$ and $(\omega/\omega_0)^2 = 0.75$ the motion is stable.   
 # 
 # **Strategy:** Preferably, use the fourth-order Runge - Kutta method to solve the equations, which can be
 # separated as in Q31. Use a minimum of $1000$ steps and time up to $t = 200$.
@@ -155,9 +171,9 @@
 # 
 # where $x \equiv \mathrm{[I^-]},\; y \equiv \mathrm{[CIO_2^-]}$ and $a$ and $b$ are positive constant numbers depending on fixed concentrations and rate constants. It is assumed in this scheme that an unending supply of reagents is available.
 # 
-# (a) Find the stable points and the nullclines, and plot on the phase plane together with some trajectories, each calculated numerically, with constant parameters $a = 8$ and $10$ and $b = 2$. Choose a few starting values close to the equilibrium point and a few some distance away.
+# **(a)** Find the stable points and the nullclines, and plot on the phase plane together with some trajectories, each calculated numerically, with constant parameters $a = 8$ and $10$ and $b = 2$. Choose a few starting values close to the equilibrium point and a few some distance away.
 # 
-# (b) Comment on the different behaviour of the two parameter sets.
+# **(b)** Comment on the different behaviour of the two parameter sets.
 # 
 # ## Q34 Limits with Fitzhugh-Nagamo eqn.
 # Show that in the Fitzhugh - Nagumo equations, the oscillation period is always the same in a limit - cycle by repeating the calculation with different starting conditions $v_0, \; w_0$ using the parameters in the text.

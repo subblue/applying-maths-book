@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1665,14 +1665,20 @@ title="Print to PDF"
 <p>The superscript * represents the complex conjugate, which means that if the wavefunction is complex replace <span class="math notranslate nohighlight">\(i\)</span> with <span class="math notranslate nohighlight">\(-i\)</span> and vice versa. If it is not complex, i.e. ‘normal’ the complex conjugate changes nothing. In Dirac ‘bra-ket’ notation the orthogonality and normalization of the wavefunctions is written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle\varphi_n | \varphi_m \rangle = \delta_{n,m}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the Kronecker delta such that <span class="math notranslate nohighlight">\(\delta_{n,n} = \delta_{m,m} = 1\)</span> and if <span class="math notranslate nohighlight">\(n \ne m\)</span>; <span class="math notranslate nohighlight">\(\delta=0\)</span>. The subscripts <span class="math notranslate nohighlight">\(i = 0, 1, 2, \cdots\)</span> are used to label the whole set of energy levels but the subscripts <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are reserved to represent individual levels should that be necessary and are also the quantum numbers. If the harmonic oscillator were being described, quantum number <span class="math notranslate nohighlight">\(i\)</span> would extend to infinity. In contrast, spin only has a finite set of quantum numbers; two for the spin state of the electron <span class="math notranslate nohighlight">\(i = -1/2, 1/2\)</span> and three for the nuclear spin state of <span class="math notranslate nohighlight">\(^{14}\)</span>N or <span class="math notranslate nohighlight">\(^2\)</span>H, <span class="math notranslate nohighlight">\(0, \pm 1\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the Kronecker delta such that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \delta_{n,n} = \delta_{m,m} = 1,\quad\text{and if}\quad  n \ne m, \delta_{n,m}=0\]</div>
+<p>The subscripts <span class="math notranslate nohighlight">\(i = 0, 1, 2, \cdots\)</span> are used to label the whole set of energy levels but the subscripts <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are reserved to represent individual levels should that be necessary and are also the quantum numbers. If the harmonic oscillator were being described, quantum number <span class="math notranslate nohighlight">\(i\)</span> would extend to infinity. In contrast, spin only has a finite set of quantum numbers; two for the spin state of the electron <span class="math notranslate nohighlight">\(i = -1/2, 1/2\)</span> and three for the nuclear spin state of <span class="math notranslate nohighlight">\(^{14}\mathrm{N}\)</span> or <span class="math notranslate nohighlight">\(^2\mathrm{H}=\; 0, \pm 1\)</span>.</p>
 </section>
 <section id="expectation-values">
 <h2>2 Expectation Values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">#</a></h2>
 <p>The expectation or average value for the lowest level <span class="math notranslate nohighlight">\(0\)</span> is the energy <span class="math notranslate nohighlight">\(E_0\)</span>. It is calculated by left multiplying equation 2 by <span class="math notranslate nohighlight">\(\varphi^*_0\)</span> and integrating over all space <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E_0=\frac{\int_{-\infty}^\infty \varphi_0^*H^0\varphi_0 dx}{\int_{-\infty}^\infty \varphi_0^*\varphi_0 dx} =\int_{-\infty}^\infty \varphi_0^*H^0\varphi_0 dx \qquad\tag{3}\]</div>
-<p>and because the wavefunction is normalized, <span class="math notranslate nohighlight">\(\int_{-\infty}^\infty \varphi_0^*\varphi_0 dx=1\)</span>. The same procedure can be followed for every other level to calculate <span class="math notranslate nohighlight">\(E_n\)</span>. Any energy can be written in equivalent ways as</p>
+<p>and because the wavefunction is normalized,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty \varphi_0^*\varphi_0 dx=1\]</div>
+<p>The same procedure can be followed for every other level to calculate <span class="math notranslate nohighlight">\(E_n\)</span>. Any energy can be written in equivalent ways as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E_n=\int_{-\infty}^\infty \varphi_n^*H^0\varphi_n dx\equiv \langle \varphi_n^*|H^0|\varphi_n\rangle = \langle n|H^0|n\rangle \qquad\tag{4}\]</div>
 <p>the latter two expressions being in Dirac’s bra-ket notation, explained in Section 4 together with basis sets. Note that the bra <span class="math notranslate nohighlight">\(\langle \varphi^*_n|\)</span> is always the complex conjugate of the wavefunction <span class="math notranslate nohighlight">\(\varphi\)</span>, but it is not common to label it as such, therefore the bra can be written as <span class="math notranslate nohighlight">\(\langle \varphi_n|\)</span>. The ket is <span class="math notranslate nohighlight">\(|\varphi_n\rangle\)</span>. In general, if <span class="math notranslate nohighlight">\(S\)</span> is an operator, its expectation is</p>
@@ -1684,12 +1690,12 @@ title="Print to PDF"
 <p>Interactions between different levels <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> lead to interesting effects, and this chapter describes how these may be calculated. No interaction occurs if <span class="math notranslate nohighlight">\(S = H^0\)</span> because <span class="math notranslate nohighlight">\(H^0\)</span> exactly solves the Schroedinger equation with wavefunctions <span class="math notranslate nohighlight">\(\varphi_i\)</span>, which are orthogonal,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H_{nm}=\int \varphi_n^*H^0\varphi_mdx=E_0\int\varphi_n^*\varphi_mdx=0\qquad n\ne m\qquad\tag{7}\]</div>
-<p>Expectation values are also called matrix elements and these are explained next. Suppose that the (quantum) harmonic oscillator is to be solved. The wavefunction is a function of position, the bond extension, and the operator is</p>
+<p>Expectation values are also called matrix elements and these are explained next. Suppose that the (quantum) harmonic oscillator is to be solved. The wavefunction is a function of position, the bond extension, and the operator is both terms in</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H^0\equiv -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\]</div>
-<p>and, for the harmonic oscillator, <span class="math notranslate nohighlight">\(V(x) = kx^2/2\)</span>. To obtain the energy, <span class="math notranslate nohighlight">\(H^0\)</span> operates on <span class="math notranslate nohighlight">\(\varphi(x)\)</span>, the result is then multiplied by <span class="math notranslate nohighlight">\(\varphi^*(x)\)</span> and this result integrated. The matrix element describing the interaction of one state <span class="math notranslate nohighlight">\(n\)</span> to another <span class="math notranslate nohighlight">\(m\)</span> based on equation 6, has the form</p>
+<p>and, for the harmonic oscillator, <span class="math notranslate nohighlight">\(V(x) = kx^2/2\)</span>. To obtain the energy, <span class="math notranslate nohighlight">\(H^0\)</span> operates on <span class="math notranslate nohighlight">\(\varphi(x)\)</span>, the result is then left multiplied by <span class="math notranslate nohighlight">\(\varphi^*(x)\)</span> and this result integrated. The matrix element describing the interaction of one state <span class="math notranslate nohighlight">\(n\)</span> to another <span class="math notranslate nohighlight">\(m\)</span> based on equation 6, has the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle H_{nm} = \int\varphi^*_nH^\varphi_m dx\]</div>
+\[\displaystyle H_{nm} = \int\varphi^*_nH^0\varphi_m dx\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{nm}\)</span> is an energy. Because the quantum numbers are discrete, a secular equation can be formed and eigenvalue - eigenvector methods used to solve for the energies. See Chapter 12 for the method. The general equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{Av}=\pmb{\lambda v}\]</div>
@@ -1699,23 +1705,35 @@ title="Print to PDF"
 <p>but because each <span class="math notranslate nohighlight">\(\varphi\)</span> is an exact solution to the Schroedinger equation the <span class="math notranslate nohighlight">\(\varphi\)</span> are orthogonal to one another and all values that are non-diagonal with <span class="math notranslate nohighlight">\(n \ne m\)</span> equation 7 are zero, giving</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}H_{00} &amp;0 &amp; 0 &amp; \cdots \\0 &amp; H_{11} &amp; 0&amp; \cdots  \\0&amp;\vdots &amp; \ddots &amp;\cdots &amp; \\ \vdots &amp; \vdots &amp; \vdots &amp; H_{nn}\\ \end{bmatrix} \begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}=\begin{bmatrix}E_0\\E_1\\ \vdots \\E_n \end{bmatrix}\begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}\qquad\qquad\qquad\qquad \text{(9)}\end{split}\]</div>
-<p>and therefore a set of equations, such as 4 is obtained, one for each quantum number <span class="math notranslate nohighlight">\(n\)</span>. The matrix 9 is already diagonalized, therefore <span class="math notranslate nohighlight">\(E_0 = H_{00}, E_1 = H_{11}\)</span>, and so forth and these are the eigenvalues or energies. Clearly, to do any of these calculations the wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> have to be known.</p>
-<p>The effect of using a different potential is calculated next. Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> has a new term in the potential energy, and this manifests itself as off-diagonal terms in the <span class="math notranslate nohighlight">\(H_{nm}\)</span> matrix equation 8. The hamiltonian can be written as</p>
+<p>and therefore a set of equations, such as 4 is obtained, one for each quantum number <span class="math notranslate nohighlight">\(n\)</span>. The matrix 9 is already diagonalized, therefore</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle E_0 = H_{00},\quad E_1 = H_{11},\quad E_2=\cdots\]</div>
+<p>and these are the eigenvalues or energies. Clearly, to do any of these calculations the wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> have to be known.</p>
+<p>The effect of using a different potential is calculated next. Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> has a new term in the potential energy, and this manifests itself as off-diagonal terms in the <span class="math notranslate nohighlight">\(H_{nm}\)</span> matrix equation 8. The Hamiltonian can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H= -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V^1(x)\]</div>
-<p>where <span class="math notranslate nohighlight">\(V^1\)</span> is the new potential. Each integral <span class="math notranslate nohighlight">\(H_{nm}=\int\varphi^*_nH\varphi_m dx\)</span> has to be solved first and the new matrix diagonalised. In some problems, such as the NMR nuclear spin example given below, the wavefunctions are never known, only their integrals with the angular momentum operator, which means that <span class="math notranslate nohighlight">\(H_{nm}\)</span> is known directly. In problems that have a large number of states, such as an anharmonic oscillator, a huge matrix will be needed to calculate accurate values of the energies because there are many non-zero, off-diagonal terms. In this case, the larger the matrix is, the more accurate the answers become, provided numerical accuracy can be maintained. In examples involving electron or nuclear spin, the matrix has a finite size that completely determines the problem, and accurate results are obtained from small matrices.</p>
+<p>where <span class="math notranslate nohighlight">\(V^1\)</span> is the new potential. Each integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{nm}=\int\varphi^*_nH\varphi_m dx\]</div>
+<p>has to be solved first and the new matrix diagonalised. In some problems, such as the NMR nuclear spin example given below, the wavefunctions are never known, only their integrals with the angular momentum operator, which means that <span class="math notranslate nohighlight">\(H_{nm}\)</span> is known directly. In problems that have a large number of states, such as an anharmonic oscillator, a huge matrix will be needed to calculate accurate values of the energies because there are many non-zero, off-diagonal terms. In this case, the larger the matrix is, the more accurate the answers become, provided numerical accuracy can be maintained. In examples involving electron or nuclear spin, the matrix has a finite size that completely determines the problem, and accurate results are obtained from small matrices.</p>
 </section>
 <section id="the-effect-of-new-potential-energy-expanding-in-a-basis-set">
 <h2>2.1 The effect of new potential energy. Expanding in a basis set.<a class="headerlink" href="#the-effect-of-new-potential-energy-expanding-in-a-basis-set" title="Permalink to this headline">#</a></h2>
 <p>The energies and wavefunctions of the harmonic oscillator are well known, the Hamiltonian is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H^0= -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+\frac{1}{2}kx^2\equiv H^k+V\]</div>
-<p>Suppose that to make the potential more like that of a real molecule, a term <span class="math notranslate nohighlight">\(V^1\)</span> replaces the potential energy making it quartic, i.e. <span class="math notranslate nohighlight">\(V^1 = k'x^4/2\)</span>, but any similar potential, such as the Morse potential, could be used. The harmonic oscillator wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> would no longer be ‘diagonal in the eigenstates’ meaning that the wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> that are solutions with <span class="math notranslate nohighlight">\(H^0\)</span> are not solutions of the Schroedinger equation with the new potential. With the new potential, some, if not all of the off-diagonal expectation values (matrix elements) <span class="math notranslate nohighlight">\(H_{23}, H_{53}\)</span> for example will no longer be zero. The new energies are no longer given by the diagonal elements of the matrix but by an equation of the form of equation 8, which has to be diagonalized.</p>
-<p>The wavefunctions of the quartic oscillator will be labelled <span class="math notranslate nohighlight">\(\psi\)</span>, however, the Schroedinger equation cannot yet be solved with this potential because the equation <span class="math notranslate nohighlight">\(H_{nm} = \int \psi^*_nH\psi_mdx\)</span> cannot be worked out because the <span class="math notranslate nohighlight">\(\psi\)</span> are unknown. One solution to this problem is to solve the Schroedinger equation with the quartic potential, <span class="math notranslate nohighlight">\(V^1\)</span>, using the harmonic wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> as a basis, and so obtain the quartic eigenvalues (energies) and eigenvectors in terms of these <span class="math notranslate nohighlight">\(\varphi\)</span>. The eigenvectors <span class="math notranslate nohighlight">\(v\)</span> are used to <em>expand</em> the unknown wavefunctions <span class="math notranslate nohighlight">\(\psi\)</span> in terms of the known ones <span class="math notranslate nohighlight">\(\varphi\)</span>. A basis set to describe the new wavefunctions has to be constructed. This basis set has to be orthogonal and although it does not need be normalized, it is usually easier to use if it is. A basis set is used because <em>any</em> vector can be described as a <em>linear combination of basis vectors</em> (Chapter 6) and it is proposed that any wavefunction can be described as a weighted sum of basis wavefunctions. The basis set used is the set of harmonic oscillator wavefunctions (eigenvectors) <span class="math notranslate nohighlight">\(\varphi\)</span> which solve the equation <span class="math notranslate nohighlight">\(H^0\varphi = E\varphi\)</span>. The new wavefunctions then have the form</p>
+<p>Suppose that to make the potential more like that of a real molecule, a term <span class="math notranslate nohighlight">\(V^1\)</span> replaces the quadratic potential energy making it quartic, i.e. <span class="math notranslate nohighlight">\(V^1 = k'x^4/2\)</span>, but any similar potential, such as the Morse potential, could be used. The harmonic oscillator wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> would no longer be ‘<em>diagonal in the eigenstates</em>’ meaning that the wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> that are solutions with <span class="math notranslate nohighlight">\(H^0\)</span> are not solutions of the Schroedinger equation with the new potential.</p>
+<p>With the new potential, some, if not all of the off-diagonal expectation values (matrix elements) <span class="math notranslate nohighlight">\(H_{23}, H_{53}\)</span> for example will no longer be zero. The new energies are no longer given by the diagonal elements of the matrix but by an equation of the form of equation 8, which has to be diagonalized to obtain energies.</p>
+<p>The wavefunctions of the quartic oscillator will be labelled <span class="math notranslate nohighlight">\(\psi\)</span>, however, the Schroedinger equation cannot yet be solved with this potential because the equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{nm} = \int \psi^*_nH\psi_mdx\]</div>
+<p>cannot be worked out because the <span class="math notranslate nohighlight">\(\psi\)</span> are unknown. One solution to this problem is to solve the Schroedinger equation with the quartic potential, <span class="math notranslate nohighlight">\(V^1\)</span>, using the harmonic wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> as a basis, and so obtain the quartic eigenvalues (energies) and eigenvectors in terms of these <span class="math notranslate nohighlight">\(\varphi\)</span>. The eigenvectors <span class="math notranslate nohighlight">\(v\)</span> are used to <em>expand</em> the unknown wavefunctions <span class="math notranslate nohighlight">\(\psi\)</span> in terms of the known ones <span class="math notranslate nohighlight">\(\varphi\)</span>. A basis set to describe the new wavefunctions has to be constructed. This basis set has to be orthogonal and although it does not need be normalized, it is usually easier to use if it is. A basis set is used because <em>any</em> vector can be described as a <em>linear combination of basis vectors</em> (Chapter 6) and it is proposed that any wavefunction can be described as a weighted sum of basis wavefunctions. The basis set used is the set of harmonic oscillator wavefunctions (eigenvectors) <span class="math notranslate nohighlight">\(\varphi\)</span> which solve the equation <span class="math notranslate nohighlight">\(\displaystyle H^0\varphi = E\varphi\)</span>. The new wavefunctions then have the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi=a_1\varphi_1 +a_2\varphi_2 +a_3\varphi_3 +\cdots \qquad\tag{10}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a_1, a_2\)</span> and so forth, are the amounts of each <span class="math notranslate nohighlight">\(\varphi\)</span> needed to make the <span class="math notranslate nohighlight">\(\psi\)</span> that solves -  which means, will diagonalize - the Schroedinger equation <span class="math notranslate nohighlight">\((H^k + V^1)\psi = E\psi\)</span>. As there are
-many levels <span class="math notranslate nohighlight">\(0 \to n\)</span>, each <span class="math notranslate nohighlight">\(\psi\)</span> has its own expansion and there are, therefore, <span class="math notranslate nohighlight">\(n^2\)</span> coefficients in
+<p>where <span class="math notranslate nohighlight">\(a_1, a_2\)</span> and so forth, are the amounts of each <span class="math notranslate nohighlight">\(\varphi\)</span> needed to make the <span class="math notranslate nohighlight">\(\psi\)</span> that solves -  which means, will diagonalize - the Schroedinger equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle(H^k + V^1)\psi = E\psi\]</div>
+<p>As there are many levels <span class="math notranslate nohighlight">\(0 \to n\)</span>, each <span class="math notranslate nohighlight">\(\psi\)</span> has its own expansion and there are, therefore, <span class="math notranslate nohighlight">\(n^2\)</span> coefficients in
 total. Each wavefunction has its own set of coefficients and it is better to give them two
 subscripts and label the coefficients <span class="math notranslate nohighlight">\(v_{1k}, v_{2k}, \cdots\)</span> as they are elements of the <span class="math notranslate nohighlight">\(k^{th}\)</span> (column) eigenvector of the matrix of <span class="math notranslate nohighlight">\(v\)</span>’s. The <span class="math notranslate nohighlight">\(k^{th}\)</span> of a total of <span class="math notranslate nohighlight">\(n\)</span> wavefunctions is</p>
 <div class="math notranslate nohighlight">
@@ -1737,7 +1755,10 @@ subscripts and label the coefficients <span class="math notranslate nohighlight"
 <p>where <span class="math notranslate nohighlight">\(b_1, b_2\)</span> are only the <em>indices</em> of the basis set; for the vibrational oscillator they are labelled <span class="math notranslate nohighlight">\(1, 2, 3, 4, \cdots\)</span>. The matrix elements, the integrals <span class="math notranslate nohighlight">\(H_{01}, H_{32}\)</span>, etc. are in the form of equations 5 and 6. The basis set indices can be put in any order but this must be the same in each row and column. To simplify the calculation, the Hamiltonian operator is split into <span class="math notranslate nohighlight">\(H\)</span> and a potential term <span class="math notranslate nohighlight">\(H^1\)</span>, as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H = H^0 + H^1\qquad\tag{13}\]</div>
-<p>and <span class="math notranslate nohighlight">\(H^1 = V^1 = k'x^4/2\)</span> if the new potential were quartic.</p>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^1 = V^1 = k'x^4/2\]</div>
+<p>if the new potential were quartic.</p>
 <p>The matrix elements formed in the new basis set have the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H_{nm}=\int \varphi^*_nH\varphi_m dx=\int \varphi^*_nH^0\varphi_m dx+\int \varphi^*_nH^1\varphi_m dx=\int \varphi^*_nH^1\varphi_m dx\]</div>
@@ -1745,20 +1766,36 @@ subscripts and label the coefficients <span class="math notranslate nohighlight"
 <p>Diagonalizing the matrix produces the eigenvalues that are the energies. The eigenvectors <span class="math notranslate nohighlight">\(\pmb{v}\)</span> are also obtained and from these the wavefunctions that approximate to the true ones can be calculated using equation 11. Eigenvectors are usually formed into a matrix; each column is the eigenvector <span class="math notranslate nohighlight">\(\pmb{v}\)</span> for a wavefunction and the order of the columns is the same as the order of the eigenvalues. This means that if <span class="math notranslate nohighlight">\(v_1, v_2, v_3\)</span> are the first three entries for the <em>column</em> eigenvector of eigenvalue 1, then the wavefunction is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi_1 \approx v_{11}\varphi_1 + v_{21}\varphi_2 + \cdots + v_{n1}\varphi_n\]</div>
-<p>and <span class="math notranslate nohighlight">\(\approx\)</span> is used as the basis set is finite so this is an approximation, albeit a very good one, if an accurate calculation has been performed with a sufficiently large basis set. The second wavefunction might be <span class="math notranslate nohighlight">\( \psi_2 \approx v_{12}\varphi_1 + v_{22}\varphi_2 +\cdots + v_{n2}\varphi_n\)</span> where the <span class="math notranslate nohighlight">\(n\)</span>’s are the elements of the second column of eigenvectors.</p>
+<p>and <span class="math notranslate nohighlight">\(\approx\)</span> is used as the basis set is finite so this is an approximation, albeit a very good one, if an accurate calculation has been performed with a sufficiently large basis set. The second wavefunction might be</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_2 \approx v_{12}\varphi_1 + v_{22}\varphi_2 +\cdots + v_{n2}\varphi_n\]</div>
+<p>where the <span class="math notranslate nohighlight">\(n\)</span>’s are the elements of the second column of eigenvectors.</p>
 <p>Finally, note that this matrix/basis set method is an entirely different approach to solving the Schroedinger equation compared to other numerical methods. In those methods (see chapter 10) the equation is solved on a large grid of points using recursive equations that approximate the integral. In the matrix method, the amounts of each of the basis wavefunctions only are calculated. A grid of points is needed only to plot the wavefunction not to do numerical calculation.</p>
-<p>Although the example described is a harmonic oscillator becoming a quartic oscillator, it is simpler mathematically as an illustration of this method, to calculate the vibrational energy levels and wavefunctions of a harmonic oscillator, using the values for the HCl molecule and the basis set of the ‘particle in a box’ wavefunctions. The length of the box will be <span class="math notranslate nohighlight">\(L\)</span>, where (arbitrarily) <span class="math notranslate nohighlight">\(L/2 = 0.128\)</span> nm, the HCl bond length. The reduced mass <span class="math notranslate nohighlight">\(\mu= 35/36\cdot 10^{-27}\)</span> kg, and force constant <span class="math notranslate nohighlight">\(k=516\)</span> N/m. The Schroedinger equation is <span class="math notranslate nohighlight">\(H\psi=E\psi\)</span> where</p>
+<p>Although the example described is a harmonic oscillator becoming a quartic oscillator, it is simpler, mathematically, as an illustration of this method, to calculate the vibrational energy levels and wavefunctions of a harmonic oscillator, using the values for the HCl molecule and the basis set of the ‘particle in a box’ wavefunctions. The particle in a box potential energy is zero except at the extremities where it is infinity.</p>
+<p>The length of the box will be <span class="math notranslate nohighlight">\(L\)</span>, where (arbitrarily) <span class="math notranslate nohighlight">\(L/2 = 0.128\)</span> nm, the HCl bond length. The reduced mass <span class="math notranslate nohighlight">\(\mu= 35/36\cdot 10^{-27}\)</span> kg, and force constant <span class="math notranslate nohighlight">\(k=516\)</span> N/m. The Schroedinger equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H\psi = E\psi\]</div>
+<p>where the harmonic oscillator wavefunctions are <span class="math notranslate nohighlight">\(\psi\)</span> and Hamiltonian operator is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H =-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}+\frac{1}{2}kx^2\]</div>
-<p>and the basis set <span class="math notranslate nohighlight">\(\varphi\)</span> are solutions of <span class="math notranslate nohighlight">\(H^0\varphi=E^0\varphi\)</span> where <span class="math notranslate nohighlight">\(\displaystyle H^0=-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}\)</span> because the potential is zero for a particle in a box. The extra potential in the harmonic oscillator is <span class="math notranslate nohighlight">\(H^1=kx^2/2\)</span></p>
-<p>The particle in a box wavefunctions are sine functions and are similar in shape to the wavefunctions of the harmonic oscillator, which oscillate in a sort of damped sinusoidal manner. Gaussian functions <span class="math notranslate nohighlight">\(e^{-\alpha (x-x_i)^2}\)</span> might also do quite well, if one were displaced from another by an amount <span class="math notranslate nohighlight">\(x_i\)</span>, and positioned along the bond extension of the molecule. Choosing <span class="math notranslate nohighlight">\(\exp(-\alpha x)\)</span> as the basis functions with different <span class="math notranslate nohighlight">\(\alpha\)</span> would be a poor choice since adding exponential functions to make an oscillating wavefunction is always going to be difficult. Note that, although we use single functions as the basis set, each element could be several functions added together; you can decide what you want to do, but the basis set functions must be made orthogonal. The Gram - Schmidt method (Arkfen 1970) can be used to do this.</p>
+<p>The basis set wavefunctions are <span class="math notranslate nohighlight">\(\varphi\)</span> and are solutions of</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^0\varphi=E^0\varphi\]</div>
+<p>where the Hamiltonian operator is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^0=-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}\]</div>
+<p>The potential is <span class="math notranslate nohighlight">\(V=0\)</span> for a particle in a box. The potential in the harmonic oscillator is <span class="math notranslate nohighlight">\(H^1=kx^2/2\)</span>, see eqn. 13.</p>
+<p>The particle in a box wavefunctions are sine functions and are similar in shape to the wavefunctions of the harmonic oscillator, which oscillate in a sort of damped sinusoidal manner. Gaussian functions <span class="math notranslate nohighlight">\(e^{-\alpha (x-x_i)^2}\)</span> might also do quite well as basis set wavefunctions, if one were displaced from another by an amount <span class="math notranslate nohighlight">\(x_i\)</span>, and positioned along the bond extension of the molecule. Choosing <span class="math notranslate nohighlight">\(\exp(-\alpha x)\)</span> as the basis functions with different <span class="math notranslate nohighlight">\(\alpha\)</span> would be a poor choice since adding exponential functions to make an oscillating wavefunction is always going to be difficult. Note that, although we use single functions as the basis set, each element could be several functions added together; you can decide what you want to do, but the basis set functions must be made orthogonal. The Gram - Schmidt method (Arkfen 1970) can be used to do this.</p>
 <p>The chosen basis set is the set of ‘particle in a box’ wavefunctions which are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi_n = \sqrt{\frac{2}{L}}\sin\left(n\pi\frac{x}{L} \right) \qquad\tag{14}\]</div>
 <p>with <span class="math notranslate nohighlight">\(n = 1, 2, 3, \cdots\)</span> and are defined over the range <span class="math notranslate nohighlight">\(0 \to L\)</span>, and are zero elsewhere. These wavefunctions are normalized and orthogonal, the first few members of the basis set are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle [\sqrt{\frac{2}{L}}\sin\left(\pi\frac{x}{L} \right),\sqrt{\frac{2}{L}}\sin\left(2\pi\frac{x}{L} \right),\sqrt{\frac{2}{L}}\sin\left(3\pi\frac{x}{L} \right),\cdots]\]</div>
-<p>In practice <span class="math notranslate nohighlight">\(L\)</span> has to be slightly larger than the bond length because of the way the harmonic potential widens as <span class="math notranslate nohighlight">\(n\)</span> increases. The equilibrium extension is at <span class="math notranslate nohighlight">\(L/2\)</span>. The potential energy on this scale is <span class="math notranslate nohighlight">\(V^1(x) = k(x - L/2)^2/2\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the bond force constant and <span class="math notranslate nohighlight">\(x\)</span> the extension about the equilibrium position, <span class="math notranslate nohighlight">\(L/2\)</span>.</p>
+<p>In practice <span class="math notranslate nohighlight">\(L\)</span> has to be slightly larger than the bond length because of the way the harmonic potential widens as <span class="math notranslate nohighlight">\(n\)</span> increases. The equilibrium extension is at <span class="math notranslate nohighlight">\(L/2\)</span>. The potential energy on this scale is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V^1(x) = \frac{1}{2}k\left(x - \frac{L}{2}\right)^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the bond force constant and <span class="math notranslate nohighlight">\(x\)</span> the extension about the equilibrium position, <span class="math notranslate nohighlight">\(L/2\)</span>.</p>
 </section>
 <section id="summary-of-calculation">
 <h2>2.3 Summary of calculation<a class="headerlink" href="#summary-of-calculation" title="Permalink to this headline">#</a></h2>
@@ -1772,7 +1809,10 @@ subscripts and label the coefficients <span class="math notranslate nohighlight"
 </section>
 <section id="matrix-elements">
 <h2>2.4 Matrix elements<a class="headerlink" href="#matrix-elements" title="Permalink to this headline">#</a></h2>
-<p>The individual matrix elements are <span class="math notranslate nohighlight">\(\langle n|H|m\rangle = \int \varphi^*_n H\varphi_mdx\)</span> where</p>
+<p>The individual matrix elements are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle n|H|m\rangle = \int \varphi^*_n H\varphi_mdx\]</div>
+<p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\langle n|H|m\rangle&amp;=\langle n|H^0|m\rangle+\langle n|H^1|m\rangle\\
 &amp;= \int_0^L\varphi^*_n\left(-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}\varphi_m+\frac{k}{2}\left(x-\frac{L}{2}\right)^2\varphi_m \right)dx \\
@@ -1790,8 +1830,7 @@ subscripts and label the coefficients <span class="math notranslate nohighlight"
 <p>and the off-diagonal terms remain as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{k}{2}\int_0^L\varphi^*_n\left(x-\frac{L}{2}\right)^2\varphi_m dx=\frac{2 L^{2} k m n \left(\left(-1\right)^{m} \left(-1\right)^{n} + 1\right)}{\pi^{2} \left(m - n\right)^{2} \left(m + n\right)^{2}}\]</div>
-<p>and individual cases have be evaluated.</p>
-<p>Using symPy to calculate these integrals gives</p>
+<p>and individual cases have be evaluated. Using SymPy to calculate these integrals gives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, m&#39;</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1888,7 +1927,10 @@ subscripts and label the coefficients <span class="math notranslate nohighlight"
 </div>
 </div>
 </div>
-<p>The exact values are <span class="math notranslate nohighlight">\(E_n=\hbar\sqrt{k/\mu}(n+1/2)\)</span> which is the normal equation fro the Harmonic oscillator. With a small matrix the calculated values are</p>
+<p>The exact values are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_n=\left(n+\frac{1}{2}\right)\hbar\sqrt{\frac{k}{\mu}}\]</div>
+<p>which is the normal equation fro the Harmonic oscillator. With a small matrix the calculated values nowhere near to the true values, e.g.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{ccc}
 n  &amp; \text{ matrix} \times 10^{20}{/ J}   &amp;   \text{exact}\times 10^{20}{/ J}\\

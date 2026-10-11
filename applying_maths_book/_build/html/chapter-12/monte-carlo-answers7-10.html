@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1595,10 +1595,16 @@ title="Print to PDF"
 </div>
 <section id="q7-answer">
 <h2>Q7 answer<a class="headerlink" href="#q7-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The fluorescence lifetime is <span class="math notranslate nohighlight">\(\tau = 1/(1 \cdot 10^7 + 2 \cdot 10^8) =4.76\)</span> ns. The yield is <span class="math notranslate nohighlight">\(\varphi =k_f/(k_f +k_{isc})=k_f\tau =0.0476\)</span>, which is very small. The triplet state rises at the same rate as the singlet decays, i.e. in <span class="math notranslate nohighlight">\(1/(4.76\)</span> ns), not at the rate given by the intersystem crossing rate constant <span class="math notranslate nohighlight">\(2 \cdot 10^8\,\mathrm{ s^{-1}}\)</span>. It is important to appreciate this.</p>
-<p>(b) Algorithm 5 needs slight modification. The rate constants are different and the timescale needs to be changed to <span class="math notranslate nohighlight">\(100\)</span> ns, which is a guess, and may need to be changed later on. Because there are two reacting species, the excited state and the triplet, a check has to be made to make sure that the numbers in any of the states do not go below zero. Try the simulation with A0 = <span class="math notranslate nohighlight">\(1000\)</span> initial molecules in nA and increase these numbers as necessary. Eventually, the number of triplet states becomes zero and the calculation must end when this occurs because there are no more molecules left to react. At this point, the number in the ground state is equal to the initial number, and this is checked for in the ‘while nG <span class="math notranslate nohighlight">\(\lt\)</span> A0 do:’ step at the beginning of the loop.</p>
+<p><strong>(a)</strong> The fluorescence lifetime is</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\displaystyle \tau = \frac{1}{(1 \cdot 10^7 + 2 \cdot 10^8)} =4.76\text{ ns}$$. \\The yield is \\$$\displaystyle \varphi =\frac{k_f}{(k_f +k_{isc})}=k_f\tau =0.0476\end{aligned}\end{align} \]</div>
+<p>which is very small. The triplet state rises at the same rate as the singlet decays, i.e. in <span class="math notranslate nohighlight">\(1/(4.76\)</span> ns), not at the rate given by the intersystem crossing rate constant <span class="math notranslate nohighlight">\(2 \cdot 10^8\,\mathrm{ s^{-1}}\)</span>. It is important to appreciate this.</p>
+<p><strong>(b)</strong> Algorithm 5 needs slight modification. The rate constants are different and the timescale needs to be changed to <span class="math notranslate nohighlight">\(100\)</span> ns, which is a guess, and may need to be changed later on. Because there are two reacting species, the excited state and the triplet, a check has to be made to make sure that the numbers in any of the states do not go below zero. Try the simulation with A0 = <span class="math notranslate nohighlight">\(1000\)</span> initial molecules in nA and increase these numbers as necessary. Eventually, the number of triplet states becomes zero and the calculation must end when this occurs because there are no more molecules left to react. At this point, the number in the ground state is equal to the initial number, and this is checked for in the ‘while nG <span class="math notranslate nohighlight">\(\lt\)</span> A0 do:’ step at the beginning of the loop.</p>
 <p>The number of triplet states increase when populated from the singlet, and decrease when the ground state is reformed. Checks are needed to decide which reaction occurs, there are three, from the excited state to the ground state, to the triplet and from the triplet to the ground state adjusting the number of molecules each time as required. This involves several steps in the algorithm below.</p>
-<p>The parameter <span class="math notranslate nohighlight">\(a_0\)</span>, equation 8, is the sum <span class="math notranslate nohighlight">\(a_0 =k_fn_A+k_{isc}n_A+k_Tn_T\)</span>. The rate constants must be put into a ns scale which means dividing <span class="math notranslate nohighlight">\(k_k,\; k_{isc}\)</span> by <span class="math notranslate nohighlight">\(10^9\)</span>.</p>
+<p>The parameter <span class="math notranslate nohighlight">\(a_0\)</span>, equation 8, is the sum</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0 =k_fn_A+k_{isc}n_A+k_Tn_T\]</div>
+<p>The rate constants must be put into a ns scale which means dividing <span class="math notranslate nohighlight">\(k_k,\; k_{isc}\)</span> by <span class="math notranslate nohighlight">\(10^9\)</span>.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig31.png" /></p>
 <p>Figure 31. A Monte Carlo calculation of the decay of an excited state and the rise and decay of a triplet state, together with the increase of the ground state’s population. The parameters used are listed below.</p>
 <hr class="docutils" />
@@ -1606,7 +1612,8 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Gillespie Method rate equations S-&gt; G, S-&gt;T, T-&gt; G Q7 and figure 22</span>
 
-<span class="n">A0</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="n">rng</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
+<span class="n">A0</span>   <span class="o">=</span> <span class="mi">20000</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">maxt</span> <span class="o">=</span> <span class="mf">100.0</span>     <span class="c1"># time in ns</span>
 <span class="n">kf</span>   <span class="o">=</span> <span class="mf">1e7</span><span class="o">/</span><span class="mf">1e9</span>   <span class="c1"># in ns units</span>
@@ -1638,11 +1645,11 @@ title="Print to PDF"
     <span class="n">a2</span> <span class="o">=</span> <span class="n">kisc</span><span class="o">*</span><span class="n">nA</span>
     <span class="n">a3</span> <span class="o">=</span> <span class="n">kT</span><span class="o">*</span><span class="n">nT</span>
     <span class="n">a0</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">+</span> <span class="n">a2</span> <span class="o">+</span> <span class="n">a3</span>            <span class="c1"># summation eqn 8</span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>  <span class="c1"># equation 11</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>  <span class="c1"># equation 11</span>
     <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>
     <span class="n">indx</span><span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">))</span>  <span class="c1"># find bin number </span>
     <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="p">:</span> 
-        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">a1</span><span class="o">/</span><span class="n">a0</span> <span class="p">:</span>                <span class="c1"># fluorescence chosen fraction a1/a0</span>
             <span class="n">nG</span> <span class="o">=</span> <span class="n">nG</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="n">nA</span> <span class="o">=</span> <span class="n">nA</span> <span class="o">-</span> <span class="mi">1</span>
@@ -1671,7 +1678,8 @@ title="Print to PDF"
 <p>Modify the code for question 7. After setting the initial values inside the loop, the following changes can be made to account for the filling of state <span class="math notranslate nohighlight">\(T\)</span>. The value of <span class="math notranslate nohighlight">\(k_{isc}\)</span> as it changes, is now called knT.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">nA</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
+<span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">nA</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">knT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">knT</span><span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">nT</span><span class="o">/</span><span class="n">A0</span>
         <span class="n">k1</span> <span class="o">=</span> <span class="n">kf</span> <span class="o">+</span> <span class="n">kisc</span><span class="o">*</span><span class="n">knT</span>
@@ -1680,7 +1688,7 @@ title="Print to PDF"
         <span class="k">pass</span>
     
     <span class="n">a0</span> <span class="o">=</span> <span class="n">k1</span><span class="o">*</span><span class="n">nA</span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>
     <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>
     <span class="n">phif</span> <span class="o">=</span> <span class="n">kf</span><span class="o">/</span><span class="n">k1</span>
 </pre></div>
@@ -1706,18 +1714,18 @@ title="Print to PDF"
 <span class="c1"># I -&gt; R     k2=kIR.</span>
 <span class="c1"># set initial values, define arrays to hold results</span>
 <span class="c1"># start averaging loop.</span>
-    
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator    </span>
 <span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="p">:</span>
     <span class="n">r1</span> <span class="o">=</span> <span class="n">k1</span><span class="o">*</span><span class="n">nI</span>  
     <span class="n">r2</span> <span class="o">=</span> <span class="n">k2</span><span class="o">*</span><span class="n">nS</span><span class="o">*</span><span class="n">nI</span> 
     <span class="n">a0</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span> <span class="o">+</span> <span class="mf">1e-20</span>                           <span class="c1"># eqn10, prevent being zero</span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>    <span class="c1"># eqn 11 </span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>    <span class="c1"># eqn 11 </span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>                                     <span class="c1"># increment time </span>
     <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">)</span>    
     <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="p">:</span>
         <span class="n">Scount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nS</span>  
         <span class="n">Icount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nI</span>  
-        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="n">r2</span><span class="o">/</span><span class="n">a0</span><span class="p">:</span>
             <span class="n">nI</span> <span class="o">=</span> <span class="n">nI</span> <span class="o">-</span> <span class="mi">1</span>  
             <span class="n">remov</span> <span class="o">=</span> <span class="n">remov</span> <span class="o">+</span> <span class="mi">1</span>           <span class="c1"># reaction 2</span>
@@ -1727,7 +1735,7 @@ title="Print to PDF"
         <span class="k">if</span> <span class="n">nI</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>    <span class="n">nI</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1"># check&gt;0 </span>
         <span class="k">if</span> <span class="n">nS</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>    <span class="n">nS</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1"># check&gt;0 </span>
         <span class="k">pass</span>   <span class="c1"># end while indx  </span>
-<span class="c1"># save and averaage nI and  nS</span>
+<span class="c1"># save and average nI and  nS</span>
 <span class="c1"># plot results</span>
 </pre></div>
 </div>
@@ -1744,17 +1752,17 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># main part of the Monte-Carlo method of evaluating </span>
 <span class="c1"># Lotka-Volterra equations by the Gillespie method.</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 <span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="p">:</span>
     <span class="n">r1</span> <span class="o">=</span> <span class="n">k1</span><span class="o">*</span><span class="n">ny</span>
     <span class="n">r2</span> <span class="o">=</span> <span class="n">k2</span><span class="o">*</span><span class="n">nz</span><span class="o">*</span><span class="n">ny</span>
     <span class="n">r3</span> <span class="o">=</span> <span class="n">k3</span><span class="o">*</span><span class="n">nz</span>
     <span class="n">a0</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span> <span class="o">+</span> <span class="n">r3</span><span class="o">+</span><span class="mf">1e-20</span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>
     <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span> <span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span> <span class="p">))</span>
     <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
         <span class="k">if</span>  <span class="n">r</span> <span class="o">&gt;</span> <span class="p">(</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>  <span class="p">:</span>
             <span class="n">nz</span> <span class="o">=</span> <span class="n">nz</span> <span class="o">-</span> <span class="mi">1</span>
             <span class="n">zcount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nz</span>          <span class="c1"># react 3</span>

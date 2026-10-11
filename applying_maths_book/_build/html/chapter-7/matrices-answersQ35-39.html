@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1608,15 +1608,18 @@ title="Print to PDF"
 </div>
 <section id="q35-answer">
 <h2>Q35 answer<a class="headerlink" href="#q35-answer" title="Permalink to this headline">#</a></h2>
-<p>Using the notation that G is the matrix for a gap, and L for a lens, then the matrices are multiplied in the order: <span class="math notranslate nohighlight">\(G(x)L(f_2)G(d)L(f_1)G(u)\)</span></p>
+<p>Using the notation that <span class="math notranslate nohighlight">\(G\)</span> is the matrix for a gap, and <span class="math notranslate nohighlight">\(L\)</span> for a lens, then the matrices are multiplied in the order:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G(x)L(f_2)G(d)L(f_1)G(u)\]</div>
+<p>then,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle ABCD = \begin{bmatrix}1 &amp; x \\ 0 &amp; 1 \end{bmatrix}\begin{bmatrix}1 &amp; 0 \\ -1/f_2 &amp; 1 \end{bmatrix}\begin{bmatrix}1 &amp; d \\ 0 &amp; 1 \end{bmatrix}\begin{bmatrix}1 &amp; 0 \\ -1/f_1 &amp; 1 \end{bmatrix}\begin{bmatrix}1 &amp; u \\ 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
 <p>The lens matrix containing <span class="math notranslate nohighlight">\(f_1\)</span>, first multiplies the matrix to its right, then the central matrix multiplies this result and so on. The calculation is shown below. A function of the lens matrix <span class="math notranslate nohighlight">\(L\)</span> and gap matrix <span class="math notranslate nohighlight">\(G\)</span> is made so that they can be used with different parameter values, <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(n\)</span>. Because an image is formed, element B, which is at position (<span class="math notranslate nohighlight">\(1, 2\)</span>) in the matrix, is made equal to zero. The resulting equation is then solved for <span class="math notranslate nohighlight">\(x\)</span>, the unknown distance. The magnification is the reciprocal of element <span class="math notranslate nohighlight">\(D\)</span> in position (<span class="math notranslate nohighlight">\(2, 2\)</span>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d, u, f, x, f1, f2, d&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d, u, f, x, f1, f2, d&#39;</span><span class="p">)</span>  <span class="c1"># Using SymPy</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># if the constants are not defined here an algebraic result is obtained</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>            <span class="c1"># if the constants are not defined here an algebraic result is obtained</span>
 <span class="n">f1</span><span class="o">=</span> <span class="mf">0.10</span>
 <span class="n">f2</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
 <span class="n">d</span> <span class="o">=</span> <span class="mf">0.05</span><span class="o">/</span><span class="n">n</span>
@@ -1666,7 +1669,8 @@ title="Print to PDF"
 <img alt="../_images/matrices-answersQ35-39_6_0.png" src="../_images/matrices-answersQ35-39_6_0.png" />
 </div>
 </div>
-<p>The image is formed at <span class="math notranslate nohighlight">\(x= 0.175/0.625=0.28\)</span> m from the second lens, is inverted, because the magnification is negative, and magnified by 1.6 times. This algorithm can be used to calculate the properties of any two lenses separated by any amount and the input and output at any distances. Any imaginary (complex) numbers for the distances means that what you are trying to determine is not possible with the values of focal lengths chosen.</p>
+<p>The image is formed at <span class="math notranslate nohighlight">\(x= 0.175/0.625=0.28\)</span> m from the second lens, is inverted, because the magnification is negative, and magnified by 1.6 times.</p>
+<p>This algorithm can be used to calculate the properties of any two lenses separated by any amount and the input and output at any distances. Any imaginary (complex) numbers for the distances means that what you are trying to determine is not possible with the values of focal lengths chosen.</p>
 </section>
 <section id="q36-answer">
 <h2>Q36 answer<a class="headerlink" href="#q36-answer" title="Permalink to this headline">#</a></h2>
@@ -1674,11 +1678,12 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \text{[gap( x ) from lens to focus]} \times \text{[lens surface  2]}
 \times \text{[lens thickness]} \times \text{[lens surface 1] }\]</div>
-<p>The thickness of the lens is a gap of length <span class="math notranslate nohighlight">\(d_L\)</span>. Use python to get a numerical answer</p>
+<p>The thickness of the lens is a gap of length <span class="math notranslate nohighlight">\(d_L\)</span>. Use Python to get a numerical answer</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># thick lens calculation</span>
-<span class="n">MG</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">/</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>  
+
+<span class="n">MG</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">/</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>            <span class="c1"># define matrix as function of x and n </span>
 <span class="n">MR</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n1</span> <span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">n2</span><span class="o">-</span><span class="n">n1</span><span class="p">)</span><span class="o">/</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
 
 <span class="n">r1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.0</span>
@@ -1687,11 +1692,12 @@ title="Print to PDF"
 <span class="n">n2</span> <span class="o">=</span> <span class="mf">1.48</span>
 <span class="n">dL</span> <span class="o">=</span> <span class="mf">6.0</span>
 
-<span class="n">f01</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">MG</span><span class="p">(</span><span class="n">dL</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span> <span class="n">MR</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span>  <span class="p">)</span>           <span class="c1"># use dot product for matrix multiplication</span>
-<span class="n">f02</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">MR</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n1</span><span class="p">),</span> <span class="n">f01</span><span class="p">)</span>
-<span class="n">ABCD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>  <span class="n">MG</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n1</span><span class="p">),</span> <span class="n">f02</span><span class="p">)</span>
- 
-<span class="n">focal_length</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ABCD</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">)</span>                 <span class="c1"># using SymPy to solve</span>
+<span class="n">f01</span>  <span class="o">=</span>  <span class="n">MG</span><span class="p">(</span><span class="n">dL</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span><span class="o">@</span> <span class="n">MR</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span>      <span class="c1"># matrix multiplication</span>
+<span class="n">f02</span>  <span class="o">=</span>  <span class="n">MR</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n1</span><span class="p">)</span> <span class="o">@</span> <span class="n">f01</span>
+<span class="n">ABCD</span> <span class="o">=</span>  <span class="n">MG</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n1</span> <span class="p">)</span><span class="o">@</span> <span class="n">f02</span>
+<span class="c1">#print(ABCD[0,0])                    # need to solve this for x, it could be done by hand!</span>
+<span class="n">focal_length</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ABCD</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">)</span> <span class="c1"># use SymPy to solve</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;focal length &#39;</span><span class="p">,</span> <span class="n">focal_length</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;magnification &#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">ABCD</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
 </pre></div>
@@ -1773,7 +1779,7 @@ confocal length = 0.0968246
 <hr class="docutils" />
 <section id="q38-answer">
 <h2>Q38 answer<a class="headerlink" href="#q38-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The matrix for a gap is <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1 \end{bmatrix}\)</span> then two gaps <span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span> form the matrix</p>
+<p><strong>(a)</strong> The matrix for a gap is <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1 \end{bmatrix}\)</span> then two gaps <span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span> form the matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{G_{12}}=\begin{bmatrix} 1 &amp; d_1 \\ 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 1 &amp; d_2 \\ 0 &amp; 1 \end{bmatrix}=\begin{bmatrix} 1 &amp; d_1+d_2 \\ 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
 <p>Multiplying the matrices the other way around is clearly going to give the same result, which is not a convincing proof of what we want because the diagonals are both one. Next, consider a gap and mirror then</p>
@@ -1783,7 +1789,7 @@ confocal length = 0.0968246
 <div class="math notranslate nohighlight">
 \[\begin{split}\pmb{G_{21}}=\begin{bmatrix} 1 &amp; d_1 \\ 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 1 &amp; 0 \\ -1/f_2 &amp; 1 \end{bmatrix}=\begin{bmatrix} 1&amp; d_1 \\ -1/f_2 &amp; 1-d_1/f_2  \end{bmatrix}\end{split}\]</div>
 <p>which shows that the diagonal elements are exchanged as proposed. In the cavity, any pair of gap-mirror or mirror-gap matrices is related by exchanging the diagonals, so by induction this is true for any gap-mirror combination since two mirrors cannot occur without a gap between them.</p>
-<p>(b) Is this order reversal true for any <span class="math notranslate nohighlight">\(ABCD\)</span> matrix combination? The proof is not so obvious, but starts with the clue given in the question. The matrix product given is for the <span class="math notranslate nohighlight">\(n^{th}\)</span> matrix and as it represents an individual matrix then <span class="math notranslate nohighlight">\(A=D=1\)</span>. In the last step <span class="math notranslate nohighlight">\(AD-BC=1\)</span> is used. The product gives</p>
+<p><strong>(b)</strong> Is this order reversal true for any <span class="math notranslate nohighlight">\(ABCD\)</span> matrix combination? The proof is not so obvious, but starts with the clue given in the question. The matrix product given is for the <span class="math notranslate nohighlight">\(n^{th}\)</span> matrix and as it represents an individual matrix then <span class="math notranslate nohighlight">\(A=D=1\)</span>. In the last step <span class="math notranslate nohighlight">\(AD-BC=1\)</span> is used. The product gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{G}_n\begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\pmb{G}_n=\begin{bmatrix} 1 &amp; B_n \\ C_n &amp; 1 \end{bmatrix}\begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 1 &amp; B_n \\ C_n &amp; 1 \end{bmatrix}= \to \to \begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
 <p>where some steps are missed out. The same calculation can be done for any <span class="math notranslate nohighlight">\(ABCD\)</span> matrix; it is just a little more complicated algebraically, therefore we can conclude that</p>
@@ -1798,7 +1804,7 @@ confocal length = 0.0968246
 <p>which is what we wanted to prove as the diagonal is reversed. The inverse of a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix is given in Section 5.7, alternatively with python/Sympy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, B, C, D&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, B, C, D&#39;</span><span class="p">)</span>   <span class="c1"># use SymPy</span>
 
 <span class="n">ABCD</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">],[</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">]])</span>
 <span class="n">X</span>    <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>

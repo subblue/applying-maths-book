@@ -26,12 +26,18 @@ from scipy.optimize import fsolve       # for numerical evaluation
 # 
 # $$\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega \tau)}{\omega\tau}\to \frac{\cos(\omega \tau)}{\tau} = 1$$
 # 
-# then the hwhm is the solution to $\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}$ which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width $H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)$ and the value of $\omega$  when $H$ is zero found. The derivative needed is $H'(\omega) = \pi/2 - \tau \cos(\omega\tau)$. Using the Newton - Raphson method some experimenting with initial guesses for $\omega$ is necessary to obtain a sensible answer. Using SymPy and defining the function $H$ and then its derivative as $dH$ gives
+# then the hwhm is the solution to 
+# 
+# $$\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}$$
+# 
+# which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width $H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)$ and the value of $\omega$  when $H$ is zero found. The derivative needed is $dH(\omega)/d\omega$. 
+# 
+# Using the Newton - Raphson method some experimenting with initial guesses for $\omega$ is necessary to obtain a sensible answer. Using SymPy and defining the function $H$ and then its derivative as $dH$ gives
 
 # In[3]:
 
 
-# using  python and numpy to get numerical answer
+# using  Python and NumPy to get numerical answer
 f  = lambda w: w*np.sqrt(np.pi/2)-np.sin(w*tau)      # function H;  w = omega
 df = lambda w: np.sqrt(np.pi/2)-tau*np.cos(w*tau)    # derivative
 
@@ -62,7 +68,7 @@ print(w)
 # 
 # $$\displaystyle -\frac{x-x_0}{f}+\lambda e^{-x}=0 \quad \text{ and } \quad -\frac{y-y_0}{f}+\lambda =0$$
 # 
-# and substituting $\lambda$ from the second into the first of these two equations and then simplifying gives,$-(x-2)+(e^{-x}-2)e^{-x}=0$. This equation cannot be solved algebraically; it is transcendental as it cannot be written either in the form $x = cdots$ or as a polynomial, but can be solved numerically using the Newton - Raphson method or using fsolve() in python. The code to get a solution is
+# and substituting $\lambda$ from the second into the first of these two equations and then simplifying gives,$-(x-2)+(e^{-x}-2)e^{-x}=0$. This equation cannot be solved algebraically; it is transcendental as it cannot be written either in the form $x = \cdots$ or as a polynomial, but can be solved numerically using the Newton - Raphson method or using $\mathrm{fsolve(\cdots)}$ in python. The code to get a solution is
 
 # In[4]:
 
@@ -79,7 +85,15 @@ print(fsolve(f,1))     # 1 is initial guess
 # ____
 # 
 # ## Q87 answer
-# The function to minimize is $f(x, y) =\sqrt{ x^2 + y^2}$ and the constraint is $g(x, y) = y -\sqrt{ (4 - x)^3/x}$. Taking the derivatives and putting values into eqn. (37) gives 
+# The function to minimize is 
+# 
+# $$\displaystyle f(x, y) =\sqrt{ x^2 + y^2}$$
+# 
+# and the constraint is 
+# 
+# $$\displaystyle g(x, y) = y -\sqrt{ (4 - x)^3/x}$$
+# 
+# Taking the derivatives and putting values into eqn. (37) gives 
 # 
 # $$\displaystyle -\frac{x}{f}+\frac{\lambda}{2y}\left( -\frac{3(4-x)^2}{x}-\frac{(4-x)^3}{x^2}  \right)=0$$
 # 
@@ -94,9 +108,9 @@ print(fsolve(f,1))     # 1 is initial guess
 # In[5]:
 
 
-x,y,f,g,L = sp.symbols('x, y, f, g, L')  # use L instead of lambda 
-f = sp.sqrt(x**2 + y**2)             # function
-g = y - sp.sqrt( (4-x)**3/x )        # constraint
+x,y,f,g,L = sp.symbols('x, y, f, g, L')   # use L instead of lambda 
+f = sp.sqrt(x**2 + y**2)                  # function
+g = y - sp.sqrt( (4-x)**3/x )             # constraint
 dfdg_dx = sp.diff(f,x) + L*sp.diff(g,x)   # eq 37 diff wrt x
 sp.simplify(dfdg_dx) 
 
@@ -121,17 +135,21 @@ sp.simplify(ans)
 # 
 # $$\displaystyle \frac{(3x^2-16)\sqrt{(3x^2-12x+16)/x}}{x(3x^3-12x+16)}=0$$
 # 
-# and as the result equals zero both sides can be multiplied by the denominator to give $(3x^2-16)\sqrt{(3x^2-12x+16)/x}$ so either of these two terms may be zero. The square root has an imaginary solution so the only possible result is that $x=\sqrt{16/3} = 2.309$ and $y = 1.446$ the shortest distance is therefore $7.425$.
+# and as the result equals zero both sides can be multiplied by the denominator to give 
+# 
+# $$\displaystyle (3x^2-16)\sqrt{(3x^2-12x+16)/x}$$
+# 
+# so either of these two terms may be zero. The square root has an imaginary solution so the only possible result is that $x=\sqrt{16/3} = 2.309$ and $y = 1.446$ the shortest distance is therefore $7.425$.
 # 
 # Note that the symbolic computer result has a different from to that worked out by hand but produces the same result as it has been factored to a greater extent than that done by hand.
 # 
 # 
 # ## Q88 answer
-# Using the Lagrange undetermined multiplier method, eqn (37), the function is $f (a, b) = ab$ and constraint $g(a, b) = a^2 + b^2 - 1$. Differentiating with respect to $a$ then $b$ respectively produces the two equations $b+2a\lambda =0$ and $a+2b\lambda =0$.
+# **(a)** Using the Lagrange Undetermined Multiplier method, eqn. (37), the function is $f (a, b) = ab$ and constraint $g(a, b) = a^2 + b^2 - 1$. Differentiating with respect to $a$ then $b$ respectively produces the two equations $b+2a\lambda =0$ and $a+2b\lambda =0$.
 # 
 # From these last two equations, the product $ab = (2abλ)^2$, therefore $ab = 1/4\lambda$. Also, from the two equations, $a^2 + b^2 = 4λ^2(a^2 + b^2)$ and therefore $\lambda = 1/2$. Since $ab = 1/4\lambda$ the answer to the question is $ab = 1/2$.
 # 
-# (b) Graphically $a^2 + b^2 = 1$ is the equation of a unit radius circle centred at the origin on axes $a$ and $b$, and $ab = 1/2$ is the equation of a hyperbola. Plotting them together shows they touch at only one point.
+# **(b)** Graphically $a^2 + b^2 = 1$ is the equation of a unit radius circle centred at the origin on axes $a$ and $b$, and $ab = 1/2$ is the equation of a hyperbola. Plotting them together shows they touch at only one point.
 # 
 # ![Drawing](differen-fig62.png)
 # 
@@ -156,7 +174,11 @@ sp.simplify(ans)
 # which proves Snell's Law usually written as $n_a\sin(\theta_a) = n_b\sin(\theta_b)$.
 
 # ## Q90 answer
-# When there are $n$ species, the sum of the mole fractions must still make unity making the constraint $\sum_{i=1}^n x_i = 1$ and the function is the entropy 
+# When there are $n$ species, the sum of the mole fractions must still make unity making the constraint 
+# 
+# $$\displaystyle \sum_{i=1}^n x_i = 1$$
+# 
+# and the function is the entropy 
 # 
 # $$S=-k_B\sum_{i=1}^nx_i\ln(x_i)$$
 # 
@@ -189,7 +211,7 @@ sp.simplify(ans)
 # 
 # therefore, 
 # 
-# $$\ln(x_v) + 1 - \lambda = 0$ or $x_v = e^{\lambda-1}$$
+# $$\ln(x_v) + 1 - \lambda = 0,\quad\text{or}\quad x_v = e^{\lambda-1}$$
 # 
 # Because the total of all the fractional populations $x_v$ is 1 then 
 # 
@@ -225,7 +247,11 @@ ans = sp.solve((diff_x, diff_y, diff_z,g,h), (x, y, z, L ,M))
 ans
 
 
-# The order of the solutions is the same as in the solve command thus $x =\pm \sqrt{2}/10\; y=\pm(1+4\sqrt{2}/5)\; z=\pm 7\sqrt{2}/10\; \lambda = -3, \mu=\pm 5/\sqrt{2}$. The two values give the maximum and minimum values thus $f_{max}=10.07$ and $f_{min}=-4.07$.
+# The order of the solutions is the same as in the solve command thus 
+# 
+# $$\displaystyle x =\pm \sqrt{2}/10,\; y=\pm(1+4\sqrt{2}/5),\; z=\pm 7\sqrt{2}/10,\; \lambda = -3,\; \mu=\pm 5/\sqrt{2}$$
+# 
+# The two values give the maximum and minimum values thus $f_{max}=10.07$ and $f_{min}=-4.07$.
 
 # In[ ]:
 

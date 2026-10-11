@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1856,7 +1856,7 @@ title="Print to PDF"
 \langle\;(a_1\varphi_1+a_2\varphi_2)\;|\psi\rangle = a^*_1\langle\varphi_1|\psi\rangle + a^*_2\langle\varphi_2|\psi \rangle\\
 \hline
 \end{array}\end{split}\]</div>
-<p>Linear operators are labelled as <span class="math notranslate nohighlight">\(A,B\)</span> and a Hermitian operator as <span class="math notranslate nohighlight">\(H\)</span>. An arbitrary ket is labelled <span class="math notranslate nohighlight">\(|x\rangle\)</span> and <span class="math notranslate nohighlight">\(a\)</span> is a (complex) number. Superscript <span class="math notranslate nohighlight">\(\dagger\)</span> is the adjoint (conjugate-transpose), superscript <span class="math notranslate nohighlight">\(*\)</span> complex conjugate.</p>
+<p>Linear operators are labelled as <span class="math notranslate nohighlight">\(\pmb{A,B}\)</span> and a Hermitian operator as <span class="math notranslate nohighlight">\(\pmb H\)</span>. An arbitrary ket is labelled <span class="math notranslate nohighlight">\(|x\rangle\)</span> and <span class="math notranslate nohighlight">\(a\)</span> is a (complex) number. Superscript <span class="math notranslate nohighlight">\(\dagger\)</span> is the adjoint (conjugate-transpose), superscript <span class="math notranslate nohighlight">\(*\)</span> complex conjugate.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{lll}\\
 \hline
@@ -1938,7 +1938,7 @@ be represented as the column vector  <span class="math notranslate nohighlight">
 <p>Expanding this out produces</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |\varphi\rangle= \begin{bmatrix}1 &amp; 0 \end{bmatrix}\begin{bmatrix}a\\b \end{bmatrix}\begin{bmatrix}1\\0 \end{bmatrix}+\begin{bmatrix}0 &amp; 1 \end{bmatrix}\begin{bmatrix}a\\b \end{bmatrix}\begin{bmatrix}0\\1 \end{bmatrix} =a|\alpha\rangle +b|\beta\rangle\end{split}\]</div>
-<p>Two kets in the basis <span class="math notranslate nohighlight">\((x, y, z, \cdots)\)</span>,</p>
+<p>but the product of two column matrices is not defined so we should really have left the kets as <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> and just multiplied the first two vectors. The kets in the basis <span class="math notranslate nohighlight">\((x, y, z, \cdots)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |A\rangle=a_1|x\rangle + a_2|y\rangle +  a_3|z\rangle+\cdots + \\
 |B\rangle=b_1|x\rangle + b_2|y\rangle +  b_3|z\rangle+\cdots +\end{split}\]</div>
@@ -1951,7 +1951,10 @@ be represented as the column vector  <span class="math notranslate nohighlight">
 </section>
 <section id="outer-products-alpha-rangle-langle-beta-and-projection-operators-alpha-rangle-langle-alpha-are-matrices">
 <h2>4.4 Outer products:<span class="math notranslate nohighlight">\(|\alpha\rangle\langle \beta|\)</span> and projection operators <span class="math notranslate nohighlight">\(|\alpha\rangle\langle\alpha|\)</span> are matrices<a class="headerlink" href="#outer-products-alpha-rangle-langle-beta-and-projection-operators-alpha-rangle-langle-alpha-are-matrices" title="Permalink to this headline">#</a></h2>
-<p>Objects of the form <span class="math notranslate nohighlight">\(|\alpha\rangle\langle \alpha|\)</span>, <span class="math notranslate nohighlight">\(|\alpha\rangle\langle \beta|\)</span> or <span class="math notranslate nohighlight">\(|\psi_{z^2}\rangle\langle \psi_{xy}|\)</span> and so forth are always square matrices and correspond to <em>operators</em>. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above</p>
+<p>Objects of the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\alpha\rangle\langle \alpha|,\qquad|\alpha\rangle\langle \beta|,\quad\text{or}\quad|\psi_{z^2}\rangle\langle \psi_{xy}|\]</div>
+<p>and so forth are always square matrices and correspond to <em>operators</em>. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} 0 &amp; 1\\ 0 &amp; 0\end{bmatrix}\end{split}\]</div>
 <div class="math notranslate nohighlight">
@@ -1988,15 +1991,18 @@ be represented as the column vector  <span class="math notranslate nohighlight">
 <p>The outer product is a matrix and hence a linear operator <span class="math notranslate nohighlight">\(\pmb A\)</span> and expressions such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle |\alpha\rangle\langle\beta|\varphi\rangle,\qquad\langle\alpha |\pmb A|\beta\rangle,\qquad \langle \pmb A\alpha|\beta\rangle= \langle \alpha|\pmb A^\dagger \beta\rangle\]</div>
-<p>are often met. The important point to note is that the bra <span class="math notranslate nohighlight">\(\langle \alpha|\)</span> is always a row vector and the complex conjugate of column vector or ket <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span></p>
+<p>are often met. The important point to note is that the bra <span class="math notranslate nohighlight">\(\langle \alpha|\)</span> is always a row vector and is the complex conjugate of column vector or ket <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span></p>
 <section id="i-langle-alpha-pmb-a-beta-rangle-is-an-expectation-or-average-value">
 <h3><strong>(i) <span class="math notranslate nohighlight">\(\langle\alpha |\pmb A|\beta\rangle\)</span> is an expectation or average value</strong><a class="headerlink" href="#i-langle-alpha-pmb-a-beta-rangle-is-an-expectation-or-average-value" title="Permalink to this headline">#</a></h3>
-<p>The expectation or average value is <span class="math notranslate nohighlight">\(\langle E\rangle=\langle\alpha |\pmb A|\beta\rangle\)</span> if <span class="math notranslate nohighlight">\(\pmb A\)</span> is the Hamiltonian (hermitian) operator and produces an energy, assuming that the wavefunctions represented by <span class="math notranslate nohighlight">\(\langle\alpha|\)</span> and <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> are normalised.</p>
+<p>The expectation or average value is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle E\rangle=\langle\alpha |\pmb A|\beta\rangle\]</div>
+<p>if <span class="math notranslate nohighlight">\(\pmb A\)</span> is the Hamiltonian (hermitian) operator and produces an energy, assuming that the wavefunctions represented by <span class="math notranslate nohighlight">\(\langle\alpha|\)</span> and <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> are normalised.</p>
 <p>We suppose that the vectors <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are initially written as column vectors. The general form is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  \langle \alpha|\pmb A|\beta\rangle=\begin{bmatrix}\alpha^*_1&amp;\alpha^*_2&amp;\cdots &amp; \alpha^*_n\end{bmatrix}\begin{bmatrix} A_{11} &amp; A_{12} &amp; \cdots&amp; A_{1n}\\ A_{21} &amp; A_{22} &amp; \cdots&amp; \vdots\\ \vdots &amp;\cdots \\A_{n1}&amp; \cdots &amp; &amp; A_{nn} \end{bmatrix}\begin{bmatrix}\beta_1\\\beta_2\\\vdots\\\beta_n\end{bmatrix}=\text{a number}\end{split}\]</div>
 <p>where the <span class="math notranslate nohighlight">\(^*\)</span> indicates the complex conjugate of ket <span class="math notranslate nohighlight">\(a\)</span>, the column vector <span class="math notranslate nohighlight">\(\alpha\)</span>, or <span class="math notranslate nohighlight">\(|a\rangle\)</span>, which is also transposed.</p>
-<p>Suppose for the purposes of illustrating the maths only the operator is $<span class="math notranslate nohighlight">\(\pmb A=\begin{bmatrix} 0 &amp; 2i &amp; 1\\ 0 &amp; 0 &amp; 0\\ 0 &amp; 6 &amp; -3i \end{bmatrix}\)</span>$</p>
+<p>Suppose, for the purposes of illustrating the maths only, the operator is $<span class="math notranslate nohighlight">\(\pmb A=\begin{bmatrix} 0 &amp; 2i &amp; 1\\ 0 &amp; 0 &amp; 0\\ 0 &amp; 6 &amp; -3i \end{bmatrix}\)</span>$</p>
 <p>which is clearly not Hermitian and let <span class="math notranslate nohighlight">\(|\alpha\rangle=\begin{bmatrix}i\\0\\3\end{bmatrix},\quad |\beta\rangle = \begin{bmatrix}0\\2\\-i \end{bmatrix}\)</span></p>
 <p>Transposing and making the complex conjugate produces the bra <span class="math notranslate nohighlight">\(\langle\alpha|\)</span>, therefore</p>
 <div class="math notranslate nohighlight">
@@ -2048,7 +2054,13 @@ be represented as the column vector  <span class="math notranslate nohighlight">
 </section>
 <section id="iv-projection-operators-are-matrices-that-operate-on-a-ket">
 <h3><strong>(iv) Projection Operators  are matrices that operate on a ket</strong><a class="headerlink" href="#iv-projection-operators-are-matrices-that-operate-on-a-ket" title="Permalink to this headline">#</a></h3>
-<p>The kets <span class="math notranslate nohighlight">\(|\alpha\rangle=\begin{bmatrix}1\\0\end{bmatrix},\;|\beta\rangle=\begin{bmatrix}0\\1\end{bmatrix}\)</span> are orthogonal <span class="math notranslate nohighlight">\(\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0 \)</span>  as may be seem by forming their dot product. They form the operator</p>
+<p>The kets</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle|\alpha\rangle =\begin{bmatrix}1\\0\end{bmatrix},\; |\beta\rangle = \begin{bmatrix}0 \\ 1 \end{bmatrix} \end{split}\]</div>
+<p>are orthogonal</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0 \]</div>
+<p>as may be seem by forming their dot product. They form the operator</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} 0 &amp; 1\\ 0 &amp; 0\end{bmatrix}\end{split}\]</div>
 <p>If this operates on a ket such as</p>

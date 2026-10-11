@@ -19,13 +19,19 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When an equation depends on more than one variable, $x$ and $y$ perhaps, then it is possible to differentiate with respect to either $x$ or $y$ while keeping the other constant. The normal rules of differentiation apply; the only change is that the notation is a little different with a curly $\partial$ being used instead of a Roman $d$ and a subscript is used to indicate which variable is held constant. If the function will allow it, second and third partial derivatives can be calculated.
 # 
-# Suppose that $z = x^2y + y^3(x + 1)$, then the $x$ and $y$ partial derivatives are
+# Suppose that 
+# 
+# $$z = x^2y + y^3(x + 1)$$
+# 
+# then the $x$ and $y$ partial derivatives are
 # 
 # $$\displaystyle \left(\frac{\partial y}{\partial x} \right)_y = 2xy+y^3, \qquad  \left(\frac{\partial y}{\partial y} \right)_x=x^2+3y^2(x+1)$$ 
 # 
 # The second partial derivatives are $\displaystyle \left(\frac{\partial^2 y}{\partial x^2} \right)_y=2y,\quad \left(\frac{\partial^2 y}{\partial y^2} \right)_x =6y(x+1)$.
 # 
-# As a second example $(\partial y/\partial x)_z$ is calculated where $(y + 1/z^2)(z - 1) = 3x$. Since it is indicated by the subscript that $z$ is a constant, differentiating gives $\displaystyle (z-1)\left(\frac{\partial y}{\partial x}  \right)_z=3$.
+# As a second example $(\partial y/\partial x)_z$ is calculated where $(y + 1/z^2)(z - 1) = 3x$. Since it is indicated by the subscript that $z$ is a constant, differentiating gives 
+# 
+# $$\displaystyle (z-1)\left(\frac{\partial y}{\partial x}  \right)_z=3$$
 # 
 # ### **(i) Ideal gas**
 # 
@@ -45,7 +51,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \left( \frac{\partial^2 p}{\partial V^2} \right)_{n,T}= 2\frac{nRT}{V^3}$$
 # 
-# is not zero. The other two derivatives are constants, $\displaystyle  \left(  \frac{\partial}{\partial T}\left(\frac{\partial}{\partial T} \frac{nR}{V}   \right)  \right)_{n,V} = \left( \frac{\partial^2 p}{\partial V^2}  \right)_{n,V} = 0 $.
+# is not zero. The other two derivatives are constants, 
+# 
+# $$\displaystyle  \left(  \frac{\partial}{\partial T}\left(\frac{\partial}{\partial T} \frac{nR}{V}   \right)  \right)_{n,V} = \left( \frac{\partial^2 p}{\partial V^2}  \right)_{n,V} = 0 $$
 # 
 # ### **(ii) van der Waals gas**
 # The van der Waals equation which, although empirical, describes real gases more accurately than does the ideal gas law. The equation is 
@@ -56,7 +64,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \left( \frac{\partial p}{\partial T} \right)_V (V-b)=R$$
 # 
-# Now find $(\partial p/\partial V)_T$. Differentiating with respect to $V$ at constant $T$ is easier if the equation is expanded first as $\displaystyle p(V-b)=-\frac{a}{V}+\frac{ab}{V^2}+RT$, then differentiating as a product produces,
+# Now find $(\partial p/\partial V)_T$. Differentiating with respect to $V$ at constant $T$ is easier if the equation is expanded first as 
+# 
+# $$\displaystyle p(V-b)=-\frac{a}{V}+\frac{ab}{V^2}+RT$$
+# 
+# then differentiating as a product produces,
 # 
 # $$\displaystyle \left( \frac{\partial p}{\partial V} \right)_T(V-b)+p=\frac{a}{V^2}-2\frac{ab}{V^3}$$
 # 
@@ -77,11 +89,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The liquefaction of gases was studied by Andrews before 1870 and he discovered the critical point using carbon dioxide. This gas was presumably used as it would be readily available from brewing. The van der Waals equation is nowadays commonly used to study non-ideal, i.e. real, gases. The equation is 
 # 
-# $$\displaystyle (p + a/V^2)(V - b) = RT$$
+# $$\displaystyle (p + \frac{a}{V^2})(V - b) = RT$$
 # 
 # where $a$ is a measure of the attractive forces between molecules and $b$ accounts for their finite size. $V$ is here the _molar volume_, which is volume divided by number of moles; this is often represented by $\bar V$ or $V_m$. Fig. 34 shows the $pVT$ surface and shows gradients at three points with different variables held constant. The partial derivatives are also shown as lines, again note that  the partial derivative is the slope at any point. 
 # 
-# The contour lines follow constant pressure where $(\partial V/\partial T)_p$ = constant. Fig. 35, shows the $pV$ or isotherm plot, for Freon with the inflexion at the critical temperature of 385 K (black dot) is where the gradients, $\partial p/\partial V = \partial^2 p/\partial V^2$ = 0. The data used to make the plot is that for freon, $\mathrm{CCl_2F_2}$, with $a = 10.78\,\mathrm{ bar\, dm^6 mol^{-2}}$ and $b = 0.0998\,\mathrm{ dm^3 mol^{-1}}$ and $R = 0.083145\,\mathrm{ bar\,dm^3\,mol^{-1}K^{-1}}$. The critical point values are $T_c = 8a/(27bR)$;$ p_c = a/(27b^2),\; V_c = 3b$.
+# The contour lines follow constant pressure where $(\partial V/\partial T)_p$ = constant. Fig. 35, shows the $pV$ or isotherm plot, for Freon with the inflexion at the critical temperature of 385 K (black dot) is where the gradients, $\partial p/\partial V = \partial^2 p/\partial V^2$ = 0. The data used to make the plot is that for freon, $\mathrm{CCl_2F_2}$, with $a = 10.78\,\mathrm{ bar\, dm^6 mol^{-2}}$, $b = 0.0998\,\mathrm{ dm^3 mol^{-1}}$ and $R = 0.083145\,\mathrm{ bar\,dm^3\,mol^{-1}K^{-1}}$. The critical point values are 
+# 
+# $$\displaystyle T_c = \frac{8a}{27bR},\quad p_c = \frac{a}{27b^2},\quad V_c = 3b$$
 # 
 # ![Drawing](differen-fig34.png)
 # 
@@ -102,19 +116,19 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-# nsolve is part of the sympy library us as sp.nsolve. You can mix python, numpy and sympy
+# nsolve is part of the SymPy library us as sp.nsolve. You can mix Python, NumPy and SymPy
 a = 10.78    # bar . (dm^3/mol)^2
 b = 0.0998   # dm^3/mol
 R = 0.083145 # dm^3.bar.mol/k;   1 dm^3.bar == 100 joules
 
-p = lambda V,T : R*T/(V-b) - a/V**2         # bar, van der waals equation; V in dm^3/mol
+p = lambda V,T : R*T/(V-b) - a/V**2         # pressure in bar, van der waals equation; V in dm^3/mol
 
 integrl = lambda V,T: R*T*sp.ln(V-b) + a/V  # dm^3.bar    integral pdV 
 
 print('{:s}'.format( 'Temp  V1        V2  dm^3/mol'))
 
 v1,v2 = sp.symbols('v1 v2')                 # use sympy and nsolve, not fast but ok. define v1 and v2
-for  T0 in range(360,370,2):             # choose some temperatures          
+for  T0 in range(360,370,2):                # choose some temperatures          
     eqn1 = integrl(v2,T0)- integrl(v1,T0) - p(v2,T0)*(v2-v1)
     eqn2 = p(v2,T0) - p(v1,T0)
     ans = sp.nsolve(( eqn1,eqn2 ), (v1,v2), (0.15,0.8), verify=False )  # 0.15 and 0.8 are approx limits.
@@ -176,7 +190,11 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # $$\displaystyle \left( \frac{\partial H}{\partial S} \right)_p=T \qquad  \left( \frac{\partial S}{\partial T} \right)_p=\frac{C_p}{T}$$ 
 # 
-# making $\displaystyle \left( \frac{\partial H}{\partial T} \right)_p=C_p$ the heat capacity at constant pressure. Had we chosen some other variable instead of $S$, $G$ or $U$ for example, then although derivatives could be found these may not correspond to anything that could be measured. 
+# making 
+# 
+# $$\displaystyle \left( \frac{\partial H}{\partial T} \right)_p=C_p$$
+# 
+# the heat capacity at constant pressure. Had we chosen some other variable instead of $S$, $G$ or $U$ for example, then although derivatives could be found these may not correspond to anything that could be measured. 
 # 
 # If the second derivatives (above)  can be integrated and is used to experimentally determine entropy: 
 # 
@@ -237,7 +255,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # Because $V$ is constant, by the ideal gas law, $p$ is only a function of temperature. Therefore as
 # 
-# $$\displaystyle \left(\frac{\partial p }{\partial T}\right)_V =1/\left(\frac{\partial T }{\partial p}\right)_V$$
+# $$\displaystyle \left(\frac{\partial p }{\partial T}\right)_V =1\big/\left(\frac{\partial T }{\partial p}\right)_V$$
 # 
 # then
 # 
@@ -260,13 +278,17 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # but this result is not very useful because it still contains the function $f$. To remove this, the equation can be divided top and bottom by $\partial p/\partial f$ which produces
 # 
 # 
-# $$\displaystyle \left(\frac{\partial V }{\partial T}\right)_{p}=-\frac{\left(\frac{\partial f }{\partial T}\right)\left(\frac{\partial p }{\partial f}\right) }{\left(\frac{\partial f }{\partial V}\right)\left(\frac{\partial p }{\partial f}\right)}=-\left(\frac{\partial p }{\partial T}\right)_V / \left(\frac{\partial p }{\partial V}\right)_T$$
+# $$\displaystyle \left(\frac{\partial V }{\partial T}\right)_{p}=-\frac{\left(\frac{\partial f }{\partial T}\right)\left(\frac{\partial p }{\partial f}\right) }{\left(\frac{\partial f }{\partial V}\right)\left(\frac{\partial p }{\partial f}\right)}=-\left(\frac{\partial p }{\partial T}\right)_V \big/ \left(\frac{\partial p }{\partial V}\right)_T$$
 # 
 # which is equivalent to equation (44) but arrived at in a different way.
 # 
 # ## 11.9 Partial Derivatives in Thermodynamics
 # 
-# In the study of thermodynamics, partial, mixed, and total derivatives are commonly used; this adds to the complexity of the subject, particularly if these appear to be 'pulled out of fresh air'. Understanding how these relationships are produced really helps in understanding thermodynamics as it removes the mathematical burden, allowing the subject itself to be better understood. To this end, the parameters used in chemistry are $p,\; V,\; A,\; T,\; H,\; U, \;G,\; S$ and each one depends upon the others. Besides $p,\; V,\; T$ and $S$, the other parameters used are $U$ the internal energy, $H$ the enthalpy, $G$ the Gibbs free energy and $A$ the Helmholtz free energy.
+# In the study of thermodynamics, partial, mixed, and total derivatives are commonly used; this adds to the complexity of the subject, particularly if these appear to be 'pulled out of fresh air'. Understanding how these relationships are produced really helps in understanding thermodynamics as it removes the mathematical burden, allowing the subject itself to be better understood. To this end, the parameters used in chemistry are 
+# 
+# >$p,\; V,\; A,\; T,\; H,\; U, \;G,\; S$ 
+# 
+# and each one depends upon the others. Besides $p,\; V,\; T$ and $S$, the other parameters used are $U$ the internal energy, $H$ the enthalpy, $G$ the Gibbs free energy and $A$ the Helmholtz free energy.
 # 
 # When one quantity is to be determined, for instance the entropy $S$, then it is defined provided it can be calculated as a function of _any other two parameters_. The two parameters chosen are normally determined by what can be measured experimentally; however, it can be shown that there are natural variables for each parameter; for the internal energy $U$ these are volume $V$ and entropy $S$. The defining equations for $H, \;U,\; G$, and $A$ in terms of natural variables are shown in table 1. When constructing equations involving thermodynamic derivatives as a rule of thumb, $'x'$ values are usually $T,\; V,\; p$, and $S$ and $'y'$ values $H,\; U,\; G,\; S$, and $A$. 
 # 

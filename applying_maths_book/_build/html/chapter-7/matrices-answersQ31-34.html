@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1585,19 +1585,31 @@ title="Print to PDF"
 <h1>Solutions Q31 - 34<a class="headerlink" href="#solutions-q31-34" title="Permalink to this headline">#</a></h1>
 <section id="q31-answer">
 <h2>Q31 answer<a class="headerlink" href="#q31-answer" title="Permalink to this headline">#</a></h2>
-<p>The coordinates of vector <span class="math notranslate nohighlight">\(V_1\)</span> are <span class="math notranslate nohighlight">\(x_1 = r\cos(\alpha)\)</span> and <span class="math notranslate nohighlight">\(y_1 = r\sin(\alpha)\)</span> and the second vector is rotated by <span class="math notranslate nohighlight">\(\theta\)</span> from the first, so that <span class="math notranslate nohighlight">\(V_2\)</span> has x-coordinate</p>
+<p>The coordinates of vector <span class="math notranslate nohighlight">\(V_1\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_1 = r\cos(\alpha), y_1 = r\sin(\alpha)\]</div>
+<p>and the second vector is rotated by <span class="math notranslate nohighlight">\(\theta\)</span> from the first, so that <span class="math notranslate nohighlight">\(V_2\)</span> has x-coordinate</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle x_2 = r\cos(\alpha-\theta) = r \cos(\alpha)\cos(\theta) + r \sin(\alpha)\sin(\theta)\]</div>
-<p>and by substitution <span class="math notranslate nohighlight">\(x_2 = x_1\cos(\theta) + y_1 \sin(\theta)\)</span>. The y-coordinate is</p>
+<p>and by substitution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_2 = x_1\cos(\theta) + y_1 \sin(\theta)\]</div>
+<p>The y-coordinate is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y_2 = r\sin(\alpha-\theta) = -r \cos(\alpha)\sin(\theta) + r \sin(\alpha)\cos(\theta)\]</div>
-<p>and <span class="math notranslate nohighlight">\(y_2 = -x_1\sin(\theta) + y_1\cos(\theta)\)</span>. Combining the two formulae produces the rotation matrix, equation 11.</p>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y_2 = -x_1\sin(\theta) + y_1\cos(\theta)\]</div>
+<p>Combining the two formulae produces the rotation matrix, equation 11.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} x_2 \\ y_2 \end{bmatrix} = \begin{bmatrix} \cos(\theta) &amp; \sin(\theta)\\ -\sin(\theta) &amp; \cos (\theta) \end{bmatrix} \begin{bmatrix} x_1 \\ y_1 \end{bmatrix}\end{split}\]</div>
 </section>
 <section id="q32-answer">
 <h2>Q32 answer<a class="headerlink" href="#q32-answer" title="Permalink to this headline">#</a></h2>
-<p>The rotation matrix is <span class="math notranslate nohighlight">\(\displaystyle \pmb{R}_\theta = \begin{bmatrix} \cos(\theta) &amp; \sin(\theta)\\ -\sin(\theta) &amp; \cos (\theta) \end{bmatrix} \)</span> and its square is</p>
+<p>The rotation matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{R}_\theta = \begin{bmatrix} \cos(\theta) &amp; \sin(\theta)\\ -\sin(\theta) &amp; \cos (\theta) \end{bmatrix} \end{split}\]</div>
+<p>and its square is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{R}_\theta = \begin{bmatrix} \cos(\theta) &amp; \sin(\theta) \\ -\sin(\theta) &amp; \cos(\theta) \end{bmatrix} \begin{bmatrix} \cos(\theta) &amp; \sin(\theta)\\ -\sin(\theta) &amp; \cos (\theta) \end{bmatrix}= \begin{bmatrix} \cos^2(\theta)-\sin^2(\theta) &amp; 2\sin(\theta)\cos(\theta)\\ -2\sin(\theta)\cos(\theta) &amp; \cos^2 (\theta)-\sin^2(\theta) \end{bmatrix}\end{split}\]</div>
 <p>Substituting the double angle relationships into the last matrix shows that <span class="math notranslate nohighlight">\(R(2\theta) = R(\theta)^2\)</span>.</p>
@@ -1608,13 +1620,19 @@ title="Print to PDF"
 </section>
 <section id="q34-answer">
 <h2>Q34 answer<a class="headerlink" href="#q34-answer" title="Permalink to this headline">#</a></h2>
-<p>As rotation only occurs about the z-axis and by <span class="math notranslate nohighlight">\(90^\text{o}\)</span>,the product of the three rotation matrices becomes</p>
+<p><strong>(a)</strong> As rotation only occurs about the z-axis and by <span class="math notranslate nohighlight">\(90^\text{o}\)</span>,the product of the three rotation matrices becomes</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  \begin{bmatrix} \cos(\theta) &amp; \sin(\theta) &amp; 0\\ -\sin(\theta) &amp; \cos (\theta) &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} =\begin{bmatrix} 0 &amp; 1 &amp; 0\\ -1 &amp; 0 &amp; 0 \\ 0&amp; 0 &amp; 1\end{bmatrix}\end{split}\]</div>
-<p>An inversion is the matrix <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} -1 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; 0 \\ 0&amp; 0 &amp; -1\end{bmatrix}\)</span> and the rotation-inversion operation is</p>
+<p>An inversion is the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} -1 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; 0 \\ 0&amp; 0 &amp; -1\end{bmatrix}\end{split}\]</div>
+<p>and the rotation-inversion operation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} -1 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; 0 \\ 0&amp; 0 &amp; -1\end{bmatrix}\begin{bmatrix} 0 &amp; 1 &amp; 0\\ -1 &amp; 0 &amp; 0 \\ 0&amp; 0 &amp; 1\end{bmatrix}=\begin{bmatrix} 0 &amp; -1 &amp; 0\\ 1 &amp; 0 &amp; 0 \\ 0&amp; 0 &amp; -1\end{bmatrix}\end{split}\]</div>
-<p>(b) Performing the matrix multiplication the other way round produces the same result, therefore <span class="math notranslate nohighlight">\(Rot \times Inv = Inv \times  Rot\)</span> and the matrices commute.</p>
+<p><strong>(b)</strong> Performing the matrix multiplication the other way round produces the same result, therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Rot \times Inv = Inv \times Rot\]</div>
+<p>and the matrices commute.</p>
 </section>
 </section>
 

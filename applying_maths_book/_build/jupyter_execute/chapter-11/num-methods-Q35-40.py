@@ -4,14 +4,18 @@
 # # Questions 35 - 40
 
 # ## Q35
-# Solve $d^2y/dx^2 = 1/(1 + y^2) + x^2$ 
+# Solve 
+# 
+# $$\displaystyle  \frac{d^2y}{dx^2} = \frac{1}{(1 + y^2)} + x^2$$ 
 # 
 # with boundary values $y_0 = 10,\; y_5 = -2$. This equation is sensitive to the initial value of $\alpha$.
 # 
 # **Strategy:** Use the shooting method. Try several values of $\alpha$ to find the region where its true value lies, then 'home in' on this with better estimates.
 # 
 # ## Q36 Potential 'hole'
-# The potential $V(x) = -V_0/\cosh^2(\alpha x)$, 
+# The potential 
+# 
+# $$\displaystyle V(x) = -\frac{V_0}{\cosh^2(\alpha x)}$$ 
 # 
 # sometimes called the Poschl-Teller potential, describes a potential hole and is used to approximate that produced by the diffusion of material in a quantum well or similar device used in opto-electronics. The potential is zero at large $\pm x$ and $-V_0$ at the origin, and the constant $\alpha$ determines the width. Calculate all its eigenvalues and wavefunctions if $V_0 = 10$ and $\alpha = 1$. Compare your answer with the analytic eigenvalues 
 # 
@@ -30,11 +34,13 @@
 # **Strategy:** Setting the maximum and minimum $x$ value effectively defines the size of the infinitely deep square well.
 # 
 # ## Q38 Tunneling in ammonia
-# The reduced mass used in the ammonia example assumes that the H atoms do not change their relative positions. However, as the N atom tunnels from one side of the plane of the H atoms to the other, the NH bonds must compress. If the transition only involves bending, then the bond lengths must remain unchanged and the reduced mass is now $\mu = 3m_H\left(m_N + 3m_H \sin^2(22^\text{o})\right)/(m_N + 3m_H)$.
+# The reduced mass used in the ammonia example assumes that the H atoms do not change their relative positions. However, as the N atom tunnels from one side of the plane of the H atoms to the other, the NH bonds must compress. If the transition only involves bending, then the bond lengths must remain unchanged and the reduced mass is now 
 # 
-# (a) Recalculate the ammonia energy levels.
+# $$\displaystyle \mu = 3m_H\frac{\left(m_N + 3m_H \sin^2(22^\text{o})\right)}{(m_N + 3m_H)}$$
 # 
-# (b)  Recalculate the energy levels for ND$_3$, using either of the reduced mass formulae (in text and
+# **(a)** Recalculate the ammonia energy levels.
+# 
+# **(b)**  Recalculate the energy levels for ND$_3$, using either of the reduced mass formulae (in text and
 # here), and comment on why the results are different from that for NH$_3$.
 # 
 # ## Q39 HCl & I$_2$ energy levels

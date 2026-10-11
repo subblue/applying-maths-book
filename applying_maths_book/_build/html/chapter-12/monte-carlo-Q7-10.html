@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1586,9 +1586,15 @@ title="Print to PDF"
 <section id="q7-singlet-excited-state-decay">
 <h2>Q7 Singlet excited state decay<a class="headerlink" href="#q7-singlet-excited-state-decay" title="Permalink to this headline">#</a></h2>
 <p>A singlet excited state decays to a triplet state by intersystem crossing with a rate constant, <span class="math notranslate nohighlight">\(k_{isc} = 2 \cdot 10^8\,\mathrm{ s^{-1}}\)</span>, as well as fluorescing to the ground state with rate constant <span class="math notranslate nohighlight">\(k_f = 1 \cdot 10^7\,\mathrm{ s^{-1}}\)</span>.</p>
-<p>(a) What is the fluorescence lifetime and the fluorescence yield?</p>
-<p>(b) Assume that the triplet state has a 20 ns decay time, <span class="math notranslate nohighlight">\(k_T = 1/(20\)</span> ns). Calculate the fluorescence decay as well as the rise and fall in the triplet population for at least <span class="math notranslate nohighlight">\(100\)</span> ns, using a Monte Carlo method.</p>
-<p><strong>Strategy:</strong> The yield and lifetime are very easy to calculate. The fluorescence lifetime is the reciprocal of the sum of the rate constants depleting the excited singlet <span class="math notranslate nohighlight">\(\tau = 1/(k_f + k_{isc})\)</span>. The fluorescence yield is the fraction of molecules that fluoresce compared to the total number of excited states, which is the same as the rate constant for fluorescence divided by the total of all rate constants causing the state to decay, <span class="math notranslate nohighlight">\(\varphi = k_f /(k_f + k_{isc}) = k_f\tau\)</span> (see Turro 1978). All yields must be between 0 and 1. The calculation is similar to that in the examples, but now two reactions are present, the singlet and triplet. The rate equations are</p>
+<p><strong>(a)</strong> What is the fluorescence lifetime and the fluorescence yield?</p>
+<p><strong>(b)</strong> Assume that the triplet state has a 20 ns decay time, <span class="math notranslate nohighlight">\(k_T = 1/(20\)</span> ns). Calculate the fluorescence decay as well as the rise and fall in the triplet population for at least <span class="math notranslate nohighlight">\(100\)</span> ns, using a Monte Carlo method.</p>
+<p><strong>Strategy:</strong> The yield and lifetime are very easy to calculate. The fluorescence lifetime is the reciprocal of the sum of the rate constants depleting the excited singlet</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tau = \frac{1}{(k_f + k_{isc})}\]</div>
+<p>The fluorescence yield is the fraction of molecules that fluoresce compared to the total number of excited states, which is the same as the rate constant for fluorescence divided by the total of all rate constants causing the state to decay,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \varphi = \frac{k_f }{(k_f + k_{isc})} = k_f\tau\]</div>
+<p>(see Turro 1978). All yields must be between 0 and 1. The calculation is similar to that in the examples, but now two reactions are present, the singlet and triplet. The rate equations are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathrm{S}\overset{ k_{isc}} \longrightarrow T, \qquad \mathrm{S}\overset{ k_f}\longrightarrow \mathrm{S_0},\qquad  \mathrm{T}\overset{ k_T}\longrightarrow \mathrm{S_0}\]</div>
 <p>where S is the excited state, T the triplet and S<span class="math notranslate nohighlight">\(_0\)</span> the ground state. The populations are calculated as in the Gillespie Algorithm for excited states modified for the decay of the triplet. This means that three checks need to be made as there are three possible transitions, excited singlet to triplet, excited singlet to ground state, and triplet to ground state. Work out the sum <span class="math notranslate nohighlight">\(a_0\)</span> then the fraction of this that corresponds to each type of transition and compare this to a random guess as to which one will be chosen.</p>
@@ -1625,7 +1631,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dY}{dt} = k_1Y − k_2YX, \qquad \frac{dX}{dt} = k_2YX − k_3X \]</div>
 <p>These equations are described in more detail in Chapter 11.8.1 where they are solved numerically.</p>
-<p>Solve these equations by using the Gillespie Monte Carlo method to calculate the time profile of species Y and X over <span class="math notranslate nohighlight">\(200\)</span> time units with initial values, <span class="math notranslate nohighlight">\(Y_0 = 400,\; X_0 = 100,\; k_1 = 0.5,\; k_2 = 0.001, \;k_3 = 0.5\)</span>. Use <span class="math notranslate nohighlight">\(1000\)</span> time bins. Comment on the results.</p>
+<p>Solve these equations by using the Gillespie Monte Carlo method to calculate the time profile of species Y and X over <span class="math notranslate nohighlight">\(200\)</span> time units with initial values,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Y_0 = 400,\; X_0 = 100,\; k_1 = 0.5,\; k_2 = 0.001, \;k_3 = 0.5\]</div>
+<p>Use <span class="math notranslate nohighlight">\(1000\)</span> time bins. Comment on the results.</p>
 <p><strong>Strategy:</strong> Use the model as in the text, making sure that <span class="math notranslate nohighlight">\(a_0\)</span> is calculated correctly. Do not forget that there are three reactions, so three choices have to be made as to which reaction is occurring at any time. If you also plot the phase plane this is, not surprisingly, very random compared to a direct numerical solution.</p>
 </section>
 </section>

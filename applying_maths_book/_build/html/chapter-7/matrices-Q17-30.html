@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1709,13 +1709,16 @@ title="Print to PDF"
 <h1>Questions  17 - 30<a class="headerlink" href="#questions-17-30" title="Permalink to this headline">#</a></h1>
 <section id="q17-ammonia-point-group">
 <h2>Q17 Ammonia Point group<a class="headerlink" href="#q17-ammonia-point-group" title="Permalink to this headline">#</a></h2>
-<p>Ammonia belongs to the <span class="math notranslate nohighlight">\(C_{3V}\)</span> point group and has the following symmetry elements: the identity, a <span class="math notranslate nohighlight">\(C_3\)</span> axes, and three vertical mirror planes. The rotation about the principal axes is <span class="math notranslate nohighlight">\(120^\text{o}\)</span> rotation clockwise <span class="math notranslate nohighlight">\(C_3^+\)</span>, and either a rotation by <span class="math notranslate nohighlight">\(-120^\text{o}\)</span> (anticlockwise) labelled <span class="math notranslate nohighlight">\(C_3^-\)</span> or a rotation by +<span class="math notranslate nohighlight">\(240^\text{o}\)</span>. The three mirror planes are at <span class="math notranslate nohighlight">\(120^\text{o}\)</span> to one another and are labelled <span class="math notranslate nohighlight">\(\sigma_V, \sigma_V'\)</span> and <span class="math notranslate nohighlight">\(\sigma+σ_V''\)</span>. Work out the <span class="math notranslate nohighlight">\(6 \times 6\)</span> group multiplication table.</p>
+<p>Ammonia belongs to the <span class="math notranslate nohighlight">\(C_{3V}\)</span> point group and has the following symmetry elements:</p>
+<p>The identity, a <span class="math notranslate nohighlight">\(C_3\)</span> axes, and three vertical mirror planes.</p>
+<p>The rotation about the principal axes is <span class="math notranslate nohighlight">\(120^\text{o}\)</span> rotation clockwise <span class="math notranslate nohighlight">\(C_3^+\)</span>, and either a rotation by <span class="math notranslate nohighlight">\(-120^\text{o}\)</span> (anticlockwise) labelled <span class="math notranslate nohighlight">\(C_3^-\)</span> or a rotation by +<span class="math notranslate nohighlight">\(240^\text{o}\)</span>.</p>
+<p>The three mirror planes are at <span class="math notranslate nohighlight">\(120^\text{o}\)</span> to one another and are labelled <span class="math notranslate nohighlight">\(\sigma_V, \sigma_V'\)</span> and <span class="math notranslate nohighlight">\(\sigma+σ_V''\)</span>. Work out the <span class="math notranslate nohighlight">\(6 \times 6\)</span> group multiplication table.</p>
 <p><strong>Strategy:</strong> The number of calculations can be reduced from <span class="math notranslate nohighlight">\(36 \to 19\)</span> because the product of a symmetry operation with the identity <span class="math notranslate nohighlight">\(E\)</span> leaves the operation unchanged. However, multiplication of an operation with itself does not necessarily produces the identity, which means that only the first row and column can be written down directly. Completing the table is rather like doing a Sudoku problem, each product must be a member of the group and each row and column contains all the elements in the group. This means that as the table approaches completion the missing terms can be inferred from those already in a row or column.</p>
 </section>
 <section id="q18-ammonia-point-group-again">
 <h2>Q18 Ammonia point group (again)<a class="headerlink" href="#q18-ammonia-point-group-again" title="Permalink to this headline">#</a></h2>
-<p>(a) Repeat the same calculation as Q17 but using the NH bonds as a basis set to form <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrices. Multiply these as appropriate to produce the group multiplication table.</p>
-<p>(b) Write a Sympy algorithm to do this.</p>
+<p><strong>(a)</strong> Repeat the same calculation as Q17 but using the NH bonds as a basis set to form <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrices. Multiply these as appropriate to produce the group multiplication table.</p>
+<p><strong>(b)</strong> Write a Sympy algorithm to do this.</p>
 </section>
 <section id="q19-group-multiplication">
 <h2>Q19 Group multiplication<a class="headerlink" href="#q19-group-multiplication" title="Permalink to this headline">#</a></h2>
@@ -1726,7 +1729,10 @@ each row and column must contain each member of the group.</p>
 </section>
 <section id="q20-similarity-transform">
 <h2>Q20 Similarity transform<a class="headerlink" href="#q20-similarity-transform" title="Permalink to this headline">#</a></h2>
-<p>Using the similarity transforms, <span class="math notranslate nohighlight">\(A_1 = \sigma_V^{-1}C_3^-\sigma_V\)</span> and <span class="math notranslate nohighlight">\(A_2 = \sigma_V^{-1}C_3^+\sigma_V\)</span> show that the <span class="math notranslate nohighlight">\(\sigma\)</span> operations belong to the same class in <span class="math notranslate nohighlight">\(C_{3V}\)</span> as <span class="math notranslate nohighlight">\(C_3^+\)</span> and <span class="math notranslate nohighlight">\(C_3^-\)</span>. Use the matrices from the previous question and Sympy to perform the matrix multiplication if necessary.</p>
+<p>Using the similarity transforms,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_1 = \sigma_V^{-1}C_3^-\sigma_V,\qquad A_2 = \sigma_V^{-1}C_3^+\sigma_V\]</div>
+<p>show that the <span class="math notranslate nohighlight">\(\sigma\)</span> operations belong to the same class in <span class="math notranslate nohighlight">\(C_{3V}\)</span> as <span class="math notranslate nohighlight">\(C_3^+\)</span> and <span class="math notranslate nohighlight">\(C_3^-\)</span>. Use the matrices from the previous question and Sympy to perform the matrix multiplication if necessary.</p>
 </section>
 <section id="q21-mathrm-xef-4">
 <h2>Q21 <span class="math notranslate nohighlight">\(\mathrm{XeF_4}\)</span><a class="headerlink" href="#q21-mathrm-xef-4" title="Permalink to this headline">#</a></h2>
@@ -1740,8 +1746,8 @@ each row and column must contain each member of the group.</p>
 </section>
 <section id="q23-rotation-reflection">
 <h2>Q23 Rotation-reflection<a class="headerlink" href="#q23-rotation-reflection" title="Permalink to this headline">#</a></h2>
-<p>(a) Work out the effect of a rotation followed by a reflection <span class="math notranslate nohighlight">\(\sigma'\)</span> in the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group. Then reverse the order so that a reflection is followed by a rotation. Use the matrices calculated in the previous question.</p>
-<p>(b) Show that operators <span class="math notranslate nohighlight">\(C_2\)</span> and <span class="math notranslate nohighlight">\(\sigma'\)</span> commute.</p>
+<p><strong>(a)</strong> Work out the effect of a rotation followed by a reflection <span class="math notranslate nohighlight">\(\sigma'\)</span> in the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group. Then reverse the order so that a reflection is followed by a rotation. Use the matrices calculated in the previous question.</p>
+<p><strong>(b)</strong> Show that operators <span class="math notranslate nohighlight">\(C_2\)</span> and <span class="math notranslate nohighlight">\(\sigma'\)</span> commute.</p>
 </section>
 <section id="q24-mathrm-h-2c-cf-2">
 <h2>Q24 <span class="math notranslate nohighlight">\(\mathrm{H_2C=CF_2}\)</span><a class="headerlink" href="#q24-mathrm-h-2c-cf-2" title="Permalink to this headline">#</a></h2>
@@ -1753,21 +1759,21 @@ each row and column must contain each member of the group.</p>
 <section id="q25-pyramidal-molecules">
 <h2>Q25 Pyramidal molecules<a class="headerlink" href="#q25-pyramidal-molecules" title="Permalink to this headline">#</a></h2>
 <p>A pyramidal molecule, such as ammonia NH<span class="math notranslate nohighlight">\(_3\)</span>, belongs to the <span class="math notranslate nohighlight">\(C_{3V}\)</span> point group, which has operations <span class="math notranslate nohighlight">\(E, 2C_3\)</span>, and <span class="math notranslate nohighlight">\(3\sigma_V\)</span>. Using an atom basis set of <span class="math notranslate nohighlight">\((N, H_1, H_2, H_3)\)</span>,</p>
-<p>(a) Calculate the effect of a <span class="math notranslate nohighlight">\(C_3\)</span> symmetry operation. Identify the rotations and vertical mirror planes. (The <span class="math notranslate nohighlight">\(C_3\)</span> operation is rotation by <span class="math notranslate nohighlight">\(\pm 360/3 = \pm120^\text{o}\)</span>).</p>
-<p>(b) Work out the matrix for reflection.</p>
+<p><strong>(a)</strong> Calculate the effect of a <span class="math notranslate nohighlight">\(C_3\)</span> symmetry operation. Identify the rotations and vertical mirror planes. (The <span class="math notranslate nohighlight">\(C_3\)</span> operation is rotation by <span class="math notranslate nohighlight">\(\pm 360/3 = \pm120^\text{o}\)</span>).</p>
+<p><strong>(b)</strong> Work out the matrix for reflection.</p>
 <p><strong>Strategy:</strong> Start by drawing a diagram of the molecule and then identify the rotation and reflection axes. Next, rotate the atoms about the principal axis. This is the axis of highest symmetry and is out of the plane of the page if you draw the molecule ‘flat’ on the page. The basis set <span class="math notranslate nohighlight">\((N, H_1, H_2, H_3)\)</span> means form a vector and matrix in only these atoms as has been done in previous questions.</p>
 </section>
 <section id="q26-rotaton-matrix">
 <h2>Q26 Rotaton matrix<a class="headerlink" href="#q26-rotaton-matrix" title="Permalink to this headline">#</a></h2>
-<p>(a) Calculate the matrix for a rotation <span class="math notranslate nohighlight">\(C_n\)</span> about the principal axis then reflection in a perpendicular plane and so produce the matrix for the <span class="math notranslate nohighlight">\(S_n\)</span> operation.</p>
-<p>(b) Calculate the trace of the matrix.</p>
+<p><strong>(a)</strong> Calculate the matrix for a rotation <span class="math notranslate nohighlight">\(C_n\)</span> about the principal axis then reflection in a perpendicular plane and so produce the matrix for the <span class="math notranslate nohighlight">\(S_n\)</span> operation.</p>
+<p><strong>(b)</strong> Calculate the trace of the matrix.</p>
 </section>
 <section id="q27-mathrm-c-3h-3">
 <h2>Q27 <span class="math notranslate nohighlight">\(\mathrm{C_3H_3^+}\)</span><a class="headerlink" href="#q27-mathrm-c-3h-3" title="Permalink to this headline">#</a></h2>
 <p>The molecular ion <span class="math notranslate nohighlight">\(\mathrm{C_3H_3^+}\)</span> has an equilateral triangular shape.</p>
-<p>(a)Sketch the symmetry elements in the point group which is <span class="math notranslate nohighlight">\(D_{3h}\)</span>.</p>
-<p>(b) The point group can be reduced to <span class="math notranslate nohighlight">\(C_3\)</span> when only p orbitals are considered because they remove the horizontal plane of symmetry. Transform the p orbitals under operations from <span class="math notranslate nohighlight">\(C_3\)</span> and from the reduced representation produced find the <em>irreps</em> and therefore the symmetry species of the <span class="math notranslate nohighlight">\(\pi\)</span> molecular orbitals.</p>
-<p>(c) The molecular orbitals (wavefunctions) will contain complex numbers but making a linear combination will make them real. Show that this is true.</p>
+<p><strong>(a)</strong> Sketch the symmetry elements in the point group which is <span class="math notranslate nohighlight">\(D_{3h}\)</span>.</p>
+<p><strong>(b)</strong> The point group can be reduced to <span class="math notranslate nohighlight">\(C_3\)</span> when only p orbitals are considered because they remove the horizontal plane of symmetry. Transform the p orbitals under operations from <span class="math notranslate nohighlight">\(C_3\)</span> and from the reduced representation produced find the <em>irreps</em> and therefore the symmetry species of the <span class="math notranslate nohighlight">\(\pi\)</span> molecular orbitals.</p>
+<p><strong>(c)</strong> The molecular orbitals (wavefunctions) will contain complex numbers but making a linear combination will make them real. Show that this is true.</p>
 <p>The <span class="math notranslate nohighlight">\(C_3\)</span> point group character table is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|ll}
@@ -1782,8 +1788,8 @@ E  &amp; 1 &amp; \epsilon &amp; \epsilon^* \\
 <section id="q28-naphthalene">
 <h2>Q28 Naphthalene<a class="headerlink" href="#q28-naphthalene" title="Permalink to this headline">#</a></h2>
 <p>Naphthalene has 10 p<span class="math notranslate nohighlight">\(\pi\)</span> orbitals.</p>
-<p>(a) What is the point group if the phase of the orbitals is taken into account in determining the symmetry? Take the short axis of the molecule to be <span class="math notranslate nohighlight">\(x\)</span> the long axis <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>(b) Find the reduced and then irreducible representations (<em>irreps</em>) of these orbitals.</p>
+<p><strong>(a)</strong> What is the point group if the phase of the orbitals is taken into account in determining the symmetry? Take the short axis of the molecule to be <span class="math notranslate nohighlight">\(x\)</span> the long axis <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><strong>(b)</strong> Find the reduced and then irreducible representations (<em>irreps</em>) of these orbitals.</p>
 </section>
 <section id="q29-naphthalene-again">
 <h2>Q29 Naphthalene (again)<a class="headerlink" href="#q29-naphthalene-again" title="Permalink to this headline">#</a></h2>
@@ -1811,7 +1817,7 @@ A_2^&quot;&amp; 1 &amp;  1&amp; -1&amp; -1&amp; -1&amp;  1&amp; z &amp; \\
 E^&quot;  &amp; 2 &amp; -1&amp;  0&amp; -2&amp;  1&amp;  0&amp; (R_x,R_y) &amp; (xz,yz)\\
 \hline
 \end{array}\end{split}\]</div>
-<p>(One normal mode is doubly degenerate so use Sympy’s GramSchmidt function to make the vectors orthogonal.)</p>
+<p>(One normal mode is doubly degenerate so use SymPy’s GramSchmidt function to make the vectors orthogonal.)</p>
 <p><strong>Strategy:</strong> Place vectors along the bonds to find the geometry of the in-plane stretching modes. First, find the <em>irreps</em> that these vectors produce then use the projection operator method to find the modes. There are <span class="math notranslate nohighlight">\(3N - 6 = 6\)</span> vibrational normal modes.</p>
 </section>
 </section>

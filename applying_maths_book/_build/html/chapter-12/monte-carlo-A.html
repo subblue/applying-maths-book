@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1617,7 +1617,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Basic Monte-Carlo integration</span>
-<span class="c1">#np.random.seed(123456)   # used to check; seed always gives same random numbers</span>
+
+<span class="c1"># rng = np.random.default_rng(seed=1234)    #  seed =... always gives same random numbers</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
@@ -1628,8 +1631,8 @@ title="Print to PDF"
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="n">xlim_b</span> <span class="o">-</span> <span class="n">xlim_a</span><span class="p">)</span><span class="o">*</span><span class="n">ymax</span> 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">Rx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xlim_b</span> <span class="o">-</span> <span class="n">xlim_a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">+</span> <span class="n">xlim_a</span>   <span class="c1"># get random numbers from a to b</span>
-    <span class="n">Ry</span> <span class="o">=</span> <span class="n">ymax</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span>
+    <span class="n">Rx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xlim_b</span> <span class="o">-</span> <span class="n">xlim_a</span><span class="p">)</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">+</span> <span class="n">xlim_a</span>   <span class="c1"># get random real number from a to b</span>
+    <span class="n">Ry</span> <span class="o">=</span> <span class="n">ymax</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">Ry</span> <span class="o">&lt;=</span> <span class="n">f</span><span class="p">(</span><span class="n">Rx</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># summ to get result</span>
     <span class="k">pass</span>
@@ -1639,7 +1642,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0740
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.1050
 </pre></div>
 </div>
 </div>
@@ -1674,14 +1677,15 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Monte-Carlo Mean value method</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                          <span class="c1"># function to integrate</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                         <span class="c1"># initialise random number generator</span>
+<span class="n">f</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                         <span class="c1"># function to integrate</span>
 <span class="n">xlim_a</span> <span class="o">=</span> <span class="mf">0.0</span> 
 <span class="n">xlim_b</span> <span class="o">=</span> <span class="mf">2.0</span> 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">5000</span>                                               <span class="c1"># repeats </span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5000</span>                                              <span class="c1"># repeats </span>
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span> 
 <span class="n">s2</span><span class="o">=</span> <span class="mf">0.0</span> 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">xlim_b</span> <span class="o">-</span> <span class="n">xlim_a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">+</span> <span class="n">xlim_a</span>    <span class="c1"># limits a to b</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">xlim_b</span> <span class="o">-</span> <span class="n">xlim_a</span><span class="p">)</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">+</span> <span class="n">xlim_a</span>       <span class="c1"># limits a to b</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span>  <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">s2</span><span class="o">=</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     <span class="k">pass</span>
@@ -1693,7 +1697,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0854 +/-   0.0079
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.0942 +/-   0.0080
 </pre></div>
 </div>
 </div>
@@ -1744,18 +1748,20 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Importance Sampling Monte Carlo Integration using p(x)=kexp(-kx) </span>
 
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
+
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                 <span class="c1"># function to integrate</span>
 <span class="n">p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>                  <span class="c1"># sampling function</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mf">1.0</span>                                     <span class="c1"># constant and limits </span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span> 
 <span class="n">b</span> <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>             <span class="c1"># constant in r =Integration/Normalise</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>  <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>            <span class="c1"># constant in r =Integration/Normalise</span>
 <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">b</span><span class="p">))</span><span class="o">/</span><span class="n">k</span>         <span class="c1"># normalisation </span>
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>                                     <span class="c1"># summation</span>
 <span class="n">s2</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">50000</span>                                   <span class="c1"># number of trials</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">k</span>  <span class="c1"># get random value</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">k</span>  <span class="c1"># get random value</span>
     <span class="n">Q</span> <span class="o">=</span> <span class="n">N</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">p</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>                         <span class="c1"># get sampled  values eqn 7</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">Q</span> 
     <span class="n">s2</span><span class="o">=</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">Q</span><span class="o">**</span><span class="mi">2</span>
@@ -1769,7 +1775,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral =  0.882079 +/- 0.001188 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral =  0.881780 +/- 0.001190 
 </pre></div>
 </div>
 </div>

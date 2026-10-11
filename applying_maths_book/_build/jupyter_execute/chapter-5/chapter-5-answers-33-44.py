@@ -14,15 +14,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q33 answer
-# (a) This expansion needed is $\displaystyle (1-\alpha)^{-2} = 1=2\alpha +\frac{6}{2!}\alpha ^2 +\frac{12}{3!}\alpha ^3 +\cdots $ and therefore keeping terms only as far as $\alpha^2$ produces
+# **(a)** This expansion needed is $\displaystyle (1-\alpha)^{-2} = 1=2\alpha +\frac{6}{2!}\alpha ^2 +\frac{12}{3!}\alpha ^3 +\cdots $ and therefore keeping terms only as far as $\alpha^2$ produces
 # 
 # $$\displaystyle F \approx \frac{k_BT}{p}\left ( \frac{1}{4} +\frac{\alpha}{2} + \frac{3\alpha^2}{4}  \cdots -\frac{1}{4}+\alpha  \right)$$
 # 
 # which simplifies to first order to, $\displaystyle F= \frac{3k_BT}{2p}\alpha = \frac{3k_BT}{2p}\frac{x}{L}$.
 # 
-# Because the force is proportional to extension $x$, Hooke's law is obeyed with the effective force constant $\displaystyle k=3k_BT/(2pL)$
+# Because the force is proportional to extension $x$, Hooke's law is obeyed with the effective force constant 
 # 
-# (b) Substituting values into the force constant gives $k\approx 5.6\cdot 10^{-4}\,\mathrm{ N\, m^{-1}}$ for the protein and $k \approx 1\cdot 10^{-8}\,\mathrm{ N\, m^{-1}}$ for the DNA. Both these force constants are very small compared to those for chemical bonds whose force constants are typically tens to hundreds of $\mathrm{ N\, m^{-1}}$. 
+# $$\displaystyle k=\frac{3k_BT}{2pL}$$
+# 
+# **(b)** Substituting values into the force constant gives $k\approx 5.6\cdot 10^{-4}\,\mathrm{ N\, m^{-1}}$ for the protein and $k \approx 1\cdot 10^{-8}\,\mathrm{ N\, m^{-1}}$ for the DNA. Both these force constants are very small compared to those for chemical bonds whose force constants are typically tens to hundreds of $\mathrm{ N\, m^{-1}}$. 
 # 
 # If the protein unfolds after extending by $28$ nm and if the energy to extend is $\approx kx^2$, this is $\approx 4 \cdot 10^{-19}$ J/ molecule. The energy needed for the DNA is about ten times larger; $\approx 3 \cdot 10^{-18}$ J/molecule. Typical bond dissociation energies are $300$ kJ/mole or $4.5 \cdot 10^{-19}$ J/ molecule. 
 # 
@@ -33,42 +35,60 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The correct energy could be calculated by integrating the force over the extension using the full worm-like-chain equation given above, but this is unhelpful because the force goes to infinity, in a similar manner to that shown in Fig. 29, at full extension. Therefore, we have to assume somewhat arbitrarily, a value of the extension where the protein or DNA unfolds. Experiment shows that this is about $95$ % of full extension.
 # 
 # ## Q34 answer
-# (a) When $L/p$ is large,the exponential term tends to zero, so that $\displaystyle 1-e^{-L/p} \to$ 1 then $\langle r^2 \rangle \approx 2p(L-p)$. When the polymer contour length is far greater than the persistence length $\langle r^2 \rangle \approx 2pL$.
+# **(a)** When $L/p$ is large,the exponential term tends to zero, so that $\displaystyle 1-e^{-L/p} \to$ 1 then $\langle r^2 \rangle \approx 2p(L-p)$. When the polymer contour length is far greater than the persistence length $\langle r^2 \rangle \approx 2pL$.
 # 
-# (b) When the contour length is smaller than the persistence length, $L/p \lt$ 1 expanding the exponential gives,
+# **(b)** When the contour length is smaller than the persistence length, $L/p \lt$ 1 expanding the exponential gives,
 # 
 # $$\displaystyle \langle r^2 \rangle =2pL - 2p^2\left( 1-\left(1-\frac{L}{p}+\frac{L^2}{2p^2}-\cdots \right) \right) =L^2\left( 1-\frac{L}{3p}\right) \rightarrow L^2$$
 # 
 # This makes sense as the polymer must be rigid if $p \gt L$.
 # 
 # ## Q35 answer
-# The Taylor series expansion, equation (17), is made about the separation $r_e$ at minimum energy. The series produced is
-# 
-# $$\displaystyle U(r_e)=U(r_e) +(r-r_e)U'(r_e)+ \frac{(r-r_e)^2}{2!}U''(r_e)+\cdots $$
-# 
-# The notation $U'(r_e)$ and so forth means _'calculate the derivatives with respect to $r$ and then evaluate them at $r_e$'_. The first two derivatives are
+# The first and second derivatives wrt. $r$ will be needed and are 
 # 
 # $$\displaystyle  U'(r)=-24\epsilon\sigma ^6\left(-\frac{1}{r^7}+\frac{2\sigma^6}{r^{13}}   \right), \qquad U''(r)=-24\epsilon\sigma ^6\left(\frac{7}{r^8}-\frac{26\sigma^6}{r^{14}}   \right) $$
+# 
+# The notation $U'(r_e)$ and so forth means *'calculate the derivatives with respect to $r$ and then evaluate them at $r_e$'*. 
+# 
+# **(a)** The minimum energy is found at $r=r_e$ where, by setting the first derivative to zero, gives 
+# 
+# $$\displaystyle r_e^6 = 2\sigma^6$$
+# 
+# and by substituting into $U$ we obtain the minimum energy,
+# 
+# $$\displaystyle U(r_e)= -4\epsilon \sigma^6\left( \frac{1}{r_e^6} -\frac{\sigma^6}{r_e^{12}}\right)= -4\epsilon \sigma^6\left( \frac{1}{2\sigma^6} -\frac{\sigma^6}{4\sigma^{12}}\right)= 4\epsilon\left( \frac{1}{2}-\frac{1}{4}  \right)= -\epsilon$$
+# 
+# **(b)** The Taylor series expansion, equation (17), is made about the separation $r_e$ at minimum energy. The series produced is
+# 
+# $$\displaystyle U(r)=U(r_e) +(r-r_e)U'(r_e)+ \frac{(r-r_e)^2}{2!}U''(r_e)+\cdots $$
 # 
 # and the series is constructed with $r=r_e$ and is 
 # 
 # $$\displaystyle U(r) = -4\epsilon\sigma ^6\left(-\frac{1}{r_e^6}+\frac{2\sigma^6}{r_e^{16}}   \right) -24\epsilon\sigma ^6\left(-\frac{1}{r_e^7}+\frac{2\sigma^6}{r_e^{13}}   \right) (r-r_e)\\ -24\epsilon\sigma ^6\left(-\frac{7}{r_e^8}-\frac{26\sigma^6}{r_e^{14}}   \right)\frac{(r-r_e)^2}{2!} -\cdots $$
 # 
-# Notice that the complicated expressions in square brackets are the constants and form the coefficients in the expansion in $(r - r_e)$.
+# Notice that the complicated expressions in brackets are the constants and form the coefficients in the expansion in $(r - r_e)$.
 # 
-# (c) The minimum energy is found at $r=r_e$ and by substituting into the previous equation this is
-# 
-# $$\displaystyle U(r_e)= -4\epsilon \sigma^6\left( \frac{1}{r_e^6} -\frac{\sigma^6}{r_e^{12}}\right)= -4\epsilon \sigma^6\left( \frac{1}{2\sigma^6} -\frac{\sigma^6}{4\sigma^{12}}\right)= 4\epsilon\left( \frac{1}{2}-\frac{1}{4}  \right)= -\epsilon$$
-# 
-# Force is the derivative of energy with extension, and has units J/m = N. The extension is $(r-r_e)$ and the first few terms of the derivatives are;
+# **(c)** Force is the derivative of energy with extension, and has units J/m = N. The extension is $(r-r_e)$ and the first few terms of the derivatives are;
 # 
 # $$\displaystyle \frac{dU}{d(r-r_e)} =-24\epsilon\sigma ^6\left(-\frac{1}{r_e^7}+\frac{2\sigma^6}{r_e^{13}}   \right) -24\epsilon\sigma ^6\left(-\frac{7}{r_e^8}-\frac{26\sigma^6}{r_e^{14}}   \right) (r-r_e)-\cdots$$
 # 
-# The force constant is therefore $\displaystyle k=24\epsilon\sigma ^6\left(-\frac{7}{r_e^8}-\frac{26\sigma^6}{r_e^{14}} \right)$ and evaluating with $\displaystyle r_e = 2^{1/6}\sigma$ produces  $k=36\cdot 2^{2/3} \epsilon/\sigma^2$ which has the correct units of N/m as $\epsilon$ is energy in joules ($1$ J $\equiv 1$ N m), and $\sigma$ has units of $\mathrm m^2$. After substituting for $\sigma$ the first term evaluates to zero.
+# The force constant is therefore 
 # 
-# The vibrational frequency (s$^{-1}$) is given by $\displaystyle \nu=\frac{1}{2\pi}\sqrt k /\mu$ where $\mu$ is the reduced mass $\displaystyle \frac{1}{\mu}=\frac{1}{m_1} +\frac{1}{m_2}$ and both atomic masses, $m_1$ and $m_2$, are the same for Xe-Xe interaction and $2.1802 \cdot 10^{-25}$ kg. The frequency produced is $\nu = 5.18 \cdot 10^{11}$ Hz which is a vibration with a period of $1.93$ ps and this large value is consistent with a weak intermolecular interaction; the vibrational period for a C-C bond would for example, be very approximately $100$ times smaller. 
+# $$\displaystyle k=24\epsilon\sigma ^6\left(-\frac{7}{r_e^8}-\frac{26\sigma^6}{r_e^{14}} \right)$$
 # 
-# (d) A plot of the true and approximate potentials is shown in the next figure; the approximation is parabolic as only terms up to $\displaystyle (r - r_e )^2 $ are included. Using higher powers in the series improves the approximation to the repulsive potential at small separations, but powers up to at least $\displaystyle (r-r_e)^{12}$ are needed to fit the attractive part of the potential and even then this is only good from the minimum up to about $-4$ meV. The 6-12 and the harmonic potential are compared in the figure below.
+# and evaluating with $\displaystyle r_e^6 = 2\sigma^6$ produces  $k=36\cdot 2^{2/3} \epsilon/\sigma^2$ which has the correct units of N/m as $\epsilon$ is energy in joules ($1$ J $\equiv 1$ N m), and $\sigma$ has units of $\mathrm m^2$. The first term in $dU/d(r-r_e) $ is zero.
+# 
+# The vibrational frequency (s$^{-1}$) is given by 
+# 
+# $$\displaystyle \nu=\frac{1}{2\pi}\sqrt{\frac{k }{\mu} }$$
+# 
+# where $\mu$ is the reduced mass 
+# 
+# $$\displaystyle \frac{1}{\mu}=\frac{1}{m_1} +\frac{1}{m_2}$$
+# 
+# and both atomic masses, $m_1$ and $m_2$, are the same for Xe-Xe interaction and are $2.1802 \cdot 10^{-25}$ kg. The frequency produced is $\nu = 5.18 \cdot 10^{11}$ Hz which is a vibration with a period of $1.93$ ps and this large value is consistent with a weak intermolecular interaction; the vibrational period for a C-C bond would, for example, be very approximately $100$ times smaller. 
+# 
+# **(d)** A plot of the true and approximate potentials is shown in the next figure; the approximation is parabolic as only terms up to $\displaystyle (r - r_e )^2 $ are included. Using higher powers in the series improves the approximation to the repulsive potential at small separations, but powers up to at least $\displaystyle (r-r_e)^{12}$ are needed to fit the attractive part of the potential and even then this is only good from the minimum up to about $-4$ meV. The 6-12 and the harmonic potential are compared in the figure below.
 
 # In[2]:
 
@@ -83,7 +103,7 @@ Ev = [ U(r[i]) for i in range(numr) ]
 re = 2**(1/6)*sigma
 EH = [36*2**(2.0/3.0)*epsilon/sigma**2*(r[i]-re)**2 - epsilon for i in range(numr)] # harmonic approx
 
-fig1 = plt.figure(figsize=(5,5))
+fig1 = plt.figure(figsize=(5,3))
 plt.plot(r,Ev,color='red',label='L-J 6-12')
 plt.plot(r,EH,color='blue',linestyle='dotted',label='Harmonic approx')
 plt.axis([300,1200,-1.05*epsilon,1.05*epsilon])
@@ -91,7 +111,7 @@ plt.axhline(0,color='gray',linestyle='dashed',linewidth=1)
 plt.yticks([-0.02,-0.01,0.0,0.01,0.02])
 plt.xlabel('r/ pm')
 plt.ylabel('E/ eV')
-plt.title('Lennard-Jones 6-12 potential & its aproximation',fontsize=12)
+plt.title('Lennard-Jones 6-12 potential & its aproximation',fontsize=10)
 plt.legend(fontsize=12)
 plt.show()
 
@@ -119,7 +139,7 @@ plt.show()
 # 
 # $$\displaystyle E= \frac{q}{4\pi\epsilon_0\epsilon d^2}\left(4\left(\frac{d}{x}\right)^3 + 8\left(\frac{d}{x} \right)^5 \right) \approx \frac{4q}{4\pi\epsilon_0\epsilon d^2}\left( \frac{d}{x}  \right)^3$$
 # 
-# and as $x \gg d$ the second term $d^3/x^5 $ is very small compared to the first and is ignored. The field thus depends on $x^{-3}$ and this term arises because those in $x^{-2}$ cancel out leaving only a weaker field in higher powers of the separation. The next figure (below) shows that the approximation to the electric field is good (lower curve) at $x \gt d$, and was drawn by assuming for simplicity that $\epsilon $ and the constants $q/4\pi\epsilon_0 = 1$. In SI units this number should be $1.44 \cdot 10^{-9}\,\mathrm{ J \,m\, C^{-1}}$. Dielectric constants are dimensionless and for non-polar solvents such as hexane, $\epsilon \approx 2$ but $\approx 78$ for polar water; molecular dipoles are typically about $5$ Debye which is $16.65 \cdot 10^{-30}$ C m.
+# and as $x \gg d$ the second term $d^5/x^5 $ is very small compared to the first and is ignored. The field thus depends on $x^{-3}$ and this term arises because those in $x^{-2}$ cancel out leaving only a weaker field in higher powers of the separation. The next figure (below) shows that the approximation to the electric field is good (lower curve) at $x \gt d$, and was drawn by assuming for simplicity that $\epsilon $ and the constants $q/4\pi\epsilon_0 = 1$. In SI units this number should be $1.44 \cdot 10^{-9}\,\mathrm{ J \,m\, C^{-1}}$. Dielectric constants are dimensionless and for non-polar solvents such as hexane, $\epsilon \approx 2$ but $\approx 78$ for polar water. Molecular dipoles are typically about $5$ Debye which is $16.65 \cdot 10^{-30}$ C m.
 # 
 # The field $E$ has units force / charge or $\mathrm{J\, m^{-1}\, C^{-1}}$; the interaction energy is therefore dimensionally field $\cdot$ charge $\cdot$ distance, which is force $\cdot$ distance. Integrating the force from infinity, where it is zero, to a separation $x$ produces the energy. Using the result for the field the force is first multiplied by the charge $z$ to give  
 # 
@@ -141,13 +161,13 @@ E     = lambda z :( -(1+z)**(-2) + (1-z)**(-2)  )
 Eapprx= lambda z : 4/z**3 
 z = np.linspace(1.0001,6.0,100)
 
-fig2 = plt.figure(figsize=(5,5))
+fig2 = plt.figure(figsize=(5,3))
 plt.plot(z, E(z), color='red',label='exact')
 plt.plot(z, Eapprx(z), color='blue',label='approx')
 plt.axis([1,6,0,4])
 plt.ylabel('reduced field '+r'$ E/q\beta$')
 plt.xlabel('reduced distance x/d')
-plt.title('ion-dipole interaction',fontsize=12)
+plt.title('ion-dipole interaction',fontsize=10)
 plt.legend(fontsize=12)
 plt.show()
 
@@ -155,25 +175,32 @@ plt.show()
 # Figure 31. The ion - dipole interaction field $E$ (in units of $q\beta/d^2$) vs reduced separation $x/d$, top line shows the exact formula, the lower (dash) line shows the approximation $(x/d)^3$ which can be seen only to be good when $x/d \gt 1$ which in this case means greater than about $3$.
 # ____
 # ## Q37 answer
-# (a) The attractive terms between opposite charges are proportional to $-(x-d_1)^{-1} - (x-d_2)^{-1}$ and the repulsive terms $x^{-1} +(x+d_2-d_1)^{-1}$. This leads directly to the equation given in the question, when scaled with the constants needed to put the energy into SI units.
+# **(a)** The attractive terms between opposite charges are proportional to $-(x-d_1)^{-1} - (x-d_2)^{-1}$ and the repulsive terms to $x^{-1} +(x+d_2-d_1)^{-1}$. This leads directly to the equation given in the question, when scaled with the constants needed to put the energy into SI units.
 # 
-# (b) As $x \gg d$ each term can be expanded using a Taylor series, but to be able to do this properly, each term must be put into the form $x(1 + d/x)$ and then the condition for series expansion, $d/x \ll 1$, is produced. The energy is expressed as the sum of attraction and repulsion terms, and after simplifying a little gives,
+# **(b)** As $x \gg d$ each term can be expanded using a Taylor series, but to be able to do this properly, each term must be put into the form $x(1 + d/x)$ and then the condition for series expansion, $d/x \ll 1$, is produced. The energy is expressed as the sum of attraction and repulsion terms, and after simplifying a little gives,
 # 
-# $$\displaystyle U=\frac{q^2}{4\pi\epsilon_0}\frac{1}{x}\left(1  +\left(1 +\frac{d_2-d_1}{x}\right)^{-1} - 
-#  \left(1 -\frac{d_1}{x}\right)^{-1} - \left(1 +\frac{d_2}{x}\right)^{-1}  \right) $$
+# $$\displaystyle  U=\frac{q^2}{4\pi\epsilon_0}\frac{1}{x}  \left(1  +\left(1 +\frac{d_2-d_1}{x}\right)^{-1} - \left(1 -\frac{d_1}{x}\right)^{-1} - \left(1 +\frac{d_2}{x}\right)^{-1}  \right) $$
 #  
-# The series$(1+s)^{-1} =1-s+s^2 -\cdots $ can now be used if $s$ represents any algebraic expression where $s \lt 1$, therefore,
+# The series 
 # 
-# $$\displaystyle \begin{align}U &=\frac{q^2}{(4\pi\epsilon_0)}\frac{1}{x} \left(1 +1-\frac{d_2-d_1}{x} +\left(\frac{d_2-d_1}{x}\right)^2 -1-\frac{d_1}{x}  -\left(\frac{d_1}{x}  \right)^2 -1+\frac{d_2}{x}   -\left( \frac{d_2}{x}  \right)^2 -\cdots    \right)\\  &= \frac{2q^2d_1d_2}{(4\pi\epsilon_0)} \frac{1}{x^3} = \frac{2\mu_1\mu_2}{(4\pi\epsilon_0)} \frac{1}{x^3} \end{align}$$
+# $$\displaystyle (1+s)^{-1} =1-s+s^2 -\cdots $$
+# 
+# can now be used if $s$ represents any algebraic expression where $s \lt 1$, therefore,
+# 
+# $$\displaystyle \begin{align}U  =&\frac{q^2}{(4\pi\epsilon_0)}\frac{1}{x} \left(1 +1-\frac{d_2-d_1}{x} +\left(\frac{d_2-d_1}{x}\right)^2  -1-\frac{d_1}{x}  -\left(\frac{d_1}{x}  \right)^2 -1+\frac{d_2}{x}   -\left( \frac{d_2}{x}  \right)^2 -\cdots    \right)\\  =& \frac{2q^2d_1d_2}{(4\pi\epsilon_0)} \frac{1}{x^3} = \frac{2\mu_1\mu_2}{(4\pi\epsilon_0)} \frac{1}{x^3} \end{align}\qquad\qquad\qquad$$
 # 
 # where $\mu _1$ and $\mu_2$ are the dipole moments $qd_1$ and $qd_2$ respectively.
 # 
-# (c) The conversion from units of Debye to J m is $1$ D $\equiv 3.33 \cdot 10^{-30}$ C m, the interaction energy of two $5$ D dipoles at $2$ nm separation is therefore $-2\cdot 25 \cdot 3.332 \cdot 10^{-60}/(4\pi 8.854\cdot 10^{-12} \cdot 8\cdot 10^{-27})$ J = $-6.23 \cdot 10^{-23}\,\mathrm{ J\, molecule^{-1}}$ or $-0.375\,\mathrm{ kJ\, mole^{-1}}$. At room temperature $k_BT = 4.14 \cdot 10^{-21}$ J (or $2.49\, \mathrm{kJ\, mole^{-1} }$) so at this $2$ nm separation the dipoles' alignment is going to be easily disrupted by thermal motion. The thermal energy is really so much larger that no persistent alignment will exist. At $1$ nm, however,  the dipole interaction energy is comparable to thermal energy.
+# **(c)** The conversion from units of Debye to J m is $1$ D $\equiv 3.33 \cdot 10^{-30}$ C m, the interaction energy of two $5$ D dipoles at $2$ nm separation is therefore 
+# 
+# $$\displaystyle \frac{-2\cdot 25 \cdot 3.332 \cdot 10^{-60}}{(4\pi\cdot 8.854\cdot 10^{-12} \cdot 8\cdot 10^{-27})} \mathrm{J} = -6.23 \cdot 10^{-23}\,\mathrm{ J\, molecule^{-1}}\;\text{or}\; -0.375\,\mathrm{ kJ\, mole^{-1}}$$ 
+# 
+# At room temperature $k_BT = 4.14 \cdot 10^{-21}$ J ( or $2.49\, \mathrm{kJ\, mole^{-1} }$ ) so at this $2$ nm separation the dipoles' alignment is going to be easily disrupted by thermal motion. The thermal energy is really so much larger that no persistent alignment will exist. At $1$ nm, however,  the dipole interaction energy is comparable to thermal energy.
 # 
 # **Exercise:** Repeat the calculation, supposing that the two dipoles are facing one another parallel and then anti-parallel. A much harder calculation is to calculate the effect of averaging over all angles.
 # 
 # ## Q38 answer
-# (a) The frequency change is shown in the next figure calculated as if the vehicle passes us when standing one metre from the kerb and is traveling at $60$ mph. Notice that the frequency change is greatest as the vehicle approaches compared to when it moves away. i.e. the curve is not symmetrical.
+# **(a)** The frequency change is shown in the next figure calculated as if the vehicle passes us when standing one metre from the kerb and is traveling at $60$ mph. Notice that the frequency change is greatest as the vehicle approaches compared to when it moves away. i.e. the curve is not quite symmetrical.
 # 
 # The relative velocity is calculated by first finding the angle $\theta$ from the vehicle at $x$ to the observer at position at $x_0$, and  $\tan(\theta) = x_0/x$, then finding the projection of this length onto the vehicle's path via $\cos(\theta)$.
 
@@ -193,27 +220,27 @@ numx= 200                      # number of data points
 x = np.linspace(-10,10,numx)   # numx points evenly spaced from -10 to 10
 print('{:6.2f} {:s}{:6.2f}{:s} '.format(mph, 'mph is equivalent to ',v,' m/s' )) 
 
-f = lambda v, x : f0*(vs+v0)/(vs-v) if x > 0 else f0*(vs+v0)/(vs+v)
+func = lambda v, x : f0*(vs+v0)/(vs-v) if x > 0 else f0*(vs+v0)/(vs+v)
 
 rel_v = [ v*np.cos(np.arctan(x0/x[i])) for i in range(numx)]  # angle to observer at x0 then apparent velocity
 
-f01 = [ f( rel_v[i], x[i] ) for i in range(numx)]
+f01 = [ func( rel_v[i], x[i] ) for i in range(numx)]
 
-fig3 = plt.figure( figsize=(5, 5) )
-plt.plot( x, f01,color='blue')
-plt.axhline(f0,color='gray',linewidth=1)
-plt.axvline(0 ,color='gray',linewidth=1)
+fig3 = plt.figure( figsize=(5, 3) )
+plt.plot( x, f01,color='blue',linewidth=1)
+plt.axhline(f0,color='gray',linewidth=0.5)
+plt.axvline(0 ,color='gray',linewidth=0.5)
 plt.xlabel('distance /m')
 plt.ylabel('frequency /Hz')
 plt.title( 'Doppler shift',fontsize=12)
-plt.ylim([f01[0]*0.95,f01[numx-1]*1.05])
+plt.yticks([int(i) for i in range(380,510,20)] )
 plt.grid(color='gray',linestyle='dotted')
 plt.show()
 
 
 # Figure 32. The relative apparent change in the siren's frequency as an ambulance passes when approaching from the right and when 1 m away from the kerb. Notice that the curve is not symmetrical about 440 Hz.
 # ____
-# (b) Rearranging the frequency equation into two parts,then dividing top and bottom by $s$, produces
+# **(b)** Rearranging the frequency equation into two parts,then dividing top and bottom by $s$, produces
 # 
 # $$\displaystyle  \frac{f}{f_0}=\frac{v_s}{v_s-v}+\frac{v_0}{v_s-v}=\left(1+\frac{v_0}{v_s}\right)\frac{1}{1-v/v_s}$$
 # 
@@ -234,22 +261,26 @@ plt.show()
 # In our example, the perceived frequency is constant at $1.08f_0$ as the ambulance approaches us, but because we are, hopefully, on the roadside and not in the middle of the road, our angle to the vehicle changes as it is moving. Consequently, we hear the frequency decrease in proportion to the apparent velocity of the vehicle and the angle between the direction of travel and ourselves. This means that the frequency decreases imperceptibly slowly when the vehicle is a long way off but more rapidly as it approaches. It is exactly $f_0$ just at the instant it passes, and then falls further as it recedes to a final value of $0.92f_0$. Different vehicle and sound speeds and your position will of course, give different perceived frequencies.
 # 
 # ## Q39 answer
-# (a If the star is moving slowly relative to us then $v/c \ll 1$ and letting $v/c = x$ then expanding the square roots as $(1 + x)^{1/2}(1 - x)^{-1/2}$, which avoids dividing the expansions produces,
+# **(a)** If the star is moving slowly relative to us then $v/c \ll 1$ and letting $v/c = x$ then expanding the square roots as $(1 + x)^{1/2}(1 - x)^{-1/2}$, which avoids dividing the expansions produces,
 # 
 # $$\displaystyle (1 + x)^{1/2}(1 - x)^{-1/2} =\left(1 + \frac{x}{2}- \frac{x^2}{8} + \frac{x^3}{16}-\cdots  \right)\left(1 + \frac{x}{2}+ 3\frac{x^2}{8} + 5\frac{x^3}{16}\cdots  \right) $$
 # 
-# Multiplying and keeping only constants and terms in $x$ and $x^2$ produces $(1 + x)^{1/2}(1 - x)^{-1/2} = 1 + x + x^2 \cdots$ and as $x = v/c$ substituting into the equation in the question gives $\delta \lambda /\lambda = v/c $ to first order.
+# Multiplying and keeping only constants and terms in $x$ and $x^2$ produces 
 # 
-# (c) As the reference transition is 0.1 nm wide then using the wavelength for the Lyman-$\alpha$ line $4 \cdot 10^7/3R = 121.5$ nm, the star velocity is $v = 3R\Delta \lambda c/(4 \cdot 10^7$) and the minimum velocity is half this because of the resolution limit and is $\approx 1.23  \cdot 10^5\,\mathrm{ m\, s^{-1}}$; very approximately four thousandths of the speed of light.
+# $$\displaystyle (1 + x)^{1/2}(1 - x)^{-1/2} = 1 + x + x^2 \cdots$$
+# 
+# and as $x = v/c$ substituting into the equation in the question gives $\delta \lambda /\lambda = v/c $ to first order.
+# 
+# **(b)** As the reference transition is 0.1 nm wide then using the wavelength for the Lyman-$\alpha$ line $4 \cdot 10^7/3R = 121.5$ nm, the star velocity is $v = 3R\Delta \lambda c/(4 \cdot 10^7$) and the minimum velocity is half this because of the resolution limit and is $\approx 1.23  \cdot 10^5\,\mathrm{ m\, s^{-1}}$; very approximately four thousandths of the speed of light.
 # 
 # ## Q40 answer
-# (a) When $V$ = 0 the levels must be $E_1$ and $E_2$ as nothing has perturbed them. With the perturbation present $V \ne 0$ and the total energy is, with $\Delta E = E_2 - E_1$,
+# **(a)** When $V$ = 0 the levels must be $E_1$ and $E_2$ as nothing has perturbed them. With the perturbation present $V \ne 0$ and the total energy is, with $\Delta E = E_2 - E_1$,
 # 
 # $$\displaystyle  E_+ + E_- = \frac{E_1}{2} +\frac{E_2}{2} +\frac{\sqrt{\Delta E^2 +4V^2}}{2}+\frac{E_1}{2} +\frac{E_2}{2} -\frac{\sqrt{\Delta E^2 +4V^2}}{2} = E_1+E_2$$
 # 
 # which is unchanged.
 # 
-# (b) When the coupling $V$ is small the square root can be expanded in $(V/\Delta E)^2$. Rewriting the equation as
+# **(b)** When the coupling $V$ is small the square root can be expanded in $(V/\Delta E)^2$. Rewriting the equation as
 # 
 # $$\displaystyle 2 E_\pm = E_1 + E_2 \pm \Delta E \sqrt{ 1+\frac{4V^2}{\Delta E^2}}$$
 # 
@@ -285,7 +316,7 @@ Elimm = [ (E1+E2)/2.0-x[i] for i in range(numx)]
 Eaprxp= [E2 + x[i]**2/deltaE for i in range(numx)]  # approximation 
 Eaprxm= [E1 - x[i]**2/deltaE for i in range(numx)]
 
-fig4 = plt.figure( figsize=(5, 5) )
+fig4 = plt.figure( figsize=(5, 3) )
 plt.plot(x,Ep,color='black',linestyle='solid',label='exact E+')
 plt.plot(x,Em,color='black',linestyle ='solid')
 
@@ -298,7 +329,7 @@ plt.plot(x,Eaprxm,color='red',linestyle='dotted')
 plt.ylabel('Energy')
 plt.xlabel('V')
 plt.axis([0,3,-4,10])
-plt.legend(fontsize=12)
+plt.legend(fontsize=8)
 plt.show()
 
 
@@ -436,7 +467,7 @@ for p in [6,12]:         # calculate for both alpha^ 6 and 12
 # 
 # where $\mu_0$ is the dipole at the equilibrium extension $x = 0$, i.e. when the bond displacement is zero. Note the units; the dipole $\mu$ and $\mu_0$ is measured in Debye which are coulomb metres, the first derivative has units of charge, i.e. coulomb, the second C/m, and so forth.
 # 
-# (a) The harmonic oscillator has a dipole that is linearly proportional to extension so that $d\mu/dx|_0 $ is a constant and thus higher derivatives are zero. Of course, $d\mu/dx|_0$ must itself not be zero which it is in homo-nuclear diatomic molecules, and therefore these molecules do not have a vibrational absorption spectrum. 
+# **(a)** The harmonic oscillator has a dipole that is linearly proportional to extension so that $d\mu/dx|_0 $ is a constant and thus higher derivatives are zero. Of course, $d\mu/dx|_0$ must itself not be zero which it is in homo-nuclear diatomic molecules, and therefore these molecules do not have a vibrational absorption spectrum. 
 # 
 # Experiment tells us that the dipole in HCl is $1.085$ Debye(D) and $d\mu/dx|_0$ is about $0.86\cdot 10^{-8}$ C. ($1 \mathrm{D} = 3.33 \cdot 10^{-30}$ C m).
 # 
@@ -450,22 +481,22 @@ for p in [6,12]:         # calculate for both alpha^ 6 and 12
 # 
 # The integral is not zero if the vibrational quantum number of state $f$ is $f = i + 1$, because of the odd-even character of the vibrational wavefunctions, which are the Hermite polynomials, see question Q50.
 # 
-# (b) The anharmonic oscillator has a dipole that varies in some non-linear way with extension, therefore additionally $d\mu/dx|_0 \ne 0$  are present in the transition moment integral that becomes,
+# **(b)** The anharmonic oscillator has a dipole that varies in some non-linear way with extension, therefore additionally $d\mu/dx|_0 \ne 0$  are present in the transition moment integral that becomes,
 # 
 # $$\displaystyle M=\left[\frac{d\mu}{dx}  \right]_0\int \psi_j^*x \psi_i dx + \left[\frac{d^2\mu}{dx^2}  \right]_0\int \psi_j^*x^2 \psi_i dx$$
 # 
-# in which the second integral is zero if $f=\pm i+2$. In practice $d^2\mu/dx^2|_0$ is small and the transitions with $\Delta \nu -f-i =\pm 2$ are only weakly observed and are called the _first overtone_ or _second harmonic_ transitions.
+# in which the second integral is zero if $f=\pm i+2$. In practice $d^2\mu/dx^2|_0$ is small and the transitions with $\Delta \nu =f-i =\pm 2$ are only weakly observed and are called the *first overtone* or *second harmonic*  transitions.
 # 
 # ## Q44 answer 
-# (a) In this particular example $\displaystyle \frac{dU}{dE}= \left<\frac{dH}{dE} \right>$, therefore, the derivative is easily calculated and is from the equations in the question, $\displaystyle dU/dE = -\langle \mu_z \rangle $.
+# **(a)** In this particular example $\displaystyle \frac{dU}{dE}= \left<\frac{dH}{dE} \right>$, therefore, the derivative is easily calculated and is from the equations in the question, $\displaystyle dU/dE = -\langle \mu_z \rangle $.
 # 
-# (b) Expanding the energy as a Taylor series in electric field $E$, by definition,
+# **(b)** Expanding the energy as a Taylor series in electric field $E$, by definition,
 # 
 # $$\displaystyle U=U_0+E\left(\frac{dU}{dE}  \right)_0+\frac{E^2}{2!}\left(\frac{d^2U}{dE^2}  \right)_0+\frac{E^3}{3!}\left(\frac{d^3U}{dE^3}  \right)_0+\cdots$$
 # 
 # where subscript 0 implies that the derivatives are calculated when $E = 0$ and $U_0$ is the molecular energy at zero field.
 # 
-# (c) From part (a), $\langle \mu_z \rangle $ can be written down as the derivative of $U$, therefore
+# **(c)** From part (a), $\langle \mu_z \rangle $ can be written down as the derivative of $U$, therefore
 # 
 # $$\displaystyle \langle \mu_z \rangle =-\left(\frac{dU}{dE}  \right)_0-E\left(\frac{d^2U}{dE^2}  \right)_0+\frac{E^2}{2!}\left(\frac{d^3U}{dE^3}  \right)_0+\cdots$$
 # 

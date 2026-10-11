@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1592,7 +1592,7 @@ title="Print to PDF"
 </section>
 <section id="q14-reversible-reactions-euler-algorithm">
 <h2>Q14 Reversible reactions. Euler algorithm<a class="headerlink" href="#q14-reversible-reactions-euler-algorithm" title="Permalink to this headline">#</a></h2>
-<p>(a) Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations</p>
+<p><strong>(a)</strong> Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dt} = -(k_f + k_2)y + k_1x,\qquad \frac{dx}{dt} = -(k_1 + k_e)x + k_2y\]</div>
 <p>over the range <span class="math notranslate nohighlight">\(0 \le t \le 1\)</span> with initial conditions <span class="math notranslate nohighlight">\(y_0 = 1,\; x_0 = 0\)</span> and with constants <span class="math notranslate nohighlight">\(k_f = 10,\; k_1 =2.5,\; k_2 = 2, k_e = 5\)</span>. These equations describe two coupled species as shown in the reaction scheme and are similar to the kinetics for excimers described in Q 10.30.</p>
@@ -1601,14 +1601,14 @@ title="Print to PDF"
 y &amp;\overset{k_2} { \underset{k_1}{ \overset{\longrightarrow} \longleftarrow } } &amp; x \\
 \quad\downarrow k_f &amp; &amp; \quad \downarrow k_e
 \end{array}\end{split}\]</div>
-<p>(b) The overall reaction between <span class="math notranslate nohighlight">\(\mathrm{N_2O_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> can be written as</p>
+<p><strong>(b)</strong> The overall reaction between <span class="math notranslate nohighlight">\(\mathrm{N_2O_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A \;\overset{k_1}{ \underset{k_2}{ \overset{\longrightarrow} \longleftarrow } } \;2B \]</div>
 <p>where <span class="math notranslate nohighlight">\(A\equiv \mathrm{N_2O_4}\)</span> and <span class="math notranslate nohighlight">\(B\equiv \mathrm{NO_2}\)</span>. Experimentally measured rate constants at <span class="math notranslate nohighlight">\(25\;^\text{o}C\)</span> are <span class="math notranslate nohighlight">\(k_1=1.7\cdot 10^5\,\mathrm{s^{-1}}\)</span> and <span class="math notranslate nohighlight">\(k_2=1 \cdot 10^6\,\mathrm{atm\,s^{-1}}\)</span> and <span class="math notranslate nohighlight">\(A_0= 2\)</span> atm. (It should be noted that the actual mechanism follows a Lindemann ‘Unimolecular reaction’ scheme).</p>
-<p>(i) Write down and numerically solve the rate equations using the Euler method. Put the Euler algorithm into a subroutine or procedure called a ‘def’ in Python which is then called to start the calculation. Pass the functions representing the rate equations into this as variables.</p>
-<p>(ii) Work out the equilibrium concentrations of A and B.</p>
-<p>(iii) When equilibrium is established describe the effect of adding a fraction of B to the reaction.</p>
-<p>(iv) Now calculate the effect you describe assuming that the amount of B only is increased by <span class="math notranslate nohighlight">\(1/5\)</span>. Modify the Euler algorithm as necessary.</p>
+<p><strong>(i)</strong> Write down and numerically solve the rate equations using the Euler method. Put the Euler algorithm into a subroutine or procedure called a ‘def’ in Python which is then called to start the calculation. Pass the functions representing the rate equations into this as variables.</p>
+<p><strong>(ii)</strong> Work out the equilibrium concentrations of A and B.</p>
+<p><strong>(iii)</strong> When equilibrium is established describe the effect of adding a fraction of B to the reaction.</p>
+<p><strong>(iv)</strong> Now calculate the effect you describe assuming that the amount of B only is increased by <span class="math notranslate nohighlight">\(1/5\)</span>. Modify the Euler algorithm as necessary.</p>
 <p><strong>Strategy</strong> It is easier to work in units of microseconds.  In (iii) use le Chatelier’s principle if necessary to predict what happens.</p>
 </section>
 <section id="q15-michaelis-menten-scheme">
@@ -1617,12 +1617,16 @@ y &amp;\overset{k_2} { \underset{k_1}{ \overset{\longrightarrow} \longleftarrow 
 <div class="math notranslate nohighlight">
 \[\displaystyle E+S \overset{k_1} {  \underset{k_{-1}}{ \overset{\longrightarrow} \longleftarrow } }   ES \overset{k_2}{\longrightarrow} P+E \]</div>
 <p>However, these equations cannot be solved analytically but either have to be solved at steady state, by setting the rate of change of the intermediate ES to zero (see Chapter 10), or have to be solved numerically.</p>
-<p>(a) Using the Euler method, write down and solve the rate equations and plot each species vs
+<p><strong>(a)</strong> Using the Euler method, write down and solve the rate equations and plot each species vs
 time up to <span class="math notranslate nohighlight">\(10\)</span> seconds using a time step of milliseconds. The initial concentrations are</p>
-<p><span class="math notranslate nohighlight">\(S(0) = 5 \cdot 10^{-3}\,\mathrm{  mol\, dm^{-3}}, E(0) = 1.5 \cdot 10^{-3} \,\mathrm{  mol\, dm^{-3}}, ES(0) = 0 \,\mathrm{  mol\, dm^{-3}}\)</span></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(S(0) = 5 \cdot 10^{-3}\,\mathrm{  mol\, dm^{-3}}, E(0) = 1.5 \cdot 10^{-3} \,\mathrm{  mol\, dm^{-3}}, ES(0) = 0 \,\mathrm{  mol\, dm^{-3}}\)</span></p>
+</div></blockquote>
 <p>and the rate constants are</p>
-<p><span class="math notranslate nohighlight">\(k_1 = 1000\,\mathrm{dm^3\, mol^{-1}\, s^{-1}}, k_{-1} = 0.05\,\mathrm{ s^{-1}}, k_2 = 1.0\,\mathrm{ s^{-1}}\)</span>.</p>
-<p>(b) Explain the shape of the curves produced and identify where the steady state is likely to be valid.</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(k_1 = 1000\,\mathrm{dm^3\, mol^{-1}\, s^{-1}}, k_{-1} = 0.05\,\mathrm{ s^{-1}}, k_2 = 1.0\,\mathrm{ s^{-1}}\)</span>.</p>
+</div></blockquote>
+<p><strong>(b)</strong> Explain the shape of the curves produced and identify where the steady state is likely to be valid.</p>
 <p><strong>Strategy:</strong> The Euler method algorithm has to be changed slightly to add new species instead of the two used in most examples so far; for example, the product is calculated inside the ‘for’ loop with a term such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle\mathtt{P = P + h*dpdt(x,y,z)}\]</div>
@@ -1636,7 +1640,10 @@ time up to <span class="math notranslate nohighlight">\(10\)</span> seconds usin
 <p>Solve the equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^3y}{dx^3}+x\frac{dy}{dx}+y-x+1=0  \tag{36}\]</div>
-<p>from <span class="math notranslate nohighlight">\(x  = 0 \to 10\)</span> with the initial conditions <span class="math notranslate nohighlight">\(y_0 = 5,\; dy/dx\big|_0 = 1\)</span>, and <span class="math notranslate nohighlight">\(d^2y/dx^2\big|_0 = 2\)</span>. Note that there are three initial conditions, each evaluated at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<p>from <span class="math notranslate nohighlight">\(x  = 0 \to 10\)</span> with the initial conditions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y_0 = 5,\qquad \frac{dy}{dx}\big|_0 = 1,\qquad \frac{d^2y}{dx^2}\big|_0 = 2\]</div>
+<p>Note that there are three initial conditions, each evaluated at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 <p><strong>Strategy:</strong> Define two new variables to represent the derivatives and so split the equation into three and solve numerically. This equation can be solved directly by SymPy, but only by producing integrals that have to be solved numerically.</p>
 </section>
 </section>

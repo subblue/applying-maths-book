@@ -16,7 +16,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q8 answer
-# (a) $\langle s|s\rangle$; the left-hand icon is the bra, which is, in quantum mechanics, always the transpose and complex conjugate of the ket. (These two combined operations are called the *Hermitian adjoint*.) In this question, the entry in the matrix is a number so its conjugate is still 1. The result of any calculation of the form bra : ket or $\langle \cdots|\cdots \rangle$ is the dot or inner product,
+# **(a)** $\displaystyle \langle s|s\rangle$; the left-hand icon is the bra, which is, in quantum mechanics, always the transpose and complex conjugate of the ket. (These two combined operations are called the *Hermitian adjoint*.) In this question, the entry in the matrix is a number so its conjugate is still 1. The result of any calculation of the form bra : ket or $\langle \cdots|\cdots \rangle$ is the dot or inner product,
 # 
 # $$\displaystyle \langle s|s\rangle=\begin{bmatrix}1 & 0 & 0\end{bmatrix}\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}=1$$
 # 
@@ -24,14 +24,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \langle s|p_x\rangle=\begin{bmatrix}1 & 0 & 0\end{bmatrix}\begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}=0$$
 # 
-# shows that the basis set is also orthogonal. These results, normalization and
-# orthogonality, mean that the basis set is orthonormal.
+# shows that the basis set is also orthogonal. These results, normalization and orthogonality, mean that the basis set is orthonormal.
 # 
-# (b) The calculation the other way around is ket-bra or $|\cdots\rangle\langle\cdots|$  and will always produce a matrix.
+# **(b)** The calculation the other way around is ket-bra or $|\cdots\rangle\langle\cdots|$  and will always produce a matrix.
 # 
-# (i) $\displaystyle |s\rangle \langle s|=\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}\begin{bmatrix}[1 & 0 & 0\end{bmatrix}=\begin{bmatrix}1 & 0 & 0 \\ 0&0&0\\0&0&0 \end{bmatrix}$
+# **(i)** $$\displaystyle |s\rangle \langle s|=\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}\begin{bmatrix}[1 & 0 & 0\end{bmatrix}=\begin{bmatrix}1 & 0 & 0 \\ 0&0&0\\0&0&0 \end{bmatrix}$$
 # 
-# The vectors are _commensurate_ because the row / column order is $3 \times 1$ and $1 \times 3$ producing a $3 \times 3$ matrix. The related calculation for the other components of the basis set produce 
+# The vectors are *commensurate* because the row / column order is $3 \times 1$ and $1 \times 3$ producing a $3 \times 3$ matrix. The related calculation for the other components of the basis set produce 
 # 
 # $$\displaystyle |p_x\rangle \langle p_x|=\begin{bmatrix}0 & 0 & 0 \\ 0&1&0\\0&0&0 \end{bmatrix},\quad |p_y\rangle \langle p_y|=\begin{bmatrix}0 & 0 & 0 \\ 0&0&0\\0&0&1 \end{bmatrix}$$
 # 
@@ -39,26 +38,26 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle |p_x\rangle \langle p_x|\psi\rangle =\begin{bmatrix}0 & 1 & 0 \\ 0&0&0\\0&0&0 \end{bmatrix}\begin{bmatrix} c_s \\c_x\\c_y\end{bmatrix} =c_x|p_x\rangle$$
 # 
-# (ii) $|s\rangle \langle p_x| =\begin{bmatrix}1\\0\\0\end{bmatrix}\begin{bmatrix}0&1&0\end{bmatrix}=\begin{bmatrix}0 & 1 & 0 \\ 0&0&0\\0&0&0 \end{bmatrix}$
+# **(ii)** $|s\rangle \langle p_x| =\begin{bmatrix}1\\0\\0\end{bmatrix}\begin{bmatrix}0&1&0\end{bmatrix} =\begin{bmatrix} 0 & 1 & 0 \\ 0&0&0\\0&0&0 \end{bmatrix}$
 # 
 # The similar calculation with bra $\langle s|$ and$\langle p|$ produce related matrices with unity in the top row and in the first and third column respectively.
 # 
-# (iii) Now operate using the matrix $|s\rangle \langle s|$ ,on $|\varphi\rangle$ .Expanding using the result from (i) gives 
+# **(iii)** Now operate using the matrix $|s\rangle \langle s|$, on $|\varphi\rangle$. Expanding using the result from **(i)** gives 
 # 
 # $$\displaystyle |s\rangle \langle s|\varphi\rangle=\begin{bmatrix}1 & 0 & 0 \\ 0&0&0\\0&0&0 \end{bmatrix}\begin{bmatrix}b_s\\b_x\\b_y\end{bmatrix}=b_s|s\rangle$$
 # 
 # which is a new ket, $b_s|s\rangle$ and therefore the result of an experiment operating on $|\varphi\rangle$, which is a linear superposition state, is to collapse the wavefunction $\varphi$ and produce the amount $b_s$ of the state $| s \rangle$.
 # 
-# (iv) The effect of basis bra $\langle p_y|$ is to select only the $y$ component, 
+# **(iv)** The effect of basis bra $\langle p_y|$ is to select only the $y$ component, 
 # 
 # $$ \displaystyle \langle p_y|\psi \rangle =\begin{bmatrix}0 & 0 & 1\end{bmatrix} \begin{bmatrix}c_s\\ c_x \\ c_y\end{bmatrix}=c_y$$
 # 
-# (vii) A matrix operator results; notice the row / column pattern of multiplication,
+# **(v)** A matrix operator results; notice the row / column pattern of multiplication,
 # 
 # $$\displaystyle |\psi\rangle\langle\varphi|= \begin{bmatrix}b_s\\ b_x \\ b_y\end{bmatrix}\begin{bmatrix}c_s^* & c_x^* & c_y^*\end{bmatrix}=\begin{bmatrix}b_sc_s^*& b_sc_x^* &b_sc_y^* \\b_xc_s^*& b_xc_x^* &b_xc_y^* \\ b_yc_s^*& b_yc_x^* &b_yc_y^*\end{bmatrix} $$
 # 
 # ## Q9 answer
-# Using the definition of the bra-ket, the right hand bra- ket is obtained by taking the complex conjugate of both vectors and noting that for any complex number $z$, taking the complex conjugate twice leaves it unchanged, $z = (z^*)^*$. Starting with the right hand side
+# Using the definition of the bra-ket, the right hand bra-ket is obtained by taking the complex conjugate of both vectors and noting that for any complex number $z$, taking the complex conjugate twice leaves it unchanged, $z = (z^*)^*$. Starting with the right hand side
 # 
 # $$\displaystyle \langle\varphi|\psi\rangle^* =\begin{bmatrix}b_s^*& b_x^* & b_y^*\end{bmatrix}^*\begin{bmatrix}c_s \\ c_x\\ c_y\end{bmatrix}^*=b_sc_s^*+b_xc_x^*+b_yc_y^*$$
 # 
@@ -69,7 +68,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # which is the same result so that $\langle\psi|\varphi\rangle =\langle\varphi|\psi\rangle^*$, and this is general because $c$ and $b$ are arbitrary constants. By induction, this result would be true no matter how long the vectors were.
 # 
 # ## Q10 answer
-# (a) Starting with each component and making the square of the operator as the product,
+# **(a)** Starting with each component and making the square of the operator as the product,
 # 
 # $$\displaystyle \pmb{I}_x\pmb{I}_x=\frac{\hbar^2}{4}\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix}\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix}=\frac{\hbar^2}{4}\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$$
 # 
@@ -77,9 +76,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \pmb{I}_y\pmb{I}_y=\frac{\hbar^2}{4}\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}\quad \displaystyle \pmb{I}_z\pmb{I}_z=\frac{\hbar^2}{4}\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix} $$
 # 
-# then, adding terms, produces the result $\displaystyle \pmb{I}^2=\frac{3\hbar^2}{4}\pmb{1}$ where $\pmb{1}$ is the unit diagonal matrix.
+# then, adding terms, produces the result 
 # 
-# (b) The commutator of two matrices A and B is $[\pmb{A}, \pmb{B}] = \pmb{A}\pmb{B} - \pmb{B}\pmb{A}$. In this example,
+# $$\displaystyle \pmb{I}^2=\frac{3\hbar^2}{4}\pmb{1}$$
+# 
+# where $\pmb{1}$ is the unit diagonal matrix.
+# 
+# **(b)** The commutator of two matrices A and B is $[\pmb{A}, \pmb{B}] = \pmb{A}\pmb{B} - \pmb{B}\pmb{A}$. In this example,
 # 
 # $$\displaystyle [\pmb{I}^2,\pmb{I}_z]=\frac{\hbar^3}{8}\begin{bmatrix}3 & 0\\0 & 3\end{bmatrix}\begin{bmatrix}1 & 0\\0 & -1\end{bmatrix}-\frac{\hbar^3}{8}\begin{bmatrix}1 & 0\\0 & -1\end{bmatrix}\begin{bmatrix}3 & 0\\0 & 3\end{bmatrix}=\frac{\hbar^3}{8}\begin{bmatrix}3 & 0\\0 & -3\end{bmatrix}-\frac{\hbar^3}{8}\begin{bmatrix}3 & 0\\0 & -3\end{bmatrix}=0$$
 # 
@@ -89,7 +92,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and as this is not zero, the angular momentum components do not commute. This is true in any order of $x, y$ or $z$, so it is not possible to determine simultaneously the $x$ or $y$ components of the angular momentum when $\pmb{I}_z$ and $\pmb{I}^2$ are determined. This is a consequence of the uncertainty principle.
 # 
-# (c) Operating on $\alpha$ with $\pmb{I}^2$ gives 
+# **(c)** Operating on $\alpha$ with $\pmb{I}^2$ gives 
 # 
 # $$\displaystyle \pmb{I}^2α =\frac{\hbar^2}{4}\begin{bmatrix} 3&0\\0&3\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix} =\frac{3\hbar^2}{4}\begin{bmatrix}1\\0\end{bmatrix}=\frac{3\hbar^2}{4}\alpha$$
 # 
@@ -107,7 +110,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # with eigenvalue $-\hbar/2$.
 # 
-# (d) The $x,y$ and $z$ components are calculated in a similar way;
+# **(d)** The $x,y$ and $z$ components are calculated in a similar way;
 # 
 # $$\displaystyle \pmb{I}_x\alpha =\frac{\hbar}{2}\begin{bmatrix} 0&1\\1&0\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix}=\frac{\hbar}{2}\beta $$
 # 
@@ -120,7 +123,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $$\displaystyle \pmb{I}_y\alpha =\frac{\hbar}{2}\begin{bmatrix} 0&-i\\i&0\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix}=\frac{\hbar}{2}\begin{bmatrix}0\\i\end{bmatrix} \qquad \pmb{I}_y\beta  =\frac{\hbar}{2}\begin{bmatrix}-i\\0\end{bmatrix}$$
 # 
 # 
-# (e) The raising operator $\pmb{I}^+ = \pmb{I}_x + i\pmb{I}_y$ has the following effect on state $\alpha$;
+# **(e)** The raising operator $\pmb{I}^+ = \pmb{I}_x + i\pmb{I}_y$ has the following effect on state $\alpha$;
 # 
 # $$\displaystyle (\pmb{I}_x + i\pmb{I}_y)\alpha=\frac{\hbar}{2}\left(\begin{bmatrix}0&  1 \\ 1&0 \end{bmatrix}+i\begin{bmatrix}0& -i\\i& 0\end{bmatrix} \right)\begin{bmatrix}1\\0\end{bmatrix}=0$$
 # 
@@ -131,21 +134,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Similarly, lowering operators lower $\alpha$ to $\beta$ and will not lower $\beta$ any further.
 
 # ## Q11 answer
-# (a) If the basis is represented as a set of matrices such as
+# **(a)** If the basis is represented as a set of matrices such as
 # 
 # $$\displaystyle \langle Lm|=\begin{bmatrix} 0\\0\\ \vdots\\1\\ \vdots\end{bmatrix} $$
 # 
 # where the _position_ of the number 1 in the vector is the _position_ of quantum number $m$ in the basis set. Any two similar vectors are normalized and any two different vectors are zero, thus the bra-ket $\langle Lm|Lm\rangle = 1$ but $\langle Lm|Ln \rangle = 0$ when $m \ne n$.
 # 
-# (b) A matrix is set up with the basis set ordering. Because only the $m$ values change, the set can be approximated as $-3/2, -1/2, 1/2, 3/2$ and $L$ does not need to be listed. The $\pmb{L}^+$ operator only couples states with $m$ and $m + 1$; only the states $-3/2 \to -1/2; -1/2 \to 1/2$ and $1/2 \to 3/2$ are coupled, thus the $4 \times 4$ matrix has only three non-zero terms and these are each one place to the right of the diagonal with the ordering used.
+# **(b)** A matrix is set up with the basis set ordering. Because only the $m$ values change, the set can be approximated as $-3/2, -1/2, 1/2, 3/2$ and $L$ does not need to be listed. The $\pmb{L}^+$ operator only couples states with $m$ and $m + 1$; only the states $-3/2 \to -1/2; -1/2 \to 1/2$ and $1/2 \to 3/2$ are coupled, thus the $4 \times 4$ matrix has only three non-zero terms and these are each one place to the right of the diagonal with the ordering used.
 # 
 # The matrix entries have values:
 # 
-# row 2, col 1: $-3/2 \to -1/2$ is $\displaystyle  \sqrt{\frac{15}{4}-\frac{-3}{2}\frac{-1}{2} }=\sqrt{3}$
+# row 2, col 1: $\qquad -3/2 \to -1/2$ is $\displaystyle  \sqrt{\frac{15}{4}-\frac{-3}{2}\frac{-1}{2} }=\sqrt{3}$
 # 
-# row 3, col 2: $-1/2 \to -1/2$ is $\displaystyle  \sqrt{\frac{15}{4}-\frac{-1}{2}\frac{-1}{2} }=2$
+# row 3, col 2: $\qquad -1/2 \to -1/2$ is $\displaystyle  \sqrt{\frac{15}{4}-\frac{-1}{2}\frac{-1}{2} }=2$
 # 
-# row 4, col 3: $1/2 \to 3/2$ is $\displaystyle  \sqrt{\frac{15}{4}-\frac{1}{2}\frac{3}{2} }=\sqrt{3}$
+# row 4, col 3: $\qquad 1/2 \to 3/2$ is $\displaystyle  \sqrt{\frac{15}{4}-\frac{1}{2}\frac{3}{2} }=\sqrt{3}$
 # 
 # making the $\pmb{L}^+$ matrix
 # 
@@ -157,7 +160,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which is the transpose of $\pmb{L}^+$.
 # 
-# (c) The $\pmb{L}_z$ operator has the effect $\pmb{L}_z |Lm\rangle = m|Lm\rangle$ and as $m$ has values $-3/2 \to 3/2$, the operator represented as a matrix is a diagonal matrix in $m$ values.
+# **(c)** The $\pmb{L}_z$ operator has the effect $\pmb{L}_z |Lm\rangle = m|Lm\rangle$ and as $m$ has values $-3/2 \to 3/2$, the operator represented as a matrix is a diagonal matrix in $m$ values.
 # 
 # The commutator matrix is 
 # 
@@ -208,27 +211,43 @@ commutator
 # _______
 # 
 # ## Q12 answer
-# (a) Using the definition of the shifting operators
+# **(a)** Using the definition of the shifting operators
 # 
 # $$\displaystyle \pmb{L}_x\big|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\big|Lm+1\rangle + \frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\big|Lm-1\rangle $$
 # 
 # then left multiplying by a bra to increase $m$ gives
 # 
-# $$\displaystyle \langle Lm+1|\pmb{L}_x|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\langle Lm+1\big|Lm+1\rangle \\+ \frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\langle Lm+1\big|Lm-1\rangle $$
+# $$\displaystyle \begin{align}\langle Lm+1|\pmb{L}_x|Lm\rangle =&\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\langle Lm+1\big|Lm+1\rangle \\+ &\frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\langle Lm+1\big|Lm-1\rangle\end{align} $$
 # 
-# As the basis set is orthogonal and normalized, by definition, $\langle Lm \pm 1 | Lm\rangle = 0$ and $\langle Lm + 1 | Lm + 1\rangle = \langle Lm - 1 | Lm - 1\rangle = 1$, therefore
+# As the basis set is orthogonal and normalized, by definition, 
+# 
+# $$\displaystyle \langle Lm \pm 1 | Lm\rangle = 0,\quad\text{and}\quad \langle Lm + 1 | Lm + 1\rangle = \langle Lm - 1 | Lm - 1\rangle = 1$$
+# 
+# therefore
 # 
 # $$\displaystyle \langle Lm+1|\pmb{L}_x|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}$$
 # 
 # A similar argument works for $\langle Lm - 1|\pmb{L}_x |Lm\rangle$ and also to obtain the two expressions for $\pmb{L}_y$.
 # 
-# (b) The commutator is 
+# **(b)** The commutator is 
 # 
 # $$[\pmb{L}^+ ,\pmb{L}^-]=\pmb{L}^+ \pmb{L}^- - \pmb{L}^- \pmb{L}^+$$
 # 
-# The effect each operator has is abbreviated as $\pmb{L}^+ | Lm\rangle \to | Lm + 1\rangle$ meaning that the quantum numbers are increased by one or are decreased by 1; $\pmb{L}^- |Lm\rangle \to |Lm - 1\rangle $. The effect of two operations is therefore to leave the state unchanged, one raises the other lowers or *vice versa*. Thus the operation $\pmb{L}^- (\pmb{L}^+ |Lm\rangle )\to \pmb{L}^- |Lm+1\rangle \to|Lm\rangle$ and similarly for $\pmb{L}^+ \pmb{L}^-$. Thus, it is established that the product operator has the same effect as $\pmb{L}_z$ in that the quantum number is unchanged. However, the commutator could turn out to be zero so the square roots have to be worked out. These have the value
+# The effect each operator has is abbreviated as 
 # 
-# $$\displaystyle \begin{align}&\sqrt{\big(L(L+1)-m(m-1)\big)\big(L(L+1)-m(m-1)\big)}-\sqrt{\big(L(L+1)-m(m+1)\big)\big(L(L+1)-m(m+1)\big)}\\&=2m\end{align}$$
+# $$\displaystyle \pmb{L}^+ | Lm\rangle \to | Lm + 1\rangle$$
+# 
+# meaning that the quantum numbers are increased by one or are decreased by 1; 
+# 
+# $$\displaystyle \pmb{L}^- |Lm\rangle \to |Lm - 1\rangle $$
+# 
+# The effect of two operations is therefore to leave the state unchanged, one raises the other lowers or *vice versa*. Thus the operation 
+# 
+# $$\displaystyle \pmb{L}^- (\pmb{L}^+ |Lm\rangle )\to \pmb{L}^- |Lm+1\rangle \to|Lm\rangle$$
+# 
+# and similarly for $\pmb{L}^+ \pmb{L}^-$. Thus, it is established that the product operator has the same effect as $\pmb{L}_z$ in that the quantum number is unchanged. However, the commutator could turn out to be zero so the square roots have to be worked out. These have the value
+# 
+# $$\displaystyle \sqrt{\big(L(L+1)-m(m-1)\big)\big(L(L+1)-m(m-1)\big)}-\sqrt{\big(L(L+1)-m(m+1)\big)\big(L(L+1)-m(m+1)\big)}=2m$$
 # 
 # which confirms that $[\pmb{L}^+,\pmb{L}^-]=2\pmb{L}_z$.
 

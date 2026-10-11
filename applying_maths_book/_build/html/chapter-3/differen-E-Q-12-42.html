@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6 Limits, l’Hopital’s rule, Maximum &amp; Minimum. Calculus of Variations. Lagrangian &amp; Euler-Lagrange equations ." href="differen-F.html" />
-    <link rel="prev" title="4 Product rule and function of function or chain rule." href="differen-D.html" />
+    <link rel="prev" title="4 Product rule and function of function or chain rule. Differentiating Parametric functions and vectors. Differentiation Summary." href="differen-D.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1513,13 +1513,16 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q12">
-   Q12
+  <a class="reference internal nav-link" href="#q12-find-dy-dx">
+   Q12  Find
+   <span class="math notranslate nohighlight">
+    \(dy/dx\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q13">
-   Q13
+  <a class="reference internal nav-link" href="#q13-differentiate-without-using-a-computer">
+   Q13 Differentiate without using a computer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1538,8 +1541,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q17">
-   Q17
+  <a class="reference internal nav-link" href="#q17-differentiate-an-integral">
+   Q17 Differentiate an integral
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1548,18 +1551,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q19">
-   Q19
+  <a class="reference internal nav-link" href="#q19-differentiate-and-plot-the-result">
+   Q19 Differentiate and plot the result.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q20">
-   Q20
+  <a class="reference internal nav-link" href="#q20-differentiate">
+   Q20 Differentiate
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q21">
-   Q21
+  <a class="reference internal nav-link" href="#q21-differentiate">
+   Q21 Differentiate
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1573,33 +1576,36 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q24">
-   Q24
+  <a class="reference internal nav-link" href="#q24-second-and-third-derivatives">
+   Q24 Second and third derivatives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q25">
-   Q25
+  <a class="reference internal nav-link" href="#q25-second-derivative">
+   Q25 Second derivative
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q26-differential-operator">
+  <a class="reference internal nav-link" href="#q26-differential-operator-df-x">
    Q26 Differential operator
+   <span class="math notranslate nohighlight">
+    \(Df(x)\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q27">
-   Q27
+  <a class="reference internal nav-link" href="#q27-operator">
+   Q27 Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q28">
-   Q28
+  <a class="reference internal nav-link" href="#q28-operator">
+   Q28 Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q29">
-   Q29
+  <a class="reference internal nav-link" href="#q29-derivatives">
+   Q29 Derivatives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1608,8 +1614,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q31-reflection-by-a-parabolic-mirror">
-   Q31 Reflection by a parabolic mirror
+  <a class="reference internal nav-link" href="#q31-reflection-by-a-parabolic-mirror-parametric-equations">
+   Q31 Reflection by a parabolic mirror. Parametric equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1638,8 +1644,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q37-wavepacket">
-   Q37 Wavepacket
+  <a class="reference internal nav-link" href="#q37-wavepackets">
+   Q37 Wavepackets
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1691,13 +1697,16 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q12">
-   Q12
+  <a class="reference internal nav-link" href="#q12-find-dy-dx">
+   Q12  Find
+   <span class="math notranslate nohighlight">
+    \(dy/dx\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q13">
-   Q13
+  <a class="reference internal nav-link" href="#q13-differentiate-without-using-a-computer">
+   Q13 Differentiate without using a computer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1716,8 +1725,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q17">
-   Q17
+  <a class="reference internal nav-link" href="#q17-differentiate-an-integral">
+   Q17 Differentiate an integral
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1726,18 +1735,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q19">
-   Q19
+  <a class="reference internal nav-link" href="#q19-differentiate-and-plot-the-result">
+   Q19 Differentiate and plot the result.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q20">
-   Q20
+  <a class="reference internal nav-link" href="#q20-differentiate">
+   Q20 Differentiate
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q21">
-   Q21
+  <a class="reference internal nav-link" href="#q21-differentiate">
+   Q21 Differentiate
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1751,33 +1760,36 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q24">
-   Q24
+  <a class="reference internal nav-link" href="#q24-second-and-third-derivatives">
+   Q24 Second and third derivatives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q25">
-   Q25
+  <a class="reference internal nav-link" href="#q25-second-derivative">
+   Q25 Second derivative
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q26-differential-operator">
+  <a class="reference internal nav-link" href="#q26-differential-operator-df-x">
    Q26 Differential operator
+   <span class="math notranslate nohighlight">
+    \(Df(x)\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q27">
-   Q27
+  <a class="reference internal nav-link" href="#q27-operator">
+   Q27 Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q28">
-   Q28
+  <a class="reference internal nav-link" href="#q28-operator">
+   Q28 Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q29">
-   Q29
+  <a class="reference internal nav-link" href="#q29-derivatives">
+   Q29 Derivatives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1786,8 +1798,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q31-reflection-by-a-parabolic-mirror">
-   Q31 Reflection by a parabolic mirror
+  <a class="reference internal nav-link" href="#q31-reflection-by-a-parabolic-mirror-parametric-equations">
+   Q31 Reflection by a parabolic mirror. Parametric equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1816,8 +1828,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q37-wavepacket">
-   Q37 Wavepacket
+  <a class="reference internal nav-link" href="#q37-wavepackets">
+   Q37 Wavepackets
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1862,142 +1874,160 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="questions-12-42">
 <h1>Questions 12-42<a class="headerlink" href="#questions-12-42" title="Permalink to this headline">#</a></h1>
 <p>The initial questions demonstrate mathematical aspects of differentiation, later questions apply differentiation to scientific problems.</p>
-<section id="q12">
-<h2>Q12<a class="headerlink" href="#q12" title="Permalink to this headline">#</a></h2>
+<section id="q12-find-dy-dx">
+<h2>Q12  Find <span class="math notranslate nohighlight">\(dy/dx\)</span><a class="headerlink" href="#q12-find-dy-dx" title="Permalink to this headline">#</a></h2>
 <p>Calculate <span class="math notranslate nohighlight">\(dy/dx \)</span> if <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{llll}
-(a) &amp; y = \sin(ax)e^{-bx}           &amp; (b) &amp; y = \tanh(x)e^{-bx} \\
-(c) &amp; y = e^{-b\sin(x^2) }          &amp; (d) &amp; y = \ln(a + bx)\cos(ax)\\
-(e) &amp; y = \ln(a + bx)\tan^{-1}(ax)  &amp; (f) &amp; y = \ln(a + b\sin(x))\\
-(g) &amp; y = \sqrt{\cos(e^{x^2} - 1)}  &amp; (h) &amp; x = \cosh(y)\\
-(i) &amp; y = \sin^{-1}(x/a)            &amp; (j) &amp; y = \sin(x/a)^{-1}\\
-(k) &amp; p = \sin^{2}(q) + q^2 \cos(q), \text{ find }\; dp/dq
+\mathbf{(a)} &amp; y = \sin(ax)e^{-bx}           &amp; \mathbf{(b)} &amp; y = \tanh(x)e^{-bx} \\
+\mathbf{(c)} &amp; y = e^{-b\sin(x^2) }          &amp; \mathbf{(d)} &amp; y = \ln(a + bx)\cos(ax)\\
+\mathbf{(e)} &amp; y = \ln(a + bx)\tan^{-1}(ax)  &amp; \mathbf{(f)} &amp; y = \ln(a + b\sin(x))\\
+\mathbf{(g)} &amp; y = \sqrt{\cos(e^{x^2} - 1)}  &amp; \mathbf{(h)} &amp; x = \cosh(y)\\
+\mathbf{(i)} &amp; y = \sin^{-1}(x/a)            &amp; \mathbf{(j)} &amp; y = \sin(x/a)^{-1}\\
+\mathbf{(k)} &amp; p = \sin^{2}(q) + q^2 \cos(q), \text{ find }\; dp/dq
 \end{array}\end{split}\]</div>
 </section>
-<section id="q13">
-<h2>Q13<a class="headerlink" href="#q13" title="Permalink to this headline">#</a></h2>
-<p>Differentiate with respect to <span class="math notranslate nohighlight">\(x\)</span> without using the computer:</p>
+<section id="q13-differentiate-without-using-a-computer">
+<h2>Q13 Differentiate without using a computer<a class="headerlink" href="#q13-differentiate-without-using-a-computer" title="Permalink to this headline">#</a></h2>
+<p>Differentiate with respect to <span class="math notranslate nohighlight">\(x\)</span> without using a computer:</p>
 <div class="math notranslate nohighlight">
-\[ (a)\; y=x^y,\quad (b)\; x=y^y,\quad (c)\; y=x^x and find the minimum $y$.\]</div>
+\[ \mathbf{(a)}\; y=x^y,\quad \mathbf{(b)}\; x=y^y,\quad \mathbf{(c)}\; y=x^x\]</div>
+<p>and in <strong>(c)</strong> find the minimum <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p><strong>Strategy:</strong> Usually with powers of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> it is simpler to take logs first then differentiate.</p>
 </section>
 <section id="q14-differentiate-an-integral">
 <h2>Q14 Differentiate an integral<a class="headerlink" href="#q14-differentiate-an-integral" title="Permalink to this headline">#</a></h2>
-<p>(a) Differentiate  <span class="math notranslate nohighlight">\(\displaystyle \int e^{ax}dx\)</span> <span class="math notranslate nohighlight">\(n\)</span> times by <span class="math notranslate nohighlight">\(a\)</span> and show that</p>
+<p><strong>(a)</strong> Differentiate  <span class="math notranslate nohighlight">\(\displaystyle \quad\int e^{ax}dx\quad n\)</span> times by <span class="math notranslate nohighlight">\(a\)</span> and show that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int x^ne^{ax}dx=\frac{d^n}{da^n}\left(  \frac{e^{ax}}{a} \right)\]</div>
-<p>(b) Find two similar relationships for  <span class="math notranslate nohighlight">\(\displaystyle \int\sin(ax)dx\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is even and for  <span class="math notranslate nohighlight">\(\displaystyle \int \cos(ax)dx\)</span> when odd. This is quite a neat way to perform these integrals.</p>
+<p><strong>(b)</strong> Find two similar relationships for  <span class="math notranslate nohighlight">\(\displaystyle \int\sin(ax)dx\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is even and for  <span class="math notranslate nohighlight">\(\displaystyle \int \cos(ax)dx\)</span> when odd. This is quite a neat way to perform these integrals.</p>
 </section>
 <section id="q15-parametric-eqn">
 <h2>Q15 Parametric eqn.<a class="headerlink" href="#q15-parametric-eqn" title="Permalink to this headline">#</a></h2>
-<p>(a) Use Python/Matplotlib to plot the parametric function</p>
+<p><strong>(a)</strong> Use Python/Matplotlib to plot the parametric function</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  x = \sin(t) - \sin^3(2t),\qquad y = \cos(t) - \cos^3(2t)\]</div>
-<p>(b) Calculate <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
-<p>(c) Find the vertical tangents.</p>
+<p><strong>(b)</strong> Calculate <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
+<p><strong>(c)</strong> Find the vertical tangents.</p>
 <p>This is a rather complex curve that would be hard to define in terms of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> alone. Try changing the constant <span class="math notranslate nohighlight">\(2\)</span> to <span class="math notranslate nohighlight">\(3\)</span> and the powers to see how the curve alters.</p>
 </section>
 <section id="q16-cardioid">
 <h2>Q16 Cardioid<a class="headerlink" href="#q16-cardioid" title="Permalink to this headline">#</a></h2>
-<p>(a) Calculate the gradient of the Cardioid with parametric equations</p>
+<p><strong>(a)</strong> Calculate the gradient of the Cardioid with parametric equations</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  x = 2\cos(t) + \cos(2t) + 1, \qquad y = 2 \sin(t) + \sin(2t)\]</div>
 <p>at the point <span class="math notranslate nohighlight">\(t\)</span>, and where <span class="math notranslate nohighlight">\(t\)</span> is not a multiple of <span class="math notranslate nohighlight">\(\pi\)</span>. A plot of a cardioid is shown in figure 6a.</p>
-<p>(b) Calculate where the tangent is zero; only two solutions are sensible, why is this and where is the tangent infinite?</p>
+<p><strong>(b)</strong> Calculate where the tangent is zero; only two solutions are sensible, why is this and where is the tangent infinite?</p>
 <p><img alt="Display" src="../_images/differen-fig6a.png" /></p>
 <p>Figure 6(c). The Cardioid, left, and Nephroid.</p>
 </section>
 <hr class="docutils" />
-<section id="q17">
-<h2>Q17<a class="headerlink" href="#q17" title="Permalink to this headline">#</a></h2>
-<p>Calculate  <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\int_{\ln(x)}^{x^2}e^{-s^2}ds\)</span>  without actually integrating</p>
+<section id="q17-differentiate-an-integral">
+<h2>Q17 Differentiate an integral<a class="headerlink" href="#q17-differentiate-an-integral" title="Permalink to this headline">#</a></h2>
+<p>Calculate  <span class="math notranslate nohighlight">\(\displaystyle \;\frac{d}{dx}\int_{\ln(x)}^{x^2}e^{-s^2}ds\;\)</span>  without actually integrating</p>
 <p><strong>Strategy:</strong> Use equation (15).</p>
 </section>
 <section id="q18-chain-rule">
 <h2>Q18 Chain rule<a class="headerlink" href="#q18-chain-rule" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(y=x^2 +2,\;x=\sqrt{w},\; w=\cos(u)\)</span>, using the chain rule write down <span class="math notranslate nohighlight">\(dy/du\)</span> in terms of <span class="math notranslate nohighlight">\(x,\,u\)</span>, and <span class="math notranslate nohighlight">\(w\)</span>, then calculate the derivative in terms of <span class="math notranslate nohighlight">\(u\)</span> alone. Confirm the result by substituting the equations first.</p>
+<p><span class="math notranslate nohighlight">\(\text{If}\quad y=x^2 +2,\quad x=\sqrt{w},\quad  w=\cos(u)\)</span>,</p>
+<p>using the chain rule write down <span class="math notranslate nohighlight">\(dy/du\)</span> in terms of <span class="math notranslate nohighlight">\(x,\,u\)</span>, and <span class="math notranslate nohighlight">\(w\)</span>, then calculate the derivative in terms of <span class="math notranslate nohighlight">\(u\)</span> alone. Confirm the result by substituting the equations first.</p>
 </section>
-<section id="q19">
-<h2>Q19<a class="headerlink" href="#q19" title="Permalink to this headline">#</a></h2>
-<p>(a) If <span class="math notranslate nohighlight">\(\displaystyle y = \left(\ln(x)\right)^x\)</span> find <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
-<p>(b) Plot graphs of <span class="math notranslate nohighlight">\(y\)</span> and its derivative and explain why the curves have the form they do. What
+<section id="q19-differentiate-and-plot-the-result">
+<h2>Q19 Differentiate and plot the result.<a class="headerlink" href="#q19-differentiate-and-plot-the-result" title="Permalink to this headline">#</a></h2>
+<p><strong>(a)</strong> Calculate <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y = \big(\ln(x)\big)^x\]</div>
+<p><strong>(b)</strong> Plot graphs of <span class="math notranslate nohighlight">\(y\)</span> and its derivative and explain why the curves have the form they do. What
 happens when <span class="math notranslate nohighlight">\(x \lt\)</span> 1 and why are the curves so similar when <span class="math notranslate nohighlight">\(x\)</span> is large?</p>
 </section>
-<section id="q20">
-<h2>Q20<a class="headerlink" href="#q20" title="Permalink to this headline">#</a></h2>
+<section id="q20-differentiate">
+<h2>Q20 Differentiate<a class="headerlink" href="#q20-differentiate" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(\displaystyle f = ye^{-ax}\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are both functions of a variable <span class="math notranslate nohighlight">\(s\)</span>, what is <span class="math notranslate nohighlight">\(df /ds\)</span> if <span class="math notranslate nohighlight">\(a\)</span> is a constant?</p>
 <p><strong>Strategy:</strong> Being a function of <span class="math notranslate nohighlight">\(s\)</span> means the functions are <span class="math notranslate nohighlight">\(y(s) =\cdots\)</span>  and <span class="math notranslate nohighlight">\(x(s) =\cdots\)</span> or ‘something in <span class="math notranslate nohighlight">\(s\)</span>’. In full notation <span class="math notranslate nohighlight">\(f (s) = y(s)e^{-ax(s)}\)</span> . As both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are functions of the independent variable <span class="math notranslate nohighlight">\(s\)</span>, then the derivatives of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> with respect to s must be found. It is here necessary to overcome our prejudice of <span class="math notranslate nohighlight">\(x\)</span> as the only differentiation variable. If the equation had different symbols, it might be easier.</p>
 </section>
-<section id="q21">
-<h2>Q21<a class="headerlink" href="#q21" title="Permalink to this headline">#</a></h2>
+<section id="q21-differentiate">
+<h2>Q21 Differentiate<a class="headerlink" href="#q21-differentiate" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(\displaystyle y=x^n\ln(x)\)</span></p>
-<p>(a) Show that <span class="math notranslate nohighlight">\(\displaystyle xy′=ny+x^n\)</span>.</p>
-<p>(b) Calculate <span class="math notranslate nohighlight">\(y''\)</span></p>
+<p><strong>(a)</strong> Show that <span class="math notranslate nohighlight">\(\displaystyle xy'=ny+x^n\)</span>.</p>
+<p><strong>(b)</strong> Calculate <span class="math notranslate nohighlight">\(y''\)</span></p>
 </section>
 <section id="q22-distance-and-velocity">
 <h2>Q22 Distance and velocity<a class="headerlink" href="#q22-distance-and-velocity" title="Permalink to this headline">#</a></h2>
-<p>Show that <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\left( \frac{v^2}{2} \right) =\frac{d^2x}{dt^2}\)</span> where <span class="math notranslate nohighlight">\(x\)</span> represents the distance travelled by a body in time <span class="math notranslate nohighlight">\(t\)</span> when <span class="math notranslate nohighlight">\(v\)</span> is its velocity.</p>
+<p>If <span class="math notranslate nohighlight">\(x\)</span> represents the distance travelled by a body in time <span class="math notranslate nohighlight">\(t\)</span> with velocity <span class="math notranslate nohighlight">\(v\)</span>, show that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dx}\left( \frac{v^2}{2} \right) =\frac{d^2x}{dt^2}\]</div>
 <p><strong>Strategy:</strong> Notice that the derivatives are in time <span class="math notranslate nohighlight">\(t\)</span> and distance <span class="math notranslate nohighlight">\(x\)</span> and that they have to be connected; the way to do this is via the velocity.</p>
 </section>
 <section id="q23-lemniscate-of-bernoulli">
 <h2>Q23 Lemniscate of Bernoulli<a class="headerlink" href="#q23-lemniscate-of-bernoulli" title="Permalink to this headline">#</a></h2>
-<p>(a) Find the gradient <span class="math notranslate nohighlight">\(dy/dx\)</span> of the Lemniscate of Bernoulli, <span class="math notranslate nohighlight">\(\displaystyle (x^2 + y^2)^2 = a^2(y^2 - x^2)\)</span> shown in Fig. 7.</p>
-<p>(b) Determine where the gradient is zero; it is easy to see on the figure, but show it mathematically.</p>
-<p>(c) Repeat the calculation by changing coordinates from Cartesian to Polar (see Chapter 1.7 for the definition of polar coordinates).</p>
+<p><strong>(a)</strong> The Lemniscate of Bernoulli is  shown in Fig. 7. Find the gradient <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (x^2 + y^2)^2 = a^2(y^2 - x^2)\]</div>
+<p><strong>(b)</strong> Determine where the gradient is zero; it is easy to see on the figure, but show it mathematically.</p>
+<p><strong>(c)</strong> Repeat the calculation by changing coordinates from Cartesian to Polar (see Chapter 1.7 for the definition of polar coordinates).</p>
 <p><strong>Strategy:</strong> In part (b), the tangent is horizontal when <span class="math notranslate nohighlight">\(dy/dx = 0\)</span>, and is infinite when <span class="math notranslate nohighlight">\(dx/dy = 0\)</span>. You will find <span class="math notranslate nohighlight">\(\displaystyle \cos^2(\theta) - \sin^2(\theta) = \cos(2\theta)\)</span> useful. The figure below is drawn in polar coordinates and the curve is rotated by <span class="math notranslate nohighlight">\(90^\text{o}\)</span> compared to that that would be drawn using Cartesian coordinates in part (a). This needs to be born in mind while calculating the gradient in (a).</p>
 <p><img alt="Display" src="../_images/differen-fig7.png" /></p>
 <p>Figure 7. The Lemniscate of Bernoulli with <span class="math notranslate nohighlight">\(a  = 2\)</span>. The plane polar angle <span class="math notranslate nohighlight">\(\theta\)</span> and radial distance <span class="math notranslate nohighlight">\(r\)</span> are shown.</p>
 </section>
 <hr class="docutils" />
-<section id="q24">
-<h2>Q24<a class="headerlink" href="#q24" title="Permalink to this headline">#</a></h2>
+<section id="q24-second-and-third-derivatives">
+<h2>Q24 Second and third derivatives<a class="headerlink" href="#q24-second-and-third-derivatives" title="Permalink to this headline">#</a></h2>
 <p>Calculate the second and third derivatives of</p>
-<p>(a) <span class="math notranslate nohighlight">\(\displaystyle  e^{ax^2+x}\)</span> and</p>
-<p>(b) <span class="math notranslate nohighlight">\( \ln(ax + b)^2\)</span>.</p>
+<p><strong>(a)</strong> <span class="math notranslate nohighlight">\(\displaystyle  e^{ax^2+x}\)</span> and</p>
+<p><strong>(b)</strong> <span class="math notranslate nohighlight">\( \ln(ax + b)^2\)</span>.</p>
 </section>
-<section id="q25">
-<h2>Q25<a class="headerlink" href="#q25" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(\displaystyle y^2 = a^2 - x^2\)</span> prove that <span class="math notranslate nohighlight">\(\displaystyle y′′ = \frac{a^2}{xy^2} y′\)</span> where <span class="math notranslate nohighlight">\(y′′\)</span> is the second derivative, <span class="math notranslate nohighlight">\(y′\)</span> the first.</p>
+<section id="q25-second-derivative">
+<h2>Q25 Second derivative<a class="headerlink" href="#q25-second-derivative" title="Permalink to this headline">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(\displaystyle \;y^2 = a^2 - x^2\)</span> prove that,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y''= \frac{a^2}{xy^2} y'\]</div>
+<p>where <span class="math notranslate nohighlight">\(y''\)</span> is the second derivative, <span class="math notranslate nohighlight">\(y'\)</span> the first.</p>
 <p><strong>Strategy:</strong> Start with the equation as written and either differentiate <span class="math notranslate nohighlight">\(y^2\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> or take the square root first; either way will work, its your choice. This equation is that for a circle centred at the origin with radius <span class="math notranslate nohighlight">\(a\)</span>.</p>
 </section>
-<section id="q26-differential-operator">
-<h2>Q26 Differential operator<a class="headerlink" href="#q26-differential-operator" title="Permalink to this headline">#</a></h2>
+<section id="q26-differential-operator-df-x">
+<h2>Q26 Differential operator <span class="math notranslate nohighlight">\(Df(x)\)</span><a class="headerlink" href="#q26-differential-operator-df-x" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(D\)</span> is the differential operator, this acts on a function <span class="math notranslate nohighlight">\(f\)</span> to give the same function in return, <span class="math notranslate nohighlight">\(Df (x) = f (x)\)</span>, and where <span class="math notranslate nohighlight">\(f(0) = 1\)</span>. Repeatedly differentiate <span class="math notranslate nohighlight">\(n\)</span> times and find <span class="math notranslate nohighlight">\(f (x)\)</span> by using the Maclaurin series, which is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x) = f(0) + f′(0)x +\frac{ f′′(0)x^2}{2!} +\frac{ f′′′(0)x^3}{3!} + \cdots \]</div>
+\[\displaystyle f(x) = f(0) + f'(0)x +\frac{ f''(0)x^2}{2!} +\frac{ f'''(0)x^3}{3!} + \cdots \]</div>
 <p>where each derivative is evaluated at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 <p><strong>Strategy:</strong> The differential operator is a fancy name for <span class="math notranslate nohighlight">\(d/dx\)</span> and therefore the equation is
 <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx} f(x)=f(x)\)</span>.</p>
 </section>
-<section id="q27">
-<h2>Q27<a class="headerlink" href="#q27" title="Permalink to this headline">#</a></h2>
-<p>Show that <span class="math notranslate nohighlight">\(\displaystyle u\frac{du}{dx} = \frac{du}{dt}\)</span> if <span class="math notranslate nohighlight">\(u = dx/dt\)</span>.</p>
+<section id="q27-operator">
+<h2>Q27 Operator<a class="headerlink" href="#q27-operator" title="Permalink to this headline">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(u = dx/dt\)</span> show that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u\frac{du}{dx} = \frac{du}{dt},\quad\text{if}\quad u = \frac{dx}{dt}\]</div>
 <p><strong>Strategy:</strong> Perform the differentiations in a rather formal way by using differentiation as an operator
 such as <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (u)\)</span>, which is <span class="math notranslate nohighlight">\(d/dt\)</span> operating on <span class="math notranslate nohighlight">\(u\)</span>. Only at the end of the calculation cancel any terms.</p>
 </section>
-<section id="q28">
-<h2>Q28<a class="headerlink" href="#q28" title="Permalink to this headline">#</a></h2>
-<p>Differentiate the equation <span class="math notranslate nohighlight">\((1 - q^2)f(qN) + qN \ln(q) = 0\)</span></p>
-<p>(a) with respect to <span class="math notranslate nohighlight">\(q\)</span> and</p>
-<p>(b) to <span class="math notranslate nohighlight">\(N\)</span> where <span class="math notranslate nohighlight">\(f(\cdots)\)</span> represents any normally differentiable function.</p>
+<section id="q28-operator">
+<h2>Q28 Operator<a class="headerlink" href="#q28-operator" title="Permalink to this headline">#</a></h2>
+<p>Differentiate the equation <span class="math notranslate nohighlight">\(\displaystyle (1 - q^2)f(qN) + qN \ln(q) = 0\)</span> where <span class="math notranslate nohighlight">\(f(\cdots)\)</span> represents any normally differentiable function.</p>
+<p><strong>(a)</strong> with respect to <span class="math notranslate nohighlight">\(q\)</span> and</p>
+<p><strong>(b)</strong> with respect to <span class="math notranslate nohighlight">\(N\)</span></p>
 </section>
-<section id="q29">
-<h2>Q29<a class="headerlink" href="#q29" title="Permalink to this headline">#</a></h2>
-<p>(a) if <span class="math notranslate nohighlight">\(\displaystyle x^n + y^n\)</span> = 1 show that <span class="math notranslate nohighlight">\(\displaystyle dy/dx = -(x/y)^{n-1}\)</span></p>
-<p>(b) find the first <span class="math notranslate nohighlight">\( dy/dx\)</span>, and second derivatives of <span class="math notranslate nohighlight">\(\tan(y) = \sinh(x)\)</span>.</p>
+<section id="q29-derivatives">
+<h2>Q29 Derivatives<a class="headerlink" href="#q29-derivatives" title="Permalink to this headline">#</a></h2>
+<p><strong>(a)</strong> if <span class="math notranslate nohighlight">\(\displaystyle x^n + y^n\)</span> = 1, show that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dy/dx = -(x/y)^{n-1}\]</div>
+<p><strong>(b)</strong> find the first <span class="math notranslate nohighlight">\( dy/dx\)</span>, and second derivatives of <span class="math notranslate nohighlight">\(\tan(y) = \sinh(x)\)</span>.</p>
 </section>
 <section id="q30-schroedinger-eqn">
 <h2>Q30 Schroedinger eqn.<a class="headerlink" href="#q30-schroedinger-eqn" title="Permalink to this headline">#</a></h2>
-<p>The Schroedinger equation can be written with certain units so that <span class="math notranslate nohighlight">\(\hbar^2/2m = 1\)</span> producing <span class="math notranslate nohighlight">\(-D^2\psi + V\psi = E\psi\)</span> where the potential energy <span class="math notranslate nohighlight">\(V\)</span> and wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> are <em>both</em> functions of <span class="math notranslate nohighlight">\(x\)</span>. The energy is <span class="math notranslate nohighlight">\(E\)</span> and must always be independent of any coordinate. The operator <span class="math notranslate nohighlight">\(D = d/dx\)</span>. Verify that</p>
+<p>The Schroedinger equation can be written with certain units so that <span class="math notranslate nohighlight">\(\hbar^2/2m = 1\)</span> producing</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -D^2\psi + V\psi = E\psi\]</div>
+<p>where the potential energy <span class="math notranslate nohighlight">\(V\)</span> and wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> are <em>both</em> functions of <span class="math notranslate nohighlight">\(x\)</span>. The energy is <span class="math notranslate nohighlight">\(E\)</span> and must always be independent of any coordinate. The operator <span class="math notranslate nohighlight">\(D = d/dx\)</span>. Verify that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi D^4\psi = D\left(\psi^2DV \right) + (V - E)^2\psi^2\]</div>
 <p><strong>Strategy:</strong> Look at the left-hand side of the equation that is to be verified, and work out what has to be done to the Schroedinger equation. Recall that <span class="math notranslate nohighlight">\(D\)</span> means differentiate once, <span class="math notranslate nohighlight">\(D^2\)</span> means twice, and that the operator only works on expressions to its right, and both <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>. Try to use the <span class="math notranslate nohighlight">\(D\)</span> notation, if it proves too unfamiliar revert to using <span class="math notranslate nohighlight">\(d/dx\)</span>.</p>
 </section>
-<section id="q31-reflection-by-a-parabolic-mirror">
-<h2>Q31 Reflection by a parabolic mirror<a class="headerlink" href="#q31-reflection-by-a-parabolic-mirror" title="Permalink to this headline">#</a></h2>
-<p>(a) Find the equation of the tangent of a parabola with parametric equations <span class="math notranslate nohighlight">\(x = at^2\)</span> and <span class="math notranslate nohighlight">\(y = 2at\)</span>.</p>
-<p>(b) Using Fig. 8 as a guide show that a light ray parallel to the x-axis reflected off a parabolic mirror always passes through the focus F; the point (<span class="math notranslate nohighlight">\(a, 0\)</span>). Do this by finding the point P and the lengths PF and FT, and consider what happens when point T is varied.</p>
+<section id="q31-reflection-by-a-parabolic-mirror-parametric-equations">
+<h2>Q31 Reflection by a parabolic mirror. Parametric equations<a class="headerlink" href="#q31-reflection-by-a-parabolic-mirror-parametric-equations" title="Permalink to this headline">#</a></h2>
+<p><strong>(a)</strong> Find the equation of the tangent of a parabola with parametric equations <span class="math notranslate nohighlight">\(x = at^2\)</span> and <span class="math notranslate nohighlight">\(y = 2at\)</span>.</p>
+<p><strong>(b)</strong> Using Fig. 8 as a guide show that a light ray parallel to the x-axis reflected off a parabolic mirror always passes through the focus F; the point (<span class="math notranslate nohighlight">\(a, 0\)</span>). Do this by finding the point P and the lengths PF and FT, and consider what happens when point T is varied.</p>
 <p><img alt="Display" src="../_images/differen-fig8.png" /></p>
 <p>Figure 8 Light reflected off the parabola passes through the focal point F = (<span class="math notranslate nohighlight">\(a, 0\)</span>). The tangent line at point T is PT.</p>
 <hr class="docutils" />
@@ -2010,11 +2040,11 @@ such as <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} 
 <div class="math notranslate nohighlight">
 \[\displaystyle U=\frac{9}{8}Nh\nu_D+\frac{9Nh}{\nu_D^3}\int_0^{\nu_D}\frac{\nu^3}{e^{h\nu/k_BT}-1 }d\nu \]</div>
 <p>where <span class="math notranslate nohighlight">\(\nu\)</span> is frequency, <span class="math notranslate nohighlight">\(\nu_D\)</span> is proportional to the highest phonon frequency of the solid, <span class="math notranslate nohighlight">\(N\)</span> is Avogadro’s number, and <span class="math notranslate nohighlight">\(k_B\)</span> Boltzmann’s constant.</p>
-<p>(a) Confirm the units of the internal energy are correct. What does the first term on the right
+<p><strong>(a)</strong> Confirm the units of the internal energy are correct. What does the first term on the right
 represent?</p>
-<p>(b) Calculate the heat capacity (at constant volume) <span class="math notranslate nohighlight">\(C_V\)</span>, which is the rate of change of energy with temperature.</p>
-<p>(c) Convert the result to dimensionless quantities using <span class="math notranslate nohighlight">\(x = h\nu/k_BT\)</span> so that the result is given in terms of temperature with <span class="math notranslate nohighlight">\(\theta = h\nu_D /k_B\)</span> being the Debye temperature. Why are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> dimensionless?</p>
-<p>(d) By changing the limits to the integration, calculate <span class="math notranslate nohighlight">\(C_V\)</span> as <span class="math notranslate nohighlight">\(T \to 0\)</span> and <span class="math notranslate nohighlight">\(T\to \infty\)</span> and show that <span class="math notranslate nohighlight">\(C_V\)</span> varies as <span class="math notranslate nohighlight">\((T/\theta)^3\)</span> at low temperatures, <span class="math notranslate nohighlight">\(C_V \to 0\)</span> at zero Kelvin and to <span class="math notranslate nohighlight">\(3R\)</span> at very high temperatures in accordance with the empirical law of Dulong and Petit. At high temperatures, expand the terms inside the integral.</p>
+<p><strong>(b)</strong> Calculate the heat capacity (at constant volume) <span class="math notranslate nohighlight">\(C_V\)</span>, which is the rate of change of energy with temperature.</p>
+<p><strong>(c)</strong> Convert the result to dimensionless quantities using <span class="math notranslate nohighlight">\(x = h\nu/k_BT\)</span> so that the result is given in terms of temperature with <span class="math notranslate nohighlight">\(\theta = h\nu_D /k_B\)</span> being the Debye temperature. Why are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> dimensionless?</p>
+<p><strong>(d)</strong> By changing the limits to the integration, calculate <span class="math notranslate nohighlight">\(C_V\)</span> as <span class="math notranslate nohighlight">\(T \to 0\)</span> and <span class="math notranslate nohighlight">\(T\to \infty\)</span> and show that <span class="math notranslate nohighlight">\(C_V\)</span> varies as <span class="math notranslate nohighlight">\((T/\theta)^3\)</span> at low temperatures, <span class="math notranslate nohighlight">\(C_V \to 0\)</span> at zero Kelvin and to <span class="math notranslate nohighlight">\(3R\)</span> at very high temperatures in accordance with the empirical law of Dulong and Petit. At high temperatures, expand the terms inside the integral.</p>
 <p><strong>Strategy:</strong> The heat capacity is the rate of change of energy with temperature and because the temperature is inside the integral, the differentiation can be performed inside the integral, and Leibniz’s rule, equation (15) does not apply.</p>
 </section>
 <section id="q33-buffer-capacity">
@@ -2022,29 +2052,51 @@ represent?</p>
 <p>The buffer capacity <span class="math notranslate nohighlight">\(\beta\)</span> of a weak acid - conjugate base buffer is defined as the number of moles of strong acid or base <span class="math notranslate nohighlight">\(C_B\)</span> needed to change the <span class="math notranslate nohighlight">\(p\)</span>H by <span class="math notranslate nohighlight">\(\pm 1\)</span> unit, where</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \beta=\frac{d\mathrm{[B]}}{d\text{pH}}\]</div>
-<p>and the equilibrium concentration base present is  <span class="math notranslate nohighlight">\(\displaystyle \mathrm{[B]}=\frac{k_w}{\mathrm{[H^+]}} - \mathrm{[H^+]}+\frac{C_BK_a}{\mathrm{[H^+]}+K_a} \)</span></p>
-<p>where <span class="math notranslate nohighlight">\(K_w\)</span> is the water ionization equilibrium constant <span class="math notranslate nohighlight">\(K_w =\mathrm{ [H^+][OH^-]} = 10^{-14}\)</span>, <span class="math notranslate nohighlight">\(K_a\)</span> is the acid dissociation constant, and <span class="math notranslate nohighlight">\(C_B\)</span> the total concentration of buffer.</p>
-<p>(a) Calculate <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
-<p>(b) Plot a graph of <span class="math notranslate nohighlight">\(\beta\)</span> vs pH for benzoic acid <span class="math notranslate nohighlight">\(pK_a = 4.2\)</span> and sodium benzoate each at <span class="math notranslate nohighlight">\(0.02\)</span> M. (<span class="math notranslate nohighlight">\(pK_a = -\log(K_a)\)</span>).</p>
-<p>(c) Differentiate <span class="math notranslate nohighlight">\(\beta\)</span>. By ignoring the buffer concentration term, find the minimum value of <span class="math notranslate nohighlight">\(\beta\)</span> using <span class="math notranslate nohighlight">\(d\beta/d\text{pH}  = 0\)</span>. Next by ignoring terms not involving <span class="math notranslate nohighlight">\(C_B\)</span> find the maximum <span class="math notranslate nohighlight">\(\beta\)</span>. Justify these simplifications.</p>
-<p>( The equation for <span class="math notranslate nohighlight">\(\mathrm{[B]}\)</span> is obtained by making the total concentration <span class="math notranslate nohighlight">\(C_B=\mathrm{[HA]+[A^-]}\)</span> and using charge balance <span class="math notranslate nohighlight">\(\mathrm{[A^-]+[OH^-] = [B^+] + [H^+]}\)</span> where <span class="math notranslate nohighlight">\(\mathrm{[B^+]}\)</span> is the amount of base which is equivalent to the amount of, say, Na<span class="math notranslate nohighlight">\(^+\)</span> present. The amount <span class="math notranslate nohighlight">\(\mathrm{[HA]}\)</span> is substituted into the equilibrium equation <span class="math notranslate nohighlight">\(K_a=\mathrm{[H^+][A^-]/[HA]}\)</span>.)</p>
+<p>and the equilibrium concentration of base present is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{[B]}=\frac{k_w}{\mathrm{[H^+]}} - \mathrm{[H^+]}+\frac{C_BK_a}{\mathrm{[H^+]}+K_a} \]</div>
+<p>where <span class="math notranslate nohighlight">\(K_w\)</span> is the water ionization equilibrium constant</p>
+<div class="math notranslate nohighlight">
+\[K_w =\mathrm{ [H^+][OH^-]} = 10^{-14}\]</div>
+<p><span class="math notranslate nohighlight">\(K_a\)</span> is the acid dissociation constant, and <span class="math notranslate nohighlight">\(C_B\)</span> the total concentration of buffer.</p>
+<p><strong>(a)</strong> Calculate <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p><strong>(b)</strong> Plot a graph of <span class="math notranslate nohighlight">\(\beta\)</span> vs pH for benzoic acid <span class="math notranslate nohighlight">\(pK_a = 4.2\)</span> and sodium benzoate each at <span class="math notranslate nohighlight">\(0.02\)</span> M. (<span class="math notranslate nohighlight">\(pK_a = -\log(K_a)\)</span>).</p>
+<p><strong>(c)</strong> Differentiate <span class="math notranslate nohighlight">\(\beta\)</span>. By ignoring the buffer concentration term, find the minimum value of <span class="math notranslate nohighlight">\(\beta\)</span> using <span class="math notranslate nohighlight">\(d\beta/d\text{pH}  = 0\)</span>. Next, by ignoring terms not involving <span class="math notranslate nohighlight">\(C_B\)</span>, find the maximum <span class="math notranslate nohighlight">\(\beta\)</span>. Justify these simplifications.</p>
+<p>The equation for <span class="math notranslate nohighlight">\(\mathrm{[B]}\)</span> is obtained by making the total concentration</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_B=\mathrm{[HA]+[A^-]}\]</div>
+<p>and using charge balance</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{[A^-]+[OH^-] = [B^+] + [H^+]}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathrm{[B^+]}\)</span> is the amount of base which is equivalent to the amount of, say, Na<span class="math notranslate nohighlight">\(^+\)</span> present. The amount <span class="math notranslate nohighlight">\(\mathrm{[HA]}\)</span> is substituted into the equilibrium equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K_a=\mathrm{[H^+][A^-]/[HA]} \]</div>
 </section>
 <section id="q34-skydiver">
 <h2>Q34 Skydiver<a class="headerlink" href="#q34-skydiver" title="Permalink to this headline">#</a></h2>
-<p>A skydiver jumps from a plane. The distance <span class="math notranslate nohighlight">\(y\)</span>  dropped in time <span class="math notranslate nohighlight">\(t\)</span> increases as <span class="math notranslate nohighlight">\(\displaystyle y=a\ln\left(\frac{e^{bt}+e^{-bt}}{2} \right)\)</span>, which assumes that the air resistance is proportional to the square of their velocity. The constants <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are <span class="math notranslate nohighlight">\(\displaystyle a= \frac{2m}{\rho CA}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle b=\sqrt{\frac{g\rho CA}{2m}}\)</span> where <span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity, <span class="math notranslate nohighlight">\(\rho\)</span> the density of air <span class="math notranslate nohighlight">\(\approx 1.29\,\mathrm{ kg\, m^{-3}}\)</span>, <span class="math notranslate nohighlight">\(A\)</span> the cross-sectional (frontal) area of the falling body of mass <span class="math notranslate nohighlight">\(m\)</span>, and <span class="math notranslate nohighlight">\(C \approx 0.5\)</span> is a shape - dependent resistance factor.</p>
-<p>(a) Calculate their velocity at time <span class="math notranslate nohighlight">\(t\)</span>, and show that this reaches a maximum or terminal velocity of <span class="math notranslate nohighlight">\(\displaystyle \sqrt{\frac{2gm}{\rho CA}}\)</span>.</p>
-<p>(b) What is the terminal velocity in miles /hour, if they weigh 60 kg and if <span class="math notranslate nohighlight">\(A  = 0.7\,\mathrm{ m^2}\)</span>? How long does it take to reach <span class="math notranslate nohighlight">\(95\)</span>% of the terminal velocity and how far will they have travelled vertically?</p>
-<p>(c) Calculate the terminal velocity for a hailstone weighing approximately <span class="math notranslate nohighlight">\(4\)</span> g and of <span class="math notranslate nohighlight">\(10\)</span> mm radius; comment on the relative speeds and energies of the skydiver and hailstone. If there were no air resistance what would happen?</p>
-<p>(d) It is an urban myth, apparently, that a cat jumping out of a ten-storey window will survive the fall; you would almost certainly not. The cat reputedly reaches a terminal velocity of only 10 mph, and if it weighs <span class="math notranslate nohighlight">\(2\)</span> kg what is its surface area? Do you think that the result make sense, and if not, why not?</p>
+<p>A skydiver jumps from a plane. The distance <span class="math notranslate nohighlight">\(y\)</span>  dropped in time <span class="math notranslate nohighlight">\(t\)</span> increases as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y=a\ln\left(\frac{e^{bt}+e^{-bt}}{2} \right)\]</div>
+<p>which assumes that the air resistance is proportional to the square of their velocity. The constants <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a= \frac{2m}{\rho CA}\quad \text{and}\quad b=\sqrt{\frac{g\rho CA}{2m}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity, <span class="math notranslate nohighlight">\(\rho\)</span> the density of air <span class="math notranslate nohighlight">\(\approx 1.29\,\mathrm{ kg\, m^{-3}}\)</span>, <span class="math notranslate nohighlight">\(A\)</span> the cross-sectional (frontal) area of the falling body of mass <span class="math notranslate nohighlight">\(m\)</span>, and <span class="math notranslate nohighlight">\(C \approx 0.5\)</span> is a shape - dependent resistance factor.</p>
+<p><strong>(a)</strong> Calculate their velocity at time <span class="math notranslate nohighlight">\(t\)</span>, and show that this reaches a maximum or terminal velocity of <span class="math notranslate nohighlight">\(\displaystyle \sqrt{\frac{2gm}{\rho CA}}\)</span>.</p>
+<p><strong>(b)</strong> What is the terminal velocity in miles /hour, if they weigh 60 kg and if <span class="math notranslate nohighlight">\(A  = 0.7\,\mathrm{ m^2}\)</span>? How long does it take to reach <span class="math notranslate nohighlight">\(95\)</span>% of the terminal velocity and how far will they have travelled vertically?</p>
+<p><strong>(c)</strong> Calculate the terminal velocity for a hailstone weighing approximately <span class="math notranslate nohighlight">\(4\)</span> g and of <span class="math notranslate nohighlight">\(10\)</span> mm radius; comment on the relative speeds and energies of the skydiver and hailstone. If there were no air resistance what would happen?</p>
+<p><strong>(d)</strong> It is an urban myth, apparently, that a cat jumping out of a ten-storey window will survive the fall; you would almost certainly not. The cat reputedly reaches a terminal velocity of only 10 mph, and if it weighs <span class="math notranslate nohighlight">\(2\)</span> kg what is its surface area? Do you think that the result make sense, and if not, why not?</p>
 </section>
 <section id="q35-schroedinger-eqn">
 <h2>Q35 Schroedinger eqn.<a class="headerlink" href="#q35-schroedinger-eqn" title="Permalink to this headline">#</a></h2>
 <p>The Schroedinger equation has the form <span class="math notranslate nohighlight">\(H\psi = E\psi\)</span> where <span class="math notranslate nohighlight">\(H\)</span> is the Hamiltonian operator describing kinetic and potential energy, <span class="math notranslate nohighlight">\(E\)</span> is the energy of the eigenstate and is called the eigenvalue and <span class="math notranslate nohighlight">\(\psi\)</span>, the wavefunction, is called the Eigenfunction. <span class="math notranslate nohighlight">\(H\psi = E\psi\)</span> is an eigenvalue - eigenvector equation and
 its characteristic is that operating on <span class="math notranslate nohighlight">\(\psi\)</span> produces a constant times <span class="math notranslate nohighlight">\(\psi\)</span>.</p>
 <p>If the operator is <span class="math notranslate nohighlight">\(\displaystyle H= \frac{d^n}{dx^n}\)</span>,</p>
-<p>(a) Show that a possible wavefunction is <span class="math notranslate nohighlight">\(e^{\alpha x}\)</span> with eigenvalue <span class="math notranslate nohighlight">\(\alpha^n\)</span>.</p>
-<p>(b) Is <span class="math notranslate nohighlight">\(\sin(\alpha x)\)</span> a possible wavefunction?</p>
-<p><strong>Strategy:</strong> The particular feature of note about eigenvalue - eigenvector equations is that the result of operating on a function is to produce the same function but multiplied by a constant. In the Schroedinger equation, the function is the wavefunction, the constant is the energy, and the operator is the kinetic plus potential energy operator <span class="math notranslate nohighlight">\(\displaystyle - \frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\)</span>  and, for the sake of clarity, the constants in the question are in units such that they <span class="math notranslate nohighlight">\(\hbar^2/2m =  1\)</span> and also <span class="math notranslate nohighlight">\(V(x) = 0\)</span>.</p>
+<p><strong>(a)</strong> Show that a possible wavefunction is <span class="math notranslate nohighlight">\(e^{\alpha x}\)</span> with eigenvalue <span class="math notranslate nohighlight">\(\alpha^n\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is a constant.</p>
+<p><strong>(b)</strong> Is <span class="math notranslate nohighlight">\(\sin(\alpha x)\)</span> a possible wavefunction?</p>
+<p><strong>Strategy:</strong> The particular feature of note about eigenvalue - eigenvector equations is that the result of operating on a function is to produce the same function but multiplied by a constant. In the Schroedinger equation, the function is the wavefunction, the constant is the energy, and the operator is the kinetic plus potential energy operator</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H=- \frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\]</div>
+<p>and, for the sake of clarity, the constants in the question are in units such that they <span class="math notranslate nohighlight">\(\hbar^2/2m =  1\)</span> and also <span class="math notranslate nohighlight">\(V(x) = 0\)</span>.</p>
 </section>
 <section id="q36-harmonic-oscillator">
 <h2>Q36 Harmonic oscillator<a class="headerlink" href="#q36-harmonic-oscillator" title="Permalink to this headline">#</a></h2>
@@ -2063,9 +2115,9 @@ its characteristic is that operating on <span class="math notranslate nohighligh
 <p>Figure 9. The <span class="math notranslate nohighlight">\(v = 0, 1, 2\)</span> wavefunctions drawn at their energy levels in the harmonic potential. <span class="math notranslate nohighlight">\(x\)</span> is the bond extension in picometres, the energy in Joules / <span class="math notranslate nohighlight">\(10^{-19}\)</span>.</p>
 </section>
 <hr class="docutils" />
-<section id="q37-wavepacket">
-<h2>Q37 Wavepacket<a class="headerlink" href="#q37-wavepacket" title="Permalink to this headline">#</a></h2>
-<p>A wavepacket is the sum of many wavefunctions and because this sum is not an eigenstate, it evolves in time. Generating a wavepacket is easy using femtosecond laser pulses because they have a wide energy spread and many molecular vibrational or rotational energy levels can be (almost) simultaneously excited. The wavepacket has the appearance of a classical particle moving from side to side in the potential, this can be observed using a second femtosecond laser pulse.</p>
+<section id="q37-wavepackets">
+<h2>Q37 Wavepackets<a class="headerlink" href="#q37-wavepackets" title="Permalink to this headline">#</a></h2>
+<p>A wavepacket is the sum of many wavefunctions and because this sum is not an eigenstate, it evolves in time. Generating a wavepacket is easy using femtosecond laser pulses because they have a wide energy spread and many molecular vibrational or rotational energy levels can be (almost) simultaneously excited. The wavepacket has the appearance of a classical particle moving from side to side in the potential, this can be observed using a second femtosecond laser pulse. See chapter 10, 18.2 and chapter 11, 4.12 for more on wavepackets.</p>
 <p>The frequency <span class="math notranslate nohighlight">\(\omega\)</span> of the wavepacket’s oscillatory motion can be calculated from</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \omega = \frac{1}{\hbar}\frac{\partial E_n}{\partial n}\]</div>
@@ -2073,14 +2125,16 @@ its characteristic is that operating on <span class="math notranslate nohighligh
 <p>The energy <span class="math notranslate nohighlight">\(E\)</span> of a Morse (anharmonic) oscillator of frequency <span class="math notranslate nohighlight">\(\omega_e\)</span> and anharmonicity <span class="math notranslate nohighlight">\(x_e\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  E = \hbar \omega_e(n + 1/2) - \hbar x_e \omega_e(n + 1/2)^2\]</div>
-<p>(a) Find the wavepacket frequency <span class="math notranslate nohighlight">\(\omega\)</span> in terms of <span class="math notranslate nohighlight">\(E\)</span> instead of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>(b) Show that this frequency decreases as the energy of an exciting photon increases towards the dissociation energy and is <span class="math notranslate nohighlight">\(\displaystyle \omega^2 = \omega_e^2 - 4x_e\omega_e(E_{h\nu} - E_0)\)</span>.</p>
+<p><strong>(a)</strong> Find the wavepacket frequency <span class="math notranslate nohighlight">\(\omega\)</span> in terms of <span class="math notranslate nohighlight">\(E\)</span> instead of <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><strong>(b)</strong> Show that this frequency decreases as the energy of an exciting photon increases towards the dissociation energy and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega^2 = \omega_e^2 - 4x_e\omega_e(E_{h\nu} - E_0)\]</div>
 </section>
 <section id="q38-filtering">
 <h2>Q38 Filtering<a class="headerlink" href="#q38-filtering" title="Permalink to this headline">#</a></h2>
 <p>A circular cone with a volume <span class="math notranslate nohighlight">\(\displaystyle V = \frac{\pi}{3} h^3 \tan^2(\alpha)\)</span> has a height <span class="math notranslate nohighlight">\(h\)</span>, base radius <span class="math notranslate nohighlight">\(b\)</span>, and semi-angle <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
-<p>(a) If <span class="math notranslate nohighlight">\(\alpha\)</span> is constant what is <span class="math notranslate nohighlight">\(dV/dx\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> is any value between zero and <span class="math notranslate nohighlight">\(h\)</span>. What does <span class="math notranslate nohighlight">\(dV/dx\)</span> represent?</p>
-<p>(b) A filter paper is formed into a circular cone and placed in a conical funnel and solvent flows out at a constant rate of <span class="math notranslate nohighlight">\(5\,\mathrm{ cm^3\, min^{-1}}\)</span>. Find the rate of decrease of the solvent’s level when there is <span class="math notranslate nohighlight">\(2\)</span> cm of solvent in the funnel if it has a base of <span class="math notranslate nohighlight">\(60\)</span> mm and depth <span class="math notranslate nohighlight">\(90\)</span> mm.</p>
+<p><strong>(a)</strong> If <span class="math notranslate nohighlight">\(\alpha\)</span> is constant what is <span class="math notranslate nohighlight">\(dV/dx\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> is any value between zero and <span class="math notranslate nohighlight">\(h\)</span>. What does <span class="math notranslate nohighlight">\(dV/dx\)</span> represent?</p>
+<p><strong>(b)</strong> A filter paper is formed into a circular cone and placed in a conical funnel and solvent flows out at a constant rate of <span class="math notranslate nohighlight">\(5\,\mathrm{ cm^3\, min^{-1}}\)</span>. Find the rate of decrease of the solvent’s level when there is <span class="math notranslate nohighlight">\(2\)</span> cm of solvent in the funnel if it has a base of <span class="math notranslate nohighlight">\(60\)</span> mm and depth <span class="math notranslate nohighlight">\(90\)</span> mm.</p>
 <p><strong>Strategy:</strong> Part (b) requires the change of volume with time to be calculated, but in (a) the change with
 <span class="math notranslate nohighlight">\(x\)</span> was calculated and these two quantities can be related using the chain rule.</p>
 <p><img alt="Display" src="../_images/differen-fig10.png" /></p>
@@ -2093,10 +2147,14 @@ its characteristic is that operating on <span class="math notranslate nohighligh
 <div class="math notranslate nohighlight">
 \[\displaystyle \rho = \frac{\left( 1+f'(x)^2  \right)^{3/2}}{ f''(x) }  \tag{24}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f'(x)\)</span> and <span class="math notranslate nohighlight">\(f''(x)\)</span> are the first and second derivatives respectively. Quantum mechanically the vibrational motion of diatomic molecules can be described by the harmonic oscillator or Morse potentials. Calculate the radius of curvature at the minima of</p>
-<p>(a) The harmonic oscillator potential <span class="math notranslate nohighlight">\(V_{HO}\)</span> given that <span class="math notranslate nohighlight">\(\displaystyle V_{HO} = k(r - r_e)^2\)</span>.</p>
-<p>(b)  The Morse potential <span class="math notranslate nohighlight">\(\displaystyle V_M = D_e\left(1 - e^{-\beta(r-re)}\right)^2\)</span>.</p>
-<p>(c) Assuming that at the minima the anharmonic curve has the same shape as the harmonic, relate <span class="math notranslate nohighlight">\(k\)</span>, the force constant, to De the dissociation energy and parameter <span class="math notranslate nohighlight">\(\beta\)</span>. The equilibrium separation of the atoms is re.</p>
-<p>(d) Dimensionally check the results for the radius of curvature and force constant, i.e. check that the units are the same on both sides of your final equation.</p>
+<p><strong>(a)</strong> The harmonic oscillator potential <span class="math notranslate nohighlight">\(V_{HO}\)</span> given that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_{HO} = k(r - r_e)^2\]</div>
+<p><strong>(b)</strong>  The Morse potential</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_M = D_e\left(1 - e^{-\beta(r-r_e)}\right)^2\]</div>
+<p><strong>(c)</strong> Assuming that at the minima the anharmonic curve has the same shape as the harmonic, relate <span class="math notranslate nohighlight">\(k\)</span>, the force constant, to <span class="math notranslate nohighlight">\(D_e\)</span> the dissociation energy and parameter <span class="math notranslate nohighlight">\(\beta\)</span>. The equilibrium separation of the atoms is <span class="math notranslate nohighlight">\(r_e\)</span>.</p>
+<p><strong>(d)</strong> Dimensionally check the results for the radius of curvature and force constant, i.e. check that the units are the same on both sides of your final equation.</p>
 <p><strong>Strategy:</strong> If you do this calculation by hand, work out the differentiations separately for each potential then put into the curvature equation. The variable to differentiate with respect to is <span class="math notranslate nohighlight">\(r\)</span>, which replaces <span class="math notranslate nohighlight">\(x\)</span> in the generic formula. The potential energy minimum occurs when <span class="math notranslate nohighlight">\(r = r_e\)</span>, so substitute this into the result and simplify. However, this is a fiddly rather than hard calculation and it is easier, and mistakes are less likely, if SymPy is used, particularly so with the Morse potential.</p>
 </section>
 <section id="q40-hooke-s-law">
@@ -2116,20 +2174,34 @@ distribution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Z=e^{-\theta/2T}(1-e^{-\theta/T})^{-1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\displaystyle \theta = \hbar\omega/k_B\)</span> is a characteristic temperature for the vibration which is in the range of a few hundred to a few thousand degrees K.</p>
-<p>(a) Calculate the internal energy <span class="math notranslate nohighlight">\(\displaystyle U = Nk_BT^2\frac{ d \ln(Z)}{dT} \)</span> and heat capacity <span class="math notranslate nohighlight">\(\displaystyle C_V = \frac{dU}{dT}\)</span>, which is the rate of change of internal energy with temperature.</p>
-<p>(b) Determine the low and high temperature limits of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(C_V\)</span>.</p>
-<p>(c) Plot graphs of the functions calculated using dimensionless units; <span class="math notranslate nohighlight">\(U/Nk_B\theta\)</span> and <span class="math notranslate nohighlight">\(C_V /Nk_B\)</span> vs <span class="math notranslate nohighlight">\(T/\theta\)</span>. If you want plot with real numbers, <span class="math notranslate nohighlight">\(k_B = 0.69\,\mathrm{ cm^{-1}\, K^{-1}}\)</span> and in iodine, <span class="math notranslate nohighlight">\(\hbar\omega = 127\,\mathrm{ cm^{-1}}\)</span>, and in NO, <span class="math notranslate nohighlight">\(1876\,\mathrm{ cm^{-1}}\)</span>. See McQuarrie &amp; Simon (1997) for other values.</p>
+<p><strong>(a)</strong> Calculate the internal energy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U = Nk_BT^2\frac{ d \ln(Z)}{dT} \]</div>
+<p>and heat capacity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_V = \frac{dU}{dT}\]</div>
+<p>which is the rate of change of internal energy with temperature.</p>
+<p><strong>(b)</strong> Determine the low and high temperature limits of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(C_V\)</span>.</p>
+<p><strong>(c)</strong> Plot graphs of the functions calculated using dimensionless units; <span class="math notranslate nohighlight">\(U/Nk_B\theta\)</span> and <span class="math notranslate nohighlight">\(C_V /Nk_B\)</span> vs <span class="math notranslate nohighlight">\(T/\theta\)</span>. If you want plot with real numbers, <span class="math notranslate nohighlight">\(k_B = 0.69\,\mathrm{ cm^{-1}\, K^{-1}}\)</span> and in iodine, <span class="math notranslate nohighlight">\(\hbar\omega = 127\,\mathrm{ cm^{-1}}\)</span>, and in NO, <span class="math notranslate nohighlight">\(1876\,\mathrm{ cm^{-1}}\)</span>. See McQuarrie &amp; Simon (1997) for other values.</p>
 <p><strong>Strategy:</strong> This is essentially a substitute and calculate problem, and looks far harder than it really is. It is always worth trying to simplify before calculating as this reduces the chance of making an error.</p>
 </section>
 <section id="q42-spin-1-nucleus">
 <h2>Q42 Spin <span class="math notranslate nohighlight">\(1\)</span> nucleus<a class="headerlink" href="#q42-spin-1-nucleus" title="Permalink to this headline">#</a></h2>
-<p>The energy of a spin 1 nucleus in a magnetic field has three non - degenerate values, <span class="math notranslate nohighlight">\(E = -\gamma \hbar B_0,\; 0, \;+\gamma \hbar B_0\)</span>, shown in Fig. 11, where <span class="math notranslate nohighlight">\(B_0\)</span> is the magnetic field, <span class="math notranslate nohighlight">\(\gamma\)</span> the magnetogyric ratio and <span class="math notranslate nohighlight">\(\hbar = h/2\pi\)</span>. The partition function <span class="math notranslate nohighlight">\(Z\)</span> is the sum of the Boltzmann factors <span class="math notranslate nohighlight">\(e^{-E_i/k_BT}\)</span>.</p>
-<p>(a) Write down the partition function and calculate the energy <span class="math notranslate nohighlight">\(U\)</span> of the nuclei in a constant magnetic field if
-<span class="math notranslate nohighlight">\(\displaystyle U=-N\frac{d\ln(Z)}{d\beta}\)</span> and <span class="math notranslate nohighlight">\(\beta=1/k_BT\)</span>.</p>
-<p>(b) Calculate the magnetic field contribution to the heat capacity <span class="math notranslate nohighlight">\(C_B = dU/dT\)</span>. The calculation is easier if the derivative is converted to <span class="math notranslate nohighlight">\(dU/d\beta\)</span> first.</p>
-<p>(c)  Investigate the high and low temperature limits of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(C_\nu\)</span>.</p>
-<p>(d) Calculate the entropy <span class="math notranslate nohighlight">\(S = UT + Nk_B \ln(Z)\)</span> and show that at high temperatures this reaches the limit <span class="math notranslate nohighlight">\(S \to k \ln(3^N )\)</span>. Comment on the result.</p>
-<p>(e) Plot graphs of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(C_V\)</span> for <span class="math notranslate nohighlight">\(^{14}\)</span>N nuclei if <span class="math notranslate nohighlight">\(B_0 =14\)</span> T and <span class="math notranslate nohighlight">\(\gamma =1.97\cdot 10^7\,\mathrm{ rad\, T^{-1}\,s^{-1}}\)</span>.</p>
+<p>The energy of a spin 1 nucleus in a magnetic field has three non - degenerate values,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E = -\gamma \hbar B_0,\quad 0, \quad+\gamma \hbar B_0\]</div>
+<p>shown in Fig. 11, where <span class="math notranslate nohighlight">\(B_0\)</span> is the magnetic field, <span class="math notranslate nohighlight">\(\gamma\)</span> the magnetogyric ratio and <span class="math notranslate nohighlight">\(\hbar = h/2\pi\)</span>. The partition function <span class="math notranslate nohighlight">\(Z\)</span> is the sum of the Boltzmann factors <span class="math notranslate nohighlight">\(e^{-E_i/k_BT}\)</span>.</p>
+<p><strong>(a)</strong> Write down the partition function and calculate the energy <span class="math notranslate nohighlight">\(U\)</span> of the nuclei in a constant magnetic field if</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U=-N\frac{d\ln(Z)}{d\beta}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\beta=1/k_BT\)</span></p>
+<p><strong>(b)</strong> Calculate the magnetic field contribution to the heat capacity <span class="math notranslate nohighlight">\(C_B = dU/dT\)</span>. The calculation is easier if the derivative is converted to <span class="math notranslate nohighlight">\(dU/d\beta\)</span> first.</p>
+<p><strong>(c)</strong>  Investigate the high and low temperature limits of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(C_\nu\)</span>.</p>
+<p><strong>(d)</strong> Calculate the entropy</p>
+<div class="math notranslate nohighlight">
+\[S = UT + Nk_B \ln(Z)\]</div>
+<p>and show that at high temperatures this reaches the limit <span class="math notranslate nohighlight">\(S \to k \ln(3^N )\)</span>. Comment on the result.</p>
+<p><strong>(e)</strong> Plot graphs of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(C_V\)</span> for <span class="math notranslate nohighlight">\(^{14}\)</span>N nuclei if <span class="math notranslate nohighlight">\(B_0 =14\)</span> T and <span class="math notranslate nohighlight">\(\gamma =1.97\cdot 10^7\,\mathrm{ rad\, T^{-1}\,s^{-1}}\)</span>.</p>
 <p><strong>Strategy:</strong> The partition function summation contains only three terms, which can be easily written down. The rest of the question is a direct calculation but notice that taking logs does not simplify the partition function as only products or quotients can be simplified with logs.</p>
 <p><img alt="Display" src="../_images/differen-fig11.png" /></p>
 <p>Figure. 11 Spin 1 nucleus’ energy levels in a magnetic field.</p>
@@ -2167,7 +2239,7 @@ distribution</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">4 Product rule and function of function or chain rule.</p>
+            <p class="prev-next-title">4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="differen-F.html" title="next page">

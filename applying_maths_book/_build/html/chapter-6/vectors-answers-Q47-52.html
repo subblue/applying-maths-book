@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1618,21 +1618,33 @@ title="Print to PDF"
 </div>
 <section id="q47-answer">
 <h2>Q47 answer<a class="headerlink" href="#q47-answer" title="Permalink to this headline">#</a></h2>
-<p>Start by defining vectors in the <span class="math notranslate nohighlight">\(\boldsymbol i-\boldsymbol j\)</span> plane as</p>
+<p>Start by defining vectors in the <span class="math notranslate nohighlight">\(\pmb i-\pmb j\)</span> plane as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec a = \cos(\alpha)\;\boldsymbol i + \sin(\alpha)\;\boldsymbol j,\quad  \vec b = \cos(\beta)\;\boldsymbol i + \sin(\beta)\;\boldsymbol j\]</div>
-<p>Recall that as <span class="math notranslate nohighlight">\(\boldsymbol i \times \;\boldsymbol i = \;\boldsymbol j \times \;\boldsymbol j = 0\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol j \times \;\boldsymbol i = \boldsymbol -k\)</span> the cross product is;</p>
+\[\displaystyle \vec a = \cos(\alpha)\;\pmb i + \sin(\alpha)\;\pmb j,\quad  \vec b = \cos(\beta)\;\pmb i + \sin(\beta)\;\pmb j\]</div>
+<p>Recall that as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec a \times \vec b = \big(\cos(\alpha)\;\boldsymbol i + \sin(\alpha)\;\boldsymbol j\big) \times \big(\cos(\beta)\;\boldsymbol i + \sin(\beta)\;\boldsymbol j\big) = \cos(\alpha)\sin(\beta)\;\boldsymbol k - \sin(\alpha)\cos(\beta)\;\boldsymbol k\]</div>
-<p>which, as it has components in <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> only, must be perpendicular to <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>.</p>
+\[\displaystyle \pmb i \times \;\pmb i = \;\pmb j \times \;\pmb j = 0,\quad \pmb j \times \;\pmb i = \pmb -k\]</div>
+<p>the cross product is;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec a \times \vec b = \big(\cos(\alpha)\;\pmb i + \sin(\alpha)\;\pmb j\big) \times \big(\cos(\beta)\;\pmb i + \sin(\beta)\;\pmb j\big) = \cos(\alpha)\sin(\beta)\;\pmb k - \sin(\alpha)\cos(\beta)\;\pmb k\]</div>
+<p>which, as it has components in <span class="math notranslate nohighlight">\(\pmb k\)</span> only, must be perpendicular to <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>.</p>
 <p>In matrix form, the calculation is clearer</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{vmatrix}\boldsymbol  i &amp; \boldsymbol  j  &amp; \boldsymbol  k\\\cos(\alpha) &amp; \sin(\alpha) &amp;0\\\cos(\beta) &amp; \sin(\beta) &amp; 0 \end{vmatrix}= \cos(\alpha)\sin(\beta)\;\boldsymbol k - \sin(\alpha)\cos(\beta)\;\boldsymbol k\end{split}\]</div>
-<p>Secondly, as <span class="math notranslate nohighlight">\(\vec a\times \vec b=|\vec a||\vec b|\sin(\alpha -\beta)\;\boldsymbol k\)</span> and as the magnitude <span class="math notranslate nohighlight">\(|\vec a| = |\vec b| = 1\)</span> then <span class="math notranslate nohighlight">\(\vec a\times \vec b = \sin(\alpha -\beta)\;\boldsymbol k\)</span>. The vector <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> is present because vectors <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span> are entirely in the <span class="math notranslate nohighlight">\(i-j\)</span> plane and <span class="math notranslate nohighlight">\(\vec a\times \vec b\)</span> is perpendicular to this plane. Comparing the two definitions of <span class="math notranslate nohighlight">\(\vec a\times \vec b\)</span> proves the relationship.</p>
+\[\begin{split}\displaystyle \begin{vmatrix}\pmb  i &amp; \pmb  j  &amp; \pmb  k\\\cos(\alpha) &amp; \sin(\alpha) &amp;0\\\cos(\beta) &amp; \sin(\beta) &amp; 0 \end{vmatrix}= \cos(\alpha)\sin(\beta)\;\pmb k - \sin(\alpha)\cos(\beta)\;\pmb k\end{split}\]</div>
+<p>Secondly, as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec a\times \vec b=|\vec a||\vec b|\sin(\alpha -\beta)\;\pmb k\]</div>
+<p>and as the magnitude <span class="math notranslate nohighlight">\(|\vec a| = |\vec b| = 1\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec a\times \vec b = \sin(\alpha -\beta)\;\pmb k\]</div>
+<p>The vector <span class="math notranslate nohighlight">\(\pmb k\)</span> is present because vectors <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span> are entirely in the <span class="math notranslate nohighlight">\(i-j\)</span> plane and <span class="math notranslate nohighlight">\(\vec a\times \vec b\)</span> is perpendicular to this plane. Comparing the two definitions of <span class="math notranslate nohighlight">\(\vec a\times \vec b\)</span> proves the relationship.</p>
 </section>
 <section id="q48-answer">
 <h2>Q48 answer<a class="headerlink" href="#q48-answer" title="Permalink to this headline">#</a></h2>
-<p>By definition, <span class="math notranslate nohighlight">\(\vec A\times\vec B =ab\sin(\chi)\)</span> and similarly for other sides, then</p>
+<p>By definition,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A\times\vec B =ab\sin(\chi)\]</div>
+<p>and similarly for other sides, then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle ab\sin(\chi) = ca\sin(\beta) = bc\sin(\alpha)\quad\text{ or }\quad \displaystyle \frac{\sin(\alpha)}{a}=\frac{\sin(\beta)}{b}=\frac{\sin(\chi)}{c}\]</div>
 <p>which is the ‘law of sines’.</p>
@@ -1642,7 +1654,10 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="q49-answer">
 <h2>Q49 answer<a class="headerlink" href="#q49-answer" title="Permalink to this headline">#</a></h2>
-<p>If you want to do the calculation by hand,the basis set to use is the orthogonal set <span class="math notranslate nohighlight">\((i, j, k)\)</span>. The vectors can be defined as <span class="math notranslate nohighlight">\(\vec A = a_1\;\boldsymbol i + a_2\;\boldsymbol j + a_3\;\boldsymbol k\)</span> and a similar equation for <span class="math notranslate nohighlight">\(\vec B\)</span> and <span class="math notranslate nohighlight">\(\vec C\)</span> with coefficients <span class="math notranslate nohighlight">\(b_{1-3},\; c_{1-3}\)</span>. Alternatively matrices can be used. In Python/SymPy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined.</p>
+<p>If you want to do the calculation by hand,the basis set to use is the orthogonal set <span class="math notranslate nohighlight">\((i, j, k)\)</span>. The vectors can be defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A = a_1\;\pmb i + a_2\;\pmb j + a_3\;\pmb k\]</div>
+<p>and a similar equation for <span class="math notranslate nohighlight">\(\vec B\)</span> and <span class="math notranslate nohighlight">\(\vec C\)</span> with coefficients <span class="math notranslate nohighlight">\(b_{1-3},\; c_{1-3}\)</span>. Alternatively matrices can be used. In Python/SymPy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a1, a2, a3, b1, b2, b3, c1, c2, c3&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1666,7 +1681,7 @@ title="Print to PDF"
 </section>
 <section id="q50-answer">
 <h2>Q50 answer<a class="headerlink" href="#q50-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) In this calculation, the line is <span class="math notranslate nohighlight">\(Ap\)</span>, and the line <span class="math notranslate nohighlight">\(Bp\)</span> is at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from <span class="math notranslate nohighlight">\(Ap\)</span>. Defining the vectors, as in the example in the text, the distance of <span class="math notranslate nohighlight">\(B\)</span> from <span class="math notranslate nohighlight">\(Ap\)</span> can be found as follows using Python to do this numerically, or by hand. The calculation is similar to that in the text.</p>
+<p>In this calculation, the line is <span class="math notranslate nohighlight">\(Ap\)</span>, and the line <span class="math notranslate nohighlight">\(Bp\)</span> is at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from <span class="math notranslate nohighlight">\(Ap\)</span>. Defining the vectors, as in the example in the text, the distance of <span class="math notranslate nohighlight">\(B\)</span> from <span class="math notranslate nohighlight">\(Ap\)</span> can be found as follows using Python to do this numerically, or by hand. The calculation is similar to that in the text.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
@@ -1693,25 +1708,30 @@ dist B to Ap = 2.910
 </section>
 <section id="q51-answer">
 <h2>Q51 answer<a class="headerlink" href="#q51-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Let <span class="math notranslate nohighlight">\(r\)</span> be the length of each side. If point A is at the origin,
-then C is at <span class="math notranslate nohighlight">\((r,0,0)\)</span> and B at <span class="math notranslate nohighlight">\((r/2,r\sqrt{3}/2,0)\)</span> as <span class="math notranslate nohighlight">\(\sin(60^\text{o})=\sqrt{3}/2\)</span>. The distance from <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(AC\)</span> is <span class="math notranslate nohighlight">\(\displaystyle |\vec d|=\frac{|\vec b \times \vec c|}{|\vec c|}\)</span></p>
+<p><strong>(a)</strong> Let <span class="math notranslate nohighlight">\(r\)</span> be the length of each side. If point A is at the origin,
+then C is at <span class="math notranslate nohighlight">\((r,0,0)\)</span> and B at <span class="math notranslate nohighlight">\((r/2,r\sqrt{3}/2,0)\)</span> because <span class="math notranslate nohighlight">\(\sin(60^\text{o})=\sqrt{3}/2\)</span>. The distance from <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(AC\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec d|=\frac{|\vec b \times \vec c|}{|\vec c|}\]</div>
 <p><img alt="Drawing" src="../_images/vectors-fig77.png" /></p>
 <p>Figure 77. Calculating the length of perpendiculars.</p>
 <hr class="docutils" />
 <p>As the length <span class="math notranslate nohighlight">\(|\vec c|=r\)</span> then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec c=r\;\boldsymbol i+0\;\boldsymbol j+0\;\boldsymbol k,\quad \vec b=\frac{r}{2}\;\boldsymbol i+\frac{r\sqrt{3}}{2}\;\boldsymbol j+0\;\boldsymbol k\]</div>
+\[\displaystyle \vec c=r\;\pmb i+0\;\pmb j+0\;\pmb k,\quad \vec b=\frac{r}{2}\;\pmb i+\frac{r\sqrt{3}}{2}\;\pmb j+0\;\pmb k\]</div>
 <p>and the cross product</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \vec b\times\vec c=\begin{vmatrix}\;\boldsymbol i&amp;\;\boldsymbol j&amp;\;\boldsymbol k\\r/2&amp; r\sqrt{3}/2 &amp; 0\\r&amp;0&amp;0\end{vmatrix}=0\;\boldsymbol i-0\;\boldsymbol j-\frac{r^2\sqrt{3}}{2}\;\boldsymbol k\end{split}\]</div>
+\[\begin{split}\displaystyle \vec b\times\vec c=\begin{vmatrix}\;\pmb i&amp;\;\pmb j&amp;\;\pmb k\\r/2&amp; r\sqrt{3}/2 &amp; 0\\r&amp;0&amp;0\end{vmatrix}=0\;\pmb i-0\;\pmb j-\frac{r^2\sqrt{3}}{2}\;\pmb k\end{split}\]</div>
 <p>and the distance from <span class="math notranslate nohighlight">\(B \to AC\)</span> is therefore <span class="math notranslate nohighlight">\(d=r\sqrt{3}/2\)</span> and by symmetry this is also the length of the other perpendiculars. This could,of course, have been calculated more easily using simple geometry.</p>
-<p>(b) To calculate the length <span class="math notranslate nohighlight">\(d_b\)</span>,find vector <span class="math notranslate nohighlight">\(\vec c'\)</span> (right hand side of figure 77) and calculated <span class="math notranslate nohighlight">\(\displaystyle d_b=\frac{|\vec b \times \vec c'|}{|\vec b|}\)</span>. Let the vector <span class="math notranslate nohighlight">\(\vec c'=\begin{bmatrix}x&amp;y&amp;0\end{bmatrix}\)</span> and because <span class="math notranslate nohighlight">\(A\)</span> is at the origin and <span class="math notranslate nohighlight">\(p\)</span> a point with coordinates <span class="math notranslate nohighlight">\((x,y,0)\)</span> and thus from part (a)</p>
+<p><strong>(b)</strong> To calculate the length <span class="math notranslate nohighlight">\(d_b\)</span>,find vector <span class="math notranslate nohighlight">\(\vec c'\)</span> (right hand side of figure 77) and then</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \vec b\times\vec{c'}=\begin{vmatrix}\;\boldsymbol i&amp;\;\boldsymbol j&amp;\;\boldsymbol k\\r/2&amp; r\sqrt{3}/2 &amp; 0\\x&amp;y&amp;0\end{vmatrix}=0\;\boldsymbol i-0\;\boldsymbol j+(y-x)\frac{r\sqrt{3}}{2})\;\boldsymbol k\end{split}\]</div>
+\[\displaystyle d_b=\frac{|\vec b \times \vec c'|}{|\vec b|}\]</div>
+<p>Let the vector <span class="math notranslate nohighlight">\(\vec c'=\begin{bmatrix}x&amp;y&amp;0\end{bmatrix}\)</span> and because <span class="math notranslate nohighlight">\(A\)</span> is at the origin and <span class="math notranslate nohighlight">\(p\)</span> a point with coordinates <span class="math notranslate nohighlight">\((x,y,0)\)</span> and thus from part (a)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \vec b\times\vec{c'}=\begin{vmatrix}\;\pmb i&amp;\;\pmb j&amp;\;\pmb k\\r/2&amp; r\sqrt{3}/2 &amp; 0\\x&amp;y&amp;0\end{vmatrix}=0\;\pmb i-0\;\pmb j+(y-x)\frac{r\sqrt{3}}{2})\;\pmb k\end{split}\]</div>
 <p>making length <span class="math notranslate nohighlight">\(\displaystyle d_b=\left|(y-x)\frac{\sqrt{3}}{2}\right|\)</span> and the absolute value is used as the length must be positive.</p>
-<p>The length <span class="math notranslate nohighlight">\(p\to \vec c\)</span> (line <span class="math notranslate nohighlight">\(AC\)</span>) is <span class="math notranslate nohighlight">\(d_c=y\)</span> by a similar calculation using <span class="math notranslate nohighlight">\((\vec c\times \vec{c'})\)</span>. This also is clear from the diagram since <span class="math notranslate nohighlight">\(AC\)</span> lies along the <span class="math notranslate nohighlight">\(x\)</span>-axis. The length <span class="math notranslate nohighlight">\(d_e\)</span> is found by calculating the vector <span class="math notranslate nohighlight">\(\vec{pC}\)</span> and vector <span class="math notranslate nohighlight">\(\vec e\)</span>. The result is</p>
+<p>The length <span class="math notranslate nohighlight">\(p\to \vec c\)</span> (line <span class="math notranslate nohighlight">\(AC\)</span>) is <span class="math notranslate nohighlight">\(d_c=y\)</span> by a similar calculation using <span class="math notranslate nohighlight">\((\vec c\times \vec c')\)</span>. This also is clear from the diagram since <span class="math notranslate nohighlight">\(AC\)</span> lies along the <span class="math notranslate nohighlight">\(x\)</span>-axis. The length <span class="math notranslate nohighlight">\(d_e\)</span> is found by calculating the vector <span class="math notranslate nohighlight">\(\vec{pC}\)</span> and vector <span class="math notranslate nohighlight">\(\vec e\)</span>. The result is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \vec {pC}\times\vec{c'}=\begin{vmatrix}\;\boldsymbol i&amp;\;\boldsymbol j&amp;\;\boldsymbol k\\x-r&amp; y &amp; 0\\-r/2&amp;r\sqrt{3}/2&amp;0\end{vmatrix}=0\;\boldsymbol i-0\;\boldsymbol j+\frac{r}{2}\left(\sqrt{3}(x-r)+y\right)\;\boldsymbol k\end{split}\]</div>
+\[\begin{split}\displaystyle \vec {pC}\times\vec{c'}=\begin{vmatrix}\;\pmb i&amp;\;\pmb j&amp;\;\pmb k\\x-r&amp; y &amp; 0\\-r/2&amp;r\sqrt{3}/2&amp;0\end{vmatrix}=0\;\pmb i-0\;\pmb j+\frac{r}{2}\left(\sqrt{3}(x-r)+y\right)\;\pmb k\end{split}\]</div>
 <p>giving a length <span class="math notranslate nohighlight">\(\displaystyle d_e = \left|\frac{\sqrt{3}(x-r)}{2} +\frac{y}{2} \right|\)</span>. The total distance of all perpendiculars is the sum of the three terms,<span class="math notranslate nohighlight">\(d_c+b_B+d_e\)</span>.</p>
 <p>To test this with some values Python can be used with the restriction that <span class="math notranslate nohighlight">\((x,y)\)</span> must lie within the triangle, that is when <span class="math notranslate nohighlight">\(x\le r/2,\;y\le x\sqrt{3}/2\)</span> and when <span class="math notranslate nohighlight">\(\displaystyle x\ge \sqrt{3}/2,\; y\le -\frac{\sqrt{3}}{2}(x-r/s)+r\sqrt{3}/4\)</span></p>
 <div class="cell docutils container">
@@ -1728,7 +1748,7 @@ then C is at <span class="math notranslate nohighlight">\((r,0,0)\)</span> and B
 <img alt="../_images/vectors-answers-Q47-52_7_0.png" src="../_images/vectors-answers-Q47-52_7_0.png" />
 </div>
 </div>
-<p>and the same answer <span class="math notranslate nohighlight">\(0.866=\sqrt(3)/2\)</span> is obtained for other valid <span class="math notranslate nohighlight">\(x,\;y\)</span> which confirms the value given in the question.</p>
+<p>and the same answer <span class="math notranslate nohighlight">\(0.866=\sqrt{3}/2\)</span> is obtained for other valid <span class="math notranslate nohighlight">\(x,\;y\)</span> which confirms the value given in the question.</p>
 </section>
 <section id="q52-answer">
 <h2>Q52 answer<a class="headerlink" href="#q52-answer" title="Permalink to this headline">#</a></h2>
@@ -1790,7 +1810,7 @@ distance Fe to plane  -0.350
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, z&#39;</span><span class="p">)</span>  <span class="c1"># use sympy as xyz are symbols </span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">X0</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span><span class="n">NA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">NA</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">NA</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="p">)</span>  <span class="c1"># any point in plane </span>
-<span class="n">plane</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">X</span> <span class="o">-</span> <span class="n">X0</span><span class="p">)</span>              <span class="c1"># n is defined above</span>
+<span class="n">plane</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">X</span> <span class="o">-</span> <span class="n">X0</span><span class="p">)</span>                 <span class="c1"># n is defined above</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">plane</span><span class="p">)</span>
 </pre></div>
 </div>

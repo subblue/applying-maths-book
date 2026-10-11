@@ -8,10 +8,12 @@
 # 
 # $$\displaystyle \sigma_d^4=\frac{\cos^4(\theta)}{\sin^4(\theta)}\frac{h^2}{8emV}\sigma_\theta^2+\frac{1}{4V^3}\frac{h^2}{\sin^2(\theta)8em}\sigma_V^2$$
 # 
-# Substituting for $d$ gives $\displaystyle \sigma_d^2=d^2\left(\frac{1}{\tan^2(\theta)}\sigma_\theta^2+\frac{1}{4V}\sigma_V^2\right)$.
+# Substituting for $d$ gives 
+# 
+# $$\displaystyle \sigma_d^2=d^2\left(\frac{1}{\tan^2(\theta)}\sigma_\theta^2+\frac{1}{4V}\sigma_V^2\right)$$
 # 
 # ## Q2 answer
-# (a) Rearranging and defining $Q$ as the ratio, produces 
+# **(a)** Rearranging and defining $Q$ as the ratio, produces 
 # 
 # $$\displaystyle Q\equiv \frac{a_{red}}{a_{ox}}e^{-(E-E^\ominus)nF/RT}$$
 # 
@@ -25,7 +27,7 @@
 # 
 # $$\displaystyle Q\pm\sigma_Q=Q\left(1\pm \frac{nF}{RT}\sqrt{\sigma_E^2+\frac{R^2\ln(Q)^2}{(nF)^2}}\right)$$
 # 
-# (b) The error is smallest at the midpoint when $Q=1$ or $a_{red} = a_{ox}$ because the log is zero.
+# **(b)** The error is smallest at the midpoint when $Q=1$ or $a_{red} = a_{ox}$ because the log is zero.
 # 
 # ## Q3 answer
 # 
@@ -72,7 +74,15 @@
 # =\sum w_ix_i^2-\frac{\left(\sum w_ix_i\right)^2}{\sum w_i}$$
 # 
 # ## Q6 answer
-# (a) The slope is $b = S_{xy} /S_{xx}$ but only the numerator depends on y so it is easier work with $S_{xy}=\sum_i^nw_iy_i(x_i-\langle x\rangle)$ to begin with. Differentiating with $y_i$ gives,
+# **(a)** The slope is 
+# 
+# $$\displaystyle b = S_{xy} /S_{xx}$$
+# 
+# but only the numerator depends on y so it is easier work with 
+# 
+# $$\displaystyle S_{xy}=\sum_i^nw_iy_i(x_i-\langle x\rangle)$$
+# 
+# to begin with. Differentiating with $y_i$ gives,
 # 
 # $$\displaystyle \frac{\partial S_{xy}}{\partial y_i}=w_i(x_i-\langle x\rangle)$$
 # 
@@ -82,20 +92,38 @@
 # 
 # $$\displaystyle \sigma_b^2=\frac{\sum w_i(x_i-\langle x\rangle)^2}{\left(\sum w_i(x_i-\langle x\rangle)^2\right)^2}=\frac{1}{\sum w_i(x_i-\langle x\rangle)^2}=\frac{1}{S_{xx}}$$
 # 
-# (b) The intercept is $a=\langle y\rangle -b\langle x\rangle$ where $b$ is the slope. The variance of this is the sum of the two terms, $\sigma^2 = \sigma_{\langle y\rangle}^2 + \sigma_{b\langle x\rangle}^2$. The value for the slope $b$ is given in (a) and here becomes $\sigma_{b\langle x\rangle}^2=\langle x\rangle^2/S_{xx}$.
+# **(b)** The intercept is 
+# 
+# $$\displaystyle a=\langle y\rangle -b\langle x\rangle$$
+# 
+# where $b$ is the slope. The variance of this is the sum of the two terms, 
+# 
+# $$\displaystyle \sigma^2 = \sigma_{\langle y\rangle}^2 + \sigma_{b\langle x\rangle}^2$$
+# 
+# The value for the slope $b$ is given in **(a)** and here becomes 
+# 
+# $$\displaystyle \sigma_{b\langle x\rangle}^2=\langle x\rangle^2/S_{xx}$$
 # 
 # Differentiating $\langle y\rangle$ produces 
 # 
 # $$\displaystyle \frac{\partial}{\partial y_i}\langle y\rangle=\frac{1}{\sum w_i}\frac{\partial}{\partial y_i} \sum w_iy_i=\frac{w_i}{\sum w_i}$$
 # 
-# This is squared, multiplied by the variance, and then summed, which produces $\displaystyle \sum\left(\frac{w_i}{\sum w_i}\right)^2=\frac{w_i}{\sum w_i}$
+# This is squared, multiplied by the variance, and then summed, which produces 
 # 
-# Combining both variances gives $\displaystyle \sigma^2=\frac{1}{\sum_i w_i}+\frac{\langle x\rangle^2}{S_{xx}}$  which can be simplified to $\displaystyle \sigma^2=\frac{\sum_i w_ix_i^2}{S_{xx}\sum_i w_i}$.
+# $$\displaystyle \sum\left(\frac{w_i}{\sum w_i}\right)^2=\frac{w_i}{\sum w_i}$$
+# 
+# Combining both variances gives 
+# 
+# $$\displaystyle \sigma^2=\frac{1}{\sum_i w_i}+\frac{\langle x\rangle^2}{S_{xx}}$$
+# 
+# which can be simplified to 
+# 
+# $$\displaystyle \sigma^2=\frac{\sum_i w_ix_i^2}{S_{xx}\sum_i w_i}$$
 # 
 # ## Q7 answer
-# (a) Using the algorithm with unit weights, since none is given with the data, produces
+# **(a)** Using the algorithm with unit weights, since none is given with the data, produces
 # 
-# Slope = $4.55 \pm 0.24$ Intercept = $0.0021 \pm 0.0046$ 
+# Slope = $4.55 \pm 0.24$   Intercept = $0.0021 \pm 0.0046$ 
 # 
 # at the $95$ % confidence level. Since the confidence on the intercept is slightly smaller than the intercept itself, this does not cover zero at $95$% confidence, so it can be assumed that there is a small systematic error on the angle. The fit is acceptable as it is clear from the data that $x$ has a strong effect on $y$. This is confirmed by the $F_0$ statistic from the ANOVA test which is $1685$ and greatly exceeds the statistic from the $F$ - distribution at the $99$% level which is $f (0.01, 1, n - 2) = 8.86$.
 # 
@@ -106,40 +134,58 @@
 # Figure 18. Residuals
 # ________
 # 
-# (b) The slope is $s = h/(d\sqrt{8em})$ and lattice spacing is therefore $d = h/(s\sqrt{8em}) = 0.135$ nm. The error on the spacing is calculated using equation 20 and is $\displaystyle \sigma_d=\frac{h\sigma_s}{s^2\sqrt{8em}}=0.007$ nm.
+# **(b)** The slope is 
+# 
+# $$\displaystyle s = \frac{h}{d\sqrt{8em}}$$
+# 
+# and lattice spacing is therefore 
+# 
+# $$\displaystyle d = \frac{h}{s\sqrt{8em}} = 0.135\text{ nm}$$
+# 
+# The error on the spacing is calculated using equation 20 and is 
+# 
+# $$\displaystyle \sigma_d=\frac{h\sigma_s}{s^2\sqrt{8em}}=0.007\text{ nm}$$
 # 
 # ## Q8 answer
-# (a) Using weighted least squares with $w=1/\sigma^2$,the slope and intercept at the $95\,%$ level are
+# **(a)** Using weighted least squares with $w=1/\sigma^2$,the slope and intercept at the $95\,%$ level are
 # 
 # slope = $200 \pm 17$ and intercept =$ 0.998 \pm 0.06$.
 # 
 # which confirms that the intercept is $1$ within error. The $\chi^2$ for the fit is $0.55$ and the $Q$ value (equation 35) is 0.004, which is small but acceptable. 
 # 
-# (b) The quenching rate constant is $k_{SV}/\tau=220/18\cdot 10^{-9}= 1.22\cdot 10^{10}\;\mathrm{ dm^3 mol^{-1} s^{-1}  }$. From the least squares the standard deviation on the slope (not the $95\,%$ quoted above) is $\sigma_{SV} =5.4$. The error on the rate constant is then 
+# **(b)** The quenching rate constant is $k_{SV}/\tau=220/18\cdot 10^{-9}= 1.22\cdot 10^{10}\;\mathrm{ dm^3 mol^{-1} s^{-1}  }$. From the least squares the standard deviation on the slope (not the $95\,%$ quoted above) is $\sigma_{SV} =5.4$. The error on the rate constant is then 
 # 
 # $$\displaystyle \sigma^2=\frac{\sigma_{SV}}{\tau^2}+\frac{k_{SV}^2}{\tau^4}\sigma_\tau^2$$
 # 
 # which produces $\sigma=0.074\cdot 10^{10} \;\mathrm{ dm^3 mol^{-1} s^{-1}  }$ and being cautious, could be rounded down to $\sigma=0.07\cdot 10^{10} \;\mathrm{ dm^3 mol^{-1} s^{-1}  }$ as the rate constant is only given to two decimal places.
 # 
 # ## Q9 answer
-# (a) The P branch occurs below about $2880\;\mathrm{ cm^{-1} }$and the R branch above this. The first P line is the $J'' = 1 \to J' = 0$ transition and is at $\approx 2860\;\mathrm{ cm^{-1} }$ and the first R branch line $J''=0\to j'=1$ is at $\approx 2900\;\mathrm{ cm^{-1} }$. The lines converge in the R branch and diverge in the P because the average bond length is greater in the upper vibrational level than in the lower one.
+# **(a)** The P branch occurs below about $2880\;\mathrm{ cm^{-1} }$and the R branch above this. The first P line is the $J'' = 1 \to J' = 0$ transition and is at $\approx 2860\;\mathrm{ cm^{-1} }$ and the first R branch line $J''=0\to j'=1$ is at $\approx 2900\;\mathrm{ cm^{-1} }$. The lines converge in the R branch and diverge in the P because the average bond length is greater in the upper vibrational level than in the lower one.
 # 
-# (b) The double lines are due to the presence of the two isotopes of chlorine, 35 and 37. This is confirmed because the less intense line is always at smaller wavenumber than the more intense one and is in a constant ratio. If the lines are due to two different types of molecules and not isotopes, it is most unlikely that the vibrational frequency could be almost the same. However, given that this has occurred, the spectrum is then most likely to be more symmetrical, that is the less intense lines would be at smaller wavenumber one side of the spectrum and longer on the other or vice versa because the two molecules would have different bond lengths and hence rotational constants. Additionally, the very small spacing between each pair of lines would be expected to differ across the spectrum because two different molecules are unlikely to have exactly the same shaped potential.
+# **(b)** The double lines are due to the presence of the two isotopes of chlorine, 35 and 37. This is confirmed because the less intense line is always at smaller wavenumber than the more intense one and is in a constant ratio. If the lines are due to two different types of molecules and not isotopes, it is most unlikely that the vibrational frequency could be almost the same. However, given that this has occurred, the spectrum is then most likely to be more symmetrical, that is the less intense lines would be at smaller wavenumber one side of the spectrum and longer on the other or vice versa because the two molecules would have different bond lengths and hence rotational constants. Additionally, the very small spacing between each pair of lines would be expected to differ across the spectrum because two different molecules are unlikely to have exactly the same shaped potential.
 # 
 # Because of the vibrational dependence of $B$ as $J$ increases, the lines in the vibration-rotation spectrum are not evenly spaced and bunch up in the R branch, and become further apart in the P branch.
 # 
-# (c) The energies of the two levels (expressed in wavenumbers ) are:
+# **(c)** The energies of the two levels (expressed in wavenumbers ) are:
 # 
 # $$\displaystyle F(0,J'')=BJ''(J''+1)+1/2v_e - 1/4x_ev_e\\ F(1,J')=BJ'(J'+1)+3/2v_e - 9/4x_ev_e$$
 # 
-# (d) The wavenumber of the transition from $( n=0,J') \to (n = 1, J')$, is given by,
+# **(d)** The wavenumber of the transition from $( n=0,J') \to (n = 1, J')$, is given by,
 # 
 # $$v_{0,J''\to 1,J'} = B(J' - J'')(J' + J'' + 1) + (1 - 2x_e)v_e$$
 # 
 # 
-# (e) If $J'=J''+1$ ,i.e. $\Delta J=+1$, then $v=2BJ+(1-2x_e)v_e$ whilst if $J'' = J' + 1$, i.e. $\Delta J = -1$, then $v = -2BJ + (1 - 2x_e)v_e$. The spectrum therefore consists of equally spaced lines, the spacing being $2B$, on each side of the origin at $v_e(1 - 2x_e)$.
+# **(e)** If 
 # 
-# (f) Using the rotational constant $B_n$, the transition frequency $n = 0 \to n = 1$ becomes
+# $$\displaystyle J'=J''+1,\quad i.e.\quad \Delta J=+1,\quad\text{then}\quad v=2BJ+(1-2x_e)v_e$$
+# 
+# whilst if 
+# 
+# $$\displaystyle J'' = J' + 1,\quad i.e.\quad \Delta J = -1,\quad\text{then}\quad v = -2BJ + (1 - 2x_e)v_e$$
+# 
+# The spectrum therefore consists of equally spaced lines, the spacing being $2B$, on each side of the origin at $v_e(1 - 2x_e)$.
+# 
+# **(f)** Using the rotational constant $B_n$, the transition frequency $n = 0 \to n = 1$ becomes
 # 
 # $$\displaystyle \begin{align}v =& \big((Be - 3/2\alpha_e)J'(J' + 1) + 3/2v_e - 9/4x_ev_e\big) - \big((Be - 1/2\alpha_e)J''(J'' + 1) + 1/2v_e - 1/4x_ev_e\big)\\
 # =&v_e(1 - 2x_e) + (B_e - 3/2\alpha_e)J'(J' + 1) - (B_e - 1/2\alpha_e)J''(J'' + 1)\end{align}$$
@@ -154,7 +200,7 @@
 # 
 # which differ only in a sign before the term in $2J$.
 # 
-# (g) Changing the notation by using $m$ to represent any $J$,the lines in both branches can be represented by
+# **(g)** Changing the notation by using $m$ to represent any $J$,the lines in both branches can be represented by
 # 
 # $$v_m=v_e(1-2x_e)+2m(B_e-\alpha_e)-\alpha_e m^2\\
 # v_{-m}=v_e(1-2x_e)-2m(B_e-\alpha_e)-\alpha_e m^2$$
@@ -165,7 +211,7 @@
 # 
 # so that a plot of $v_m + v_{-m}$ against $m^2$ is a straight line with slope $-2\alpha_e$ and intercept $2v_0 = 2v_e(1 - 2x_e)$ thus enabling $v_e$ and $\alpha_e$ to be found.
 # 
-# (h,i) Note that the weighting is added as $1/\sigma^2$. Using the weighted least squares Algorithm 2, the data produces
+# **(h,i)** Note that the weighting is added as $1/\sigma^2$. Using the weighted least squares Algorithm 2, the data produces
 # 
 # $$\displaystyle \begin{array}{ccccc}\\
 #  ^{35}\text{Cl}& \alpha_e & v_e\,/\,\mathrm{cm^{-1}} & v_e\,/\,\mathrm{cm^{-1}} & k\,/\,\mathrm{Nm^{-1} }\\
@@ -186,13 +232,15 @@
 # The two value for the force constant differ by slightly more than their respective errors, and this is is most likely (a) underestimation of the true error and so accuracy of the spectral lines wavenumbers and, or (b) due to the model used not containing terms describing small anharmonic interactions.
 # 
 # ## Q10 answer
-# if normalised $\sum_{k=0}^\infty  p(k,\mu)=1$, hence the sum is
+# If normalised 
+# 
+# $$\displaystyle \sum_{k=0}^\infty  p(k,\mu)=1$$
+# 
+# hence the sum is
 # 
 # $$\displaystyle e^{-\mu}\sum_{k=0}^\infty\frac{\mu^k}{k!}=e^{-\mu}e^{\mu}=1$$
 # 
-# where the definition of the exponential as a series is used.
-# 
-# Using the formula for the mean, in the limit $n\to\infty$ is
+# where the definition of the exponential as a series is used. Using the formula for the mean, in the limit $n\to\infty$ is
 # 
 # $$\displaystyle \begin{align}\langle k\rangle= \sum_{k=0}^\infty kp(k,\mu)=&e^{-\mu}\sum_{k=0}^\infty\frac{k\mu^k}{k!}=e^{-\mu}\sum_{k=0}^\infty\frac{\mu^k}{(k-1)!}\\=&e^{-\mu}\mu(0+1+\mu+\mu^2/2!+\cdots)=e^{-\mu}\mu e^{+\mu}=\mu\end{align}$$
 # 
@@ -235,11 +283,19 @@
 # The weighting is $1/y_i$ ($y$=number of areas) assuming that the data is Poisson distributed. $\chi^2=1.15$ giving a probability of obtaining this or a higher number as $0.95$ which means that the Poisson model fits the data. 
 # 
 # ## Q13 answer
-# In wavenumbers $G(n)=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3$ and the difference $n\to n+1$
+# In wavenumbers 
+# 
+# $$\displaystyle G(n)=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3$$
+# 
+# and the difference $n\to n+1$
 # 
 # $$\displaystyle \Delta G=v_e(1 +13y_e/4-2x_e+2(3y_e-x_e)n+3y_en^2 )$$
 # 
-# which means that a polynomial of the form $y = c_1 + c_2x + c_3n^2$ should fit the data with $n$ starting at zero. Doing this means that $n$ is now a variable and can take any value unlike in the equation for $G$ where it is an integer. To obtain the area under the curve and hence dissociation energy, $n$ can be integrated from zero to whatever value it has that makes $y = 0$. The weighting is unknown so that in the polynomial least squares this is made equal to one.
+# which means that a polynomial of the form 
+# 
+# $$\displaystyle y = c_1 + c_2x + c_3n^2$$
+# 
+# should fit the data with $n$ starting at zero. Doing this means that $n$ is now a variable and can take any value unlike in the equation for $G$ where it is an integer. To obtain the area under the curve and hence dissociation energy, $n$ can be integrated from zero to whatever value it has that makes $y = 0$. The weighting is unknown so that in the polynomial least squares this is made equal to one.
 # 
 # ![Drawing](analysis-fig21.png)
 # 
@@ -249,7 +305,15 @@
 # 
 # which being >0.1 makes the fit acceptable. The $\chi^2$ is large because the weightings on the data are 1, which are not the true values, however, a value of 1 gives an unbiased estimate of the fit, but the $\chi^2$ is no longer quantitative.
 # 
-# The parameters are $c_1 = 683.8 ± 0.7, c_2 = -18.38 ± 0.25, c_3 = -1.12 ± 0.019$ making the equation $\Delta G = 683.8 - 18.4n - 1.12n^2$. Integrating up to $\Delta G=0$ produces an energy of $7152\pm 118\;\mathrm{cm^{-1}}$ (at $95$%) which compares well with the literature value of $7057\;\mathrm{cm^{-1}}$, (Herzberg 1950, p. 559).
+# The parameters are 
+# 
+# $$\displaystyle c_1 = 683.8 ± 0.7, c_2 = -18.38 ± 0.25, c_3 = -1.12 ± 0.019$$
+# 
+# making the equation 
+# 
+# $$\displaystyle \Delta G = 683.8 - 18.4n - 1.12n^2$$
+# 
+# Integrating up to $\Delta G=0$ produces an energy of $7152\pm 118\;\mathrm{cm^{-1}}$ (at $95$%) which compares well with the literature value of $7057\;\mathrm{cm^{-1}}$, (Herzberg 1950, p. 559).
 
 # In[ ]:
 

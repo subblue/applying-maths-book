@@ -16,7 +16,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q73 answer
-# (a) Using $\psi = x(L - x)$ the denominator integral is 
+# **(a)** Using $\psi = x(L - x)$ the denominator integral is 
 # 
 # $$\displaystyle \int \psi^*\psi d\tau=\int_0^L x^2(L-x)^2dx= \frac{L^5}{30}$$ 
 # 
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The variational energy is therefore $\displaystyle E =5\frac{\hbar^2}{mL^2}$ which is only slightly larger than the true energy $\displaystyle\frac{\pi^2}{2}\frac{\hbar^2}{mL^2}$ by about $1.4$ %.
 # 
-# (b) The normalisation integral is  $\displaystyle \int \psi^*\psi d\tau=\int_{-L}^L e^{-2ax^2}dx=\sqrt{\frac{\pi}{2a} }$. 
+# **(b)** The normalisation integral is  $\displaystyle \int \psi^*\psi d\tau=\int_{-L}^L e^{-2ax^2}dx=\sqrt{\frac{\pi}{2a} }$. 
 # 
 # The expectation value of operator $H$ is $\displaystyle \int \psi^*H\psi d\tau$.
 # 
@@ -99,13 +99,13 @@ sp.simplify(Enrg)
 # which is a good approximation to the true energy of $\displaystyle 1.060 k^{1/3} \left( \frac{\hbar^2}{2m} \right)^{2/3}$.
 # 
 # ## Q75 answer
-# (a, b) The H atom energy levels are $E_n = -RZ^2/n^2 \mathrm{\,cm^{-1}}$, where $R$ is the Rydberg and $n$ the principal quantum number. The energy is therefore $E_1(He) = -2RZ^2 = -8\times 109737 = -877 896 \mathrm{\,cm^{-1}}$ or $-108.8$ eV.
+# **(a, b)** The H atom energy levels are $E_n = -RZ^2/n^2 \mathrm{\,cm^{-1}}$, where $R$ is the Rydberg and $n$ the principal quantum number. The energy is therefore $E_1(He) = -2RZ^2 = -8\times 109737 = -877 896 \mathrm{\,cm^{-1}}$ or $-108.8$ eV.
 # 
 # The energy to ionize He$^+$ is $E_1 = 4R$, or $54.4$ eV which is $4 \times 13.6$ eV the ionization of the H atom. The total experimental energy is $-(54.4 + 24.5) = -79$ eV and the crude theoretical value $-108.8$, which is considerably larger. In (a) it was supposed that the He atom was twice an H atom with no electron-electron interaction or electron-nuclear interaction between opposite atoms; clearly this is wrong. The terms missing are of the form of $\pm e^2/r_{12}$ where $r_{12}$ is the separation between the two electrons or electrons and nuclei.
 # 
 # The equation given in the question allows for electron-electron interaction but not screening of the nuclear charge by the other electron; the variational approach is empirical but should have the effect of reducing the error by changing the effective screening between electrons.
 # 
-# (c) The wavefunction is normalized so that $\int \varphi^*\varphi d\tau =1$ and the expectation value is given in the question for the ground state energy, therefore the only calculation remaining is to find the minimum energy in terms of $\zeta$. This is done by solving
+# **(c)** The wavefunction is normalized so that $\int \varphi^*\varphi d\tau =1$ and the expectation value is given in the question for the ground state energy, therefore the only calculation remaining is to find the minimum energy in terms of $\zeta$. This is done by solving
 # 
 # $$\displaystyle \frac{d}{d\zeta}\int \varphi^*H \varphi d\tau = \frac{e^2}{4\pi\epsilon_0a_0}\left( 2\zeta-2Z+\frac{5}{8} \right)=0$$
 # 
@@ -145,12 +145,12 @@ EV
 # 
 # The next step step is to find the minimum energy by differentiating by $\alpha$ which gives $\displaystyle \frac{dE_V}{d\alpha}=\frac{(\alpha^{3/2}+\alpha^{1/2})(\alpha+1)^{1/2}-2}{4\sqrt{\alpha}(\alpha+1)^{1/2}} =0$. 
 # 
-# Solving this using the numerator gives a value of $0.748$
+# Solving this using the numerator gives a value of $0.748$.
 
 # In[6]:
 
 
-sp.solve( (alpha**(3/2) + alpha**(1/2) )*( alpha +1 )**(1/2)-2,alpha )
+sp.solve( sp.sqrt(alpha)*(alpha + 1 )**(3/2)-2.0,alpha )
 
 
 # This result gives an energy of $E_V=0.53284$. This is close to but a little higher than the numerical solution, which is $0.5226$.  
@@ -248,7 +248,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # This integral has a standard form making $\displaystyle I=\sqrt{\frac{\pi}{4}}$.
 # 
 # ## Q82 answer
-# (a) The integral will be $\displaystyle Z = \int_{n=1}^\infty e^{-E_n/k_BT}dn\equiv \int_{n=1}^\infty e^{-an^2}dn$ 
+# **(a)** The integral will be $\displaystyle Z = \int_{n=1}^\infty e^{-E_n/k_BT}dn\equiv \int_{n=1}^\infty e^{-an^2}dn$ 
 # 
 # where the constant $a = h^2/(8mL^2k_BT)$. Using the method of the previous question, 
 # 
@@ -260,9 +260,9 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # 
 # The mass of a benzene molecule is $78 \times 1.66 \cdot 10^{-27}$ kg, the mean free path is $L = k_BT/(\sqrt{2}\sigma^2 p) \approx 100$ nm (with $\sigma = 0.3\cdot10^{-9}$ m and area $\pi\sigma^2$) making the partition function $Z^3 \approx 7 \cdot 10^{11}$.
 # 
-# (b) At the average thermal energy the quantum number is $\approx 17560$, and the energy gap to the next value is $\approx 6 \cdot 10^{-21}$ J. This energy is far larger than expected. The reason is that we used the mean free path, which is small, rather than the size of the container to define $L$. If $L$ were $100$ cm instead of $100$ nm then the energies would be $10^{14}$ times smaller. Assuming that the size of the container determines $L$ seems to be too much of an approximation, as it assumes that the gas molecules do not interact, similarly assuming that $L$ is the mean free path is also not good enough, but for a different reason. The mean free path is an average value and if the exponential distribution of path lengths between collisions was used instead of a single value then small energy gaps are calculated. The distribution of collision distances produces a continuous range of $L$ values and consequently of energies. This range will in effect make the energy levels continuous.
+# **(b)** At the average thermal energy the quantum number is $\approx 17560$, and the energy gap to the next value is $\approx 6 \cdot 10^{-21}$ J. This energy is far larger than expected. The reason is that we used the mean free path, which is small, rather than the size of the container to define $L$. If $L$ were $100$ cm instead of $100$ nm then the energies would be $10^{14}$ times smaller. Assuming that the size of the container determines $L$ seems to be too much of an approximation, as it assumes that the gas molecules do not interact, similarly assuming that $L$ is the mean free path is also not good enough, but for a different reason. The mean free path is an average value and if the exponential distribution of path lengths between collisions was used instead of a single value then small energy gaps are calculated. The distribution of collision distances produces a continuous range of $L$ values and consequently of energies. This range will in effect make the energy levels continuous.
 # 
-# (c) The partition function can then be written as $Q=\alpha T^{3N/2}$ where $\alpha$ is the collection of parameters and constants, $\displaystyle \alpha = \frac{V^N}{N!}\left( \frac{2\pi mk_B}{h^2} \right)^{3N/2}$. 
+# **(c)** The partition function can then be written as $Q=\alpha T^{3N/2}$ where $\alpha$ is the collection of parameters and constants, $\displaystyle \alpha = \frac{V^N}{N!}\left( \frac{2\pi mk_B}{h^2} \right)^{3N/2}$. 
 # 
 # The entropy is 
 # 
@@ -274,7 +274,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # ## Q83 answer
 # The Jacobian represents the same area or volume element in two different coordinate systems, in this case these are $(x, y)$ and $(u, t)$. A probability of a number being in a region in $(x, y)$ is found by transforming from the original linear coordinates, but because distributions are involved, the chance of being at a given place is changed because the areas enclosed are the same.
 # 
-# (a) the Jacobian determinant is 
+# **(a)** the Jacobian determinant is 
 # 
 # $$\displaystyle \frac{\partial (u,v)}{\partial(x,y)}=
 # \begin{vmatrix} 
@@ -292,7 +292,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # 
 # written to make the two distributions clear.
 # 
-# (b) If $(x-\mu)/\sigma$ and $(y-\mu)/\sigma$ are substituted for  $x$ and $y$ respectively and the transform repeated the distribution has the form $\displaystyle \frac{1}{\sqrt{2\pi\sigma} }e^{(x-\mu)^2/2\sigma^2}$ and similarly for $y$.
+# **(b)** If $(x-\mu)/\sigma$ and $(y-\mu)/\sigma$ are substituted for  $x$ and $y$ respectively and the transform repeated the distribution has the form $\displaystyle \frac{1}{\sqrt{2\pi\sigma} }e^{(x-\mu)^2/2\sigma^2}$ and similarly for $y$.
 # 
 # ## Q84 answer
 # The Jacobian determinant is
@@ -349,13 +349,13 @@ sp.simplify(Jac.det())
 # The volume element is therefore $dxdydz = a^3(v^2 - u^22)du dv d\theta$.
 # 
 # ## Q86 answer
-# (a) Because the wavefunctions $\varphi$ are real there is no need to label them as complex conjugates. The calculation is
+# **(a)** Because the wavefunctions $\varphi$ are real there is no need to label them as complex conjugates. The calculation is
 # 
 # $$\displaystyle (a\varphi_{2s}e^{iEt/\hbar} +b\varphi_{2p_z}e^{iEt/\hbar} )(a\varphi_{2s}e^{-iEt/\hbar} +b\varphi_{2p_z}e^{-iEt/\hbar})= a^2\varphi_{2s}^2+2ab \varphi_{2s}\varphi_{2p_z}+b^2\varphi_{2p_z}^2$$
 # 
 # and no integration is necessary. 
 # 
-# (b) The product is 
+# **(b)** The product is 
 # 
 # $$\displaystyle \begin{align}P&=\left( \frac{\sqrt{3}}{2}\varphi_{1s}e^{iE_{1s}t/\hbar} + \frac{1}{2}\varphi_{2s}e^{iE_{2s}t/\hbar}  \right)\left( \frac{\sqrt{3}}{2}\varphi_{1s}e^{-iE_{1s}t/\hbar} + \frac{1}{2}\varphi_{2s}e^{-iE_{2s}t/\hbar}  \right)\\& = \frac{3}{4}\varphi_{1s}^2 +\frac{\sqrt{3}}{2}\varphi_{1s}\varphi_{2s}e^{i(E_{1s}-E_{2s})t\hbar} +\frac{1}{4}\varphi_{2s}^2\end{align}$$
 # 
@@ -379,7 +379,7 @@ sp.simplify(Jac.det())
 # 
 # This is an even function because $|z|$ is always positive. When this result is multiplied by $\cos(\Delta \omega t)$ the function will oscillate up and down but the symmetry remains because cosine is an even function and therefore symmetrical about $z=0$ and can never produce an oscillating dipole.
 # 
-# (c) In this case $\displaystyle \psi = \frac{\sqrt{3}}{2}\varphi_{1s}e^{-E_{1s}t\hbar}+\frac{1}{2}\varphi_{2p_z}e^{-iE_{2p_z}t\hbar}$ and again the integral will only have one time-dependent term which is 
+# **(c)** In this case $\displaystyle \psi = \frac{\sqrt{3}}{2}\varphi_{1s}e^{-E_{1s}t\hbar}+\frac{1}{2}\varphi_{2p_z}e^{-iE_{2p_z}t\hbar}$ and again the integral will only have one time-dependent term which is 
 # 
 # $$\displaystyle \int \frac{\sqrt{3}}{2}\varphi_{1s}\varphi_{2p_z}e^{i(E_{1s}-E{2p_z}t/\hbar}d\tau$$
 # 
@@ -399,11 +399,11 @@ sp.simplify(Jac.det())
 # _____
 
 # ## Q87 answer
-# (a) This integral is an overlap integral because the wavefunctions are not functions of the internuclear separation $R$, 
+# **(a)** This integral is an overlap integral because the wavefunctions are not functions of the internuclear separation $R$, 
 # 
 # $$\displaystyle \int \varphi_1\frac{q^2}{R}\varphi_2 d\tau =\frac{q^2}{R} \int \varphi_1\varphi_2 d\tau=\frac{q^2}{R}S$$
 # 
-# (b) Substituting the prolate spherical coordinates and values for $\rho_1$ etc. into the resonance integral, equation 73, rearranging and simplifying gives 
+# **(b)** Substituting the prolate spherical coordinates and values for $\rho_1$ etc. into the resonance integral, equation 73, rearranging and simplifying gives 
 # 
 # $$\displaystyle \begin{align} A &= \int \varphi_1\frac{q^2}{r_1}\varphi_2 d\tau 
 # = \frac{q^2}{\pi a_0^4} \int e^{-\rho_1} \frac{1}{\rho_2}e^{-\rho_2}d\tau \\&
@@ -465,17 +465,17 @@ plt.show()
 
 
 # ## Q88 answer
-# (a) A circle of unit radius $R$, has the polar equation $r=R$ then 
+# **(a)** A circle of unit radius $R$, has the polar equation $r=R$ then 
 # 
 # $$\displaystyle S=\int_0^{2\pi} Rd\theta=2\pi R$$
 # 
 # which is the circumference as integration was around the whole circle.
 # 
-# (b) As $r=e^{-\theta/a}$ then $dr/d\theta =-e^{-\theta/a}/a$. The arc length becomes 
+# **(b)** As $r=e^{-\theta/a}$ then $dr/d\theta =-e^{-\theta/a}/a$. The arc length becomes 
 # 
 # $$\displaystyle S=\int_0^{2\pi} \sqrt{ e^{-2\theta/a}\left(1+\frac{1}{a^2}\right) }d\theta =\sqrt{ a^2+1 }\left(1-e^{-2\pi/a} \right) $$
 # 
-# (c) Using equation 83 and $dy/dx=\sinh(x)$ gives 
+# **(c)** Using equation 83 and $dy/dx=\sinh(x)$ gives 
 # 
 # $$\displaystyle S=\int_0^{x_0}\sqrt{1+\sinh^2(x)}dx$$
 # 
@@ -483,14 +483,14 @@ plt.show()
 # 
 # $$\displaystyle S=\int_0^{x_0}\cosh(x)dx=\sinh(x_0)$$
 # 
-# (d) $r=a\theta$ and $dr/d\theta=a$  giving 
+# **(d)** $r=a\theta$ and $dr/d\theta=a$  giving 
 # 
 # $$\displaystyle S=a\int_0^{2\pi}\sqrt{1+\theta^2}d\theta =\frac{a}{2}\left(x\sqrt{1+x^2}+\sinh^{-1}(x)\right)\bigg|_0^{2\pi}$$
 # 
 # is a standard integral and evaluates to $21.26a$.
 # 
 # ## Q89 answer
-# he ellipse has to be used to define the limits to the calculation. The maximum and minimum $y$ values are $\pm b\sqrt{1 - x^2/a^2}$ and the maximum and minimum $x$ are $\pm a$. Draw out the ellipse if you are not sure of this. The are is 
+# The ellipse has to be used to define the limits to the calculation. The maximum and minimum $y$ values are $\pm b\sqrt{1 - x^2/a^2}$ and the maximum and minimum $x$ are $\pm a$. Draw out the ellipse if you are not sure of this. The are is 
 # 
 # $$\displaystyle A=\int_{-a}^a\int_{-b\sqrt{1-x^2/a^2}}^{b\sqrt{1-x^2/a^2}}1dydx= 2b \int_{-a}^a \sqrt{1-\frac{x^2}{a^2} }=\pi ab$$
 # 
@@ -563,7 +563,7 @@ sp.integrate(eq, (x,0,a) )
 
 
 # ## Q92 answer
-# (a) In the parametric form the area under a curve is given by equation 80 or 
+# **(a)** In the parametric form the area under a curve is given by equation 80 or 
 # 
 # $$\displaystyle \int y(t)dx = \int y(t) \frac{dx}{dt} dt$$ 
 # 
@@ -573,7 +573,7 @@ sp.integrate(eq, (x,0,a) )
 # 
 # $$\displaystyle a^2\int_0^{2\pi} (1-\cos(t))^2dt= a^2\int_0^{2\pi}1-2\cos(t)+\frac{1}{2}+\frac{1}{2}\cos(2t)dt =3\pi a^2$$
 # 
-# (b) The arc-length is the integral of a small element $ds$ of the line and is by equation 83; 
+# **(b)** The arc-length is the integral of a small element $ds$ of the line and is by equation 83; 
 # 
 # $$\displaystyle \int_0^{2\pi}ds =\int_0^{2\pi} \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$$
 # 
@@ -584,16 +584,16 @@ sp.integrate(eq, (x,0,a) )
 # which is clearly a complicated integral which, unfortunately, SymPy completely fails to solve but the result is $8a$. The surprising result is that the point on the circumference travels a distance $8a$ while the wheel travels only the distance $2\pi a$ along the road.
 # 
 # ## Q93 answer
-# (a) Using the equation $\displaystyle S =\int_{x_1}^{x_2}\sqrt{r^2+\left( \frac{dr}{d\theta}\right)^2}d\theta$ the length is $S=\int_0^{2\pi}d\theta=2\pi$, the circumference of a circle of unit radius. The equation $r=1$ defines a unit circle in polar coordinates.
+# **(a)** Using the equation $\displaystyle S =\int_{x_1}^{x_2}\sqrt{r^2+\left( \frac{dr}{d\theta}\right)^2}d\theta$ the length is $S=\int_0^{2\pi}d\theta=2\pi$, the circumference of a circle of unit radius. The equation $r=1$ defines a unit circle in polar coordinates.
 # 
-# (b) The integral is $\displaystyle S = \sqrt{2}\int_0^{2\pi} e^{-\theta}d\theta=\sqrt{2}(1-e^{-2\theta})$.
+# **(b)** The integral is $\displaystyle S = \sqrt{2}\int_0^{2\pi} e^{-\theta}d\theta=\sqrt{2}(1-e^{-2\theta})$.
 # 
-# (c) $\displaystyle S=\int_{0}^{x_0}\sqrt{1+\sinh^2(x)}dx$. This is not an obvious integral until the relationship $\cosh^2(x) - \sinh^2(x) = 1$ is recalled, then $\displaystyle S=\int_{0}^{x_0}\cosh(x)dx=\sinh(x_0)$.
+# **(c)** $\displaystyle S=\int_{0}^{x_0}\sqrt{1+\sinh^2(x)}dx$. This is not an obvious integral until the relationship $\cosh^2(x) - \sinh^2(x) = 1$ is recalled, then $\displaystyle S=\int_{0}^{x_0}\cosh(x)dx=\sinh(x_0)$.
 # 
 # ## Q94 answer
-# (a) The derivative is $\displaystyle \frac{df(x)}{dt}=\frac{2x}{2\sqrt{r^2-x^2}}$, substituting and simplifying gives $\displaystyle A=2\pi \int_{-r}^r rdx=4\pi r^2$
+# **(a)** The derivative is $\displaystyle \frac{df(x)}{dt}=\frac{2x}{2\sqrt{r^2-x^2}}$, substituting and simplifying gives $\displaystyle A=2\pi \int_{-r}^r rdx=4\pi r^2$
 # 
-# (b) The limits are from $x=r\cos(\theta) \to r$ where $\theta$ is $90$ - latitude and is $34^\mathrm{o}$ . The integral evaluates to  
+# **(b)** The limits are from $x=r\cos(\theta) \to r$ where $\theta$ is $90$ - latitude and is $34^\mathrm{o}$ . The integral evaluates to  
 # 
 # $$\displaystyle 2\pi rx\big|_{r\cos(\theta}^r=2\pi r^2(1-\cos(\theta))$$
 # 
@@ -605,9 +605,9 @@ sp.integrate(eq, (x,0,a) )
 # _____
 # 
 # ## Q95 answer
-# (a) Given the same set of conditions, a state variable has the same value and is independent of how those conditions were reached. A state variable is therefore a quantity whose value defines a thermodynamic state. Examples are temperature, pressure, potential energy, internal energy, and entropy.
+# **(a)** Given the same set of conditions, a state variable has the same value and is independent of how those conditions were reached. A state variable is therefore a quantity whose value defines a thermodynamic state. Examples are temperature, pressure, potential energy, internal energy, and entropy.
 # 
-# (b) The first path has a constant temperature, and then constant pressure, the second is a straight-line from the start to the end. The line along which integration is performed is $pV = RT$. Putting the equation in the form of equation 85 gives at constant temperature, $w_T$ and pressure $w_p$,
+# **(b)** The first path has a constant temperature, and then constant pressure, the second is a straight-line from the start to the end. The line along which integration is performed is $pV = RT$. Putting the equation in the form of equation 85 gives at constant temperature, $w_T$ and pressure $w_p$,
 # 
 # $$\displaystyle w_T=\int  p\left(  \frac{\partial V}{\partial T}\right)_p\frac{dT}{dp}+ p\left(  \frac{\partial V}{\partial p}\right)_T dp$$
 # 

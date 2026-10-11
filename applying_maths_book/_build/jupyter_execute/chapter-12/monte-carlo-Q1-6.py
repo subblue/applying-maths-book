@@ -4,14 +4,18 @@
 # # Questions 1 - 6
 
 # ## Q1 Area under curve
-# Calculate the area under the curve $\displaystyle e^{-x} \sin(x^2)$ 
+# Calculate the area under the curve 
+# 
+# $$\displaystyle e^{-x} \sin(x^2)$$ 
 # 
 # in the range $0 \to 6$ using the mean-value method. 
 # 
 # **Strategy:** Use the algorithm in the text modified for the new function and limits.
 # 
 # ## Q2 Mean value method
-# Integrate $\displaystyle \int_0^2\int_0^1\int_0^{3/2}\sqrt{16-x^2-y^2-z^2}dxdydz$  
+# Integrate 
+# 
+# $$\displaystyle \int_0^2\int_0^1\int_0^{3/2}\sqrt{16-x^2-y^2-z^2}dxdydz$$  
 # 
 # using the mean value, Monte Carlo method and accurate to two significant figures.
 # 
@@ -19,22 +23,34 @@
 # 
 # 
 # ## Q3 Importance sampling
-# Integrate $\displaystyle \int_o^\infty e^{-x}\sin(x^2)dx$ using importance sampling.
+# Integrate 
+# 
+# $$\displaystyle \int_o^\infty e^{-x}\sin(x^2)dx$$
+# 
+# using importance sampling.
 # 
 # **Strategy:** The distribution function can be chosen as $e^{-x}$ and the importance sampling algorithm followed. This method also enables us to calculate from zero to infinity; however, a cut-off value has to be determined and $e^{-10}$ can be chosen because it is so small compared to $1$. The limits are therefore $a = 0 ,\; b = 10$.
 # 
 # ## Q4 Importance sampling
-# Calculate the integral $\displaystyle \int_0^2 e^{-x^2}dx$
+# Calculate the integral 
 # 
-# using importance sampling and the distribution function $p(x) = 1/(x^2 + 1/4)$, 
+# $$\displaystyle \int_0^2 e^{-x^2}dx$$
 # 
-# which has a similar shape to the function in the integral.
+# using importance sampling and the distribution function $p(x) = 1/(x^2 + 1/4)$, which has a similar shape to the function in the integral.
 # 
 # **Strategy:**  Following the text on importance sampling, $p(x)$ has to be made into a distribution. The integral from $0 \to t$ is 
 # 
 # $$\displaystyle \int_0^t (x^2+1/4)^{-1}dx = 2\tan^{-1}(2t)$$
 # 
-# and the normalization is therefore $N = 2 \tan^{-1}(4)$. Working out the cumulative distribution and solving for $r$ produces $r = \tan^{-1}(2t)/\tan^{-1}(4)$. The variable $r$ is sampled from a uniform distribution in the range $0 \to 1$.
+# and the normalization is therefore 
+# 
+# $$\displaystyle N = 2 \tan^{-1}(4)$$
+# 
+# Working out the cumulative distribution and solving for $r$ produces 
+# 
+# $$\displaystyle r = \frac{\tan^{-1}(2t)}{\tan^{-1}(4)}$$
+# 
+# The variable $r$ is sampled from a uniform distribution in the range $0 \to 1$.
 # 
 # ## Q5 Accuracy
 # Apparently innocent functions, when calculated by simple Monte Carlo methods, can give incorrect results even when huge numbers of sampling points are taken. One example is the integral 
@@ -43,12 +59,12 @@
 # 
 # (Krauth 2006, p66).
 # 
-# (a) Accurate values are obtained when $0.5 \lt \gamma \lt 1$. Show that this is the case using a simple,
+# **(a)** Accurate values are obtained when $0.5 \lt \gamma \lt 1$. Show that this is the case using a simple,
 # or mean-value Monte Carlo method with $\gamma = 1/2$ and $20000$ samples.
 # 
-# (b) Using the same method show that an incorrect result is produced when $\gamma = -0.8$, and similar values close to $-1$, even though tens or even hundreds of thousands of samples are taken. (Note that this may take several minutes to complete depending on the computer used and how efficient the algorithm is.)
+# **(b)** Using the same method show that an incorrect result is produced when $\gamma = -0.8$, and similar values close to $-1$, even though tens or even hundreds of thousands of samples are taken. (Note that this may take several minutes to complete depending on the computer used and how efficient the algorithm is.)
 # 
-# (c) Next, use the importance sampling method with the distribution $p(x) = x\lambda$ where $\gamma \lt \lambda \lt 0$, and obtain an accurate result.
+# **(c)** Next, use the importance sampling method with the distribution $p(x) = x\lambda$ where $\gamma \lt \lambda \lt 0$, and obtain an accurate result.
 # 
 # ## Q6 Lennard Jones potential & virial coefficient
 # The Virial Coefficients are used in the description of real gases. The compression factor $Z = 1$ for an ideal gas, but is expanded as a series for a real gas, 
@@ -76,7 +92,7 @@
 # and $U(r)$. In practice, a maximum value has to be put on $r$, and using the values given in the question, a plot indicates that $r = 2$ nm is quite sufficient. The function $f (r)$ is zero initially, and rises as $r^2$ for small $r$; however, this term is overwhelmed by the exponential at larger values of $r$.
 # 
 
-# In[28]:
+# In[ ]:
 
 
 

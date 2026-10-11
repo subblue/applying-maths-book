@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1690,9 +1690,11 @@ title="Print to PDF"
 <section id="q22-predator-prey">
 <h2>Q22 Predator - prey<a class="headerlink" href="#q22-predator-prey" title="Permalink to this headline">#</a></h2>
 <p>Using the Lotka - Volterra equations 49,</p>
-<p>(a)  Sketch what happens if the predators do not die by natural causes <span class="math notranslate nohighlight">\(k_3 = 0\)</span> and confirm this by calculation.</p>
-<p>(b)  What happens if an extra term is introduced into each equation; <span class="math notranslate nohighlight">\(-k_{11}Y\)</span> into <span class="math notranslate nohighlight">\(dY/dt\)</span> and <span class="math notranslate nohighlight">\(-k_{22}X\)</span> into the other equation, which removes by poisoning both prey (pest) and predator in proportion to their populations? This has been used as a way of controlling pests; does it work? Assume that the predators do die off naturally so that <span class="math notranslate nohighlight">\(k_3 \ne  0\)</span>. Use values given in the text and <span class="math notranslate nohighlight">\(k_{11} = 0.9\)</span> and <span class="math notranslate nohighlight">\(k_{22} = 0.2\)</span>.</p>
-<p><strong>Strategy:</strong> Consider the steady state or equilibrium populations. Plot the phase plane and nullclines, and compare these with the case when <span class="math notranslate nohighlight">\(k_{11}\)</span> and <span class="math notranslate nohighlight">\(k_{22}\)</span> are zero. Solve the equations using the Euler method with at least 500 points in the calculation. The text gives values <span class="math notranslate nohighlight">\(X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5\)</span>.</p>
+<p><strong>(a)</strong>  Sketch what happens if the predators do not die by natural causes <span class="math notranslate nohighlight">\(k_3 = 0\)</span> and confirm this by calculation.</p>
+<p><strong>(b)</strong>  What happens if an extra term is introduced into each equation; <span class="math notranslate nohighlight">\(-k_{11}Y\)</span> into <span class="math notranslate nohighlight">\(dY/dt\)</span> and <span class="math notranslate nohighlight">\(-k_{22}X\)</span> into the other equation, which removes by poisoning both prey (pest) and predator in proportion to their populations? This has been used as a way of controlling pests; does it work? Assume that the predators do die off naturally so that <span class="math notranslate nohighlight">\(k_3 \ne  0\)</span>. Use values given in the text and <span class="math notranslate nohighlight">\(k_{11} = 0.9\)</span> and <span class="math notranslate nohighlight">\(k_{22} = 0.2\)</span>.</p>
+<p><strong>Strategy:</strong> Consider the steady state or equilibrium populations. Plot the phase plane and nullclines, and compare these with the case when <span class="math notranslate nohighlight">\(k_{11}\)</span> and <span class="math notranslate nohighlight">\(k_{22}\)</span> are zero. Solve the equations using the Euler method with at least 500 points in the calculation. The text gives values</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5\]</div>
 </section>
 <section id="q23-predator-prey">
 <h2>Q23 Predator - prey<a class="headerlink" href="#q23-predator-prey" title="Permalink to this headline">#</a></h2>
@@ -1703,7 +1705,10 @@ title="Print to PDF"
 <p>A more realistic model for predator - prey interactions than equation 48 is to modify the equations to limit the prey population so that its numbers do not grow exponentially in the absence of predators. The numbers will be limited by the amount of food, irrespective of predation. One way to do this, starting with the basic predator - prey equations is to add a term to the prey equation that limits its population, depending on the square of its population: this is a term dependent on its ‘density’ and is called <em>density dependent growth</em>. This in chemical terms is a bimolecular process <span class="math notranslate nohighlight">\(-k_dY^2\)</span> and the squared term represents two <span class="math notranslate nohighlight">\(Y\)</span> species recombining to produce an inert product that takes no further part in the reaction. The equations are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dY}{dt}=k_1Y-k_2YX-k_dY^2, \qquad \frac{dX}{dt}=k_2YX - k_3X\]</div>
-<p>Calculate the populations’ time dependence and phase plane with <span class="math notranslate nohighlight">\(k_d = 0.002\)</span> and use the values for other parameters given in the text and which are <span class="math notranslate nohighlight">\(X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5\)</span>. Explain the results you obtain.</p>
+<p>Calculate the populations’ time dependence and phase plane with <span class="math notranslate nohighlight">\(k_d = 0.002\)</span> and use the values for other parameters given in the text and which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5\]</div>
+<p>Explain the results you obtain.</p>
 </section>
 <section id="q25-nerve-impulses">
 <h2>Q25 Nerve impulses<a class="headerlink" href="#q25-nerve-impulses" title="Permalink to this headline">#</a></h2>
@@ -1720,17 +1725,20 @@ A + B &amp; \overset{k_3}\longrightarrow &amp;B + X \\
 B &amp; \overset{k_3}\longrightarrow &amp; X \\
 \end{array}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\text{(50)}\end{split}\]</div>
 <p>Because <span class="math notranslate nohighlight">\(C\)</span> is held constant, the first reaction can be rewritten with a pseudo, first-order rate constant, <span class="math notranslate nohighlight">\(k_1 = k'_1C\)</span>, equivalent to <span class="math notranslate nohighlight">\(\displaystyle A \overset{k_1}\to A + A\)</span>. The rate of change of <span class="math notranslate nohighlight">\(B\)</span> is zero in the third step because it catalyses this reaction. This scheme also has a biological interpretation;  <span class="math notranslate nohighlight">\(A\)</span>, is a micro-organism that produces a chemical toxin <span class="math notranslate nohighlight">\(B\)</span> that will ultimately poison it.</p>
-<p>(a) Write down the rate equations.</p>
-<p>(b)  Describe the equilibrium (steady state) points and nullclines.</p>
-<p>(c) Calculate the concentration of species <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> up to time <span class="math notranslate nohighlight">\(t = 600\)</span>, and also plot the phase plane with <span class="math notranslate nohighlight">\(k_1 = 0.2,\; k_2 = 0.01,\; k_3 = 0.01,\; k_4 = 0.02\)</span> and initial concentrations of <span class="math notranslate nohighlight">\(A_0 = 50,\; B_0 = 0\)</span>.</p>
-<p>(d) Comment on the results obtained.</p>
+<p><strong>(a)</strong> Write down the rate equations.</p>
+<p><strong>(b)</strong>  Describe the equilibrium (steady state) points and nullclines.</p>
+<p><strong>(c)</strong> Calculate the concentration of species <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> up to time <span class="math notranslate nohighlight">\(t = 600\)</span>, and also plot the phase plane with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k_1 = 0.2,\; k_2 = 0.01,\; k_3 = 0.01,\; k_4 = 0.02\]</div>
+<p>and initial concentrations of <span class="math notranslate nohighlight">\(A_0 = 50,\; B_0 = 0\)</span>.</p>
+<p><strong>(d)</strong> Comment on the results obtained.</p>
 <p><strong>Strategy:</strong> The rate equations are calculated by working out the change in the number of species in the usual way. <span class="math notranslate nohighlight">\(A\)</span> is gained in the first step and lost in the other two, while <span class="math notranslate nohighlight">\(B\)</span> is produced in the second step, unchanged in the third and lost in the last. The equilibrium points are calculated at steady state,<span class="math notranslate nohighlight">\( dA/dt = dB/dt = 0\)</span> and the numerical solution is calculated using Euler’s method.</p>
 </section>
 <section id="q27-rigid-pendulum">
 <h2>Q27 Rigid pendulum<a class="headerlink" href="#q27-rigid-pendulum" title="Permalink to this headline">#</a></h2>
 <p>In this question, the motion of a rigid pendulum is examined, see Section 6.3 for the equations to use and use <span class="math notranslate nohighlight">\(\omega  = 1\)</span>.</p>
-<p>(a) Set the pendulum initially to <span class="math notranslate nohighlight">\(\varphi_0 = \pi\)</span> but with zero velocity and observe what happens with the Euler, modified Euler, and Euler - Cromer methods. This is a test of how good the numerical algorithm is, because the pendulum should remain vertical forever. Repeat the calculation with the initial angle of <span class="math notranslate nohighlight">\(3.0\)</span> radians.</p>
-<p>(b) Calculate the angle, velocity, and phase plane at several initial starting angles. Plot a graph of velocity vs time to illustrate how the non-linear motion increases with increase in the initial angle.</p>
+<p><strong>(a)</strong> Set the pendulum initially to <span class="math notranslate nohighlight">\(\varphi_0 = \pi\)</span> but with zero velocity and observe what happens with the Euler, modified Euler, and Euler - Cromer methods. This is a test of how good the numerical algorithm is, because the pendulum should remain vertical forever. Repeat the calculation with the initial angle of <span class="math notranslate nohighlight">\(3.0\)</span> radians.</p>
+<p><strong>(b)</strong> Calculate the angle, velocity, and phase plane at several initial starting angles. Plot a graph of velocity vs time to illustrate how the non-linear motion increases with increase in the initial angle.</p>
 <p><strong>Strategy:</strong> (a) Use <span class="math notranslate nohighlight">\(5000\)</span> points in the calculation (b) <span class="math notranslate nohighlight">\(500\)</span> points will suffice here and initial angles between <span class="math notranslate nohighlight">\(\pi\)</span> and zero radians; the values <span class="math notranslate nohighlight">\(3, 1.5, 0.5\)</span> and <span class="math notranslate nohighlight">\(0.25\)</span> radians should work.</p>
 </section>
 <section id="q28-damped-pendulum">
@@ -1746,8 +1754,8 @@ B &amp; \overset{k_3}\longrightarrow &amp; X \\
 <p>This question shows how two different oscillators, a pendulum attached to a rotating shaft, can produce a complicated but understandable motion. The figure shows a rigid pendulum freely suspended beneath a rotating rod. The equation of motion is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2\varphi}{dt^2}+\left[\frac{\alpha}{L}-\omega^2\cos(\varphi)\right] \sin(\varphi)=0\]</div>
-<p>(a) Calculate the equilibrium points, nullclines, phase plane, and the angle and the change of the velocity of the pendulum with time.</p>
-<p>(b) Consider the cases when <span class="math notranslate nohighlight">\(L\)</span> is very long so that <span class="math notranslate nohighlight">\(a/L \ll \omega^2\)</span> and when very short.</p>
+<p><strong>(a)</strong> Calculate the equilibrium points, nullclines, phase plane, and the angle and the change of the velocity of the pendulum with time.</p>
+<p><strong>(b)</strong> Consider the cases when <span class="math notranslate nohighlight">\(L\)</span> is very long so that <span class="math notranslate nohighlight">\(a/L \ll \omega^2\)</span> and when very short.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig24.png" /></p>
 <p>Figure 24. A rigid pendulum attached to the base of a rotating rod.</p>
 </section>
@@ -1758,9 +1766,14 @@ B &amp; \overset{k_3}\longrightarrow &amp; X \\
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2\varphi}{dt^2}+\left[\frac{\alpha}{L}-\omega^2\cos(\varphi)\right] \sin(\varphi)=0\]</div>
 <p>calculate the period of the pendulum when</p>
-<p>(a)  <span class="math notranslate nohighlight">\(\varphi \to 0\)</span> and</p>
-<p>(b)  <span class="math notranslate nohighlight">\(\varphi = \varphi_0\)</span> where <span class="math notranslate nohighlight">\(\varphi_0\)</span> is the initial angle given by <span class="math notranslate nohighlight">\(\varphi_0= \cos^{-1}\left(a/(L\omega^2)\right)\)</span></p>
-<p>(c)  Assume <span class="math notranslate nohighlight">\(\varphi - \varphi_0\)</span> is not small and show that <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2\varphi}{dt^2}=\omega^2\varphi\sin^2(\varphi)\)</span> by ignoring a <span class="math notranslate nohighlight">\(\varphi^2\)</span> term. What does this equation represent?</p>
+<p><strong>(a)</strong>  <span class="math notranslate nohighlight">\(\varphi \to 0\)</span> and</p>
+<p><strong>(b)</strong>  <span class="math notranslate nohighlight">\(\varphi = \varphi_0\)</span> where <span class="math notranslate nohighlight">\(\varphi_0\)</span> is the initial angle given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi_0= \cos^{-1}\left(a/(L\omega^2)\right)\]</div>
+<p><strong>(c)</strong>  Assume <span class="math notranslate nohighlight">\(\varphi - \varphi_0\)</span> is not small and show that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\varphi}{dt^2}=\omega^2\varphi\sin^2(\varphi)\]</div>
+<p>by ignoring a <span class="math notranslate nohighlight">\(\varphi^2\)</span> term. What does this equation represent?</p>
 <p><strong>Strategy:</strong> In (a) approximate the series expansion to small angles. In (b) Use a Taylor series expansion about <span class="math notranslate nohighlight">\(\varphi_0\)</span>, and take only the first two or three terms to approximate to small values. In (c) It will be useful to change the angle to <span class="math notranslate nohighlight">\(\varphi \to \varphi - \varphi_0\)</span> in the equation of motion.</p>
 </section>
 <section id="q31-vertical-oscillations">
@@ -1780,8 +1793,8 @@ B &amp; \overset{k_3}\longrightarrow &amp; X \\
 <p>and is therefore similar to that of a pendulum  hanging beneath an oscillating mount, which was described in Q31, provided that <span class="math notranslate nohighlight">\(\sin(\varphi) \to \varphi\)</span>. This means that the initial angle measured away from the vertical is small. The natural period of the pendulum is <span class="math notranslate nohighlight">\(\omega_0\)</span>, and the mount moves with frequency <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
 <p>If the initial angle is exactly zero and so is the initial velocity, then the motion of the pendulum is purely vertical and no oscillation should occur, there being no forces other than purely vertical ones. If, however, a small perturbation occurs so that the initial angle in not zero or initial velocity not zero the pendulum starts to oscillate and its amplitude may grow indefinitely or may be stable. This means that there are regions of stability and instability and these are difficult to predict. The figure below shows some of the stable and unstable regions which was calculated numerically but slowly using a square grid of values.</p>
 <p>Show that with an initial angle of <span class="math notranslate nohighlight">\(0.01\)</span> degrees and zero initial velocity that</p>
-<p>(a) the motion is unstable if <span class="math notranslate nohighlight">\(h = 0.4\)</span>  and <span class="math notranslate nohighlight">\((\omega/\omega_0)^2 = 0.4\)</span> because the pendulum’s amplitude continuously grows.</p>
-<p>(b) when <span class="math notranslate nohighlight">\(h = 1.75\)</span> and <span class="math notranslate nohighlight">\((\omega/\omega_0)^2 = 0.75\)</span> the motion is stable.</p>
+<p><strong>(a)</strong> the motion is unstable if <span class="math notranslate nohighlight">\(h = 0.4\)</span>  and <span class="math notranslate nohighlight">\((\omega/\omega_0)^2 = 0.4\)</span> because the pendulum’s amplitude continuously grows.</p>
+<p><strong>(b)</strong> when <span class="math notranslate nohighlight">\(h = 1.75\)</span> and <span class="math notranslate nohighlight">\((\omega/\omega_0)^2 = 0.75\)</span> the motion is stable.</p>
 <p><strong>Strategy:</strong> Preferably, use the fourth-order Runge - Kutta method to solve the equations, which can be
 separated as in Q31. Use a minimum of <span class="math notranslate nohighlight">\(1000\)</span> steps and time up to <span class="math notranslate nohighlight">\(t = 200\)</span>.</p>
 <p><strong>Exercise:</strong> You can investigate the stability regions by observing if the phase plane spirals outwards or not for different sets of parameters. Choose <span class="math notranslate nohighlight">\(h\)</span> starting at zero and <span class="math notranslate nohighlight">\((\omega/\omega_0)^2\)</span> from <span class="math notranslate nohighlight">\(0 \to 2\)</span>. A graph of the stability regions are given by Acheson (1997) and a similar one shown below.</p>
@@ -1803,8 +1816,8 @@ separated as in Q31. Use a minimum of <span class="math notranslate nohighlight"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dx}{dt}=a-x -\frac{4xy}{1+x^2}, \qquad \frac{dy}{dt}=bx\left(1-\frac{y}{1+x^2}  \right) \]</div>
 <p>where <span class="math notranslate nohighlight">\(x \equiv \mathrm{[I^-]},\; y \equiv \mathrm{[CIO_2^-]}\)</span> and <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are positive constant numbers depending on fixed concentrations and rate constants. It is assumed in this scheme that an unending supply of reagents is available.</p>
-<p>(a) Find the stable points and the nullclines, and plot on the phase plane together with some trajectories, each calculated numerically, with constant parameters <span class="math notranslate nohighlight">\(a = 8\)</span> and <span class="math notranslate nohighlight">\(10\)</span> and <span class="math notranslate nohighlight">\(b = 2\)</span>. Choose a few starting values close to the equilibrium point and a few some distance away.</p>
-<p>(b) Comment on the different behaviour of the two parameter sets.</p>
+<p><strong>(a)</strong> Find the stable points and the nullclines, and plot on the phase plane together with some trajectories, each calculated numerically, with constant parameters <span class="math notranslate nohighlight">\(a = 8\)</span> and <span class="math notranslate nohighlight">\(10\)</span> and <span class="math notranslate nohighlight">\(b = 2\)</span>. Choose a few starting values close to the equilibrium point and a few some distance away.</p>
+<p><strong>(b)</strong> Comment on the different behaviour of the two parameter sets.</p>
 </section>
 <section id="q34-limits-with-fitzhugh-nagamo-eqn">
 <h2>Q34 Limits with Fitzhugh-Nagamo eqn.<a class="headerlink" href="#q34-limits-with-fitzhugh-nagamo-eqn" title="Permalink to this headline">#</a></h2>

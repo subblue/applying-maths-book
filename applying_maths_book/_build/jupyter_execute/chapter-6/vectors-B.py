@@ -4,13 +4,13 @@
 # # 6 Projections and components
 
 # ## 6 Projections
-# To find the projection or component of a vector $\vec A$ that lies along an axis, the dot product with one of the vector's orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector $\boldsymbol i$ is used;
+# To find the projection or component of a vector $\vec A$ that lies along an axis, the dot product with one of the vector's orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector $\pmb i$ is used;
 # 
-# $$\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \qquad\tag{13}$$
+# $$\displaystyle \pmb i\cdot \vec A = \pmb i\cdot(a\pmb i + b\pmb j + c\pmb k) = a\pmb i\cdot\pmb i = a. \qquad\tag{13}$$
 # 
-# This shows that only the $x$ component is extracted and you can see how to obtain the $b$ and $c$ components using $\boldsymbol j$ and $\boldsymbol k$ instead of $\boldsymbol i$. More usefully, since the dot product can be written as
+# This shows that only the $x$ component is extracted and you can see how to obtain the $b$ and $c$ components using $\pmb j$ and $\pmb k$ instead of $\pmb i$. More usefully, since the dot product can be written as
 # 
-# $$\displaystyle \boldsymbol i \cdot\vec A=|\boldsymbol i||\vec A|\cos(\theta)=|\vec A|\cos(\theta)$$
+# $$\displaystyle \pmb i \cdot\vec A=|\pmb i||\vec A|\cos(\theta)=|\vec A|\cos(\theta)$$
 # then 
 # 
 # $$\displaystyle a=|\vec A|\cos(\theta)$$
@@ -52,21 +52,21 @@
 # ### **(i) Work done**
 # Consider the work done, $W$, on moving an object. This is force $\times$ distance, but if the force is not applied in the direction that the object is moved, but at an angle $\theta$, then only a component of the force is effective. The total work done is $W = |F||d|\cos(\theta) = \vec F\cdot\vec d$, which is a scalar number. If force is given by the vector $\vec F=\begin{bmatrix}5 & -3& 1\end{bmatrix}$ and the direction of motion by $\vec d=\begin{bmatrix}2&3 &4\end{bmatrix}$, then the work done is,
 # 
-# $$\displaystyle  W=\vec F\cdot \vec d = (5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)=10-9+5 =5$$
+# $$\displaystyle  W=\vec F\cdot \vec d = (5\pmb i-3\pmb j+\pmb k)\cdot (2\pmb i+3\pmb j+4\pmb k)=10-9+5 =5$$
 # 
 # In vector-matrix form this is $\displaystyle W=\begin{bmatrix}5 & -3 & 1\end{bmatrix}\begin{bmatrix}2\\3\\4\end{bmatrix}=5$
 # 
 # The same calculation, as a projection of the force onto the direction of motion, is the vector $P$, equation 14,
 # 
-# $$\displaystyle (5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)  \frac{(2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)}{4+9+16}=\frac{5}{29}(2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)$$
+# $$\displaystyle (5\pmb i-3\pmb j+\pmb k)\cdot (2\pmb i+3\pmb j+4\pmb k)  \frac{(2\pmb i+3\pmb j+4\pmb k)}{4+9+16}=\frac{5}{29}(2\pmb i+3\pmb j+4\pmb k)$$
 # 
 # where the dot product is a scalar. The magnitude of the projection is by eqn 15,
 # 
-# $$\displaystyle L= \big|(5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)\big|\frac{1}{\sqrt{29}}=\frac{5}{\sqrt{29}}$$
+# $$\displaystyle L= \big|(5\pmb i-3\pmb j+\pmb k)\cdot (2\pmb i+3\pmb j+4\pmb k)\big|\frac{1}{\sqrt{29}}=\frac{5}{\sqrt{29}}$$
 # 
-# To calculate the total work, this projected length has to be multiplied by the distance moved which is the length of vector $\vec d = (2\boldsymbol i + 3\boldsymbol j + 4\boldsymbol k)$ which is $\sqrt{29}$, therefore the work is $5$ as calculated above.
+# To calculate the total work, this projected length has to be multiplied by the distance moved which is the length of vector $\vec d = (2\pmb i + 3\pmb j + 4\pmb k)$ which is $\sqrt{29}$, therefore the work is $5$ as calculated above.
 # 
-# If the vectors are greater than three dimensional then the $(\boldsymbol i, \boldsymbol j, \boldsymbol k)$ basis cannot be used and matrices are used instead. For example if $\vec w=\begin{bmatrix}1& 3& 5& 7\end{bmatrix}$ and $\vec v = \begin{bmatrix}2& 4& 6& 8\end{bmatrix} $ the projection of $\vec w$ onto $\vec v$ is still given by eqn 14.  
+# If the vectors are greater than three dimensional then the $(\pmb i, \pmb j, \pmb k)$ basis cannot be used and matrices are used instead. For example if $\vec w=\begin{bmatrix}1& 3& 5& 7\end{bmatrix}$ and $\vec v = \begin{bmatrix}2& 4& 6& 8\end{bmatrix} $ the projection of $\vec w$ onto $\vec v$ is still given by eqn 14.  
 # 
 # The square of the magnitude 
 # 
@@ -120,16 +120,16 @@
 
 # ## 7 Direction cosines
 # 
-# A three-dimensional vector is often defined as $\vec V = a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$. However, the vector can equally well be described by the angles it makes to the $x, y$ and $z$-axes, when these angles are $\alpha, \beta,  \gamma$, as shown in figure 18, where the angles are measured away from the axes to the vector.
+# A three-dimensional vector is often defined as $\vec V = a\pmb i + b\pmb j + c\pmb k$. However, the vector can equally well be described by the angles it makes to the $x, y$ and $z$-axes, when these angles are $\alpha, \beta,  \gamma$, as shown in figure 18, where the angles are measured away from the axes to the vector.
 # The vector $v$ is now described by
 # 
-# $$\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\boldsymbol i + \cos(\beta)\boldsymbol j + \cos(\gamma )\boldsymbol k\right) \qquad\tag{16}$$
+# $$\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\pmb i + \cos(\beta)\pmb j + \cos(\gamma )\pmb k\right) \qquad\tag{16}$$
 # 
-# and the components $\cos(\alpha), \cos(\beta), \cos(\gamma )$ are each _direction cosines_ . The direction cosines are, therefore, the projections the normalized vector $v$ makes onto each of the $x-, y-$ and $z-$ axes. They are also the dot product of vector $v$ with each base vector $\boldsymbol i, \boldsymbol j , \boldsymbol k$ in turn. Taking the dot product with base vector $\boldsymbol i$ gives
+# and the components $\cos(\alpha), \cos(\beta), \cos(\gamma )$ are each _direction cosines_ . The direction cosines are, therefore, the projections the normalized vector $v$ makes onto each of the $x-, y-$ and $z-$ axes. They are also the dot product of vector $v$ with each base vector $\pmb i, \pmb j , \pmb k$ in turn. Taking the dot product with base vector $\pmb i$ gives
 # 
-# $$\displaystyle \vec v\cdot \boldsymbol i=|\vec v|\cos(\alpha), \quad \cos(\alpha)=\frac{\vec v\cdot \boldsymbol i}{|\vec v|}$$
+# $$\displaystyle \vec v\cdot \pmb i=|\vec v|\cos(\alpha), \quad \cos(\alpha)=\frac{\vec v\cdot \pmb i}{|\vec v|}$$
 # 
-# Because $\vec v = a\boldsymbol i  + b\boldsymbol j + c\boldsymbol k$, the direction cosine can also be written as
+# Because $\vec v = a\pmb i  + b\pmb j + c\pmb k$, the direction cosine can also be written as
 # 
 # $$\displaystyle \cos(\alpha)=\frac{a}{|\vec v|}=\frac{a}{\sqrt{a^2+b^2+c^2}}$$
 # 
@@ -145,13 +145,13 @@
 # 
 # This equation shows that the angles are not independent because knowing two of them determines the third. Note that direction cosines describe the vector by angles rather than components of $(x, y, z)$ and hence can be used to find these angles; alternatively, if the angles are given, they can be used to find the $x, y, z$ components.
 # 
-# As an example, let us find the angles that the vector $\vec R = 3\boldsymbol i + 6\boldsymbol j - 2\boldsymbol k$ makes with the x-axis and calculate the direction cosines for this vector. First, assume that the angles are $\alpha, \beta$, and $\gamma$ with respect to the positive $x-, y-$, and $z-$axes, as in figure 18, as this is the convention. The dot product with unit vector $\boldsymbol i$ produces
+# As an example, let us find the angles that the vector $\vec R = 3\pmb i + 6\pmb j - 2\pmb k$ makes with the x-axis and calculate the direction cosines for this vector. First, assume that the angles are $\alpha, \beta$, and $\gamma$ with respect to the positive $x-, y-$, and $z-$axes, as in figure 18, as this is the convention. The dot product with unit vector $\pmb i$ produces
 # 
-# $$\displaystyle \boldsymbol i\cdot \vec R=|\boldsymbol i||\vec R|\cos(\alpha)=7\cos(\alpha)$$
+# $$\displaystyle \pmb i\cdot \vec R=|\pmb i||\vec R|\cos(\alpha)=7\cos(\alpha)$$
 # 
-# because $|\boldsymbol i| = 1$ and the length of the vector is $\sqrt{3^2 + 6^2 + 2^2} = 7$. Next, using vector components
+# because $|\pmb i| = 1$ and the length of the vector is $\sqrt{3^2 + 6^2 + 2^2} = 7$. Next, using vector components
 # 
-# $$\displaystyle \boldsymbol i\cdot \vec R=\boldsymbol i(3\boldsymbol i+6\boldsymbol j-2\boldsymbol k)=3 $$
+# $$\displaystyle \pmb i\cdot \vec R=\pmb i(3\pmb i+6\pmb j-2\pmb k)=3 $$
 # 
 # and combining these two equations gives the direction cosine as $\cos(\alpha) = 3/7$, and the
 # angle $\alpha = \cos^{-1}(3/7)$ or $\alpha = 64.62^\text{o}$. A similar calculation gives the other direction cosines as $\cos(\beta)=6/7$ and $\cos(\gamma)=-2/7$. As a check use eqn. 17, $(3/7)^2+(6/7)^2+(-2/7)^2= 1$

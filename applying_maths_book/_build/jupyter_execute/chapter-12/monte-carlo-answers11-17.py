@@ -19,19 +19,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-# Algorithm  
+# Algorithm 
+
+rng = np.random.default_rng()               # initialise random number generator
 n = 50
 d = np.zeros(n,dtype=int)
 m = 0 
 for j in range(n):
     d[j]= m
-    r = np.random.ranf() 
+    r = rng.random() 
     if r < 0.5 :
         m = m + 1 
     else:
         m = m - 1 
     pass                  # end for j 
-
+fig1 = plt.figure( figsize=(5, 4) )
 plt.plot(d,color='red')
 plt.ylim([-15,15])
 plt.axhline(0,linewidth=1)
@@ -45,25 +47,27 @@ plt.show()
 
 
 # Algorithm
+rng = np.random.default_rng()               # initialise random number generator
 events = 500
 k1 = 1.0/10                            # reaction rate const 1/tau 
 times= np.zeros(events,dtype=float)    # make array to store results  
 
 for i in range(events):                # repeat events times       
-    t= -np.log( np.random.ranf()) / k1
+    t= -np.log( rng.random()) / k1
     times[i] = t                       # store times        
     pass
-
-plt.plot(times)
+fig1= plt.figure( figsize=(5, 4) )
+plt.plot(times,linewidth=0.75,color='blue')
+plt.axhline(0,linewidth=1, color='black')
 plt.show()
 
 
-# The plot of event number i vs times should look similar to Fig. 11 (left), but will be different in detail because of the random nature of the events. Notice how much the time that the molecule remains in the excited state varies; these times are Poisson distributed and when a histogram is made an exponential decay with a $10$ ns decay lifetime results. 
+# The plot of event number $i$ vs times should look similar to Fig. 11 (left), but will be different in detail because of the random nature of the events. Notice how much the time that the molecule remains in the excited state varies; these times are Poisson distributed and when a histogram is made an exponential decay with a $10$ ns decay lifetime results. 
 # 
 # As an exercise, make these into a histogram to convince you of this and a plot similar to Figure 11 (right) should result.
 # 
 # ## Q15 answer
-# (a) The first step is to work out a numbering scheme for the position of the bases and then to select from a uniformly distributed random number, four possibilities to represent them. One such scheme is
+# **(a)** The first step is to work out a numbering scheme for the position of the bases and then to select from a uniformly distributed random number, four possibilities to represent them. One such scheme is
 # shown in the question. Because only G bases are important, only one check needs to be made. For example, if a
 # random number ranges from $0 \to 4$, if it is greater than $3$, then this can be the G base. Eleven bases are then chosen at random, and placed in a list; the list is given the value $1$ if the base is G, otherwise it contains zero. The sixth base, which is in the middle, is made into the dye. The position of a G in the list is converted into the distance from the dye, (in position 6), and the rate constant calculated using the equation for $k$. The absolute value of the distance from position 6 is calculated because the transfer distance must always be positive. The whole process is repeated, until you are satisfied that the average value of $k$ is sufficiently accurate, say to 1 decimal place. The time is calculated using equation 13.
 
@@ -73,6 +77,7 @@ plt.show()
 # Algorithm: DNA bases
 
 def DNAbases():
+    rng = np.random.default_rng()               # initialise random number generator
     beta= 7.0
     d   = 0.34                                  # base separation
     kf  = 10**(-3)/380.0
@@ -91,7 +96,7 @@ def DNAbases():
         pass
     for j in range(reps):
         for i in range(nb):                     # G into DNA if rand > 3 
-            if 4*np.random.ranf() > 3:
+            if 4*rng.random() > 3:
                 DNA[i] = 1 
             else:
                 DNA[i] = 0                      # base G has value 1
@@ -103,18 +108,19 @@ def DNAbases():
                 a0 = a0 + k0*np.exp(-beta*abs(i-dye)*d)  # total rate
                 pass 
             pass
-        t = -np.log( np.random.ranf() )/ a0     # equation 13
+        t = -np.log( rng.random() )/ a0         # equation 13
         indx = int(np.round(t*bins/maxt) )      # make into index
                    
         if indx < bins -1:
             Acount[indx+1]= Acount[indx+1] + 1  # make histogram
             pass 
         pass                                    # end reps 
-    return dtime,Acount
+    return dtime, Acount
     
-#times,counts = DNAbases()                         # remove # to calculate 
+#times,counts = DNAbases()                      # remove # to calculate 
 #print('finished')                         
-#Acount[0] = Acount[1]
+#counts[0] = counts[1]
+#fig1= plt.figure( figsize=(5, 5) )
 #plt.plot(times,counts,color='red',linewidth=1)
 #plt.yscale('log')
 #plt.show()
@@ -137,10 +143,11 @@ def DNAbases():
 # P[]= 0 = Immune, 1 = susceptible,  2= Infected.
 
 def SIR_mc():
+    rng = np.random.default_rng()   # initialise random number generator
     nums  = 1000                    # number of people
     fract = 0.01                    # initially immune
     recovr= 0.2                     # chance recovery / day
-    num_infect=1                    # number infected / day
+    num_infect = 1                  # number infected / day
     numd = 50                       # number of  days
     reps = 40
     
@@ -157,7 +164,7 @@ def SIR_mc():
         fn= int(np.round(fract*nums) )      # make into integer
         n = 0
         while n < fn:                       # exact fract*nums immune
-            ra = np.random.randint(0,nums)  # choose rand num= 0 to nums-1
+            ra = rng.integers(0,nums)       # choose rand num= 0 to nums-1
             if P[ra] != 0:
                 P[ra] = 0
                 n = n + 1
@@ -177,7 +184,7 @@ def SIR_mc():
             for i in range(nums):                     # loop students 
                 if P[i] == 2:                         # spread infection
                     for ii in range(num_infect):
-                        ra = np.random.randint(0,nums)# infect new stdnt
+                        ra = rng.integers(0,nums)     # infect new student, range 0 to nums
                         if P[ra]== 1:
                             P[ra] = 2 
                             remov = remov + 1
@@ -185,7 +192,7 @@ def SIR_mc():
                         pass                          # end for ii
                     pass                              # end if
                 if np.random.ranf() < recovr:         # chance of recovery
-                    ra = np.random.randint(1,nums)
+                    ra = rng.integers(1,nums)
                     if P[ra] == 2:  P[ra]= 0
                     pass
                 pass                                  # end for i
@@ -205,8 +212,8 @@ def SIR_mc():
     
     return data,sdata
 
-data, sdata = SIR_mc()
-
+#data, sdata = SIR_mc()
+#fig1 = plt.figure(figsize=(5,4))
 #plt.plot(sdata,color='red')
 #plt.plot(data,color='blue')
 #plt.show()

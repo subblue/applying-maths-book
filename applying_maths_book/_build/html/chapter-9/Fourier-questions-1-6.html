@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1605,7 +1605,7 @@ title="Print to PDF"
 <h1>Questions 1 - 6<a class="headerlink" href="#questions-1-6" title="Permalink to this headline">#</a></h1>
 <section id="q1-confirm-eqn-3">
 <h2>Q1  Confirm eqn 3<a class="headerlink" href="#q1-confirm-eqn-3" title="Permalink to this headline">#</a></h2>
-<p>Confirm equation (3), describing <span class="math notranslate nohighlight">\(b_n\)</span> by using a similar calculation to that used to derive coefficients <span class="math notranslate nohighlight">\(a_n\)</span>.</p>
+<p>Confirm equation (3) describing <span class="math notranslate nohighlight">\(b_n\)</span> by using a similar calculation to that used to derive coefficients <span class="math notranslate nohighlight">\(a_n\)</span>.</p>
 </section>
 <section id="q2-fourier-series">
 <h2>Q2  Fourier series<a class="headerlink" href="#q2-fourier-series" title="Permalink to this headline">#</a></h2>
@@ -1613,26 +1613,29 @@ title="Print to PDF"
 </section>
 <section id="q3">
 <h2>Q3<a class="headerlink" href="#q3" title="Permalink to this headline">#</a></h2>
-<p>(a) Calculate the Fourier series of <span class="math notranslate nohighlight">\(\pi/2 - x\)</span> over the interval <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(\pi\)</span>. Choose at least 10 terms in the series. If you choose more terms, observe that the overshoot persists but is not of constant height as it is in the square wave.</p>
-<p>(b) Using a general code, test it with the functions <span class="math notranslate nohighlight">\(f (x) = x - x^3, \; | x |,\; x^2e^{-x^2/2}\)</span> and <span class="math notranslate nohighlight">\(\tanh(x)\)</span>, and plot the graphs. Generalize the code to make the limits <span class="math notranslate nohighlight">\(\pm L\)</span> and recalculate over the range <span class="math notranslate nohighlight">\(\pm\)</span>20.</p>
-<p><strong>Strategy:</strong> (a) the function <span class="math notranslate nohighlight">\(\pi/2 - x\)</span> is neither odd nor even and both <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> coefficients will have to be calculated.</p>
+<p><strong>(a)</strong> Calculate the Fourier series of <span class="math notranslate nohighlight">\(\pi/2 - x\)</span> over the interval <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(\pi\)</span>. Choose at least 10 terms in the series. If you choose more terms, observe that the overshoot persists but is not of constant height as it is in the square wave.</p>
+<p><strong>(b)</strong> Using a general code, test it with the functions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f (x) = x - x^3, \quad f(x)= | x |,\quad f(x)= x^2e^{-x^2/2},\quad f(x)=\tanh(x)\]</div>
+<p>and plot the graphs. Generalize the code to make the limits <span class="math notranslate nohighlight">\(\pm L\)</span> and recalculate over the range <span class="math notranslate nohighlight">\(\pm 20\)</span>.</p>
+<p><strong>Strategy:</strong> <strong>(a)</strong> the function <span class="math notranslate nohighlight">\(\pi/2 - x\)</span> is neither odd nor even and both <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> coefficients will have to be calculated.</p>
 </section>
 <section id="q4-series-expansion">
 <h2>Q4 Series expansion<a class="headerlink" href="#q4-series-expansion" title="Permalink to this headline">#</a></h2>
 <p>Calculate the series expansion of</p>
-<p>(a) <span class="math notranslate nohighlight">\(f = \cos^2(x)e^{-x/2}\)</span>, using Hermite polynomials over the range <span class="math notranslate nohighlight">\(\pm 7\)</span>, and</p>
-<p>(b) <span class="math notranslate nohighlight">\(f = x + x^3/10 - 2x^7\)</span> over the range <span class="math notranslate nohighlight">\(\pm 1\)</span>, using Chebychev polynomials.</p>
+<p><strong>(a)</strong> <span class="math notranslate nohighlight">\(\displaystyle f = \cos^2(x)e^{-x/2}\)</span>, using Hermite polynomials over the range <span class="math notranslate nohighlight">\(\pm 7\)</span>, and</p>
+<p><strong>(b)</strong> <span class="math notranslate nohighlight">\(\displaystyle f = x + x^3/10 - 2x^7\)</span> over the range <span class="math notranslate nohighlight">\(\pm 1\)</span>, using Chebychev polynomials.</p>
 <p><strong>Strategy:</strong> Write some code to calculate the polynomials or use the SymPy/Scipy functions as appropriate.
 Use the algorithm used in the text, taking care to add the correct weighting and normalization terms, these are given in the text also in Section 4. The calculation is a little awkward for the Chebychev polynomials, because an exception has to be made for the term <span class="math notranslate nohighlight">\(n\)</span> = 0.</p>
 </section>
 <section id="q5-generating-function">
 <h2>Q5 Generating function<a class="headerlink" href="#q5-generating-function" title="Permalink to this headline">#</a></h2>
-<p>(a) Use the generating function method,</p>
-<p>(b) the derivative formula and</p>
-<p>(c) the recursion formula</p>
+<p>Confirm that the following methods can be used generate the first few Laguerre polynomials. Use SymPy as necessary.</p>
+<p><strong>(a)</strong> Use the generating function method,</p>
+<p><strong>(b)</strong> the derivative formula,</p>
+<p><strong>(c)</strong> and the recursion formula,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (n+1)L_{n+1}(x)=(2n+1-x)L_n(x)-nL_{n-1}(x), \quad\quad L_0(x)=1,\quad L_1(x)=1-x.\]</div>
-<p>to confirm that these give the same results as the first few Laguerre polynomials. Use SymPy as necessary.</p>
+\[\displaystyle (n+1)L_{n+1}(x)=(2n+1-x)L_n(x)-nL_{n-1}(x), \qquad L_0(x)=1,\qquad L_1(x)=1-x.\]</div>
 </section>
 <section id="q6-polynomials">
 <h2>Q6 Polynomials<a class="headerlink" href="#q6-polynomials" title="Permalink to this headline">#</a></h2>
@@ -1643,7 +1646,11 @@ Use the algorithm used in the text, taking care to add the correct weighting and
 <p>The values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(l\)</span> are related as 0 <span class="math notranslate nohighlight">\(\le m \le l\)</span>, meaning that <span class="math notranslate nohighlight">\(m\)</span> cannot exceed <span class="math notranslate nohighlight">\(l\)</span> or be negative. These functions are used to obtain the <em>spherical harmonics</em>, which are the functions that describe the shapes of the atomic orbitals, s, p, d, etc. and other angular momentum properties of atoms and molecules. The spherical harmonics are defined as</p>
 <div class="math notranslate nohighlight">
 \[Y_{l,m}(\theta,\varphi)=\sqrt{\frac{(2l+1)(l-m)!}{4\pi(l+m)!}} P_l^m(\cos(\theta))e^{im\varphi} \tag{21}\]</div>
-<p>When <span class="math notranslate nohighlight">\(m\)</span> is negative then <span class="math notranslate nohighlight">\(Y_{l ,-m}(\theta, \varphi) = (-1)^m Y^*_{l ,m}(\theta, \varphi)\)</span> where the * indicates the complex conjugate and <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span>. If dealing with atomic orbitals, then <span class="math notranslate nohighlight">\(l\)</span> represents the overall angular momentum where <span class="math notranslate nohighlight">\(l = 0\)</span> for s orbitals, <span class="math notranslate nohighlight">\(1\)</span> for p and <span class="math notranslate nohighlight">\(2\)</span> for d. The projection, magnetic, or z-value quantum number is <span class="math notranslate nohighlight">\(m\)</span> and defines the orientation in space. In the spherical harmonics, <span class="math notranslate nohighlight">\(-l \le m \le l\)</span>.</p>
+<p>When <span class="math notranslate nohighlight">\(m\)</span> is negative then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Y_{l ,-m}(\theta, \varphi) = (-1)^m Y^*_{l ,m}(\theta, \varphi)\]</div>
+<p>where the * indicates the complex conjugate and <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span>.</p>
+<p>If dealing with atomic orbitals, then <span class="math notranslate nohighlight">\(l\)</span> represents the overall angular momentum where <span class="math notranslate nohighlight">\(l = 0\)</span> for s orbitals, <span class="math notranslate nohighlight">\(1\)</span> for p and <span class="math notranslate nohighlight">\(2\)</span> for d. The projection, magnetic, or z-value quantum number is <span class="math notranslate nohighlight">\(m\)</span> and defines the orientation in space. In the spherical harmonics, <span class="math notranslate nohighlight">\(-l \le m \le l\)</span>.</p>
 <p>There is a useful recursion formula on <span class="math notranslate nohighlight">\(l\)</span> for the associated Legendre polynomial, which is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (l - m)P_l^m =x(2l -1)P_{l-1}^m -(l + m - 1)P_{l-2}^m   \tag{22}\]</div>
@@ -1651,7 +1658,10 @@ Use the algorithm used in the text, taking care to add the correct weighting and
 <p>A starting value can be found, when <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(l\)</span> are the same with the relationship (see Prest et al. 1986, pp. 180 - 2),</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P_m^m=(-1)^m(2m-1)!!(1-x^2)^{m/2}\]</div>
-<p>A double factorial, in general, <span class="math notranslate nohighlight">\(n\)</span>!!, reduces the index by <span class="math notranslate nohighlight">\(2\)</span> each time instead of <span class="math notranslate nohighlight">\(1\)</span> as in the normal factorial. The series is thus <span class="math notranslate nohighlight">\(n!! = n(n - 2)(n - 4) \cdots\)</span> (6)(4)(2)  if <span class="math notranslate nohighlight">\(n\)</span> is even and if <span class="math notranslate nohighlight">\(n\)</span> is odd, such as <span class="math notranslate nohighlight">\(2n - 1\)</span>, the series is one of odd numbers ending in <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>A double factorial, in general, <span class="math notranslate nohighlight">\(n\)</span>!!, reduces the index by <span class="math notranslate nohighlight">\(2\)</span> each time instead of <span class="math notranslate nohighlight">\(1\)</span> as in the normal factorial. The series is thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n!! = n(n - 2)(n - 4) \cdots (6)(4)(2)\]</div>
+<p>if <span class="math notranslate nohighlight">\(n\)</span> is even and if <span class="math notranslate nohighlight">\(n\)</span> is odd, such as <span class="math notranslate nohighlight">\(2n - 1\)</span>, the series is one of odd numbers ending in <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>A second starting function, is obtained by substituting <span class="math notranslate nohighlight">\(l = m + 1\)</span> into the recursion equation and letting <span class="math notranslate nohighlight">\(P_{m-1}^m = 0\)</span>. To form the spherical harmonics, use <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span>. The formulae are only valid if <span class="math notranslate nohighlight">\(|x| \le  1\)</span>.</p>
 <p>Using SymPy if necessary, calculate the associated polynomials and the spherical harmonics with <span class="math notranslate nohighlight">\(l = 0, 1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span> and their associated <span class="math notranslate nohighlight">\(\pm m\)</span> values.</p>
 <p><strong>Strategy:</strong> The first step is to calculate the second starting function. Using the information given, and substituting <span class="math notranslate nohighlight">\(l = m\)</span> + 1 into (22) produces</p>

@@ -76,14 +76,14 @@ def ForsterET():
     for k in range( reps):                          # start calc loop
         a0 = kf                                     # fluorescence rate
         for i in range(n):
-            x = np.random.ranf() - 0.5              # choose acceptors
-            y = np.random.ranf() - 0.5              # x,y,z coordinates
-            z = np.random.ranf() - 0.5 
+            x = rng.random() - 0.5              # choose acceptors
+            y = rng.random() - 0.5              # x,y,z coordinates
+            z = rng.random() - 0.5 
             rate = s/(x**2 + y**2 + z**2)**3        # 2/3*kf*(R0/R)**6
             if rate > Rmax :  rate = Rmax
             a0 = a0 + rate                          # sum rate
             pass
-        t = -np.log( np.random.ranf() )/a0          # calc time eqn (12.11)
+        t = -np.log( rng.random() )/a0          # calc time eqn (12.11)
         indx = int(np.round(t*bins/maxt) )          # make index
         if indx < bins-1 :
             Acount[indx]= Acount[indx] + 1          # histogram
@@ -92,7 +92,7 @@ def ForsterET():
     # end reps loop
     return dtime,Acount
 #----------------------------------
-
+rng = np.random.default_rng()                    # initialise random number generator
 kf = 1/10.0                                      # 10 ns lifetime
 c  = 0.002                                       # conc mol/dm3
 R0 = 3.0                                         # R0 in nm
@@ -106,8 +106,8 @@ maxt = 50.0                                      # maximum time
 Acount= np.zeros(bins,dtype=int)                 # define arrays
 dtime = np.zeros(bins,dtype=float) 
 
-#dtime,Acount = ForsterET()                     # remove # to calculate
-
+#dtime, Acount = ForsterET()                     # remove # to calculate
+#
 #plt.plot(dtime,Acount)
 #plt.ylim([1,1e4])
 #plt.yscale('log')
@@ -172,7 +172,7 @@ dtime = np.zeros(bins,dtype=float)
 
 # Algorithm: Effect of impurity
 # P[,]>= 1 = A molecs, 2 = B molecs, 0 = impurity.
-
+rng = np.random.default_rng()                   # initialise random number generator
 n    = 20                                       # size of grid side
 reps = 100                                      # repeat calc’n
 num_fract  = 10                                 # number of fractions calc’d
@@ -192,8 +192,8 @@ def Impurity():
             # part b make fraction of impurities
             num = 0
             while num < fn :                    # exactly fract impurity
-                ra = np.random.randint(1,n+1) 
-                rb = np.random.randint(1,n+1)
+                ra = rng.integers(1,n+1)        # in range 1 to n 
+                rb = rng.integers(1,n+1)
                 if P[ra,rb] != 0:
                     P[ra,rb] = 0 
                     num = num + 1 
@@ -202,22 +202,22 @@ def Impurity():
             num = 0
             # choose one type B molecule
             while num < 1 : 
-                ra = np.random.randint(1,n+1)    # in range 1 to n+1
-                rb = np.random.randint(1,n+1)  
+                ra = rng.integers(1,n+1)        # in range 1 to n
+                rb = rng.integers(1,n+1)  
                 if P[ra,rb] == 1 :
                     P[ra,rb] = 2
                     num = 1 
                     pass
-                pass                             # end while num
+                pass                            # end while num
             # part c main calculation starts ###
             b = -1 
             c = 0
-            while c > b :                        # check if calc ended
-                b = c                            # store old value in b 
-                c = 0                            # reset c
+            while c > b :                       # check if calc ended
+                b = c                           # store old value in b 
+                c = 0                           # reset c
                 for i in range(1,n+1):
                     for j in range(1,n+1):
-                        if P[i,j] == 2 :         # search array
+                        if P[i,j] == 2 :        # search array
                             if P[i,j-1] == 1  : P[i,j-1] = 2 
                             if P[i,j+1] == 1  : P[i,j+1] = 2 
                             if P[i-1,j] == 1  : P[i-1,j] = 2 
@@ -239,7 +239,13 @@ def Impurity():
 
 #fdata,data = Impurity()
 #print('finished')
-# plot data and fdata to give fig 18.
-#plt.scatter(fdata,data)
+##plot data and fdata to give fig 18.
+#plt.scatter(fdata,data,s=10)
 #plt.show()
+
+
+# In[ ]:
+
+
+
 

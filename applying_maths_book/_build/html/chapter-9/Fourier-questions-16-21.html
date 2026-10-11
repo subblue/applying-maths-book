@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1606,27 +1606,38 @@ title="Print to PDF"
 <section id="q16-optical-correlator">
 <h2>Q16 Optical correlator<a class="headerlink" href="#q16-optical-correlator" title="Permalink to this headline">#</a></h2>
 <p>In example (iii) of Section 8.4 describing the optical correlator, Fig. 32, a special case has been examined because the laser intensity was given as <span class="math notranslate nohighlight">\(\displaystyle e^{-(t/a)^2}\)</span> which represents the envelope of the pulse and ignores the electric field itself. However, it is the amplitude of the laser’s electric field <span class="math notranslate nohighlight">\(E\)</span> that is important, the square of which is the intensity <span class="math notranslate nohighlight">\(I\)</span>. A <em>fringe-resolved</em> autocorrelation is recorded if a fast responding photodiode is used to detect the signal; this has the shape of a pulse but with sinusoidal type oscillations within the pulse envelope. The amplitude of <span class="math notranslate nohighlight">\(E\)</span> describes how the electric field of the light varies throughout the pulse. In a transform-limited pulse, the frequency is constant across the pulse duration. In a chirped pulse, the frequency varies, either increasing or decreasing as time progresses. If this could be heard, it would, as the name suggests, sound like a bird’s chirp.</p>
-<p>The amplitude profile of a transform limited pulse, can be written as <span class="math notranslate nohighlight">\(\displaystyle E(t) = \cos(\omega t/a)e^{-t^2/(2a^2)}\)</span> where <span class="math notranslate nohighlight">\(a = \tau/\sqrt{2\ln(2)}\)</span> and <span class="math notranslate nohighlight">\(\tau\)</span> is the pulse fwhm and <span class="math notranslate nohighlight">\(\omega\)</span> its central wavelength; Fig. 35 shows the pulse shape.</p>
+<p>The amplitude profile of a transform limited pulse, can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E(t) = \cos\left(\frac{\omega t}{a}\right)e^{-t^2/(2a^2)},\qquad  a = \frac{\tau}{\sqrt{2\ln(2)}}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\tau\)</span> is the pulse fwhm and <span class="math notranslate nohighlight">\(\omega\)</span> its central wavelength; Fig. 35 shows the pulse shape.</p>
 <p><img alt="Diagram" src="../_images/Fourier-fig35.png" /></p>
 <p>Figure 35. Electric field <span class="math notranslate nohighlight">\(E(t)\)</span> of a laser pulse, left, and right, first order autocorrelation <span class="math notranslate nohighlight">\(G^1(u)\)</span>. The constants are <span class="math notranslate nohighlight">\(a\)</span> = 5 and <span class="math notranslate nohighlight">\(\omega = 10\)</span>.</p>
 <hr class="docutils" />
-<p>(a) Start by using algebra or Sympy to simplify and calculate the (first-order) amplitude correlation of a laser
+<p><strong>(a)</strong> Start by using algebra or SymPy to simplify and calculate the (first-order) amplitude correlation of a laser
 pulse,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle G^1(u)=\frac{\int\limits_{-\infty}^\infty |E(t)+E(u+t)|^2dt}{\int\limits_{-\infty}^\infty E(t)^2dt} \]</div>
 <p>which would be measured from the interferometer if the beam is directly measured on a photodiode at its normal. i.e. not doubled, wavelength. The square is present because the detector measures only the intensity of the light <span class="math notranslate nohighlight">\(| E^*E |\)</span> not the field amplitude <span class="math notranslate nohighlight">\(E\)</span>. Make the result into a function and plot using <span class="math notranslate nohighlight">\(a = 5\)</span> and <span class="math notranslate nohighlight">\(\omega = 10\)</span>.</p>
-<p>(b) The second-order correlation <span class="math notranslate nohighlight">\(G^2(u)\)</span> is made when the two beams overlap in a frequency doubling crystal and then only the ultraviolet light produced is detected. The amount of this is proportional to the square of the total field. The second squared term in the equation is present because the detector measures only the intensity.</p>
+<p><strong>(b)</strong> The second-order correlation <span class="math notranslate nohighlight">\(G^2(u)\)</span> is made when the two beams overlap in a frequency doubling crystal and then only the ultraviolet light produced is detected. The amount of this is proportional to the square of the total field. The second squared term in the equation is present because the detector measures only the intensity.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle G^2(u)=\frac{\int\limits_{-\infty}^\infty ||E(t)+E(u+t)|^2|^2dt}{\int\limits_{-\infty}^\infty E(t)^4dt} \]</div>
 <p>The analytical result is complicated, so use Sympy to calculate and then plot the autocorrelation, again
 using <span class="math notranslate nohighlight">\(a = 5\)</span> and <span class="math notranslate nohighlight">\(\omega = 10\)</span>.</p>
-<p>(c) Ignore the cosine part of the field <span class="math notranslate nohighlight">\(E\)</span> and so calculate the upper and lower bounds of the second order autocorrelation and add these to the graph. Calculate the fwhm of the upper curve and determine how much wider this is than the pulse <span class="math notranslate nohighlight">\(t^{1/2}\)</span>.</p>
-<p>(d) The pulse seems to have only one frequency according to the equation for <span class="math notranslate nohighlight">\(E(t)\)</span>, but the pulse is short and by time-energy uncertainty a short pulse must have a wide spectral width. Calculate this by Fourier transforming the pulse if <span class="math notranslate nohighlight">\(a\)</span> is <span class="math notranslate nohighlight">\(5\)</span> fs and <span class="math notranslate nohighlight">\(\omega = 10\,\mathrm{ fs^{-1}}\)</span>.</p>
-<p><strong>Strategy:</strong> As the pulse is real, calculating the absolute value has no special effect and the squares can be taken directly. To simplify the calculation, expand out the terms first and collect similar terms together. For example, the second order autocorrelation has terms <span class="math notranslate nohighlight">\(\displaystyle \int E(t)^4dt=\int E(u+t)^4dt\)</span> and <span class="math notranslate nohighlight">\(\int E(t)E(u+t)^3dt = \int E(t)^3E(u+t)dt\)</span>.</p>
+<p><strong>(c)</strong> Ignore the cosine part of the field <span class="math notranslate nohighlight">\(E\)</span> and so calculate the upper and lower bounds of the second order autocorrelation and add these to the graph. Calculate the fwhm of the upper curve and determine how much wider this is than the pulse <span class="math notranslate nohighlight">\(t^{1/2}\)</span>.</p>
+<p><strong>(d)</strong> The pulse seems to have only one frequency according to the equation for <span class="math notranslate nohighlight">\(E(t)\)</span>, but the pulse is short and by time-energy uncertainty a short pulse must have a wide spectral width. Calculate this by Fourier transforming the pulse if <span class="math notranslate nohighlight">\(a\)</span> is <span class="math notranslate nohighlight">\(5\)</span> fs and <span class="math notranslate nohighlight">\(\omega = 10\,\mathrm{ fs^{-1}}\)</span>.</p>
+<p><strong>Strategy:</strong> As the pulse is real, calculating the absolute value has no special effect and the squares can be taken directly. To simplify the calculation, expand out the terms first and collect similar terms together. For example, the second order autocorrelation has terms</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\int E(t)^4dt&amp; =\int E(u+t)^4dt\\\int E(t)E(u+t)^3dt &amp; = \int E(t)^3E(u+t)dt \end{align}\end{split}\]</div>
 </section>
 <section id="q17-femtosecond-laser-pulses">
 <h2>Q17 Femtosecond laser pulses<a class="headerlink" href="#q17-femtosecond-laser-pulses" title="Permalink to this headline">#</a></h2>
-<p>Femtosecond laser pulses have been assumed to have different shapes such as <span class="math notranslate nohighlight">\(\exp(-| x |/a)\)</span> or sech<span class="math notranslate nohighlight">\(^2(x/a)\)</span> where sech is the reciprocal of the hyperbolic cosine which is cosh, and <span class="math notranslate nohighlight">\(\cosh(x) = (e^x + e^{-x})/2\)</span>. The sech<span class="math notranslate nohighlight">\(^2\)</span> function looks very much like a Gaussian.</p>
+<p>Femtosecond laser pulses have been assumed to have different shapes such as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \exp(-| x |/a),\quad\text{or}\quad  \text{sech}^2(x/a)\]</div>
+<p>where sech is the reciprocal of the hyperbolic cosine which is cosh, and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cosh(x) = (e^x + e^{-x})/2\]</div>
+<p>The sech<span class="math notranslate nohighlight">\(^2\)</span> function looks very much like a Gaussian.</p>
 <p>Calculate the autocorrelation of these two pulse shapes, and work out the pulse-widths and fwhm from each autocorrelation and how much wider these are than the laser pulse that generated them.</p>
 <p><strong>Strategy:</strong> Start with equation 42, but notice that the absolute value of <span class="math notranslate nohighlight">\(x\)</span> is used. The integration is far simpler if it is assumed that <span class="math notranslate nohighlight">\(a\)</span> is positive and that <span class="math notranslate nohighlight">\(x\)</span> real and positive. There is a discontinuity in the sech<span class="math notranslate nohighlight">\(^2\)</span> integral so care is needed here.</p>
 </section>
@@ -1640,8 +1651,8 @@ to at least <span class="math notranslate nohighlight">\(3\)</span> cm is clearl
 <div class="math notranslate nohighlight">
 \[\displaystyle  S(t)=\left(e^{-12t} - e^{-13t}+0.02e^{-10(t-0.5)^2}  \right)\cos(150t-a/(1+t)^2)\]</div>
 <p>very approximately mimics the acoustic pulse of insectivorous bats (<em>Eptesicus fuscus</em>), where time is measured in milliseconds. An object at <span class="math notranslate nohighlight">\(12\)</span> mm returns a signal after <span class="math notranslate nohighlight">\(70 \mu\)</span>s, and this allows the calibration in distance instead of time.</p>
-<p>(a) Plot <span class="math notranslate nohighlight">\(S(t)\)</span> for an un-chirped pulse, <span class="math notranslate nohighlight">\(a = 0\)</span>, and a chirped pulse, <span class="math notranslate nohighlight">\(a = 60\)</span>. Next, calculate and plot the autocorrelation.</p>
-<p>(b) Calculate the sum of the autocorrelation with time, and compare this with the experimental
+<p><strong>(a)</strong> Plot <span class="math notranslate nohighlight">\(S(t)\)</span> for an un-chirped pulse, <span class="math notranslate nohighlight">\(a = 0\)</span>, and a chirped pulse, <span class="math notranslate nohighlight">\(a = 60\)</span>. Next, calculate and plot the autocorrelation.</p>
+<p><strong>(b)</strong> Calculate the sum of the autocorrelation with time, and compare this with the experimental
 data below for the percentage of successful discrimination. (Data measured from Simmons 1971, Fig. 2.)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle 
@@ -1650,7 +1661,7 @@ data below for the percentage of successful discrimination. (Data measured from 
 \text{% correct} &amp; 52 &amp; 61 &amp; 70.5 &amp; 78 &amp; 88 &amp; 96 &amp; 95 &amp; 97 &amp; 94 &amp; 96 &amp; 97.5 &amp; 96 &amp; 96
 \end{array}
 \end{split}\]</div>
-<p>(c) Explain why an un-chirped pulse is very poor compared to the chirped one, when discriminating between two objects if the bat uses autocorrelation.</p>
+<p><strong>(c)</strong> Explain why an un-chirped pulse is very poor compared to the chirped one, when discriminating between two objects if the bat uses autocorrelation.</p>
 <p><strong>Strategy:</strong> Use previously used  code to calculate the autocorrelation which you may need to modify to make the maximum value of <span class="math notranslate nohighlight">\(t= 1\)</span>, and therefore the maximum time equal to <span class="math notranslate nohighlight">\(1\)</span> ms which is <span class="math notranslate nohighlight">\(2\, \mu\)</span>s per point. To plot the summed signal up to a given time, convert time to distance with <span class="math notranslate nohighlight">\(12\)</span> mm = <span class="math notranslate nohighlight">\(70\,\mu\)</span>s.</p>
 </section>
 <section id="q19-fid-in-nmr">
@@ -1660,10 +1671,10 @@ data below for the percentage of successful discrimination. (Data measured from 
 \[\displaystyle e^{-x/300}\left(\sin(2\pi x/4.8)+ \sin(2\pi x/4.5)  \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the time, which is in units of the channel number of the data, i.e. <span class="math notranslate nohighlight">\(x\)</span> ranges from <span class="math notranslate nohighlight">\(0 \to 2^{12}\)</span>
 which is the maximum number of points.</p>
-<p>(a) Calculate the FFT and plot its value. Decide whether the real or imaginary parts represent the  spectrum.</p>
-<p>(b) Add normally distributed noise to the FID <span class="math notranslate nohighlight">\(\sigma = 1.5\)</span>; recalculate and plot the FFT.</p>
-<p>(c) Apodize the FID by multiplying by <span class="math notranslate nohighlight">\(\displaystyle e^{−x/\tau}\)</span> where <span class="math notranslate nohighlight">\(\tau \)</span> is a large number <span class="math notranslate nohighlight">\(500 \to 1500\)</span> and recalculate the spectrum; comment on its appearance.</p>
-<p>(d) Explain why the apodisation improves the signal to noise of the spectrum.</p>
+<p><strong>(a)</strong> Calculate the FFT and plot its value. Decide whether the real or imaginary parts represent the  spectrum.</p>
+<p><strong>(b)</strong> Add normally distributed noise to the FID <span class="math notranslate nohighlight">\(\sigma = 1.5\)</span>; recalculate and plot the FFT.</p>
+<p><strong>(c)</strong> Apodize the FID by multiplying by <span class="math notranslate nohighlight">\(\displaystyle e^{−x/\tau}\)</span> where <span class="math notranslate nohighlight">\(\tau \)</span> is a large number <span class="math notranslate nohighlight">\(500 \to 1500\)</span> and recalculate the spectrum; comment on its appearance.</p>
+<p><strong>(d)</strong> Explain why the apodisation improves the signal to noise of the spectrum.</p>
 </section>
 <section id="q20-chirped-laser-pulse">
 <h2>Q20 Chirped laser pulse<a class="headerlink" href="#q20-chirped-laser-pulse" title="Permalink to this headline">#</a></h2>

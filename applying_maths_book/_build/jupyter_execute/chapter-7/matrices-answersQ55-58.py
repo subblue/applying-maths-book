@@ -17,7 +17,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q55 answer
-# (a) The total potential energy $V$ is proportional to the amount the bobs are raised and is
+# **(a)** The total potential energy $V$ is proportional to the amount the bobs are raised and is
 # 
 # $$\displaystyle V = (m_1 + m_2)gh_1 + m_2gh_2$$
 # 
@@ -30,7 +30,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle V=(m_1+m_2)g\frac{\theta_1^2}{2}+m_2g\frac{\theta_2^2}{2}$$
 # 
 # The displacements $s_1$ and $s_2$ are $s_1 = L_1 \sin(\theta_1) \approx L_1\theta_1$  and
-# $s_2 = s_1 + L_2\sin(\theta_2) \approx s_1 + L_2\theta_2$. Writing the potential in terms of the s displacements gives
+# $s_2 = s_1 + L_2\sin(\theta_2) \approx s_1 + L_2\theta_2$. Writing the potential in terms of the  displacements $s$ gives
 # 
 # $$\displaystyle V=(m_1+m_2)g\frac{s_1^2}{2L_1}+m_2g\frac{(s_2-s_1)^2}{2L_2}$$
 # 
@@ -42,11 +42,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \qquad\qquad\begin{bmatrix}\displaystyle\frac{dV}{ds_1}\\ \displaystyle\frac{dV}{ds_2} \end{bmatrix}=\begin{bmatrix}-\displaystyle\frac{g}{L_1}  & \displaystyle\frac{g}{L_2}\displaystyle\frac{m_2}{m_1+m_2}\\ \displaystyle\frac{g}{L_2} & -\displaystyle\frac{g}{L_2}\end{bmatrix}\begin{bmatrix}s_1\\s_2 \end{bmatrix} \qquad\qquad \qquad\qquad\text{(77)}$$
 # 
-# (b) The eigenvalues of the secular determinant with $L_1 = L_2 = L$ can be obtained by hand. Simplifying and substituting for $M$ for the ratio of masses gives
+# **(b)** The eigenvalues of the secular determinant with $L_1 = L_2 = L$ can be obtained by hand. Simplifying and substituting for $M$ for the ratio of masses gives
 # 
 # $$\displaystyle \frac{g}{L}\begin{vmatrix}-1-\lambda & M \\ 1 &-1-\lambda \end{vmatrix}=0$$
 # 
-# The characteristic equation is $((1 + \lambda)^2 - M)g/L = 0$ which has solutions $\lambda =(-1\pm\sqrt{M})g/l$.
+# The characteristic equation is 
+# 
+# $$\displaystyle ((1 + \lambda)^2 - M)g/L = 0$$
+# 
+# which has solutions 
+# 
+# $$\displaystyle \lambda =(-1\pm\sqrt{M})g/l$$
 # 
 # Because the motion is harmonic, using an equation analogous to equation 54 with force per unit mass gives
 # 
@@ -54,7 +60,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which means that the normal mode or characteristic frequencies for small oscillations are $\omega^2 = (1 \pm \sqrt{M})g/L$ where $M = m_2/(m_1 + m_2)$.
 # 
-# (c) If the coupling between the two pendulums is also a spring, an extra term is added to the potential, which becomes
+# **(c)** If the coupling between the two pendulums is also a spring, an extra term is added to the potential, which becomes
 # 
 # $$\displaystyle V=(m_1+m_2)g\frac{s_1^2}{2L_1}+m_2g\frac{(s_2-s_1)^2}{2L_2} +k\frac{\theta^2_2}{2} $$
 # 
@@ -66,7 +72,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle g\begin{vmatrix} -L^{-1}-\lambda & M(L^{-1}+k) \\ (L^{-1}+k) &-L^{-1}-\lambda \end{vmatrix}=0$$
 # 
-# whose solutions are $\displaystyle \lambda = \pm g\left(\frac{1}{L}+M \right)\sqrt{M}-\frac{g}{L}$ which gives frequencies
+# whose solutions are 
+# 
+# $$\displaystyle \lambda = \pm g\left(\frac{1}{L}+M \right)\sqrt{M}-\frac{g}{L}$$
+# 
+# which gives frequencies
 # 
 # $$\displaystyle  \omega^2 = \frac{g}{L}\left(1\pm (1+kL)\sqrt{M} \right)$$
 # 
@@ -99,14 +109,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # These vectors indicate the normal mode geometries as they represent the displacements of the two masses. The normal mode frequencies are calculated using equation 54, producing $m\omega_1^2 =k$ and $m_2^2 =k(1+2n)$. The modes are that of two springs extending and one being compressed. The lower frequency mode $\omega_1$ occurs when both masses move in the same direction and by the same amount so that the central spring is not compressed. The higher frequency occurs when the two masses approach one another and the central spring is compressed and extended. This problem is very similar to the example of the two pendulums and a spring.
 # 
 # ## Q57 answer
-# (a) The only normal mode in the plane of the figure is shown below, as only this arrangement of displacements leaves the centre of mass of the molecule unchanged and produces no overall rotation, i.e. the total angular momentum is unchanged.
+# **(a)** The only normal mode in the plane of the figure is shown below, as only this arrangement of displacements leaves the centre of mass of the molecule unchanged and produces no overall rotation, i.e. the total angular momentum is unchanged.
 # 
 # ![Drawing](matrices-fig94.png)
 # 
 # Figure 94. Bending normal modes in a linear triatomic molecule.
 # ________
 # 
-# (b) The potential energy is the sum of terms bending the molecule about the central atom, therefore the potential is similar to that calculated for vibration except, that the force constant is now that for a bend.
+# **(b)** The potential energy is the sum of terms bending the molecule about the central atom, therefore the potential is similar to that calculated for vibration except, that the force constant is now that for a bend.
 # 
 # $$\displaystyle V(s_1,s_2,s_3)= \frac{k_b}{2}(s_1-s-2)^2 +\frac{k_b}{2}(s_2-s-3)^2$$
 # 
@@ -125,7 +135,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 95. Displacements for mode $Q_1$ left and $Q_3$ right neither is a normal mode; (left) causes a rotation and (right) a translation.
 # ______
 # 
-# (c) The relative displacements in mode $Q_2$ are, as before, in the ratio $2m_O/m_C$. As the two bending vibrations are degenerate because of symmetry, they have a fixed phase with one another and the motion is in orthogonal directions. When both modes are considered together when they are exactly $90^\mathrm{o}$ out of phase with one another then the atoms' motion would appear to be circular. The outer atoms would rotate in the opposite sense to the middle one so that the total angular momentum is zero.
+# **(c)** The relative displacements in mode $Q_2$ are, as before, in the ratio $2m_O/m_C$. As the two bending vibrations are degenerate because of symmetry, they have a fixed phase with one another and the motion is in orthogonal directions. When both modes are considered together when they are exactly $90^\mathrm{o}$ out of phase with one another then the atoms' motion would appear to be circular. The outer atoms would rotate in the opposite sense to the middle one so that the total angular momentum is zero.
 # 
 # ## Q58 answer
 # First,define the displacements $s_1 \to s_4$  along the x-axis,and calculate the potential energy as the sum of squared terms,

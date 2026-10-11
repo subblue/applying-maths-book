@@ -17,9 +17,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # ## 8.1 Basis set 
 # 
-# In crystallography the coordinates of the unit cell are often reported in terms of the crystal type, monoclinic, triclinic, and so forth, whose axes are not mutually at right angles or always of the same length. The base vectors are no longer the orthonormal $\boldsymbol i, j, k$ set we have been using and are now labelled as $\vec a, \vec b, \vec c$ to indicate that they are non-orthogonal. By convention, the angle $\alpha$ lies between $b$ and $c$, $\beta$ between $a$ and $c$, and $\gamma$ between $a$ and $b$. This is shown in figure 20. Many authors use $\boldsymbol {a,b,c}$ instead of $\vec a, \vec b, \vec c$ but using arrows is here clearer.  
+# In crystallography the coordinates of the unit cell are often reported in terms of the crystal type, monoclinic, triclinic, and so forth, whose axes are not mutually at right angles or always of the same length. The base vectors are no longer the orthonormal $\pmb i, j, k$ set we have been using and are now labelled as $\vec a, \vec b, \vec c$ to indicate that they are non-orthogonal. By convention, the angle $\alpha$ lies between $b$ and $c$, $\beta$ between $a$ and $c$, and $\gamma$ between $a$ and $b$. This is shown in figure 20. Many authors use $\pmb {a,b,c}$ instead of $\vec a, \vec b, \vec c$ but using arrows is here clearer.  
 # 
-# As the base vectors are not at $90^\text{o}$ to one another, when a dot product is calculated, the terms $\vec a\cdot \vec b, \vec a\cdot\vec c$, and $\vec c\cdot \vec b$ are not zero but the corresponding cross terms $\boldsymbol i\cdot k, \boldsymbol i\cdot j$, and $\boldsymbol j\cdot k$ in the right-angled basis set are. Additionally, the base vectors are often not of unit length, but have the length, and relative angles, of the unit cell, which means that they are not normalized and not orthogonal - just about as bad as it can get! However, the method to calculate a dot product is, in principle, no different to that already described. Although a, b, and c represent the length of the unit cell, these are not unit vectors; the 'unit' here refers to the minimum repeat distance in the crystal.
+# As the base vectors are not at $90^\text{o}$ to one another, when a dot product is calculated, the terms $\vec a\cdot \vec b, \vec a\cdot\vec c$, and $\vec c\cdot \vec b$ are not zero but the corresponding cross terms $\pmb i\cdot k, \pmb i\cdot j$, and $\pmb j\cdot k$ in the right-angled basis set are. Additionally, the base vectors are often not of unit length, but have the length, and relative angles, of the unit cell, which means that they are not normalized and not orthogonal - just about as bad as it can get! However, the method to calculate a dot product is, in principle, no different to that already described. Although a, b, and c represent the length of the unit cell, these are not unit vectors; the 'unit' here refers to the minimum repeat distance in the crystal.
 # 
 # ## 8.2 non-orthogonal vectors
 # 
@@ -156,7 +156,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ## 9.1 Converting axes
 # 
-# We will assume that the $xyz$ basis set is orthogonal (just as are $\boldsymbol i, \boldsymbol j,\boldsymbol k$), as is the convention, therefore the basis vectors $\vec x, \vec y$, and $\vec z$ are orthogonal to one another, for instance, 
+# We will assume that the $xyz$ basis set is orthogonal (just as are $\pmb i, \pmb j,\pmb k$), as is the convention, therefore the basis vectors $\vec x, \vec y$, and $\vec z$ are orthogonal to one another, for instance, 
 # 
 # $$\displaystyle \vec x\cdot\vec y = \vec x\cdot\vec z = \vec z\cdot\vec y = 0$$
 # 
@@ -223,13 +223,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This equation can be written in shorthand as
 # 
-# $$\displaystyle \vec D = \boldsymbol{M}\vec X$$
+# $$\displaystyle \vec D = \pmb{M}\vec X$$
 # 
-# where $\vec D$ is the vector $abc$ and $\vec X$ that of unit vectors $xyz$ and the matrix is $\boldsymbol M$. This matrix represents the conversion from one set of axes into another; as written converting from the $xyz$ axes to the $abc$. To effect the opposite conversion, the equation to use is
+# where $\vec D$ is the vector $abc$ and $\vec X$ that of unit vectors $xyz$ and the matrix is $\pmb M$. This matrix represents the conversion from one set of axes into another; as written converting from the $xyz$ axes to the $abc$. To effect the opposite conversion, the equation to use is
 # 
-# $$\displaystyle \vec X=\boldsymbol{M}^{-1}\vec D$$
+# $$\displaystyle \vec X=\pmb{M}^{-1}\vec D$$
 # 
-# where $\boldsymbol{M}^{-1}$ is the inverse of $\boldsymbol{M}$, see Chapter 7. Finally, and as a check when all the angles are $90^\text{o}$, matrix $\boldsymbol{M}$ reduces to a diagonal matrix and this tells us that ordering the axes as $ABC$ gives the resulting order $xyz$.
+# where $\pmb{M}^{-1}$ is the inverse of $\pmb{M}$, see Chapter 7. Finally, and as a check when all the angles are $90^\text{o}$, matrix $\pmb{M}$ reduces to a diagonal matrix and this tells us that ordering the axes as $ABC$ gives the resulting order $xyz$.
 
 # ## 10 Transformation of basis vectors
 # ## 10.1 Calculating bond lengths and angles in non right-angled crystals
@@ -249,15 +249,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \begin{bmatrix}g_x & g_y & g_z \end{bmatrix}=\begin{bmatrix}g_A&g_B & g_C \end{bmatrix}\begin{bmatrix}k_1 & k_2 & k_3\\m_1 & m_2 & m_3\\n_1 & n_2 & n_3  \end{bmatrix}$$
 # 
-# and the square matrix is the matrix, $\boldsymbol M$ of equation 30. This last equation can be summarized as the matrix equation
+# and the square matrix is the matrix, $\pmb M$ of equation 30. This last equation can be summarized as the matrix equation
 # 
-# $$\displaystyle \vec g_{xyz}=g_{ABC}\boldsymbol M \qquad\tag{31}$$
+# $$\displaystyle \vec g_{xyz}=g_{ABC}\pmb M \qquad\tag{31}$$
 # 
 # where the $g$'s are vectors of the _coefficients_ . With X-ray data, the $g_{ABC}$ are the $x/a, y/b, z/c$ data given in crystallographic tables. This equation shows us how to calculate the coordinates in $xyz$ axes given those in $abc$. To calculate $abc$ coordinates given $xyz$, the equation to use is
 # 
-# $$\displaystyle \vec g_{ABC}=\vec g_{xyz}\boldsymbol{M}^{-1}$$
+# $$\displaystyle \vec g_{ABC}=\vec g_{xyz}\pmb{M}^{-1}$$
 # 
-# which is obtained by right multiplying both sides of eqn 31 by the inverse of $\boldsymbol M$.
+# which is obtained by right multiplying both sides of eqn 31 by the inverse of $\pmb M$.
 # 
 # If a vector $\vec W$ between two atoms represents the bond vector, then its coordinates are conventionally given in terms of $abc$ and its length can be calculated from equation 21. More conveniently, the dot product can be used 
 # 
@@ -265,7 +265,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and with equation 31 and is
 # 
-# $$\displaystyle d^2=(g_{abs}\boldsymbol M)\cdot(g_{abs}^T\boldsymbol M^T)\qquad\tag{32}$$
+# $$\displaystyle d^2=(g_{abs}\pmb M)\cdot(g_{abs}^T\pmb M^T)\qquad\tag{32}$$
 # 
 # which is the same as equation 21 when it is expanded out. The superscript $T$ means that the transpose is taken, see Chapter 7. This equation looks a little different from those dot products calculated previously because the transpose is in a different place. This is because $\vec g$ is a row vector and the left vector has to be a row, the right-hand side as a column, hence the transpose.
 # 
@@ -273,9 +273,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \theta_{12}=\cos^{-1}\left(\frac{\vec g_{1,xyz}\cdot \vec g_{2,xyz}}{|\vec g_{1,xyz}||\vec g_{2,xyz}|} \right)=\cos^{-1}\left(\frac{\vec g_{1,xyz}\cdot \vec g_{2,xyz}}{d_1d_2} \right) \qquad\tag{33}$$
 # 
-# In a monoclinic crystal, which is perhaps the most common crystal type, the equations are considerably simplified because $\alpha = \gamma = 90^\text{o}$ then the matrix $\boldsymbol M$, equation 30 is
+# In a monoclinic crystal, which is perhaps the most common crystal type, the equations are considerably simplified because $\alpha = \gamma = 90^\text{o}$ then the matrix $\pmb M$, equation 30 is
 # 
-# $$\displaystyle \boldsymbol M = \begin{bmatrix}a&0&0\\0 & b & 0\\c\cos(\beta) & 0 & c\sin(\beta) \end{bmatrix}$$
+# $$\displaystyle \pmb M = \begin{bmatrix}a&0&0\\0 & b & 0\\c\cos(\beta) & 0 & c\sin(\beta) \end{bmatrix}$$
 # 
 # and the new coordinates are 
 # 
@@ -291,7 +291,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle a  = 5.0147,\; b = 7.527,\; c = 10.620,\; \alpha = 69.41,\; \beta = 86.07,\; \gamma = 71.01 $$
 # 
-# The first step is to define the matrix $\boldsymbol M$, and then equation 31 where the row vector is the vector of bond coordinates. When M was defined, it was done so in terms of fractional coordinates, as shown in the table, so that these can be used directly in the calculation. The angles are quoted in degrees and minutes and must be converted into fractions of degrees and then radians.
+# The first step is to define the matrix $\pmb M$, and then equation 31 where the row vector is the vector of bond coordinates. When M was defined, it was done so in terms of fractional coordinates, as shown in the table, so that these can be used directly in the calculation. The angles are quoted in degrees and minutes and must be converted into fractions of degrees and then radians.
 # 
 # ![Drawing](vectors-nitro.png)
 # ________________________

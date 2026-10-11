@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1605,30 +1605,44 @@ title="Print to PDF"
 <h1>Questions 1 - 6<a class="headerlink" href="#questions-1-6" title="Permalink to this headline">#</a></h1>
 <section id="q1-area-under-curve">
 <h2>Q1 Area under curve<a class="headerlink" href="#q1-area-under-curve" title="Permalink to this headline">#</a></h2>
-<p>Calculate the area under the curve <span class="math notranslate nohighlight">\(\displaystyle e^{-x} \sin(x^2)\)</span></p>
+<p>Calculate the area under the curve</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle e^{-x} \sin(x^2)\]</div>
 <p>in the range <span class="math notranslate nohighlight">\(0 \to 6\)</span> using the mean-value method.</p>
 <p><strong>Strategy:</strong> Use the algorithm in the text modified for the new function and limits.</p>
 </section>
 <section id="q2-mean-value-method">
 <h2>Q2 Mean value method<a class="headerlink" href="#q2-mean-value-method" title="Permalink to this headline">#</a></h2>
-<p>Integrate <span class="math notranslate nohighlight">\(\displaystyle \int_0^2\int_0^1\int_0^{3/2}\sqrt{16-x^2-y^2-z^2}dxdydz\)</span></p>
+<p>Integrate</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^2\int_0^1\int_0^{3/2}\sqrt{16-x^2-y^2-z^2}dxdydz\]</div>
 <p>using the mean value, Monte Carlo method and accurate to two significant figures.</p>
 <p><strong>Strategy:</strong> Use equation 5 modified for three variables. Repeat the calculation until the answer becomes accurate enough for your needs.</p>
 </section>
 <section id="q3-importance-sampling">
 <h2>Q3 Importance sampling<a class="headerlink" href="#q3-importance-sampling" title="Permalink to this headline">#</a></h2>
-<p>Integrate <span class="math notranslate nohighlight">\(\displaystyle \int_o^\infty e^{-x}\sin(x^2)dx\)</span> using importance sampling.</p>
+<p>Integrate</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_o^\infty e^{-x}\sin(x^2)dx\]</div>
+<p>using importance sampling.</p>
 <p><strong>Strategy:</strong> The distribution function can be chosen as <span class="math notranslate nohighlight">\(e^{-x}\)</span> and the importance sampling algorithm followed. This method also enables us to calculate from zero to infinity; however, a cut-off value has to be determined and <span class="math notranslate nohighlight">\(e^{-10}\)</span> can be chosen because it is so small compared to <span class="math notranslate nohighlight">\(1\)</span>. The limits are therefore <span class="math notranslate nohighlight">\(a = 0 ,\; b = 10\)</span>.</p>
 </section>
 <section id="q4-importance-sampling">
 <h2>Q4 Importance sampling<a class="headerlink" href="#q4-importance-sampling" title="Permalink to this headline">#</a></h2>
-<p>Calculate the integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^2 e^{-x^2}dx\)</span></p>
-<p>using importance sampling and the distribution function <span class="math notranslate nohighlight">\(p(x) = 1/(x^2 + 1/4)\)</span>,</p>
-<p>which has a similar shape to the function in the integral.</p>
+<p>Calculate the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^2 e^{-x^2}dx\]</div>
+<p>using importance sampling and the distribution function <span class="math notranslate nohighlight">\(p(x) = 1/(x^2 + 1/4)\)</span>, which has a similar shape to the function in the integral.</p>
 <p><strong>Strategy:</strong>  Following the text on importance sampling, <span class="math notranslate nohighlight">\(p(x)\)</span> has to be made into a distribution. The integral from <span class="math notranslate nohighlight">\(0 \to t\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^t (x^2+1/4)^{-1}dx = 2\tan^{-1}(2t)\]</div>
-<p>and the normalization is therefore <span class="math notranslate nohighlight">\(N = 2 \tan^{-1}(4)\)</span>. Working out the cumulative distribution and solving for <span class="math notranslate nohighlight">\(r\)</span> produces <span class="math notranslate nohighlight">\(r = \tan^{-1}(2t)/\tan^{-1}(4)\)</span>. The variable <span class="math notranslate nohighlight">\(r\)</span> is sampled from a uniform distribution in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span>.</p>
+<p>and the normalization is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N = 2 \tan^{-1}(4)\]</div>
+<p>Working out the cumulative distribution and solving for <span class="math notranslate nohighlight">\(r\)</span> produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r = \frac{\tan^{-1}(2t)}{\tan^{-1}(4)}\]</div>
+<p>The variable <span class="math notranslate nohighlight">\(r\)</span> is sampled from a uniform distribution in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span>.</p>
 </section>
 <section id="q5-accuracy">
 <h2>Q5 Accuracy<a class="headerlink" href="#q5-accuracy" title="Permalink to this headline">#</a></h2>
@@ -1636,10 +1650,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \gamma = \int_0^1x^\gamma dx=\frac{1}{1+\gamma}\quad\text{ when }\quad\gamma \gt 0\]</div>
 <p>(Krauth 2006, p66).</p>
-<p>(a) Accurate values are obtained when <span class="math notranslate nohighlight">\(0.5 \lt \gamma \lt 1\)</span>. Show that this is the case using a simple,
+<p><strong>(a)</strong> Accurate values are obtained when <span class="math notranslate nohighlight">\(0.5 \lt \gamma \lt 1\)</span>. Show that this is the case using a simple,
 or mean-value Monte Carlo method with <span class="math notranslate nohighlight">\(\gamma = 1/2\)</span> and <span class="math notranslate nohighlight">\(20000\)</span> samples.</p>
-<p>(b) Using the same method show that an incorrect result is produced when <span class="math notranslate nohighlight">\(\gamma = -0.8\)</span>, and similar values close to <span class="math notranslate nohighlight">\(-1\)</span>, even though tens or even hundreds of thousands of samples are taken. (Note that this may take several minutes to complete depending on the computer used and how efficient the algorithm is.)</p>
-<p>(c) Next, use the importance sampling method with the distribution <span class="math notranslate nohighlight">\(p(x) = x\lambda\)</span> where <span class="math notranslate nohighlight">\(\gamma \lt \lambda \lt 0\)</span>, and obtain an accurate result.</p>
+<p><strong>(b)</strong> Using the same method show that an incorrect result is produced when <span class="math notranslate nohighlight">\(\gamma = -0.8\)</span>, and similar values close to <span class="math notranslate nohighlight">\(-1\)</span>, even though tens or even hundreds of thousands of samples are taken. (Note that this may take several minutes to complete depending on the computer used and how efficient the algorithm is.)</p>
+<p><strong>(c)</strong> Next, use the importance sampling method with the distribution <span class="math notranslate nohighlight">\(p(x) = x\lambda\)</span> where <span class="math notranslate nohighlight">\(\gamma \lt \lambda \lt 0\)</span>, and obtain an accurate result.</p>
 </section>
 <section id="q6-lennard-jones-potential-virial-coefficient">
 <h2>Q6 Lennard Jones potential &amp; virial coefficient<a class="headerlink" href="#q6-lennard-jones-potential-virial-coefficient" title="Permalink to this headline">#</a></h2>

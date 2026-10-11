@@ -30,11 +30,11 @@ sp.series(sp.exp(-x)*(3*x**2-x**3),x,n=10)
 # In[3]:
 
 
-# **** The very last part of this calculation may be v slow ****
+# The very last part of this calculation is slow
 # because the integration is first done algebraically.
-# mixture is sympy and numpy python used.
+# A mixture of SymPy, NumPy and Python is used.
 
-fig1 = plt.figure(figsize=(5,5))
+fig1 = plt.figure(figsize=(5,3))
 
 z   = sp.symbols('z')
 sfunc = sp.exp(-z)*(3*z**2 - z**3)             # SymPy function
@@ -50,7 +50,7 @@ maxx = 10.0                                    # max x
 x = np.linspace(0, maxx, numx )
 
 
-plt.plot(x,func(x),color='cyan',label='exact function',linewidth=6 )
+plt.plot(x,func(x),color='cyan',label='exact function',linewidth=5 )
 plt.plot(x,aseries(x),color='red',label='series to '+r'$x^{30}$')
 plt.axhline(0,color='black')
 plt.axis([0, maxx, -1, 1])
@@ -106,14 +106,12 @@ for i in range(30,48,2):
 
 
 #--------------------
-def fact(n):              # will overflow if n is too large > 100
-    if n == 0 or n == 1:
+def fact(n):              # assume n is positive integer. will overflow if n is too large > 100
+    if n < 2:
         return 1
     else:
         return n * fact(n-1)
 #--------------------
-
-fig2 = plt.figure(figsize=(5,5))
 
 bfact = lambda n: (n - 0.5)*np.log(n) - n
 
@@ -121,31 +119,38 @@ maxn = 100
 n = np.linspace(1,maxn,maxn)
 afact = [np.log(fact(n[i])) for i in range(maxn)]    
 
-fig1 = plt.figure(figsize=(5,5))
+fig2 = plt.figure(figsize=(5,4))
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
-plt.scatter(n,bfact(n),s=3,label=r'$(n-1/2)\ln(n)-n$',color='red')
-plt.scatter(n[0:100],afact,s=3,label=r'$\ln(n!)$',color='black')
+plt.scatter(n,bfact(n),s=2,label=r'$(n-1/2)\ln(n)-n$',color='red')
+plt.scatter(n[0:100],afact,s=2,label=r'$\ln(n!)$',color='black')
 plt.yscale('log')
 plt.xscale('log')
 plt.axis([1,100,0.9,500])
 plt.xlabel('n')
 plt.ylabel('ln(n!)')
-plt.legend()
+plt.legend(fontsize=12)
 plt.show()
 
 
 # Figure 27. Log of the factorial function (upper line) and log of Stirling's approximation, which is accurate only at large $n$.
 # ____
 # ## Q30 answer
-# (a) The rotational energy is $E_J = BJ(J + 1)$ and the partition function accounting for the 2$J$ + 1 multiplicity
-# of the levels is 
+# **(a)** The rotational energy is 
+# 
+# $$\displaystyle E_J = BJ(J + 1)$$
+# 
+# and the partition function accounting for the 2$J$ + 1 multiplicity of the levels is 
 # 
 # $$\displaystyle Z = \sum\limits_{J=0}^\infty (2J + 1)e^{−BJ(J+1)/k_BT}$$
 # 
-# where the summation goes as far as is necessary to make the function converge; infinity is rarely needed! When the rotational constant $B$ is small, the energy levels are closely spaced and the integral of $Z$ approximates better to the summation than when $B$ is large. As $B$ is inversely proportional to the reduced mass of the molecule, $B = \hbar^2/2\mu r_e^2$ , and to the equilibrium bond length squared, both of which are large in $\mathrm{I_2}$ compared to HD, hence the approximation is poor for HD.
+# where the summation goes as far as is necessary to make the function converge; infinity is rarely needed! When the rotational constant $B$ is small, the energy levels are closely spaced and the integral of $Z$ approximates better to the summation than when $B$ is large. As $B$ is inversely proportional to the reduced mass of the molecule, 
 # 
-# (b) The Euler–Maclaurin formula is going to require then evaluation of the integral 
+# $$\displaystyle B = \frac{\hbar^2}{2\mu r_e^2}$$
+# 
+# and to the equilibrium bond length squared, both of which are large in $\mathrm{I_2}$ compared to HD, hence the approximation is poor for HD.
+# 
+# **(b)** The Euler–Maclaurin formula is going to require then evaluation of the integral 
 # 
 # $$\displaystyle \int\limits_{J=0}^\infty (2J+1)e^{-BJ(J+1)/k_BT}dJ$$ 
 # 
@@ -153,7 +158,11 @@ plt.show()
 # 
 # $$\displaystyle \int\limits_{J=0}^\infty (2J+1)e^{-BJ(J+1)/k_BT}dJ =- \left. \frac{k_BT}{B} e^{-BJ(J+1)/k_BT}  \right|_{J=0}^\infty =\frac{k_BT}{B}$$
 # 
-# because the exponential is zero when $J$ is infinity and unity when $J$ is zero. The partition function is proportional to the reduced mass $\mu$ (in kg) and bond length squared because the rotational constant, more properly labelled $B_e$ since it reflects the value at the equilibrium bond length, is $B_e=\hbar/(4\pi c\mu r_e^2)\, \mathrm{cm^{-1}}$ where $c$ is the speed of light in cm/s. 
+# because the exponential is zero when $J$ is infinity and unity when $J$ is zero. The partition function is proportional to the reduced mass $\mu$ (in kg) and bond length squared because the rotational constant, more properly labelled $B_e$ since it reflects the value at the equilibrium bond length, is 
+# 
+# $$\displaystyle B_e=\frac{\hbar}{4\pi c\mu r_e^2}\, \mathrm{cm^{-1}}$$
+# 
+# where $c$ is the speed of light in cm/s. 
 # 
 # The value for HD is $B_e = 45.655\,\mathrm{ cm^{-1}}$ and for $\mathrm{I_2}$ is  $0.03735 \,\mathrm{ cm^{-1}}$. At $30$ K the partition function for HD calculated as an integral is $0.695 \times 30/45.655 = 0.457$ and is $4.57$ at $300$ K. The values for $\mathrm{I_2}$ are $556.6$ and $5566$ at the same two temperatures. The partition function for HD at $30$ K calculated properly as a summation is $1.037$. The calculation is
 
@@ -231,13 +240,13 @@ plt.show()
 # Fig. 28 Comparison of the partition function for a rigid rotor calculated using the integral, the summation and Euler–Maclaurin equation. The latter two are virtually identical.
 # ____
 # ## Q31 answer
-# (a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is 
+# **(a)** By convention for any type of energy levels the lowest energy is always the more negative. The energy is 
 # 
 # $$\displaystyle  E_{m_z} = -\gamma \hbar B_zm_z $$
 # 
 # so that this is negative with positive $m_z$. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field ($B_z$ along the $z$ direction), its energy will be lower than if it opposes the field, so $m_z$ must be positive. In some nuclei, for example, $^3H$ and $^{17}O,\, \gamma $ is negative and the order is then inverted.
 # 
-# (b) The number of nuclei (particles) in an upper level $\alpha$ is related by the Boltzmann distribution to those in a lower level $\beta$ by
+# **(b)** The number of nuclei (particles) in an upper level $\alpha$ is related by the Boltzmann distribution to those in a lower level $\beta$ by
 # 
 # $$\displaystyle \frac{n_\alpha}{n_\beta}=e^{-\Delta E/k_BT}$$
 # 
@@ -254,9 +263,9 @@ plt.show()
 # $$\displaystyle  n_\beta -n_\alpha = \frac{N\gamma \hbar B_z}{2k_BT}$$
 # 
 # ## Q32 answer
-# (a) Hooke’s law states that force is directly proportional to extension; $F = kx$ with force constant $k$. The force is also the derivative of *energy* with extension.
+# **(a)** Hooke’s law states that force is directly proportional to extension; $F = kx$ with force constant $k$. The force is also the derivative of *energy* with extension.
 # 
-# (b) Differentiating the energy by $x$ produces the force, 
+# **(b)** Differentiating the energy by $x$ produces the force, 
 # 
 # $$\displaystyle F=\frac{dU}{dx}=-T\frac{dS}{dx}-P\frac{dV}{dx}$$
 # 
@@ -290,7 +299,13 @@ ans
 # 
 # $$\displaystyle F=\frac{k_BT}{2L}\left[\alpha - \alpha^2/2+\cdots  \right] - \frac{k_BT}{2L}\left[-\alpha - \alpha^2/2-\cdots  \right]$$
 # 
-# so that $F = x k_BT/(NL^2)$ which shows that at small extension, $x$, this is linearly proportional to the applied force which is Hooke’s Law. The force constant is $k_BT/(NL^2)$. 
+# so that 
+# 
+# $$\displaystyle F = x \frac{k_BT}{NL^2}$$
+# 
+# which shows that at small extension, $x$, this is linearly proportional to the applied force which is Hooke’s Law. The force constant is 
+# 
+# $$\displaystyle k=\frac{k_BT}{NL^2}$$ 
 # 
 # The plot below shows the approximate force equation just derived but plotted as $FL/k_BT$  vs. fractional extension $\alpha$. Plotting this way makes the force dimensionless. The full equation is also plotted and the comparison clearly shows the region where the approximation is valid.
 
@@ -301,17 +316,23 @@ alpha  = np.linspace(0,0.999,100)                                # define set of
 fapprox= [alpha[i] for i in range(100)]                          # Hook's law
 f = [0.5*np.log((1 + alpha[i])/(1 - alpha[i])) for i in range(100)]  # reduced force into array
 
-fig4=plt.figure(figsize=(5,5))
-plt.plot(alpha,fapprox,color='red',label="approximation, Hook's law")
+fig4 = plt.figure(figsize=(5,4))
+plt.plot(alpha,fapprox,color='red',label="Hook's law approximation",linestyle='dashed')
 plt.plot(alpha,f,color='blue',label='freely jointed chain')
 plt.axis([0,1,0,4])
 plt.xlabel(r'$ \alpha $')
 plt.ylabel(r'$FL/k_BT$')
 plt.title("Freely jointed chain vs Hook's law",fontsize=12)
-plt.legend(fontsize=12)
+plt.legend(fontsize=10)
 plt.show()
 
 
-# Fig.5.29 'Dimensionless force', $FL/k_BT$ vs fractional extension $\alpha$ (where $\alpha = x/L$) for an 'elastic' protein. The Hooke's law region occurs at small extension where force is linearly proportional to $\alpha$ and is shown as the straight line.
+# Fig.5.29 'Dimensionless force', $FL/k_BT$ vs fractional extension $\alpha$ (where $\alpha = x/NL$) for an 'elastic' protein. The Hooke's law region occurs at small extension where force is linearly proportional to $\alpha$ and is shown as the straight line.
 # ____
 # As seen in the figure, at low extension Hooke's law is obeyed, but there is huge deviation as the extension increases. At large extension, the force tends to infinity because here the model protein, made up of many segments, has a finite length when all bonds are taut, and we assume that bonds cannot be broken just by pulling on the protein.
+
+# In[ ]:
+
+
+
+

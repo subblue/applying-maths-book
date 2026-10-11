@@ -3,6 +3,17 @@
 
 # # 14 Computed Tomography
 
+# In[1]:
+
+
+# import all python add-ons etc that will be needed later on
+get_ipython().run_line_magic('matplotlib', 'inline')
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import ndimage
+plt.rcParams.update({'font.size': 14})  # set font size for plots
+
+
 # ## 14.1 Motivation and concept
 # 
 # One important application of fourier transforms is x-ray Computed Tomography which, in medicine, is called a CAT scan and is used to observe soft tissue inside a person's body. The method is quite general and can be used in diverse applications, for example, to measure the position and concentration of different chemical species in a combustion reaction (i.e. in a flame) or to examine the quality of steel inside steel-reinforced concrete. Waves, which could be electromagnetic or acoustic, are passed through an object and the absorption at many points along a line is measured and then this is repeated at each of many angles. After transforming, this data can reproduce an accurate image of the original object. Houndsfield and Cormack received the 1979 Nobel prize in Physiology or Medicine for discovering the technique of x-ray computed tomography. 
@@ -55,7 +66,7 @@
 # 
 # ![Drawing](fourier-radon-fig3.png)
 # 
-# figure 88. Definition of straight line as distance $r$ from the origin and angle $\theta$. In effect this re-defines the line in polar coordinates $(r,\theta)$. 
+# figure 88. Definition of the minimum straight line distance $r$ from the origin to the line and its corresponding angle $\theta$. The gradient is $m=-\cos(\theta)/\sin(\theta)$, and intercept $c=r/\sin(\theta)$. The inverse formulas are $r=|c|/\sqrt{1+m^2}$ and $\theta= \cos^{-1}(-m/\sqrt{1+m^2} )$.
 # ______
 # ## 14.3 Sinograms
 # 
@@ -219,16 +230,11 @@
 # 
 # _______
 
-# In[1]:
+# In[2]:
 
 
-get_ipython().run_line_magic('matplotlib', 'inline')
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import ndimage
-plt.rcParams.update({'font.size': 14})  # set font size for plots
-# make the sonogram from the image call it p[ ..., ...], image is n by n.
-# e.g n = 2**m to make FFT fast, say say 256
+# Make the Sonogram from the image call it p[ ..., ...], image is n by n.
+# e.g n = 2**m to make FFT faster, say 256,512 etc
 # This code is slow and not the most efficient but illustrates the method. 
 
 #----------------------------
@@ -286,7 +292,7 @@ def filterproj(p):
 
 fig,(ax1,ax2,ax3) = plt.subplots( nrows=1, ncols=3, figsize=(13,10) )  # define plots
 
-n = 2**8                                          # size of image to use
+n  = 2**8                                         # size of image to use
 nc = n//2                                         # integer division
 
 imageA = makeimage()

@@ -18,7 +18,7 @@
 # **Strategy:**  Use eqn. 13.
 # 
 # ## Q3  
-# Simplify without using your calculator:
+# Simplify by hand, i.e. without using the computer.
 # 
 # $$\displaystyle\begin{array}{lll}\\
 # \hline

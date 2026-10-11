@@ -24,7 +24,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $E_1^{(1)} = 410.86,\,   E_2^{(1)} = 888.65, \,  E_1^{(2)} = -9.53,  \,  E_2^{(2)} = -8.98$.
 # 
 # ## Q46 answer
-# The orthogonality of the wavefunctions means that $\int \psi_n\psi_m dx = \delta_{nm}$ therefore only terms with $n = m$ are non-zero, and this condition produces the normal, unperturbed, energies. The first-order corrections to the energies are given by the equation 
+# The orthogonality of the wavefunctions means that 
+# 
+# $$\displaystyle \int \psi_n\psi_m dx = \delta_{nm}$$
+# 
+# therefore only terms with $n = m$ are non-zero, and this condition produces the normal, unperturbed, energies. The first-order corrections to the energies are given by the equation 
 # 
 # $$\displaystyle E_n^{(1)} =\int\limits_\infty^\infty \psi(n,x)\,x\,\psi(n,x)dx$$
 # 
@@ -45,7 +49,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-# using sympy and numpy python
+# using SymPy and NumPy python. This calculation takes a few seconds
 
 n, m, x,alpha,hbar,omega = sp.symbols('n,m,x,alpha,hbar,omega',positive=True) # using sympy
 
@@ -55,8 +59,8 @@ def psi(n):     # wavefunction, factorial is an inbuilt  SymPy function
     return 1/sp.sqrt(2**n*sp.factorial(n))*sp.sqrt(sp.sqrt(alpha/pi))*\
            sp.hermite(n,x*sp.sqrt(alpha))*sp.exp(-(alpha*x**2)/2) 
 #-------------------------------------
-print('{:s}'.format('non-zero values;2nd order correction'))
-print('{:s}'.format('n,  sum(int(psi(n) * psi(m))**2)/(E(n)-E(m))' ) )
+print('{:s}'.format('non-zero values; 2nd order correction'))
+print('{:s}'.format('[n,  sum( int( psi(n) . psi(m) )^2)/(E(n)-E(m))]' ) )
 pi = sp.pi
 inf = sp.oo                                   # sp.oo is sympy infinity
 alist = []                                    # list to hold results for printing
@@ -71,15 +75,25 @@ for n in range(5):
             #print(n,m,ans/(E(n)-E(m)))
             if ans != 0:                                   # check if integral is zero
                 s = s + ans**2/( E(n) - E(m) )             # add each 2nd order term
-    alist.append(s)                                        # add to list   
-
-for i in range(5):
-    print(i,alist[i])
+    alist.append([n,s])                                        # add to list   
 
 
-# These results produce $\displaystyle\left | \int\psi(n)\,x\,\psi(m)dx\right|^2$, see eqn 44. The result can now be found because the denominator is always the difference in energy between the two levels, which is $\pm \hbar\omega$. Thus for $n = 0$ the correction is $-1/(2\alpha\hbar\omega)$ and substituting for $\displaystyle \alpha =\sqrt{k\mu}/\hbar=\mu\omega/\hbar$ gives $\displaystyle E_1^{(2)}= -\frac{a^2}{2\mu\omega^2}$
+alist[:]
+
+
+# These results produce $\displaystyle\left | \int\psi(n)\,x\,\psi(m)dx\right|^2$, see eqn 44. The result can now be found because the denominator is always the difference in energy between the two levels, which is $\pm \hbar\omega$. Thus for $n = 0$ the correction is $-1/(2\alpha\hbar\omega)$ and substituting for 
 # 
-# The terms from $n = 1$ go to $n = 0, 2$ and these have values $\displaystyle E_1^{(2)}= +\frac{a^2}{2\mu\omega^2}-\frac{a^2}{\mu\omega^2} =-\frac{a^2}{2\mu\omega^2} $. Similar calculations for other levels produce the same result. The energy is 
+# $$\displaystyle \alpha =\frac{\sqrt{k\mu}}{\hbar}=\frac{\mu\omega}{\hbar}$$
+# 
+# gives 
+# 
+# $$\displaystyle E_1^{(2)}= -\frac{a^2}{2\mu\omega^2}$$
+# 
+# The terms from $n = 1$ go to $n = 0, 2$ and these have values 
+# 
+# $$\displaystyle E_1^{(2)}= +\frac{a^2}{2\mu\omega^2}-\frac{a^2}{\mu\omega^2} =-\frac{a^2}{2\mu\omega^2} $$
+# 
+# Similar calculations for other levels produce the same result. The energy is 
 # 
 # $$\displaystyle  E_n= \hbar\omega(n+1/2) -\frac{a^2}{2\mu\omega^2} $$
 # 
@@ -99,9 +113,11 @@ for i in range(5):
 # **Exercise:** Repeat the calculation with a quartic potential term, $bx^4$, or both cubic and quartic.
 # 
 # ## Q48 answer
-# (a) Solving the equation by differentiating the wavefunction produces the energy of level $n$ as $\displaystyle E_n=n^2\frac{\hbar^2}{2\mu}$. 
+# **(a)** Solving the equation by differentiating the wavefunction produces the energy of level $n$ as 
 # 
-# (b) Because $n = 0$ and the potential is not zero only from $\pm a \pi$ the first-order perturbation is the integral (equation (41)),
+# $$\displaystyle E_n=n^2\frac{\hbar^2}{2\mu}$$ 
+# 
+# **(b)** Because $n = 0$ and the potential is not zero only from $\pm a \pi$ the first-order perturbation is the integral (equation (41)),
 # 
 # $$\displaystyle E^{(1)}=\frac{V}{2\pi}\int\limits_{-a\pi}^{a\pi}d\phi =aV$$
 # 
@@ -122,9 +138,9 @@ for i in range(5):
 # The total energy of the lowest level corrected to second order is $E=aV-E_n^{(2)}$. In the case that $a = 1/6$ the summation rapidly converges to $\approx 0.313$, because of the influence of the $k^{-4}$ term. As the potential is $V = 0.1E_1 = \hbar^2/20\mu$ the energy is $E = 0.01651\hbar^2/\mu$ which is very small compared to the energy $E_1-E_0$ energy gap of $0.5\hbar/\mu$.
 # 
 # ## Q49 answer
-# (a) The frequency is calculated with $\Delta E =h\nu $ and $\omega = 2\pi\nu $ or $\omega=(E_4 - E_3)/\hbar $ radian/sec which is $\displaystyle \omega = 7\frac{2\pi h}{8mL^2} = 4\cdot 10^{15}\,\mathrm{ rad\, s^{-1}}$  and the period $2\pi/\omega = 1.57 \cdot 10^{-15}$s.
+# **(a)** The frequency is calculated with $\Delta E =h\nu $ and $\omega = 2\pi\nu $ or $\omega=(E_4 - E_3)/\hbar $ radian/sec which is $\displaystyle \omega = 7\frac{2\pi h}{8mL^2} = 4\cdot 10^{15}\,\mathrm{ rad\, s^{-1}}$  and the period $2\pi/\omega = 1.57 \cdot 10^{-15}$s.
 # 
-# (b) The superposition is $\Psi=N(\psi_1/2+2\psi_2/3)$ where  $N=(1/4+4/9)^{-1/2}=6/5$ is the normalisation. Substituting into equation (54) produces,
+# **(b)** The superposition is $\Psi=N(\psi_1/2+2\psi_2/3)$ where  $N=(1/4+4/9)^{-1/2}=6/5$ is the normalisation. Substituting into equation (54) produces,
 # 
 # $$\displaystyle P(x,t)=\left[ \frac{3}{5}\psi_3^0(x) \right]^2+\left[ \frac{4}{5}\psi_4^0(x) \right]^2+\frac{24}{25}\psi_3^0\psi_4^0\cos(\omega t)$$
 # 
@@ -167,7 +183,7 @@ for j, i in enumerate(tmes):
     ax[j].set_ylim([0,5])
 
 ax[0].set_ylabel('wavepacket amplitiude')
-plt.tight_layout()
+fig1.tight_layout()
 plt.show()
 
 
@@ -175,7 +191,7 @@ plt.show()
 # ____
 # 
 # ## Q50 answer
-# (a) Substituting for energy produces 
+# **(a)** Substituting for energy produces 
 # 
 # $$\displaystyle \Psi(x,t)=\sum\limits_n a_n\psi_n(x) e^{-iE_nt/\hbar} = \sum\limits_n a_n\psi_n(x)e^{-i\omega(n+1/2)t/\hbar}$$
 # 
@@ -189,12 +205,12 @@ plt.show()
 # 
 # This means that the wavepacket periodically reforms itself, but only within a change in sign. The probability density is the square of the wavepacket amplitude, which reforms itself exactly after each successive period, and appears to be the mirror image of itself after exactly $1/2$ a period.
 # 
-# (b) In calculating the wavefunction, the Hermite polynomials are needed. These have been used in question 46 but now numerical values, not algebraic are needed so we need to use numpy instead of SymPy
+# **(b)** In calculating the wavefunction, the Hermite polynomials are needed. These have been used in question 46 but now numerical values, not algebraic are needed so we need to use NumPy instead of SymPy
 
 # In[4]:
 
 
-# wavepacket calculation  This code follows some of the calculation desribed in the text.
+# Wavepacket calculation  This code follows some of the calculation desribed in the text.
 #--------------
 def Hermite(n,x):       # use recursion formulae, x is real, n is order.
     if n == 0:
@@ -259,7 +275,9 @@ plt.show()
 # Figure 35. Probabilities of a wavepacket made from five harmonic oscillator wavefunctions vs period $t$ and bond displacement $x$. The wavepacket consists of the $n = 0 \to 4$ vibrational levels of HI over two vibrational periods; a period is $14.4$ fs.
 # ____
 # ## Q51 answer
-# The wavepacket is $\displaystyle \Psi(r,t)=\sum\limits_n a_n\psi_n(r)e^{-iRt/(n^2\hbar)}$ 
+# **(a)** The wavepacket is 
+# 
+# $$\displaystyle \Psi(r,t)=\sum\limits_n a_n\psi_n(r)e^{-iRt/(n^2\hbar)}$$
 # 
 # and the radial probability distribution is
 # 
@@ -272,44 +290,46 @@ plt.show()
 # 
 # $$\displaystyle \Psi_{n,L,M}(r,\theta,\phi)=\left [ \alpha^3 \frac{(n-L-1)!}{2n(n+L)!}    \right]^{1/2} \cdot (\alpha r)^Le^{-\alpha r/2} Lg_{n-L-1}^{2L+1}(\alpha r) Y_L^M(\theta, \phi)$$
 # 
-# but the angular part is not needed and so can be ignored including its normalisation is $\sqrt( (2n+1)/(4\pi))$ since this only depends slightly on $n$ over the range of $n$ used. For hydrogen $Z = 1,\, Lg$ is the generalised Laguerre polynomial and $\alpha =2Z/(na_0)$. The calculation is quite slow, $\approx 10$ secs.
+# but the angular part is not needed and so can be ignored including its normalisation, $\sqrt{ (2n+1)/(4\pi)}$, since this only depends slightly on $n$ over the range of $n$ used. For hydrogen $Z = 1,\, Lg$ is the generalised Laguerre polynomial and $\alpha =2Z/(na_0)$. The calculation is quite slow and takes a few seconds.
 
 # In[5]:
 
 
 from scipy.special import eval_genlaguerre  as GL
 
-fig3= plt.figure(figsize=(15, 9))       # use figure to define plot size and subplots
+fig3= plt.figure(figsize=(15, 10))       # use figure to define plot size and subplots
+
 ax0 = plt.subplot(1,2,1)
 ax1 = plt.subplot(3,2,2)
 ax2 = plt.subplot(3,2,4)
 ax3 = plt.subplot(3,2,6)
 #-------------
-def fact(n):           # factorial
-    if n == 0 or n == 1:
+def fact(n):           # factorial, assume n is positive integer
+    if n < 2:
         return 1
     else:
         return n*fact(n - 1)
 #--------------  
 # radial function next
 Radl = lambda n, el, r:   np.sqrt( ( fact(n-el-1) * (2/(n*a0))**3)/(2*n*fact(n+el)) )\
-                 * ( (2*r)/(n*a0))**el *np.exp(-r/(n*a0) )* GL( n-el-1,2*el+1,(2.0*r)/(n*a0) )   
+                 * ( (2*r)/(n*a0))**el *np.exp(-r/(n*a0) )\
+                 * GL( n-el-1,2*el+1,(2.0*r)/(n*a0) )   
 
-pm = 1e-12
-ps = 1e-12
+pm = 1e-12                     # distances, metre
+ps = 1e-12                     # time, second
 R  = 109737.0                  # Rydberg in cm^(-1)
-h  = 5.308*2*np.pi             # cm^(-1) ps
+h  = 5.308*2*np.pi             # in units of cm^(-1) ps
 a0 = 0.052918                  # Bohr radius nm
 
-r1 = 100                        # r1, r2 two plots. Set separation from nucleus ( pm) to plot wavepacket profile vs time
-r2 = 19
+r1 = 100                       # r1, r2 two plots. Set separation from nucleus (pm)
+r2 = 19                        #     to plot wavepacket profile vs time.
 cn = [ 0.1, 0.2, 0.3, 0.5, 0.8, 1.0, 0.8, 0.5, 0.3, 0.2, 0.1 ]  # amplitudes a   
 el = 1                         # p orbital L=1
 n0 = 25                        # lower q number 
 qn = [ n0+i for i in range( 0,len(cn)) ]   # range of q numbers same length as cn    
 print('{:s}{:s}'.format('quantum numbers ',str(qn)))
 
-psi = lambda r, n, el, t: r*Radl( n, el, r)*np.exp( 2*np.pi*1j*R*t/(h*n**2) )  # time dep wavefunction
+psi = lambda r, n, el, t: r*Radl( n, el, r)*np.exp( 2*np.pi*1j*R*t/(h*n**2) )  # time dependent wavefunction
 
 wp = lambda r,el,t: sum( [cn[n-n0]*psi(r,n,el,t) for n in qn ])  # wavepacket , sum over n 
 
@@ -324,8 +344,10 @@ print('{:s} {:f}'.format('distance / point pm', xr[1]-xr[0]))
 
 rvals,tvals = np.meshgrid(xr,yt)                                       # set up grid of points to plot contour
 
-aprob = (wp(rvals,el,tvals) * np.conjugate(wp(rvals,el,tvals))).real   # make Psi^*Psi; divide by 10^-12 toscale
-Lvls= [i for i in np.linspace(0,0.1,15)]         # adjust linspace to chnage range & number of contours
+aprob = (wp(rvals,el,tvals) * np.conjugate(wp(rvals,el,tvals))).real   # make Psi^*Psi; divide by 10^-12 to scale
+Lvls= [i for i in np.linspace(0,0.1,15)]         # adjust linspace to change range & number of contours
+
+func = lambda rval :(wp(rval,el,yt) * np.conjugate(wp(rval,el,yt))).real
 
 ax0.contour(rvals,tvals, aprob, cmap = plt.cm.brg, levels=Lvls) 
 ax0.xaxis.grid(True, zorder=0)
@@ -337,32 +359,32 @@ ax0.set_ylabel('time /ps',fontsize=14)
 #ax0.set_ylim([0,100])  #. adjust limits to expand in on region
 # calculate just certain values at fixed x and all times. Equivalent to probing at certain wavelengths
 
-func = lambda rval :(wp(rval,el,yt) * np.conjugate(wp(rval,el,yt))).real
+#func = lambda rval :(wp(rval,el,yt) * np.conjugate(wp(rval,el,yt))).real
 
 ax1.plot(xr, aprob[0],color='red')         
 ax1.plot(xr, aprob[5],color='blue')
-ax1.set_title('wavepacket vs. position at t=0 (red) & 4 ps')
+ax1.set_title('wavepacket vs. position at t=0 (red) & 4 ps',fontsize=12)
 ax1.set_xlabel('separation /pm')
 
 ax2.plot(yt, func(r1),color='blue')
 ax2.plot(yt, func(r2)+0.25,color='red')
-ax2.set_title('wavepacket vs. time at '+str(r1)+ '(blue) & '+str(r2)+ ' pm')
+ax2.set_title('wavepacket vs. time at '+str(r1)+ '(blue) & '+str(r2)+ ' pm',fontsize=12)
 ax2.set_xlabel('time /ps')
 
-isfft = np.fft.rfft(func(r1))
+isfft = np.fft.rfft(func(r1))                    # fourier transform to get frequencies
 freq =  np.linspace(0,1.0/(2*tstep),numt//2)
 fmax =  max(freq)
 ymax =  max(np.abs(isfft[2:]))
 ax3.plot(freq,np.abs(isfft[:-1]))
 ax3.set_xlim([0.0,fmax])
-ax3.set_ylim([-0.02,ymax*1.2])
+ax3.set_ylim([-0.02,ymax*1.25])
 
-minor_ticks=np.linspace(0,fmax,51)
+minor_ticks = np.linspace(0,fmax,51)
 ax3.set_xticks(minor_ticks, minor=True)
-ax3.set_title('abs(fft) of plot at '+str(r1)+' pm')
+ax3.set_title('abs(fft) of plot at '+str(r1)+' pm',fontsize=12)
 ax3.set_xlabel('frequency /'+ r'$ps^{-1}$')
 
-fig1.tight_layout()
+fig3.tight_layout()
 plt.show()
 
 
@@ -371,14 +393,14 @@ plt.show()
 # 
 # After about $6$ ps the wavefunctions have constructively interfered to form a more compact wavepacket at the outer turning point; $\approx 100$ nm, see the top right figure. The wavepacket recurs with periods of about $4$ ps, plus longer periods of about $40$ ps. If the atom could be measured vs time at 90 nm the signal would look like that shown on the right bottom. The top right figure shows the spatial shape of the wavepacket at two different times.
 # 
-# (b) The size of the Rydberg atom with $n = 30$ is vast, $\approx 2a_0n^2$ or $\approx 95$ nm, compared to the H atom in its ground state, with its classical radius $a_0 = 0.0529$ nm. The oscillation frequency is 
+# **(b)** The size of the Rydberg atom with $n = 30$ is vast, $\approx 2a_0n^2$ or $\approx 95$ nm, compared to the H atom in its ground state, with its classical radius $a_0 = 0.0529$ nm. The oscillation frequency is 
 # 
 # $$\displaystyle \omega = \frac{1}{\hbar}\bigg|\frac{dE_n}{dn}\bigg|=\frac{2R}{\hbar n^3}$$
 # 
 # which is a frequency of $\nu=\omega/2\pi$ per second or a period of $4.1$ ps. 
 # 
 # ## Q52 answer
-# (a) Using information in the question the fluorescence signal is the square of the sum of the amplitudes of each path, $1\to 2$ and $1\to 3$, and using equation (56), 
+# **(a)** Using information in the question the fluorescence signal is the square of the sum of the amplitudes of each path, $1\to 2$ and $1\to 3$, and using equation (56), 
 # 
 # $$\displaystyle f(t)=A\left| \int \varphi_3\mu [a_1\varphi_1e^{-iE_1t/\hbar -kt/2+}+a_2\varphi_1e^{-iE_2t/\hbar -kt/2+}]dq  \right |^2$$
 # 
@@ -434,7 +456,7 @@ minor_ticks=np.linspace(0,0.1,11)
 ax1.set_xticks(minor_ticks, minor=True)
 ax1.set_title('abs fourier transform of signal')
 ax1.set_xlabel('frequency /'+r'$ps^{-1}$')
-
+fig4.tight_layout()
 plt.show()
 
 
@@ -445,7 +467,7 @@ plt.show()
 # 
 # The beating or oscillatory signal is due to an interference of the two pathways from levels $1$ and $2$ to level $3$ and is present in the equation as the cross-term in the multiplication. These are also called the off-diagonal terms and are a reference to the matrix formulation of quantum problems. The off-diagonal terms always lead to interactions and time dependence.
 # 
-# (b) The normalization is obtained when $t = 0$ and is $(a_1B_{31} + a_2B_{32})^2$.
+# **(b)** The normalization is obtained when $t = 0$ and is $(a_1B_{31} + a_2B_{32})^2$.
 # 
 # **Exercise:** repeat the calculation with four levels with energies above the lowest level of $1, 2$, and $3\,\mathrm{ cm^{-1}}$ excited with amounts $0.3, 0.7, 0.3$, and $0.7$. Assume that the other parameters are the same as in the question. Plot the graph of the decaying signal. Fourier transform it to find the frequencies present.
 # 

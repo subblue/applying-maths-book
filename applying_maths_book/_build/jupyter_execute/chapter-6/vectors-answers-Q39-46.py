@@ -16,38 +16,54 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q39 answer
-# (a) Taking the dot product
+# **(a)** Taking the dot product
 # 
-# $$\displaystyle \vec\psi_1\cdot\vec \psi_2 = (a_1\vec\varphi_1 + a_2\vec\varphi_2)\cdot(b_2\vec\varphi_1-b_2\vec\varphi_2) = a_1b_1\vec\varphi_1\cdot\vec\varphi_1 -a_1b_2\vec\varphi_1\cdot\vec\varphi_2+ a_2b_1\vec\varphi_2\cdot\vec\varphi_1 - a_2b_2\vec\varphi_2\cdot\vec\varphi_2 $$
+# $$\displaystyle \begin{align}\vec\psi_1\cdot\vec \psi_2 &= (a_1\vec\varphi_1 + a_2\vec\varphi_2)\cdot(b_2\vec\varphi_1-b_2\vec\varphi_2) \\&= a_1b_1\vec\varphi_1\cdot\vec\varphi_1 -a_1b_2\vec\varphi_1\cdot\vec\varphi_2+ a_2b_1\vec\varphi_2\cdot\vec\varphi_1 - a_2b_2\vec\varphi_2\cdot\vec\varphi_2 \end{align}$$
 # 
 # If we now use the orthonormality of the base vectors $\vec\varphi_1, \vec\varphi_2$ , then basis set vector components with dissimilar indices are zero, and those with the same index unity, leaving $\vec\psi_1\cdot\vec \psi_2 = a_1b_1 - a_2b_2$. This is the same result as obtained using equation 36. Equivalent results are found using the summation formula:
 # 
 # $$\displaystyle \sum_{p=1}^2\sum_{q=1}^2=a_pb_q\delta_{p,q} =a_1(b_1\delta_{11}-b_2\delta_{12})+a_2(b_1\delta_{21}-b_2\delta_{22})= a_1b_1-a_2b_2$$
 # 
-# and in matrix form $\displaystyle \begin{bmatrix}a_1&a_2\end{bmatrix}\begin{bmatrix}b_1\\-b_2\end{bmatrix}=a_1b_1-a_2b_2$
+# and in matrix form 
 # 
-# (b) A vector $\vec v$ is normalized when it becomes $\displaystyle \vec v \to \frac{\vec v}{\sqrt{\vec v\cdot\vec v}}$. Normalisation produces 
+# $$\displaystyle \begin{bmatrix}a_1&a_2\end{bmatrix}\begin{bmatrix}b_1\\-b_2\end{bmatrix}=a_1b_1-a_2b_2$$
+# 
+# **(b)** A vector $\vec v$ is normalized when it becomes $\displaystyle \vec v \to \frac{\vec v}{\sqrt{\vec v\cdot\vec v}}$. Normalisation produces 
 # 
 # $$\displaystyle \vec \psi_1=\frac{a_1\vec\varphi_1+a_2\vec\varphi_2}{\sqrt{a_1^2+a_2^2}},\quad \vec \psi_2=\frac{b_1\vec\varphi_1-b_2\vec\varphi_2}{\sqrt{b_1^2+b_2^2}}$$
 # 
 # ## Q40 answer
-# The wavefunctions are $\vec \psi_1 = 2\vec\varphi_1 + 2\vec\varphi_2$, and $\vec\psi_2 = 4\vec\varphi_1 - 4\vec\varphi_2$ 
+# The wavefunctions are 
 # 
-# and when normalized are $\vec\psi \to \vec\psi/\sqrt{\vec\psi\cdot\vec\psi}$.
+# $$\displaystyle \vec \psi_1 = 2\vec\varphi_1 + 2\vec\varphi_2,\qquad \vec\psi_2 = 4\vec\varphi_1 - 4\vec\varphi_2$$ 
 # 
-# The dot product is $\displaystyle \vec\psi_1\cdot\vec\psi_1= 4(\vec\varphi_1 + \vec\varphi_2)\cdot(\vec\varphi_1 + \vec\varphi_2) =8$
+# and when normalized are 
 # 
-# and the then $\displaystyle \vec\psi_1= \frac{2}{\sqrt{8}}(\vec\varphi_1 + \vec\varphi_2)$ and similarly $\displaystyle \vec\psi_2= \frac{2}{\sqrt{8}}(\vec\varphi_1 - \vec\varphi_2)$. The dot product $\vec\psi_1\cdot\vec\psi_2=0$ because $\vec\varphi_1\cdot\vec\varphi_2=0$. We conclude that the wavefunctions are orthogonal and could therefore describe two eigenstates of the same quantum system. The wavefunctions could be describing H$^+_2$ and if so have the form of bonding and anti-bonding orbitals.
+# $$\displaystyle \vec\psi \to \frac{\vec\psi}{\sqrt{\vec\psi\cdot\vec\psi}}$$
+# 
+# The dot product is 
+# 
+# $$\displaystyle \vec\psi_1\cdot\vec\psi_1= 4(\vec\varphi_1 + \vec\varphi_2)\cdot(\vec\varphi_1 + \vec\varphi_2) =8$$
+# 
+# and the then 
+# 
+# $$\displaystyle \vec\psi_1= \frac{2}{\sqrt{8}}(\vec\varphi_1 + \vec\varphi_2),\qquad\displaystyle \vec\psi_2= \frac{2}{\sqrt{8}}(\vec\varphi_1 - \vec\varphi_2)$$
+# 
+# The dot product $\vec\psi_1\cdot\vec\psi_2=0$ because $\vec\varphi_1\cdot\vec\varphi_2=0$. We conclude that the wavefunctions are orthogonal and could therefore describe two eigenstates of the same quantum system. The wavefunctions could be describing H$^+_2$ and if so have the form of bonding and anti-bonding orbitals.
 # 
 # ## Q41 answer
 # Yes, because the dot product is zero; $(1 + 1 - 1 - 1)/4 = 0$.
 # 
 # ## Q42 answer
-# (a) The dot product is zero if the two orbitals are orthogonal. Choosing $\vec v_1$ and $\vec v_2$, their dot product is $(-1 + 1 + 0 -1 + 1 + 0)=0$, and with $\vec v_3$ and $\vec v_6$ produce $(-1+0-+1+0+1)=0$ and so on, except for $\vec v_3$ and $\vec v_2$. Their dot product is $\vec v_2\cdot\vec v_3 = (+1 +0 +0 +1 +0 +0) = 2$ so these vectors are not orthogonal to one another. Orbitals 5 and 6 are orthogonal with orbitals 1 to 4, but not with one another because their dot product produces $-2$ and not zero.
+# **(a)** The dot product is zero if the two orbitals are orthogonal. Choosing $\vec v_1$ and $\vec v_2$, their dot product is $(-1 + 1 + 0 -1 + 1 + 0)=0$, and with $\vec v_3$ and $\vec v_6$ produce $(-1+0-+1+0+1)=0$ and so on, except for $\vec v_3$ and $\vec v_2$. Their dot product is $\vec v_2\cdot\vec v_3 = (+1 +0 +0 +1 +0 +0) = 2$ so these vectors are not orthogonal to one another. Orbitals 5 and 6 are orthogonal with orbitals 1 to 4, but not with one another because their dot product produces $-2$ and not zero.
 # 
-# (b) One linear combination is $\vec v_2+\vec v_3=\begin{bmatrix}-2&1&1&-2&1&1\end{bmatrix}$, 
+# **(b)** One linear combination is 
 # 
-# the other $\vec v_2-\vec v_3=\begin{bmatrix}0&1&-1&0&1&-1\end{bmatrix}$ 
+# $$\displaystyle \vec v_2+\vec v_3=\begin{bmatrix}-2&1&1&-2&1&1\end{bmatrix}$$ 
+# 
+# the other 
+# 
+# $$\displaystyle \vec v_2-\vec v_3=\begin{bmatrix}0&1&-1&0&1&-1\end{bmatrix}$$ 
 # 
 # and the dot product with $\vec v_1$ is
 # 
@@ -59,26 +75,42 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # therefore these new orbitals are orthogonal with one another and with the other orbitals.
 # 
-# Normalizing a vector v can be achieved with $\vec v/\sqrt{\vec v\cdot\vec v}$. This produces the following results $(\vec v_2+\vec v_3)\cdot(\vec v_2+\vec v_3)=12$  hence the normalisation constant is $1/\sqrt{12}$ and $(\vec v_2-\vec v_3)\cdot(\vec v_2-\vec v_3)=4$ with normalisation constant $1/2$. 
+# Normalizing a vector v can be achieved as 
 # 
-# The similar calculation on orbitals 5 and 6 produces the normalized vectors 
+# $$\displaystyle \frac{\vec v}{\sqrt{\vec v\cdot\vec v}}$$
+# 
+# This produces the following results 
+# 
+# $$\displaystyle (\vec v_2+\vec v_3)\cdot(\vec v_2+\vec v_3)=12$$
+# 
+# hence the normalisation constant is $1/\sqrt{12}$ and 
+# 
+# $$\displaystyle (\vec v_2-\vec v_3)\cdot(\vec v_2-\vec v_3)=4$$
+# 
+# with normalisation constant $1/2$. The similar calculation on orbitals 5 and 6 produces the normalized vectors 
 # 
 # $$\displaystyle \vec v_5+\vec v_5=\begin{bmatrix}0&-1&-1&0&1&1\end{bmatrix}/2,\quad \vec v_5-\vec v_5=\begin{bmatrix}-2&-1&1&2&1&-1\end{bmatrix}/\sqrt{12}$$
 # 
-# (c) The orbitals are shown in Figures 89 and 90 in chapter 7, Matrices. Their shapes can also be obtained from a consideration of molecular group theory.
+# **(c)** The orbitals are shown in Figures 89 and 90 in chapter 7, Matrices. Their shapes can also be obtained from a consideration of molecular group theory.
 # 
 # ## Q43 answer
-# (a) The angles are $\alpha = 0,\; \beta= 0$; in calculating $\vec R\cdot\vec \mu_2$ use the angle $\beta$ to the right of dipole. The angle $\gamma$ between the dipoles is $180^\text{o}$ as they are parallel and in line, then 
+# **(a)** The angles are $\alpha = 0,\; \beta= 0$; in calculating $\vec R\cdot\vec \mu_2$ use the angle $\beta$ to the right of dipole. The angle $\gamma$ between the dipoles is $180^\text{o}$ as they are parallel and in line, then 
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec\mu_2=-|\vec\mu_1||\vec\mu_2|$$
 # 
-# With $R\cdot\mu_1=R|\mu_1|\cos(0)= R|\vec \mu_1|$, and $R\cdot\mu_2= R|\vec \mu_2|$
+# With 
+# 
+# $$\displaystyle R\cdot\mu_1=R|\mu_1|\cos(0)= R|\vec \mu_1|,\quad \text{and}\quad R\cdot\mu_2= R|\vec \mu_2|$$
 # 
 # the energy is
 # 
 # $$\displaystyle E=\frac{1}{4\pi\epsilon_0}\left( -\frac{|\vec\mu_1||\vec \mu_2|}{R^3}-3\frac{|\vec\mu_1||\vec \mu_2|R^2}{R^5}\right)=-\frac{|\vec\mu_1||\vec \mu_2|}{\pi\epsilon_0R^3}$$
 # 
-# and because it is negative, this means that the interaction is attractive.  In terms of the charge $\delta$ on each molecule,$\displaystyle E=\frac{4\delta^2a^2}{\pi\epsilon_0R^3}$ which shows that that the bigger the dipole is, the larger the interaction is as intuition  would dictate.
+# and because it is negative, this means that the interaction is attractive.  In terms of the charge $\delta$ on each molecule, 
+# 
+# $$\displaystyle E=\frac{4\delta^2a^2}{\pi\epsilon_0R^3}$$
+# 
+# which shows that that the bigger the dipole is, the larger the interaction is as intuition  would dictate.
 # 
 # The maximum repulsion occurs in the opposite situation, when $\alpha = 0,\; \beta = 180^\text{o}$, now $\vec R\cdot\mu_2=R|\mu_2|\cos(\pi)= -R|\vec \mu_2|$ and the angle between the dipoles is zero, $\vec\mu_1\cdot\vec\mu_2=|\vec\mu_1||\vec\mu_2|$. The energy is 
 # 
@@ -86,7 +118,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is not unsurprisingly the same magnitude but of opposite energy to the attraction.
 # 
-# (b) The minimum interaction occurs when the two terms n the equation are of equal and opposite sign, or both are zero. Intuitively, the latter occurs when the two dipoles are at $90^\text{o}$ to one another as shown below, figure 71, and therefore, the positive and negative interactions cancel. However, the interaction is only zero if the one dipole points towards the centre of the other as in the left-hand diagram.
+# **(b)** The minimum interaction occurs when the two terms n the equation are of equal and opposite sign, or both are zero. Intuitively, the latter occurs when the two dipoles are at $90^\text{o}$ to one another as shown below, figure 71, and therefore, the positive and negative interactions cancel. However, the interaction is only zero if the one dipole points towards the centre of the other as in the left-hand diagram.
 # 
 # ![Drawing](vectors-fig71.png)
 # 
@@ -110,7 +142,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 72. Dipole angles.
 # ________
 # 
-# (c) In figure 27 the vectors are parallel and the angle between them is zero, so that 
+# **(c)** In figure 27 the vectors are parallel and the angle between them is zero, so that 
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec\mu_2 = | \vec\mu_1 || \vec\mu_2 |$$
 # 
@@ -120,7 +152,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and from this, the answer follows after some simplification. Additionally, when $\cos(\theta) = \sqrt{1/3}$, then the expression is zero and $\theta = 54.7^\text{o}$, as in the previous question.
 # 
-# (d) In figure 28 (i) the angle $\displaystyle \gamma =180-30-100$ hence 
+# **(d)** In figure 28(i) the angle $\displaystyle \gamma =180-30-100$ hence 
 # 
 # $$\displaystyle \vec\mu_1\vec\mu_2 = 15\cos(50\pi/180),\quad \vec\mu_1\cdot\vec R = 20\cos(30\pi/180),\quad \vec R\cdot\vec\mu_2 = 12\cos(80\pi/180)$$
 # 
@@ -145,7 +177,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec\mu_2 =\mu_1\mu_2\big(\sin(\theta_1)\cos(\phi_1)\sin(\theta_2)\cos(\phi_2)+ \sin(\theta_1)\sin(\phi_1)\sin(\theta_2)\sin(\phi_2)+\cos(\theta_1)\cos(\theta_2 \big)$$
 # 
-# The terms can be combines using the identity $\cos(a-b)=\cos(a)\cos(b)+\sin(a)\sin(b)$ to give
+# The terms can be combined using the identity 
+# 
+# $$\displaystyle \cos(a-b)=\cos(a)\cos(b)+\sin(a)\sin(b)$$
+# 
+# to give
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec\mu_2 =\mu_1\mu_2\big(\sin(\theta_1)\sin(\theta_2)\cos(\phi_1-\phi_2)+\cos(\theta_1)\cos(\theta_2)\big)$$
 # 
@@ -156,13 +192,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # which, when simplified, produces the equation in the question.
 # 
 # ## Q45 answer
-# (a) The interaction between the dipoles is estimated by considering the distance between their positive and negative partial charges. The separation between the C and O atoms is constant, therefore so is their interaction, each atom's dipole here being slightly $\delta+$. The determining attraction is therefore between the negative ends of each dipole with the positive and negative parts of the other dipole.
+# **(a)** The interaction between the dipoles is estimated by considering the distance between their positive and negative partial charges. The separation between the C and O atoms is constant, therefore so is their interaction, each atom's dipole here being slightly $\delta+$. The determining attraction is therefore between the negative ends of each dipole with the positive and negative parts of the other dipole.
 # 
 # In the molecule shown on the left of figure 74, the negative charges of the two dipoles are far apart between the two axial positions, so interact only slightly. The interaction between the axial $\vec\mu_x$ and equatorial $\vec\mu_O$ is larger, as the ends of the dipole are closer, and is more repulsive than the $a-a$ interaction.
 # 
 # The molecule on the right with the $e$ substituent, has a strong repulsive interaction between the $e-e$ direction dipoles and the same repulsion for the $e-a$ interaction as in the other molecule, therefore, the $e$ substituent molecule is less stable. In a solvent all the interactions are reduced by $1/\epsilon$ which is largest in a polar solvent. If the dipole interaction is already small, making it smaller has little effect. Therefore, the solvent effect is most important in reducing the $e$ substituent's dipole repulsion, making it more likely that equal amounts of the axial and equatorial substituents are produced in polar solvents, as shown by experiment.
 # 
-# (b) Determining the geometry of the molecule is the most difficult part, whereas calculating the dot products is relatively easy so the calculation is far easier using vectors. Using the idealized symmetry of the structure considerably simplifies the calculation; bonds $A$ and $A'$ are parallel to one another, and so are the $B$ and $B'$, and $C$ and $C'$ bonds; the projection of bond $B$ bisects the $C'-A'$ bonds.
+# **(b)** Determining the geometry of the molecule is the most difficult part, whereas calculating the dot products is relatively easy so the calculation is far easier using vectors. Using the idealized symmetry of the structure considerably simplifies the calculation; bonds $A$ and $A'$ are parallel to one another, and so are the $B$ and $B'$, and $C$ and $C'$ bonds; the projection of bond $B$ bisects the $C'-A'$ bonds.
 # 
 # Recall, that a tetrahedral atom can be placed at the centre of a cube the surrounding atoms reaching opposite corners, see question 14. This enables us to determine the molecule's coordinates as shown in the diagram, and from these, bond vectors can be made with which to calculate the dipole energy.
 # 
@@ -236,15 +272,19 @@ energy_equat_axial
 # Exercise: Repeat the calculation, but correctly define $R$ as the vector between the centres of each pair of dipoles. $R$ will no longer have length $d$ and this will have to be calculated in each case.
 # 
 # ## Q46 answer
-# (a) The Mg-Mg distance is calculated using positional vectors,say $p$ and $q$, from the origin, $\vec OO=\begin{bmatrix} 0& 0& 0\end{bmatrix}$ to each of the Mg atoms. The distance is then $|\vec p -\vec q|$.
+# **(a)** The Mg-Mg distance is calculated using positional vectors,say $p$ and $q$, from the origin, $\vec OO=\begin{bmatrix} 0& 0& 0\end{bmatrix}$ to each of the Mg atoms. The distance is then $|\vec p -\vec q|$.
 # 
 # Taking values from the data
 # 
 # $$\displaystyle \vec p=\begin{bmatrix}114.289 & 22.722 & 26.723\end{bmatrix},\quad \vec q=\begin{bmatrix}106.145 & 30.029 & 31.708\end{bmatrix}$$
 # 
-# then the distance$|\vec p -\vec q|= \Delta^2_x +\Delta^2_y +\Delta^2_z$  where $\Delta$ is the difference in $x-, y-$, or $z$-coordinate and we find that $d_{Mg-Mg} = 12.02$ angstrom or $1.202$ nm. When normalised this Mg-Mg vector is $\begin{bmatrix}0.677 &-0.608 &-0.415\end{bmatrix}$.
+# then the distance 
 # 
-# (b) To calculate a unit dipole vector along the Mg-NA bond, we first have to calculate the vector and normalize it, which means dividing by its length, in this case the bond length.
+# $$\displaystyle |\vec p -\vec q|= \Delta^2_x +\Delta^2_y +\Delta^2_z$$
+# 
+# where $\Delta$ is the difference in $x-, y-$, or $z-$coordinate and we find that $d_{Mg-Mg} = 12.02$ angstrom or $1.202$ nm. When normalised this Mg-Mg vector is $\begin{bmatrix}0.677 &-0.608 &-0.415\end{bmatrix}$.
+# 
+# **(b)** To calculate a unit dipole vector along the Mg-NA bond, we first have to calculate the vector and normalize it, which means dividing by its length, in this case the bond length.
 # 
 # The dipole vector $\vec\mu_1$ for the donor (atoms 498 and 518) is 
 # 

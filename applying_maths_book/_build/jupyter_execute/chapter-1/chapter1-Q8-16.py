@@ -4,25 +4,19 @@
 # # Questions 8 - 16
 
 # ## Q8 Waves
-# The particles in a wave have displacement defined as $y = 0.25\sin(125t - 3x + 0.6)$ metres. 
+# The particles in a wave have displacement defined as $\displaystyle y = 0.25\sin(125t - 3x + 0.6)$ metres. 
 # What is 
 # 
-# (a) the amplitude, 
+# **(a)** the amplitude,  **(b)** the frequency in s$^{-1}$,  **(c)** the wavelength in metres, 
 # 
-# (b) the frequency in s$^{-1}$, 
+# **(d)** the phase, **(e)** the wave velocity? 
 # 
-# (c) the wavelength in metres, 
-# 
-# (d) the phase, 
-# 
-# (e) the wave velocity? 
-# 
-# You will need to know how to differentiate to do part (e).
+# You will need to know how to differentiate to do part **(e)**.
 # 
 # ## Q9 Beating sound waves
-# (a) If two sound waves of equal amplitude and phase and of frequency $\omega_1$ and $\omega_2$ are travelling in the same direction, show that the frequencies of the resulting waves are $\omega_1 \pm \omega_2$ and hence exhibit beating as shown in figure 13 when observed at some position $x$.
+# **(a)** If two sound waves of equal amplitude and phase and of frequency $\omega_1$ and $\omega_2$ are travelling in the same direction, show that the frequencies of the resulting waves are $\omega_1 \pm \omega_2$ and hence exhibit beating as shown in figure 13 when observed at some position $x$.
 # 
-# (b) In this figure convince yourself that the beat frequency is 0.5 Hz.
+# **(b)** In this figure convince yourself that the beat frequency is 0.5 Hz.
 # 
 # **Strategy:** Use the appropriate trigonometric identity from Section 5. The beat frequency is the difference of the two frequencies but the lower frequency of the summed wave is half the difference in frequency. Because the beating occurs in time, the term $-kx$ and phase $\phi$ can be ignored in the general wave equation 16.
 # 
@@ -56,15 +50,15 @@
 # Calculate $\sqrt{23}$. The initial two $r$ values can be chosen to be $0$ and $1$.
 # 
 # ## Q15 Fibonacci series
-# (a) Use a recursion equation and Python if you wish, to calculate the Fibonacci series whose first two values are 1 and all other values are the sum of the previous two.
+# **(a)** Use a recursion equation and Python if you wish, to calculate the Fibonacci series whose first two values are 1 and all other values are the sum of the previous two.
 # 
-# (b) Show numerically that the ratio of two adjacent Fibonacci numbers tends to the golden ratio.
+# **(b)** Show numerically that the ratio of two adjacent Fibonacci numbers tends to the golden ratio.
 # 
-# (c) If the recursion expression is $f_n = 2f_{n-1} + f_{n-2}$ 
+# **(c)** If the recursion expression is $f_n = 2f_{n-1} + f_{n-2}$ 
 # 
 # show that the ratio of two adjacent numbers tends to $1 + \sqrt{2}$ and if the equation is $f_n = f_{n-1} + 2f_{n-2}$ show that ratio tends to 2. In both these formulae $f_1 = 1$ and $f_2 = 1$.
 # 
-# (d) Make a Fibonacci series going backwards from the first two terms in the series in (a) by subtracting the next value rather than adding it.
+# **(d)** Make a Fibonacci series going backwards from the first two terms in the series in (a) by subtracting the next value rather than adding it.
 # 
 # **Strategy:** Define an array to hold the values $f_n, f_{n-1}$, etc. define the first two values then use a loop to increment values.
 # 
@@ -73,9 +67,9 @@
 # 
 # The binomial coefficients also form the pattern of splitting, in simple AX type, NMR spectra showing the $n : n + 1$ rule. For example, a CH$_2$ next to CH$_3$ has four lines of intensity $1:3:3:1$.
 # 
-# (a) Make a Pascal’s triangle by adding numbers as described above.
+# **(a)** Make a Pascal’s triangle by adding numbers as described above.
 # 
-# (b) Show that the recurrence formula 
+# **(b)** Show that the recurrence formula 
 # 
 # $$\displaystyle \binom{ n}{q+1}=\frac{n-q}{q+1}\binom{n}{q}$$
 # 

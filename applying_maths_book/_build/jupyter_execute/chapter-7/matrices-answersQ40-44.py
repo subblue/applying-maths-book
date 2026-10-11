@@ -16,7 +16,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q40 answer
-# (a) From the table of polarizer matrices, that for a polarizer at zero degrees is 
+# **(a)** From the table of polarizer matrices, that for a polarizer at zero degrees is 
 # 
 # $$\displaystyle \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$$
 # 
@@ -34,7 +34,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is not too surprising, and conforms to our own intuition.
 # 
-# (b) At $45^\text{o}$ or $\pi$/4 radians, the matrix is 
+# **(b)** At $45^\text{o}$ or $\pi$/4 radians, the matrix is 
 # 
 # $$\displaystyle \begin{bmatrix} \cos^2(\pi/4) & \sin(\pi/4)\cos(\pi/4)\\ \sin(\pi/4)\cos(\pi/4) & \sin^2(\pi/4)\end{bmatrix}=\begin{bmatrix}1/2 & 1/2 \\1/2 & 1/2  \end{bmatrix}$$
 # 
@@ -85,9 +85,9 @@ sp.simplify(2*sp.sin(theta)*sp.cos(theta)/(2*sp.cos(theta)**2-1) )
 # or $\displaystyle \tan(\psi)=\tan(2\theta)$ or $ \psi=2\theta$ thus the rotation angle is then twice that rotated by the fast axis of the wave plate.
 # 
 # ## Q42 answer
-# (a) The matrix equation for the quarter-wave plate with its fast axis at $0^\text{o}$ is $\displaystyle \begin{bmatrix} 1 & 0\\0 & -i\end{bmatrix} \begin{bmatrix} V\\0\end{bmatrix}=\begin{bmatrix} V\\0\end{bmatrix}$ an has no effect on the beam. The transmitted intensity remains at $V^2$.
+# **(a)** The matrix equation for the quarter-wave plate with its fast axis at $0^\text{o}$ is $\displaystyle \begin{bmatrix} 1 & 0\\0 & -i\end{bmatrix} \begin{bmatrix} V\\0\end{bmatrix}=\begin{bmatrix} V\\0\end{bmatrix}$ an has no effect on the beam. The transmitted intensity remains at $V^2$.
 # 
-# (b) At $ \theta= 45^\text{o}\, \Delta=\pi/2$ and $e^{-i\Delta}=-i$ the related equation is 
+# **(b)** At $ \theta= 45^\text{o}\, \Delta=\pi/2$ and $e^{-i\Delta}=-i$ the related equation is 
 # 
 # $$\displaystyle \begin{bmatrix} \cos^2(\theta)-i\sin^2(\theta) & \sin(\theta)\cos(\theta)(1+i)\\ \sin(\theta)\cos(\theta)(1+i) & -i\cos^2(\theta)+\sin^2(\theta) \end{bmatrix} =\frac{1}{2} \begin{bmatrix} 1-i & 1+i\\1+i & 1-i\end{bmatrix}$$
 # 
@@ -101,7 +101,7 @@ sp.simplify(2*sp.sin(theta)*sp.cos(theta)/(2*sp.cos(theta)**2-1) )
 # 
 # and no intensity is lost. Notice again that we make the complex conjugate when forming the row vector.
 # 
-# (c) In the general case the matrix equation is 
+# **(c)** In the general case the matrix equation is 
 # 
 # $$\displaystyle \begin{bmatrix} \cos^2(\theta)-i\sin^2(\theta) & \sin(\theta)\cos(\theta)(1+i)\\ \sin(\theta)\cos(\theta)(1+i) & -i\cos^2(\theta)+\sin^2(\theta) \end{bmatrix}\begin{bmatrix} V\\0\end{bmatrix}=V\begin{bmatrix}\cos^2(\theta)-i\sin^2(\theta)\\(1+i)\cos(\theta)\sin(\theta)\end{bmatrix}$$
 # 
@@ -112,7 +112,7 @@ sp.simplify(2*sp.sin(theta)*sp.cos(theta)/(2*sp.cos(theta)**2-1) )
 # proving that any ideal wave-plate does not alter the intensity of a beam passing through it. This calculation clearly ignores any reflection at the surfaces, due to changes in the refractive index between the wave-plate and air.
 # 
 # ## Q43 answer
-# The experimental scheme is
+# **(a)** The experimental scheme is
 # 
 # ![Drawing](matrices-fig86.png)
 # 
@@ -133,7 +133,7 @@ sp.simplify(2*sp.sin(theta)*sp.cos(theta)/(2*sp.cos(theta)**2-1) )
 # 
 # which shows that the transmitted intensity varies as $\cos^2(\theta)$ and is a maximum when the polarizer is at $0^\theta{o}$; that is when the polarization direction of the laser's electric field and that of the polarizer are aligned. The transmitted intensity is zero when the laser polarization and polarizer direction are perpendicular ($90^\text{o}$) to one another. This is a very useful way of attenuating a laser's intensity.
 # 
-# (b) The output Maxwell column 
+# **(b)** The output Maxwell column 
 # 
 # $$\displaystyle \begin{bmatrix}E_V\\E_H \end{bmatrix}=\begin{bmatrix} \cos^2(\theta)\\ \sin(\theta)\cos(\theta) &  \end{bmatrix}$$
 # 
@@ -141,7 +141,7 @@ sp.simplify(2*sp.sin(theta)*sp.cos(theta)/(2*sp.cos(theta)**2-1) )
 # 
 # 
 # ## Q44 answer
-# (a) We use particular matrices first and then use general ones in a second calculation.
+# **(a)** We use particular matrices first and then use general ones in a second calculation.
 
 # In[5]:
 
@@ -188,15 +188,15 @@ sp.solve(sp.diff(Intensity,theta) ,theta )    # find maxima and minima.
 # Figure 87. Variation of transmitted intensity with half-wave plate's angle in radians.  The gray line shows the limit at small angle, see part (c).
 # ______
 # 
-# (b) The maximum is found at $\pm 45^\text{o}$ to the vertical; minima between these positions at zero and $90^\text{o}$ etc.
+# **(b)** The maximum is found at $\pm 45^\text{o}$ to the vertical; minima between these positions at zero and $90^\text{o}$ etc.
 # 
-# (c) At small angles where $\theta <0.1$ radian, the intensity can be expanded as a series; (see Chapter 5)
+# **(c)** At small angles where $\theta <0.1$ radian, the intensity can be expanded as a series; (see Chapter 5)
 # 
 # $$\displaystyle I= 4\cos^2(\theta)\sin^2(\theta)\approx 4\left(1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}\cdots\right)^2 \left(\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}\cdots\right)^2$$
 # 
 # Because $\theta \lt \theta^2$ and also for higher powers, on multiplying out gives all squared and higher terms are unimportant thus, $I\approx 4\theta^2$ which may be confirmed by plotting this result. The transmitted intensity is proportional to the square of the angle when this is small.
 # 
-# (d) Now make the calculation general for any polarizer and wave-plate angles using SymPy. 
+# **(d)** Now make the calculation general for any polarizer and wave-plate angles using SymPy. 
 
 # In[10]:
 
@@ -209,10 +209,10 @@ beta  = sp.pi/2
 alpha = 0
 delta = sp.pi
 
-Wave_plate = sp.Matrix([[sp.cos(theta)**2+sp.sin(theta)**2*sp.exp(-1J*delta),\
+Wave_plate = sp.Matrix([[sp.cos(theta)**2 + sp.sin(theta)**2*sp.exp(-1J*delta),\
                          sp.cos(theta)*sp.sin(theta)*(1-sp.exp(-1J*delta))],\
                         [sp.cos(theta)*sp.sin(theta)*(1-sp.exp(-1J*delta)), \
-                         sp.sin(theta)**2+sp.cos(theta)**2*sp.exp(-1J*delta)]])
+                         sp.sin(theta)**2 + sp.cos(theta)**2*sp.exp(-1J*delta)]])
 Wave_plate
 
 

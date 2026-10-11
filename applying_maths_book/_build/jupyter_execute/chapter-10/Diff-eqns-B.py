@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 9 First & second order equations. Integrating Factors. Newton's laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+# # 9 Homogeneous equations.  First order equations. Integrating Factors & Second order equations.  Bernoulli equation. Newton's laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
 
 # In[1]:
 
@@ -139,7 +139,7 @@ sp.factor(ans)
 # 
 # and the remaining integral is now a difficult one with the answer involving the error function.
 # 
-# ### **(ii) Coupled chemical kinetic equations**
+# ### **(ii) Coupled Chemical Kinetic equations**
 # 
 # One particularly useful application of this method is to solve coupled kinetic equations. If a molecule reacts in a scheme 
 # 
@@ -226,7 +226,6 @@ sp.factor(ans)
 # $$\displaystyle c\approx \frac{E_0}{k}+\frac{E_0M}{\sqrt{k^2+w^2}}\sin(wt+w/k) $$
 # 
 # This has to be compared to the driving signal profile which is just the sine wave without the extra phase. The result means that the decay time measured is entirely dependent on the values of $\tan ^{-1}(w/k)$. On the whole the phase shift is very small in this phase method although it can be measured over many waves which will increase precision, and measured at different frequencies. Typical values of $w/k$ are $10^8/10^9=0.1$. Compared to single photon counting this is an inferior method of measuring accurate fluorescence decay profiles.
-# 
 # 
 # ### **Calculation of trig terms**
 # 
@@ -337,7 +336,7 @@ sp.factor(ans)
 # 
 # 
 
-# ## 10.1 Newton's laws and differential equations describing motion
+# ## 10.1 Newton's laws. Differential equations describing motion
 # 
 # Differential equations dominate the study of the motion of the planets and of molecules. In single molecules or in ensembles of them, molecular dynamics calculations rely on solving many simultaneous equations according to Newton's laws of motion, linked to potentials describing intermolecular interactions. 
 # 
@@ -385,7 +384,7 @@ sp.factor(ans)
 # 
 # This equation contains all the information about a freely falling body.
 # 
-# ## 10.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.
+# ## 10.2 General Equation of Motion and an Energy equation.
 # 
 # If the force is represented by $f(x)$ then different types of motion can be studied, for example motion under gravity or that due to extension of a spring which will lead to simple harmonic motion.
 # 
@@ -403,21 +402,25 @@ sp.factor(ans)
 # 
 # and, although this does not look too promising, the left-hand terms are the derivative of $\displaystyle \left(\frac{1}{2}\frac{dx}{dt}\right)^2$, therefore integrating both sides gives
 # 
-# $$\displaystyle  \frac{m}{2}\left(\frac{dx}{dt}\right)^2=\int f(x)\frac{dx}{dt}dt+c =\int f(x)dx+c  \qquad\tag{14} $$
+# $$\displaystyle  \frac{m}{2}\left(\frac{dx}{dt}\right)^2=\int f(x)\frac{dx}{dt}dt+c =\int f(x)dx+c  \tag{14} $$
 # 
-# where $c$ is the constant of integration. This is the '_Equation of Energy_'; the left-hand side is the kinetic energy since $dx/dt$ is velocity and the right hand side is the potential energy. The time to reach position $x$ can also be found. First let 
+# where $c$ is the constant of integration. This is the '*Equation of Energy*'; the left-hand side is the kinetic energy since $dx/dt$ is velocity and the right hand side is the potential energy. 
 # 
-# $$\displaystyle \int f(x)dx+c =F(x)$$
+# The time to reach position $x$ can also be found. The potential energy is $F(x)$, where
 # 
-# then rearrange the energy equation to
+# $$\displaystyle F(x)= \int f(x)dx+c,\quad \text{or}\quad F(x)= \int_{x_a}^{x_b} f(x)dx $$
+# 
+# where $x_a,x_b$ are the limits on $x$, then rearrange the energy equation to
 # 
 # $$\displaystyle \frac{dt}{dx}=\pm\sqrt{\frac{m}{2}}\frac{1}{\sqrt{F(x)}}$$
 # 
 # and integrate,
 # 
-# $$\displaystyle t=\pm\sqrt{\frac{m}{2}}\int \frac{dx}{\sqrt{F(x)}}+ c_1  \qquad\tag{15}$$
+# $$\displaystyle t=\pm\sqrt{\frac{m}{2}}\int \frac{dx}{\sqrt{F(x)}}+ c_1  \tag{15}$$
 # 
-# This equation contains two arbitrary constants, $c_1$ and $c$, of which $c$ is already included in $F(x)$. Two constants are needed because the acceleration has to be integrated twice.
+# This equation contains two arbitrary constants, $c_1$ and $c$, of which $c$ is already included in $F(x)$. Two constants are needed because the acceleration has to be integrated twice. Alternatively we can write
+# 
+# $$\displaystyle t=\pm\sqrt{\frac{m}{2}}\int_{x_a}^{x_b} \frac{dx}{\sqrt{F(x)}} \tag{15a}$$
 # 
 # The equation of energy can be obtained in a slightly different way if the velocity $v$ is required. Taking $x$ as the dependent variable and using 
 # 
@@ -431,18 +434,86 @@ sp.factor(ans)
 # 
 # $$\displaystyle \frac{mv^2}{2}=\int f(x)dx+c$$
 # 
-# which is the same as equation 14. The calculation can be completed when different types of forces are assigned to $f(x)$. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.
+# which is the same as equation 14. The calculation can be completed when different types of forces are assigned to $f(x)$. Three examples are given, the first for gravity collapsing a gas cloud, the next the motion of a rocket and finally for simple harmonic motion.
+
+# ## 10.3 Collapsing gas sphere. 
 # 
-# ## 10.3 Rockets
-# At the end of section 3.5 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity and time vs distance away from the earth's surface. To calculate the distance moved in a given time equation 15 can be used. 
+# A homogeneous sphere of matter, such as a vast cloud of hydrogen gas has a gravitational attraction on an external particle as though the whole mass were concentrated at the centre. If we suppose that this cloud has, for example, the radius of a light-year we can obtain a very approximate time that it would take to condense to the size of the solar system and then into the size of a star such as our sun. We will use eqn. 15 to work out the time to collapse, provided we can workout $F(x)$ and the integral. To do this calculation we place a unit mass at the edge of the sphere and let it free-fall a distance $R$ towards the centre. In the calculation we assume that the only interaction is gravity and that the gas molecules act as an ideal gas. This should be a good assumption until the gas density becomes too large. 
 # 
-# The equation to use is $\displaystyle \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}$ which leads to $\displaystyle F(r)= v_0^2 - 2gR+ \frac{2gR^2}{r}$. 
+# The gas sphere initially has a radius $R_0$ and total mass $M_0$. By Newton's law the force between two masses $M$ and $M_0$ at a separation $R$ is
+# 
+# $$\displaystyle f(r) = G\frac{M_0 M}{R^2}$$
+# 
+# where $G$ is the universal gravitational constant. If we let $M$ be a unit mass and integrate from radius $R_0$ down to $R$ then the work done by the gravitational field on the unit mass by moving it from $R_0$ to $R$ is
+# 
+# $$\displaystyle F(R)= GM_0\int_R^{R_0}\frac{dr}{R^2}=-\frac{GM_0}{R}\bigg|_R^{R_0}=GM_0\left(\frac{1}{R}-\frac{1}{R_0}\right)$$
+# 
+# Using equation 15,
+# 
+# $$\displaystyle t=\sqrt{\frac{1}{2M_0G}}\int_R^{R_0}\frac{dR}{\sqrt{\left(\frac{1}{R}-\frac{1}{R_0}\right)} } =\sqrt{\frac{R_0}{2M_0G}}\int_R^{R_0}{\sqrt{\frac{R}{R_0-R}} }dR$$
+# 
+# This is an awkward integral to solve but can be done with a substitution for $R$ and by calculating $dR$:
+# 
+# $$\displaystyle R=R_0\cos^{2}(\theta),\qquad dR=-2R_0\cos(\theta)\sin(\theta)$$
+# 
+# Doing this produces 
+# 
+# $$\displaystyle \begin{align}t & = \sqrt{\frac{R_0^3}{2M_0G}}\int_0^\theta  \big(1+2\cos(2\theta)\big)d\theta\\ &= \sqrt{\frac{R_0^3}{2M_0G}}\left(\frac{2\theta+ \sin(2\theta)}{2}\right)\end{align}$$
+# 
+# and as $R=R_0\cos^{2}(\theta)$ then $\theta$ is given by
+# 
+# $$\displaystyle \theta = \cos^{-1}\left(\sqrt{\frac{R}{R_0} }\right)$$
+# 
+# The lower limit has $\theta=0$ since at the edge of the cloud, where $R=R_0, \cos(0) = 1$ and the other limit is $\theta$.
+# 
+# Using the constants $ G= 6.673\cdot 10^{-11}$ N m kg$^{-2}, M_0= 1.989\cdot 10^{30}$ kg, and for the light-year the distance is $R_0=9.45418\cdot 10^{15}$ m, the free-fall time $t_{R=0}$ for the cloud to collapse to a point where $R=0$ and $\theta = \pi/2$, is 
+# 
+# $$\displaystyle t_{R=0}=\frac{\pi}{2}\sqrt{\frac{R_0^3}{2M_0G}}$$
+# 
+# and using the numerical values of the constants gives
+# 
+# $$\displaystyle t= 8.89\cdot 10^{13} \text{s},\quad\text{ or about }\quad 2.82\cdot 10^6\text{years}$$
+# 
+# which is a remarkably short time considering the initial size of the gas cloud. Of course we have ignored any heating, angular momentum and interactions between the molecules etc, so this result can only be very approximate.  
+# 
+# Calculating the time to collapse to approximately the size of the solar system, say $50$ a.u. (1 a.u. = $1.496 \cdot 10^{11}$ m) which is roughly $50$ times the distance of the earth from the sun, gives a very similar time to collapsing to a point. This time differs only in the $4^\text{th}$ decimal place from collapse to a point, and is $\approx 62.5$ years, and so illustrates the huge accelerating effect of $1/R^2$ on the gravitational force compressing the cloud and illustrates how naive our calculation is. At the size of the solar system the density of the cloud is still extremely low ($\approx 10^{-9} \mathrm{kg/m^3}$), still a good vacuum, so it should still behave as an ideal gas, but a very hot one. 
+# 
+# As the gas collapses the volume decreases as the cube of the radius, and the pressure obviously increases as does the temperature. The ratio of the initial to final pressure and temperatures, $p_0,p_f$ and $ T_0,T_f$ respectively, scale with the radius of the cloud as it collapses (or expands) under the effect of gravity (Chandraskhar 1968 Chapter 2) as 
+# 
+# $$\displaystyle \frac{p_f}{p_0}=\left(\frac{R_0}{R_f}\right)^4, \quad \text{and}\quad \frac{T_f}{T_0}=\left(\frac{R_0}{R_f}\right)$$ 
+# 
+# meaning at the radius of the solar system the gas's temperature has increased by about a thousand times and the pressure by far more even though the pressure is still low.
+# 
+# ___________________________
+# **Note:** The integral above can be converted into a result in $R$ and $R_0$.
+# 
+# $$\displaystyle \begin{align}t&=\sqrt{\frac{R_0^3}{2M_0G}}\int  \big(1+2\cos(2\theta)\big)d\theta\\ &= \sqrt{\frac{R_0^3}{2M_0G}}\left(\theta+ \sin(\theta)\cos(\theta)\right)+ const\end{align}$$
+# 
+# and substituting for $\theta$ and the sine and cosine  and working out the constant using the limits gives,
+# 
+# $$\displaystyle t = \sqrt{\frac{R_0^3}{2M_0G} }\left( \cos^{-1}\left(\sqrt{\frac{R}{R_0} }\right) + \sqrt{1-\frac{R}{R_0} }\cdot \sqrt{\frac{R}{R_0}}\right) $$
+# ________________________
+
+# ## 10.4 Rockets
+# At the end of section 8.2 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity $v$ and time *vs*. distance away from the earth's surface, $r$. To calculate the distance moved in a given time eqn. 15 can be used. 
+# 
+# The equation to use is 
+# 
+# $$\displaystyle \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}$$
+# 
+# where $R$ is the radius of the earth, $r\ge R$ is the vertical distance the rocket has moved, and $g$ acceleration due to gravity. This equation leads to 
+# 
+# $$\displaystyle F(r)= v_0^2 - 2gR+ \frac{2gR^2}{r}$$ 
 # 
 # The integration is 
 # 
 # $$\displaystyle t=\int \frac{dr}{\sqrt{v_0^2 - 2gR+ 2gR^2/r} } +c$$
 # 
-# With $r$ as the variable the equation can be clarified if written as $\displaystyle \int \frac{ dr}{\sqrt{A+B/r}}$ where $A=v_0^2-2gR$ and $B=2gR^2$ are constants in the integration. The result is
+# With $r$ as the variable the equation can be clarified if written as 
+# 
+# $$\displaystyle \int \frac{ dr}{\sqrt{A+B/r}}$$
+# 
+# where $A=v_0^2-2gR$ and $B=2gR^2$ are constants in the integration. The result is
 # 
 # $$\displaystyle t= \frac{1}{A}\left( \sqrt{Br}\sqrt{\frac{Ar}{B}+1 } -\frac{B}{\sqrt{A}}\sinh^{-1}\left( \sqrt{\frac{Ar}{B}} \right)  \right) +c$$
 # 
@@ -458,7 +529,7 @@ sp.factor(ans)
 # 
 # $$\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})$$
 # 
-# ## 10.4 Rockets and conservation of momentum
+# ## 10.5 Rockets and conservation of momentum
 # 
 # The Law of Conservation of Momentum can be used to find the velocity of a rocket. Suppose that the rocket is moving at velocity $v$ (relative to some fixed coordinate system) and ejects fuel with velocity $-u$ relative to the rocket, therefore the mass of the rocket $M$ decreases with time as the fuel is used. We know that the rate of change of momentum is equal to the external force on a system of particles (i.e force is mass times acceleration and acceleration is the rate of change of momentum)
 # 
@@ -491,7 +562,7 @@ sp.factor(ans)
 # 
 # In a rocket it is therefore desirable to carry as much mass as fuel as possible so that $1+m/M)$ is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. $u$ is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.  
 # 
-# ## 10.5 Hooke's Law and simple harmonic motion
+# ## 10.6 Hooke's Law and simple harmonic motion
 # In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke's law 
 # 
 # $$\displaystyle f (x) = -kx$$
@@ -557,7 +628,7 @@ sp.factor(ans)
 # 
 # $$\displaystyle \langle x^2\rangle =\frac{\int_0^{1/v} x^2dt}{\int_0^{1/v} dt}=v\int_0^{1/v} A^2\sin^2(\omega t+B)dt=\frac{A^2v}{2}\int_0^{1/v} (1-\cos(4\pi v t+2B)dt=\frac{A^2}{2}$$
 # 
-# using $\cos(2\theta)=1-2\sin^2(\theta)$ to simplify the integration. The integral using python/SymPy is 
+# using $\cos(2\theta)=1-2\sin^2(\theta)$ to simplify the integration. The integral using Python/SymPy is 
 
 # In[3]:
 
@@ -594,7 +665,7 @@ sp.simplify(ans)
 # __________
 # The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of $172$ N/m and the first quantised energy level is shown at energy $E_1$. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy $E_1$. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. $20$ the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.
 
-# ## 10.6 Springs
+# ## 10.7 Springs
 # 
 # Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.
 # 
@@ -618,7 +689,7 @@ sp.simplify(ans)
 # 
 # Note that if the question stated that the _weight_ was 2 kg then this would correspond to $mg$ not $m$ and the mass to use would therefore be $2/9.81$ kg.
 # 
-# ## 10.7 Total energy
+# ## 10.8 Total energy
 # 
 # The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion $mv^2/2$, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke's law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is $mgh$ where $h$ is the height change.
 # 
@@ -636,7 +707,7 @@ sp.simplify(ans)
 # 
 # As $\displaystyle \omega^2 = k/m$ the total energy, the sum of the potential and kinetic terms, is $\displaystyle E=\frac{k}{2}A^2$ which is a constant.
 
-# ## 10.8 Simple harmonic motion with a constant force
+# ## 10.9 Simple harmonic motion with a constant force
 # 
 # If a particle is attracted to the origin of set of coordinates, and subject to a further constant force $W$, the equation of motion takes the form based on equation (13),
 # 
@@ -727,7 +798,7 @@ sp.simplify(ans)
 
 # ## 11.3 Torsional Oscillations in ethene
 # 
-# The ethylene molecule can undergo torsional motion whereby the double bond twists and so each CH$_2$ group oscillates with respect to the other. Naturally, single bonds also do this but to a much greater extent such that complete rotation of a group is possible. We shall examine just the small angle torsional oscillations of a double bond and calculate the motion using classical equations of motion. This section follows the method used in chapter V of Cohen-Tannoudji, Diu, & Laloë, 'Quantum Mechanics'. 
+# The ethylene molecule can undergo torsional motion whereby the double bond twists and so each CH$_2$ group oscillates with respect to the other. Naturally, single bonds also do this but to a much greater extent such that complete rotation of a group is possible. We shall examine just the small angle torsional oscillations of a double bond and calculate the motion using classical equations of motion. This section follows the method used in chapter V of Cohen-Tannoudji, Diu, & Laloë, 'Quantum Mechanics' (1977). 
 # 
 # The potential for the motion of the CH$_2$ is provided by the double bond and by comparison with other molecules, such as the inversion of ammonia we shall suppose that the potential has the form
 # 
@@ -769,7 +840,7 @@ sp.simplify(ans)
 # 
 # The first equation 23a, shows that the molecule rotates freely about the C-C axis as a whole body because there is no force restricting it. The angle $\alpha_1+\alpha_2$ increases continually as time increases as may be seen by integrating 23a twice, producing $\alpha_1+\alpha_2=c_0t+c_1$ where the $c$'s are constants. The second equation has the same form as that for a simple pendulum, eqn 17. Notice that there is no coupling between the whole body rotation and the  torsional motion, therefore one motion does not affect the other. If there were coupling eqn 23a would equal zero.
 # 
-# In ethene the maximum potential restricting twisting the double bond is very large compared to room temperature thermal energy and this will mean that motion is restricted to the bottom of the potential. In this case the cosine can be expanded as $\cos(2\alpha)=1-2x^2+\cdots$ and the potential becomes $V(\alpha)\sim V_0\alpha^2$ and
+# In ethene the maximum potential restricting twisting the double bond is very large compared to room temperature thermal energy and this will mean that motion is restricted to the bottom of the potential. In this case the cosine can be expanded as $\cos(2\alpha)=1-2\alpha^2+\cdots$ and the potential becomes $V(\alpha)\sim V_0\alpha^2$ and
 # 
 # $$\displaystyle \frac{d^2\alpha}{dt^2}=-\frac{4V_0}{I}\alpha$$
 # 
@@ -785,9 +856,9 @@ sp.simplify(ans)
 
 # ## 11.4 The Cable equation. Voltage change in a Cell
 # 
-# The biological cell consists of a bilayer membrane, made mainly of phospholipids, encapsulating the cytoplasm. The membrane also contains various proteins that connect the inner cytoplasm to the outside of the cell. The cytoplasm is a gel-like substance that is highly conductive, unlike the membrane itself, because it contains various ions, as well as organelles, such as the mitochondria. Some cells, such as in muscles and nerves, can be stimulated to act by an electrical potential. When this potential travels along a cell it acts to trigger cellular events. 
+# The biological cell consists of a bilayer membrane, made mainly of phospholipids, encapsulating the cytoplasm. The membrane also contains various proteins that connect the inner cytoplasm to the outside of the cell. The cytoplasm is a gel-like substance that is highly conductive, unlike the membrane itself, because it contains various ions as well as organelles, for example mitochondria. Some cells, as found in muscles and nerves, can be stimulated to act by an electrical potential. When this potential travels along a cell it acts to trigger cellular events. 
 # 
-# The Cable model of the cell has been borrowed and simplified from a similar one of a telegraph cable first worked out by W. Thompson (late Lord Kelvin) in the 1850's. At that time he was scientific consultant to the Atlantic Telegraph Company trying to lay the first trans-Atlantic telegraph cable from Valencia in Ireland to Newfoundland. 
+# The Cable model of the cell has been borrowed and simplified from a similar one of a telegraph cable first worked out by W. Thompson (later Lord Kelvin) in the 1850's. At that time he was scientific consultant to the Atlantic Telegraph Company trying to lay the first trans-Atlantic telegraph cable from Valencia in Ireland to Newfoundland. 
 # 
 # In our model the central core (the cytoplasm) has high conductivity and so low electrical resistance and the membrane low conductivity and high resistance, thus current can flow along the cell quickly with but only slowly is this lost via ions passing through ion-channel proteins in the membrane itself. The analogy with a telegraph wire is clear, the wire itself has low resistance to current flow but some small leakage to ground must also occur through any partial insulation, such as at the receivers or telegraph pole connections or through the air. Sometimes the comparison with a leaky hosepipe is also made.
 # 
@@ -924,7 +995,6 @@ sp.simplify(ans)
 # Figure 11e. Steady state voltage along a cable/cell with different boundary conditions.
 # 
 # _________
-# 
 
 # ## 11.5 Particle in a one-dimensional box
 # 
@@ -977,7 +1047,7 @@ sp.simplify(ans)
 # Figure 11f. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is $1$ nm in length. Notice how the energy levels move apart as $n$ increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.
 # _________
 # 
-# ## 11.6 The Rigid Rotor, particle on a Ring and particle in a sphere
+# ## 11.6 The Rigid Rotor, particle on a Ring and in a sphere
 # 
 # ### **(i) The Rigid Rotor, particle on a Ring** 
 # 

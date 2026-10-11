@@ -32,13 +32,13 @@
 # 
 # where $E_n = n^2h^2/(8mL^2)$ in a box of length $L$. As the energy levels are so closely spaced they may effectively be considered as being continuous and the sum changed into an integral.
 # 
-# (a) Evaluate this integral and using values for benzene vapour at $300$ K and 1 bar pressure calculate $Z^3$ - the three-dimensional partition function is the cube of the one-dimensional value - using the mean free path as the size of the 'box'.
+# **(a)** Evaluate this integral and using values for benzene vapour at $300$ K and 1 bar pressure calculate $Z^3$ - the three-dimensional partition function is the cube of the one-dimensional value - using the mean free path as the size of the 'box'.
 # 
-# (b) Calculate the energy gap between two levels at the average thermal energy $3k_BT/2$. The number you should find is of the order of an NMR transition energy, and much larger than your textbook may indicate because there is no known spectroscopy associated with translational motion the gaps being too small. What is going on here?
+# **(b)** Calculate the energy gap between two levels at the average thermal energy $3k_BT/2$. The number you should find is of the order of an NMR transition energy, and much larger than your textbook may indicate because there is no known spectroscopy associated with translational motion the gaps being too small. What is going on here?
 # 
 # (The cross-sectional area for benzene is $\sigma = 0.88\,\mathrm{ nm^2}$).
 # 
-# (c) The translational partition function when corrected for the indistinguishability of $N$ particles is $\displaystyle Q = \frac{Z^N}{N!}$. From classical thermodynamics the translational entropy at constant volume is 
+# **(c)** The translational partition function when corrected for the indistinguishability of $N$ particles is $\displaystyle Q = \frac{Z^N}{N!}$. From classical thermodynamics the translational entropy at constant volume is 
 # 
 # $$\displaystyle S=k_B\left( \frac{\partial \ln(Q)}{\partial T} \right)_V$$
 # 
@@ -52,10 +52,10 @@
 # 
 # where $x, y$ are two Gaussian distributed numbers. 
 # 
-# (a) Prove that $x, y$  are Gaussian distributed with a mean of zero and a variance of one by calculating the
+# **(a)** Prove that $x, y$  are Gaussian distributed with a mean of zero and a variance of one by calculating the
 # Jacobian $\displaystyle \frac{ \partial(u, v)}{\partial(x, y)}$. Why is the Jacobian appropriate?
 # 
-# (b) Change the transform equations to produce a distribution with mean $\mu$ and standard deviation $\sigma$.
+# **(b)** Change the transform equations to produce a distribution with mean $\mu$ and standard deviation $\sigma$.
 # 
 # ## Q84 Jacobian
 # Show that the integral $\displaystyle \int_0^{\pi/2}\int_0^{\pi/2}\sqrt{\frac{\sin(\varphi)}{\cos(\theta)}}d\varphi d\theta = \pi$ using the substitution $u = \sin(\varphi)\cos(\theta), v = \sin(\varphi)\sin(\theta)$.
@@ -111,20 +111,26 @@
 # Figure 28 Cylindrical coordinates.
 # _____
 # 
-# (a) Show that if a wavefunction $\psi$ is a superposition of stationary states that have the same energy, as do each of the 2s and 2p orbitals, then the time dependence cancels out and there can be no fluctuating dipole.
+# **(a)** Show that if a wavefunction $\psi$ is a superposition of stationary states that have the same energy, as do each of the 2s and 2p orbitals, then the time dependence cancels out and there can be no fluctuating dipole.
 # 
-# In (b) and (c) use cylindrical coordinates to show that
+# In **(b)** and **(c)** use cylindrical coordinates to show that
 # 
-# (b) if the superposition is 
+# **(b)** if the superposition is 
 # 
 # $$\displaystyle \psi=\frac{\sqrt{3}}{2}\varphi_{1s}e^{-iE_{1s}t/\hbar} +\frac{1}{2}\varphi_{2s}e^{-iE_{2s}t/\hbar}$$
 # 
 # there is no oscillating dipole ans the probability is symmetric about $z=0$.
 # 
-# (c) if $\displaystyle \psi=\frac{\sqrt{3}}{2}\varphi_{1s}e^{-iE_{1s}t/\hbar} +\frac{1}{2}\varphi_{2p_z}e^{-iE_{2p_z}t/\hbar}$ the atom does have an oscillating dipole. 
+# **(c)** if $\displaystyle \psi=\frac{\sqrt{3}}{2}\varphi_{1s}e^{-iE_{1s}t/\hbar} +\frac{1}{2}\varphi_{2p_z}e^{-iE_{2p_z}t/\hbar}$ the atom does have an oscillating dipole. 
 # 
-# (d) Plot some example graphs in (b) and (c).
+# **(d)** Plot some example graphs from (b) and (c).
 # 
 # **Strategy:** (a) No integration is necessary here, the product $\psi^*\psi$ can be shown to have no time dependence. Remember that in the complex conjugate $i \to -i$.
 # 
-# In (b) and (c) expand the terms as in (a) before calculating any integrals. The wavefunctions are written in _spherical polar_ coordinates where the distance to any point $(x, y, z)$ from the origin is $r$ where $r = x^2 + y^2 + z^2$. In _cylindrical_ coordinates the same distance from the origin $r = R^2 + z^2$ but now $R$ is the radial distance in the x-y plane.
+# In (b) and (c) expand the terms as in (a) before calculating any integrals. The wavefunctions are written in *spherical polar* coordinates where the distance to any point $(x, y, z)$ from the origin is $r$ where $r = x^2 + y^2 + z^2$. In _cylindrical_ coordinates the same distance from the origin $r = R^2 + z^2$ but now $R$ is the radial distance in the x-y plane.
+
+# In[ ]:
+
+
+
+

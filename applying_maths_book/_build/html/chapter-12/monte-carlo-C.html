@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1621,14 +1621,14 @@ title="Print to PDF"
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">reps</span><span class="p">):</span>                          <span class="c1"># start calc loop</span>
         <span class="n">a0</span> <span class="o">=</span> <span class="n">kf</span>                                     <span class="c1"># fluorescence rate</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span>              <span class="c1"># choose acceptors</span>
-            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span>              <span class="c1"># x,y,z coordinates</span>
-            <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span> 
+            <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span>              <span class="c1"># choose acceptors</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span>              <span class="c1"># x,y,z coordinates</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span> 
             <span class="n">rate</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>        <span class="c1"># 2/3*kf*(R0/R)**6</span>
             <span class="k">if</span> <span class="n">rate</span> <span class="o">&gt;</span> <span class="n">Rmax</span> <span class="p">:</span>  <span class="n">rate</span> <span class="o">=</span> <span class="n">Rmax</span>
             <span class="n">a0</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">+</span> <span class="n">rate</span>                          <span class="c1"># sum rate</span>
             <span class="k">pass</span>
-        <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>          <span class="c1"># calc time eqn (12.11)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">a0</span>          <span class="c1"># calc time eqn (12.11)</span>
         <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># make index</span>
         <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="o">-</span><span class="mi">1</span> <span class="p">:</span>
             <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span><span class="o">=</span> <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>          <span class="c1"># histogram</span>
@@ -1637,7 +1637,7 @@ title="Print to PDF"
     <span class="c1"># end reps loop</span>
     <span class="k">return</span> <span class="n">dtime</span><span class="p">,</span><span class="n">Acount</span>
 <span class="c1">#----------------------------------</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                    <span class="c1"># initialise random number generator</span>
 <span class="n">kf</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">10.0</span>                                      <span class="c1"># 10 ns lifetime</span>
 <span class="n">c</span>  <span class="o">=</span> <span class="mf">0.002</span>                                       <span class="c1"># conc mol/dm3</span>
 <span class="n">R0</span> <span class="o">=</span> <span class="mf">3.0</span>                                         <span class="c1"># R0 in nm</span>
@@ -1651,8 +1651,8 @@ title="Print to PDF"
 <span class="n">Acount</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>                 <span class="c1"># define arrays</span>
 <span class="n">dtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> 
 
-<span class="c1">#dtime,Acount = ForsterET()                     # remove # to calculate</span>
-
+<span class="c1">#dtime, Acount = ForsterET()                     # remove # to calculate</span>
+<span class="c1">#</span>
 <span class="c1">#plt.plot(dtime,Acount)</span>
 <span class="c1">#plt.ylim([1,1e4])</span>
 <span class="c1">#plt.yscale(&#39;log&#39;)</span>
@@ -1698,7 +1698,7 @@ In each iteration, the whole array is searched.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Effect of impurity</span>
 <span class="c1"># P[,]&gt;= 1 = A molecs, 2 = B molecs, 0 = impurity.</span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                   <span class="c1"># initialise random number generator</span>
 <span class="n">n</span>    <span class="o">=</span> <span class="mi">20</span>                                       <span class="c1"># size of grid side</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">100</span>                                      <span class="c1"># repeat calc’n</span>
 <span class="n">num_fract</span>  <span class="o">=</span> <span class="mi">10</span>                                 <span class="c1"># number of fractions calc’d</span>
@@ -1718,8 +1718,8 @@ In each iteration, the whole array is searched.</p>
             <span class="c1"># part b make fraction of impurities</span>
             <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="n">fn</span> <span class="p">:</span>                    <span class="c1"># exactly fract impurity</span>
-                <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
-                <span class="n">rb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">ra</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># in range 1 to n </span>
+                <span class="n">rb</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">,</span><span class="n">rb</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">,</span><span class="n">rb</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
                     <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span> 
@@ -1728,22 +1728,22 @@ In each iteration, the whole array is searched.</p>
             <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="c1"># choose one type B molecule</span>
             <span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">:</span> 
-                <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># in range 1 to n+1</span>
-                <span class="n">rb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>  
+                <span class="n">ra</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># in range 1 to n</span>
+                <span class="n">rb</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>  
                 <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">,</span><span class="n">rb</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span>
                     <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">,</span><span class="n">rb</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
                     <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span> 
                     <span class="k">pass</span>
-                <span class="k">pass</span>                             <span class="c1"># end while num</span>
+                <span class="k">pass</span>                            <span class="c1"># end while num</span>
             <span class="c1"># part c main calculation starts ###</span>
             <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> 
             <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">while</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">:</span>                        <span class="c1"># check if calc ended</span>
-                <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>                            <span class="c1"># store old value in b </span>
-                <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>                            <span class="c1"># reset c</span>
+            <span class="k">while</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">:</span>                       <span class="c1"># check if calc ended</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>                           <span class="c1"># store old value in b </span>
+                <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>                           <span class="c1"># reset c</span>
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
                     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-                        <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">:</span>         <span class="c1"># search array</span>
+                        <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">:</span>        <span class="c1"># search array</span>
                             <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>  <span class="p">:</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
                             <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>  <span class="p">:</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
                             <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>  <span class="p">:</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
@@ -1765,8 +1765,8 @@ In each iteration, the whole array is searched.</p>
 
 <span class="c1">#fdata,data = Impurity()</span>
 <span class="c1">#print(&#39;finished&#39;)</span>
-<span class="c1"># plot data and fdata to give fig 18.</span>
-<span class="c1">#plt.scatter(fdata,data)</span>
+<span class="c1">##plot data and fdata to give fig 18.</span>
+<span class="c1">#plt.scatter(fdata,data,s=10)</span>
 <span class="c1">#plt.show()</span>
 </pre></div>
 </div>

@@ -437,7 +437,7 @@ plt.show()
 # 
 # A Markov chain is a stochastic process for predicting future behaviour based solely on the present state, i.e. there is no memory of any previous state, what happens next depends only on the present state. Here the 'state' is the list of probabilities that each entity or site or species has as time passes. The 'process' forming the Markov chain can be one of a number of very diverse types; a sequence of chemical reactions, diffusion along a line, the 'drunkard's walk', behaviour of the stock market, games such as 'snakes and ladders', the 'gambler's ruin' and how a company competes for sales with rivals. What is required is that the transition probability from one site to each of the others is known. These probabilities are entered into a transition or transfer matrix and used to predict the future state. All that is needed to be able to predict any future behaviour is a starting state, e.g. the initial chance that each site has of being populated and the transition matrix. Once the chain starts there is an initial transient stage where the probabilities of being at any site vary up and down but eventually an equilibrium or steady-state is reached when the site probabilities become constant.
 # 
-# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect sites and that a 'do nothing' or waiting probability is added to each site, although this could be zero. The next figure gives an example of a three site system similar to that in fig 55a above. 
+# The way a process is written down is similar to the way we do this for a chemical reaction, except that probabilities rather than rate constants connect sites and that a 'do nothing' or waiting probability is added to each site. The next figure gives an example of a three site system similar to that in fig 55a above. 
 # 
 # ![Drawing](matrices-fig55b.png)
 # 
@@ -458,7 +458,7 @@ plt.show()
 # 
 # $$\displaystyle P(\tau) = P_0\pmb T$$
 # 
-# where each *row* in the transfer matrix contains all the probabilities for that site, for example in fig 55b,
+# where each *row* in the transfer matrix contains all the probabilities for *leaving or remaining* on that site, for example in fig 55b,
 # 
 # $$\displaystyle \pmb T=\begin{bmatrix}p_{11}& p_{12}&p_{13}\\p_{21} & p_{22} & p_{23}\\ p_{31}& p_{32} & p_{33} \end{bmatrix}$$
 # 
@@ -613,11 +613,15 @@ print( np.array2string(Pi/mx, precision = 3) )
 
 # ### **(iii) A reversible first order reaction $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$**
 # 
-# In calculating the populations in chemical reaction the transition matrix has a slightly different form to that used so far. If the reaction is $\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ the transition matrix is 
+# The Markov model is very useful in the numerically integration of rate equations. It appears to be equally as good as the other methods given in other chapters, which method to use then depends on the particular problem. 
 # 
-# $$\displaystyle \pmb T=\begin{bmatrix}1-k_{12}\tau & k_{12}\tau\\ k_{21}\tau & 1-k_{21}\tau \end{bmatrix} $$
+# In calculating the populations in a chemical reaction the transition matrix has a slightly different form to that used so far, but we still calculate the probabilities of leaving or remaining on a site as each row of the matrix. If the reaction is $\displaystyle A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ the transition matrix is 
 # 
-# where $\tau$ is a small time-step used to convert the rate constants into probabilities with values $0\le k\tau\le 1$. If the largest rate constant is $10^8$/s then $\tau$ could be $\sim 10^{-9}$ s thus making $k\tau$ less than unity and also dimensionless. In the case of chemical reactions this is important in another way since the time that a molecule exists before it reacts is not constant in time but exponentially distributed, i.e. as $e^{-kt}$ and when this is expanded at small times with $t=\tau$ then on expanding as a series $e^{-k\tau} \approx 1-k\tau$ which is now a constant and so small that any further terms are so small as to be insignificant.
+# $$\displaystyle \begin{matrix}A\to\\B\to\end{matrix}\begin{bmatrix}1-k_{12}\tau & k_{12}\tau\\ k_{21}\tau & 1-k_{21}\tau \end{bmatrix} $$
+# 
+# where $\tau$ is a small time-step used to convert the rate constants into probabilities with values $0\le k\tau\le 1$. The value in each row is the chance of remaining on site A or B or leaving it. The sum of each row is the total probability for that species which is unity.
+# 
+# If the largest rate constant is $10^8$/s then $\tau$ could be $\sim 10^{-9}$ s thus making $k\tau$ less than unity and also dimensionless. In the case of chemical reactions this is important in another way since the time that a molecule exists before it reacts is not constant in time but exponentially distributed, i.e. as $e^{-kt}$ and when this is expanded at small times with $t=\tau$ then on expanding as a series $e^{-k\tau} \approx 1-k\tau$ which is now a constant and so small that any further terms are so small as to be insignificant.
 # 
 # If only the state A is initially populated the vector is $P_0=\begin{bmatrix} 1, 0\end{bmatrix}^T$. Choosing $k_{12}=4\cdot10^7, k_{21}=5\cdot10^6$ and $\tau=10^{-9}$ then in units of time $\tau$ 
 # 
@@ -634,7 +638,7 @@ print( np.array2string(Pi/mx, precision = 3) )
 # In[9]:
 
 
-# Markov Chain method to solve rate equation A=B
+# Markov Chain method to solve rate equation A = B
 # by the iterative method.
 
 tau = 1e-9                 # set small time to make rate constants into probabilities
@@ -657,7 +661,7 @@ for i in range(1,n,1):            # start at 1 step by 1
     B[i] = temp[1]
     p = temp                      # new p value for next step
     pass
-
+figiv = plt.figure(figsize=(5,3))
 plt.plot(t, A, color='blue',linewidth=1)
 plt.plot(t, B, color='red',linewidth=1)
 plt.xlim([0,n])
@@ -670,7 +674,7 @@ plt.title(r'$A\rightleftharpoons B$'+ ' via a Markov Chain')
 plt.show()
 
 
-# #### **Steady State**
+# ### **Steady State**
 # 
 # It is clear even before doing the calculation that $A \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} B$ will come to a steady state at sufficiently long time. This state can be found by assuming that $P_\infty=\pmb T^TP_\infty$ which is an eigenvalue-eigenvector equation with eigenvalues $E=[1,1]^T$ of unity, $\pmb T^TP_\infty=EP_{\infty}$. The normalised eigenvectors are obtained from matrix $T$ and are calculated as follows;
 
@@ -689,26 +693,28 @@ evecs
 # 
 # ### **(iv) The reversible reaction  $A\rightleftharpoons B\rightleftharpoons C$**
 # 
-# If the scheme is $\displaystyle A \underset{k_{21}}{\stackrel{k_{12}}{\rightleftharpoons} } B \underset{k_{32}}{\stackrel{k_{23}}{\rightleftharpoons} } C $,  as in 13.2(iv) above, we can also use a Markov chain to find the populations.  We proceed to form the transition matrix as in the previous example by placing the probability of leaving a species in each row and making sure the total probability in each row is unity. The matrix is. 
+# If the scheme is $\displaystyle A \underset{k_{21}}{\stackrel{k_{12}}{\rightleftharpoons} } B \underset{k_{32}}{\stackrel{k_{23}}{\rightleftharpoons} } C $,  as in 13.2(iv) above, we can also use a Markov chain to find the populations.  We proceed to form the transition matrix as in the previous example by placing the probability of leaving a species in each row and making sure the total probability in each row is unity. The matrix, remembering that each row is the chance of remaining on a species or leaving it, is, 
 # 
 # $$\displaystyle \pmb T=\begin{bmatrix}1-k_{12}\tau & k_{12}\tau & 0\\ k_{21}\tau & 1-k_{21}\tau-k_{23}\tau &k_{23}\tau\\ 0 & k_{32}\tau & 1-k_{32}\tau\end{bmatrix} $$
 # 
-# and this can be used to calculate the populations as shown in the previous example.
+# and this can be used to calculate the populations as shown in the previous example. The zero entries occur when one species is not directly connected to another, as then the probability of transfer is zero.
 # 
 # ### **(v) A second order reaction $A +B \overset{k_{12}}{ \underset{ k_{21}}  \rightleftharpoons} C$**
 # 
-# A bimolecular reaction can be considered as a sequence of instantaneous first-order processes when the time intervals are very small meaning that the first-order rate that A decays by during time interval $\tau$ is $k_{12}[B]$ and so the probability that it remains unchanged is $1-k_{12}\tau [B]$. The transition matrix is no longer a constant because of the bimolecular reaction, and at the $m^{th}$ time step this is  
+# A bimolecular reaction can be considered as a sequence of instantaneous first-order processes when the time intervals are very small. This means that the first-order rate by which A decays by during time interval $\tau$ is $k_{12}[B]$ and so the probability that it remains unchanged is $1 - k_{12}\tau [B]$. The transition matrix is no longer a constant because of the bimolecular reaction, and at the $m^{th}$ time step this is  
 # 
 # $$\displaystyle T_m=\begin{bmatrix}1-k_{12}\tau[B]_m& 0&k_{12}\tau[B]_m/2\\0 &1 - k_{12}\tau[A]_m & k_{12}\tau[A]_m/2\\k_{21}\tau& k_{21}\tau & 1-k_{21}\tau \end{bmatrix}$$
 # 
-# where the time increment $\tau$ is used to change the rate constants into probabilities and $[A]_m,[B]_m$ are the concentrations that exist at the $m^{th}$ time increment. The populations are calculated by updating $[A]$ and $[B]$ in the transition matrix at each time step. (The zeros appear because there is no transition A to B or vice versa).
+# where the time increment $\tau$ is used to change the rate constants into probabilities and $[A]_m,[B]_m$ are the concentrations that exist at the $m^{th}$ time increment. THe rows still contain chance of remaining or leaving. site.The populations are calculated by updating $[A]$ and $[B]$ in the transition matrix at each time step. (The zeros appear because there is no transition A to B or vice versa). In the code below the transfer matrix is transposed before starting the calculation so that it can be right multiplied by the column vector of the concentrations.
 # 
-# The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from $n$ of them is $\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}$ and when $n$ is very large this is $n^2/2$ to a very good approximation. The probability is the fraction of the total which is $\displaystyle \frac{n^2/2}{n} =\frac{n}{2}$. The term in the transfer matrix is therefore  $\displaystyle \frac{k}{2}\tau n$ where the rate constant is $k$. The calculation is shown next. 
+# The probabilities need some further examination when the reaction is bimolecular. The number of ways that a pair of molecules can be chosen from $n$ of them is $\displaystyle \frac{n!}{2!(n-2)!}= \frac{n(n-1)}{2}$ and when $n$ is very large this is $n^2/2$ to a very good approximation. The probability is the fraction of the total which is $\displaystyle \frac{n^2/2}{n} =\frac{n}{2}$. The term in the transfer matrix is therefore  $\displaystyle \frac{k}{2}\tau n$ where the rate constant is $k$. The diagonal terms in the transition matrix $T_m$ do not need the division by two as this refers to the probability belonging the same molecule. The calculation is shown next. 
 
 # In[11]:
 
 
-# Markov Chain method to solve rate equation A = B -> C
+# Markov Chain method to solve rate equation A + B <=> C
+# note that, for simplicity, tau multiplies the rate constants before the calculation begins
+# so that tau does not appear explicitely in the matrix
 
 tau = 1e-9                        # set time to make rate constants into probabilities
 k12 = 4e7*tau                     # choose some rate constants
@@ -724,8 +730,11 @@ A[0] = p[0]                       # initial values
 B[0] = p[1]
 C[0] = p[2]
 
-TT = np.array([[ 1 - k12*B[0], 0, k12*B[0]/2 ], [ 0, 1 - k12*A[0], k12*A[0]/2],[ k21, k21, 1 - k21] ] )  #  transfer matrix
-T  = np.transpose(TT)
+Tm = np.array([[ 1 - k12*B[0], 0           , k12*B[0]/2 ], \
+               [ 0           , 1 - k12*A[0], k12*A[0]/2],  \
+               [ k21         , k21         , 1 - k21] ]    )  #  transfer matrix
+
+T  = np.transpose(Tm)             # transpose to right multiply by vector p
 
 for i in range(1,n,1):
     temp = T @ p                  # @ is matrix multiply
@@ -734,20 +743,20 @@ for i in range(1,n,1):
     C[i] = temp[2]
     p = temp                      # new p value ready for next step
     T[0,0] = 1 - k12*B[i]         # update T matrix; note T is already transposed
-    T[2,0] = k12*B[i]/2
+    T[2,0] =     k12*B[i]/2
     T[1,1] = 1 - k12*A[i]
-    T[2,1] = k12*A[i]/2
+    T[2,1] =     k12*A[i]/2
     pass
-
+figv = plt.figure(figsize=(5,3))
 plt.plot(t, A, color='blue',linewidth=1)
 plt.plot(t, C, color='red' ,linewidth=1)
 plt.xlim([0,n])
 plt.ylim([0, A[0] + C[0]])
 plt.ylabel('Populations')
 plt.xlabel('time /'+r'$\tau$')
-plt.text(17, A[15],'A')
+plt.text(17, A[15],'A & B')
 plt.text(17, C[10],'C')
-plt.title(r'$A+B\rightleftharpoons C$'+ ' via a Markov Chain')
+plt.title(r'$A+B\rightleftharpoons C$'+ ' via a Markov Chain',fontsize=14)
 plt.show()
 
 
@@ -771,15 +780,33 @@ plt.show()
 # 
 # $$\displaystyle x=\frac{vw\left(e^{\sqrt{q}t}-1\right)}{ v - we^{\sqrt{q}t} }$$
 # 
-# An alternative equation using the equilibrium amounts of $x$ is given by Wilkinson (1980), chapter 3, table 12 , agrees with these calculations.
+# An alternative equation using the equilibrium amounts of $x$ is given by Wilkinson (1980), chapter 3, table 12, agrees with these calculations.
+# 
+# ### **(vi) The SIR model of an infectious disease. $S +I \overset{k_{2}}  \to 2I,\quad I\overset{k_{1}}  \to R\$**
+# 
+# This important scheme is described more fully in section 6 of chapter 11, (Numerical Methods), but here we show only how the Markov chain approach can be used to integrate the rate equations. In this model S are the susceptibles, i.e. individuals capable of being infected, I are the infected and R the recovered. We shall assume a large numbers of individuals are involved so that we can represent the process as if it were a set of chemical reactions, the rate equations are
+# 
+# $$\displaystyle \frac{d[S]}{dt}=-k_2[I][S],\qquad \frac{d[I]}{dt}=k_2[I][S]-k_1[I],\qquad \frac{d[R]}{dt}=k_1[I]$$
+# 
+# The fact that species I is a 'reactant' and also a 'product' does not change how we form the transition matrix. In the transition matrix each row is the chance of remaining on a site or of leaving it. The 'trick' is to work out the chance of all transfers and leave the chance of remaining on a site (always the diagonal) until last. Thus the matrix at each time step $m$ is  
+# 
+# $$\displaystyle \begin{matrix}S\to \\ I \to \\ R \to \end{matrix}\begin{bmatrix}1-k_2[I]_m\tau & 2k_2[I]_m\tau/2& 0\\ 0 & 1-k_1\tau& k_1\tau\\0 & 0 & 1 \end{bmatrix} $$
+# 
+# where the bimolecular reaction term is divided by 2 as explained in (v) above, and multiplied by 2 because two  I are formed. This matrix can be used in the same way as that shown in the Python code for the $A+B=C$ reaction, see above, note also that the matrix must be transposed before matrix multiplication. The total number of individuals remains constant at $N$ which is the total of all S, I and R.
+# 
+# $$\displaystyle N = S_0+I_0+R_0 = S_t + I_t + R_t$$
+# 
+#  A typical set of initial conditions is $S_0 = N-1,I_0 = 1, R_0 = 0$.
+# 
+# The resulting populations when $k_2 \ll k_1$ show that S falls monotonously and I rises and then falls as time progresses. This shows that the infection has a definite and finite time profile. Of course it does not mean that the infection cannot occur again at some future time, as happened with Covid.  Figure 17 of chapter 11 shows a plot of the populations vs time.  
 
 # ## 13.5 Similarity Transforms
 # 
-# In our study of molecular group theory, similar matrices were introduced. However, _similar_ matrices are used more generally. A square matrix $\pmb{W}$ is described as being _similar or conjugate_ to another square matrix $\pmb{N}$, if there exists a third, non-singular, square matrix $\pmb{X}$ such that
+# In our study of molecular group theory, similar matrices were introduced. However, *similar* matrices are used more generally. A square matrix $\pmb{W}$ is described as being *similar or conjugate* to another square matrix $\pmb{N}$, if there exists a third, non-singular, square matrix $\pmb{X}$ such that
 # 
 # $$\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \qquad\tag{42}$$
 # 
-# then $\pmb{X}^{-1}\pmb{NX}$ is a similarity transform; $\pmb{X}\pmb{NX}^{-1}$ is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation. 
+# then $\pmb{X}^{-1}\pmb{NX}$ is a Similarity Transform; $\pmb{X}\pmb{NX}^{-1}$ is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation. 
 # 
 # If matrix $\pmb{W}$ operates on an object, this is the equivalent of transforming the object (which could be a rotation), then operating on it by $\pmb{N}$, which stretches or alters the object in some way (but does not rotate), then undoing the initial transformation with a further transformation (rotation in the opposite direction) with $\pmb{X}^{-1}$. Thus, $\pmb{W}$ performs the same operation as $\pmb{N}$ but uses a different set of axes.
 # 
@@ -812,9 +839,17 @@ plt.show()
 # which is used to solve equations in chemical kinetics.
 # 
 # ### **(i) Raising matrices to a power**
-# Suppose that a matrix $\pmb{M}$ is to be raised to its $n^{th}$ power, the function $\pmb{f}(\pmb{W})$ is then $\pmb{M}^n$. The similarity transform becomes $\pmb{X}^{-1}\pmb{M}^n\pmb{X} = \pmb{\Lambda}^n$, which can be rearranged to $\pmb{M}^n=\pmb{X}\pmb{\Lambda}^n\pmb{X}^{-1} $ and so the equation can be used both ways round. This last expression is a very convenient way of raising a matrix to a large power, if $\pmb{M}$ can be diagonalized and its eigenvalue matrix $\pmb{\Lambda}$ determined. The alternative method, is the repeated multiplication $\pmb{MMMM}\cdots$, which is impracticable should $n$ be large, $100$ for example.
+# Suppose that a matrix $\pmb{M}$ is to be raised to its $n^{th}$ power, the function $\pmb{f}(\pmb{W})$ is then $\pmb{M}^n$. The similarity transform becomes 
 # 
-# To show that a similarity transform on $\pmb{M}$ produces a diagonal matrix of eigenvalues, consider the matrix
+# $$\displaystyle\pmb{X}^{-1}\pmb{M}^n\pmb{X} = \pmb{\Lambda}^n$$
+# 
+# which can be rearranged to 
+# 
+# $$\displaystyle \pmb{M}^n=\pmb{X}\pmb{\Lambda}^n\pmb{X}^{-1} $$
+# 
+# and so the equation can be used both ways round. This last expression is a very convenient way of raising a matrix to a large power, if $\pmb{M}$ can be diagonalized and its eigenvalue matrix $\pmb{\Lambda}$ determined. The alternative method, is the repeated multiplication $\pmb{MMMM}\cdots$, which is impracticable should $n$ be large, $100$ for example.
+# 
+# To show that a similarity transform on $\pmb{M}$ produces a diagonal matrix of eigenvalues $\pmb \Lambda$, consider the matrix
 # 
 # $$\displaystyle \pmb{M}=\begin{bmatrix} -2 & 10 \\ 2 & -3\end{bmatrix}$$
 # 

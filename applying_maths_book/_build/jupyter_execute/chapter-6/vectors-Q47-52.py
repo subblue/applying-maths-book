@@ -4,10 +4,17 @@
 # #  Questions 47 - 52
 
 # ## Q47 Cross product
-# Show that $\sin(\alpha - \beta) = \sin(\alpha)\cos(\beta )- \cos(\alpha)\sin(\beta)$. See problem Q25.
+# Show that 
+# 
+# $$\displaystyle \sin(\alpha - \beta) = \sin(\alpha)\cos(\beta )- \cos(\alpha)\sin(\beta)$$
+# 
+# See problem Q25.
 # 
 # **Strategy:** As the problem involves cosines we could try to solve it by calculating the cross product of a and b as two unit vectors which have an angle $\alpha - \beta$ between them. The cross product is
-# $\vec a \times\vec b = |\vec a||\vec b|\sin(\alpha - \beta)\;\boldsymbol k$ and we calculate this in two ways and compare the results.
+# 
+# $$\displaystyle \vec a \times\vec b = |\vec a||\vec b|\sin(\alpha - \beta)\;\boldsymbol k$$
+# 
+# Calculate this in two ways and compare the results.
 # 
 # ## Q48  'Law of sines'
 # If the sides of a triangle have lengths $a, b, c$ prove the 'law of sines' for plane triangles,
@@ -17,21 +24,25 @@
 # **Strategy:** Half of the cross product of any two sides of a triangle, taken as vectors, is equal to half its area. Let the sides be described by vectors $\vec A, \vec B$ and $\vec C$ and calculate the cross products using different pairs of sides.
 # 
 # ## Q49  Cross product
-# Show that $\vec A \times (\vec B \times\vec C) = \vec B(\vec A\cdot\vec C) - \vec C(\vec A\cdot\vec B)$ by defining vectors in a three-dimensional basis set. Use python/Sympy to show that one side of the equation is the same as the other as this is simpler than doing it by hand.
+# Show that 
+# 
+# $$\displaystyle \vec A \times (\vec B \times\vec C) = \vec B(\vec A\cdot\vec C) - \vec C(\vec A\cdot\vec B)$$
+# 
+# by defining vectors in a three-dimensional basis set. Use Python/SymPy to show that one side of the equation is the same as the other as this is simpler than doing it by hand.
 # 
 # ## Q50  Distance point to line
 # Using figure figure 34 (section 16.3) 
 # 
-# (a) calculate the distance of point $B$ from the line $A$p, and 
+# **(a)** calculate the distance of point $B$ from the line $A$p, and 
 # 
-# (b) the distance of $A$ from the line $pB$.
+# **(b)** the distance of $A$ from the line $pB$.
 # 
 # ## Q51  Equilateral triangle
 # Show that 
 # 
-# (a) the length of any perpendicular inside an equilateral triangle, of side $r$, to any vertex is $(r/2)\sqrt{3}$ and 
+# **(a)** the length of any perpendicular inside an equilateral triangle, of side $r$, to any vertex is $\displaystyle \frac{r\sqrt{3}}{2}$ and 
 # 
-# (b) (b) the lengths of the perpendiculars from any point $p$ inside the triangle to the sides add to give $(r/2)\sqrt{3}$.
+# **(b)** the lengths of the perpendiculars from any point $p$ inside the triangle to the sides add to give $\displaystyle \frac{r\sqrt{3}}{2}$.
 # 
 # **strategy:** All sides have the same length because the triangle is equilateral and the internal angles are $60^\text{o}$. (a) Determine the coordinates of the vertices then calculate one perpendicular distance. (b) choose a point $p$ inside the triangle with coordinates $(x, y, 0)$ and calculate the distance from $p$ to each side.
 # 
@@ -40,11 +51,11 @@
 # 
 # In the haem protein, the Fe is sixfold coordinated, and the sixth position is taken by a nearby histidine residue whose bonding to the Fe pulls it out of the plane of the porphyrin. When the Fe atom releases the oxygen molecule, the porphyrin changes shape which results in the Fe atom moving more into the plane of the ring. The resulting force on the histidine is sufficient to trigger a shape change in the protein allowing the O$_2$ molecule to escape.
 # 
-# The following data is taken from the Brookhaven protein data bank (pdb) entry 1THB recorded at $1.5$ angstrom resolution (Waller & Liddington 1990). The data below contains only some of the $\approx 4900$ atom's coordinates, in $\overset{o}A$, of the histidine and Fe porphyrin.
+# The following data is taken from the Brookhaven protein data bank (pdb) entry 1THB recorded at $1.5$ angstrom resolution (Waller & Liddington 1990). The data below contains only some of the $\approx 4900$ atom's coordinates, in &#8491;, of the histidine and Fe porphyrin.
 # 
-# (a) Calculate the O-O, Fe-O, and Fe-His nitrogen bond lengths. Look up the Fe-O and Fe-N bond lengths from other compounds and comment on the bond lengths in this protein.
+# **(a)** Calculate the O-O, Fe-O, and Fe-His nitrogen bond lengths. Look up the Fe-O and Fe-N bond lengths from other compounds and comment on the bond lengths in this protein.
 # 
-# (b) Compared to the plane set by the NA-NB-ND atoms, calculate how much out of the plane, histidine Nitrogen, Fe, and O atoms are.
+# **(b)** Compared to the plane set by the NA-NB-ND atoms, calculate how much out of the plane, histidine Nitrogen, Fe, and O atoms are.
 # 
 # $$\displaystyle \small \begin{array}\\
 # \hline
@@ -67,3 +78,9 @@
 # ![Drawing](vectors-fig37.png)
 # 
 # Figure 37. Part of .pdb 1THB showing the porphyrin, O$_2$, and histidine molecules attached to the Fe at the centre of the porphyrin's ring. The distortion of the porphyrin is clear, showing that the Fe is not in the plane of the four N atoms. The best fit plane to the N atoms is described in chapter 13.6.
+
+# In[ ]:
+
+
+
+

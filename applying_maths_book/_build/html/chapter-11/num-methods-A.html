@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -264,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1531,6 +1529,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#organized-chaos">
    1.4 Organized Chaos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-map">
+     <strong>
+      Logistic Map
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numerical-methods-used-to-find-the-roots-of-an-equation">
@@ -1567,11 +1574,6 @@ title="Print to PDF"
    3.4 Simpson’s rule integration
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration">
-     and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-concentration-of-ion-pairs">
      <strong>
@@ -1654,6 +1656,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#organized-chaos">
    1.4 Organized Chaos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-map">
+     <strong>
+      Logistic Map
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numerical-methods-used-to-find-the-roots-of-an-equation">
@@ -1690,11 +1701,6 @@ title="Print to PDF"
    3.4 Simpson’s rule integration
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration">
-     and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-concentration-of-ion-pairs">
      <strong>
@@ -1765,13 +1771,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>To start this chapter, some details on numerical accuracy are reviewed; next simple integration methods are described with a few examples and problems. More difficult, and interesting, is the numerical integration of differential equations, some of which only have numerical solutions. The various methods used are explained. A different numerical approach is taken in the next chapter on Monte Carlo methods. Simple integration is rather slow by this method but integrating differential equations is very robust. Monte Carlo methods are very versatile at simulating physical processes, such as diffusion or fluorescence, and occasionally this is the only way to do the calculation. Simulation also provides a good way to understand the processes involved, some of which can be very complex and not always easily translated into differential equations.</p>
+<p>In this and the next chapter numerical methods of solving equations are examined. To start with numerical accuracy are reviewed then simple integration methods are described with examples and problems. More difficult, and interesting, is the numerical integration of differential equations, some of which only have numerical solutions. The various methods used are explained.</p>
+<p>A different numerical approach is taken using Monte Carlo methods which are described in the next chapter. Simple integration is rather slow by this method but integrating differential equations is very robust. Monte Carlo methods are very versatile at simulating physical processes, such as diffusion or fluorescence, and occasionally this is the only way to do the calculation. Simulation also provides a good way to understand the processes involved, some of which can be very complex and not always easily translated into differential equations.</p>
 <section id="rounding-errors">
 <h2>1.1 Rounding errors<a class="headerlink" href="#rounding-errors" title="Permalink to this headline">#</a></h2>
-<p>In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is expanded as the series</p>
+<p>In many numerical calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is expanded as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (1 - x)^6=1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\]</div>
-<p>and this is plotted close to its minimum at <span class="math notranslate nohighlight">\(x\approx 1\)</span> in Fig.1. While the scale is small, <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span>, determining the exact root of the equation numerically is difficult. Of course, we know it is at <span class="math notranslate nohighlight">\(1\)</span>, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.</p>
+\[\displaystyle (1 - x)^6 = 1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\]</div>
+<p>and this function is plotted close to its minimum at <span class="math notranslate nohighlight">\(x\approx 1\)</span> in Fig.1 with different levels of floating point precision. While the scale is small, <span class="math notranslate nohighlight">\( \lt 10^{-14}\)</span>, determining the exact root of the equation numerically is difficult. Of course, we know the root is <span class="math notranslate nohighlight">\(1\)</span>, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot (fig 1, left) is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.</p>
 <p>A real number is converted in the computer into a floating-point number represented as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle x = \pm 0.d_1d_2d_3d_4 \cdot 10^y\]</div>
@@ -1782,10 +1789,10 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Newton-Raphson </span>
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="mf">1.0</span> <span class="o">-</span>  <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>  <span class="o">-</span>  <span class="mf">20.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">15.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">6</span> <span class="c1"># function</span>
 <span class="n">df</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.0</span> <span class="o">+</span> <span class="mf">30.0</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">30.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span>        <span class="c1"># derivative</span>
-<span class="n">s</span>  <span class="o">=</span> <span class="mf">0.8</span>                     <span class="c1"># initial guess</span>
+<span class="n">s</span>  <span class="o">=</span> <span class="mf">0.7</span>                     <span class="c1"># initial guess</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">snew</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-5</span><span class="p">:</span>   <span class="c1"># stop when change is small</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-10</span><span class="p">:</span>   <span class="c1"># stop when change is small</span>
         <span class="k">break</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">snew</span>
@@ -1794,14 +1801,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0030182818841857
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9968543412918619
 </pre></div>
 </div>
 </div>
 </div>
-<p>With typical double precision (<span class="math notranslate nohighlight">\(16\)</span> decimal places), the root found is <span class="math notranslate nohighlight">\(1.0030182818841857\)</span>, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with <span class="math notranslate nohighlight">\(25\)</span> digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.  Python has the ‘decimal’ library to deal with higher precision and also there is a third party library called mpath.</p>
+<p>With typical double precision (<span class="math notranslate nohighlight">\(16\)</span> decimal places), the root found is <span class="math notranslate nohighlight">\(1.0030182818841857\)</span> when the starting point is <span class="math notranslate nohighlight">\(s=8\)</span>, furthermore this result depends greatly on the starting value, when <span class="math notranslate nohighlight">\(s=7\)</span> the value for the root is <span class="math notranslate nohighlight">\(0.9968543412918619\)</span> which is so different from the first value that quoting any decimal places rather ridiculous.</p>
+<p>If the function <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with <span class="math notranslate nohighlight">\(25\)</span> digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.  Python has the ‘decimal’ library to deal with higher precision and also there is a third party library called mpath.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig1.png" /></p>
-<p>Figure 1. Plots of the series expansion of <span class="math notranslate nohighlight">\((1 - x)^6\)</span> with two different values of floating point precision. (Notice the axes range.)</p>
+<p>Figure 1. Plots of the expansion of <span class="math notranslate nohighlight">\(\displaystyle (1 - x)^6 = 1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\)</span> with two different values of floating point precision. The curve on the right has a <span class="math notranslate nohighlight">\(y\)</span>-scale <span class="math notranslate nohighlight">\(10^6\)</span> times smaller that that on the left.</p>
 </section>
 <hr class="docutils" />
 <section id="truncation-errors">
@@ -1809,75 +1817,80 @@ title="Print to PDF"
 <p>In summing a series, the number of terms to be added has to be decided in advance. This automatically leads to an error that is nothing to do with arithmetical precision. The calculation should be repeated with more terms until the number of decimal places you require is continuously obtained. Rounding errors must additionally be considered, especially if the series contains alternating positive and negative terms; the errors can accumulate as the summation continues but will not be the same for all values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Consider the series</p>
 <div class="math notranslate nohighlight">
-\[ \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\]</div>
+\[ \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}\cdots \]</div>
 <p>which is valid for all <span class="math notranslate nohighlight">\(x\)</span>. If the series is summed up to the term <span class="math notranslate nohighlight">\(x^n/n!\)</span> with <span class="math notranslate nohighlight">\(x \gt 0\)</span>, the error is less than <span class="math notranslate nohighlight">\(\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|\)</span>. The value of <span class="math notranslate nohighlight">\(\sin(0.5)\)</span> is <span class="math notranslate nohighlight">\(0.47942553\)</span> whether calculated directly using Python or as the summation up to the <span class="math notranslate nohighlight">\(x^7\)</span> term. If, however, <span class="math notranslate nohighlight">\(x\)</span> is large, for instance <span class="math notranslate nohighlight">\(x = 5.5\pi\)</span>, then we know by drawing a graph that  <span class="math notranslate nohighlight">\(\sin(x) = -1\)</span>, but by summation up to <span class="math notranslate nohighlight">\(x^7\)</span> the result is <span class="math notranslate nohighlight">\(-79258.34\)</span>: clearly this is ridiculous because <span class="math notranslate nohighlight">\(\sin(x) \le 1 \)</span> for all <span class="math notranslate nohighlight">\(x\)</span>. Only if the number of terms in the summation is increased to at least terms <span class="math notranslate nohighlight">\(\gt x^{59}\)</span>, and the numerical precision increased to <span class="math notranslate nohighlight">\(20\)</span> decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of <span class="math notranslate nohighlight">\(\sin(x)\)</span> are well known, but if you are summing a series whose result is unknown, then great care is necessary.</p>
 </section>
 <section id="unstable-recursion-magnification-of-errors">
 <h2>1.3 Unstable recursion: magnification of errors<a class="headerlink" href="#unstable-recursion-magnification-of-errors" title="Permalink to this headline">#</a></h2>
-<p>In solving integrals, a recursion formula can often be found, particularly when the integration is done by parts. An example met before (Q4.22) is</p>
+<p>In solving integrals, a recursion formula can often be found, particularly when the integration is done by parts. An example met before (Chapter 4 Q.22) is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_n=\int_0^1 x^ne^{x-1}dx = x^ne^{x-1} \bigg|_0^1 -n\int_0^1 x^{n-1}e^{x-1} dx =1 - nI_{n-1}\]</div>
-<p>To evaluate the integral with the code below different <span class="math notranslate nohighlight">\(n\)</span>, the starting value with <span class="math notranslate nohighlight">\(n = 0\)</span> is required, which is <span class="math notranslate nohighlight">\(I_0 = 1 - 1/e\)</span>. In the recursion calculation, <span class="math notranslate nohighlight">\(s\)</span> has, arbitrarily, been chosen as the name for the integral because <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(int\)</span> are reserved names in Sympy. Recall that <span class="math notranslate nohighlight">\(\mathtt{s= 1 - n* s}\)</span>; is an assignment, meaning that the new value of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1 - n \times (current\; value)\)</span>. Some of the results are tabulated below the code, <span class="math notranslate nohighlight">\(n\)</span> is the power to which <span class="math notranslate nohighlight">\(x\)</span> is raised, <span class="math notranslate nohighlight">\(s\)</span> is the recursion answer and <span class="math notranslate nohighlight">\(f(n)\)</span> the result of algebraic integration. In fact the situation is worse as the result <span class="math notranslate nohighlight">\(f(n)\)</span> depends on whether the limits used are real or integer numbers, i.e <span class="math notranslate nohighlight">\((x,0,1)\)</span> or <span class="math notranslate nohighlight">\((x,0.1,1.0)\)</span>.</p>
+<p>To evaluate the integral with the code below, different <span class="math notranslate nohighlight">\(n\)</span>, starting with <span class="math notranslate nohighlight">\(n = 0\)</span> are required. The starting point is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_0 = 1 - \frac{1}{e}\]</div>
+<p>In the recursion calculation, <span class="math notranslate nohighlight">\(s\)</span> has, arbitrarily, been chosen as the name for the integral because <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(int\)</span> are reserved names in SymPy. Recall that <span class="math notranslate nohighlight">\(\mathtt{s= 1 - n* s}\)</span>; is an assignment, meaning that the new value of <span class="math notranslate nohighlight">\(s = 1 - n \times (current\; value)\)</span>. Some of the results are tabulated below the code, <span class="math notranslate nohighlight">\(n\)</span> is the power to which <span class="math notranslate nohighlight">\(x\)</span> is raised, <span class="math notranslate nohighlight">\(s\)</span> is the recursion answer and <span class="math notranslate nohighlight">\(f(n)\)</span> the result of algebraic integration. In fact the situation is worse as the result <span class="math notranslate nohighlight">\(f(n)\)</span> depends on whether the limits used are real or integer numbers, i.e <span class="math notranslate nohighlight">\((x,0,1)\)</span> or <span class="math notranslate nohighlight">\((x,0.1,1.0)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>         <span class="c1"># SymPy, define symbols</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>      <span class="c1"># SymPy, define symbols</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>                       <span class="c1"># initial value</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>                    <span class="c1"># initial value</span>
 <span class="n">ans_s</span> <span class="o">=</span> <span class="p">[]</span>                                   <span class="c1"># arrays to hold results</span>
 <span class="n">ans_f</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">s</span>                            <span class="c1"># recursion</span>
     <span class="n">ans_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>                          <span class="c1"># save values</span>
     <span class="n">eqn</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>          <span class="c1"># SymPy function. Algebraic integration, from 0 to 1</span>
+    <span class="n">f</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>     <span class="c1"># SymPy function. Algebraic integration, from 0 to 1</span>
     <span class="n">ans_f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">evalf</span><span class="p">())</span>                  <span class="c1"># save result</span>
     <span class="k">pass</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;n     s(recursion) f(n)(SymPy function)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;n   s(recursion), f(n)(SymPy), difference&#39;</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ans_s</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:3d}</span><span class="s1">     </span><span class="si">{:s}</span><span class="s1">   </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>  <span class="p">)</span>    <span class="c1"># format output</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:3d}</span><span class="s1">     </span><span class="si">{:s}</span><span class="s1">   </span><span class="si">{:10s}</span><span class="s1">    </span><span class="si">{:}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans_s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">ans_f</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">))</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  n     s(recursion) f(n)(SymPy function)
-  1     0.36787944   0.36787944
-  2     0.26424111   0.26424111
-  3     0.20727664   0.20727664
-  4     0.17089341   0.17089341
-  5     0.14553294   0.14553294
-  6     0.12680235   0.12680235
-  7     0.11238350   0.11238350
-  8     0.10093196   0.10093196
-  9     0.09161229   0.09161229
- 10     0.08387707   0.08387707
- 11     0.07735222   0.07735222
- 12     0.07177324   0.07177326
- 13     0.06694777   0.06694793
- 14     0.06273108   0.06273269
- 15     0.05903379   0.05902099
- 16     0.05545930   0.05566406
- 17     0.05719187   0.06250000
- 18     -0.0294536   0
- 19     1.55961974   -16.000000
- 20     -30.192394   0
- 21     635.040292   16384.0000
- 22     -13969.886   0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  n   s(recursion), f(n)(SymPy), difference
+  1     0.36787944   0.36787944    0 
+  2     0.26424111   0.26424111    0 
+  3     0.20727664   0.20727664    0 
+  4     0.17089341   0.17089341    0 
+  5     0.14553294   0.14553294    3.55271367880050e-15 
+  6     0.12680235   0.12680235    -2.13162820728030e-14 
+  7     0.11238350   0.11238350    -2.13162820728030e-14 
+  8     0.10093196   0.10093196    1.70530256582424e-13 
+  9     0.09161229   0.09161229    -1.24487087305170e-11 
+ 10     0.08387707   0.08387707    -5.01358954352327e-11 
+ 11     0.07735222   0.07735222    -1.46997081174050e-10 
+ 12     0.07177324   0.07177326    -1.31371962197591e-8 
+ 13     0.06694777   0.06694793    -1.57041995407781e-7 
+ 14     0.06273108   0.06273269    -1.61610932991607e-6 
+ 15     0.05903379   0.05902099    1.27975481518661e-5 
+ 16     0.05545930   0.05566406    -0.000204760770429857 
+ 17     0.05719187   0.06250000    -0.00530812940269243 
+ 18     -0.0294536   0             -0.0294536707515363 
+ 19     1.55961974   -16.000000    17.5596197442792 
+ 20     -30.192394   0             -30.1923948855838 
+ 21     635.040292   16384.0000    -15748.9597074027 
+ 22     -13969.886   0             -13969.8864371397 
 </pre></div>
 </div>
 </div>
 </div>
-<p>The failure of both the Sympy integration and the recursion formula indicates how careful one needs to be with some apparently innocent numerical calculations. After about <span class="math notranslate nohighlight">\(n = 12\)</span> it is difficult to judge which calculation gives the most accurate result, and by <span class="math notranslate nohighlight">\(n = 18\)</span>, both are clearly wrong. If integer constants  are used then accurate results are obtained for the direct integration, but using integers will not always be an option.</p>
+<p>The failure of both the Sympy integration and the recursion formula indicates how careful one needs to be with some apparently innocent numerical calculations. After about <span class="math notranslate nohighlight">\(n = 14\)</span> it is difficult to judge which calculation gives the most accurate result, and by <span class="math notranslate nohighlight">\(n = 18\)</span>, both are clearly wrong. If integer constants  are used then accurate results are obtained for the direct integration, but using integers will not always be an option.</p>
 <p>While this calculation is a little unusual, it is not uncommon. When calculating wavefunctions using Hermite or other polynomials, large powers of <span class="math notranslate nohighlight">\(x\)</span>, exponentials and recursion formulae are commonly used. Recursion and difference formulae are often used in the numerical integration of differential equations, see Section 11.3, consequently, their numerical integration is akin to an art rather than a science. However, you should not be too despondent or sceptical about numerical methods because with care, and sometimes cunning, accurate results can be obtained.</p>
 </section>
 <section id="organized-chaos">
 <h2>1.4 Organized Chaos<a class="headerlink" href="#organized-chaos" title="Permalink to this headline">#</a></h2>
 <p>You need to be aware that recursion can sometimes lead to chaotic behaviour as a normal outcome of a calculation. This is a different sort of chaos to that just calculated; it is very much like ‘organized chaos’ and is not due to rounding or precision errors. Often this chaos is termed ‘deterministic’.</p>
 <p>There is an important distinction therefore to be made between different types of ‘Chaos’. In classical and quantum mechanics, in studying molecules for example, it is also observed that regular motion can suddenly become chaotic even though the underlying equations of motion do not indicate that this will necessarily happen. By ‘chaotic’ is meant that two starting conditions placed arbitrary close to one another in value, will lead to entirely different but <em>repeatable outcomes</em> at some later time. If the cause of the chaos is due to rounding errors, the outcome is not repeatable but unpredictable.</p>
-<p>We take a short diversion into this interesting topic via a well-known example of deterministic chaos, first described in detail by May (1974, 1987) and May &amp; Oster (1976), and called the <em>logistic map</em>. This arises from the recursive equation</p>
+<section id="logistic-map">
+<h3><strong>Logistic Map</strong><a class="headerlink" href="#logistic-map" title="Permalink to this headline">#</a></h3>
+<p>We take a short diversion into this interesting topic via a well known example of deterministic chaos, first described in detail by May (1974, 1987) and May &amp; Oster (1976), and called the <em>Logistic Map</em>. This arises from the recursive equation</p>
 <div class="math notranslate nohighlight">
 \[x_{n+1} = r\,x_n(1 - x_n)\]</div>
-<p>where <span class="math notranslate nohighlight">\(r\)</span> is a constant and this equation is the discrete version of the Logistic equation (also called the Verhulst equation and first used by him in 1838) used to describe population growth,</p>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is a constant and this equation is the discrete version of the Logistic equation, also called the Verhulst equation and first used by him in 1838 to describe population growth, (see Chapter 10-3.3). The equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dN/dt=r\,N(1-N/k)\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the population <span class="math notranslate nohighlight">\(r\)</span> the growth rate and <span class="math notranslate nohighlight">\(k\)</span> a constant with the same units as <span class="math notranslate nohighlight">\(N\)</span> and is called the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction</p>
@@ -1895,7 +1908,7 @@ title="Print to PDF"
 <p><img alt="Drawing" src="../_images/num-methods-fig1b.png" /></p>
 <p>Figure 1b. The population <span class="math notranslate nohighlight">\(x_n\)</span> shown vs. iteration number <span class="math notranslate nohighlight">\(n\)</span> for different growth rates <span class="math notranslate nohighlight">\(r\)</span>. Notice that bifurcation occurs above <span class="math notranslate nohighlight">\(r=3\)</span> and that chaotic behaviour at <span class="math notranslate nohighlight">\(r=3.9\)</span>. The data points are in red, the line simply aids the eye to help follow the pattern of the points.</p>
 <hr class="docutils" />
-<p>To be able to view the bifurcations more easily a plot of population <span class="math notranslate nohighlight">\(x_n\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> is made and apparently random behaviour from otherwise regular behaviour is observed, Fig. 2. Some authors call this an orbit plot. The iteration is continued at each <span class="math notranslate nohighlight">\(r\)</span> for at least a hundred steps to allow and initial oscillations to die out and become constant or to allow any constant oscillation to become steady or random depending on <span class="math notranslate nohighlight">\(r\)</span>. As <span class="math notranslate nohighlight">\(r\)</span> increases the doubling multiplies to <span class="math notranslate nohighlight">\(4, 8, 16\cdots \)</span> and more numerous sets of numbers produce a random looking but regular pattern.   Figure 2 shows part of the plot.   The values up to <span class="math notranslate nohighlight">\(r=1\)</span> are zero then they rise uniformly in a single curved line to join the plot shown. The initial pitchfork bifurcation at <span class="math notranslate nohighlight">\(r=3\)</span> is clear as are the next few bifurcations (at each of which the number of points double) at <span class="math notranslate nohighlight">\(r\approx 3.449, 3.5409, 3.5644\cdots \)</span> but then become too numerous to see on this plot. Pain (1993, chapter 12) and Strogatz 1994 chapter 10) both describe these non-linear and chaotic effects that have been observed experimentally as well as a detailed mathematical description of this topic.</p>
+<p>To be able to view the bifurcations more easily a plot of population <span class="math notranslate nohighlight">\(x_n\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> is made and apparently random behaviour from otherwise regular behaviour is observed, Fig. 2. Some authors call this an orbit plot. The iteration is continued at each <span class="math notranslate nohighlight">\(r\)</span> for at least a hundred steps to allow and initial oscillations to die out and become constant or to allow any constant oscillation to become steady or random depending on <span class="math notranslate nohighlight">\(r\)</span>. As <span class="math notranslate nohighlight">\(r\)</span> increases the doubling multiplies to <span class="math notranslate nohighlight">\(4, 8, 16\cdots \)</span> and more numerous sets of numbers produce a random looking but regular pattern.   Figure 2 shows part of the plot.   The values up to <span class="math notranslate nohighlight">\(r=1\)</span> are zero then they rise uniformly in a single curved line to join the plot shown. The initial pitchfork bifurcation at <span class="math notranslate nohighlight">\(r=3\)</span> is clear as are the next few bifurcations (at each of which the number of points double) at <span class="math notranslate nohighlight">\(r\approx 3.449, 3.5409, 3.5644\cdots \)</span> but then become too numerous to see on this plot. Pain (1993, Chapter 12) and Strogatz 1994 Chapter 10) both describe these non-linear and chaotic effects that have been observed experimentally as well as a detailed mathematical description of this topic.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig2.png" /></p>
 <p>Figure 2. Bifurcations and ordered chaos generated by iterating <span class="math notranslate nohighlight">\(x_{n+1} = r\,x_n(1 - x_n)\)</span>.</p>
 <hr class="docutils" />
@@ -1907,31 +1920,37 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 1;  Logistic eqn. &amp; Bifurcation.</span>
-<span class="c1"># remove # as necessary below this point to plot results</span>
+<span class="c1"># remove # as necessary to do calculation and to plot results</span>
 
 <span class="c1">#fig1= plt.figure( figsize=(10,10) )    </span>
 <span class="c1">#plt.rcParams.update({&#39;font.size&#39;: 16})</span>
 
-<span class="n">Leqn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">:</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>      <span class="c1"># logistic map eqn</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span>                               <span class="c1"># increase this for more detail, e.g 200</span>
-<span class="n">dn</span><span class="o">=</span> <span class="mi">100</span>                               <span class="c1"># ditto</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">dn</span>
-<span class="n">popl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>    <span class="c1"># define 2D array</span>
-<span class="n">popl</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="mi">2</span>                         <span class="c1"># set value outside plot range</span>
-<span class="n">r0</span>  <span class="o">=</span> <span class="mf">2.5</span>                             <span class="c1"># r start</span>
-<span class="n">rmax</span><span class="o">=</span> <span class="mf">4.0</span>                             <span class="c1"># r end   </span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">r0</span><span class="p">,</span><span class="n">rmax</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>            <span class="c1"># growth rate array</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>                               <span class="c1"># initial x </span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">Leqn</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>             <span class="c1"># x = r*x*(1.0 - x)</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
-            <span class="n">popl</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="n">dn</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>          <span class="c1"># save last n do this to get all branches as these oscillate</span>
+<span class="k">def</span> <span class="nf">Logistic</span><span class="p">():</span>
+    <span class="n">Leqn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">:</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>      <span class="c1"># logistic map eqn</span>
+    
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">200</span>                               <span class="c1"># increase this for more detail, e.g 200</span>
+    <span class="n">dn</span><span class="o">=</span> <span class="mi">100</span>                               <span class="c1"># ditto</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">dn</span>
+    <span class="n">popl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>    <span class="c1"># define 2D array</span>
+    <span class="n">popl</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="mi">2</span>                         <span class="c1"># set value outside plot range</span>
+    <span class="n">r0</span>  <span class="o">=</span> <span class="mf">2.5</span>                             <span class="c1"># r start</span>
+    <span class="n">rmax</span><span class="o">=</span> <span class="mf">4.0</span>                             <span class="c1"># r end   </span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">r0</span><span class="p">,</span><span class="n">rmax</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>            <span class="c1"># growth rate array</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>                               <span class="c1"># initial x </span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">Leqn</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>             <span class="c1"># x = r*x*(1.0 - x)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">popl</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="n">dn</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>          <span class="c1"># save last n do this to get all branches as these oscillate</span>
+            <span class="k">pass</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">n</span>                     <span class="c1"># increment x</span>
         <span class="k">pass</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">n</span>                     <span class="c1"># increment x</span>
-    <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">popl</span>
+<span class="c1">#------------------------------------</span>
+
+<span class="c1">#n,r,popl  Logistic()                 # do calculation here</span>
+
 <span class="c1">#for i in range(n):                   # remove # to plot results</span>
 <span class="c1">#    plt.scatter(r[:],popl[:,i],color=&#39;black&#39;,marker=&#39;o&#39;,s=0.1)    # plot </span>
 <span class="c1">#    </span>
@@ -1945,12 +1964,13 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+</section>
 <section id="numerical-methods-used-to-find-the-roots-of-an-equation">
 <h2>2 Numerical methods used to find the roots of an equation<a class="headerlink" href="#numerical-methods-used-to-find-the-roots-of-an-equation" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="secant-method">
 <h2>2.1 Secant method<a class="headerlink" href="#secant-method" title="Permalink to this headline">#</a></h2>
-<p>We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.</p>
+<p>We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula-Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.</p>
 <p>The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If <span class="math notranslate nohighlight">\(f (x) = 0\)</span> is the equation whose roots or <span class="math notranslate nohighlight">\(x\)</span> values we want to find, then, in a recursive scheme, the next <span class="math notranslate nohighlight">\(x\)</span> value is given by Newton - Raphson as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle x_{n+1} = x_n  f(x_n)/f'(x_n),\quad n = 0, 1, 2 \cdots\]</div>
@@ -2223,9 +2243,7 @@ quadratic function to data points rather than straight lines; the formula is</p>
 </div>
 </div>
 </div>
-<section id="and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration">
-<h3>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.<a class="headerlink" href="#and-as-can-be-seen-this-result-is-much-closer-to-the-algebraic-one-that-the-other-methods-for-the-same-number-of-points-in-the-integration" title="Permalink to this headline">#</a></h3>
-</section>
+<p>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.</p>
 <section id="i-concentration-of-ion-pairs">
 <h3><strong>(i)  Concentration of ion pairs</strong><a class="headerlink" href="#i-concentration-of-ion-pairs" title="Permalink to this headline">#</a></h3>
 <p>Bjerrum’s theory of ionic association in solution, the concentration of ion pairs is</p>
@@ -2238,7 +2256,7 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>Before doing the calculation, the function <span class="math notranslate nohighlight">\(e^x x^{-4}\)</span> should be examined. It changes slowly with <span class="math notranslate nohighlight">\(x\)</span>, as may be seen by plotting, and has a minimum at <span class="math notranslate nohighlight">\(x = 4\)</span>, where the ions are at separation <span class="math notranslate nohighlight">\(a_0\)</span>. At larger values of <span class="math notranslate nohighlight">\(x\)</span>, the function rises rapidly as the exponential term dominates the <span class="math notranslate nohighlight">\(x^{-4}\)</span> term. The value of <span class="math notranslate nohighlight">\(a_0\)</span> for a 1-1 electrolyte is <span class="math notranslate nohighlight">\(0.350\)</span> nm in water at <span class="math notranslate nohighlight">\(25\,^\text{o}\)</span>C taking the dielectric constant to be <span class="math notranslate nohighlight">\(80\)</span>. The calculation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathrm{a_0 = \frac{(1.602 \cdot 10^{-19} C)^2}{8\pi \cdot 8.854 \cdot 10^{-12} Fm^{-1} \cdot 1.381 \cdot 10^{-23} JK^{-1}\cdot298 K \cdot 80}}\]</div>
-<p>The unit is <span class="math notranslate nohighlight">\(\mathrm{C^2/(Fm^{-1}JK^{-1}K)}\)</span> and it is not immediately obviously that this is metres. A farad (F) is a coulomb/volt and a volt is joule/coulomb, therefore a farad is <span class="math notranslate nohighlight">\(\mathrm{F = C^2J^{-1}}\)</span> giving <span class="math notranslate nohighlight">\(a_0\)</span> units of distance. Returning now to the numerical calculation, the integral at <span class="math notranslate nohighlight">\(b = 2\)</span> is clearly zero, starting at <span class="math notranslate nohighlight">\(b = 3\)</span> and incrementing by <span class="math notranslate nohighlight">\(3\)</span> to <span class="math notranslate nohighlight">\(30\)</span> in a loop, gives range of values.</p>
+<p>The unit is <span class="math notranslate nohighlight">\(\mathrm{C^2/(Fm^{-1}JK^{-1}K)}\)</span> and it is not immediately obviously that this is metres. A Farad (F) is a Coulomb/Volt and a volt is Joule/Coulomb, therefore a farad is <span class="math notranslate nohighlight">\(\mathrm{F = C^2J^{-1}}\)</span> giving <span class="math notranslate nohighlight">\(a_0\)</span> units of distance. Returning now to the numerical calculation, the integral at <span class="math notranslate nohighlight">\(b = 2\)</span> is clearly zero, starting at <span class="math notranslate nohighlight">\(b = 3\)</span> and incrementing by <span class="math notranslate nohighlight">\(3\)</span> to <span class="math notranslate nohighlight">\(30\)</span> in a loop, gives range of values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integral in Byerrum equation using Simpson&#39;s method</span>
@@ -2413,6 +2431,7 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 8; Elastic scattering with LJ potential</span>
+
 <span class="c1">#-----------------------------</span>
 <span class="k">def</span> <span class="nf">scattering</span><span class="p">(</span><span class="n">E0</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>           <span class="c1"># solve equations</span>
     
@@ -2457,11 +2476,11 @@ quadratic function to data points rather than straight lines; the formula is</p>
     <span class="k">return</span> <span class="n">xm</span>
 <span class="c1">#-------------------------------</span>
 
-<span class="c1"># remove # to plot results</span>
+<span class="c1"># remove # in front of code  to plot results</span>
 
-<span class="c1">#fig1 = plt.figure(figsize=(6,6))         # define figure size</span>
-<span class="c1">#plt.axhline(0,linewidth=1,color=&#39;grey&#39;)</span>
-<span class="n">clr</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>               <span class="c1"># colour of plot lines.</span>
+<span class="c1">#fig1 = plt.figure(figsize=(6,6))         # define figure size, remove hash to plot</span>
+<span class="c1">#plt.axhline(0,linewidth=1,color=&#39;grey&#39;)  # remove hash to plot zero line</span>
+<span class="n">clr</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>                <span class="c1"># colour of plot lines.</span>
 
 <span class="n">E0</span>    <span class="o">=</span> <span class="mf">0.2</span>         <span class="c1"># set initial values</span>
 <span class="n">eps</span>   <span class="o">=</span> <span class="mf">1.0</span>
@@ -2476,9 +2495,9 @@ quadratic function to data points rather than straight lines; the formula is</p>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">eps</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">E0</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="n">E0</span><span class="p">,</span><span class="n">E0</span><span class="o">/</span><span class="mi">5</span><span class="p">]):</span>     <span class="c1"># calculate for 3 values </span>
     <span class="n">bval</span><span class="p">,</span><span class="n">angle</span> <span class="o">=</span> <span class="n">scattering</span><span class="p">(</span><span class="n">E0</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-    <span class="c1">#plt.plot(bval, angle,color = clr[i])    # plot results</span>
+    <span class="c1">#plt.plot(bval, angle,color = clr[i])   # remove hash to plot results</span>
     <span class="k">pass</span>
-<span class="c1">#plt.show()</span>
+<span class="c1">#plt.show()                                 # remove hash to plot results                               </span>
 </pre></div>
 </div>
 </div>

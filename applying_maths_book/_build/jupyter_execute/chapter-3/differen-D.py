@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 4 Product rule and function of function or chain rule.
+# # 4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
 
 # In[1]:
 
@@ -32,10 +32,10 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # >**differentiate the main or 'outside function', then multiply this by the differential of the inside function.**
 # 
 # This simple but powerful method is most easily explained by examples; (i) to (iv) below are typical. The general formula is given in the next section. To differentiate the functions, use the table or various sections above to remind you of the rules. 
-# 
-# $\quad$ (a) $\displaystyle y=\sin(ax^2+x^{-3}),\qquad\qquad \;\;$     (b) $\displaystyle y=e^{ax^2+\sin(ax)}$
-# 
-# $\quad$ (c) $\displaystyle p=\ln(e^{aq})$ and find $dp/dq,\qquad$ (d) $\displaystyle y^n=\sin(ax^3)$
+# $\displaystyle \begin{array}{lll}\\
+# (a) & y=\sin(ax^2+x^{-3}) & &                    (b)& y=e^{ax^2+\sin(ax)}\\
+# (c) & p=\ln(e^{aq})       & \text{and find dp/dq} & (d)& y^n=\sin(ax^3)\\
+# \end{array}$
 # 
 # **(a)** To differentiate $\displaystyle y=\sin(ax^2+x^{-3})$ treat the sine as the outside function, differentiate it to produce $\cos(\cdots)$, then multiply by the differential of the terms inside the sine bracket
 # 
@@ -75,13 +75,27 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # 
 # ## 4.2 Function-of-a-function, general formula
 # 
-# The general equation on which to use the function-of-function or chain rule is $f[g(h)]$, which means that $f$ is a function of a second function $g$, with the generic variable here called $h$; $\sin(ax^2 + x^{-3})$ has this form with $f$ being $\sin(\cdots)$ and $g(x)$ being $ax^2 + x^{-3}$ and the generic variable $h$ is $x$ in this case.
+# The general equation on which to use the function-of-function or chain rule is $f\big(g(h)\big)$, which means that $f$ is a function of a second function $g$, with the generic variable here called $h$; $\sin(ax^2 + x^{-3})$ has this form with $f$ being $\sin(\cdots)$ and $g(x)$ being $ax^2 + x^{-3}$ and the generic variable $h$ is $x$ in this case.
 # 
 # Differentiation is performed by letting $u = g(h)$ giving
 # 
-# $$\displaystyle  \frac{d}{dh}f\left(g(h)\right)=\frac{df}{du}\frac{du}{dh} \qquad\tag{17}$$
+# $$\displaystyle  \frac{d}{dh}f\big(g(h)\big)=\frac{df}{du}\frac{du}{dh} \qquad\tag{17}$$
 # 
-# and this formally expressed, is what was done in our previous examples. Notice how $du$ is on the bottom of the derivative on the left, and on the top on the right. To differentiate the equation using the formal equation is harder than following the rule 'differentiate the outside and then the inside', but can be done. Suppose that $f = (a + x^2)^3$ is to be differentiated with respect to $x$. Letting $x=h$ and $u=1+x^2$ gives $du/dx=2x$ and as $f=u^3$,then $df/du = 3(u)^2$ and the result is $df/du = 6x(1 + x^2)^2$.
+# and this formally expressed, is what was done in our previous examples. Notice how $du$ is on the bottom of the derivative on the left, and on the top on the right. To differentiate the equation using the formal equation is harder than following the rule 'differentiate the outside and then the inside', but can be done. Suppose that 
+# 
+# $$\displaystyle f = (1 + x^2)^3$$
+# 
+# is to be differentiated with respect to $x$. Letting $x=h$ and $u=1+x^2$ gives 
+# 
+# $$\displaystyle \frac{du}{dx}=2x$$
+# 
+# and as $f=u^3$, then 
+# 
+# $$\displaystyle \frac{df}{du} = 3(u)^2$$
+# 
+# and the result is 
+# 
+# $$\displaystyle \frac{df}{du} = 6x(1 + x^2)^2$$
 # 
 # In thermodynamics, derivatives often seem to appear out of nowhere. For instance, 
 # 
@@ -97,11 +111,68 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # 
 # >**Add to this the result of differentiating the second function, leaving the first alone.**
 # 
-# An example should make this clear. To differentiate $\displaystyle y = (x^2 + a)(x^3 + x)$ let the first function be $(x^2 + a)$ and differentiate this to $2x$ and multiply by the second function $(x^3 + x)$, then do this the other way round and add the two terms together.
+# ### **Example (i)**
+# 
+# To differentiate 
+# 
+# $$\displaystyle y = (x^2 + a)(x^3 + x)$$
+# 
+# let the first function be $(x^2 + a)$ and differentiate this to $2x$ and multiply by the second function $(x^3 + x)$, then do this the other way round and add the two terms together.
 # 
 # $$\displaystyle  \frac{dy}{dx}=2x(x^3+x)+(x^2+a)(3x^2+1)$$
 # 
-# As a check, expand the brackets to $\displaystyle y = x^5 + (1 + a)x^3 + ax$ and then differentiate giving $\displaystyle \frac{dy}{dx} = 5x^4 + 3(1 + a)x^2 + a$, which is the same as the first result. This can be seen by expanding all the brackets in both results.
+# As a check, expand the brackets to 
+# 
+# $$\displaystyle y = x^5 + (1 + a)x^3 + ax$$
+# 
+# and then differentiate giving 
+# 
+# $$\displaystyle \frac{dy}{dx} = 5x^4 + 3(1 + a)x^2 + a$$
+# 
+# which is the same as the first result. This can be seen by expanding all the brackets in both results.
+# 
+# ### **Example (ii)** 
+# Sometimes solving a complicated looking equation can be simplified by identifying it as the result of differentiating a product.   The equation
+# 
+# $$\displaystyle R\frac{d^2S}{dx^2}+2\frac{dR}{dx}\frac{dS}{dx}=0\tag{17a}$$
+# 
+# where both $R$ and $S$ are functions of $x$ can be solved this way. Being functions of $x$ simply means that they can be differentiated by $x$.  The 'trick' here is to write down a guessed function and, for example, expand out by differentiating. We try
+# 
+# $$\displaystyle \frac{d}{dx}R^2\frac{dS}{dx}$$
+# 
+# to see if this produces the initial equation. Recall that $R$ and $S$ are functions of $x$ so differentiating separately by $x$ gives
+# 
+# $$\displaystyle \frac{dR^2}{dx}=2R\frac{dR}{dx},\qquad \frac{d}{dx}\frac{dS}{dx}=\frac{d^2S}{dx^2}$$
+# 
+# and using the product rule gives
+# 
+# $$\displaystyle 2\frac{dR}{dx}\frac{dS}{dx}+ R\frac{d^2S}{dx^2}=0$$
+# 
+# which is the original equation when set to zero. The equation 
+# 
+# $$\displaystyle \frac{d}{dx}R^2\frac{dS}{dx}=0$$
+# 
+# can now be integrated once on both sides to give
+# 
+# $$\displaystyle \frac{dS}{dx}=\frac{c}{R^2}$$
+# 
+# where zero integrates to $c$ which is a constant. Integrating again can only be done in symbolic way until function $R$ and limits are known. Integration is described in Chapter 4.
+# 
+# If you did not notice that eqn. 17a is the result of a differentiation the way to solve it to generate the logarithmic form via $\displaystyle \frac{1}{y}\frac{dy}{dx}=\frac{\ln(y)}{dx}$. 
+# 
+# Dividing eqn 17a by $R$ gives, the converting to logs and using $2\ln(R)=\ln(R^2)$, gives 
+# 
+# $$\displaystyle \frac{d^2S}{dx^2}+\frac{2}{R}\frac{dR}{dx}\frac{dS}{dx}=0,\quad\to\quad \frac{d^2S}{dx^2}+\frac{d\ln(R^2)}{dx}\frac{dS}{dx}=0$$
+# 
+# Next for clarity we let $U=\frac{dS}{dx}$ then divide by $U$ to get
+# 
+# $$\displaystyle \frac{d U}{dx}+\frac{d\ln(R^2)}{dx}U=0,\quad\to\quad \frac{d \ln(U)}{dx}+\frac{d\ln(R^2)}{dx}=0,\quad\to\quad \frac{d}{dx}\ln\big(\frac{dS}{dx}R^2\big)=0$$
+# 
+# where we convert to the logarithmic form and simplify. Integrating once in $x$ gives
+# 
+# $$\displaystyle \ln\big(\frac{dS}{dx}R^2\big)=c',\quad\to \frac{dS}{dx}R^2=e^{c'}$$
+# 
+# which is the result above, remembering that the constant is arbitrary.
 # 
 # ## 4.4 General formula
 # 
@@ -130,7 +201,14 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # ## 4.5 Differentiating ratios of functions: Quotient rule.
 # 
 # The product rule and function-of-function rule can be used to calculate quotients. If
-# $\displaystyle y = \frac{f (x)}{g(x)}$ then this can be represented as $\displaystyle y = f (x)g(x)^{−1}$ and the derivative is,
+# 
+# $$\displaystyle y = \frac{f (x)}{g(x)}$$
+# 
+# then this can be represented as 
+# 
+# $$\displaystyle y = f (x)g(x)^{−1}$$
+# 
+# and the derivative is,
 # 
 # $$\displaystyle   \frac{d}{dx}f(x)g(x)^{-1} =\frac{1}{g(x)}f'(x)+\frac{f(x)}{g(x)^2}g'(x) \qquad\tag{20}$$
 # 
@@ -140,11 +218,11 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # 
 # where the brackets and $x$ are suppressed for clarity.  For example using eqn. (20)
 # 
-# $$\displaystyle  (a) \quad y=\frac{\sin(x)}{1+x^2}, \qquad \frac{dy}{dx}=\frac{\cos(x)}{1+x^2}-2x\frac{\sin(x)}{(1+x^2)^2}$$
+# $$\displaystyle  y=\frac{\sin(x)}{1+x^2}, \quad \frac{dy}{dx}=\frac{\cos(x)}{1+x^2}-2x\frac{\sin(x)}{(1+x^2)^2}$$
 # 
 # and using eqn. 21
 # 
-# $$\displaystyle  (b) \quad y=\tan(x)=\frac{\sin(x)}{\cos(x)}, \qquad \frac{dy}{dx}=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=1+\tan^2(x)$$
+# $$\displaystyle   y=\tan(x)=\frac{\sin(x)}{\cos(x)}, \quad \frac{dy}{dx}=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=1+\tan^2(x)$$
 
 # ## 4.6 Differentiation with respect to a function
 # 
@@ -152,7 +230,11 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # $\displaystyle \frac{d(\Delta G/T)}{d(1/T)}$ rather than $\displaystyle \frac{d\Delta G}{dT}$. The reason for doing this is largely historical and relates to a time not so long ago when computers were not readily available, and so the equation was simplified making it easier to integrate or plot by hand on graph paper. 
 # 
 # ### **( i )  Example, Gibbs-Helmholtz eqn.** 
-# To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation $dG = Vdp - SdT$. At constant pressure $dp = 0$, and taking the derivative gives 
+# To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation 
+# 
+# $$\displaystyle dG = Vdp - SdT$$
+# 
+# At constant pressure $dp = 0$, and taking the derivative gives 
 # 
 # $$\displaystyle \left( \frac{\partial G}{\partial T} \right)_p=-S$$
 # 
@@ -172,7 +254,13 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # 
 # $$\displaystyle  \frac{d}{dT}\left(\frac{\Delta G}{T}  \right)=-\frac{\Delta H}{T^2}$$
 # 
-# So far, this is what we have done several times in one form or another. The next step is to find the derivative with respect to $1/T$. The best way to proceed is to recast the equation with substitution, for example, $u = 1/T$ makes $\displaystyle du = −dT/T^2$. Substituting for $dT$ gives $\displaystyle -\frac{1}{T^2}\frac{d}{du}\left(\frac{\Delta G}{T}  \right)=-\frac{\Delta H}{T^2}$, therefore
+# So far, this is what we have done several times in one form or another. The next step is to find the derivative with respect to $1/T$. The best way to proceed is to recast the equation with substitution, for example, $u = 1/T$ makes $\displaystyle du = −\frac{dT}{T^2}$. 
+# 
+# Substituting for $dT$ gives 
+# 
+# $$\displaystyle -\frac{1}{T^2}\frac{d}{du}\left(\frac{\Delta G}{T}  \right)=-\frac{\Delta H}{T^2}$$
+# 
+# therefore
 # 
 # $$\displaystyle  \frac{d(\Delta G/T)}{d(1/T)}=\Delta H$$
 # 
@@ -212,13 +300,21 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # 
 # Quite often, an equation we may want to differentiate contains powers or functions of $y$ as well as $x$. For example, $\displaystyle \sin(y) + x^2e^x = 1$, and cannot easily be put into the form $y = \cdots$. In this case implicit differentiation is necessary, which is just a grand sounding name for a rather simple procedure and one with which you are already familiar. All that is done is to differentiate any function of $y$ using the function-of-function or product rule or both, as appropriate, and remembering that the differential of $y$ is $dy/dx$.
 # 
-# Differentiating $\displaystyle \sin(y) + x^2e^x = 1$ with respect to $x$ produces
+# Differentiating
+# 
+# $$\displaystyle \sin(y) + x^2e^x = 1$$
+# 
+# with respect to $x$ produces
 # 
 # $$\displaystyle  \cos(y)\frac{dy}{dx}+2xe^x+x^2e^x=0$$
 # 
 # To test how well you understand this, find $dx/dy$ by direct calculation using $\displaystyle\sin(y) + x^2e^x = 1$, and thus show that $\displaystyle \frac{dy}{dx}=\left( \frac{dx}{dy} \right)^{-1}$.
 # 
-# An apparently hard differentiation is to find $dy/dx$ for $\displaystyle y^y-x^x=0$. This is however made easier if logs are taken first then differentiated implicitly. Thus differentiate $y\ln(y)=x\ln(x)$ leading to 
+# An apparently hard differentiation is to find $dy/dx$ for 
+# 
+# $$\displaystyle y^y-x^x=0$$
+# 
+# This is however made easier if logs are taken first then differentiated implicitly. Thus differentiate $y\ln(y)=x\ln(x)$ leading to 
 # 
 # $$\displaystyle \frac{dy}{dx}\ln(y)+\frac{y}{y}\frac{dy}{dx}=\ln(x)+\frac{x}{x}$$
 # 
@@ -226,7 +322,7 @@ from scipy.optimize import fsolve     # use this for numerical solution
 # 
 # $$\displaystyle \frac{dy}{dx}\left(1+\ln(y)\right)=1+\ln(x)$$
 # 
-# SymPy produces the same result after a little simplification and remembering that the function equals zero and that x^x=y^y$.
+# SymPy produces the same result after a little simplification and remembering that the function equals zero and that $x^x=y^y$.
 
 # In[3]:
 
@@ -256,7 +352,7 @@ sp.simplify(ans)
 # 
 # To differentiate the parametric form use the function-of-function approach and write
 # 
-# $$\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\qquad\tag{23}$$
+# $$\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}\big/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\qquad\tag{23}$$
 # 
 # Therefore, $dy/dx$ is always the ratio of the two derivatives with respect to $t$, the parametric variable. 
 # 
@@ -295,12 +391,13 @@ sp.simplify(ans)
 # In[5]:
 
 
-# using numpy
-f = lambda t:  t**3-t-2   #  define function so fsolve knows what to solve for
-ans = fsolve(f,1)[0]      # use [0] to get first answer only, answer is t
-print('{:s} {:f}'.format('real root of equation = ',ans) )
-print('{:s} {:f}'.format('gradient = ', 4*ans*np.cos(ans**2)/(3*ans**2-1)) )
-print('{:s} {:f}'.format('y0 = ', 2*np.sin(ans**2)) )
+# using NumPy
+f = lambda t:  t**3-t-2   # define function so fsolve knows what to solve for
+ans = fsolve(f,1)         # use ans[0] to get first part of answer only, answer is t
+A   = ans[0]              # just to make equations below simpler
+print('{:s} {:f}'.format('real root of equation = ',A) )
+print('{:s} {:f}'.format('gradient = ', 4*A*np.cos(A**2)/(3*A**2-1)) )
+print('{:s} {:f}'.format('y0 = ', 2*np.sin(A**2)) )
 
 
 # ![Drawing](differen-fig6.png)
@@ -331,7 +428,27 @@ print('{:s} {:f}'.format('y0 = ', 2*np.sin(ans**2)) )
 # 
 # Assuming that the fixed circle is centred at the origin of the coordinates (fig. 6b), the parameter $t$ used in the parametric equations is the angle from the x-axis to the centre of the rolling circle as shown in figure 6b.  The aim is to represent the point D in terms of the angle $t$ and the radii of the two circles $r_a\;r_b$. 
 # 
-# We start by writing down the lengths AB and BC which are $x_{AB}=(r_a+r_B)\cos(t)$ and $y_{BC}=(r_a+r_B)\sin(t)$. This leaves the horizontal distance from D to B to be found, and the similar vertical distance D to C. This means finding the angle DCB ($\theta$). We know that the angle ACB is $\pi/2 - t$ because ABC is a right angled triangle. To find the other angle we realise that the distance $L$ from the contact point P of the two circles to point O and to point D is the same, since one curve rolls over the other. The angle $t$ is equal to the same fraction of the circle as distance O to P ($L$) is to the circumference; similarly angle ACD to length PD which is also $L$. Thus $\displaystyle \frac{t}{2\pi}= \frac{L}{2\pi r_a}$ and for the angle ACD $\displaystyle \frac{\pi/2-t+\theta}{2\pi}=\frac{L}{2\pi r_b}$. Equating the two lengths $L$ and a little rearranging gives $\displaystyle \theta= \left(\frac{r_a+r_b}{r_b}  \right)t+\frac{\pi}{2}$. The extra $x$ length is then $\displaystyle-r_b\cos\left(\frac{r_a+r_b}{r_b}  t\right)$ and the parametric equations are 
+# We start by writing down the lengths AB and BC which are 
+# 
+# $$\displaystyle x_{AB}=(r_a+r_B)\cos(t),\quad y_{BC}=(r_a+r_B)\sin(t)$$
+# 
+# This leaves the horizontal distance from D to B to be found, and the similar vertical distance D to C. This means finding the angle DCB ($\theta$). We know that the angle ACB is $\pi/2 - t$ because ABC is a right angled triangle. To find the other angle we realise that the distance $L$ from the contact point P of the two circles to point O and to point D is the same, since one curve rolls over the other. The angle $t$ is equal to the same fraction of the circle as distance O to P ($L$) is to the circumference; similarly angle ACD to length PD which is also $L$. Thus 
+# 
+# $$\displaystyle \frac{t}{2\pi}= \frac{L}{2\pi r_a}$$
+# 
+# and for the angle ACD 
+# 
+# $$\displaystyle \frac{\pi/2-t+\theta}{2\pi}=\frac{L}{2\pi r_b}$$
+# 
+# Equating the two lengths $L$ and a little rearranging gives 
+# 
+# $$\displaystyle \theta= \left(\frac{r_a+r_b}{r_b}  \right)t+\frac{\pi}{2}$$
+# 
+# The extra $x$ length is then 
+# 
+# $$\displaystyle-r_b\cos\left(\frac{r_a+r_b}{r_b}  t\right)$$
+# 
+# and the parametric equations are 
 # 
 # $$\displaystyle x=(r_a+r_b)\cos(t)-r_b\cos\left(\frac{r_a+r_b}{r_b}  t\right) \\ \displaystyle y=(r_a+r_b)\sin(t)-r_b\sin\left(\frac{r_a+r_b}{r_b}  t\right)$$
 # 
@@ -348,7 +465,19 @@ print('{:s} {:f}'.format('y0 = ', 2*np.sin(ans**2)) )
 # 
 # $$\displaystyle   \frac{dv}{dt}=\left[\frac{dx}{dt}\;\frac{dy}{dt}  \right] $$
 # 
-# Evaluating each term produces $\displaystyle \frac{dv}{dt} = [2at, 2a]$. The second derivative is $\displaystyle \frac{d^2v}{dt^2} = [2a, 0]$. Previously, equation (23), it was shown that the gradient was the ratio of the derivative of $y(t)$ over that of $x(t)$. Applying this produces $\displaystyle \frac{dy}{dx}=\frac{2a}{2at}=\frac{1}{t}$ so that the gradient is $\sqrt{a/x}$ which is the same as starting with $\displaystyle y^2=4ax$.
+# Evaluating each term produces 
+# 
+# $$\displaystyle \frac{dv}{dt} = [2at, 2a]$$
+# 
+# The second derivative is 
+# 
+# $$\displaystyle \frac{d^2v}{dt^2} = [2a, 0]$$
+# 
+# Previously, equation (23), it was shown that the gradient was the ratio of the derivative of $y(t)$ over that of $x(t)$. Applying this produces 
+# 
+# $$\displaystyle \frac{dy}{dx}=\frac{2a}{2at}=\frac{1}{t}$$
+# 
+# so that the gradient is $\sqrt{a/x}$ which is the same as starting with $\displaystyle y^2=4ax$.
 # 
 # ## 4.10 Differentiating dot and cross products
 # 
@@ -364,7 +493,9 @@ print('{:s} {:f}'.format('y0 = ', 2*np.sin(ans**2)) )
 # 
 # ## 5 Differentiation summary
 # 
-# Notation $f'=d/dx,\; f(x),\; g(x) $ are general functions in $x$ such as $x^2$ or $\sin(x)e^x$ etc. but mostly written as $f$ and $g$ for clarity. Constants used are $a$ and $b$.
+# **Notation** $f'=d/dx$.  
+# 
+# $f(x)$ and $g(x) $ are general functions in $x$ such as $x^2$ or $\sin(x)e^x$ etc. but are often written as $f$ and $g$ for clarity. Constants used are $a$ and $b$.
 # 
 # ### **(i) Exponentials**
 # $$\displaystyle   y=e^{f(x)} \qquad \frac{dy}{dx}=f'(x)e^{f(x)}$$

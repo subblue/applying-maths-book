@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1595,10 +1595,10 @@ title="Print to PDF"
 <h1>Questions 73 - 77<a class="headerlink" href="#questions-73-77" title="Permalink to this headline">#</a></h1>
 <section id="q73-1d-box-variational-energy">
 <h2>Q73 1D box  variational energy<a class="headerlink" href="#q73-1d-box-variational-energy" title="Permalink to this headline">#</a></h2>
-<p>(a) For the particle in a one-dimensional box, calculate the variational energy if the trial wavefunction is <span class="math notranslate nohighlight">\(\psi= x(L - x)\)</span> where <span class="math notranslate nohighlight">\(L\)</span> is the length of the box for which the potential energy <span class="math notranslate nohighlight">\(V = 0\)</span>. Compare your result with the true energy for the lowest level which is <span class="math notranslate nohighlight">\(\displaystyle \frac{h^2}{8mL^2}\)</span>. The Schroedinger equation is</p>
+<p><strong>(a)</strong> For the particle in a one-dimensional box, calculate the variational energy if the trial wavefunction is <span class="math notranslate nohighlight">\(\psi= x(L - x)\)</span> where <span class="math notranslate nohighlight">\(L\)</span> is the length of the box for which the potential energy <span class="math notranslate nohighlight">\(V = 0\)</span>. Compare your result with the true energy for the lowest level which is <span class="math notranslate nohighlight">\(\displaystyle \frac{h^2}{8mL^2}\)</span>. The Schroedinger equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi=E\psi\]</div>
-<p>(b) Calculate the variational energy for a finite square well using the trial wavefunction <span class="math notranslate nohighlight">\(\psi=e^{-a x^2}\)</span>. The potential extends to <span class="math notranslate nohighlight">\(\pm \infty\)</span> with a height <span class="math notranslate nohighlight">\(U\)</span> except in the range <span class="math notranslate nohighlight">\(\pm L\)</span> where it is zero. To obtain a numerical answer for the variational energy assume <span class="math notranslate nohighlight">\(\hbar=m=1, U=0.5, L=1\)</span>. With this potential the exact value for the only bound level is 0.27312.</p>
+<p><strong>(b)</strong> Calculate the variational energy for a finite square well using the trial wavefunction <span class="math notranslate nohighlight">\(\psi=e^{-a x^2}\)</span>. The potential extends to <span class="math notranslate nohighlight">\(\pm \infty\)</span> with a height <span class="math notranslate nohighlight">\(U\)</span> except in the range <span class="math notranslate nohighlight">\(\pm L\)</span> where it is zero. To obtain a numerical answer for the variational energy assume <span class="math notranslate nohighlight">\(\hbar=m=1, U=0.5, L=1\)</span>. With this potential the exact value for the only bound level is 0.27312.</p>
 <p><strong>Strategy:</strong> (a) Calculate the two integrals in equation 47 separately; remember that <span class="math notranslate nohighlight">\(H\)</span> acts on the wavefunction to its right and the result is then multiplied by <span class="math notranslate nohighlight">\(\psi\)</span> before the integration is evaluated. (b) Calculate the integrals using Sympy, doing so in three parts, <span class="math notranslate nohighlight">\(-\infty \to -1; -1\to 1; 1\to \infty\)</span>. When trying to find the optimal value of <span class="math notranslate nohighlight">\(\alpha\)</span> the LamberW function is encountered. At this point go back a step substitute the numerical value and recalculate.</p>
 </section>
 <section id="q74-quartic-oscillator">
@@ -1617,9 +1617,9 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle E=\int \varphi H\varphi du=\frac{e^2}{4\pi\epsilon_0a_0}\left(\zeta^2-2Z\zeta+\frac{5}{8}\zeta\right)\]</div>
 <p><span class="math notranslate nohighlight">\(H\)</span> is the Hamiltonian operator and <span class="math notranslate nohighlight">\(du\)</span> represents integration over all coordinates.</p>
-<p>(a) Look up the formula for the energy of an H atom. Calculate the (zeroth order) ground state energy of the He atom as twice the energy of an H atom with <span class="math notranslate nohighlight">\(Z = 2\)</span>. What interaction terms are missing in this crude model?</p>
-<p>(b) Calculate the ionization energy of He+ and add this to the experimentally measured first ionization energy of <span class="math notranslate nohighlight">\(24.5\)</span> eV then call this the ‘experimental’ energy of the He atom. Compare this with the energy from (a).</p>
-<p>(c) Find the variational energy of the ground state of the He atom. Compare it with the energy calculated assuming that <span class="math notranslate nohighlight">\(\zeta = Z\)</span>, and with your ‘experimental’ value.</p>
+<p><strong>(a)</strong> Look up the formula for the energy of an H atom. Calculate the (zeroth order) ground state energy of the He atom as twice the energy of an H atom with <span class="math notranslate nohighlight">\(Z = 2\)</span>. What interaction terms are missing in this crude model?</p>
+<p><strong>(b)</strong> Calculate the ionization energy of He+ and add this to the experimentally measured first ionization energy of <span class="math notranslate nohighlight">\(24.5\)</span> eV then call this the ‘experimental’ energy of the He atom. Compare this with the energy from (a).</p>
+<p><strong>(c)</strong> Find the variational energy of the ground state of the He atom. Compare it with the energy calculated assuming that <span class="math notranslate nohighlight">\(\zeta = Z\)</span>, and with your ‘experimental’ value.</p>
 </section>
 <section id="q76-variational-energy-in-gaussian-well">
 <h2>Q76 Variational energy in Gaussian well<a class="headerlink" href="#q76-variational-energy-in-gaussian-well" title="Permalink to this headline">#</a></h2>

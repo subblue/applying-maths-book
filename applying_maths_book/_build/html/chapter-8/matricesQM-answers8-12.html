@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1608,38 +1608,37 @@ title="Print to PDF"
 </div>
 <section id="q8-answer">
 <h2>Q8 answer<a class="headerlink" href="#q8-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) <span class="math notranslate nohighlight">\(\langle s|s\rangle\)</span>; the left-hand icon is the bra, which is, in quantum mechanics, always the transpose and complex conjugate of the ket. (These two combined operations are called the <em>Hermitian adjoint</em>.) In this question, the entry in the matrix is a number so its conjugate is still 1. The result of any calculation of the form bra : ket or <span class="math notranslate nohighlight">\(\langle \cdots|\cdots \rangle\)</span> is the dot or inner product,</p>
+<p><strong>(a)</strong> <span class="math notranslate nohighlight">\(\displaystyle \langle s|s\rangle\)</span>; the left-hand icon is the bra, which is, in quantum mechanics, always the transpose and complex conjugate of the ket. (These two combined operations are called the <em>Hermitian adjoint</em>.) In this question, the entry in the matrix is a number so its conjugate is still 1. The result of any calculation of the form bra : ket or <span class="math notranslate nohighlight">\(\langle \cdots|\cdots \rangle\)</span> is the dot or inner product,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \langle s|s\rangle=\begin{bmatrix}1 &amp; 0 &amp; 0\end{bmatrix}\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}=1\end{split}\]</div>
 <p>similarly <span class="math notranslate nohighlight">\(\langle p_x|p_x\rangle =\langle p_y|p_y\rangle=1\)</span> and in each case show that the basis set if normalised.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \langle s|p_x\rangle=\begin{bmatrix}1 &amp; 0 &amp; 0\end{bmatrix}\begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}=0\end{split}\]</div>
-<p>shows that the basis set is also orthogonal. These results, normalization and
-orthogonality, mean that the basis set is orthonormal.</p>
-<p>(b) The calculation the other way around is ket-bra or <span class="math notranslate nohighlight">\(|\cdots\rangle\langle\cdots|\)</span>  and will always produce a matrix.</p>
-<p>(i) <span class="math notranslate nohighlight">\(\displaystyle |s\rangle \langle s|=\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}\begin{bmatrix}[1 &amp; 0 &amp; 0\end{bmatrix}=\begin{bmatrix}1 &amp; 0 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;0 \end{bmatrix}\)</span></p>
+<p>shows that the basis set is also orthogonal. These results, normalization and orthogonality, mean that the basis set is orthonormal.</p>
+<p><strong>(b)</strong> The calculation the other way around is ket-bra or <span class="math notranslate nohighlight">\(|\cdots\rangle\langle\cdots|\)</span>  and will always produce a matrix.</p>
+<p><strong>(i)</strong> $<span class="math notranslate nohighlight">\(\displaystyle |s\rangle \langle s|=\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}\begin{bmatrix}[1 &amp; 0 &amp; 0\end{bmatrix}=\begin{bmatrix}1 &amp; 0 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;0 \end{bmatrix}\)</span>$</p>
 <p>The vectors are <em>commensurate</em> because the row / column order is <span class="math notranslate nohighlight">\(3 \times 1\)</span> and <span class="math notranslate nohighlight">\(1 \times 3\)</span> producing a <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrix. The related calculation for the other components of the basis set produce</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |p_x\rangle \langle p_x|=\begin{bmatrix}0 &amp; 0 &amp; 0 \\ 0&amp;1&amp;0\\0&amp;0&amp;0 \end{bmatrix},\quad |p_y\rangle \langle p_y|=\begin{bmatrix}0 &amp; 0 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;1 \end{bmatrix}\end{split}\]</div>
 <p>As each of the matrices is zero for all but one component, these operators will, when right multiplied by a ket, extract just one coefficient and produce a new ket. For example</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |p_x\rangle \langle p_x|\psi\rangle =\begin{bmatrix}0 &amp; 1 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;0 \end{bmatrix}\begin{bmatrix} c_s \\c_x\\c_y\end{bmatrix} =c_x|p_x\rangle\end{split}\]</div>
-<p>(ii) <span class="math notranslate nohighlight">\(|s\rangle \langle p_x| =\begin{bmatrix}1\\0\\0\end{bmatrix}\begin{bmatrix}0&amp;1&amp;0\end{bmatrix}=\begin{bmatrix}0 &amp; 1 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;0 \end{bmatrix}\)</span></p>
+<p><strong>(ii)</strong> <span class="math notranslate nohighlight">\(|s\rangle \langle p_x| =\begin{bmatrix}1\\0\\0\end{bmatrix}\begin{bmatrix}0&amp;1&amp;0\end{bmatrix} =\begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;0 \end{bmatrix}\)</span></p>
 <p>The similar calculation with bra <span class="math notranslate nohighlight">\(\langle s|\)</span> and<span class="math notranslate nohighlight">\(\langle p|\)</span> produce related matrices with unity in the top row and in the first and third column respectively.</p>
-<p>(iii) Now operate using the matrix <span class="math notranslate nohighlight">\(|s\rangle \langle s|\)</span> ,on <span class="math notranslate nohighlight">\(|\varphi\rangle\)</span> .Expanding using the result from (i) gives</p>
+<p><strong>(iii)</strong> Now operate using the matrix <span class="math notranslate nohighlight">\(|s\rangle \langle s|\)</span>, on <span class="math notranslate nohighlight">\(|\varphi\rangle\)</span>. Expanding using the result from <strong>(i)</strong> gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |s\rangle \langle s|\varphi\rangle=\begin{bmatrix}1 &amp; 0 &amp; 0 \\ 0&amp;0&amp;0\\0&amp;0&amp;0 \end{bmatrix}\begin{bmatrix}b_s\\b_x\\b_y\end{bmatrix}=b_s|s\rangle\end{split}\]</div>
 <p>which is a new ket, <span class="math notranslate nohighlight">\(b_s|s\rangle\)</span> and therefore the result of an experiment operating on <span class="math notranslate nohighlight">\(|\varphi\rangle\)</span>, which is a linear superposition state, is to collapse the wavefunction <span class="math notranslate nohighlight">\(\varphi\)</span> and produce the amount <span class="math notranslate nohighlight">\(b_s\)</span> of the state <span class="math notranslate nohighlight">\(| s \rangle\)</span>.</p>
-<p>(iv) The effect of basis bra <span class="math notranslate nohighlight">\(\langle p_y|\)</span> is to select only the <span class="math notranslate nohighlight">\(y\)</span> component,</p>
+<p><strong>(iv)</strong> The effect of basis bra <span class="math notranslate nohighlight">\(\langle p_y|\)</span> is to select only the <span class="math notranslate nohighlight">\(y\)</span> component,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \displaystyle \langle p_y|\psi \rangle =\begin{bmatrix}0 &amp; 0 &amp; 1\end{bmatrix} \begin{bmatrix}c_s\\ c_x \\ c_y\end{bmatrix}=c_y\end{split}\]</div>
-<p>(vii) A matrix operator results; notice the row / column pattern of multiplication,</p>
+<p><strong>(v)</strong> A matrix operator results; notice the row / column pattern of multiplication,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle |\psi\rangle\langle\varphi|= \begin{bmatrix}b_s\\ b_x \\ b_y\end{bmatrix}\begin{bmatrix}c_s^* &amp; c_x^* &amp; c_y^*\end{bmatrix}=\begin{bmatrix}b_sc_s^*&amp; b_sc_x^* &amp;b_sc_y^* \\b_xc_s^*&amp; b_xc_x^* &amp;b_xc_y^* \\ b_yc_s^*&amp; b_yc_x^* &amp;b_yc_y^*\end{bmatrix} \end{split}\]</div>
 </section>
 <section id="q9-answer">
 <h2>Q9 answer<a class="headerlink" href="#q9-answer" title="Permalink to this headline">#</a></h2>
-<p>Using the definition of the bra-ket, the right hand bra- ket is obtained by taking the complex conjugate of both vectors and noting that for any complex number <span class="math notranslate nohighlight">\(z\)</span>, taking the complex conjugate twice leaves it unchanged, <span class="math notranslate nohighlight">\(z = (z^*)^*\)</span>. Starting with the right hand side</p>
+<p>Using the definition of the bra-ket, the right hand bra-ket is obtained by taking the complex conjugate of both vectors and noting that for any complex number <span class="math notranslate nohighlight">\(z\)</span>, taking the complex conjugate twice leaves it unchanged, <span class="math notranslate nohighlight">\(z = (z^*)^*\)</span>. Starting with the right hand side</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \langle\varphi|\psi\rangle^* =\begin{bmatrix}b_s^*&amp; b_x^* &amp; b_y^*\end{bmatrix}^*\begin{bmatrix}c_s \\ c_x\\ c_y\end{bmatrix}^*=b_sc_s^*+b_xc_x^*+b_yc_y^*\end{split}\]</div>
 <p>and the left hand side of the expression has the bra and ket reversed;</p>
@@ -1649,21 +1648,24 @@ orthogonality, mean that the basis set is orthonormal.</p>
 </section>
 <section id="q10-answer">
 <h2>Q10 answer<a class="headerlink" href="#q10-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Starting with each component and making the square of the operator as the product,</p>
+<p><strong>(a)</strong> Starting with each component and making the square of the operator as the product,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{I}_x\pmb{I}_x=\frac{\hbar^2}{4}\begin{bmatrix}0 &amp; 1\\1 &amp; 0\end{bmatrix}\begin{bmatrix}0 &amp; 1\\1 &amp; 0\end{bmatrix}=\frac{\hbar^2}{4}\begin{bmatrix}1 &amp; 0\\0 &amp; 1\end{bmatrix}\end{split}\]</div>
 <p>next, remembering that <span class="math notranslate nohighlight">\(i^2 = -1\)</span> we find that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{I}_y\pmb{I}_y=\frac{\hbar^2}{4}\begin{bmatrix}1 &amp; 0\\0 &amp; 1\end{bmatrix}\quad \displaystyle \pmb{I}_z\pmb{I}_z=\frac{\hbar^2}{4}\begin{bmatrix}1 &amp; 0\\0 &amp; 1\end{bmatrix} \end{split}\]</div>
-<p>then, adding terms, produces the result <span class="math notranslate nohighlight">\(\displaystyle \pmb{I}^2=\frac{3\hbar^2}{4}\pmb{1}\)</span> where <span class="math notranslate nohighlight">\(\pmb{1}\)</span> is the unit diagonal matrix.</p>
-<p>(b) The commutator of two matrices A and B is <span class="math notranslate nohighlight">\([\pmb{A}, \pmb{B}] = \pmb{A}\pmb{B} - \pmb{B}\pmb{A}\)</span>. In this example,</p>
+<p>then, adding terms, produces the result</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{I}^2=\frac{3\hbar^2}{4}\pmb{1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pmb{1}\)</span> is the unit diagonal matrix.</p>
+<p><strong>(b)</strong> The commutator of two matrices A and B is <span class="math notranslate nohighlight">\([\pmb{A}, \pmb{B}] = \pmb{A}\pmb{B} - \pmb{B}\pmb{A}\)</span>. In this example,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle [\pmb{I}^2,\pmb{I}_z]=\frac{\hbar^3}{8}\begin{bmatrix}3 &amp; 0\\0 &amp; 3\end{bmatrix}\begin{bmatrix}1 &amp; 0\\0 &amp; -1\end{bmatrix}-\frac{\hbar^3}{8}\begin{bmatrix}1 &amp; 0\\0 &amp; -1\end{bmatrix}\begin{bmatrix}3 &amp; 0\\0 &amp; 3\end{bmatrix}=\frac{\hbar^3}{8}\begin{bmatrix}3 &amp; 0\\0 &amp; -3\end{bmatrix}-\frac{\hbar^3}{8}\begin{bmatrix}3 &amp; 0\\0 &amp; -3\end{bmatrix}=0\end{split}\]</div>
 <p>Because the two operators <span class="math notranslate nohighlight">\(\pmb{I}^2\)</span> and <span class="math notranslate nohighlight">\(\pmb{I}_z\)</span> both satisfy the Schroedinger equation by producing eigenvalues, and because they commute with one another, it is possible to determine the <span class="math notranslate nohighlight">\(\pmb{I}^2\)</span> and <span class="math notranslate nohighlight">\(\pmb{I}_z\)</span>  angular momenta simultaneously. The commutator of the <span class="math notranslate nohighlight">\(x, y, z\)</span> components is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle [\pmb{I}_x,\pmb{I}_y]=\frac{i\hbar^2}{4}\begin{bmatrix}0 &amp; 1\\1 &amp; 0\end{bmatrix}\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}-\frac{i\hbar^2}{4}\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\begin{bmatrix}0 &amp; 1\\1 &amp; 0\end{bmatrix} = \frac{i\hbar^2}{2}\begin{bmatrix}1 &amp; 0\\0 &amp; -1\end{bmatrix}=i\hbar\pmb{I}_z\end{split}\]</div>
 <p>and as this is not zero, the angular momentum components do not commute. This is true in any order of <span class="math notranslate nohighlight">\(x, y\)</span> or <span class="math notranslate nohighlight">\(z\)</span>, so it is not possible to determine simultaneously the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> components of the angular momentum when <span class="math notranslate nohighlight">\(\pmb{I}_z\)</span> and <span class="math notranslate nohighlight">\(\pmb{I}^2\)</span> are determined. This is a consequence of the uncertainty principle.</p>
-<p>(c) Operating on <span class="math notranslate nohighlight">\(\alpha\)</span> with <span class="math notranslate nohighlight">\(\pmb{I}^2\)</span> gives</p>
+<p><strong>(c)</strong> Operating on <span class="math notranslate nohighlight">\(\alpha\)</span> with <span class="math notranslate nohighlight">\(\pmb{I}^2\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{I}^2α =\frac{\hbar^2}{4}\begin{bmatrix} 3&amp;0\\0&amp;3\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix} =\frac{3\hbar^2}{4}\begin{bmatrix}1\\0\end{bmatrix}=\frac{3\hbar^2}{4}\alpha\end{split}\]</div>
 <p>A similar calculation leads to <span class="math notranslate nohighlight">\(\displaystyle \pmb{I}^2α =\frac{3\hbar^2}{4}\alpha\)</span>.</p>
@@ -1675,7 +1677,7 @@ orthogonality, mean that the basis set is orthonormal.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{I}_z\beta =\frac{\hbar}{2}\begin{bmatrix} 1&amp;0\\0&amp;-1\end{bmatrix}\begin{bmatrix}0\\1\end{bmatrix}=-\frac{\hbar}{2}\alpha \end{split}\]</div>
 <p>with eigenvalue <span class="math notranslate nohighlight">\(-\hbar/2\)</span>.</p>
-<p>(d) The <span class="math notranslate nohighlight">\(x,y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> components are calculated in a similar way;</p>
+<p><strong>(d)</strong> The <span class="math notranslate nohighlight">\(x,y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> components are calculated in a similar way;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{I}_x\alpha =\frac{\hbar}{2}\begin{bmatrix} 0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix}=\frac{\hbar}{2}\beta \end{split}\]</div>
 <p>but the results how that an eigenstate has not been produced because <span class="math notranslate nohighlight">\(\pmb{I}_x\alpha \ne c\alpha\)</span> where <span class="math notranslate nohighlight">\(c\)</span> is a constant. With the <span class="math notranslate nohighlight">\(\beta\)</span> spin state the effect is similar</p>
@@ -1684,7 +1686,7 @@ orthogonality, mean that the basis set is orthonormal.</p>
 <p>With the <span class="math notranslate nohighlight">\(y\)</span> component, again the eigenstate is not produced.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{I}_y\alpha =\frac{\hbar}{2}\begin{bmatrix} 0&amp;-i\\i&amp;0\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix}=\frac{\hbar}{2}\begin{bmatrix}0\\i\end{bmatrix} \qquad \pmb{I}_y\beta  =\frac{\hbar}{2}\begin{bmatrix}-i\\0\end{bmatrix}\end{split}\]</div>
-<p>(e) The raising operator <span class="math notranslate nohighlight">\(\pmb{I}^+ = \pmb{I}_x + i\pmb{I}_y\)</span> has the following effect on state <span class="math notranslate nohighlight">\(\alpha\)</span>;</p>
+<p><strong>(e)</strong> The raising operator <span class="math notranslate nohighlight">\(\pmb{I}^+ = \pmb{I}_x + i\pmb{I}_y\)</span> has the following effect on state <span class="math notranslate nohighlight">\(\alpha\)</span>;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle (\pmb{I}_x + i\pmb{I}_y)\alpha=\frac{\hbar}{2}\left(\begin{bmatrix}0&amp;  1 \\ 1&amp;0 \end{bmatrix}+i\begin{bmatrix}0&amp; -i\\i&amp; 0\end{bmatrix} \right)\begin{bmatrix}1\\0\end{bmatrix}=0\end{split}\]</div>
 <p>and as <span class="math notranslate nohighlight">\(\alpha\)</span> is the highest state it cannot be raised any higher. The effect on state <span class="math notranslate nohighlight">\(\beta\)</span> is to raise it to state <span class="math notranslate nohighlight">\(\alpha\)</span> as follows,</p>
@@ -1694,15 +1696,15 @@ orthogonality, mean that the basis set is orthonormal.</p>
 </section>
 <section id="q11-answer">
 <h2>Q11 answer<a class="headerlink" href="#q11-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) If the basis is represented as a set of matrices such as</p>
+<p><strong>(a)</strong> If the basis is represented as a set of matrices such as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \langle Lm|=\begin{bmatrix} 0\\0\\ \vdots\\1\\ \vdots\end{bmatrix} \end{split}\]</div>
 <p>where the <em>position</em> of the number 1 in the vector is the <em>position</em> of quantum number <span class="math notranslate nohighlight">\(m\)</span> in the basis set. Any two similar vectors are normalized and any two different vectors are zero, thus the bra-ket <span class="math notranslate nohighlight">\(\langle Lm|Lm\rangle = 1\)</span> but <span class="math notranslate nohighlight">\(\langle Lm|Ln \rangle = 0\)</span> when <span class="math notranslate nohighlight">\(m \ne n\)</span>.</p>
-<p>(b) A matrix is set up with the basis set ordering. Because only the <span class="math notranslate nohighlight">\(m\)</span> values change, the set can be approximated as <span class="math notranslate nohighlight">\(-3/2, -1/2, 1/2, 3/2\)</span> and <span class="math notranslate nohighlight">\(L\)</span> does not need to be listed. The <span class="math notranslate nohighlight">\(\pmb{L}^+\)</span> operator only couples states with <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m + 1\)</span>; only the states <span class="math notranslate nohighlight">\(-3/2 \to -1/2; -1/2 \to 1/2\)</span> and <span class="math notranslate nohighlight">\(1/2 \to 3/2\)</span> are coupled, thus the <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix has only three non-zero terms and these are each one place to the right of the diagonal with the ordering used.</p>
+<p><strong>(b)</strong> A matrix is set up with the basis set ordering. Because only the <span class="math notranslate nohighlight">\(m\)</span> values change, the set can be approximated as <span class="math notranslate nohighlight">\(-3/2, -1/2, 1/2, 3/2\)</span> and <span class="math notranslate nohighlight">\(L\)</span> does not need to be listed. The <span class="math notranslate nohighlight">\(\pmb{L}^+\)</span> operator only couples states with <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m + 1\)</span>; only the states <span class="math notranslate nohighlight">\(-3/2 \to -1/2; -1/2 \to 1/2\)</span> and <span class="math notranslate nohighlight">\(1/2 \to 3/2\)</span> are coupled, thus the <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix has only three non-zero terms and these are each one place to the right of the diagonal with the ordering used.</p>
 <p>The matrix entries have values:</p>
-<p>row 2, col 1: <span class="math notranslate nohighlight">\(-3/2 \to -1/2\)</span> is <span class="math notranslate nohighlight">\(\displaystyle  \sqrt{\frac{15}{4}-\frac{-3}{2}\frac{-1}{2} }=\sqrt{3}\)</span></p>
-<p>row 3, col 2: <span class="math notranslate nohighlight">\(-1/2 \to -1/2\)</span> is <span class="math notranslate nohighlight">\(\displaystyle  \sqrt{\frac{15}{4}-\frac{-1}{2}\frac{-1}{2} }=2\)</span></p>
-<p>row 4, col 3: <span class="math notranslate nohighlight">\(1/2 \to 3/2\)</span> is <span class="math notranslate nohighlight">\(\displaystyle  \sqrt{\frac{15}{4}-\frac{1}{2}\frac{3}{2} }=\sqrt{3}\)</span></p>
+<p>row 2, col 1: <span class="math notranslate nohighlight">\(\qquad -3/2 \to -1/2\)</span> is <span class="math notranslate nohighlight">\(\displaystyle  \sqrt{\frac{15}{4}-\frac{-3}{2}\frac{-1}{2} }=\sqrt{3}\)</span></p>
+<p>row 3, col 2: <span class="math notranslate nohighlight">\(\qquad -1/2 \to -1/2\)</span> is <span class="math notranslate nohighlight">\(\displaystyle  \sqrt{\frac{15}{4}-\frac{-1}{2}\frac{-1}{2} }=2\)</span></p>
+<p>row 4, col 3: <span class="math notranslate nohighlight">\(\qquad 1/2 \to 3/2\)</span> is <span class="math notranslate nohighlight">\(\displaystyle  \sqrt{\frac{15}{4}-\frac{1}{2}\frac{3}{2} }=\sqrt{3}\)</span></p>
 <p>making the <span class="math notranslate nohighlight">\(\pmb{L}^+\)</span> matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\pmb{L}^+=\begin{bmatrix}0&amp;0&amp;0&amp;0\\\sqrt{3} &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 2 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; \sqrt{3} &amp; 0\end{bmatrix} \end{split}\]</div>
@@ -1710,7 +1712,7 @@ orthogonality, mean that the basis set is orthonormal.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\pmb{L}^-=\begin{bmatrix}0&amp;\sqrt{3}&amp;0&amp;0\\ 0&amp; 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \sqrt{3}\\ 0 &amp; 0 &amp; 0 &amp; 0\end{bmatrix} \end{split}\]</div>
 <p>which is the transpose of <span class="math notranslate nohighlight">\(\pmb{L}^+\)</span>.</p>
-<p>(c) The <span class="math notranslate nohighlight">\(\pmb{L}_z\)</span> operator has the effect <span class="math notranslate nohighlight">\(\pmb{L}_z |Lm\rangle = m|Lm\rangle\)</span> and as <span class="math notranslate nohighlight">\(m\)</span> has values <span class="math notranslate nohighlight">\(-3/2 \to 3/2\)</span>, the operator represented as a matrix is a diagonal matrix in <span class="math notranslate nohighlight">\(m\)</span> values.</p>
+<p><strong>(c)</strong> The <span class="math notranslate nohighlight">\(\pmb{L}_z\)</span> operator has the effect <span class="math notranslate nohighlight">\(\pmb{L}_z |Lm\rangle = m|Lm\rangle\)</span> and as <span class="math notranslate nohighlight">\(m\)</span> has values <span class="math notranslate nohighlight">\(-3/2 \to 3/2\)</span>, the operator represented as a matrix is a diagonal matrix in <span class="math notranslate nohighlight">\(m\)</span> values.</p>
 <p>The commutator matrix is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} \pmb{I}^+,&amp;\pmb{I}^-\end{bmatrix}=\begin{bmatrix}-3&amp;0&amp;0&amp;0\\0 &amp; -1 &amp; 0 &amp; 0\\ 0 &amp;0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 3\end{bmatrix}\end{split}\]</div>
@@ -1766,22 +1768,34 @@ orthogonality, mean that the basis set is orthonormal.</p>
 <hr class="docutils" />
 <section id="q12-answer">
 <h2>Q12 answer<a class="headerlink" href="#q12-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Using the definition of the shifting operators</p>
+<p><strong>(a)</strong> Using the definition of the shifting operators</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{L}_x\big|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\big|Lm+1\rangle + \frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\big|Lm-1\rangle \]</div>
 <p>then left multiplying by a bra to increase <span class="math notranslate nohighlight">\(m\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \langle Lm+1|\pmb{L}_x|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\langle Lm+1\big|Lm+1\rangle \\+ \frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\langle Lm+1\big|Lm-1\rangle \end{split}\]</div>
-<p>As the basis set is orthogonal and normalized, by definition, <span class="math notranslate nohighlight">\(\langle Lm \pm 1 | Lm\rangle = 0\)</span> and <span class="math notranslate nohighlight">\(\langle Lm + 1 | Lm + 1\rangle = \langle Lm - 1 | Lm - 1\rangle = 1\)</span>, therefore</p>
+\[\begin{split}\displaystyle \begin{align}\langle Lm+1|\pmb{L}_x|Lm\rangle =&amp;\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\langle Lm+1\big|Lm+1\rangle \\+ &amp;\frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\langle Lm+1\big|Lm-1\rangle\end{align} \end{split}\]</div>
+<p>As the basis set is orthogonal and normalized, by definition,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle Lm \pm 1 | Lm\rangle = 0,\quad\text{and}\quad \langle Lm + 1 | Lm + 1\rangle = \langle Lm - 1 | Lm - 1\rangle = 1\]</div>
+<p>therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle Lm+1|\pmb{L}_x|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\]</div>
 <p>A similar argument works for <span class="math notranslate nohighlight">\(\langle Lm - 1|\pmb{L}_x |Lm\rangle\)</span> and also to obtain the two expressions for <span class="math notranslate nohighlight">\(\pmb{L}_y\)</span>.</p>
-<p>(b) The commutator is</p>
+<p><strong>(b)</strong> The commutator is</p>
 <div class="math notranslate nohighlight">
 \[[\pmb{L}^+ ,\pmb{L}^-]=\pmb{L}^+ \pmb{L}^- - \pmb{L}^- \pmb{L}^+\]</div>
-<p>The effect each operator has is abbreviated as <span class="math notranslate nohighlight">\(\pmb{L}^+ | Lm\rangle \to | Lm + 1\rangle\)</span> meaning that the quantum numbers are increased by one or are decreased by 1; <span class="math notranslate nohighlight">\(\pmb{L}^- |Lm\rangle \to |Lm - 1\rangle \)</span>. The effect of two operations is therefore to leave the state unchanged, one raises the other lowers or <em>vice versa</em>. Thus the operation <span class="math notranslate nohighlight">\(\pmb{L}^- (\pmb{L}^+ |Lm\rangle )\to \pmb{L}^- |Lm+1\rangle \to|Lm\rangle\)</span> and similarly for <span class="math notranslate nohighlight">\(\pmb{L}^+ \pmb{L}^-\)</span>. Thus, it is established that the product operator has the same effect as <span class="math notranslate nohighlight">\(\pmb{L}_z\)</span> in that the quantum number is unchanged. However, the commutator could turn out to be zero so the square roots have to be worked out. These have the value</p>
+<p>The effect each operator has is abbreviated as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}&amp;\sqrt{\big(L(L+1)-m(m-1)\big)\big(L(L+1)-m(m-1)\big)}-\sqrt{\big(L(L+1)-m(m+1)\big)\big(L(L+1)-m(m+1)\big)}\\&amp;=2m\end{align}\end{split}\]</div>
+\[\displaystyle \pmb{L}^+ | Lm\rangle \to | Lm + 1\rangle\]</div>
+<p>meaning that the quantum numbers are increased by one or are decreased by 1;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{L}^- |Lm\rangle \to |Lm - 1\rangle \]</div>
+<p>The effect of two operations is therefore to leave the state unchanged, one raises the other lowers or <em>vice versa</em>. Thus the operation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{L}^- (\pmb{L}^+ |Lm\rangle )\to \pmb{L}^- |Lm+1\rangle \to|Lm\rangle\]</div>
+<p>and similarly for <span class="math notranslate nohighlight">\(\pmb{L}^+ \pmb{L}^-\)</span>. Thus, it is established that the product operator has the same effect as <span class="math notranslate nohighlight">\(\pmb{L}_z\)</span> in that the quantum number is unchanged. However, the commutator could turn out to be zero so the square roots have to be worked out. These have the value</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sqrt{\big(L(L+1)-m(m-1)\big)\big(L(L+1)-m(m-1)\big)}-\sqrt{\big(L(L+1)-m(m+1)\big)\big(L(L+1)-m(m+1)\big)}=2m\]</div>
 <p>which confirms that <span class="math notranslate nohighlight">\([\pmb{L}^+,\pmb{L}^-]=2\pmb{L}_z\)</span>.</p>
 </section>
 </section>

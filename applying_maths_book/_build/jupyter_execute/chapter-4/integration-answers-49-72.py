@@ -16,7 +16,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q49 answer
-# (a) The centroid in this part has the x-axis as its lower limit hence $g(x)$ is zero. The limits of $x$ are $0 \to  r$ the radius.
+# **(a)** The centroid in this part has the x-axis as its lower limit hence $g(x)$ is zero. The limits of $x$ are $0 \to  r$ the radius.
 # 
 # $$\displaystyle M_x=\frac{1}{2}\int_0^r y^2 dx=\frac{1}{2}\int_0^r (r^2-x^2)dx=\frac{r^3}{3},\qquad M_y=\int_0^r xydx=\int_0^r x\sqrt{r^2-x^2}dx$$
 # 
@@ -24,7 +24,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The average $x$ and $y$ positions are obtained by dividing the centroids by the area which for a quadrant is $\pi r^2/4$; see equation 35; $\langle y \rangle = M_x /A,\; \langle x \rangle = M_y /A$. The average values are $4r/3\pi$. 
 # 
-# (b) In this part $g(x) = x^2$ then the integrals are 
+# **(b)** In this part $g(x) = x^2$ then the integrals are 
 # 
 # $$\displaystyle M_x=\frac{1}{2}\int_0^r (r^2-x^2-x^4)dr =\frac{r^3}{2}\left(\frac{2}{3}-\frac{r^2}{5} \right),\; M_y=\int_0^r x\sqrt{r^2-x^2}dx$$
 # 
@@ -35,7 +35,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # The area is the difference between the two curves, $\displaystyle \pi r^2/4-\int_0^r x^2dx =\pi r^2/4-r^3/3$ and the average $x$ and $y$ values then their centroids respectively divided by the area making the average values $\displaystyle \langle x \rangle = \frac{(4-3r)r}{3\pi-4r},\, \langle y \rangle = \frac{2(10-3r^2)r}{5(3\pi-4r)}$.
 # 
 # ## Q50 answer
-# (a) The volume of a small circular disc of thickness $dx$ is $\pi r^2dx$ where $r$ is the radius of the disc at any position $x$. The mass of the element is therefore $\rho_0\pi r^2dx$ where $rho_0$ is the density (mass / unit volume) and the total mass of the lens is 
+# **(a)** The volume of a small circular disc of thickness $dx$ is $\pi r^2dx$ where $r$ is the radius of the disc at any position $x$. The mass of the element is therefore $\rho_0\pi r^2dx$ where $rho_0$ is the density (mass / unit volume) and the total mass of the lens is 
 # 
 # $$\displaystyle \pi\rho_0\int_0^h r^2 dx= a\pi\rho_0\int_0^h x dx = a\pi\rho_0 h^2/2$$
 # 
@@ -45,7 +45,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which is $h/3$ from the base. Because the lens is cylindrically symmetric the centre of gravity lies along the x-axis at the point $(2h/3,\, 0)$.
 # 
-# (b) Since now the density is a function only of distance $x$ then it is uniform in the y-direction. The mass is the integral of the volume element $\rho_(x)\pi r^2dx$ over the length, which is 
+# **(b)** Since now the density is a function only of distance $x$ then it is uniform in the y-direction. The mass is the integral of the volume element $\rho_(x)\pi r^2dx$ over the length, which is 
 # 
 # $$\displaystyle a\rho_0\pi\int_0^h(1+bx)xdx=a\rho_0\pi\left( \frac{h^2}{2}+b\frac{h^3}{3} \right)$$
 # 
@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # This reduces to the previous result when $b = 0$ and if $b$ were very large, if such a material existed, then in the limit $\langle x\rangle = 4h/5$.
 # 
 # ## Q51 answer
-# (a) The volume is $\displaystyle V=\pi \int_0^\infty y^2dx=\pi\int_0^\infty \frac{dx}{x^2}=\pi$. 
+# **(a)** The volume is $\displaystyle V=\pi \int_0^\infty y^2dx=\pi\int_0^\infty \frac{dx}{x^2}=\pi$. 
 # 
 # The surface area is given by $\displaystyle S=2\pi\int_a^b y\sqrt{1+y'^2}dx$, where $y'$ is the derivative. 
 # 
@@ -75,7 +75,7 @@ sp.integrate( sp.sqrt((x**2 - 1)/x**4), (x,1,inf) )
 # **Exercise:** Calculate the surface area of the parabolic lens described in the previous question.
 # 
 # ## Q52 answer
-# (a) As $p$ is not a variable of the integration and if integration is done first then 
+# **(a)** As $p$ is not a variable of the integration and if integration is done first then 
 # 
 # $$\displaystyle F=\frac{d}{dp}\int_a^b e^{-px}dx=-\frac{d}{dp}\left(\frac{e^{-px}}{p} \right)\bigg |_a^b=-\frac{d}{dp}\left(\frac{e^{-bp}-e^{-ap}}{p}\right)$$
 # 
@@ -87,7 +87,7 @@ sp.integrate( sp.sqrt((x**2 - 1)/x**4), (x,1,inf) )
 # 
 # which is a standard form and can be integrated to the same result as above. Using the method above  demonstrates an alternative way of evaluating $\int_a^b xe^{-px}dx$ instead of by parts.
 # 
-# (b) The average of the distribution is by definition, equation 28, $\displaystyle \langle x \rangle =\int xe^{-px}dx\big / \int e^{-px}dx$. Integrating first gives 
+# **(b)** The average of the distribution is by definition, equation 28, $\displaystyle \langle x \rangle =\int xe^{-px}dx\big / \int e^{-px}dx$. Integrating first gives 
 # 
 # $$\displaystyle  F= \frac{d}{dp} \ln\left( \int_a^b e^{-px}dx \right)=\frac{d}{dp}\ln \left( \frac{ e^{-ap}- e^{-bp}  }{p} \right) = -\frac{1}{p}+\frac{be^{-bp}-ae^{-ap}}{e^{-ap}-e^{-bp}} $$
 # 
@@ -103,7 +103,7 @@ sp.integrate( sp.sqrt((x**2 - 1)/x**4), (x,1,inf) )
 # where the integrals are standard ones and the limits are $\pm \infty$. This result is not zero because the functions inside the integrals are even. As in the previous question this illustrates an alternative way of calculating integrals.
 # 
 # ## Q54 answer
-# (a) The average value of $E$ is based on equation 28, 
+# **(a)** The average value of $E$ is based on equation 28, 
 # 
 # $$\displaystyle \langle E\rangle = \frac{\int_0^\infty Ee^{-E/k_BT}dE}{\int_0^\infty e^{-E/k_BT}dE}$$
 # 
@@ -125,7 +125,7 @@ eq1 = sp.exp(-E/(kB*T) )
 sp.integrate(eq2,(E,0,inf)) /sp.integrate(eq1,(E,0,inf))  
 
 
-# (b) Using the results just calculated the variance of the energy is 
+# **(b)** Using the results just calculated the variance of the energy is 
 # 
 # $$\sigma_E^2 = \langle E^2\rangle - \langle E\rangle^2 = (k_BT)^2$$
 # 
@@ -136,17 +136,17 @@ sp.integrate(eq2,(E,0,inf)) /sp.integrate(eq1,(E,0,inf))
 # Calculated in a slightly different way, the variance is related to the heat capacity as $\sigma_E^2 = k_BT^2C_V$ and therefore $\sigma_E \approx \sqrt{N}$ because the heat capacity is proportional to $N$. (In an ideal monatomic gas $C_V=3Nk_BT/2$). As the average energy $\langle E\rangle$ is proportional to $N$, then $\sigma_E/\langle E\rangle \approx 1/\sqrt{N}$ and this ratio becomes very small, even when $N$ is many orders of magnitude smaller than Avogadro's number.
 # 
 # ## Q55 answer 
-# (a) The variable to be differentiated with respect to is not the same as that for integration therefore the differentiation can be placed inside the integration as 
+# **(a)** The variable to be differentiated with respect to is not the same as that for integration therefore the differentiation can be placed inside the integration as 
 # 
 # $$ \displaystyle \frac{d}{dT}\int f(x,T)dx=\int\frac{d}{dT}f(x,T)dx$$
 # 
-# (b) Using the chain rule to differentiate $\ln(y)$ produces $\displaystyle \frac{d\ln(y)}{dx}=\frac{1}{y}\frac{dy}{dx}$
+# **(b)** Using the chain rule to differentiate $\ln(y)$ produces $\displaystyle \frac{d\ln(y)}{dx}=\frac{1}{y}\frac{dy}{dx}$
 # 
 # or in general for any function $\displaystyle \frac{d\ln(f(y))}{dx}=\frac{1}{f(y)}\frac{dy}{dx}$.
 # 
 # Differentiating $1/x$ gives $-1/x^2$ or $\displaystyle d(1/x)=-1/x^2$. Applying this to the equation with $x\equiv T$ gives the quoted result.
 # 
-# (c) Re-writing produces $\displaystyle E_a=\frac{k_BT^2}{k(T)}\frac{dk(T)}{dT}$. Differentiating and multiplying by $k_BT^2$ gives
+# **(c)** Re-writing produces $\displaystyle E_a=\frac{k_BT^2}{k(T)}\frac{dk(T)}{dT}$. Differentiating and multiplying by $k_BT^2$ gives
 # 
 # $$\displaystyle  k_BT^2\frac{dk(T)}{dT}=-\frac{3}{2}k_BT^2\sqrt{\frac{2}{\pi\mu}}\frac{1}{(k_BT)^{3/2}}\int_0^\infty \sigma(E)Ee^{-E/k_BT}dE +\sqrt{\frac{2}{\pi\mu}}\frac{1}{(k_BT)^{3/2}}\int_0^\infty \sigma(E)E^2e^{-E/k_BT}dE$$
 # 
@@ -156,7 +156,7 @@ sp.integrate(eq2,(E,0,inf)) /sp.integrate(eq1,(E,0,inf))
 # 
 # The first term is the average energy of all collisions, which is the kinetic energy of the molecules. The second term is the average energy of all reactive collisions, which are distributed as the product of the cross section, the energy and the Boltzmann distribution.
 # 
-# (d) The calculation is 
+# **(d)** The calculation is 
 # 
 # $$\displaystyle E_a=-\frac{3}{2}k_BT +\frac{\int_{E_0}^\infty E^2(1-\frac{E_0}{E})e^{-E/k_BT}dE}{\int_{E_0}^\infty E(1-\frac{E_0}{E})e^{-E/k_BT}dE}$$
 # 
@@ -175,7 +175,7 @@ sp.simplify( (sp.integrate(eq2,(E,E0,inf)) )/ (sp.integrate(eq1,(E,E0,inf)) ) )
 
 
 # ## Q56 answer
-# (a) The average speed is by definition, 
+# **(a)** The average speed is by definition, 
 # 
 # $$\displaystyle \langle u\rangle =\frac{\int_0^\infty uP(u)du}{\int_0^\infty P(u)du} = \int_0^\infty uP(u)du$$
 # 
@@ -202,7 +202,7 @@ sp.integrate(eq,(u,0,inf))
 # 
 # which is an integral of the form $\displaystyle \int u^4e^{-au^2}du =\frac{3\sqrt{\pi}}{8a^{5/2}}$ making the root mean square speed $\displaystyle \sqrt{\langle u^2\rangle} =\sqrt{ \frac{3 k_BT}{ m} }$. 
 # 
-# (b) The most probable speed occurs at the maximum $P(u)$ and is found by differentiating the speed distribution and setting the result to zero, 
+# **(b)** The most probable speed occurs at the maximum $P(u)$ and is found by differentiating the speed distribution and setting the result to zero, 
 # 
 # $$\displaystyle \frac{dP(u)}{dU}=0= (2k_BT-mu^2)\frac{\sqrt{2}m^{3/2}}{\sqrt{\pi}(k_BT)^{5/2}}ue^{-mu^2/2k_BT}$$
 # 
@@ -219,7 +219,7 @@ sp.integrate(eq,(u,0,inf))
 # Figure 51b: Boltzmann distribution $P(u)$ vs $u$  at $300$ K for a molecule with the mass of SO$_2$. The different speeds are marked on the plot. The values are $u_{max_p}=279,\,\langle u\rangle= 315,\, u_{rms}= 342$ K.
 # ____
 # 
-# (c) Rewriting the distribution in terms of energy $E=mu^2/2$ using $du=dE/\sqrt{2mE}$ and simplifying produces 
+# **(c)** Rewriting the distribution in terms of energy $E=mu^2/2$ using $du=dE/\sqrt{2mE}$ and simplifying produces 
 # 
 # $$\displaystyle P(E)dE=\left( \frac{4}{2\pi k_B^3T^3} \right)^{1/2}\sqrt{E}e^{-E/k_BT}dE$$
 # 
@@ -252,7 +252,7 @@ sp.integrate(eq32,(E,0,inf))/sp.integrate(eq12,(E,0,inf))
 # and the fractional standard deviation  $\displaystyle \frac{\sigma_E}{\langle E \rangle}=\sqrt{\frac{2}{3} }$.
 # 
 # ## Q57 answer
-# (a) The displacement, not the energy, is calculated. The probability function to use is the Boltzmann distribution with the energy at position $x$. In the harmonic oscillator, it is intuitive that the average displacement is zero; this can also be appreciated from the equation 
+# **(a)** The displacement, not the energy, is calculated. The probability function to use is the Boltzmann distribution with the energy at position $x$. In the harmonic oscillator, it is intuitive that the average displacement is zero; this can also be appreciated from the equation 
 # 
 # $$\displaystyle \langle x \rangle =\frac{\int xe^{-kx^2/(2k_BT)}dx}{\int e^{-kx^2/(2k_BT)}dx}$$
 # 
@@ -268,12 +268,12 @@ sp.integrate(eq32,(E,0,inf))/sp.integrate(eq12,(E,0,inf))
 # 
 # Because the average energy $k_BT$ is fixed at constant temperature, the smaller the force constant $k$ is, the larger is the spread of the oscillator displacement; exactly as might be anticipated. The average $\langle x^2 \rangle$ is the average of the square of the displacement from zero either to positive or negative $x$ and because $x^2$ is always positive $\langle x^2 \rangle$ is not zero. The term $\sqrt{\langle x^2 \rangle}$ is the average displacement.
 # 
-# (b) Using the values given in the question, the root mean square value of the displacement is $\sqrt{\langle x^2 \rangle} = 4.89$ pm and is a very small percentage ($1.8$%) of the bond length of $267$ pm. This can be taken as the average extension or contraction of the I$_2$ bond at $300$ K.
+# **(b)** Using the values given in the question, the root mean square value of the displacement is $\sqrt{\langle x^2 \rangle} = 4.89$ pm and is a very small percentage ($1.8$%) of the bond length of $267$ pm. This can be taken as the average extension or contraction of the I$_2$ bond at $300$ K.
 # 
 # This calculation implicitly assumes that the molecule's vibrations are not quantised (why is this?) therefore this result is only accurate if the vibrational energy level spacing is small compared to $k_BT$ when the molecule can be considered to behave classically. As iodine's vibrational frequency is $\approx 213 \mathrm{\,cm^{-1}}$ and at room temperature $k_BT \approx 208 \mathrm{\,cm^{-1}}$, even this heavy molecule, with its small vibrational frequency and energy spacing, should be described by quantum mechanics.
 # 
 # ## Q58 answer
-# The motion is $x = x_0\cos(\omega t)$ where $\omega$ is the angular frequency and $x_0$ the maximum amplitude. The small distance $dx$ is proportional to $dt$ and by differentiation 
+# **(a)** The motion is $x = x_0\cos(\omega t)$ where $\omega$ is the angular frequency and $x_0$ the maximum amplitude. The small distance $dx$ is proportional to $dt$ and by differentiation 
 # 
 # $$dx =\omega x_0 \sin(\omega t)dt$$
 # 
@@ -291,33 +291,37 @@ sp.integrate(eq32,(E,0,inf))/sp.integrate(eq12,(E,0,inf))
 # 
 # $$\displaystyle P(x)= \frac{1}{\pi}\frac{dx}{\sqrt{x_0^2-x^2}}$$
 # 
-# This function is approximately 'U' shaped about the equilibrium bond extension position. At the maximum extension $\pm x_0,\, P(x_0)=\infty$ and at $x=0$ the probability is a minimum and has the value $1/(\pi x_0)$.
+# **(b)** This function is approximately 'U' shaped about the equilibrium bond extension position. At the maximum extension $\pm x_0,\, P(x_0)=\infty$ and at $x=0$ the probability is a minimum and has the value $1/(\pi x_0)$.
 # 
 # This distribution is infinite at $x = \pm x_0$ but surprisingly is normalized as can be shown by integrating between the limits of the motion 
 # 
 # $$\displaystyle I=\int_{-x_0}^{x_0} P(x)dx= \frac{1}{\pi}\int_{-x_0}^{x_0}\frac{dx}{\sqrt{x_0^2-x^2}}$$
 # 
-# This is a standard integral $\displaystyle I=\frac{1}{\pi}\sin^{-1}\left(\frac{x}{x_0} \right)\bigg|_{-x_0}^{x_0}=1$  where $\sin^{-1}(-1)=-\pi/2$.
+# This is a standard integral 
 # 
-# (c) The average position is zero because the function to integrate is odd, the probability distribution is symmetrical about $x = 0$ and the extension and the limits are symmetrical. As the distribution is normalised  $\displaystyle \langle x\rangle = \int xP(x)dx=0$. The mean squared displacement is $\displaystyle \langle x^2 \rangle = \int x^2P(x)dx$ and is quite an awkward integration. Using Sympy gives $\displaystyle \langle x^2 \rangle = x_0^2/2$ as shown below. The dispersion, or variance is $\displaystyle \langle x^2 \rangle - \langle x \rangle^2$ which is also equal to $x_0^2/2$ because $\langle x \rangle  = 0$.
+# $$\displaystyle I=\frac{1}{\pi}\sin^{-1}\left(\frac{x}{x_0} \right)\bigg|_{-x_0}^{x_0}=1$$
+# 
+# where $\sin^{-1}(-1)=-\pi/2$.
+# 
+# **(c)** The average position is zero because the function to integrate is odd, the probability distribution is symmetrical about $x = 0$ and the extension and the limits are symmetrical. As the distribution is normalised  $\displaystyle \langle x\rangle = \int xP(x)dx=0$. The mean squared displacement is $\displaystyle \langle x^2 \rangle = \int x^2P(x)dx$ and is quite an awkward integration. Using SymPy gives $\displaystyle \langle x^2 \rangle = x_0^2/2$ as shown below. The dispersion, or variance is $\displaystyle \langle x^2 \rangle - \langle x \rangle^2$ which is also equal to $x_0^2/2$ because $\langle x \rangle  = 0$.
 
 # In[7]:
 
 
-x0, x = sp.symbols('x0, x', positive =True)
+x0, x = sp.symbols('x0, x', positive =True)  # Using SymPy
 pi = sp.pi
 eq = x**2/(pi*sp.sqrt(x0**2 - x**2) )
 sp.integrate(eq,(x,-x0,x0 ))
 
 
 # ## Q59 answer
-# (a) The probability distribution function is $\psi^*\psi dx$ making the integral $\displaystyle \langle x \rangle = \int_{-\infty}^\infty x\psi^2(x)dx$,
+# **(a)** The probability distribution function is $\psi^*\psi dx$ making the integral $\displaystyle \langle x \rangle = \int_{-\infty}^\infty x\psi^2(x)dx$,
 # 
-# because $\psi$ is real not complex. First consider the wavefunction for the second quantum level $\psi_2$, which is an even function, and therefore $\psi_2^2$ is also even, but multiplying by $x$ makes $x\psi_2^2$ odd. Therefore this and all even quantum numbered wavefunctions produce $\langle x \rangle = 0$.
+# because $\psi$ is real, not complex. First consider the wavefunction for the second quantum level $\psi_2$, which is an even function, and therefore $\psi_2^2$ is also even, but multiplying by $x$ makes $x\psi_2^2$ odd. Therefore this and all even quantum numbered wavefunctions produce $\langle x \rangle = 0$.
 # 
 # The odd numbered wavefunctions become even when squared and so these are also zero as $x\psi_1^2$ is again odd, therefore $\langle x \rangle = 0$ for all harmonic oscillator wavefunctions. And this is the same result as was obtained classically in the previous example.
 # 
-# Calculating 
+# **(b)** Calculating 
 # 
 # $$\displaystyle \langle x^2 \rangle=\int_{-\infty}^\infty x^2\psi^2(x)dx$$
 # 
@@ -374,7 +378,7 @@ for n in range(5):
 ans
 
 
-# From these results the general pattern is 
+# **(c, d)** From these results the general pattern is 
 # 
 # $$\displaystyle \langle x^2 \rangle=\left(n+\frac{1}{2}\right)\frac{1}{\alpha} $$
 # 
@@ -385,7 +389,7 @@ ans
 # Figure 52. Potential energy and the $n = 0 \to 8$ vibrational energy levels  with the wavefunctions for CO assuming that it is a quantum harmonic oscillator. The equilibrium bond length $x_e = 0.113$ nm. The average $\langle x \rangle$  and root mean square distance $\langle x^2 \rangle$ are also shown as circles.
 # ____
 # 
-# (e) The average momentum is $\displaystyle  \langle p\rangle =-i\hbar\int_{-\infty}^\infty \psi^*(x)\frac{d}{dx}\psi(x)dx$. 
+# **(e)** The average momentum is $\displaystyle  \langle p\rangle =-i\hbar\int_{-\infty}^\infty \psi^*(x)\frac{d}{dx}\psi(x)dx$. 
 # 
 # Because the motion is equally to the left and right during the vibration the average momentum should be zero. To check this start with the $n = 0$ wavefunction $\psi_0(x)=N_0e^{−\alpha x^2/2}$, where $N_0 = (\alpha/\pi)^{1/4}$ is the normalization constant. The average momentum is therefore 
 # 
@@ -426,9 +430,9 @@ sp.integrate(eq,(x,-inf,inf) )
 # $$ \sqrt{\langle x^2 \rangle \langle p^2 \rangle} \ge \frac{\hbar}{2}$$
 # 
 # ## Q60 answer
-# (a) The distribution is the Poisson distribution multiplied by $\beta$; see Chapters 1 and 13 for details. The derivation of the distribution assumes many events occur each with a low probability. The energy $E$ is the expected oscillator energy in units of $\beta$, and $s-1$ is the number of oscillators with this energy making $P$ the probability of obtaining energy $E$ with $s-1$ oscillators.
+# **(a)** The distribution is the Poisson distribution multiplied by $\beta$; see Chapters 1 and 13 for details. The derivation of the distribution assumes many events occur each with a low probability. The energy $E$ is the expected oscillator energy in units of $\beta$, and $s-1$ is the number of oscillators with this energy making $P$ the probability of obtaining energy $E$ with $s-1$ oscillators.
 # 
-# The average oscillator energy is by definition 
+# **(b)** The average oscillator energy is by definition 
 # 
 # $$\displaystyle \langle E \rangle= \int_0^\infty EP(E)dE\,\big/ \int_0^\infty P(E)dE$$
 # 
@@ -470,7 +474,7 @@ sp.simplify( sp.integrate( avE, (E,0,inf) ) )
 # 
 # and the standard deviation $\sigma =k_BT\sqrt{s}$ where $\beta=1/k_BT$.
 # 
-# (c) The graph of the distribution is interesting; it becomes more symmetrical as the number of oscillators is increased and the mean value increases, but this is not surprising as the distribution $P(E)$ is Poissonian and tends to the normal distribution at large $s$. The average energy when there are $50$ oscillators is $s/\beta = 50 \times 200$, which is the same as shown on the graph which was drawn assuming that the energy
+# **(c)** The graph of the distribution is interesting; it becomes more symmetrical as the number of oscillators is increased and the mean value increases, but this is not surprising as the distribution $P(E)$ is Poissonian and tends to the normal distribution at large $s$. The average energy when there are $50$ oscillators is $s/\beta = 50 \times 200$, which is the same as shown on the graph which was drawn assuming that the energy
 # is a continuous variable. The standard deviation is $200 \times 50 = 1414 \,\mathrm{cm^{-1}}$.
 # 
 # ![Drawing](integration-fig53.png)
@@ -479,7 +483,7 @@ sp.simplify( sp.integrate( avE, (E,0,inf) ) )
 # ____
 # 
 # ## Q61 answer
-# (a) The normalization is obtained by calculating the probability over all space, which has to be unity, i.e.
+# **(a)** The normalization is obtained by calculating the probability over all space, which has to be unity, i.e.
 # 
 # $$\displaystyle \int_0^L \psi_n^*(x)\psi_n(x)dx=1$$
 # 
@@ -487,7 +491,7 @@ sp.simplify( sp.integrate( avE, (E,0,inf) ) )
 # 
 # The normalised wavefunction is $\displaystyle \sqrt{\frac{L}{2} }\sin(n\pi x/L)$
 # 
-# (b) The average is $\displaystyle \langle x \rangle =\int_0^L \psi_n^*(x)\,x\,\psi_n(x)dx$
+# **(b)** The average is $\displaystyle \langle x \rangle =\int_0^L \psi_n^*(x)\,x\,\psi_n(x)dx$
 # 
 # and should be $L/2$ as the box is symmetrical about its centre. As a check the integral is 
 
@@ -599,15 +603,15 @@ sp.simplify(sp.integrate(eq,(x,0,L)) )
 # ______
 # 
 # ## Q64 answer
-# (a) If two wavefunctions are not orthogonal then $\displaystyle \int \psi_a^*\psi_b d\tau \ne 0$.
+# **(a)** If two wavefunctions are not orthogonal then $\displaystyle \int \psi_a^*\psi_b d\tau \ne 0$.
 # 
-# (b) Using the recursion formula  (see answer to Q59)
+# **(b)** Using the recursion formula  (see answer to Q59)
 # 
 # $$\displaystyle H(n+2,x)=2xH(n+1,x) - 2(n+1)H(n,x),\qquad H(0,x)=1,\quad H(1,x)=2x$$
 # 
 # The third and fourth  Hermite polynomials are $H(2,x)=4x^2-2,\,H(3,x)=8x^3-12x$.
 # 
-# (c) Starting with equation 44 define the wave functions, then calculate the FC factors. First, define the wavefunctions as function of quantum number $n$ and in terms of constant $\alpha$, coordinate $x $and internuclear separation $x_0$, and then list them with quantum numbers $0, \,1$, and $2$.
+# **(c)** Starting with equation 44 define the wave functions, then calculate the FC factors. First, define the wavefunctions as function of quantum number $n$ and in terms of constant $\alpha$, coordinate $x $and internuclear separation $x_0$, and then list them with quantum numbers $0, \,1$, and $2$.
 
 # In[16]:
 
@@ -654,8 +658,9 @@ pp
 
 FC = []
 for i in [0, 1, 5, 6]:
-    ans = sp.integrate(psi(0,x_a)*psi(0,x_b),(x,-inf,inf))  
-    FC.append([i,sp.simplify( abs( ans)**2) ] )  #  add result to list
+    ans = sp.integrate(psi(0,x_a)*psi(0,x_b),(x,-sp.oo,sp.oo)) # sp.oo is SymPy infinity
+    temp = sp.simplify( sp.conjugate( ans)*ans )
+    FC.append([i,temp ] )  #  add result to list
 FC
 
 
@@ -702,7 +707,7 @@ FC
 # ## Q65 answer
 # When $c=0$ then the only way the donor can lose energy in our model is by fluorescing, hence $\phi_0 = 1$ because both numerator and denominator in the equation 45 defining $\phi$ are then the same.
 # 
-# When the concentration is $c$ then $\displaystyle \phi=\int_0^\infty e^{-k_ft-(c/c_0)\sqrt{\pi k_ft}} dt\big/\int_0^\infty e^{-k_ft} dt$.  
+# When the concentration is $c$ then $\displaystyle \phi=\int_0^\infty e^{-k_ft-(c/c_0)\sqrt{\pi k_ft}} dt\Big/\int_0^\infty e^{-k_ft} dt$.  
 # 
 # The denominator evaluated to $1/k_f=\phi_0$, see equation 29. Using Sympy for the more complicated integral with $a=c/c_0$ gives
 # 
@@ -777,8 +782,7 @@ numer/denom
 # and shows that direct dipole-dipole coupling cannot be measured in solution by using NMR. The spin-spin coupling measured in solution is the indirect dipole-dipole coupling (J coupling) of the nuclear spins mediated via the electrons.
 # 
 # ## Q68  answer
-# (a) The first calculation is to show that the total wavefunction is normalized then by using the definition of
-# an average equation 28 calculate the answers to (b).
+# **(a)** The first calculation is to show that the total wavefunction is normalized then by using the definition of an average (eqn. 28) calculate the answers to **(b)**.
 # 
 # Integrating the angular terms in the normalization equation 46 produces 
 # 
@@ -799,7 +803,7 @@ numer/denom
 # 
 # which confirms that the wavefunction is normalised.
 # 
-# (b) As the angular parts of the 1s wavefunction evaluate to $4\pi$, see (a), the wavefunction being spherically symmetrical, the average $\langle 1/r \rangle$  is evaluated using
+# **(b)** As the angular parts of the 1s wavefunction evaluate to $4\pi$, see (a), the wavefunction being spherically symmetrical, the average $\langle 1/r \rangle$  is evaluated using
 # 
 # $$\displaystyle \begin{align}
 # \langle 1/r \rangle&= 4\pi\int_0^\infty \frac{r^2\psi^*(r,\theta,\varphi) \,\psi(r,\theta,\varphi)dr}{r}\\
@@ -845,9 +849,9 @@ for i,n in enumerate([-2,-1,0,1,2,3,4]):
 ans[:]    
 
 
-# (c) The standard deviation of a quantity $x$ is $\sigma_x=\sqrt{\langle x^2 \rangle -\langle x \rangle^2}$ and for the 1s orbital is $\displaystyle \frac{a_0}{4}\sqrt{\frac{3}{4}}$, which can be thought of s the uncertainty in the position of the electron.  For H atoms this is $\approx 46$ pm. As $Z$ increases, this value becomes smaller as the electron is more tightly bound to the nucleus.
+# **(c)** The standard deviation of a quantity $x$ is $\sigma_x=\sqrt{\langle x^2 \rangle -\langle x \rangle^2}$ and for the 1s orbital is $\displaystyle \frac{a_0}{4}\sqrt{\frac{3}{4}}$, which can be thought of s the uncertainty in the position of the electron.  For H atoms this is $\approx 46$ pm. As $Z$ increases, this value becomes smaller as the electron is more tightly bound to the nucleus.
 # 
-# (d) The chance of being within any distance $x$ of the nucleus is the integral from zero up to a distance $x$, not to infinity, as was used in previous parts of this question;
+# **(d)** The chance of being within any distance $x$ of the nucleus is the integral from zero up to a distance $x$, not to infinity, as was used in previous parts of this question;
 # 
 # $$\displaystyle p_{0\to x}=4\pi\int_0^x r^2\psi^*(r,\theta,\varphi) \,\psi(r,\theta,\varphi)dr=4\left(\frac{Z}{a_0}  \right)^3\int_0^x r^2e^{-2Zr/a_0}dr$$
 # 
@@ -874,7 +878,7 @@ sp.simplify(sp.integrate(eq,(r,0,a_0)) )
 # ____
 # 
 # ## Q69 answer
-# The total dipole contribution to the energy of each dipole in the field direction is rather daunting and is
+# **(a)** The total dipole contribution to the energy of each dipole in the field direction is rather daunting and is
 # 
 # $$\displaystyle \int_0^\pi E(\theta)p(\theta)d\theta =-\frac{\epsilon\mu N}{2}\int_0^\pi \cos(\theta)e^{\epsilon\mu \cos(\theta)/k_BT}\sin(\theta)d\theta$$
 # 
@@ -903,7 +907,7 @@ sp.simplify(sp.integrate(eq,(r,0,a_0)) )
 # Figure 60 The average dipole energy vs field $\epsilon$. Both energy and $\epsilon$ are in reduced units as shown on the axes. The interaction energy is negative when both $\mu$ and $\epsilon$ are positive. The lines at $\pm 1$ show the limiting values at a large positive and negative electric field. At small values of the field the energy varies linearly. The arrows (right) show, in a very diagrammatic way, how the dipoles might align at different field strengths $E$.
 # _____
 # 
-# (b) In the case of a small interaction $\epsilon\mu/k_BT \ll 1$,which means that $a \ll 1$ and therefore the exponential terms can be expanded as a series $\displaystyle e^a\approx 1+a+\frac{a^2}{2!}+\frac{a^3}{3!}\cdots $. Using Sympy makes the simple algebra even easier. 
+# **(b)** In the case of a small interaction $\epsilon\mu/k_BT \ll 1$,which means that $a \ll 1$ and therefore the exponential terms can be expanded as a series $\displaystyle e^a\approx 1+a+\frac{a^2}{2!}+\frac{a^3}{3!}\cdots $. Using Sympy makes the simple algebra even easier. 
 
 # In[23]:
 
@@ -920,7 +924,7 @@ sp.simplify( ans - 1/a)
 # provided that $\epsilon\mu \ll k_BT$. As a check work out the units. The electric field has units
 # $\mathrm{J \,C^{-1}\, m^{-1}}$, the dipole C m, so overall the average energy has units of J, which is correct. When the field or dipole is zero so is the energy.
 # 
-# (c) The heat capacity must be a positive  quantity and at constant volume is $\displaystyle C_V=\frac{d}{dT}\langle E\rangle =\frac{\epsilon^2\mu^2}{3k_BT^2}$, which means that $C_V=-\langle E\rangle /T$ and has units of J/K as expected.
+# **(c)** The heat capacity must be a positive  quantity and at constant volume is $\displaystyle C_V=\frac{d}{dT}\langle E\rangle =\frac{\epsilon^2\mu^2}{3k_BT^2}$, which means that $C_V=-\langle E\rangle /T$ and has units of J/K as expected.
 # 
 # The mean square energy $\langle E^2 \rangle$ is calculated in a similar way using energy $E^2$ in the calculations instead of $E$. Using the substitution $a=\epsilon\mu/k_BT$, as above, 
 # 
@@ -944,7 +948,7 @@ sp.simplify( ans - 1/a)
 # 
 # The fractional standard deviation at small applied field is $\sigma/\langle E \rangle \approx k_BT$, which means that the spread of energies is proportional to the temperature. This makes physical sense as the thermally induced Brownian motion of the solvent disrupts the orientational order of the molecule.
 # 
-# (d) At a large field $\displaystyle \frac{\epsilon\mu}{k_BT} \gg 1$  and the positive exponential terms will dominate $\langle E\rangle$ then $\langle E\rangle_{large\, \epsilon} = -\epsilon\mu + k_BT$. When the temperature is low enough or the field large enough, the second term is small compared to the first and the energy is just that of fully aligned molecules $\langle E\rangle_{large\, \epsilon} = -\epsilon\mu$ as shown in Figure 60.
+# **(d)** At a large field $\displaystyle \frac{\epsilon\mu}{k_BT} \gg 1$  and the positive exponential terms will dominate $\langle E\rangle$ then $\langle E\rangle_{large\, \epsilon} = -\epsilon\mu + k_BT$. When the temperature is low enough or the field large enough, the second term is small compared to the first and the energy is just that of fully aligned molecules $\langle E\rangle_{large\, \epsilon} = -\epsilon\mu$ as shown in Figure 60.
 # 
 # In calculating $\langle E^2\rangle$ at large field the exponential
 # terms dominate the other terms and then cancel, and
@@ -987,7 +991,7 @@ sp.simplify(sp.integrate(eq,(J,0,inf)) )
 # ______
 # 
 # ## Q71 answer
-# (a) Substituting for $g$ produces 
+# Substituting for $g$ produces 
 # 
 # $$\displaystyle Z=\frac{4\pi\sqrt{2}Vm^{3/2}}{\hbar^3}\int_0^\infty \sqrt{\epsilon}\,e^{-\epsilon/k_BT}d\epsilon$$
 # 
@@ -1010,7 +1014,7 @@ sp.simplify(sp.integrate(eq,(epsilon,0,inf) ) )
 
 
 # ## Q72 answer
-# (a) The expectation has the usual form  $\langle p_x \rangle=\int \psi^*p_x\psi dx\big/\int \psi^*\psi dx$.
+# **(a)** The expectation has the usual form  $\langle p_x \rangle=\int \psi^*p_x\psi dx\big/\int \psi^*\psi dx$.
 # 
 # The normalisation (denominator) is a constant equal to $\int dx$ but the numerator is 
 # 
@@ -1019,9 +1023,9 @@ sp.simplify(sp.integrate(eq,(epsilon,0,inf) ) )
 # 
 # thus $\langle p_x \rangle=p_x$.
 # 
-# (b) the expectation is $\displaystyle \langle p_x^2 \rangle=(-i\hbar)^2\int e^{-ip_x x/\hbar}\frac{d^2}{dx^2} e^{ip_x x/\hbar} dx\big/ \int dx = p_x^2$.
+# **(b)** the expectation is $\displaystyle \langle p_x^2 \rangle=(-i\hbar)^2\int e^{-ip_x x/\hbar}\frac{d^2}{dx^2} e^{ip_x x/\hbar} dx\big/ \int dx = p_x^2$.
 # 
-# (c) The previous results produce $\Delta p^2 = 0$ which show that $\psi$ is an eigenfunction of both operators $p_x$ and $p_x^2$. This can also be realized because both operators commute,
+# **(c)** The previous results produce $\Delta p^2 = 0$ which show that $\psi$ is an eigenfunction of both operators $p_x$ and $p_x^2$. This can also be realized because both operators commute,
 # 
 # $$\displaystyle \left[-i\hbar\frac{d}{dx} , -\hbar^2\frac{d^2}{dx^2}\right]fx=i\hbar^3\frac{d}{dx}\frac{d^2}{dx^2}f(x)-i\hbar^3\frac{d}{dx}\frac{d^2}{dx^2}f(x)=0$$
 # 

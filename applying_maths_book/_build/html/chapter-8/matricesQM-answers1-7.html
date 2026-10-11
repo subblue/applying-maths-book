@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1629,8 +1629,10 @@ title="Print to PDF"
 <section id="q1-answer">
 <h2>Q1 answer<a class="headerlink" href="#q1-answer" title="Permalink to this headline">#</a></h2>
 <p>There is no linearly polarized light present so none can cause transitions. If it were present, however, the <span class="math notranslate nohighlight">\(μ\mu_z\)</span> components of the dipole operator would be used and have the selection rules <span class="math notranslate nohighlight">\(\Delta s=0, \Delta m=0\)</span> or <span class="math notranslate nohighlight">\(s_1 =s_2\)</span> and <span class="math notranslate nohighlight">\(m_1 =m_2\)</span>.  However, all of these terms will be zero because <span class="math notranslate nohighlight">\(m\)</span> must change in any transition to conserve angular momentum. Therefore, all parts of the transition matrix containing <span class="math notranslate nohighlight">\(\mu_z\)</span> are zero. In other words, electric dipole transitions do not couple to spin angular momentum.</p>
-<p>The magnetic dipole transitions have the <span class="math notranslate nohighlight">\(\Delta m = \pm 1\)</span> selection rule. To find out what transitions are to be expected start with the ordering of quantum numbers <span class="math notranslate nohighlight">\(m_a, m_b\)</span> in the <span class="math notranslate nohighlight">\(sm\)</span> basis chosen. This ordering is
-<span class="math notranslate nohighlight">\((m_a, m_b) = (1/2, 1/2), (1/2, -1/2), (-1/2, 1/2), (-1/2, -1/2)\)</span> and transitions are allowed only between states with <span class="math notranslate nohighlight">\(\Delta m = \pm 1\)</span> and these are</p>
+<p>The magnetic dipole transitions have the <span class="math notranslate nohighlight">\(\Delta m = \pm 1\)</span> selection rule. To find out what transitions are to be expected start with the ordering of quantum numbers <span class="math notranslate nohighlight">\(m_a, m_b\)</span> in the <span class="math notranslate nohighlight">\(sm\)</span> basis chosen. This ordering is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (m_a, m_b) = (1/2, 1/2),\quad (1/2, -1/2),\quad (-1/2, 1/2),\quad (-1/2, -1/2)\]</div>
+<p>and transitions are allowed only between states with <span class="math notranslate nohighlight">\(\Delta m = \pm 1\)</span> and these are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{rrrrrrr}
 \hline
@@ -1673,21 +1675,29 @@ m_a &amp; m_b &amp; &amp; m_a &amp; m_b &amp; \text{matrix position} \\
 <p>By analogy with equation 22,the Hamiltonian is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H = g \beta S_zB − g_Nβ_NI_zB + a(S_xI_x + S_yI_y + S_zI_z)\]</div>
-<p>where <span class="math notranslate nohighlight">\(S\)</span> refers to the electron and <span class="math notranslate nohighlight">\(I\)</span> to the proton spin. Using a basis set notation as <span class="math notranslate nohighlight">\(|\alpha\alpha\rangle = (1/2, 1/2)(1/2, 1/2), |\alpha\beta\rangle = (1/2, 1/2)(1/2, -1/2)\)</span>, and so forth, which is in the same ordering as in the text, if the first letter refers to electron spin and the second to nuclear spin, the Hamiltonian matrix can be written down as</p>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> refers to the electron and <span class="math notranslate nohighlight">\(I\)</span> to the proton spin. Using a basis set notation as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\alpha\alpha\rangle = (1/2, 1/2)(1/2, 1/2),\qquad |\alpha\beta\rangle = (1/2, 1/2)(1/2, -1/2)\]</div>
+<p>and so forth, which is in the same ordering as in the text, if the first letter refers to electron spin and the second to nuclear spin, the Hamiltonian matrix can be written down as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}&amp;\qquad\qquad\qquad\begin{matrix} \quad|\alpha\alpha\rangle \qquad &amp;\qquad\quad|\alpha\beta\rangle \qquad&amp;\qquad \quad|\beta\alpha\rangle \qquad&amp; \qquad\qquad\quad|\beta\beta\rangle  \end{matrix}\\ &amp;\begin{matrix}  |\alpha\alpha\rangle \\|\alpha\beta\rangle \\ |\beta\alpha\rangle \\ |\beta\beta\rangle \end{matrix} 
 \begin{bmatrix} (G-G_N)/2+a/4 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; (G+G_N)/2-a/4 &amp; a/2 &amp; 0\\0 &amp; a/2 &amp; -(G+G_N)/2-a/4 &amp;0\\ 0 &amp; 0 &amp; 0 &amp; -(G-G_N)/2+a/4 \end{bmatrix} \end{align}\end{split}\]</div>
-<p>with the abbreviations <span class="math notranslate nohighlight">\(G = g\beta B,  G_N = g_N\beta_NB\)</span>. (Do not confuse <span class="math notranslate nohighlight">\(\beta\)</span> in the equation for <span class="math notranslate nohighlight">\(G\)</span> with <span class="math notranslate nohighlight">\(\beta\)</span> used in the basis set). The matrix shows how the states <span class="math notranslate nohighlight">\(| \alpha\beta \rangle\)</span> and <span class="math notranslate nohighlight">\(| \beta\alpha \rangle\)</span> are mixed by the electron and nuclear spin interaction because these are the only states with off-diagonal terms. The matrix can be diagonalized by blocking it into two <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrices and a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix, therefore two of the energies can be read directly from the matrix. The states that mix have different energies at zero <span class="math notranslate nohighlight">\(B\)</span> and move apart as they all do as <span class="math notranslate nohighlight">\(B\)</span> is increased.</p>
+<p>with the abbreviations</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G = g\beta B,\qquad  G_N = g_N\beta_NB\]</div>
+<p>(Do not confuse <span class="math notranslate nohighlight">\(\beta\)</span> in the equation for <span class="math notranslate nohighlight">\(G\)</span> with <span class="math notranslate nohighlight">\(\beta\)</span> used in the basis set). The matrix shows how the states <span class="math notranslate nohighlight">\(| \alpha\beta \rangle\)</span> and <span class="math notranslate nohighlight">\(| \beta\alpha \rangle\)</span> are mixed by the electron and nuclear spin interaction because these are the only states with off-diagonal terms. The matrix can be diagonalized by blocking it into two <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrices and a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix, therefore two of the energies can be read directly from the matrix. The states that mix have different energies at zero <span class="math notranslate nohighlight">\(B\)</span> and move apart as they all do as <span class="math notranslate nohighlight">\(B\)</span> is increased.</p>
 <p>Calculating the eigenvalues can be done using Python/SymPy, although the <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix can be diagonalized by hand. The result is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{align} E_{\alpha\alpha}&amp;=\frac{a}{4}+\frac{g\beta-g_N\beta_N}{2}B \\
 E_{\alpha\beta+\beta\alpha}&amp;=-\frac{a}{4}+\frac{\sqrt{a^2+(g\beta+g_N\beta_N)B^2}}{2}\\
 E_{\alpha\beta-\beta\alpha}&amp;=-\frac{a}{4}-\frac{\sqrt{a^2+(g\beta+g_N\beta_N)B^2}}{2}\\
 E_{\beta\beta}&amp;=\frac{a}{4}-\frac{g\beta-g_N\beta_N}{2}B \end{align}\end{split}\]</div>
-<p>The energy levels vs B are shown in Figure 6. The separation of levels at zero field is <span class="math notranslate nohighlight">\(a\)</span>, as may be confirmed from the energy levels; the lowest level is at <span class="math notranslate nohighlight">\(-3a/4\)</span> and the other three at <span class="math notranslate nohighlight">\(a/4\)</span>. By inspecting the eigenvalues with basis-set ordering, the composition of the levels can be determined. At high field, the states with the same electron spin ms quantum number <span class="math notranslate nohighlight">\(1/2\)</span>, which are the two lower and two upper states, are separated by a constant amount a/2, irrespective of the magnetic field B. Also at high field, (Fig. 6) the states can be labelled with the basis set values because mixing between states is small; the off-diagonal terms are small because <span class="math notranslate nohighlight">\(B\)</span> is large. At small or zero <span class="math notranslate nohighlight">\(B\)</span>, the states <span class="math notranslate nohighlight">\(|\alpha\beta\rangle\)</span> and <span class="math notranslate nohighlight">\(|\beta\alpha\rangle\)</span> are mixed and it is better to describe them as a symmetric and symmetric pair, <span class="math notranslate nohighlight">\((|\alpha\beta\rangle\pm|\beta\alpha\rangle)\sqrt{2}\)</span>.</p>
+<p>The energy levels vs B are shown in Figure 6. The separation of levels at zero field is <span class="math notranslate nohighlight">\(a\)</span>, as may be confirmed from the energy levels; the lowest level is at <span class="math notranslate nohighlight">\(-3a/4\)</span> and the other three at <span class="math notranslate nohighlight">\(a/4\)</span>. By inspecting the eigenvalues with basis-set ordering, the composition of the levels can be determined. At high field, the states with the same electron spin ms quantum number <span class="math notranslate nohighlight">\(1/2\)</span>, which are the two lower and two upper states, are separated by a constant amount a/2, irrespective of the magnetic field B. Also at high field, (Fig. 6) the states can be labelled with the basis set values because mixing between states is small; the off-diagonal terms are small because <span class="math notranslate nohighlight">\(B\)</span> is large. At small or zero <span class="math notranslate nohighlight">\(B\)</span>, the states <span class="math notranslate nohighlight">\(|\alpha\beta\rangle\)</span> and <span class="math notranslate nohighlight">\(|\beta\alpha\rangle\)</span> are mixed and it is better to describe them as a symmetric and symmetric pair,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (|\alpha\beta\rangle\pm|\beta\alpha\rangle)\sqrt{2}\]</div>
 <p>The three levels at zero field form a triplet</p>
 <div class="math notranslate nohighlight">
-\[|\alpha\alpha \rangle,|\beta\beta \rangle,(|\alpha\beta\rangle+|\beta\alpha\rangle)/\sqrt{2}\]</div>
+\[|\alpha\alpha \rangle,\quad|\beta\beta \rangle,\quad(|\alpha\beta\rangle+|\beta\alpha\rangle)/\sqrt{2}\]</div>
 <p>with energy <span class="math notranslate nohighlight">\(a/4\)</span>, and the other state is a singlet,</p>
 <div class="math notranslate nohighlight">
 \[(|\alpha\beta\rangle-|\beta\alpha\rangle)/\sqrt{2}\]</div>
@@ -1791,16 +1801,22 @@ QJ&amp; 0 &amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
 </section>
 <section id="q4-answer">
 <h2>Q4 answer<a class="headerlink" href="#q4-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Differentiating <span class="math notranslate nohighlight">\(\varphi\)</span> twice and forming the Schroedinger equation gives after some simplification</p>
+<p><strong>(a)</strong> Differentiating <span class="math notranslate nohighlight">\(\varphi\)</span> twice and forming the Schroedinger equation gives after some simplification</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2I}\frac{d^2\varphi_m}{d\theta^2}=\frac{\hbar^2}{2I}m^2\varphi_m\]</div>
-<p>therefore the energy is <span class="math notranslate nohighlight">\(\displaystyle E_m=\frac{\hbar^2}{2I}m^2\)</span>.</p>
-<p>Starting with <span class="math notranslate nohighlight">\(H^0\varphi_m=E_m\varphi_m\)</span> the expectation value of operator <span class="math notranslate nohighlight">\(H^0\)</span> between levels with quantum numbers <span class="math notranslate nohighlight">\(m = m'\)</span>, which is the diagonal or self-energy, is</p>
+<p>therefore the energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_m=\frac{\hbar^2}{2I}m^2\]</div>
+<p>Starting with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^0\varphi_m=E_m\varphi_m\]</div>
+<p>the expectation value of operator <span class="math notranslate nohighlight">\(H^0\)</span> between levels with quantum numbers <span class="math notranslate nohighlight">\(m = m'\)</span>, which is the diagonal or self-energy, is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H^0_{m,m}=\frac{\int\varphi^*_mH^0\varphi_md\theta}{\int\varphi^*_m\varphi_md\theta}=\frac{\int\varphi^*_mE_m\varphi_md\theta}{\int\varphi^*_m\varphi_md\theta}=E_m\]</div>
-<p>when the wavefunction is normalized,<span class="math notranslate nohighlight">\(\int\varphi^*_m\varphi_md\theta = 1\)</span> with <span class="math notranslate nohighlight">\(\theta = 0
-\to 2\pi\)</span>.</p>
-<p>Using the definition of <span class="math notranslate nohighlight">\(\varphi\)</span> in the question the expectation value for the changed potential <span class="math notranslate nohighlight">\(V\)</span> between levels <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m'\)</span> is</p>
+<p>when the wavefunction is normalized,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^{2\pi}\varphi^*_m\varphi_md\theta = 1\]</div>
+<p><strong>(b)</strong> Using the definition of <span class="math notranslate nohighlight">\(\varphi\)</span> in the question the expectation value for the changed potential <span class="math notranslate nohighlight">\(V\)</span> between levels <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m'\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} H^1_{mm'}&amp;=\frac{V_3}{2}\int\varphi^*_m\left(1-\cos(3\theta)\right)\varphi_{m'}d\theta\\
 &amp;=\frac{V_3}{2}\int\varphi^*_m\varphi_{m'}d\theta - \frac{V_3}{2}\int\varphi^*_m\cos(3\theta)\varphi_{m'}d\theta\\
@@ -1820,17 +1836,26 @@ QJ&amp; 0 &amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
 <img alt="../_images/matricesQM-answers1-7_5_0.png" src="../_images/matricesQM-answers1-7_5_0.png" />
 </div>
 </div>
-<p>Simplifying the result gives <span class="math notranslate nohighlight">\(\displaystyle \frac{ia(1-e^{2i\pi a})}{a^2-3^2}\)</span> which is zero when <span class="math notranslate nohighlight">\(a=m-m'=0\)</span> but real when <span class="math notranslate nohighlight">\(a=3\)</span> or <span class="math notranslate nohighlight">\(m-m'=3\)</span> this is not so obvious because the real part when <span class="math notranslate nohighlight">\(a = 3\)</span> has a numerator and denominator that are both zero; however, the limit is <span class="math notranslate nohighlight">\(\pi\)</span>; The real part is <span class="math notranslate nohighlight">\(\displaystyle \frac{a\sin(2\pi a)}{a^2-3^2}\)</span> Plotting the function clarifies this.</p>
+<p>Simplifying the result gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{ia(1-e^{2i\pi a})}{a^2-3^2}\]</div>
+<p>which is zero when <span class="math notranslate nohighlight">\(a=m-m'=0\)</span> but real when <span class="math notranslate nohighlight">\(a=3\)</span> or <span class="math notranslate nohighlight">\(m-m'=3\)</span> this is not so obvious because the real part when <span class="math notranslate nohighlight">\(a = 3\)</span> has a numerator and denominator that are both zero; however, the limit is <span class="math notranslate nohighlight">\(\pi\)</span>; The real part is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{a\sin(2\pi a)}{a^2-3^2}\]</div>
+<p>Plotting the function clarifies this.</p>
 <p><img alt="Drawing" src="../_images/matricesQM-fig7.png" /></p>
 <p>Figure 7 Real and imaginary part of the integration. Only integer values of <span class="math notranslate nohighlight">\(a\)</span> are valid are valid because the quantum numbers are integers. Only at integer <span class="math notranslate nohighlight">\(a = 3\)</span> is the real result not zero.</p>
 <hr class="docutils" />
-<p>The result for the <span class="math notranslate nohighlight">\(m, m'\)</span> expectation value is</p>
+<p><strong>(c)</strong> The result for the <span class="math notranslate nohighlight">\(m, m'\)</span> expectation value is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H^1_{m,m'}= \frac{V_3}{2}\delta_{m,m}-\frac{V_3}{4}\delta_{m,m\pm3} \tag{35}\]</div>
 <p>where <span class="math notranslate nohighlight">\(m'\)</span> can only take values <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m \pm 3\)</span>. Now all the matrix elements are calculated they can be put into a matrix, equation 12, provided the ordering of the m values is decided upon. The basis set can be ordered in groups of m values as,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle m = 0, 1, -1, 2, -2 \cdots\]</div>
-<p>which pairs <span class="math notranslate nohighlight">\(m\)</span> values; it could also be done as <span class="math notranslate nohighlight">\(m = \cdots -3, -2, -1, 0, 1, 2, \cdots\)</span> or in a random order; there are many choices. The diagonal terms all contain <span class="math notranslate nohighlight">\(H^0\)</span> and some also contain part of <span class="math notranslate nohighlight">\(H^1\)</span> and are <span class="math notranslate nohighlight">\(\displaystyle {\hbar^2}{2I}m^2+\frac{V_3}{2}\)</span> because on the diagonal <span class="math notranslate nohighlight">\(m = m'\)</span>. The off-diagonal terms are only non-zero when <span class="math notranslate nohighlight">\(m' = m \pm 3\)</span> and each have the value <span class="math notranslate nohighlight">\(-V_3/4\)</span>. The matrix for <span class="math notranslate nohighlight">\(m\)</span> up to <span class="math notranslate nohighlight">\(\pm 3\)</span> is with substitutions <span class="math notranslate nohighlight">\(V \equiv V_3/2\)</span> and <span class="math notranslate nohighlight">\(\displaystyle A\equiv \frac{\hbar^2}{2I}\)</span></p>
+<p>which pairs <span class="math notranslate nohighlight">\(m\)</span> values; it could also be done as <span class="math notranslate nohighlight">\(m = \cdots -3, -2, -1, 0, 1, 2, \cdots\)</span> or in a random order; there are many choices. The diagonal terms all contain <span class="math notranslate nohighlight">\(H^0\)</span> and some also contain part of <span class="math notranslate nohighlight">\(H^1\)</span> and are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle {\hbar^2}{2I}m^2+\frac{V_3}{2}\]</div>
+<p>because on the diagonal <span class="math notranslate nohighlight">\(m = m'\)</span>. The off-diagonal terms are only non-zero when <span class="math notranslate nohighlight">\(m' = m \pm 3\)</span> and each have the value <span class="math notranslate nohighlight">\(-V_3/4\)</span>. The matrix for <span class="math notranslate nohighlight">\(m\)</span> up to <span class="math notranslate nohighlight">\(\pm 3\)</span> is with substitutions <span class="math notranslate nohighlight">\(V \equiv V_3/2\)</span> and <span class="math notranslate nohighlight">\(\displaystyle A\equiv \frac{\hbar^2}{2I}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}&amp;\begin{matrix}m\to &amp;\quad 0 \qquad &amp; 1 \qquad &amp; -1\qquad &amp; 2\qquad &amp; -2 &amp;\qquad 3 &amp;\qquad -3\end{matrix}\\
 &amp;\begin{matrix}\;0\\ \;1\\-1\\ \;2\\-2\\ \;3\\-3\end{matrix}
@@ -1841,7 +1866,7 @@ QJ&amp; 0 &amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
 0 &amp; -V/2 &amp; 0 &amp; 0 &amp; 4A+V&amp; 0 &amp; 0\\
 -V/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;9A+V &amp; 0\\
 -V/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0&amp; 0 &amp; 9A+V\end{bmatrix} \end{align}\end{split}\]</div>
-<p>The same calculation can easily be put into Python/SymPy and its size increased to make the answer more accurate. The expectation values are defined first with <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m1\)</span> as the two quantum numbers and the abbreviation <span class="math notranslate nohighlight">\(A = \hbar^2/2I\)</span> is used for simplicity. The eigenvalues need to be sorted because the order in which the computation returns them will not necessarily be in order of increasing energy. As a check, when the applied potential is zero, the normal rigid rotor energies are returned.</p>
+<p><strong>(d)</strong> The same calculation can easily be put into Python/SymPy and its size increased to make the answer more accurate. The expectation values are defined first with <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(m1\)</span> as the two quantum numbers and the abbreviation <span class="math notranslate nohighlight">\(A = \hbar^2/2I\)</span> is used for simplicity. The eigenvalues need to be sorted because the order in which the computation returns them will not necessarily be in order of increasing energy. As a check, when the applied potential is zero, the normal rigid rotor energies are returned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hindered Rigin Rotor Algorithm</span>
@@ -1933,8 +1958,22 @@ QJ&amp; 0 &amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
 <p>To calculate the others,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (H^1V_1)_{m,m'}=\frac{V_1}{2}\int\varphi^*_m(1-\cos(\theta))\varphi_m d\theta =\frac{V_1}{2}\delta_{m,m'}-\frac{V_1}{4\pi}\int e^{i\theta (m-m')}\cos(\theta)d\theta\]</div>
-<p>Substituting <span class="math notranslate nohighlight">\(a=m-m'\)</span> simplifies the integral which is <span class="math notranslate nohighlight">\(\displaystyle \frac{ia(1-e^{2\pi ia})}{a^2-1} \)</span> and is calculated in the same way to the similar integral in question 4.  This integral has the limit <span class="math notranslate nohighlight">\(\pi\)</span> when <span class="math notranslate nohighlight">\(m'=m\pm 1\)</span>. The expectation value for <span class="math notranslate nohighlight">\(V_1\)</span> is <span class="math notranslate nohighlight">\(\displaystyle H^1_{mm'}=\frac{V_1}{2}\delta_{mm'}-\frac{V_1}{4}\delta_{mm\pm 1}\)</span> and for the <span class="math notranslate nohighlight">\(6\theta\)</span> potential is <span class="math notranslate nohighlight">\(\frac{V_6}{2}\delta_{mm'}-\frac{V_6}{4}\delta_{mm\pm 6}\)</span>.</p>
-<p>There are therefore four terms on the diagonal; the free rotor and one from each of the potentials. We expect off- diagonal terms when <span class="math notranslate nohighlight">\(m' = m \pm 1, m' = m \pm 3\)</span> and <span class="math notranslate nohighlight">\(m' = m\pm 6\)</span>. The basis set is still that of the free rotor in <span class="math notranslate nohighlight">\(m = 0, 1, -1, 2, -2 \cdots\)</span> with <span class="math notranslate nohighlight">\(V_{136} =V_1 +V_3 +V_6\)</span>, and the matrix must be Hermitian: real and symmetrical. The entries are added according to the changes in <span class="math notranslate nohighlight">\(m\)</span>. For clarity the notation is similar to that in question 3; but with <span class="math notranslate nohighlight">\(V\equiv V_{136}/2\)</span></p>
+<p>Substituting <span class="math notranslate nohighlight">\(a=m-m'\)</span> simplifies the integral which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{ia(1-e^{2\pi ia})}{a^2-1} \]</div>
+<p>and is calculated in the same way to the similar integral in question 4.  This integral has the limit <span class="math notranslate nohighlight">\(\pi\)</span> when <span class="math notranslate nohighlight">\(m'=m\pm 1\)</span>. The expectation value for <span class="math notranslate nohighlight">\(V_1\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^1_{mm'}=\frac{V_1}{2}\delta_{mm'}-\frac{V_1}{4}\delta_{mm\pm 1}\]</div>
+<p>and for the <span class="math notranslate nohighlight">\(6\theta\)</span> potential is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{V_6}{2}\delta_{mm'}-\frac{V_6}{4}\delta_{mm\pm 6}\]</div>
+<p>There are therefore four terms on the diagonal; the free rotor and one from each of the potentials. We expect off- diagonal terms when</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m' = m \pm 1, m' = m \pm 3$ and $m' = m\pm 6\]</div>
+<p>The basis set is still that of the free rotor in <span class="math notranslate nohighlight">\(m = 0, 1, -1, 2, -2 \cdots\)</span> with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_{136} =V_1 +V_3 +V_6\]</div>
+<p>and the matrix must be Hermitian: real and symmetrical. The entries are added according to the changes in <span class="math notranslate nohighlight">\(m\)</span>. For clarity the notation is similar to that in question 3; but with <span class="math notranslate nohighlight">\(V\equiv V_{136}/2\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}&amp;\begin{matrix}m\to  &amp;\quad 0 \qquad &amp; 1 \qquad &amp; -1\qquad &amp; 2\qquad &amp; -2 &amp;\qquad 3 &amp;\qquad -3\end{matrix}\\
 &amp;\begin{matrix}\;0\\ \;1\\-1\\ \;2\\-2\\ \;3\\-3\end{matrix}\begin{bmatrix}0A+V&amp;-V_1/4&amp;V_1/4&amp;0&amp;0 &amp;-V_3/4 &amp;-V_3/4\\
@@ -1948,7 +1987,7 @@ QJ&amp; 0 &amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
 </section>
 <section id="q7-answer">
 <h2>Q7 answer<a class="headerlink" href="#q7-answer" title="Permalink to this headline">#</a></h2>
-<p>The radial parts of the wavefunction can be ignored because <span class="math notranslate nohighlight">\(r\)</span> factors out of the equation and will integrate to a constant.</p>
+<p><strong>(a)</strong> The radial parts of the wavefunction can be ignored because <span class="math notranslate nohighlight">\(r\)</span> factors out of the equation and will integrate to a constant.</p>
 <p>Changing to spherical polar coordinates, the potential becomes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V = \left(A \cos^2(\varphi) + B \sin^2(\varphi)\right)\sin^2(\theta) - (A + B)\cos^2(\theta)\]</div>
@@ -2002,7 +2041,7 @@ QJ&amp; 0 &amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
 </div>
 </div>
 <p>The other integrals may be calculated similarly.</p>
-<p>(b) The px, py, pz orbitals point along the <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axes. As the potential has no terms in <span class="math notranslate nohighlight">\(xy, xz\)</span> or <span class="math notranslate nohighlight">\(yz\)</span> the field it produces is only along the axes. The matrix will therefore be diagonal. The matrix elements are calculated in the same manner as in (a) the eigenvalues can be read from the matrix, because it is diagonal.</p>
+<p><strong>(b)</strong> The px, py, pz orbitals point along the <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axes. As the potential has no terms in <span class="math notranslate nohighlight">\(xy, xz\)</span> or <span class="math notranslate nohighlight">\(yz\)</span> the field it produces is only along the axes. The matrix will therefore be diagonal. The matrix elements are calculated in the same manner as in (a) the eigenvalues can be read from the matrix, because it is diagonal.</p>
 <p><strong>Exercise:</strong> Calculate the splitting the field <span class="math notranslate nohighlight">\(V\)</span> produces in the five d orbitals.</p>
 </section>
 </section>

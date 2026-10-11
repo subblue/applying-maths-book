@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1632,11 +1632,11 @@ title="Print to PDF"
 </section>
 <section id="q2-answer">
 <h2>Q2 answer<a class="headerlink" href="#q2-answer" title="Permalink to this headline">#</a></h2>
-<p>Starting with <span class="math notranslate nohighlight">\(1/(1+x)\)</span>, differentiating once produces <span class="math notranslate nohighlight">\(-1/(1 + x)^2\)</span> and twice <span class="math notranslate nohighlight">\(2/(1 + x)^3\)</span>. Therefore, the expansion required can be found by differentiating the series expansion of <span class="math notranslate nohighlight">\(1/(1 + x)^2\)</span>. This was calculated in, equation (5.5), and produces the answer with the substitution <span class="math notranslate nohighlight">\(x \rightarrow ax\)</span>.</p>
+<p>Starting with <span class="math notranslate nohighlight">\(1/(1+x)\)</span>, differentiating once produces <span class="math notranslate nohighlight">\(-1/(1 + x)^2\)</span> and twice <span class="math notranslate nohighlight">\(2/(1 + x)^3\)</span>. Therefore, the expansion required can be found by differentiating the series expansion of <span class="math notranslate nohighlight">\(1/(1 + x)^2\)</span>. This was calculated in equation (5.5) and produces the answer with the substitution <span class="math notranslate nohighlight">\(x \rightarrow ax\)</span>.</p>
 <p>The expansion of <span class="math notranslate nohighlight">\(1/(1 + ax)^2\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 1 - 2ax + 3a^2x^2 - 4a^3x^3 + \cdots + (-1)^{n-1}na^{n-1}x^{n-1} + \cdots \]</div>
-<p>and differentiating produces</p>
+<p>and differentiating both sides produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -2a/(1+ax)^3 =-2a+6a^2x-12a^3x^2 +\cdots  +(-1)^n\frac{n(n-1)}{2}a^{n-1}x^{n-2} + \cdots \]</div>
 <p>the series is then</p>
@@ -1645,7 +1645,7 @@ title="Print to PDF"
 <p>Using symbolic algebra, as shown below we can confirm the calculation. The ‘big O’ notation means that the series was terminated before the <span class="math notranslate nohighlight">\(x^6\)</span> term.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  using symbolic algebra SymPy to find the series, infinity is oo (two lc letter o together)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  using symbolic algebra SymPy to find the series</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, a&#39;</span><span class="p">)</span>         
 <span class="n">f01</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
@@ -1659,53 +1659,61 @@ title="Print to PDF"
 </section>
 <section id="q3-answer">
 <h2>Q3 answer<a class="headerlink" href="#q3-answer" title="Permalink to this headline">#</a></h2>
-<p>The average is found by using eqn. 6,  <span class="math notranslate nohighlight">\(\displaystyle \langle x \rangle= \sum xp(x)/\sum p(x)\)</span> the quantity <span class="math notranslate nohighlight">\(x\)</span> is the mass and <span class="math notranslate nohighlight">\(p\)</span> the fraction of the isotope present. Because the <em>fractions</em> add to unity, only the numerator need be evaluated.  The final number is rounded to 6 decimal places, the same as each value.</p>
+<p>The average is found by using eqn. 6,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x \rangle= \frac{\sum xp(x)}{\sum p(x)}\]</div>
+<p>the quantity <span class="math notranslate nohighlight">\(x\)</span> is the mass and <span class="math notranslate nohighlight">\(p\)</span> the fraction of the isotope present. Because the <em>fractions</em> add to unity, only the numerator need be evaluated.  The final number is rounded to 6 decimal places, the same as each value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the simple sum could be made, instead a general way of summing data is illustrated</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The simple sum could be made, instead a general way of summing data is illustrated</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">203.973020</span><span class="p">,</span>  <span class="mf">205.974440</span> <span class="p">,</span> <span class="mf">206.975872</span> <span class="p">,</span> <span class="mf">207.976627</span><span class="p">]</span>  <span class="c1"># </span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0140</span><span class="p">,</span>  <span class="mf">0.241</span> <span class="p">,</span> <span class="mf">0.221</span><span class="p">,</span>  <span class="mf">0.524</span><span class="p">]</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="n">av</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
-<span class="n">av2</span><span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>                                               <span class="c1"># length of array f</span>
+<span class="n">av</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="p">)</span>
+<span class="n">av2</span><span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:12.6f}{:s}{:1.6f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;average = &#39;</span><span class="p">,</span><span class="n">av</span><span class="p">,</span><span class="s1">&#39;, std dev = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">av2</span><span class="o">-</span><span class="n">av</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.3f}{:s}{:8.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;average = &#39;</span><span class="p">,</span><span class="n">av</span><span class="p">,</span><span class="s1">&#39;, std dev = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">av2</span><span class="o">-</span><span class="n">av</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average =   207.216883, std dev = 0.913584
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average =  207.217, std dev =    0.914
 </pre></div>
 </div>
 </div>
 </div>
-<p>The std deviation, <span class="math notranslate nohighlight">\(\sqrt{\langle x \rangle-\langle x^2\rangle}\)</span>, is large because the wide range of masses and their fractions. The data is not the result measuring the same thing many times, which is necessary in a statistical measurement, but the average of disparate things, in this case the different isotopes. The precision of the individual masses reflects the effect of many measurements. The std deviation should be rounded to <span class="math notranslate nohighlight">\(0.9\)</span> making the average <span class="math notranslate nohighlight">\(207.2 \pm 0.9\)</span>. However, it would be acceptable to give the answer as <span class="math notranslate nohighlight">\(207 \pm 1\)</span> to err on the cautious side and considering that the percentage abundance is only known to three figures.</p>
+<p>The standard deviation, <span class="math notranslate nohighlight">\(\sigma=\sqrt{\langle x \rangle-\langle x^2\rangle}\)</span>, is large because the wide range of masses and their fractions. The data is not the result of measuring the same thing many times, which is necessary in a statistical measurement, but the average of disparate things, in this case the different isotopes. The precision of the individual masses reflects the effect of many measurements. The std. deviation could be rounded to <span class="math notranslate nohighlight">\(0.9\)</span> making the average <span class="math notranslate nohighlight">\(207.2 \pm 0.9\)</span>. However, it would be acceptable to give the answer as <span class="math notranslate nohighlight">\(207 \pm 1\)</span> to err on the cautious side and considering that the percentage abundance is only known to three figures.</p>
 </section>
 <section id="q4-answer">
 <h2>Q4 answer<a class="headerlink" href="#q4-answer" title="Permalink to this headline">#</a></h2>
-<p>A die has six sides and the chance of it falling on any side is equal, if it is a fair die. The average of the numbers produced is then the sum,</p>
+<p><strong>(a)</strong> A die has six sides and the chance of it falling on one side is equal to any other, if it is a fair die. The average of the numbers produced on the faces is the sum,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle = 1/6 + 2/6 + 3/6 + 4/6 + 5/6 + 6/6 = 21/6 = 3.5\]</div>
-<p>The sum <span class="math notranslate nohighlight">\(\sum p(x) = \sum_1^6 1/6 = 1\)</span> and clearly need not be included in the denominator. The average squared is <span class="math notranslate nohighlight">\(1/6 + 4/6 + 9/6 + 16/6 + 25/6 + 36/6 = 91/6 = 15.16\)</span> and the dispersion or variance in the average value is <span class="math notranslate nohighlight">\(\sigma^2 \approx\)</span> 2.92. The standard deviation <span class="math notranslate nohighlight">\(\sigma \approx\)</span> 1.7. The average value is therefore <span class="math notranslate nohighlight">\(3.5 \pm 1.7\)</span>.</p>
-<p>If there are two dice there are <span class="math notranslate nohighlight">\(6^2 = 36\)</span> possible outcomes, but some are the same as others; <span class="math notranslate nohighlight">\(1 + 2\)</span> is the same as <span class="math notranslate nohighlight">\(2 + 1\)</span> and so forth. Therefore, there are six values when the numbers are the same and fifteen values each to be doubled. This can be visualized in this case as a matrix of numbers whose entries are the sum of the row or column index, <span class="math notranslate nohighlight">\(1 \to 6\)</span>; The matrix of numbers is shown below.</p>
+<p>The sum</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum p(x) = \sum_1^6 \frac{1}{6} = 1\]</div>
+<p>and clearly need not be included in the denominator. The average squared is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1/6 + 4/6 + 9/6 + 16/6 + 25/6 + 36/6 = 91/6 = 15.16\]</div>
+<p>and the dispersion or variance in the average value is <span class="math notranslate nohighlight">\(\sigma^2 \approx 2.92\)</span>. The standard deviation is <span class="math notranslate nohighlight">\(\sigma \approx 1.7\)</span>. The average value is therefore <span class="math notranslate nohighlight">\(3.5 \pm 1.7\)</span>.</p>
+<p><strong>(b)</strong> If there are two dice there are <span class="math notranslate nohighlight">\(6^2 = 36\)</span> possible outcomes, but some are the same as others; <span class="math notranslate nohighlight">\(1 + 2\)</span> is the same as <span class="math notranslate nohighlight">\(2 + 1\)</span> and so forth. Therefore, there are six values when the numbers are the same and fifteen values each to be doubled. This can be visualized in this case as a matrix of numbers whose entries are the sum of the row or column index, <span class="math notranslate nohighlight">\(1 \to 6\)</span>; The matrix of numbers is shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">p</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">][:])</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p</span><span class="p">[:][:]),</span><span class="n">separator</span> <span class="o">=</span><span class="s1">&#39;  &#39;</span> <span class="p">)</span>  <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 [2, 3, 4, 5, 6, 7]
-1 [3, 4, 5, 6, 7, 8]
-2 [4, 5, 6, 7, 8, 9]
-3 [5, 6, 7, 8, 9, 10]
-4 [6, 7, 8, 9, 10, 11]
-5 [7, 8, 9, 10, 11, 12]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2   3   4   5   6   7]
+ [ 3   4   5   6   7   8]
+ [ 4   5   6   7   8   9]
+ [ 5   6   7   8   9  10]
+ [ 6   7   8   9  10  11]
+ [ 7   8   9  10  11  12]]
 </pre></div>
 </div>
 </div>
@@ -1717,12 +1725,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>   <span class="c1"># range 1 to 6, make 2D array of numbers i+j.</span>
-<span class="n">av_x</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>                    <span class="c1"># &lt;x&gt; sum array rows , cols in turn   </span>
-
-<span class="n">p2</span> <span class="o">=</span><span class="p">[[(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="n">av_x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>                   <span class="c1"># &lt;x^2&gt; </span>
-
+<span class="n">p</span>     <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>   <span class="c1"># range 1 to 6, make 2D array of numbers i+j.</span>
+<span class="n">av_x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>                                    <span class="c1"># &lt;x&gt; sum all elements                </span>
+<span class="n">p2</span>    <span class="o">=</span> <span class="p">[[(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">av_x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>                                   <span class="c1"># &lt;x^2&gt; sum all elements</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:10.3f}{:s}{:10.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;average = &#39;</span><span class="p">,</span><span class="n">av_x</span><span class="p">,</span><span class="s1">&#39;, std dev = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">av_x2</span> <span class="o">-</span> <span class="n">av_x</span><span class="o">**</span><span class="mi">2</span><span class="p">))))</span>
 </pre></div>
 </div>
@@ -1741,22 +1747,27 @@ title="Print to PDF"
 </section>
 <section id="q6-answer">
 <h2>Q6 answer<a class="headerlink" href="#q6-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Writing down the partition function directly, equation (11), produces <span class="math notranslate nohighlight">\(\displaystyle Z = \sum_{n=0}^\infty e^{-E_n/k_BT} = \sum_{n=0}^\infty e^{-nh\nu/k_BT}\)</span></p>
-<p>Next substitute <span class="math notranslate nohighlight">\(e^{-h\nu/k_BT} = x \)</span> and recognize the expression as being the same as the series <span class="math notranslate nohighlight">\(\sum_{n=0}^\infty x^n = (1-x)^{-1}\)</span>. Substituting back produces</p>
+<p><strong>(a)</strong> Writing down the partition function directly, equation (11), produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z = \sum_{n=0}^\infty e^{-E_n/k_BT} = \sum_{n=0}^\infty e^{-nh\nu/k_BT}\]</div>
+<p>Next substitute <span class="math notranslate nohighlight">\(e^{-h\nu/k_BT} = x \)</span> and recognize the expression as being the same as the series</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^\infty x^n = (1-x)^{-1}\]</div>
+<p>Substituting back produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  Z=\frac{1}{1-e^{-h\nu/k_BT}}\]</div>
-<p>(b) In the harmonic oscillator, separate out the constant term (<span class="math notranslate nohighlight">\(\displaystyle e^{-h\nu/2k_BT}\)</span> ) in the summation as follows</p>
+<p><strong>(b)</strong> In the harmonic oscillator, separate out the constant term (<span class="math notranslate nohighlight">\(\displaystyle e^{-h\nu/2k_BT}\)</span> ) in the summation as follows</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Z = \sum_{n=0}^\infty e^{-(n+1/2)h\nu/k_BT} = e^{-h\nu/2k_BT} \sum_{n=0}^\infty e^{-nh\nu/k_BT}\]</div>
-<p>The result is then similar to that of part (a) and the result is by inspection</p>
+<p>The result is then similar to that of part <strong>(a)</strong> and the result is by inspection</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  Z=\frac{e^{-h\nu/2k_BT}}{1-e^{-h\nu/k_BT}}\]</div>
 <p>The term <span class="math notranslate nohighlight">\(h\nu/k_B\)</span> has units of temperature, is often called the <em>vibrational temperature</em> and given the symbol <span class="math notranslate nohighlight">\(\theta\)</span>. Its values range from <span class="math notranslate nohighlight">\(3551\)</span> K for <span class="math notranslate nohighlight">\(\mathrm {N_2}\)</span> to <span class="math notranslate nohighlight">\(308\)</span> K for <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> molecules.</p>
-<p>(c) If the <em>vibrational temperature</em> is much greater than room temperature, <span class="math notranslate nohighlight">\(\approx\)</span> 300 K, only the lowest energy level is populated to a significant extent. Therefore for <span class="math notranslate nohighlight">\(\mathrm {N_2}\)</span>, which has large vibrational quanta because it has a large bond force constant, the lowest level is almost exclusively populated, but in <span class="math notranslate nohighlight">\(\mathrm {I_2}\)</span> several levels are populated as here the energy gaps between vibrational levels are far smaller relative to the temperature <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p><strong>(c)</strong> If the <em>vibrational temperature</em> is much greater than room temperature, <span class="math notranslate nohighlight">\(\approx\)</span> 300 K, only the lowest energy level is populated to a significant extent. Therefore for <span class="math notranslate nohighlight">\(\mathrm {N_2}\)</span>, which has large vibrational quanta because it has a large bond force constant, the lowest level is almost exclusively populated, but in <span class="math notranslate nohighlight">\(\mathrm {I_2}\)</span> several levels are populated as here the energy gaps between vibrational levels are far smaller relative to the temperature <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>The direct calculation of the relative population starts from equation (12), which is modified so as to use <span class="math notranslate nohighlight">\(\theta\)</span>. Notice that to obtain the frequency in wavenumbers (<span class="math notranslate nohighlight">\(\mathrm{cm^{-1}}\)</span>), <span class="math notranslate nohighlight">\(h\)</span> is multiplied by <span class="math notranslate nohighlight">\(c\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculation part (c) </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q6 calculation part (c) </span>
 <span class="c1"># Z = lambda nu:np.exp(-h*c*nu/(2*kB*T))/(1.0-np.exp(-h*c*nu/(kB*T)))   # normal equation </span>
 <span class="n">Z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">theta</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">theta</span><span class="o">/</span><span class="n">T</span><span class="p">))</span>          <span class="c1"># in terms of theta</span>
                        
@@ -1806,27 +1817,30 @@ total population N2 =  1.000000 and I2 = 0.999256
 </section>
 <section id="q7-answer">
 <h2>Q7 answer<a class="headerlink" href="#q7-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The probability distribution for energy <span class="math notranslate nohighlight">\(E_n\)</span> is that of Boltzmann’s distribution <span class="math notranslate nohighlight">\(\displaystyle e^{-E_n/k_BT}\)</span>. The average number of photons <span class="math notranslate nohighlight">\(n\)</span> with total energy <span class="math notranslate nohighlight">\(nh\nu\)</span> is therefore</p>
+<p><strong>(a)</strong> The probability distribution for energy <span class="math notranslate nohighlight">\(E_n\)</span> is that of Boltzmann’s distribution <span class="math notranslate nohighlight">\(\displaystyle \exp(-E_n/k_BT)\)</span>. The average number of photons <span class="math notranslate nohighlight">\(n\)</span> with total energy <span class="math notranslate nohighlight">\(nh\nu\)</span> is therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle n\rangle =\frac{\sum\limits_{n=0}^\infty ne^{-nh\nu/k_BT}}{ \sum\limits_{n=0}^\infty e^{-nh\nu/k_BT}}\]</div>
-<p>The summation in the denominator is just the partition function worked out in equation (12), which is <span class="math notranslate nohighlight">\(\displaystyle Z = (1 - e^{-h\nu/k_BT})^{-1}\)</span> and the numerator is</p>
+<p>The summation in the denominator is just the partition function worked out in equation (12), which is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sum_{n=0}^\infty ne^{-nh\nu/k_BT} = \sum_{n=0}^\infty n(e^{-h\nu/k_BT} )^n\]</div>
+\[\displaystyle Z = (1 - e^{-h\nu/k_BT})^{-1}\]</div>
+<p>and the numerator is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^\infty ne^{-nh\nu/k_BT} = \sum_{n=0}^\infty n\left(e^{-h\nu/k_BT} \right)^n\]</div>
 <p>This does not look very encouraging at first, but with a bit of cunning this can be rewritten in another form by removing a constant term <span class="math notranslate nohighlight">\(e^{h\nu/k_BT}\)</span> from the summation. The result is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \sum_{n=0}^\infty n(e^{-h\nu/k_BT})^n =e^{+h\nu/k_BT} \sum_{n=0}^\infty n(e^{-h\nu/k_BT})^{n-1} \]</div>
+\[\displaystyle  \sum_{n=0}^\infty n(e^{-h\nu/k_BT})^n =e^{+h\nu/k_BT} \sum_{n=0}^\infty n\left(e^{-h\nu/k_BT}\right)^{n-1} \]</div>
 <p>Now by substituting <span class="math notranslate nohighlight">\(\displaystyle e^{-h\nu/k_BT} = x\)</span>, the summation becomes <span class="math notranslate nohighlight">\(\displaystyle x\sum nx^{n-1}\)</span> which is the derivative of the sum of <span class="math notranslate nohighlight">\(x^n\)</span> multiplied by <span class="math notranslate nohighlight">\(x\)</span>. This means that the summation is calculable from the derivative of <span class="math notranslate nohighlight">\(1/(1 - x)\)</span> which is <span class="math notranslate nohighlight">\(1/(1 - x)^2\)</span>. The result of the summation is therefore,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \sum_{n=0}^\infty ne^{-nh\nu/k_BT}= \frac{e^{-h\nu/k_BT} }{(1-e^{-h\nu/k_BT})^2 }  \]</div>
+\[\displaystyle  \sum_{n=0}^\infty ne^{-nh\nu/k_BT}= \frac{e^{-h\nu/k_BT} }{\left(1-e^{-h\nu/k_BT}\right)^2 }  \]</div>
 <p>making</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \langle n \rangle =\frac{e^{-h\nu/k_BT}(1-e^{-h\nu/k_BT})}{(1-e^{-h\nu/k_BT})^2} = \frac{1}{e^{+h\nu/k_BT}-1} \]</div>
+\[\displaystyle  \langle n \rangle =\frac{e^{-h\nu/k_BT}\left(1-e^{-h\nu/k_BT}\right)}{\left(1-e^{-h\nu/k_BT}\right)^2} = \frac{1}{e^{+h\nu/k_BT}-1} \]</div>
 <p>where the last part involves a little re-arranging. Notice that <span class="math notranslate nohighlight">\(\langle n \rangle\)</span> is zero when <span class="math notranslate nohighlight">\(T \to 0\)</span>  as expected and tends to infinity when <span class="math notranslate nohighlight">\(T\)</span> is large and this is because there is no limit to the number of quanta.</p>
-<p>(b) The average for the harmonic oscillator is calculated using summations evaluated in previous questions and is</p>
+<p><strong>(b)</strong> The average for the harmonic oscillator is calculated using summations evaluated in previous questions and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle n \rangle =\frac{\sum\limits_{n=0}^\infty ne^{-(n+1/2)h\nu/k_BT}}{\sum\limits_{n=0}^\infty e^{-(n+1/2)h\nu/k_BT}} = \frac{\sum\limits_{n=0}^\infty ne^{-nh\nu/k_BT}}{\sum\limits_{n=0}^\infty e^{-nh\nu/k_BT}} = \frac{1}{e^{+h\nu/k_BT}-1}\]</div>
-<p>This is the same calculation and hence the same result as in part (a). The displacement in energy due to the zero-point vibrations makes no difference to the average number of quanta, but would make a difference to the average energy.</p>
-<p>(c) Using the formula, the average number of quanta at room temperature for <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span> is approximately <span class="math notranslate nohighlight">\(1.22\cdot 10^{-5}\)</span>, and for <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> is approximately <span class="math notranslate nohighlight">\(0.56\)</span>.</p>
+<p>This is the same calculation and hence the same result as in part <strong>(a)</strong>. The displacement in energy due to the zero-point vibrations makes no difference to the average number of quanta, but would make a difference to the average energy.</p>
+<p><strong>(c)</strong> Using the formula, the average number of quanta at room temperature for <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span> is approximately <span class="math notranslate nohighlight">\(1.22\cdot 10^{-5}\)</span>, and for <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span> is approximately <span class="math notranslate nohighlight">\(0.56\)</span>.</p>
 <p>Do these numbers make sense? Remember that in <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span> only one level is significantly populated, see the previous question, and the harmonic oscillator has an infinite number of levels, therefore the average is almost zero. In <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span>, many more levels are populated and although the average is much larger, it is still not very large.</p>
 <p>Repeating the calculation with an anharmonic oscillator, you might expect that the average will be larger as there are now only a finite number of energy levels before dissociation occurs, and they become closer together as the energy increases. However, at room temperature so few levels are populated, even in <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span>, and the anharmonicity has only a small effect on the lower energy levels that this makes effectively no difference to <span class="math notranslate nohighlight">\(\langle n \rangle\)</span>. Typically, temperatures <span class="math notranslate nohighlight">\(\gt 2000\)</span> K are needed to make more than about a <span class="math notranslate nohighlight">\(5\)</span>% change compared to a harmonic potential. The calculation below shows how <span class="math notranslate nohighlight">\(\langle n \rangle\)</span> varies with temperature for <span class="math notranslate nohighlight">\(\mathrm{I_2}\)</span>. Notice how close to zero the average is at room temperature. If the plot were for nitrogen the line would be practically indistinguishable from zero.</p>
 <div class="cell docutils container">

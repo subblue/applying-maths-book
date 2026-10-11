@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1596,9 +1596,12 @@ title="Print to PDF"
 <section id="q8-numerically-evaluate-a-differential-equation">
 <h2>Q8 Numerically evaluate a differential equation<a class="headerlink" href="#q8-numerically-evaluate-a-differential-equation" title="Permalink to this headline">#</a></h2>
 <p>In this problem, a differential equation is solved in two different ways but by three different numerical methods.</p>
-<p>(a) Solve <span class="math notranslate nohighlight">\(dy/dt = y \sin(t^2)\)</span> by separating variables and show that an integral is formed that can only be solved numerically.</p>
-<p>(b) Solve the differential equation by a numerical method with <span class="math notranslate nohighlight">\(t_0 = 0,\, y(t_0) = 3\)</span> over the interval <span class="math notranslate nohighlight">\(-7 \to 7\)</span>.</p>
-<p>(c) Confirm that Python/Scipy’s <span class="math notranslate nohighlight">\(\mathtt{odeint( \cdots)}\)</span> procedure agrees with your calculation. You will need to add <span class="math notranslate nohighlight">\(\mathtt{from\;scipy.integrate\; import\;quad,\; odeint }\)</span> if it is not already included</p>
+<p><strong>(a)</strong> Solve</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dy/dt = y \sin(t^2)\]</div>
+<p>by separating variables and show that an integral is formed that can only be solved numerically.</p>
+<p><strong>(b)</strong> Solve the differential equation by a numerical method with <span class="math notranslate nohighlight">\(t_0 = 0,\, y(t_0) = 3\)</span> over the interval <span class="math notranslate nohighlight">\(-7 \to 7\)</span>.</p>
+<p><strong>(c)</strong> Confirm that Python/SciPy’s <span class="math notranslate nohighlight">\(\mathtt{odeint( \cdots)}\)</span> procedure agrees with your calculation. You will need to add <span class="math notranslate nohighlight">\(\mathtt{from\;scipy.integrate\; import\;quad,\; odeint }\)</span> if it is not already included</p>
 <p><strong>Strategy:</strong> (a) Separating variables means rearranging to put terms only in <span class="math notranslate nohighlight">\(t\)</span> and only with <span class="math notranslate nohighlight">\(y\)</span> on different sides of the equation. (b) Because the starting time is less than <span class="math notranslate nohighlight">\(t_0\)</span>, equation 20 should be used up to the value <span class="math notranslate nohighlight">\(t_0\)</span>. Alternatively, a negative <span class="math notranslate nohighlight">\(h\)</span> should be used. The time values start at <span class="math notranslate nohighlight">\(t_0\)</span> and decrease or increase depending on the sign of <span class="math notranslate nohighlight">\(h\)</span>. A simple method is to use a subroutine to work out the values and call this with <span class="math notranslate nohighlight">\(h\)</span> positive, and then negative. In this example, <span class="math notranslate nohighlight">\(t_0 = 0\)</span> so that the range is symmetrical about zero; if <span class="math notranslate nohighlight">\(t_0\)</span> was not zero then more care would have to be taken to produce the range required. Algorithm 9 can be modified to do this calculation.</p>
 </section>
 <section id="q9-scattering-trajectory">
@@ -1622,7 +1625,9 @@ title="Print to PDF"
 \[\displaystyle m\frac{d^2y}{dt^2} + mc\frac{dy}{dt} + mg = 0\]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> is the mass of the ball, <span class="math notranslate nohighlight">\(c\)</span> a damping constant, and <span class="math notranslate nohighlight">\(g\)</span> the acceleration due to gravity  = <span class="math notranslate nohighlight">\(9.8  \,\mathrm{m\,s^{-2}}\)</span>. Calculate how the height and velocity of the ball changes with time. Choose your own values for the initial height, mass, and damping constant, which can be zero, but values of <span class="math notranslate nohighlight">\(30\)</span> m and <span class="math notranslate nohighlight">\(c\)</span> in the range <span class="math notranslate nohighlight">\(0 \to 1\,\mathrm{ kg\, s^{-1}}\)</span> will work with time steps of <span class="math notranslate nohighlight">\(0.005\)</span> s.</p>
 <p>Although this problem concerns a ball, the form of the equation is general and a molecule, such as a protein or DNA experiences acceleration and friction when in an electric field, in a centrifuge or in a flowing fluid. However, the friction imposed by the solvent is usually proportionally far greater compared to that of air on the ball.</p>
-<p><strong>Strategy:</strong> Use equations 26 and 27 for the velocity and follow the method in Algorithm 13. To make the ball bounce, reverse the coordinates when the value of <span class="math notranslate nohighlight">\(y\)</span> becomes less than zero. Plot <span class="math notranslate nohighlight">\(y\)</span> vs time and <span class="math notranslate nohighlight">\(v\)</span> vs time. When the damping is zero, the ball should always return to the same height and this can be used to check that a sufficiently small time step has been chosen. From the equation of motion, the acceleration is no longer constant and is <span class="math notranslate nohighlight">\(d^2y/dt^2 = -cv - g\)</span> where <span class="math notranslate nohighlight">\(v = dy/dt\)</span>.</p>
+<p><strong>Strategy:</strong> Use equations 26 and 27 for the velocity and follow the method in Algorithm 13. To make the ball bounce, reverse the coordinates when the value of <span class="math notranslate nohighlight">\(y\)</span> becomes less than zero. Plot <span class="math notranslate nohighlight">\(y\)</span> vs time and <span class="math notranslate nohighlight">\(v\)</span> vs time. When the damping is zero, the ball should always return to the same height and this can be used to check that a sufficiently small time step has been chosen. From the equation of motion, the acceleration is no longer constant and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dt^2} = -cv - g,\qquad v = \frac{dy}{dt}\]</div>
 </section>
 <section id="q12-verlet-algorithm">
 <h2>Q12 Verlet algorithm<a class="headerlink" href="#q12-verlet-algorithm" title="Permalink to this headline">#</a></h2>

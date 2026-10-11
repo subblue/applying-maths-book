@@ -54,7 +54,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # Algorithm: Basic Monte-Carlo integration
-#np.random.seed(123456)   # used to check; seed always gives same random numbers
+
+# rng = np.random.default_rng(seed=1234)    #  seed =... always gives same random numbers
+
+rng = np.random.default_rng()               # initialise random number generator
 
 f = lambda x: np.sin(1.0/x)**2
 
@@ -65,8 +68,8 @@ ymax   = 1.0
 s = 0.0
 A = (xlim_b - xlim_a)*ymax 
 for i in range(n):
-    Rx = (xlim_b - xlim_a)*np.random.ranf() + xlim_a   # get random numbers from a to b
-    Ry = ymax*np.random.ranf()
+    Rx = (xlim_b - xlim_a)*rng.random() + xlim_a   # get random real number from a to b
+    Ry = ymax*rng.random()
     if Ry <= f(Rx):
         s = s + 1   # summ to get result
     pass
@@ -116,14 +119,15 @@ print('{:8.4f}'.format(av_f) )
 
 # Algorithm: Monte-Carlo Mean value method
 
-f = lambda x:  np.sin(1/x)**2                          # function to integrate
+rng = np.random.default_rng()                         # initialise random number generator
+f   = lambda x:  np.sin(1/x)**2                         # function to integrate
 xlim_a = 0.0 
 xlim_b = 2.0 
-n = 5000                                               # repeats 
+n = 5000                                              # repeats 
 s = 0.0 
 s2= 0.0 
 for i in range(n):
-    x = (xlim_b - xlim_a)*np.random.ranf() + xlim_a    # limits a to b
+    x = (xlim_b - xlim_a)*rng.random() + xlim_a       # limits a to b
     s = s  + f(x)
     s2= s2 + f(x)**2
     pass
@@ -203,18 +207,20 @@ print('{:8.4f} {:s} {:8.4f}'.format( av_f, '+/-',  sig ) )
 
 # Algorithm: Importance Sampling Monte Carlo Integration using p(x)=kexp(-kx) 
 
+rng = np.random.default_rng()               # initialise random number generator
+
 f = lambda x: np.exp(-x**2)                 # function to integrate
 p = lambda x: np.exp(-k*x)                  # sampling function
 k = 1.0                                     # constant and limits 
 a = 0.0 
 b = 2.0
-c = np.exp(-k*a) - np.exp(-k*b)             # constant in r =Integration/Normalise
+c = np.exp(-k*a)  - np.exp(-k*b)            # constant in r =Integration/Normalise
 N = (np.exp(-k*a) - np.exp(-k*b))/k         # normalisation 
 s = 0.0                                     # summation
 s2= 0.0
 n = 50000                                   # number of trials
 for i in range(n):
-    t = -np.log( 1.0-np.random.ranf()*c)/k  # get random value
+    t = -np.log( 1.0-rng.random()*c)/k  # get random value
     Q = N*f(t)/p(t)                         # get sampled  values eqn 7
     s = s + Q 
     s2= s2 + Q**2

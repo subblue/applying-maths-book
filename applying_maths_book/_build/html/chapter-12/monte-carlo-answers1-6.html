@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1622,7 +1622,9 @@ title="Print to PDF"
 <p>Three random numbers are needed for each of <span class="math notranslate nohighlight">\(x,\;y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>. A guess of 5000 calculations is made, this may have to be increased if a large error is produced. An accurate integration gives 11.04148. With 20000 points in the monte-carlo integration a typical value is <span class="math notranslate nohighlight">\(11.044 \pm 0.004\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Mean value monte carlo method for a triple integral.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Mean value Monte Carlo method for a triple integral.</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                  <span class="c1"># initialise random number generator</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">16.0</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">20000</span>                                      <span class="c1"># guess number of calculations</span>
@@ -1635,9 +1637,9 @@ title="Print to PDF"
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">s2</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">lim2</span> <span class="o">-</span> <span class="n">lim1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">+</span> <span class="n">lim1</span> 
-    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">lim4</span> <span class="o">-</span> <span class="n">lim3</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">+</span> <span class="n">lim3</span> 
-    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">lim6</span> <span class="o">-</span> <span class="n">lim5</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">+</span> <span class="n">lim5</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">lim2</span> <span class="o">-</span> <span class="n">lim1</span><span class="p">)</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">+</span> <span class="n">lim1</span> 
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">lim4</span> <span class="o">-</span> <span class="n">lim3</span><span class="p">)</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">+</span> <span class="n">lim3</span> 
+    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">lim6</span> <span class="o">-</span> <span class="n">lim5</span><span class="p">)</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">+</span> <span class="n">lim5</span> 
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
     <span class="n">s2</span><span class="o">=</span> <span class="n">s2</span><span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     <span class="k">pass</span>
@@ -1650,7 +1652,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11.0432 +/-   0.0041
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11.0388 +/-   0.0041
 </pre></div>
 </div>
 </div>
@@ -1658,7 +1660,13 @@ title="Print to PDF"
 </section>
 <section id="q3-answer">
 <h2>Q3 answer<a class="headerlink" href="#q3-answer" title="Permalink to this headline">#</a></h2>
-<p>If the function chosen is <span class="math notranslate nohighlight">\(\sin(x^2)\)</span> then its integral cannot be inverted easily and is of no use. Therefore, the simple exponential <span class="math notranslate nohighlight">\(e^{-x}\)</span> is chosen. Use the method and algorithm as described in the text, with limits of <span class="math notranslate nohighlight">\(a=0,\; b = 10\)</span>, making the ratio <span class="math notranslate nohighlight">\(r = (1 - e^{-t})/(1-e^{-b})\)</span> . The ratio <span class="math notranslate nohighlight">\(f(x)/p(x) =\sin(t^2)\)</span> because the exponential cancels out. The answer, with <span class="math notranslate nohighlight">\(20000\)</span> samples, is <span class="math notranslate nohighlight">\(0.268 \pm 0.003\)</span> which has a smaller variance than the <span class="math notranslate nohighlight">\(0.278 \pm 0.006\)</span> estimated by the mean value method with the same number of samples. The accurate value is <span class="math notranslate nohighlight">\(271\)</span> to <span class="math notranslate nohighlight">\(3\)</span> decimal places.</p>
+<p>If the function chosen is <span class="math notranslate nohighlight">\(\sin(x^2)\)</span> then its integral cannot be inverted easily and is of no use. Therefore, the simple exponential <span class="math notranslate nohighlight">\(e^{-x}\)</span> is chosen. Use the method and algorithm as described in the text, with limits of <span class="math notranslate nohighlight">\(a=0,\; b = 10\)</span>, making the ratio</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r = \frac{(1 - e^{-t})}{(1-e^{-b})}\]</div>
+<p>The ratio</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{f(x)}{p(x)} =\sin(t^2)\]</div>
+<p>because the exponential cancels out. The answer, with <span class="math notranslate nohighlight">\(20000\)</span> samples, is <span class="math notranslate nohighlight">\(0.268 \pm 0.003\)</span> which has a smaller variance than the <span class="math notranslate nohighlight">\(0.278 \pm 0.006\)</span> estimated by the mean value method with the same number of samples. The accurate value is <span class="math notranslate nohighlight">\(271\)</span> to <span class="math notranslate nohighlight">\(3\)</span> decimal places.</p>
 </section>
 <section id="q4-answer">
 <h2>Q4 answer<a class="headerlink" href="#q4-answer" title="Permalink to this headline">#</a></h2>
@@ -1666,14 +1674,29 @@ title="Print to PDF"
 </section>
 <section id="q5-answer">
 <h2>Q5 answer<a class="headerlink" href="#q5-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The mean value method using Algorithm 2 with <span class="math notranslate nohighlight">\(f = 1/x^{1/2}\)</span> and <span class="math notranslate nohighlight">\(20000\)</span> samples, gives typical values <span class="math notranslate nohighlight">\(1.99 \pm 0.02\)</span> which is close to the true value of <span class="math notranslate nohighlight">\(2.0\)</span>. Similar good agreement with the analytic result is found when <span class="math notranslate nohighlight">\(\gamma\)</span> is positive.</p>
-<p>(b) Using <span class="math notranslate nohighlight">\(f = 1/x^{0.8}\)</span> gives rather erratic answers, with an average <span class="math notranslate nohighlight">\(4.7 \pm 0.4\)</span>, being typical after <span class="math notranslate nohighlight">\(20000\)</span> samples, which is far from the true value of <span class="math notranslate nohighlight">\(5\)</span>. After <span class="math notranslate nohighlight">\(10^5\)</span> samples the result has not settled down to a fixed value, nor has it done so after <span class="math notranslate nohighlight">\(10^6\)</span> samples, with a value <span class="math notranslate nohighlight">\(4.7 \pm 0.1\)</span> being typical, which is quite unexpected and unusual behaviour. See figure 20a. Using python/Sympy the correct value is obtained.</p>
+<p><strong>(a)</strong> The mean value method using Algorithm 2 with <span class="math notranslate nohighlight">\(f = 1/x^{1/2}\)</span> and <span class="math notranslate nohighlight">\(20000\)</span> samples, gives typical values <span class="math notranslate nohighlight">\(1.99 \pm 0.02\)</span> which is close to the true value of <span class="math notranslate nohighlight">\(2.0\)</span>. Similar good agreement with the analytic result is found when <span class="math notranslate nohighlight">\(\gamma\)</span> is positive.</p>
+<p><strong>(b)</strong> Using <span class="math notranslate nohighlight">\(f = 1/x^{0.8}\)</span> gives rather erratic answers, with an average <span class="math notranslate nohighlight">\(4.7 \pm 0.4\)</span>, being typical after <span class="math notranslate nohighlight">\(20000\)</span> samples, which is far from the true value of <span class="math notranslate nohighlight">\(5\)</span>. After <span class="math notranslate nohighlight">\(10^5\)</span> samples the result has not settled down to a fixed value, nor has it done so after <span class="math notranslate nohighlight">\(10^6\)</span> samples, with a value <span class="math notranslate nohighlight">\(4.7 \pm 0.1\)</span> being typical, which is quite unexpected and unusual behaviour. See figure 20a. Using python/Sympy the correct value is obtained.</p>
 <p>The origin of this behaviour would appear to lie in the fact that the function tends to infinity as <span class="math notranslate nohighlight">\(x \to 0\)</span>. With an increasing number of samples, there are many <span class="math notranslate nohighlight">\(x\)</span> values close to zero and the large numbers these produce have a disproportionate effect on the integral relative to those at large <span class="math notranslate nohighlight">\(x\)</span>, which contribute almost nothing. Importance sampling should correct this effect.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig29.png" /></p>
-<p>Figure 29. Monte-Carlo calculation of the integral <span class="math notranslate nohighlight">\(\int_0^1 x^\gamma dx\)</span> with <span class="math notranslate nohighlight">\(\gamma =-0.8\)</span> showing that the true average <span class="math notranslate nohighlight">\(5\)</span> is not approached even for a huge number of samples.</p>
+<p>Figure 29. Monte-Carlo calculation of the integral <span class="math notranslate nohighlight">\(\int_0^1 x^\gamma dx\)</span> with <span class="math notranslate nohighlight">\(\gamma =-0.8\)</span> showing that the true average, <span class="math notranslate nohighlight">\(5\)</span>, is not approached even for a huge number of samples.</p>
 <hr class="docutils" />
-<p>(c) The distribution function is <span class="math notranslate nohighlight">\(p(x) = x^\lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> has to be chosen to be between zero and <span class="math notranslate nohighlight">\(\gamma\)</span>. This function is almost the same as <span class="math notranslate nohighlight">\(f\)</span>, and by dividing by <span class="math notranslate nohighlight">\(f\)</span> makes the function integrated much flatter and so has a reduced standard deviation.</p>
-<p>The integral is changed to <span class="math notranslate nohighlight">\(\displaystyle \int_0^1 x^\gamma dx=\int_0^1\left(x^{\gamma-\lambda}  \right)x^\lambda dx\)</span> and normalising the distribution produces <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{N}\int_0^tx^\lambda dx=x^{t+1}=r\)</span> from which <span class="math notranslate nohighlight">\(t = r^{1/(t+1)}\)</span>. The normalization constant is <span class="math notranslate nohighlight">\(N = 1/(1 + \lambda)\)</span>. The next step is to choose a value for <span class="math notranslate nohighlight">\(\lambda\)</span> and this is done so that <span class="math notranslate nohighlight">\(\gamma -\lambda\)</span> is close to zero because small powers of <span class="math notranslate nohighlight">\(x\)</span> lead to an accurate integration; choosing <span class="math notranslate nohighlight">\(\gamma -\lambda = 0.1\)</span> is a suitable value although other small values could be used. Making these changes and using <span class="math notranslate nohighlight">\(t=\mathrm{rand}()^{1/(\lambda+1)}\)</span>; in the importance sampling algorithm after 20000 samples, a value of <span class="math notranslate nohighlight">\(4.996 \pm 0.020\)</span> is obtained. This is now acceptably close to the true value of <span class="math notranslate nohighlight">\(5\)</span>. Furthermore, if the difference between <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> is made smaller, for instance <span class="math notranslate nohighlight">\(\gamma -\lambda = 0.01\)</span>, then the calculation produces <span class="math notranslate nohighlight">\(4.995 \pm 0.008\)</span> after only <span class="math notranslate nohighlight">\(1000\)</span> samples; quite an improvement. Finally, making the difference zero produces the exact result with zero standard deviation. Why is this?</p>
+<p><strong>(c)</strong> The distribution function is <span class="math notranslate nohighlight">\(p(x) = x^\lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> has to be chosen to be between zero and <span class="math notranslate nohighlight">\(\gamma\)</span>. This function is almost the same as <span class="math notranslate nohighlight">\(f\)</span>, and by dividing by <span class="math notranslate nohighlight">\(f\)</span> makes the function integrated much flatter and so has a reduced standard deviation.</p>
+<p>The integral is changed to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1 x^\gamma dx=\int_0^1\left(x^{\gamma-\lambda}  \right)x^\lambda dx\]</div>
+<p>and normalising the distribution produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{N}\int_0^tx^\lambda dx=x^{t+1}=r\]</div>
+<p>from which</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t = r^{1/(t+1)}\]</div>
+<p>The normalization constant is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N = \frac{1}{(1 + \lambda)}\]</div>
+<p>The next step is to choose a value for <span class="math notranslate nohighlight">\(\lambda\)</span> and this is done so that <span class="math notranslate nohighlight">\(\gamma -\lambda\)</span> is close to zero because small powers of <span class="math notranslate nohighlight">\(x\)</span> lead to an accurate integration; choosing <span class="math notranslate nohighlight">\(\gamma -\lambda = 0.1\)</span> is a suitable value although other small values could be used. Making these changes and using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t=(\mathrm{random\, number})^{1/(\lambda+1)}\]</div>
+<p>in the importance sampling algorithm after 20000 samples, a value of <span class="math notranslate nohighlight">\(4.996 \pm 0.020\)</span> is obtained. This is now acceptably close to the true value of <span class="math notranslate nohighlight">\(5\)</span>. Furthermore, if the difference between <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> is made smaller, for instance <span class="math notranslate nohighlight">\(\gamma -\lambda = 0.01\)</span>, then the calculation produces <span class="math notranslate nohighlight">\(4.995 \pm 0.008\)</span> after only <span class="math notranslate nohighlight">\(1000\)</span> samples; quite an improvement. Finally, making the difference zero produces the exact result with zero standard deviation. Why is this?</p>
 </section>
 <section id="q6-answer">
 <h2>Q6 answer<a class="headerlink" href="#q6-answer" title="Permalink to this headline">#</a></h2>

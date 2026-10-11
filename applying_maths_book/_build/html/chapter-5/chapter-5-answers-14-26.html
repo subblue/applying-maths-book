@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1752,7 +1752,7 @@ title="Print to PDF"
 </section>
 <section id="q19-answer">
 <h2>Q19 answer<a class="headerlink" href="#q19-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The expansion is <span class="math notranslate nohighlight">\(\displaystyle \sum_{k=1} e^{ikx} = e^{ix} + e^{2ix} + e^{3ix} + e^{4ix} +\cdots \)</span></p>
+<p><strong>(a)</strong> The expansion is <span class="math notranslate nohighlight">\(\displaystyle \sum_{k=1} e^{ikx} = e^{ix} + e^{2ix} + e^{3ix} + e^{4ix} +\cdots \)</span></p>
 <p>Removing the first term and substituting <span class="math notranslate nohighlight">\(\displaystyle e^{inx} = w^n\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle \sum_{k=1}e^{ikx} =e^{ix}(1+w^2 +w^3 +w^4 +\cdots+)\)</span></p>
 <p>This series looks familiar; to check use the table of series expansions (Chapter 5.6.4) or try with SymPy.</p>
 <div class="cell docutils container">
@@ -1767,7 +1767,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>which then gives <span class="math notranslate nohighlight">\(\displaystyle \sum_{k=1}e^{ikx}=\frac{e^{ix}}{1-e^{ix}}\)</span>.</p>
-<p>(b) The summation <span class="math notranslate nohighlight">\(\sum_{k=1}^\infty e^{ikx}/k\)</span> is very close to the integral of <span class="math notranslate nohighlight">\(\sum_{k=1}^\infty e^{ikx}\)</span> calculated in (a). Integrating this sum multiplied by <span class="math notranslate nohighlight">\(i\)</span> gives</p>
+<p><strong>(b)</strong> The summation <span class="math notranslate nohighlight">\(\sum_{k=1}^\infty e^{ikx}/k\)</span> is very close to the integral of <span class="math notranslate nohighlight">\(\sum_{k=1}^\infty e^{ikx}\)</span> calculated in (a). Integrating this sum multiplied by <span class="math notranslate nohighlight">\(i\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle i\int\sum\limits_{k=1} e^{ikx} = \sum\limits_{k=1}\frac{e^{ikx}}{k} + c\]</div>
 <p>Integrating the result from part (a) also multiplied by <span class="math notranslate nohighlight">\(i\)</span> gives</p>
@@ -1823,7 +1823,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculation of sinc function</span>
-<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">sinc2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
@@ -1848,7 +1848,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="q22-answer">
 <h2>Q22 answer<a class="headerlink" href="#q22-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The power series expansion has the form <span class="math notranslate nohighlight">\(\displaystyle f(s)=e^{-s^2}=1-sf^{'}(0)+\frac{s^2}{s!}f^{''}(0)+\cdots \)</span> and the derivatives are</p>
+<p><strong>(a)</strong> The power series expansion has the form <span class="math notranslate nohighlight">\(\displaystyle f(s)=e^{-s^2}=1-sf^{'}(0)+\frac{s^2}{s!}f^{''}(0)+\cdots \)</span> and the derivatives are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  \begin{align}f'(s) &amp;= -2sf(s),\quad f''(s) = -2f(s) - 2sf'(s) \\ f'''(s) &amp;= -2f'(s) - 2f'(s) - 2sf''(s),\quad f^4(s) = -4f''(s) - 2f'''(s) - 2sf'''(s) \end{align}\end{split}\]</div>
 <p>When <span class="math notranslate nohighlight">\(s = 0\)</span> the Maclaurin series is <span class="math notranslate nohighlight">\(\quad f(0) = 1,\quad f'(0) = 0,\quad f''(0) = -2,\quad f'''(0) = 0,\quad f^4(0) = 12\)</span> where each odd-power derivative is zero. Substituting into the series expansion for  <span class="math notranslate nohighlight">\(\displaystyle e^{\large{{-s^2}}}\)</span> gives</p>
@@ -1857,7 +1857,7 @@ title="Print to PDF"
 <p>and integrating this series term by term produces,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \text{erf}(x) \approx \frac{2}{\sqrt{\pi}}\int\limits_0^x  1-s^2 + \frac{s^4}{2} -\cdots ds = \frac{2}{\sqrt{\pi}}\left[   x- \frac{x^3}{3} +\frac{x^5}{10}-\frac{x^7}{42} +\frac{x^9}{216}-\cdots \right] \]</div>
-<p>(b) The next calculation compares approximation with exact values</p>
+<p><strong>(b)</strong> The next calculation compares approximation with exact values</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">erf</span>   <span class="c1"># import error function as this is not </span>
@@ -1881,26 +1881,31 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>which shows that the series approximation is quite good even up to <span class="math notranslate nohighlight">\(x = 1\)</span> if not too much precision is required. Naturally increasing the number of terms in the series will improve the precision.</p>
+<p>which shows that the series approximation is quite good even up to <span class="math notranslate nohighlight">\(x = 1\)</span> if not too much precision is required. Increasing the number of terms in the series will improve the precision.</p>
 </section>
 <section id="q23-answer">
 <h2>Q23 answer<a class="headerlink" href="#q23-answer" title="Permalink to this headline">#</a></h2>
-<p>The series expansion can be worked out from first principles or looked up and based on <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1-ax} =1+ax+(ax)^2 +(ax)^3 +\cdots\)</span> with <span class="math notranslate nohighlight">\(a=1,\,x=t^2\)</span> and provided that <span class="math notranslate nohighlight">\(t^2 \lt 1\)</span> the expansion will be valid;</p>
+<p>The series expansion can be worked out from first principles or looked up and based on</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{1-ax} =1+ax+(ax)^2 +(ax)^3 +\cdots\]</div>
+<p>with <span class="math notranslate nohighlight">\(a=1,\,x=t^2\)</span> and provided that <span class="math notranslate nohighlight">\(t^2 \lt 1\)</span> the expansion will be valid;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{1-t^2} \approx 1+t^2 +t^4 +t^6 +\cdots\]</div>
-<p>Integrating term by term gives <span class="math notranslate nohighlight">\(\displaystyle \tanh^{-1}(x) \approx \left[t + t^3/3 + t^5/5 + \cdots \right]_0^{x} = x + x^3/3 + x^5/5 + \cdots\)</span>.</p>
-<p>This series can be summed and compared to an accurate calculation;</p>
+<p>Integrating term by term gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \tanh^{-1}(x) \approx \left[t + t^3/3 + t^5/5 + \cdots \right]_0^{x} = x + x^3/3 + x^5/5 + \cdots\]</div>
+<p>This series can be summed and compared to an accurate calculation. The result gets more accurate as the number of terms in the summation increases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">atanh</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span> <span class="p">)</span>    <span class="c1"># make list then sum, increment by 2 from 1 to 15</span>
+<span class="n">atanh</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span>    <span class="c1"># make list then sum, increment by 2 from 1 to 10</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:f}{:s}{:f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;tanh(&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;) summation &#39;</span><span class="p">,</span><span class="n">atanh</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:f}{:s}{:f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;tanh(&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;) direct    &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arctanh</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>   
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tanh(0.500000) summation 0.549304
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tanh(0.500000) summation 0.549250
 tanh(0.500000) direct    0.549306
 </pre></div>
 </div>
@@ -1958,8 +1963,8 @@ accurate  3.1415926535897931
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use our own factorial function using recursion; good for small values of n </span>
 <span class="c1">#-------------------</span>
-<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>      <span class="c1"># assume n is positive integer</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -1968,7 +1973,7 @@ accurate  3.1415926535897931
 
 <span class="n">nmax</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">x</span>    <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">val</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmax</span><span class="p">)]</span>
+<span class="n">val</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nmax</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="c1"># make array of zeros</span>
 <span class="n">s</span>    <span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmax</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">fact</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span>
@@ -2029,7 +2034,7 @@ accurate  3.1415926535897931
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span> <span class="n">f03</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numx</span><span class="p">)</span> <span class="p">]</span>      <span class="c1"># calculate function at points x[i] and put into array for plotting</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span>
-<span class="n">afun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">f01</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>              <span class="c1"># make original function into numpy function</span>
+<span class="n">afun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">f01</span><span class="p">,</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>           <span class="c1"># make original function into numpy function</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">afun</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="n">f01</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">maxx</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.25</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>

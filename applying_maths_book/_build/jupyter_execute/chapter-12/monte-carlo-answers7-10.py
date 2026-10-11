@@ -13,13 +13,25 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q7 answer
-# (a) The fluorescence lifetime is $\tau = 1/(1 \cdot 10^7 + 2 \cdot 10^8) =4.76$ ns. The yield is $\varphi =k_f/(k_f +k_{isc})=k_f\tau =0.0476$, which is very small. The triplet state rises at the same rate as the singlet decays, i.e. in $1/(4.76$ ns), not at the rate given by the intersystem crossing rate constant $2 \cdot 10^8\,\mathrm{ s^{-1}}$. It is important to appreciate this.
+# **(a)** The fluorescence lifetime is 
 # 
-# (b) Algorithm 5 needs slight modification. The rate constants are different and the timescale needs to be changed to $100$ ns, which is a guess, and may need to be changed later on. Because there are two reacting species, the excited state and the triplet, a check has to be made to make sure that the numbers in any of the states do not go below zero. Try the simulation with A0 = $1000$ initial molecules in nA and increase these numbers as necessary. Eventually, the number of triplet states becomes zero and the calculation must end when this occurs because there are no more molecules left to react. At this point, the number in the ground state is equal to the initial number, and this is checked for in the 'while nG $\lt$ A0 do:' step at the beginning of the loop.
+# $$\displaystyle \tau = \frac{1}{(1 \cdot 10^7 + 2 \cdot 10^8)} =4.76\text{ ns}$$. 
+# 
+# The yield is 
+# 
+# $$\displaystyle \varphi =\frac{k_f}{(k_f +k_{isc})}=k_f\tau =0.0476$$
+# 
+# which is very small. The triplet state rises at the same rate as the singlet decays, i.e. in $1/(4.76$ ns), not at the rate given by the intersystem crossing rate constant $2 \cdot 10^8\,\mathrm{ s^{-1}}$. It is important to appreciate this.
+# 
+# **(b)** Algorithm 5 needs slight modification. The rate constants are different and the timescale needs to be changed to $100$ ns, which is a guess, and may need to be changed later on. Because there are two reacting species, the excited state and the triplet, a check has to be made to make sure that the numbers in any of the states do not go below zero. Try the simulation with A0 = $1000$ initial molecules in nA and increase these numbers as necessary. Eventually, the number of triplet states becomes zero and the calculation must end when this occurs because there are no more molecules left to react. At this point, the number in the ground state is equal to the initial number, and this is checked for in the 'while nG $\lt$ A0 do:' step at the beginning of the loop.
 # 
 # The number of triplet states increase when populated from the singlet, and decrease when the ground state is reformed. Checks are needed to decide which reaction occurs, there are three, from the excited state to the ground state, to the triplet and from the triplet to the ground state adjusting the number of molecules each time as required. This involves several steps in the algorithm below.
 # 
-# The parameter $a_0$, equation 8, is the sum $a_0 =k_fn_A+k_{isc}n_A+k_Tn_T$. The rate constants must be put into a ns scale which means dividing $k_k,\; k_{isc}$ by $10^9$.  
+# The parameter $a_0$, equation 8, is the sum 
+# 
+# $$\displaystyle a_0 =k_fn_A+k_{isc}n_A+k_Tn_T$$
+# 
+# The rate constants must be put into a ns scale which means dividing $k_k,\; k_{isc}$ by $10^9$.  
 # 
 # ![Drawing](monte-carlo-fig31.png)
 # 
@@ -31,7 +43,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # Algorithm: Gillespie Method rate equations S-> G, S->T, T-> G Q7 and figure 22
 
-A0 = 20000
+rng  = np.random.default_rng()               # initialise random number generator
+A0   = 20000
 bins = 200
 maxt = 100.0     # time in ns
 kf   = 1e7/1e9   # in ns units
@@ -63,11 +76,11 @@ while indx < bins and nG < A0 :   # check no negative counts
     a2 = kisc*nA
     a3 = kT*nT
     a0 = a1 + a2 + a3            # summation eqn 8
-    t0 = -np.log(np.random.random_sample())/a0  # equation 11
+    t0 = -np.log(rng.random())/a0  # equation 11
     t  = t + t0
     indx= int(np.round(t*bins/maxt))  # find bin number 
     if indx < bins: 
-        r = np.random.random_sample()
+        r = rng.random()
         if r < a1/a0 :                # fluorescence chosen fraction a1/a0
             nG = nG + 1
             nA = nA - 1
@@ -94,6 +107,7 @@ while indx < bins and nG < A0 :   # check no negative counts
 # In[3]:
 
 
+rng = np.random.default_rng()               # initialise random number generator
 while indx < bins and nA > 0:
     if knT > 0:
         knT= 1.0 - 2.0*nT/A0
@@ -103,7 +117,7 @@ while indx < bins and nA > 0:
         pass
     
     a0 = k1*nA
-    t0 = -np.log(np.random.random_sample())/a0
+    t0 = -np.log(rng.random())/a0
     t  = t + t0
     phif = kf/k1
 
@@ -131,18 +145,18 @@ while indx < bins and nA > 0:
 # I -> R     k2=kIR.
 # set initial values, define arrays to hold results
 # start averaging loop.
-    
+rng = np.random.default_rng()               # initialise random number generator    
 while indx < bins :
     r1 = k1*nI  
     r2 = k2*nS*nI 
     a0 = r1 + r2 + 1e-20                           # eqn10, prevent being zero
-    t0 = -np.log(np.random.random_sample() )/a0    # eqn 11 
+    t0 = -np.log(rng.random() )/a0    # eqn 11 
     t = t + t0                                     # increment time 
     indx = int(t*bins/maxt)    
     if indx < bins :
         Scount[indx] = nS  
         Icount[indx] = nI  
-        r = np.random.random_sample()
+        r = rng.random()
         if r > r2/a0:
             nI = nI - 1  
             remov = remov + 1           # reaction 2
@@ -152,7 +166,7 @@ while indx < bins :
         if nI < 0 :    nI = 0           # check>0 
         if nS < 0 :    nS = 0           # check>0 
         pass   # end while indx  
-# save and averaage nI and  nS
+# save and average nI and  nS
 # plot results
 
 
@@ -169,17 +183,17 @@ while indx < bins :
 
 # main part of the Monte-Carlo method of evaluating 
 # Lotka-Volterra equations by the Gillespie method.
-
+rng = np.random.default_rng()               # initialise random number generator
 while indx < bins :
     r1 = k1*ny
     r2 = k2*nz*ny
     r3 = k3*nz
     a0 = r1 + r2 + r3+1e-20
-    t0 = -np.log( np.random.rand() )/a0
+    t0 = -np.log( rng.random() )/a0
     t = t + t0
     indx = int(np.trunc( t*bins/maxt ))
     if indx < bins :
-        r = np.random.rand()
+        r = rng.random()
         if  r > ( r1 + r2 )/a0  :
             nz = nz - 1
             zcount[indx] = nz          # react 3

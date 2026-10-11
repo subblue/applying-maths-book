@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1606,9 +1606,9 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-comb-of-top-hat-functions">
+    <a class="reference internal nav-link" href="#iii-a-single-and-a-comb-of-top-hat-functions">
      <strong>
-      (iii) Comb of top-hat functions
+      (iii) A single and a comb of top-hat functions
      </strong>
     </a>
    </li>
@@ -1623,6 +1623,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#d-diffusion">
    18.6 2D Diffusion
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frap-fluorescence-recovery-after-photo-bleaching">
+     <strong>
+      FRAP. Fluorescence recovery after photo-bleaching
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1737,9 +1746,9 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-comb-of-top-hat-functions">
+    <a class="reference internal nav-link" href="#iii-a-single-and-a-comb-of-top-hat-functions">
      <strong>
-      (iii) Comb of top-hat functions
+      (iii) A single and a comb of top-hat functions
      </strong>
     </a>
    </li>
@@ -1754,6 +1763,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#d-diffusion">
    18.6 2D Diffusion
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frap-fluorescence-recovery-after-photo-bleaching">
+     <strong>
+      FRAP. Fluorescence recovery after photo-bleaching
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -2099,53 +2117,58 @@ equation (61). This gives</p>
 </section>
 <section id="the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
 <h2>18.2 The Schroedinger equation for a particle in a gravitational potential: <span class="math notranslate nohighlight">\(V(x)\sim x\)</span><a class="headerlink" href="#the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x" title="Permalink to this headline">#</a></h2>
-<p>THe Schroedinger equation with potential <span class="math notranslate nohighlight">\(V(x)\)</span> is</p>
+<p>The Schroedinger equation with potential <span class="math notranslate nohighlight">\(V(x)\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi = E\psi\]</div>
 <p>and when the potential is linear, such as in a gravitational field, then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}(mgx-E)\psi=0 \tag{66}\]</div>
-<p>where  <span class="math notranslate nohighlight">\(m\)</span> is mass and <span class="math notranslate nohighlight">\(g\)</span> the force due to gravity. With a linear potential this equation can be changed into a form equivalent to eqn. 65. The boundary conditions or limits on the wavefunction are defined as <span class="math notranslate nohighlight">\(\psi(0)=0\)</span> and <span class="math notranslate nohighlight">\(\psi(\infty)\to 0\)</span> . This means that only positive values of <span class="math notranslate nohighlight">\(x\)</span> are possible, the potential is shown in figure 30a and is infinitely high at <span class="math notranslate nohighlight">\(x=0\)</span> so the wavefunction cannot penetrate this side of the barrier. The equation does not yet have the form of eqn. 65 and the most difficult part of the calculation is changing it into this form.</p>
-<p>We start by looking at the units of the constants</p>
+<p>where  <span class="math notranslate nohighlight">\(m\)</span> is mass and <span class="math notranslate nohighlight">\(g\)</span> the force due to gravity. With a linear potential this equation can be changed into a form equivalent to eqn. 65. The boundary conditions or limits on the wavefunction are defined as <span class="math notranslate nohighlight">\(\psi(0)=0\)</span> and <span class="math notranslate nohighlight">\(\psi(\infty)\to 0\)</span> . This means that only positive values of <span class="math notranslate nohighlight">\(x\)</span> are possible, the potential is shown in figure 30a and is vertical and infinitely high at <span class="math notranslate nohighlight">\(x=0\)</span> so the wavefunction cannot penetrate this side of the barrier. The most difficult part of the calculation is changing the equation it into the form of the Airy/Stokes equation.</p>
+<p>We start by looking at the constants, and when combined have units</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{2m^2g}{\hbar^2}\equiv \mathrm{\frac{kg^2ms^{-2}}{kg^2m^4s^{-4}s^2}  }=\frac{1}{m^3}\]</div>
-<p>and so define a characteristic length <span class="math notranslate nohighlight">\(l\)</span> as</p>
+<p>which allows us to define a characteristic length <span class="math notranslate nohighlight">\(l\)</span> as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle l=\left(\frac{\hbar^2}{2m^2g}\right)^{1/3}\]</div>
-<p>The distance becomes dimensionless by defining a new variable  <span class="math notranslate nohighlight">\(\chi=x/l\)</span>.</p>
-<p>The energy can be made dimensionless also by the calculation</p>
+\[\displaystyle l=\left(\frac{\hbar^2}{2m^2g}\right)^{1/3}\tag{66a}\]</div>
+<p>Any distance <span class="math notranslate nohighlight">\(x\)</span> becomes dimensionless by defining a new dimensionless variable <span class="math notranslate nohighlight">\(\chi=x/l\)</span>  and similarly the energy can be made dimensionless by defining</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle E_0=\left(\frac{\hbar mg^2}{2}\right)^{1/3}\]</div>
-<p><span class="math notranslate nohighlight">\(\hbar mg^2\)</span> has dimensions of energy cubed and we define <span class="math notranslate nohighlight">\(\epsilon=E/E_0\)</span> where <span class="math notranslate nohighlight">\(\epsilon\)</span> is dimensionless or reduced energy. With these new values and defining</p>
+\[\displaystyle E_0=\left(\frac{\hbar mg^2}{2}\right)^{1/3}\tag{66b}\]</div>
+<p><span class="math notranslate nohighlight">\(\hbar mg^2\)</span> has dimensions of energy cubed and we define <span class="math notranslate nohighlight">\(\epsilon=E/E_0\)</span> where <span class="math notranslate nohighlight">\(\epsilon\)</span> as a dimensionless or reduced energy. With these new values and defining</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \xi = \chi-\epsilon\]</div>
-<p>we can change the equation into a dimensionless form and one similar to eqn. 65</p>
+<p>we can now change the equation into a dimensionless form and one similar to eqn. 65</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d^2\psi}{d\xi^2}-\xi\psi =0 \]</div>
-<p>with solutions that are the Airy function <span class="math notranslate nohighlight">\(\psi(\xi)=Ai(\xi)\)</span>. The limits are <span class="math notranslate nohighlight">\(\psi(-\epsilon)=0, \psi(\infty)\to 0\)</span> so classical motion is permitted only between turning points <span class="math notranslate nohighlight">\(\xi=-\epsilon\)</span> and <span class="math notranslate nohighlight">\(\xi=0\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-<p>When the wavefunction <span class="math notranslate nohighlight">\(Ai(x)=0\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span> there must be a solution giving a discrete energy, and so a valid solution to the Schroedinger equation, because the wavefunction has to be zero at the boundary <span class="math notranslate nohighlight">\(x=0\)</span>. The Airy function is oscillatory and the zero crossings lead to energy levels with quantum numbers <span class="math notranslate nohighlight">\(n=1,2, \cdots\)</span>. When <span class="math notranslate nohighlight">\(\displaystyle Ai\left(-\epsilon_n\right)=0\)</span> (i.e. at <span class="math notranslate nohighlight">\(x=0\)</span>) the energy for the <span class="math notranslate nohighlight">\(n^{th}\)</span> level is <span class="math notranslate nohighlight">\(E_n=E_0\epsilon_n\)</span> where <span class="math notranslate nohighlight">\(\epsilon_n\)</span> is the value that makes <span class="math notranslate nohighlight">\(Ai=0\)</span>.</p>
-<p>The values where the Airy function is zero are tabulated, the first few are for <span class="math notranslate nohighlight">\(Ai(-\epsilon_n)=0\)</span> when <span class="math notranslate nohighlight">\(\epsilon_n=2.3381,  4.08795,  5.5206,  6.7867,  7.9441\)</span>. The characteristic length for an electron is <span class="math notranslate nohighlight">\(l=8.801\cdot 10^{-4}\)</span> m in Earth’s gravitational field and its characteristic energy <span class="math notranslate nohighlight">\(E_0=1.6654\cdot 10^{-21}\)</span> J which, for comparison, is a little smaller that thermal energy at room temperature <span class="math notranslate nohighlight">\(4.14 \cdot 10^{-21}\)</span> J.</p>
+\[\displaystyle \frac{d^2\psi}{d\xi^2}-\xi\psi =0 \tag{66c}\]</div>
+<p>The solutions are the Airy function <span class="math notranslate nohighlight">\(\psi(\xi)=Ai(\xi)\)</span>. The limits are <span class="math notranslate nohighlight">\(\psi(-\epsilon)=0, \psi(\infty)\to 0\)</span> so classical motion is permitted only between turning points <span class="math notranslate nohighlight">\(\xi=-\epsilon\)</span> and <span class="math notranslate nohighlight">\(\xi=0\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>When the wavefunction <span class="math notranslate nohighlight">\(Ai(x)=0\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span> there must be a solution giving a discrete energy, and therefore is a valid solution to the Schroedinger equation, simply because the wavefunction has to be zero at the boundary <span class="math notranslate nohighlight">\(x=0\)</span>. The Airy function is oscillatory and the zero crossings lead to energy levels with quantum numbers <span class="math notranslate nohighlight">\(n = 1,2, \cdots\)</span>. When <span class="math notranslate nohighlight">\(\displaystyle Ai\left(-\epsilon_n\right)=0\)</span> (i.e. at <span class="math notranslate nohighlight">\(x=0\)</span>) the energy for the <span class="math notranslate nohighlight">\(n^{th}\)</span> level is <span class="math notranslate nohighlight">\(E_n = E_0\epsilon_n\)</span> where <span class="math notranslate nohighlight">\(\epsilon_n\)</span> is the value that makes <span class="math notranslate nohighlight">\(Ai=0\)</span>.</p>
+<p>The values where the Airy function is zero are tabulated, the first few are for <span class="math notranslate nohighlight">\(Ai(-\epsilon_n)=0\)</span> when <span class="math notranslate nohighlight">\(\epsilon_n=2.3381,  4.08795,  5.5206,  6.7867,  7.9441\)</span>. (These values can also be found using Python/SciPy special functions). The characteristic length for an electron in our units (eqn. 66a) is <span class="math notranslate nohighlight">\(l=8.801\cdot 10^{-4}\)</span> m in Earth’s gravitational field and its characteristic energy (eqn.66b) <span class="math notranslate nohighlight">\(E_0=1.6654\cdot 10^{-21}\)</span> J which, by comparison, is a little smaller that thermal energy at room temperature <span class="math notranslate nohighlight">\(4.14 \cdot 10^{-21}\)</span> J.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30a.png" /></p>
-<p>Figure 30a. The wavefunctions, the Airy function <span class="math notranslate nohighlight">\(Ei(\xi)\)</span>, and energy levels for a particle in a linear potential. The plots show the data which is not scaled by <span class="math notranslate nohighlight">\(l\)</span> or <span class="math notranslate nohighlight">\(E_0\)</span> in the way described in the text and both have a value of <span class="math notranslate nohighlight">\(1\)</span>. The diagonal line shows the potential and the tunnelling to the right of this is clear. The quantum numbers are also shown. (The amplitudes of the wavefunctions are arbitrary and adjusted to fit the figure.)</p>
+<p>Figure 30a. The wavefunctions, the Airy function <span class="math notranslate nohighlight">\(Ei(\xi)\)</span>, and energy levels for a particle in a linear potential. The plots show the data which is not scaled by <span class="math notranslate nohighlight">\(l\)</span> or <span class="math notranslate nohighlight">\(E_0\)</span> in the way described in the text and both have been given a value of <span class="math notranslate nohighlight">\(1\)</span>. The diagonal line shows the potential, <span class="math notranslate nohighlight">\(V(x)=x\)</span>, and the tunnelling to the right of this is clear. The quantum numbers are also shown. (The amplitudes of the wavefunctions are arbitrary and adjusted to fit the figure.)</p>
 <hr class="docutils" />
-<p>The shape of the wavefunctions is reminiscent of those for the harmonic oscillator but more like the anharmonic Morse potential being skewed at larger <span class="math notranslate nohighlight">\(x\)</span> because of the shape of the potential allowing tunnelling. The lowest level wavefunction has zero nodes, then <span class="math notranslate nohighlight">\(1,2\cdots\)</span> nodes as the energy increases. Tunnelling is apparent into the non-classical region at large <span class="math notranslate nohighlight">\(x\)</span> but not at <span class="math notranslate nohighlight">\(x=0\)</span> because here the potential is infinitely high. The gap between the energy levels decreases with increase in energy just as in the Morse potential and unlike the harmonic oscilator. (The symmetry in the HO prevents this from happening).</p>
-<p>The wavefunction shown in figure 30a, are the stationary state ones, they give only the probability of finding the particle at height <span class="math notranslate nohighlight">\(x\)</span> above ground level when in a given energy level. There is no motion in this. To see that the particle can ‘bounce’ two or more of these eigenstates must be excited at the same time. The time dependence of a wavefunction is obtained by multiplying by <span class="math notranslate nohighlight">\(e^{-iE_nt}\)</span> for energy <span class="math notranslate nohighlight">\(E_n\)</span> to make the wavefunction <span class="math notranslate nohighlight">\(\psi_{x,n,t}=\psi_{x,n}e^{-iE_nt}\)</span>. The probability of being at  position <span class="math notranslate nohighlight">\(x\)</span> is the product <span class="math notranslate nohighlight">\(\psi^*_{x,n}\psi_{x,n}\)</span> where * indicates the complex conjugate and so all time disappears. If, however, a superposition is made, i.e. a wavepacket with wavefunctions having different quantum numbers, then this will have a time dependence. The simplest case is to add two wavefunctions together, e.g.</p>
+<p>The shape of the wavefunctions is reminiscent of those for the harmonic oscillator but much more like the anharmonic Morse potential being skewed at larger <span class="math notranslate nohighlight">\(x\)</span> because of the shape of the potential allowing tunnelling when <span class="math notranslate nohighlight">\(x\gt 0\)</span>. The lowest level wavefunction has zero nodes, then <span class="math notranslate nohighlight">\(1,2\cdots\)</span> nodes as the energy increases. Tunnelling is apparent into the non-classical region at large <span class="math notranslate nohighlight">\(x\)</span> but tunnelling is not possible at <span class="math notranslate nohighlight">\(x=0\)</span> because here the potential is vertical and infinitely high. The gap between the energy levels decreases with increase in energy just as in the Morse potential and unlike the harmonic oscillator. (The symmetry in the harmonic oscillator prevents this from happening).</p>
+<p>The wavefunction shown in figure 30a, are the stationary ones, they give only the probability of finding the particle at height <span class="math notranslate nohighlight">\(x\)</span> above ground level when in a given energy level. There is no motion implied in this. To see that the particle can ‘bounce’ two or more of these eigenstates must be excited at the same time such as by a short laser pulse. The time dependence of a wavefunction is obtained by multiplying by <span class="math notranslate nohighlight">\(e^{-iE_nt}\)</span> for energy <span class="math notranslate nohighlight">\(E_n\)</span> to make the wavefunction</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_{x,n,t}=\psi_{x,n}e^{-iE_nt}\]</div>
+<p>The probability of being at  position <span class="math notranslate nohighlight">\(x\)</span> is the product</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi^*_{x,n,t}\psi_{x,n,t}=\psi^*_{x,n}\psi_{x,n}\]</div>
+<p>where * indicates the complex conjugate and the time dependence disappears from this product. If, however, a superposition is made, i.e. a wavepacket with wavefunctions having different quantum numbers, then this will have a time dependence. The simplest case is to add two wavefunctions together, e.g.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle S = \frac{1}{\sqrt{2}}(\psi_{x,n}e^{-iE_nt}+\psi_{x,m}e^{-iE_mt}),\quad n,m =1,2\cdots; n \ne m\]</div>
 <p>and then the probability at any time is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}W&amp;= ((\psi_{x,n}e^{+iE_nt}+\psi_{x,m}e^{+iE_mt}))(\psi_{x,n}e^{-iE_nt}+\psi_{x,m}e^{-iE_mt})/2\\&amp;= (\psi_{x,n}^2+\psi_{x,m}^2+\psi_{x,n}\psi_{x,m}(e^{i(E_m-E_n)t}+e^{-i(E_m-E_n)t} ))/2\end{align}\end{split}\]</div>
-<p>which has a constant term plus a variable one that looks very similar to a cosine in <span class="math notranslate nohighlight">\((E_m-E_n)t\)</span>. The time dependence causes the wavepacket to move in the potential, and do so repeatedly with a period <span class="math notranslate nohighlight">\(2\pi/(|E_n-E_m|)\)</span>. This is shown in figure 30b for the sum of wavefunctions <span class="math notranslate nohighlight">\(n=5,m=6\)</span> and for fractions of the period, <span class="math notranslate nohighlight">\(0,0.2,\dots\)</span> as shown in each panel. The reinforcing and destructive interference are clear. With lower quantum numbers the extension is smaller and the period longer because the energy gaps are greater. Adding several levels together leads to lots of different periods with recursions at different times due to different combinations of <span class="math notranslate nohighlight">\(E_n,E_m,E_p,E_q\)</span> etc. produced.</p>
+<p>which has two constant terms plus a variable one <span class="math notranslate nohighlight">\(\psi_{x,n}\psi_{x,m}\cos\big((E_m-E_n)t\big)\)</span>. The time dependence causes the wavepacket to move in the potential, and do so repeatedly with a period <span class="math notranslate nohighlight">\(2\pi/(|E_n-E_m|)\)</span>. The initial wavepacket is repeatedly reformed after each whole period. This is shown in figure 30b for the sum of wavefunctions <span class="math notranslate nohighlight">\(n = 5,m = 6\)</span> and for fractions of the period, <span class="math notranslate nohighlight">\(0,0.2,\dots 1\)</span> as shown in the panels. The reinforcing and destructive interference are clear. With lower quantum numbers the motion is less extended and the period shorter because the energy gaps are greater. Adding several levels together leads to lots of different periods with recursions at different times due to various combinations of levels with energies <span class="math notranslate nohighlight">\(E_i, E_{(i+1)}, E_{(i+2)}, \cdots\)</span> etc.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30b.png" /></p>
-<p>Figure 30b. Wavepackets for the quantum numbers (<span class="math notranslate nohighlight">\(5,6\)</span>) at fractions of a period.</p>
+<p>Figure 30b. Wavepackets for the quantum numbers <span class="math notranslate nohighlight">\(5\)</span> and <span class="math notranslate nohighlight">\(6\)</span> at fractions of a period <span class="math notranslate nohighlight">\(t_p\)</span>. These times are <span class="math notranslate nohighlight">\(t=\cdots\)</span>. The diagonal dashed line is the potential energy and the wavepacket is plotted at the average energy of the two levels.</p>
 <hr class="docutils" />
-<p>To imagine the particle ‘bouncing’ the average distance can be computed. Again the wavepacket is needed, if just one wavefunction is used then a constant value is obtained for the average position as all time is removed via the complex conjugate.</p>
-<p>The average position is by definition</p>
+<p>To imagine the particle ‘bouncing’ in the gravitational well (i.e. moving left to right in the diagram but up and down in reality) then the average distance can also be computed again using the wavepacket. If just one wavefunction is used then a constant value is obtained for the average position as all time is removed <em>via</em>. the complex conjugate.</p>
+<p>The average position is by definition,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle x\rangle =\int_0^\infty x\psi_{x,n}e^{iE_n t}\psi_{x,m}e^{-iE_mt}dx\]</div>
-<p>and the result at several times is shown in figure 30c. The sinusoidal motion is clear. The period of the wavepacket is maintained and the particle oscillates only between finite values and does not reach zero.</p>
-<p><img alt="Drawing" src="../_images/diffeqn-fig30c.png" /></p>
-<p>Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown (<span class="math notranslate nohighlight">\(5,6\)</span>) vs time. The period is shown between vertical lines is the same as the wavepacket period.</p>
+\[\displaystyle \langle x\rangle =\int_0^\infty x\left(\psi_{x,n}e^{-iE_n t}\right)^*\psi_{x,m}e^{-iE_mt}dx\]</div>
+<p>and the resulting position over time is shown in figure 30c where the co-sinusoidal motion is clear. The period of the average position of the wavepacket is clear and although the particle oscillates its average position does not reach zero for any combination of quantum numbers.<br />
+<img alt="Drawing" src="../_images/diffeqn-fig30c.png" /></p>
+<p>Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown (<span class="math notranslate nohighlight">\(n=5,m=6\)</span>) vs time. The period between vertical lines is the same as the wavepacket period. This is <span class="math notranslate nohighlight">\(2\pi/\Delta E\)</span> where <span class="math notranslate nohighlight">\(\Delta E = |E_n - E_m|\)</span> .</p>
 </section>
 <hr class="docutils" />
 <section id="time-dependent-schroedinger-equation-for-a-2d-square-well">
@@ -2203,11 +2226,11 @@ equation (61). This gives</p>
 <p>but because we shall define <span class="math notranslate nohighlight">\(f(x,0)=\delta(x)\)</span> the delta function picks out just one value at <span class="math notranslate nohighlight">\(x=0\)</span> as its value is unity only at <span class="math notranslate nohighlight">\(x\)</span>, giving <span class="math notranslate nohighlight">\(\displaystyle g(k,0)=\frac{1}{\sqrt{2\pi}}\)</span>.</p>
 <p>Transforming back into ‘real’ space gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c(x,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk^2t}e^{ikx}dk=\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}\]</div>
-<p>where the integral is evaluated by completing the square, otherwise Sympy can be used. As can be seen this solution is only correct for <span class="math notranslate nohighlight">\(t&gt;0\)</span>. This equation produces a gaussian concentration profile because the fourier transform of a Gaussian is also a Gaussian. This equation essentially forms a kernel from which the effect of diffusion on other initial distributions can be based.</p>
-<p>Calculating the profiles shows that the concentration spreads out across space and in time as shown in the figure. From the values you can see that diffusion is a relatively slow process, but with a rapid initial phase. In 1D the root mean squared distance diffused in time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(\sqrt{2Dt}\)</span>.</p>
+\[\displaystyle c(x,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk^2t}e^{ikx}dk=\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}\tag{70a}\]</div>
+<p>where the integral is evaluated by completing the square, otherwise SymPy can be used. As can be seen this solution is only correct for <span class="math notranslate nohighlight">\(t&gt;0\)</span>. This equation produces a gaussian concentration profile because the fourier transform of a Gaussian is also a Gaussian. This equation essentially forms a <em>kernel</em> from which the effect of diffusion on other initial distributions can be based by using convolution.</p>
+<p>Calculating the profiles (fig. 30d) shows that the concentration spreads out across space and in time. From the time and distance you can see that diffusion is a relatively slow process, but with a rapid initial phase. In 1D the root mean squared distance diffused in time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(\sqrt{2Dt}\)</span>.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30d.png" /></p>
-<p>Figure 30d. Diffusion from the delta function initial distribution is represented by the vertical line at zero. The diffusion constant used was <span class="math notranslate nohighlight">\(10\cdot 10^{-6}\,\mathrm{cm^2\,s^{-1}}\)</span>. The left panel shows the concentration profile vs. position at the times shown and the right panel the concentration at various positions vs. time.</p>
+<p>Figure 30d. Diffusion from the delta function. The initial distribution is represented by the vertical line at zero. The diffusion constant used was <span class="math notranslate nohighlight">\(10\cdot 10^{-6}\,\mathrm{cm^2\,s^{-1}}\)</span> typical of a small molecule such as sucrose or urea in water. The left panel shows the concentration profile vs. position at the times shown and the right panel the concentration at various positions vs. time.</p>
 </section>
 <hr class="docutils" />
 <section id="ii-initial-concentration-not-at-x-0">
@@ -2218,29 +2241,25 @@ equation (61). This gives</p>
 <p>Thus to shift the centre of the concentration profile <span class="math notranslate nohighlight">\(c(x,t)\)</span> by a distance <span class="math notranslate nohighlight">\(x_0\)</span> the transform becomes</p>
 <div class="math notranslate nohighlight">
 \[g(k,0)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x,0)e^{-ikx}e^{-ikx_0}dx \]</div>
-<p>which in the case of delta function initial condition results in a Gaussian where <span class="math notranslate nohighlight">\(x\to x-x_0\)</span> or</p>
+<p>which in the case of delta function initial condition results in a Gaussian in <span class="math notranslate nohighlight">\( x-x_0\)</span> or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle c(x,t)=\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}\]</div>
-<p>As might be expected in some cases the transform cannot be easily reversed by integration and a numerical transform (FFT) is the only recourse.</p>
-<p>In a case that a function other than the delta function is needed then the result assuming a delta function, the kernel, can be convoluted with the new function.</p>
-<p>When the initial condition is not a delta function we have to reverse transform eqn. 70 to bring us back to ‘real space’, i.e. <span class="math notranslate nohighlight">\(x\)</span> and the equation to do this is</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty f(y,0)e^{-iky}dy\right]e^{-Dk^2t} e^{ikx} dk\]</div>
-<p>where <span class="math notranslate nohighlight">\(y\)</span> a dummy variable for the integration and <span class="math notranslate nohighlight">\(f(y,0)\)</span> the initial condition. Rearranging gives</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] f(y,0)dy\]</div>
+<p>and so the effect of shifting the origin is, as one might anticipate, simply to change <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(x-x_0\)</span>. When some function <span class="math notranslate nohighlight">\(f(x)\)</span> other than the delta function is needed as the source then <span class="math notranslate nohighlight">\(c(x,t)\)</span> can be convoluted with <span class="math notranslate nohighlight">\(f(x)\)</span> as shown in the next section.</p>
 </section>
-<section id="iii-comb-of-top-hat-functions">
-<h3><strong>(iii) Comb of top-hat functions</strong><a class="headerlink" href="#iii-comb-of-top-hat-functions" title="Permalink to this headline">#</a></h3>
-<p>In the case of a ‘top-hat’ function, i.e one that is constant between <span class="math notranslate nohighlight">\(x=a \to b\)</span> and zero elsewhere or many polynomials between two values, the integrations can be performed analytically but for other cases a numerical method will have to used. The outer integral limits are <span class="math notranslate nohighlight">\(y=\pm\infty\)</span> but usually the integral is split into parts, e.g <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty [\cdots] -\int_{-\infty}^a [\cdots]- \int_b^\infty [\cdots]\)</span>  which can be simplified to <span class="math notranslate nohighlight">\(\displaystyle \int_a^b[\cdots]\)</span>. As an example the result of heating a series of strips is shown in figure 30e. The equation for a single strip is of amplitude <span class="math notranslate nohighlight">\(1\)</span> is</p>
+<section id="iii-a-single-and-a-comb-of-top-hat-functions">
+<h3><strong>(iii) A single and a comb of top-hat functions</strong><a class="headerlink" href="#iii-a-single-and-a-comb-of-top-hat-functions" title="Permalink to this headline">#</a></h3>
+<p>In the case of a ‘top-hat’ function, i.e. one that is constant between <span class="math notranslate nohighlight">\(x=a \to x=b\)</span> and zero elsewhere the integrations can be performed analytically but for many other functions a numerical integration method will have to used. The integration needed is a convolution with the result of a delta-function, eqn. 70a, with a function <span class="math notranslate nohighlight">\(f(x)\)</span> that describes the initial concentration profile in <span class="math notranslate nohighlight">\(x\)</span>. Using <span class="math notranslate nohighlight">\(v\)</span> as a dummy variable in the integration the convolution equation is (see chapter 9-7),</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] dy=\int_a^b\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}dy\]</div>
-<p>which has the solution (<span class="math notranslate nohighlight">\(a &lt; b\)</span>)</p>
+\[\displaystyle C(x,t) = \int f(v)c(x-v,t)dv\]</div>
+<p>where the limits of the integration will depend on the nature of the function <span class="math notranslate nohighlight">\(f\)</span>. Suppose that this is a top-hat function of intensity <span class="math notranslate nohighlight">\(A\)</span> and non-zero only in the range from <span class="math notranslate nohighlight">\(x=a\to x=b\)</span>. The equation to integrate is now</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c(x,t)=  \frac{1}{2}\mathrm{erf}{\left(\frac{b - x}{2 \sqrt{Dt}} \right)} - \frac{1}{2}\mathrm{erf}{\left(\frac{a - x}{2 \sqrt{Dt}} \right)} \]</div>
-<p>and other strips are positioned by changing <span class="math notranslate nohighlight">\(a,b\)</span>. The initial top-hat population is coloured grey. An rapid initial fall in population is clear which then slows is accord with the square root of time for the root mean square distance diffused, <span class="math notranslate nohighlight">\(\langle x\rangle =\sqrt{2Dt}\)</span> in one dimension.</p>
+\[\displaystyle C(x,t) = \frac{A}{\sqrt{4\pi Dt} }\int_a^b e^{-(x-v)^2/(4Dt)}dv\]</div>
+<p>and evaluating produces error two functions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(x,t)=  \frac{1}{2}\mathrm{erf}{\left(\frac{b - x}{ \sqrt{4Dt}} \right)} - \frac{1}{2}\mathrm{erf}{\left(\frac{a - x}{ \sqrt{4Dt}} \right)} \tag{40b}\]</div>
+<p>If the change <span class="math notranslate nohighlight">\(x\to x-x_0\)</span> is made the the strips will be positioned around <span class="math notranslate nohighlight">\(x_0\)</span> alternatively <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> could be changed. The result of initially placing a concentrated solution in a series of strips and allowed to diffuse freely is shown in figure 30e and mimics the effect of a transient grating experiment which is described next. The initial top-hat population is coloured grey in fig. 30e. A rapid initial fall in population is clear which then slows accord with the square root of time as given by the root mean square distance diffused. This is <span class="math notranslate nohighlight">\(\langle x\rangle =\sqrt{2Dt}\)</span> in one dimension.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30e.png" /></p>
-<p>Figure 30e. Population as an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of <span class="math notranslate nohighlight">\(D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}\)</span>. The horizontal axis is in <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
+<p>Figure 30e. The population of an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of <span class="math notranslate nohighlight">\(D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}\)</span>. The horizontal axis is in <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -2267,15 +2286,18 @@ equation (61). This gives</p>
 <p>The 2D diffusion equation has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial c}{\partial t}=D\left(\frac{\partial^2 c}{\partial x^2}+\frac{\partial^2 c}{\partial y^2}\right) \]</div>
-<p>which has the same form as that for 1D diffusion but with the extra term in <span class="math notranslate nohighlight">\(y\)</span>. There is no term in the product <span class="math notranslate nohighlight">\(xy\)</span> so this is in effect rather like two separate equations. If the fourier transforms are taken as above in terms of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and necessarily using <span class="math notranslate nohighlight">\(k_x\)</span> and <span class="math notranslate nohighlight">\(k_y\)</span> instead of just <span class="math notranslate nohighlight">\(k\)</span> the result is just the product of two 1D terms. Following the method above the transform equation is</p>
+<p>which has the same form as that for 1D diffusion but with the extra term in <span class="math notranslate nohighlight">\(y\)</span>. There is no term in the product <span class="math notranslate nohighlight">\(xy\)</span> so this is in effect rather like two separate equations. If the fourier transforms are taken as above in terms of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and necessarily using <span class="math notranslate nohighlight">\(k_x\)</span> and <span class="math notranslate nohighlight">\(k_y\)</span> instead of just <span class="math notranslate nohighlight">\(k\)</span> the result is just the product of two 1D terms. Following the method given for the 1D case with a delta function initial condition in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> the transform equation is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial }{\partial t}g(k_x,k_y,t)=-D(k_x^2+k_y^2) g(k_x,k_y,t)\]</div>
 <p>and transforming to <span class="math notranslate nohighlight">\(x,y\)</span> from <span class="math notranslate nohighlight">\(k_x,k_y\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle c(x,y,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk_x^2t}e^{ik_xx}dk_x\int_{-\infty}^\infty e^{-Dk_y^2t}e^{ik_yx}dk_y=\frac{1}{4\pi Dt}e^{-(x^2+y^2)/(4Dt)}\]</div>
-<p>where the integral <span class="math notranslate nohighlight">\(\int\int e^{-D(k_x^2+k_y^2)t}e^{i(k_xx+k_yy)} dk_xdk_y \)</span> is split into two because, as mentioned, there is no term in <span class="math notranslate nohighlight">\(xy\)</span>. The <span class="math notranslate nohighlight">\(x^2+y^2\)</span> in the exponential means that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are interchangeable, or put another way that diffusion is the same in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, i.e. is spherically symmetrical and we can consider that <span class="math notranslate nohighlight">\(x^2+y^2=r^2\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is the radius of the diffusing material, this with a delta function placed at <span class="math notranslate nohighlight">\(x=y=0\)</span> shows that the concentration spreads out spherically while its peak height reduces. This, naturally, has the be the case because the amount of material is constant.  The effect is shown in figure 30g. Finally note that the solution to Fick’s law, in any dimension, cannot apply at <span class="math notranslate nohighlight">\(t=0\)</span>, as the concentration would have to become infinite.  The short time behaviour is completely missing and more sophisticated models, are needed here.</p>
+<p>where the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\int\int e^{-D(k_x^2+k_y^2)t}e^{i(k_xx+k_yy)} dk_xdk_y \]</div>
+<p>was split into two because, as mentioned, there is no term in <span class="math notranslate nohighlight">\(xy\)</span>. The <span class="math notranslate nohighlight">\(x^2+y^2\)</span> in the exponential means that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are interchangeable, or put another way that diffusion is the same in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, i.e. is spherically symmetrical and we can consider that <span class="math notranslate nohighlight">\(x^2+y^2=r^2\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is the radius of the diffusing material, this with a delta function placed at <span class="math notranslate nohighlight">\(x=y=0\)</span> shows that the concentration spreads out spherically while its peak height reduces. This, naturally, has the be the case because the amount of material is constant.  The effect is shown in figure 30g. Finally note that the solution to Fick’s law, in any dimension, cannot apply at <span class="math notranslate nohighlight">\(t=0\)</span>, as the concentration would have to become infinite.  The short time behaviour is completely missing and more sophisticated models, are needed here.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30g.png" /></p>
-<p>Fig. 30g. Diffusion in <span class="math notranslate nohighlight">\(2\)</span> dimensions, with an initial amount at <span class="math notranslate nohighlight">\(x=y=0\)</span> showing how the concentration spreads out spatially and in time. The line shows the time evolution of the peak concentration, where <span class="math notranslate nohighlight">\(x=y=0\)</span> and which has the form <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{4\pi Dt}\)</span>. The radial distance <span class="math notranslate nohighlight">\(r\)</span> is measured in the plane from the centre of the circle outwards at any angle <span class="math notranslate nohighlight">\(\theta = 0\to 2\pi\)</span> around the circular base.</p>
+<p>Fig. 30g. Diffusion in <span class="math notranslate nohighlight">\(2\)</span> dimensions, with an initial amount at <span class="math notranslate nohighlight">\(x=y=0\)</span> showing how the concentration spreads out spatially and in time. The line shows the time evolution of the peak concentration, where <span class="math notranslate nohighlight">\(x=y=0\)</span> and which has the form <span class="math notranslate nohighlight">\(\displaystyle (4\pi Dt)^{-1}\)</span>. The radial distance <span class="math notranslate nohighlight">\(r\)</span> is measured in the plane from the centre of the circle outwards at any angle <span class="math notranslate nohighlight">\(\theta = 0\to 2\pi\)</span> around the circular base.</p>
 <hr class="docutils" />
 <p>We can see that the mean or average or mean value of the concentration distribution will be zero, since this is radially symmetrical. First we should check that the concentration profile over all coordinates is normalised to unity, since we used a delta function as the boundary condition when solving the equations. The integral is taken over all coordinates and is,</p>
 <div class="math notranslate nohighlight">
@@ -2283,13 +2305,13 @@ equation (61). This gives</p>
 <p>This can be tackled in two ways, either by retaining Cartesian <span class="math notranslate nohighlight">\(x,y\)</span> or by changing to plane polar coordinates, (see chapter 1, section 5.7) in which case the area element  <span class="math notranslate nohighlight">\(dxdy\to r\,dr\,d\theta\)</span> and <span class="math notranslate nohighlight">\(x^2+y^2 \to r^2\)</span> and the limits are changed from <span class="math notranslate nohighlight">\(\pm \infty\)</span> in <span class="math notranslate nohighlight">\(x,y\)</span> to <span class="math notranslate nohighlight">\(0\to \infty\)</span> in <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(0\to 2\pi\)</span> in <span class="math notranslate nohighlight">\(\theta\)</span>. The integral becomes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{4\pi Dt}\int_0^{2\pi}\int_0^{\infty} e^{-r^2/4Dt}rdrd\theta=\frac{2\pi}{4\pi Dt}\int_0^\infty e^{-r^2/4Dt}rdr=1\]</div>
-<p>which can be confirmed using Sympy.</p>
+<p>which can be confirmed using SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r,D,t&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">inf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>                                         <span class="c1"># sp.oo is SymPy infinity</span>
 <span class="n">f01</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span> <span class="mi">4</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">t</span> <span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">t</span> <span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>         <span class="c1">#sp.oo is sympy infinity</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>                   <span class="c1">#sp.oo is sympy infinity</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;normalisation =&#39;</span><span class="p">,</span><span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2307,20 +2329,15 @@ equation (61). This gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x^2\rangle =\frac{1}{4\pi Dt}\int_{0}^{2\pi}\int_{0}^\infty r^2re^{-r^2/4Dt}drd\theta=4Dt\]</div>
 <p>thus the mean distance diffused by the whole group of particles in two dimensions in time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(\sqrt{4Dt}\)</span>. Any individual particle moves under Brownian motion and this individual motion is not bound by Fick’s law, only the average behaviour.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f02</span> <span class="o">=</span> <span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span> <span class="mi">4</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">t</span> <span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">t</span> <span class="p">)</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f02</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">))</span>                   
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;r^2&gt; =&#39;</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;r^2&gt; = 4*D*t
-</pre></div>
-</div>
-</div>
-</div>
+<section id="frap-fluorescence-recovery-after-photo-bleaching">
+<h3><strong>FRAP. Fluorescence recovery after photo-bleaching</strong><a class="headerlink" href="#frap-fluorescence-recovery-after-photo-bleaching" title="Permalink to this headline">#</a></h3>
+<p>The technique of fluorescence recovery after photo-bleaching or FRAP (Axelrod et al. Biophysical J. v16, p1055, 1976) is an important method with which to determine the diffusion coefficients of molecules in biological membranes and in cells. Under a microscope a short pulse of laser light of nanosecond or shorter duration irreversibly bleaches a small circular area of a sample to which a fluorescent dye had been added. The fluorescence from any remaining unbleached dye in this area is monitored immediately after bleaching by exciting with weak continuous light so as to stimulate fluorescence but not cause any significant photo-bleaching. As some dye diffuses from elsewhere into the bleached area the fluorescence signal recovers.</p>
+<p>The 2D equation used to describe spatial and temporal recovery is similar to, but more complicated than that just described as it has to take into account the physical shape and intensity profile of the bleaching laser pulse. Of course this pulse has to be shorter than the time taken for diffusion to replace the bleached dye but technically this is not a problem as diffusion is relatively a slow process. If we imagine that fig. 30g shows how the amount of <em>bleached</em> dye with time changes as it diffuses out of the region, the fluorescence produced is rather like the inverse this with the the red line showing how the total fluorescence from the bleached area would recover. The fluorescence signal is initially small but grows as dye diffuses into the bleached area and by analysing the shape of the recovery curve a diffusion coefficient can be determined.</p>
+<p>Although it is easier to assume that the laser has a circular profile, which leads to a complicated result, it is not necessary to assume this. Multi-mode Q-switched nanosecond lasers are quite common meaning that the intensity profile across the beam is effectively uniform and a mask could be placed in the laser beam to make it square. In this case the result is the product of equations in the x- and in the y-directions. Equation 70b gives the basic equation therefore if the rectangle has sides <span class="math notranslate nohighlight">\(-a\to a\)</span> and <span class="math notranslate nohighlight">\(-b\to b\)</span> the equation needed is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(x,t)=  \frac{A}{4}\left(\mathrm{erf}{\left(\frac{a + x}{ \sqrt{4Dt}} \right)} + \mathrm{erf}{\left(\frac{a - x}{ \sqrt{4Dt}} \right)}\right)\left(\mathrm{erf}{\left(\frac{b + y}{ \sqrt{4Dt}} \right)} + \mathrm{erf}{\left(\frac{b - y}{ \sqrt{4Dt}} \right)}\right)\]</div>
+<p>The total fluorescence is this function when integrated over <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> at each time <span class="math notranslate nohighlight">\(t\)</span> and this can be integrated over a square area to produce an analytic equation in terms of an exponential and an error function.</p>
+</section>
 </section>
 </section>
 

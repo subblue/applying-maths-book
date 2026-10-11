@@ -17,8 +17,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # ## 3.1 Clever substitution can help to solve an integral
 # 
-# ### **(i)** Substitutions
-# It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.
+# It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard one and therefore is of simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.
 # 
 # There are three parts to the method, which will be illustrated with $\displaystyle\int \sin^2(x)\cos(x)dx$. 
 # 
@@ -28,24 +27,53 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $\quad$**(2)** Workout $dx$ as an expression in $du$. In our example, $du=-\sin(x)dx$.
 # 
-# $\quad$**(3)** Change all limits to the new variable.
+# $\quad$**(3)** Change all limits to the new variable or wait until the expression is in $x$ and then the limits.
 # 
 # The usage of $du$ and $dx$ as independent entities in themselves in step (2) appears to be different to that of $du/dx$, which has previously been used as a ratio. However, it is quite permissible to use $du$ and $dx$ and so forth on their own, provided their ratio could still be made by rearranging the equation.
 # 
-# As a rule of thumb with complicated sine and cosine expressions, try sine and cosine substitutions. If you are lucky, your first guess may be the correct one; if not, try again.
+# ### **(i)** A rule of thumb with sine and cosine expressions 
 # 
-# Start by guessing that the substitution $u = \cos(x)$ might work, therefore $\displaystyle \frac{du}{dx}=-\sin(x)$ or $dx=-du/\sin(x)$. Next substituting for $\cos(x)$ and $dx$ gives
+# **(a)** Start by guessing that the substitution $u = \cos(x)$ might work, therefore $\displaystyle \frac{du}{dx}=-\sin(x)$ or $dx=-du\,/\sin(x)$. Next substituting for $\cos(x)$ and $dx$ gives
 # 
+# $$\displaystyle \int \sin^2(x)\cos(x)dx = -\int \sin(x)u\,du = -\int \sqrt{1 - u^2}\,u\,du$$
 # 
-# $$\displaystyle \int \sin^2(x)\cos(x)dx = -\int \sin(x)udu = -\int \sqrt{(1 - u^2)}udu$$
+# and in the last step $\cos^2(x) + \sin^2(x) = 1$ was used. If you are lucky, your first guess may be the correct one; if not, try again.
 # 
-# and in the last step $\cos^2(x) + \sin^2(x) = 1$ was used. Notice that no integration has yet been performed, just the substitutions. However, this last integral looks as if it might be possible but it is still a bit complicated, so instead of persevering it is easier to try again and see if a better result is possible. You can always return to this result if necessary. As a second try, substitute $u = \sin(x)$ and then $du = \cos(x)dx$ and this turns out to be far simpler:
+# Notice that no integration has yet been performed, just the substitutions. However, this last integral looks as if it might be possible but it is still a bit complicated, so instead of persevering it is easier to try again and see if a better result is possible. You can always return to this result if necessary. As a second try, substitute $u = \sin(x)$ and then $du = \cos(x)dx$ and this turns out to be far simpler:
 # 
 # $$\displaystyle \int\sin^2(x)\cos(x)dx=\int u^3du=\frac{u^3}{3}=\frac{\sin^3(x)}{3}$$
 # 
 # Using the right-angled triangle it is possible to substitute trigonometric functions for algebraic ones and vice versa. The triangles and their corresponding trig relationships are shown in table 1.
 # 
-# Consider the integral $\displaystyle \int \frac{x^2}{\sqrt{4-x^2}}dx$. The substitution $\tan(\theta)=x/\sqrt{a^2-x^2}$ with $a=2$ is appealing. However, when differentiated to substitute $d\theta$ for $dx$ it  produces a horrible result. Trying $\cos(\theta)=\sqrt{ 2^2-x^2}/2$ instead proves to be a good starting place because when differentiated $d\theta$ produces a reciprocal square root that cancels with that in the integral. Differentiating gives $2\sin(\theta)d\theta = x/\sqrt{4 - x^2}dx$ changing the integral into
+# **(b)** The integral 
+# 
+# $$\displaystyle \int\frac{\sin(x)\cos(x)}{1+\sin^2(x)}dx$$
+# 
+# appears to be very complicated. The aim of a substitution is to make the integration simpler so we will try
+# 
+# $$\displaystyle u=\sin^2(x),\qquad du=2\sin(x)\cos(x) dx$$
+# 
+# and you can see immediately that this substitution will cancel out the numerator producing a simpler integral with a logarithmic solution
+# 
+# $$\displaystyle \int \frac{1}{2(1+u)}du=\frac{1}{2}\ln(1+u)du = \frac{1}{2}\ln(1+\sin^2(x))+c$$
+# 
+# **(c)** Consider the integral 
+# 
+# $$\displaystyle \int \frac{x^2}{\sqrt{4-x^2}}dx$$
+# 
+# The substitution 
+# 
+# $$\displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}}$$
+# 
+# with $a=2$ is appealing (se table 1 below). However, when differentiated to substitute $d\theta$ for $dx$ it  produces a horrible result. Trying 
+# 
+# $$\displaystyle \cos(\theta)=\frac{1}{2}\sqrt{ 2^2-x^2}$$
+# 
+# instead proves to be a good starting place because when differentiated $d\theta$ produces a reciprocal square root that cancels with that in the integral. Differentiating gives 
+# 
+# $$\displaystyle 2\sin(\theta)d\theta = \frac{x}{\sqrt{4 - x^2}}dx$$
+# 
+# changing the integral into
 # 
 # $$\displaystyle 2\int\sin(x)xd\theta =4\int\sin(\theta)\sqrt{1-\cos^2(\theta)} d\theta=4\int\sin^2(\theta)d\theta$$
 # 
@@ -99,7 +127,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### **(i)** Reciprocal functions
 # 
-# Suppose the integral is $\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx$, trying the substitution $u = 1 + 2x$ seems an obvious choice and therefore $dx = du/2$. The limits are $x = 2$ and  8, which become $u = 5$ and $17$ in the new variable, making the integral
+# Suppose the integral is 
+# 
+# $$\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx$$
+# 
+# trying the substitution $u = 1 + 2x$ seems an obvious choice and therefore $dx = du/2$. The limits are $x = 2$ and  8, which become $u = 5$ and $17$ in the new variable, making the integral
 # 
 # $$\displaystyle \int_5^{17}\frac{3}{2u^2}du = -\frac{3}{2u}\bigg|_5^{17} =\frac{18}{85}$$
 # 
@@ -114,7 +146,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # often occur in quantum problems. The solution to the simpler integral is 
 # 
-# $$\displaystyle \int_{-\infty}^\infty e^{-ax^2/2}dx=\sqrt{2\pi/a}$$
+# $$\displaystyle \int_{-\infty}^\infty e^{-ax^2/2}dx=\sqrt{\frac{2pi}{a}}$$
 # 
 # and with a substitution we can solve the more complex integral.
 # 
@@ -128,13 +160,17 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \begin{align}\int_{-\infty}^\infty  e^{-a(x-b/a)^2+b^2/2a} dx &= e^{b^2/2a}\int_{-\infty}^\infty  e^{-az^2/2} dz\\&=\sqrt{\frac{2\pi}{a}}e^{b^2/2a}\end{align}$$
 # 
-# ### **(iii)  Integrals as products and ratios of sines and cosines  $\int \cos^n(\theta)\sin^m(\theta)d\theta$**
+# ## 3.4   Integrals as products and ratios of sines and cosines  $\displaystyle \int \cos^n(\theta)\sin^m(\theta)d\theta$
 # 
-# The integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ can be found when $n$ or $m$ or both is an odd number. If the index of the sine is odd let $x=\cos(\theta)$, if the index of cosine is odd let $x=\sin(\theta)$. If $n+m$ is a negative even integer then the integral can also be found. This was illustrated above. When $n$ and $m$ are both even the integral becomes very difficult and then using computer algebra is by far the quickest way to arrive at at solution. 
+# The integral 
 # 
-# #### **(a) $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$**
+# $$\displaystyle \int \cos^n(\theta)\sin^m(\theta)d\theta $$
 # 
-#  The integrals $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$ and so $dx=-\sin(\theta)d\theta$,
+# can be found when $n$ or $m$ or both is an odd number. If the index of the sine is odd let $x=\cos(\theta)$, if the index of cosine is odd let $x=\sin(\theta)$. If $n+m$ is a negative even integer then the integral can also be found. This was illustrated above. When $n$ and $m$ are both even the integral becomes very difficult and then using computer algebra is by far the quickest way to arrive at at solution. 
+# 
+# ### **(i)** Integrals of the form $\displaystyle \int \cos^n(\theta)\sin(\theta)d\theta$
+# 
+#  The integrals $\displaystyle \int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$ and so $dx=-\sin(\theta)d\theta$,
 # 
 # $$\displaystyle \int \cos^n(\theta)\sin(\theta)d\theta \to -\int x^n dx = \frac{x^{n+1}}{n+1}+c$$
 # 
@@ -148,7 +184,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # making all the integrals zero for odd $n$. 
 # 
-# #### **(b) Integrals such as $\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta $**
+# ### **(ii) Integrals such as $\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta $**
 # 
 # Again let $x=\cos(\theta)$ then 
 # 
@@ -158,13 +194,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle -\int (x^4-x^6) dx=-\frac{x^5}{5}+\frac{x^7}{7}=-\frac{\cos^5{\theta}}{5}+\frac{\cos^7{\theta}}{7}+c$$
 # 
-# #### **(c) Ratios of sine and cosine, e.g.  $\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta$**
+# ### **(iii)** Ratios of sine and cosine
 # 
-# With the substitution $x=\sin(\theta), dx=\cos(\theta)d\theta$ the integral becomes 
+# With integrals such as 
+# 
+# $$\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta$$
+# 
+# try the substitution 
+# 
+# $$x=\sin(\theta),\quad dx=\cos(\theta)d\theta$$
+# 
+# and the integral becomes 
 # 
 # $$\displaystyle \int \frac{1-x^2}{x^2}dx=\int \left(\frac{1}{x^2}-1\right)dx=-\frac{1}{x}-x=-\frac{1}{\sin(\theta)}-\sin(\theta)+c$$
 # 
-# #### **(d) The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $**
+# ### **(iv) The general integral $\displaystyle \int \cos^n(\theta)\sin^m(\theta)d\theta $ by iteration**
 # 
 # The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ is hard to integrate whe the conditions given above do not apply, but can be done by iteration which means finding a reduction formula. The method is to start with another related function, differentiate it then integrate the result. The integral we require will then appear in terms of a new function and a new integral that can usually be solved easily. If this is not the case then the process can be repeated until a solvable integral appears.
 # 
@@ -177,7 +221,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int \cos^n(\theta)\sin^m(\theta)d\theta=\frac{\cos^{n-1}(\theta)\sin^{m+1}(\theta)}{n+m}+\frac{n-1}{m+n}\int \cos^{n-2}(\theta)\sin^m(\theta)d\theta$$
 # 
-# As an example, let the rather tricky integral be $\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta$ in this case $m=n=2$ and so the solution is
+# **(a)** As an example, let the rather tricky integral be 
+# 
+# $$\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta$$
+# 
+# in this case $m=n=2$ and so the solution is
 # 
 # $$\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta=\frac{\cos(\theta)\sin^{3}(\theta)}{4}+\frac{1}{4}\int \sin^2(\theta)d\theta$$
 # 
@@ -242,7 +290,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 #    
 # **$\qquad$   The integral of $udv$ is $u$ times the integral of $dv$, which is $v$, minus the integral of $v$ times the derivative of $u$.**
 # 
-# The trick is to find $u$ that can be differentiated, which is usually easy, and $v$ that can be integrated, which is sometimes much harder. It is worth exchanging $u$ and $v$ if the resulting integration gets more complicated. 
+# The trick is to find $u$ that can be differentiated, which is usually easy, and $v$ that can be integrated, which is sometimes much harder. It is always worth exchanging $u$ and $v$ if the resulting integration gets more complicated. 
 # 
 # A few examples should make this important method clearer.
 # 
@@ -400,7 +448,7 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # Unfortunately the integral appears to have no algebraic solution, unless the limits are $0\to \infty$, and will have to be evaluated numerically.
 # 
-# ### **(vi)  Using summation and 'by-parts' to evaluate the integral $\int_0^\infty \frac{x^3}{e^x -1}dx$ from the Debye model** 
+# ### **(vi)  Using summation and 'by-parts' to evaluate the integral $\displaystyle\int_0^\infty \frac{x^3}{e^x -1}dx$ from the Debye model** 
 # 
 # In calculating the heat capacity of a crystal at low temperatures using the Debye model the integral to be solved is 
 # 
@@ -529,7 +577,11 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # ### **(i)  $\displaystyle\int_0^{\pi/2}\sin(t-x)dx$**
 # 
-# Let $\displaystyle F(t)=\int_0^{\pi/2}\sin(t-x)dx$ then $\displaystyle \frac{dF}{dt}$ can either be evaluated by direct calculation or by using the simpler form of the Leibniz formula, (eqn. A), since the limits are constants. Using Leibniz produces
+# Let 
+# 
+# $$\displaystyle F(t)=\int_0^{\pi/2}\sin(t-x)dx$$
+# 
+# then $\displaystyle \frac{dF}{dt}$ can either be evaluated by direct calculation or by using the simpler form of the Leibniz formula, (eqn. A), since the limits are constants. Using Leibniz produces
 # 
 # $$\displaystyle \begin{align}\frac{dF}{dt}&= \int_0^{\pi/2}\frac{\partial }{\partial t}\sin(t-x)dx= \int_0^{\pi/2} \cos(t-x)dx=\sin(t-x)\bigg |_{x\,=\,0}^{x\,=\,\pi/2} \\&= -\sin(t-\pi/2)+\sin(t)=\cos(t)+\sin(t)\end{align}$$
 # 
@@ -554,9 +606,17 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # ### **(iii) Partition function and heat capacity for the Debye model of a solid**
 # 
-# The internal energy of a system is calculated from the partition function as $\displaystyle U = RT^2\frac{\partial }{\partial T^2}\ln(Z)$ and the heat capacity $\displaystyle C_V=\frac{\partial U}{\partial T}$ both at constant volume. 
+# The internal energy of a system is calculated from the partition function as 
 # 
-# In part 5 example (v), the integral in the partition function for the Debye crystal was simplified, here we find the internal energy and heat capacity by differentiating the integral.
+# $$\displaystyle U = RT^2\frac{\partial }{\partial T^2}\ln(Z)$$
+# 
+# and the heat capacity 
+# 
+# $$\displaystyle C_V=\frac{\partial U}{\partial T}$$
+# 
+# both taken at constant volume. 
+# 
+# In part 5 example **(v)**, the integral in the partition function for the Debye crystal was simplified, here we find the internal energy and heat capacity by differentiating the integral.
 # 
 # The Debye temperature is $\theta=\hbar\omega/k_B$ where $k_B$ is the Boltzmann constant and the Debye frequency $\omega$ is the highest frequency a phonon can have in the crystal's lattice. For silver $\theta$ = $225$ K. The partition function is given by 
 # 
@@ -588,7 +648,7 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle \int_0^\infty \frac{x^3}{(e^{x}-1)}dx$$
 # 
-# which as a definite integral is just a number. This integral is solved above, see section 5 example (vi), and is $\pi^4/15$ making the low temperature heat capacity
+# which as a definite integral is just a number. This integral is solved above, see section 5 example **(vi)**, and is $\pi^4/15$ making the low temperature heat capacity
 # 
 # $$\displaystyle C_V= \frac{12\pi^4R}{5}\left(\frac{T}{\theta}\right)^3,\qquad T\to 0 $$
 # 
@@ -664,7 +724,7 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \qquad$$
 # 
-# where $n$ is the average number of molecules / unit volume. ($1 \mathrm{\,mol\, m^{-3}}  \equiv 10^3  N_A/10^{27} = 0.6023$ molecules / nm$^3$). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in $0 \to r$ and the integral is the probability that it exists in $0 \to r$. The $4\pi r^2 n$ is the number of molecules in the shell $\delta r$.
+# where $n$ is the average number of molecules / unit volume. ( $1 \mathrm{\,mol\, dm^{-3}}  \equiv 10^3  N_A/10^{27} = 0.6022 $ molecules / nm $^3$). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in $0 \to r$ and the integral is the probability that it exists in $0 \to r$. The $4\pi r^2 n$ is the number of molecules in the shell $\delta r$.
 # 
 # This looks hard to solve because $w(r)$ is also inside the integration, so it is necessary to isolate the integral first, by dividing both sides by $4\pi r^2 n$, and then differentiating both sides to find 
 # 
@@ -675,11 +735,19 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)=-4\pi r^2 n \left(\frac{w(r)}{4\pi r^2 n}\right)$$ 
 # 
-# The result is seen by inspection if you recognize that by letting $w(r)/4\pi r^2 n=y$ and integrating the equation it has the form $\displaystyle \int\frac{dy}{y}=-4\pi n \int r^2dr $ which is a standard integral and gives 
+# The result is seen by inspection if you recognize that by letting $w(r)/4\pi r^2 n=y$ the equation now  has the form 
+# 
+# $$\displaystyle \int\frac{dy}{y}=-4\pi n \int r^2dr $$
+# 
+# which is a standard integral and gives,  
 # 
 # $$\displaystyle  w(r)=4\pi r^2 ne^{-4\pi r^3n/3}$$
 # 
-# The shape of $w(r)$ can be worked out just by looking at it. The term in $r^2$ causes $w(r)$ to increase and the exponential to decrease, thus we expect it to start at zero reach a maximum and fall off to zero at large $r$. Physically this is what one might expect, no near neighbour will be at at zero distance and none either at very large distances because they are all present at some shorter distance.
+# after substituting back. The shape of $w(r)$ can be worked out just by looking at it. The term in $r^2$ causes $w(r)$ to increase and the exponential to decrease, thus we expect it to start at zero reach a maximum and fall off to zero at large $r$. Physically this is what one might expect, no near neighbour will be at at zero distance and none either at very large distances because they are all present at some shorter distance.  The average distance to a nearest neighbour can be worked out also using
+# 
+# $$\displaystyle \langle r \rangle=\int_0^\infty rw(r)dr$$
+# 
+# and is $\langle r\rangle =0.55396 n^{-1/3}$ with $n$ in units of molecules/nm$^3$.
 # 
 # ![Drawing](differen-fig5a.png)
 # 
@@ -716,7 +784,7 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx$$
 # 
-# and this appears to be extremely difficult, but is clarified is the sine is expanded as a series. This series was known to Euler and is 
+# and this appears to be extremely difficult, but is clarified if the sine is expanded as a series. This series was known to Euler and is 
 # 
 # $$\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots$$
 # 
@@ -728,7 +796,7 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx=\int_0^1 dx-\frac{1}{3!}\int_0^1\ln^2(x)dx+\frac{1}{5!}\int_0^1\ln^4(x)dx-\cdots$$
 # 
-# which means that integrals of the form $\displaystyle \int_0^1\ln^n(x)dx$ are needed where $n =2,4,6\cdots$, i.e. even numbers. This integral has already been met in example (vi) section 5.2 as $\displaystyle \int_0^1x^t\ln^n(x)dx$ and and the result is 
+# which means that integrals of the form $\displaystyle \int_0^1\ln^n(x)dx$ are needed where $n =2,4,6\cdots$, i.e. even numbers. This integral has already been met in example **(vi)** section 5.2 as $\displaystyle \int_0^1x^t\ln^n(x)dx$ and and the result is 
 # 
 # $$\displaystyle \int_0^1 x^t\ln^n(x)dx =(-1)^n\frac{n!}{(t+1)^{n+1}}$$
 # 
@@ -774,7 +842,7 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # ### **(ii) A hard integral made easier, $\displaystyle  \int_0^1(x-1)\big/\ln(x)\;dx$**
 # 
-# A far harder integral than in example (i) is $\displaystyle \int_0^1\frac{x-1}{\ln(x)}dx$ which, using the Feynman method by adding a parameter $t$, is changed to
+# A far harder integral than in example **(i)** is $\displaystyle \int_0^1\frac{x-1}{\ln(x)}dx$ which, using the Feynman method by adding a parameter $t$, is changed to
 # 
 # $$\displaystyle F(t)=\int_0^1\frac{x^t-1}{\ln(x)}dx$$
 # 
@@ -792,9 +860,9 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # and the value of $t$ can be chosen as unity for our integral. 
 # 
-# ### **(iii) The sinc function $\displaystyle \int \sin(ax)\big/ax\; dx$**
+# ### **(iii) The sinc function $\displaystyle \int \frac{\sin(ax)}{ax}\; dx$**
 # 
-# The sinc function has the form $\displaystyle \frac{\sin(ax)}{ax}$ and is the fourier transform of a rectangular pulse of length $a$. The integral 
+# The sinc function is the fourier transform of a rectangular pulse of length $a$. The integral 
 # 
 # $$\displaystyle \int_{-\infty}^\infty \frac{\sin(x)}{x}dx=2\int_0^\infty \frac{\sin(x)}{x}dx\tag{16E}$$
 # 
@@ -806,7 +874,11 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle \frac{dF(t)}{dt}=-\int_0^\infty \sin(x)e^{-tx}dx$$
 # 
-# which can be evaluated by using the 'by parts' method or by converting the sine to its exponential form $\displaystyle \sin(x)=\frac{e^{ix}-e^{-ix}}{2i}$ producing
+# which can be evaluated by using the 'by parts' method or by converting the sine to its exponential form 
+# 
+# $$\displaystyle \sin(x)=\frac{e^{ix}-e^{-ix}}{2i}$$
+# 
+# producing
 # 
 # $$\displaystyle\begin{align} \frac{dF(t)}{dt}&=\frac{-1}{2i}\int_0^\infty \left(e^{ix}-e^{-ix}\right)e^{-tx})dx\\&=\frac{-1}{2i}\left(\frac{e^{(i-t)x}}{i-t}-\frac{e^{-(i+t)x}}{-(i+t)}\right) \bigg |_0^{x\,=\,\infty} =-\frac{1}{1+t^2}\qquad (t \gt 0)\end{align}$$
 # 
@@ -834,11 +906,20 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # where $n$ is the quantum number, $N_n$ is the normalisation, $H_n$ a Hermite polynomial. The parameter $x=r-r_e$ where $r_e$ is the equilibrium bond length and $\displaystyle a=\frac{\sqrt{\mu k}}{\hbar}$. The first few wavefunctions are
 # 
-# $$\displaystyle \begin{array}\psi_0= N_0e^{-a x^2/2}, & \psi_1 = N_1xe^{-a x^2/2}\\ \psi_2 = N_2(2a x^2-1)e^{-a x^2/2} & \psi_3  = N_3(2a x^3-3x)e^{-a x^2/2}\end{array}$$
+# $$\displaystyle \begin{array}\\
+# \psi_0= N_0e^{-a x^2/2}, & \psi_1 = N_1xe^{-a x^2/2}\\ \psi_2 = N_2(2a x^2-1)e^{-a x^2/2} & \psi_3  = N_3(2a x^3-3x)e^{-a x^2/2}\end{array}$$
 # 
-# and these wavefunctions have the general form $\displaystyle x^se^{-ax^2/2}$, where $s=0,1,\cdots$. The normalisation is given by $N_n^2\displaystyle \int_{-\infty}^\infty\psi_n^*\psi_n dx=1$ which means integrating equations such as $\displaystyle \int_{-\infty}^\infty x^se^{-ax^2}dx$ where $s$ is always an even number. If $s$ is odd then the integral is an odd function and will be zero over any symmetrical integration limits. First the integrations are evaluated then the normalisation calculated. 
+# and these wavefunctions have are composed of integrals of the general form 
 # 
-# The integration can be done 'by parts' but also by the Feynman method, the only integration we need to know is the first
+# $$\displaystyle \psi_s= x^se^{-ax^2/2}$$
+# 
+# where $s = 0,1,\cdots$. The normalisation constant $N_n$ for quantum number $n$ is found using 
+# 
+# $$\displaystyle N_n^2 \int_{-\infty}^\infty\psi_n^*\psi_n dx=1$$
+# 
+# which means integrating equations such as $\displaystyle \int_{-\infty}^\infty x^se^{-ax^2}dx$ where $s$ is always an even number. If $s$ is odd then the integral is an odd function and will be zero over any symmetrical integration limits. First the integrations are evaluated then the normalisation calculated. 
+# 
+# The integration can be done 'by parts' but also by the Feynman method. The only integration we need to know is the first
 # 
 # $$\displaystyle \int_{-\infty}^\infty e^{-ax^2/2}dx=\sqrt{\frac{2\pi}{a}}$$
 # 
@@ -850,7 +931,11 @@ sp.simplify(sp.integrate(x**3*sp.exp(-a*x),x) )
 # 
 # $$\displaystyle \int_{-\infty}^\infty x^2e^{-ax^2/2}dx=-2\int_{-\infty}^\infty \frac{\partial }{\partial a}e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\int_{-\infty}^\infty e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\sqrt{\frac{2\pi}{a}}=\sqrt{\frac{2\pi}{a^3}} $$
 # 
-# and no further integrations were done. It is now easy to see that by differentiating $\displaystyle \frac{d}{da}x^2e^{-ax^2/2}=-x^4e^{-ax^2}/2$ is produced and so we can now proceed to calculate all the terms in $\displaystyle \int_{-\infty}^\infty x^se^{-ax^2/2}dx$ where $s$ is even, for example
+# and no further integrations were done. It is now easy to see that by differentiating wrt. $a$
+# 
+# $$\displaystyle \frac{d}{da}x^2e^{-ax^2/2}=-\frac{x^4}{2}e^{-ax^2}$$
+# 
+# and so we can now proceed to calculate all the terms in $\displaystyle \int_{-\infty}^\infty x^se^{-ax^2/2}dx$ where $s$ is even, for example
 # 
 # $$\displaystyle \int_{-\infty}^\infty x^4e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\frac{\sqrt{2\pi}}{a^{3/2}}=3\sqrt{\frac{2\pi}{a^5}}$$
 # $$\displaystyle \int_{-\infty}^\infty x^6e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\frac{3\sqrt{2\pi}}{a^{5/2}}=15\sqrt{\frac{2\pi}{a^7}}$$

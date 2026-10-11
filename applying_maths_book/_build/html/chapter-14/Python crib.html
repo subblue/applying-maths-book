@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1596,8 +1596,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-numbers">
+     9.4 Random numbers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-map-f-x-alist-or-f-x-for-x-in-list">
-     10 Using map( f(x),  alist )   or    [ f(x) for x in list ]
+     10 Using  map( f(x),  alist )   or    [  f(x)  for  x  in  list ]
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1802,8 +1807,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-numbers">
+     9.4 Random numbers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-map-f-x-alist-or-f-x-for-x-in-list">
-     10 Using map( f(x),  alist )   or    [ f(x) for x in list ]
+     10 Using  map( f(x),  alist )   or    [  f(x)  for  x  in  list ]
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1919,12 +1929,18 @@ title="Print to PDF"
 <h1>5 Appendix:  Some basic Python instructions with a few examples.<a class="headerlink" href="#appendix-some-basic-python-instructions-with-a-few-examples" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First import all python add-ons etc that will be needed later on</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First import all python add-ons etc that will be needed later on.</span>
 <span class="c1"># the next line is specific &#39;magic&#39; instruction to jupyter notebook ; do not add anything ele to that line</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline                       
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>               <span class="c1"># general python    fast numerical calculation</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># general python    plotting  always used</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span> <span class="c1"># specific use: e.g. import general numerical integration routine;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span> <span class="c1"># specific use: e.g. import general numerical integration routine;</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>               <span class="c1"># algebraic solution of equations, only add if doing algebraic things </span>
 <span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>               <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots, alter at will.</span>
@@ -1970,7 +1986,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_5_0.png" src="../_images/Python crib_5_0.png" />
+<img alt="../_images/Python crib_6_0.png" src="../_images/Python crib_6_0.png" />
 </div>
 </div>
 <p>Arrays are usually called <em>lists</em> and enclosed by square brackets <span class="math notranslate nohighlight">\([\; ]\)</span>  and indexed by square brackets,
@@ -2321,7 +2337,7 @@ sum of whole list is  7.885735968708085
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_32_0.png" src="../_images/Python crib_32_0.png" />
+<img alt="../_images/Python crib_33_0.png" src="../_images/Python crib_33_0.png" />
 </div>
 </div>
 <p>If you want to plot two graphs together then it is a bit more complicated. First it is necessary to define a <em>figure</em> and then define <em>axes</em> on which to draw the data and add subplots as the two figures. This is shown below.</p>
@@ -2362,7 +2378,7 @@ sum of whole list is  7.885735968708085
 func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 </pre></div>
 </div>
-<img alt="../_images/Python crib_35_1.png" src="../_images/Python crib_35_1.png" />
+<img alt="../_images/Python crib_36_1.png" src="../_images/Python crib_36_1.png" />
 </div>
 </div>
 </section>
@@ -2407,7 +2423,7 @@ func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>returned values are Q, 2*x and sin(z), i.e. -0.5211115802791633 6.2 -0.8715757724135881
 </pre></div>
 </div>
-<img alt="../_images/Python crib_37_1.png" src="../_images/Python crib_37_1.png" />
+<img alt="../_images/Python crib_38_1.png" src="../_images/Python crib_38_1.png" />
 </div>
 </div>
 </section>
@@ -2469,12 +2485,88 @@ func2 with if statement, cannot plot this, value at -1 is  0.8414709848078965
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_40_0.png" src="../_images/Python crib_40_0.png" />
+<img alt="../_images/Python crib_41_0.png" src="../_images/Python crib_41_0.png" />
+</div>
+</div>
+</section>
+<section id="random-numbers">
+<h2>9.4 Random numbers<a class="headerlink" href="#random-numbers" title="Permalink to this headline">#</a></h2>
+<p>There is a new version of the random number generators in NumPy. There are also lots of examples of the older way of generating these. The new method is to be preferred and these are initialised by using the instruction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>   <span class="c1"># use ...default_rng(seed=123 etc) for same set of numbers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A random number can be an integer or a floating point or arrays of these. The distribution to which the numbers belong can also be defined, for example uniform or normal etc.</p>
+<p>Random integers have to have limits set and the instruction, for example, to make 25 random integers in the range 0, to 9 is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>  <span class="c1"># note range is 0 to 10-1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 2, 7, 2, 1, 6, 6, 4, 3, 0, 5, 5, 3, 1, 7, 4, 7, 4, 9, 6, 3, 8,
+       6, 8, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Random floating point numbers from a uniform distribution in the interval <span class="math notranslate nohighlight">\(0\to 1\)</span> but not <span class="math notranslate nohighlight">\(1\)</span> itself</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.90350055, 0.19140231, 0.07926461, 0.64672292, 0.16675662,
+       0.60770277, 0.0153538 , 0.27909406, 0.62874326, 0.01118142,
+       0.84071073, 0.35638094, 0.60541471, 0.21237086, 0.28482808,
+       0.510584  , 0.64513575, 0.49711073, 0.65304735, 0.21218762,
+       0.37510415, 0.85969086, 0.53216124, 0.97525681, 0.0199563 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>and if you want them in the range 3 to 8 use</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">+</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.9018353 , 6.47633603, 4.47319046, 6.71507376, 5.28198859,
+       3.55487886, 6.92060579, 6.9928695 , 5.43876147, 3.53364972,
+       4.17428006, 6.59969882, 3.23180424, 6.96164901, 5.76356753,
+       7.03993986, 3.06536819, 6.14526339, 7.4089609 , 4.5810353 ,
+       3.72001156, 6.06319066, 6.52591038, 3.42452204, 5.26856749])
+</pre></div>
+</div>
+</div>
+</div>
+<p>and 10 values from a unit standard gaussian (normal) distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.61614238,  0.33957249, -1.22954943,  0.48948292,  0.04087269,
+       -0.72497589, -0.88579298, -1.47535486, -0.16282576,  1.21002055])
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="using-map-f-x-alist-or-f-x-for-x-in-list">
-<h2>10 Using map( f(x),  alist )   or    [ f(x) for x in list ]<a class="headerlink" href="#using-map-f-x-alist-or-f-x-for-x-in-list" title="Permalink to this headline">#</a></h2>
+<h2>10 Using  map( f(x),  alist )   or    [  f(x)  for  x  in  list ]<a class="headerlink" href="#using-map-f-x-alist-or-f-x-for-x-in-list" title="Permalink to this headline">#</a></h2>
 <p>This is a way to perform an operation of a list of things without having to use a loop. The <em>map</em> function has  two or more arguments <em>map( function, sequence )</em>. One simple use is to multiply all of a list by some number, you cannot do *<em>[1,2,4,5]<em>2</em></em> for example, but have to use map or list comprehension as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2560,7 +2652,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_44_0.png" src="../_images/Python crib_44_0.png" />
+<img alt="../_images/Python crib_55_0.png" src="../_images/Python crib_55_0.png" />
 </div>
 </div>
 </section>
@@ -2581,7 +2673,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_46_0.png" src="../_images/Python crib_46_0.png" />
+<img alt="../_images/Python crib_57_0.png" src="../_images/Python crib_57_0.png" />
 </div>
 </div>
 <p>The result contains the gamma function, if you type <span class="math notranslate nohighlight">\(\mathtt{av.evalf()}\)</span> you can evaluate the numerical parts and find that <span class="math notranslate nohighlight">\(\displaystyle \langle r \rangle = 0.55396n^{-1/3}\)</span>, which is <span class="math notranslate nohighlight">\(6.56\)</span> nm at <span class="math notranslate nohighlight">\(10^{-3}\)</span> M.</p>
@@ -2645,18 +2737,18 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_50_0.png" src="../_images/Python crib_50_0.png" />
+<img alt="../_images/Python crib_61_0.png" src="../_images/Python crib_61_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>                        <span class="c1"># expand Q (above) about zero and to powers of r**15 if possible </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>                        <span class="c1"># expand Q (above) about zero and to powers of r**15</span>
 <span class="n">S</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_51_0.png" src="../_images/Python crib_51_0.png" />
+<img alt="../_images/Python crib_62_0.png" src="../_images/Python crib_62_0.png" />
 </div>
 </div>
 <p>If you want to use the result in subsequent code the ‘big O’ notation can be removed as shown below</p>
@@ -2668,7 +2760,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_53_0.png" src="../_images/Python crib_53_0.png" />
+<img alt="../_images/Python crib_64_0.png" src="../_images/Python crib_64_0.png" />
 </div>
 </div>
 </section>
@@ -2725,7 +2817,7 @@ remove &#39; and , from output [H A T R X   I S   B E S T]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function with x=2 &amp; k=5, is  4.5399929762484854e-05
 </pre></div>
 </div>
-<img alt="../_images/Python crib_55_1.png" src="../_images/Python crib_55_1.png" />
+<img alt="../_images/Python crib_66_1.png" src="../_images/Python crib_66_1.png" />
 </div>
 </div>
 </section>
@@ -2794,7 +2886,7 @@ dBdt =+k1*A -(km1+k2)*B
 dCdt =+k2*B
 </pre></div>
 </div>
-<img alt="../_images/Python crib_57_1.png" src="../_images/Python crib_57_1.png" />
+<img alt="../_images/Python crib_68_1.png" src="../_images/Python crib_68_1.png" />
 </div>
 </div>
 </section>
@@ -2824,7 +2916,7 @@ dCdt =+k2*B
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_59_0.png" src="../_images/Python crib_59_0.png" />
+<img alt="../_images/Python crib_70_0.png" src="../_images/Python crib_70_0.png" />
 </div>
 </div>
 <p>Because constants are produced it is necessary to evaluate these before any further calcuation. At <span class="math notranslate nohighlight">\(t =0\)</span> as <span class="math notranslate nohighlight">\(B =0\)</span> then  <span class="math notranslate nohighlight">\(C_1+C_2=0\)</span> and as the total magnitude of the signal does not matter we can set <span class="math notranslate nohighlight">\(C_1=1\)</span> and <span class="math notranslate nohighlight">\(C_2=-1\)</span>. The plot below shows the algebraic solution for <span class="math notranslate nohighlight">\(B\)</span>.</p>
@@ -2850,7 +2942,7 @@ dCdt =+k2*B
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_61_0.png" src="../_images/Python crib_61_0.png" />
+<img alt="../_images/Python crib_72_0.png" src="../_images/Python crib_72_0.png" />
 </div>
 </div>
 </section>
@@ -2947,7 +3039,7 @@ The best way to start with is to use the script <strong><em>with open() as f:</e
 number of atoms =  18 number of connections =  18
 </pre></div>
 </div>
-<img alt="../_images/Python crib_63_1.png" src="../_images/Python crib_63_1.png" />
+<img alt="../_images/Python crib_74_1.png" src="../_images/Python crib_74_1.png" />
 </div>
 </div>
 </section>
@@ -3110,7 +3202,7 @@ Covarience Matrix
 Normalised total residual squared   0.0228
 </pre></div>
 </div>
-<img alt="../_images/Python crib_67_2.png" src="../_images/Python crib_67_2.png" />
+<img alt="../_images/Python crib_78_2.png" src="../_images/Python crib_78_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3152,7 +3244,7 @@ Normalised total residual squared   0.0228
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python crib_68_0.png" src="../_images/Python crib_68_0.png" />
+<img alt="../_images/Python crib_79_0.png" src="../_images/Python crib_79_0.png" />
 </div>
 </div>
 </section>

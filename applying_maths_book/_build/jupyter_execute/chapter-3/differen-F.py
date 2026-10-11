@@ -5,15 +5,15 @@
 
 # ## 6  l' Hopital's rule
 # 
-# In many calculations limits are encountered. For example, in the theory of diffraction the function $\sin(x)/x$ is met which, when $x \to 0$, has the form $0/0$ and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as $\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty$ and l'Hopital's rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l'Hopital who was one of his pupils.
+# In many calculations limits are encountered. For example, in the theory of diffraction the function $\sin(x)/x$ is met which, when $x \to 0$, has the form $0/0$ and at first sight this ratio seem to be indeterminate. There are other indeterminate forms similar to this such as $\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty$ and l'Hopital's rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l'Hopital who was one of his pupils.
 # 
 # The method is
 # 
-# **(a)** Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.
+# **(a)** Rearrange the function whose limit is required, if necessary, so that it becomes a ratio. This may require some cunning.
 # 
-# **(b)** Differentiate top and bottom separately with respect to the limit variable. 
+# **(b)** Differentiate top and bottom separately with respect to the limit variable, usually $x$. 
 # 
-# **(c)** Substitute in the limit and check if the ratio is still indeterminate. If it is return to (b) if not the answer has been found.
+# **(c)** Substitute in the limit after differentiating both top and bottom and check if the ratio is indeterminate. If it is return to **(b)**, if not, the answer has been found.
 # 
 # ### **(i) Some examples**
 # 
@@ -23,21 +23,21 @@
 # 
 # and the limiting value of $x = 0$ is only applied in the last step. As a check, one way to determine any limits close to zero is to plot the function. You will see that $\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}$ does indeed have a value of 1 at $x = 0$. See question 47 for other examples.
 # 
-# **(b)** Expressions such as $\displaystyle \frac{e^x-1}{x^2}$ often need to be evaluated when $x \to 0$ or $x \to \infty$. In statistical mechanics, for example, $x$ may be $-E/k_BT$, a ratio of energies where $k_B$ is the Boltzmann constant and $T$ temperature. When $x \to 0$, which corresponds to high temperatures, the function $\displaystyle(e^x - 1)/x^2$ appears to have the indeterminate form $0/0$, but the limit by l'Hopital's is
+# **(b)(i)** Expressions such as $\displaystyle \frac{e^x-1}{x^2}$ often need to be evaluated when $x \to 0$ or $x \to \infty$. In statistical mechanics, for example, $x$ may be $-E/k_BT$, a ratio of energies where $k_B$ is the Boltzmann constant and $T$ temperature. When $x \to 0$, which corresponds to high temperatures, the function $\displaystyle(e^x - 1)/x^2$ appears to have the indeterminate form $0/0$, but the limit by l'Hopital's method appears to give,
 # 
-# $$\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\frac{1}{2}\qquad \text{      !!!   this is wrong!}$$
+# $$\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\frac{1}{2}\qquad \text{      !!!   THIS IS WRONG!}$$
 # 
-# where differentiation was performed twice over.  However, this is *wrong*: no check for an indeterminate ratio was made after the first differentiation and doing this gives, 
+# where differentiation was performed twice over.  However, this is **wrong**: no check for an indeterminate ratio was made after the first differentiation and doing this gives, 
 # 
 # $$\displaystyle  \lim_{x\to 0}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}= \frac{1}{0}=\infty$$
 # 
-# The other limiting case $x \to \infty$ is also infinity: note that after the first differentiation checking the ratio gives $\displaystyle \frac{e^x}{2x} = \frac{\infty}{\infty}$ so indeterminate and so continue to differentiate again
+# **(ii)** The other limiting case $x \to \infty$ is also infinity: note that after the first differentiation checking the ratio gives $\displaystyle \frac{e^x}{2x} = \frac{\infty}{\infty}$ which is indeterminate and so continue to differentiate again
 # 
 # $$\displaystyle  \lim_{x\to \infty}\frac{e^x -1}{x^2}\to \frac{e^x}{2x}\to \frac{e^x}{2}=\infty$$
 # 
 # and this result is because $e^x$ increases faster with $x$ than $x^2$ does. You could plot a graph to see that this is true.
 # 
-# The limit $\displaystyle \lim_{x\to\infty} \frac{e^{-x}-1}{x^2-3}$  can perhaps be appreciated by looking at the ratio and noticing that when $x$ is large $e^{-x}$ becomes small but $x^2$ large so the limit is expected to be zero. Checking this properly gives the same result as intuition:
+# **(iii)** The limit $\displaystyle \lim_{x\to\infty} \frac{e^{-x}-1}{x^2-3}$  can perhaps be appreciated by looking at the ratio and noticing that when $x$ is large $e^{-x}$ becomes small but $x^2$ large so the limit is expected to be zero. Checking this properly gives the same result as intuition:
 # 
 # $$\displaystyle  \lim_{x\to \infty}\frac{e^{-x} -1}{x^2-3}\to \frac{-e^{-x}}{2x}\to \frac{e^{-x}}{2}=0$$
 # 
@@ -55,15 +55,15 @@
 # 
 # $$\displaystyle \lim_{x\to 1}\frac{x^m -1}{x^n -1}= \lim_{x\to 1}\frac{mx^{m-1}}{nx^{n-1}}=\frac{m}{n}$$
 # 
-# **(f)** In a numerical solution of a differential equation the gradient, say $df/dt$ has to be evaluated. In such calculations the time step, call this $h$, has to be very small to obtain an accurate solution. The gradient can then be obtained as $\delta f/\delta t$. The question then is how to calculate this accurately so that in the limit $h\to 0$ this is the derivative. Suppose we are solving at time point $a$ then the function to form the gradient is $f(a)$ and to calculate $df/dt$ we take a point at time $h$ ahead of point $a$ and a point at $-h$ before point $a$, so the time step is $2h$ and the gradient is 
+# **(f)** In a numerical solution of a differential equation the gradient, say $df/dt$ has to be evaluated. In such calculations the time step, call this $h$, has to be very small to obtain an accurate solution. The gradient can then be obtained as $\delta f/\delta t$. The question then is how to calculate this accurately so that in the limit $h\to 0$ this is the derivative. Suppose we are solving at time point $a$ then the function to form the gradient is $f(a)$ and to calculate $df/dt$ we take a point at time $h$ ahead of point $a$ and a point at $-h$ before point $a$, so the time step is $2h$. The gradient is the change in $f$ divided by that in $t$ which is
 # 
 # $$\displaystyle \frac{f(a+h)-f(a-h)}{2h}$$
 # 
-# In the limit when $h\to 0$ then, using the notation where $f'$ is the derivative, gives
+# In the limit when $h\to 0$ then, using the notation where $f'$ is the derivative in $h$, gives
 # 
-# $$\displaystyle \lim_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}=\lim_{h\to 0}\frac{f'(a+h)+h'(a-h)}{2}=f'(h)$$
+# $$\displaystyle \lim_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}\to\lim_{h\to 0}\frac{f'(a+h)+f'(a-h)}{2}=f'(a)$$
 # 
-# which shows that this ratio is indeed the gradient. Using a similar approach the ratio
+# which shows that this ratio is indeed the average value of the gradient at point $a$ provided $h$ is very small compared to $a$. Using a similar approach the ratio
 # 
 # $$\displaystyle \lim_{h\to 0}\frac{f(a+h)+f(a-h)-2f(a)}{h^2}=\lim_{h\to 0}\frac{f'(a+h)-f'(a-h)}{2h}\to \to f''(a)$$
 # 
@@ -77,7 +77,7 @@
 # 
 # $$\displaystyle \frac{dC}{dt}=k_1AB-k_{-1}CD$$
 # 
-# where $C\equiv [C]$ etc. for clarity. Re-writing the equation using $A_0-A=B_0-B=C_0+C=D_0+D$, where the subscript $0$ indicates the initial amount, and assuming initially that only $A$ and $B$ are present so that $C_0=D_0=0$ then 
+# where $C\equiv [C]$ etc. for clarity. Re-writing the equation using $A_0-A=B_0-B=C_0+C=D_0+D$, where the subscript $0$ indicates the initial amount, and assuming initially that only $A$ and $B$ are present initially so that $C_0=D_0=0$ then 
 # 
 # $$\displaystyle \frac{dC}{dt} = k_1(A_0-C)(B_0-C) - k_{-1}C^2$$
 # 
@@ -100,13 +100,13 @@
 # which makes sense as there are equal moles initially of $A$ and $B$ so in total $2A_0$ and equal concentrations for each species but only in this particular case.
 
 # ### **(iii) Diffraction intensity**
-# The intensity of line of $N$ emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by
+# The intensity of line of $N$ emitters, such as coherent point sources, as occurs in the theory of interference and diffraction, is given by
 # 
 # $$\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}$$
 # 
-# where $I_0$ is the initial intensity of each emitter and $I$ the intensity when the phase difference between emitters is $\delta$. As each emitter radiates over all $4\pi$ angles only at certain values of these angles do the waves add up, i.e. they are in phase and so form a maxima and the equation describes how the intensity changes with phase. See Chapters 9 & 10 of 'Optics' by Hecht & Zajac (1982).
+# where $I_0$ is the initial intensity of each emitter and $I$ the intensity when the phase difference between emitters is $\delta$. As each emitter radiates over all $4\pi$ angles only at certain values of these angles do the waves add up, i.e. they are in phase and so form a maxima and the equation above describes how the intensity changes with phase. See Chapters 9 & 10 of 'Optics' by Hecht & Zajac (1982).
 # 
-# When $N=1, I=I_0$ and when $N=2,I=4I_0\cos^2(\delta/2)$, but what is the maximum intensity for any $N$? To find this we can use l'Hopital's rule with $\delta=2m\pi,\;m=0,\pm 1,\pm 2\cdots$ meaning that the phase difference must be equivalent to a whole number of wavelengths for the intensity to be at a maximum. Simplifying gives 
+# When $N=1, I=I_0$ and when $N = 2,I = 4I_0\cos^2(\delta/2)$, but what is the maximum intensity for any $N$? To find this we can use l'Hopital's rule with $\delta=2m\pi,\;m=0,\pm 1,\pm 2\cdots$ meaning that the phase difference must be equivalent to a whole number of wavelengths for the intensity to be at a maximum. Simplifying gives 
 # 
 # $$\displaystyle \frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)} = \left(\frac{\sin(N\delta/2)}{\sin(\delta/2)}\right)^2$$
 # 
@@ -126,9 +126,9 @@
 # 
 # $$\displaystyle \lim_{x\to 0} \quad\frac{\sin^2(x\tau)}{x^2}\to \tau\frac{2\sin(x\tau) \cos(x\tau)}{2x}$$
 # 
-# which still has the variable in both numerator and denominator so differentiating again produces
+# which is $0/0$ by substituting for $x$ and therefore indeterminate. Differentiating again produces
 # 
-# $$\displaystyle \lim_{x\to 0} \quad \tau\frac{\sin(x\tau)\cos(x\tau)}{x}\to\tau^2\cos^2(x\tau)-\tau^2\sin^2(x\tau)\to \frac{t^2}{4\hbar^2}$$
+# $$\displaystyle \lim_{x\to 0} \quad \tau\frac{\sin(x\tau)\cos(x\tau)}{x}\to\tau^2\cos^2(x\tau)-\tau^2\sin^2(x\tau)= \frac{t^2}{4\hbar^2}$$
 # 
 # when in making the limit $x\to 0$ is used.
 # 
@@ -154,7 +154,15 @@
 # 
 # The first derivative is zero at $x$ = 4/3 and 3, which are the maximum and minimum respectively. The second derivative, which is the straight line, is negative at the maximum and positive at the minimum, so that the maximum and minimum of a function can be found from knowledge of the first and second derivatives.
 # 
-# The function shown in Fig. 12 is the equation $y = 2(x - 2)^3 - x^2 + 4$, which has three roots, where $x = 0$ at $x \approx 0.8, 2$, and $\approx 3.7$. The first derivative is $y' = 6(x - 3)(x - 4/3)$, which has roots at $x = 4/3$ and $3$, which from the graph (left) are the maximum and minimum. The second derivative $y'' = 12x - 26$ is negative where $x \lt 13/6$ ($\approx 2.2$) as can also be seen from the graph.
+# The function shown in Fig. 12 is the equation 
+# 
+# $$\displaystyle y = 2(x - 2)^3 - x^2 + 4$$
+# 
+# which has three roots, where $x = 0$ at $x \approx 0.8, 2$, and $\approx 3.7$. The first derivative is 
+# 
+# $$\displaystyle y' = 6(x - 3)(x - 4/3)$$
+# 
+# which has roots at $x = 4/3$ and $3$, which from the graph (left) are the maximum and minimum. The second derivative $y'' = 12x - 26$ is negative where $x \lt 13/6$ ($\approx 2.2$) as can also be seen from the graph.
 # 
 # ![Drawing](differen-fig12.png)
 # 
@@ -163,9 +171,9 @@
 # 
 # ### **(i) Luminescence from phosphors. An example with differentiation of an integral, maximum value and  numerically solving for a root**
 # 
-# Many compounds such as ZnS-Cu and zinc silicates-Mn and many other crystalline minerals, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists after being buried perhaps for millenia. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat (i.e. as phonons) from relatively low energy impurity 'traps'. The excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valence band) and the empty ones at higher energy (excited state or conduction band). 
+# Many compounds such as ZnS-Cu and zinc silicates-Mn and many other crystalline minerals, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence with visible or infra-red light or on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists after being buried, perhaps for millenia. Background ionising radiation from radionucleotides (e.g. $^{40}$K ) causes electrons and traps in a ceramic to be separated while it is buried in the earth. The longer the time a meterial is buried the more electrons are released from traps and stored in the material waiting to be released. When dug up and on exposure to UV/visible/ir radiation luminescence is produced. The cause of the luminescence is the recombination of electrons, liberated by the UV etc. or heat (as phonons) from relatively low energy 'impurity traps'. The excess energy is released as a photon. These impurity traps have an energy between the filled energy levels (ground state or valence band) and the empty ones found at higher energy (as in an excited state or conduction band). 
 # 
-# In ceramics heating during firing the clay releases all the previously trapped electrons and effectively sets the clock to zero. Subsequently the compounds in the ceramic are continuously energised via the breakdown of radioactive elements in their environment the total amount growing with the amount of time they are buried. After millenia there are enough trapped electrons to produce a measureable amount of phosphorescence when the material is either exposed to strong light, often a few seconds exposure to daylight is sufficient, or heated. The time-range of this method is from approximately $2000 \to 350,000$ years ago.
+# In ceramics heating during firing the clay releases all the previously trapped electrons and effectively sets the clock to zero. Subsequently the compounds in the ceramic are continuously energised via the breakdown of radioactive elements in their environment the total amount growing with the amount of time they are buried. After millenia there are enough trapped electrons to produce a measureable amount of phosphorescence when the material is either exposed to strong light, often a few seconds exposure to daylight is sufficient, or heated. The time-range of this method is from approximately $2000 \to 350,000$ years ago. The amount of luminescence released gives a measure, when carefully calibrated, of the time that the ceramic was buried.
 # 
 # If there are $n$ electrons liberated their decay into a trap can be described by a first order process as,
 # 
@@ -175,17 +183,17 @@
 # 
 # $$\displaystyle \frac{dn}{dt}=-k_0e^{-E/{k_BT}}n\quad\text{or}\quad \frac{dn}{n}=-k_0e^{-E/{k_BT}}dt\qquad\tag{27a} $$
 # 
-# Integrating produces
+# Integrating both sides of (27a) (see Chapter 4) produces
 # 
 # $$\displaystyle n=n_0e^{-k_1t}\quad \text{or} \quad n=n_0 e^{\large -k_0te^{-E/k_BT}} \qquad\tag{27b}$$
 # 
-# with $n_0$ as the initial number of $n$. The intensity of luminescence (photons/sec) is the rate of being trapped, $-dn/dt$, or
+# with $n_0$ as the initial number of $n$. The intensity of luminescence (photons/sec) is the rate of being trapped, $-dn/dt=k_1n$, or
 # 
 # $$\displaystyle k_1n =n_0k_0e^{-E/k_BT} e^{\large -k_0te^{-E/k_BT}}$$
 # 
 # Integrating over all time ($t=0\to \infty$) produces a total intensity of $n_0$, i.e. every electron has found a trap as is to be expected.  
 # 
-# In many experiments the temperature is increased as the luminescence is decaying and the total luminescence measured vs. temperature. The temperature is ramped so that $dT =\beta dt$ where $\beta$ is the rate of heating, in $\mathrm{degrees\,s^{-1}}$. 
+# In many experiments the temperature is increased as the luminescence is decaying and the total luminescence measured vs. temperature. The temperature is ramped so that $dT =\beta dt$ where $\beta$ is the rate of heating in $\mathrm{degrees\,s^{-1}}$. 
 # 
 # Integrating the left-hand side of 27a and substituting for $dt$ into the right hand side and integrating gives,
 # 
@@ -197,7 +205,7 @@
 # 
 # The intensity $I_T$ has units of photons/sec. If this is divided by the heating rate $\beta$  i.e. $I_T/\beta$ is then the number of photons liberated per degree and when integrated over all temperatures produces $n_0$ the total number of electrons present initially. Fig 13b shows plots of $I_T/\beta$ vs. temperature.
 # 
-# The intensity must always be positive, because negative intensity is not physically realistic, and also has a maximum. We can understand this directly without calculation.  At low temperatures no electrons have the energy to surmount the energy barrier making the luminescence zero. At very high temperatures all the electrons have enough energy to reach a trap and no more are left to luminesce and so again the intensity is zero.  This is important when this method is used to date pottery or other artefacts because heating sets the 'clock back to zero' by allowing all electrons to recombine with traps. Thermally and/or by exposure to light the electrons are released and so the material can luminesce again. This provides a way of dating.  
+# The intensity must always be positive, because negative intensity is not physically realistic, and it also has a maximum. We can understand this directly without calculation.  At low temperatures no electrons have the energy to surmount the energy barrier making the luminescence zero. At very high temperatures all the electrons have enough energy to reach a trap and no more are left to luminesce and so again the intensity is zero.  This is important when this method is used to date pottery or other artifacts because heating sets the 'clock back to zero' by allowing all electrons to recombine with traps. Thermally and/or by exposure to light the electrons are released and so the material can luminesce again. This provides a way of dating.  
 # 
 # Mathematically, when $T\to\infty$ in the limit the integral in $T$ becomes $\infty$ and thus the exponential becomes $e^{-\infty}=0$ and the luminescence intensity is zero. When $T\to 0$ the first exponential becomes zero, $e^{-E/0}=e^{-\infty}=0$ and $I_T=0$.
 # 
@@ -254,7 +262,11 @@
 # 
 # $$\displaystyle   2\pi \int_a^b y ds=2\pi \int_a^b y\sqrt{1+\left( \frac{dy}{dx} \right)^2}dx  \tag{29}$$
 # 
-# If we know the function $y$ straightforward integration for example with the parabola $y = 2\sqrt{ax}$ will produce the parabola's surface area. This approach can be applied to any other normal function. The term in the square root is the length of a small element of the curve, see Chapter 4, Fig. 19 (Q51) and the integral has the form of equation (28). To obtain an arc-length we need to find the integral $\int ds$ where $ds$ is a small length of the curve and this is found by using a right angled triangle with hypotenuse $ds$ and sides $dx,dy$ giving $\displaystyle ds=\sqrt{dx^2+dy^2}$ thus $\displaystyle \sqrt{dx^2+dy^2} = \sqrt{1+(dy/dx)^2}dx$ and so we form eqn. 29.
+# If we know the function $y$ straightforward integration for example with the parabola $y = 2\sqrt{ax}$ will produce the parabola's surface area. This approach can be applied to any other normal function. The term in the square root is the length of a small element of the curve, see Chapter 4, Fig. 19 (Q51) and the integral has the form of equation (28). To obtain an arc-length we need to find the integral $\int ds$ where $ds$ is a small length of the curve and this is found by using a right angled triangle with hypotenuse $ds$ and sides $dx,dy$ giving $\displaystyle ds=\sqrt{dx^2+dy^2}$ thus 
+# 
+# $$\displaystyle \sqrt{dx^2+dy^2} = \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx$$
+# 
+# and so we form eqn. 29.
 # 
 # Imagine now a surface film suspended between two similar wire hoops at $x = a$ and $b$, in practice this could be a soap film, see Fig. 13(b). Now, suppose that the problem is to find that one particular curve, of all possible curves, that will produce the minimum surface area within the two rings; this minimum area surface is the surface formed by a soap film, and its profile is called the Catenary. The equation for the film $y = \cdots$ is not known before starting the calculation. The Calculus of Variations allows it be found by using the Euler-Lagrange equation and then integrating. This is described next.
 # 
@@ -275,7 +287,7 @@
 # 
 # $$\displaystyle  f= y\sqrt{1+\left( \frac{dy}{dx} \right)^2} $$
 # 
-# and $y_x $ is the expression we want to find, which, when integrated, produces $y$, the equation of the curve required. Notice that the equation tells us to differentiate with respect to $dy_x$; see Section 5.6, which describes differentiation with respect to a function. Should the equation for $f$ _not explicitly contain_ $x$ then a simpler version can be used which is
+# and $y_x $ is the expression we want to find, which, when integrated, produces $y$, the equation of the curve required. Notice that the equation tells us to differentiate with respect to $dy_x$; see Section 5.6, which describes differentiation with respect to a function. Should the equation for $f$ _not explicitly contain_ $x$ then a simpler version of eqn. 30 can be used which is
 # 
 # $$\displaystyle   \frac{\partial f}{\partial y}-\frac{d}{dx}\left(f-y_x\frac{\partial f}{\partial y_x}\right)=0 \tag{31}$$
 # 
@@ -396,7 +408,15 @@
 # 
 # $$\displaystyle \ddot z + g = 0,\qquad\text{or}\qquad \frac{d^2z}{dt^2} = -g$$
 # 
-# This equation can be integrated to give velocity $\displaystyle v = v_0 + gt $ where $v=\dot z = dz/dt$ and again to give position  $z = z_0 + v_0t - gt^2/2 $ where $v_0$ is the initial velocity, which could be zero, and $z_0$ the initial height above ground level $z=0$. If the motion had not been vertical we would have needed to evaluate similar equations in $x$ and $y$ as well and in that case components of the gravitational force in all directions would be needed.
+# This equation can be integrated to give velocity 
+# 
+# $$\displaystyle v = v_0 + gt $$
+# 
+# where $v=\dot z = dz/dt$ and again to give position  
+# 
+# $$\displaystyle z = z_0 + v_0t - gt^2/2 $$
+# 
+# where $v_0$ is the initial velocity, which could be zero, and $z_0$ the initial height above ground level $z=0$. If the motion had not been vertical we would have needed to evaluate similar equations in $x$ and $y$ as well and in that case components of the gravitational force in all directions would be needed.
 # 
 # ### **(iia) Simple Harmonic motion**
 # 

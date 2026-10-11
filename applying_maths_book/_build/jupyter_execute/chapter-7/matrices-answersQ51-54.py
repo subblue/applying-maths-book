@@ -77,7 +77,7 @@ plt.text(100, 1.05*C[100],'C')
 plt.show()
 
 
-# ## Q52 answer
+# ## Q52a answer
 # The rate equation for the fourth molecule is, with $C_1 \cdots C_7$ being the populations of the BChl molecules, and $k_f$ the fluorescence rate constant,
 # 
 # $$\displaystyle \begin{align}\frac{dC_4}{dt}=-k_fC_4&-(k_{41}+k_{42}+k_{43}+k_{45}+k_{46}+k_{47})C_4 \\&+k_{14}C_1+ k_{24}C_2 +k_{34}C_3 + k_{54}C_5  + k_{64}C_6 + k_{74}C_7 \end{align}$$
@@ -102,9 +102,9 @@ plt.show()
 # 
 # The calculation is shown below. The following points are important.
 # 
-# (1) The transfer rate with index $ii$ is set to zero because this has no physical meaning because it is the transfer rate from any molecule to itself, and 
+# **(i)** The transfer rate with index $ii$ is set to zero because this has no physical meaning because it is the transfer rate from any molecule to itself, and 
 # 
-# (ii) an '$\mathtt{if\, else}$'  statement is used to remove this term by making it zero. Because the calculation is numerical the matrix equation has to be solved at each time point and the result is stored in the 2D array pop.  
+# **(ii)** an '$\mathtt{if\, else}$'  statement is used to remove this term by making it zero. Because the calculation is numerical the matrix equation has to be solved at each time point and the result is stored in the 2D array pop.  
 # 
 # Note that when the off-diagonal terms are calculated (shown below) $M[i,j] = kC[j,i]$ to obtain the correct rate constant. As it happens in this calculation $k_{i,j} = k_{j,i}$ because the energy transfer from molecule $a\to b$ is the same as $b\to a$ therefore this ordering of indices has no effect, but if this were not true it would produce erroneous results.
 
@@ -185,29 +185,55 @@ print('{:s} {:8.5f}'.format('sum of population should be 1 only if kf = 0', sum(
 # Figure 92. log of time profile of populations on molecules 1 and 7 in the FMO antenna when molecule 7 is initially excited. Left: Notice how little time is needed for the energy to equilibrate. Right: When a quenching rate of $10^{12}\,\mathrm{ s^{-1}}$ is added to molecule 1 the population decays to zero even from molecule 7, but notice the change of time scale. The population is 1 at $t = 0$ although this may not be clear on the figure.
 # __________
 # 
-# (a) The wide range of rate constants $\approx 10^{12} \to 10^{10}\;\mathrm{ s^{-1}}$ is due to the $R^{-6}$ dependence of the transfer rate with inter molecular separation. The closeness of the molecules ensures very fast transfer, and equilibration occurs within about one picosecond, irrespective of which molecule is excited initially. The population does not decay to zero, because the fluorescence rate at $0.2\cdot 10^9\;\mathrm{ s^{-1}}$ is about $1000$ times slower than the energy transfer rate, and on the short times range plotted the population appears to be constant. When we add quenching, which could be caused by energy-transfer to a second nearby FMO protein or to a reaction centre, the population now falls to zero in about $20$ ps as energy is drained out of the antenna. As the energy - equilibration is so fast, it does not matter which molecule
+# **(a)** The wide range of rate constants $\approx 10^{12} \to 10^{10}\;\mathrm{ s^{-1}}$ is due to the $R^{-6}$ dependence of the transfer rate with inter molecular separation. The closeness of the molecules ensures very fast transfer, and equilibration occurs within about one picosecond, irrespective of which molecule is excited initially. The population does not decay to zero, because the fluorescence rate at $0.2\cdot 10^9\;\mathrm{ s^{-1}}$ is about $1000$ times slower than the energy transfer rate, and on the short times range plotted the population appears to be constant. When we add quenching, which could be caused by energy-transfer to a second nearby FMO protein or to a reaction centre, the population now falls to zero in about $20$ ps as energy is drained out of the antenna. As the energy - equilibration is so fast, it does not matter which molecule
 # is excited even when the quenching rate is $10^{12}\;\mathrm{ s^{-1}}$.
 # 
+# 
+# ## Q52b answer
+# 
+# The transition matrix for the $i^\text{th}$ time point is
+# 
+# $$\displaystyle \begin{matrix}M\to\\A\to\\X\to\\D\to\end{matrix}\begin{bmatrix}1-(k_1\tau+k_5\tau)&k_1\tau& 0 &k_5\tau\\ 0&1+k_2\tau-(k_3\tau X[i]+k_4\tau)&k_2\tau&k_3\tau X[i]/2+k_4\tau\\0&0&1-k_3\tau A[i]&k_3\tau A[i]/2\\0&0&0&1\end{bmatrix} $$
+# 
+# and the order of the columns is the same as the rows, i.e. M, A, X, D. The small time increment $\tau$ is such that $k_i \tau \ll 1$ and $k_i \tau [A]$ and/or $k_i\tau [X]\ll 1$. Note that in the code given in the text this matrix is transposed so that it can be right multiplied by the vector of populations $p$. In the calculation the concentrations $[\cdots]_i$ are incremented at each step, $i=0,1\cdots$. 
+# 
+# 
 # ## Q53 answer
-# The equation relating diagonal eigenvalue matrix $\Lambda$, and the eigenvectors $\pmb{X}$, is $\pmb{MX} = \pmb{X}\Lambda$. If we left-multiply by eigenvector matrix $\pmb{X}^{-1}$ then $\pmb{X}^{-1}\pmb{MX} = \Lambda$, and then this can be raised to the $50^{th}$ power. As the matrix is diagonal, this is simply achieved by raising each term to the power.
+# The equation relating diagonal eigenvalue matrix $\Lambda$, and the eigenvectors $\pmb{X}$, is 
+# 
+# $$\displaystyle \pmb{MX} = \pmb{X}\Lambda$$
+# 
+# If we left-multiply by eigenvector matrix $\pmb{X}^{-1}$ then 
+# 
+# $$\displaystyle \pmb{X}^{-1}\pmb{MX} = \Lambda$$
+# 
+# and then this can be raised to the $50^{th}$ power. As the matrix is diagonal, this is simply achieved by raising each term to the power.
 # 
 # The calculation using SymPy is
 
 # In[6]:
 
 
-a, b = sp.symbols('a, b')
+a, b = sp.symbols('a, b')              # Using SymPy
 M = sp.Matrix( [ [-2*a,a], [a,-2*a] ] )
 X, Lambda = M.diagonalize()
 X, Lambda
 
 
-# The eigenvalue matrix can be raised to the $50^{th}$ power directly to give $\displaystyle \Lambda=a^{50}\begin{bmatrix} 3^{50} & 0\\0 & 1 \end{bmatrix}$, but we want $\pmb{M}^{50}$ therefore the next step is to use the similarity transform as $\pmb{M}^{50}=\pmb{X}\Lambda^{50}\pmb{X}^{-1}$. To make the calculation general, and to keep the result algebraic, rather than numerical, $\pmb{M}$ is raised to power $b$ 
+# The eigenvalue matrix can be raised to the $50^{th}$ power directly to give 
+# 
+# $$\displaystyle \Lambda=a^{50}\begin{bmatrix} 3^{50} & 0\\0 & 1 \end{bmatrix}$$
+# 
+# but we want $\pmb{M}^{50}$ therefore the next step is to use the similarity transform as 
+# 
+# $$\displaystyle \pmb{M}^{50}=\pmb{X}\Lambda^{50}\pmb{X}^{-1}$$
+# 
+# To make the calculation general, and to keep the result algebraic, rather than numerical, $\pmb{M}$ is raised to power $b$ 
 
 # In[7]:
 
 
-Mtob = X*Lambda**b * X.inv()  # with SymPy * is matrix multiply (unlike python/numpy)
+Mtob = X*Lambda**b * X.inv()  # with SymPy * is matrix multiply (unlike Python/NumPy)
 sp.simplify(Mtob) 
 
 
@@ -217,10 +243,10 @@ sp.simplify(Mtob)
 Mtob.det()
 
 
-# Simplifying this result and letting $b=50$ gives $\pmb{M}^{50}= 3^{50}a^{100}$. Notice that in the determinant, if it is assumed that 1 is small compared to $b^{50}$, which of course it is when $b=50$, and so removed from the calculation, then a serious error would be introduced, the answer would be zero: an error by a factor of $3^{50}$ or $\approx 10^{23}$ if a was $1$. This shows the importance of not approximating until the calculation is finished.
+# Simplifying this result and letting $b=50$ gives $\pmb{M}^{50}= 3^{50}a^{100}$. Notice that in the determinant, if it is assumed that 1 is small compared to $b^{50}$, which of course it is when $b=50$, and so removed from the calculation at that point, then a serious error would be introduced, the answer would be zero. An error by a factor of $3^{50}$ or $\approx 10^{23}$ if $a$ was $1$. This shows the importance of not approximating until the calculation is finished.
 # 
 # ## Q54 answer
-# (a) If any of the plants are cross-fertilized without restriction, the following table of all possible types is produced in the first generation where the offspring's genetic make-up starts the rows and the parents head the columns. The total chance in each column is one, as this is the chance of parents having offspring.
+# **(a)** If any of the plants are cross-fertilized without restriction, the following table of all possible types is produced in the first generation where the offspring's genetic make-up starts the rows and the parents head the columns. The total chance in each column is one, as this is the chance of parents having offspring.
 # 
 # $$\displaystyle \begin{array}{c|ccc|cc}
 # \hline 
@@ -232,7 +258,7 @@ Mtob.det()
 # \hline
 # \end{array}$$
 # 
-# (b) In the first entry, two adults $BB$ and $BB$ can obviously only generate a $BB$ offspring because no $A$ gene is present. If two adults each have $BA$ genes (column 4) when mixed by fertilization only one in four times will offspring $BB$ or $AA$ result (see Figure 58), and otherwise a $BA$ offspring is produced.
+# **(b)** In the first entry, two adults $BB$ and $BB$ can obviously only generate a $BB$ offspring because no $A$ gene is present. If two adults each have $BA$ genes (column 4) when mixed by fertilization only one in four times will offspring $BB$ or $AA$ result (see Figure 58), and otherwise a $BA$ offspring is produced.
 # 
 # Because fertilization is always with a $BB$ plant, only the first three columns are important. The chance of growing a $BB$ plant is 
 # 

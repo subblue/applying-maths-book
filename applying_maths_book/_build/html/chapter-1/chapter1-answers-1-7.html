@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1634,9 +1634,9 @@ title="Print to PDF"
 <span class="n">c</span> <span class="o">=</span> <span class="mf">2.9970e10</span>  <span class="c1"># cm/s </span>
 <span class="n">kB</span><span class="o">=</span> <span class="mf">1.3806e-23</span> <span class="c1"># J/mol/K</span>
 
-<span class="n">n1_n0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">deltaE</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">deltaE</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="p">)</span>    <span class="c1"># make a function</span>
-<span class="n">deltaE</span><span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">T</span>     <span class="o">=</span> <span class="mf">30.0</span>
+<span class="n">n1_n0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">deltaE</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">deltaE</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="p">)</span>    <span class="c1"># make the Boltzmann function</span>
+<span class="n">deltaE</span><span class="o">=</span> <span class="mf">1.0</span>                                              <span class="c1"># energy gap, cm^{-1}</span>
+<span class="n">T</span>     <span class="o">=</span> <span class="mf">30.0</span>                                             <span class="c1"># temperature, K</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:8.3f}</span><span class="s1">    </span><span class="si">{:8.3f}</span><span class="s1"> </span><span class="si">{:8.5g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">deltaE</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">n1_n0</span><span class="p">(</span><span class="n">deltaE</span><span class="p">,</span><span class="n">T</span><span class="p">))</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -1661,26 +1661,26 @@ title="Print to PDF"
 <h2>Q2 answer<a class="headerlink" href="#q2-answer" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|llll}
-(a) \log_{10}(100) = 2, \text{ as } 10^2 = 100 &amp; (b) \log_{10}(10) = 1, \text{ as } 10^1 = 10. \\
-(c) \log_e(e) = 1. &amp; (d) \log_b(b) = 1 \\
-(e) \log_b(bx) = x &amp; (f) \log_2(1/8) = -\log_2(8) = -3 \text{ as } 2^3 = 8\\
-(g) \log_{10}(n)=-4,; n=10^{-4} &amp; (h)  \log_n(1/16) = -2 \text{ as } \log_n(1/16) = -\log_n(16),
+\mathbf{(a)} \log_{10}(100) = 2, \text{ as } 10^2 = 100 &amp; \mathbf{(b)} \log_{10}(10) = 1, \text{ as } 10^1 = 10. \\
+\mathbf{(c)} \log_e(e) = 1. &amp; \mathbf{(d)} \log_b(b) = 1 \\
+\mathbf{(e)} \log_b(bx) = x &amp; \mathbf{(f)} \log_2(1/8) = -\log_2(8) = -3 \text{ as } 2^3 = 8\\
+\mathbf{(g)} \log_{10}(n)=-4,; n=10^{-4} &amp; \mathbf{(h)}  \log_n(1/16) = -2 \text{ as } \log_n(1/16) = -\log_n(16),
 \; n^2 =16\\
-(i) \log_5(125)=n,; 5^n =125
+\mathbf{(i)} \log_5(125)=n,; 5^n =125
 \end{array}\end{split}\]</div>
 </section>
 <section id="q3-answer">
 <h2>Q3 answer<a class="headerlink" href="#q3-answer" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|lll}
-(a) \ln(3^x) = x \ln(3) &amp;    (b) \ln(a^2/b)=2\ln(a)-\ln(b)\\
-(c) \ln(a^{1/2}/b^3) = (1/2)\ln(a) - 3\ln(b) &amp; (d) \ln(3^{1/(x+6)}) = (x + 6)^{-1}\ln(3)\\
-(e)  \displaystyle \ln\left( \frac{x^{1/2} \sin(x) }{\ln(x^n)}  \right) = \frac{1}{2} \ln(x) + \ln(\sin(x)) - \ln\left(n \ln(x)\right)
+\mathbf{(a)} \ln(3^x) = x \ln(3) &amp;    \mathbf{(b)} \ln(a^2/b)=2\ln(a)-\ln(b)\\
+\mathbf{(c)} \ln(a^{1/2}/b^3) = (1/2)\ln(a) - 3\ln(b) &amp; \mathbf{(d)} \ln(3^{1/(x+6)}) = (x + 6)^{-1}\ln(3)\\
+\mathbf{(e)}  \displaystyle \ln\left( \frac{x^{1/2} \sin(x) }{\ln(x^n)}  \right) = \frac{1}{2} \ln(x) + \ln(\sin(x)) - \ln\left(n \ln(x)\right)
 \end{array}\end{split}\]</div>
 </section>
 <section id="q4-answer">
 <h2>Q4 answer<a class="headerlink" href="#q4-answer" title="Permalink to this headline">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\displaystyle \ln\left(1 + s/a)^r\right) = r \ln(1 + s/a)\)</span> which follows because <span class="math notranslate nohighlight">\(\displaystyle \ln(x^n) = n\ln(x)\)</span>. Converting to exponential form gives <span class="math notranslate nohighlight">\(\displaystyle x^n = e^{n\ln(x)}\)</span> and therefore <span class="math notranslate nohighlight">\(\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} \)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \ln\left( (1 + s/a)^r\right) = r \ln(1 + s/a)\)</span> which follows because <span class="math notranslate nohighlight">\(\displaystyle \ln(x^n) = n\ln(x)\)</span>. Converting to exponential form gives <span class="math notranslate nohighlight">\(\displaystyle x^n = e^{n\ln(x)}\)</span> and therefore <span class="math notranslate nohighlight">\(\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} \)</span>.</p>
 <p>More formally let <span class="math notranslate nohighlight">\(\displaystyle y=n^x\)</span>, taking logs produces <span class="math notranslate nohighlight">\(\displaystyle \ln(y) = x \ln(n)\)</span> then ‘exponentiating’, <span class="math notranslate nohighlight">\(\displaystyle y = e^{x\ln(n)}\)</span>  produces the general form: <span class="math notranslate nohighlight">\(\displaystyle n^x = e^{x\ln(n)}\)</span>. Now  substitute <span class="math notranslate nohighlight">\(n \to 1 + s/a\)</span>  and <span class="math notranslate nohighlight">\(x \to r\)</span>, the result is <span class="math notranslate nohighlight">\(\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} \)</span>.</p>
 </section>
 <section id="q5-answer">

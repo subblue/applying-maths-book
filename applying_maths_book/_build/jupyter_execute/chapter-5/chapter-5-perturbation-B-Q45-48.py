@@ -29,9 +29,9 @@
 # 
 # and the quantum numbers are $n = 0,  \pm 1, \pm 2, \cdots$
 # 
-# (a) Calculate the unperturbed energies $E_n$.
+# **(a)** Calculate the unperturbed energies $E_n$.
 # 
-# (b) Calculate the perturbed energy of the lowest level ($n = 0$) to second order, when the potential has the value $V$ from $-a\pi \cdots a\pi$  where $a$ is a fraction $\lt 1$. If we were to suppose that our ring was pyridine then the nitrogen would have a different potential to that of the carbons. Call this value $V$, and then $a$ could be 1/6. Find the energy if $V = 0.1E_1$. The figure shows a particle on a ring with a small region of perturbation.
+# **(b)** Calculate the perturbed energy of the lowest level ($n = 0$) to second order, when the potential has the value $V$ from $-a\pi \cdots a\pi$  where $a$ is a fraction $\lt 1$. If we were to suppose that our ring was pyridine then the nitrogen would have a different potential to that of the carbons. Call this value $V$, and then $a$ could be 1/6. Find the energy if $V = 0.1E_1$. The figure shows a particle on a ring with a small region of perturbation.
 # 
 # ![Drawing](series-fig14.png)
 # 

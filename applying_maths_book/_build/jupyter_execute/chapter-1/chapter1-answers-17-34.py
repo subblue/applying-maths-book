@@ -24,40 +24,40 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ## Q18 answer
 # 
-# (a) The fraction of $^{13}$C is $(12.011 - 12)/12 = 0.011$ or approximately 1/91. 
+# **(a)** The fraction of $^{13}$C is $(12.011 - 12)/12 = 0.011$ or approximately 1/91. 
 # 
-# (b) The chance that both carbons are $^{13}$C is $(1/91)(1/91) = 1/8281$. 
+# **(b)** The chance that both carbons are $^{13}$C is $(1/91)(1/91) = 1/8281$. 
 # 
-# (c) One $^{13}$C appears with a chance $1/91$ and there is a $1 - 1/91= 90/91$ chance that it does not appear. Two $^{13}$C have a chance of $(90/91)^2$ that they do not occur and therefore $1 - (90/91)^2 = 181/8281$ is the chance that a $^{13}$C appears at least once. Alternatively, we can argue that if at least one carbon is $^{13}$C, the chance of this occurring is the sum of the chance that carbon $1$ is $^{13}$C or atom $2$ is $^{13}$C less the chance that both carbons are $^{13}$C.
+# **(c)** One $^{13}$C appears with a chance $1/91$ and there is a $1 - 1/91= 90/91$ chance that it does not appear. Two $^{13}$C have a chance of $(90/91)^2$ that they do not occur and therefore $1 - (90/91)^2 = 181/8281$ is the chance that a $^{13}$C appears at least once. Alternatively, we can argue that if at least one carbon is $^{13}$C, the chance of this occurring is the sum of the chance that carbon $1$ is $^{13}$C or atom $2$ is $^{13}$C less the chance that both carbons are $^{13}$C.
 # 
 # This is $\displaystyle \frac{1}{91}+\frac{1}{91}-\frac{1}{91^2}=\frac{181}{8281}\approx 0.0219 $. 
 # 
 # The relative size of the NMR signal is this result multiplied by the cube of the ratio of magnetogyric ratios, which is $\approx 3.5 \cdot 10^{-4}$ making it clear why $^{13}$C spectra are more difficult to obtain than $^1$H. Furthermore, as the signal to noise increases only as $\sqrt{n}$ for $n$ scans, this makes obtaining good quality $^{13}$C spectra very time consuming.
 # 
 # ## Q19 answer
-# (a) This is effectively the same problem as tossing two coins. The four possible outcomes are 'AA', 'Aa', 'aA',and 'aa' of which the middle two are the same, therefore, the incidences are $p^2,\; 2p(1 - p)$, and $(1 - p)^2$ respectively.
+# **(a)** This is effectively the same problem as tossing two coins. The four possible outcomes are 'AA', 'Aa', 'aA',and 'aa' of which the middle two are the same, therefore, the incidences are $p^2,\; 2p(1 - p)$, and $(1 - p)^2$ respectively.
 # 
-# (b) The chance that an individual is 'aa' is is the fraction 
+# **(b)** The chance that an individual is 'aa' is is the fraction 
 # 
 # $$\displaystyle \frac{(1-p)^2}{p^2+2p(1-p)+(1-p)^2}=(1-p)^2$$
 # 
 # and the joint chance that an individual has both 'A' and 'a' genes  $2p(1 - p)$, then, by equation 24, the probability of not being 'aa' but having an 'a' gene is $2p(1 - p)/(1 - p)^2$.
 # 
 # ## Q20 answer
-# (a) $p=V_A/(V_A +V_B)$. 
+# **(a)** $p=V_A/(V_A +V_B)$. 
 # 
-# (b) For $N$ molecules,the chance of all molecules being in volume $V_A$ becomes a product of individual ones since one molecule does not influence any other. The result is $\left(V_A/(V_A + V_B)\right)^N$. For equal volumes and only $100$ molecules, the probability is extremely small $p = 1/2^{100} \approx 8 \cdot 10^{-31}$. For $1000$ molecules, this probability becomes infinitesimal $\approx 10^{-301}$. If a mole of gas molecules were present this chance is so small that it has been effectively zero since the universe began and is likely to be so until it ends. 
+# **(b)** For $N$ molecules,the chance of all molecules being in volume $V_A$ becomes a product of individual ones since one molecule does not influence any other. The result is $\left(V_A/(V_A + V_B)\right)^N$. For equal volumes and only $100$ molecules, the probability is extremely small $p = 1/2^{100} \approx 8 \cdot 10^{-31}$. For $1000$ molecules, this probability becomes infinitesimal $\approx 10^{-301}$. If a mole of gas molecules were present this chance is so small that it has been effectively zero since the universe began and is likely to be so until it ends. 
 # 
-# (c) In this question the initial volume is $V_A$ and expansion is into the total volume, thus the chance is the inverse of that in (a). The entropy change is positive and is 
+# **(c)** In this question the initial volume is $V_A$ and expansion is into the total volume, thus the chance is the inverse of that in (a). The entropy change is positive and is 
 # 
 # $$\displaystyle S=Nk_B\ln\left( \frac{V_A + V_B}{V_A} \right)$$
 # 
 # i.e. the gas expands spontaneously to fill the whole volume. 
 # 
 # ## Q21 answer
-# (a) $4^3 = 64$ possible amino acids. 
+# **(a)** $4^3 = 64$ possible amino acids. 
 # 
-# (b) $20^{100} \approx 1.3 \cdot 10^{30}$ proteins.
+# **(b)** $20^{100} \approx 1.3 \cdot 10^{30}$ proteins.
 # 
 # ## Q22 answer
 # As the objects are distinguishable, label them $A$ and $B$. The arrangements are,
@@ -87,8 +87,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-def fact(n):                # recursively calculate factorial
-    if n == 0 or n==1:
+def fact(n):                # recursively calculate factorial, assume n is always positive
+    if n < 1:
         return 1
     else:
         return n*fact(n-1)
@@ -105,34 +105,34 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # The left-hand state is produced  $5!/(4!1!)=5$ ways, (see Section 9.2), the middle distribution in $5!/(2!1!1!1!) = 60$ ways, and the right-hand one in $5! = 120$ ways so, the probabilities are in the ratio $1 : 12 : 24$. The empty levels do not change the result because $0! = 1$ and are not shown in the calculation.
 # 
 # ## Q27 answer
-# (a) The fraction of isotopes in the product is the same because each molecule is distinguishable therefore the equilibrium constant is 
+# **(a)** The fraction of isotopes in the product is the same because each molecule is distinguishable therefore the equilibrium constant is 
 # 
 # $$\displaystyle K=\frac{(f_Hf_D)(f_Hf_D)}{(f_H^2)(f_D^2)} = 1$$ 
 # 
-# (b) The fraction $\mathrm{^{35} Cl }$ in $\mathrm{P^{35}Cl_3}$ is $f_{35}$ and $f_{37}$ in $\mathrm{P^{37}Cl_3}$. In the product each can have three ways of arranging the isotopes; for example $35-35-37,\, 35-37-35,\, 37-35-35$. Hence the fraction is $3f^2_{35}f_{37}$ and $3f^2_{37}f_{35}$ and the equilibrium constants is 
+# **(b)** The fraction $\mathrm{^{35} Cl }$ in $\mathrm{P^{35}Cl_3}$ is $f_{35}$ and $f_{37}$ in $\mathrm{P^{37}Cl_3}$. In the product each can have three ways of arranging the isotopes; for example $35-35-37,\, 35-37-35,\, 37-35-35$. Hence the fraction is $3f^2_{35}f_{37}$ and $3f^2_{37}f_{35}$ and the equilibrium constants is 
 # 
 # $$\displaystyle K=\frac{(3f^2_{37}f_{35})(3f_{35}^2f_{37})}{(f_{35}^3)(f_{37}^3)} = 9$$
 # 
-# (c) In this case, the product molecules each have six ways of distributing the isotopic atoms, or $4!/(2!2!)$, and the equilibrium constant 
+# **(c)** In this case, the product molecules each have six ways of distributing the isotopic atoms, or $4!/(2!2!)$, and the equilibrium constant 
 # 
 # $$\displaystyle K=\frac{(6f^2_{37}f^2_{35})(6f^2_{35}f^2_{37})}{(f_{35}^4)(f_{37}^4)} = 36$$
 # 
 # If you are not convinced, label the chlorine isotopes A and B and work out the number of arrangements of 2A and 2B atoms such as AABB, etc.
 # 
 # ## Q28 answer
-# The important words here are 'at least' which means that we look for the chance that the event does not happen (Subtraction Rule). The chance of *not* observing one six is $5/6$ and in four throws, as they are independent, is $(5/6)^4$. Therefore, the chance of observing at least one six in four throws is $1 - (5/6)^4 = 0.518$ , which is slightly better than  evens or $50$% chance of winning. 
+# The important words here are '*at least*' which means that we look for the chance that the event does not happen (Subtraction Rule). The chance of *not* observing one six is $5/6$ and in four throws, as they are independent, is $(5/6)^4$. Therefore, the chance of observing at least one six in four throws is $1 - (5/6)^4 = 0.518$ , which is slightly better than  evens or $50$% chance of winning. 
 # 
 # On the other hand, the chance of observing two sixes in $24$ throws is $1 - (35/36)^{24} = 0.491$ and, as there is less than a $50$% chance of winning, money will inevitably be lost. The $35/36$ occurs as there are $36$ possibilities with two throws of the dice but only one combination has two sixes and we seek the chance that this is *not* observed in $24$ attempts. Had the Chevalier insisted instead on gambling that two sixes would be produced in $25$ throws or more he would have not lost his money. As the number of tries gets larger the chance of getting two sixes increases, as one might expect, and as may be seen because $35/36 <1$ thus becomes smaller when raised to a power. The Chavalier is remembered because he asked Pascal to help work out out the odds of success and failure and so helped to found probability theory.
 # 
 # ## Q29 answer
-# (a) The chance of at least one club being chosen can be found using equation 23 and is the chance of obtaining a club from each group less the joint chance which is $\displaystyle \frac{3}{5}+\frac{1}{4}-\frac{3}{5}\times\frac{1}{4}=\frac{7}{10}$.
+# **(a)** The chance of at least one club being chosen can be found using equation 23 and is the chance of obtaining a club from each group less the joint chance which is $\displaystyle \frac{3}{5}+\frac{1}{4}-\frac{3}{5}\times\frac{1}{4}=\frac{7}{10}$.
 # 
-# (b) To obtain at least one ace the chance is $\displaystyle \frac{1}{5}+\frac{1}{4}-\frac{1}{5}\times\frac{1}{4}=\frac{8}{10}$.
+# **(b)** To obtain at least one ace the chance is $\displaystyle \frac{1}{5}+\frac{1}{4}-\frac{1}{5}\times\frac{1}{4}=\frac{8}{10}$.
 # 
-# (c) The chance of one card less than $4$ (assuming ace is high) is $\displaystyle \frac{4}{5}+\frac{3}{4}-\frac{4}{5}\times\frac{3}{4}=\frac{19}{20}$.
+# **(c)** The chance of one card less than $4$ (assuming ace is high) is $\displaystyle \frac{4}{5}+\frac{3}{4}-\frac{4}{5}\times\frac{3}{4}=\frac{19}{20}$.
 # 
 # ## Q30 answer
-# (a) This is effectively the problem of tossing two coins many times and looking for heads and tails. The Punnett square has the form
+# **(a)** This is effectively the problem of tossing two coins many times and looking for heads and tails. The Punnett square has the form
 # 
 # $$\displaystyle \begin{array}{lll}
 # \hline 
@@ -144,20 +144,20 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # 
 # which means that $3/4$ can taste the PTC because at least one allele in the offspring is B in $3$ of the $4$ outcomes. The ratio of dominant to recessive is $3:1$. 
 # 
-# (b) The chance that each of the first four children are non-tasters is $(1/4)^4 = 1/256$. All children $1/4$. 
+# **(b)** The chance that each of the first four children are non-tasters is $(1/4)^4 = 1/256$. All children $1/4$. 
 # 
-# (c) If the children are both B then the next generation are all tasters as both parents carry this gene. If the parents are heterozygous,B and b, the result is the same as in (a),and if both parents are b, all offspring are non-tasters.
+# **(c)** If the children are both B then the next generation are all tasters as both parents carry this gene. If the parents are heterozygous,B and b, the result is the same as in (a),and if both parents are b, all offspring are non-tasters.
 # 
 # ## Q31 answer
 # Use the binomial distribution and the chance of any one digit being chosen is $1/10$; the chance of a run of zeros is the same as a run of any other digit. 
 # 
-# (a) The chance of choosing five zeros one after the other is 
+# **(a)** The chance of choosing five zeros one after the other is 
 # 
 # $$\displaystyle p(10,5,1/10)= \frac{10!}{5!5!}\left(\frac{1}{10} \right)^5\left(\frac{9}{10} \right)^5$$
 # 
 # which is relatively easy to calculate, giving $3720087 / 2500000000 = 0.00148$. 
 # 
-# (b) The chance this time is 
+# **(b)** The chance this time is 
 # 
 # $$\displaystyle p(100,50,1/10)= \frac{100!}{50!50!}\left(\frac{1}{10} \right)^{50}\left(\frac{9}{10} \right)^{50}$$
 # 
@@ -171,26 +171,26 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # 
 # which, when the exponential is taken, gives a chance of $6.53 \cdot 10^{-23}$, which is miniscule. The exact calculation gives $5.2 \cdot 10^{-24}$ and, as might be expected, is different because $n!$ is not approximated.
 # 
-# (c) In this case, the Stirling approximation is needed, and gives $1.4 \cdot 10^{-222}$, which is definitely a zero chance in practice of finding a run of five hundred zeros as might be expected if the numbers are random. The exact calculation gives $3.5 \cdot 10^{-224}$.
+# **(c)** In this case, the Stirling approximation is needed, and gives $1.4 \cdot 10^{-222}$, which is definitely a zero chance in practice of finding a run of five hundred zeros as might be expected if the numbers are random. The exact calculation gives $3.5 \cdot 10^{-224}$.
 # 
 # ## Q32 answer
-# (a) Using the binomial distribution, the chance or fraction is 
+# **(a)** Using the binomial distribution, the chance or fraction is 
 # 
 # $$\displaystyle p(6,4,1/2)=\frac{6!}{4!2!}\left(\frac{1}{2} \right)^4\left(\frac{1}{2} \right)^2= \frac{15}{64}\approx 0.23$$
 # 
 # and the chance of not having four girls is $49/64$. The odds are therefore $15:49$ against having four girls in a family of six children. 
 # 
-# (b) If the odds are no longer 1/2 but 3/5, the fraction is now 
+# **(b)** If the odds are no longer 1/2 but 3/5, the fraction is now 
 # 
 # $$\displaystyle p(6,4,1/2)=\frac{6!}{4!2!}\left(\frac{3}{5} \right)^4\left(\frac{2}{5} \right)^2= \frac{927}{3125}\approx 0.31$$
 # 
 # ## Q33 answer
-# (a) Start by evaluating both sides separately and the identity is proved.
+# **(a)** Start by evaluating both sides separately and the identity is proved.
 # 
 # $$\displaystyle q\binom{n}{q}=q\frac{n!}{q!(n-q)!}=\frac{n!}{(q-1)!(n-q)!}\\
 # n\binom{n-1}{q-1}=\frac{n(n-1)!}{(q-1)!(n-1-q+1)!}=\frac{n!}{(q-1)!(n-q)!}$$
 # 
-# (b) The right-hand side is 
+# **(b)** The right-hand side is 
 # 
 # $$\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{(n-1)!}{(q-1)!(n-1-q+1)!}+\frac{(n-1)!}{q!(n-1-q)!}$$
 # 
@@ -198,7 +198,7 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # 
 # $$\displaystyle  \binom{n-1}{q-1}+\binom{n-1}{q}=\frac{q(n-1)!}{q!(n-q)!}+\frac{(n-q)(n-1)!}{q!(n-q)!} = \frac{n!}{q!(n-q)!}$$
 # 
-# (c) The fraction  $\displaystyle \binom{n-1}{q-1}$ can be converted to a more useful form by realising that  for any factorial $x!=x(x-1)!$ thus
+# **(c)** The fraction  $\displaystyle \binom{n-1}{q-1}$ can be converted to a more useful form by realising that  for any factorial $x!=x(x-1)!$ thus
 # 
 # $$\displaystyle \binom{n-1}{q-1}=\frac{q}{n}\binom{n}{q}$$
 # 
@@ -224,7 +224,7 @@ print('binomial(',i+1,',',q,') is', y)
 
 
 # ## Q34 answer
-# (a) Using notation similar to that in the text, (Chapter 1, section 9.15), the formula is 
+# **(a)** Using notation similar to that in the text, (Chapter 1, section 9.15), the formula is 
 # 
 # $$\displaystyle p(Na^+|+) = p(+|Na^+)\frac{p(Na^+)}{p(+)}$$
 # 
@@ -236,7 +236,7 @@ print('binomial(',i+1,',',q,') is', y)
 # 
 # where using a Tree diagram really helps in working out $p(+)$. The probability of correctly identifying Na$^+$ is $99.2$%. 
 # 
-# The probability of the analysis result was caused by  K$^+$ is the complement of this $1-0.992=0.8$%
+# The probability that the result of analysis was caused by  K$^+$ is the complement of this $1-0.992=0.8$%
 # 
 # **(b)** What if the analysis result is negative? The equation is
 # 

@@ -6,11 +6,19 @@
 # ## Q7 Singlet excited state decay
 # A singlet excited state decays to a triplet state by intersystem crossing with a rate constant, $k_{isc} = 2 \cdot 10^8\,\mathrm{ s^{-1}}$, as well as fluorescing to the ground state with rate constant $k_f = 1 \cdot 10^7\,\mathrm{ s^{-1}}$.
 # 
-# (a) What is the fluorescence lifetime and the fluorescence yield?
+# **(a)** What is the fluorescence lifetime and the fluorescence yield?
 # 
-# (b) Assume that the triplet state has a 20 ns decay time, $k_T = 1/(20$ ns). Calculate the fluorescence decay as well as the rise and fall in the triplet population for at least $100$ ns, using a Monte Carlo method.
+# **(b)** Assume that the triplet state has a 20 ns decay time, $k_T = 1/(20$ ns). Calculate the fluorescence decay as well as the rise and fall in the triplet population for at least $100$ ns, using a Monte Carlo method.
 # 
-# **Strategy:** The yield and lifetime are very easy to calculate. The fluorescence lifetime is the reciprocal of the sum of the rate constants depleting the excited singlet $\tau = 1/(k_f + k_{isc})$. The fluorescence yield is the fraction of molecules that fluoresce compared to the total number of excited states, which is the same as the rate constant for fluorescence divided by the total of all rate constants causing the state to decay, $\varphi = k_f /(k_f + k_{isc}) = k_f\tau$ (see Turro 1978). All yields must be between 0 and 1. The calculation is similar to that in the examples, but now two reactions are present, the singlet and triplet. The rate equations are
+# **Strategy:** The yield and lifetime are very easy to calculate. The fluorescence lifetime is the reciprocal of the sum of the rate constants depleting the excited singlet 
+# 
+# $$\displaystyle \tau = \frac{1}{(k_f + k_{isc})}$$
+# 
+# The fluorescence yield is the fraction of molecules that fluoresce compared to the total number of excited states, which is the same as the rate constant for fluorescence divided by the total of all rate constants causing the state to decay, 
+# 
+# $$\displaystyle  \varphi = \frac{k_f }{(k_f + k_{isc})} = k_f\tau$$
+# 
+# (see Turro 1978). All yields must be between 0 and 1. The calculation is similar to that in the examples, but now two reactions are present, the singlet and triplet. The rate equations are
 # 
 # $$\displaystyle \mathrm{S}\overset{ k_{isc}} \longrightarrow T, \qquad \mathrm{S}\overset{ k_f}\longrightarrow \mathrm{S_0},\qquad  \mathrm{T}\overset{ k_T}\longrightarrow \mathrm{S_0}$$ 
 # 
@@ -56,7 +64,11 @@
 # 
 # These equations are described in more detail in Chapter 11.8.1 where they are solved numerically. 
 # 
-# Solve these equations by using the Gillespie Monte Carlo method to calculate the time profile of species Y and X over $200$ time units with initial values, $Y_0 = 400,\; X_0 = 100,\; k_1 = 0.5,\; k_2 = 0.001, \;k_3 = 0.5$. Use $1000$ time bins. Comment on the results.
+# Solve these equations by using the Gillespie Monte Carlo method to calculate the time profile of species Y and X over $200$ time units with initial values, 
+# 
+# $$\displaystyle Y_0 = 400,\; X_0 = 100,\; k_1 = 0.5,\; k_2 = 0.001, \;k_3 = 0.5$$
+# 
+# Use $1000$ time bins. Comment on the results.
 # 
 # **Strategy:** Use the model as in the text, making sure that $a_0$ is calculated correctly. Do not forget that there are three reactions, so three choices have to be made as to which reaction is occurring at any time. If you also plot the phase plane this is, not surprisingly, very random compared to a direct numerical solution.
 

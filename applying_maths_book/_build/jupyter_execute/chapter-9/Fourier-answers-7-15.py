@@ -31,7 +31,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is the shape of the spectral line.
 # 
-# The exponential decay with $\tau = 2$ and the corresponding square of the transform, are shown in Fig. 54. In this case $k$ corresponds to a frequency in s$^{-1}$% because $t$ is in seconds.
+# The exponential decay with $\tau = 2$ and the corresponding square of the transform, are shown in Fig. 54. In this case $k$ corresponds to a frequency in s$^{-1}$ because $t$ is in seconds.
 # 
 # ![Diagram](Fourier-fig54.png)
 # 
@@ -48,7 +48,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The Heisenberg uncertainty principle arises because operators, such as position and momentum, do not commute, but in quantum mechanics time is not an operator, but an observable, therefore commutation does not apply. See Atkins & Friedmann (1997, p. 198) for a detailed discussion of the distinction between Heisenberg uncertainty and time-energy uncertainty.
 # 
 # ## Q8 answer
-# (a) With the forward transform $\displaystyle g(\omega) =\frac{1}{\sqrt{2\pi}}\int_0^{t_0} e^{i\omega_0 t}e^{-i\omega t}dt$
+# **(a)** With the forward transform $\displaystyle g(\omega) =\frac{1}{\sqrt{2\pi}}\int_0^{t_0} e^{i\omega_0 t}e^{-i\omega t}dt$
 # 
 # which, being exponential, is easily integrated to 
 # 
@@ -69,36 +69,49 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 55. Left top: The electric field of a square pulse of 0.1 ps duration. Bottom right: the square of absolute value of the Fourier transform of the pulse; this is its spectrum. The small vertical line shows the position of the first minima, see part (b). Bottom left: The imaginary component of the Fourier transform, the sinc function, and right, the real part.
 # ______
 # 
-# (b) Differentiating the transform finds the maxima and minima, either side of these are the missing frequencies as the period of the transform's oscillations is constant. Differentiating gives  
+# **(b)** Differentiating the transform finds the maxima and minima, either side of these are the missing frequencies as the period of the transform's oscillations is constant. Differentiating gives  
 # 
 # $$\displaystyle \frac{d}{d\omega}\frac{\cos((\omega_0-\omega)t_0)-1}{\pi(\omega_0-\omega)^2} = -\frac{t_0\sin((\omega_0-\omega)t_0)}{\pi(\omega_0-\omega)^2}-2\frac{\cos((\omega_0-\omega)t_0)-1}{\pi(\omega_0-\omega)^3} $$ 
 # 
-# which must be zero at each of its minima. Multiplying out factors gives $\displaystyle (\omega_0-\omega)\sin((\omega_0-\omega)t_0)=2(1-\cos((\omega_0-\omega)t_0))$ which is solved when $t_0(\omega_0-\omega)=2\pi n$ because here the sine is zero, and when $\cos((\omega_0-\omega)t_0)=1$ which is when $n$ is an integer and $n=\pm 1$,  $\pm 2,\cdots$ or $\omega = \omega_0-2\pi n/t_0$ thus a series of zeros is expected. The pulse has a width of $0.1$ ps and zero's occur at $\omega=600\cdot 10^{12}\pm 2\pi n\cdot 10^{13}$ Hz and so the first zeros are at $\approx 662.8 \cdot 10^{12}$ Hz.
+# which must be zero at each of its minima. Multiplying out factors gives 
+# 
+# $$\displaystyle (\omega_0-\omega)t_0\sin\big((\omega_0-\omega)t_0\big)=2-2\cos\big((\omega_0-\omega)t_0\big)$$
+# 
+# which is solved when 
+# 
+# $$\displaystyle t_0(\omega_0-\omega)=2\pi n$$
+# 
+# because here the sine is zero, and when 
+# 
+# $$\displaystyle \cos((\omega_0-\omega)t_0)=1$$
+# 
+# which is when $n$ is an integer and $n=\pm 1$,  $\pm 2,\cdots$ or $\omega = \omega_0-2\pi n/t_0$ thus a series of zeros is expected.
+# 
+# The pulse has a width of $0.1$ ps and zero's occur at $\omega=600\cdot 10^{12}\pm 2\pi n\cdot 10^{13}$ Hz and so the first zeros are at $\approx 662.8 \cdot 10^{12}$ Hz.
 
 # ## Q9 answer
-# (a) As the pulse is square and of finite duration, it lasts only from time 0 to $\tau$, therefore its Fourier transform is 
+# **(a)** As the pulse is square and of finite duration, it lasts only from time 0 to $\tau$, therefore its Fourier transform is 
 # 
 # $$\displaystyle g(\omega)=\frac{1}{\sqrt{2\pi}}\int_0^\tau ae^{-i\omega t}dt =\frac{-a}{\sqrt{2\pi}} \left. \frac{e^{i\omega t}}{i\omega}  \right|_0^\tau = \frac{a}{\sqrt{2\pi}} \left( \frac{1-e^{i\omega \tau}}{i\omega}  \right)$$
 # 
 # which is similar to that in Q8 but with  the change $\omega\rightarrow \omega_0-\omega$.
 # 
-# (b) The real and imaginary parts are calculated using Euler's formula for the complex exponential giving
+# **(b)** The real and imaginary parts are calculated using Euler's formula for the complex exponential giving
 # 
 # $$\left( \frac{1-e^{i\omega \tau}}{i\omega}  \right) =\frac{-i}{\omega}(1-\cos(\omega \tau)) +\frac{\sin(\omega \tau)}{\omega}$$
 # 
 # The real part $\displaystyle Re[g(\omega)]= \frac{a\tau}{\sqrt{2\pi}}\frac{\sin(\omega \tau)}{\omega}$ which can be converted to the sinc function by multiplying by $\tau/\tau$, see figs 15 and 55.
 # 
-# (c, d) The pulse is zero, $Re[g(\omega)]$ = 0, when $\displaystyle \frac{\sin(\omega \tau)}{\omega\tau}$ = 0 which does not occur when $\omega$ = 0 but for the first time when $\omega\tau = \pm \pi$ , because although the sine is zero, the denominator is $\pi$. L'Hopital's rule can also be used to determine the value when $\omega \to 0$:
+# **(c, d)** The pulse is zero, $Re[g(\omega)]$ = 0, when $\displaystyle \frac{\sin(\omega \tau)}{\omega\tau}$ = 0 which does not occur when $\omega$ = 0 but for the first time when $\omega\tau = \pm \pi$ , because although the sine is zero, the denominator is $\pi$. L'Hopital's rule can also be used to determine the value when $\omega \to 0$:
 # 
 # $$\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega\tau)}{\omega\tau}\to \frac{\tau\cos(\omega\tau)}{\tau} \to 1$$
 # 
 # The pulse has a frequency spread to the first minima of $2\pi/\tau$ which corresponds to $2\pi$ MHz for a $1\,\mu$s duration pulse. Suppose that only half this frequency range has useful intensity then this extends from $399.5 \to 400.5$ MHz in a $400$ MHz instrument. This gives a potential chemical shift of $\pm 50000/400 = 125$ ppm, which is large compared to most proton shifts which are typically $\lt 20$ ppm.
 # 
 # ## Q10 answer
-# (a) The FID is caused,in a semi-classical interpretation of NMR, by the rotating magnetization cutting the wire
-# coil of the detector, and inducing the current that is subsequently detected. The two different classes of spins move with different frequencies due to their different chemical environments, and hence, experience slightly different magnetic fields. These are the two cosines mentioned in the question. The decay of magnetization is due to the interaction of the spins with one another, with other atoms in the molecule and with dipoles in the solvent. These interactions have the effect of transferring more spins from the upper spin level to the lower one, than in the opposite direction, and hence back towards equilibrium. These effects cause the population to decay with a lifetime T1, and the loss of the spin coherence determines the T2 lifetime. The $\tau = 100$ in the question represents both these decay processes. In a real experiment the decay time would be of the order of a few seconds and the frequencies in MHz. 
+# **(a)** The FID is caused,in a semi-classical interpretation of NMR, by the rotating magnetization cutting the wire coil of the detector, and inducing the current that is subsequently detected. The two different classes of spins move with different frequencies due to their different chemical environments, and hence, experience slightly different magnetic fields. These are the two cosines mentioned in the question. The decay of magnetization is due to the interaction of the spins with one another, with other atoms in the molecule and with dipoles in the solvent. These interactions have the effect of transferring more spins from the upper spin level to the lower one, than in the opposite direction, and hence back towards equilibrium. These effects cause the population to decay with a lifetime T1, and the loss of the spin coherence determines the T2 lifetime. The $\tau = 100$ in the question represents both these decay processes. In a real experiment the decay time would be of the order of a few seconds and the frequencies in MHz. 
 # 
-# (b) Using the FID equation given in the question the Python code below can be used. You should modify this as you wish.
+# **(b)** Using the FID equation given in the question the Python code below can be used. You should modify this as you wish.
 
 # In[2]:
 
@@ -162,7 +175,7 @@ plt.show()
 
 # ## Q11 answer
 # 
-# (a) The transform is $\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt$
+# **(a)** The transform is $\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt$
 # 
 # which can be evaluated by hand or using SymPy. By hand this is made easier by converting the sin to exponential first. 
 
@@ -188,7 +201,7 @@ sp.simplify(sp.re(g))
 sp.simplify(sp.im(g))
 
 
-# (b) when $\varphi = n\pi$ and $n = 0, 1, 2, \cdots$ then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, $\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}$ and the form of the transform is a damped sine wave because the sine is divided by $k^2$.
+# **(b)** when $\varphi = n\pi$ and $n = 0, 1, 2, \cdots$ then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, $\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}$ and the form of the transform is a damped sine wave because the sine is divided by $k^2$.
 
 # In[6]:
 
@@ -207,7 +220,7 @@ plt.show()
 
 
 # ## Q12 answer
-# (a) The Fourier transform of the $\delta$-function is obtained directly by using its selecting property. For instance acting on a function $f$ gives, 
+# **(a)** The Fourier transform of the $\delta$-function is obtained directly by using its selecting property. For instance acting on a function $f$ gives, 
 # 
 # $$\displaystyle \int f(x)\delta(x-a)dx = f(a)$$
 # 
@@ -217,7 +230,7 @@ plt.show()
 # 
 # The probability density is $P_k^*P_k=1/2\pi$ because the complex conjugate is $\displaystyle  p^* = e^{+ikx}/\sqrt(2\pi)$. Because $P^*P$ is a constant the scattering off an atom is the same in all directions.
 # 
-# (b) The Gaussian function has the transform 
+# **(b)** The Gaussian function has the transform 
 # 
 # $$\displaystyle P_k=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-(x-a)^2/d^2}e^{ikx}dx$$
 # 
@@ -287,7 +300,7 @@ plt.show()
 
 
 # ## Q15 answer 
-# (a) The pulse has an absolute value of $x$, so it is symmetrical about zero. The fwhm is $2\ln$(2) and as the pulse is $\tau= 10$ fs long the scaling is $a = \ln(2)/\tau$ in units of fs$^{-1}$. The Fourier transform can be taken from zero to infinity with $\displaystyle e^{-ax}$, and from $-\infty \cdots 0$ with $\displaystyle e^{ax}$, and the results added and simplified.
+# **(a)** The pulse has an absolute value of $x$, so it is symmetrical about zero. The fwhm is $2\ln$(2) and as the pulse is $\tau= 10$ fs long the scaling is $a = \ln(2)/\tau$ in units of fs$^{-1}$. The Fourier transform can be taken from zero to infinity with $\displaystyle e^{-ax}$, and from $-\infty \cdots 0$ with $\displaystyle e^{ax}$, and the results added and simplified.
 # 
 # The transform is 
 # 
@@ -301,7 +314,7 @@ plt.show()
 # 
 # When plotted this looks something like a bell-shaped curve but is more pointed at the top; it has a Lorentzian shape. The full width at half maximum is $\displaystyle k_{fwhm}=2a(  4/\sqrt{2\pi}-a ) $ which for a $10$ fs pulse is $0.65 \cdot 10^{14}\, s^{-1}$. The central wavelength of the laser is $800$ nm or $12500\,\mathrm{ cm^{-1}}$, the frequency spread then $12500 \pm 0.6505 \cdot 10^{14}/c/2\, \mathrm{cm^{-1}}$ or $14670 \to 10329 \,\mathrm{cm^{-1}}$ which is $681.7 \to 968.1$ nm and covers most of the deep red part of the visible spectrum and spreads into a wavelength region where the eye is insensitive. As a consequence, lasers such as these, titanium sapphire is an example, appear very faint when in fact they could be very intense.
 # 
-# (b) The laser cavity is $1.5$ metres long, hence with these wavelengths, approximately $4.4 - 3.1 = 1.3$ million modes (half wavelengths) exist in the cavity and all these have to be in phase to form a pulse.
+# **(b)** The laser cavity is $1.5$ metres long, hence with these wavelengths, approximately $4.4 - 3.1 = 1.3$ million modes (half wavelengths) exist in the cavity and all these have to be in phase to form a pulse.
 
 # In[ ]:
 

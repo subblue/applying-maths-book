@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1648,10 +1648,14 @@ title="Print to PDF"
 <p>When <span class="math notranslate nohighlight">\(\omega = 0\)</span>, the function has the value nominally <span class="math notranslate nohighlight">\(0/0\)</span> and l’Hopital’s rule can be used to find its true value. This gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega \tau)}{\omega\tau}\to \frac{\cos(\omega \tau)}{\tau} = 1\]</div>
-<p>then the hwhm is the solution to <span class="math notranslate nohighlight">\(\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}\)</span> which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width <span class="math notranslate nohighlight">\(H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)\)</span> and the value of <span class="math notranslate nohighlight">\(\omega\)</span>  when <span class="math notranslate nohighlight">\(H\)</span> is zero found. The derivative needed is <span class="math notranslate nohighlight">\(H'(\omega) = \pi/2 - \tau \cos(\omega\tau)\)</span>. Using the Newton - Raphson method some experimenting with initial guesses for <span class="math notranslate nohighlight">\(\omega\)</span> is necessary to obtain a sensible answer. Using SymPy and defining the function <span class="math notranslate nohighlight">\(H\)</span> and then its derivative as <span class="math notranslate nohighlight">\(dH\)</span> gives</p>
+<p>then the hwhm is the solution to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\tau \sin(\omega\tau)}{\sqrt{2\pi}\;\omega\tau}=\frac{1}{2}\]</div>
+<p>which will have to be solved numerically using the Newton - Raphson method. First, it is necessary to define a function for the half-width <span class="math notranslate nohighlight">\(H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)\)</span> and the value of <span class="math notranslate nohighlight">\(\omega\)</span>  when <span class="math notranslate nohighlight">\(H\)</span> is zero found. The derivative needed is <span class="math notranslate nohighlight">\(dH(\omega)/d\omega\)</span>.</p>
+<p>Using the Newton - Raphson method some experimenting with initial guesses for <span class="math notranslate nohighlight">\(\omega\)</span> is necessary to obtain a sensible answer. Using SymPy and defining the function <span class="math notranslate nohighlight">\(H\)</span> and then its derivative as <span class="math notranslate nohighlight">\(dH\)</span> gives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using  python and numpy to get numerical answer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using  Python and NumPy to get numerical answer</span>
 <span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">tau</span><span class="p">)</span>      <span class="c1"># function H;  w = omega</span>
 <span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">tau</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">tau</span><span class="p">)</span>    <span class="c1"># derivative</span>
 
@@ -1686,7 +1690,7 @@ title="Print to PDF"
 <p>Working out the derivatives and putting them into the equations produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{x-x_0}{f}+\lambda e^{-x}=0 \quad \text{ and } \quad -\frac{y-y_0}{f}+\lambda =0\]</div>
-<p>and substituting <span class="math notranslate nohighlight">\(\lambda\)</span> from the second into the first of these two equations and then simplifying gives,<span class="math notranslate nohighlight">\(-(x-2)+(e^{-x}-2)e^{-x}=0\)</span>. This equation cannot be solved algebraically; it is transcendental as it cannot be written either in the form <span class="math notranslate nohighlight">\(x = cdots\)</span> or as a polynomial, but can be solved numerically using the Newton - Raphson method or using fsolve() in python. The code to get a solution is</p>
+<p>and substituting <span class="math notranslate nohighlight">\(\lambda\)</span> from the second into the first of these two equations and then simplifying gives,<span class="math notranslate nohighlight">\(-(x-2)+(e^{-x}-2)e^{-x}=0\)</span>. This equation cannot be solved algebraically; it is transcendental as it cannot be written either in the form <span class="math notranslate nohighlight">\(x = \cdots\)</span> or as a polynomial, but can be solved numerically using the Newton - Raphson method or using <span class="math notranslate nohighlight">\(\mathrm{fsolve(\cdots)}\)</span> in python. The code to get a solution is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># must be a function to use fsolve</span>
@@ -1707,7 +1711,13 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="q87-answer">
 <h2>Q87 answer<a class="headerlink" href="#q87-answer" title="Permalink to this headline">#</a></h2>
-<p>The function to minimize is <span class="math notranslate nohighlight">\(f(x, y) =\sqrt{ x^2 + y^2}\)</span> and the constraint is <span class="math notranslate nohighlight">\(g(x, y) = y -\sqrt{ (4 - x)^3/x}\)</span>. Taking the derivatives and putting values into eqn. (37) gives</p>
+<p>The function to minimize is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x, y) =\sqrt{ x^2 + y^2}\]</div>
+<p>and the constraint is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(x, y) = y -\sqrt{ (4 - x)^3/x}\]</div>
+<p>Taking the derivatives and putting values into eqn. (37) gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{x}{f}+\frac{\lambda}{2y}\left( -\frac{3(4-x)^2}{x}-\frac{(4-x)^3}{x^2}  \right)=0\]</div>
 <p>and <span class="math notranslate nohighlight">\(\displaystyle -\frac{y}{f}+\lambda=0\)</span>.</p>
@@ -1717,9 +1727,9 @@ title="Print to PDF"
 <p>Using Newton-Raphson to solve the equation gives <span class="math notranslate nohighlight">\(x = 2.309,\, y = 1.446\)</span> The calculation is shown next using SymPy to do the differentiations</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, f, g, L&#39;</span><span class="p">)</span>  <span class="c1"># use L instead of lambda </span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># function</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span> <span class="p">)</span>        <span class="c1"># constraint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, f, g, L&#39;</span><span class="p">)</span>   <span class="c1"># use L instead of lambda </span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                  <span class="c1"># function</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">x</span> <span class="p">)</span>             <span class="c1"># constraint</span>
 <span class="n">dfdg_dx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">L</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># eq 37 diff wrt x</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dfdg_dx</span><span class="p">)</span> 
 </pre></div>
@@ -1755,14 +1765,17 @@ title="Print to PDF"
 <p>The equation remaining is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{(3x^2-16)\sqrt{(3x^2-12x+16)/x}}{x(3x^3-12x+16)}=0\]</div>
-<p>and as the result equals zero both sides can be multiplied by the denominator to give <span class="math notranslate nohighlight">\((3x^2-16)\sqrt{(3x^2-12x+16)/x}\)</span> so either of these two terms may be zero. The square root has an imaginary solution so the only possible result is that <span class="math notranslate nohighlight">\(x=\sqrt{16/3} = 2.309\)</span> and <span class="math notranslate nohighlight">\(y = 1.446\)</span> the shortest distance is therefore <span class="math notranslate nohighlight">\(7.425\)</span>.</p>
+<p>and as the result equals zero both sides can be multiplied by the denominator to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (3x^2-16)\sqrt{(3x^2-12x+16)/x}\]</div>
+<p>so either of these two terms may be zero. The square root has an imaginary solution so the only possible result is that <span class="math notranslate nohighlight">\(x=\sqrt{16/3} = 2.309\)</span> and <span class="math notranslate nohighlight">\(y = 1.446\)</span> the shortest distance is therefore <span class="math notranslate nohighlight">\(7.425\)</span>.</p>
 <p>Note that the symbolic computer result has a different from to that worked out by hand but produces the same result as it has been factored to a greater extent than that done by hand.</p>
 </section>
 <section id="q88-answer">
 <h2>Q88 answer<a class="headerlink" href="#q88-answer" title="Permalink to this headline">#</a></h2>
-<p>Using the Lagrange undetermined multiplier method, eqn (37), the function is <span class="math notranslate nohighlight">\(f (a, b) = ab\)</span> and constraint <span class="math notranslate nohighlight">\(g(a, b) = a^2 + b^2 - 1\)</span>. Differentiating with respect to <span class="math notranslate nohighlight">\(a\)</span> then <span class="math notranslate nohighlight">\(b\)</span> respectively produces the two equations <span class="math notranslate nohighlight">\(b+2a\lambda =0\)</span> and <span class="math notranslate nohighlight">\(a+2b\lambda =0\)</span>.</p>
+<p><strong>(a)</strong> Using the Lagrange Undetermined Multiplier method, eqn. (37), the function is <span class="math notranslate nohighlight">\(f (a, b) = ab\)</span> and constraint <span class="math notranslate nohighlight">\(g(a, b) = a^2 + b^2 - 1\)</span>. Differentiating with respect to <span class="math notranslate nohighlight">\(a\)</span> then <span class="math notranslate nohighlight">\(b\)</span> respectively produces the two equations <span class="math notranslate nohighlight">\(b+2a\lambda =0\)</span> and <span class="math notranslate nohighlight">\(a+2b\lambda =0\)</span>.</p>
 <p>From these last two equations, the product <span class="math notranslate nohighlight">\(ab = (2abλ)^2\)</span>, therefore <span class="math notranslate nohighlight">\(ab = 1/4\lambda\)</span>. Also, from the two equations, <span class="math notranslate nohighlight">\(a^2 + b^2 = 4λ^2(a^2 + b^2)\)</span> and therefore <span class="math notranslate nohighlight">\(\lambda = 1/2\)</span>. Since <span class="math notranslate nohighlight">\(ab = 1/4\lambda\)</span> the answer to the question is <span class="math notranslate nohighlight">\(ab = 1/2\)</span>.</p>
-<p>(b) Graphically <span class="math notranslate nohighlight">\(a^2 + b^2 = 1\)</span> is the equation of a unit radius circle centred at the origin on axes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(ab = 1/2\)</span> is the equation of a hyperbola. Plotting them together shows they touch at only one point.</p>
+<p><strong>(b)</strong> Graphically <span class="math notranslate nohighlight">\(a^2 + b^2 = 1\)</span> is the equation of a unit radius circle centred at the origin on axes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(ab = 1/2\)</span> is the equation of a hyperbola. Plotting them together shows they touch at only one point.</p>
 <p><img alt="Drawing" src="../_images/differen-fig62.png" /></p>
 <p>Figure 62 Plot showing that <span class="math notranslate nohighlight">\(ab = 1/2\)</span> is a maximum if constrained by <span class="math notranslate nohighlight">\(a^2 +b^2 =1\)</span>.</p>
 </section>
@@ -1784,7 +1797,10 @@ title="Print to PDF"
 </section>
 <section id="q90-answer">
 <h2>Q90 answer<a class="headerlink" href="#q90-answer" title="Permalink to this headline">#</a></h2>
-<p>When there are <span class="math notranslate nohighlight">\(n\)</span> species, the sum of the mole fractions must still make unity making the constraint <span class="math notranslate nohighlight">\(\sum_{i=1}^n x_i = 1\)</span> and the function is the entropy</p>
+<p>When there are <span class="math notranslate nohighlight">\(n\)</span> species, the sum of the mole fractions must still make unity making the constraint</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{i=1}^n x_i = 1\]</div>
+<p>and the function is the entropy</p>
 <div class="math notranslate nohighlight">
 \[S=-k_B\sum_{i=1}^nx_i\ln(x_i)\]</div>
 <p>Using the Lagrange multiplier method for each species <span class="math notranslate nohighlight">\(i\)</span> and by differentiating with respect to <span class="math notranslate nohighlight">\(x_1\)</span> then <span class="math notranslate nohighlight">\(x_2\)</span> etc., a series of <span class="math notranslate nohighlight">\(n\)</span> equations is produced. The first two are</p>
@@ -1811,7 +1827,7 @@ title="Print to PDF"
 \[\displaystyle \frac{d}{dx_v}\left( -\sum_{v=0}^n (x_v\ln(x_v)-\lambda x_v) \right)=-\sum_{v=0}^n(\ln(x_v)+1-\lambda=0\]</div>
 <p>therefore,</p>
 <div class="math notranslate nohighlight">
-\[\ln(x_v) + 1 - \lambda = 0$ or $x_v = e^{\lambda-1}\]</div>
+\[\ln(x_v) + 1 - \lambda = 0,\quad\text{or}\quad x_v = e^{\lambda-1}\]</div>
 <p>Because the total of all the fractional populations <span class="math notranslate nohighlight">\(x_v\)</span> is 1 then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{v=0}^n x_v = \sum_{v=0}^n e^{\lambda-1}= e^{\lambda-1}\sum_{v=0}^n 1=ne^{\lambda-1}=1\]</div>
@@ -1846,7 +1862,10 @@ title="Print to PDF"
 <img alt="../_images/differen-R-answers-86-92_14_0.png" src="../_images/differen-R-answers-86-92_14_0.png" />
 </div>
 </div>
-<p>The order of the solutions is the same as in the solve command thus <span class="math notranslate nohighlight">\(x =\pm \sqrt{2}/10\; y=\pm(1+4\sqrt{2}/5)\; z=\pm 7\sqrt{2}/10\; \lambda = -3, \mu=\pm 5/\sqrt{2}\)</span>. The two values give the maximum and minimum values thus <span class="math notranslate nohighlight">\(f_{max}=10.07\)</span> and <span class="math notranslate nohighlight">\(f_{min}=-4.07\)</span>.</p>
+<p>The order of the solutions is the same as in the solve command thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x =\pm \sqrt{2}/10,\; y=\pm(1+4\sqrt{2}/5),\; z=\pm 7\sqrt{2}/10,\; \lambda = -3,\; \mu=\pm 5/\sqrt{2}\]</div>
+<p>The two values give the maximum and minimum values thus <span class="math notranslate nohighlight">\(f_{max}=10.07\)</span> and <span class="math notranslate nohighlight">\(f_{min}=-4.07\)</span>.</p>
 </section>
 </section>
 

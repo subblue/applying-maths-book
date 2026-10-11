@@ -60,7 +60,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \cos(\psi)=\frac{\vec m\cdot\vec n}{|\vec m||\vec n|}= \frac{\vec m\cdot\vec n}{\sqrt{\vec m\cdot\vec m}\sqrt{\vec n\cdot\vec n}}\qquad\tag{54}$$
 # 
-# To evaluate these equations each vector has to be defined in a basis set. The protein data bank crystallographic and NMR data use a basis set of (orthogonal) Cartesian $x, y, z$ coordinates, as will those from a molecular dynamics simulation. The $\vec n$ and $\vec m$ vectors are defined as differences in these values, for example, in the $(i, j, k)$ basis set $\vec n = p_1\boldsymbol i + p_2\boldsymbol j + p_3\boldsymbol k$ and $\vec m = q_1\boldsymbol i + q_2\boldsymbol j + q_3\boldsymbol k$ where the $p$'s and $q$'s are coefficients or coordinates along each axis. In this case, the angle is calculated using
+# To evaluate these equations each vector has to be defined in a basis set. The protein data bank crystallographic and NMR data use a basis set of (orthogonal) Cartesian $x, y, z$ coordinates, as will those from a molecular dynamics simulation. The $\vec n$ and $\vec m$ vectors are defined as differences in these values, for example, in the $(i, j, k)$ basis set $\vec n = p_1\pmb i + p_2\pmb j + p_3\pmb k$ and $\vec m = q_1\pmb i + q_2\pmb j + q_3\pmb k$ where the $p$'s and $q$'s are coefficients or coordinates along each axis. In this case, the angle is calculated using
 # 
 # $$\displaystyle \cos(\psi)=\frac{(p_1q_1+p_2q_2+p_3q_3)}{\sqrt{p_1^2+p_2^2+p_3^2}\sqrt{q_1^2+q_2^2+q_3^2}}$$
 # 

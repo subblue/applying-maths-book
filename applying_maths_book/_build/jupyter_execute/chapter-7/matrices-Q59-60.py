@@ -6,9 +6,9 @@
 # ## Q59 XeF$_4$ moments of inertia.
 # Calculate the moments of inertia of the planar molecule XeF$_4$ 
 # 
-# (a) about the C$_4$ symmetry axis and 
+# **(a)** about the C$_4$ symmetry axis and 
 # 
-# (b) about a diagonal and also about an edge. 
+# **(b)** about a diagonal and also about an edge. 
 # 
 # Assume each bond length is $2 \unicode{x212B}$ .
 # 
@@ -20,11 +20,11 @@
 # ## Q60 Loop of wire
 # A circular loop of wire is formed by n rigidly connected masses with radius $R$ of total mass $M$. Explain the different values obtained for the moment of inertia,
 # 
-# (a) About an axis z, through the centre of the loop, 
+# **(a)** About an axis z, through the centre of the loop, 
 # 
-# (b) about a diameter,
+# **(b)** about a diameter,
 # 
-# (c)  About an edge and parallel to $z$.
+# **(c)**  About an edge and parallel to $z$.
 # 
 # The difference in moments of inertia, is illustrated in Figure 68, and in the right-hand diagram where the loop rotates about an edge.
 # 

@@ -17,13 +17,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # ## 6 Maclaurin and Taylor series
 # 
-# Many normal functions can be expanded into a series by the method devised by Maclaurin and by Taylor. Series are often used to simplify a function at some value of its argument, for example at small $x, \sin(x) \approx x$, and this may enable an equation to be solved, as in the case of a pendulum's motion. The equation of motion is greatly simplified by assuming that the pendulum is restricted to move only to small angles from the vertical. 
+# Many normal functions can be expanded into a series by the method devised by Maclaurin and by Taylor. Series are often used to simplify a function at some value of its argument, for example at small $x, \sin(x) \approx x$, and this may enable an equation to be solved, as in the case of a pendulum's motion. In this case the equation of motion is greatly simplified by assuming that the pendulum is restricted to move only to small angles from the vertical which means that it is necessary to know how the sine can be approximated at small angles. 
 # 
-# The other use of a series expansion is to extrapolate from some simple law where dependence may be linear in $x$, into more realistic conditions by adding terms in $x^2$ and $x^3$ and so on. This approach extends our knowledge into unknown regions by using what is presently known about the behaviour of the equations, and assumes that they change only in a predictable and gradual way. This is the approach made when the virial coefficients of a real gas are calculated. The equation has the form 
+# The other use of a series expansion is to extrapolate from some simple law where dependence may be linear in $x$, into more realistic conditions by adding terms in $x^2$ and $x^3$ and so on. This approach extends our knowledge into unknown regions by using what is presently known about the behaviour of the equations, and assumes that they change only in a predictable and gradual way. This is the approach made when the Virial coefficients of a real gas are calculated. The equation has the form 
 # 
 # $$\displaystyle \frac{pV}{nRT } = c_0 + c_1\frac{n}{V} + c_2\left(\frac{n}{V}\right)^2 + \cdots$$
 # 
-# with virial coefficients $c_0, c_1$ etc. and is clearly seen to be based on the ideal gas law.
+# with Virial coefficients $c_0, c_1$ etc. and is clearly seen to be based on the ideal gas law.
 # 
 # ## 6.1 Maclaurin series
 # 
@@ -69,52 +69,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle f(x) =f(x_0)+(x-x_0)\left( \frac{df}{dx} \right)_{x_0} + \frac{(x-x_0)^2}{2!}\left( \frac{d^2f}{dx^2} \right)_{x_0}+\cdots   \tag{17} $$
 # 
-# where the subscript $x_0$ means evaluate the derivative at $x = x_0$: The Taylor series evaluated at zero is the Maclaurin series.
+# where the subscript $x_0$ means evaluate the derivative at $x = x_0$: The Taylor series evaluated at zero is the Maclaurin series. Notice that the derivative is always taken at the $x$ value of the first term in the expansion.
 # 
 # These series are extremely useful, for example, to calculate $\sin(1.3), \;\cos(\pi/4),\; \ln(1 + x)$, and so forth if the function can be expanded as a Taylor series and the terms added until the required numerical accuracy is needed. This is tedious to do by hand, rather than being difficult, but is ideally suited for computer calculation where repetitive calculations are easily performed.
-# 
-# ### **(i) Series of an Unknown function** 
-# 
-# If there is a multiply differentiable but unknown function $f$ then expansion of $f(x+x_0)$ is possible. Starting with eqn 16 we substitute $x+x_0$ for $x$ and $x$ for $x_0$ then
-# 
-# $$\displaystyle f(x+x_0)=f(x)+x_0\frac{df}{dx}+\frac{x_0^2}{2!}\frac{d^2f}{dx^2}+\cdots$$
-# 
-# and similarly
-# 
-# $$\displaystyle f(x-x_0)=f(x)-x_0\frac{df}{dx}+\frac{x_0^2}{2!}\frac{d^2f}{dx^2}-\cdots$$
-# 
-# To form a good approximation to the second derivative which is often needed in numerical methods, e.g. as when using the diffusion equation in cases where an algebraic solution cannot be found, we add the series for $f(x+x_0)$ and $f(x-x_0)$ together. In these cases in the derivation leading to this point $x_0$ will be a very small quantity and small compared to $x$. To emphasise this we change $x_0 \to \delta x$ in the next equations 
-# 
-# $$\displaystyle f(x+\delta x)+f(x-\delta x)= 2f(x) + \delta x^2\frac{d^2f}{dx^2}+2\frac{\delta x^4}{4!}\frac{d^2f}{dx^2} +\cdots $$
-# 
-# and therefore a good approximation, if we assume $\delta x$ is a small quantity and so $\delta x^2 \gg \delta x^4$ and so this approximation is a good one as the quartic terms are effectively zero, 
-# 
-# $$\displaystyle \frac{d^2f}{dx^2}\approx\frac{f(x+\delta x)+f(x-\delta x)-2f(x)}{\delta x^2}$$
-# 
-# ## 6.3 $\mathcal{O}(x)$ and $\sim$ notations
-# 
-# In a series expansion of a function $f(x)$ it is often possible to state something general perhaps that that $f(x) \to \infty$ as $x\to \infty$. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as $x$ changes; does it change as $x^2$ or $e^x$ for example? 
-# 
-# The 'big O' notation, for example, $\mathcal{O}(x^2),\; \mathcal{O}(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + \mathcal{O}(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
-# 
-# ## 6.4 Useful series expansion formulae
-# 
-# Several expansions are listed below. If you want to calculate, for example $1/(1 - ax)$, replace each $x$ in the first series below with $-ax$ and evaluate the result; $(1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots$. This substitution can be performed with any series and means that fewer need to be remembered. The $\mathcal{O}(x^6)$ means that the next term in the series has power of order of $x^6$. You must check on the value of $x$ used determine if this is an acceptable approximation.
-# 
-# $$\displaystyle \begin{align}
-# \frac{1}{1+x} &= 1 - x + x^{2} - x^{3} + x^{4} - x^{5}+\mathcal{O}\left(x^{6}\right)  \\[0.25cm]
-# \frac{1}{\left(1+x\right)^{2}}& = 1 - 2 x + 3 x^{2} - 4 x^{3} + 5 x^{4} - 6 x^{5}+\mathcal{O}\left(x^{6}\right) \\[0.25cm]
-# \sqrt{1+x} &= 1 + \frac{x }{ 2} - \frac{x^{2} }{ 8} + \frac{x^{3} }{16} - \frac{5}{128} x^{4}  + \frac{7}{256} x^{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# \frac{1}{\sqrt{1+x}}& = 1 - \frac{x }{2} + \frac{3}{8} x^{2} - \frac{5}{16} x^{3}  + \frac{35}{128} x^{4} - \frac{63}{256} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# \sin{\left (x \right )}& = x - \frac{x^{3}}{ 3!} + \frac{x^{5}}{ 5!}  - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# \cos{\left (x \right )}& = 1 - \frac{x^{2} }{2!} + \frac{x^{4}}{4!}   - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# \tan{\left (x \right )}& = x + \frac{x^{3}}{3} + \frac{2}{15} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# \ln{\left (1+x \right )}& = x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4} }{ 4} + \frac{x^{5}}{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# \exp{\left( x\right)} &= 1 + x + \frac{x^{2} }{ 2!} + \frac{x^{3}}{ 3!} + \frac{x^{4}}{ 4!} + \frac{x^{5} }{ 5!} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
-# (a+x)^n &= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
-# \end{align}$$
 
-# ## 6.5 Trig functions expansion
+# ## 6.3 Trig functions expansion
 # 
 # The Maclaurin series of $f(x) = \sin(x)$ is equivalent to a Taylor series expanded about zero.
 # By definition the expansion is given by replacing $f(x)$ in equation $15$,
@@ -156,11 +115,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 x, a = sp.symbols('x, a')
 f01 = sp.sin(a + x)
-s = sp.series(f01,x,n = 5)
+s   = sp.series(f01,x,n = 5)
 s
 
 
-# The graph below shows the Taylor series approximation to $\sin(x)$ taken up to $x^{23}$. The dashed curve is the approximation which is almost exact up to about $x = \pm$6.
+# Figure 3, below, shows the Taylor series approximation to $\sin(x)$ taken up to $x^{23}$. The dashed curve is the approximation which is almost exact up to about $x = \pm 6$.
 
 # In[3]:
 
@@ -195,7 +154,7 @@ plt.show()
 # Figure 3. Taylor expansion of $\sin(x)$ up to $x^{23}$ together with the function (black line).
 # ____
 # 
-# ## 6.6 Exponential expansion
+# ## 6.4 Exponential expansion
 # 
 # The expansion of the exponential is easy to achieve with $\displaystyle f(x) = e^{ax}$ and $a$ as a constant. The
 # derivatives are
@@ -212,7 +171,7 @@ plt.show()
 # 
 # These approximations are perfectly acceptable provided that $|ax| \lt 1$, and therefore $(ax)^2 \ll ax$ and so forth. The indication of 'less than' means ten times less rather than just slightly less for this approximation to be a good one. You could investigate this for yourself.
 # 
-# ## 6.7 Log expansion
+# ## 6.5 Log expansion
 # 
 # Finding the expansion of log functions is also easy, but in this case it is restricted to the
 # limits $-1 \lt x \le 1$ when $f(x) = \ln(1 + x)$. Differentiating produces
@@ -251,7 +210,7 @@ plt.show()
 # 
 # This series expansion method does give us a way of evaluating integrals numerically. The method is to keep on adding terms to the series until the answer does not vary to within a sufficiently large number of decimal places or the answer is considered accurate enough. An example is given below. There are several well known methods for numerical integration such as the Euler–Maclaurin method or Simpson's rule and generally, these should be used. Numerical integration is described in Chapter 10 and Euler-Maclaurin in Section 7.
 
-# ## 6.8 Binomial expansion $ (1+x)^m$
+# ## 6.6 Binomial expansion $ (1+x)^m$
 # 
 # One of the most general formulas is obtained by expanding $f (x) = (1 + x)^m$ where $m$ can be positive, negative, an integer, or a fraction. 
 # 
@@ -289,10 +248,10 @@ plt.show()
 # 
 # $$\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \qquad\tag{25}$$
 # 
-# ### **(i) Calculate square root**
+# ### **(i) Calculating a square root**
 # Consider calculating $\sqrt{3/2}$, using equation (25). Letting $x$ = 1/2 the series is $(1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265$. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being $x^8$ to reach this level of accuracy. Trying to calculate $\sqrt 3$ using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.
 # 
-# ## 6.9 Derivatives of series
+# ## 6.7 Derivatives of series
 # 
 # Sometimes it is convenient to obtain a series by taking the derivative of each term in another known series rather than work out the series from scratch; for example, by differentiating term by term
 # 
@@ -306,13 +265,98 @@ plt.show()
 # 
 # $$\sum_n nx^{n-1}= 1+2x+3x^2+4x^3+\cdots = \frac{1}{(1-x)^2} $$
 
-# ## 6.10 Paramagnetic spins. Example using partition functions, expansions and limits
+# ## 6.8 Series expansion of an arbitrary function 
+# 
+# Often we wish to know how some quantity changes with a certain parameter, for example entropy with energy.  Suppose that there is a thermodynamic system in which A and B are in equilibrium and that both A and B are connected to a heat bath with which energy and entropy can be exchanged. The process could be a reaction $A\rightleftharpoons B$. 
+# 
+# Suppose that an amount of energy is transferred from the heat bath into the system then an endothermic process has occurred in taking A to B. This energy transfer is the heat $q$ taken from the bath. As a result of this there is a change in entropy $S$ of the heat bath and we would like to calculate what this change is. The difference in energy between A and B is $\Delta E = E_B-E_A$. If the function we want to expand is the entropy, we need to expand $S(E_0-\Delta E)$ in terms of the energy $E$ where $E_0$ is the initial energy in the heat bath. 
+# 
+# This calculation can be done once we have the expansion equation of an arbitrary function $f$ at $x+a$, i.e $f(x+a)$. Starting with eqn. 17 and expand about a general point $x_0$ the result is
+# 
+# $$\displaystyle f(x+a) = f(x_0)+(x+a-x_0)\frac{df(x_0)}{dx}+\frac{(x+a-x_0)^2}{2!}\frac{d^2f(x_0)}{dx^2}+\cdots$$
+# 
+# but $x_0$ is general and we can replace this with $x$ thus
+# 
+# $$\displaystyle f(x+a) = f(x) + a\frac{df(x)}{dx} + \frac{a^2}{2!}\frac{d^2f(x)}{dx^2} + \cdots \tag{17a}$$
+# 
+# and similarly for $f(x-a)$
+# 
+# $$\displaystyle f(x-a) = f(x) - a\frac{df(x)}{dx} + \frac{a^2}{2!}\frac{d^2f(x)}{dx^2} - \cdots\tag{17b}$$
+# 
+# Returning now to our thermodynamics problem. The entropy of the bath is $S(E_0)$ before any energy transfer, and $S(E_0-\Delta E)$ afterwards. The heat bath is always assumed to be vast compared to our system and so $\Delta E\ll E_0$ and the squared and higher terms in the expansion can be ignored because they will be far smaller than both of the first two terms. Thus by substitution into 17b,
+# 
+# $$\displaystyle S(E_0-\Delta E)= S(E_0) -\Delta E\cdot \frac{d S}{d E}\approx S(E_0) -\Delta S$$
+# 
+# where $\Delta S$ is the amount of entropy transferred to the system from the bath. We have supposed here that $dS/dE \approx \Delta S/\Delta E$ meaning that the amount of energy and entropy transferred is very small, i.e. infinitesimal. The heat $q$ is related to the entropy as $dS=dq/T$ and if no work is done $dq=dE=\Delta E$ and so
+# 
+# $$\displaystyle S(E_0-\Delta E) \approx S(E_0) -\frac{\Delta E}{T}$$
+# 
+# where $\Delta E$ is the energy gap between A and B.
+
+# ## 6.9 First and second order numerical derivatives
+# 
+# In many numerical calculations the first and second derivatives are needed, for example, to solve a differential equation, such as the diffusion equation, where an algebraic solution is not forthcoming. Equations for both the first and second derivatives can be found using the expansions 17(a,b) derived in 6.8 above. The amount $a$ is assumed to be small compared to $x$.
+# 
+# **(a)** To calculate the first derivative equations 17(a) and (b) are truncated at the first power because $a\ll x$ and so higher powers of $a$ lead to very small values. The two series are now subtracted giving
+# 
+# $$\displaystyle f(x+a)-f(x-a) = 2a\frac{df(x)}{dx}$$
+# 
+# therefore
+# 
+# $$\displaystyle \frac{df(x)}{dx}\approx\frac{f(x+a)-f(x-a)}{2a}$$
+# 
+# You can see how this equation is in effect the gradient $\Delta y/\Delta x$ because $f(x+a)-f(x-a)$ is the change in $y$ and the change in $x$ is $2a$.
+# 
+# **(b)** To form a good approximation to the second derivative we add the series for $f(x+a)$ and $f(x-a)$ together giving,
+# 
+# $$\displaystyle f(x+a)+f(x-a)= 2f(x) + a^2\frac{d^2f}{dx^2}+2\frac{a^4}{4!}\frac{d^2f}{dx^2} +\cdots $$
+# 
+# This is a good approximation if we again assume $a$ is a small quantity relative to $x$ and so $a^2 \gg a^4$ making the quartic and higher terms effectively zero, 
+# 
+# $$\displaystyle \frac{d^2f}{dx^2}\approx\frac{f(x+a)+f(x-a)-2f(x)}{a^2}$$
+
+# ## 6.10 $\mathcal{O}(x)$ and $\sim$ notations
+# 
+# In a series expansion of a function $f(x)$ it is often possible to state something general perhaps that that $f(x) \to \infty$ as $x\to \infty$. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as $x$ changes; does it change as $x^2$ or $e^x$ for example? 
+# 
+# The 'big O' notation, for example, $\mathcal{O}(x^2),\; \mathcal{O}(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + \mathcal{O}(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
+# 
+# ## 6.11 Useful series expansion formulae
+# 
+# Several expansions are listed below. If you want to calculate, for example $1/(1 - ax)$, replace each $x$ in the first series below with $-ax$ and evaluate the result; $(1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots$. This substitution can be performed with any series and means that fewer need to be remembered. The $\mathcal{O}(x^6)$ means that the next term in the series has power of order of $x^6$. You must check on the value of $x$ used determine if this is an acceptable approximation.
+# 
+# $$\displaystyle \begin{align}
+# \frac{1}{1+x} &= 1 - x + x^{2} - x^{3} + x^{4} - x^{5}+\mathcal{O}\left(x^{6}\right)  \\[0.25cm]
+# \frac{1}{\left(1+x\right)^{2}}& = 1 - 2 x + 3 x^{2} - 4 x^{3} + 5 x^{4} - 6 x^{5}+\mathcal{O}\left(x^{6}\right) \\[0.25cm]
+# \sqrt{1+x} &= 1 + \frac{x }{ 2} - \frac{x^{2} }{ 8} + \frac{x^{3} }{16} - \frac{5}{128} x^{4}  + \frac{7}{256} x^{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# \frac{1}{\sqrt{1+x}}& = 1 - \frac{x }{2} + \frac{3}{8} x^{2} - \frac{5}{16} x^{3}  + \frac{35}{128} x^{4} - \frac{63}{256} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# \sin{\left (x \right )}& = x - \frac{x^{3}}{ 3!} + \frac{x^{5}}{ 5!}  - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# \cos{\left (x \right )}& = 1 - \frac{x^{2} }{2!} + \frac{x^{4}}{4!}   - \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# \tan{\left (x \right )}& = x + \frac{x^{3}}{3} + \frac{2}{15} x^{5}  + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# \ln{\left (1+x \right )}& = x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4} }{ 4} + \frac{x^{5}}{5} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# \exp{\left( x\right)} &= 1 + x + \frac{x^{2} }{ 2!} + \frac{x^{3}}{ 3!} + \frac{x^{4}}{ 4!} + \frac{x^{5} }{ 5!} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
+# (a+x)^n &= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
+# \end{align}$$
+
+# ## 6.12 Paramagnetic spins. Example using partition functions, expansions and limits
 # 
 # As an illustration of using several of the methods described in this chapter the properties of magnetic ions in a crystal are examined. In a paramagnetic crystal such as chromium potassium alum, $\mathrm{Cr_2(SO_4)_3}$ in $\mathrm{K_2(SO_4)24H_2O}$ the paramagnetic Cr$^{3+}$ ion is surrounded by 1 potassium, 2 sulfur, 20 oxygen and 24 hydrogen atoms, thus the paramagnetic ion is relatively dilute and are positioned so far apart that their unpaired electrons only suffer very weak interactions between one ion and another, rather like the atoms in a dilute gas have. This means (a) that the rest of the crystal can be thought of as an inert container for the magnetic ions and (b) that the standard method of statistical mechanics can be used to determine the magnetic properties since the paramagnetic electrons do not interact with one another. In effect this means that we can determine the partition function and therefore the _magnetization_ , which is the total magnetic moment, and the entropy, internal energy and heat capacity. 
 # 
-# If an atom, molecule or ion possesses a resultant magnetic moment and it is sufficiently removed from its neighbours then this is only weakly influenced by them. The number of unpaired electrons $S$ and orbital angular momentum $L$ determines the multiplicity of the energy levels which are degenerate in the absence of other interactions. The total angular momentum is $J=L+S$. If the total spin is $S$ the spin multiplicity is $2J+1$. Sometimes the ions such as Cr$^{3+}$ and Fe$^{3+}$ can have effectively zero orbital angular momentum this being 'quenched' by the fields from neighbouring ions, in this case $J=S$. If an external (or internal) magnetic field is present the degeneracy is lifted and the levels have quantum numbers $m_J$ ranging in unit integral values from $-J,-J+1\cdots J-1,+J$ or $2J+1$ in total. For example for Cr$^{3+}, J=3/2$, thus $m_J$ has $2(3/2)+1=4$ values in the series $-3/2,-1/2,1/2,3/2$.
+# If an atom, molecule or ion possesses a resultant magnetic moment and it is sufficiently removed from its neighbours then this is only weakly influenced by them. The number of unpaired electrons $S$ and orbital angular momentum $L$ determines the multiplicity of the energy levels which are degenerate in the absence of other interactions. The total angular momentum is $J=L+S$. If the total spin is $S$ the spin multiplicity is $2J+1$. Sometimes the ions such as Cr$^{3+}$ and Fe$^{3+}$ can have effectively zero orbital angular momentum this being 'quenched' by the fields from neighbouring ions, in this case $J=S$. If an external (or internal) magnetic field is present the degeneracy is lifted and the levels have quantum numbers $m_J$ ranging in unit integral values from 
 # 
-# A magnetic field gives rise to states whose energy is $E= \pm m_Jg\mu_BB$ and $m_J$ pairs of levels are separated by $\Delta E=2|m_J|g\mu_BB$ where $B$ is the magnetic field strength (in Tesla $T$) and $\mu_B=9.27401\cdot 10^{-24} $ J/T is the Bohr magneton. The energy gaps in a $2$ Tesla field, assuming $J=1/2$ and Lande splitting factor $g=2$ (described below) are $\displaystyle \cdot 9.27401\cdot 10^{-24}\cdot 2/hc \approx 1.9\; \mathrm{{cm}^{-1}} $ whereas thermal energy at 300 K is $\approx 210\;\mathrm{{cm}^{-1}}$ which means that at all but at very low temperature all levels are approximately evenly populated. To observe any effect, therefore, the temperature has to be extremely low and/or the field very large.
+# $$\displaystyle -J,-J+1\cdots J-1,+J$$
+# 
+# or $2J+1$ in total. For example for Cr$^{3+}, J=3/2$, thus $m_J$ has $2(3/2)+1=4$ values in the series $-3/2,-1/2,1/2,3/2$.
+# 
+# A magnetic field gives rise to states whose energy is 
+# 
+# $$\displaystyle E= \pm m_Jg\mu_BB$$
+# 
+# and $m_J$ pairs of levels are separated by 
+# 
+# $$\displaystyle \Delta E=2|m_J|g\mu_BB$$
+# 
+# where $B$ is the magnetic field strength (in Tesla $T$) and $\mu_B=9.27401\cdot 10^{-24} $ J/T is the Bohr magneton. The energy gaps in a $2$ Tesla field, assuming $J=1/2$ and Lande splitting factor $g=2$ (described below) are $\displaystyle \cdot 9.27401\cdot 10^{-24}\cdot 2/hc \approx 1.9\; \mathrm{{cm}^{-1}} $ whereas thermal energy at 300 K is $\approx 210\;\mathrm{{cm}^{-1}}$ which means that at all but at very low temperature all levels are approximately evenly populated. To observe any effect, therefore, the temperature has to be extremely low and/or the field very large.
 # 
 # In the crystal there are (obviously) other electric charges from nearby ions and these can also split the energy levels (zero field splitting, Stark effect) but the magnitude is very small, fractions of wavenumbers. This means that the splitting of levels and hence the magnetization is determined virtually completely by any applied magnetic field.
 # 
@@ -402,9 +446,9 @@ plt.show()
 # 
 # The form of this equation is as anticipated on physical grounds because when a sample is placed into a magnetic field the magnetic dipoles tend to align, and do so more as the field $B$ is increased, but thermal motion tends to disrupt this alignment, and so the magnetization is in inverse proportion to temperature and in direct proportion to field.
 # 
-# This equation only applies when the magnitude of $\displaystyle a=2\mu_B B/(k_BT)$ is much less that unity. The ratio $2\mu_B/k_B \approx 1$ so that this result is only valid if $B/T \ll 1$. The Curie function is plotted in figure 5b as the dashed line where $J=3/2$. These results, both the Brilluoin and Curie equations very closely match the experimentally measured magnetization for many paramagnetic salts.
+# This equation only applies when the magnitude of $\displaystyle a=2\mu_B B/(k_BT)$ is much less that unity. The ratio $2\mu_B/k_B \approx 1$ so that this result is only valid if $B/T \ll 1$. The Curie function is plotted in figure 5b as the dashed line where $J=3/2$. These results, both the Brillouin and Curie equations very closely match the experimentally measured magnetization for many paramagnetic salts.
 # 
-# The _susceptibility_ $\chi$ or degree of magnetization can be measured, for example by using a Gouy balance, and for low fields
+# The *susceptibility* $\chi$ or degree of magnetization can be measured, for example by using a Gouy balance, and for low fields
 # 
 # $$\displaystyle \chi = \frac{\mu_0M}{B}=\frac{\mu_0\mu^2_{eff} }{3k_BT}$$
 # 

@@ -29,21 +29,21 @@
 # Convert voltage, resistance, and capacitance into base SI units.
 # 
 # ## Q39 Folding paper
-# (a) If a piece of paper is 0.1 mm thick, how many times will it have to be folded to reach the moon?
+# **(a)** If a piece of paper is 0.1 mm thick, how many times will it have to be folded to reach the moon?
 # This is hardly realistic, nevertheless, suppose that it were possible.
 # 
-# (b) Graphene is a one carbon thick layer of atoms with the structure of graphite having sp$^2$ hybridized C-C bonds forming six membered rings. If a sheet of graphene were folded for the same number of times as the paper, how thick would it be?
+# **(b)** Graphene is a one carbon thick layer of atoms with the structure of graphite having sp$^2$ hybridized C-C bonds forming six membered rings. If a sheet of graphene were folded for the same number of times as the paper, how thick would it be?
 # 
 # ## Q40 Heat of evaporation
 # In natural history programmes, it is common to see pictures of dried up lakes due to intense heat and lack of rainfall.
 # 
-# (a) Calculate how much energy is needed to evaporate the last one inch depth of each $1 \mathrm{ km}^2$ of a lake.
+# **(a)** Calculate how much energy is needed to evaporate the last one inch depth of each $1 \mathrm{ km}^2$ of a lake.
 # 
-# (b) How many full car petrol tanks contain this much energy?
+# **(b)** How many full car petrol tanks contain this much energy?
 # 
-# (c) If the solar irradiance is $1.3\, \mathrm{kw/m^2}$ how long will it take the sun to evaporate the same volume of water assuming all the incident energy is used to do this?
+# **(c)** If the solar irradiance is $1.3\, \mathrm{kw/m^2}$ how long will it take the sun to evaporate the same volume of water assuming all the incident energy is used to do this?
 # 
-# (d) The water evaporating from the lake will rise, cool and condense into a cloud as it meets colder air. Why do clouds float when they contain so much water?
+# **(d)** The water evaporating from the lake will rise, cool and condense into a cloud as it meets colder air. Why do clouds float when they contain so much water?
 
 # In[ ]:
 

@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1595,7 +1595,7 @@ title="Print to PDF"
 <h1>Questions 35 - 39<a class="headerlink" href="#questions-35-39" title="Permalink to this headline">#</a></h1>
 <section id="q35-thin-lens">
 <h2>Q35 Thin Lens<a class="headerlink" href="#q35-thin-lens" title="Permalink to this headline">#</a></h2>
-<p>Two thin lenses, <span class="math notranslate nohighlight">\(f = 10\)</span> cm and <span class="math notranslate nohighlight">\(f = -20\)</span> cm are positioned in air as shown in the diagram. If an object is placed at <span class="math notranslate nohighlight">\(0.25\)</span> m from the first (positive) lens and the lenses are separated by <span class="math notranslate nohighlight">\(0.05\)</span> m, where is the image to be found, and what is its magnification?</p>
+<p>Two thin lenses, <span class="math notranslate nohighlight">\(f_1 = 10\)</span> cm and <span class="math notranslate nohighlight">\(f_2 = -20\)</span> cm are positioned in air as shown in the diagram. If an object is placed at <span class="math notranslate nohighlight">\(0.25\)</span> m from the first (positive) lens and the lenses are separated by <span class="math notranslate nohighlight">\(0.05\)</span> m, where is the image to be found, and what is its magnification?</p>
 <p><img alt="Drawing" src="../_images/matrices-fig42.png" /></p>
 <p>Figure 42. Two thin lenses producing an object-image relationship.</p>
 <hr class="docutils" />
@@ -1605,7 +1605,7 @@ title="Print to PDF"
 <h2>Q36 Thick Lens<a class="headerlink" href="#q36-thick-lens" title="Permalink to this headline">#</a></h2>
 <p>A thick lens is to be used to focus a laser beam. For the best focusing with minimal distortion the most curved surface is presented to the laser. The lens thickness is <span class="math notranslate nohighlight">\(d_L = 6\)</span> mm and it is made of quartz with a refractive index of <span class="math notranslate nohighlight">\(1.48\)</span> at the laser’s wavelength and has surfaces with radii of curvature of
 <span class="math notranslate nohighlight">\(100\)</span> mm and <span class="math notranslate nohighlight">\(300\)</span> mm. Where is the focal point of the lens if the input beam is effectively parallel?</p>
-<p>The lens is shown below with surfaces exaggerated very greatly. Use the matrix in equation 21 for the lens surfaces between the reference planes shown. Use Python/Sympy to perform the matrix multiplications.</p>
+<p>The lens is shown below with surfaces exaggerated very greatly. Use the matrix in equation 21 for the lens surfaces between the reference planes shown. Use Python/SymPy to perform the matrix multiplications.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig43.png" /></p>
 <p>Figure 43 Geometry of a thick lens.</p>
 <hr class="docutils" />
@@ -1620,15 +1620,28 @@ title="Print to PDF"
 <p>A laser cavity can contain several mirrors; a common design for a continuously pumped dye laser has three mirrors, a cavity dumped dye laser four; see Figure 44. In such cavities, the sequence of matrices and gaps can become very long. The general equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{M} = G_1G_2G_3 \cdots G_nM_2G_n \cdots G_3G_2G_1M_1\]</div>
-<p>The whole sequence can also be written as <span class="math notranslate nohighlight">\(\displaystyle \pmb{M}=\begin{vmatrix} A &amp; B \\C &amp; D\end{vmatrix}\pmb{M_2}\begin{vmatrix} D &amp; B \\C &amp; A\end{vmatrix}\pmb{M_1}\)</span> where <span class="math notranslate nohighlight">\(\pmb{M_1,2}\)</span> are the matrices foro the end mirrors and <span class="math notranslate nohighlight">\(ABCD\)</span> matrices for the cavity elements between the end mirrors.</p>
-<p>Mirror 1 is the output coupler and is where the reference planes are situated. The aim of this question is to show that if <span class="math notranslate nohighlight">\(G_1G_2G_3 \cdots G_n= \begin{vmatrix} A &amp; B \\C &amp; D\end{vmatrix}\)</span> then <span class="math notranslate nohighlight">\(G_n\cdots G_3G_2G_1= \begin{vmatrix} D &amp; B \\C &amp; A\end{vmatrix}\)</span>.</p>
-<p>(a) Work out the matrix for only the gaps between mirrors, then a gap plus mirror and a mirror plus gap to show that the proposition is true.</p>
-<p>(b) In the general case, the result can be found by induction, by first calculating <span class="math notranslate nohighlight">\(\displaystyle G_n\begin{vmatrix} -1 &amp; 0 \\1 &amp; 0\end{vmatrix}G_n\)</span> and then making <span class="math notranslate nohighlight">\(G\)</span> and <span class="math notranslate nohighlight">\(ABCD\)</span> matrix.(This question is based on one in Gerrard &amp; Burch 1975.)</p>
+<p>The whole sequence can also be written as <span class="math notranslate nohighlight">\(\displaystyle \pmb{M}=\begin{vmatrix} A &amp; B \\C &amp; D\end{vmatrix}\pmb{M}_2\begin{vmatrix} D &amp; B \\C &amp; A\end{vmatrix}\pmb{M}_1\)</span> where <span class="math notranslate nohighlight">\(\pmb{M}_{1,2}\)</span> are the matrices for the end mirrors and <span class="math notranslate nohighlight">\(ABCD\)</span> matrices for the cavity elements between the end mirrors. Mirror 1 is the output coupler and is where the reference planes are situated.</p>
+<p>The aim of this question is to show that if</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle G_1G_2G_3 \cdots G_n= \begin{vmatrix} A &amp; B \\C &amp; D\end{vmatrix}\end{split}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle G_n\cdots G_3G_2G_1= \begin{vmatrix} D &amp; B \\C &amp; A\end{vmatrix}\end{split}\]</div>
+<p><strong>(a)</strong> Work out the matrix for only the gaps between mirrors, then a gap plus mirror and a mirror plus gap to show that the proposition is true.</p>
+<p><strong>(b)</strong> In the general case, the result can be found by induction, by first calculating</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle G_n\begin{vmatrix} -1 &amp; 0 \\1 &amp; 0\end{vmatrix}G_n\end{split}\]</div>
+<p>and then making <span class="math notranslate nohighlight">\(G\)</span> an <span class="math notranslate nohighlight">\(ABCD\)</span> matrix.(This question is based on one in Gerrard &amp; Burch 1975.)</p>
 <p><strong>Strategy:</strong> In the general calculation you will need to use the fact that from the definition of the matrices for any individual gap or mirror matrix <span class="math notranslate nohighlight">\(A = D = 1\)</span>, and also for any individual or product of matrices <span class="math notranslate nohighlight">\(AD-BC=1\)</span></p>
 </section>
 <section id="q39-cavity-dumped-laser">
 <h2>Q39 Cavity dumped laser<a class="headerlink" href="#q39-cavity-dumped-laser" title="Permalink to this headline">#</a></h2>
-<p>Show that the equation developed in the previous question applies to the cavity shown in the sketch; Figure 44. The jet of a fluorescent dye in ethylene glycol or a Ti sapphire crystal, is the gain medium, and could be placed at the focus between mirrors 1 and 2 and then the cavity dumper, a crystal with an attached piezoelectric element, is at the focus of mirrors 3 and 4. The cavity dumper crystal has an acoustic field produced in it via an RF source applied to the piezo element and this diffracts, or ‘dumps’, the light out of the cavity. Mirrors <span class="math notranslate nohighlight">\(M_1\)</span> and <span class="math notranslate nohighlight">\(M_2\)</span> have focal lengths <span class="math notranslate nohighlight">\(50\)</span> and <span class="math notranslate nohighlight">\(100\)</span> mm and <span class="math notranslate nohighlight">\(M_3\)</span> and <span class="math notranslate nohighlight">\(M_4\)</span> lengths of <span class="math notranslate nohighlight">\(75\)</span> and <span class="math notranslate nohighlight">\(50\)</span> mm. Gap 1 is <span class="math notranslate nohighlight">\(g_1= 210\)</span>, gap 2 is <span class="math notranslate nohighlight">\(1400\)</span> and gap 3 is <span class="math notranslate nohighlight">\(185\)</span> mm. Is this cavity stable? Use Python/Sympy to do the calculation. You could also to do repeated calculations based around the values given to look at the stability diagram of this type of cavity. In this case let gap 2 become <span class="math notranslate nohighlight">\(1400-g_1-g_2\)</span> mm and vary <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_2\)</span> to find the stable regions. Doing this means that the laser always has the same optical length.</p>
+<p>Show that the equation developed in the previous question applies to the cavity shown in the sketch; Figure 44.</p>
+<p>The jet of a fluorescent dye in ethylene glycol or a Ti sapphire crystal, is the gain medium, and could be placed at the focus between mirrors 1 and 2 and then the cavity dumper, a crystal with an attached piezoelectric element, is at the focus of mirrors 3 and 4.</p>
+<p>The cavity dumper crystal has an acoustic field produced in it via an RF source applied to the piezo element and this diffracts, or ‘dumps’, the light out of the cavity.</p>
+<p>Mirrors <span class="math notranslate nohighlight">\(M_1\)</span> and <span class="math notranslate nohighlight">\(M_2\)</span> have focal lengths <span class="math notranslate nohighlight">\(50\)</span> and <span class="math notranslate nohighlight">\(100\)</span> mm and <span class="math notranslate nohighlight">\(M_3\)</span> and <span class="math notranslate nohighlight">\(M_4\)</span> lengths of <span class="math notranslate nohighlight">\(75\)</span> and <span class="math notranslate nohighlight">\(50\)</span> mm. Gap 1 is <span class="math notranslate nohighlight">\(g_1= 210\)</span>, gap 2 is <span class="math notranslate nohighlight">\(1400\)</span> and gap 3 is <span class="math notranslate nohighlight">\(185\)</span> mm.</p>
+<p>Is this cavity stable? Use Python/Sympy to do the calculation.</p>
+<p>You could also to do repeated calculations based around the values given to look at the stability diagram of this type of cavity. In this case let gap 2 become <span class="math notranslate nohighlight">\(1400-g_1-g_2\)</span> mm and vary <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_2\)</span> to find the stable regions. Doing this means that the laser always has the same optical length.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig44.png" /></p>
 <p>Figure 44.  Diagram of four mirror cavity, showing the configuration for cavity dumping.</p>
 </section>

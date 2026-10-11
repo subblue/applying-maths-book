@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1791,7 +1791,7 @@ title="Print to PDF"
 <p>which can be simplified somewhat. Using SymPy the mixed calculation can be done in one step</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z, x, y&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z, x, y&#39;</span><span class="p">)</span>   <span class="c1"># using SymPy</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
@@ -1804,21 +1804,31 @@ title="Print to PDF"
 </section>
 <section id="q94-answer">
 <h2>Q94 answer<a class="headerlink" href="#q94-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Differentiating with <span class="math notranslate nohighlight">\(x\)</span> twice produces <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial z}{\partial x}=e^{x+cy}+\frac{1}{x-cy} \quad \text{ and }\quad \frac{\partial^2 z}{\partial x^2}=e^{x+cy}-\frac{1}{(x-cy)^2} \)</span></p>
+<p><strong>(a)</strong> Differentiating with <span class="math notranslate nohighlight">\(x\)</span> twice produces <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial z}{\partial x}=e^{x+cy}+\frac{1}{x-cy} \quad \text{ and }\quad \frac{\partial^2 z}{\partial x^2}=e^{x+cy}-\frac{1}{(x-cy)^2} \)</span></p>
 <p>and with <span class="math notranslate nohighlight">\(y\)</span> also <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial z}{\partial y}=ce^{x+cy}-\frac{1}{x-cy} \quad \text{ and }\quad \frac{\partial^2 z}{\partial x^2}=c^2e^{x+cy}-\frac{1}{(x-cy)^2} \)</span></p>
-<p>Multiplying the second derivative in <span class="math notranslate nohighlight">\(x\)</span> by <span class="math notranslate nohighlight">\(c^2\)</span> shows that <span class="math notranslate nohighlight">\(z\)</span> is a solution to <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2z}{\partial y^2}=c^2\frac{\partial^2z}{\partial x^2}\)</span></p>
-<p>(b) By ‘arbitrary’ is meant only that we need not specify exactly how <span class="math notranslate nohighlight">\(z\)</span> depends on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> except that they contain terms in <span class="math notranslate nohighlight">\(x + cy\)</span>. Taking derivatives;</p>
+<p>Multiplying the second derivative in <span class="math notranslate nohighlight">\(x\)</span> by <span class="math notranslate nohighlight">\(c^2\)</span> shows that <span class="math notranslate nohighlight">\(z\)</span> is a solution to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial^2z}{\partial y^2}=c^2\frac{\partial^2z}{\partial x^2}\]</div>
+<p><strong>(b)</strong> By ‘arbitrary’ is meant only that we need not specify exactly how <span class="math notranslate nohighlight">\(z\)</span> depends on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> except that they contain terms in <span class="math notranslate nohighlight">\(x + cy\)</span>. Taking derivatives;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial z}{\partial x}=\frac{\partial f}{\partial x}+\frac{\partial \phi}{\partial x} \quad \text{ and } \quad \frac{\partial^2 z}{\partial x^2}=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 \phi}{\partial x^2}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial z}{\partial y}=c\frac{\partial f}{\partial y}-c\frac{\partial \phi}{\partial y} \quad \text{ and } \quad \frac{\partial^2 z}{\partial y^2}=c^2\frac{\partial^2 f}{\partial y^2}+c^2\frac{\partial^2 \phi}{\partial y^2}\]</div>
-<p>then by comparing the second derivative in <span class="math notranslate nohighlight">\(y\)</span> with that in <span class="math notranslate nohighlight">\(x\)</span> multiplied by <span class="math notranslate nohighlight">\(c^2\)</span> shows again that <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2z}{\partial y^2}=c^2\frac{\partial^2z}{\partial x^2}\)</span>.</p>
+<p>then by comparing the second derivative in <span class="math notranslate nohighlight">\(y\)</span> with that in <span class="math notranslate nohighlight">\(x\)</span> multiplied by <span class="math notranslate nohighlight">\(c^2\)</span> shows again that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial^2z}{\partial y^2}=c^2\frac{\partial^2z}{\partial x^2}\]</div>
 </section>
 <section id="q95-answer">
 <h2>Q95 answer<a class="headerlink" href="#q95-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) By substitution <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial c}{\partial t}=-\frac{\partial J}{\partial x}=-\frac{\partial}{\partial x}\left(-D  \frac{\partial c}{\partial x} \right)\)</span>, therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}\)</span> which is Fick’s second law.</p>
-<p>(b) While the complete expression for <span class="math notranslate nohighlight">\(c\)</span> can be differentiated, it is easier to remove the constants and simplify the expression first. Doing this produces</p>
+<p><strong>(a)</strong> By substitution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial c}{\partial t}=-\frac{\partial J}{\partial x}=-\frac{\partial}{\partial x}\left(-D  \frac{\partial c}{\partial x} \right)\]</div>
+<p>therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}\]</div>
+<p>which is Fick’s second law.</p>
+<p><strong>(b)</strong> While the complete expression for <span class="math notranslate nohighlight">\(c\)</span> can be differentiated, it is easier to remove the constants and simplify the expression first. Doing this produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial c}{\partial t} = \frac{c_0}{\sqrt{4\pi D}}\frac{\partial}{\partial t}\left( \frac{e^{-x^2/4Dt}}{\sqrt{t}} \right)\]</div>
 <p>differentiating and simplifying gives</p>
@@ -1831,7 +1841,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <p>which proves that the equation for <span class="math notranslate nohighlight">\(c\)</span> is a solution to Fick’s Second Law as this result is the same as the previous one. Using SymPy we can check the result easily. (it is necessary to use the simplify command to force the simplification.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, D, c0, t&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, D, c0, t&#39;</span><span class="p">)</span>   <span class="c1"># Using SymPy</span>
 <span class="n">pi</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">c0</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">((</span><span class="n">D</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>  <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span> <span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">)))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1847,24 +1857,33 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </div>
 </div>
 </div>
-<p>(c) The concentration equation does not apply at <span class="math notranslate nohighlight">\(t = 0\)</span> because here <span class="math notranslate nohighlight">\(c\)</span> is infinity and this is not possible as the total concentration is <span class="math notranslate nohighlight">\(c_0\)</span> unless the disc of atoms is made infinitesimally thin. In solving the diffusion equations, the complete answer has been approximated and so simplified to obtain the concentration equation quoted above. At <span class="math notranslate nohighlight">\(t = 0\)</span> the total concentration must be <span class="math notranslate nohighlight">\(c_0\)</span> which is the same at all times because no material is lost.</p>
-<p>(d) As <span class="math notranslate nohighlight">\(x= \sqrt{2Dt}\)</span> and if <span class="math notranslate nohighlight">\(t = 1\,\mathrm{\mu s}\)</span> then <span class="math notranslate nohighlight">\(x \approx 4.5 \cdot 10^{-7}\)</span> m so a scale of microseconds and tens to hundreds of nanometres seems sensible to try. A concentration of <span class="math notranslate nohighlight">\(1\,\mathrm{ mol\,dm^{-3}} =0.602\)</span> in  molecules / nm<span class="math notranslate nohighlight">\(^3\)</span> .  Plotting produced the following graph, which shows how the molecules all initially at <span class="math notranslate nohighlight">\(x = 0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span>, spread out into the solution as time progresses and shows that diffusion really is a slow process. When you notice the smell of coffee or perfume in a room this is probably due to convection of the air rather than diffusion.</p>
+<p><strong>(c)</strong> The concentration equation does not apply at <span class="math notranslate nohighlight">\(t = 0\)</span> because here <span class="math notranslate nohighlight">\(c\)</span> is infinity and this is not possible as the total concentration is <span class="math notranslate nohighlight">\(c_0\)</span> unless the disc of atoms is made infinitesimally thin. In solving the diffusion equations, the complete answer has been approximated and so simplified to obtain the concentration equation quoted above. At <span class="math notranslate nohighlight">\(t = 0\)</span> the total concentration must be <span class="math notranslate nohighlight">\(c_0\)</span> which is the same at all times because no material is lost.</p>
+<p><strong>(d)</strong> As <span class="math notranslate nohighlight">\(x= \sqrt{2Dt}\)</span> and if <span class="math notranslate nohighlight">\(t = 1\,\mathrm{\mu s}\)</span> then <span class="math notranslate nohighlight">\(x \approx 4.5 \cdot 10^{-7}\)</span> m so a scale of microseconds and tens to hundreds of nanometres seems sensible to try. A concentration of <span class="math notranslate nohighlight">\(1\,\mathrm{ mol\,dm^{-3}} =0.602\)</span> in  molecules / nm<span class="math notranslate nohighlight">\(^3\)</span> .  Plotting produced the following graph, which shows how the molecules all initially at <span class="math notranslate nohighlight">\(x = 0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span>, spread out into the solution as time progresses and shows that diffusion really is a slow process. When you notice the smell of coffee or perfume in a room this is probably due to convection of the air rather than diffusion.</p>
 <p><img alt="Drawing" src="../_images/differen-fig63.png" /></p>
 <p>Figure 63 One-dimensional diffusion of molecules initially placed at <span class="math notranslate nohighlight">\(x = 0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span> is shown at different times in microseconds. The diffusion constant is the similar to that of water, <span class="math notranslate nohighlight">\(\approx 2.5\cdot 10^{-9}\,\mathrm{ m^2\,s^{-1}}\)</span>. At time zero, the molecules form a <span class="math notranslate nohighlight">\(\delta\)</span> function at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="q96-answer">
 <h2>Q96 answer<a class="headerlink" href="#q96-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Expanding <span class="math notranslate nohighlight">\(\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT\)</span> produces <span class="math notranslate nohighlight">\(pV+a/V-bp-ab/V^2=RT\)</span>.</p>
+<p><strong>(a)</strong> Expanding</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT\]</div>
+<p>produces</p>
+<div class="math notranslate nohighlight">
+\[pV+a/V-bp-ab/V^2=RT\]</div>
 <p>At constant <span class="math notranslate nohighlight">\(T\)</span> and because <span class="math notranslate nohighlight">\(p\)</span> is a function of <span class="math notranslate nohighlight">\(V\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial}{\partial V}pV=V\frac{\partial p}{\partial V}+p\]</div>
 <p>the first derivative wrt <span class="math notranslate nohighlight">\(V\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V\left(\frac{\partial p}{\partial V}   \right)_T + p-\frac{a}{V^2} - b\left( \frac{\partial p}{\partial V} \right)_T +\frac{2ab}{V^3}= 0\]</div>
-<p>Simplifying produces <span class="math notranslate nohighlight">\(\displaystyle (V-b)\left( \frac{\partial p}{\partial V}\right)_T + p -\frac{a}{V^2}+\frac{2ab}{V^3} = 0\)</span>.</p>
-<p>Labelling with a subscript <span class="math notranslate nohighlight">\(c\)</span> to indicate the critical points, and because the derivatives are zero here, produces <span class="math notranslate nohighlight">\(\displaystyle p_c-\frac{a}{V_c^2}+\frac{2ab}{V_c^3}=0\)</span>.</p>
-<p>(b) Starting with the first derivative the second is, at constant <span class="math notranslate nohighlight">\(T\)</span>,</p>
+<p>Simplifying produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (V-b)\left( \frac{\partial p}{\partial V}\right)_T + p -\frac{a}{V^2}+\frac{2ab}{V^3} = 0\]</div>
+<p>Labelling with a subscript <span class="math notranslate nohighlight">\(c\)</span> to indicate the critical points, and because the derivatives are zero here, produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p_c-\frac{a}{V_c^2}+\frac{2ab}{V_c^3}=0\]</div>
+<p><strong>(b)</strong> Starting with the first derivative the second is, at constant <span class="math notranslate nohighlight">\(T\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V\left( \frac{\partial^2 p}{\partial V^2} \right)_T+\left( \frac{\partial p}{\partial V} \right)_T+\left( \frac{\partial p}{\partial V} \right)_T+2\frac{a}{V^3}-b\left( \frac{\partial^2 p}{\partial V^2} \right)_T-\frac{6ab}{V^4}=0\]</div>
 <p>and as these derivatives are also zero at the critical point <span class="math notranslate nohighlight">\(V_c=3b\)</span>. Substituting into the equations for <span class="math notranslate nohighlight">\(p_c\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle p_c=\frac{a}{27b^2}\)</span> and <span class="math notranslate nohighlight">\(T_c\)</span> can be found by substitution into the van-der Waals equation and is <span class="math notranslate nohighlight">\(\displaystyle T_c=\frac{8a}{27bR}\)</span>.</p>
@@ -1908,30 +1927,51 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q97-answer">
 <h2>Q97 answer<a class="headerlink" href="#q97-answer" title="Permalink to this headline">#</a></h2>
-<p>Differentiating <span class="math notranslate nohighlight">\(H\)</span> with temperature at constant pressure <span class="math notranslate nohighlight">\(p\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial H}{\partial T}\right)_p =  \left( \frac{\partial U}{\partial T}\right)_p +p \left( \frac{\partial V}{\partial T}\right)_p\)</span></p>
-<p>and from the definition of <span class="math notranslate nohighlight">\(C_p\)</span> and rearranging gives the required expression <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial U}{\partial T}\right)_p=C_p - p \left( \frac{\partial V}{\partial T}\right)_p\)</span></p>
+<p>Differentiating <span class="math notranslate nohighlight">\(H\)</span> with temperature at constant pressure <span class="math notranslate nohighlight">\(p\)</span> produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left( \frac{\partial H}{\partial T}\right)_p =  \left( \frac{\partial U}{\partial T}\right)_p +p \left( \frac{\partial V}{\partial T}\right)_p\]</div>
+<p>and from the definition of <span class="math notranslate nohighlight">\(C_p\)</span> and rearranging gives the required expression</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left( \frac{\partial U}{\partial T}\right)_p=C_p - p \left( \frac{\partial V}{\partial T}\right)_p\]</div>
 </section>
 <section id="q98-answer">
 <h2>Q98 answer<a class="headerlink" href="#q98-answer" title="Permalink to this headline">#</a></h2>
-<p>At constant pressure, differentiating <span class="math notranslate nohighlight">\(S\)</span> with <span class="math notranslate nohighlight">\(T\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial S}{\partial T}\right)_p= n\frac{C_p}{T}\)</span>.</p>
-<p>Because volume is not explicitly in the equation, the ideal gas law is used to substitute for pressure and so obtain an equation containing volume;</p>
+<p>At constant pressure, differentiating <span class="math notranslate nohighlight">\(S\)</span> with <span class="math notranslate nohighlight">\(T\)</span> produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  S=S+0+nC_p\ln(T)-nR\ln\left( \frac{RT}{V} \right)\]</div>
+\[\displaystyle \left( \frac{\partial S}{\partial T}\right)_p= n\frac{C_p}{T}\]</div>
+<p>Because volume is not explicitly in the Sakur-Tetrode equation, the ideal gas law is used to substitute for pressure and so obtain an equation containing volume;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S=S_0+nC_p\ln(T)-nR\ln\left( \frac{RT}{V} \right)\]</div>
 <p>then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial S}{\partial T}\right)_V =n\frac{C_p}{T}-n\frac{R}{T}\]</div>
 <p>which by substitution of the first result shows that the two partial derivatives are different;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial S}{\partial T}\right)_V =\left( \frac{\partial S}{\partial T}\right)_p-\frac{nR}{T}\]</div>
-<p>The plot shows this also as the partial derivatives are horizontal or vertical lines on this plot and are clearly different. For example at constant pressure, say <span class="math notranslate nohighlight">\(2.5\)</span> bar the slope at low temperatures is greater than at higher ones as the contours become more widely spaced at the temperature increases, this is in accord with <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial S}{\partial T}\right)_p= n\frac{C_p}{T}\)</span>. In the plot <span class="math notranslate nohighlight">\(C_p= 5R/2\)</span> which is that for a diatomic molecule; <span class="math notranslate nohighlight">\(3R/3\)</span> for translation and <span class="math notranslate nohighlight">\(R/2\)</span> each for vibrational kinetic and potential energy.</p>
+<p>The plot shows this also as the partial derivatives are horizontal or vertical lines on this plot and are clearly different. For example at constant pressure, say <span class="math notranslate nohighlight">\(2.5\)</span> bar the slope at low temperatures is greater than at higher ones as the contours become more widely spaced at the temperature increases, this is in accord with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left( \frac{\partial S}{\partial T}\right)_p= n\frac{C_p}{T}\]</div>
+<p>In the plot <span class="math notranslate nohighlight">\(C_p= 5R/2\)</span> which is that for a diatomic molecule; <span class="math notranslate nohighlight">\(3R/3\)</span> for translation and <span class="math notranslate nohighlight">\(R/2\)</span> each for vibrational kinetic and potential energy.</p>
 <p><img alt="Drawing" src="../_images/differen-fig64.png" /></p>
-<p>Figure 64. Contour plot of the entropy with pressure and temperature. (<span class="math notranslate nohighlight">\(C_p=5R/2\)</span> and <span class="math notranslate nohighlight">\(S_0=0\)</span>). The contours are at constant entropy with values labelled in J/mol/K. The gradient <span class="math notranslate nohighlight">\(\partial S/\partial p\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> would be a vertical line, <span class="math notranslate nohighlight">\(\partial S/\partial T\)</span> at constant <span class="math notranslate nohighlight">\(p\)</span> is a horizontal line.</p>
+<p>Figure 64. Contour plot of the entropy from the Sakur-Tetrode equation, <span class="math notranslate nohighlight">\(\displaystyle  S=S_0+nC_p\ln(T)-nR\ln( p )\)</span>  vs. pressure and temperature. (<span class="math notranslate nohighlight">\(C_p=5R/2,\; S_0=0,\;n=1\)</span>). The contours are at constant entropy with values labelled in J/mol/K. The gradient <span class="math notranslate nohighlight">\(\partial S/\partial p\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> is a vertical line on this plot, <span class="math notranslate nohighlight">\(\partial S/\partial T\)</span> at constant <span class="math notranslate nohighlight">\(p\)</span> is a horizontal line. Both of these <em>gradients</em> decrease with their relevant variable, <span class="math notranslate nohighlight">\(T\)</span> or <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="q99-answer">
 <h2>Q99 answer<a class="headerlink" href="#q99-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Using the ideal gas law <span class="math notranslate nohighlight">\(pV=RT\)</span> therefore  <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial p}{\partial T}\right)_V=\frac{R}{V}\)</span> and therefore <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial U}{\partial V}\right)_T=\frac{RT}{V}-p=0\)</span>. This result is expected because the ideal gas is defined as consisting of hard sphere point molecules with no interaction energy between them; therefore, at constant temperature, the internal energy does not depend upon the volume of the gas.</p>
-<p>(b) The van der Waals gas is defined by <span class="math notranslate nohighlight">\(\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT\)</span>. With <span class="math notranslate nohighlight">\(V\)</span> as a constant a  <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial p}{\partial T} \right)_V =\frac{R}{V-b}\)</span> . Using the equation in the question</p>
+<p><strong>(a)</strong> Using the ideal gas law <span class="math notranslate nohighlight">\(pV=RT\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left( \frac{\partial p}{\partial T}\right)_V=\frac{R}{V}\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left( \frac{\partial U}{\partial V}\right)_T=\frac{RT}{V}-p=0\]</div>
+<p>This result is expected because the ideal gas is defined as consisting of hard sphere point molecules with no interaction energy between them; therefore, at constant temperature, the internal energy does not depend upon the volume of the gas.</p>
+<p><strong>(b)</strong> The van der Waals gas is defined by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT\]</div>
+<p>and with <span class="math notranslate nohighlight">\(V\)</span> as a constant</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left( \frac{\partial p}{\partial T} \right)_V =\frac{R}{V-b}\]</div>
+<p>Using the equation in the question</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial U}{\partial V}\right)_T=\frac{RT}{V-b}-p =\frac{a}{V^2}\]</div>
 <p>and the van der Waals equation was used to simplify the derivative. This confirms that the constant <span class="math notranslate nohighlight">\(a\)</span> is related to the interaction energy between molecules; the internal energy becomes large when the volume is small. Conversely, when the volume is large,</p>
@@ -1941,14 +1981,14 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q100-answer">
 <h2>Q100 answer<a class="headerlink" href="#q100-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) As <span class="math notranslate nohighlight">\(pV=nRT\)</span> and <span class="math notranslate nohighlight">\(T\)</span> is held constant in an isothermal process then <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial V}{\partial p} \right)_T =-\frac{nRT}{p^2}\)</span>.</p>
+<p><strong>(a)</strong> As <span class="math notranslate nohighlight">\(pV=nRT\)</span> and <span class="math notranslate nohighlight">\(T\)</span> is held constant in an isothermal process then <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial V}{\partial p} \right)_T =-\frac{nRT}{p^2}\)</span>.</p>
 <p>Substituting for <span class="math notranslate nohighlight">\(RT\)</span> and dividing by <span class="math notranslate nohighlight">\(-V\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \kappa =-\frac{1}{V}\left( \frac{\partial V}{\partial p} \right)_T=\frac{1}{p}\]</div>
-<p>(b) For the van der Waals gas where <span class="math notranslate nohighlight">\(\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT\)</span> expanding the terms to make it easier to differentiate gives</p>
+<p><strong>(b)</strong> For the van der Waals gas where <span class="math notranslate nohighlight">\(\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT\)</span> expanding the terms to make it easier to differentiate gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle pV+\frac{a}{V}-pb-\frac{ab}{V^2}-RT=0\]</div>
-<p>Differentiating <span class="math notranslate nohighlight">\(V\)</span> wrt <span class="math notranslate nohighlight">\(p\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> gives</p>
+<p>Differentiating <span class="math notranslate nohighlight">\(V\)</span> wrt. <span class="math notranslate nohighlight">\(p\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V+p\left(\frac{\partial V}{\partial p} \right)_T-\frac{a}{V^2}\left(\frac{\partial V}{\partial p} \right)_T -b+2\frac{ab}{V^2}\left( \frac{\partial V}{\partial p} \right)_T=0\]</div>
 <p>and after some serious rearranging</p>
@@ -1958,9 +1998,11 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q101-answer">
 <h2>Q101 answer<a class="headerlink" href="#q101-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) When <span class="math notranslate nohighlight">\(t = 0\)</span> the concentration is <span class="math notranslate nohighlight">\(\displaystyle c=c_0e^{v(x-x_0)/2D}\)</span>.</p>
+<p><strong>(a)</strong> When <span class="math notranslate nohighlight">\(t = 0\)</span> the concentration is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c=c_0e^{v(x-x_0)/2D}\]</div>
 <p>If also <span class="math notranslate nohighlight">\(x = x_0\)</span> then the concentration is <span class="math notranslate nohighlight">\(c_0\)</span> at zero time, and this is therefore the initial concentration and  <span class="math notranslate nohighlight">\(x_0\)</span> is therefore the initial position. Clearly, the units of each term in the equation must be the same. On the left-hand side they are <span class="math notranslate nohighlight">\(\mathrm{dm^3\, mol^{-1}\,s^{-1}}\)</span>, and the first term on the right is <span class="math notranslate nohighlight">\(D\partial^2 c/\partial x^2\)</span> which has units <span class="math notranslate nohighlight">\(D \cdot\,\mathrm{ dm^3\, mol^{-1}\, dm^{-2}}\)</span>. To make this <span class="math notranslate nohighlight">\(\mathrm{dm^3\, mol^{-1}\,s^{-1}}\)</span>, <span class="math notranslate nohighlight">\(D\)</span> must have units of <span class="math notranslate nohighlight">\(\mathrm{dm^2\, s^{-1}}\)</span> or distance<span class="math notranslate nohighlight">\(\mathrm{^2\, time^{-1}}\)</span> (or area/time). In solution, large molecules typically have diffusion coefficients of <span class="math notranslate nohighlight">\(\approx 10^{-9}\,\mathrm{ m^2\, s^{-1}}\)</span>.</p>
-<p>(b) To show that the equation in the question is a solution, differentiate with respect to <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. Differentiation with respect to <span class="math notranslate nohighlight">\(t\)</span> gives</p>
+<p><strong>(b)</strong> To show that the equation in the question is a solution, differentiate with respect to <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. Differentiation with respect to <span class="math notranslate nohighlight">\(t\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial c}{\partial t}=-\frac{v^2}{4D}e^{v(x-x_0)/2D} e^{-v^2/4D}\]</div>
 <p>and wrt <span class="math notranslate nohighlight">\(x\)</span>;</p>
@@ -1976,7 +2018,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q102-answer">
 <h2>Q102 answer<a class="headerlink" href="#q102-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The first law of thermodynamics states that,for an infinitesimal quasi-statical change of state, a condition often called ‘reversible’, the change in the internal energy <span class="math notranslate nohighlight">\(U\)</span> of an object is the sum of the heat transferred to the object <span class="math notranslate nohighlight">\(Q\)</span> and the work done on the object <span class="math notranslate nohighlight">\(W\)</span>,</p>
+<p><strong>(a)</strong> The first law of thermodynamics states that,for an infinitesimal quasi-statical change of state, a condition often called ‘reversible’, the change in the internal energy <span class="math notranslate nohighlight">\(U\)</span> of an object is the sum of the heat transferred to the object <span class="math notranslate nohighlight">\(Q\)</span> and the work done on the object <span class="math notranslate nohighlight">\(W\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dU=dQ+dW\]</div>
 <p>The work done on a gas is <span class="math notranslate nohighlight">\(-pdV\)</span> and because <span class="math notranslate nohighlight">\(U=U(T)\)</span> is a function of temperature only for an <em>ideal gas</em>, then we can state that <span class="math notranslate nohighlight">\(\displaystyle dU=\frac{dU}{dT}dT\)</span> and write <span class="math notranslate nohighlight">\(dU\)</span> rather than <span class="math notranslate nohighlight">\(\partial U\)</span>, because <span class="math notranslate nohighlight">\(U\)</span> only depends on <span class="math notranslate nohighlight">\(T\)</span> and therefore cannot be a partial derivative of anything else.</p>
@@ -1989,16 +2031,20 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <p>and working under conditions of constant volume means that <span class="math notranslate nohighlight">\(dV\)</span> is zero and</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dQ =\frac{dU}{dT} dT\]</div>
-<p>The constant volume heat capacity is therefore <span class="math notranslate nohighlight">\(\displaystyle C_V=\frac{dU}{dT}\)</span>.</p>
+<p>The constant volume heat capacity is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_V=\frac{dU}{dT}\]</div>
 <p>Next, to calculate the constant pressure heat capacity <span class="math notranslate nohighlight">\(C_p\)</span>, the change in pressure must be zero, therefore <span class="math notranslate nohighlight">\(dp \to 0\)</span>. To do this the first law must be recast in terms of <span class="math notranslate nohighlight">\(dp\)</span>, rather than <span class="math notranslate nohighlight">\(dV\)</span>. From the ideal gas law <span class="math notranslate nohighlight">\(pV = RT\)</span> and for changes in pressure, temperature and volume; <span class="math notranslate nohighlight">\(pdV+Vdp=RdT\)</span>. Substituting for <span class="math notranslate nohighlight">\(pdV\)</span> into the first law produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dQ=dU+RdT-Vdp = \left(\frac{dU}{dT}+R  \right)dT-Vdp\]</div>
 <p>and so it follows that at constant pressure when <span class="math notranslate nohighlight">\(dp \to 0\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dQ}{dT}=\left(\frac{dU}{dT}+R  \right)\]</div>
-<p>and therefore as <span class="math notranslate nohighlight">\(\displaystyle \frac{dQ}{dT}\)</span> defines heat capacity <span class="math notranslate nohighlight">\(\displaystyle C_p=\frac{dU}{dT}+R\)</span> and <span class="math notranslate nohighlight">\(C_p=C_V+R\)</span>.</p>
+<p>and therefore as <span class="math notranslate nohighlight">\(\displaystyle \frac{dQ}{dT}\)</span> defines heat capacity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_p=\frac{dU}{dT}+R,\quad\text{and}\quad  C_p=C_V+R\]</div>
 <p>The heat capacity at constant pressure is larger than at constant volume because the volume must change if the pressure is constant and therefore work has to be done on the gas to make it expand.</p>
-<p>(b) A new function called the enthalpy is always used to take account of any change in volume (and hence work) that occurs at constant pressure and is defined as</p>
+<p><strong>(b)</strong> A new function called the enthalpy is always used to take account of any change in volume (and hence work) that occurs at constant pressure and is defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle H=U+pV = U+nRT\]</div>
 <p>For 1 mole of gas, <span class="math notranslate nohighlight">\(n = 1\)</span>; differentiating <span class="math notranslate nohighlight">\(H\)</span> with respect to <span class="math notranslate nohighlight">\(T\)</span> at constant <span class="math notranslate nohighlight">\(p\)</span> produces</p>
@@ -2011,7 +2057,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q103-answer">
 <h2>Q103 answer<a class="headerlink" href="#q103-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The quantities <span class="math notranslate nohighlight">\(dU\)</span> and <span class="math notranslate nohighlight">\(dS\)</span> are both functions of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(V\)</span>, and starting with <span class="math notranslate nohighlight">\(U\)</span> the total derivative is,</p>
+<p><strong>(a)</strong> The quantities <span class="math notranslate nohighlight">\(dU\)</span> and <span class="math notranslate nohighlight">\(dS\)</span> are both functions of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(V\)</span>, and starting with <span class="math notranslate nohighlight">\(U\)</span> the total derivative is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dU=\left( \frac{\partial U}{\partial V}\right)_TdV+\left( \frac{\partial U}{\partial T}\right)_VdT\]</div>
 <p>and similarly</p>
@@ -2032,7 +2078,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <p>from which, using the definition of <span class="math notranslate nohighlight">\(C_V\)</span> in the previous question, we obtain</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial S}{\partial T}\right)_V=\frac{C_V}{T}\]</div>
-<p>(b) As <span class="math notranslate nohighlight">\(H\)</span> is by definition <span class="math notranslate nohighlight">\(H=U+pV \)</span> and therefore a function of <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, and <span class="math notranslate nohighlight">\(V\)</span>, then by definition</p>
+<p><strong>(b)</strong> As <span class="math notranslate nohighlight">\(H\)</span> is by definition <span class="math notranslate nohighlight">\(H=U+pV \)</span> and therefore a function of <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, and <span class="math notranslate nohighlight">\(V\)</span>, then by definition</p>
 <div class="math notranslate nohighlight">
 \[dH = dU + pdV + Vdp\]</div>
 <p>Substituting for <span class="math notranslate nohighlight">\(dU + pdV\)</span> into the equation given in the question, <span class="math notranslate nohighlight">\(dU + pdV = TdS\)</span>, gives <span class="math notranslate nohighlight">\(dH = TdS + Vdp\)</span>. As <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(S\)</span> are each a function of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(p\)</span>, the total derivatives are</p>
@@ -2052,8 +2098,13 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q104-answer">
 <h2>Q104 answer<a class="headerlink" href="#q104-answer" title="Permalink to this headline">#</a></h2>
-<p>Equation(50) states that  <span class="math notranslate nohighlight">\(\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=T\left( \frac{\partial p}{\partial T}\right)_V-p\)</span></p>
-<p>and as the van der Waals equation is <span class="math notranslate nohighlight">\(\displaystyle \left(p+\frac{a}{V^2}\right)(V-b)=RT\)</span>, differentiating pressure wrt <span class="math notranslate nohighlight">\(T\)</span> gives</p>
+<p>Equation (50) states that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=T\left( \frac{\partial p}{\partial T}\right)_V-p\]</div>
+<p>and as the van der Waals equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(p+\frac{a}{V^2}\right)(V-b)=RT\]</div>
+<p>differentiating pressure wrt <span class="math notranslate nohighlight">\(T\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle T\left( \frac{\partial p}{\partial T}\right)_V= \frac{RT}{V-b}= p+\frac{a}{V^2}\]</div>
 <p>therefore <span class="math notranslate nohighlight">\(\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=\frac{a}{V^2}\)</span>.</p>
@@ -2082,7 +2133,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <p>By integrating the Maxwell equation, the entropy change between any two pressures <span class="math notranslate nohighlight">\(p_0\)</span> and <span class="math notranslate nohighlight">\(p_1\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta S_{p_0 \to p_1} =-\int_{p_0}^{P_1} \left(\frac{\partial V}{\partial T} \right)_pdp\]</div>
-<p>(a) Expanding the van der Waals equation of state <span class="math notranslate nohighlight">\((p+a/V^2)(V-b)=RT\)</span> gives</p>
+<p><strong>(a)</strong> Expanding the van der Waals equation of state <span class="math notranslate nohighlight">\((p+a/V^2)(V-b)=RT\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle pV+a/V - pb-ab/V^2 = RT\]</div>
 <p>Differentiating <span class="math notranslate nohighlight">\(V\)</span> with respect to <span class="math notranslate nohighlight">\(T\)</span> with <span class="math notranslate nohighlight">\(p\)</span> constant and rearranging gives</p>
@@ -2101,7 +2152,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta S = -R\ln\left(\frac{RT}{V-b}-\frac{2ab}{V^3}  \right)\]</div>
 <p>The units inside the log have dimensions of pressure. These must be made dimensionless by dividing by 1 bar, although this is almost never shown in a formula.</p>
-<p>(b) The Bertholet equation can be simplified</p>
+<p><strong>(b)</strong> The Bertholet equation can be simplified</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V= \frac{RT}{p}+c_0\left(1-\frac{c_1}{T^2}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(c_0, c_1\)</span> are constants as may be seen by comparison with the equation in the question. The derivative is</p>
@@ -2117,11 +2168,11 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q108-answer">
 <h2>Q108 answer<a class="headerlink" href="#q108-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Differentiating <span class="math notranslate nohighlight">\(dH=TdS+Vdp\)</span>  with <span class="math notranslate nohighlight">\(p\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> changes the differentials into partial ones and gives</p>
+<p><strong>(a)</strong> Differentiating <span class="math notranslate nohighlight">\(dH=TdS+Vdp\)</span>  with <span class="math notranslate nohighlight">\(p\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> changes the differentials into partial ones and gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial H }{\partial p} \right)_T =T \left( \frac{\partial S}{\partial p} \right)_T+V\]</div>
 <p>Substituting for the entropy term produces the required equation <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial H }{\partial p} \right)_T =-T \left( \frac{\partial V}{\partial T} \right)_p+V\)</span>.</p>
-<p>(b) Differentiating each term with temperature at constant pressure gives</p>
+<p><strong>(b)</strong> Differentiating each term with temperature at constant pressure gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial}{\partial T}\left( \left( \frac{\partial H }{\partial p} \right)_T \right)_p =-T\left( \frac{\partial^2 V }{\partial T^2} \right)_p-\left( \frac{\partial V }{\partial T} \right)_p+\left( \frac{\partial V }{\partial T} \right)_p\]</div>
 <p>Using the definition <span class="math notranslate nohighlight">\(C_p = dH/dT \equiv (\partial H/\partial T)_p\)</span> the left-hand side is simplified and also cancelling terms on the right gives</p>
@@ -2143,14 +2194,14 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q109-answer">
 <h2>Q109 answer<a class="headerlink" href="#q109-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) by definition, <span class="math notranslate nohighlight">\(\displaystyle C_V=\left( \frac{\partial U}{\partial T} \right)_V\)</span>  and also as <span class="math notranslate nohighlight">\(H=U+pV\)</span>, and by definition</p>
+<p><strong>(a)</strong> by definition, <span class="math notranslate nohighlight">\(\displaystyle C_V=\left( \frac{\partial U}{\partial T} \right)_V\)</span>  and also as <span class="math notranslate nohighlight">\(H=U+pV\)</span>, and by definition</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle C_p=\left( \frac{\partial H}{\partial T} \right)_p=\left( \frac{\partial U}{\partial T} \right)_p+ \left( \frac{\partial pV}{\partial T} \right)_p\]</div>
 <p>it follows that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle C_p=\left( \frac{\partial U}{\partial T} \right)_p + p\left( \frac{\partial V}{\partial T} \right)_p\]</div>
 <p>at constant pressure.</p>
-<p>(b) Comparing the equations for <span class="math notranslate nohighlight">\(C_p\)</span> in parts (a) and (b) it seems that the derivative <span class="math notranslate nohighlight">\(\partial V/\partial T\)</span> at constant pressure will be needed, so we start with this. The internal energy is a function <span class="math notranslate nohighlight">\(U = f(p, V, T)\)</span>, and therefore can produce the differential</p>
+<p><strong>(b)</strong> Comparing the equations for <span class="math notranslate nohighlight">\(C_p\)</span> in parts (a) and (b) it seems that the derivative <span class="math notranslate nohighlight">\(\partial V/\partial T\)</span> at constant pressure will be needed, so we start with this. The internal energy is a function <span class="math notranslate nohighlight">\(U = f(p, V, T)\)</span>, and therefore can produce the differential</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dU=\left( \frac{\partial U}{\partial T} \right)_VdT+\left( \frac{\partial U}{\partial V} \right)_TdV\]</div>
 <p>which by dividing by <span class="math notranslate nohighlight">\(dT\)</span> at constant pressure gives</p>
@@ -2179,7 +2230,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 </section>
 <section id="q-111-answer">
 <h2>Q 111 answer<a class="headerlink" href="#q-111-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) Differentiating the Helmholtz energy gives <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial A}{\partial V} \right)_T=\left( \frac{\partial U}{\partial V} \right)_T-T\left( \frac{\partial S}{\partial V} \right)_T\)</span>.</p>
+<p><strong>(a)</strong> Differentiating the Helmholtz energy gives <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial A}{\partial V} \right)_T=\left( \frac{\partial U}{\partial V} \right)_T-T\left( \frac{\partial S}{\partial V} \right)_T\)</span>.</p>
 <p>Next the derivatives need to be changed into terms that can be measured, which means those involving <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(p\)</span>. With this in mind using the differential form <span class="math notranslate nohighlight">\(dA = \cdots\)</span> The first derivative is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial A}{\partial V} \right)_T=-p\]</div>
@@ -2193,35 +2244,42 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial p}{\partial T} \right)_V=\frac{nR}{V-b}\]</div>
 <p>and the final result is <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial U}{\partial V} \right)_T=a\frac{n^2}{V^2}\)</span>.</p>
-<p>(b) The constant <span class="math notranslate nohighlight">\(a\)</span> for CO<span class="math notranslate nohighlight">\(_2\)</span> is <span class="math notranslate nohighlight">\(3.66\,\mathrm{ bar\, dm^6\,mol^{-2}}\)</span>. Integrating the last result gives</p>
+<p><strong>(b)</strong> The constant <span class="math notranslate nohighlight">\(a\)</span> for CO<span class="math notranslate nohighlight">\(_2\)</span> is <span class="math notranslate nohighlight">\(3.66\,\mathrm{ bar\, dm^6\,mol^{-2}}\)</span>. Integrating the last result gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta U=\int_{V_1}^{V_2} \frac{an^2}{V^2}dV=-n^2a\left( \frac{1}{V_2}-\frac{1}{V_1} \right)\]</div>
 <p>which has units <span class="math notranslate nohighlight">\(\mathrm{bar dm^3\,mol^{-1}}\)</span>. As pressure (bar) is force/area therefore the units are <span class="math notranslate nohighlight">\(\displaystyle \mathrm{\frac{kg\cdot m\cdot s^{-2}}{m^2}m^3=\frac{kg\cdot m^2}{s^2}=J}\)</span>.  The change in internal energy of <span class="math notranslate nohighlight">\(1\)</span> mole of CO<span class="math notranslate nohighlight">\(_2\)</span> expanding from <span class="math notranslate nohighlight">\(10 \to 20\,\mathrm{ dm^3}\)</span> at constant temperature is therefore <span class="math notranslate nohighlight">\(0.183\)</span> J.</p>
 </section>
 <section id="q112-answer">
 <h2>Q112 answer<a class="headerlink" href="#q112-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The integral is <span class="math notranslate nohighlight">\(\displaystyle \int\left(\frac{\partial U}{\partial V} \right)_TdV=\int\left[ T\left( \frac{\partial S}{\partial V} \right)_T-p \right]dV\)</span></p>
+<p><strong>(a)</strong> The integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\left(\frac{\partial U}{\partial V} \right)_TdV=\int\left[ T\left( \frac{\partial S}{\partial V} \right)_T-p \right]dV\]</div>
 <p>and this can be put in a more useful form with the Maxwell equation for <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(V\)</span> given in Q110 and then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\left[ T\left( \frac{\partial p}{\partial T} \right)_V-p \right]dV\]</div>
 <p>Differentiating the (van der Waals) pressure wrt <span class="math notranslate nohighlight">\(T\)</span>, simplifying the result and integrating gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\left(\frac{\partial U}{\partial V} \right)_TdV = an^2\int\frac{dV}{V^2}=-\frac{an^2}{V}\]</div>
-<p>(b) The total energy is</p>
+<p><strong>(b)</strong> The total energy is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle U_{total}=\frac{3}{2}nk_BT-\frac{an^2}{V}\]</div>
 <p>where the first term is the kinetic energy obtained by using the eqi-partition  theorem and is in effect the internal energy if chlorine is assumed to be an ideal gas.</p>
 </section>
 <section id="q113-answer">
 <h2>Q113 answer<a class="headerlink" href="#q113-answer" title="Permalink to this headline">#</a></h2>
-<p>Rewriting gives <span class="math notranslate nohighlight">\(\displaystyle \ln(k)=\ln(A)-\frac{\Delta H}{RT}+\frac{\Delta S}{R} \)</span> and differentiating at constant pressure</p>
+<p>Rewriting gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(k)=\ln(A)-\frac{\Delta H}{RT}+\frac{\Delta S}{R} \]</div>
+<p>and differentiating at constant pressure</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{k}\left(\frac{\partial k }{\partial T}  \right)_p=\frac{1}{A}\left(\frac{\partial A }{\partial T}  \right)_p+\frac{\Delta H}{RT^2}-\frac{1}{RT}\left(\frac{\partial \Delta H}{\partial T }  \right)_p+\frac{1}{R}\left(\frac{\partial \Delta S}{\partial T}  \right)_p\]</div>
-<p>Substituting the identity in the question and rearranging produces <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{\partial k }{\partial T}  \right)_p=k\left[ \frac{1}{A}\left(\frac{\partial A }{\partial T}  \right)_p+\frac{\Delta H}{RT^2} \right]\)</span>.</p>
+<p>Substituting the identity in the question and rearranging produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(\frac{\partial k }{\partial T}  \right)_p=k\left[ \frac{1}{A}\left(\frac{\partial A }{\partial T}  \right)_p+\frac{\Delta H}{RT^2} \right]\]</div>
 </section>
 <section id="q114-answer">
 <h2>Q114 answer<a class="headerlink" href="#q114-answer" title="Permalink to this headline">#</a></h2>
-<p>(a) The partial derivative can be expressed directly as</p>
+<p><strong>(a)</strong> The partial derivative can be expressed directly as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial z}{\partial x}=\frac{\partial z}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial z}{\partial \theta }\frac{\partial \theta}{\partial x}\]</div>
 <p>The derivatives in <span class="math notranslate nohighlight">\(x\)</span> are calculated using a right-angled triangle to obtain angles (see Q12 &amp; fig 38),</p>
@@ -2231,7 +2289,7 @@ D\frac{\partial^2 c}{\partial x^2}=&amp;\frac{Dc_0}{\sqrt{4\pi Dt}}\frac{\partia
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial \theta}{\partial x}=-\frac{y}{x^2+y^2}=-\frac{\sin(\theta)}{r}\]</div>
 <p>and these can be substituted into the result if required.</p>
-<p>(b) The second derivative is harder to evaluate. Start by differentiating the last result as if the whole of it were <span class="math notranslate nohighlight">\(z\)</span>, i.e.</p>
+<p><strong>(b)</strong> The second derivative is harder to evaluate. Start by differentiating the last result as if the whole of it were <span class="math notranslate nohighlight">\(z\)</span>, i.e.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\partial^2 z}{\partial x^2}=\frac{\partial}{\partial r}\left[\frac{\partial z}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial z}{\partial \theta }\frac{\partial \theta}{\partial x} \right]\frac{\partial r}{\partial x}+\frac{\partial}{\partial \theta}\left[\frac{\partial z}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial z}{\partial \theta }\frac{\partial \theta}{\partial x} \right]\frac{\partial \theta}{\partial x}\]</div>
 <p>Using the product rule and operating to the right using <span class="math notranslate nohighlight">\(\partial \partial r\)</span> the first term becomes</p>

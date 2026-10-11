@@ -16,24 +16,40 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ## Q47 answer
-# Start by defining vectors in the $\boldsymbol i-\boldsymbol j$ plane as
+# Start by defining vectors in the $\pmb i-\pmb j$ plane as
 # 
-# $$\displaystyle \vec a = \cos(\alpha)\;\boldsymbol i + \sin(\alpha)\;\boldsymbol j,\quad  \vec b = \cos(\beta)\;\boldsymbol i + \sin(\beta)\;\boldsymbol j$$
+# $$\displaystyle \vec a = \cos(\alpha)\;\pmb i + \sin(\alpha)\;\pmb j,\quad  \vec b = \cos(\beta)\;\pmb i + \sin(\beta)\;\pmb j$$
 # 
-# Recall that as $\boldsymbol i \times \;\boldsymbol i = \;\boldsymbol j \times \;\boldsymbol j = 0$ and $\boldsymbol j \times \;\boldsymbol i = \boldsymbol -k$ the cross product is;
+# Recall that as 
 # 
-# $$\displaystyle \vec a \times \vec b = \big(\cos(\alpha)\;\boldsymbol i + \sin(\alpha)\;\boldsymbol j\big) \times \big(\cos(\beta)\;\boldsymbol i + \sin(\beta)\;\boldsymbol j\big) = \cos(\alpha)\sin(\beta)\;\boldsymbol k - \sin(\alpha)\cos(\beta)\;\boldsymbol k$$
+# $$\displaystyle \pmb i \times \;\pmb i = \;\pmb j \times \;\pmb j = 0,\quad \pmb j \times \;\pmb i = \pmb -k$$
 # 
-# which, as it has components in $\boldsymbol k$ only, must be perpendicular to $\vec a$ and $\vec b$.
+# the cross product is;
+# 
+# $$\displaystyle \vec a \times \vec b = \big(\cos(\alpha)\;\pmb i + \sin(\alpha)\;\pmb j\big) \times \big(\cos(\beta)\;\pmb i + \sin(\beta)\;\pmb j\big) = \cos(\alpha)\sin(\beta)\;\pmb k - \sin(\alpha)\cos(\beta)\;\pmb k$$
+# 
+# which, as it has components in $\pmb k$ only, must be perpendicular to $\vec a$ and $\vec b$.
 # 
 # In matrix form, the calculation is clearer
 # 
-# $$\displaystyle \begin{vmatrix}\boldsymbol  i & \boldsymbol  j  & \boldsymbol  k\\\cos(\alpha) & \sin(\alpha) &0\\\cos(\beta) & \sin(\beta) & 0 \end{vmatrix}= \cos(\alpha)\sin(\beta)\;\boldsymbol k - \sin(\alpha)\cos(\beta)\;\boldsymbol k$$
+# $$\displaystyle \begin{vmatrix}\pmb  i & \pmb  j  & \pmb  k\\\cos(\alpha) & \sin(\alpha) &0\\\cos(\beta) & \sin(\beta) & 0 \end{vmatrix}= \cos(\alpha)\sin(\beta)\;\pmb k - \sin(\alpha)\cos(\beta)\;\pmb k$$
 # 
-# Secondly, as $\vec a\times \vec b=|\vec a||\vec b|\sin(\alpha -\beta)\;\boldsymbol k$ and as the magnitude $|\vec a| = |\vec b| = 1$ then $\vec a\times \vec b = \sin(\alpha -\beta)\;\boldsymbol k$. The vector $\boldsymbol k$ is present because vectors $\vec a$ and $\vec b$ are entirely in the $i-j$ plane and $\vec a\times \vec b$ is perpendicular to this plane. Comparing the two definitions of $\vec a\times \vec b$ proves the relationship.
+# Secondly, as 
+# 
+# $$\displaystyle \vec a\times \vec b=|\vec a||\vec b|\sin(\alpha -\beta)\;\pmb k$$
+# 
+# and as the magnitude $|\vec a| = |\vec b| = 1$ then 
+# 
+# $$\displaystyle \vec a\times \vec b = \sin(\alpha -\beta)\;\pmb k$$
+# 
+# The vector $\pmb k$ is present because vectors $\vec a$ and $\vec b$ are entirely in the $i-j$ plane and $\vec a\times \vec b$ is perpendicular to this plane. Comparing the two definitions of $\vec a\times \vec b$ proves the relationship.
 # 
 # ## Q48 answer
-# By definition, $\vec A\times\vec B =ab\sin(\chi)$ and similarly for other sides, then 
+# By definition, 
+# 
+# $$\displaystyle \vec A\times\vec B =ab\sin(\chi)$$
+# 
+# and similarly for other sides, then 
 # 
 # $$\displaystyle ab\sin(\chi) = ca\sin(\beta) = bc\sin(\alpha)\quad\text{ or }\quad \displaystyle \frac{\sin(\alpha)}{a}=\frac{\sin(\beta)}{b}=\frac{\sin(\chi)}{c}$$
 # 
@@ -45,7 +61,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # _______
 # 
 # ## Q49 answer
-# If you want to do the calculation by hand,the basis set to use is the orthogonal set $(i, j, k)$. The vectors can be defined as $\vec A = a_1\;\boldsymbol i + a_2\;\boldsymbol j + a_3\;\boldsymbol k$ and a similar equation for $\vec B$ and $\vec C$ with coefficients $b_{1-3},\; c_{1-3}$. Alternatively matrices can be used. In Python/SymPy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined. 
+# If you want to do the calculation by hand,the basis set to use is the orthogonal set $(i, j, k)$. The vectors can be defined as 
+# 
+# $$\displaystyle \vec A = a_1\;\pmb i + a_2\;\pmb j + a_3\;\pmb k$$
+# 
+# and a similar equation for $\vec B$ and $\vec C$ with coefficients $b_{1-3},\; c_{1-3}$. Alternatively matrices can be used. In Python/SymPy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined. 
 
 # In[2]:
 
@@ -63,7 +83,7 @@ sp.simplify( f1 - f2 + f3 )
 
 
 # ## Q50 answer
-# (a) In this calculation, the line is $Ap$, and the line $Bp$ is at an angle $\theta$ from $Ap$. Defining the vectors, as in the example in the text, the distance of $B$ from $Ap$ can be found as follows using Python to do this numerically, or by hand. The calculation is similar to that in the text.
+# In this calculation, the line is $Ap$, and the line $Bp$ is at an angle $\theta$ from $Ap$. Defining the vectors, as in the example in the text, the distance of $B$ from $Ap$ can be found as follows using Python to do this numerically, or by hand. The calculation is similar to that in the text.
 
 # In[3]:
 
@@ -82,8 +102,10 @@ print('{:s}{:6.3f}'.format('dist B to Ap =',d_B_Ap) )
 
 
 # ## Q51 answer
-# (a) Let $r$ be the length of each side. If point A is at the origin,
-# then C is at $(r,0,0)$ and B at $(r/2,r\sqrt{3}/2,0)$ as $\sin(60^\text{o})=\sqrt{3}/2$. The distance from $B$ to $AC$ is $\displaystyle |\vec d|=\frac{|\vec b \times \vec c|}{|\vec c|}$
+# **(a)** Let $r$ be the length of each side. If point A is at the origin,
+# then C is at $(r,0,0)$ and B at $(r/2,r\sqrt{3}/2,0)$ because $\sin(60^\text{o})=\sqrt{3}/2$. The distance from $B$ to $AC$ is 
+# 
+# $$\displaystyle |\vec d|=\frac{|\vec b \times \vec c|}{|\vec c|}$$
 # 
 # ![Drawing](vectors-fig77.png)
 # 
@@ -92,23 +114,27 @@ print('{:s}{:6.3f}'.format('dist B to Ap =',d_B_Ap) )
 # 
 # As the length $|\vec c|=r$ then 
 # 
-# $$\displaystyle \vec c=r\;\boldsymbol i+0\;\boldsymbol j+0\;\boldsymbol k,\quad \vec b=\frac{r}{2}\;\boldsymbol i+\frac{r\sqrt{3}}{2}\;\boldsymbol j+0\;\boldsymbol k$$
+# $$\displaystyle \vec c=r\;\pmb i+0\;\pmb j+0\;\pmb k,\quad \vec b=\frac{r}{2}\;\pmb i+\frac{r\sqrt{3}}{2}\;\pmb j+0\;\pmb k$$
 # 
 # and the cross product
 # 
-# $$\displaystyle \vec b\times\vec c=\begin{vmatrix}\;\boldsymbol i&\;\boldsymbol j&\;\boldsymbol k\\r/2& r\sqrt{3}/2 & 0\\r&0&0\end{vmatrix}=0\;\boldsymbol i-0\;\boldsymbol j-\frac{r^2\sqrt{3}}{2}\;\boldsymbol k$$
+# $$\displaystyle \vec b\times\vec c=\begin{vmatrix}\;\pmb i&\;\pmb j&\;\pmb k\\r/2& r\sqrt{3}/2 & 0\\r&0&0\end{vmatrix}=0\;\pmb i-0\;\pmb j-\frac{r^2\sqrt{3}}{2}\;\pmb k$$
 # 
 # and the distance from $B \to AC$ is therefore $d=r\sqrt{3}/2$ and by symmetry this is also the length of the other perpendiculars. This could,of course, have been calculated more easily using simple geometry.
 # 
-# (b) To calculate the length $d_b$,find vector $\vec c'$ (right hand side of figure 77) and calculated $\displaystyle d_b=\frac{|\vec b \times \vec c'|}{|\vec b|}$. Let the vector $\vec c'=\begin{bmatrix}x&y&0\end{bmatrix}$ and because $A$ is at the origin and $p$ a point with coordinates $(x,y,0)$ and thus from part (a)
+# **(b)** To calculate the length $d_b$,find vector $\vec c'$ (right hand side of figure 77) and then 
 # 
-# $$\displaystyle \vec b\times\vec{c'}=\begin{vmatrix}\;\boldsymbol i&\;\boldsymbol j&\;\boldsymbol k\\r/2& r\sqrt{3}/2 & 0\\x&y&0\end{vmatrix}=0\;\boldsymbol i-0\;\boldsymbol j+(y-x)\frac{r\sqrt{3}}{2})\;\boldsymbol k$$
+# $$\displaystyle d_b=\frac{|\vec b \times \vec c'|}{|\vec b|}$$
+# 
+# Let the vector $\vec c'=\begin{bmatrix}x&y&0\end{bmatrix}$ and because $A$ is at the origin and $p$ a point with coordinates $(x,y,0)$ and thus from part (a)
+# 
+# $$\displaystyle \vec b\times\vec{c'}=\begin{vmatrix}\;\pmb i&\;\pmb j&\;\pmb k\\r/2& r\sqrt{3}/2 & 0\\x&y&0\end{vmatrix}=0\;\pmb i-0\;\pmb j+(y-x)\frac{r\sqrt{3}}{2})\;\pmb k$$
 # 
 # making length $\displaystyle d_b=\left|(y-x)\frac{\sqrt{3}}{2}\right|$ and the absolute value is used as the length must be positive.
 # 
-# The length $p\to \vec c$ (line $AC$) is $d_c=y$ by a similar calculation using $(\vec c\times \vec{c'})$. This also is clear from the diagram since $AC$ lies along the $x$-axis. The length $d_e$ is found by calculating the vector $\vec{pC}$ and vector $\vec e$. The result is 
+# The length $p\to \vec c$ (line $AC$) is $d_c=y$ by a similar calculation using $(\vec c\times \vec c')$. This also is clear from the diagram since $AC$ lies along the $x$-axis. The length $d_e$ is found by calculating the vector $\vec{pC}$ and vector $\vec e$. The result is 
 # 
-# $$\displaystyle \vec {pC}\times\vec{c'}=\begin{vmatrix}\;\boldsymbol i&\;\boldsymbol j&\;\boldsymbol k\\x-r& y & 0\\-r/2&r\sqrt{3}/2&0\end{vmatrix}=0\;\boldsymbol i-0\;\boldsymbol j+\frac{r}{2}\left(\sqrt{3}(x-r)+y\right)\;\boldsymbol k$$
+# $$\displaystyle \vec {pC}\times\vec{c'}=\begin{vmatrix}\;\pmb i&\;\pmb j&\;\pmb k\\x-r& y & 0\\-r/2&r\sqrt{3}/2&0\end{vmatrix}=0\;\pmb i-0\;\pmb j+\frac{r}{2}\left(\sqrt{3}(x-r)+y\right)\;\pmb k$$
 # 
 # giving a length $\displaystyle d_e = \left|\frac{\sqrt{3}(x-r)}{2} +\frac{y}{2} \right|$. The total distance of all perpendiculars is the sum of the three terms,$d_c+b_B+d_e$.
 # 
@@ -124,7 +150,7 @@ f = lambda x,y : np.abs(y/2-x*np.sqrt(3)/2) + y + np.abs((x - r)*np.sqrt(3)/2 + 
 f(1/4,1/8)
 
 
-# and the same answer $0.866=\sqrt(3)/2$ is obtained for other valid $x,\;y$ which confirms the value given in the question.
+# and the same answer $0.866=\sqrt{3}/2$ is obtained for other valid $x,\;y$ which confirms the value given in the question.
 # 
 # ## Q52 answer
 # Using Python to do the arithmetic, calculate the bond distances first. It is not obvious from the data which O atom to take, so calculate both distances. A simple function 'length' is made to calculate the lengths to avoid retyping similar equations.
@@ -175,7 +201,7 @@ print('{:s}{:8.3f}'.format('distance Fe to plane', d ) )
 x, y, z = sp.symbols('x, y, z')  # use sympy as xyz are symbols 
 X = sp.Matrix( [x, y, z] )
 X0= sp.Matrix( [NA[0], NA[1], NA[2]] )  # any point in plane 
-plane= np.dot(n,X - X0)              # n is defined above
+plane= np.dot(n,X - X0)                 # n is defined above
 print(plane)
 
 

@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-D.html">
-     4 Product rule and function of function or chain rule.
+     4 Product rule and function of function or chain rule. Differentiating  Parametric functions and vectors. Differentiation Summary.
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +978,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First &amp; second order equations. Integrating Factors. Newton’s laws, equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
+     9 Homogeneous equations.  First order equations. Integrating Factors &amp; Second order equations.  Bernoulli equation. Newton’s laws, Equations of motion, Simple harmonic Motion, Particle in a Box, Rigid Rotor, Pendulums, Cable equation and Bernoulli principle.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1652,7 +1652,7 @@ title="Print to PDF"
 <section id="q1-lorenz-determinant">
 <h2>Q1 Lorenz determinant<a class="headerlink" href="#q1-lorenz-determinant" title="Permalink to this headline">#</a></h2>
 <p>Evaluate the Lorentz determinant <span class="math notranslate nohighlight">\(\displaystyle \;d\begin{vmatrix} 1 &amp; -v \\ \displaystyle -\frac{v}{c} &amp; 1 \\ \end{vmatrix}\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(c\)</span> is the speed of light and <span class="math notranslate nohighlight">\(v\)</span> the velocity of a body and <span class="math notranslate nohighlight">\(d=c/\sqrt{c^2-v^2}\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the speed of light and <span class="math notranslate nohighlight">\(v\)</span> the velocity of a body and <span class="math notranslate nohighlight">\(\displaystyle d=\frac{c}{\sqrt{c^2-v^2}}\)</span>.</p>
 </section>
 <section id="q2-zero-determinant">
 <h2>Q2 Zero determinant<a class="headerlink" href="#q2-zero-determinant" title="Permalink to this headline">#</a></h2>
@@ -1668,8 +1668,8 @@ title="Print to PDF"
 </section>
 <section id="q5-zero-determinant">
 <h2>Q5 Zero determinant<a class="headerlink" href="#q5-zero-determinant" title="Permalink to this headline">#</a></h2>
-<p>(a) Use Python to calculate the determinant of the first <span class="math notranslate nohighlight">\(16\)</span> numbers starting at <span class="math notranslate nohighlight">\(1\)</span>. Explain why the determinant is zero. Construct the matrix explicitly then repeat the calculation using a procedure containing two ‘for’  loops</p>
-<p>(b) Change the matrix, using your procedure, to calculate the determinant of the cube of each of the first <span class="math notranslate nohighlight">\(49\)</span> numbers starting at <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p><strong>(a)</strong> Use Python to calculate the determinant of the first <span class="math notranslate nohighlight">\(16\)</span> numbers starting at <span class="math notranslate nohighlight">\(1\)</span>. Explain why the determinant is zero. Construct the matrix explicitly then repeat the calculation using a procedure containing two ‘for’  loops</p>
+<p><strong>(b)</strong> Change the matrix, using your procedure, to calculate the determinant of the cube of each of the first <span class="math notranslate nohighlight">\(49\)</span> numbers starting at <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p><strong>Strategy:</strong> Use the Python method in the text to define a matrix. In part (a) the matrix is small enough to be written by hand. In (b) we could also do this by hand but it is easier to use two loops, one for rows the other for columns which enables us to make a matrix of any size.</p>
 </section>
 <section id="q6-prime-number-determinant">
@@ -1680,8 +1680,8 @@ title="Print to PDF"
 <section id="q7-linear-polyene">
 <h2>Q7 Linear polyene<a class="headerlink" href="#q7-linear-polyene" title="Permalink to this headline">#</a></h2>
 <p>In a linear polyene, the only interactions lie on the diagonal and 1 element to the right or left of this, a tri-diagonal form, but in the cyclic polyenes the first atom has to interact with the last in the ring, atom <span class="math notranslate nohighlight">\(1\)</span> with atom <span class="math notranslate nohighlight">\(6\)</span> in benzene for example. Modify Algorithm 1 and construct the Huckel matrix for any cyclic polyene.</p>
-<p>(a) Calculate the MO energies for benzene and cyclo-octatetraene assuming that <span class="math notranslate nohighlight">\(x=(\alpha-E)/\beta\)</span>.</p>
-<p>(b) Sketch and label the energy levels.</p>
+<p><strong>(a)</strong> Calculate the MO energies for benzene and cyclo-octatetraene assuming that <span class="math notranslate nohighlight">\(\displaystyle x=\frac{\alpha-E}{\beta}\)</span>.</p>
+<p><strong>(b)</strong> Sketch and label the energy levels.</p>
 <p><strong>Strategy:</strong> Work out what it means to form a ring by adding extra matrix elements to the Huckel MO matrix.</p>
 </section>
 <section id="q8-fulvalene-azulene-and-naphthalene-energies">
@@ -1695,14 +1695,17 @@ title="Print to PDF"
 <section id="q9-na-3">
 <h2>Q9 Na<span class="math notranslate nohighlight">\(_3\)</span><a class="headerlink" href="#q9-na-3" title="Permalink to this headline">#</a></h2>
 <p>The molecule Na<span class="math notranslate nohighlight">\(_3\)</span> exists as a covalently bound molecule in the vapour phase and its spectroscopy has been studied.</p>
-<p>(a) Using Huckel theory, work out if the linear or triangular arrangement of atoms is the most stable.</p>
-<p>(b) which arrangement of atoms is most stable in Na<span class="math notranslate nohighlight">\(_3^+\)</span>?</p>
-<p>(c) Calculate the energy, as the bond is opened from a triangular to straight form, assuming a very crude model in which the overlap on the outside two atoms varies as <span class="math notranslate nohighlight">\(\beta e^{-r/d}\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is their separation assuming that the bond length is <span class="math notranslate nohighlight">\(d\)</span>. The overlap <span class="math notranslate nohighlight">\(\beta\)</span> accounts for the interaction at the normal bond length, and the exponential describes just how the overlap decreases as the atoms separate.</p>
+<p><strong>(a)</strong> Using Huckel theory, work out if the linear or triangular arrangement of atoms is the most stable.</p>
+<p><strong>(b)</strong> which arrangement of atoms is most stable in Na<span class="math notranslate nohighlight">\(_3^+\)</span>?</p>
+<p><strong>(c)</strong> Calculate the energy, as the bond is opened from a triangular to straight form, assuming a very crude model in which the overlap on the outside two atoms varies as <span class="math notranslate nohighlight">\(\displaystyle \beta e^{-r/d}\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is their separation assuming that the bond length is <span class="math notranslate nohighlight">\(d\)</span>. The overlap <span class="math notranslate nohighlight">\(\beta\)</span> accounts for the interaction at the normal bond length, and the exponential describes just how the overlap decreases as the atoms separate.</p>
 <p><strong>Strategy:</strong> The molecule has three s electrons that can become involved in bonding. The reference energy, without forming an MO, is the self-energy <span class="math notranslate nohighlight">\(\alpha\)</span> of the three electrons. In (c) the <span class="math notranslate nohighlight">\(\beta\)</span> is changed due to the separation of two of the atoms as they move round in a circle from the bent to straight form. Use the cosine rule to work out how the distance <span class="math notranslate nohighlight">\(r\)</span> varies with bond angle <span class="math notranslate nohighlight">\(\theta\)</span>. It is not obvious which energy levels are lowest, so plot all three to determine this and then calculate the total energy. Use values <span class="math notranslate nohighlight">\(\alpha = 0;\; \beta = -1\)</span> to observe the trend with bond angle. The value of <span class="math notranslate nohighlight">\(\alpha\)</span> does not matter, because every energy contains a term <span class="math notranslate nohighlight">\(+\alpha\)</span>. The value of <span class="math notranslate nohighlight">\(\beta\)</span> should be negative; the exact value does not matter as only trends are sought in this crude model.</p>
 </section>
 <section id="q10-polyene-energy-recursion-formula">
 <h2>Q10 Polyene energy recursion formula<a class="headerlink" href="#q10-polyene-energy-recursion-formula" title="Permalink to this headline">#</a></h2>
-<p>(a) Show that the characteristic equation for the Huckel energy of the nth linear polyene’s molecular orbitals can be written as the recursion formula <span class="math notranslate nohighlight">\(f_n(x) = xf_{n-1}(x) - f_{n-2}(x)\)</span> where <span class="math notranslate nohighlight">\(f_{n-1}\)</span> is the equation for the <span class="math notranslate nohighlight">\((n - 1)^{th}\)</span> polyene. The <span class="math notranslate nohighlight">\(n^{th}\)</span> polyene has a characteristic equation found evaluating the <span class="math notranslate nohighlight">\(n \times n\)</span> determinant</p>
+<p>Show that the characteristic equation for the Huckel energy of the nth linear polyene’s molecular orbitals can be written as the recursion formula</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f_n(x) = xf_{n-1}(x) - f_{n-2}(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_{n-1}\)</span> is the equation for the <span class="math notranslate nohighlight">\((n - 1)^{th}\)</span> polyene. The <span class="math notranslate nohighlight">\(n^{th}\)</span> polyene has a characteristic equation found evaluating the <span class="math notranslate nohighlight">\(n \times n\)</span> determinant</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle f_n(x)=\begin{vmatrix} x &amp; 1 &amp; 0 &amp; \\ 1 &amp; x &amp; 1 &amp; \\ 0 &amp; 1 &amp;\ddots &amp; \cdots\\ &amp; &amp;  \vdots &amp; \ddots \end{vmatrix} \end{split}\]</div>
 <p>and when <span class="math notranslate nohighlight">\(n = 1\)</span>, corresponding to a single carbon atom, let <span class="math notranslate nohighlight">\(f_1(x) = x\)</span>.</p>

@@ -156,8 +156,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # Algorithm: Metropolis  Harmonic oscillator  
 
-# np.random.ranf() calculates one random number in the range 0 - 1
-
+# rng.random() calculates one random number in the range 0 - 1
+rng = np.random.default_rng()     # initialise random number generator
 n = 20000                         # number of samples
 deltax= 0.4                       # max displacement
 kB    = 1.38e-5                   # in kg/nm^2/s^2/K == 1.38e^(-23) J/k
@@ -172,7 +172,7 @@ x1= 0.0                           # first guess of x
 E1= V(x1)                         # first guess of PE 
 
 for i in range(n):                # start loop step(2)   
-    x2 = x1 + (np.random.ranf()-0.5)*deltax       #new x position 
+    x2 = x1 + (rng.random()-0.5)*deltax       #new x position 
     E2 = V(x2)                                    # new PE
     DeltaE = E2 - E1                              # energy difference
     # next line is Metropolis parts(2) in algorithm
@@ -234,7 +234,7 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # Algorithm: Metropolis. Calculate Maxwell speed distribution.
 
 # mass in amu, kB in J/K, x = speed in m/s
- 
+rng = np.random.default_rng()                 # initialise random number generator 
 N   =   1000                                  # number of samples
 deltax= 5000.0                                # max speed m /s
 kB  =   1.381e-23                             # Boltzmann?s const J/K
@@ -259,7 +259,7 @@ fs  = np.zeros(N,dtype=float)                 # Maxwell probability f(s)
 fx  = np.zeros(N,dtype=float)                 # x value
  
 for i in range(N):                            # start loop step (2)
-    x2 =  x1 + (np.random.ranf() - 0.5)*deltax     # new x position
+    x2 =  x1 + (rng.random() - 0.5)*deltax    # new x position
     E2 = V(x2)                                # new PE
     DeltaE = E2 - E1                          # energy difference
                                               # next line is Metropolis sampling
@@ -282,7 +282,7 @@ Estdev = np.sqrt((E2av - Eav**2)/(N-1))
 CV     = (E2av - Eav**2)/(kB*T**2)
 
 # plot data 
-#plt.scatter(fx[0:jj],fs[0:jj],color='red',s=3)
+#plt.scatter(fx[0:jj],fs[0:jj],color='red',s=1)
 #plt.show()
 
 
@@ -354,7 +354,7 @@ def Ising1D(beta):
     #kB              # Boltzmann const, in a.u.
     #T               # temperature
     # beta = J/kBT
-    rndi = np.random.randint(L,size = N)      # make list of random numbers 0 to n used as indices
+    rndi = rng.integers(L,size = N)      # make list of random numbers 0 to L-1 used as indices
     spin=  np.zeros(L,dtype=int)
                               # deltaE can take values ( -4, 0, 4), however, only the
                               # positive value is used in the metropolis test, hence we define 
@@ -375,7 +375,7 @@ def Ising1D(beta):
     
         DeltaE = 2.0*J*spin[i]*(spin[indx1] + spin[indx2])     # energy of  spin i + energy of adjacent spins
                                        
-        if DeltaE <= 0.0 or np.random.ranf() < P :             # Metropolis test 
+        if DeltaE <= 0.0 or rng.random() < P :                 # Metropolis test 
             spin[i] = -spin[i]                                 # flip spin
             Enrg = Enrg + DeltaE                               # add  energy 
             pass
@@ -385,7 +385,7 @@ def Ising1D(beta):
     
     return tot_Enrg, tot_Enrg2
 #---------------------------------------------
-
+rng = np.random.default_rng()                     # initialise random number generator
 L    = 500                                        # L sites
 reps = 400                                        # repeats
 N    = L*reps                                     # reps calcs / site
@@ -591,8 +591,8 @@ def get_entropy(spin):
 #---------------------------
 def ising2d(beta):
     
-    rndi = np.random.randint(L,size = N)      # make list of random numbers 0 to L-1 used as indices
-    rndk = np.random.randint(L,size = N)
+    rndi = rng.integers(L,size = N)      # make list of random numbers 0 to L-1 used as indices
+    rndk = rng.integers(L,size = N)
     spin = np.zeros((L,L),dtype=int)          # spinlattice
     prob = np.zeros(8,dtype=float)            # array for exp(-deltaE/kBT)
     # 2*( -4,-2, 0, 2, 4) only positive used, 0 is checked for
@@ -628,7 +628,7 @@ def ising2d(beta):
         sum_nn = spin[indx1,k] + spin[indx2,k] + spin[i,indx3] + spin[i,indx4] 
         DeltaE = 2*spin[i,k]*sum_nn          # # -2*old value*( -J )*neigbours 
         
-        if DeltaE <= 0 or np.random.ranf() < prob[DeltaE-1] :  # Metropolis test
+        if DeltaE <= 0 or rng.random() < prob[DeltaE-1] :  # Metropolis test
             spin[i,k]= -spin[i,k]            # flip spin
             Enrg = Enrg + DeltaE             # increment
             #mag = mag +2*spin[i,k]
@@ -640,6 +640,7 @@ def ising2d(beta):
         pass
     return  tot_Enrg, tot_Enrg2, M,spin                              # end of for num loop
 #------------------------------
+rng = np.random.default_rng()                    # initialise random number generator
 L  = 16           # side 
 n  = L**2
 N  = n*25*10**3   # integer  use 10**3 for pics
@@ -648,9 +649,9 @@ kB = 1.0
 T  = 2.0    
 beta = J/( kB*T )
 
-#tot_E,tot_E2,tot_M,spin = ising2d(beta)  # remove # to do calculation which is v slow.
+tot_E,tot_E2,tot_M,spin = ising2d(beta)  # remove # to do calculation which is v slow.
 
-#print(tot_E,tot_E2,tot_M,'\n',spin)
+print(tot_E,tot_E2,tot_M,'\n',spin)
 
 
 # In[ ]:

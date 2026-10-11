@@ -19,7 +19,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # There is no linearly polarized light present so none can cause transitions. If it were present, however, the $μ\mu_z$ components of the dipole operator would be used and have the selection rules $\Delta s=0, \Delta m=0$ or $s_1 =s_2$ and $m_1 =m_2$.  However, all of these terms will be zero because $m$ must change in any transition to conserve angular momentum. Therefore, all parts of the transition matrix containing $\mu_z$ are zero. In other words, electric dipole transitions do not couple to spin angular momentum.
 # 
 # The magnetic dipole transitions have the $\Delta m = \pm 1$ selection rule. To find out what transitions are to be expected start with the ordering of quantum numbers $m_a, m_b$ in the $sm$ basis chosen. This ordering is
-# $(m_a, m_b) = (1/2, 1/2), (1/2, -1/2), (-1/2, 1/2), (-1/2, -1/2)$ and transitions are allowed only between states with $\Delta m = \pm 1$ and these are
+# 
+# $$\displaystyle (m_a, m_b) = (1/2, 1/2),\quad (1/2, -1/2),\quad (-1/2, 1/2),\quad (-1/2, -1/2)$$ 
+# 
+# and transitions are allowed only between states with $\Delta m = \pm 1$ and these are
 # 
 # $$\displaystyle \begin{array}{rrrrrrr}
 # \hline
@@ -73,12 +76,20 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle H = g \beta S_zB − g_Nβ_NI_zB + a(S_xI_x + S_yI_y + S_zI_z)$$
 # 
-# where $S$ refers to the electron and $I$ to the proton spin. Using a basis set notation as $|\alpha\alpha\rangle = (1/2, 1/2)(1/2, 1/2), |\alpha\beta\rangle = (1/2, 1/2)(1/2, -1/2)$, and so forth, which is in the same ordering as in the text, if the first letter refers to electron spin and the second to nuclear spin, the Hamiltonian matrix can be written down as
+# where $S$ refers to the electron and $I$ to the proton spin. Using a basis set notation as 
+# 
+# $$\displaystyle |\alpha\alpha\rangle = (1/2, 1/2)(1/2, 1/2),\qquad |\alpha\beta\rangle = (1/2, 1/2)(1/2, -1/2)$$
+# 
+# and so forth, which is in the same ordering as in the text, if the first letter refers to electron spin and the second to nuclear spin, the Hamiltonian matrix can be written down as
 # 
 # $$\displaystyle \begin{align}&\qquad\qquad\qquad\begin{matrix} \quad|\alpha\alpha\rangle \qquad &\qquad\quad|\alpha\beta\rangle \qquad&\qquad \quad|\beta\alpha\rangle \qquad& \qquad\qquad\quad|\beta\beta\rangle  \end{matrix}\\ &\begin{matrix}  |\alpha\alpha\rangle \\|\alpha\beta\rangle \\ |\beta\alpha\rangle \\ |\beta\beta\rangle \end{matrix} 
 # \begin{bmatrix} (G-G_N)/2+a/4 & 0 & 0 & 0\\ 0 & (G+G_N)/2-a/4 & a/2 & 0\\0 & a/2 & -(G+G_N)/2-a/4 &0\\ 0 & 0 & 0 & -(G-G_N)/2+a/4 \end{bmatrix} \end{align}$$
 # 
-# with the abbreviations $G = g\beta B,  G_N = g_N\beta_NB$. (Do not confuse $\beta$ in the equation for $G$ with $\beta$ used in the basis set). The matrix shows how the states $| \alpha\beta \rangle$ and $| \beta\alpha \rangle$ are mixed by the electron and nuclear spin interaction because these are the only states with off-diagonal terms. The matrix can be diagonalized by blocking it into two $1 \times 1$ matrices and a $2 \times 2$ matrix, therefore two of the energies can be read directly from the matrix. The states that mix have different energies at zero $B$ and move apart as they all do as $B$ is increased.
+# with the abbreviations 
+# 
+# $$\displaystyle G = g\beta B,\qquad  G_N = g_N\beta_NB$$
+# 
+# (Do not confuse $\beta$ in the equation for $G$ with $\beta$ used in the basis set). The matrix shows how the states $| \alpha\beta \rangle$ and $| \beta\alpha \rangle$ are mixed by the electron and nuclear spin interaction because these are the only states with off-diagonal terms. The matrix can be diagonalized by blocking it into two $1 \times 1$ matrices and a $2 \times 2$ matrix, therefore two of the energies can be read directly from the matrix. The states that mix have different energies at zero $B$ and move apart as they all do as $B$ is increased.
 # 
 # Calculating the eigenvalues can be done using Python/SymPy, although the $2 \times 2$ matrix can be diagonalized by hand. The result is
 # 
@@ -87,11 +98,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # E_{\alpha\beta-\beta\alpha}&=-\frac{a}{4}-\frac{\sqrt{a^2+(g\beta+g_N\beta_N)B^2}}{2}\\
 # E_{\beta\beta}&=\frac{a}{4}-\frac{g\beta-g_N\beta_N}{2}B \end{align}$$
 # 
-# The energy levels vs B are shown in Figure 6. The separation of levels at zero field is $a$, as may be confirmed from the energy levels; the lowest level is at $-3a/4$ and the other three at $a/4$. By inspecting the eigenvalues with basis-set ordering, the composition of the levels can be determined. At high field, the states with the same electron spin ms quantum number $1/2$, which are the two lower and two upper states, are separated by a constant amount a/2, irrespective of the magnetic field B. Also at high field, (Fig. 6) the states can be labelled with the basis set values because mixing between states is small; the off-diagonal terms are small because $B$ is large. At small or zero $B$, the states $|\alpha\beta\rangle$ and $|\beta\alpha\rangle$ are mixed and it is better to describe them as a symmetric and symmetric pair, $(|\alpha\beta\rangle\pm|\beta\alpha\rangle)\sqrt{2}$. 
+# The energy levels vs B are shown in Figure 6. The separation of levels at zero field is $a$, as may be confirmed from the energy levels; the lowest level is at $-3a/4$ and the other three at $a/4$. By inspecting the eigenvalues with basis-set ordering, the composition of the levels can be determined. At high field, the states with the same electron spin ms quantum number $1/2$, which are the two lower and two upper states, are separated by a constant amount a/2, irrespective of the magnetic field B. Also at high field, (Fig. 6) the states can be labelled with the basis set values because mixing between states is small; the off-diagonal terms are small because $B$ is large. At small or zero $B$, the states $|\alpha\beta\rangle$ and $|\beta\alpha\rangle$ are mixed and it is better to describe them as a symmetric and symmetric pair, 
+# 
+# $$\displaystyle (|\alpha\beta\rangle\pm|\beta\alpha\rangle)\sqrt{2}$$ 
 # 
 # The three levels at zero field form a triplet 
 # 
-# $$|\alpha\alpha \rangle,|\beta\beta \rangle,(|\alpha\beta\rangle+|\beta\alpha\rangle)/\sqrt{2}$$
+# $$|\alpha\alpha \rangle,\quad|\beta\beta \rangle,\quad(|\alpha\beta\rangle+|\beta\alpha\rangle)/\sqrt{2}$$
 # 
 # with energy $a/4$, and the other state is a singlet, 
 # 
@@ -196,20 +209,27 @@ H
 
 
 # ## Q4 answer
-# (a) Differentiating $\varphi$ twice and forming the Schroedinger equation gives after some simplification
+# **(a)** Differentiating $\varphi$ twice and forming the Schroedinger equation gives after some simplification
 # 
 # $$\displaystyle -\frac{\hbar^2}{2I}\frac{d^2\varphi_m}{d\theta^2}=\frac{\hbar^2}{2I}m^2\varphi_m$$
 # 
-# therefore the energy is $\displaystyle E_m=\frac{\hbar^2}{2I}m^2$.
+# therefore the energy is 
 # 
-# Starting with $H^0\varphi_m=E_m\varphi_m$ the expectation value of operator $H^0$ between levels with quantum numbers $m = m'$, which is the diagonal or self-energy, is
+# $$\displaystyle E_m=\frac{\hbar^2}{2I}m^2$$
+# 
+# Starting with 
+# 
+# $$\displaystyle H^0\varphi_m=E_m\varphi_m$$
+# 
+# the expectation value of operator $H^0$ between levels with quantum numbers $m = m'$, which is the diagonal or self-energy, is
 # 
 # $$\displaystyle H^0_{m,m}=\frac{\int\varphi^*_mH^0\varphi_md\theta}{\int\varphi^*_m\varphi_md\theta}=\frac{\int\varphi^*_mE_m\varphi_md\theta}{\int\varphi^*_m\varphi_md\theta}=E_m$$
 # 
-# when the wavefunction is normalized,$\int\varphi^*_m\varphi_md\theta = 1$ with $\theta = 0
-# \to 2\pi$. 
+# when the wavefunction is normalized,
 # 
-# Using the definition of $\varphi$ in the question the expectation value for the changed potential $V$ between levels $m$ and $m'$ is
+# $$\displaystyle \int_0^{2\pi}\varphi^*_m\varphi_md\theta = 1$$
+# 
+# **(b)** Using the definition of $\varphi$ in the question the expectation value for the changed potential $V$ between levels $m$ and $m'$ is
 # 
 # $$\displaystyle \begin{align} H^1_{mm'}&=\frac{V_3}{2}\int\varphi^*_m\left(1-\cos(3\theta)\right)\varphi_{m'}d\theta\\
 # &=\frac{V_3}{2}\int\varphi^*_m\varphi_{m'}d\theta - \frac{V_3}{2}\int\varphi^*_m\cos(3\theta)\varphi_{m'}d\theta\\
@@ -227,14 +247,22 @@ ans = sp.integrate( sp.exp(1j*a*theta)*sp.cos(3*theta),(theta,0,2*pi), conds='no
 sp.simplify(ans)
 
 
-# Simplifying the result gives $\displaystyle \frac{ia(1-e^{2i\pi a})}{a^2-3^2}$ which is zero when $a=m-m'=0$ but real when $a=3$ or $m-m'=3$ this is not so obvious because the real part when $a = 3$ has a numerator and denominator that are both zero; however, the limit is $\pi$; The real part is $\displaystyle \frac{a\sin(2\pi a)}{a^2-3^2}$ Plotting the function clarifies this. 
+# Simplifying the result gives 
+# 
+# $$\displaystyle \frac{ia(1-e^{2i\pi a})}{a^2-3^2}$$
+# 
+# which is zero when $a=m-m'=0$ but real when $a=3$ or $m-m'=3$ this is not so obvious because the real part when $a = 3$ has a numerator and denominator that are both zero; however, the limit is $\pi$; The real part is 
+# 
+# $$\displaystyle \frac{a\sin(2\pi a)}{a^2-3^2}$$
+# 
+# Plotting the function clarifies this. 
 # 
 # ![Drawing](matricesQM-fig7.png)
 # 
 # Figure 7 Real and imaginary part of the integration. Only integer values of $a$ are valid are valid because the quantum numbers are integers. Only at integer $a = 3$ is the real result not zero.
 # __________
 # 
-# The result for the $m, m'$ expectation value is
+# **(c)** The result for the $m, m'$ expectation value is
 # 
 # $$\displaystyle H^1_{m,m'}= \frac{V_3}{2}\delta_{m,m}-\frac{V_3}{4}\delta_{m,m\pm3} \tag{35}$$
 # 
@@ -243,7 +271,11 @@ sp.simplify(ans)
 # 
 # $$\displaystyle m = 0, 1, -1, 2, -2 \cdots$$ 
 # 
-# which pairs $m$ values; it could also be done as $m = \cdots -3, -2, -1, 0, 1, 2, \cdots$ or in a random order; there are many choices. The diagonal terms all contain $H^0$ and some also contain part of $H^1$ and are $\displaystyle {\hbar^2}{2I}m^2+\frac{V_3}{2}$ because on the diagonal $m = m'$. The off-diagonal terms are only non-zero when $m' = m \pm 3$ and each have the value $-V_3/4$. The matrix for $m$ up to $\pm 3$ is with substitutions $V \equiv V_3/2$ and $\displaystyle A\equiv \frac{\hbar^2}{2I}$
+# which pairs $m$ values; it could also be done as $m = \cdots -3, -2, -1, 0, 1, 2, \cdots$ or in a random order; there are many choices. The diagonal terms all contain $H^0$ and some also contain part of $H^1$ and are 
+# 
+# $$\displaystyle {\hbar^2}{2I}m^2+\frac{V_3}{2}$$
+# 
+# because on the diagonal $m = m'$. The off-diagonal terms are only non-zero when $m' = m \pm 3$ and each have the value $-V_3/4$. The matrix for $m$ up to $\pm 3$ is with substitutions $V \equiv V_3/2$ and $\displaystyle A\equiv \frac{\hbar^2}{2I}$
 # 
 # $$\displaystyle \begin{align}&\begin{matrix}m\to &\quad 0 \qquad & 1 \qquad & -1\qquad & 2\qquad & -2 &\qquad 3 &\qquad -3\end{matrix}\\
 # &\begin{matrix}\;0\\ \;1\\-1\\ \;2\\-2\\ \;3\\-3\end{matrix}
@@ -255,7 +287,7 @@ sp.simplify(ans)
 # -V/2 & 0 & 0 & 0 & 0 &9A+V & 0\\
 # -V/2 & 0 & 0 & 0 & 0& 0 & 9A+V\end{bmatrix} \end{align}$$
 # 
-# The same calculation can easily be put into Python/SymPy and its size increased to make the answer more accurate. The expectation values are defined first with $m$ and $m1$ as the two quantum numbers and the abbreviation $A = \hbar^2/2I$ is used for simplicity. The eigenvalues need to be sorted because the order in which the computation returns them will not necessarily be in order of increasing energy. As a check, when the applied potential is zero, the normal rigid rotor energies are returned.
+# **(d)** The same calculation can easily be put into Python/SymPy and its size increased to make the answer more accurate. The expectation values are defined first with $m$ and $m1$ as the two quantum numbers and the abbreviation $A = \hbar^2/2I$ is used for simplicity. The eigenvalues need to be sorted because the order in which the computation returns them will not necessarily be in order of increasing energy. As a check, when the applied potential is zero, the normal rigid rotor energies are returned.
 
 # In[4]:
 
@@ -331,9 +363,27 @@ for i in range(13):
 # 
 # $$\displaystyle (H^1V_1)_{m,m'}=\frac{V_1}{2}\int\varphi^*_m(1-\cos(\theta))\varphi_m d\theta =\frac{V_1}{2}\delta_{m,m'}-\frac{V_1}{4\pi}\int e^{i\theta (m-m')}\cos(\theta)d\theta$$
 # 
-# Substituting $a=m-m'$ simplifies the integral which is $\displaystyle \frac{ia(1-e^{2\pi ia})}{a^2-1} $ and is calculated in the same way to the similar integral in question 4.  This integral has the limit $\pi$ when $m'=m\pm 1$. The expectation value for $V_1$ is $\displaystyle H^1_{mm'}=\frac{V_1}{2}\delta_{mm'}-\frac{V_1}{4}\delta_{mm\pm 1}$ and for the $6\theta$ potential is $\frac{V_6}{2}\delta_{mm'}-\frac{V_6}{4}\delta_{mm\pm 6}$.
+# Substituting $a=m-m'$ simplifies the integral which is 
 # 
-# There are therefore four terms on the diagonal; the free rotor and one from each of the potentials. We expect off- diagonal terms when $m' = m \pm 1, m' = m \pm 3$ and $m' = m\pm 6$. The basis set is still that of the free rotor in $m = 0, 1, -1, 2, -2 \cdots$ with $V_{136} =V_1 +V_3 +V_6$, and the matrix must be Hermitian: real and symmetrical. The entries are added according to the changes in $m$. For clarity the notation is similar to that in question 3; but with $V\equiv V_{136}/2$
+# $$\displaystyle \frac{ia(1-e^{2\pi ia})}{a^2-1} $$
+# 
+# and is calculated in the same way to the similar integral in question 4.  This integral has the limit $\pi$ when $m'=m\pm 1$. The expectation value for $V_1$ is 
+# 
+# $$\displaystyle H^1_{mm'}=\frac{V_1}{2}\delta_{mm'}-\frac{V_1}{4}\delta_{mm\pm 1}$$
+# 
+# and for the $6\theta$ potential is 
+# 
+# $$\displaystyle \frac{V_6}{2}\delta_{mm'}-\frac{V_6}{4}\delta_{mm\pm 6}$$
+# 
+# There are therefore four terms on the diagonal; the free rotor and one from each of the potentials. We expect off- diagonal terms when 
+# 
+# $$\displaystyle m' = m \pm 1, m' = m \pm 3$ and $m' = m\pm 6$$
+# 
+# The basis set is still that of the free rotor in $m = 0, 1, -1, 2, -2 \cdots$ with 
+# 
+# $$\displaystyle V_{136} =V_1 +V_3 +V_6$$
+# 
+# and the matrix must be Hermitian: real and symmetrical. The entries are added according to the changes in $m$. For clarity the notation is similar to that in question 3; but with $V\equiv V_{136}/2$
 # 
 # 
 # $$\displaystyle \begin{align}&\begin{matrix}m\to  &\quad 0 \qquad & 1 \qquad & -1\qquad & 2\qquad & -2 &\qquad 3 &\qquad -3\end{matrix}\\
@@ -348,7 +398,7 @@ for i in range(13):
 # With three parameters $V_1, V_3$ and $V_6$ as variables, it should be possible to fit the most complicated restricted rotor spectra.
 # 
 # ## Q7 answer
-# The radial parts of the wavefunction can be ignored because $r$ factors out of the equation and will integrate to a constant. 
+# **(a)** The radial parts of the wavefunction can be ignored because $r$ factors out of the equation and will integrate to a constant. 
 # 
 # Changing to spherical polar coordinates, the potential becomes
 # 
@@ -412,6 +462,6 @@ sp.simplify(ans10)
 
 # The other integrals may be calculated similarly. 
 # 
-# (b) The px, py, pz orbitals point along the $x$-, $y$-, and $z$-axes. As the potential has no terms in $xy, xz$ or $yz$ the field it produces is only along the axes. The matrix will therefore be diagonal. The matrix elements are calculated in the same manner as in (a) the eigenvalues can be read from the matrix, because it is diagonal.
+# **(b)** The px, py, pz orbitals point along the $x$-, $y$-, and $z$-axes. As the potential has no terms in $xy, xz$ or $yz$ the field it produces is only along the axes. The matrix will therefore be diagonal. The matrix elements are calculated in the same manner as in (a) the eigenvalues can be read from the matrix, because it is diagonal.
 # 
 # **Exercise:** Calculate the splitting the field $V$ produces in the five d orbitals.
